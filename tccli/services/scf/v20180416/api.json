@@ -5512,9 +5512,21 @@
           "example": "x",
           "member": "NamespaceResourceEnvTKE",
           "name": "TKE",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "近离线计算类型的命名空间",
+          "example": "true",
+          "member": "bool",
+          "name": "OFFLINE",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -277,7 +277,7 @@
         {
           "disabled": false,
           "document": "cos地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "ap-guanghzou",
           "member": "string",
           "name": "CosRegion",
           "output_required": false,
@@ -288,7 +288,7 @@
         {
           "disabled": false,
           "document": "地域描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "广州地域",
           "member": "string",
           "name": "CosRegionName",
           "output_required": false,
@@ -396,7 +396,7 @@
         {
           "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
-          "example": "操作审计",
+          "example": "audit_test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -423,7 +423,7 @@
         {
           "disabled": false,
           "document": "数据过滤条件",
-          "example": "无",
+          "example": "{     \"ResourceFields\": [         {             \"ResourceType\": \"cam\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"AddSubAccount\",                 \"AddSubAccountCheckingMFA\"             ]         },         {             \"ResourceType\": \"cvm\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"*\"             ]         },         {             \"ResourceType\": \"tke\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"*\"             ]         }     ] }",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -906,7 +906,7 @@
         {
           "disabled": false,
           "document": "日志集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": "[     {         \"CloudAuditEvent\": \"\",         \"EventName\": \"PostTrack\",         \"EventTime\": \"xxxx\",         \"EventId\": \"\",         \"SecretId\": \"xxxxxxA2bADrx2jeiQPQy2kIV05F4xjl9Nxxxxx\",         \"ErrorCode\": 0,         \"RequestID\": \"xxxxx-8fd8-4121-b1e8-6264292eeb4f\",         \"SourceIPAddress\": \"xx.xx.96.xx\",         \"EventSource\": \"xx.ap-chongqing.api.tencentyun.com/\",         \"EventRegion\": \"ap-guangzhou\",         \"Resources\": {             \"ResourceName\": \"\",             \"ResourceType\": \"tandon\"         },         \"Username\": \"root\",         \"AccountID\": xxxx,         \"Location\": \"xxxx\",         \"ResourceTypeCn\": \"腾讯云安灯\",         \"EventNameCn\": \"智能客服官网浏览记录上报\",         \"ResourceRegion\": \"\"     } ]",
           "member": "Event",
           "name": "Events",
           "output_required": true,
@@ -1114,7 +1114,7 @@
         {
           "disabled": false,
           "document": "资源筛选条件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [             {                 \"ResourceType\": \"cam\",                 \"ActionType\": \"*\",                 \"EventNames\": [                     \"AddSubAccount\",                     \"AddSubAccountCheckingMFA\"                 ]             }                      ]",
           "member": "ResourceField",
           "name": "ResourceFields",
           "output_required": false,
@@ -1624,7 +1624,7 @@
         {
           "disabled": false,
           "document": "跟踪集名称，仅支持大小写字母、数字、-以及_的组合，3-48个字符",
-          "example": "操作审计",
+          "example": "audit_test",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1660,7 +1660,7 @@
         {
           "disabled": false,
           "document": "多产品筛选过滤条件",
-          "example": "无",
+          "example": "{     \"ResourceFields\": [         {             \"ResourceType\": \"cam\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"AddSubAccount\",                 \"AddSubAccountCheckingMFA\"             ]         },         {             \"ResourceType\": \"cvm\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"*\"             ]         },         {             \"ResourceType\": \"tke\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"*\"             ]         }     ] }",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1687,7 +1687,7 @@
         {
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cloudaudit",
           "member": "string",
           "name": "ResourceType",
           "output_required": false,
@@ -1698,7 +1698,7 @@
         {
           "disabled": false,
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "ins-234234",
           "member": "string",
           "name": "ResourceName",
           "output_required": false,
@@ -1715,7 +1715,7 @@
         {
           "disabled": false,
           "document": "跟踪事件所属产品（支持全部产品或单个产品，如：cam，全部：*）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cvm",
           "member": "string",
           "name": "ResourceType",
           "output_required": false,
@@ -1726,7 +1726,7 @@
         {
           "disabled": false,
           "document": "跟踪事件类型（读：Read；写：Write；全部：*）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Read",
           "member": "string",
           "name": "ActionType",
           "output_required": false,
@@ -1737,7 +1737,7 @@
         {
           "disabled": false,
           "document": "跟踪事件接口名列表（ResourceType为 * 时，EventNames必须为全部：[\"\"]；指定ResourceType时，支持全部接口：[\"\"]；支持部分接口：[\"cos\", \"cls\"]，接口列表上限10个）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"AddUser\"]",
           "member": "string",
           "name": "EventNames",
           "output_required": false,
@@ -1872,7 +1872,7 @@
         {
           "disabled": false,
           "document": "被指定存储用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "23424",
           "member": "string",
           "name": "StorageAccountId",
           "output_required": false,
@@ -1883,7 +1883,7 @@
         {
           "disabled": false,
           "document": "被指定存储用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3545646",
           "member": "string",
           "name": "StorageAppId",
           "output_required": false,

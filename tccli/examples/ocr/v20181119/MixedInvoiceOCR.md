@@ -298,7 +298,7 @@ Input:
 ```
 tccli ocr MixedInvoiceOCR --cli-unfold-argument  \
     --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
-    --Types 2
+    --Types 3
 ```
 
 Output: 

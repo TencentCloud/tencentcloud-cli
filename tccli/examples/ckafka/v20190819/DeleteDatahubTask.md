@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DeleteDatahubTask --cli-unfold-argument  \
-    --TaskId abc
+    --TaskId task-y9799wbn
 ```
 
 Output: 

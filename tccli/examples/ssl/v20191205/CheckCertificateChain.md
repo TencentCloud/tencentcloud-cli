@@ -17,9 +17,11 @@ Output:
         "IsValid": true,
         "IsTrustedCA": true,
         "Chains": [
-            "abc"
+            "m.d****.com",
+            "TrustAsia RSA DV TLS CA G2",
+            "AAA Certificate Services"
         ],
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

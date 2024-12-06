@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli config PutEvaluations --cli-unfold-argument  \
-    --ResultToken Wm9yZlY3WmlKa3cxaW1oQlu-H3WA6JZnH46cUAn2DWGJ9dp3GwJyhMyXsJyeXRcqa8sCimZKH6hy-7RGW_DEtva2Bjd36ryyDg0tbNOfYpf3r6lJB_gHRUCPRrr8HQbEvCoeoGw-KH7LqNUsoa4GzyrvKx2Ak1vycWzfAGaiTISWoTQ2mYr_BYSsVcO077lUlY4hieGJyolSxxUf1V9fDoIXFQikxW6AmU4cTUUpEJ-OF4Mvbq_7quPYZQOjDuo9cAxzUX-D8w== \
+    --ResultToken Wm9yZlY3WmlKa3cxaW1oQlu-H3WA6JZnH46cUAn2DWG**** \
     --Evaluations.0.ComplianceResourceId disk-26itbqha \
     --Evaluations.0.ComplianceResourceType QCS::CBS::Disk \
     --Evaluations.0.ComplianceRegion ap-guangzhou \

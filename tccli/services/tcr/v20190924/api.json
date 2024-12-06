@@ -7864,7 +7864,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistryId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7874,7 +7874,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistryName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7884,17 +7884,17 @@
           "example": "无",
           "member": "string",
           "name": "RegistryType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例状态",
+          "document": "实例状态。有以下状态：\nPending, 初始化中\nDeploying, 创建中\nRunning, 运行中\nUnhealthy, 状态异常\nFailedCreated, 创建失败\nFailedUpdated, 更新失败\nBucket-Error, 存储桶异常\nIsolate, 待回收\nDeleting, 删除中\nDeleteBucketFailed, 实例删除存储桶失败\nDeleteFailed, 实例删除失败",
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7904,7 +7904,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7914,7 +7914,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7924,7 +7924,7 @@
           "example": "无",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7934,7 +7934,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7944,7 +7944,7 @@
           "example": "无",
           "member": "bool",
           "name": "EnableAnonymous",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7954,7 +7954,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TokenValidTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7964,7 +7964,7 @@
           "example": "无",
           "member": "string",
           "name": "InternalEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7974,7 +7974,7 @@
           "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7984,7 +7984,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpiredAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7994,7 +7994,7 @@
           "example": "无",
           "member": "int64",
           "name": "PayMod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8004,7 +8004,7 @@
           "example": "无",
           "member": "int64",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8014,7 +8014,7 @@
           "example": "无",
           "member": "bool",
           "name": "DeletionProtection",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }

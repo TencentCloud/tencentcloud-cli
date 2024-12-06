@@ -13,53 +13,40 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "3d7a859c-4991-4d1d-bb8c-a25676c049d6",
         "QueueDescribe": {
-            "QueueId": "abc",
-            "QueueName": "abc",
-            "Qps": 1,
-            "Bps": 1,
-            "MaxDelaySeconds": 1,
-            "MaxMsgHeapNum": 1,
-            "PollingWaitSeconds": 1,
-            "MsgRetentionSeconds": 1,
-            "VisibilityTimeout": 1,
-            "MaxMsgSize": 1,
-            "RewindSeconds": 1,
-            "CreateTime": 1,
-            "LastModifyTime": 1,
-            "ActiveMsgNum": 1,
-            "InactiveMsgNum": 1,
-            "DelayMsgNum": 1,
-            "RewindMsgNum": 1,
-            "MinMsgTime": 1,
-            "Transaction": true,
-            "DeadLetterSource": [
-                {
-                    "QueueId": "abc",
-                    "QueueName": "abc"
-                }
-            ],
-            "DeadLetterPolicy": {
-                "DeadLetterQueue": "abc",
-                "Policy": 1,
-                "MaxTimeToLive": 1,
-                "MaxReceiveCount": 1
-            },
-            "TransactionPolicy": {
-                "FirstQueryInterval": 1,
-                "MaxQueryCount": 1
-            },
-            "CreateUin": 1,
+            "QueueId": "cmqq-d88rxnbv2",
+            "QueueName": "test1120",
+            "Qps": 5000,
+            "Bps": 52428800,
+            "MaxDelaySeconds": 3600,
+            "MaxMsgHeapNum": 1000000,
+            "PollingWaitSeconds": 3,
+            "MsgRetentionSeconds": 7200,
+            "VisibilityTimeout": 30,
+            "MaxMsgSize": 1048576,
+            "RewindSeconds": 0,
+            "RetentionSizeInMB": 0,
+            "CreateTime": 1732096676000,
+            "LastModifyTime": 1732096676000,
+            "ActiveMsgNum": 20,
+            "InactiveMsgNum": 0,
+            "DelayMsgNum": 0,
+            "RewindMsgNum": null,
+            "MinMsgTime": null,
+            "MaxUnackedMsgNum": 100000,
+            "DeadLetterPolicy": null,
+            "DeadLetterSource": null,
+            "Transaction": null,
+            "TransactionPolicy": null,
+            "CreateUin": null,
+            "Trace": null,
             "Tags": null,
-            "Trace": true,
-            "TenantId": "abc",
-            "NamespaceName": "abc",
-            "Status": 0,
-            "MaxUnackedMsgNum": 0,
-            "MaxMsgBacklogSize": 0,
-            "RetentionSizeInMB": 1
-        },
-        "RequestId": "abc"
+            "TenantId": "cmq-131242",
+            "NamespaceName": "CMQ_QUEUE-test1120",
+            "Status": 1,
+            "MaxMsgBacklogSize": 10737418240
+        }
     }
 }
 ```

@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli ssl DescribePackages --cli-unfold-argument ```
+tccli ssl DescribePackages --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 10 \
+    --Status used
+```
 
 Output: 
 ```
@@ -14,33 +18,33 @@ Output:
         "TotalCount": 1,
         "Packages": [
             {
-                "Status": "xx",
-                "UpdateTime": "xx",
+                "Status": "used",
+                "UpdateTime": "2022-09-13",
                 "Total": 1,
-                "SourceType": "xx",
+                "SourceType": "transferIn",
                 "TransferOutInfos": [
                     {
-                        "UpdateTime": "xx",
+                        "UpdateTime": "2023-09-13",
                         "ReceiverUin": 1,
-                        "ReceivePackageId": "xx",
+                        "ReceivePackageId": "H09******88",
                         "TransferCount": 1,
-                        "ReceiveTime": "xx",
-                        "ExpireTime": "xx",
-                        "TransferCode": "xx",
-                        "PackageId": "xx",
-                        "TransferStatus": "xx",
-                        "CreateTime": "xx"
+                        "ReceiveTime": "2023-10-19",
+                        "ExpireTime": "2023-12-19",
+                        "TransferCode": "hg****jj",
+                        "PackageId": "K234*******77",
+                        "TransferStatus": "refund",
+                        "CreateTime": "2023-09-18"
                     }
                 ],
                 "SourceUin": 1,
-                "ExpireTime": "xx",
-                "PackageId": "xx",
+                "ExpireTime": "2023-12-18",
+                "PackageId": "J88*****867",
                 "Balance": 1,
-                "Type": "xx",
-                "CreateTime": "xx"
+                "Type": "buy",
+                "CreateTime": "2023-08-26"
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "hdg**********jdj",
         "TotalBalance": 1
     }
 }

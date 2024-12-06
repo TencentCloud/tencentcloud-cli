@@ -13,120 +13,77 @@ Output:
 ```
 {
     "Response": {
-        "OwnerUin": "a1b2c3",
-        "ProjectId": "a1b2c3",
-        "From": "a1b2c3",
-        "CertificateType": "a1b2c3",
-        "PackageType": "a1b2c3",
-        "ProductZhName": "a1b2c3",
-        "Domain": "a1b2c3",
-        "Alias": "a1b2c3",
-        "Status": 1,
-        "StatusMsg": "a1b2c3",
-        "VerifyType": "a1b2c3",
-        "VulnerabilityStatus": "a1b2c3",
-        "CertBeginTime": "2020-09-22 00:00:00",
-        "CertEndTime": "2020-09-22 00:00:00",
-        "ValidityPeriod": "a1b2c3",
-        "InsertTime": "2020-09-22 00:00:00",
-        "OrderId": "a1b2c3",
+        "OwnerUin": "815836472",
+        "ProjectId": "0",
+        "From": "trustasia",
+        "OrderId": "u1hD8*****mXue",
+        "CertificateType": "SVR",
+        "PackageType": "48",
+        "ProductZhName": "DNSPod-域名型(DV)SSL证书",
+        "Domain": "ninghhuang.online",
+        "Alias": "",
+        "Status": 4,
+        "StatusMsg": "CA-REVIEWING",
+        "VulnerabilityStatus": "INACTIVE",
+        "RootCert": {
+            "Sign": null,
+            "Encrypt": null,
+            "Standard": null
+        },
+        "EncryptCert": null,
+        "EncryptPrivateKey": null,
+        "CertificatePrivateKey": "*******",
+        "CertificatePublicKey": null,
+        "CertBeginTime": null,
+        "CertEndTime": null,
+        "ValidityPeriod": "12",
+        "InsertTime": "2024-12-02 19:12:46",
+        "VulnerabilityReport": null,
+        "CertificateId": "K33dxkOk",
+        "TypeName": "DNSPod-域名型(DV)SSL证书",
+        "StatusName": "待验证",
         "CertificateExtra": {
-            "DomainNumber": "a1b2c3",
-            "OriginCertificateId": "a1b2c3",
-            "ReplacedBy": "a1b2c3",
-            "ReplacedFor": "a1b2c3",
-            "RenewOrder": "a1b2c3",
             "SMCert": 0,
+            "ReplacedBy": null,
+            "OriginCertificateId": null,
+            "ReplacedFor": null,
+            "RenewOrder": null,
+            "DomainNumber": "1",
             "CompanyType": 2
         },
-        "CertificatePrivateKey": "a1b2c3",
-        "CertificatePublicKey": "a1b2c3",
         "DvAuthDetail": {
-            "DvAuthKey": "a1b2c3",
-            "DvAuthValue": "a1b2c3",
-            "DvAuthDomain": "a1b2c3",
-            "DvAuthPath": "a1b2c3",
-            "DvAuthKeySubDomain": "a1b2c3",
             "DvAuths": [
                 {
-                    "DvAuthKey": "a1b2c3",
-                    "DvAuthValue": "a1b2c3",
-                    "DvAuthDomain": "a1b2c3",
-                    "DvAuthPath": "a1b2c3",
-                    "DvAuthSubDomain": "a1b2c3",
-                    "DvAuthVerifyType": "a1b2c3"
+                    "DvAuthKey": "_875bed25cf9e03596931d91cb0a52bd9.ninghhuang.online",
+                    "DvAuthValue": "a3108492878a2d989949fa50522dd2b0.cc7346307ff022fcfa68e025f6dbf6ad.cmcdpcwca5iljv.trust-provider.com",
+                    "DvAuthDomain": "ninghhuang.online",
+                    "DvAuthPath": null,
+                    "DvAuthSubDomain": "_875bed25cf9e03596931d91cb0a52bd9",
+                    "DvAuthVerifyType": "CNAME"
                 }
-            ]
-        },
-        "VulnerabilityReport": "a1b2c3",
-        "CertificateId": "a1b2c3",
-        "TypeName": "a1b2c3",
-        "StatusName": "a1b2c3",
-        "SubjectAltName": [
-            "a1b2c3"
-        ],
-        "IsVip": true,
-        "IsWildcard": true,
-        "IsDv": true,
-        "IsVulnerability": true,
-        "SubmittedData": {
-            "CsrType": "a1b2c3",
-            "CsrContent": "a1b2c3",
-            "CertificateDomain": "a1b2c3",
-            "DomainList": [
-                "a1b2c3"
             ],
-            "KeyPassword": "a1b2c3",
-            "OrganizationName": "a1b2c3",
-            "OrganizationDivision": "a1b2c3",
-            "OrganizationAddress": "a1b2c3",
-            "OrganizationCountry": "a1b2c3",
-            "OrganizationCity": "a1b2c3",
-            "OrganizationRegion": "a1b2c3",
-            "PostalCode": "a1b2c3",
-            "PhoneAreaCode": "a1b2c3",
-            "PhoneNumber": "a1b2c3",
-            "AdminFirstName": "a1b2c3",
-            "AdminLastName": "a1b2c3",
-            "AdminPhoneNum": "a1b2c3",
-            "AdminEmail": "a1b2c3",
-            "AdminPosition": "a1b2c3",
-            "ContactFirstName": "a1b2c3",
-            "ContactLastName": "a1b2c3",
-            "ContactNumber": "a1b2c3",
-            "ContactEmail": "a1b2c3",
-            "ContactPosition": "a1b2c3",
-            "VerifyType": "a1b2c3"
+            "DvAuthKey": "_875bed25cf9e03596931d91cb0a52bd9.ninghhuang.online",
+            "DvAuthValue": "a3108492878a2d989949fa50522dd2b0.cc7346307ff022fcfa68e025f6dbf6ad.cmcdpcwca5iljv.trust-provider.com",
+            "DvAuthDomain": "ni****ang.online",
+            "DvAuthPath": null,
+            "DvAuthKeySubDomain": "_875bed25cf9e03596931d91cb0a52bd9"
         },
-        "RenewAble": true,
+        "VerifyType": "DNS_AUTO",
+        "DvRevokeAuthDetail": [],
+        "SubjectAltName": [],
+        "IsVip": true,
+        "IsWildcard": false,
+        "IsDv": true,
+        "IsVulnerability": false,
+        "SubmittedData": null,
+        "RenewAble": false,
         "Deployable": true,
-        "Tags": [
-            {
-                "TagKey": "a1b2c3",
-                "TagValue": "a1b2c3"
-            }
-        ],
-        "RootCert": {
-            "Sign": "a1b2c3",
-            "Encrypt": "a1b2c3",
-            "Standard": "a1b2c3"
-        },
-        "EncryptCert": "a1b2c3",
-        "EncryptPrivateKey": "a1b2c3",
-        "CertFingerprint": "a1b2c3",
-        "EncryptCertFingerprint": "a1b2c3",
-        "EncryptAlgorithm": "a1b2c3",
-        "DvRevokeAuthDetail": [
-            {
-                "DvAuthKey": "a1b2c3",
-                "DvAuthValue": "a1b2c3",
-                "DvAuthDomain": "a1b2c3",
-                "DvAuthPath": "a1b2c3",
-                "DvAuthSubDomain": "a1b2c3",
-                "DvAuthVerifyType": "a1b2c3"
-            }
-        ],
-        "RequestId": "a1b2c3"
+        "Tags": [],
+        "CertFingerprint": null,
+        "EncryptCertFingerprint": null,
+        "EncryptAlgorithm": "RSA 2048",
+        "CertChainInfo": null,
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```
@@ -146,120 +103,77 @@ Output:
 ```
 {
     "Response": {
-        "OwnerUin": "a1b2c3",
-        "ProjectId": "a1b2c3",
-        "From": "a1b2c3",
-        "CertificateType": "a1b2c3",
-        "PackageType": "a1b2c3",
-        "ProductZhName": "a1b2c3",
-        "Domain": "a1b2c3",
-        "Alias": "a1b2c3",
-        "Status": 1,
-        "StatusMsg": "a1b2c3",
-        "VerifyType": "a1b2c3",
-        "VulnerabilityStatus": "a1b2c3",
-        "CertBeginTime": "2020-09-22 00:00:00",
-        "CertEndTime": "2020-09-22 00:00:00",
-        "ValidityPeriod": "a1b2c3",
-        "InsertTime": "2020-09-22 00:00:00",
-        "OrderId": "a1b2c3",
+        "OwnerUin": "815836472",
+        "ProjectId": "0",
+        "From": "trustasia",
+        "OrderId": "PVpvxIN2_E*****pvjw",
+        "CertificateType": "SVR",
+        "PackageType": "43",
+        "ProductZhName": "DNSPod-企业型(OV)SSL证书",
+        "Domain": "ninghhuang.online",
+        "Alias": "",
+        "Status": 4,
+        "StatusMsg": "PRE-REVIEWING",
+        "VulnerabilityStatus": "INACTIVE",
+        "RootCert": {
+            "Sign": null,
+            "Encrypt": null,
+            "Standard": null
+        },
+        "EncryptCert": null,
+        "EncryptPrivateKey": null,
+        "CertificatePrivateKey": "*****",
+        "CertificatePublicKey": null,
+        "CertBeginTime": null,
+        "CertEndTime": null,
+        "ValidityPeriod": "12",
+        "InsertTime": "2024-11-27 20:06:51",
+        "VulnerabilityReport": null,
+        "CertificateId": "Jv8u7beI",
+        "TypeName": "DNSPod-企业型(OV)SSL证书",
+        "StatusName": "待验证",
         "CertificateExtra": {
-            "DomainNumber": "a1b2c3",
-            "OriginCertificateId": "a1b2c3",
-            "ReplacedBy": "a1b2c3",
-            "ReplacedFor": "a1b2c3",
-            "RenewOrder": "a1b2c3",
             "SMCert": 0,
+            "ReplacedBy": null,
+            "OriginCertificateId": null,
+            "ReplacedFor": null,
+            "RenewOrder": null,
+            "DomainNumber": "1",
             "CompanyType": 2
         },
-        "CertificatePrivateKey": "a1b2c3",
-        "CertificatePublicKey": "a1b2c3",
         "DvAuthDetail": {
-            "DvAuthKey": "a1b2c3",
-            "DvAuthValue": "a1b2c3",
-            "DvAuthDomain": "a1b2c3",
-            "DvAuthPath": "a1b2c3",
-            "DvAuthKeySubDomain": "a1b2c3",
             "DvAuths": [
                 {
-                    "DvAuthKey": "a1b2c3",
-                    "DvAuthValue": "a1b2c3",
-                    "DvAuthDomain": "a1b2c3",
-                    "DvAuthPath": "a1b2c3",
-                    "DvAuthSubDomain": "a1b2c3",
-                    "DvAuthVerifyType": "a1b2c3"
+                    "DvAuthKey": "_882a77cde28ffe49e5764ab3afb75849.ninghhuang.online",
+                    "DvAuthValue": "97f80ec4c7947178cec6b5a093ed34b0.a5cd7986aaaffdfd37437c9c6de1dd30.cmcopc2ncmbffy.trust-provider.com",
+                    "DvAuthDomain": "ninghhuang.online",
+                    "DvAuthPath": null,
+                    "DvAuthSubDomain": "_882a77cde28ffe49e5764ab3afb75849",
+                    "DvAuthVerifyType": "CNAME"
                 }
-            ]
-        },
-        "VulnerabilityReport": "a1b2c3",
-        "CertificateId": "a1b2c3",
-        "TypeName": "a1b2c3",
-        "StatusName": "a1b2c3",
-        "SubjectAltName": [
-            "a1b2c3"
-        ],
-        "IsVip": true,
-        "IsWildcard": true,
-        "IsDv": true,
-        "IsVulnerability": true,
-        "SubmittedData": {
-            "CsrType": "a1b2c3",
-            "CsrContent": "a1b2c3",
-            "CertificateDomain": "a1b2c3",
-            "DomainList": [
-                "a1b2c3"
             ],
-            "KeyPassword": "a1b2c3",
-            "OrganizationName": "a1b2c3",
-            "OrganizationDivision": "a1b2c3",
-            "OrganizationAddress": "a1b2c3",
-            "OrganizationCountry": "a1b2c3",
-            "OrganizationCity": "a1b2c3",
-            "OrganizationRegion": "a1b2c3",
-            "PostalCode": "a1b2c3",
-            "PhoneAreaCode": "a1b2c3",
-            "PhoneNumber": "a1b2c3",
-            "AdminFirstName": "a1b2c3",
-            "AdminLastName": "a1b2c3",
-            "AdminPhoneNum": "a1b2c3",
-            "AdminEmail": "a1b2c3",
-            "AdminPosition": "a1b2c3",
-            "ContactFirstName": "a1b2c3",
-            "ContactLastName": "a1b2c3",
-            "ContactNumber": "a1b2c3",
-            "ContactEmail": "a1b2c3",
-            "ContactPosition": "a1b2c3",
-            "VerifyType": "a1b2c3"
+            "DvAuthKey": "_882a77cde28ffe49e5764ab3afb75849.ninghhuang.online",
+            "DvAuthValue": "97f80ec4c7947178cec6b5a093ed34b0.a5cd7986aaaffdfd37437c9c6de1dd30.cmcopc2ncmbffy.trust-provider.com",
+            "DvAuthDomain": "ninghhuang.online",
+            "DvAuthPath": null,
+            "DvAuthKeySubDomain": "_882a77cde28ffe49e5764ab3afb75849"
         },
-        "RenewAble": true,
+        "VerifyType": "DNS_AUTO",
+        "DvRevokeAuthDetail": [],
+        "SubjectAltName": [],
+        "IsVip": true,
+        "IsWildcard": false,
+        "IsDv": false,
+        "IsVulnerability": false,
+        "SubmittedData": null,
+        "RenewAble": false,
         "Deployable": true,
-        "Tags": [
-            {
-                "TagKey": "a1b2c3",
-                "TagValue": "a1b2c3"
-            }
-        ],
-        "RootCert": {
-            "Sign": "a1b2c3",
-            "Encrypt": "a1b2c3",
-            "Standard": "a1b2c3"
-        },
-        "EncryptCert": "a1b2c3",
-        "EncryptPrivateKey": "a1b2c3",
-        "CertFingerprint": "a1b2c3",
-        "EncryptCertFingerprint": "a1b2c3",
-        "EncryptAlgorithm": "a1b2c3",
-        "DvRevokeAuthDetail": [
-            {
-                "DvAuthKey": "a1b2c3",
-                "DvAuthValue": "a1b2c3",
-                "DvAuthDomain": "a1b2c3",
-                "DvAuthPath": "a1b2c3",
-                "DvAuthSubDomain": "a1b2c3",
-                "DvAuthVerifyType": "a1b2c3"
-            }
-        ],
-        "RequestId": "a1b2c3"
+        "Tags": [],
+        "CertFingerprint": null,
+        "EncryptCertFingerprint": null,
+        "EncryptAlgorithm": "RSA 2048",
+        "CertChainInfo": null,
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

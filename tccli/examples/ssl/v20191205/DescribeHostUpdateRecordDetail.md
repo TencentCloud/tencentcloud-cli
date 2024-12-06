@@ -6,54 +6,54 @@ Input:
 
 ```
 tccli ssl DescribeHostUpdateRecordDetail --cli-unfold-argument  \
-    --DeployRecordId abc \
-    --Limit abc \
-    --Offset abc
+    --DeployRecordId 748332 \
+    --Limit 0 \
+    --Offset 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "RecordDetailList": [
             {
-                "ResourceType": "abc",
+                "ResourceType": "teo",
                 "List": [
                     {
-                        "Id": 1,
-                        "CertId": "abc",
-                        "OldCertId": "abc",
+                        "Id": 788838,
+                        "CertId": "txhs***j",
+                        "OldCertId": "wjhs**jj",
                         "Domains": [
-                            "abc"
+                            "www.test.com"
                         ],
-                        "ResourceType": "abc",
-                        "Region": "abc",
+                        "ResourceType": "teo",
+                        "Region": "ap-guangzhou",
                         "Status": 1,
-                        "ErrorMsg": "abc",
-                        "CreateTime": "abc",
-                        "UpdateTime": "abc",
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "ListenerId": "abc",
-                        "ListenerName": "abc",
-                        "Protocol": "abc",
+                        "ErrorMsg": "",
+                        "CreateTime": "2023-12-12 12:00:00",
+                        "UpdateTime": "2023-12-12 12:00:00",
+                        "InstanceId": "eo-******",
+                        "InstanceName": "test",
+                        "ListenerId": "",
+                        "ListenerName": "",
+                        "Protocol": "",
                         "SniSwitch": 1,
-                        "Bucket": "abc",
+                        "Bucket": "",
                         "Port": 0,
-                        "Namespace": "abc",
-                        "SecretName": "abc",
-                        "EnvId": "abc",
-                        "TCBType": "abc"
+                        "Namespace": "",
+                        "SecretName": "test",
+                        "EnvId": "",
+                        "TCBType": ""
                     }
                 ],
-                "TotalCount": 0
+                "TotalCount": 1
             }
         ],
         "SuccessTotalCount": 0,
         "FailedTotalCount": 0,
         "RunningTotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

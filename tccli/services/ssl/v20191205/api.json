@@ -36,14 +36,14 @@
       "status": "online"
     },
     "CommitCertificateInformation": {
-      "document": "提交证书订单。",
+      "document": "提交证书订单到CA机构。",
       "input": "CommitCertificateInformationRequest",
       "name": "提交证书订单",
       "output": "CommitCertificateInformationResponse",
       "status": "online"
     },
     "CompleteCertificate": {
-      "document": "本接口（CompleteCertificate）用于主动触发证书验证。仅非DNSPod和Wotrus品牌证书支持使用此接口。",
+      "document": "本接口（CompleteCertificate）用于主动触发证书验证。DNSPod和Wotrus品牌的证书不支持使用此接口。",
       "input": "CompleteCertificateRequest",
       "name": "主动触发证书验证",
       "output": "CompleteCertificateResponse",
@@ -833,7 +833,7 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "abcdefg",
+          "example": "hehk**js",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -851,7 +851,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -870,7 +870,7 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "",
+          "example": "heh**jsj",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -885,9 +885,10 @@
         {
           "disabled": false,
           "document": "取消订单成功的证书 ID。",
-          "example": "",
+          "example": "hehk**jsj",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1780,7 +1781,7 @@
         {
           "disabled": false,
           "document": "true为通过检查，false为未通过检查。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "IsValid",
           "output_required": true,
@@ -1790,7 +1791,7 @@
         {
           "disabled": false,
           "document": "true为可信CA，false为不可信CA。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "IsTrustedCA",
           "output_required": true,
@@ -1822,7 +1823,7 @@
         {
           "disabled": false,
           "document": "证书ID。",
-          "example": "无",
+          "example": "heh**jsjs",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -1840,7 +1841,7 @@
           "example": "无",
           "member": "DomainValidationResult",
           "name": "VerificationResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2083,7 +2084,7 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "无",
+          "example": "heh**kkk",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -2091,8 +2092,8 @@
         },
         {
           "disabled": false,
-          "document": "域名验证方式",
-          "example": "无",
+          "document": "域名验证方式，如 DNS,DNS_AUTO,FILE",
+          "example": "DNS",
           "member": "string",
           "name": "VerifyType",
           "required": false,
@@ -2110,6 +2111,7 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2119,6 +2121,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2243,7 +2246,7 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "hey**js",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -2258,9 +2261,10 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "yey**hhd",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2981,7 +2985,7 @@
         {
           "disabled": false,
           "document": "待部署的证书ID",
-          "example": "无",
+          "example": "FvuXExOA",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -2990,7 +2994,7 @@
         {
           "disabled": false,
           "document": "需要部署实例列表",
-          "example": "无",
+          "example": "[\"www.test.com\"]",
           "member": "string",
           "name": "InstanceIdList",
           "required": true,
@@ -2998,8 +3002,8 @@
         },
         {
           "disabled": false,
-          "document": "部署的云资源类型",
-          "example": "无",
+          "document": "部署的云资源类型,如clb，cos",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "required": false,
@@ -3063,8 +3067,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID",
-          "example": "无",
+          "document": "待重试部署记录ID，通过DeployCertificateInstance获得",
+          "example": "83838",
           "member": "int64",
           "name": "DeployRecordId",
           "required": false,
@@ -3072,8 +3076,8 @@
         },
         {
           "disabled": false,
-          "document": "待重试部署记录详情ID",
-          "example": "无",
+          "document": "待重试部署记录详情ID，通过DescribeHostDeployRecordDetail获得",
+          "example": "848822",
           "member": "int64",
           "name": "DeployRecordDetailId",
           "required": false,
@@ -3099,8 +3103,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID",
-          "example": "无",
+          "document": "待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId",
+          "example": "7474",
           "member": "int64",
           "name": "DeployRecordId",
           "required": false,
@@ -3697,7 +3701,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，根据任务ID查询绑定云资源结果， 最大支持100个",
+          "document": "任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个",
           "example": "无",
           "member": "string",
           "name": "TaskIds",
@@ -4661,7 +4665,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认10。最大1000",
+          "document": "每页数量，默认10。最大值1000，如超过1000按1000处理",
           "example": "11",
           "member": "uint64",
           "name": "Limit",
@@ -4707,7 +4711,7 @@
         {
           "disabled": false,
           "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
-          "example": "1",
+          "example": "[1]",
           "member": "uint64",
           "name": "CertificateStatus",
           "required": false,
@@ -4787,7 +4791,7 @@
         },
         {
           "disabled": false,
-          "document": "//是否筛选等待签发的证书，传1是筛选，0和null不筛选",
+          "document": "是否筛选等待签发的证书，传1是筛选，0和null不筛选",
           "example": "无",
           "member": "int64",
           "name": "IsPendingIssue",
@@ -5042,16 +5046,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5074,10 +5069,37 @@
         },
         {
           "disabled": false,
+          "document": "部署资源类型apigateway",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "已部署的证书ID",
           "example": "无",
           "member": "string",
           "name": "OldCertificateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。\t",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。\t",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
           "required": false,
           "type": "string"
         }
@@ -5089,19 +5111,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "apiGateway实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "apiGateway实例列表,如取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiGatewayInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "总数，如取不到值返回0",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5123,16 +5147,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5152,6 +5167,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型cdn",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5182,7 +5206,7 @@
         },
         {
           "disabled": false,
-          "document": "是否异步",
+          "document": "是否异步,0表示否，1表示是，默认为0",
           "example": "无",
           "member": "int64",
           "name": "AsyncCache",
@@ -5197,37 +5221,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDN实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDN实例列表，如取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CdnInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CDN域名总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDN域名总数，如取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异步刷新总数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步刷新总数，如取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "AsyncTotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异步刷新当前执行数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步刷新当前执行数，如取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "AsyncOffset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5237,6 +5265,7 @@
           "example": "无",
           "member": "string",
           "name": "AsyncCacheTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5254,15 +5283,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "待部署的证书ID",
-          "example": "无",
-          "member": "string",
-          "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "1",
           "member": "uint64",
@@ -5278,6 +5298,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5299,7 +5328,7 @@
         },
         {
           "disabled": false,
-          "document": "是否异步缓存",
+          "document": "是否异步缓存,0表示否,1表示是",
           "example": "无",
           "member": "int64",
           "name": "AsyncCache",
@@ -5323,46 +5352,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数，取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CLB实例监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CLB实例监听器列表，取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClbInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异步刷新总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步刷新总数，取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "AsyncTotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异步刷新当前执行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步刷新当前执行数，取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "AsyncOffset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当前缓存读取时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前缓存读取时间，去不到值返回空\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AsyncCacheTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5443,7 +5477,7 @@
         },
         {
           "disabled": false,
-          "document": "是否异步\t",
+          "document": "是否异步，0表示否，1表示是",
           "example": "无",
           "member": "int64",
           "name": "AsyncCache",
@@ -5524,16 +5558,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5556,12 +5581,39 @@
         },
         {
           "disabled": false,
+          "document": "部署资源类型ddos",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "已部署的证书ID",
           "example": "无",
           "member": "string",
           "name": "OldCertificateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5571,11 +5623,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "DDOS实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DDOS实例列表,取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DdosInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -5714,8 +5777,8 @@
         },
         {
           "disabled": false,
-          "document": "资源类型",
-          "example": "无",
+          "document": "支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "required": false,
@@ -5765,16 +5828,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型 lighthouse",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5794,6 +5848,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "部署资源类型 lighthouse",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5803,21 +5866,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "Lighthouse实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Lighthouse实例列表,如取不到返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "LighthouseInstanceDetail",
           "name": "InstanceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "总数，如取不到返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5839,16 +5902,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -5870,6 +5924,15 @@
           "type": "list"
         },
         {
+          "disabled": true,
+          "document": "部署资源类型",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": false,
           "document": "已部署的证书ID",
           "example": "无",
@@ -5886,10 +5949,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "live实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "live实例列表,如取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LiveInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6017,15 +6081,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "待部署的证书ID",
-          "example": "无",
-          "member": "string",
-          "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "分页偏移量，从0开始。",
           "example": "1",
           "member": "uint64",
@@ -6041,6 +6096,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待部署的证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6062,7 +6126,7 @@
         },
         {
           "disabled": false,
-          "document": "是否异步缓存",
+          "document": "是否异步缓存，0表示否，1表示是，默认为0",
           "example": "无",
           "member": "int64",
           "name": "AsyncCache",
@@ -6086,37 +6150,41 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数，取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CLB实例监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tke实例列表，取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TkeInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异步刷新总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步刷新总数，取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "AsyncTotalNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "异步刷新当前执行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步刷新当前执行数，取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "AsyncOffset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6126,6 +6194,7 @@
           "example": "无",
           "member": "string",
           "name": "AsyncCacheTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6143,7 +6212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键更新记录ID",
+          "document": "一键更新记录ID,从接口UpdateCertificateInstance获得",
           "example": "无",
           "member": "string",
           "name": "DeployRecordId",
@@ -6176,8 +6245,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "总数,如果取不到返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -6186,8 +6255,8 @@
         },
         {
           "disabled": false,
-          "document": "证书部署记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "证书部署记录列表，如果取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
           "member": "UpdateRecordDetails",
           "name": "RecordDetailList",
           "output_required": true,
@@ -6196,8 +6265,8 @@
         },
         {
           "disabled": false,
-          "document": "成功总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "成功总数,如果取不到返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "SuccessTotalCount",
           "output_required": true,
@@ -6206,8 +6275,8 @@
         },
         {
           "disabled": false,
-          "document": "失败总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "失败总数,如果取不到返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "FailedTotalCount",
           "output_required": true,
@@ -6216,8 +6285,8 @@
         },
         {
           "disabled": false,
-          "document": "部署中总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "部署中总数,如果取不到返回0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "RunningTotalCount",
           "output_required": true,
@@ -6316,16 +6385,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型 vod",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6347,6 +6407,15 @@
           "type": "list"
         },
         {
+          "disabled": true,
+          "document": "部署资源类型 vod",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": false,
           "document": "已部署的证书ID",
           "example": "无",
@@ -6363,19 +6432,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "Vod实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Vod实例列表，如果取不到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VodInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数,如果取不到值返回0\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6397,16 +6468,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "部署资源类型",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6428,6 +6490,15 @@
           "type": "list"
         },
         {
+          "disabled": true,
+          "document": "部署资源类型，如waf",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
           "disabled": false,
           "document": "已部署的证书ID",
           "example": "无",
@@ -6444,10 +6515,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "WAF实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WAF实例列表，如果没有取到值返回空数组\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LiveInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6465,7 +6537,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "管理人ID",
+          "document": "管理人ID,可以从describeManagers接口获得",
           "example": "无",
           "member": "int64",
           "name": "ManagerId",
@@ -6700,7 +6772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公司ID",
+          "document": "公司ID,可以从DescribeCompanies接口获取",
           "example": "12",
           "member": "int64",
           "name": "CompanyId",
@@ -6874,7 +6946,7 @@
           "example": "无",
           "member": "PackageInfo",
           "name": "Packages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6884,7 +6956,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6894,7 +6966,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalBalance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7803,7 +7875,7 @@
         {
           "disabled": false,
           "document": "证书ID列表。最多50个",
-          "example": "无",
+          "example": "[heh***js]",
           "member": "string",
           "name": "CertificateIds",
           "required": true,
@@ -7812,7 +7884,7 @@
         {
           "disabled": false,
           "document": "0:不忽略通知。1:忽略通知",
-          "example": "0:不忽略通知。1:忽略通知",
+          "example": "0",
           "member": "uint64",
           "name": "SwitchStatus",
           "required": true,
@@ -7830,6 +7902,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10039,8 +10112,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID",
-          "example": "无",
+          "document": "待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID",
+          "example": "748939",
           "member": "int64",
           "name": "DeployRecordId",
           "required": false,
@@ -10048,8 +10121,8 @@
         },
         {
           "disabled": false,
-          "document": "待重试部署记录详情ID",
-          "example": "无",
+          "document": "待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得",
+          "example": "6637737",
           "member": "int64",
           "name": "DeployRecordDetailId",
           "required": false,
@@ -10075,8 +10148,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID",
-          "example": "无",
+          "document": "待重试部署记录ID,通过UpdateCertificateInstance获得",
+          "example": "7377374",
           "member": "int64",
           "name": "DeployRecordId",
           "required": false,

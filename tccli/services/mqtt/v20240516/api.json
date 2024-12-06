@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ActivateDeviceCertificate": {
+      "document": "生效设备证书",
+      "input": "ActivateDeviceCertificateRequest",
+      "name": "生效设备证书",
+      "output": "ActivateDeviceCertificateResponse",
+      "status": "online"
+    },
     "CreateAuthorizationPolicy": {
       "document": "创建MQTT实例的性能测试任务",
       "input": "CreateAuthorizationPolicyRequest",
@@ -63,6 +70,13 @@
       "output": "DescribeAuthorizationPoliciesResponse",
       "status": "online"
     },
+    "DescribeDeviceCertificates": {
+      "document": "分页查询设备证书",
+      "input": "DescribeDeviceCertificatesRequest",
+      "name": "查询设备证书",
+      "output": "DescribeDeviceCertificatesResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "查询实例信息",
       "input": "DescribeInstanceRequest",
@@ -71,7 +85,7 @@
       "status": "online"
     },
     "DescribeInstanceList": {
-      "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
+      "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
       "input": "DescribeInstanceListRequest",
       "name": "获取MQTT实例列表",
       "output": "DescribeInstanceListResponse",
@@ -141,6 +155,42 @@
     "serviceShortName": "mqtt"
   },
   "objects": {
+    "ActivateDeviceCertificateRequest": {
+      "document": "ActivateDeviceCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书序列号",
+          "example": "0d3839",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateDeviceCertificateResponse": {
+      "document": "ActivateDeviceCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AuthorizationPolicyItem": {
       "document": "AuthorizationPolicyItem",
       "members": [
@@ -584,7 +634,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "123",
+          "example": "your-secret",
           "member": "string",
           "name": "Secret",
           "required": false,
@@ -638,7 +688,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -647,7 +697,7 @@
         {
           "disabled": false,
           "document": "主题",
-          "example": "test",
+          "example": "sample-topic-name",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -656,7 +706,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "remark",
+          "example": "additional-remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -671,7 +721,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "mqtt-1234",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -681,7 +731,7 @@
         {
           "disabled": false,
           "document": "主题",
-          "example": "test",
+          "example": "sample-topic-name",
           "member": "string",
           "name": "Topic",
           "output_required": true,
@@ -784,7 +834,7 @@
         {
           "disabled": false,
           "document": "主题",
-          "example": "test",
+          "example": "sample-topic-name",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -872,10 +922,93 @@
         {
           "disabled": false,
           "document": "规则",
-          "example": "[]",
+          "example": "[ \t\t\t{ \t\t\t\t\"Actions\": \"connect\", \t\t\t\t\"ClientId\": null, \t\t\t\t\"CreatedTime\": 1721813529000, \t\t\t\t\"Effect\": \"allow\", \t\t\t\t\"Id\": 7, \t\t\t\t\"InstanceId\": \"mqtt-g4r4x85z\", \t\t\t\t\"Ip\": null, \t\t\t\t\"PolicyName\": \"policy2\", \t\t\t\t\"Priority\": 2, \t\t\t\t\"Qos\": null, \t\t\t\t\"Remark\": \"\", \t\t\t\t\"Resources\": \"topic1\", \t\t\t\t\"Retain\": 2, \t\t\t\t\"UpdateTime\": 1721813529000, \t\t\t\t\"Username\": null, \t\t\t\t\"Version\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"Actions\": \"connect\", \t\t\t\t\"ClientId\": null, \t\t\t\t\"CreatedTime\": 1721813039000, \t\t\t\t\"Effect\": \"allow\", \t\t\t\t\"Id\": 1, \t\t\t\t\"InstanceId\": \"mqtt-g4r4x85z\", \t\t\t\t\"Ip\": null, \t\t\t\t\"PolicyName\": \"policy3\", \t\t\t\t\"Priority\": 3, \t\t\t\t\"Qos\": null, \t\t\t\t\"Remark\": \"111\", \t\t\t\t\"Resources\": \"topic1\", \t\t\t\t\"Retain\": 3, \t\t\t\t\"UpdateTime\": 1721813039000, \t\t\t\t\"Username\": \"user1\", \t\t\t\t\"Version\": 1 \t\t\t} \t\t]",
           "member": "AuthorizationPolicyItem",
           "name": "Data",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCertificatesRequest": {
+      "document": "DescribeDeviceCertificates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CREATE_TIME_DESC, 创建时间降序\n    CREATE_TIME_ASC,创建时间升序\n    UPDATE_TIME_DESC,更新时间降序\n    UPDATE_TIME_ASC,更新时间升序",
+          "example": "CREATE_TIME_DESC",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCertificatesResponse": {
+      "document": "DescribeDeviceCertificates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备证书",
+          "example": "无",
+          "member": "DeviceCertificateItem",
+          "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -893,8 +1026,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询条件列表",
-          "example": "无",
+          "document": "查询条件列表,支持以下子弹\nInstanceName：集群名模糊搜索\nInstanceId：集群id精确搜索\nInstanceStatus：集群状态搜索",
+          "example": "[{\"Name\":\"InstanceName\",\"Values\":[\"instance1\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -921,7 +1054,7 @@
         {
           "disabled": false,
           "document": "标签过滤器",
-          "example": "无",
+          "example": "[{\"TagKey\":\"tag1-key\",\"TagValue\":[\"tag1-value\"]}]",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -1233,8 +1366,8 @@
         },
         {
           "disabled": false,
-          "document": "查询条件列表",
-          "example": "无",
+          "document": "查询条件列表:\n支持TopicName模糊查询",
+          "example": "[{\"Name\":\"TopicName\",\"Values\":[\"home\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1299,7 +1432,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1308,7 +1441,7 @@
         {
           "disabled": false,
           "document": "主题",
-          "example": "test",
+          "example": "sample-topic-name",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -1333,7 +1466,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "topic1",
+          "example": "sample-topic-name",
           "member": "string",
           "name": "Topic",
           "output_required": true,
@@ -1343,7 +1476,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "remark",
+          "example": "additional-remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -1369,6 +1502,152 @@
       ],
       "type": "object"
     },
+    "DeviceCertificateItem": {
+      "document": "设备证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "device1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备证书",
+          "example": "-----BEGIN CERTIFICATE-----\\r\\nMIIDtzCCAp+gAwIBAgIUDAmlFLEYRYrhNkFH+uRaU/0TZCswDQYJKoZIhvcNAQEL\\r\\n\\n-----END CERTIFICATE-----\\r\\n",
+          "member": "string",
+          "name": "DeviceCertificate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备证书Sn",
+          "example": "sn",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备证书Cn",
+          "example": "common name",
+          "member": "string",
+          "name": "DeviceCertificateCn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签发ca的序列号",
+          "example": "casn",
+          "member": "string",
+          "name": "CaSn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书格式",
+          "example": "PEM",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书状态\n    ACTIVE,//激活\n    INACTIVE,//未激活\n    REVOKED,//吊销\n    PENDING_ACTIVATION,//注册待激活",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastActivationTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次取消激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastInactivationTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书来源：\nAPI, 手动注册   \nJITP 自动注册\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JITP",
+          "member": "string",
+          "name": "CertificateSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书失效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotAfterTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书生效开始日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotBeforeTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "查询过滤器",
       "members": [
@@ -1384,7 +1663,7 @@
         {
           "disabled": false,
           "document": "过滤条件的值",
-          "example": "无",
+          "example": "value",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -1409,7 +1688,7 @@
         {
           "disabled": false,
           "document": "认证器配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\\\"headers\\\":[{\\\"key\\\":\\\"user\\\",\\\"value\\\":\\\"${username}\\\"}],\\\"endpoint\\\":\\\"127.0.0.1\\\",\\\"method\\\":\\\"Post\\\",\\\"readTimeout\\\":1,\\\"connectTimeout\\\":1,\\\"body\\\":[{\\\"key\\\":\\\"user\\\",\\\"value\\\":\\\"${username}\\\"}],\\\"concurrency\\\":1}",
           "member": "string",
           "name": "Config",
           "output_required": false,
@@ -1455,7 +1734,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -1465,7 +1744,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "instance-poc",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -1515,7 +1794,7 @@
         {
           "disabled": false,
           "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "this is remark",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -1922,7 +2201,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1939,7 +2218,7 @@
         },
         {
           "disabled": false,
-          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "document": "设备连接时传递jwt的key；\nusername-使用用户名字段传递；\npassword-使用密码字段传递",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -1958,7 +2237,7 @@
         {
           "disabled": false,
           "document": "公钥",
-          "example": "test",
+          "example": " -----BEGIN CERTIFICATE----- MIIECDCCAvCgAwIBAgIUG/L3CDia0Tl2KKs8bDOxY2t+SfUwDQYJKoZIhvcNAQEN 9w0BAQ0FAAOCAQEAtXGaYSOlseeXzq9lapF0SWcI/UhRXSfomwLeF+PvH3meF04r 2Hdl/IvY0jfKuc/olOPDxF3mK3/Lf7nk/68fKG7ytmVJrBXCGUN8R2AuTmeRsbK8 qEf2C8DgIw9KAPHtPY7ZupRzRskVeZHUy6N1pKYjlQk80451SwNwnfU8gni10BaJ dd1vc7JbPm90IQjb+OcfuflFwfl8yiQLWy1oJdwGwEN/f4PFoRKP4dizyn9+0+Ki 5M8AINMMlYrfXRWHVyr8N/Pj8l4QNo3cJiUeXIpoSc39oNiYbdfTs1f3sJCT8lIG 8lCCucEU4bX5ZPwMJ9QMTJ6xORLenDIk2orY7Q== -----END CERTIFICATE-----",
           "member": "string",
           "name": "PublicKey",
           "required": false,
@@ -2003,7 +2282,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2012,7 +2291,7 @@
         {
           "disabled": false,
           "document": "主题",
-          "example": "test",
+          "example": "sample-topic-name",
           "member": "string",
           "name": "Topic",
           "required": true,
@@ -2021,7 +2300,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "test",
+          "example": "additional-remark",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -2057,7 +2336,7 @@
         {
           "disabled": false,
           "document": "设备证书",
-          "example": "无",
+          "example": "-----BEGIN CERTIFICATE----- MIIDXTCCAkWgAwIBAgIJALc4Yk9ZT1WjMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV BAYTAkNOMRAwDgYDVQQIDAdBeW9tYW5nMQ8wDQYDVQQHDAZGb3J0cmUwHhcNMTkw ODA1MTUwOTA5WhcNMjAwODEyMTUwOTA5WjBFMQswCQYDVQQGEwJDTjEQMA4GA1UE CAwHQXlvbWFuZzEPMA0GA1UEBwwGRm9ydHJlMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQ... -----END CERTIFICATE-----",
           "member": "string",
           "name": "DeviceCertificate",
           "required": true,
@@ -2066,7 +2345,7 @@
         {
           "disabled": false,
           "document": "关联的CA证书SN",
-          "example": "12345",
+          "example": "7439e17052ff2edbeda4f5db379a69fd8c5f48a5",
           "member": "string",
           "name": "CaSn",
           "required": true,
@@ -2075,7 +2354,7 @@
         {
           "disabled": false,
           "document": "客户端ID",
-          "example": "client1",
+          "example": "VIN0001",
           "member": "string",
           "name": "ClientId",
           "required": false,
@@ -2120,7 +2399,7 @@
         {
           "disabled": false,
           "document": "标签键名称",
-          "example": "test",
+          "example": "key1",
           "member": "string",
           "name": "TagKey",
           "required": false,

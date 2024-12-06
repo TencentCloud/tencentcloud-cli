@@ -6,8 +6,10 @@ Input:
 
 ```
 tccli tdmq ModifyCmqSubscriptionAttribute --cli-unfold-argument  \
-    --TopicName test \
-    --SubscriptionName test
+    --TopicName check-topic \
+    --SubscriptionName check-sub \
+    --NotifyStrategy BACKOFF_RETRY \
+    --FilterTags ins
 ```
 
 Output: 

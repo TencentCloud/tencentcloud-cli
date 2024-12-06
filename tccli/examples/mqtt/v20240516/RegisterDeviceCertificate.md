@@ -34,7 +34,7 @@ ajvuaaIlJp7GgOZxxPInOVXPmBlBlp28AiMlmxSfSAuMpUF0I8w=
 -----END CERTIFICATE-----
  \
     --CaSn 1b1e3bf3702110125887a3a721a7e66f05522513 \
-    --ClientId 1111
+    --ClientId VIN0001
 ```
 
 Output: 

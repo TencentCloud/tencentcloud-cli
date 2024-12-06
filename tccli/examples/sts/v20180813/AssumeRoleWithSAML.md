@@ -17,9 +17,9 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "Token": "1siMD***5ue",
-            "TmpSecretId": "AKID****H58",
-            "TmpSecretKey": "q95K****yoh"
+            "Token": "1siMD***",
+            "TmpSecretId": "AKID***",
+            "TmpSecretKey": "q95K***"
         },
         "ExpiredTime": 1543914376,
         "Expiration": "2018-12-04T09:06:16Z",

@@ -16,18 +16,18 @@ Output:
         "TotalCount": 1,
         "DeployRecordList": [
             {
-                "Id": 1,
-                "CertId": "abc",
-                "OldCertId": "abc",
+                "Id": 73839,
+                "CertId": "jdjenhss",
+                "OldCertId": "zYrIXwpu",
                 "ResourceTypes": [
-                    "abc"
+                    "clb"
                 ],
                 "Regions": [
-                    "abc"
+                    "ap-guangzhou"
                 ],
                 "Status": 1,
-                "CreateTime": "abc",
-                "UpdateTime": "abc"
+                "CreateTime": "2023-12-18 12:00:00",
+                "UpdateTime": "2023-12-18 12:11:00"
             }
         ],
         "RequestId": "abc"

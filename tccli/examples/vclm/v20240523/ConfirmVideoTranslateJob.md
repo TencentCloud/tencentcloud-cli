@@ -24,10 +24,8 @@ Output:
 {
     "Response": {
         "JobId": "bEOhlL4G87lFvVmN6PnG3LAH1Kdu5tgs",
-        "RequestId": "8357c7a1-d348-4306-b744-ce6625c39fa4",
-        "SessionId": "0bfda02b562d4432be1176904bbcbe68",
-        "TaskId": "ecaa9680e41441399b4f29759174383f",
-        "Message": ""
+        "JobStatus": 5,
+        "RequestId": "8357c7a1-d348-4306-b744-ce6625c39fa4"
     }
 }
 ```

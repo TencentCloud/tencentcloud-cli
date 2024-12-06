@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli ssl DescribeHostWafInstanceList --cli-unfold-argument  \
-    --CertificateId abc \
+    --CertificateId T****j \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
-    --ResourceType abc \
-    --OldCertificateId abc
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
+    --OldCertificateId Yj****k
 ```
 
 Output: 
@@ -20,12 +19,12 @@ Output:
     "Response": {
         "InstanceList": [
             {
-                "Domain": "abc",
-                "CertId": "abc",
+                "Domain": "hh**.com",
+                "CertId": "K***hh",
                 "Status": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

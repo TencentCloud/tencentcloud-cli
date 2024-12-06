@@ -3,8 +3,8 @@
     "AssumeRole": [
       {
         "document": "申请扮演角色临时访问凭证",
-        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssumeRole\n<公共请求参数>\n\n{\n    \"RoleArn\": \"qcs%3A%3Acam%3A%3Auin%2F2385420691%3Arole%2F4611686018427397919\",\n    \"RoleSessionName\": \"cts\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"da1e9d2ee9d***2dfe340001\",\n            \"TmpSecretId\": \"AKID65zyIP0mpXtaI******WIQVMn1umNH58\",\n            \"TmpSecretKey\": \"q95K84wrzuEGoc*******52boxvp71yoh\"\n        },\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"RequestId\": \"4daec797-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssumeRole\n<公共请求参数>\n\n{\n    \"RoleArn\": \"qcs::cam::uin/100015158414:roleName/readOnlyRole\",\n    \"RoleSessionName\": \"cts\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"da1e***\",\n            \"TmpSecretId\": \"AKID***\",\n            \"TmpSecretKey\": \"q95K***\"\n        },\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"RequestId\": \"4daec797-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
         "title": "申请扮演角色临时访问凭证"
       }
     ],
@@ -12,7 +12,7 @@
       {
         "document": "SAML 断言申请角色临时访问凭证",
         "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssumeRoleWithSAML\n<公共请求参数>\n\n{\n    \"RoleArn\": \"qcs::cam::uin/798950673:roleName/OneLogin-Role\",\n    \"PrincipalArn\": \"qcs::cam::uin/798950673:saml-provider/OneLogin\",\n    \"SAMLAssertion\": \"c2FtbCBhc3NlcnRpb24=\",\n    \"RoleSessionName\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"1siMD***5ue\",\n            \"TmpSecretId\": \"AKID****H58\",\n            \"TmpSecretKey\": \"q95K****yoh\"\n        },\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"RequestId\": \"4daec797-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"1siMD***\",\n            \"TmpSecretId\": \"AKID***\",\n            \"TmpSecretKey\": \"q95K***\"\n        },\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"RequestId\": \"4daec797-9cd2-4f09-9e7a-7d4c43b2a74c\"\n    }\n}",
         "title": "SAML 断言申请角色临时访问凭证"
       }
     ],
@@ -20,7 +20,7 @@
       {
         "document": "申请OIDC角色临时访问凭证",
         "input": "POST / HTTP/1.1\nHost: sts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssumeRoleWithWebIdentity\n<公共请求参数>\n\n{\n    \"DurationSeconds\": \"1800\",\n    \"RoleSessionName\": \"test_OIDC\",\n    \"WebIdentityToken\": \"eyJraWQiOiJkT**********CNOQ\",\n    \"RoleArn\": \"qcs::cam::uin/7989***:roleName/OneLogin-Role\",\n    \"ProviderId\": \"OIDC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"Credentials\": {\n            \"Token\": \"1siMD5r0tPAq9xpR******6a1ad76f09a0069002923def8aFw7tUMd2nH\",\n            \"TmpSecretId\": \"AKID65zyIP0mp****qt2SlWIQVMn1umNH58\",\n            \"TmpSecretKey\": \"q95K84wrzuE****y39zg52boxvp71yoh\"\n        },\n        \"RequestId\": \"f6e7cbcb-add1-47bd-9097-d08cf8f3a919\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1543914376,\n        \"Expiration\": \"2018-12-04T09:06:16Z\",\n        \"Credentials\": {\n            \"Token\": \"1siMD***\",\n            \"TmpSecretId\": \"AKID***\",\n            \"TmpSecretKey\": \"q95K***\"\n        },\n        \"RequestId\": \"f6e7cbcb-add1-47bd-9097-d08cf8f3a919\"\n    }\n}",
         "title": "申请OIDC角色临时访问凭证"
       }
     ],
@@ -48,7 +48,7 @@
       {
         "document": "授权临时访问凭证具有以下权限：\n{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name/cos:PutObject\"],\"resource\":[\"qcs::cos:ap-beijing:uid/123456:prefix//123456/bucketA/*\"]}]}\n\n注意，因为GET请求需要给所有参数做urlencode，所以下面示例中的Policy参数是做了两次urlencode的结果。",
         "input": "https://sts.tencentcloudapi.com/?Action=GetFederationToken\n&Name=SUN\n&Policy=%257B%2522version%2522%3A%25222.0%2522%2C%2522statement%2522%3A%255B%257B%2522effect%2522%3A%2522allow%2522%2C%2522action%2522%3A%255B%2522name%2Fcos%3APutObject%2522%255D%2C%2522resource%2522%3A%255B%2522qcs%3A%3Acos%3Aap-beijing%3Auid%2F123456%3Aprefix%2F%2F123456%2FbucketA%2F%2A%2522%255D%257D%255D%257D\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"kTRt***Jb7m\",\n            \"TmpSecretId\": \"AKID****CjE6\",\n            \"TmpSecretKey\": \"Eo28***7ps=\"\n        },\n        \"Expiration\": \"2023-06-14T05:06:57Z\",\n        \"ExpiredTime\": 1686719217,\n        \"RequestId\": \"59a5e07e-4147-4d2e-a808-dca76ac5b3fd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"Token\": \"kTRt***\",\n            \"TmpSecretId\": \"AKID***\",\n            \"TmpSecretKey\": \"Eo28***\"\n        },\n        \"Expiration\": \"2023-06-14T05:06:57Z\",\n        \"ExpiredTime\": 1686719217,\n        \"RequestId\": \"59a5e07e-4147-4d2e-a808-dca76ac5b3fd\"\n    }\n}",
         "title": "获取临时访问凭证"
       }
     ],
@@ -56,7 +56,7 @@
       {
         "document": "",
         "input": "https://sts.tencentcloudapi.com/?Action=QueryApiKey\n&TargetUin=100020328651\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"IdKeys\": [\n            {\n                \"SecretId\": \"AKID5Cn***\",\n                \"CreateTime\": 1575517111,\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"5cf9d558-a46a-4ce7-bbc2-500cad68b0da\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IdKeys\": [\n            {\n                \"SecretId\": \"AKID***\",\n                \"CreateTime\": 1575517111,\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"5cf9d558-a46a-4ce7-bbc2-500cad68b0da\"\n    }\n}",
         "title": "拉取API密钥列表"
       }
     ]

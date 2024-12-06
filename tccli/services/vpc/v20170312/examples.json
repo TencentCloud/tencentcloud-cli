@@ -652,7 +652,7 @@
       {
         "document": "创建协议端口模板集合",
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateServiceTemplateGroup\n&ServiceTemplateGroupName=TestName\n&ServiceTemplateIds.0=ppm-529nwwj8\n&ServiceTemplateIds.1=ppm-4dw6agho\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceTemplateGroup\": {\n            \"ServiceTemplateGroupName\": \"TestName\",\n            \"ServiceTemplateGroupId\": \"ppmg-2klmrefu\",\n            \"ServiceTemplateIdSet\": [\n                \"ppm-529nwwj8\",\n                \"ppm-4dw6agho\"\n            ],\n            \"CreatedTime\": \"2018-04-03 22:05:32\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ServiceTemplateGroup\": {\n            \"ServiceTemplateGroupName\": \"TestName\",\n            \"ServiceTemplateGroupId\": \"ppmg-2klmrefu\",\n            \"ServiceTemplateIdSet\": [\n                \"ppm-529nwwj8\",\n                \"ppm-4dw6agho\"\n            ],\n            \"ServiceTemplateSet\": [\n                {\n                    \"ServiceTemplateId\": \"abc\",\n                    \"ServiceTemplateName\": \"abc\",\n                    \"ServiceSet\": [],\n                    \"ServiceExtraSet\": [],\n                    \"CreatedTime\": \"2018-04-03 22:05:32\"\n                }\n            ],\n            \"CreatedTime\": \"2018-04-03 22:05:32\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "创建协议端口模板集合"
       }
     ],
@@ -2480,13 +2480,13 @@
       {
         "document": "包年包月询价时输入",
         "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceCreateVpnGateway\n&InstanceChargeType=PREPAID\n&InstanceChargePrepaid.Period=1\n&InternetMaxBandwidthOut=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 380,\n                \"DiscountPrice\": 380,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"\"\n            }\n        },\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 380,\n                \"DiscountPrice\": 380,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"none\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"none\"\n            }\n        },\n        \"RequestId\": \"1b2534de-3f38-4913-921a-af5ff1a9cb73\"\n    }\n}",
         "title": "包年包月询价输入"
       },
       {
         "document": "按量计费询价时输入",
         "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceCreateVpnGateway\n&InstanceChargeType=POSTPAID_BY_HOUR\n&InternetMaxBandwidthOut=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.48,\n                \"ChargeUnit\": \"HOUR\"\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\"\n            }\n        },\n        \"RequestId\": \"e87327cd-f8fa-4340-9959-58ebe8f11f6b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 0.48,\n                \"UnitPrice\": 0.48,\n                \"DiscountPrice\": 0.48,\n                \"ChargeUnit\": \"HOUR\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0.8,\n                \"UnitPrice\": 0.8,\n                \"DiscountPrice\": 0.8,\n                \"ChargeUnit\": \"GB\"\n            }\n        },\n        \"RequestId\": \"e87327cd-f8fa-4340-9959-58ebe8f11f6b\"\n    }\n}",
         "title": "按量计费询价输入"
       }
     ],

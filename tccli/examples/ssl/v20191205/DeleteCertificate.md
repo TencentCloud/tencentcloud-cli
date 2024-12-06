@@ -27,7 +27,7 @@ Input:
 
 ```
 tccli ssl DeleteCertificate --cli-unfold-argument  \
-    --CertificateId abc \
+    --CertificateId tey**hdh \
     --IsCheckResource True
 ```
 
@@ -37,7 +37,7 @@ Output:
     "Response": {
         "DeleteResult": false,
         "TaskId": "1251261",
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

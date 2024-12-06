@@ -106,11 +106,11 @@
       "status": "online"
     },
     "CreateAuditRule": {
-      "document": "本接口(CreateAuditRule)用于创建用户在当前地域的审计规则。",
+      "document": "不再支持审计规则创建\n\n本接口(CreateAuditRule)用于创建用户在当前地域的审计规则。",
       "input": "CreateAuditRuleRequest",
       "name": "创建审计规则",
       "output": "CreateAuditRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateAuditRuleTemplate": {
       "document": "创建审计规则模板",
@@ -225,11 +225,11 @@
       "status": "online"
     },
     "DeleteAuditRule": {
-      "document": "本接口(DeleteAuditRule)用于删除用户的审计规则。",
+      "document": "不再支持审计规则创建\n\n本接口(DeleteAuditRule)用于删除用户的审计规则。",
       "input": "DeleteAuditRuleRequest",
       "name": "删除审计规则",
       "output": "DeleteAuditRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteAuditRuleTemplates": {
       "document": "删除审计规则模板",
@@ -351,11 +351,11 @@
       "status": "online"
     },
     "DescribeAuditRules": {
-      "document": "本接口(DescribeAuditRules)用于查询用户在当前地域的审计规则。",
+      "document": "不再支持审计规则创建\n\n本接口(DescribeAuditRules)用于查询用户在当前地域的审计规则。",
       "input": "DescribeAuditRulesRequest",
       "name": "查询审计规则",
       "output": "DescribeAuditRulesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeBackupConfig": {
       "document": "本接口(DescribeBackupConfig)用于查询数据库备份配置信息。",
@@ -820,11 +820,11 @@
       "status": "online"
     },
     "ModifyAuditRule": {
-      "document": "本接口(ModifyAuditRule)用于修改用户的审计规则。",
+      "document": "不再支持审计规则创建\n\n本接口(ModifyAuditRule)用于修改用户的审计规则。",
       "input": "ModifyAuditRuleRequest",
       "name": "修改审计规则",
       "output": "ModifyAuditRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyAuditRuleTemplates": {
       "document": "修改审计规则模板",

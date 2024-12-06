@@ -37,9 +37,9 @@ Output:
             "InternalEndpoint": "rocketmq.tencent.internal.com:8080",
             "HttpInternalEndpoint": "http://rocketmq.tencent.internal.com:8080",
             "AclEnabled": true,
-            "PublicClbId": "abc",
-            "Vip": "abc",
-            "VpcId": "abc",
+            "PublicClbId": "",
+            "Vip": "",
+            "VpcId": "",
             "SupportMigration": true,
             "InstanceStatus": 1,
             "ZoneId": 100001,
@@ -55,7 +55,7 @@ Output:
             "UsedTopicNum": 1,
             "MaxGroupNum": 1,
             "UsedGroupNum": 1,
-            "ConfigDisplay": "abc",
+            "ConfigDisplay": "",
             "NodeCount": 1,
             "NodeDistribution": [
                 {

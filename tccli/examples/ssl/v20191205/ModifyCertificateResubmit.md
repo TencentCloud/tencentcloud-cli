@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ssl ModifyCertificateResubmit --cli-unfold-argument  \
-    --CertificateId xxx
+    --CertificateId The**hhs
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CertificateId": "xxa",
-        "RequestId": "xxa"
+        "CertificateId": "The**hhs",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

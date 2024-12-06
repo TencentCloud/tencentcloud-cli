@@ -64,7 +64,7 @@
       "status": "online"
     },
     "SubmitVideoTranslateJob": {
-      "document": "###### 支持音色种别列表\n| 音色名称                 | 性别 | 音色ID |音色试听ID |\n| ------------------------ | ---- | ------ |------ |\n| Florian Multilingual     | 男   | 701001 |\n| Seraphina                | 女   | 701002 |\n| Ada Multilingual         | 女   | 701003 |\n| Ollie Multilingual       | 男   | 701004 |\n| Ava Multilingual         | 女   | 701005 |\n| Andrew Multilingual      | 男   | 701006 |\n| Emma Multilingual        | 女   | 701007 |\n| Brian Multilingual       | 男   | 701008 |\n| Jenny Multilingual       | 女   | 701009 |\n| Ryan Multilingual        | 男   | 701010 |\n| Adam Multilingual        | 男   | 701011 |\n| AlloyTurbo Multilingual  | 男   | 701012 |\n| Amanda Multilingual      | 女   | 701013 |\n| Brandon Multilingual     | 男   | 701014 |\n| Christopher Multilingual | 男   | 701015 |\n| Cora Multilingual        | 女   | 701016 |\n| Davis Multilingual       | 男   | 701017 |\n| Derek Multilingual       | 男   | 701018 |\n| Dustin Multilingual      | 男   | 701019 |\n| Evelyn Multilingual      | 女   | 701020 |\n| Lewis Multilingual       | 男   | 701021 |\n| Lola Multilingual        | 女   | 701022 |\n| Nancy Multilingual       | 女   | 701023 |\n| NovaTurbo Multilingual   | 女   | 701024 |\n| Phoebe Multilingual      | 女   | 701025 |\n| Samuel Multilingual      | 男   | 701026 |\n| Serena Multilingual      | 女   | 701027 |\n| Steffan Multilingual     | 男   | 701028 |\n| Arabella Multilingual    | 女   | 701029 |\n| Isidora Multilingual     | 女   | 701030 |\n| Tristan Multilingual     | 男   | 701031 |\n| Ximena Multilingual      | 女   | 701032 |\n| Remy Multilingual        | 男   | 701033 |\n| Vivienne Multilingual    | 女   | 701034 |\n| Lucien Multilingual      | 男   | 701035 |\n| Alessio Multilingual     | 男   | 701036 |\n| Giuseppe Multilingual    | 男   | 701037 |\n| Isabella Multilingual    | 女   | 701038 |\n| Marcello Multilingual    | 男   | 701039 |\n| Masaru Multilingual      | 男   | 701040 |\n| Hyunsu Multilingual      | 男   | 701041 |\n| Macerio Multilingual     | 男   | 701042 |\n| Thalita Multilingual     | 女   | 701043 |\n| 晓辰 多语言              | 女   | 701044 |\n| 晓晓 多语言              | 女   | 701045 |\n| 晓宇 多语言              | 女   | 701046 |\n| 云逸 多语言              | 男   | 701047 |\n| Yunfan Multilingual      | 男   | 701048 |\n| Yunxiao Multilingual     | 男   | 701049 |\n| 晓晓 方言                | 女   | 701050 |",
+      "document": "### 支持音色种别列表。\n每个音色都支持：英语（美国）、阿拉伯语、德语、西班牙语、法语、印尼语、意大利语、日语、韩语、马来语、葡萄牙语、俄语、泰语、土耳其语、越南语。\n\n| 音色名称    | 性别 | 音色ID |\n| ----------- | ---- | ------ |\n| Seraphina   | 女   | 701002 |\n| Ada         | 女   | 701003 |\n| Emma        | 女   | 701007 |\n| Brian       | 男   | 701008 |\n| Amanda      | 女   | 701013 |\n| Brandon     | 男   | 701014 |\n| Christopher | 男   | 701015 |\n| Davis       | 男   | 701017 |\n| Derek       | 男   | 701018 |\n| Dustin      | 男   | 701019 |\n| Evelyn      | 女   | 701020 |\n| Lewis       | 男   | 701021 |\n| Lola        | 女   | 701022 |\n| Samuel      | 男   | 701026 |\n| Steffan     | 男   | 701028 |\n| Arabella    | 女   | 701029 |\n| Isidora     | 女   | 701030 |\n| Tristan     | 男   | 701031 |\n| Vivienne    | 女   | 701034 |\n| Lucien      | 男   | 701035 |\n| Alessio     | 男   | 701036 |\n| Giuseppe    | 男   | 701037 |\n| Isabella    | 女   | 701038 |\n| Marcello    | 男   | 701039 |\n| Masaru      | 男   | 701040 |\n| Macerio     | 男   | 701042 |\n| Thalita     | 女   | 701043 |\n| 晓晓         | 女   | 701045 |\n| 晓宇         | 女   | 701046 |\n| 云逸         | 男   | 701047 |\n| Yunfan       | 男   | 701048 |",
       "input": "SubmitVideoTranslateJobRequest",
       "name": "提交视频转译任务",
       "output": "SubmitVideoTranslateJobResponse",
@@ -219,7 +219,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "音频转译任务 ID。",
           "example": "ecaa9680e41441399b4f29759174383f",
           "member": "string",
@@ -229,7 +229,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "音频转译结果确认 session。\t",
           "example": "0bfda02b562d4432be1176904bbcbe68",
           "member": "string",
@@ -239,8 +239,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "该字段与 DescribeVideoTranslateJob 接口的 Status 功能相同，均表示任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。",
+          "disabled": true,
+          "document": "任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。",
           "example": "5",
           "member": "int64",
           "name": "Status",
@@ -249,13 +249,23 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "视频转译任务信息。\t",
           "example": "音频转译结果已确认",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。0：任务初始化。1：音频翻译中。 2：音频翻译失败。 3：音频翻译成功。 4：音频结果待确认。 5：音频结果已确认完毕。6：视频翻译中。 7：视频翻译失败。 8：视频翻译成功。",
+          "example": "5",
+          "member": "int64",
+          "name": "JobStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -559,7 +569,7 @@
         {
           "disabled": false,
           "document": "音频转译后分句翻译内容，包含分句起始时间、源识别文本以及翻译后文本。\n当JobStatus为3、4时，该字段返回分句翻译数据。",
-          "example": "[{\"SourceText\":\"我的天呐,\",\"TargetText\":\"Oh my God,\"}]",
+          "example": "无",
           "member": "TranslateResult",
           "name": "TranslateResults",
           "output_required": false,
@@ -567,7 +577,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否需要确认翻译结果。0：不需要，1：需要。\t",
           "example": "1",
           "member": "int64",
@@ -577,7 +587,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "音频任务 ID。\t",
           "example": "b4c2e836bf01418a888c8958f06c75fd",
           "member": "string",
@@ -587,7 +597,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "视频审核任务ID。",
           "example": "1245282556098985984",
           "member": "string",
@@ -597,7 +607,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "音频审核任务 ID。",
           "example": "1982362556098762761",
           "member": "string",
@@ -607,7 +617,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "口型驱动任务 ID。",
           "example": "1245339406861418496",
           "member": "string",
@@ -617,7 +627,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "视频素材原始 URL。",
           "example": "https://console.cloud.tencent.com/cos/video.mp4",
           "member": "string",
@@ -629,7 +639,7 @@
         {
           "disabled": false,
           "document": "文本片段及其时间戳。",
-          "example": "{\"EndMs\":14080,\"StartMs\":360,\"Text\":\"我的天呐，\"}",
+          "example": "无",
           "member": "AsrTimestamps",
           "name": "AsrTimestamps",
           "output_required": false,
@@ -637,7 +647,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "提交视频转译任务时的 requestId。",
           "example": "403fb3f1-c40b-454b-9a68-fbcdefcdce58",
           "member": "string",

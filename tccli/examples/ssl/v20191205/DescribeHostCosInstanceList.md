@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ssl DescribeHostCosInstanceList --cli-unfold-argument  \
-    --CertificateId abc \
+    --CertificateId Hhh**kk \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
-    --ResourceType abc
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
+    --ResourceType clb
 ```
 
 Output: 
@@ -19,18 +19,18 @@ Output:
     "Response": {
         "InstanceList": [
             {
-                "Domain": "abc",
-                "CertId": "abc",
-                "Status": "abc",
-                "Bucket": "abc",
-                "Region": "abc"
+                "Domain": "www.test.com",
+                "CertId": "Hhh**kk",
+                "Status": "ENABLED",
+                "Bucket": "1873sjejej**kdkdk.cos",
+                "Region": "ap-guangzhou"
             }
         ],
-        "TotalCount": 0,
+        "TotalCount": 1,
         "AsyncTotalNum": 0,
         "AsyncOffset": 0,
-        "AsyncCacheTime": "abc",
-        "RequestId": "abc"
+        "AsyncCacheTime": "2023-01-24 12:00:00",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

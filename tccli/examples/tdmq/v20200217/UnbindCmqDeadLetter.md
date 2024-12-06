@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq UnbindCmqDeadLetter --cli-unfold-argument  \
-    --SourceQueueName test
+    --SourceQueueName testQueue
 ```
 
 Output: 

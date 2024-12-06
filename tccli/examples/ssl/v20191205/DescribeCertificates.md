@@ -16,90 +16,86 @@ Output:
         "TotalCount": 1,
         "Certificates": [
             {
-                "OwnerUin": "abc",
-                "ProjectId": "abc",
-                "From": "abc",
-                "PackageType": "abc",
-                "CertificateType": "abc",
-                "ProductZhName": "abc",
-                "Domain": "abc",
-                "Alias": "abc",
+                "OwnerUin": "10*******",
+                "ProjectId": "zr*****",
+                "From": "upload",
+                "PackageType": "company",
+                "CertificateType": "svr",
+                "ProductZhName": "DigiCert Secure Site CN CA G3",
+                "Domain": "www.zrh.com",
+                "Alias": "upload cert",
                 "Status": 1,
                 "CertificateExtra": {
-                    "DomainNumber": "abc",
-                    "OriginCertificateId": "abc",
-                    "ReplacedBy": "abc",
-                    "ReplacedFor": "abc",
-                    "RenewOrder": "abc",
+                    "DomainNumber": "10983",
+                    "OriginCertificateId": "hj****",
+                    "ReplacedBy": "hkk****",
+                    "ReplacedFor": "ete****",
+                    "RenewOrder": "feg****",
                     "SMCert": 0,
                     "CompanyType": 0
                 },
-                "VulnerabilityStatus": "abc",
-                "StatusMsg": "abc",
-                "VerifyType": "abc",
-                "CertBeginTime": "abc",
-                "CertEndTime": "abc",
-                "ValidityPeriod": "abc",
-                "InsertTime": "abc",
-                "CertificateId": "abc",
+                "VulnerabilityStatus": "INACTIVE",
+                "StatusMsg": "PRE-REVIEWING",
+                "VerifyType": "DNS",
+                "CertBeginTime": "2024-11-06 08:00:0",
+                "CertEndTime": "2025-12-02 07:59:59",
+                "ValidityPeriod": "13",
+                "InsertTime": "2024-11-11 11:53:07",
+                "CertificateId": "hdhd**",
                 "SubjectAltName": [
-                    "abc"
+                    "zrh"
                 ],
-                "PackageTypeName": "abc",
-                "StatusName": "abc",
+                "PackageTypeName": "company",
+                "StatusName": "证书已颁发",
                 "IsVip": true,
                 "IsDv": true,
                 "IsWildcard": true,
                 "IsVulnerability": true,
                 "RenewAble": true,
                 "ProjectInfo": {
-                    "ProjectName": "abc",
+                    "ProjectName": "默认项目",
                     "ProjectCreatorUin": 1,
-                    "ProjectCreateTime": "abc",
-                    "ProjectResume": "abc",
+                    "ProjectCreateTime": "0000-00-00 00:00:00",
+                    "ProjectResume": "默认项目",
                     "OwnerUin": 1,
-                    "ProjectId": "abc"
+                    "ProjectId": "0"
                 },
                 "BoundResource": [
-                    "abc"
+                    ""
                 ],
                 "Deployable": true,
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "zrh",
+                        "TagValue": "ok"
                     }
                 ],
                 "IsIgnore": true,
                 "IsSM": true,
-                "EncryptAlgorithm": "abc",
+                "EncryptAlgorithm": "svr",
                 "CAEncryptAlgorithms": [
-                    "abc"
+                    "svr"
                 ],
-                "CAEndTimes": [
-                    "abc"
-                ],
-                "CACommonNames": [
-                    "abc"
-                ],
+                "CAEndTimes": [],
+                "CACommonNames": [],
                 "PreAuditInfo": {
                     "TotalPeriod": 0,
                     "NowPeriod": 0,
-                    "ManagerId": "abc"
+                    "ManagerId": "84994"
                 },
                 "AutoRenewFlag": 0,
                 "HostingStatus": 0,
-                "HostingCompleteTime": "abc",
-                "HostingRenewCertId": "abc",
-                "HasRenewOrder": "abc",
+                "HostingCompleteTime": "2024-11-06 08:00:00",
+                "HostingRenewCertId": "2024-11-06 08:00:00",
+                "HasRenewOrder": "yes",
                 "ReplaceOriCertIsDelete": true,
                 "IsExpiring": true,
-                "DVAuthDeadline": "abc",
-                "ValidationPassedTime": "abc",
+                "DVAuthDeadline": "2024-11-06 08:00:00",
+                "ValidationPassedTime": "2024-11-06 08:00:00",
                 "CertSANs": [
-                    "abc"
+                    "normal"
                 ],
-                "AwaitingValidationMsg": "abc",
+                "AwaitingValidationMsg": "wait",
                 "AllowDownload": true,
                 "IsDNSPODResolve": true,
                 "IsPackage": true,
@@ -115,7 +111,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

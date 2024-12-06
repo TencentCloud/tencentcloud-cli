@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli ssl DeleteCertificates --cli-unfold-argument  \
-    --CertificateIds abc
+    --CertificateIds 1ODjBeH8 25EMBPYQ txV0pewo rcGiGyTx 4FVmnb1u \
+    --IsSync True
 ```
 
 Output: 

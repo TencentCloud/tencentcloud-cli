@@ -1906,7 +1906,7 @@
         {
           "disabled": false,
           "document": "自定义的访问数据库的账号名称。\n- 仅由字母、数字、下划线、中划线组成。\n- 长度不能大于32位。",
-          "example": "test",
+          "example": "username_01",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -1942,7 +1942,7 @@
         {
           "disabled": false,
           "document": "子账号描述信息，长度[0,64] 字节，支持中文。",
-          "example": "\"\"",
+          "example": "\"生产账号\"",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1957,7 +1957,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123456",
+          "example": "29600111",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -2333,7 +2333,7 @@
         {
           "disabled": false,
           "document": "配置复制组名称。仅支持长度为2-64个字符的中文、英文、数字、下划线_、分隔符-。",
-          "example": "test",
+          "example": "example_group_name",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -2424,7 +2424,7 @@
         {
           "disabled": false,
           "document": "子账号名称。请登录[Redis控制台](https://console.cloud.tencent.com/redis)，切换至**账号管理**页面获取。具体信息，请参见[管理账号](https://cloud.tencent.com/document/product/239/36710)。",
-          "example": "test",
+          "example": "example_name",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -2439,7 +2439,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123456",
+          "example": "101",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -4710,7 +4710,7 @@
         {
           "disabled": false,
           "document": "设置模糊查询关键字段，仅实例名称支持模糊查询。",
-          "example": "test",
+          "example": "模糊查询实例名称",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -4728,7 +4728,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "test",
+          "example": "example_InstanceName",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -4854,7 +4854,7 @@
         {
           "disabled": false,
           "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
-          "example": "test",
+          "example": "keyname",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -8678,7 +8678,7 @@
         {
           "disabled": false,
           "document": "手动备份任务的备注信息。",
-          "example": "xxxx",
+          "example": "Backup instructions",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -9045,7 +9045,7 @@
         {
           "disabled": false,
           "document": "子账号名称，如果要修改主账号，填 root。",
-          "example": "test",
+          "example": "example_name",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -9063,7 +9063,7 @@
         {
           "disabled": false,
           "document": "子账号描述信息",
-          "example": "test",
+          "example": "some account instruction",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -9105,7 +9105,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123456",
+          "example": "11011",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -9327,7 +9327,7 @@
         {
           "disabled": false,
           "document": "日志集所在地域，不传默认使用实例所在地域。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "LogRegion",
           "required": false,

@@ -7,9 +7,9 @@ Input:
 ```
 tccli ckafka SendMessage --cli-unfold-argument  \
     --DataHubId datahub-meuh9nhn \
-    --Message.0.Key  \
+    --Message.0.Key key1 \
     --Message.0.Body vvvvsdgsgshhh \
-    --Message.1.Key  \
+    --Message.1.Key key2 \
     --Message.1.Body vvvhhhhhhvsdgsgshhh
 ```
 

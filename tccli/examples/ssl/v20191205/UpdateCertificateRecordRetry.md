@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ssl UpdateCertificateRecordRetry --cli-unfold-argument  \
-    --DeployRecordId 1 \
-    --DeployRecordDetailId 2
+    --DeployRecordId 1499393 \
+    --DeployRecordDetailId 46737382
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1111111111111"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

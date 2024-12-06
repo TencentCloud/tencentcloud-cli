@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl DescribeCertificateBindResourceTaskResult --cli-unfold-argument  \
-    --TaskIds abc
+    --TaskIds 748599
 ```
 
 Output: 
@@ -15,25 +15,22 @@ Output:
     "Response": {
         "SyncTaskBindResourceResult": [
             {
-                "TaskId": "abc",
+                "TaskId": "748599",
                 "BindResourceResult": [
                     {
-                        "ResourceType": "abc",
+                        "ResourceType": "clb",
                         "BindResourceRegionResult": [
                             {
-                                "Region": "abc",
+                                "Region": "ap-guangzhou",
                                 "TotalCount": 1,
-                                "Error": "abc"
+                                "Error": ""
                             }
                         ]
                     }
                 ],
                 "Status": 1,
-                "Error": {
-                    "Code": "abc",
-                    "Message": "abc"
-                },
-                "CacheTime": "abc"
+                "Error": null,
+                "CacheTime": "2023-10-12 12:00:00"
             }
         ],
         "RequestId": "abc"

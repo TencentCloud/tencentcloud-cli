@@ -223,6 +223,7 @@
           "member": "int64",
           "name": "X",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -233,6 +234,7 @@
           "member": "int64",
           "name": "Y",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -243,6 +245,7 @@
           "member": "int64",
           "name": "Width",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -253,11 +256,12 @@
           "member": "int64",
           "name": "Height",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "FaceRect": {
       "document": "人脸框信息",
@@ -559,25 +563,27 @@
         {
           "disabled": false,
           "document": "人脸序号",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FaceId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸框信息",
-          "example": "",
+          "example": "无",
           "member": "FaceInfo",
           "name": "FaceInfo",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "MergeInfo": {
       "document": "人脸图片和待被融合的素材模板图的人脸位置信息。",

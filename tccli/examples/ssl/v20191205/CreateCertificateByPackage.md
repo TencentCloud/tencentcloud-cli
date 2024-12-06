@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli ssl CreateCertificateByPackage --cli-unfold-argument  \
-    --PackageIds xx123 \
-    --Tags.0.TagKey xx123 \
-    --Tags.0.TagValue xx123 \
+    --PackageIds Z2*******80000 \
+    --Tags.0.TagKey z***j \
+    --Tags.0.TagValue m****k \
     --ProjectId 1 \
-    --RenewAlgorithmParam xx123 \
-    --RenewKeyPass xx123 \
+    --RenewAlgorithmParam 2048 \
+    --RenewKeyPass k***j \
     --Period 1 \
-    --OldCertificateId xx123 \
+    --OldCertificateId Rt***9 \
     --ProductPid 1 \
-    --RenewGenCsrMethod xx123 \
-    --RenewCsr xx123 \
-    --DomainCount xx123 \
-    --RenewAlgorithmType xx123 \
+    --RenewGenCsrMethod online \
+    --RenewCsr CSR \
+    --DomainCount 5 \
+    --RenewAlgorithmType RSA \
     --VerifyType DNS
 ```
 
@@ -26,10 +26,10 @@ Output:
 ```
 {
     "Response": {
-        "CertificateId": "xx123",
-        "RequestId": "xx123",
+        "CertificateId": "T*****h",
+        "RequestId": "dh7d********jdkm",
         "CertificateIds": [
-            "xx123"
+            "j*****uk"
         ]
     }
 }

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ssl DescribeHostLighthouseInstanceList --cli-unfold-argument  \
-    --ResourceType xx \
+    --CertificateId heu**je \
     --IsCache 1 \
-    --CertificateId xx \
-    --Filters.0.FilterKey xx \
-    --Filters.0.FilterValue xx
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
+    --ResourceType lighthouse
 ```
 
 Output: 

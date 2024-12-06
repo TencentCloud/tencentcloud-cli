@@ -23,7 +23,7 @@ Output:
             {
                 "IpRule": "0.0.0.0/0",
                 "Allow": true,
-                "Remark": "test"
+                "Remark": "remark info"
             }
         ]
     }

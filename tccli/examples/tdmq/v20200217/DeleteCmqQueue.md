@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DeleteCmqQueue --cli-unfold-argument  \
-    --QueueName test
+    --QueueName testQueue
 ```
 
 Output: 

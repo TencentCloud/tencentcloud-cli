@@ -7,7 +7,7 @@ Input:
 ```
 tccli mqtt DeleteTopic --cli-unfold-argument  \
     --InstanceId mqtt-rvb5xxrn \
-    --Topic 111
+    --Topic home
 ```
 
 Output: 

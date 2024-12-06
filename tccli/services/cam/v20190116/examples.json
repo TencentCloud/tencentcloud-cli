@@ -59,8 +59,8 @@
     "CreateAccessKey": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateAccessKey\n&TargetUin=123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessKey\": {\n            \"AccessKeyId\": \"AKID8GFED7s****QrFXkmb\",\n            \"SecretAccessKey\": \"iDVjy****tNzX\",\n            \"Status\": \"Active\",\n            \"CreateTime\": \"2020-03-03 18:00:26\"\n        },\n        \"RequestId\": \"f8423e9b-a7da-488d-9539-333f1955ca78\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateAccessKey\n&TargetUin=100013065917\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessKey\": {\n            \"AccessKeyId\": \"AKID***\",\n            \"SecretAccessKey\": \"iDVd***\",\n            \"Status\": \"Active\",\n            \"CreateTime\": \"2020-03-03 18:00:26\"\n        },\n        \"RequestId\": \"f8423e9b-a7da-488d-9539-333f1955ca78\"\n    }\n}",
         "title": "创建访问密钥"
       }
     ],
@@ -147,7 +147,7 @@
     "DeleteAccessKey": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessKey\n<公共请求参数>\n\n{\n    \"TargetUin\": \"123456\",\n    \"AccessKeyId\": \"AKIDtm****lqorp\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccessKey\n<公共请求参数>\n\n{\n    \"TargetUin\": \"100013065917\",\n    \"AccessKeyId\": \"AKID***\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99d650e2-10fa-4c8f-819f-874578039641\"\n    }\n}",
         "title": "删除访问密钥"
       }
@@ -410,7 +410,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSecurityLastUsed\n<公共请求参数>\n\n{\n    \"SecretIdList\": [\n        \"***\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"***\",\n                \"LastUsedDate\": \"2022-12-19\",\n                \"LastSecretUsedDate\": 1671681023555\n            }\n        ],\n        \"RequestId\": \"b790d4ca-5692-42ae-8a8c-d15c6ed976db\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretIdLastUsedRows\": [\n            {\n                \"SecretId\": \"AKID***\",\n                \"LastUsedDate\": \"2022-12-19\",\n                \"LastSecretUsedDate\": 1671681023555\n            }\n        ],\n        \"RequestId\": \"b790d4ca-5692-42ae-8a8c-d15c6ed976db\"\n    }\n}",
         "title": "密钥最后一次访问时间"
       }
     ],
@@ -448,9 +448,9 @@
     ],
     "ListAccessKeys": [
       {
-        "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\n&TargetUin=123456\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"AKIDlOp****mQsJQWEaYK\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"A2342hOv****QOHySnzb5P7dv8\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
+        "document": "列出访问密钥",
+        "input": "https://cam.tencentcloudapi.com/?Action=ListAccessKeys\n&TargetUin=100013065917\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AccessKeys\": [\n            {\n                \"AccessKeyId\": \"AKID***\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2019-12-25 14:53:03\"\n            },\n            {\n                \"AccessKeyId\": \"AKID***\",\n                \"Status\": \"Active\",\n                \"CreateTime\": \"2020-03-03 16:51:21\"\n            }\n        ],\n        \"RequestId\": \"bbc4c6b1-ee32-416a-9135-68de318c54f2\"\n    }\n}",
         "title": "列出访问密钥"
       }
     ],
@@ -647,7 +647,7 @@
     "UpdateAccessKey": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAccessKey\n&TargetUin=123456\n&AccessKeyId=AKIDtm****lqorp\n&Status=Active\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateAccessKey\n&TargetUin=100013065917\n&AccessKeyId=AKID***\n&Status=Active\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"99d650e2-10fa-4c8f-819f-874578039641\"\n    }\n}",
         "title": "更新访问密钥"
       }

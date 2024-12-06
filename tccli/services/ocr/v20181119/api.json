@@ -6970,6 +6970,15 @@
           "name": "EnableReflectDetail",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用于控制是否开启日期校验，默认值为true，打开会进行日期校验。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableDateVerify",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -12985,7 +12994,7 @@
         {
           "disabled": false,
           "document": "门头照标签",
-          "example": "标准门头照",
+          "example": " [\"标准门头照\"]",
           "member": "string",
           "name": "StoreLabel",
           "output_required": true,
@@ -13495,7 +13504,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
-          "example": "https://xx/a.jpg",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
