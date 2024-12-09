@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tdmq ImportRocketMQTopics --cli-unfold-argument  \
-    --Topics.0.Namespace  \
-    --Topics.0.TopicName Topic_11334 \
+    --Topics.0.Namespace test_ns \
+    --Topics.0.TopicName test_topic \
     --Topics.0.Type Normal \
     --Topics.0.Partitions 3 \
-    --Topics.0.Remark 236 \
+    --Topics.0.Remark remark info \
     --TaskId 700000780519-o4n3m5g97wgr-3391d15d
 ```
 

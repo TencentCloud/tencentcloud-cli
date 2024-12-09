@@ -2762,31 +2762,34 @@
       "members": [
         {
           "disabled": false,
-          "document": "Docker Hub 用户名或 Tencent Registry 用户名",
-          "example": "无",
-          "member": "string",
-          "name": "User",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Docker Hub 密码或 Tencent Registry 密码",
-          "example": "无",
-          "member": "string",
-          "name": "Password",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "Docker Hub填写“[user/repo]:[tag]”，Tencent Registry填写“ccr.ccs.tencentyun.com/[namespace/repo]:[tag]”",
           "example": "无",
           "member": "string",
           "name": "Image",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Docker Hub 用户名或 Tencent Registry 用户名；公共镜像可不填写此参数。",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Docker Hub 密码或 Tencent Registry 密码；公共镜像可不填写此参数。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2796,6 +2799,7 @@
           "example": "无",
           "member": "string",
           "name": "Server",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2806,6 +2810,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxRetryCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2816,6 +2821,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DelayOnRetry",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2826,6 +2832,7 @@
           "example": "-u root",
           "member": "string",
           "name": "DockerRunOption",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

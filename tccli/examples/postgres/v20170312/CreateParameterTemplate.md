@@ -9,7 +9,7 @@ tccli postgres CreateParameterTemplate --cli-unfold-argument  \
     --TemplateName test_template \
     --DBMajorVersion 13 \
     --DBEngine postgresql \
-    --TemplateDescription test
+    --TemplateDescription This template is used for testing environment
 ```
 
 Output: 

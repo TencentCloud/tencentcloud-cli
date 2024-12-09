@@ -21,6 +21,15 @@ Output:
                 "ppm-529nwwj8",
                 "ppm-4dw6agho"
             ],
+            "ServiceTemplateSet": [
+                {
+                    "ServiceTemplateId": "abc",
+                    "ServiceTemplateName": "abc",
+                    "ServiceSet": [],
+                    "ServiceExtraSet": [],
+                    "CreatedTime": "2018-04-03 22:05:32"
+                }
+            ],
             "CreatedTime": "2018-04-03 22:05:32"
         },
         "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239"

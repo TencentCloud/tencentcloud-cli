@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sts AssumeRole --cli-unfold-argument  \
-    --RoleArn qcs%3A%3Acam%3A%3Auin%2F2385420691%3Arole%2F4611686018427397919 \
+    --RoleArn qcs::cam::uin/100015158414:roleName/readOnlyRole \
     --RoleSessionName cts
 ```
 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "Token": "da1e9d2ee9d***2dfe340001",
-            "TmpSecretId": "AKID65zyIP0mpXtaI******WIQVMn1umNH58",
-            "TmpSecretKey": "q95K84wrzuEGoc*******52boxvp71yoh"
+            "Token": "da1e***",
+            "TmpSecretId": "AKID***",
+            "TmpSecretKey": "q95K***"
         },
         "ExpiredTime": 1543914376,
         "Expiration": "2018-12-04T09:06:16Z",

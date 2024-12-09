@@ -8,9 +8,9 @@ Input:
 tccli ssl DescribeHostDdosInstanceList --cli-unfold-argument  \
     --ResourceType ddos \
     --IsCache 1 \
-    --CertificateId abc \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc
+    --CertificateId jk****j \
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1
 ```
 
 Output: 
@@ -19,14 +19,15 @@ Output:
     "Response": {
         "InstanceList": [
             {
-                "Domain": "abc",
-                "InstanceId": "abc",
-                "Protocol": "abc",
-                "CertId": "abc",
-                "VirtualPort": "abc"
+                "Domain": "www.zrh.com",
+                "InstanceId": "ins-*******",
+                "Protocol": "https",
+                "CertId": "h****KL",
+                "VirtualPort": "80"
             }
         ],
-        "RequestId": "abc"
+        "TotalCount": 1,
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

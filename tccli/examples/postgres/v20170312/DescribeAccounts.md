@@ -15,12 +15,12 @@ Output:
     "Response": {
         "Details": [
             {
-                "CreateTime": "0000-00-00 00:00:00",
+                "CreateTime": "2024-05-06 21:00:12",
                 "DBInstanceId": "postgres-hpe52jnz",
                 "Remark": "",
                 "Status": 2,
                 "UpdateTime": "2024-06-06 21:00:12",
-                "UserName": "test",
+                "UserName": "app_user",
                 "UserType": "tencentDBSuper"
             }
         ],

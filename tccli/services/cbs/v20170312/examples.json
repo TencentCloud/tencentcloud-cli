@@ -84,6 +84,14 @@
         "title": "非加密快照转加密快照"
       }
     ],
+    "CreatePrivilegeSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivilegeSnapshot\n<公共请求参数>\n\n{\n    \"DiskId\": \"disk-b1f7xvod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ed56a0-4b9a-4690-bd5e-7aa76fd67b4d\",\n        \"SnapshotId\": \"snap-bh2d9l10\"\n    }\n}",
+        "title": "创建特权快照示例"
+      }
+    ],
     "CreateSnapshot": [
       {
         "document": "用户创建快照",

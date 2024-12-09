@@ -12,11 +12,11 @@ Output:
 {
     "Response": {
         "Auth": {
-            "Version": "abc",
-            "SecretId": "abc",
+            "Version": "ver1",
+            "SecretId": "sxuwq1Kx123xz",
             "Timestamp": 1,
-            "Signature": "abc",
-            "Nonce": "abc"
+            "Signature": "123xz1a",
+            "Nonce": "17406"
         },
         "RequestId": "abc"
     }

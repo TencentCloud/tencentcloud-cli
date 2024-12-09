@@ -8,7 +8,7 @@ Input:
 tccli postgres CreateDatabase --cli-unfold-argument  \
     --DBInstanceId postgres-5cz25tr5 \
     --DatabaseName mydatabase \
-    --DatabaseOwner test
+    --DatabaseOwner data_team
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 tccli postgres CreateDatabase --cli-unfold-argument  \
     --DBInstanceId postgres-5cz25tr5 \
     --DatabaseName mydatabase \
-    --DatabaseOwner test \
+    --DatabaseOwner data_team \
     --Encoding UTF8 \
     --Collate zh_CN.utf8 \
     --Ctype zh_CN.utf8

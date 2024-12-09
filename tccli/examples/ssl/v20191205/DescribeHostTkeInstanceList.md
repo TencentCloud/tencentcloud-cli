@@ -1,6 +1,6 @@
-**Example 1: 证书部署TKEX实例列表**
+**Example 1: 证书部署TKE实例列表**
 
-证书部署TKEX实例列表
+证书部署TKE实例列表
 
 Input: 
 
@@ -8,12 +8,12 @@ Input:
 tccli ssl DescribeHostTkeInstanceList --cli-unfold-argument  \
     --Offset 1 \
     --Limit 1 \
-    --CertificateId abc \
+    --CertificateId tke-****** \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
     --AsyncCache 0 \
-    --OldCertificateId abc
+    --OldCertificateId J**kk
 ```
 
 Output: 
@@ -23,28 +23,30 @@ Output:
         "TotalCount": 1,
         "InstanceList": [
             {
-                "ClusterId": "abc",
-                "ClusterName": "abc",
+                "ClusterId": "tke-******",
+                "ClusterName": "tke****",
+                "ClusterType": "n**w",
+                "ClusterVersion": "3.8.***.1",
                 "NamespaceList": [
                     {
-                        "Name": "abc",
+                        "Name": "zrh",
                         "SecretList": [
                             {
-                                "Name": "abc",
-                                "CertId": "abc",
+                                "Name": "zrh",
+                                "CertId": "jj**kk",
                                 "IngressList": [
                                     {
-                                        "IngressName": "abc",
+                                        "IngressName": "zrh",
                                         "TlsDomains": [
-                                            "abc"
+                                            "www.zrh,com"
                                         ],
                                         "Domains": [
-                                            "abc"
+                                            "ww.zrh.com"
                                         ]
                                     }
                                 ],
                                 "NoMatchDomains": [
-                                    "abc"
+                                    "www.zyh.com"
                                 ]
                             }
                         ]
@@ -54,8 +56,8 @@ Output:
         ],
         "AsyncTotalNum": 0,
         "AsyncOffset": 0,
-        "AsyncCacheTime": "abc",
-        "RequestId": "abc"
+        "AsyncCacheTime": "10",
+        "RequestId": "c9c9d2fb-41c0-43b6-8c10-44c81de553c1"
     }
 }
 ```

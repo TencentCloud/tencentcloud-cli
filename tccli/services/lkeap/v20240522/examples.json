@@ -135,8 +135,8 @@
     "UploadDoc": [
       {
         "document": "上传无属性标签文档",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadDoc\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"804c3fe0-05b1-48f9-8003-ab118658fec7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadDoc\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"FileName\": \"example.pdf\",\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.pdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocId\": \"1830996257459865536\",\n        \"RequestId\": \"804c3fe0-05b1-48f9-8003-ab118658fec7\"\n    }\n}",
         "title": "上传无属性标签文档"
       }
     ],

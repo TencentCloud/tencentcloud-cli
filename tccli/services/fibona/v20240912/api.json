@@ -893,6 +893,24 @@
           "name": "ExtraConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "FAPPID",
+          "example": "d133466e86e565cb",
+          "member": "string",
+          "name": "FAPPID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话临时校验Token",
+          "example": "bdf74e3e-8cd5-4b5b-8e3a-84a5960a443f",
+          "member": "string",
+          "name": "SessionToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

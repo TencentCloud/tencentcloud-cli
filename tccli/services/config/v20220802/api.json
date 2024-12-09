@@ -95,30 +95,30 @@
         {
           "disabled": false,
           "document": "规则标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "qqq",
+          "example": "cam-user-invalid-ak-check",
           "member": "string",
           "name": "Identifier",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "配置规则1",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "InputParameter",
           "name": "InputParameter",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -128,27 +128,27 @@
           "example": "无",
           "member": "SourceConditionForManage",
           "name": "SourceCondition",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则支持的资源类型，规则仅对指定资源类型的资源生效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [           \"QCS::CAM::User\"         ]",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则所属标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           \"用户\",           \"密钥\"         ]",
           "member": "string",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -158,17 +158,17 @@
           "example": "1",
           "member": "int64",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则对应的函数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "scf1",
           "member": "string",
           "name": "ServiceFunction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -178,7 +178,7 @@
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -188,7 +188,7 @@
           "example": "Redis实例内存总量大于等于指定的参数值，视为“合规”。默认值：1000MB",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -198,7 +198,7 @@
           "example": "规则状态",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -208,7 +208,7 @@
           "example": "合规状态",
           "member": "string",
           "name": "ComplianceResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -218,7 +218,7 @@
           "example": "合规详情",
           "member": "Annotation",
           "name": "Annotation",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -228,17 +228,17 @@
           "example": "2022-09-01 12:00:00",
           "member": "string",
           "name": "ConfigRuleInvokedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "22",
+          "example": "cr-24234234werw234",
           "member": "string",
           "name": "ConfigRuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -248,97 +248,97 @@
           "example": "规则类型",
           "member": "string",
           "name": "IdentifierType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "合规包ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "cp-342424dfsdfdf",
           "member": "string",
           "name": "CompliancePackId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发类型\nScheduledNotification：周期触发、\nConfigurationItemChangeNotification：变更触发\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[           {             \"MaximumExecutionFrequency\": null,             \"MessageType\": \"ConfigurationItemChangeNotification\"           }         ]",
           "member": "TriggerType",
           "name": "TriggerType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "参数详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "InputParameterForManage",
           "name": "ManageInputParameter",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "合规包名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "合规包1",
           "member": "string",
           "name": "CompliancePackName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "关联地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [\"ap-guangzhou\"]",
           "member": "string",
           "name": "RegionsScope",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "关联标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "Tag",
           "name": "TagsScope",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": " 规则对指定资源ID无效，即不对该资源执行评估。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"23424\"]",
           "member": "string",
           "name": "ExcludeResourceIdsScope",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "账号组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ca-34sdf345345",
           "member": "string",
           "name": "AccountGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "账号组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "账号组1",
           "member": "string",
           "name": "AccountGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -348,7 +348,7 @@
           "example": "3444***4455",
           "member": "uint64",
           "name": "RuleOwnerId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -358,7 +358,7 @@
           "example": "[\"ScheduledNotification\"]",
           "member": "string",
           "name": "ManageTriggerType",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -454,7 +454,7 @@
         {
           "disabled": false,
           "document": "资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "qq",
+          "example": "{\"InstanceState\":\"STOPPED\",\"InstanceName\":\"未命名3\",\"InstanceId\":\"ins-jrkgnbhq\",\"InstanceType\":\"xxx\",\"VirtualPrivateCloud\":{\"VpcId\":\"xxx\"}",
           "member": "string",
           "name": "Configuration",
           "output_required": true,
@@ -464,7 +464,7 @@
         {
           "disabled": false,
           "document": "资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12332",
+          "example": "2021-11-16 09:28:13",
           "member": "string",
           "name": "ResourceCreateTime",
           "output_required": true,
@@ -474,7 +474,7 @@
         {
           "disabled": false,
           "document": "资源标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[     {         \"tagKey\": \"运营部\",         \"tagValue\": \"开发部\"     } ]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -484,7 +484,7 @@
         {
           "disabled": false,
           "document": "资源更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-05 19:14:53",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -796,7 +796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "每页限制",
+          "document": "每页数量。\n取值范围：1~200",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -805,7 +805,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "偏移量。\n取值范围：最小值为0",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -814,7 +814,7 @@
         },
         {
           "disabled": false,
-          "document": "排序类型, 倒序：desc，顺序：asc",
+          "document": "排序类型(规则名称)。\n倒序：desc，\n顺序：asc",
           "example": "desc",
           "member": "string",
           "name": "OrderType",
@@ -823,7 +823,7 @@
         },
         {
           "disabled": false,
-          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "document": "风险等级。\n1：高风险，\n2：中风险，\n3：低风险。",
           "example": "[1,2]",
           "member": "uint64",
           "name": "RiskLevel",
@@ -832,7 +832,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态",
+          "document": "规则状态。\nACTIVE：启用\nUN_ACTIVE：停用\n",
           "example": "ACTIVE",
           "member": "string",
           "name": "State",
@@ -841,7 +841,7 @@
         },
         {
           "disabled": false,
-          "document": "评估结果",
+          "document": "评估结果。\nCOMPLIANT：合规\nNON_COMPLIANT：不合规",
           "example": "[\"COMPLIANT\"]",
           "member": "string",
           "name": "ComplianceResult",
@@ -869,17 +869,17 @@
           "example": "4",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "详情",
-          "example": "无",
+          "example": "[     {         \"AccountGroupId\": null,         \"AccountGroupName\": null,         \"Annotation\": null,         \"CompliancePackId\": \"\",         \"CompliancePackName\": null,         \"ComplianceResult\": \"NON_COMPLIANT\",         \"ConfigRuleId\": \"cr-xxxxxxZePDhR0Bxxxxx\",         \"ConfigRuleInvokedTime\": null,         \"CreateTime\": \"2024-11-15 14:21:47\",         \"Description\": \"CAM用户下不存在已禁用的 AccessKey，则符合规则。\",         \"ExcludeResourceIdsScope\": [],         \"Identifier\": \"cam-user-invalid-ak-check\",         \"IdentifierType\": \"SYSTEM\",         \"InputParameter\": [],         \"Labels\": [             \"用户\",             \"密钥\"         ],         \"ManageInputParameter\": [],         \"ManageTriggerType\": [             \"ConfigurationItemChangeNotification\"         ],         \"RegionsScope\": [],         \"ResourceType\": [             \"QCS::CAM::User\"         ],         \"RiskLevel\": 3,         \"RuleName\": \"CAM用户下不存在已禁用的访问密钥AccessKey\",         \"RuleOwnerId\": xxxxxxx,         \"ServiceFunction\": null,         \"SourceCondition\": [],         \"Status\": \"ACTIVE\",         \"TagsScope\": [],         \"TriggerType\": [             {                 \"MaximumExecutionFrequency\": null,                 \"MessageType\": \"ConfigurationItemChangeNotification\"             }         ]     } ]",
           "member": "ConfigRule",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -907,7 +907,7 @@
         {
           "disabled": false,
           "document": "resourceName：资源名  resourceId ：资源ID",
-          "example": "无",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -916,7 +916,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": " 无",
+          "example": "[     {         \"tagKey\": \"运营部门\",         \"tagValue\": \"开发部     } ]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -925,7 +925,7 @@
         {
           "disabled": false,
           "document": "下一页token",
-          "example": "\"\"",
+          "example": "C3IptlTj6hTlW0WKVO3NI",
           "member": "string",
           "name": "NextToken",
           "required": false,
@@ -949,20 +949,20 @@
         {
           "disabled": false,
           "document": "详情",
-          "example": "无",
+          "example": "{\"ResourceType\":\"cvm\"}",
           "member": "ResourceListInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下一页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x",
+          "example": "C3IptlTj6hTlW0WKVO3NI",
           "member": "string",
           "name": "NextToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -980,7 +980,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值",
+          "document": "回调令牌。从自定义规则所选的scf云函数入参中取参数ResultToken值\n<a href=\"https://cloud.tencent.com/document/product/583/9210#.E5.87.BD.E6.95.B0.E5.85.A5.E5.8F.82.3Ca-id.3D.22input.22.3E.3C.2Fa.3E\" target=\"_blank\">云函数入参说明</a>",
           "example": "FQikxW6AmU4cTUUpEJ-OF4Mvbq_7quPYZQOjDuo9cAxzUX-D8w==",
           "member": "string",
           "name": "ResultToken",
@@ -990,7 +990,7 @@
         {
           "disabled": false,
           "document": "自定义规则评估结果信息。",
-          "example": "无",
+          "example": "[{         \"ComplianceResourceId\": \"disk-26itbqha\",         \"ComplianceResourceType\": \"QCS::CBS::Disk\",         \"ComplianceRegion\": \"ap-guangzhou\",         \"ComplianceType\": \"NON_COMPLIANT\",         \"Annotation\":              {                 \"Configuration\": \"1\",                 \"DesiredValue\": \"2\",                 \"Operator\": \"equal\",                 \"Property\": \"age\"             }       }]",
           "member": "Evaluation",
           "name": "Evaluations",
           "required": true,
@@ -1179,9 +1179,10 @@
         {
           "disabled": false,
           "document": "标签key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aaa",
+          "example": "产品部",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1189,9 +1190,10 @@
         {
           "disabled": false,
           "document": "标签value\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "bbb",
+          "example": "运营部成员",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

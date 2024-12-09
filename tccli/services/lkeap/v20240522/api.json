@@ -106,7 +106,7 @@
       "status": "online"
     },
     "UploadDoc": {
-      "document": "用于上传文档内容。上传的文档将存储在知识库中，可以通过SearchKnowledge知识库内容检索接口进行检索。 使用场景：适用于需要长期存储和检索的文档内容，如产品手册、用户指南等。",
+      "document": "用于上传文档内容。上传的文档将存储在知识库中，可以通过SearchKnowledge知识库内容检索接口进行检索。 \n使用场景：适用于需要长期存储和检索的文档内容，如产品手册、用户指南等。",
       "input": "UploadDocRequest",
       "name": "上传文档",
       "output": "UploadDocResponse",
@@ -339,8 +339,8 @@
       "document": "创建智能文档拆分任务的配置信息",
       "members": [
         {
-          "disabled": false,
-          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为1",
+          "disabled": true,
+          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为",
           "example": "1",
           "member": "string",
           "name": "TableResultType",
@@ -348,7 +348,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为3（返回全文MD + 每一页的OCR原始Json）\n\n",
           "example": "3",
           "member": "string",
@@ -364,6 +364,15 @@
           "name": "EnableMllm",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "最大分片长度",
+          "example": "4800",
+          "member": "int64",
+          "name": "MaxChunkSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -1434,6 +1443,21 @@
       ],
       "usage": "out"
     },
+    "SegmentationConfig": {
+      "document": "分段配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大分片长度",
+          "example": "4800",
+          "member": "int64",
+          "name": "MaxChunkSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "SplitDocumentFailedPage": {
       "document": "文档解析失败记录",
       "members": [
@@ -1472,12 +1496,57 @@
       "members": [
         {
           "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名，可选。\n**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。",
+          "example": "example.pdf",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`\n\n**支持的文件大小：**\n - `PDF`、`DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
+          "example": "PDF",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
+          "example": "https://example.com/example.pdf",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "属性标签引用",
           "example": "无",
           "member": "AttributeLabelReferItem",
           "name": "AttributeLabel",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分段信息",
+          "example": "{\"MaxChunkSize\":4800}",
+          "member": "SegmentationConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1485,6 +1554,16 @@
     "UploadDocResponse": {
       "document": "UploadDoc返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "1830996257452865536",
+          "member": "string",
+          "name": "DocId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

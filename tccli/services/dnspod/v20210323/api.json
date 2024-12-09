@@ -1656,6 +1656,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "yes：不实际添加域名仅检测",
+          "example": "no",
+          "member": "string",
+          "name": "OnlyCheck",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli config ListDiscoveredResources --cli-unfold-argument  \
-    --OrderType xx \
-    --NextToken xx \
-    --MaxResults 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Tags.0.TagKey xx \
-    --Tags.0.TagValue xx
+    --OrderType desc \
+    --NextToken C3IptlTj6hTlW0WKVO3NI \
+    --MaxResults 10 \
+    --Filters.0.Values ins-234234 \
+    --Filters.0.Name resourceName \
+    --Tags.0.TagKey 开发部 \
+    --Tags.0.TagValue 运营部
 ```
 
 Output: 
@@ -21,25 +21,25 @@ Output:
     "Response": {
         "Items": [
             {
-                "ResourceStatus": "xx",
+                "ResourceStatus": "Running",
                 "Tags": [
                     {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
+                        "TagKey": "开发部",
+                        "TagValue": "运营部"
                     }
                 ],
-                "ResourceType": "xx",
-                "ResourceId": "xx",
-                "ResourceCreateTime": 1,
-                "ResourceRegion": "xx",
-                "ResourceName": "xx",
-                "ResourceZone": "xx",
+                "ResourceType": "cvm",
+                "ResourceId": "ins-234er",
+                "ResourceCreateTime": "2022-10-10 12:56:37",
+                "ResourceRegion": "ap-guangzhou",
+                "ResourceName": "云服务器",
+                "ResourceZone": "ap-guangzhou-1",
                 "ResourceDelete": 1,
-                "ComplianceResult": "xx"
+                "ComplianceResult": "COMPLIANT"
             }
         ],
-        "NextToken": "xx",
-        "RequestId": "xx"
+        "NextToken": "C3IptlTj6hTlW0WKVO3NI",
+        "RequestId": "4006b9ea-9b33-4b80-8496-6917c900b122"
     }
 }
 ```

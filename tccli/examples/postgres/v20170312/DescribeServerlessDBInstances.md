@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli postgres DescribeServerlessDBInstances --cli-unfold-argument  \
-    --Filter.0.Name "xxx", \
+    --Filter.0.Name db-instance-name \
+    --Filter.0.Values user-data-db \
     --Limit 0 \
     --Offset 1
 ```
@@ -18,14 +19,14 @@ Output:
         "TotalCount": 1,
         "DBInstanceSet": [
             {
-                "DBInstanceId": "postgres-xxxxxxxx",
-                "DBInstanceName": "xxx",
+                "DBInstanceId": "postgres-dnlizio3",
+                "DBInstanceName": "user-data-db",
                 "DBInstanceStatus": "running",
                 "Region": "ap-guangzhou",
                 "Zone": "ap-guangzhou-3",
                 "ProjectId": 0,
-                "VpcId": "vpc-xxxxxxxx",
-                "SubnetId": "subnet-xxxxxxxx",
+                "VpcId": "vpc-49ab5lb9",
+                "SubnetId": "subnet-b23o6b22",
                 "DBCharset": "UTF8",
                 "DBVersion": "10",
                 "DBKernelVersion": "v10.4_r1.0",
@@ -33,7 +34,7 @@ Output:
                 "DBInstanceNetInfo": [
                     {
                         "Address": "",
-                        "Ip": "10.10.10.111",
+                        "Ip": "10.*.*.*",
                         "Port": 5432,
                         "Status": "opened",
                         "NetType": "private"

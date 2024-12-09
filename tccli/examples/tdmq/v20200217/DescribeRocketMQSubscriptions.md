@@ -25,7 +25,7 @@ Output:
                 "Type": "Normal",
                 "PartitionNum": 3,
                 "ExpressionType": "TAG",
-                "SubString": "*",
+                "SubString": "test_tag",
                 "Status": 0,
                 "ConsumerLag": 120
             }

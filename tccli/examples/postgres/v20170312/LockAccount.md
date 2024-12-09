@@ -7,7 +7,7 @@ Input:
 ```
 tccli postgres LockAccount --cli-unfold-argument  \
     --DBInstanceId postgres-4sfuv15b \
-    --UserName test
+    --UserName app_user
 ```
 
 Output: 

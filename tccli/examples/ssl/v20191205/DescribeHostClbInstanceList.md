@@ -8,12 +8,12 @@ Input:
 tccli ssl DescribeHostClbInstanceList --cli-unfold-argument  \
     --Offset 1 \
     --Limit 1 \
-    --CertificateId abc \
+    --CertificateId heh**jej \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
     --AsyncCache 0 \
-    --OldCertificateId abc
+    --OldCertificateId hexjx**jj
 ```
 
 Output: 
@@ -23,38 +23,38 @@ Output:
         "TotalCount": 1,
         "InstanceList": [
             {
-                "LoadBalancerId": "abc",
-                "LoadBalancerName": "abc",
+                "LoadBalancerId": "lb-******",
+                "LoadBalancerName": "test",
                 "Listeners": [
                     {
-                        "ListenerId": "abc",
-                        "ListenerName": "abc",
+                        "ListenerId": "lbl-*****",
+                        "ListenerName": "lbltest",
                         "SniSwitch": 1,
-                        "Protocol": "abc",
+                        "Protocol": "https",
                         "Certificate": {
-                            "CertId": "abc",
+                            "CertId": "jejsj**jsj",
                             "DnsNames": [
-                                "abc"
+                                "www.zrh.com"
                             ]
                         },
                         "Rules": [
                             {
-                                "LocationId": "abc",
-                                "Domain": "abc",
+                                "LocationId": "lbl-*****",
+                                "Domain": "www.zrh.com",
                                 "IsMatch": true,
                                 "Certificate": {
-                                    "CertId": "abc",
+                                    "CertId": "jesux****",
                                     "DnsNames": [
-                                        "abc"
+                                        "www.zrh.com"
                                     ]
                                 },
                                 "NoMatchDomains": [
-                                    "abc"
+                                    "www.zrhtest.com"
                                 ]
                             }
                         ],
                         "NoMatchDomains": [
-                            "abc"
+                            "www.zrhtest.com"
                         ]
                     }
                 ]
@@ -62,8 +62,8 @@ Output:
         ],
         "AsyncTotalNum": 0,
         "AsyncOffset": 0,
-        "AsyncCacheTime": "abc",
-        "RequestId": "abc"
+        "AsyncCacheTime": "2023-12-09 12:00:00",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

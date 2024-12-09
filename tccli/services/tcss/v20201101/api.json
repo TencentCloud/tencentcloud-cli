@@ -13528,7 +13528,7 @@
         {
           "disabled": false,
           "document": "受影响的节点列表",
-          "example": "[{\"ClusterId\": \"cls-6q97****\",\"NodeName\": \"inode****\", \"ClusterName\": \"cluster-1****\", \"ClusterVersion\": \"1.26.1\", \"ContainerRuntime\": \"eks:/****\", \"InstanceId\": \"ins-mlyx****\", \"InstanceRole\": \"WORKER\", \"NodeName\": \"cluster-node-1****\", \"PrivateIpAddresses\": \"10.255****\", \"Region\": null, \"VerifyInfo\": \"docker version emulate docker cli using podman. create /etc/containers/nodocker to quiet msg.\\npodman version 4.9.4-rhel(/bin/docker****)\"}]",
+          "example": "[{\"ClusterId\": \"cls-6q97v****\",\"NodeName\": \"inode****\", \"ClusterName\": \"cluster-1****\", \"ClusterVersion\": \"1.26.1\", \"ContainerRuntime\": \"eks:/****\", \"InstanceId\": \"ins-mlyx****\", \"InstanceRole\": \"WORKER\", \"NodeName\": \"cluster-node-1****\", \"PrivateIpAddresses\": \"10.255****\", \"Region\": null, \"VerifyInfo\": \"docker version emulate docker cli using podman. create /etc/containers/nodocker to quiet msg.\\npodman version 4.9.4-rhel(/bin/docker****)\"}]",
           "member": "AffectedNodeItem",
           "name": "AffectedNodeList",
           "output_required": true,

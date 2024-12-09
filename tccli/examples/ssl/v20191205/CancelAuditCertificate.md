@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli ssl CancelAuditCertificate --cli-unfold-argument  \
-    --CertificateId abcdefg
+    --CertificateId hehj***jsj
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx-xxx-xxx-xxx",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456",
         "Result": true
     }
 }

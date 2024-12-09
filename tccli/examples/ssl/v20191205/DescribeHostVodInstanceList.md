@@ -6,12 +6,11 @@ Input:
 
 ```
 tccli ssl DescribeHostVodInstanceList --cli-unfold-argument  \
-    --CertificateId abc \
+    --CertificateId yX1eNoWz \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
-    --ResourceType abc \
-    --OldCertificateId abc
+    --Filters.0.FilterKey DomainMatch \
+    --Filters.0.FilterValue 1 \
+    --OldCertificateId HJ*****gg
 ```
 
 Output: 

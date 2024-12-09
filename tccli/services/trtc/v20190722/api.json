@@ -4912,7 +4912,7 @@
         },
         {
           "disabled": false,
-          "document": "SEI消息的payload_type，取值范围5、100-254（244除外，244为我们内部自定义的时间戳SEI）。",
+          "document": "SEI消息的PayloadType，取值范围5、100-254（244除外，244为我们内部自定义的时间戳SEI）。\n注：部分播放器可能不支持PayloadType为5带PayloadUuid的标准类型，建议优先使用其他PayloadType。",
           "example": "101",
           "member": "uint64",
           "name": "PayloadType",
@@ -8482,8 +8482,7 @@
           "member": "string",
           "name": "SubscribeAudioUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8492,8 +8491,7 @@
           "member": "string",
           "name": "UnSubscribeAudioUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8502,8 +8500,7 @@
           "member": "string",
           "name": "SubscribeVideoUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -8512,8 +8509,7 @@
           "member": "string",
           "name": "UnSubscribeVideoUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

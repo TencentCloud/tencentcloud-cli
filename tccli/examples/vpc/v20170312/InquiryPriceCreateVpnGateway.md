@@ -20,13 +20,13 @@ Output:
                 "OriginalPrice": 380,
                 "DiscountPrice": 380,
                 "UnitPrice": 0,
-                "ChargeUnit": ""
+                "ChargeUnit": "none"
             },
             "BandwidthPrice": {
                 "OriginalPrice": 0,
                 "DiscountPrice": 0,
                 "UnitPrice": 0,
-                "ChargeUnit": ""
+                "ChargeUnit": "none"
             }
         },
         "RequestId": "1b2534de-3f38-4913-921a-af5ff1a9cb73"
@@ -52,11 +52,15 @@ Output:
     "Response": {
         "Price": {
             "InstancePrice": {
+                "OriginalPrice": 0.48,
                 "UnitPrice": 0.48,
+                "DiscountPrice": 0.48,
                 "ChargeUnit": "HOUR"
             },
             "BandwidthPrice": {
+                "OriginalPrice": 0.8,
                 "UnitPrice": 0.8,
+                "DiscountPrice": 0.8,
                 "ChargeUnit": "GB"
             }
         },

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl CheckCertificateDomainVerification --cli-unfold-argument  \
-    --CertificateId xx
+    --CertificateId hehk**js
 ```
 
 Output: 
@@ -15,19 +15,17 @@ Output:
     "Response": {
         "VerificationResults": [
             {
-                "Domain": "xx",
-                "CheckValue": [
-                    "xx"
-                ],
-                "LocalCheckFailReason": "xx",
-                "LocalCheck": 0,
-                "CaCheck": 0,
-                "Frequently": true,
-                "VerifyType": "xx",
+                "Domain": "*.umcare.cn",
+                "VerifyType": "DNS",
+                "LocalCheck": 1,
+                "CaCheck": 1,
+                "LocalCheckFailReason": "",
+                "CheckValue": [],
+                "Frequently": false,
                 "Issued": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

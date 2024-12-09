@@ -15,7 +15,7 @@ Output:
     "Response": {
         "IdKeys": [
             {
-                "SecretId": "AKID5Cn***",
+                "SecretId": "AKID***",
                 "CreateTime": 1575517111,
                 "Status": 2
             }

@@ -10,7 +10,7 @@ tccli postgres CreateAccount --cli-unfold-argument  \
     --UserName user_normal \
     --Password Test_password1 \
     --Type normal \
-    --Remark 
+    --Remark 普通账号
 ```
 
 Output: 

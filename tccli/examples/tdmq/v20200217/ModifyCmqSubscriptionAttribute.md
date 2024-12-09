@@ -9,7 +9,7 @@ tccli tdmq ModifyCmqSubscriptionAttribute --cli-unfold-argument  \
     --TopicName check-topic \
     --SubscriptionName check-sub \
     --NotifyStrategy BACKOFF_RETRY \
-    --FilterTags aa
+    --FilterTags ins
 ```
 
 Output: 

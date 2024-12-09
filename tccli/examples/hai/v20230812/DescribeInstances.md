@@ -19,7 +19,7 @@ Output:
         "InstanceSet": [
             {
                 "InstanceId": "hai-jklfaded",
-                "InstanceName": "abc",
+                "InstanceName": "hai",
                 "InstanceState": "RUNNING",
                 "ApplicationName": "pytorch",
                 "BundleName": "基础型",

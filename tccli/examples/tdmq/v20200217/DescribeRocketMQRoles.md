@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeRocketMQRoles --cli-unfold-argument  \
-    --RoleName  \
+    --RoleName test_role_name \
     --Offset 0 \
     --Limit 20 \
     --ClusterId rocketmq-2p9vx3ax9jxg \

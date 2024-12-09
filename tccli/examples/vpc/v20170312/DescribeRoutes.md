@@ -23,8 +23,8 @@ Output:
                 "GatewayId": "172.16.0.25",
                 "Enabled": true,
                 "PublishedToVbc": true,
-                "RouteTableId": "rtb-123456",
-                "RouteItemId": "abc",
+                "RouteTableId": "rtb-nswq8wkq",
+                "RouteItemId": "rti-hj3he929",
                 "RouteDescription": "",
                 "CreatedTime": "2020-01-01 10:00:00"
             }

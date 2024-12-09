@@ -312,7 +312,7 @@ Output:
             "TaskStatus": 8,
             "TaskTimeCost": 110,
             "CallbackURL": "http://example.com/api/callback",
-            "Label": "xxx",
+            "Label": "",
             "TextMetadata": null,
             "ImageMetadata": null,
             "AudioMetadata": null,

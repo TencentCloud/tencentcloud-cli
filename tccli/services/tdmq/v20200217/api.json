@@ -575,11 +575,11 @@
       "status": "online"
     },
     "DescribeRabbitMQVirtualHostList": {
-      "document": "RabbitMQ专享版查询虚拟主机列表",
+      "document": "消息队列TDMQ RabbitMQ 有一个存量旧接口没下线，目前实际上已经不在产品中使用：DescribeRabbitMQVirtualHostList，这个接口很久前已经被 DescribeRabbitMQVirtualHost 替换掉。已无用户在调用。\n\nRabbitMQ专享版查询虚拟主机列表",
       "input": "DescribeRabbitMQVirtualHostListRequest",
       "name": "RabbitMQ专享版查询虚拟主机列表",
       "output": "DescribeRabbitMQVirtualHostListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQCluster": {
       "document": "获取单个RocketMQ集群信息",
@@ -10120,7 +10120,7 @@
         {
           "disabled": false,
           "document": "迁移任务名称",
-          "example": "无",
+          "example": "4ed3a07b-36ef-4522-968b-5434dff663xi",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -10129,7 +10129,7 @@
         {
           "disabled": false,
           "document": "分页大小",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -10138,7 +10138,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -13511,7 +13511,7 @@
         {
           "disabled": false,
           "document": "BindingKey数量不超过5个， 每个BindingKey长度不超过64字节，该字段表示订阅接收消息的过滤策略，每个BindingKey最多含有15个“.”， 即最多16个词组。",
-          "example": "[\"aa\"]",
+          "example": "[\"ins\"]",
           "member": "string",
           "name": "BindingKey",
           "required": false,

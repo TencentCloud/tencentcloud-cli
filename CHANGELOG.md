@@ -1,3 +1,185 @@
+# Release 3.0.1113.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 15 次发布
+
+发布时间：2024-12-10 01:08:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ImageOutpainting](http://document.tencentcloudapi.woa.com/document/product/1728/85467)
+
+
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 18 次发布
+
+发布时间：2024-12-10 01:10:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Docker](http://document.tencentcloudapi.woa.com/document/product/599/15912#Docker)
+
+	* <font color="#dd0000">**修改成员**：</font>User, Password
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 113 次发布
+
+发布时间：2024-12-10 01:16:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeServerlessInstanceSpecs](http://document.tencentcloudapi.woa.com/document/product/1003/85468)
+
+修改接口：
+
+* [ModifyServerlessStrategy](http://document.tencentcloudapi.woa.com/document/product/1003/84781)
+
+	* <font color="#dd0000">**删除入参**：</font>AutoScaleUp, AutoScaleDown
+
+
+新增数据结构：
+
+* [ServerlessSpec](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ServerlessSpec)
+* [ServerlessZoneStockInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ServerlessZoneStockInfo)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 72 次发布
+
+发布时间：2024-12-10 01:19:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudInstance](http://document.tencentcloudapi.woa.com/document/product/589/85470)
+* [ModifyPodNum](http://document.tencentcloudapi.woa.com/document/product/589/85469)
+
+新增数据结构：
+
+* [AuthenticationInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#AuthenticationInfo)
+* [CLBSetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#CLBSetting)
+* [CloudResource](http://document.tencentcloudapi.woa.com/document/product/589/33981#CloudResource)
+* [CreateComputeResourceConfig](http://document.tencentcloudapi.woa.com/document/product/589/33981#CreateComputeResourceConfig)
+* [CustomImage](http://document.tencentcloudapi.woa.com/document/product/589/33981#CustomImage)
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/589/33981#Disk)
+* [ExternalAccess](http://document.tencentcloudapi.woa.com/document/product/589/33981#ExternalAccess)
+* [GlobalRouterPluginSetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#GlobalRouterPluginSetting)
+* [HostPathVolumeSource](http://document.tencentcloudapi.woa.com/document/product/589/33981#HostPathVolumeSource)
+* [ImageInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#ImageInfo)
+* [ImagePullSecret](http://document.tencentcloudapi.woa.com/document/product/589/33981#ImagePullSecret)
+* [NetworkPlugin](http://document.tencentcloudapi.woa.com/document/product/589/33981#NetworkPlugin)
+* [NodeAffinity](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeAffinity)
+* [NodeSelector](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeSelector)
+* [NodeSelectorRequirement](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeSelectorRequirement)
+* [NodeSelectorTerm](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeSelectorTerm)
+* [PaySetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#PaySetting)
+* [PreferredSchedulingTerm](http://document.tencentcloudapi.woa.com/document/product/589/33981#PreferredSchedulingTerm)
+* [VolumeSetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#VolumeSetting)
+* [VpcCniPluginSetting](http://document.tencentcloudapi.woa.com/document/product/589/33981#VpcCniPluginSetting)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 57 次发布
+
+发布时间：2024-12-10 01:23:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBatchProduction](http://document.tencentcloudapi.woa.com/document/product/1081/63808)
+
+	* 新增出参：Status
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 11 次发布
+
+发布时间：2024-12-10 01:25:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadDoc](http://document.tencentcloudapi.woa.com/document/product/1764/84928)
+
+	* 新增入参：KnowledgeBaseId, FileName, FileType, FileUrl, Config
+
+	* 新增出参：DocId
+
+
+新增数据结构：
+
+* [SegmentationConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#SegmentationConfig)
+
+修改数据结构：
+
+* [CreateSplitDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateSplitDocumentFlowConfig)
+
+	* 新增成员：MaxChunkSize
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 72 次发布
+
+发布时间：2024-12-10 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ParseLiveStreamProcessNotification](http://document.tencentcloudapi.woa.com/document/product/862/39229)
+
+	* 新增出参：Timestamp, Sign
+
+
+修改数据结构：
+
+* [ImageEnhanceConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ImageEnhanceConfig)
+
+	* 新增成员：ColorEnhance, SharpEnhance, FaceEnhance
+
+
+
+
 # Release 3.0.1112.1
 
 ## 文件存储(cfs) 版本：2019-07-19

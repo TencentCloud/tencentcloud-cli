@@ -9,7 +9,8 @@ tccli postgres ModifyBackupDownloadRestriction --cli-unfold-argument  \
     --RestrictionType CUSTOMIZE \
     --VpcRestrictionEffect ALLOW \
     --VpcIdSet vpc-15ld6dhr \
-    --IpRestrictionEffect 
+    --IpRestrictionEffect ALLOW \
+    --IpSet 10.*.*.*
 ```
 
 Output: 

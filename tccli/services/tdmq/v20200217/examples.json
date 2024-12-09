@@ -789,7 +789,7 @@
     "DescribeRocketMQRoles": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQRoles\n<公共请求参数>\n\n{\n    \"RoleName\": \"\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"Filters\": [\n        {\n            \"Name\": \"RoleName\",\n            \"Values\": [\n                \"test_role_name\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQRoles\n<公共请求参数>\n\n{\n    \"RoleName\": \"test_role_name\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"ClusterId\": \"rocketmq-2p9vx3ax9jxg\",\n    \"Filters\": [\n        {\n            \"Name\": \"RoleName\",\n            \"Values\": [\n                \"test_role_name\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RoleSets\": [\n            {\n                \"RoleName\": \"test_role_name\",\n                \"Token\": \"eyJrZXlJZCI6InN1bmdvxxxxx0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY\",\n                \"Remark\": \"测试角色\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"UpdateTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"23ca1a58-0388-4d2d-8465-653a53addda7\"\n    }\n}",
         "title": "获取角色列表"
       }
@@ -842,7 +842,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSubscriptions\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-a5nzx52ab7jb\",\n    \"Namespace\": \"test_namespace\",\n    \"Group\": \"test_group\",\n    \"Offset\": \"0\",\n    \"Limit\": \"20\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cde7c1eb-c631-453a-999b-03c9ed38b892\",\n        \"TotalCount\": 1,\n        \"Subscriptions\": [\n            {\n                \"Topic\": \"test_topic\",\n                \"Type\": \"Normal\",\n                \"PartitionNum\": 3,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"*\",\n                \"Status\": 0,\n                \"ConsumerLag\": 120\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cde7c1eb-c631-453a-999b-03c9ed38b892\",\n        \"TotalCount\": 1,\n        \"Subscriptions\": [\n            {\n                \"Topic\": \"test_topic\",\n                \"Type\": \"Normal\",\n                \"PartitionNum\": 3,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"test_tag\",\n                \"Status\": 0,\n                \"ConsumerLag\": 120\n            }\n        ]\n    }\n}",
         "title": "获取rocketmq消费组订阅关系"
       }
     ],
@@ -937,7 +937,7 @@
     "ImportRocketMQConsumerGroups": [
       {
         "document": "导入消费组列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQConsumerGroups\n<公共请求参数>\n\n{\n    \"Groups\": [\n        {\n            \"Namespace\": \"\",\n            \"GroupName\": \"ConsumerGroup_1039\",\n            \"ConsumeBroadcastEnable\": true,\n            \"ConsumeEnable\": true,\n            \"Remark\": \"abc\",\n            \"ConsumerGroupType\": \"TCP\"\n        }\n    ],\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQConsumerGroups\n<公共请求参数>\n\n{\n    \"Groups\": [\n        {\n            \"Namespace\": \"test_ns\",\n            \"GroupName\": \"test_group\",\n            \"ConsumeBroadcastEnable\": true,\n            \"ConsumeEnable\": true,\n            \"Remark\": \"remark info\",\n            \"ConsumerGroupType\": \"TCP\"\n        }\n    ],\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"78ef8089-2ec3-4784-ad21-68c71d289d69\"\n    }\n}",
         "title": "导入消费组列表"
       }
@@ -945,7 +945,7 @@
     "ImportRocketMQTopics": [
       {
         "document": "导入主题列表",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQTopics\n<公共请求参数>\n\n{\n    \"Topics\": [\n        {\n            \"Namespace\": \"\",\n            \"TopicName\": \"Topic_11334\",\n            \"Type\": \"Normal\",\n            \"Partitions\": 3,\n            \"Remark\": \"236\"\n        }\n    ],\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportRocketMQTopics\n<公共请求参数>\n\n{\n    \"Topics\": [\n        {\n            \"Namespace\": \"test_ns\",\n            \"TopicName\": \"test_topic\",\n            \"Type\": \"Normal\",\n            \"Partitions\": 3,\n            \"Remark\": \"remark info\"\n        }\n    ],\n    \"TaskId\": \"700000780519-o4n3m5g97wgr-3391d15d\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"73996928-797f-445a-9572-25ed6c588d30\"\n    }\n}",
         "title": "导入主题列表"
       }
@@ -985,7 +985,7 @@
     "ModifyCmqSubscriptionAttribute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmqSubscriptionAttribute\n<公共请求参数>\n\n{\n    \"TopicName\": \"check-topic\",\n    \"SubscriptionName\": \"check-sub\",\n    \"NotifyStrategy\": \"BACKOFF_RETRY\",\n    \"FilterTags\": [\n        \"aa\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmqSubscriptionAttribute\n<公共请求参数>\n\n{\n    \"TopicName\": \"check-topic\",\n    \"SubscriptionName\": \"check-sub\",\n    \"NotifyStrategy\": \"BACKOFF_RETRY\",\n    \"FilterTags\": [\n        \"ins\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "修改订阅属性"
       }

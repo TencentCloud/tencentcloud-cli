@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ckafka DescribeDatahubTask --cli-unfold-argument  \
-    --TaskId abc
+    --TaskId task-test
 ```
 
 Output: 

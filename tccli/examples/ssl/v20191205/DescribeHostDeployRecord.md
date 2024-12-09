@@ -16,16 +16,16 @@ Output:
         "TotalCount": 1,
         "DeployRecordList": [
             {
-                "Id": 1,
-                "CertId": "abc",
-                "ResourceType": "abc",
-                "Region": "abc",
+                "Id": 748932,
+                "CertId": "vyRlKIeI",
+                "ResourceType": "clb",
+                "Region": "ap-guangzhou",
                 "Status": 1,
-                "CreateTime": "abc",
-                "UpdateTime": "abc"
+                "CreateTime": "2023-09-19 12:00:00",
+                "UpdateTime": "2023-09-19 13:00:00"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

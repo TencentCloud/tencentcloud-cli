@@ -7,16 +7,16 @@ Input:
 ```
 tccli ssl ModifyCertificatesExpiringNotificationSwitch --cli-unfold-argument  \
     --SwitchStatus 1 \
-    --CertificateIds xx
+    --CertificateIds Thd**jjd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456",
         "CertificateIds": [
-            "xx"
+            "Thd**jjd"
         ]
     }
 }

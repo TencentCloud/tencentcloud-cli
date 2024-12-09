@@ -14,9 +14,9 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxx-xxx-xxx-xxx",
-        "DownloadCertificateUrl": "http://xxx.zip",
-        "DownloadFilename": "xxx.com_nginx.zip"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456",
+        "DownloadCertificateUrl": "http://****.zip",
+        "DownloadFilename": "****.com_nginx.zip"
     }
 }
 ```

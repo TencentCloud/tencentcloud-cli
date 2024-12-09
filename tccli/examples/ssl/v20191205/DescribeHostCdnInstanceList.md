@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli ssl DescribeHostCdnInstanceList --cli-unfold-argument  \
-    --CertificateId abc \
+    --CertificateId hhj****k \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
-    --ResourceType abc \
-    --OldCertificateId abc \
-    --Offset 1 \
-    --Limit 1
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
+    --ResourceType cdn \
+    --OldCertificateId yey***j \
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -22,16 +22,17 @@ Output:
     "Response": {
         "InstanceList": [
             {
-                "Domain": "abc",
-                "CertId": "abc",
-                "Status": "abc"
+                "Domain": "www.zrh.com",
+                "CertId": "gss***kl",
+                "Status": "normal",
+                "HttpsBillingSwitch": "1"
             }
         ],
         "TotalCount": 1,
         "AsyncTotalNum": 0,
         "AsyncOffset": 0,
-        "AsyncCacheTime": "abc",
-        "RequestId": "abc"
+        "AsyncCacheTime": "2023-10-12 12:00:00",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

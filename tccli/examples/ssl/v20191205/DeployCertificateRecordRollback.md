@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli ssl DeployCertificateRecordRollback --cli-unfold-argument  \
-    --DeployRecordId 1
+    --DeployRecordId 1737382
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DeployRecordId": 0,
-        "RequestId": "abc"
+        "DeployRecordId": 885943,
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

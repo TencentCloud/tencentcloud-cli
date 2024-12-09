@@ -1,18 +1,18 @@
 {
   "actions": {
     "DescribeNewUserAcquisition": {
-      "document": "判断新用户信誉值",
+      "document": "产品控制台已下线，服务没有调用量，申请预下线\n\n判断新用户信誉值",
       "input": "DescribeNewUserAcquisitionRequest",
       "name": "拉新判断服务",
       "output": "DescribeNewUserAcquisitionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeStockEstimation": {
-      "document": "查询存量判断服务",
+      "document": "产品控制台已下线，服务没有调用量，申请预下线\n\n查询存量判断服务",
       "input": "DescribeStockEstimationRequest",
       "name": "存量判断服务",
       "output": "DescribeStockEstimationResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

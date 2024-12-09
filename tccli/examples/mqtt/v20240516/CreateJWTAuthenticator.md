@@ -9,7 +9,7 @@ tccli mqtt CreateJWTAuthenticator --cli-unfold-argument  \
     --InstanceId mqtt-jeredv33 \
     --Algorithm hmac-based \
     --From username \
-    --Secret 123 \
+    --Secret secret1 \
     --Status open
 ```
 

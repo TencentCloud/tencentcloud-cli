@@ -17,7 +17,7 @@ Output:
     "Response": {
         "DeployRecordId": 1,
         "DeployStatus": 0,
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```
@@ -41,7 +41,7 @@ Output:
     "Response": {
         "DeployRecordId": 1,
         "DeployStatus": 0,
-        "RequestId": "abc"
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

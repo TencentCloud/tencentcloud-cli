@@ -8,7 +8,7 @@ Input:
 tccli postgres DeleteReadOnlyGroupNetworkAccess --cli-unfold-argument  \
     --SubnetId subnet-4s9dejli \
     --VpcId vpc-gaestjaf \
-    --Vip 127.0.0.1 \
+    --Vip 127.*.*.* \
     --ReadOnlyGroupId pgro-4t9c6g7k
 ```
 

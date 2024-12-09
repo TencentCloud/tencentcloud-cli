@@ -1,6 +1,6 @@
 **Example 1: 修改参数模板**
 
-无
+修改模版中的参数项
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli postgres ModifyParameterTemplate --cli-unfold-argument  \
     --TemplateId 497857b4-4676-5583-8359-b697fe5968d9 \
     --TemplateName test_template \
-    --TemplateDescription test \
+    --TemplateDescription This template is used for testing environment \
     --ModifyParamEntrySet.0.Name max_wal_senders \
     --ModifyParamEntrySet.0.ExpectedValue 360 \
     --ModifyParamEntrySet.1.Name max_logical_replication_workers \

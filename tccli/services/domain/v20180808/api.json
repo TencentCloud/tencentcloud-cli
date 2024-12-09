@@ -7511,6 +7511,15 @@
           "name": "DnsTransfer",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户APPID",
+          "example": "12456",
+          "member": "string",
+          "name": "ToAppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7524,7 +7533,7 @@
           "example": "1",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

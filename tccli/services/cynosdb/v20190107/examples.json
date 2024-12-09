@@ -88,6 +88,14 @@
         "title": "关闭数据库代理"
       }
     ],
+    "CloseProxyEndPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseProxyEndPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"ProxyGroupId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "关闭数据库代理连接地址"
+      }
+    ],
     "CloseWan": [
       {
         "document": "",
@@ -570,6 +578,14 @@
         "title": "查询实例列表"
       }
     ],
+    "DescribeInstancesWithinSameCluster": [
+      {
+        "document": "查询统一集群下实例ID列表",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesWithinSameCluster\n<公共请求参数>\n\n{\n    \"UniqVpcId\": \"abc\",\n    \"Vip\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询统一集群下实例ID列表"
+      }
+    ],
     "DescribeIsolatedInstances": [
       {
         "document": "",
@@ -694,6 +710,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRollbackTimeRange\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-oib3wx0i\"\n}",
         "output": "{\n    \"Response\": {\n        \"RollbackTimeRanges\": [\n            {\n                \"TimeRangeStart\": \"2019-01-13 02:12:05\",\n                \"TimeRangeEnd\": \"2019-01-20 02:10:12\"\n            }\n        ],\n        \"TimeRangeStart\": \"\",\n        \"TimeRangeEnd\": \"\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询回档时间范围"
+      }
+    ],
+    "DescribeServerlessInstanceSpecs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessInstanceSpecs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Specs\": [\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.5,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.25,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 1000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 1\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.5,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 5000,\n                \"MinCpu\": 0.0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            },\n            {\n                \"MaxStorageSize\": 10000,\n                \"MinCpu\": 0.0,\n                \"StockCount\": 0,\n                \"MaxCpu\": 0.0,\n                \"HasStock\": true,\n                \"IsDefault\": 0\n            }\n        ],\n        \"RequestId\": \"52-a341-4269-bce2-221ec952ea16|m\"\n    }\n}",
+        "title": "查询Serverless实例可选规格"
       }
     ],
     "DescribeServerlessStrategy": [
@@ -1054,6 +1078,12 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServerlessStrategy\n<公共请求参数>\n\n{\n    \"AutoPause\": \"no\",\n    \"AutoScaleUpDelay\": 200,\n    \"AutoPauseDelay\": 100,\n    \"MinCpu\": 0.25,\n    \"MaxCpu\": 2,\n    \"ClusterId\": \"cynosdbmysql-8vcxoq75\",\n    \"AutoScaleDownDelay\": 300\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1008300,\n        \"RequestId\": \"c3da7958-23e8-11eb-8e52-525400b7dd5a\"\n    }\n}",
         "title": "修改serverless策略"
+      },
+      {
+        "document": "调整主节点",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServerlessStrategy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-92oecwyv\",\n    \"MinCpu\": 2,\n    \"MaxCpu\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 917319,\n        \"RequestId\": \"a7ef1e81-e306-45fd-ab3d-37a6ae7ecf96\"\n    }\n}",
+        "title": "变更serverless策略"
       }
     ],
     "ModifyVipVport": [

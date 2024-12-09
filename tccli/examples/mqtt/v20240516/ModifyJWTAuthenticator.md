@@ -9,8 +9,8 @@ tccli mqtt ModifyJWTAuthenticator --cli-unfold-argument  \
     --InstanceId mqtt-mmgej724 \
     --Algorithm hmac-based \
     --From username \
-    --Secret 123 \
-    --Remark 2222222
+    --Secret secret1 \
+    --Remark remark1
 ```
 
 Output: 
