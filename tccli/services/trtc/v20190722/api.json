@@ -7154,8 +7154,7 @@
           "member": "string",
           "name": "SubscribeAudioUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7164,8 +7163,7 @@
           "member": "string",
           "name": "UnSubscribeAudioUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7174,8 +7172,7 @@
           "member": "string",
           "name": "SubscribeVideoUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7184,8 +7181,7 @@
           "member": "string",
           "name": "UnSubscribeVideoUserIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

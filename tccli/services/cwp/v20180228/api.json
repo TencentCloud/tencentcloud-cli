@@ -22481,7 +22481,7 @@
         {
           "disabled": false,
           "document": "基线信息列表",
-          "example": "[             {                 \"Name\": \"基线名1\",                 \"Level\": 1,                 \"RuleCount\": 11,                 \"HostCount\": 12,                 \"Status\": 0,                 \"CategoryId\": 2,                 \"LastScanTime\": \"2024-11-04 03:43:26\",                 \"MaxStatus\": 2,                 \"BaselineFailCount\": 29             }         ]",
+          "example": "[             {                 \"Name\": \"基线名A\",                 \"Level\": 1,                 \"RuleCount\": 11,                 \"HostCount\": 12,                 \"Status\": 0,                 \"CategoryId\": 2,                 \"LastScanTime\": \"2024-11-04 03:43:26\",                 \"MaxStatus\": 2,                 \"BaselineFailCount\": 29             }         ]",
           "member": "BaselineInfo",
           "name": "BaselineList",
           "output_required": true,

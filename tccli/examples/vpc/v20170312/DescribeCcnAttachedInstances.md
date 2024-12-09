@@ -16,99 +16,27 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "InstanceSet": [
             {
-                "CcnId": "ccn-gree226l",
+                "CcnId": "ccn-ch28gexx",
                 "InstanceType": "VPC",
-                "InstanceId": "vpc-2u0s99fx",
-                "InstanceName": "test1",
+                "InstanceId": "vpc-ch28gexx",
+                "InstanceName": "instance-name",
                 "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "38059483",
+                "InstanceUin": "1234611233",
                 "CidrBlock": [
-                    "10.0.0.0/16"
-                ],
-                "State": "PENDING",
-                "CcnUin": "100000072292",
-                "InstanceArea": "CHINA_MAINLAND",
-                "AttachedTime": "2021-03-03 16:19:44",
-                "RouteTableId": null,
-                "RouteTableName": null,
-                "Description": ""
-            },
-            {
-                "CcnId": "ccn-gree226l",
-                "InstanceType": "VPC",
-                "InstanceId": "vpc-r1ckkpid",
-                "InstanceName": "vpc0420",
-                "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "88419914",
-                "CidrBlock": [
-                    "10.33.0.0/16"
-                ],
-                "State": "REJECTED",
-                "CcnUin": "100000072292",
-                "InstanceArea": "CHINA_MAINLAND",
-                "AttachedTime": "2021-03-03 16:19:44",
-                "RouteTableId": null,
-                "RouteTableName": null,
-                "Description": ""
-            },
-            {
-                "CcnId": "ccn-gree226l",
-                "InstanceType": "VPC",
-                "InstanceId": "vpc-3dr1zrr9",
-                "InstanceName": "10.100.0.0/16",
-                "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "979137",
-                "CidrBlock": [
-                    "10.100.0.0/16"
+                    "10.0.0.0/24"
                 ],
                 "State": "ACTIVE",
-                "CcnUin": "100000072292",
+                "AttachedTime": "2020-09-22 00:00:00",
+                "CcnUin": "1234611233",
                 "InstanceArea": "CHINA_MAINLAND",
-                "AttachedTime": "2021-03-03 16:19:44",
-                "RouteTableId": null,
-                "RouteTableName": null,
-                "Description": ""
-            },
-            {
-                "CcnId": "ccn-gree226l",
-                "InstanceType": "DIRECTCONNECT",
-                "InstanceId": "dcg-98qosdc3",
-                "InstanceName": "",
-                "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "979137",
-                "CidrBlock": [
-                    "192.168.0.0/24"
-                ],
-                "State": "ACTIVE",
-                "CcnUin": "100000072292",
-                "InstanceArea": "CHINA_MAINLAND",
-                "AttachedTime": "2021-03-03 16:19:44",
-                "RouteTableId": null,
-                "RouteTableName": null,
-                "Description": ""
-            },
-            {
-                "CcnId": "ccn-gree226l",
-                "InstanceType": "DIRECTCONNECT",
-                "InstanceId": "dcg-ni7ps9kb",
-                "InstanceName": "",
-                "InstanceRegion": "ap-guangzhou",
-                "InstanceUin": "979137",
-                "CidrBlock": [
-                    "192.168.1.0/24"
-                ],
-                "State": "ACTIVE",
-                "CcnUin": "100000072292",
-                "InstanceArea": "CHINA_MAINLAND",
-                "AttachedTime": "2021-03-03 16:19:44",
-                "RouteTableId": null,
-                "RouteTableName": null,
-                "Description": ""
+                "Description": "desc",
+                "RouteTableId": "ccnr-xxxxxxxx",
+                "RouteTableName": "ccnr-name"
             }
         ],
-        "TotalCount": 5,
         "RequestId": "0227fa04-3298-470c-8477-149f309a386a"
     }
 }

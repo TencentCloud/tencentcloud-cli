@@ -7,8 +7,8 @@ Input:
 ```
 tccli postgres ModifyDatabaseOwner --cli-unfold-argument  \
     --DBInstanceId postgres-mnhbbw99 \
-    --DatabaseName testdatabase \
-    --DatabaseOwner test
+    --DatabaseName alice_database \
+    --DatabaseOwner alice
 ```
 
 Output: 

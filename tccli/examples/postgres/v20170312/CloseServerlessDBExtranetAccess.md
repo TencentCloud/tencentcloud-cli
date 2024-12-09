@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli postgres CloseServerlessDBExtranetAccess --cli-unfold-argument  \
-    --DBInstanceName test \
+    --DBInstanceName test-db-instance \
     --DBInstanceId postgres-apzvwncr
 ```
 

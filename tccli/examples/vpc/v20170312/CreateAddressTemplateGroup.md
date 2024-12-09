@@ -23,6 +23,8 @@ Output:
             ],
             "AddressTemplateSet": [
                 {
+                    "AddressTemplateId": "abc",
+                    "AddressTemplateName": "abc",
                     "To": "10.1.1.2/22",
                     "From": "10.1.1.3/22"
                 }

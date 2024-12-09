@@ -25,3 +25,26 @@ Output:
 }
 ```
 
+**Example 2: 变更serverless策略**
+
+调整主节点
+
+Input: 
+
+```
+tccli cynosdb ModifyServerlessStrategy --cli-unfold-argument  \
+    --ClusterId cynosdbmysql-92oecwyv \
+    --MinCpu 2 \
+    --MaxCpu 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": 917319,
+        "RequestId": "a7ef1e81-e306-45fd-ab3d-37a6ae7ecf96"
+    }
+}
+```
+

@@ -7,7 +7,7 @@ Input:
 ```
 tccli postgres DeleteDBInstanceNetworkAccess --cli-unfold-argument  \
     --SubnetId subnet-4s9dejli \
-    --Vip 127.0.01 \
+    --Vip 127.*.*.* \
     --VpcId vpc-gaestjaf \
     --DBInstanceId postgres-6bwgamo3
 ```

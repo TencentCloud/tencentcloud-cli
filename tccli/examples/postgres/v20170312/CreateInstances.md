@@ -32,7 +32,7 @@ Output:
         "DBInstanceIdSet": [
             "postgres-xxxxx"
         ],
-        "BillId": "123"
+        "BillId": "20181225711000768276471"
     }
 }
 ```
@@ -71,7 +71,7 @@ Output:
         "DBInstanceIdSet": [
             "postgres-xxxxx"
         ],
-        "BillId": "123"
+        "BillId": "20181225711000768276476"
     }
 }
 ```
@@ -113,7 +113,7 @@ Output:
         "DBInstanceIdSet": [
             "postgres-xxxxx"
         ],
-        "BillId": "123"
+        "BillId": "20181225711000768276479"
     }
 }
 ```

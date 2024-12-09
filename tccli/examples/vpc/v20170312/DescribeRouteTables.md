@@ -26,7 +26,7 @@ Output:
             {
                 "VpcId": "vpc-2at5y1pn",
                 "RouteTableId": "rtb-l2h8d7c2",
-                "RouteTableName": "TestRouteTable",
+                "RouteTableName": "RouteTable",
                 "AssociationSet": [],
                 "RouteSet": [
                     {
@@ -47,8 +47,8 @@ Output:
                 "Main": false,
                 "TagSet": [
                     {
-                        "Value": "test",
-                        "Key": "test"
+                        "Value": "tag-key",
+                        "Key": "tag-value"
                     }
                 ],
                 "LocalCidrForCcn": [
@@ -88,7 +88,7 @@ Output:
             {
                 "VpcId": "vpc-2at5y1pn",
                 "RouteTableId": "rtb-l2h8d7c2",
-                "RouteTableName": "TestRouteTable",
+                "RouteTableName": "RouteTable",
                 "AssociationSet": [],
                 "RouteSet": [
                     {

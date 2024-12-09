@@ -540,11 +540,11 @@
       "status": "online"
     },
     "DescribeRabbitMQVirtualHostList": {
-      "document": "RabbitMQ专享版查询虚拟主机列表",
+      "document": "消息队列TDMQ RabbitMQ 有一个存量旧接口没下线，目前实际上已经不在产品中使用：DescribeRabbitMQVirtualHostList，这个接口很久前已经被 DescribeRabbitMQVirtualHost 替换掉。已无用户在调用。\n\nRabbitMQ专享版查询虚拟主机列表",
       "input": "DescribeRabbitMQVirtualHostListRequest",
       "name": "RabbitMQ专享版查询虚拟主机列表",
       "output": "DescribeRabbitMQVirtualHostListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeRocketMQCluster": {
       "document": "获取单个RocketMQ集群信息",

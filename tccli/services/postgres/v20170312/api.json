@@ -797,7 +797,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "DBInstanceId",
+          "example": "postgres-9epegwdp",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -806,7 +806,7 @@
         {
           "disabled": false,
           "document": "只读组ID",
-          "example": "ReadOnlyGroupId",
+          "example": "pgrogrp-efacxt00",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -821,10 +821,10 @@
         {
           "disabled": false,
           "document": "流程ID",
-          "example": "1234",
+          "example": "26541",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1288,7 +1288,7 @@
         {
           "disabled": false,
           "document": "CPU核数",
-          "example": "16",
+          "example": "8",
           "member": "uint64",
           "name": "CPU",
           "output_required": true,
@@ -1298,7 +1298,7 @@
         {
           "disabled": false,
           "document": "内存大小，单位：MB",
-          "example": "131072",
+          "example": "16384",
           "member": "uint64",
           "name": "Memory",
           "output_required": true,
@@ -1308,7 +1308,7 @@
         {
           "disabled": false,
           "document": "该规格所支持最大存储容量，单位：GB",
-          "example": "3000",
+          "example": "4000",
           "member": "uint64",
           "name": "MaxStorage",
           "output_required": true,
@@ -1318,7 +1318,7 @@
         {
           "disabled": false,
           "document": "该规格所支持最小存储容量，单位：GB",
-          "example": "1000",
+          "example": "10",
           "member": "uint64",
           "name": "MinStorage",
           "output_required": true,
@@ -1328,7 +1328,7 @@
         {
           "disabled": false,
           "document": "该规格的预估QPS",
-          "example": "79000",
+          "example": "20000",
           "member": "uint64",
           "name": "QPS",
           "output_required": true,
@@ -1479,7 +1479,7 @@
         {
           "disabled": false,
           "document": "活动ID。",
-          "example": "123",
+          "example": "2364",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
@@ -1587,9 +1587,10 @@
         {
           "disabled": false,
           "document": "异步任务流程ID",
-          "example": "1234",
+          "example": "25441",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1617,7 +1618,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "test-db-instance",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -1653,7 +1654,7 @@
         {
           "disabled": false,
           "document": "创建的账号名称。",
-          "example": "test",
+          "example": "readonly_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -1662,7 +1663,7 @@
         {
           "disabled": false,
           "document": "账号对应的密码。",
-          "example": "1234qwe",
+          "example": "1234qwe!",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1780,7 +1781,7 @@
         {
           "disabled": false,
           "document": "目标VIP地址。",
-          "example": "10.10.10.220",
+          "example": "10.*.*.*",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -1795,7 +1796,7 @@
         {
           "disabled": false,
           "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "26345",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -1934,7 +1935,7 @@
         {
           "disabled": false,
           "document": "活动ID",
-          "example": "123",
+          "example": "23642",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
@@ -2063,7 +2064,7 @@
         {
           "disabled": false,
           "document": "数据库的所有者",
-          "example": "test",
+          "example": "data_team",
           "member": "string",
           "name": "DatabaseOwner",
           "required": true,
@@ -2288,7 +2289,7 @@
         {
           "disabled": false,
           "document": "活动ID。",
-          "example": "123",
+          "example": "14542",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
@@ -2462,7 +2463,7 @@
         {
           "disabled": false,
           "document": "参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@",
-          "example": "test",
+          "example": "my_custom_template",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,
@@ -2480,7 +2481,7 @@
           "example": "497857b4-4676-5583-8359-b697fe5968d9",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2508,7 +2509,7 @@
         {
           "disabled": false,
           "document": "只读实例的主实例ID。",
-          "example": "MasterDBInstanceId",
+          "example": "pgrogrp-efacxt00",
           "member": "string",
           "name": "MasterDBInstanceId",
           "required": true,
@@ -2517,7 +2518,7 @@
         {
           "disabled": false,
           "document": "售卖规格码。该参数可以通过调用[DescribeClasses](https://cloud.tencent.com/document/api/409/89019)的返回值中的SpecCode字段来获取。",
-          "example": "SpecCode",
+          "example": "pg.it.large8",
           "member": "string",
           "name": "SpecCode",
           "required": true,
@@ -2526,7 +2527,7 @@
         {
           "disabled": false,
           "document": "实例容量大小，单位：GB。",
-          "example": "1",
+          "example": "100",
           "member": "uint64",
           "name": "Storage",
           "required": true,
@@ -2553,7 +2554,7 @@
         {
           "disabled": false,
           "document": "私有网络ID，形如vpc-xxxxxxxx（该参数当前必传）。有效的VpcId可通过登录控制台查询；也可以调用接口 [DescribeVpcEx](https://cloud.tencent.com/document/api/215/1372) ，从接口返回中的unVpcId字段获取。",
-          "example": "VpcId",
+          "example": "vpc-e3t30r8t",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -2562,7 +2563,7 @@
         {
           "disabled": false,
           "document": "私有网络子网ID，形如subnet-xxxxxxxx（该参数当前必传）。有效的私有网络子网ID可通过登录控制台查询；也可以调用接口 [DescribeSubnets ](https://cloud.tencent.com/document/api/215/15784)，从接口返回中的unSubnetId字段获取。",
-          "example": "SubnetId",
+          "example": "subnet-jd9cvu0o",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -2571,7 +2572,7 @@
         {
           "disabled": false,
           "document": "实例计费类型，目前支持：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：后付费，即按量计费。</li>\n默认值：PREPAID。如果主实例为后付费，只读实例必须也为后付费。",
-          "example": "InstanceChargeType",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -2607,7 +2608,7 @@
         {
           "disabled": false,
           "document": "项目ID。",
-          "example": "1",
+          "example": "1457",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -2616,7 +2617,7 @@
         {
           "disabled": false,
           "document": "优惠活动ID",
-          "example": "1",
+          "example": "1364",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
@@ -2625,7 +2626,7 @@
         {
           "disabled": false,
           "document": "只读组ID。",
-          "example": "ReadOnlyGroupId",
+          "example": "pgrogrp-efacxt00",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": false,
@@ -2643,7 +2644,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组，该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。\n",
-          "example": "[\"sasasasd\"]",
+          "example": "[\"sg-95hf696p\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -2694,7 +2695,7 @@
         {
           "disabled": false,
           "document": "订单号列表。每个实例对应一个订单号",
-          "example": "[1,2,3]",
+          "example": "[\"20241205591002398481181\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -2704,7 +2705,7 @@
         {
           "disabled": false,
           "document": "冻结流水号",
-          "example": "BillId",
+          "example": "20241204591002395368561",
           "member": "string",
           "name": "BillId",
           "output_required": true,
@@ -2714,7 +2715,7 @@
         {
           "disabled": false,
           "document": "创建成功的实例ID集合，只在后付费情景下有返回值",
-          "example": "[\"BillId\"]",
+          "example": "[\"pgro-kdkdkx68\"]",
           "member": "string",
           "name": "DBInstanceIdSet",
           "output_required": true,
@@ -2772,7 +2773,7 @@
         {
           "disabled": false,
           "document": "目标VIP地址。",
-          "example": "10.10.10.220",
+          "example": "10.*.*.*",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -2787,7 +2788,7 @@
         {
           "disabled": false,
           "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "26415",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -4004,7 +4005,7 @@
         {
           "disabled": false,
           "document": "删除的账号名称。\t",
-          "example": "test",
+          "example": "readonly_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -4094,7 +4095,7 @@
         {
           "disabled": false,
           "document": "目标VIP地址。",
-          "example": "10.10.10.220",
+          "example": "10.*.*.*",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -4109,7 +4110,7 @@
         {
           "disabled": false,
           "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "14654",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -4221,7 +4222,7 @@
         {
           "disabled": false,
           "document": "目标VIP地址。",
-          "example": "10.10.10.220",
+          "example": "10.*.*.*",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -4236,7 +4237,7 @@
         {
           "disabled": false,
           "document": "流程ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "15234",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -4258,7 +4259,7 @@
         {
           "disabled": false,
           "document": "待删除只读组ID",
-          "example": "ReadOnlyGroupId",
+          "example": "pgrogrp-efacxt00",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -4273,10 +4274,10 @@
         {
           "disabled": false,
           "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "21321",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4295,7 +4296,7 @@
         {
           "disabled": false,
           "document": "DB实例名称，实例名和实例ID必须至少传一个，如果同时存在，将只以实例ID为准。",
-          "example": "test",
+          "example": "user-data-db",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -4340,7 +4341,7 @@
         {
           "disabled": false,
           "document": "查询此账号对某数据库对象所拥有的权限信息。",
-          "example": "test",
+          "example": "app_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -5223,7 +5224,7 @@
         {
           "disabled": false,
           "document": "数据库名字。",
-          "example": "postgres-xxx",
+          "example": "webapp-use",
           "member": "string",
           "name": "DatabaseName",
           "required": false,
@@ -5232,7 +5233,7 @@
         {
           "disabled": false,
           "document": "搜索关键字。",
-          "example": "test",
+          "example": "ERROR",
           "member": "string",
           "name": "SearchKeys",
           "required": false,
@@ -5574,7 +5575,7 @@
         {
           "disabled": false,
           "document": "实例详细信息集合。",
-          "example": "[     {         \"DBInstanceId\": \"postgres-xxxxxxxx\",         \"DBInstanceName\": \"xxx\",         \"DBInstanceStatus\": \"running\",         \"Region\": \"ap-guangzhou\",         \"Zone\": \"ap-guangzhou-3\",         \"ProjectId\": 0,         \"VpcId\": \"vpc-xxxxxxxx\",         \"SubnetId\": \"subnet-xxxxxxxx\",         \"DBCharset\": \"UTF8\",         \"DBVersion\": \"10\",         \"DBKernelVersion\": \"v10.4_r1.0\",         \"CreateTime\": \"2020-03-20 12:19:14\",         \"DBInstanceNetInfo\": [             {                 \"Address\": \"\",                 \"Ip\": \"10.10.10.111\",                 \"Port\": 5432,                 \"Status\": \"opened\",                 \"NetType\": \"private\"             },             {                 \"Address\": \"\",                 \"Ip\": \"\",                 \"Port\": 0,                 \"Status\": \"initing\",                 \"NetType\": \"public\"             }         ],         \"DBAccountSet\": [],         \"DBDatabaseList\": null     } ]",
+          "example": "[     {         \"AppId\": 251240000,         \"AutoRenew\": 0,         \"CreateTime\": \"2024-09-01 16:00:45\",         \"DBCharset\": \"UTF8\",         \"DBEngine\": \"postgresql\",         \"DBEngineConfig\": \"\",         \"DBInstanceClass\": \"pg.it.small2\",         \"DBInstanceClassName\": \"1 core 2 GiB\",         \"DBInstanceCpu\": 1,         \"DBInstanceId\": \"postgres-dnlizio3\",         \"DBInstanceMemory\": 2,         \"DBInstanceName\": \"Unnamed\",         \"DBInstanceNetInfo\": [             {                 \"Address\": \"\",                 \"Ip\": \"10.*.*.*\",                 \"NetType\": \"private\",                 \"Port\": 5432,                 \"ProtocolType\": \"postgresql\",                 \"Status\": \"opened\",                 \"SubnetId\": \"subnet-b23o6b22\",                 \"VpcId\": \"vpc-49ab5lb9\"             },             {                 \"Address\": \"\",                 \"Ip\": \"\",                 \"NetType\": \"public\",                 \"Port\": 0,                 \"ProtocolType\": \"\",                 \"Status\": \"initing\",                 \"SubnetId\": \"\",                 \"VpcId\": \"\"             }         ],         \"DBInstanceStatus\": \"running\",         \"DBInstanceStorage\": 100,         \"DBInstanceType\": \"primary\",         \"DBInstanceVersion\": \"standard\",         \"DBKernelVersion\": \"v16.2_r1.5\",         \"DBMajorVersion\": \"16\",         \"DBNodeSet\": [             {                 \"DedicatedClusterId\": \"\",                 \"ReplicationMode\": \"\",                 \"Role\": \"Primary\",                 \"Zone\": \"ap-guangzhou-2\"             },             {                 \"DedicatedClusterId\": \"\",                 \"ReplicationMode\": \"\",                 \"Role\": \"Standby\",                 \"Zone\": \"ap-guangzhou-2\"             }         ],         \"DBVersion\": \"16.2\",         \"ExpireTime\": \"0000-00-00 00:00:00\",         \"IsSupportTDE\": 0,         \"IsolatedTime\": \"0000-00-00 00:00:00\",         \"MasterDBInstanceId\": \"\",         \"NetworkAccessList\": null,         \"OfflineTime\": \"0001-01-04 00:00:00\",         \"PayType\": \"postpaid\",         \"ProjectId\": 0,         \"ReadOnlyInstanceNum\": 0,         \"Region\": \"ap-guangzhou\",         \"StatusInReadonlyGroup\": \"\",         \"SubnetId\": \"subnet-b23o6b22\",         \"SupportIpv6\": 0,         \"SwitchEndTime\": \"\",         \"SwitchStartTime\": \"\",         \"TagList\": [],         \"Type\": \"\",         \"Uid\": 421842,         \"UpdateTime\": \"2024-09-29 10:10:57\",         \"VpcId\": \"vpc-49ab5lb9\",         \"Zone\": \"ap-guangzhou-2\"     } ]",
           "member": "DBInstance",
           "name": "DBInstanceSet",
           "output_required": true,
@@ -6324,7 +6325,7 @@
         {
           "disabled": false,
           "document": "参数模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "my_test_template",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -6354,7 +6355,7 @@
         {
           "disabled": false,
           "document": "参数模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "use to test",
+          "example": "this template use to test environment",
           "member": "string",
           "name": "TemplateDescription",
           "output_required": true,
@@ -6722,7 +6723,7 @@
         {
           "disabled": false,
           "document": "查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {         \"DBInstanceId\": \"postgres-xxxxxxxx\",         \"DBInstanceName\": \"xxx\",         \"DBInstanceStatus\": \"running\",         \"Region\": \"ap-guangzhou\",         \"Zone\": \"ap-guangzhou-3\",         \"ProjectId\": 0,         \"VpcId\": \"vpc-xxxxxxxx\",         \"SubnetId\": \"subnet-xxxxxxxx\",         \"DBCharset\": \"UTF8\",         \"DBVersion\": \"10\",         \"DBKernelVersion\": \"v10.4_r1.0\",         \"CreateTime\": \"2020-03-20 12:19:14\",         \"DBInstanceNetInfo\": [             {                 \"Address\": \"\",                 \"Ip\": \"10.10.10.111\",                 \"Port\": 5432,                 \"Status\": \"opened\",                 \"NetType\": \"private\"             },             {                 \"Address\": \"\",                 \"Ip\": \"\",                 \"Port\": 0,                 \"Status\": \"initing\",                 \"NetType\": \"public\"             }         ],         \"DBAccountSet\": [],         \"DBDatabaseList\": null     } ]",
+          "example": "[     {         \"DBInstanceId\": \"postgres-dnlizio3\",         \"DBInstanceName\": \"user-data-db\",         \"DBInstanceStatus\": \"running\",         \"Region\": \"ap-guangzhou\",         \"Zone\": \"ap-guangzhou-3\",         \"ProjectId\": 0,         \"VpcId\": \"vpc-49ab5lb9\",         \"SubnetId\": \"subnet-b23o6b22\",         \"DBCharset\": \"UTF8\",         \"DBVersion\": \"10\",         \"DBKernelVersion\": \"v10.4_r1.0\",         \"CreateTime\": \"2020-03-20 12:19:14\",         \"DBInstanceNetInfo\": [             {                 \"Address\": \"\",                 \"Ip\": \"10.*.*.*\",                 \"Port\": 5432,                 \"Status\": \"opened\",                 \"NetType\": \"private\"             },             {                 \"Address\": \"\",                 \"Ip\": \"\",                 \"Port\": 0,                 \"Status\": \"initing\",                 \"NetType\": \"public\"             }         ],         \"DBAccountSet\": [],         \"DBDatabaseList\": null     } ]",
           "member": "ServerlessDBInstance",
           "name": "DBInstanceSet",
           "output_required": true,
@@ -7154,10 +7155,10 @@
         {
           "disabled": false,
           "document": "KMS实例加密的KeyId。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "975982f8-b2d5-11ef-a4a2-525400000000",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7167,17 +7168,17 @@
           "example": "PGSQL-KMS",
           "member": "string",
           "name": "KeyAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例加密密钥DEK的密文。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "A********9",
           "member": "string",
           "name": "DEKCipherTextBlob",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7187,7 +7188,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsEnabled",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7197,7 +7198,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "KeyRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7207,7 +7208,7 @@
           "example": "2014-08-03 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7220,40 +7221,40 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "",
+          "example": "app_user",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库名字",
-          "example": "",
+          "example": "user-data-db",
           "member": "string",
           "name": "Database",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误发生时间",
-          "example": "",
+          "example": "2024-12-04 21:13:46",
           "member": "string",
           "name": "ErrTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误消息",
-          "example": "",
+          "example": "2024-12-04 21:13:46.789 UTC [12345] FATAL:  password authentication failed for user \"myuser\"",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7269,7 +7270,7 @@
           "example": "wal_level",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7279,7 +7280,7 @@
           "example": "replica",
           "member": "string",
           "name": "OldValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7289,7 +7290,7 @@
           "example": "logical",
           "member": "string",
           "name": "NewValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7299,7 +7300,7 @@
           "example": "2021-08-01 02:03:04",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7309,7 +7310,7 @@
           "example": "2021-08-01 02:03:34",
           "member": "string",
           "name": "EffectiveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7319,7 +7320,7 @@
           "example": "success",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7329,17 +7330,17 @@
           "example": "123344",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "时间日志。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "this event is success",
           "member": "string",
           "name": "EventLog",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7388,7 +7389,7 @@
         {
           "disabled": false,
           "document": "过滤键的名称。",
-          "example": "",
+          "example": "db-instance-id",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7397,7 +7398,7 @@
         {
           "disabled": false,
           "document": "一个或者多个过滤值。",
-          "example": "",
+          "example": "postgres-kwk4tq23",
           "member": "string",
           "name": "Values",
           "required": false,
@@ -7797,7 +7798,7 @@
         {
           "disabled": false,
           "document": "账号名称。",
-          "example": "test",
+          "example": "db_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -7939,7 +7940,7 @@
         {
           "disabled": false,
           "document": "修改此账号对某数据库对象的权限。",
-          "example": "test",
+          "example": "readonly_user",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -7984,7 +7985,7 @@
         {
           "disabled": false,
           "document": "实例用户名",
-          "example": "test",
+          "example": "bob_admin",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -7993,7 +7994,7 @@
         {
           "disabled": false,
           "document": "用户UserName对应的新备注",
-          "example": "testModifyRemark",
+          "example": "bob have admin permissions",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -8056,7 +8057,7 @@
         {
           "disabled": false,
           "document": "允许或拒绝下载备份文件的ip列表。",
-          "example": "[     \"10.10.10.220\" ]",
+          "example": "[     \"10.*.*.*\" ]",
           "member": "string",
           "name": "IpSet",
           "required": false,
@@ -8480,7 +8481,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "DBInstanceId",
+          "example": "postgres-kwk4tq23",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -8489,7 +8490,7 @@
         {
           "disabled": false,
           "document": "当前实例所在只读组ID",
-          "example": "ReadOnlyGroupId",
+          "example": "pgrogrp-fyzsd35e",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -8498,7 +8499,7 @@
         {
           "disabled": false,
           "document": "实例修改的目标只读组ID",
-          "example": "NewReadOnlyGroupId",
+          "example": "pgrogrp-mnwtmp20",
           "member": "string",
           "name": "NewReadOnlyGroupId",
           "required": true,
@@ -8513,10 +8514,10 @@
         {
           "disabled": false,
           "document": "流程ID",
-          "example": "1234",
+          "example": "4253",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8686,7 +8687,7 @@
         {
           "disabled": false,
           "document": "冻结流水号。",
-          "example": "123",
+          "example": "20241204591602395368569",
           "member": "string",
           "name": "BillId",
           "output_required": true,
@@ -8762,7 +8763,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "testdatabase",
+          "example": "alice_database",
           "member": "string",
           "name": "DatabaseName",
           "required": true,
@@ -8771,7 +8772,7 @@
         {
           "disabled": false,
           "document": "数据库新所有者",
-          "example": "test",
+          "example": "alice",
           "member": "string",
           "name": "DatabaseOwner",
           "required": true,
@@ -8816,7 +8817,7 @@
         {
           "disabled": false,
           "document": "参数模板描述，长度为0～60个字符，仅支持数字,英文大小写字母、中文以及特殊字符_-./()（）[]+=：:@  注：若不传入该参数，则保持原参数模板描述",
-          "example": "test",
+          "example": "This template is used for testing environment",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,
@@ -9112,150 +9113,150 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "",
+          "example": "db_user",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "调用次数",
-          "example": "",
+          "example": "150",
           "member": "int64",
           "name": "Calls",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "粒度点",
-          "example": "",
+          "example": "[10,20,30,40,50]",
           "member": "int64",
           "name": "CallsGrids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "花费总时间",
-          "example": "",
+          "example": "120.5",
           "member": "float",
           "name": "CostTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "影响的行数",
-          "example": "",
+          "example": "75",
           "member": "int64",
           "name": "Rows",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "花费最小时间",
-          "example": "",
+          "example": "0.5",
           "member": "float",
           "name": "MinCostTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "花费最大时间",
-          "example": "",
+          "example": "5.0",
           "member": "float",
           "name": "MaxCostTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最早一条慢SQL时间",
-          "example": "",
+          "example": "2024-10-01T10:00:00Z",
           "member": "string",
           "name": "FirstTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最晚一条慢SQL时间",
-          "example": "",
+          "example": "2024-10-01T10:05:00Z",
           "member": "string",
           "name": "LastTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "读共享内存块数",
-          "example": "",
+          "example": "300",
           "member": "int64",
           "name": "SharedReadBlks",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "写共享内存块数",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "SharedWriteBlks",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "读io总耗时",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "ReadCostTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "写io总耗时",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "WriteCostTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库名字",
-          "example": "",
+          "example": "my_database",
           "member": "string",
           "name": "DatabaseName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "脱敏后的慢SQL",
-          "example": "",
+          "example": "SELECT * FROM users WHERE age > 30",
           "member": "string",
           "name": "NormalQuery",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9292,9 +9293,10 @@
         {
           "disabled": false,
           "document": "异步任务流程ID",
-          "example": "1234",
+          "example": "47161",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9736,17 +9738,17 @@
           "example": "6e89c045-935f-5d5f-8512-08d7f6cf2210",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数模板名称",
-          "example": "test",
+          "example": "my_custom_template",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9756,7 +9758,7 @@
           "example": "13",
           "member": "string",
           "name": "DBMajorVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9766,17 +9768,17 @@
           "example": "postgresql",
           "member": "string",
           "name": "DBEngine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数模板描述",
-          "example": "test",
+          "example": "This template is used for testing",
           "member": "string",
           "name": "TemplateDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9789,60 +9791,60 @@
         {
           "disabled": false,
           "document": "订单名",
-          "example": "",
+          "example": "20180615110033",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "所属用户",
-          "example": "",
+          "example": "909619400",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单涉及多少个实例",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "付费模式。1-预付费；0-后付费",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异步任务流程ID",
-          "example": "",
+          "example": "3356",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例ID数组",
-          "example": "",
+          "example": "postgres-2uepfuz1",
           "member": "string",
           "name": "DBInstanceIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9977,180 +9979,180 @@
         {
           "disabled": false,
           "document": "只读组标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "pgrogrp-q66su76e",
           "member": "string",
           "name": "ReadOnlyGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "只读组名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "Autotestgroup",
           "member": "string",
           "name": "ReadOnlyGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "1465",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "postgres-dsu8985n",
           "member": "string",
           "name": "MasterDBInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最小保留实例数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "0",
           "member": "int64",
           "name": "MinDelayEliminateReserve",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "延迟空间大小阈值",
-          "example": "空",
+          "example": "0",
           "member": "int64",
           "name": "MaxReplayLatency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "延迟大小开关",
-          "example": "空",
+          "example": "0",
           "member": "int64",
           "name": "ReplayLatencyEliminate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "延迟时间大小阈值",
-          "example": "空",
+          "example": "0",
           "member": "float",
           "name": "MaxReplayLag",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "延迟时间开关",
-          "example": "空",
+          "example": "0",
           "member": "int64",
           "name": "ReplayLagEliminate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "虚拟网络id",
-          "example": "空",
+          "example": "vpc-e3t30r8t",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "subnet-jd9cvu0o",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "地域id",
-          "example": "空",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地区id",
-          "example": "空",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态",
-          "example": "空",
+          "example": "ok",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例详细信息",
-          "example": "空",
+          "example": "[     {         \"AppId\": 2512000007,         \"AutoRenew\": 0,         \"CreateTime\": \"2024-12-05 12:04:14\",         \"DBCharset\": \"UTF8\",         \"DBEngine\": \"postgresql\",         \"DBEngineConfig\": \"\",         \"DBInstanceClass\": \"pg.it.small2\",         \"DBInstanceClassName\": \"1 core 2 GiB\",         \"DBInstanceCpu\": 1,         \"DBInstanceId\": \"pgro-kdkdkx68\",         \"DBInstanceMemory\": 2,         \"DBInstanceName\": \"Unnamed\",         \"DBInstanceNetInfo\": [             {                 \"Address\": \"\",                 \"Ip\": \"172.*.*.*\",                 \"NetType\": \"private\",                 \"Port\": 5432,                 \"ProtocolType\": \"postgresql\",                 \"Status\": \"opened\",                 \"SubnetId\": \"subnet-jd9cvu0o\",                 \"VpcId\": \"vpc-e3t30r8t\"             }         ],         \"DBInstanceStatus\": \"running\",         \"DBInstanceStorage\": 40,         \"DBInstanceType\": \"readonly\",         \"DBInstanceVersion\": \"standard\",         \"DBKernelVersion\": \"v17.0_r1.0\",         \"DBMajorVersion\": \"17\",         \"DBNodeSet\": null,         \"DBVersion\": \"17.0\",         \"ExpireTime\": \"0000-00-00 00:00:00\",         \"IsSupportTDE\": 0,         \"IsolatedTime\": \"0000-00-00 00:00:00\",         \"MasterDBInstanceId\": \"postgres-dsu8985n\",         \"NetworkAccessList\": null,         \"OfflineTime\": \"0001-01-04 00:00:00\",         \"PayType\": \"postpaid\",         \"ProjectId\": 0,         \"ReadOnlyInstanceNum\": 0,         \"Region\": \"ap-guangzhou\",         \"StatusInReadonlyGroup\": \"running\",         \"SubnetId\": \"subnet-jd9cvu0o\",         \"SupportIpv6\": 0,         \"SwitchEndTime\": \"\",         \"SwitchStartTime\": \"\",         \"TagList\": [],         \"Type\": \"\",         \"Uid\": 1289,         \"UpdateTime\": \"2024-12-05 12:06:17\",         \"VpcId\": \"vpc-e3t30r8t\",         \"Zone\": \"ap-guangzhou-3\"     } ]",
           "member": "DBInstance",
           "name": "ReadOnlyDBInstanceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "自动负载均衡开关",
-          "example": "空",
+          "example": "0",
           "member": "int64",
           "name": "Rebalance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络信息",
-          "example": "空",
+          "example": "[     {         \"Address\": \"\",         \"Ip\": \"172.*.*.*\",         \"NetType\": \"private\",         \"Port\": 5432,         \"ProtocolType\": \"postgresql\",         \"Status\": \"opened\",         \"SubnetId\": \"subnet-jd9cvu0o\",         \"VpcId\": \"vpc-e3t30r8t\"     } ]",
           "member": "DBInstanceNetInfo",
           "name": "DBInstanceNetInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "只读组网络信息列表（此字段已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "空",
+          "example": "无",
           "member": "NetworkAccess",
           "name": "NetworkAccessList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -10246,7 +10248,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "DBInstanceId",
+          "example": "postgres-c4wtbx1f",
           "member": "string",
           "name": "DBInstanceId",
           "required": true,
@@ -10255,7 +10257,7 @@
         {
           "disabled": false,
           "document": "只读组ID",
-          "example": "ReadOnlyGroupId",
+          "example": "pgrogrp-7ikfr75q",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "required": true,
@@ -10270,10 +10272,10 @@
         {
           "disabled": false,
           "document": "流程ID",
-          "example": "1234",
+          "example": "23654",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10365,7 +10367,7 @@
         {
           "disabled": false,
           "document": "实例账户名",
-          "example": "test",
+          "example": "test_account",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -10416,10 +10418,10 @@
         {
           "disabled": false,
           "document": "异步流程ID",
-          "example": "1234",
+          "example": "11528",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10446,8 +10448,8 @@
         },
         {
           "disabled": false,
-          "document": "需要恢复的对象列表。假设需要恢复的对象名为test，则恢复后的名称为test_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。",
-          "example": "[\"test\"]",
+          "document": "需要恢复的对象列表。假设需要恢复的对象名为user，则恢复后的名称为user_bak_${LinuxTime}。${LinuxTime}无法指定，由系统根据任务发起的linux时间设定。",
+          "example": "[\"user\"]",
           "member": "string",
           "name": "RestoreObjects",
           "required": true,
@@ -10568,30 +10570,30 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "web_app",
           "member": "string",
           "name": "DBUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "A********5",
           "member": "string",
           "name": "DBPassword",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "连接数限制\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "DBConnLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -10780,50 +10782,50 @@
         {
           "disabled": false,
           "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "gz-xxx.tencent.com",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "172.*.*.*",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "端口号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5432",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "opened",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "private",
           "member": "string",
           "name": "NetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11198,7 +11200,7 @@
         {
           "disabled": false,
           "document": "账号名称。",
-          "example": "test",
+          "example": "bob_admin",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -11441,7 +11443,7 @@
         {
           "disabled": false,
           "document": "活动ID",
-          "example": "123",
+          "example": "36921",
           "member": "int64",
           "name": "ActivityId",
           "required": false,
@@ -11493,7 +11495,7 @@
         {
           "disabled": false,
           "document": "冻结流水号",
-          "example": "123",
+          "example": "20241204591002321368561",
           "member": "string",
           "name": "BillId",
           "output_required": true,
@@ -11591,60 +11593,60 @@
         {
           "disabled": false,
           "document": "备份文件唯一标识",
-          "example": "",
+          "example": "450",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件生成的开始时间",
-          "example": "",
+          "example": "2024-06-22 01:56:46",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件生成的结束时间",
-          "example": "",
+          "example": "2024-06-22 01:56:53",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网下载地址",
-          "example": "",
+          "example": "http://172.*.*.*:8366/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==",
           "member": "string",
           "name": "InternalAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "外网下载地址",
-          "example": "",
+          "example": "https://gz-dl-postgres.cloud.tencent.com/download/20180622015646_20180622015653.tar.gz?giz7Z4LlMjal0S0oJY6+5JbQ1MfhjybTALKlriBmLUrmJMxzi1C3EagZ/IhOQeSGyXm+Qr3D3I2GL1G4RV69vLVylUaeIJ+zH+CEG5Ast0GoDmpzjJ5Jaw==",
           "member": "string",
           "name": "ExternalAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份文件大小",
-          "example": "",
+          "example": "247967",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

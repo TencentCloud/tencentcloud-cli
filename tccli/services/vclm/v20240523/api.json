@@ -1005,7 +1005,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频地址URL。\n格式要求：支持 mp4、mov 。\n时长要求：【5-600】秒。\nfps 要求：【15-60】fps\n分辨率要求：单边像素要求在 【360~4096】 之间。\n大小要求：不超过500Mb\n",
+          "document": "视频地址URL。\n格式要求：支持 mp4、mov、avi 。\n时长要求：【5-600】秒。\nfps 要求：【15-60】fps\n分辨率要求：单边像素要求在 【360~4096】 之间。\n大小要求：不超过500MB\n",
           "example": "http://console.cloud.tencent.com/cos/video.mp4",
           "member": "string",
           "name": "VideoUrl",
@@ -1023,7 +1023,7 @@
         },
         {
           "disabled": false,
-          "document": "当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。\n格式要求：支持 mp3、m4a、aac、wav 格式。\n时长要求：【5~600】秒，音频时长要匹配视频时长。\n大小要求：不超过 100Mb。",
+          "document": "当音频 URL 不为空时，不经过语音AI处理，直接以视频为素材用音频内容做视频口型驱动。\n格式要求：支持 mp3、m4a、aac、wav 格式。\n时长要求：【5~600】秒，音频时长要匹配视频时长。\n大小要求：不超过 100MB。",
           "example": "http://console.cloud.tencent.com/cos/audio.mp3",
           "member": "string",
           "name": "AudioUrl",
@@ -1042,7 +1042,7 @@
         {
           "disabled": false,
           "document": "翻译语种匹配音色种别，其他说明如下：\n1）默认不填代表克隆输入视频中音频音色；\n2）翻译语种非中英（即zh、en），该项必填；\n\n具体音色种别详见说明“支持音色种别列表”，每个音色都支持 15 个目标语种。\n",
-          "example": "701001",
+          "example": "701003",
           "member": "string",
           "name": "VoiceType",
           "required": false,

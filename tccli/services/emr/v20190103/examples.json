@@ -16,6 +16,14 @@
         "title": "test"
       }
     ],
+    "CreateCloudInstance": [
+      {
+        "document": "创建EMR容器实例",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"EMR-dzrgkpwq\",\n    \"LoginSettings\": {\n        \"Password\": \"xxxxxxxxxx\"\n    },\n    \"VPCSettings\": {\n        \"SubnetId\": \"subnet-xxxxo3x0\",\n        \"VpcId\": \"vpc-xxxxqmqz\"\n    },\n    \"CosBucket\": \"coslcl-xxxxxxxxxx\",\n    \"ExternalService\": [],\n    \"CloudResources\": [\n        {\n            \"ComponentName\": \"QuorumPeerMain\",\n            \"PodNumber\": 3,\n            \"LimitCpu\": 1,\n            \"LimitMemory\": 2,\n            \"Service\": \"ZOOKEEPER\",\n            \"VolumeDir\": {\n                \"VolumeType\": \"NEW_PVC\",\n                \"HostPath\": {\n                    \"Path\": \"\",\n                    \"Type\": \"DirectoryOrCreate\"\n                }\n            },\n            \"Disks\": [\n                {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskCapacity\": 100,\n                    \"DiskNumber\": 1\n                }\n            ]\n        },\n        {\n            \"ComponentName\": \"Slapd\",\n            \"PodNumber\": 2,\n            \"LimitCpu\": 1,\n            \"LimitMemory\": 2,\n            \"Service\": \"OPENLDAP\",\n            \"VolumeDir\": {\n                \"VolumeType\": \"NEW_PVC\",\n                \"HostPath\": {\n                    \"Path\": \"\",\n                    \"Type\": \"DirectoryOrCreate\"\n                }\n            },\n            \"Disks\": [\n                {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskCapacity\": 100,\n                    \"DiskNumber\": 1\n                }\n            ]\n        },\n        {\n            \"ComponentName\": \"HiveServer2Node\",\n            \"PodNumber\": 1,\n            \"LimitCpu\": 1,\n            \"LimitMemory\": 2,\n            \"Service\": \"HIVESERVER2\",\n            \"VolumeDir\": {\n                \"VolumeType\": \"NEW_PVC\",\n                \"HostPath\": {\n                    \"Path\": \"\",\n                    \"Type\": \"DirectoryOrCreate\"\n                }\n            },\n            \"Disks\": [\n                {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskCapacity\": 100,\n                    \"DiskNumber\": 1\n                }\n            ]\n        },\n        {\n            \"ComponentName\": \"HiveMetaStoreNode\",\n            \"PodNumber\": 1,\n            \"LimitCpu\": 1,\n            \"LimitMemory\": 2,\n            \"Service\": \"METASTORE\",\n            \"VolumeDir\": {\n                \"VolumeType\": \"NEW_PVC\",\n                \"HostPath\": {\n                    \"Path\": \"\",\n                    \"Type\": \"DirectoryOrCreate\"\n                }\n            },\n            \"Disks\": [\n                {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskCapacity\": 100,\n                    \"DiskNumber\": 1\n                }\n            ]\n        },\n        {\n            \"ComponentName\": \"SparkJobHistoryServer\",\n            \"PodNumber\": 1,\n            \"LimitCpu\": 2,\n            \"LimitMemory\": 4,\n            \"Service\": \"SPARK\",\n            \"VolumeDir\": {\n                \"VolumeType\": \"NEW_PVC\",\n                \"HostPath\": {\n                    \"Path\": \"\",\n                    \"Type\": \"DirectoryOrCreate\"\n                }\n            },\n            \"Disks\": [\n                {\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskCapacity\": 100,\n                    \"DiskNumber\": 1\n                }\n            ]\n        }\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"test-key\",\n            \"TagValue\": \"v1\"\n        }\n    ],\n    \"MetaDBInfo\": {\n        \"MetaType\": \"EMR_DEFAULT_META\"\n    },\n    \"Software\": [\n        \"zookeeper-3.6.3\",\n        \"metastore-3.1.3\",\n        \"openldap-2.4.44\",\n        \"hiveserver2-3.1.3\",\n        \"spark-3.3.2\"\n    ],\n    \"ClusterClass\": \"EMR-TKE\",\n    \"PlatFormType\": \"tke\",\n    \"EksClusterId\": \"cls-xxxxxl3o\",\n    \"ProductId\": 60,\n    \"SgId\": \"sg-1111123nt\",\n    \"ZoneId\": 1000010\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d830face-6587-4263-8ab0-56bda2657xxx\",\n        \"InstanceId\": \"emr-xxxx\"\n    }\n}",
+        "title": "创建EMR容器实例"
+      }
+    ],
     "CreateCluster": [
       {
         "document": "",
@@ -374,6 +382,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGlobalConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-123\",\n    \"Items\": [\n        {\n            \"Key\": \"enableResourceSchedule\",\n            \"Value\": \"true\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"514a7860-f50f-49ec-92eb-6d4558ec45c3\"\n    }\n}",
         "title": "修改YARN资源调度的全局配置"
+      }
+    ],
+    "ModifyPodNum": [
+      {
+        "document": "调整容器集群Pod数量",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPodNum\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-ikoyp9nw\",\n    \"ServiceGroup\": 44,\n    \"ServiceType\": 93,\n    \"PodNum\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"emr-ikoyp9nw\",\n        \"FlowId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "调整容器集群Pod数量"
       }
     ],
     "ModifyResourcePools": [

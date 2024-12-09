@@ -5565,7 +5565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
+          "document": "查询结果",
           "example": "[{\"Address\":\"beijing\",\"InsID\":\"ins-cvmid\",\"InsName\":\"cvmname\",\"Ip\":\"141.98.11.67\",\"Num\":39,\"Port\":\"22\"}]",
           "member": "StaticInfo",
           "name": "Data",

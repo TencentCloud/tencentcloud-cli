@@ -7,12 +7,12 @@ Input:
 ```
 tccli vpc ResetRoutes --cli-unfold-argument  \
     --RouteTableId rtb-n0yejvje \
-    --RouteTableName TEST \
+    --RouteTableName demo \
     --Routes.0.RouteId 1 \
     --Routes.0.DestinationCidrBlock 192.168.0.0/16 \
     --Routes.0.GatewayType NORMAL_CVM \
     --Routes.0.GatewayId 172.16.16.37 \
-    --Routes.0.RouteDescription abc \
+    --Routes.0.RouteDescription demo \
     --Routes.0.Enabled True
 ```
 

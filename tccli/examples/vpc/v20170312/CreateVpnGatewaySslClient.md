@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc CreateVpnGatewaySslClient --cli-unfold-argument  \
     --SslVpnServerId vpns-5au854w1 \
-    --SslVpnClientName test
+    --SslVpnClientName ssl_client_name
 ```
 
 Output: 

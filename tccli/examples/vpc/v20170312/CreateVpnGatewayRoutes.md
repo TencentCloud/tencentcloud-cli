@@ -20,14 +20,18 @@ Output:
     "Response": {
         "Routes": [
             {
-                "DestinationCidrBlock": "192.241.0.0/24",
-                "Status": "ENABLE",
-                "InstanceId": "vpnx-ng2asdew",
+                "RouteId": "vpnr-xxxxxxxx",
+                "DestinationCidrBlock": "10.0.0.0/24",
                 "InstanceType": "VPNCONN",
-                "Priority": 100
+                "InstanceId": "vpnx-xxxxxxxx",
+                "Priority": 0,
+                "Status": "ENABLE",
+                "Type": "Static",
+                "CreateTime": "2020-09-22 00:00:00",
+                "UpdateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "6e446c86-d8c9-4981-9b33-d10956585058"
+        "RequestId": "a713021b-1942-4569-aa08-d8ad1867c2ad"
     }
 }
 ```

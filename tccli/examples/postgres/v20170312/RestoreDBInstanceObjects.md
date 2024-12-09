@@ -1,6 +1,6 @@
 **Example 1: 指定恢复时间，恢复数据库对象**
 
-在原实例上指定恢复时间，恢复某些数据库相关对象。例如在postgres-abcd1234实例上，恢复时间点2024-03-25 01:27:35上的test数据库。
+在原实例上指定恢复时间，恢复某些数据库相关对象。例如在postgres-abcd1234实例上，恢复时间点2024-03-25 01:27:35上的user数据库。
 
 Input: 
 
@@ -8,7 +8,7 @@ Input:
 tccli postgres RestoreDBInstanceObjects --cli-unfold-argument  \
     --DBInstanceId postgres-abcd1234 \
     --RestoreTargetTime 2024-03-25 01:27:35 \
-    --RestoreObjects test
+    --RestoreObjects user
 ```
 
 Output: 
@@ -22,7 +22,7 @@ Output:
 
 **Example 2: 选定备份集，恢复数据库对象**
 
-在原实例上选定备份集，恢复某些数据库相关对象。例如在postgres-abcd1234实例上，使用备份集28aa61ac-1b1f-566a-bedb-6e918024be02恢复test数据库。
+在原实例上选定备份集，恢复某些数据库相关对象。例如在postgres-abcd1234实例上，使用备份集28aa61ac-1b1f-566a-bedb-6e918024be02恢复user数据库。
 
 Input: 
 
@@ -30,7 +30,7 @@ Input:
 tccli postgres RestoreDBInstanceObjects --cli-unfold-argument  \
     --DBInstanceId postgres-abcd1234 \
     --BackupSetId 28aa61ac-1b1f-566a-bedb-6e918024be02 \
-    --RestoreObjects test
+    --RestoreObjects user
 ```
 
 Output: 

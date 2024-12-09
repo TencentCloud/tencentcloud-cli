@@ -956,7 +956,7 @@
           "example": "无",
           "member": "string",
           "name": "Title",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -966,7 +966,7 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -976,7 +976,7 @@
           "example": "无",
           "member": "string",
           "name": "CheckCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -986,7 +986,7 @@
           "example": "无",
           "member": "string",
           "name": "SerialNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -996,7 +996,7 @@
           "example": "无",
           "member": "string",
           "name": "Date",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1006,7 +1006,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1016,7 +1016,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentCodeFirst",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1026,7 +1026,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentCodeSecond",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1036,7 +1036,7 @@
           "example": "无",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1046,7 +1046,7 @@
           "example": "无",
           "member": "string",
           "name": "UserID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1056,7 +1056,7 @@
           "example": "无",
           "member": "string",
           "name": "Issuer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1066,7 +1066,7 @@
           "example": "无",
           "member": "string",
           "name": "Fare",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1076,7 +1076,7 @@
           "example": "无",
           "member": "string",
           "name": "Tax",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1086,7 +1086,7 @@
           "example": "无",
           "member": "string",
           "name": "FuelSurcharge",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1096,7 +1096,7 @@
           "example": "无",
           "member": "string",
           "name": "AirDevelopmentFund",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1106,7 +1106,7 @@
           "example": "无",
           "member": "string",
           "name": "Insurance",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1116,7 +1116,7 @@
           "example": "无",
           "member": "string",
           "name": "Total",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1126,7 +1126,7 @@
           "example": "无",
           "member": "string",
           "name": "Kind",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1136,7 +1136,7 @@
           "example": "无",
           "member": "string",
           "name": "DomesticInternationalTag",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1146,7 +1146,7 @@
           "example": "无",
           "member": "string",
           "name": "DateStart",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1156,7 +1156,7 @@
           "example": "无",
           "member": "string",
           "name": "DateEnd",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1166,7 +1166,7 @@
           "example": "无",
           "member": "string",
           "name": "Endorsement",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1176,7 +1176,7 @@
           "example": "无",
           "member": "int64",
           "name": "QRCodeMark",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1186,8 +1186,78 @@
           "example": "无",
           "member": "FlightItem",
           "name": "FlightItems",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息",
+          "example": "无",
+          "member": "string",
+          "name": "PromptInformation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码/纳税人识别号",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerTaxID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买方名称",
+          "example": "无",
+          "member": "string",
+          "name": "Buyer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiptNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开票状态",
+          "example": "无",
+          "member": "string",
+          "name": "InvoiceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税率",
+          "example": "无",
+          "member": "string",
+          "name": "TaxRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税额",
+          "example": "无",
+          "member": "string",
+          "name": "TaxAmount",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4523,6 +4593,16 @@
           "example": "无",
           "member": "string",
           "name": "OriginalNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标识信息",
+          "example": "无",
+          "member": "string",
+          "name": "IDInfo",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15866,17 +15946,17 @@
           "example": "无",
           "member": "TableCellInfo",
           "name": "Cells",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "图像中的文本块类型，0 为非表格文本，\n1 为有线表格，2 为无线表格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图像中的文本块类型：0为非表格文本、1为有线表格、2为无线表格，\n有线表格：在表格内部，有横线/竖线纵跨整个表格的宽/高；\n无线表格：在表格内部，无横线/竖线纵跨整个表格的宽/高。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -15886,7 +15966,7 @@
           "example": "无",
           "member": "Coord",
           "name": "TableCoordPoint",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

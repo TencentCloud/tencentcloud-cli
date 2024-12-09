@@ -49,6 +49,13 @@
       "output": "AllocateAddressesResponse",
       "status": "online"
     },
+    "AllocateIPv6Addresses": {
+      "document": "本接口（AllocateIPv6Addresses）用于申请一个或多个弹性公网IPv6（简称EIPv6）实例。\n\n- EIPv6 是您在腾讯云某个地域可以独立申请和持有的，固定不变的公网 IPv6 地址，提供与弹性公网 IPv4 一致的产品体验。\n- 通过弹性公网 IPv6，您可以快速将 EIPv6 实例绑定到云资源的内网 IPv6 地址上，实现为云资源快速开通 IPv6 公网带宽。\n- 您还可以按需将 EIPv6 实例绑定到其他云资源上，从而屏蔽实例故障。",
+      "input": "AllocateIPv6AddressesRequest",
+      "name": "创建弹性公网IPv6",
+      "output": "AllocateIPv6AddressesResponse",
+      "status": "online"
+    },
     "AllocateIp6AddressesBandwidth": {
       "document": "本接口（AllocateIp6AddressesBandwidth）用于为传统弹性公网 IPv6 实例开通 IPv6 公网带宽。\n\n- 传统弹性公网 IPv6 实例默认仅具备 IPv6 内网通信能力，需为 IPv6 地址分配公网带宽后，才具备 IPv6 公网通信能力。\n- 支持为一个或多个传统弹性公网 IPv6 实例开通公网带宽。",
       "input": "AllocateIp6AddressesBandwidthRequest",
@@ -103,6 +110,13 @@
       "input": "AssociateDirectConnectGatewayNatGatewayRequest",
       "name": "专线网关绑定NAT网关",
       "output": "AssociateDirectConnectGatewayNatGatewayResponse",
+      "status": "online"
+    },
+    "AssociateIPv6Address": {
+      "document": "本接口（AssociateIPv6Address）用于将弹性公网IPv6（简称EIPv6）实例绑定到 CVM 或弹性网卡配置的内网 IPv6 地址上。\n\n- 将 EIPv6 绑定到 CVM 上，其本质是将 EIPv6 绑定到 CVM 弹性网卡所配置的内网 IPv6 地址上。\n- 将 EIPv6 绑定到指定网卡的内网 IPv6 时，需确保该内网 IPv6 地址为未绑定状态，才能执行绑定操作。",
+      "input": "AssociateIPv6AddressRequest",
+      "name": "绑定弹性公网IPv6",
+      "output": "AssociateIPv6AddressResponse",
       "status": "online"
     },
     "AssociateInstancesToCcnRouteTable": {
@@ -1197,6 +1211,13 @@
       "output": "DescribeHighPriorityRoutesResponse",
       "status": "online"
     },
+    "DescribeIPv6Addresses": {
+      "document": "本接口（DescribeIPv6Addresses）用于查询一个或多个弹性公网 IPv6（简称 EIPv6）实例的详细信息。\n\n- 支持查询您在指定地域的弹性公网 IPv6 和传统弹性公网 IPv6 实例信息\n- 如果参数为空，返回当前用户一定数量（Limit所指定的数量，默认为20）的 EIPv6。",
+      "input": "DescribeIPv6AddressesRequest",
+      "name": "查询弹性公网IPv6列表",
+      "output": "DescribeIPv6AddressesResponse",
+      "status": "online"
+    },
     "DescribeIp6Addresses": {
       "document": "本接口（DescribeIp6Addresses）用于查询一个或多个传统弹性公网 IPv6 实例的详细信息。",
       "input": "DescribeIp6AddressesRequest",
@@ -1757,6 +1778,13 @@
       "output": "DisassociateDirectConnectGatewayNatGatewayResponse",
       "status": "online"
     },
+    "DisassociateIPv6Address": {
+      "document": "本接口（DisassociateIPv6Address）用于解绑弹性公网 IPv6（简称EIPv6）实例。\n\n- 支持对 CVM、弹性网卡绑定的 EIPv6 实例进行解绑操作。\n- 只有状态为 BIND 和 BIND_ENI 的 EIPv6 实例才能进行解绑操作。",
+      "input": "DisassociateIPv6AddressRequest",
+      "name": "解绑弹性公网IPv6",
+      "output": "DisassociateIPv6AddressResponse",
+      "status": "online"
+    },
     "DisassociateNatGatewayAddress": {
       "document": "本接口（DisassociateNatGatewayAddress）用于NAT网关解绑弹性IP。",
       "input": "DisassociateNatGatewayAddressRequest",
@@ -2100,8 +2128,22 @@
       "output": "ModifyHighPriorityRouteTableAttributeResponse",
       "status": "online"
     },
+    "ModifyIPv6AddressesAttributes": {
+      "document": "本接口（ModifyIPv6AddressesAttributes）用于修改弹性公网 IPv6（简称EIPv6）实例名称。\n\n- 支持对弹性公网 IPv6 和传统弹性公网 IPv6 实例名称进行修改。",
+      "input": "ModifyIPv6AddressesAttributesRequest",
+      "name": "修改弹性公网IPv6属性",
+      "output": "ModifyIPv6AddressesAttributesResponse",
+      "status": "online"
+    },
+    "ModifyIPv6AddressesBandwidth": {
+      "document": "本接口（ModifyIPv6AddressesBandwidth）用于调整弹性公网 IPv6（简称EIPv6）实例的带宽上限。",
+      "input": "ModifyIPv6AddressesBandwidthRequest",
+      "name": "调整弹性公网IPv6带宽",
+      "output": "ModifyIPv6AddressesBandwidthResponse",
+      "status": "online"
+    },
     "ModifyIp6AddressesBandwidth": {
-      "document": "本接口（ModifyIp6AddressesBandwidt）用于调整传统弹性公网 IPv6 实例的带宽上限。\n\n- 仅支持对传统弹性公网 IPv6 实例的带宽上限进行调整。\n- 如需调整弹性公网 IPv6 实例的带宽上限，请使用 ModifyIPv6AddressesBandwidth 接口。",
+      "document": "本接口（ModifyIp6AddressesBandwidth）用于调整传统弹性公网 IPv6 实例的带宽上限。\n\n- 仅支持对传统弹性公网 IPv6 实例的带宽上限进行调整。\n- 如需调整弹性公网 IPv6 实例的带宽上限，请使用 ModifyIPv6AddressesBandwidth 接口。",
       "input": "ModifyIp6AddressesBandwidthRequest",
       "name": "调整传统弹性公网IPv6带宽",
       "output": "ModifyIp6AddressesBandwidthResponse",
@@ -2415,6 +2457,13 @@
       "output": "ReleaseAddressesResponse",
       "status": "online"
     },
+    "ReleaseIPv6Addresses": {
+      "document": "本接口（ReleaseIPv6Addresses）用于释放一个或多个弹性公网IPv6（简称EIPv6）实例。\n\n- 支持对已申请到的弹性公网 IPv6 实例进行释放操作，如需再次使用，请重新申请。\n- 只有状态为 UNBIND 的 EIPv6 实例才能进行释放操作。",
+      "input": "ReleaseIPv6AddressesRequest",
+      "name": "释放弹性公网IPv6",
+      "output": "ReleaseIPv6AddressesResponse",
+      "status": "online"
+    },
     "ReleaseIp6AddressesBandwidth": {
       "document": "本接口（ReleaseIp6AddressesBandwidth）用于为传统弹性公网 IPv6 实例关闭 IPv6 公网带宽。\n\n- 传统弹性公网 IPv6 实例关闭公网带宽后，仍具备 IPv6 内网通信能力。\n- 如需再次开通 IPv6 公网带宽，请使用 AllocateIp6AddressesBandwidth 接口进行开通。",
       "input": "ReleaseIp6AddressesBandwidthRequest",
@@ -2535,7 +2584,7 @@
       "status": "online"
     },
     "ResetRoutes": {
-      "document": "本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br />\n注意: 调用本接口是先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。",
+      "document": "本接口（ResetRoutes）用于对某个路由表名称和所有路由策略（Route）进行重新设置。<br /> 注意: 调用本接口时先删除当前路由表中所有路由策略, 再保存新提交的路由策略内容, 会引起网络中断。",
       "input": "ResetRoutesRequest",
       "name": "重置路由表名称和路由策略",
       "output": "ResetRoutesResponse",
@@ -3743,6 +3792,125 @@
       ],
       "type": "object"
     },
+    "AllocateIPv6AddressesRequest": {
+      "document": "AllocateIPv6Addresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EIP名称，用于申请EIP时用户自定义该EIP的个性化名称，默认值：未命名。",
+          "example": "test",
+          "member": "string",
+          "name": "AddressName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6类型，可选值：\n\n- EIPv6：普通IPv6\n- HighQualityEIPv6：精品IPv6\n注意：需联系产品开通精品IPv6白名单，且仅部分地域支持精品IPv6\n\n默认值：EIPv6。",
+          "example": "EIPv6",
+          "member": "string",
+          "name": "AddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请的弹性公网IPv6数量，默认值：1。",
+          "example": "1",
+          "member": "int64",
+          "name": "AddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6计费方式，可选值：\n\n- BANDWIDTH_PACKAGE：[共享带宽包](https://cloud.tencent.com/document/product/684/15255)付费\n- TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费\n\n默认值：TRAFFIC_POSTPAID_BY_HOUR。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6线路类型，默认值：BGP。\n\n已开通静态单线IP白名单的用户，可选值：\n- CMCC：中国移动\n- CTCC：中国电信\n- CUCC：中国联通\n注意：仅部分地域支持静态单线IP。",
+          "example": "BGP",
+          "member": "string",
+          "name": "InternetServiceProvider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6带宽上限，单位：Mbps。\n\n可选值范围取决于EIP计费方式：\n\n- BANDWIDTH_PACKAGE：1 Mbps 至 2000 Mbps\n- TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps\n\n默认值：1 Mbps。",
+          "example": "10",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "带宽包唯一ID参数。\n设定该参数且InternetChargeType为BANDWIDTH_PACKAGE，则表示创建的EIP加入该BGP带宽包并采用带宽包计费。",
+          "example": "bwp-6jnvlsv4",
+          "member": "string",
+          "name": "BandwidthPackageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要关联的标签列表。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6网络出口，可选值：\n\n- CENTER_EGRESS_1：中心出口一\n- CENTER_EGRESS_2：中心出口二\n- CENTER_EGRESS_3：中心出口三\n注意：不同运营商或资源类型对应的网络出口需要联系产品开白\n\n默认值：CENTER_EGRESS_1。",
+          "example": "无",
+          "member": "string",
+          "name": "Egress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AllocateIPv6AddressesResponse": {
+      "document": "AllocateIPv6Addresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请到的弹性公网 IPv6 地址的唯一 ID 列表。",
+          "example": "[\"eipv6-m44ku5d2\"]",
+          "member": "string",
+          "name": "AddressSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务TaskId，可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。",
+          "example": "61531428",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AllocateIp6AddressesBandwidthRequest": {
       "document": "AllocateIp6AddressesBandwidth请求参数结构体",
       "members": [
@@ -4254,6 +4422,51 @@
     },
     "AssociateDirectConnectGatewayNatGatewayResponse": {
       "document": "AssociateDirectConnectGatewayNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateIPv6AddressRequest": {
+      "document": "AssociateIPv6Address请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。",
+          "example": "eipv6-nzvwsush",
+          "member": "string",
+          "name": "IPv6AddressId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过登录控制台查询，也可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。",
+          "example": "eni-jyhoxx61",
+          "member": "string",
+          "name": "NetworkInterfaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要绑定的内网 IPv6。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIPv6Address ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIPv6Address 是指定的 NetworkInterfaceId 上的一个内网 IPv6。指定弹性网卡的内网 IPv6 可通过登录控制台查询，也可通过DescribeNetworkInterfaces接口返回值中的Ipv6AddressSet.Address获取。",
+          "example": "fc00:200:300:700:0:9c64:2c95:b711",
+          "member": "string",
+          "name": "PrivateIPv6Address",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateIPv6AddressResponse": {
+      "document": "AssociateIPv6Address返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6787,6 +7000,15 @@
           "name": "AddressTemplateIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6800,6 +7022,7 @@
           "example": "无",
           "member": "AddressTemplateGroup",
           "name": "AddressTemplateGroup",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6841,6 +7064,15 @@
           "name": "AddressesExtra",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6854,6 +7086,7 @@
           "example": "无",
           "member": "AddressTemplate",
           "name": "AddressTemplate",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7254,7 +7487,7 @@
         {
           "disabled": false,
           "document": "需要创建的路由表列表。",
-          "example": "无",
+          "example": "{'CcnId': 'ccn-xxxxxxxx', 'Name': 'ccn', 'Description': 'ccn'}",
           "member": "CcnBatchRouteTable",
           "name": "RouteTable",
           "required": true,
@@ -7269,7 +7502,7 @@
         {
           "disabled": false,
           "document": "路由表信息列表。",
-          "example": "无",
+          "example": "{'CcnRouteTableSet': [{'CcnId': 'ccn-xxxxxxxx', 'CcnRouteTableId': 'rtb-xxxxxxx', 'RouteTableName': 'name', 'RouteTableDescription': 'cc', 'IsDefaultTable': True, 'CreateTime': '2024-04-01 16:52:51'}]}",
           "member": "CcnRouteTable",
           "name": "CcnRouteTableSet",
           "output_required": true,
@@ -9432,6 +9665,15 @@
           "name": "ServicesExtra",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9445,6 +9687,7 @@
           "example": "无",
           "member": "ServiceTemplate",
           "name": "ServiceTemplate",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10470,7 +10713,7 @@
         {
           "disabled": false,
           "document": "VPN网关目的路由列表",
-          "example": "无",
+          "example": "{     'RouteId': 'vpnr-xxxxxxxx',     'DestinationCidrBlock': '10.0.0.0/24',     'InstanceType': 'VPNCONN',     'InstanceId': 'vpnx-xxxxxxxx' }",
           "member": "VpnGatewayRoute",
           "name": "Routes",
           "required": true,
@@ -10485,9 +10728,10 @@
         {
           "disabled": false,
           "document": "VPN网关目的路由",
-          "example": "无",
+          "example": "[{'RouteId': 'vpnr-xxxxxxxx', 'DestinationCidrBlock': '10.0.0.0/24', 'Status': 1, 'InstanceId': 'vpnx-xxxxxxxx', 'InstanceType': 'vpnconn', 'Priority': 1, 'Type': 1, 'CreateTime': '2024-04-01 16:52:51', 'UpdateTime': '2024-04-01 16:52:51'}]",
           "member": "VpnGatewayRoute",
           "name": "Routes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10533,7 +10777,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表",
-          "example": "无",
+          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10548,7 +10792,7 @@
         {
           "disabled": false,
           "document": "异步任务ID。",
-          "example": "无",
+          "example": "671233",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -10679,7 +10923,7 @@
         {
           "disabled": false,
           "document": "SAML-DATA，开启SSO时传。",
-          "example": "无",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGl",
           "member": "string",
           "name": "SamlData",
           "required": false,
@@ -10688,7 +10932,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表",
-          "example": "无",
+          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10703,7 +10947,7 @@
         {
           "disabled": false,
           "document": "创建SSL-VPN server 异步任务ID。",
-          "example": "无",
+          "example": "52631",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -11442,7 +11686,7 @@
         {
           "disabled": false,
           "document": "需要删除的路由表列表。",
-          "example": "无",
+          "example": "rtb-xxxxxxxx",
           "member": "string",
           "name": "RouteTableId",
           "required": true,
@@ -12889,7 +13133,7 @@
         {
           "disabled": false,
           "document": "异步任务ID。",
-          "example": "无",
+          "example": "123",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -12926,7 +13170,7 @@
         {
           "disabled": false,
           "document": "异步任务ID。",
-          "example": "123",
+          "example": "675671",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -13524,7 +13768,7 @@
         {
           "disabled": false,
           "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>instance-type - String -（过滤条件）关联实例类型。</li>\n<li>instance-region - String -（过滤条件）关联实例所属地域。</li>\n<li>instance-id - String -（过滤条件）关联实例ID。</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"ccn-id\",\"Values\":[\"ccn-nb107zhp\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -13569,15 +13813,17 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关联实例列表。",
-          "example": "无",
+          "example": "[{'CcnId': 'ccn-gree226l', 'InstanceType': 'VPC', 'InstanceId': 'vpc-2u0s99fx', 'InstanceName': 'test1', 'InstanceRegion': 'ap-guangzhou', 'InstanceUin': '38059483', 'CidrBlock': ['10.0.0.0/16'], 'State': 'PENDING', 'CcnUin': '100000072292', 'InstanceArea': 'CHINA_MAINLAND', 'AttachedTime': '2021-03-03 16:19:44', 'RouteTableId': 'rtb-xxxxxxxx', 'RouteTableName': 'name', 'Description': 'ccn-1'}]",
           "member": "CcnAttachedInstance",
           "name": "InstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14455,7 +14701,7 @@
         {
           "disabled": false,
           "document": "云联网跨境带宽监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{'InBandwidth': [1, 1], 'InPkg': [1, 2], 'OutBandwidth': [1, 3], 'OutPkg': [1, 4]}]",
           "member": "CrossBorderFlowMonitorData",
           "name": "CrossBorderFlowMonitorData",
           "output_required": true,
@@ -15431,6 +15677,89 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPv6AddressesRequest": {
+      "document": "DescribeIPv6Addresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识 IPv6 的唯一 ID 列。\n\n- 传统弹性公网 IPv6 唯一 ID 形如：`eip-11112222`\n- 弹性公网 IPv6 唯一 ID 形如：`eipv6-11112222`\n\n注意：参数不支持同时指定`IPv6AddressIds`和`Filters`。",
+          "example": "[\"eipv6-kxjsieow\"]",
+          "member": "string",
+          "name": "IPv6AddressIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`IPv6AddressIds`和`Filters`。详细的过滤条件如下：\n\n- address-id - String - 是否必填：否 - （过滤条件）按照弹性公网IPv6的唯一ID过滤。\n- public-ipv6-address - String - 是否必填：否 - （过滤条件）按照公网 IPv6 的 IP 地址过滤。\n- network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。\n- instance-id - String - 是否必填：否 - （过滤条件）按照绑定实例的唯一ID过滤。\n- charge-type - String - 是否必填：否 - （过滤条件）按照计费类型过滤。\n- private-ipv6-address - String - 是否必填：否 - （过滤条件）按照绑定的内网 IPv6 地址过滤。\n- egress - String - 是否必填：否 - （过滤条件）按照出口过滤。\n- address-type - String - 是否必填：否 - （过滤条件）按照IPv6类型 进行过滤。可选值：'EIP6'，'EIPv6'，'WanIPv6'，'HighQualityEIPv6'。默认值是'EIPv6'。\n- address-isp - String - 是否必填：否 - （过滤条件）按照 运营商类型 进行过滤。可选值：'BGP'，'CMCC'，'CUCC', 'CTCC'。\n- address-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。状态包含：'CREATING'，'BINDING'，'BIND'，'UNBINDING'，'UNBIND'，'OFFLINING'，'BIND_ENI'，'PRIVATE'。\n- address-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\n- tag-key - String - 是否必填：否 - （过滤条件）按照标签键进行过滤。\n- tag-value - String - 是否必填：否 - （过滤条件）按照标签值进行过滤。\n- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。tag-key使用具体的标签键进行替换。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询传统型IPv6地址信息。",
+          "example": "False",
+          "member": "bool",
+          "name": "Traditional",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPv6AddressesResponse": {
+      "document": "DescribeIPv6Addresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的 IPv6 数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv6 详细信息列表。",
+          "example": "无",
+          "member": "Address",
+          "name": "AddressSet",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -17397,7 +17726,7 @@
         {
           "disabled": false,
           "document": "路由表对象。",
-          "example": "[{\"RouteSet\": [{\"RouteTableId\": \"rtb-l2h8d7c2\", \"RouteItemId\": \"rti6-hj3he929\", \"Enabled\": true, \"RouteId\": 0, \"GatewayId\": \"ccn-nswq8wkq\", \"PublishedToVbc\": false, \"CreatedTime\": \"2017-06-30 19:52:03\", \"DestinationIpv6CidrBlock\": \"2402:4e00:1000:810b::/64\", \"DestinationCidrBlock\": \"\", \"RouteDescription\": \"\", \"GatewayType\": \"CCN\", \"RouteType\": \"USER\"}], \"RouteTableId\": \"rtb-l2h8d7c2\", \"VpcId\": \"vpc-2at5y1pn\", \"TagSet\": [{\"Key\": \"test\", \"Value\": \"test\"}], \"CreatedTime\": \"2017-06-30 19:52:03\", \"AssociationSet\": [], \"Main\": false, \"RouteTableName\": \"TestRouteTable\", \"LocalCidrForCcn\": [{\"Cidr\": \"10.1.0.0/16\", \"PublishedToVbc\": true}]}]",
+          "example": "[{\"RouteSet\": [{\"RouteTableId\": \"rtb-l2h8d7c2\", \"RouteItemId\": \"rti6-hj3he929\", \"Enabled\": true, \"RouteId\": 0, \"GatewayId\": \"ccn-nswq8wkq\", \"PublishedToVbc\": false, \"CreatedTime\": \"2017-06-30 19:52:03\", \"DestinationIpv6CidrBlock\": \"2402:4e00:1000:810b::/64\", \"DestinationCidrBlock\": \"\", \"RouteDescription\": \"\", \"GatewayType\": \"CCN\", \"RouteType\": \"USER\"}], \"RouteTableId\": \"rtb-l2h8d7c2\", \"VpcId\": \"vpc-2at5y1pn\", \"TagSet\": [{\"Key\": \"tag-key\", \"Value\": \"tag-value\"}], \"CreatedTime\": \"2017-06-30 19:52:03\", \"AssociationSet\": [], \"Main\": false, \"RouteTableName\": \"RouteTable\", \"LocalCidrForCcn\": [{\"Cidr\": \"10.1.0.0/16\", \"PublishedToVbc\": true}]}]",
           "member": "RouteTable",
           "name": "RouteTableSet",
           "output_required": true,
@@ -17452,7 +17781,7 @@
         {
           "disabled": false,
           "document": "路由对象。",
-          "example": "[{'RouteTableId': 'rtb-pnpcflil', 'RouteItemId': 'rti-hj3he929', 'Enabled': True, 'RouteId': 14915, 'GatewayId': '172.16.0.25', 'PublishedToVbc': True, 'CreatedTime': '2020-01-01 10:00:00', 'DestinationCidrBlock': '172.16.0.0/28', 'RouteDescription': '', 'GatewayType': 'NORMAL_CVM', 'RouteType': 'USER'}]",
+          "example": "[{\"RouteTableId\": \"rtb-pnpcflil\", \"RouteItemId\": \"rti-hj3he929\", \"Enabled\": True, \"RouteId\": 14915, \"GatewayId\": \"172.16.0.25\", \"PublishedToVbc\": True, \"CreatedTime\": \"2020-01-01 10:00:00\", \"DestinationCidrBlock\": \"172.16.0.0/28\", \"RouteDescription\": \"\", \"GatewayType\": \"NORMAL_CVM\", \"RouteType\": \"USER\"}]",
           "member": "Route",
           "name": "RouteSet",
           "output_required": true,
@@ -18692,7 +19021,7 @@
         {
           "disabled": false,
           "document": "流量调度规则。",
-          "example": "无",
+          "example": "[{'CcnId': 'ccn-0puqax1n', 'QosId': 1, 'QosPolicyDescription': '1', 'QosPolicyName': '1', 'Bandwidth': 1}]",
           "member": "TrafficQosPolicySet",
           "name": "TrafficQosPolicySet",
           "output_required": false,
@@ -21065,6 +21394,42 @@
     },
     "DisassociateDirectConnectGatewayNatGatewayResponse": {
       "document": "DisassociateDirectConnectGatewayNatGateway返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateIPv6AddressRequest": {
+      "document": "DisassociateIPv6Address请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6唯一ID，EIPv6 唯一 ID 形如：eipv6-11112222。",
+          "example": "eipv6-nzvwsush",
+          "member": "string",
+          "name": "IPv6AddressId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解绑时是否保持绑定弹性网卡。",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepBindWithEni",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateIPv6AddressResponse": {
+      "document": "DisassociateIPv6Address返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25447,6 +25812,78 @@
     },
     "ModifyHighPriorityRouteTableAttributeResponse": {
       "document": "ModifyHighPriorityRouteTableAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIPv6AddressesAttributesRequest": {
+      "document": "ModifyIPv6AddressesAttributes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6唯一ID列表。",
+          "example": "[\"eipv6-2ucdpy9t\"]",
+          "member": "string",
+          "name": "IPv6AddressIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6地址名称",
+          "example": "test",
+          "member": "string",
+          "name": "IPv6AddressName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIPv6AddressesAttributesResponse": {
+      "document": "ModifyIPv6AddressesAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIPv6AddressesBandwidthRequest": {
+      "document": "ModifyIPv6AddressesBandwidth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6地址唯一ID",
+          "example": "[\"eipv6-3lxpc6sh\"]",
+          "member": "string",
+          "name": "IPv6AddressIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网IPv6地址网络带宽",
+          "example": "10",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIPv6AddressesBandwidthResponse": {
+      "document": "ModifyIPv6AddressesBandwidth返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -29874,6 +30311,33 @@
       ],
       "type": "object"
     },
+    "ReleaseIPv6AddressesRequest": {
+      "document": "ReleaseIPv6Addresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv6地址唯一ID。",
+          "example": "['eipv6-jfiwlckv']",
+          "member": "string",
+          "name": "IPv6AddressIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleaseIPv6AddressesResponse": {
+      "document": "ReleaseIPv6Addresses返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReleaseIp6AddressesBandwidthRequest": {
       "document": "ReleaseIp6AddressesBandwidth请求参数结构体",
       "members": [
@@ -30351,7 +30815,7 @@
         {
           "disabled": false,
           "document": "路由策略对象。需要指定路由策略ID（RouteId）。",
-          "example": "无",
+          "example": "[{\"DestinationCidrBlock\": \"10.1.0.0/16\", \"GatewayId\": \"10.0.0.10\", \"GatewayType\": \"NORMAL_CVM\", \"RouteDescription\": \"demo\", \"RouteItemId\": \"rti-o47594ph\"}]",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -30366,18 +30830,20 @@
         {
           "disabled": false,
           "document": "原路由策略信息。",
-          "example": "无",
+          "example": "[{\"RouteTableId\": \"rtb-ods657t1\", \"RouteItemId\": \"rti-o47594ph\", \"DestinationCidrBlock\": \"10.1.0.0/17\", \"DestinationIpv6CidrBlock\": \"\", \"GatewayType\": \"NORMAL_CVM\", \"GatewayId\": \"10.0.0.10\", \"RouteDescription\": \"\"}]",
           "member": "Route",
           "name": "OldRouteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后的路由策略信息。",
-          "example": "无",
+          "example": "[{\"RouteTableId\": \"rtb-ods657t1\", \"RouteItemId\": \"rti-o47594ph\", \"DestinationCidrBlock\": \"10.1.0.0/16\", \"DestinationIpv6CidrBlock\": \"\", \"GatewayType\": \"NORMAL_CVM\", \"GatewayId\": \"10.0.0.10\", \"RouteDescription\": \"\"}]",
           "member": "Route",
           "name": "NewRouteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30737,7 +31203,7 @@
         {
           "disabled": false,
           "document": "路由表名称，最大长度不能超过60个字节。",
-          "example": "TEST",
+          "example": "demo",
           "member": "string",
           "name": "RouteTableName",
           "required": true,
@@ -30746,7 +31212,7 @@
         {
           "disabled": false,
           "document": "路由策略。",
-          "example": "无",
+          "example": "[{\"DestinationCidrBlock\": \"10.0.0.10/32\", \"GatewayId\": \"10.0.0.17\", \"GatewayType\": \"NORMAL_CVM\", \"RouteDescription\": \"demo\"}]",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -31790,7 +32256,7 @@
         {
           "disabled": false,
           "document": "路由表名称。",
-          "example": "ruby",
+          "example": "demo",
           "member": "string",
           "name": "RouteTableName",
           "output_required": true,
@@ -31840,7 +32306,7 @@
         {
           "disabled": false,
           "document": "标签键值对。",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
