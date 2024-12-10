@@ -10026,7 +10026,7 @@
         {
           "disabled": false,
           "document": "VPC实例ID。",
-          "example": "vpc-ihwh81fr。",
+          "example": "vpc-ihwh81fr",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -10035,7 +10035,7 @@
         {
           "disabled": false,
           "document": "终端节点服务名称。",
-          "example": "终端服务测试001。",
+          "example": "demo",
           "member": "string",
           "name": "EndPointServiceName",
           "required": true,
@@ -10044,7 +10044,7 @@
         {
           "disabled": false,
           "document": "是否自动接受。",
-          "example": "True。",
+          "example": "true",
           "member": "bool",
           "name": "AutoAcceptFlag",
           "required": true,
@@ -10053,7 +10053,7 @@
         {
           "disabled": false,
           "document": "后端服务ID，比如lb-xxx。",
-          "example": "lb-7xwasqqy。",
+          "example": "lb-7xwasqqy",
           "member": "string",
           "name": "ServiceInstanceId",
           "required": true,
@@ -10062,7 +10062,7 @@
         {
           "disabled": false,
           "document": "~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~",
-          "example": "True",
+          "example": "true",
           "member": "bool",
           "name": "IsPassService",
           "required": false,
@@ -10071,11 +10071,20 @@
         {
           "disabled": false,
           "document": "挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。",
-          "example": "CLB,CDB,CRS",
+          "example": "CLB",
           "member": "string",
           "name": "ServiceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10086,9 +10095,10 @@
         {
           "disabled": false,
           "document": "终端节点服务对象详细信息。",
-          "example": "无。",
+          "example": "{\"EndPointSet\": [], \"AutoAcceptFlag\": \"false\", \"ServiceName\": \"test_002\", \"EndPointServiceId\": \"vpcsvc-kngiybxl\", \"ServiceType\": \"CLB\", \"VpcId\": \"vpc-hj3he929\", \"ServiceOwner\": \"1254277469\", \"ServiceVip\": \"10.101.1.11\", \"CreateTime\": \"0000-00-00 00:00:00\", \"ServiceInstanceId\": \"lb-nswq8wkq\", \"EndPointCount\": 1}",
           "member": "EndPointService",
           "name": "EndPointService",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

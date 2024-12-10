@@ -44,7 +44,7 @@
       {
         "document": "生成AuthToken",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildDataFlowAuthToken\n<公共请求参数>\n\n{\n    \"ResourceId\": \"cdb-12dd3d\",\n    \"ResourceRegion\": \"ap-shanghai\",\n    \"ResourceAccount\": \"ReadOnly\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"CurrentTime\": 12332343423,\n            \"LastRotationTimeCost\": 343,\n            \"NextRotationTime\": 10,\n            \"RotationMessage\": \"success\",\n            \"RotationStatus\": \"success\",\n            \"Token\": \"944a***mtHS\"\n        },\n        \"RequestId\": \"5bc7f0df-18a3-426b-84ce-ddbc8d1c95d1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Credentials\": {\n            \"CurrentTime\": 1733802016,\n            \"LastRotationTimeCost\": 343,\n            \"NextRotationTime\": 10,\n            \"RotationMessage\": \"success\",\n            \"RotationStatus\": \"success\",\n            \"Token\": \"944a***mtHS\"\n        },\n        \"RequestId\": \"5bc7f0df-18a3-426b-84ce-ddbc8d1c95d1\"\n    }\n}",
         "title": "生成AuthToken"
       }
     ],
@@ -356,7 +356,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"GroupName\": \"test1\",\n        \"GroupNum\": 1,\n        \"Remark\": \"test2\",\n        \"CreateTime\": \"2019-04-03 15:11:34\",\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"testName\",\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": 2020,\n        \"GroupName\": \"group1\",\n        \"GroupNum\": 1,\n        \"Remark\": \"IT\",\n        \"CreateTime\": \"2019-04-03 15:11:34\",\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"zhangsan\",\n                \"PhoneNum\": \"188****8888\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"user1***@tencent.com\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"4a00d281-862a-4699-9d71-387d9fc2c36a\"\n    }\n}",
         "title": "查询用户组详情"
       }
     ],
@@ -433,7 +433,7 @@
     "GetUserAppId": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=GetUserAppId\r\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=GetUserAppId\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Uin\": \"12345678\",\n        \"OwnerUin\": \"12345678\",\n        \"AppId\": 1250000000,\n        \"RequestId\": \"6fd84cee-0df1-4003-88c9-029acc082ad1\"\n    }\n}",
         "title": "获取用户appId"
       }
@@ -576,7 +576,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListUsersForGroup\r\n&GroupId=2020\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"testName\",\n                \"PhoneNum\": \"\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalNum\": 1,\n        \"UserInfo\": [\n            {\n                \"Uid\": 1001408,\n                \"Uin\": 100000545998,\n                \"Name\": \"group1\",\n                \"PhoneNum\": \"188****8888\",\n                \"CountryCode\": \"86\",\n                \"PhoneFlag\": 0,\n                \"Email\": \"user1***@tencent.com\",\n                \"EmailFlag\": 0,\n                \"UserType\": 3,\n                \"CreateTime\": \"2018-04-24 15:36:26\",\n                \"IsReceiverOwner\": 0\n            }\n        ],\n        \"RequestId\": \"576e68f4-49cf-451b-b717-a584cb68910a\"\n    }\n}",
         "title": "查询用户组关联的用户列表"
       }
     ],
@@ -698,6 +698,14 @@
         "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleDescription\n&RoleId=4611686018427731422\n&Description=abc234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"405af400-30ec-4c78-8955-ef4da843bde2\"\n    }\n}",
         "title": "修改角色描述信息"
+      }
+    ],
+    "UpdateRoleSessionDuration": [
+      {
+        "document": "",
+        "input": "https://cam.tencentcloudapi.com/?Action=UpdateRoleSessionDuration\n&RoleId=1234567\n&SessionDuration=1234567\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4097a057-19c9-45bd-ad12-b4225a75c085\"\n    }\n}",
+        "title": "修改角色会话时长"
       }
     ],
     "UpdateSAMLProvider": [

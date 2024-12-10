@@ -25,7 +25,7 @@ Output:
             "EngineNo": "8B54321",
             "RegisterDate": "2011-10-10",
             "IssueDate": "",
-            "Seal": "上海市公安局交通警寨总队"
+            "Seal": "上海市公安局交通警察总队"
         },
         "BackInfo": null,
         "RecognizeWarnCode": [

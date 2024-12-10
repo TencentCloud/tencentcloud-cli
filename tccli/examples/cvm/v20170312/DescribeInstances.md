@@ -21,10 +21,14 @@ Output:
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "Uuid": "e85f1388-0422-410d-8e50-bef540e78c18",
                 "InstanceState": "RUNNING",
+                "DisableApiTermination": false,
+                "LatestOperationErrorMsg": "",
+                "DefaultLoginPort": 22,
+                "LicenseType": "TencentCloud",
+                "DefaultLoginUser": "root",
                 "LatestOperationState": "SUCCESS",
                 "LoginSettings": {
                     "Password": "123qwe!@#QWE",
-                    "KeepImageLogin": "False",
                     "KeyIds": [
                         "skey-b4vakk62"
                     ]
@@ -137,6 +141,11 @@ Output:
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "Uuid": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
                 "InstanceState": "RUNNING",
+                "DisableApiTermination": false,
+                "LatestOperationErrorMsg": "",
+                "DefaultLoginPort": 22,
+                "LicenseType": "TencentCloud",
+                "DefaultLoginUser": "root",
                 "LatestOperationState": "SUCCESS",
                 "OsName": "CentOS 7.6 64bit",
                 "CreatedTime": "2020-03-10T02:43:51Z",
@@ -184,6 +193,10 @@ Output:
                 "InstanceName": "测试实例",
                 "DataDisks": [],
                 "VirtualPrivateCloud": {
+                    "Ipv6AddressCount": 1,
+                    "PrivateIpAddresses": [
+                        "172.16.3.59"
+                    ],
                     "SubnetId": "subnet-a2676p0e",
                     "AsVpcGateway": false,
                     "VpcId": "vpc-g7wzcv7n"
@@ -227,6 +240,11 @@ Output:
                 "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
                 "Uuid": "e85f1388-0422-410d-8e50-bef540e78c18",
                 "InstanceState": "RUNNING",
+                "DisableApiTermination": false,
+                "LatestOperationErrorMsg": "",
+                "DefaultLoginPort": 22,
+                "LicenseType": "TencentCloud",
+                "DefaultLoginUser": "root",
                 "LatestOperationState": "OPERATING",
                 "LoginSettings": {
                     "Password": "123qwe!@#QWE",

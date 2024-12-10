@@ -152,6 +152,14 @@
         "title": "创建云原生网关引擎分组"
       }
     ],
+    "CreateNativeGatewayServiceSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNativeGatewayServiceSource\n<公共请求参数>\n\n{\n    \"GatewayID\": \"gateway-dde03567\",\n    \"SourceID\": \"ins-5ef8277d\",\n    \"SourceName\": \"nacos-learn-prod\",\n    \"SourceType\": \"TSE-Nacos\",\n    \"SourceInfo\": {\n        \"Addresses\": [\n            \"10.0.0.1:8848\"\n        ],\n        \"VpcInfo\": {\n            \"VpcID\": \"vpc-83p03121\",\n            \"SubnetID\": \"subnet-83p03121\"\n        },\n        \"Auth\": {\n            \"Username\": \"tse@tencentUser\",\n            \"Password\": \"tse@tencentPwd\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"0f1f5ecf-cf0d-47ea-95c4-7ebe260c2f06\"\n    }\n}",
+        "title": "创建服务来源实例"
+      }
+    ],
     "CreateOrUpdateConfigFileAndRelease": [
       {
         "document": "创建或更新配置并发布",
@@ -318,6 +326,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-dde03767\",\n    \"GroupId\": \"group-4se0czf7\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"gateway-dde03767\",\n            \"GroupId\": \"group-4se0czf7\",\n            \"Status\": \"Deleting\",\n            \"TaskId\": \"task-z31df1dz\"\n        },\n        \"RequestId\": \"ffadafb6-545d-461c-ad8c-baa26c0f8955\"\n    }\n}",
         "title": "删除网关实例分组"
+      }
+    ],
+    "DeleteNativeGatewayServiceSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNativeGatewayServiceSource\n<公共请求参数>\n\n{\n    \"GatewayID\": \"gateway-dde03567\",\n    \"SourceID\": \"ins-5ef8277d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"0f1f5ecf-cf0d-47ea-95c4-7ebe260c2f06\"\n    }\n}",
+        "title": "删除网关服务来源实例"
       }
     ],
     "DeleteWafDomains": [
@@ -606,6 +622,14 @@
         "title": "查询云原生网关分组信息"
       }
     ],
+    "DescribeNativeGatewayServiceSources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNativeGatewayServiceSources\n<公共请求参数>\n\n{\n    \"SourceName\": \"nacos-learn-prod\",\n    \"OrderType\": \"AES\",\n    \"Limit\": 1,\n    \"SourceTypes\": [\n        \"TSE-Nacos\"\n    ],\n    \"OrderField\": \"SourceName\",\n    \"Offset\": 1,\n    \"GatewayID\": \"gateway-dde03567\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"GatewayID\": \"gateway-dde03567\",\n                \"SourceID\": \"ins-5ef8277d\",\n                \"SourceName\": \"nacos-learn-prod\",\n                \"SourceType\": \"TSE-Nacos\",\n                \"SourceInfo\": {\n                    \"VpcInfo\": {\n                        \"VpcID\": \"vpc-83p03121\",\n                        \"SubnetID\": \"subnet-83p03121\"\n                    },\n                    \"Addresses\": [\n                        \"10.0.0.1:8848\"\n                    ],\n                    \"Auth\": {\n                        \"Username\": \"tse@tencentUser\",\n                        \"Password\": \"tse@tencentPwd\",\n                        \"AccessToken\": \"\"\n                    }\n                },\n                \"CreateTime\": \"2024-12-09 18:11:19\",\n                \"ModifyTime\": \"2024-12-09 18:11:19\"\n            }\n        ],\n        \"RequestId\": \"0bcf3f70-550e-439d-81ee-7ebe260c2f06\",\n        \"Total\": 3\n    }\n}",
+        "title": "查询网关服务来源实例列表"
+      }
+    ],
     "DescribeOneCloudNativeAPIGatewayService": [
       {
         "document": "获取云原生网关服务详情",
@@ -812,6 +836,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"Name\": \"<Name>\",\n    \"Description\": \"<Description>\",\n    \"GroupId\": \"<GroupId>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\"\n    }\n}",
         "title": "修改云原生API网关实例分组基础信息"
+      }
+    ],
+    "ModifyNativeGatewayServiceSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNativeGatewayServiceSource\n<公共请求参数>\n\n{\n    \"GatewayID\": \"gateway-dde03567\",\n    \"SourceID\": \"ins-5ef8277d\",\n    \"SourceName\": \"nacos-learn-prod\",\n    \"SourceInfo\": {\n        \"Addresses\": [\n            \"10.0.0.1:8848\"\n        ],\n        \"VpcInfo\": {\n            \"VpcID\": \"vpc-83p03121\",\n            \"SubnetID\": \"subnet-83p03121\"\n        },\n        \"Auth\": {\n            \"Username\": \"tse@tencentUser\",\n            \"Password\": \"tse@tencentPwd\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f1f5ecf-cf0d-47ea-95c4-7ebe260c2f06\"\n    }\n}",
+        "title": "ModifyNativeGatewayServiceSource"
       }
     ],
     "ModifyNetworkAccessStrategy": [

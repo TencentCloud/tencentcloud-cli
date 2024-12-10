@@ -3796,7 +3796,7 @@
         {
           "disabled": false,
           "document": "<li><strong>zone</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区例如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p> <li><strong>project-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>项目ID</strong>】进行过滤，可通过调用[DescribeProjects](https://cloud.tencent.com/document/api/651/78725)查询已创建的项目列表或登录[控制台](https://console.cloud.tencent.com/cvm/index)进行查看；也可以调用[AddProject](https://cloud.tencent.com/document/api/651/81952)创建新的项目。项目ID例如：1002189。</p><p style=\"padding-left: 30px;\">类型：Integer</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>host-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDH](https://cloud.tencent.com/document/product/416) ID</strong>】进行过滤。[CDH](https://cloud.tencent.com/document/product/416) ID例如：host-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>dedicated-cluster-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>[CDC](https://cloud.tencent.com/document/product/1346) ID</strong>】进行过滤。[CDC](https://cloud.tencent.com/document/product/1346) ID例如：cluster-xxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>vpc-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>VPC ID</strong>】进行过滤。VPC ID例如：vpc-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>subnet-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>子网ID</strong>】进行过滤。子网ID例如：subnet-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例ID</strong>】进行过滤。实例ID例如：ins-xxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>uuid</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例UUID</strong>】进行过滤。实例UUID例如：xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>security-group-id</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>安全组ID</strong>】进行过滤。安全组ID例如: sg-8jlk3f3r。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-name</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-charge-type</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 | CDHPAID：表示[CDH](https://cloud.tencent.com/document/product/416)付费，即只对[CDH](https://cloud.tencent.com/document/product/416)计费，不对[CDH](https://cloud.tencent.com/document/product/416)上的实例计费。)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>instance-state</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例状态</strong>】进行过滤。状态类型详见[实例状态表](https://cloud.tencent.com/document/api/213/15753#InstanceStatus)</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>private-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的内网IP</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>public-ip-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例主网卡的公网IP</strong>】进行过滤，包含实例创建时自动分配的IP和实例创建后手动绑定的弹性IP。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>ipv6-address</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例的IPv6地址</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> <li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><li><strong>creation-start-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例创建起始时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>creation-end-time</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>实例创建截止时间</strong>】进行过滤。例如：2023-06-01 00:00:00。\n</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p> 每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`InstanceIds`和`Filters`。",
-          "example": "NA",
+          "example": "[ { \"Name\": \"zone\", \"Values\": [ \"ap-guangzhou-6\" ] } ] ",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3839,7 +3839,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。",
-          "example": "NA",
+          "example": "[     {         \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",         \"Uuid\": \"e85f1388-0422-401d-8e50-bef540e78c18\",         \"InstanceState\": \"RUNNING\",         \"DisableApiTermination\": false,         \"LatestOperationErrorMsg\": \"\",         \"DefaultLoginPort\": 22,         \"LicenseType\": \"TencentCloud\",         \"DefaultLoginUser\": \"root\",         \"LatestOperationState\": \"SUCCESS\",         \"IPv6Addresses\": [             \"2001:0db8:86a3:08d3:1319:8a2e:0370:7344\"         ],         \"DedicatedClusterId\": \"\",         \"RestrictState\": \"PROTECTIVELY_ISOLATED\",         \"ExpiredTime\": \"2020-09-22T00:00:00+00:00\",         \"DisasterRecoverGroupId\": \"\",         \"Memory\": 1,         \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",         \"CPU\": 1,         \"RdmaIpAddresses\": [],         \"CamRoleName\": \"\",         \"PublicIpAddresses\": [             \"123.207.11.190\"         ],         \"Tags\": [             {                 \"Value\": \"test\",                 \"Key\": \"test\"             }         ],         \"InstanceId\": \"ins-xlsyru2j\",         \"ImageId\": \"img-8toqc6s3\",         \"StopChargingMode\": \"NOT_APPLICABLE\",         \"InstanceChargeType\": \"POSTPAID_BY_HOUR\",         \"InstanceType\": \"S2.SMALL2\",         \"SystemDisk\": {             \"DiskSize\": 50,             \"DiskId\": \"disk-czsodtl1\",             \"DiskType\": \"CLOUD_SSD\"         },         \"Placement\": {             \"ProjectId\": 1174660,             \"HostIds\": [],             \"Zone\": \"ap-guangzhou-2\",             \"HostIps\": []         },         \"PrivateIpAddresses\": [             \"172.16.32.78\"         ],         \"OsName\": \"CentOS 7.4 64bit\",         \"SecurityGroupIds\": [             \"sg-p1ezv4wz\"         ],         \"InstanceName\": \"test\",         \"IsolatedSource\": \"NOTISOLATED\",         \"VirtualPrivateCloud\": {             \"SubnetId\": \"subnet-mv4sn55k\",             \"AsVpcGateway\": false,             \"Ipv6AddressCount\": 1,             \"VpcId\": \"vpc-m0xxxtxj\",             \"PrivateIpAddresses\": [                 \"172.10.3.59\"             ]         },         \"LatestOperationRequestId\": \"c7dexxx-061d-4ace-8caf-6ad8e5a2f29a\",         \"InternetAccessible\": {             \"PublicIpAssigned\": true,             \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",             \"InternetMaxBandwidthOut\": 1         },         \"HpcClusterId\": \"\",         \"LatestOperation\": \"ResetInstancesType\"     } ]",
           "member": "Instance",
           "name": "InstanceSet",
           "output_required": true,
@@ -5130,22 +5130,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "无",
+          "example": "zone",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -6825,7 +6823,7 @@
           "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6835,7 +6833,7 @@
           "example": "ins-9bxebleo",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6845,7 +6843,7 @@
           "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6855,7 +6853,7 @@
           "example": "1",
           "member": "int64",
           "name": "CPU",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6865,17 +6863,17 @@
           "example": "1",
           "member": "int64",
           "name": "Memory",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例<br><li>EXPIRED：表示过期的实例<br><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。",
+          "document": "实例业务状态。取值范围：<br><li>NORMAL：表示正常状态的实例</li><li>EXPIRED：表示过期的实例</li><li>PROTECTIVELY_ISOLATED：表示被安全隔离的实例。</li>",
           "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6885,17 +6883,17 @@
           "example": "测试实例",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。",
+          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月</li><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费</li><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。</li><li>`SPOTPAID`：表示竞价实例付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6905,7 +6903,7 @@
           "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6915,7 +6913,7 @@
           "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6925,7 +6923,7 @@
           "example": "[\"172.16.32.78\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6935,7 +6933,7 @@
           "example": "[\"123.207.11.190\"]",
           "member": "string",
           "name": "PublicIpAddresses",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6945,7 +6943,7 @@
           "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6955,7 +6953,7 @@
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6965,17 +6963,17 @@
           "example": "img-9qabwvbn",
           "member": "string",
           "name": "ImageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费<br><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费<br><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。\n<br><li>注意：后付费模式本项为null",
+          "document": "自动续费标识。取值范围：<br><li>`NOTIFY_AND_MANUAL_RENEW`：表示通知即将过期，但不自动续费</li><li>`NOTIFY_AND_AUTO_RENEW`：表示通知即将过期，而且自动续费</li><li>`DISABLE_NOTIFY_AND_MANUAL_RENEW`：表示不通知即将过期，也不自动续费。\n</li><li>注意：后付费模式本项为null</li>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6985,7 +6983,7 @@
           "example": "2020-03-10T02:43:51Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6995,7 +6993,7 @@
           "example": "2020-04-10T02:47:36Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7005,7 +7003,7 @@
           "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7015,7 +7013,7 @@
           "example": "[\"sg-p1ezv4wz\"]",
           "member": "string",
           "name": "SecurityGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7025,7 +7023,7 @@
           "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7035,7 +7033,7 @@
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7045,17 +7043,17 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例的关机计费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费<br><li>STOP_CHARGING：关机停止收费<li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件<br>",
+          "document": "实例的关机计费模式。\n取值范围：<br><li>KEEP_CHARGING：关机继续收费</li><li>STOP_CHARGING：关机停止收费</li><li>NOT_APPLICABLE：实例处于非关机状态或者不适用关机停止计费的条件</li>",
           "example": "NOT_APPLICABLE",
           "member": "string",
           "name": "StopChargingMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7065,7 +7063,7 @@
           "example": "68b510db-b4c1-4630-a62b-73d0c7c970f9",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7075,17 +7073,17 @@
           "example": "RenewInstances",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功<br><li>OPERATING：表示操作执行中<br><li>FAILED：表示操作失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的最新操作状态。取值范围：<br><li>SUCCESS：表示操作成功</li><li>OPERATING：表示操作执行中</li><li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7095,7 +7093,7 @@
           "example": "3554eb5b-1cfa-471a-ae76-dc436c9d43e8",
           "member": "string",
           "name": "LatestOperationRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7105,7 +7103,7 @@
           "example": "null",
           "member": "string",
           "name": "DisasterRecoverGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7115,7 +7113,7 @@
           "example": "null",
           "member": "string",
           "name": "IPv6Addresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7125,7 +7123,7 @@
           "example": "null",
           "member": "string",
           "name": "CamRoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7135,7 +7133,7 @@
           "example": "null",
           "member": "string",
           "name": "HpcClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7145,7 +7143,7 @@
           "example": "null",
           "member": "string",
           "name": "RdmaIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7155,7 +7153,7 @@
           "example": "cluster-du3jken",
           "member": "string",
           "name": "DedicatedClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7165,7 +7163,7 @@
           "example": "NOTISOLATED",
           "member": "string",
           "name": "IsolatedSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7175,7 +7173,7 @@
           "example": "无",
           "member": "GPUInfo",
           "name": "GPUInfo",
-          "required": false,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7185,17 +7183,17 @@
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。",
+          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例</li><li>false：表示关闭实例保护，允许通过api接口删除实例</li><br>默认取值：false。",
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7205,7 +7203,7 @@
           "example": "root",
           "member": "string",
           "name": "DefaultLoginUser",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7215,7 +7213,7 @@
           "example": "22",
           "member": "int64",
           "name": "DefaultLoginPort",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7225,7 +7223,7 @@
           "example": "None",
           "member": "string",
           "name": "LatestOperationErrorMsg",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

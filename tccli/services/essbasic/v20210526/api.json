@@ -332,7 +332,7 @@
     "CreateBatchOrganizationRegistrationTasks": {
       "document": "该接口用于批量创建企业认证链接， 可以支持PC浏览器，H5和小程序三种途径。\n此接口为异步提交任务接口，需要与[查询子企业批量认证链接](https://qcloudimg.tencent-cloud.cn/raw/1d3737991b2a3be78002bd78a47d6917.png)配合使用，整体流程如下图。\n![image](https://qcloudimg.tencent-cloud.cn/raw/654aa2a72ab7d42f06464ea33c50c3bb.png)\n\n\n\n**注意**\n\n1. 单次最多创建10个子企业。\n2. 一天内，同一家企业最多创建8000个子企业。\n3. 同一批创建的子客户不能重复，包括企业名称、企业统一信用代码和子客户经办人openId。\n4. 跳转到小程序的实现，请参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）。如何配置跳转电子签小程序，可参考：<a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n\n\n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateBatchOrganizationRegistrationTasksRequest",
-      "name": "提交子企业批量认证链接创建任务",
+      "name": "创建企业批量认证链接任务",
       "output": "CreateBatchOrganizationRegistrationTasksResponse",
       "status": "online"
     },
@@ -1396,7 +1396,7 @@
         {
           "disabled": false,
           "document": "撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。",
-          "example": "合同里边支付的加个写错了",
+          "example": "合同里边支付的价格写错了",
           "member": "string",
           "name": "CancelMessage",
           "required": false,

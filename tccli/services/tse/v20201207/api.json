@@ -133,6 +133,13 @@
       "output": "CreateNativeGatewayServerGroupResponse",
       "status": "online"
     },
+    "CreateNativeGatewayServiceSource": {
+      "document": "创建网关服务来源",
+      "input": "CreateNativeGatewayServiceSourceRequest",
+      "name": "创建网关服务来源",
+      "output": "CreateNativeGatewayServiceSourceResponse",
+      "status": "online"
+    },
     "CreateOrUpdateConfigFileAndRelease": {
       "document": "创建或更新配置文件并发布配置",
       "input": "CreateOrUpdateConfigFileAndReleaseRequest",
@@ -278,6 +285,13 @@
       "input": "DeleteNativeGatewayServerGroupRequest",
       "name": "删除网关实例分组",
       "output": "DeleteNativeGatewayServerGroupResponse",
+      "status": "online"
+    },
+    "DeleteNativeGatewayServiceSource": {
+      "document": "删除网关服务来源实例",
+      "input": "DeleteNativeGatewayServiceSourceRequest",
+      "name": "删除网关服务来源实例",
+      "output": "DeleteNativeGatewayServiceSourceResponse",
       "status": "online"
     },
     "DeleteWafDomains": {
@@ -525,6 +539,13 @@
       "output": "DescribeNativeGatewayServerGroupsResponse",
       "status": "online"
     },
+    "DescribeNativeGatewayServiceSources": {
+      "document": "查询网关服务来源实例列表",
+      "input": "DescribeNativeGatewayServiceSourcesRequest",
+      "name": "查询网关服务来源实例列表",
+      "output": "DescribeNativeGatewayServiceSourcesResponse",
+      "status": "online"
+    },
     "DescribeOneCloudNativeAPIGatewayService": {
       "document": "获取云原生网关服务详情",
       "input": "DescribeOneCloudNativeAPIGatewayServiceRequest",
@@ -705,6 +726,13 @@
       "input": "ModifyNativeGatewayServerGroupRequest",
       "name": "修改云原生API网关实例分组基础信息",
       "output": "ModifyNativeGatewayServerGroupResponse",
+      "status": "online"
+    },
+    "ModifyNativeGatewayServiceSource": {
+      "document": "修改网关服务来源",
+      "input": "ModifyNativeGatewayServiceSourceRequest",
+      "name": "修改网关服务来源",
+      "output": "ModifyNativeGatewayServiceSourceResponse",
       "status": "online"
     },
     "ModifyNetworkAccessStrategy": {
@@ -5032,6 +5060,79 @@
       ],
       "type": "object"
     },
+    "CreateNativeGatewayServiceSourceRequest": {
+      "document": "CreateNativeGatewayServiceSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-dde03567",
+          "member": "string",
+          "name": "GatewayID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源类型，参考值：\n- TSE-Nacos \n- TSE-Consul \n- TSE-PolarisMesh\n- Customer-Nacos\n- Customer-Consul\n- Customer-PolarisMesh\n- TSF\n- TKE\n- EKS\n- PrivateDNS\n- Customer-DNS",
+          "example": "TSE-Nacos",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例ID，当SourceType的值不为PrivateDNS或Customer-DNS时，必填",
+          "example": "ins-5ef8277d",
+          "member": "string",
+          "name": "SourceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例名称，当SourceType的值不为PrivateDNS时，必填",
+          "example": "nacos-learn-prod",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例额外信息",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "SourceInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNativeGatewayServiceSourceResponse": {
+      "document": "CreateNativeGatewayServiceSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrUpdateConfigFileAndReleaseRequest": {
       "document": "CreateOrUpdateConfigFileAndRelease请求参数结构体",
       "members": [
@@ -6098,6 +6199,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteNativeGatewayServiceSourceRequest": {
+      "document": "DeleteNativeGatewayServiceSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例 ID",
+          "example": "gateway-dde03567",
+          "member": "string",
+          "name": "GatewayID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例 ID",
+          "example": "ins-5ef8277d",
+          "member": "string",
+          "name": "SourceID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNativeGatewayServiceSourceResponse": {
+      "document": "DeleteNativeGatewayServiceSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteWafDomainsRequest": {
       "document": "DeleteWafDomains请求参数结构体",
@@ -9097,6 +9244,107 @@
           "name": "Result",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNativeGatewayServiceSourcesRequest": {
+      "document": "DescribeNativeGatewayServiceSources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-dde03567",
+          "member": "string",
+          "name": "GatewayID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单页条数，最大100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例名称，模糊搜索",
+          "example": "nacos-learn-prod",
+          "member": "string",
+          "name": "SourceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "微服务引擎类型：TSE-Nacos｜TSE-Consul｜TSE-PolarisMesh｜Customer-Nacos｜Customer-Consul｜Customer-PolarisMesh",
+          "example": "TSE-Nacos",
+          "member": "string",
+          "name": "SourceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段类型，当前仅支持SourceName",
+          "example": "SourceName",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型，AES/DESC",
+          "example": "AES",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNativeGatewayServiceSourcesResponse": {
+      "document": "DescribeNativeGatewayServiceSources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总实例数",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例列表",
+          "example": "无",
+          "member": "NativeGatewayServiceSourceItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -14200,6 +14448,60 @@
       ],
       "type": "object"
     },
+    "ModifyNativeGatewayServiceSourceRequest": {
+      "document": "ModifyNativeGatewayServiceSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-dde03567",
+          "member": "string",
+          "name": "GatewayID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例ID",
+          "example": "ins-5ef8277d",
+          "member": "string",
+          "name": "SourceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源名称",
+          "example": "nacos-learn-prod",
+          "member": "string",
+          "name": "SourceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务来源实例额外信息",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "SourceInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNativeGatewayServiceSourceResponse": {
+      "document": "ModifyNativeGatewayServiceSource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNetworkAccessStrategyRequest": {
       "document": "ModifyNetworkAccessStrategy请求参数结构体",
       "members": [
@@ -14657,6 +14959,82 @@
           "name": "GatewayGroupList",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NativeGatewayServiceSourceItem": {
+      "document": "网关数据来源单个描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源ID",
+          "example": "nacos-xxx",
+          "member": "string",
+          "name": "SourceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源名称",
+          "example": "nacos-xx",
+          "member": "string",
+          "name": "SourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源类型",
+          "example": "TSE Nacos｜TSE Consul｜TSE PolarisMesh｜Nacos｜Consul｜PolarisMesh",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务来源额外信息",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "SourceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-08-06 12:34:56",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2022-08-06 12:34:56",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -15829,6 +16207,104 @@
         }
       ],
       "usage": "out"
+    },
+    "SourceInfo": {
+      "document": "服务来源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "微服务引擎接入IP地址信息",
+          "example": "[\"127.0.0.1:8080\"]",
+          "member": "string",
+          "name": "Addresses",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "微服务引擎VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceInstanceVpcInfo",
+          "name": "VpcInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "微服务引擎鉴权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceInstanceAuth",
+          "name": "Auth",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceInstanceAuth": {
+      "document": "实例鉴权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tse",
+          "member": "string",
+          "name": "Username",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账户密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tse",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问凭据 token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tse",
+          "member": "string",
+          "name": "AccessToken",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceInstanceVpcInfo": {
+      "document": "微服务引擎实例的VPC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "微服务引擎VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "微服务引擎子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "SubnetID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StorageOption": {
       "document": "存储的额外选项",

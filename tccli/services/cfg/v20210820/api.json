@@ -1194,6 +1194,15 @@
           "name": "TaskStatusList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "架构ID",
+          "example": "arch-xxxx",
+          "member": "string",
+          "name": "ArchId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

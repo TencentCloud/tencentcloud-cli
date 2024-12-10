@@ -9324,7 +9324,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "user-data-db",
           "member": "string",
           "name": "DBInstanceName",
           "required": false,
@@ -10884,30 +10884,30 @@
         {
           "disabled": false,
           "document": "花费总时间",
-          "example": "",
+          "example": "120.5",
           "member": "float",
           "name": "TotalTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "调用总次数",
-          "example": "",
+          "example": "150",
           "member": "int64",
           "name": "TotalCalls",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "脱敏后的慢SQL列表",
-          "example": "",
+          "example": "{     \"DatabaseName\": \"my_database\",     \"UserName\": \"db_user\",     \"NormalQuery\": \"SELECT * FROM users WHERE age > 30\",     \"Calls\": 150,     \"CallsGrids\": [         10,         20,         30,         40,         50     ],     \"CostTime\": 120.5,     \"Rows\": 75,     \"MinCostTime\": 0.5,     \"MaxCostTime\": 5.0,     \"FirstTime\": \"2024-10-01T10:00:00Z\",     \"LastTime\": \"2024-10-01T10:05:00Z\",     \"SharedReadBlks\": 300,     \"SharedWriteBlks\": 50,     \"ReadCostTime\": 100,     \"WriteCostTime\": 20 }",
           "member": "NormalQueryItem",
           "name": "NormalQueries",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -11165,9 +11165,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "env",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11175,9 +11176,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "prod",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

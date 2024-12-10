@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Credentials": {
-            "CurrentTime": 12332343423,
+            "CurrentTime": 1733802016,
             "LastRotationTimeCost": 343,
             "NextRotationTime": 10,
             "RotationMessage": "success",

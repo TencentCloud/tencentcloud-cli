@@ -30,7 +30,8 @@ Output:
             "ServiceOwner": "1254277469",
             "EndPointCount": 1,
             "EndPointSet": [],
-            "ServiceType": "CLB"
+            "ServiceType": "CLB",
+            "CdcId": ""
         }
     }
 }

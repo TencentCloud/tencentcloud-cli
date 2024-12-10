@@ -7,8 +7,8 @@ Input:
 ```
 tccli ssl DescribeHostUpdateRecordDetail --cli-unfold-argument  \
     --DeployRecordId 748332 \
-    --Limit 0 \
-    --Offset 10
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 

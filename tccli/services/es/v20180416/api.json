@@ -5062,6 +5062,7 @@
           "example": "无",
           "member": "DictInfo",
           "name": "MainDict",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5072,6 +5073,7 @@
           "example": "无",
           "member": "DictInfo",
           "name": "Stopwords",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5082,6 +5084,7 @@
           "example": "无",
           "member": "DictInfo",
           "name": "QQDict",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5092,6 +5095,7 @@
           "example": "无",
           "member": "DictInfo",
           "name": "Synonym",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5102,9 +5106,54 @@
           "example": "无",
           "member": "string",
           "name": "UpdateType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ansj启用词词典列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DictInfo",
+          "name": "AnsjMain",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ansj停用词词典列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DictInfo",
+          "name": "AnsjStop",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ansj歧义词库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DictInfo",
+          "name": "AnsjAmbiguity",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ansj同义词词典列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DictInfo",
+          "name": "AnsjSynonyms",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6696,6 +6745,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有置放群组异步调度任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableScheduleRecoverGroup",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步调度任务的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnableScheduleOperationDuration",
+          "name": "EnableScheduleOperationDuration",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启集群保护：OPEN-开启，CLOSE-关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "EnableDestroyProtection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8254,7 +8333,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8264,7 +8343,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8274,7 +8353,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8284,7 +8363,7 @@
           "example": "无",
           "member": "OperationDetail",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8294,7 +8373,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8304,7 +8383,7 @@
           "example": "无",
           "member": "TaskDetail",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8314,8 +8393,18 @@
           "example": "无",
           "member": "float",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回滚标记， 0未回滚 ，1回滚中，2已回滚",
+          "example": "0",
+          "member": "int64",
+          "name": "RollbackTag",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8324,7 +8413,7 @@
           "example": "无",
           "member": "string",
           "name": "SubAccountUin",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10678,6 +10767,15 @@
           "name": "EnableScheduleOperationDuration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "开启集群保护：OPEN-开启，CLOSE-关闭",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "EnableDestroyProtection",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

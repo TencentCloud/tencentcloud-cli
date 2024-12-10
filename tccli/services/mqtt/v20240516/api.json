@@ -35,6 +35,13 @@
       "output": "CreateTopicResponse",
       "status": "online"
     },
+    "DeactivateDeviceCertificate": {
+      "document": "失效Ca证书",
+      "input": "DeactivateDeviceCertificateRequest",
+      "name": "失效设备证书",
+      "output": "DeactivateDeviceCertificateResponse",
+      "status": "online"
+    },
     "DeleteAuthenticator": {
       "document": "根据认证器类型删除一个MQTT认证器",
       "input": "DeleteAuthenticatorRequest",
@@ -47,6 +54,13 @@
       "input": "DeleteAuthorizationPolicyRequest",
       "name": "删除授权策略",
       "output": "DeleteAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "DeleteDeviceCertificate": {
+      "document": "删除设备证书",
+      "input": "DeleteDeviceCertificateRequest",
+      "name": "删除设备证书",
+      "output": "DeleteDeviceCertificateResponse",
       "status": "online"
     },
     "DeleteTopic": {
@@ -68,6 +82,13 @@
       "input": "DescribeAuthorizationPoliciesRequest",
       "name": "查询授权策略",
       "output": "DescribeAuthorizationPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeDeviceCertificate": {
+      "document": "查询设备证书详情接口",
+      "input": "DescribeDeviceCertificateRequest",
+      "name": "查询设备证书详情",
+      "output": "DescribeDeviceCertificateResponse",
       "status": "online"
     },
     "DescribeDeviceCertificates": {
@@ -138,6 +159,13 @@
       "input": "RegisterDeviceCertificateRequest",
       "name": "注册设备证书",
       "output": "RegisterDeviceCertificateResponse",
+      "status": "online"
+    },
+    "RevokedDeviceCertificate": {
+      "document": "吊销设备证书",
+      "input": "RevokedDeviceCertificateRequest",
+      "name": "吊销设备证书",
+      "output": "RevokedDeviceCertificateResponse",
       "status": "online"
     },
     "UpdateAuthorizationPolicyPriority": {
@@ -747,6 +775,42 @@
       ],
       "type": "object"
     },
+    "DeactivateDeviceCertificateRequest": {
+      "document": "DeactivateDeviceCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书序列号",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeactivateDeviceCertificateResponse": {
+      "document": "DeactivateDeviceCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAuthenticatorRequest": {
       "document": "DeleteAuthenticator请求参数结构体",
       "members": [
@@ -809,6 +873,42 @@
     },
     "DeleteAuthorizationPolicyResponse": {
       "document": "DeleteAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceCertificateRequest": {
+      "document": "DeleteDeviceCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书序列号",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeviceCertificateResponse": {
+      "document": "DeleteDeviceCertificate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -927,6 +1027,182 @@
           "name": "Data",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCertificateRequest": {
+      "document": "DescribeDeviceCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备证书sn",
+          "example": "123",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceCertificateResponse": {
+      "document": "DescribeDeviceCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次更新时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书失效日期",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotAfterTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次激活时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastActivationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次取消激活时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastInactivationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "123",
+          "member": "string",
+          "name": "CaSn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备证书sn",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书内容",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备证书cn",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificateCn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书格式",
+          "example": "PEM",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "    API, 手动注册   \n    JITP 自动注册",
+          "example": "API",
+          "member": "string",
+          "name": "CertificateSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书生效开始时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotBeforeTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2383,6 +2659,42 @@
     },
     "RegisterDeviceCertificateResponse": {
       "document": "RegisterDeviceCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokedDeviceCertificateRequest": {
+      "document": "RevokedDeviceCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书序列号",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceCertificateSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RevokedDeviceCertificateResponse": {
+      "document": "RevokedDeviceCertificate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

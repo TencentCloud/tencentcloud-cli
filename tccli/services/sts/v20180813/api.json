@@ -230,7 +230,7 @@
         {
           "disabled": false,
           "document": "会话名称",
-          "example": "test",
+          "example": "readOnlySession",
           "member": "string",
           "name": "RoleSessionName",
           "required": true,
@@ -254,7 +254,7 @@
         {
           "disabled": false,
           "document": "对象里面包含 Token，TmpSecretId，TmpSecretKey 三元组",
-          "example": "无",
+          "example": "{\"Token\":\"1siMD***\",\"TmpSecretId\":\"AKID***\",\"TmpSecretKey\":\"q95K***\"}",
           "member": "Credentials",
           "name": "Credentials",
           "output_required": true,
@@ -389,30 +389,30 @@
         {
           "disabled": false,
           "document": "token。token长度和绑定的策略有关，最长不超过4096字节。",
-          "example": "",
+          "example": "da1e***",
           "member": "string",
           "name": "Token",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "临时证书密钥ID。最长不超过1024字节。",
-          "example": "",
+          "example": "AKID***",
           "member": "string",
           "name": "TmpSecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "临时证书密钥Key。最长不超过1024字节。",
-          "example": "",
+          "example": "q95K***",
           "member": "string",
           "name": "TmpSecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -487,7 +487,7 @@
         {
           "disabled": false,
           "document": "您可以自定义调用方英文名称，由字母组成。",
-          "example": "test",
+          "example": "readOnly",
           "member": "string",
           "name": "Name",
           "required": true,

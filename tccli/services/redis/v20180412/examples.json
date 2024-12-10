@@ -400,10 +400,10 @@
     ],
     "DescribeMaintenanceWindow": [
       {
-        "document": "修改实例的维护时间窗为03:00-06:00",
+        "document": "查询实例的维护时间窗，结果为03:00-06:00",
         "input": "https://redis.tencentcloudapi.com/?Action=DescribeMaintenanceWindow\n&InstanceId=crs-5a4p****\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"StartTime\": \"03:00\",\n        \"EndTime\": \"06:00\",\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
-        "title": "配置实例访问时间窗"
+        "title": "查询实例维护时间窗"
       }
     ],
     "DescribeParamTemplateInfo": [
