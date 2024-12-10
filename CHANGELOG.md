@@ -1,3 +1,250 @@
+# Release 3.0.1114.1
+
+## 大模型图像创作引擎(aiart) 版本：2022-12-29
+
+### 第 16 次发布
+
+发布时间：2024-12-11 01:08:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ImageInpaintingRemoval](http://document.tencentcloudapi.woa.com/document/product/1728/85473)
+
+
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 19 次发布
+
+发布时间：2024-12-11 01:10:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Docker](http://document.tencentcloudapi.woa.com/document/product/599/15912#Docker)
+
+	* 新增成员：KeepDockerEnvTime
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 18 次发布
+
+发布时间：2024-12-11 01:13:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/1694/79902)
+
+	* 新增入参：ArchId
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 78 次发布
+
+发布时间：2024-12-11 01:20:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：EnableDestroyProtection
+
+
+修改数据结构：
+
+* [EsDictionaryInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsDictionaryInfo)
+
+	* 新增成员：AnsjMain, AnsjStop, AnsjAmbiguity, AnsjSynonyms
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：EnableScheduleRecoverGroup, EnableScheduleOperationDuration, EnableDestroyProtection
+
+* [Operation](http://document.tencentcloudapi.woa.com/document/product/845/30634#Operation)
+
+	* 新增成员：RollbackTag
+
+	* <font color="#dd0000">**修改成员**：</font>SubAccountUin
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 21 次发布
+
+发布时间：2024-12-11 01:28:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryPolicyProductListByCode](http://document.tencentcloudapi.woa.com/document/product/1724/85474)
+
+新增数据结构：
+
+* [PolicyProductList](http://document.tencentcloudapi.woa.com/document/product/1724/80754#PolicyProductList)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 73 次发布
+
+发布时间：2024-12-11 01:32:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AddOnSubtitle](http://document.tencentcloudapi.woa.com/document/product/862/37615#AddOnSubtitle)
+
+	* 新增成员：SubtitleName
+
+
+
+
+## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+
+### 第 5 次发布
+
+发布时间：2024-12-11 01:32:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeactivateDeviceCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85478)
+* [DeleteDeviceCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85477)
+* [DescribeDeviceCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85476)
+* [RevokedDeviceCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85475)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 125 次发布
+
+发布时间：2024-12-11 01:39:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceNodeDistribution](http://document.tencentcloudapi.woa.com/document/product/1179/46089#InstanceNodeDistribution)
+
+	* 新增成员：ZoneStatus
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 25 次发布
+
+发布时间：2024-12-11 01:41:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateClusterAdminInfo](http://document.tencentcloudapi.woa.com/document/product/1739/85479)
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 76 次发布
+
+发布时间：2024-12-11 01:41:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateNativeGatewayServiceSource](http://document.tencentcloudapi.woa.com/document/product/1364/85483)
+* [DeleteNativeGatewayServiceSource](http://document.tencentcloudapi.woa.com/document/product/1364/85482)
+* [DescribeNativeGatewayServiceSources](http://document.tencentcloudapi.woa.com/document/product/1364/85481)
+* [ModifyNativeGatewayServiceSource](http://document.tencentcloudapi.woa.com/document/product/1364/85480)
+
+新增数据结构：
+
+* [NativeGatewayServiceSourceItem](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NativeGatewayServiceSourceItem)
+* [SourceInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#SourceInfo)
+* [SourceInstanceAuth](http://document.tencentcloudapi.woa.com/document/product/1364/54942#SourceInstanceAuth)
+* [SourceInstanceVpcInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#SourceInstanceVpcInfo)
+
+
+
+## 向量数据库(vdb) 版本：2023-06-16
+
+### 第 9 次发布
+
+发布时间：2024-12-11 01:43:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1758/83305#InstanceInfo)
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 181 次发布
+
+发布时间：2024-12-11 01:43:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpcEndPointService](http://document.tencentcloudapi.woa.com/document/product/215/54684)
+
+	* 新增入参：Tags
+
+
+
+
 # Release 3.0.1113.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

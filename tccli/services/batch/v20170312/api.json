@@ -2836,6 +2836,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "紧耦合任务情况下，在任务结束后保持环境不被销毁。",
+          "example": "180",
+          "member": "string",
+          "name": "KeepDockerEnvTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3380,22 +3391,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "无",
+          "example": "zone",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

@@ -24,11 +24,10 @@ Output:
                 "EngineVersion": "",
                 "ExpiredAt": "2023-08-07",
                 "Extend": "{\"Port\": \"8100\", \"DiskType\": \"CLOUD_SSD\", \"NodeType\": \"Store\", \"Platform\": \"vdb-cd\", \"NodeSpecs\": \"{\\\"Cpu\\\":1,\\\"Memory\\\":8}\", \"NodeNumber\": \"3\", \"DiskCapacity\": \"20\", \"DiskTypeValue\": \"云硬盘\", \"EngineVersion\": \"v1.0.0\", \"NodeTypeValue\": \"存储型\", \"NodeSpecsValue\": \"S.2SMALL\", \"NodeNumberValue\": \"\", \"DiskCapacityValue\": \"\"}",
-                "HealthScore": 0,
                 "InstanceId": "vdb-77qt0r46",
                 "IsNoExpired": false,
                 "Memory": 8,
-                "Name": "benyqhuang_测试",
+                "Name": "test",
                 "Networks": [
                     {
                         "Port": 8100,
@@ -39,14 +38,13 @@ Output:
                 ],
                 "PayMode": 1,
                 "Product": "vdb",
-                "Project": "vdb",
+                "Project": "",
                 "Region": "ap-guangzhou",
                 "ReplicaNum": 3,
                 "ResourceTags": [],
                 "ShardNum": 1,
                 "Status": "online",
-                "Warning": 0,
-                "Zone": "ap-guangzhou-3"
+                "Zone": ""
             },
             {
                 "AppId": 251223614,
@@ -57,7 +55,6 @@ Output:
                 "EngineVersion": "",
                 "ExpiredAt": "2023-08-06",
                 "Extend": "{\"Port\": \"8100\", \"DiskType\": \"CLOUD_SSD\", \"NodeType\": \"Store\", \"Platform\": \"vdb-cd\", \"NodeSpecs\": \"{\\\"Cpu\\\":1,\\\"Memory\\\":8}\", \"NodeNumber\": \"3\", \"DiskCapacity\": \"20\", \"DiskTypeValue\": \"云硬盘\", \"EngineVersion\": \"v1.0.0\", \"NodeTypeValue\": \"存储型\", \"NodeSpecsValue\": \"S.2SMALL\", \"NodeNumberValue\": \"\", \"DiskCapacityValue\": \"\"}",
-                "HealthScore": 0,
                 "InstanceId": "vdb-o2ovx6ko",
                 "IsNoExpired": false,
                 "Memory": 8,
@@ -72,14 +69,13 @@ Output:
                 ],
                 "PayMode": 1,
                 "Product": "vdb",
-                "Project": "vdb",
+                "Project": "",
                 "Region": "ap-guangzhou",
                 "ReplicaNum": 3,
                 "ResourceTags": [],
                 "ShardNum": 1,
                 "Status": "online",
-                "Warning": 0,
-                "Zone": "ap-guangzhou-3"
+                "Zone": ""
             }
         ],
         "RequestId": "2757e3ad-427f-45dc-9119-8c9cfb4ae614",

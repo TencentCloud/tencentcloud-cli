@@ -15,7 +15,7 @@ tccli cloudaudit CreateAuditTrack --cli-unfold-argument  \
     --Storage.StorageType cos \
     --Storage.StorageRegion ap-guangzhou \
     --Storage.StorageName audit-cos \
-    --Storage.StoragePrefix test
+    --Storage.StoragePrefix audit
 ```
 
 Output: 

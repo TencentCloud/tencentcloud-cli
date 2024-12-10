@@ -126,6 +126,14 @@
         "title": "示例"
       }
     ],
+    "GetCosKeysByFile": [
+      {
+        "document": "获取成功",
+        "input": "POST / HTTP/1.1\nHost: tandon.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCosKeysByFile\n<公共请求参数>\n\n{\n    \"FilePath\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Bucket\": \"1\",\n            \"Credentials\": {\n                \"SessionToken\": \"1\",\n                \"TmpSecretId\": \"2\",\n                \"TmpSecretKey\": \"3\"\n            },\n            \"ExpiredTime\": 1731500616,\n            \"Prefix\": \"1\",\n            \"Region\": \"1\"\n        },\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "success"
+      }
+    ],
     "GetInternalServiceScene": [
       {
         "document": "",
@@ -140,6 +148,14 @@
         "input": "https://ticket.tencentcloudapi.com/?Action=InternalGetTicket\r\n&TicketId=3927491\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"546\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "GetMCCountTicket": [
+      {
+        "document": "",
+        "input": "https://ticket.tencentcloudapi.com/?Action=MCCountTicket\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WaitingNum\": 1,\n            \"HandlingNum\": 2,\n            \"TotalNum\": 3\n        },\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "例子"
       }
     ],
     "GetOpenTicketInfo": [

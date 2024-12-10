@@ -22,10 +22,10 @@ Output:
         "LogFilePrefix": "xxx2312",
         "ReadWriteAttribute": 1,
         "AuditStatus": 1,
-        "KeyId": "xx",
+        "KeyId": "34",
         "IsEnableKmsEncry": 0,
-        "KmsRegion": "xx",
-        "KmsAlias": "xx",
+        "KmsRegion": "hk",
+        "KmsAlias": "test",
         "RequestId": "e23ee347-d011-482a-83fa-12e7d318dd9f"
     }
 }

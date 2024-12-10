@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateClusterAdminInfo": {
+      "document": "创建RocketMQClusterAdmin",
+      "input": "CreateClusterAdminInfoRequest",
+      "name": "创建RocketMQClusterAdmin",
+      "output": "CreateClusterAdminInfoResponse",
+      "status": "online"
+    },
     "CreateConsumerGroup": {
       "document": "创建消费组",
       "input": "CreateConsumerGroupRequest",
@@ -487,6 +494,96 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateClusterAdminInfoRequest": {
+      "document": "CreateClusterAdminInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "room1",
+          "example": "无",
+          "member": "string",
+          "name": "Room",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "无",
+          "member": "string",
+          "name": "DeployEnv",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Nameserver",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ak",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sk",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterAdminInfoResponse": {
+      "document": "CreateClusterAdminInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateConsumerGroupRequest": {
       "document": "CreateConsumerGroup请求参数结构体",

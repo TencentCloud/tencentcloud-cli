@@ -173,7 +173,7 @@ def doModifyMQTTTopic(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteMQTTUser(args, parsed_globals):
+def doCreateMQTTTopic(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -202,11 +202,11 @@ def doDeleteMQTTUser(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteMQTTUserRequest()
+    model = models.CreateMQTTTopicRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteMQTTUser(model)
+        rsp = client.CreateMQTTTopic(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -277,7 +277,7 @@ def doCreateRole(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyMQTTUser(args, parsed_globals):
+def doModifyMQTTInstanceCertBinding(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -306,11 +306,11 @@ def doModifyMQTTUser(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMQTTUserRequest()
+    model = models.ModifyMQTTInstanceCertBindingRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyMQTTUser(model)
+        rsp = client.ModifyMQTTInstanceCertBinding(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -537,7 +537,7 @@ def doCreateConsumerGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeMQTTUserList(args, parsed_globals):
+def doDeleteMQTTInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -566,11 +566,11 @@ def doDescribeMQTTUserList(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeMQTTUserListRequest()
+    model = models.DeleteMQTTInstanceRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeMQTTUserList(model)
+        rsp = client.DeleteMQTTInstance(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -953,7 +953,7 @@ def doDeleteRole(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteMQTTInstance(args, parsed_globals):
+def doDescribeMQTTUserList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -982,11 +982,11 @@ def doDeleteMQTTInstance(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteMQTTInstanceRequest()
+    model = models.DescribeMQTTUserListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteMQTTInstance(model)
+        rsp = client.DescribeMQTTUserList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1525,7 +1525,7 @@ def doDescribeMQTTInstance(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMQTTTopic(args, parsed_globals):
+def doCreateClusterAdminInfo(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1554,11 +1554,11 @@ def doCreateMQTTTopic(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMQTTTopicRequest()
+    model = models.CreateClusterAdminInfoRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateMQTTTopic(model)
+        rsp = client.CreateClusterAdminInfo(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1785,7 +1785,7 @@ def doDeleteTopic(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeFusionInstanceList(args, parsed_globals):
+def doDeleteMQTTUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1814,11 +1814,11 @@ def doDescribeFusionInstanceList(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeFusionInstanceListRequest()
+    model = models.DeleteMQTTUserRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeFusionInstanceList(model)
+        rsp = client.DeleteMQTTUser(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1889,7 +1889,7 @@ def doDescribeMQTTInstanceCert(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyMQTTInstanceCertBinding(args, parsed_globals):
+def doModifyMQTTUser(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1918,11 +1918,11 @@ def doModifyMQTTInstanceCertBinding(args, parsed_globals):
     client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyMQTTInstanceCertBindingRequest()
+    model = models.ModifyMQTTUserRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyMQTTInstanceCertBinding(model)
+        rsp = client.ModifyMQTTUser(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2617,6 +2617,58 @@ def doDescribeTopicList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeFusionInstanceList(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TrocketClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeFusionInstanceListRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeFusionInstanceList(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyInstance(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2735,14 +2787,14 @@ ACTION_MAP = {
     "DescribeMQTTMessageList": doDescribeMQTTMessageList,
     "ModifyTopic": doModifyTopic,
     "ModifyMQTTTopic": doModifyMQTTTopic,
-    "DeleteMQTTUser": doDeleteMQTTUser,
+    "CreateMQTTTopic": doCreateMQTTTopic,
     "CreateRole": doCreateRole,
-    "ModifyMQTTUser": doModifyMQTTUser,
+    "ModifyMQTTInstanceCertBinding": doModifyMQTTInstanceCertBinding,
     "DeleteInstance": doDeleteInstance,
     "DescribeBrokerStatus": doDescribeBrokerStatus,
     "DescribeMQTTProductSKUList": doDescribeMQTTProductSKUList,
     "CreateConsumerGroup": doCreateConsumerGroup,
-    "DescribeMQTTUserList": doDescribeMQTTUserList,
+    "DeleteMQTTInstance": doDeleteMQTTInstance,
     "DeleteMQTTInsPublicEndpoint": doDeleteMQTTInsPublicEndpoint,
     "DescribeRoleList": doDescribeRoleList,
     "DeleteConsumerGroup": doDeleteConsumerGroup,
@@ -2750,7 +2802,7 @@ ACTION_MAP = {
     "ModifyConsumerGroup": doModifyConsumerGroup,
     "DescribeMQTTInsVPCEndpoints": doDescribeMQTTInsVPCEndpoints,
     "DeleteRole": doDeleteRole,
-    "DeleteMQTTInstance": doDeleteMQTTInstance,
+    "DescribeMQTTUserList": doDescribeMQTTUserList,
     "DescribeProductSKUs": doDescribeProductSKUs,
     "ImportSourceClusterConsumerGroups": doImportSourceClusterConsumerGroups,
     "ModifyMQTTInstance": doModifyMQTTInstance,
@@ -2761,14 +2813,14 @@ ACTION_MAP = {
     "CreateTopic": doCreateTopic,
     "DescribeMQTTTopicList": doDescribeMQTTTopicList,
     "DescribeMQTTInstance": doDescribeMQTTInstance,
-    "CreateMQTTTopic": doCreateMQTTTopic,
+    "CreateClusterAdminInfo": doCreateClusterAdminInfo,
     "CreateInstance": doCreateInstance,
     "DeleteMQTTTopic": doDeleteMQTTTopic,
     "DescribeInstance": doDescribeInstance,
     "DeleteTopic": doDeleteTopic,
-    "DescribeFusionInstanceList": doDescribeFusionInstanceList,
+    "DeleteMQTTUser": doDeleteMQTTUser,
     "DescribeMQTTInstanceCert": doDescribeMQTTInstanceCert,
-    "ModifyMQTTInstanceCertBinding": doModifyMQTTInstanceCertBinding,
+    "ModifyMQTTUser": doModifyMQTTUser,
     "DescribeMQTTInstanceList": doDescribeMQTTInstanceList,
     "ImportSourceClusterTopics": doImportSourceClusterTopics,
     "CreateMQTTInstance": doCreateMQTTInstance,
@@ -2782,6 +2834,7 @@ ACTION_MAP = {
     "ModifyBrokerNode": doModifyBrokerNode,
     "CreateMQTTInsPublicEndpoint": doCreateMQTTInsPublicEndpoint,
     "DescribeTopicList": doDescribeTopicList,
+    "DescribeFusionInstanceList": doDescribeFusionInstanceList,
     "ModifyInstance": doModifyInstance,
     "CreateMQTTUser": doCreateMQTTUser,
 

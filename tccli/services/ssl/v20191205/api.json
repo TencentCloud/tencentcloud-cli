@@ -5870,7 +5870,7 @@
         {
           "disabled": false,
           "document": "每页数量，默认10。\t",
-          "example": "10",
+          "example": "\"10\"",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -5879,7 +5879,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始。\t",
-          "example": "0",
+          "example": "\"0\"",
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -7004,7 +7004,7 @@
         {
           "disabled": false,
           "document": "每页数量，默认10。",
-          "example": "10",
+          "example": "\"10\"",
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -7013,7 +7013,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始。",
-          "example": "0",
+          "example": "\"0\"",
           "member": "string",
           "name": "Offset",
           "required": false,

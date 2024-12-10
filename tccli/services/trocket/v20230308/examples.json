@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateClusterAdminInfo": [
+      {
+        "document": "标准请求",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRocketMQClusterAdminInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"1\",\n    \"ClusterStatus\": \"RUNNING\",\n    \"ClusterVersion\": \"1\",\n    \"Room\": \"1\",\n    \"DeployEnv\": \"CLOUD\",\n    \"Nameserver\": \"1\",\n    \"AccessKey\": \"1\",\n    \"SecretKey\": \"1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"bc959d81-16a1-449a-a89a-eb1a1b804260\"\n    }\n}",
+        "title": "标准请求"
+      }
+    ],
     "CreateConsumerGroup": [
       {
         "document": "创建消费组成功",

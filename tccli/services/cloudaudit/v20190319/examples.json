@@ -3,7 +3,7 @@
     "CreateAuditTrack": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditTrack\n<公共请求参数>\n\n{\n    \"Name\": \"audit\",\n    \"ActionType\": \"Read\",\n    \"ResourceType\": \"audit\",\n    \"Status\": 1,\n    \"TrackForAllMembers\": 1,\n    \"EventNames\": [\n        \"LookUpEvents\",\n        \"DeleteAudit\"\n    ],\n    \"Storage\": {\n        \"StorageType\": \"cos\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageName\": \"audit-cos\",\n        \"StoragePrefix\": \"test\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditTrack\n<公共请求参数>\n\n{\n    \"Name\": \"audit\",\n    \"ActionType\": \"Read\",\n    \"ResourceType\": \"audit\",\n    \"Status\": 1,\n    \"TrackForAllMembers\": 1,\n    \"EventNames\": [\n        \"LookUpEvents\",\n        \"DeleteAudit\"\n    ],\n    \"Storage\": {\n        \"StorageType\": \"cos\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageName\": \"audit-cos\",\n        \"StoragePrefix\": \"audit\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TrackId\": 1,\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
         "title": "创建跟踪集"
       }
@@ -28,7 +28,7 @@
       {
         "document": "查询跟踪集详情",
         "input": "https://cloudaudit.tencentcloudapi.com/?Action=DescribeAudit\n&AuditName=xxxxx_cloudaudit_2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AuditName\": \"xxxxx_cloudaudit_2\",\n        \"CmqQueueName\": \"xxxxx-cloudaudit-2\",\n        \"CmqRegion\": \"hk\",\n        \"CosBucketName\": \"xxxxx-cloudaudit-2\",\n        \"CosRegion\": \"ap-hongkong\",\n        \"IsEnableCmqNotify\": 1,\n        \"LogFilePrefix\": \"xxx2312\",\n        \"ReadWriteAttribute\": 1,\n        \"AuditStatus\": 1,\n        \"KeyId\": \"xx\",\n        \"IsEnableKmsEncry\": 0,\n        \"KmsRegion\": \"xx\",\n        \"KmsAlias\": \"xx\",\n        \"RequestId\": \"e23ee347-d011-482a-83fa-12e7d318dd9f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditName\": \"xxxxx_cloudaudit_2\",\n        \"CmqQueueName\": \"xxxxx-cloudaudit-2\",\n        \"CmqRegion\": \"hk\",\n        \"CosBucketName\": \"xxxxx-cloudaudit-2\",\n        \"CosRegion\": \"ap-hongkong\",\n        \"IsEnableCmqNotify\": 1,\n        \"LogFilePrefix\": \"xxx2312\",\n        \"ReadWriteAttribute\": 1,\n        \"AuditStatus\": 1,\n        \"KeyId\": \"34\",\n        \"IsEnableKmsEncry\": 0,\n        \"KmsRegion\": \"hk\",\n        \"KmsAlias\": \"test\",\n        \"RequestId\": \"e23ee347-d011-482a-83fa-12e7d318dd9f\"\n    }\n}",
         "title": "查询跟踪集详情"
       }
     ],
@@ -36,7 +36,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTrack\n<公共请求参数>\n\n{\n    \"TrackId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"audit\",\n        \"ActionType\": \"Read\",\n        \"ResourceType\": \"audit\",\n        \"EventNames\": [\n            \"LookUpEvents\"\n        ],\n        \"Storage\": {\n            \"StorageName\": \"audit-cos\",\n            \"StoragePrefix\": \"test\",\n            \"StorageRegion\": \"ap-guangzhou\",\n            \"StorageType\": \"cos\"\n        },\n        \"TrackForAllMembers\": 1,\n        \"Status\": 1,\n        \"CreateTime\": \"2021-01-14 14:43:38\",\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"audit\",\n        \"ActionType\": \"Read\",\n        \"ResourceType\": \"audit\",\n        \"EventNames\": [\n            \"LookUpEvents\"\n        ],\n        \"Storage\": {\n            \"StorageName\": \"audit-cos\",\n            \"StoragePrefix\": \"audit\",\n            \"StorageRegion\": \"ap-guangzhou\",\n            \"StorageType\": \"cos\"\n        },\n        \"TrackForAllMembers\": 1,\n        \"Status\": 1,\n        \"CreateTime\": \"2021-01-14 14:43:38\",\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
         "title": "查询操作审计跟踪集详情"
       }
     ],
@@ -115,7 +115,7 @@
     "ModifyAuditTrack": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditTrack\n<公共请求参数>\n\n{\n    \"TrackId\": 1,\n    \"Name\": \"audit\",\n    \"ActionType\": \"Read\",\n    \"ResourceType\": \"audit\",\n    \"Status\": 0,\n    \"TrackForAllMembers\": 1,\n    \"EventNames\": [\n        \"LookUpEvents\",\n        \"DeleteAudit\"\n    ],\n    \"Storage\": {\n        \"StorageType\": \"cos\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageName\": \"audit-cos\",\n        \"StoragePrefix\": \"test\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditTrack\n<公共请求参数>\n\n{\n    \"TrackId\": 1,\n    \"Name\": \"audit\",\n    \"ActionType\": \"Read\",\n    \"ResourceType\": \"audit\",\n    \"Status\": 0,\n    \"TrackForAllMembers\": 1,\n    \"EventNames\": [\n        \"LookUpEvents\",\n        \"DeleteAudit\"\n    ],\n    \"Storage\": {\n        \"StorageType\": \"cos\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageName\": \"audit-cos\",\n        \"StoragePrefix\": \"audit\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
         "title": "修改操作审计跟踪"
       }
@@ -147,7 +147,7 @@
     "UpdateAudit": [
       {
         "document": "更新跟踪集",
-        "input": "https://cloudaudit.tencentcloudapi.com/?Action=UpdateAudit\n&AuditName=xxxxx\n&CosBucketName=sss\n&CosRegion=ap-hongkong\n&LogFilePrefix=wwwwww\n&<公共请求参数>",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=UpdateAudit\n&AuditName=audit_log\n&CosBucketName=sss\n&CosRegion=ap-hongkong\n&LogFilePrefix=wwwwww\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"IsSuccess\": 1,\n        \"RequestId\": \"45cb39e2-4b94-4d9c-bf95-db7daba5740d\"\n    }\n}",
         "title": "更新跟踪集"
       }
