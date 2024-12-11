@@ -463,14 +463,14 @@
       "status": "online"
     },
     "DescribeCDNStatDetails": {
-      "document": "该接口用于查询点播域名的 CDN 带宽、流量等统计数据。\n* 查询的起始时间和结束时间跨度不超过90天。\n* 可以查询不同服务区域的数据。\n* 中国境内的数据支持查询指定地区、运营商的统计数据。",
+      "document": "该接口用于查询点播域名的 CDN 带宽、流量等统计数据。\n* 查询的起始时间和结束时间跨度不超过90天。\n* 可以查询不同服务区域的数据。\n* 中国境内的数据支持查询指定地区、运营商的统计数据。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeCDNStatDetailsRequest",
       "name": "查询点播域名的 CDN 统计数据",
       "output": "DescribeCDNStatDetailsResponse",
       "status": "online"
     },
     "DescribeCDNUsageData": {
-      "document": "该接口用于查询点播 CDN 的流量、带宽等统计数据。\n   1. 可以查询最近365天内的 CDN 用量数据。\n   2.  查询时间跨度不超过90天。\n   3. 可以指定用量数据的时间粒度，支持5分钟、1小时、1天的时间粒度。\n   4.  流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。",
+      "document": "该接口用于查询点播 CDN 的流量、带宽等统计数据。\n   1. 可以查询最近365天内的 CDN 用量数据。\n   2. 查询时间跨度不超过90天。\n   3. 可以指定用量数据的时间粒度，支持5分钟、1小时、1天的时间粒度。\n   4. 流量为查询时间粒度内的总流量，带宽为查询时间粒度内的峰值带宽。\n   5. 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeCDNUsageDataRequest",
       "name": "查询点播 CDN 用量数据",
       "output": "DescribeCDNUsageDataResponse",
@@ -526,21 +526,21 @@
       "status": "online"
     },
     "DescribeDailyMediaPlayStat": {
-      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 结束日期和起始日期的时间跨度最大为90天。",
+      "document": "该接口用于查询指定日期范围内每天的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 结束日期和起始日期的时间跨度最大为90天。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeDailyMediaPlayStatRequest",
       "name": "查询媒体文件的播放统计数据",
       "output": "DescribeDailyMediaPlayStatResponse",
       "status": "online"
     },
     "DescribeDailyMostPlayedStat": {
-      "document": "该接口用于查询每日播放Top100 的媒体文件的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 可以按播放次数或者播放流量查询。\n* 播放次数统计说明：\n    1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。",
+      "document": "该接口用于查询每日播放Top100 的媒体文件的播放统计数据。\n* 可以查询最近一年的播放统计数据。\n* 可以按播放次数或者播放流量查询。\n* 播放次数统计说明：\n    1. HLS 文件：访问 M3U8 文件时统计播放次数；访问 TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeDailyMostPlayedStatRequest",
       "name": "查询每日播放 Top100的媒体文件的播放统计数据",
       "output": "DescribeDailyMostPlayedStatResponse",
       "status": "online"
     },
     "DescribeDailyPlayStatFileList": {
-      "document": "该接口用于查询播放统计文件的下载地址。\n* 可以查询最近一年的播放统计文件下载地址，查询的起始日期和结束日期的时间跨度不超过90天。\n* 云点播每天对前一天的 CDN 请求日志进行分析处理，生成播放统计文件。\n* 播放统计文件内容包含媒体文件的播放次数、播放流量等统计信息。\n* 播放次数统计说明：\n    1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。",
+      "document": "该接口用于查询播放统计文件的下载地址。\n* 可以查询最近一年的播放统计文件下载地址，查询的起始日期和结束日期的时间跨度不超过90天。\n* 云点播每天对前一天的 CDN 请求日志进行分析处理，生成播放统计文件。\n* 播放统计文件内容包含媒体文件的播放次数、播放流量等统计信息。\n* 播放次数统计说明：\n    1. HLS 文件：访问M3U8 文件时统计播放次数；访问TS 文件不统计播放次数。\n    2. 其它文件（如 MP4 文件）：播放请求带有 range 参数且 range 的 start 参数不等于0时不统计播放次数，其它情况统计播放次数。\n* 播放设备的统计：播放请求带了 UserAgent 参数，并且 UserAgent 包含 Android 或者 iPhone 等标识，会统计为移动端播放次数，否则统计为 PC 端播放次数。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeDailyPlayStatFileListRequest",
       "name": "查询播放统计文件下载列表",
       "output": "DescribeDailyPlayStatFileListResponse",
@@ -645,7 +645,7 @@
       "status": "online"
     },
     "DescribeMediaPlayStatDetails": {
-      "document": "该接口用于查询媒体文件按指定时间粒度统计的播放数据\n* 可以查询最近一年的播放统计数据。\n* 时间粒度为小时，结束时间和起始时间的跨度最大为7天。\n* 时间粒度为天，结束时间和起始时间的跨度最大为90天。",
+      "document": "该接口用于查询媒体文件按指定时间粒度统计的播放数据\n* 可以查询最近一年的播放统计数据。\n* 时间粒度为小时，结束时间和起始时间的跨度最大为7天。\n* 时间粒度为天，结束时间和起始时间的跨度最大为90天。\n* 播放统计仅针对 VOD 域名（即 EdgeOne 域名的分发不计入播放统计）。",
       "input": "DescribeMediaPlayStatDetailsRequest",
       "name": "查询媒体文件按指定时间粒度统计的播放数据",
       "output": "DescribeMediaPlayStatDetailsResponse",

@@ -9414,7 +9414,7 @@
           "example": "[]",
           "member": "LivePackageInfo",
           "name": "LivePackageInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9424,7 +9424,7 @@
           "example": "201",
           "member": "int64",
           "name": "PackageBillMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9434,7 +9434,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9444,7 +9444,7 @@
           "example": "95",
           "member": "int64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9454,7 +9454,7 @@
           "example": "2",
           "member": "int64",
           "name": "PageNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9464,7 +9464,7 @@
           "example": "10",
           "member": "int64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9474,7 +9474,7 @@
           "example": "201,201,204,204",
           "member": "string",
           "name": "FluxPackageBillMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

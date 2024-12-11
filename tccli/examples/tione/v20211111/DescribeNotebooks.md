@@ -24,66 +24,61 @@ Output:
     "Response": {
         "NotebookSet": [
             {
-                "Id": "abc",
-                "Name": "abc",
-                "ChargeType": "abc",
+                "Id": "nb-1188508294472113920",
+                "Name": "notebook-test",
+                "ChargeType": "POSTPAID_BY_HOUR",
                 "ResourceConf": {
-                    "Cpu": 1,
-                    "Memory": 1,
                     "Gpu": 1,
-                    "GpuType": "abc",
-                    "InstanceType": "abc"
+                    "Cpu": 2018,
+                    "GpuType": "V100",
+                    "InstanceType": "TI.S.MEDIUM.POST",
+                    "Memory": 4000
                 },
-                "ResourceGroupId": "abc",
-                "VolumeSizeInGB": 1,
+                "ResourceGroupId": "trsg-dwpqnjmk",
+                "VolumeSizeInGB": 100,
                 "BillingInfos": [
-                    "abc"
+                    "info"
                 ],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "test-key",
+                        "TagValue": "test-value"
                     }
                 ],
-                "CreateTime": "abc",
-                "StartTime": "abc",
-                "UpdateTime": "abc",
-                "RuntimeInSeconds": 1,
-                "ChargeStatus": "abc",
-                "Status": "abc",
-                "FailureReason": "abc",
-                "EndTime": "abc",
-                "PodName": "abc",
-                "InstanceTypeAlias": "abc",
-                "ResourceGroupName": "abc",
+                "CreateTime": "2024-11-11T10:50:44+08",
+                "StartTime": "2024-11-11T10:51:44+08",
+                "UpdateTime": "2024-11-11T10:51:44+08",
+                "RuntimeInSeconds": 100,
+                "ChargeStatus": "BILLING",
+                "Status": "Stopped",
+                "FailureReason": "errMsg",
+                "EndTime": "2024-11-14T17:22:16+08",
+                "PodName": "nb-1188501796310898048-912gqy8i0xvk",
+                "InstanceTypeAlias": "2C4G",
+                "ResourceGroupName": "resource-test",
                 "AutoStopping": true,
-                "AutomaticStopTime": 1,
-                "VolumeSourceType": "abc",
+                "AutomaticStopTime": 100,
+                "VolumeSourceType": "CFS",
                 "VolumeSourceCFS": {
-                    "Id": "abc",
-                    "Path": "abc",
-                    "MountType": "abc",
-                    "Protocol": "abc"
+                    "Id": "cfs-9su5kqtv",
+                    "Path": "/",
+                    "Protocol": "NFS",
+                    "MountType": "STORAGE"
                 },
-                "Message": "abc",
+                "Message": "message1",
                 "UserTypes": [
-                    "abc"
+                    "AiMarket"
                 ],
                 "SSHConfig": {
                     "Enable": true,
-                    "PublicKey": "abc",
-                    "Port": 0,
-                    "LoginCommand": "abc"
-                },
-                "VolumeSourceGooseFS": {
-                    "Id": "abc",
-                    "Type": "abc",
-                    "Path": "abc"
+                    "PublicKey": "ssh-rsa AAAA*.00=",
+                    "Port": 6001,
+                    "LoginCommand": "ssh -p 127.0.0.1:6001"
                 }
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "ecc8d2f6-9772-40df-856f-f6e48c6a7008"
     }
 }
 ```

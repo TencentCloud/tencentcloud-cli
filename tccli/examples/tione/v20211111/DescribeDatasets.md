@@ -22,6 +22,7 @@ Output:
                 "Creator": "100007955047",
                 "DatasetVersion": "v1",
                 "DatasetType": "TYPE_DATASET_TEXT",
+                "DatasetScope": "SCOPE_DATASET_PRIVATE",
                 "DatasetTags": [],
                 "DatasetAnnotationTaskName": "",
                 "DatasetAnnotationTaskId": "",
@@ -48,6 +49,7 @@ Output:
                     ]
                 },
                 "AnnotationStatus": "STATUS_NON_ANNOTATED",
+                "AnnotationKeyStatus": "STATUS_SUCCESS",
                 "AnnotationType": "",
                 "AnnotationFormat": "",
                 "DatasetVersions": []

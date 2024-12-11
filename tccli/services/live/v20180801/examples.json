@@ -812,7 +812,7 @@
       {
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=DescribeLivePackageInfo\n&PackageType=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b30c-a32x-493c-8e36-83b295459397\",\n        \"PackageBillMode\": 201,\n        \"TotalPage\": 0,\n        \"TotalNum\": 0,\n        \"PageNum\": 0,\n        \"PageSize\": 0,\n        \"FluxPackageBillMode\": \"xx\",\n        \"LivePackageInfoList\": [\n            {\n                \"Id\": \"17\",\n                \"Total\": 10000,\n                \"Used\": 3000,\n                \"Left\": 7000,\n                \"Status\": 1,\n                \"BuyTime\": \"2019-12-17 17:36:20\",\n                \"ExpireTime\": \"2020-12-17 17:36:20\",\n                \"Type\": 0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"LivePackageInfoList\": [\n            {\n                \"Id\": \"abc\",\n                \"Total\": 0,\n                \"Used\": 0,\n                \"Left\": 0,\n                \"BuyTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"Type\": 0,\n                \"Status\": 0,\n                \"WillRenew\": 0,\n                \"RenewalResult\": 0\n            }\n        ],\n        \"PackageBillMode\": 0,\n        \"TotalPage\": 0,\n        \"TotalNum\": 0,\n        \"PageNum\": 0,\n        \"PageSize\": 0,\n        \"FluxPackageBillMode\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询直播套餐包信息"
       }
     ],

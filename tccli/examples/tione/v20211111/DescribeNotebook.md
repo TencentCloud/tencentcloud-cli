@@ -6,62 +6,122 @@ Input:
 
 ```
 tccli tione DescribeNotebook --cli-unfold-argument  \
-    --Id xx
+    --Id nb-1188508294472113920
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "ecc8d2f6-9772-40df-856f-f6e48c6a7008",
         "NotebookDetail": {
-            "ChargeType": "xx",
+            "ChargeType": "POSTPAID_BY_HOUR",
             "AutomaticStopTime": 0,
-            "EndTime": "xx",
-            "ChargeStatus": "xx",
-            "Status": "xx",
-            "UpdateTime": "xx",
-            "VpcId": "xx",
-            "Tags": [
+            "EndTime": "2024-11-14T17:22:16+08",
+            "ChargeStatus": "BILLING",
+            "Status": "Stopped",
+            "UpdateTime": "2024-11-14T17:17:51+08",
+            "DataSource": "CFS",
+            "Message": "test",
+            "VolumeSourceCFS": {
+                "Id": "cfs-9su5kqtv",
+                "Path": "/",
+                "Protocol": "NFS",
+                "MountType": "STORAGE"
+            },
+            "VolumeSourceType": "CFS",
+            "ImageInfo": {
+                "ImageType": "SYSTEM",
+                "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0",
+                "ImageName": "tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu",
+                "RegistryId": "",
+                "RegistryRegion": ""
+            },
+            "ImageType": "SYSTEM",
+            "DataConfigs": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "MappingPath": "/home/tione/notebook",
+                    "DataSourceType": "CFS",
+                    "DataSourceUsage": "test",
+                    "HDFSSource": {
+                        "Id": "hd-sds",
+                        "Path": "/date"
+                    },
+                    "CFSTurboSource": {
+                        "Id": "cfs-14csdso5",
+                        "Path": "/"
+                    },
+                    "CFSSource": {
+                        "Id": "cfs-14cpoxo5",
+                        "Protocol": "NFS",
+                        "MountType": "STORAGE",
+                        "Path": "/"
+                    },
+                    "COSSource": {
+                        "Bucket": "harry-1318247806",
+                        "Region": "ap-shanghai",
+                        "Paths": [
+                            "/test"
+                        ]
+                    },
+                    "GooseFSSource": {
+                        "Id": "",
+                        "Type": "",
+                        "Path": "",
+                        "NameSpace": ""
+                    },
+                    "LocalDiskSource": {
+                        "InstanceId": ""
+                    },
+                    "CBSSource": {
+                        "VolumeSizeInGB": 0
+                    },
+                    "DataSetSource": {
+                        "Id": ""
+                    }
                 }
             ],
-            "Id": "xx",
-            "ResourceGroupId": "xx",
-            "SubnetId": "xx",
-            "LifecycleScriptId": "xx",
+            "VpcId": "vpc-hb7u9q6e",
+            "Tags": [
+                {
+                    "TagKey": "test-key",
+                    "TagValue": "test-value"
+                }
+            ],
+            "Id": "nb-1188508294472113920",
+            "ResourceGroupId": "trsg-dwpqnjmk",
+            "SubnetId": "subnet-58zkmdob",
+            "LifecycleScriptId": "ls-1007228485705742720",
             "RootAccess": true,
-            "Name": "xx",
-            "DefaultCodeRepoId": "xx",
+            "Name": "notebook-test",
+            "DefaultCodeRepoId": "cr-1000669213287070080",
             "ResourceConf": {
                 "Gpu": 1,
-                "Cpu": 1,
-                "GpuType": "xx",
-                "InstanceType": "xx",
-                "Memory": 1
+                "Cpu": 2018,
+                "GpuType": "V100",
+                "InstanceType": "TI.S.MEDIUM.POST",
+                "Memory": 4000
             },
             "AutoStopping": true,
-            "ResourceGroupName": "xx",
+            "ResourceGroupName": "resource-test",
             "LogEnable": true,
             "BillingInfos": [
-                "xx"
+                "info"
             ],
-            "InstanceTypeAlias": "xx",
+            "InstanceTypeAlias": "2C4G",
             "AdditionalCodeRepoIds": [
-                "xx"
+                "cr-1000669213287070080"
             ],
             "DirectInternetAccess": true,
-            "CreateTime": "xx",
-            "RuntimeInSeconds": 1,
-            "VolumeSizeInGB": 1,
-            "StartTime": "xx",
-            "PodName": "xx",
-            "FailureReason": "xx",
+            "CreateTime": "2024-11-11T10:50:44+08",
+            "RuntimeInSeconds": 100,
+            "VolumeSizeInGB": 100,
+            "StartTime": "2024-11-14T19:50:10+08",
+            "PodName": "nb-1188501796310898048-912gqy8i0xvk",
+            "FailureReason": "no-msg",
             "LogConfig": {
-                "TopicId": "xx",
-                "LogsetId": "xx"
+                "TopicId": "ea8048db-8f97-4abb-9668-f3532b9b61f8",
+                "LogsetId": "4dd0a097-f629-4afc-9b99-888ef99a178f"
             }
         }
     }

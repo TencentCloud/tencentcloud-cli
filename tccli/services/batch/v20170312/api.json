@@ -3341,7 +3341,7 @@
         {
           "disabled": false,
           "document": "释放地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ReleaseAddress",
           "output_required": false,
@@ -3351,8 +3351,8 @@
         },
         {
           "disabled": false,
-          "document": "不支持的网络类型，取值范围：<br><li>BASIC：基础网络<br><li>VPC1.0：私有网络VPC1.0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VPC1.0",
           "member": "string",
           "name": "UnsupportNetworks",
           "output_required": false,
@@ -3363,7 +3363,7 @@
         {
           "disabled": false,
           "document": "HDD本地存储属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{     \"Type\": \"LOCAL_NVME\",     \"MinSize\": 3570,     \"MaxSize\": 3570 }",
           "member": "StorageBlock",
           "name": "StorageBlockAttr",
           "output_required": false,

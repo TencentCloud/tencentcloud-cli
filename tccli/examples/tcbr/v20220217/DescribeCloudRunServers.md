@@ -39,17 +39,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "a2e5dae7-7a84-4caf-b304-519aede64b82",
         "ServerList": [
             {
-                "ServerName": "",
-                "DefaultDomainName": "",
-                "CustomDomainName": "",
-                "Status": "",
-                "UpdateTime": ""
+                "ServerName": "abc",
+                "DefaultDomainName": "abc",
+                "CustomDomainName": "abc",
+                "Status": "abc",
+                "UpdateTime": "abc",
+                "AccessTypes": [
+                    "abc"
+                ],
+                "CustomDomainNames": [
+                    "abc"
+                ]
             }
         ],
-        "Total": 1
+        "Total": 0,
+        "RequestId": "abc"
     }
 }
 ```

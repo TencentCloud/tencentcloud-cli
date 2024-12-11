@@ -1,6 +1,6 @@
-**Example 1: 表格识别示例代码**
+**Example 1: RecognizeTableAccurateOCR调用**
 
-表格识别示例代码
+
 
 Input: 
 

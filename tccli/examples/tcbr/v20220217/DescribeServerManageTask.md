@@ -6,45 +6,45 @@ Input:
 
 ```
 tccli tcbr DescribeServerManageTask --cli-unfold-argument  \
-    --ServerName xx \
-    --EnvId xx \
-    --OperatorRemark xx \
-    --TaskId 0
+    --EnvId abc \
+    --ServerName abc \
+    --TaskId 0 \
+    --OperatorRemark abc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "IsExist": true,
         "Task": {
-            "Status": "xx",
-            "EnvId": "xx",
-            "PreVersionName": "xx",
-            "ServerName": "xx",
+            "Id": 0,
+            "EnvId": "abc",
+            "ServerName": "abc",
+            "CreateTime": "abc",
+            "ChangeType": "abc",
+            "ReleaseType": "abc",
+            "DeployType": "abc",
+            "PreVersionName": "abc",
+            "VersionName": "abc",
             "PipelineId": 0,
-            "ReleaseType": "xx",
-            "CreateTime": "xx",
-            "ReleaseId": 0,
-            "FailReason": "xx",
-            "DeployType": "xx",
             "PipelineTaskId": 0,
-            "VersionName": "xx",
+            "ReleaseId": 0,
+            "Status": "abc",
             "Steps": [
                 {
-                    "Status": "xx",
+                    "Name": "abc",
+                    "Status": "abc",
+                    "StartTime": "abc",
+                    "EndTime": "abc",
                     "CostTime": 0,
-                    "Name": "xx",
-                    "FailReason": "xx",
-                    "StartTime": "xx",
-                    "EndTime": "xx"
+                    "FailReason": "abc"
                 }
             ],
-            "OperatorRemark": "xx",
-            "Id": 0,
-            "ChangeType": "xx"
+            "FailReason": "abc",
+            "OperatorRemark": "abc"
         },
-        "RequestId": "xx",
-        "IsExist": true
+        "RequestId": "abc"
     }
 }
 ```

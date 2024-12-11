@@ -105,6 +105,20 @@
       "output": "DescribeBillingResourceInstanceRunningJobsResponse",
       "status": "online"
     },
+    "DescribeBillingSpecs": {
+      "document": "本接口(DescribeBillingSpecs) 提供查询计费项列表",
+      "input": "DescribeBillingSpecsRequest",
+      "name": "查询计费项列表",
+      "output": "DescribeBillingSpecsResponse",
+      "status": "online"
+    },
+    "DescribeBillingSpecsPrice": {
+      "document": "本接口(DescribeBillingSpecsPrice)用于查询按量计费计费项价格。",
+      "input": "DescribeBillingSpecsPriceRequest",
+      "name": "查询计费项价格",
+      "output": "DescribeBillingSpecsPriceResponse",
+      "status": "online"
+    },
     "DescribeBuildInImages": {
       "document": "获取内置镜像列表",
       "input": "DescribeBuildInImagesRequest",
@@ -238,13 +252,6 @@
       "output": "PushTrainingMetricsResponse",
       "status": "online"
     },
-    "SendChatMessage": {
-      "document": "这是一个供您体验大模型聊天的接口。",
-      "input": "SendChatMessageRequest",
-      "name": "大模型聊天体验",
-      "output": "SendChatMessageResponse",
-      "status": "online"
-    },
     "StartNotebook": {
       "document": "启动Notebook",
       "input": "StartNotebookRequest",
@@ -372,8 +379,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话的目标模型ID。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。",
-          "example": "无",
+          "document": "对话的目标模型ID。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-q7pfr29p。",
+          "example": "ms-q7pfr29p",
           "member": "string",
           "name": "Model",
           "required": true,
@@ -390,8 +397,8 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为1.0，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
-          "example": "无",
+          "document": "仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为0.7，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
+          "example": "0.7",
           "member": "float",
           "name": "Temperature",
           "required": false,
@@ -400,7 +407,7 @@
         {
           "disabled": false,
           "document": "仅当模型为自行部署的开源大模型时生效。核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "TopP",
           "required": false,
@@ -408,8 +415,8 @@
         },
         {
           "disabled": false,
-          "document": "仅当模型为自行部署的开源大模型时生效。最大生成的token数目。默认为无限大。",
-          "example": "无",
+          "document": "仅当模型为自行部署的开源大模型时生效。默认 512，模型可生成内容的最长 token 数量，最大不能超过模型支持的上下文长度。",
+          "example": "512",
           "member": "int64",
           "name": "MaxTokens",
           "required": false,
@@ -423,8 +430,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署好的服务Id",
-          "example": "无",
+          "document": "对话的模型服务组ID",
+          "example": "ms-q7pfr29p",
           "member": "string",
           "name": "Model",
           "output_required": false,
@@ -443,23 +450,23 @@
         },
         {
           "disabled": false,
-          "document": "会话Id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "会话Id。",
+          "example": "86eb3227-06f5-4e2f-8333-4d41ca30195b",
           "member": "string",
           "name": "Id",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "token统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "token统计",
           "example": "无",
           "member": "Usage",
           "name": "Usage",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -475,18 +482,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对话结果",
           "example": "无",
           "member": "Message",
           "name": "Message",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束理由: stop, length, content_filter, null",
-          "example": "无",
+          "example": "stop",
           "member": "string",
           "name": "FinishReason",
           "output_required": false,
@@ -496,7 +503,7 @@
         {
           "disabled": false,
           "document": "序号",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Index",
           "output_required": false,
@@ -671,7 +678,7 @@
           "example": "TYPE_DATASET_TEXT",
           "member": "string",
           "name": "DatasetType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -680,7 +687,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -689,7 +696,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -712,7 +719,7 @@
         },
         {
           "disabled": false,
-          "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪",
+          "document": "标注类型:\nANNOTATION_TYPE_CLASSIFICATION，图片分类\nANNOTATION_TYPE_DETECTION，目标检测\nANNOTATION_TYPE_SEGMENTATION，图片分割\nANNOTATION_TYPE_TRACKING，目标跟踪\nANNOTATION_TYPE_OCR，OCR\nANNOTATION_TYPE_TEXT_CLASSIFICATION，文本分类",
           "example": "ANNOTATION_TYPE_DETECTION",
           "member": "string",
           "name": "AnnotationType",
@@ -721,7 +728,7 @@
         },
         {
           "disabled": false,
-          "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构",
+          "document": "标注格式:\nANNOTATION_FORMAT_TI，TI平台格式\nANNOTATION_FORMAT_PASCAL，Pascal Voc\nANNOTATION_FORMAT_COCO，COCO\nANNOTATION_FORMAT_FILE，文件目录结构\nANNOTATION_FORMAT_TEXT_TI，文本类型TI平台格式\nANNOTATION_FORMAT_TXT，文本类型TXT格式\nANNOTATION_FORMAT_CSV，文本类型CSV格式\nANNOTATION_FORMAT_JSON，文本类型JSON格式",
           "example": "VOC",
           "member": "string",
           "name": "AnnotationFormat",
@@ -748,12 +755,39 @@
         },
         {
           "disabled": false,
-          "document": "导入文件粒度，按行或者按文件",
+          "document": "导入文件粒度\nTYPE_TEXT_LINE，按行\nTYPE_TEXT_FILE，按文件",
           "example": "TYPE_TEXT_LINE",
           "member": "string",
           "name": "ContentType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据集建模一级类别。LLM,CV,STRUCTURE,OTHER",
+          "example": "LLM",
+          "member": "string",
+          "name": "DatasetScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据集标签。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据集CFS配置。仅支持LLM场景",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -767,6 +801,7 @@
           "example": "rodftu04veo",
           "member": "string",
           "name": "DatasetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1019,7 +1054,7 @@
         {
           "disabled": false,
           "document": "回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)",
-          "example": "无",
+          "example": "http://callback.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -1028,7 +1063,7 @@
         {
           "disabled": false,
           "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ModelTurboEnable",
           "required": false,
@@ -1037,7 +1072,7 @@
         {
           "disabled": false,
           "document": "服务分类",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -1046,7 +1081,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
-          "example": "无",
+          "example": "sleep 36000",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -1064,7 +1099,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
-          "example": "无",
+          "example": "c2xlZXAgMzYwMDA=",
           "member": "string",
           "name": "CommandBase64",
           "required": false,
@@ -1073,9 +1108,27 @@
         {
           "disabled": false,
           "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
-          "example": "无",
+          "example": "8501",
           "member": "int64",
           "name": "ServicePort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "DeployType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePerReplicas",
           "required": false,
           "type": "int"
         }
@@ -1087,13 +1140,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的模型服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生成的模型服务",
           "example": "无",
           "member": "Service",
           "name": "Service",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1110,7 +1163,7 @@
         {
           "disabled": false,
           "document": "名称。不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
-          "example": "a1",
+          "example": "notebook-test",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1119,7 +1172,7 @@
         {
           "disabled": false,
           "document": "计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
-          "example": "a1",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "required": true,
@@ -1128,7 +1181,7 @@
         {
           "disabled": false,
           "document": "计算资源配置",
-          "example": "无",
+          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "required": true,
@@ -1173,7 +1226,7 @@
         {
           "disabled": false,
           "document": "资源组ID(for预付费)",
-          "example": "a1",
+          "example": "trsg-dwpqnjmk",
           "member": "string",
           "name": "ResourceGroupId",
           "required": false,
@@ -1182,7 +1235,7 @@
         {
           "disabled": false,
           "document": "Vpc-Id",
-          "example": "a1",
+          "example": "vpc-4kq8vlym",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1191,7 +1244,7 @@
         {
           "disabled": false,
           "document": "子网Id",
-          "example": "a1",
+          "example": "subnet-58zkmdob",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1218,7 +1271,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置",
-          "example": "无",
+          "example": "{\"id\":\"cfs-9su5kqtv\",\"path\":\"/\",\"mappingPath\":\"/data\"}",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "required": false,
@@ -1227,7 +1280,7 @@
         {
           "disabled": false,
           "document": "日志配置",
-          "example": "无",
+          "example": "{\"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\", \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\"}",
           "member": "LogConfig",
           "name": "LogConfig",
           "required": false,
@@ -1236,7 +1289,7 @@
         {
           "disabled": false,
           "document": "生命周期脚本的ID",
-          "example": "a1",
+          "example": "ls-1007228485705742720",
           "member": "string",
           "name": "LifecycleScriptId",
           "required": false,
@@ -1245,7 +1298,7 @@
         {
           "disabled": false,
           "document": "默认GIT存储库的ID",
-          "example": "a1",
+          "example": "cr-1000669213287070080",
           "member": "string",
           "name": "DefaultCodeRepoId",
           "required": false,
@@ -1254,7 +1307,7 @@
         {
           "disabled": false,
           "document": "其他GIT存储库的ID，最多3个",
-          "example": "无",
+          "example": "[\"cr-1000669213287070080\"]",
           "member": "string",
           "name": "AdditionalCodeRepoIds",
           "required": false,
@@ -1272,7 +1325,7 @@
         {
           "disabled": false,
           "document": "标签配置",
-          "example": "无",
+          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1281,7 +1334,7 @@
         {
           "disabled": false,
           "document": "数据配置，只支持WEDATA_HDFS存储类型",
-          "example": "[]",
+          "example": "[ {\"DataSourceType\": \"CLOUD_PREMIUM\", \"CBSSource\": {\"VolumeSizeInGB\": 50}, \"MappingPath\": \"/home/tione/notebook\"}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "required": false,
@@ -1290,7 +1343,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "无",
+          "example": "{\"ImageType\":\"SYSTEM\",\"ImageId\":\"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"ImageName\":\"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\"AllowSaveAllContent\":true,\"SupportDataPipeline\":false}",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -1299,7 +1352,7 @@
         {
           "disabled": false,
           "document": "镜像类型，包括SYSTEM、TCR、CCR",
-          "example": "无",
+          "example": "System",
           "member": "string",
           "name": "ImageType",
           "required": false,
@@ -1308,7 +1361,7 @@
         {
           "disabled": false,
           "document": "SSH配置信息",
-          "example": "无",
+          "example": " {\"Enable\": false, \"PublicKey\": \"public-key\"}",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "required": false,
@@ -1317,7 +1370,7 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置",
-          "example": "无",
+          "example": "{\"id\":\"x-c60-v747xo7z\",\"gfsType\":\"GooseFSx\",\"path\":\"/\"}",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "required": false,
@@ -1767,6 +1820,17 @@
         },
         {
           "disabled": false,
+          "document": "存储用途\n可选值为 BUILTIN_CODE, BUILTIN_DATA, BUILTIN_MODEL, USER_DATA, USER_CODE, USER_MODEL, OUTPUT, OTHER\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BUILTIN_CODE",
+          "member": "string",
+          "name": "DataSourceUsage",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATASET",
           "member": "string",
@@ -1918,7 +1982,7 @@
           "example": "Voc2017",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1928,7 +1992,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1938,7 +2002,7 @@
           "example": "test",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1948,7 +2012,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1958,7 +2022,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1968,7 +2032,7 @@
           "example": "test",
           "member": "Tag",
           "name": "DatasetTags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1978,7 +2042,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetAnnotationTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1988,7 +2052,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1998,7 +2062,7 @@
           "example": "test",
           "member": "uint64",
           "name": "Process",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2008,7 +2072,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2018,7 +2082,7 @@
           "example": "test",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2028,7 +2092,7 @@
           "example": "test",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2038,7 +2102,7 @@
           "example": "test",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2048,7 +2112,7 @@
           "example": "test",
           "member": "string",
           "name": "ExternalTaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2058,7 +2122,7 @@
           "example": "test",
           "member": "string",
           "name": "DatasetSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2068,7 +2132,7 @@
           "example": "test",
           "member": "uint64",
           "name": "FileNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2078,7 +2142,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2088,7 +2152,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2098,7 +2162,7 @@
           "example": "test",
           "member": "DatasetInfo",
           "name": "DatasetVersions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2108,7 +2172,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2118,7 +2182,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2128,7 +2192,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2138,7 +2202,7 @@
           "example": "SCOPE_DATASET_PRIVATE",
           "member": "string",
           "name": "DatasetScope",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2148,7 +2212,7 @@
           "example": "IDENTITY",
           "member": "string",
           "name": "OcrScene",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2158,7 +2222,7 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "AnnotationKeyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2168,8 +2232,68 @@
           "example": "TYPE_TEXT_LINE",
           "member": "string",
           "name": "ContentType",
-          "required": false,
+          "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集建模类别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasetScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NumAnnotated",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注规范\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AnnotationSpecification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AnnotationSchemaConfigured",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -2184,7 +2308,7 @@
           "example": "rodftv7u3gg",
           "member": "string",
           "name": "DatasetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2194,7 +2318,7 @@
           "example": "test_text_202111291118",
           "member": "string",
           "name": "DatasetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2204,7 +2328,7 @@
           "example": "nemoren",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2214,7 +2338,7 @@
           "example": "v1",
           "member": "string",
           "name": "DatasetVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2224,7 +2348,7 @@
           "example": "TEXT",
           "member": "string",
           "name": "DatasetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2234,7 +2358,7 @@
           "example": "tag",
           "member": "Tag",
           "name": "DatasetTags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2244,7 +2368,7 @@
           "example": "anno_test_text",
           "member": "string",
           "name": "DatasetAnnotationTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2254,7 +2378,7 @@
           "example": "\"anno_id\"",
           "member": "string",
           "name": "DatasetAnnotationTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2264,7 +2388,7 @@
           "example": "100",
           "member": "int64",
           "name": "Process",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2274,7 +2398,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "DatasetStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2284,7 +2408,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2294,7 +2418,7 @@
           "example": "2021-12-01 18:32:05",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2304,7 +2428,7 @@
           "example": "2021-12-01 18:32:05",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2314,7 +2438,7 @@
           "example": "test",
           "member": "string",
           "name": "ExternalTaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2324,7 +2448,7 @@
           "example": "1G",
           "member": "string",
           "name": "DatasetSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2334,7 +2458,7 @@
           "example": "20",
           "member": "uint64",
           "name": "FileNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2344,7 +2468,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageDataPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2354,7 +2478,7 @@
           "example": "test",
           "member": "CosPathInfo",
           "name": "StorageLabelPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2364,7 +2488,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2374,7 +2498,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2384,7 +2508,7 @@
           "example": "test",
           "member": "string",
           "name": "AnnotationFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2394,7 +2518,7 @@
           "example": "SCOPE_DATASET_PRIVATE",
           "member": "string",
           "name": "DatasetScope",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2404,7 +2528,7 @@
           "example": "IDENTITY",
           "member": "string",
           "name": "OcrScene",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2414,8 +2538,78 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "AnnotationKeyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集建模类别。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatasetScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CFS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CFSConfig",
+          "name": "CFSConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据集标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SceneTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已标注数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "NumAnnotated",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注规范\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AnnotationSpecification",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标注Schema是否配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AnnotationSchemaConfigured",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -2580,7 +2774,7 @@
         {
           "disabled": false,
           "document": "notebook id",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -2697,7 +2891,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
-          "example": "无",
+          "example": "[]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -2706,7 +2900,7 @@
         {
           "disabled": false,
           "document": "分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10....即每页左边为闭区间; 默认0",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2715,7 +2909,7 @@
         {
           "disabled": false,
           "document": "分页查询每页大小，默认20",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2724,7 +2918,7 @@
         {
           "disabled": false,
           "document": "排序方向; 枚举值: ASC | DESC；默认DESC",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -2733,7 +2927,7 @@
         {
           "disabled": false,
           "document": "排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime",
-          "example": "无",
+          "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -2798,7 +2992,7 @@
         },
         {
           "disabled": false,
-          "document": "Filter.Name: 枚举值: ResourceGroupId (资源组id列表)\n                    ResourceGroupName (资源组名称列表)\nFilter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为5，Filter.Values的上限为100",
+          "document": "Filter.Name: 枚举值: ResourceGroupId (资源组id列表)                    ResourceGroupName (资源组名称列表)                    AvailableNodeCount（资源组中可用节点数量）Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询每次请求的Filters的上限为5，Filter.Values的上限为100",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2931,6 +3125,98 @@
       ],
       "type": "object"
     },
+    "DescribeBillingSpecsPriceRequest": {
+      "document": "DescribeBillingSpecsPrice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "询价参数，支持批量询价",
+          "example": "无",
+          "member": "SpecUnit",
+          "name": "SpecsParam",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingSpecsPriceResponse": {
+      "document": "DescribeBillingSpecsPrice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项价格，支持批量返回",
+          "example": "无",
+          "member": "SpecPrice",
+          "name": "SpecsPrice",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingSpecsRequest": {
+      "document": "DescribeBillingSpecs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "枚举值：空、TRAIN、NOTEBOOK、INFERENCE或EMS",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型：[\"\", \"CALC\", \"CPU\", \"GPU\", \"GPU-SW\"]",
+          "example": "CALC",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingSpecsResponse": {
+      "document": "DescribeBillingSpecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项列表",
+          "example": "无",
+          "member": "Spec",
+          "name": "Specs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBuildInImagesRequest": {
       "document": "DescribeBuildInImages请求参数结构体",
       "members": [
@@ -3033,6 +3319,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否检查CFS。若开启，则在CFS挂载好之前，不会返回数据集列表。",
+          "example": "无",
+          "member": "bool",
+          "name": "CFSChecking",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回CFS详情。",
+          "example": "无",
+          "member": "bool",
+          "name": "CFSDetail",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3046,7 +3350,7 @@
           "example": "23",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3056,7 +3360,7 @@
           "example": "无",
           "member": "DatasetGroup",
           "name": "DatasetGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3066,9 +3370,19 @@
           "example": "100",
           "member": "uint64",
           "name": "DatasetIdNums",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "若开启了CFSChecking，则检查CFS是否准备完毕。若CFS未准备完毕，则返回true，并且TotalCount为0，DatasetGroups为空。",
+          "example": "无",
+          "member": "bool",
+          "name": "CFSNotReady",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3633,7 +3947,7 @@
           "example": "无",
           "member": "NotebookDetail",
           "name": "NotebookDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3711,23 +4025,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详情",
           "example": "无",
           "member": "NotebookSetItem",
           "name": "NotebookSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4107,7 +4421,7 @@
         {
           "disabled": false,
           "document": "GooseFSx实例需要挂载的路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "/",
+          "example": "/test",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -4166,7 +4480,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4176,7 +4490,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4186,7 +4500,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Gpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4196,7 +4510,7 @@
           "example": "无",
           "member": "GpuDetail",
           "name": "GpuDetailSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -4379,7 +4693,7 @@
         {
           "disabled": false,
           "document": "过滤值",
-          "example": "无",
+          "example": "[\"DataPipeline\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -4388,7 +4702,7 @@
         {
           "disabled": false,
           "document": "是否反选",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Negative",
           "required": false,
@@ -4476,56 +4790,23 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "镜像仓库用户名密码信息(仅当ImageType为CUSTOM第三方镜像的时候需要)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "ImageSecret",
-          "name": "ImageSecret",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": true
         }
       ],
       "usage": "both"
     },
-    "ImageSecret": {
-      "document": "自定义镜像仓库凭据",
+    "ImageUrl": {
+      "document": "多模态对话图片信息",
       "members": [
         {
           "disabled": false,
-          "document": "用于加密密码的KMS公钥ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "9a3b93e2-0f68-11ef-9b3e-5254000fd567",
+          "document": "图片url",
+          "example": "https://cos-bucket.cos.ap-guangzhou.myqcloud.com/TI-ONE-release/IMG.jpg",
           "member": "string",
-          "name": "KeyId",
+          "name": "Url",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test_user",
-          "member": "string",
-          "name": "Username",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "密码,base64编码； 当keyId不为空时，密码是加密后的\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dGVzdF9wYXNzd29yZAo=",
-          "member": "string",
-          "name": "Password",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5002,25 +5283,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色名。支持三个角色：system、user、assistant，其中system仅开头可出现一次，也可忽略。",
           "example": "user",
           "member": "string",
           "name": "Role",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对话输入内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "对话输入内容。",
+          "example": "你好",
           "member": "string",
           "name": "Content",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数",
+          "example": "无",
+          "member": "MultiModalContent",
+          "name": "MultiModalContents",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5110,7 +5402,7 @@
           "example": "acc-3v3yf470zrpc",
           "member": "string",
           "name": "ModelAccTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5120,7 +5412,7 @@
           "example": "test-task",
           "member": "string",
           "name": "ModelAccTaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5130,7 +5422,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5140,7 +5432,7 @@
           "example": "test",
           "member": "string",
           "name": "ModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5150,7 +5442,7 @@
           "example": "v1",
           "member": "string",
           "name": "ModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5160,7 +5452,7 @@
           "example": "JOB",
           "member": "string",
           "name": "ModelSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5170,7 +5462,7 @@
           "example": "FP16",
           "member": "string",
           "name": "OptimizationLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5180,7 +5472,7 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5190,7 +5482,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ModelInputNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5200,7 +5492,7 @@
           "example": "无",
           "member": "ModelInputInfo",
           "name": "ModelInputInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5210,7 +5502,7 @@
           "example": "T4",
           "member": "string",
           "name": "GPUType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5220,7 +5512,7 @@
           "example": "FREE",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5230,7 +5522,7 @@
           "example": "2.86x",
           "member": "string",
           "name": "Speedup",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5240,7 +5532,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelInputPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5250,7 +5542,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelOutputPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5260,7 +5552,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5270,7 +5562,7 @@
           "example": "PYTORCH",
           "member": "string",
           "name": "AlgorithmFramework",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5280,7 +5572,7 @@
           "example": "0",
           "member": "uint64",
           "name": "WaitNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5290,7 +5582,7 @@
           "example": "2022-05-10 22:10:11",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5300,7 +5592,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TaskProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5310,7 +5602,7 @@
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "ModelFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5320,7 +5612,7 @@
           "example": "无",
           "member": "string",
           "name": "TensorInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5330,7 +5622,7 @@
           "example": "无",
           "member": "HyperParameter",
           "name": "HyperParameter",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5340,7 +5632,7 @@
           "example": "无",
           "member": "string",
           "name": "AccEngineVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5350,7 +5642,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5360,7 +5652,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsSaved",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5370,7 +5662,7 @@
           "example": "test",
           "member": "string",
           "name": "ModelSignature",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5380,7 +5672,7 @@
           "example": "false",
           "member": "bool",
           "name": "QATModel",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5390,7 +5682,37 @@
           "example": "无",
           "member": "string",
           "name": "FrameworkVersion",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelVersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-rg-id",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5665,6 +5987,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型的类别 多模态MultiModal, 文本大模型 LLM",
+          "example": "MultiModal",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5997,7 +6330,7 @@
         {
           "disabled": false,
           "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ModelTurboEnable",
           "required": false,
@@ -6006,7 +6339,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
-          "example": "无",
+          "example": "sleep 36000",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -6024,7 +6357,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
-          "example": "无",
+          "example": "c2xlZXAgMzYwMDA=",
           "member": "string",
           "name": "CommandBase64",
           "required": false,
@@ -6033,9 +6366,18 @@
         {
           "disabled": false,
           "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
-          "example": "无",
+          "example": "8501",
           "member": "int64",
           "name": "ServicePort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "InstancePerReplicas",
           "required": false,
           "type": "int"
         }
@@ -6064,13 +6406,52 @@
       ],
       "type": "object"
     },
+    "MultiModalContent": {
+      "document": "多模态对话内容,支持图片与文字信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话类型，text表示文本对话内容，image_url表示图片对话内容",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本对话内容，当Type为text时需要填写该值",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片对话内容，当Type为image_url时需要填写该值",
+          "example": "无",
+          "member": "ImageUrl",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NotebookDetail": {
       "document": "类型NotebookDetail",
       "members": [
         {
           "disabled": false,
           "document": "notebook  ID",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -6080,7 +6461,7 @@
         {
           "disabled": false,
           "document": "notebook 名称",
-          "example": "a2",
+          "example": "notebook-test",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6090,7 +6471,7 @@
         {
           "disabled": false,
           "document": "生命周期脚本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a3",
+          "example": "ls-1007228485705742720",
           "member": "string",
           "name": "LifecycleScriptId",
           "output_required": true,
@@ -6100,7 +6481,7 @@
         {
           "disabled": false,
           "document": "Pod-Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a4",
+          "example": "nb-1188415493581985152-911m56fdooow",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -6110,7 +6491,7 @@
         {
           "disabled": false,
           "document": "Update-Time",
-          "example": "a5",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -6130,7 +6511,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a9",
+          "example": "trsg-dwpqnjmk",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -6140,7 +6521,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -6150,7 +6531,7 @@
         {
           "disabled": false,
           "document": "是否自动停止",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AutoStopping",
           "output_required": true,
@@ -6160,7 +6541,7 @@
         {
           "disabled": false,
           "document": "其他GIT存储库，最多3个，单个\n长度不超过512字符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"cr-1000669213287070080\"]",
           "member": "string",
           "name": "AdditionalCodeRepoIds",
           "output_required": true,
@@ -6170,7 +6551,7 @@
         {
           "disabled": false,
           "document": "自动停止时间，单位小时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "14",
+          "example": "100",
           "member": "int64",
           "name": "AutomaticStopTime",
           "output_required": true,
@@ -6180,7 +6561,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "无",
+          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "output_required": true,
@@ -6190,7 +6571,7 @@
         {
           "disabled": false,
           "document": "默认GIT存储库，长度不超过512字符",
-          "example": "a17",
+          "example": "cr-1000669213287070080",
           "member": "string",
           "name": "DefaultCodeRepoId",
           "output_required": true,
@@ -6200,7 +6581,7 @@
         {
           "disabled": false,
           "document": "训练输出\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "q18",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -6220,7 +6601,7 @@
         {
           "disabled": false,
           "document": "日志配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"TopicId\": \"ea8048db-8f97-4abb-9668-f3532b9b61f8\", \"LogsetId\": \"4dd0a097-f629-4afc-9b99-888ef99a178f\"}",
           "member": "LogConfig",
           "name": "LogConfig",
           "output_required": true,
@@ -6230,7 +6611,7 @@
         {
           "disabled": false,
           "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a21",
+          "example": "vpc-4kq8vlym",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -6240,7 +6621,7 @@
         {
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a22",
+          "example": "subnet-58zkmdob",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -6250,7 +6631,7 @@
         {
           "disabled": false,
           "document": "任务状态",
-          "example": "a23",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6260,7 +6641,7 @@
         {
           "disabled": false,
           "document": "运行时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "24",
+          "example": "100",
           "member": "uint64",
           "name": "RuntimeInSeconds",
           "output_required": true,
@@ -6270,7 +6651,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "a25",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -6280,7 +6661,7 @@
         {
           "disabled": false,
           "document": "训练开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a26",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -6290,7 +6671,7 @@
         {
           "disabled": false,
           "document": "计费状态，eg：BILLING计费中，ARREARS_STOP欠费停止，NOT_BILLING不在计费中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a27",
+          "example": "BILLING",
           "member": "string",
           "name": "ChargeStatus",
           "output_required": true,
@@ -6310,7 +6691,7 @@
         {
           "disabled": false,
           "document": "计贺金额信息，eg:2.00元/小时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"计算资源计费中：折扣价 0.78 元/小时（原价： 1.38元/小时)\"]",
           "member": "string",
           "name": "BillingInfos",
           "output_required": true,
@@ -6320,7 +6701,7 @@
         {
           "disabled": false,
           "document": "存储卷大小 （单位时GB，最小10GB，必须是10G的倍数）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "30",
+          "example": "100",
           "member": "uint64",
           "name": "VolumeSizeInGB",
           "output_required": true,
@@ -6330,7 +6711,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a31",
+          "example": "errMsg",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
@@ -6350,7 +6731,7 @@
         {
           "disabled": false,
           "document": "后付费资源规格说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2核4G",
+          "example": "2C4G",
           "member": "string",
           "name": "InstanceTypeAlias",
           "output_required": true,
@@ -6380,7 +6761,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"cfs-abcdefg\",\"Path\":\"/\"}",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "output_required": true,
@@ -6390,7 +6771,7 @@
         {
           "disabled": false,
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"MappingPath\":\"/home/tione/notebook\",\"DataSourceType\":\"CFS\",\"WeDataHDFSSource\":{\"Id\":0,\"Path\":\"\"},\"CFSSource\":{\"Id\":\"cfs-14cpoxo5\",\"Path\":\"/\"},\"GooseFSSource\":{\"Id\":\"\",\"Type\":\"\",\"Path\":\"\",\"NameSpace\":\"\"},\"LocalDiskSource\":{\"InstanceId\":\"\"},\"CBSSource\":{\"VolumeSizeInGB\":0},\"DataSetSource\":{\"Id\":\"\"}}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "output_required": true,
@@ -6400,7 +6781,7 @@
         {
           "disabled": false,
           "document": "notebook 信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "message1",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -6410,7 +6791,7 @@
         {
           "disabled": false,
           "document": "数据源来源，eg：WeData_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CFS",
           "member": "string",
           "name": "DataSource",
           "output_required": true,
@@ -6420,7 +6801,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "无",
+          "example": "{\"ImageType\":\"SYSTEM\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"AllowSaveAllContent\":true,\"ImageName\":\"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\"SupportDataPipeline\":false,\"ImageSecret\":{\"KeyId\":\"\",\"Username\":\"\",\"Password\":\"\",\"SecretId\":\"\"},\"ImageId\":\"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\"}",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "output_required": true,
@@ -6430,7 +6811,7 @@
         {
           "disabled": false,
           "document": "镜像类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SYSTEM",
           "member": "string",
           "name": "ImageType",
           "output_required": true,
@@ -6440,7 +6821,7 @@
         {
           "disabled": false,
           "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"PublicKey\":\"\",\"Port\":0,\"LoginCommand\":\"\"}",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "output_required": false,
@@ -6450,12 +6831,52 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"gs-1234\",\"Type\":\"GooseFSx\",\"Path\":\"/\", \"NameSpace\": \"test\"}",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子用户ID",
+          "example": "100032979603",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度节点ID",
+          "example": "ins-pow5jmtf",
+          "member": "string",
+          "name": "ResourceGroupInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子用户名称",
+          "example": "username",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务实例创建时间",
+          "example": "2024-11-14T16:58:00+08",
+          "member": "string",
+          "name": "JobCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6466,7 +6887,7 @@
         {
           "disabled": false,
           "document": "notebook ID",
-          "example": "a",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -6476,7 +6897,7 @@
         {
           "disabled": false,
           "document": "notebook 名称",
-          "example": "a",
+          "example": "notebook-test",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6496,7 +6917,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "a a",
+          "example": " {\"Cpu\": 1000, \"Memory\": 1024, \"Gpu\": 0, \"InstanceType\": \"TI.S.MEDIUM.POST\"}",
           "member": "ResourceConf",
           "name": "ResourceConf",
           "output_required": true,
@@ -6506,7 +6927,7 @@
         {
           "disabled": false,
           "document": "预付费资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "trsg-dwpqnjmk",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -6516,7 +6937,7 @@
         {
           "disabled": false,
           "document": "存储卷大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10",
+          "example": "100",
           "member": "uint64",
           "name": "VolumeSizeInGB",
           "output_required": true,
@@ -6526,7 +6947,7 @@
         {
           "disabled": false,
           "document": "计费金额信息，eg：2.00元/小时 (for后付费)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sss",
+          "example": "[\"计算资源计费中：折扣价 0.78 元/小时（原价： 1.38元/小时)\"]",
           "member": "string",
           "name": "BillingInfos",
           "output_required": true,
@@ -6536,7 +6957,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"TagKey\": \"test_key\", \"TagValue\": \"good_value\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -6546,7 +6967,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "xxx",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -6556,7 +6977,7 @@
         {
           "disabled": false,
           "document": "启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x x x",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -6566,7 +6987,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "xxx",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -6586,7 +7007,7 @@
         {
           "disabled": false,
           "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "BILLING",
           "member": "string",
           "name": "ChargeStatus",
           "output_required": true,
@@ -6596,7 +7017,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "xx",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6606,7 +7027,7 @@
         {
           "disabled": false,
           "document": "错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "errMsg",
           "member": "string",
           "name": "FailureReason",
           "output_required": true,
@@ -6616,7 +7037,7 @@
         {
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "2024-11-14T16:58:00+08",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -6626,7 +7047,7 @@
         {
           "disabled": false,
           "document": "Pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "nb-1188415493581985152-911m56fdooow",
           "member": "string",
           "name": "PodName",
           "output_required": true,
@@ -6636,7 +7057,7 @@
         {
           "disabled": false,
           "document": "后付费资源规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2核4G",
+          "example": "2C4G",
           "member": "string",
           "name": "InstanceTypeAlias",
           "output_required": true,
@@ -6666,7 +7087,7 @@
         {
           "disabled": false,
           "document": "自动停止时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "AutomaticStopTime",
           "output_required": true,
@@ -6686,7 +7107,7 @@
         {
           "disabled": false,
           "document": "CFS存储的配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"cfs-abcdefg\",\"Path\":\"/\"}",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
           "output_required": true,
@@ -6696,7 +7117,7 @@
         {
           "disabled": false,
           "document": "notebook 信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "message1",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -6716,7 +7137,7 @@
         {
           "disabled": false,
           "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"PublicKey\":\"\",\"Port\":0,\"LoginCommand\":\"\"}",
           "member": "SSHConfig",
           "name": "SSHConfig",
           "output_required": false,
@@ -6726,12 +7147,22 @@
         {
           "disabled": false,
           "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Id\":\"gs-1234\",\"Type\":\"GooseFSx\",\"Path\":\"/\", \"NameSpace\": \"test\"}",
           "member": "GooseFS",
           "name": "VolumeSourceGooseFS",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子用户名称",
+          "example": "username",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6893,7 +7324,7 @@
         {
           "disabled": false,
           "document": "pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -6903,7 +7334,7 @@
         {
           "disabled": false,
           "document": "pod启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-11T18:36:50+08",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -6913,7 +7344,7 @@
         {
           "disabled": false,
           "document": "pod结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-11T18:36:50+08",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -6923,7 +7354,7 @@
         {
           "disabled": false,
           "document": "pod资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{                             \"Role\": \"WORKER\",                             \"Cpu\": 180000,                             \"Memory\": 921600,                             \"GpuType\": \"HCC-A100\",                             \"Gpu\": 800,                             \"InstanceType\": \"\",                             \"InstanceTypeAlias\": \"\",                             \"InstanceNum\": 2,                             \"RDMAConfig\": {                                 \"Enable\": true                             },                             \"ExtendedResourceList\": {},                             \"ArchType\": \"\"                         }",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfo",
           "output_required": false,
@@ -7424,7 +7855,7 @@
         {
           "disabled": false,
           "document": "公钥信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ssh-rsa AAAAB3**8NYTfO0=",
           "member": "string",
           "name": "PublicKey",
           "output_required": false,
@@ -7452,6 +7883,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "登录地址是否改变\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAddressChanged",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -7508,89 +7950,6 @@
         }
       ],
       "usage": "in"
-    },
-    "SendChatMessageRequest": {
-      "document": "SendChatMessage请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "会话id，标识一组对话的唯一id，id变更则重置会话",
-          "example": "6e85ab47-e2df-d139-3823-de3d3aa51cf2",
-          "member": "string",
-          "name": "SessionId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "问题描述",
-          "example": "你好，请介绍一下自己",
-          "member": "string",
-          "name": "Question",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "会话模型版本。\n金融大模型：填写sn-finllm-13b-chat-v1。\n默认为sn-finllm-13b-chat-v1，即金融大模型。",
-          "example": "demo_big_model_version_id",
-          "member": "string",
-          "name": "ModelVersion",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "使用模式。\n通用问答：填写General。\n搜索增强问答：填写WithSearchPlugin。\n默认为General，即通用问答。\n当前可体验模型仅支持General。",
-          "example": "General",
-          "member": "string",
-          "name": "Mode",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "搜索来源。仅当Mode为WithSearchPlugin时生效。\n预置文稿库：填写Preset。自定义：填写Custom。",
-          "example": "无",
-          "member": "string",
-          "name": "SearchSource",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SendChatMessageResponse": {
-      "document": "SendChatMessage返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "答案",
-          "example": "无",
-          "member": "string",
-          "name": "Answer",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "会话id,返回请求的会话id",
-          "example": "6e85ab47-e2df-d139-3823-de3d3aa51cf2",
-          "member": "string",
-          "name": "SessionId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "Service": {
       "document": "描述在线服务",
@@ -7891,6 +8250,36 @@
           "example": "NORMAL",
           "member": "string",
           "name": "ResourceGroupSWType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的归档状态  Waiting 等待归档中，Archived 已归档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Archived",
+          "member": "string",
+          "name": "ArchiveStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的部署类型 [STANDARD 标准部署，DIST 分布式多机部署] 默认STANDARD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "STANDARD",
+          "member": "string",
+          "name": "DeployType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "InstancePerReplicas",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8486,6 +8875,17 @@
         },
         {
           "disabled": false,
+          "document": "服务的规格别名",
+          "example": "8核40GB V100*1",
+          "member": "string",
+          "name": "InstanceAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "实例数量调节方式,默认为手动\n支持：自动 - \"AUTO\", 手动 - \"MANUAL\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO",
           "member": "string",
@@ -8608,7 +9008,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sleep 36000",
           "member": "string",
           "name": "Command",
           "output_required": false,
@@ -8630,7 +9030,7 @@
         {
           "disabled": false,
           "document": "服务端口，默认为8501\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8501",
           "member": "int64",
           "name": "ServicePort",
           "output_required": false,
@@ -8691,6 +9091,174 @@
       ],
       "usage": "both"
     },
+    "Spec": {
+      "document": "计费项内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项标签",
+          "example": "sv_tio_platform_cloud_post_gpu_8c40g_1v100",
+          "member": "string",
+          "name": "SpecId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项名称",
+          "example": "TI.GN10.2XLARGE40.POST",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项显示名称",
+          "example": "8核40GB V100*1",
+          "member": "string",
+          "name": "SpecAlias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否售罄",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前资源售罄时，可用的区域有哪些",
+          "example": "[]",
+          "member": "string",
+          "name": "AvailableRegion",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前计费项支持的特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "SpecFeatures",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GPU",
+          "member": "string",
+          "name": "SpecType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "V100",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项CategoryId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024554",
+          "member": "string",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SpecPrice": {
+      "document": "计费项询价结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项名称",
+          "example": "TI.S.MEDIUM.POST",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原价，单位：分。最大值42亿，超过则返回0",
+          "example": "70",
+          "member": "uint64",
+          "name": "TotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优惠后的价格，单位：分",
+          "example": "70",
+          "member": "uint64",
+          "name": "RealTotalCost",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "SpecCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SpecUnit": {
+      "document": "计费项询价单元",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费项名称",
+          "example": "TI.S.MEDIUM.POST",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项数量,建议不超过100万",
+          "example": "1",
+          "member": "uint64",
+          "name": "SpecCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "StartCmdInfo": {
       "document": "启动命令信息",
       "members": [
@@ -8733,7 +9301,7 @@
         {
           "disabled": false,
           "document": "notebook id",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -8879,7 +9447,7 @@
         {
           "disabled": false,
           "document": "notebook id",
-          "example": "a1",
+          "example": "nb-1188415493581985152",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -9346,6 +9914,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -9951,33 +10529,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的token数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "生成的token数目",
+          "example": "12",
           "member": "int64",
           "name": "CompletionTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "输入的token数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "输入的token数目",
+          "example": "4",
           "member": "int64",
           "name": "PromptTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总共token数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "总共token数目",
+          "example": "16",
           "member": "int64",
           "name": "TotalTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

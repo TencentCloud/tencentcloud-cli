@@ -25,127 +25,163 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c8469f68-defe-4a3d-81ec-9538e39b2483",
+        "RequestId": "2835bab6-1992-4377-bab4-88e1a8a7adfb",
         "Template": {
-            "BirthCert": null,
-            "C14": null,
-            "Check": null,
-            "Covid": null,
-            "DiagCert": null,
-            "Electrocardiogram": null,
-            "Endoscopy": null,
-            "Exame": null,
-            "Eye": null,
-            "FirstPage": null,
-            "Hospitalization": null,
-            "Indicator": null,
-            "IndicatorV3": null,
-            "Maternity": null,
-            "MedDoc": null,
-            "MedDocV2": null,
-            "MedicalRecordInfo": null,
-            "OcrResult": "                                       处方笺                           [自费]\neking Union Medical College Hospital\n性别          定点医疗机构编石                   处方号  015111835596  [底方]\n       男         年龄50岁                        病人ID\n                                                      科别     特需皮肤科门诊1\nR:\t\t\n\t环孢素软胶囊[新山地明]25MG 25MG 50粒/盒X 3盒(50)\t\n用法:每次5粒\t每日两次\t口服\t\n\t\t多烯磷脂酰胆碱胶囊[易善复]228MG 24粒/盒X3盒(24)\t\n用法:每次2粒\t每日三次\t口服\t\n*白凡士林500G 500G/瓶X1瓶\t\t\t\n用法:每次10G\t每日两次\t外用\t\n\n                                                             开单日期\n                                                                  2015-11-18 14:39\n                                                             收费日期\n                                                                   2015-11-18 14:45\n",
-            "OcrText": "                                       处方笺                           [自费]\neking Union Medical College Hospital\n性别          定点医疗机构编石                   处方号  015111835596  [底方]\n       男         年龄50岁                        病人ID\n                                                      科别     特需皮肤科门诊1\nR:\t\t\n\t环孢素软胶囊[新山地明]25MG 25MG 50粒/盒X 3盒(50)\t\n用法:每次5粒\t每日两次\t口服\t\n\t\t多烯磷脂酰胆碱胶囊[易善复]228MG 24粒/盒X3盒(24)\t\n用法:每次2粒\t每日三次\t口服\t\n*白凡士林500G 500G/瓶X1瓶\t\t\t\n用法:每次10G\t每日两次\t外用\t\n\n                                                             开单日期\n                                                                  2015-11-18 14:39\n                                                             收费日期\n                                                                   2015-11-18 14:45\n",
-            "Pathology": null,
-            "PathologyV2": null,
-            "PatientInfo": {
-                "Address": "",
-                "Age": "50岁",
-                "AgeNorm": "438000小时",
-                "BedNo": "",
-                "BirthPlace": "",
-                "Birthday": "",
-                "EducationBackground": "",
-                "Ethnicity": "",
-                "HealthCardNo": "",
-                "IdCard": "",
-                "Married": "",
-                "MarriedCode": "",
-                "MedicalInsuranceType": "",
-                "MedicalInsuranceTypeCode": "",
-                "Name": "",
-                "Nation": "",
-                "Nationality": "",
-                "Phone": "",
-                "Profession": "",
-                "ProfessionCode": "",
-                "Sex": "男",
-                "SocialSecurityCardNo": ""
-            },
-            "Prescription": {
-                "MedicineList": [
+            "Indicator": {
+                "Indicators": [
                     {
-                        "Category": "",
-                        "DosageUnit": "粒",
-                        "Firm": "",
-                        "MinQuantity": "50",
-                        "Name": "环孢素软胶囊",
-                        "PackingUnit": "盒",
-                        "Specification": "",
-                        "TradeName": ""
+                        "Code": "HBA",
+                        "Id": 911,
+                        "ItemString": "血红蛋白A",
+                        "Name": "血红蛋白A",
+                        "Normal": true,
+                        "Range": ">94.5",
+                        "Scode": "HbA",
+                        "Sname": "血红蛋白A",
+                        "Unit": "%"
                     },
                     {
-                        "Category": "",
-                        "DosageUnit": "粒",
-                        "Firm": "",
-                        "MinQuantity": "24",
-                        "Name": "多烯磷脂酰胆碱胶囊",
-                        "PackingUnit": "盒",
-                        "Specification": "",
-                        "TradeName": "易善复"
+                        "Code": "HBF",
+                        "Id": 912,
+                        "ItemString": "血红蛋白F",
+                        "Name": "血红蛋白F",
+                        "Normal": true,
+                        "Range": "<2.3",
+                        "Scode": "HBF",
+                        "Sname": "抗碱性血红蛋白",
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBA2",
+                        "Id": 910,
+                        "ItemString": "血红蛋白A2",
+                        "Name": "血红蛋白A2",
+                        "Normal": true,
+                        "Range": "2.5--3.5",
+                        "Scode": "HbA2",
+                        "Sname": "血红蛋白A2",
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBH",
+                        "ItemString": "血红蛋白H",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBART'S",
+                        "ItemString": "血红蛋白Bart's",
+                        "Name": "血红蛋白Bart's?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBJ",
+                        "ItemString": "血红蛋白J",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBC-S",
+                        "ItemString": "血红蛋白C-S",
+                        "Name": "RBC血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBE",
+                        "ItemString": "血红蛋白E",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBS",
+                        "ItemString": "血红蛋白S",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBD",
+                        "ItemString": "血红蛋白D",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBG",
+                        "ItemString": "血红蛋白G",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBK",
+                        "ItemString": "血红蛋白K",
+                        "Name": "血红蛋白?",
+                        "Normal": true,
+                        "Unit": "%"
+                    },
+                    {
+                        "Code": "HBOTHERS",
+                        "ItemString": "其他异常血红蛋白。",
+                        "Name": "其他异常血红蛋白。?",
+                        "Normal": true,
+                        "Unit": "%"
                     }
-                ],
-                "Page": 0
+                ]
+            },
+            "OcrResult": "                                                                                                                           ..l2c\n                                                                                                                                     效有日当票\n                                                                                                                           H91 90\n                                                                                                                                       WJ^((9\n                                                                                                                                      M4ohCt\n代号\t项目名称\t结果\t单位\t参考值\t\nHbA\t血红蛋白A\t96.31\t%\t>94.5\t\nHbF\t血红蛋白F\t1.05\t%\t<2.3\t\nHbA2\t血红蛋白A2\t2.64\t%\t2.5~3.5\t\nHbH\t血红蛋白H\t未检出\t%\t\t\nHbarts\t血红蛋白Barts\t未检出\t%\t\t\nHbJ\t血红蛋白J\t未检出\t%\t\t\nHbC-S\t血红蛋白C-S\t未检出\t%\t\t\nHbE\t血红蛋白E\t未检出\t%\t\t\nHbS\t血红蛋白S\t未检出\t%\t\t\nHbD\t血红蛋白D\t未检出\t%\t\t\nHbG\t血红蛋白G\t未检出\t%\t\t\nHbK\t血红蛋白K\t未检出\t%\t\t\nHbothers\t其他异常血红蛋白。\t未检出\t%\t\t\n\n                                                                                                                                      wos ro\n                                                                                                                                     0自\n                                                                                                                                             的屏示\n        门诊                          xxx院检验报告单                                 86-1\n                                                                                 全自动毛细管电泳仪-38\n        姓名:  张三                 科室:产科                                  全血\n        性别:  男                      床号:                              标本类型:               标本状态:                         y\n        年龄:                                                                条码号:  xxxx12582  检验备注:\n                 33岁                    病历号:。                             临床诊断:                                                  B楼四\n                                                     15328022                              体检\n                                                                                                                                               产\n                                                                                                                                                大勺\n                                                      2021-10-31 09:41:00                                                 查蝉响\n 申请医师:xxx                       采集时间:                                        检验者: xxx 审核者:\n                                              报告时间:\n        2021-10-31 10:59:32               2021-11-05 11:05:17\n接收时间:                                                                                                                            第1页.共1页\n※本次实验报告仅对本次标本负责。项目前*号标记为广西医院互认项目。※\n",
+            "OcrText": "                                                                                                                           ..l2c\n                                                                                                                                     效有日当票\n                                                                                                                           H91 90\n                                                                                                                                       WJ^((9\n                                                                                                                                      M4ohCt\n代号\t项目名称\t结果\t单位\t参考值\t\nHbA\t血红蛋白A\t96.31\t%\t>94.5\t\nHbF\t血红蛋白F\t1.05\t%\t<2.3\t\nHbA2\t血红蛋白A2\t2.64\t%\t2.5~3.5\t\nHbH\t血红蛋白H\t未检出\t%\t\t\nHbarts\t血红蛋白Barts\t未检出\t%\t\t\nHbJ\t血红蛋白J\t未检出\t%\t\t\nHbC-S\t血红蛋白C-S\t未检出\t%\t\t\nHbE\t血红蛋白E\t未检出\t%\t\t\nHbS\t血红蛋白S\t未检出\t%\t\t\nHbD\t血红蛋白D\t未检出\t%\t\t\nHbG\t血红蛋白G\t未检出\t%\t\t\nHbK\t血红蛋白K\t未检出\t%\t\t\nHbothers\t其他异常血红蛋白。\t未检出\t%\t\t\n\n                                                                                                                                      wos ro\n                                                                                                                                     0自\n                                                                                                                                             的屏示\n        门诊                          xxx医院检验报告单                                 86-1\n                                                                                 全自动毛细管电泳仪-38\n        姓名:  张三                 科室:产科                                  全血\n        性别:  男                      床号:                              标本类型:               标本状态:                         y\n        年龄:                                                                条码号:   xxx12582  检验备注:\n                 33岁                    病历号:。                             临床诊断:                                                  B楼四\n                                                     15328022                              体检\n                                                                                                                                               产\n                                                                                                                                                大勺\n                                                      2021-10-31 09:41:00                                                 查蝉响\n 申请医师:xxx                       采集时间:                                        检验者: xxx 审核者:\n                                              报告时间:\n        2021-10-31 10:59:32               2021-11-05 11:05:17\n接收时间:                                                                                                                            第1页.共1页\n※本次实验报告仅对本次标本负责。项目前*号标记为广西医院互认项目。※\n",
+            "PatientInfo": {
+                "Age": "33岁",
+                "AgeNorm": "289080小时",
+                "BedNo": "xxx82",
+                "Name": "张三",
+                "Sex": "男"
             },
             "ReportInfo": {
-                "BedNo": "",
-                "BillingTime": "",
-                "CheckItem": "",
-                "CheckMethod": "",
-                "CheckNum": "",
-                "DepartmentName": "特需皮肤科门诊",
-                "Diagnose": "",
-                "DiagnoseTime": "",
-                "HealthCheckupNum": "",
-                "Hospital": "",
-                "ImageNum": "",
-                "InHospitalNum": "",
-                "InspectTime": "",
-                "MedicalRecordNum": "",
-                "OtherTime": "2015-11-18 14:39:00",
-                "OutpatientNum": "",
-                "PathologyNum": "",
-                "PrintTime": "",
-                "RadiationNum": "",
-                "ReportName": "处方笺",
-                "ReportTime": "",
-                "SampleNum": "",
-                "SampleType": "",
-                "TestNum": "",
+                "BedNo": "xxx582",
+                "DepartmentName": "体检",
+                "Hospital": "xxx医院",
+                "MedicalRecordNum": "15328022",
+                "ReportName": "检验报告单",
+                "ReportTime": "2023-11-05 11:05:17",
                 "Times": [
                     {
-                        "Name": "其它日期",
-                        "Value": "2015-11-18 14:39:00"
+                        "Name": "报告日期",
+                        "Value": "2023-11-05 11:05:17"
+                    },
+                    {
+                        "Name": "接收日期",
+                        "Value": "2023-10-31 10:59:32"
+                    },
+                    {
+                        "Name": "采集日期",
+                        "Value": "2023-10-31 09:41:00"
                     }
-                ],
-                "UltraNum": ""
+                ]
             },
-            "ReportType": "prescription",
-            "ReportTypeDesc": "",
-            "Surgery": null,
-            "Timeline": null,
-            "VaccineCertificate": null
+            "ReportType": "indicator"
         },
         "TextTypeList": [
             {
-                "Id": 13,
+                "Id": 11,
                 "Level": 1,
-                "Name": "医疗文本"
+                "Name": "检验报告"
             },
             {
-                "Id": 215,
+                "Id": 24,
                 "Level": 2,
-                "Name": "处方报告"
+                "Name": "一般检验"
+            },
+            {
+                "Id": 316,
+                "Level": 3,
+                "Name": "血液一般检查"
             }
         ]
     }
