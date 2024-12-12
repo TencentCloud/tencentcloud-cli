@@ -7,7 +7,7 @@ Input:
 ```
 tccli redis ManualBackupInstance --cli-unfold-argument  \
     --InstanceId crs-5a4p**** \
-    --Remark xxxx
+    --Remark note_message
 ```
 
 Output: 

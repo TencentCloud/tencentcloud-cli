@@ -2402,6 +2402,24 @@
           "name": "FlowDisplayType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否为预览模式，取值如下： <ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li> <li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedPreview",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>\n注: `此参数在NeedPreview 为true时有效`\n",
+          "example": "0",
+          "member": "int64",
+          "name": "PreviewType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

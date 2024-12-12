@@ -42,6 +42,13 @@
       "output": "CreateAlarmPolicyResponse",
       "status": "online"
     },
+    "CreateAlarmShield": {
+      "document": "创建告警屏蔽规则",
+      "input": "CreateAlarmShieldRequest",
+      "name": "创建告警屏蔽规则",
+      "output": "CreateAlarmShieldResponse",
+      "status": "online"
+    },
     "CreateAlertRule": {
       "document": "创建 Prometheus 告警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "CreateAlertRuleRequest",
@@ -3481,6 +3488,205 @@
           "example": "1234556",
           "member": "string",
           "name": "OriginId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmShieldRequest": {
+      "document": "CreateAlarmShield请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块名，这里填“monitor”",
+          "example": "monitor",
+          "member": "string",
+          "name": "Module",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽策略名称",
+          "example": "测试屏蔽",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控类型",
+          "example": "MT_QCE",
+          "member": "string",
+          "name": "MonitorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间即策略类型",
+          "example": "CKAFKA-CONSUMERGROUP-TOPIC",
+          "member": "string",
+          "name": "NameSpace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽时间类型 FOREVER_SHIELD:永久屏蔽 PERIOD_SHIELD:绝对时间范围屏蔽 LOOP_SHIELD:相对时间范围屏蔽",
+          "example": "LOOP_SHIELD",
+          "member": "string",
+          "name": "ShieldTimeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽对象",
+          "example": "[\"cafka-xxx\", \"cafka-xxx\"]",
+          "member": "string",
+          "name": "ShieldObject",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽指标 为空则为全部指标",
+          "example": "[\"UnconsumeTopic\", \"MaxOffsetTopic\"]",
+          "member": "string",
+          "name": "ShieldMetric",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间 相对时间范围:36000 绝对时间范围:1648742400 缺省:0",
+          "example": "36000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间 相对时间范围:72000 绝对时间范围:1649088000 缺省:0",
+          "example": "72000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环开始日期 2022/04/01 缺省:0",
+          "example": "1648742400",
+          "member": "uint64",
+          "name": "LoopStartDate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "循环结束日期 2022/04/05 缺省:0",
+          "example": "1649088000",
+          "member": "uint64",
+          "name": "LoopEndDate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的策略ID",
+          "example": "policy-1111",
+          "member": "string",
+          "name": "ShieldPolicyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要屏蔽的告警等级，取值范围Warn,Remind,Serious",
+          "example": "Warn",
+          "member": "string",
+          "name": "ShieldAlarmLevel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型，为OBJNAME是老版本实例名屏蔽，为POLICY是新版本维度匹配",
+          "example": "OBJNAME",
+          "member": "string",
+          "name": "VersionTag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽规则的描述",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 时区，东八区+8，西八区减8，以此类推\n",
+          "example": "5.5",
+          "member": "float",
+          "name": "TimeZone",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽事件 为空则为全部指标",
+          "example": "[\"cpm:ErrorEvent:SsdTempe\"]",
+          "member": "string",
+          "name": "ShieldEvent",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否对指标屏蔽 1=是 0=否",
+          "example": "1",
+          "member": "int64",
+          "name": "ShieldMetricFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否对事件屏蔽 1=是 0=否",
+          "example": "1",
+          "member": "int64",
+          "name": "ShieldEventFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlarmShieldResponse": {
+      "document": "CreateAlarmShield返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "屏蔽规则的Id",
+          "example": "Shield-xxxx",
+          "member": "string",
+          "name": "ShieldId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

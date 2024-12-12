@@ -2261,7 +2261,7 @@
           "example": "无",
           "member": "KeyPair",
           "name": "KeyPair",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6163,7 +6163,7 @@
         {
           "disabled": false,
           "document": "防火墙规则描述。",
-          "example": "''",
+          "example": "Web服务HTTP(80)，如 Apache、Nginx",
           "member": "string",
           "name": "FirewallRuleDescription",
           "output_required": true,
@@ -7281,40 +7281,40 @@
         {
           "disabled": false,
           "document": "实例 ID。",
-          "example": "",
+          "example": "lhins-xusdke45",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例是否可退还。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsReturnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例退还失败错误码。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "ReturnFailCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例退还失败错误信息。",
-          "example": "",
+          "example": "资源已过期",
           "member": "string",
           "name": "ReturnFailMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

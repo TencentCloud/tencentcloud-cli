@@ -9711,6 +9711,15 @@
           "name": "SnapshotPolicies",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -9724,7 +9733,7 @@
           "example": "无",
           "member": "SnapshotPolicy",
           "name": "SnapshotPolicies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

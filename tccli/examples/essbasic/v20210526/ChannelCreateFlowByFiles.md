@@ -279,7 +279,6 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.0.Components.13.ComponentRequired False \
     --FlowApprovers.0.Components.13.ComponentType SELECTOR \
     --FlowApprovers.0.Components.13.ComponentWidth 216 \
-    --FlowApprovers.0.Components.14.ComponentExtra {} \
     --FlowApprovers.0.Components.14.ComponentHeight 16 \
     --FlowApprovers.0.Components.14.ComponentPage 7 \
     --FlowApprovers.0.Components.14.ComponentPosX 83.09375 \
@@ -960,7 +959,6 @@ tccli essbasic ChannelCreateFlowByFiles --cli-unfold-argument  \
     --FlowApprovers.0.Components.10.ComponentType MULTI_LINE_TEXT \
     --FlowApprovers.0.Components.10.ComponentWidth 398 \
     --FlowApprovers.0.Components.10.FileIndex 0 \
-    --FlowApprovers.0.Components.11.ComponentExtra {} \
     --FlowApprovers.0.Components.11.ComponentHeight 16 \
     --FlowApprovers.0.Components.11.ComponentPage 7 \
     --FlowApprovers.0.Components.11.ComponentPosX 83.09375 \

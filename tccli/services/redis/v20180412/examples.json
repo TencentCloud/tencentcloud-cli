@@ -129,7 +129,7 @@
     "DeleteInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=DeleteInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=DeleteInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=example_account\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }
@@ -193,8 +193,8 @@
     "DescribeCommonDBInstances": [
       {
         "document": "废弃接口",
-        "input": "https://redis.tencentcloudapi.com/?Action=DescribeCommonDBInstances\n&PayMode=0\n&InstanceIds.0=crs-nh47ubwr\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceDetails\": [\n            {\n                \"InstanceName\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"AppId\": 0,\n                \"ProjectId\": 0,\n                \"Region\": \"abc\",\n                \"Zone\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Status\": \"abc\",\n                \"Vips\": [\n                    \"abc\"\n                ],\n                \"Vport\": 0,\n                \"Createtime\": \"abc\",\n                \"PayMode\": 0,\n                \"NetType\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "https://redis.tencentcloudapi.com/?Action=DescribeCommonDBInstances\n&PayMode=0\n&InstanceIds.0=crs-xjhsdj****\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceDetails\": [\n            {\n                \"AppId\": 1251111111,\n                \"Createtime\": \"2022-06-13 21:41:40\",\n                \"InstanceId\": \"crs-xjhsdj****\",\n                \"InstanceName\": \"dba-stag\",\n                \"NetType\": 1,\n                \"PayMode\": 1,\n                \"ProjectId\": 0,\n                \"Region\": \"ap-beijing\",\n                \"Status\": \"2\",\n                \"SubnetId\": \"unknown-unSubnetId\",\n                \"Vips\": [\n                    \"10.76.128.10\"\n                ],\n                \"VpcId\": \"unknown-unVpcId\",\n                \"Vport\": 6379,\n                \"Zone\": \"ap-beijing-1\"\n            }\n        ],\n        \"RequestId\": \"fc4a37f4-b27d-4aaf-9661-8212c9dabmclnvXXX\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -266,7 +266,7 @@
       {
         "document": "请求示例",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceMonitorBigKey\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-5a4py64p\",\n    \"Date\": \"20191101\",\n    \"ReqType\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DB\": 0,\n                \"Key\": \"abc\",\n                \"Type\": \"abc\",\n                \"Size\": 0,\n                \"Updatetime\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DB\": 0,\n                \"Key\": \"exapmle_key\",\n                \"Type\": \"exapmle_type\",\n                \"Size\": 0,\n                \"Updatetime\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -410,7 +410,7 @@
       {
         "document": "查询指定参数模板ID的模板信息",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeParamTemplateInfo\n<公共请求参数>\n\n{\n    \"TemplateId\": \"crs-cfg-7mgt****\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Description\": \"MyCustomParamTemplate\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"\",\n                \"Default\": \"\\\"\\\"\",\n                \"Description\": \"commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'\",\n                \"EnumValue\": [\n                    \"flushall\",\n                    \"flushdb\",\n                    \"keys\",\n                    \"hgetall\",\n                    \"eval\",\n                    \"evalsha\",\n                    \"script\"\n                ],\n                \"Max\": \"\",\n                \"Min\": \"\",\n                \"Name\": \"disable-command-list\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"multi\"\n            },\n            {\n                \"CurrentValue\": \"512\",\n                \"Default\": \"512\",\n                \"Description\": \"Hashes are encoded using a memory efficient data structure when they have a small number of entries\",\n                \"EnumValue\": null,\n                \"Max\": \"10000\",\n                \"Min\": \"1\",\n                \"Name\": \"hash-max-ziplist-entries\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"64\",\n                \"Default\": \"64\",\n                \"Description\": \"Hashes are encoded using a memory efficient data structure when the biggest entry does not exceed a given threshold\",\n                \"EnumValue\": null,\n                \"Max\": \"10000\",\n                \"Min\": \"1\",\n                \"Name\": \"hash-max-ziplist-value\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"10\",\n                \"Default\": \"10\",\n                \"Description\": \"The frequency at which Redis background tasks are performed. A higher value results in higher CPU consumption but smaller latency. We recommend that you do not specify a value larger than 100.\",\n                \"EnumValue\": null,\n                \"Max\": \"500\",\n                \"Min\": \"1\",\n                \"Name\": \"hz\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            }\n        ],\n        \"Name\": \"redis_automation_is_awesome_1\",\n        \"ProductType\": 2,\n        \"RequestId\": \"72881d6c-c2a0-42af-862a-a5de09de104d\",\n        \"TemplateId\": \"crs-cfg-7mgt****\",\n        \"TotalCount\": 14\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Description\": \"MyCustomParamTemplate\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"flushall\",\n                \"Default\": \"param_default_value\",\n                \"Description\": \"commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'\",\n                \"EnumValue\": [\n                    \"flushall\",\n                    \"flushdb\",\n                    \"keys\",\n                    \"hgetall\",\n                    \"eval\",\n                    \"evalsha\",\n                    \"script\"\n                ],\n                \"Max\": \"\",\n                \"Min\": \"\",\n                \"Name\": \"disable-command-list\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"multi\"\n            },\n            {\n                \"CurrentValue\": \"512\",\n                \"Default\": \"512\",\n                \"Description\": \"Hashes are encoded using a memory efficient data structure when they have a small number of entries\",\n                \"EnumValue\": null,\n                \"Max\": \"10000\",\n                \"Min\": \"1\",\n                \"Name\": \"hash-max-ziplist-entries\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"64\",\n                \"Default\": \"64\",\n                \"Description\": \"Hashes are encoded using a memory efficient data structure when the biggest entry does not exceed a given threshold\",\n                \"EnumValue\": null,\n                \"Max\": \"10000\",\n                \"Min\": \"1\",\n                \"Name\": \"hash-max-ziplist-value\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"10\",\n                \"Default\": \"10\",\n                \"Description\": \"The frequency at which Redis background tasks are performed. A higher value results in higher CPU consumption but smaller latency. We recommend that you do not specify a value larger than 100.\",\n                \"EnumValue\": null,\n                \"Max\": \"500\",\n                \"Min\": \"1\",\n                \"Name\": \"hz\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            }\n        ],\n        \"Name\": \"redis_automation_is_awesome_1\",\n        \"ProductType\": 2,\n        \"RequestId\": \"72881d6c-c2a0-42af-862a-a5de09de104d\",\n        \"TemplateId\": \"crs-cfg-7mgt****\",\n        \"TotalCount\": 14\n    }\n}",
         "title": "查询参数模板信息"
       }
     ],
@@ -482,7 +482,7 @@
       {
         "document": "查询实例对应的复制组信息",
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationGroupInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-a7oxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AppId\": 251237400,\n        \"GroupId\": \"crs-rpl-oxsincth\",\n        \"GroupName\": \"test\",\n        \"InstanceRole\": \"rw\",\n        \"RegionId\": 1,\n        \"RequestId\": \"02ef9326-3db7-47ab-8f65-c6d1a772f71c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": 251237400,\n        \"GroupId\": \"crs-rpl-oxsincth\",\n        \"GroupName\": \"group_name\",\n        \"InstanceRole\": \"rw\",\n        \"RegionId\": 1,\n        \"RequestId\": \"02ef9326-3db7-47ab-8f65-c6d1a772f71c\"\n    }\n}",
         "title": "查询复制组信息"
       }
     ],
@@ -601,7 +601,7 @@
     "ManualBackupInstance": [
       {
         "document": "手动备份",
-        "input": "https://redis.tencentcloudapi.com/?Action=ManualBackupInstance\n&InstanceId=crs-5a4p****\n&Remark=xxxx\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ManualBackupInstance\n&InstanceId=crs-5a4p****\n&Remark=note_message\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"6954227\",\n        \"RequestId\": \"4daddc97-0005-45d8-b5b8-38514ec1e97c\"\n    }\n}",
         "title": "请求示例"
       }
@@ -657,7 +657,7 @@
     "ModifyInstanceAccount": [
       {
         "document": "",
-        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test\n&<公共请求参数>",
+        "input": "https://redis.tencentcloudapi.com/?Action=ModifyInstanceAccount\n&InstanceId=crs-5a4py64p\n&AccountName=test_account\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"0e728fa9-c2e5-4bf8-8d6b-c1c4fab7b6db\"\n    }\n}",
         "title": "请求示例"
       }

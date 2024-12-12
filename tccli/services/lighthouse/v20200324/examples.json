@@ -124,7 +124,7 @@
       {
         "document": "",
         "input": "https://lighthouse.tencentcloudapi.com/?Action=CreateKeyPair\n&KeyName=test_create_1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"KeyId\": \"lhkp-hfenegt1\",\n            \"KeyName\": \"test_create_1\",\n            \"PublicKey\": \"xxxxxx\",\n            \"AssociatedInstanceIds\": [],\n            \"CreatedTime\": null,\n            \"PrivateKey\": \"xxxxxx\"\n        },\n        \"RequestId\": \"02dc35eb-06f0-477f-9b06-c980bc56c18d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KeyPair\": {\n            \"KeyId\": \"lhkp-hfenegt1\",\n            \"KeyName\": \"test_create_1\",\n            \"PublicKey\": \"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6Zx4q...\",\n            \"AssociatedInstanceIds\": [],\n            \"CreatedTime\": null,\n            \"PrivateKey\": \"-----BEGIN RSA PRIVATE KEY-----\\nMIIEowIBAAKCAQEAumc...\\n-----END RSA PRIVATE KEY-----\"\n        },\n        \"RequestId\": \"02dc35eb-06f0-477f-9b06-c980bc56c18d\"\n    }\n}",
         "title": "创建密钥对"
       }
     ],
@@ -188,7 +188,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllScenes\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22cef196-4013-493e-8acb-33a2cb629869\",\n        \"TotalCount\": 3,\n        \"SceneInfoSet\": [\n            {\n                \"SceneId\": \"lhsc-1ubg0exh\",\n                \"DisplayName\": \"测试modify1\",\n                \"Description\": \"测试测试1\"\n            },\n            {\n                \"SceneId\": \"lhsc-h69tuf89\",\n                \"DisplayName\": \"测试\",\n                \"Description\": \"测试测试\"\n            },\n            {\n                \"SceneId\": \"lhsc-1bbbtj87\",\n                \"DisplayName\": \"31\",\n                \"Description\": \"31\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"22cef196-4013-493e-8acb-33a2cb629869\",\n        \"TotalCount\": 3,\n        \"SceneInfoSet\": [\n            {\n                \"SceneId\": \"lhsc-xyz789ab\",\n                \"DisplayName\": \"场景名称1\",\n                \"Description\": \"场景描述1\"\n            },\n            {\n                \"SceneId\": \"lhsc-pqr456st\",\n                \"DisplayName\": \"场景名称2\",\n                \"Description\": \"场景描述2\"\n            },\n            {\n                \"SceneId\": \"lhsc-uvw123xy\",\n                \"DisplayName\": \"场景名称3\",\n                \"Description\": \"场景描述3\"\n            }\n        ]\n    }\n}",
         "title": "查询全地域使用场景信息"
       }
     ],

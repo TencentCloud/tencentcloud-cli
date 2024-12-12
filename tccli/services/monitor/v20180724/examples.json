@@ -48,6 +48,20 @@
         "title": "创建告警策略"
       }
     ],
+    "CreateAlarmShield": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmShield\n<公共请求参数>\n\n{\n    \"LoopStartDate\": \"1648742400\",\n    \"StartTime\": \"36000\",\n    \"NameSpace\": \"cvm_device\",\n    \"Module\": \"monitor\",\n    \"ShieldMetric\": [\n        \"CpuUsage\"\n    ],\n    \"LoopEndDate\": \"1649088000\",\n    \"ShieldTimeType\": \"LOOP_SHIELD\",\n    \"MonitorType\": \"MT_QCE\",\n    \"EndTime\": \"72000\",\n    \"ShieldObject\": [\n        \"cafka-xxx\"\n    ],\n    \"Name\": \"1311\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4f51ecc-c3fa-4e0a-a9b5-093b1a58013e\",\n        \"ShieldId\": \"Shield-wixc9u804z\"\n    }\n}",
+        "title": "CreateAlarmShield示例1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlarmShield\n<公共请求参数>\n\n{\n    \"Module\": \"monitor\",\n    \"Name\": \"测试屏蔽\",\n    \"MonitorType\": \"MT_QCE\",\n    \"NameSpace\": \"cvm_device\",\n    \"ShieldObject\": [\n        \"cafka-xxx\",\n        \"cafka-xxx1\"\n    ],\n    \"ShieldMetric\": [\n        \"CpuUsage\",\n        \"BaseCpuUsage\"\n    ],\n    \"ShieldTimeType\": \"LOOP_SHIELD\",\n    \"StartTime\": \"36000\",\n    \"EndTime\": \"72000\",\n    \"LoopStartDate\": \"1648742400\",\n    \"LoopEndDate\": \"1649088000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29ghj2hh-45-266627r66hheh-23\",\n        \"ShieldId\": \"shield-xxxx\"\n    }\n}",
+        "title": "创建告警屏蔽规则"
+      }
+    ],
     "CreateAlertRule": [
       {
         "document": "",

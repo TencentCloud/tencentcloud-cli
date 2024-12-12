@@ -18,8 +18,8 @@ Output:
         "Data": [
             {
                 "DB": 0,
-                "Key": "abc",
-                "Type": "abc",
+                "Key": "exapmle_key",
+                "Type": "exapmle_type",
                 "Size": 0,
                 "Updatetime": 0
             }
