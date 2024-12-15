@@ -8,11 +8,11 @@
       "status": "online"
     },
     "AssignTWeCallLicense": {
-      "document": "分配License",
+      "document": "微信VOIP功能调整下线\n\n分配License",
       "input": "AssignTWeCallLicenseRequest",
       "name": "分配TWeCall",
       "output": "AssignTWeCallLicenseResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "BindCloudStorageUser": {
       "document": "绑定云存用户",
@@ -729,11 +729,11 @@
       "status": "online"
     },
     "GetTWeCallPkgList": {
-      "document": "查询TWeCall包列表",
+      "document": "微信VOIP功能调整下线\n\n查询TWeCall包列表",
       "input": "GetTWeCallPkgListRequest",
       "name": "查询TWeCall包列表",
       "output": "GetTWeCallPkgListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetTopicRuleList": {
       "document": "获取规则列表",

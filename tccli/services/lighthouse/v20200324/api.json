@@ -1235,7 +1235,7 @@
         {
           "disabled": false,
           "document": "官方网站Url。",
-          "example": "\"\"",
+          "example": "https://www.bt.cn",
           "member": "string",
           "name": "CommunityUrl",
           "output_required": true,
@@ -1245,7 +1245,7 @@
         {
           "disabled": false,
           "document": "指导文章Url。",
-          "example": "\"\"",
+          "example": "https://cloud.tencent.com/document/product/1207/47425",
           "member": "string",
           "name": "GuideUrl",
           "output_required": true,
@@ -1291,30 +1291,30 @@
         {
           "disabled": false,
           "document": "镜像信息。",
-          "example": "",
+          "example": "无",
           "member": "Blueprint",
           "name": "Blueprint",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "软件列表。",
-          "example": "",
+          "example": "无",
           "member": "Software",
           "name": "SoftwareSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例 ID。",
-          "example": "",
+          "example": "lhins-swgw4sg2",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1833,7 +1833,7 @@
         {
           "disabled": false,
           "document": "云硬盘名称。最大长度60。",
-          "example": "test",
+          "example": "disk_for_softwares",
           "member": "string",
           "name": "DiskName",
           "required": false,
@@ -5683,7 +5683,7 @@
         {
           "disabled": false,
           "document": "云硬盘退还失败错误信息。",
-          "example": "\"\"",
+          "example": "该资源购买自活动，活动设置不允许进行退费, 如有疑问，请联系我们。",
           "member": "string",
           "name": "ReturnFailMessage",
           "output_required": true,
@@ -6235,7 +6235,7 @@
         {
           "disabled": false,
           "document": "任务ID。",
-          "example": "lgtk-xxxxxxxx",
+          "example": "lgtk-dodi8tqa",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -6264,7 +6264,7 @@
         },
         {
           "disabled": false,
-          "document": "应用模板的执行状态。",
+          "document": "应用模板的执行状态。\n\n- SUCCESS：成功\n- FAILED：失败",
           "example": "SUCCESS",
           "member": "string",
           "name": "ApplyState",
@@ -6330,8 +6330,8 @@
         },
         {
           "disabled": false,
-          "document": "防火墙模板应用状态。",
-          "example": "SUCCESS",
+          "document": "防火墙模板应用状态。\n\n- SUCCESS：成功\n- FAILED：失败",
+          "example": "FAILED",
           "member": "string",
           "name": "ApplyState",
           "output_required": true,
@@ -6341,7 +6341,7 @@
         {
           "disabled": false,
           "document": "防火墙模板应用错误信息。",
-          "example": "\"\"",
+          "example": "modifyInstanceFirewallRules error",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -6357,7 +6357,7 @@
         {
           "disabled": false,
           "document": "防火墙模板规则ID。",
-          "example": "lhftr-xxxxxxxxxx",
+          "example": "lhftr-gexf7cmvpq",
           "member": "string",
           "name": "TemplateRuleId",
           "output_required": true,
@@ -6404,35 +6404,35 @@
       "usage": "out"
     },
     "GeneralResourceQuota": {
-      "document": "描述通用资源配额信息。\n\n",
+      "document": "描述通用资源配额信息。",
       "members": [
         {
           "disabled": false,
           "document": "资源名称。",
-          "example": "",
+          "example": "GENERAL_BUNDLE_INSTANCE",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源当前可用数量。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "ResourceQuotaAvailable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源总数量。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "ResourceQuotaTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7353,7 +7353,7 @@
         {
           "disabled": false,
           "document": " 来源：RESTRICT：封禁、FREEZW：冻结\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "FREEZING",
           "member": "string",
           "name": "Source",
           "output_required": false,
@@ -7363,7 +7363,7 @@
         {
           "disabled": false,
           "document": "是否允许自助解封：1是，2否\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "State",
           "output_required": false,
@@ -7373,7 +7373,7 @@
         {
           "disabled": false,
           "document": "违规类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "未备案",
           "member": "string",
           "name": "Reason",
           "output_required": false,
@@ -7383,7 +7383,7 @@
         {
           "disabled": false,
           "document": "违规内容（URL、关联域名）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://157.*.*.29/",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -7508,7 +7508,7 @@
         {
           "disabled": false,
           "document": "密钥对名称。",
-          "example": "test",
+          "example": "api_group_key",
           "member": "string",
           "name": "KeyName",
           "output_required": true,
@@ -7518,7 +7518,7 @@
         {
           "disabled": false,
           "document": "密钥对的纯文本公钥。",
-          "example": "\"\"",
+          "example": "ssh-rsa AAAAB3NzaC1yc2E*****JNseYY4Pt3IbTv30Zx8jqQtYvfayk35YZLFl1woO2R skey-jfwgd",
           "member": "string",
           "name": "PublicKey",
           "output_required": true,
@@ -7528,7 +7528,7 @@
         {
           "disabled": false,
           "document": "密钥对关联的实例 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"lhins-afge14se\"]",
           "member": "string",
           "name": "AssociatedInstanceIds",
           "output_required": true,
@@ -8074,7 +8074,7 @@
         {
           "disabled": false,
           "document": "实例名称。可任意命名，但不得超过 60 个字符。",
-          "example": "test",
+          "example": "instance_for_api",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -8814,30 +8814,30 @@
         {
           "disabled": false,
           "document": "镜像详细信息",
-          "example": "",
+          "example": "无",
           "member": "Blueprint",
           "name": "BlueprintInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例镜像是否可重置为目标镜像",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsResettable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不可重置信息.当镜像可重置时为\"\"",
-          "example": "",
+          "example": "非中国大陆地域不支持Linux系统和Windows系统之间互转。",
           "member": "string",
           "name": "NonResettableMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9077,30 +9077,30 @@
         {
           "disabled": false,
           "document": "使用场景Id",
-          "example": "\"lhsc-123456\"",
+          "example": "lhsc-3bzsddow",
           "member": "string",
           "name": "SceneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用场景展示名称",
-          "example": "\"\"",
+          "example": "网站",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用场景描述",
-          "example": "\"\"",
+          "example": "提供常用建站类应用模板与工具，帮助您快速构建满足业务诉求的网站，如企业官网、资讯、博客、论坛等等。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9113,30 +9113,30 @@
         {
           "disabled": false,
           "document": "使用场景Id。",
-          "example": "\"lhsc-123456\"",
+          "example": "lhsc-3bzsddow",
           "member": "string",
           "name": "SceneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用场景展示名称。",
-          "example": "\"\"",
+          "example": "网站",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用场景描述信息。",
-          "example": "\"\"",
+          "example": "提供常用建站类应用模板与工具，帮助您快速构建满足业务诉求的网站，如企业官网、资讯、博客、论坛等等。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9327,50 +9327,50 @@
         {
           "disabled": false,
           "document": "软件名称。",
-          "example": "",
+          "example": "宝塔Linux面板",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "软件版本。",
-          "example": "",
+          "example": "8.1.0 腾讯云专享版",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "软件图片 URL。",
-          "example": "",
+          "example": "https://imgcache.qq.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/bt-panel.svg",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "软件安装目录。",
-          "example": "",
+          "example": "/www",
           "member": "string",
           "name": "InstallDir",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "软件详情列表。",
-          "example": "",
+          "example": "无",
           "member": "SoftwareDetail",
           "name": "DetailSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

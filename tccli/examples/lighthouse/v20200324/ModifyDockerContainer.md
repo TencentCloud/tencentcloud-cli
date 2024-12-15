@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse ModifyDockerContainer --cli-unfold-argument  \
-    --Command  \
+    --Command ls -l \
     --Envs.0.Key Key1 \
     --Envs.0.Value Value1 \
     --PublishPorts.0.ContainerPort 80 \

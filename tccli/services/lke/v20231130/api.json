@@ -4926,7 +4926,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间戳, 单位为秒",
+          "document": "开始时间戳, 单位为秒(默认值0)",
           "example": "无",
           "member": "string",
           "name": "StartTime",
@@ -4935,7 +4935,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间戳, 单位为秒",
+          "document": "结束时间戳, 单位为秒(默认值0， 必须大于开始时间戳)",
           "example": "无",
           "member": "string",
           "name": "EndTime",

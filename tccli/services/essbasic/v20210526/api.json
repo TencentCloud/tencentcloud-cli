@@ -6134,8 +6134,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "小程序路径",
-          "example": "无",
+          "document": "小程序路径，有效时间为7天",
+          "example": "pages/guide/index?to=BATCH_INITIALIZATION_ORGANIZATIONS&shortKey=yDAHpURDf",
           "member": "string",
           "name": "MiniAppPath",
           "output_required": true,
@@ -6144,7 +6144,7 @@
         },
         {
           "disabled": false,
-          "document": "操作长链",
+          "document": "操作长链，有效时间为7天",
           "example": "无",
           "member": "string",
           "name": "OperateLongUrl",
@@ -6154,8 +6154,8 @@
         },
         {
           "disabled": false,
-          "document": "操作短链",
-          "example": "无",
+          "document": "操作短链，有效时间为7天",
+          "example": "https://essurl.cn/zahbUBHxW3",
           "member": "string",
           "name": "OperateShortUrl",
           "output_required": true,
@@ -6164,7 +6164,7 @@
         },
         {
           "disabled": false,
-          "document": "操作二维码",
+          "document": "操作二维码，有效时间为7天",
           "example": "无",
           "member": "string",
           "name": "QRCodeUrl",
@@ -12585,7 +12585,7 @@
         },
         {
           "disabled": false,
-          "document": "模板的填充控件列表",
+          "document": "模板的填充控件列表\n\n[点击查看在模板中配置的填充控件的样子](https://qcloudimg.tencent-cloud.cn/raw/cb2f58529fca8d909258f9d45a56f7f4.png)",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -12595,7 +12595,7 @@
         },
         {
           "disabled": false,
-          "document": "此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。",
+          "document": "此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。\n\n[点击查看在模板中配置的签署参与方角色列表的样子](https://qcloudimg.tencent-cloud.cn/raw/e082bbcc0d923f8cb723d98382410aa2.png)\n\n",
           "example": "无",
           "member": "Recipient",
           "name": "Recipients",
@@ -12605,7 +12605,7 @@
         },
         {
           "disabled": false,
-          "document": "此模板中的签署控件列表",
+          "document": "此模板中的签署控件列表\n\n[点击查看在模板中配置的签署控件的样子](https://qcloudimg.tencent-cloud.cn/raw/29bc6ed753a5a0fce4a3ab02e2c0d955.png)",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -12615,7 +12615,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型：1-静默签；3-普通模板",
+          "document": "模板类型可以分为以下两种：\n\n<b>1</b>：带有<b>本企业自动签署</b>的模板，即签署过程无需签署人手动操作，系统自动完成签署。\n<b>3</b>：普通模板，即签署人需要手动进行签署操作。",
           "example": "3",
           "member": "int64",
           "name": "TemplateType",
@@ -12655,7 +12655,7 @@
         },
         {
           "disabled": false,
-          "document": "模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的 H5 预览链接，有效期为 5 分钟。\n您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。\n\n注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://embed.beta.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDSxNUUckptbbq64UEly7FaCkhsBlSLj&codeType=QUICK&businessType=TEMPLATE&businessId=yDSLVUUckpo3pub6UE5dPdv8pkDsrbEn&channel=PROXYCHANNEL",
           "member": "string",
           "name": "PreviewUrl",

@@ -14677,7 +14677,7 @@
         },
         {
           "disabled": false,
-          "document": "模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的 H5 预览链接，有效期为 5 分钟。\n您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。\n\n注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://embed.beta.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDSxNUUckptbbq64UEly7FaCkhsBlSLj&codeType=QUICK&businessType=TEMPLATE&businessId=yDSLVUUckpo3pub6UE5dPdv8pkDsrbEn&channel=PROXYCHANNEL",
           "member": "string",
           "name": "PreviewUrl",

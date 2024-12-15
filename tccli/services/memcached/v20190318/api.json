@@ -223,14 +223,14 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例关联的标签信息",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -427,25 +427,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "标签key",
           "member": "string",
           "name": "TagKey",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "标签value",
           "member": "string",
           "name": "TagValue",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
