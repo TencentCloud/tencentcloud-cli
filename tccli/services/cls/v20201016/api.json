@@ -10012,7 +10012,7 @@
         {
           "disabled": false,
           "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。\n入参必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sasl_plaintext",
+          "example": "sasl_ssl",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -10023,7 +10023,7 @@
         {
           "disabled": false,
           "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "PLAIN",
           "member": "string",
           "name": "Mechanism",
           "output_required": true,
@@ -10034,7 +10034,7 @@
         {
           "disabled": false,
           "document": "用户名。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -10045,7 +10045,7 @@
         {
           "disabled": false,
           "document": "用户密码。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "axxxxxx",
           "member": "string",
           "name": "Password",
           "output_required": true,

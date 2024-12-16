@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl CancelCertificateOrder --cli-unfold-argument  \
-    --CertificateId hjejs**jsj
+    --CertificateId hehj***jsj
 ```
 
 Output: 

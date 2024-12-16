@@ -115,7 +115,7 @@
     "VerifySmsCode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifySmsCode\n<公共请求参数>\n\n{\n    \"Purpose\": \"BindSuperAdmin\",\n    \"InstanceId\": \"n0v9tdme\",\n    \"PhoneNumber\": \"18999999999\",\n    \"Code\": \"1234\"\n}",
+        "input": "POST / HTTP/1.1\nHost: smh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifySmsCode\n<公共请求参数>\n\n{\n    \"Purpose\": \"BindSuperAdmin\",\n    \"InstanceId\": \"n0v9tdme\",\n    \"PhoneNumber\": \"18999999999\",\n    \"Code\": \"2261\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"98a878b5-8c16-4788-a7e7-4b1a19a461db\"\n    }\n}",
         "title": "验证短信验证码"
       }

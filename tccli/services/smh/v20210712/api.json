@@ -137,7 +137,7 @@
         {
           "disabled": false,
           "document": "存储桶全名，新建后不可更改。当前版本不再支持指定存储桶。",
-          "example": "无",
+          "example": "demo-bucket-13000000000",
           "member": "string",
           "name": "BucketName",
           "required": false,
@@ -146,7 +146,7 @@
         {
           "disabled": false,
           "document": "存储桶所在地域，新建后不可更改。当前版本不再支持指定存储桶所在地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
           "required": false,
@@ -384,7 +384,7 @@
         {
           "disabled": false,
           "document": "自定义信息。不超过 255 个字符。",
-          "example": "无",
+          "example": "普通用户",
           "member": "string",
           "name": "Customize",
           "required": false,
@@ -529,7 +529,7 @@
         {
           "disabled": false,
           "document": "自定义信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "普通用户",
           "member": "string",
           "name": "Customize",
           "output_required": false,
@@ -1628,7 +1628,7 @@
         {
           "disabled": false,
           "document": "自定义信息。不超过 255 个字符。",
-          "example": "无",
+          "example": "普通用户",
           "member": "string",
           "name": "Customize",
           "required": false,
@@ -1773,7 +1773,7 @@
         {
           "disabled": false,
           "document": "自定义信息。",
-          "example": "无",
+          "example": "普通用户",
           "member": "string",
           "name": "Customize",
           "output_required": false,
@@ -1997,7 +1997,7 @@
         {
           "disabled": false,
           "document": "短信验证码",
-          "example": "1234",
+          "example": "2261",
           "member": "string",
           "name": "Code",
           "required": true,

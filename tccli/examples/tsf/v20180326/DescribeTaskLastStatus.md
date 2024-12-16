@@ -17,7 +17,7 @@ Output:
         "Result": {
             "BatchId": "batch-vk8hn123g",
             "State": "SUCCESS",
-            "BatchLogId": "xx"
+            "BatchLogId": "blog-6a79x94v"
         }
     }
 }

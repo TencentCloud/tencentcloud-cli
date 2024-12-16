@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl RevokeCertificate --cli-unfold-argument  \
-    --CertificateId a91hoLqi \
+    --CertificateId hehx***hshj \
     --Reason revoke
 ```
 

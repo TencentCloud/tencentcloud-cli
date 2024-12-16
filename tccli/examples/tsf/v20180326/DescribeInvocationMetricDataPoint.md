@@ -6,12 +6,13 @@ Input:
 
 ```
 tccli tsf DescribeInvocationMetricDataPoint --cli-unfold-argument  \
-    --Metrics.0.Function xx \
-    --Metrics.0.Name xx \
-    --EndTime xx \
-    --StartTime xx \
-    --MetricDimensionValues.0.Name xx \
-    --MetricDimensionValues.0.Value xx
+    --StartTime 2019-11-23 09:22:33 \
+    --EndTime 2019-11-23 09:24:33 \
+    --MetricDimensionValues.0.Name namespace \
+    --MetricDimensionValues.0.Value namespace-6a79x94v \
+    --Metrics.0.Name name-mock \
+    --Metrics.0.Function func-mock \
+    --Kind SERVER
 ```
 
 Output: 
@@ -20,12 +21,13 @@ Output:
     "Response": {
         "Result": [
             {
-                "MetricDataValue": "xx",
-                "MetricFunction": "xx",
-                "MetricName": "xx"
+                "MetricName": "name-mock",
+                "MetricFunction": "func-mock",
+                "MetricDataValue": "namespace-6a79x94v",
+                "DailyPercent": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

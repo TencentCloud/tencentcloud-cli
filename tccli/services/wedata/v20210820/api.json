@@ -9400,6 +9400,72 @@
       ],
       "usage": "both"
     },
+    "DataSourceConnectStatus": {
+      "document": "数据源云梯连接状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "1",
+          "member": "string",
+          "name": "DatasourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接结果",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectError",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "1",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DataSourceInfo": {
       "document": "数据源对象",
       "members": [
@@ -9741,6 +9807,16 @@
           "name": "DevelopmentParams",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "DataSourceConnectStatus",
+          "name": "ConnectStatus",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

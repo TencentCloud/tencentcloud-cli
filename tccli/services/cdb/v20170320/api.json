@@ -5804,7 +5804,7 @@
         {
           "disabled": false,
           "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。",
-          "example": "[]",
+          "example": "[{\"Name\": \"auto_increment_increment\",\"Value\": \"1\"}]",
           "member": "ParamInfo",
           "name": "ParamList",
           "required": false,
@@ -5849,7 +5849,7 @@
         {
           "disabled": false,
           "document": "安全组参数，可使用 [查询项目安全组信息](https://cloud.tencent.com/document/api/236/15850) 接口查询某个项目的安全组详情。",
-          "example": "[]",
+          "example": "[\"sg-9stjvjn1\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -5885,7 +5885,7 @@
         {
           "disabled": false,
           "document": "实例标签信息。",
-          "example": "[]",
+          "example": "[{\"TagKey\": \"march\",\"TagValue\": [\"march1\"]}]",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
@@ -5930,7 +5930,7 @@
         {
           "disabled": false,
           "document": "告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。",
-          "example": "[]",
+          "example": "[7957756]",
           "member": "int64",
           "name": "AlarmPolicyList",
           "required": false,
@@ -5984,7 +5984,7 @@
         {
           "disabled": false,
           "document": "告警策略名数组，例如:[\"policy-uyoee9wg\"]，AlarmPolicyList不为空时该参数无效。",
-          "example": "[]",
+          "example": "[\"policy-uyoee9wg\"]",
           "member": "string",
           "name": "AlarmPolicyIdList",
           "required": false,
@@ -6011,7 +6011,7 @@
         {
           "disabled": false,
           "document": "指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。",
-          "example": "[]",
+          "example": "[\"172.1.1.1\"]",
           "member": "string",
           "name": "Vips",
           "required": false,
@@ -6037,7 +6037,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型，基础版或者集群版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘。",
+          "document": "硬盘类型，单节点（云盘版）或者集群版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘。\n说明：单节点（云盘版）、集群版实例硬盘类型所支持的地域略有不同，具体支持情况请参考 [地域和可用区](https://cloud.tencent.com/document/product/236/8458)。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -6238,7 +6238,7 @@
         {
           "disabled": false,
           "document": "参数列表，参数格式如 ParamList.0.Name=auto_increment&ParamList.0.Value=1。可通过 [查询默认的可设置参数列表](https://cloud.tencent.com/document/api/236/32662) 查询支持设置的参数。",
-          "example": "[]",
+          "example": "[{\"Name\": \"auto_increment_increment\",\"Value\": \"1\"}]",
           "member": "ParamInfo",
           "name": "ParamList",
           "required": false,
@@ -6274,7 +6274,7 @@
         {
           "disabled": false,
           "document": "安全组参数，可使用 [查询项目安全组信息](https://cloud.tencent.com/document/api/236/15850) 接口查询某个项目的安全组详情。",
-          "example": "[]",
+          "example": "[\"sg-9stjvjn1\"]",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -6283,7 +6283,7 @@
         {
           "disabled": false,
           "document": "只读实例参数。购买只读实例时，该参数必传。",
-          "example": "{}",
+          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": \"5\",\"MinRoInGroup\": \"1\",\"RoOfflineDelay\": \"1\"}",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
@@ -6301,7 +6301,7 @@
         {
           "disabled": false,
           "document": "实例标签信息。",
-          "example": "[]",
+          "example": "[{\"TagKey\": \"march\",\"TagValue\": [\"march1\"]}]",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,
@@ -6346,7 +6346,7 @@
         {
           "disabled": false,
           "document": "告警策略id数组。腾讯云可观测平台DescribeAlarmPolicy接口返回的OriginId。",
-          "example": "[]",
+          "example": "[7957756]",
           "member": "int64",
           "name": "AlarmPolicyList",
           "required": false,
@@ -6400,7 +6400,7 @@
         {
           "disabled": false,
           "document": "告警策略名数组，例如:[\"policy-uyoee9wg\"]，AlarmPolicyList不为空时该参数无效。",
-          "example": "[]",
+          "example": "[\"policy-uyoee9wg\"]",
           "member": "string",
           "name": "AlarmPolicyIdList",
           "required": false,
@@ -6427,7 +6427,7 @@
         {
           "disabled": false,
           "document": "指定实例的IP列表。仅支持主实例指定，按实例顺序，不足则按未指定处理。",
-          "example": "[]",
+          "example": "[\"172.1.1.1\"]",
           "member": "string",
           "name": "Vips",
           "required": false,
@@ -6453,7 +6453,7 @@
         },
         {
           "disabled": false,
-          "document": "磁盘类型，基础版或者集群版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘。",
+          "document": "磁盘类型，单节点（云盘版）或者集群版实例可以指定此参数。CLOUD_SSD 表示 SSD 云硬盘，CLOUD_HSSD 表示增强型 SSD 云硬盘。\n说明：单节点（云盘版）、集群版实例硬盘类型所支持的地域略有不同，具体支持情况请参考 [地域和可用区](https://cloud.tencent.com/document/product/236/8458)。",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",

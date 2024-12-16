@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli ocr VatInvoiceVerifyNew --cli-unfold-argument  \
-    --InvoiceCode 144002288010 \
-    --InvoiceNo 04138864 \
+    --InvoiceCode 1440****010 \
+    --InvoiceNo 041***64 \
     --InvoiceDate 2022-11-16 \
     --Amount 498.90 \
-    --CheckCode 311400 \
+    --CheckCode 31****0 \
     --RegionCode 4400 \
-    --SellerTaxCode 44078819091887401X \
+    --SellerTaxCode 44078*****401X \
     --EnableCommonElectronic True
 ```
 
@@ -102,57 +102,57 @@ Output:
             "VinNo": ""
         },
         "ElectronicTrainTicket": {
-            "BuyerName": "abc",
-            "BuyerTaxCode": "abc",
-            "Number": "abc",
-            "Date": "abc",
-            "TotalCN": "abc",
-            "Tax": "abc",
-            "ServiceType": "abc",
-            "TimeGetOn": "abc",
-            "TrainNumber": "abc",
-            "Code": "abc",
-            "SeatType": "abc",
-            "DateGetOn": "abc",
-            "TrainCabin": "abc",
-            "StationGetOn": "abc",
-            "ElectronicNumber": "abc",
-            "PassengerName": "abc",
-            "PassengerNo": "abc",
-            "Amount": "abc",
-            "StationGetOff": "abc",
-            "TaxRate": "abc",
-            "Seat": "abc",
-            "Total": "abc",
-            "CheckCode": "abc",
-            "StateCode": "0"
+            "BuyerName": "",
+            "BuyerTaxCode": "",
+            "Number": "",
+            "Date": "",
+            "TotalCN": "",
+            "Tax": "",
+            "ServiceType": "",
+            "TimeGetOn": "",
+            "TrainNumber": "",
+            "Code": "",
+            "SeatType": "",
+            "DateGetOn": "",
+            "TrainCabin": "",
+            "StationGetOn": "",
+            "ElectronicNumber": "",
+            "PassengerName": "",
+            "PassengerNo": "",
+            "Amount": "",
+            "StationGetOff": "",
+            "TaxRate": "",
+            "Seat": "",
+            "Total": "",
+            "CheckCode": "",
+            "StateCode": ""
         },
         "ElectronicAirTransport": {
-            "Code": "abc",
-            "Number": "abc",
-            "Date": "abc",
-            "Amount": "abc",
-            "CheckCode": "abc",
-            "Total": "abc",
-            "DeductionMark": "abc",
-            "StateCode": "abc",
-            "BuyerTaxCode": "abc",
-            "BuyerName": "abc",
-            "DomesticInternationalMark": "abc",
-            "PassengerName": "abc",
-            "PassengerNo": "abc",
-            "ElectronicNumber": "abc",
+            "Code": "",
+            "Number": "",
+            "Date": "",
+            "Amount": "",
+            "CheckCode": "",
+            "Total": "",
+            "DeductionMark": "",
+            "StateCode": "",
+            "BuyerTaxCode": "",
+            "BuyerName": "",
+            "DomesticInternationalMark": "",
+            "PassengerName": "",
+            "PassengerNo": "",
+            "ElectronicNumber": "",
             "ElectronicAirTransportDetails": [
                 {
-                    "FlightSegment": "abc",
-                    "StationGetOn": "abc",
-                    "StationGetOff": "abc",
-                    "Carrier": "abc",
-                    "FlightNumber": "abc",
-                    "SeatLevel": "abc",
-                    "FlightDate": "abc",
-                    "DepartureTime": "abc",
-                    "FareBasis": "abc"
+                    "FlightSegment": "",
+                    "StationGetOn": "",
+                    "StationGetOff": "",
+                    "Carrier": "",
+                    "FlightNumber": "",
+                    "SeatLevel": "",
+                    "FlightDate": "",
+                    "DepartureTime": "",
+                    "FareBasis": ""
                 }
             ]
         }

@@ -385,6 +385,13 @@
       "output": "DeleteProtectDirResponse",
       "status": "online"
     },
+    "DeleteRaspRules": {
+      "document": "删除漏洞防御白名单",
+      "input": "DeleteRaspRulesRequest",
+      "name": "删除rasp白名单规则",
+      "output": "DeleteRaspRulesResponse",
+      "status": "online"
+    },
     "DeleteReverseShellEvents": {
       "document": "根据Ids删除反弹Shell事件",
       "input": "DeleteReverseShellEventsRequest",
@@ -1897,6 +1904,27 @@
       "output": "DescribeRansomDefenseTrendResponse",
       "status": "online"
     },
+    "DescribeRaspMaxCpu": {
+      "document": "查看漏洞防御最大cpu限制",
+      "input": "DescribeRaspMaxCpuRequest",
+      "name": "查询rasp最大cpu限制",
+      "output": "DescribeRaspMaxCpuResponse",
+      "status": "online"
+    },
+    "DescribeRaspRuleVuls": {
+      "document": "获取漏洞防御白名单漏洞列表",
+      "input": "DescribeRaspRuleVulsRequest",
+      "name": "获取rasp白名单里的漏洞列表",
+      "output": "DescribeRaspRuleVulsResponse",
+      "status": "online"
+    },
+    "DescribeRaspRules": {
+      "document": "查询漏洞防御白名单",
+      "input": "DescribeRaspRulesRequest",
+      "name": "获取rasp白名单列表",
+      "output": "DescribeRaspRulesResponse",
+      "status": "online"
+    },
     "DescribeRecommendedProtectCpu": {
       "document": "查询推荐购买防护核数",
       "input": "DescribeRecommendedProtectCpuRequest",
@@ -3267,6 +3295,20 @@
       "input": "ModifyRansomDefenseStrategyStatusRequest",
       "name": "批量修改防勒索策略状态",
       "output": "ModifyRansomDefenseStrategyStatusResponse",
+      "status": "online"
+    },
+    "ModifyRaspMaxCpu": {
+      "document": "编辑漏洞防御最大cpu配置",
+      "input": "ModifyRaspMaxCpuRequest",
+      "name": "编辑rasp最大cpu限制",
+      "output": "ModifyRaspMaxCpuResponse",
+      "status": "online"
+    },
+    "ModifyRaspRules": {
+      "document": "添加漏洞防御白名单",
+      "input": "ModifyRaspRulesRequest",
+      "name": "编辑或者创建rasp白名单规则",
+      "output": "ModifyRaspRulesResponse",
       "status": "online"
     },
     "ModifyReverseShellRulesAggregation": {
@@ -11698,11 +11740,21 @@
         },
         {
           "disabled": false,
-          "document": "自动生成的正则表达式",
+          "document": "转义后的正则表达式",
           "example": "rm -rf /tmp/t*",
           "member": "string",
           "name": "RegexBashCmd",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转义后的正则表达式",
+          "example": "/usr/sbin/tail",
+          "member": "string",
+          "name": "RegexExe",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16266,6 +16318,33 @@
     },
     "DeleteProtectDirResponse": {
       "document": "DeleteProtectDir返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRaspRulesRequest": {
+      "document": "DeleteRaspRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除的规则ID数组 (最大100条)",
+          "example": "[31]",
+          "member": "uint64",
+          "name": "IDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRaspRulesResponse": {
+      "document": "DeleteRaspRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -31166,6 +31245,181 @@
           "example": "134",
           "member": "uint64",
           "name": "CompanyCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspMaxCpuRequest": {
+      "document": "DescribeRaspMaxCpu请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRaspMaxCpuResponse": {
+      "document": "DescribeRaspMaxCpu返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制",
+          "example": "100",
+          "member": "uint64",
+          "name": "RaspMaxCpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspRuleVulsRequest": {
+      "document": "DescribeRaspRuleVuls请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。Name=WhiteType的必选，0：表示自定义范围的漏洞列表，1：表示全部请求范围的列表",
+          "example": "[{\"Name\":\"WhiteType\",\"Values\":[\"0\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为1000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspRuleVulsResponse": {
+      "document": "DescribeRaspRuleVuls返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表内容",
+          "example": "[ \t\t\t{ \t\t\t\t\"CveID\": \"CVE-2012-4453\", \t\t\t\t\"SupportDefense\": 2, \t\t\t\t\"VulVulsID\": 1, \t\t\t\t\"VulVulsName\": \"dracut 权限许可和访问控制漏洞 (CVE-2012-4453)\" \t\t\t} \t\t]",
+          "member": "RaspRuleVul",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspRulesRequest": {
+      "document": "DescribeRaspRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>Keywords - String - 是否必填：否 - 关键字(进程名称)</li>",
+          "example": "[{\"Name\":\"Keywords\",\"Values\":[\"加白内容\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，目前有：CreateTime、ModifyTime，默认按照ModifyTime排序",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序升序还是倒序，DESC有ASC、",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRaspRulesResponse": {
+      "document": "DescribeRaspRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表内容",
+          "example": "[ \t\t\t{ \t\t\t\t\"CreateTime\": \"2024-10-17 17:32:13\", \t\t\t\t\"CveID\": \"CVE-2012-4453\", \t\t\t\t\"Id\": 2, \t\t\t\t\"ModifyTime\": \"2024-10-17 17:32:13\", \t\t\t\t\"Status\": 0, \t\t\t\t\"SupportDefense\": 2, \t\t\t\t\"URLRegexp\": \"\", \t\t\t\t\"VulVulsID\": 1, \t\t\t\t\"VulVulsName\": \"dracut 权限许可和访问控制漏洞 (CVE-2012-4453)\", \t\t\t\t\"WhiteType\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"CreateTime\": \"2024-10-17 17:32:13\", \t\t\t\t\"CveID\": \"CVE-2016-5003\", \t\t\t\t\"Id\": 3, \t\t\t\t\"ModifyTime\": \"2024-10-17 17:32:13\", \t\t\t\t\"Status\": 0, \t\t\t\t\"SupportDefense\": 1, \t\t\t\t\"URLRegexp\": \"\", \t\t\t\t\"VulVulsID\": 18878, \t\t\t\t\"VulVulsName\": \"Apache Archiva Apache XML-RPC库安全漏洞(CVE-2016-5003)\", \t\t\t\t\"WhiteType\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"CreateTime\": \"2024-10-17 17:28:05\", \t\t\t\t\"CveID\": \"CVE-2012-4453\", \t\t\t\t\"Id\": 1, \t\t\t\t\"ModifyTime\": \"2024-10-17 17:28:05\", \t\t\t\t\"Status\": 0, \t\t\t\t\"SupportDefense\": 2, \t\t\t\t\"URLRegexp\": \"abc\", \t\t\t\t\"VulVulsID\": 1, \t\t\t\t\"VulVulsName\": \"dracut 权限许可和访问控制漏洞 (CVE-2012-4453)\", \t\t\t\t\"WhiteType\": 0 \t\t\t} \t\t]",
+          "member": "RaspRule",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -48892,6 +49146,87 @@
       ],
       "type": "object"
     },
+    "ModifyRaspMaxCpuRequest": {
+      "document": "ModifyRaspMaxCpu请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "rasp当前最大cpu限制，0<cpu<=100，默认100表示不限制",
+          "example": "80",
+          "member": "uint64",
+          "name": "RaspMaxCpu",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRaspMaxCpuResponse": {
+      "document": "ModifyRaspMaxCpu返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRaspRulesRequest": {
+      "document": "ModifyRaspRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID(新增时请留空，编辑时候必传)",
+          "example": "34",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "漏洞id数组",
+          "example": "2",
+          "member": "uint64",
+          "name": "VulVulsIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义请求范围加白正则表达式，选择全部请求范围时候为空，否则不能为空，base64编码",
+          "example": "LiovdXNyL2Jpbi8=",
+          "member": "string",
+          "name": "URLRegexp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加白方式，0：自定义请求范围加白。1：全部请求加白",
+          "example": "0",
+          "member": "uint64",
+          "name": "WhiteType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRaspRulesResponse": {
+      "document": "ModifyRaspRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyReverseShellRulesAggregationRequest": {
       "document": "ModifyReverseShellRulesAggregation请求参数结构体",
       "members": [
@@ -53149,6 +53484,158 @@
         }
       ],
       "usage": "both"
+    },
+    "RaspRule": {
+      "document": "rasp白名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "222",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义请求url范围正则表达式，为空则保存不成功",
+          "example": "regexp",
+          "member": "string",
+          "name": "URLRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞id",
+          "example": "100",
+          "member": "uint64",
+          "name": "VulVulsID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "vulVulName",
+          "member": "string",
+          "name": "VulVulsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve_id",
+          "example": "CVE-2015-7975",
+          "member": "string",
+          "name": "CveID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御类型，从漏洞表富化， 1:支持组件漏洞防御，组件漏洞没有正则加白。2:支持正则防御",
+          "example": "1",
+          "member": "uint64",
+          "name": "SupportDefense",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加白范围，0:全部请求加白，1:自定义请求范围加白",
+          "example": "1",
+          "member": "uint64",
+          "name": "WhiteType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 0: 有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2020-01-08 09:15:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2020-01-08 09:15:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RaspRuleVul": {
+      "document": "rasp白名单漏洞列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞id",
+          "example": "104845",
+          "member": "uint64",
+          "name": "VulVulsID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "JetBrains TeamCity 安全漏洞",
+          "member": "string",
+          "name": "VulVulsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cve_id",
+          "example": "CVE-2023-42793",
+          "member": "string",
+          "name": "CveID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞防御类型，从漏洞表富化， 1:支持组件漏洞防御，组件漏洞没有正则加白。2:支持正则防御",
+          "example": "1",
+          "member": "uint64",
+          "name": "SupportDefense",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RecordInfo": {
       "document": "客户端异常信息结构",

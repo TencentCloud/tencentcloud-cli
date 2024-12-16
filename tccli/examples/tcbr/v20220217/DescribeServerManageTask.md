@@ -6,45 +6,35 @@ Input:
 
 ```
 tccli tcbr DescribeServerManageTask --cli-unfold-argument  \
-    --EnvId abc \
-    --ServerName abc \
-    --TaskId 0 \
-    --OperatorRemark abc
+    --EnvId prod-2g59lad002c864a6 \
+    --ServerName golang-h7yv \
+    --TaskId 1000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "IsExist": true,
+        "IsExist": false,
+        "RequestId": "f72cf9c7-e477-443e-98f5-19703abbd2af",
         "Task": {
+            "ChangeType": "",
+            "CreateTime": "",
+            "DeployType": "",
+            "EnvId": "",
+            "FailReason": "",
             "Id": 0,
-            "EnvId": "abc",
-            "ServerName": "abc",
-            "CreateTime": "abc",
-            "ChangeType": "abc",
-            "ReleaseType": "abc",
-            "DeployType": "abc",
-            "PreVersionName": "abc",
-            "VersionName": "abc",
+            "OperatorRemark": "",
             "PipelineId": 0,
             "PipelineTaskId": 0,
+            "PreVersionName": "",
             "ReleaseId": 0,
-            "Status": "abc",
-            "Steps": [
-                {
-                    "Name": "abc",
-                    "Status": "abc",
-                    "StartTime": "abc",
-                    "EndTime": "abc",
-                    "CostTime": 0,
-                    "FailReason": "abc"
-                }
-            ],
-            "FailReason": "abc",
-            "OperatorRemark": "abc"
-        },
-        "RequestId": "abc"
+            "ReleaseType": "",
+            "ServerName": "",
+            "Status": "",
+            "Steps": [],
+            "VersionName": ""
+        }
     }
 }
 ```

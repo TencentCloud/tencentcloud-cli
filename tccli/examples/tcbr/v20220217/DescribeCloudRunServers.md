@@ -6,56 +6,32 @@ Input:
 
 ```
 tccli tcbr DescribeCloudRunServers --cli-unfold-argument  \
-    --EnvId 字符串 \
-    --PageSize 15 \
-    --PageNum 1
+    --EnvId prod-2g59lad002c864a6
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9fb51324-4592-4690-a6fe-f4a676321588",
-        "ServerList": [],
-        "Total": 0
-    }
-}
-```
-
-**Example 2: success 0630**
-
-
-
-Input: 
-
-```
-tccli tcbr DescribeCloudRunServers --cli-unfold-argument  \
-    --EnvId 字符串 \
-    --PageNum 0 \
-    --PageSize 0
-```
-
-Output: 
-```
-{
-    "Response": {
+        "RequestId": "8d28b0d2-8215-4f80-a6d2-3e1a372ac748",
         "ServerList": [
             {
-                "ServerName": "abc",
-                "DefaultDomainName": "abc",
-                "CustomDomainName": "abc",
-                "Status": "abc",
-                "UpdateTime": "abc",
                 "AccessTypes": [
-                    "abc"
+                    "OA",
+                    "PUBLIC",
+                    "MINIAPP"
                 ],
+                "CustomDomainName": "",
                 "CustomDomainNames": [
-                    "abc"
-                ]
+                    ""
+                ],
+                "DefaultDomainName": "",
+                "ServerName": "golang-h7yv",
+                "Status": "running",
+                "UpdateTime": "2024-09-13 10:31:56"
             }
         ],
-        "Total": 0,
-        "RequestId": "abc"
+        "Total": 1
     }
 }
 ```

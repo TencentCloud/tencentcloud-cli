@@ -3577,6 +3577,15 @@
           "name": "Encryption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义描述字段。\n- 用于描述调用业务信息，出参中将返回此描述字段。 \n- 每个自定义描述字段支持[1,10]个字符。",
+          "example": "开户业务",
+          "member": "string",
+          "name": "Extra",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3611,6 +3620,16 @@
           "member": "string",
           "name": "Description",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用接口中自定义的描述字段。",
+          "example": "开户业务",
+          "member": "string",
+          "name": "Extra",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

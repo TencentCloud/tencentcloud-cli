@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DescribeTaskDetail --cli-unfold-argument  \
-    --TaskId 0
+    --TaskId task-6a79x94v
 ```
 
 Output: 
@@ -15,40 +15,40 @@ Output:
     "Response": {
         "Result": {
             "RetryInterval": 0,
-            "TriggerType": "xx",
+            "TriggerType": "auto",
             "TimeOut": 0,
             "TaskRule": {
                 "RepeatInterval": 1,
-                "RuleType": "xx",
-                "Expression": "xx"
+                "RuleType": "cron",
+                "Expression": "* 30 * * * ? *"
             },
-            "TaskState": "xx",
+            "TaskState": "Running",
             "SuccessRatio": 0,
-            "TaskContent": "xx",
-            "TaskArgument": "xx",
+            "TaskContent": "1,2,3,4,5",
+            "TaskArgument": "1,2,3,4,5",
             "AdvanceSettings": {
                 "SubTaskConcurrency": 0
             },
             "RetryCount": 0,
-            "SuccessOperator": "xx",
-            "TaskId": "xx",
-            "TaskType": "xx",
+            "SuccessOperator": "noop",
+            "TaskId": "task-6a79x94v",
+            "TaskType": "normal",
             "ShardCount": 0,
-            "ExecuteType": "xx",
-            "TaskName": "xx",
+            "ExecuteType": "auto",
+            "TaskName": "task-mock",
             "ShardArguments": [
                 {
-                    "ShardValue": "xx",
+                    "ShardValue": "4",
                     "ShardKey": 1
                 }
             ],
-            "GroupId": "xx",
-            "TaskLogId": "xx",
+            "GroupId": "group-6a79x94v",
+            "TaskLogId": "tlog-6a79x94v",
             "BelongFlowIds": [
-                "xx"
+                "flow-6a79x94v"
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

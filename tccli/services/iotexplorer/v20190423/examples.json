@@ -176,6 +176,14 @@
         "title": "创建手动指定psk的设备"
       }
     ],
+    "CreateDeviceChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ChannelId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "创建设备通道示例"
+      }
+    ],
     "CreateExternalSourceAIServiceTask": [
       {
         "document": "",
@@ -190,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFenceBind\n<公共请求参数>\n\n{\n    \"FenceId\": 6,\n    \"Items\": [\n        {\n            \"ProductId\": \"X4912BAIVR\",\n            \"Devices\": [\n                {\n                    \"DeviceName\": \"dev2\",\n                    \"AlertCondition\": \"InOrOut\",\n                    \"FenceEnable\": true,\n                    \"Method\": \"AppInform\"\n                }\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
         "title": "CreateFenceBind"
+      }
+    ],
+    "CreateFreeCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"yc1m3d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Amount\": 0,\n        \"Price\": 0,\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "开通免费实例"
       }
     ],
     "CreateIotVideoCloudStorage": [

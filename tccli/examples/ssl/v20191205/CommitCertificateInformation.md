@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli ssl CommitCertificateInformation --cli-unfold-argument  \
-    --CertificateId djes**hh
+    --CertificateId hehj***jsj \
+    --VerifyType DNS
 ```
 
 Output: 

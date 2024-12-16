@@ -16,7 +16,7 @@ Output:
         "RequestId": "c033faca-041a-4357-a96d-xxxxxxxx",
         "Result": {
             "PackageName": "consumer-demo-1.25.0-Greenwich-SNAPSHOT.jar",
-            "PackageVersion": "xxxxxx",
+            "PackageVersion": "1.25.0",
             "PackageId": "pkg-xxxxxx",
             "PublicConfigReleaseList": [
                 {
@@ -25,14 +25,14 @@ Output:
                     "ConfigName": "n1",
                     "ConfigVersion": "v1",
                     "ReleaseTime": "2021-08-10 10:xx:xx",
-                    "GroupId": null,
-                    "GroupName": null,
+                    "GroupId": "group-6a79x94v",
+                    "GroupName": "group-mock",
                     "NamespaceId": "namespace-xxxxxxxx",
-                    "NamespaceName": "xxxxxx",
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseDesc": null,
-                    "ApplicationId": null
+                    "NamespaceName": "default",
+                    "ClusterId": "cls-6a79x94v",
+                    "ClusterName": "cls-mock",
+                    "ReleaseDesc": "this is a desc",
+                    "ApplicationId": "application-6a79x94v"
                 }
             ]
         }

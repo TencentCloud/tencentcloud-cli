@@ -1515,22 +1515,20 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "",
+          "example": "Domain",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "参数值数组",
-          "example": "",
+          "example": "qq.com",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2378,9 +2376,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "key1",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2388,9 +2387,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "value1",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

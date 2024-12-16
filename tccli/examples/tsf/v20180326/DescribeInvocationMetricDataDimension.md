@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DescribeInvocationMetricDataDimension --cli-unfold-argument  \
-    --StartTime xx \
-    --DimensionName xx \
+    --StartTime 2024-11-11 12:21:32 \
+    --DimensionName applicationName \
     --Limit 0 \
-    --SearchWord xx \
+    --SearchWord name \
     --Offset 0 \
-    --EndTime xx \
-    --MetricDimensionValues.0.Name xx \
-    --MetricDimensionValues.0.Value xx
+    --EndTime 2024-11-11 12:26:32 \
+    --MetricDimensionValues.0.Name key \
+    --MetricDimensionValues.0.Value value1
 ```
 
 Output: 
@@ -21,12 +21,10 @@ Output:
 {
     "Response": {
         "Result": {
-            "Content": [
-                "xx"
-            ],
+            "Content": [],
             "TotalCount": 0
         },
-        "RequestId": "xx"
+        "RequestId": "niw82o0-k298s7-akqo20-kx8305"
     }
 }
 ```

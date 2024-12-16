@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl DownloadCertificate --cli-unfold-argument  \
-    --CertificateId CertificateId
+    --CertificateId hehx***hshj
 ```
 
 Output: 

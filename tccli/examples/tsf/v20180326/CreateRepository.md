@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tsf CreateRepository --cli-unfold-argument  \
-    --RepositoryName xxxxx \
+    --RepositoryName repoName-test \
     --RepositoryType private \
     --BucketName mybucket \
     --BucketRegion cq \
     --Directory aa/bb \
-    --RepositoryDesc xxxx
+    --RepositoryDesc 'this is a desc'
 ```
 
 Output: 

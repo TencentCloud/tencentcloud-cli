@@ -18,23 +18,23 @@ Output:
             "TotalCount": 0,
             "Content": [
                 {
-                    "ApplicationId": "abc",
-                    "ApplicationName": "abc",
-                    "ApplicationType": "abc",
-                    "MicroserviceType": "abc",
-                    "ApplicationDesc": "abc",
-                    "ProgLang": "abc",
-                    "ApplicationResourceType": "abc",
-                    "CreateTime": "abc",
-                    "UpdateTime": "abc",
-                    "ApigatewayServiceId": "abc",
-                    "ApplicationRuntimeType": "abc",
-                    "AmpInstanceId": "abc",
-                    "ApmInstanceName": "abc"
+                    "ApplicationId": "application-6a79x94v",
+                    "ApplicationName": "app-mock",
+                    "ApplicationType": "C",
+                    "MicroserviceType": "DEF",
+                    "ApplicationDesc": "this is a desc",
+                    "ProgLang": "J",
+                    "ApplicationResourceType": "DEF",
+                    "CreateTime": "2019-11-22 11:12:22",
+                    "UpdateTime": "2019-11-22 11:12:22",
+                    "ApigatewayServiceId": "gw-ins-6a79x94v",
+                    "ApplicationRuntimeType": "konaJdk8",
+                    "AmpInstanceId": "apm-6a79x94v",
+                    "ApmInstanceName": "apm-mock"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

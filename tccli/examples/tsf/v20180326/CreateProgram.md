@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli tsf CreateProgram --cli-unfold-argument  \
-    --ProgramName abc \
-    --ProgramDesc abc \
-    --ProgramItemList.0.ProgramItemId abc \
-    --ProgramItemList.0.Resource.ResourceId abc \
-    --ProgramItemList.0.Resource.ResourceCode abc \
-    --ProgramItemList.0.Resource.ResourceName abc \
-    --ProgramItemList.0.Resource.ServiceCode abc \
-    --ProgramItemList.0.Resource.ResourceAction abc \
-    --ProgramItemList.0.Resource.IdField abc \
-    --ProgramItemList.0.Resource.NameField abc \
-    --ProgramItemList.0.Resource.SelectIdsField abc \
+    --ProgramName program-test \
+    --ProgramDesc this is a description \
+    --ProgramItemList.0.ProgramItemId program-6a79x94v \
+    --ProgramItemList.0.Resource.ResourceId resource-6a79x94v \
+    --ProgramItemList.0.Resource.ResourceCode resourceCode \
+    --ProgramItemList.0.Resource.ResourceName name-test \
+    --ProgramItemList.0.Resource.ServiceCode mock-service \
+    --ProgramItemList.0.Resource.ResourceAction TestAction \
+    --ProgramItemList.0.Resource.IdField progaramId \
+    --ProgramItemList.0.Resource.NameField programName \
+    --ProgramItemList.0.Resource.SelectIdsField programId \
     --ProgramItemList.0.Resource.CreationTime 0 \
     --ProgramItemList.0.Resource.LastUpdateTime 0 \
     --ProgramItemList.0.Resource.DeleteFlag True \
-    --ProgramItemList.0.Resource.ResourceDesc abc \
+    --ProgramItemList.0.Resource.ResourceDesc this is a desc \
     --ProgramItemList.0.Resource.CanSelectAll True \
-    --ProgramItemList.0.Resource.SearchWordField abc \
+    --ProgramItemList.0.Resource.SearchWordField programName \
     --ProgramItemList.0.Resource.Index 0 \
     --ProgramItemList.0.ValueList abc \
     --ProgramItemList.0.IsAll True \

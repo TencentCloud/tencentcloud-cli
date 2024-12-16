@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tcbr ReleaseGray --cli-unfold-argument  \
-    --EnvId abc \
-    --ServerName abc \
-    --GrayType abc \
-    --VersionFlowItems.0.VersionName abc \
-    --VersionFlowItems.0.FlowRatio 0 \
-    --VersionFlowItems.0.UrlParam.Key abc \
-    --VersionFlowItems.0.UrlParam.Value abc \
+    --EnvId env-sdfsdf \
+    --ServerName server-sdfsdf \
+    --GrayType FLOW \
+    --VersionFlowItems.0.VersionName version-sdfsdf \
+    --VersionFlowItems.0.FlowRatio 50 \
+    --VersionFlowItems.0.UrlParam.Key key \
+    --VersionFlowItems.0.UrlParam.Value value \
     --VersionFlowItems.0.Priority 0 \
     --VersionFlowItems.0.IsDefaultPriority True \
-    --TrafficType abc \
-    --OperatorRemark abc \
+    --TrafficType  \
+    --OperatorRemark remark \
     --GrayFlowRatio 0
 ```
 
@@ -24,7 +24,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "sdfsdfsdf"
     }
 }
 ```

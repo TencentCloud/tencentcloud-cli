@@ -13,8 +13,10 @@ tccli tsf ModifyTask --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
-    "Response": true
+    "Response": {
+        "Result": true,
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+    }
 }
 ```
 

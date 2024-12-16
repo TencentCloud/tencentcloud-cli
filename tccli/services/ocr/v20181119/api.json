@@ -498,7 +498,7 @@
       "status": "online"
     },
     "TextDetect": {
-      "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。",
+      "document": "本接口通过检测图片中的文字信息特征，快速判断图片中有无文字并返回判断结果，帮助用户过滤无文字的图片。\n\n默认接口请求频率限制：5次/秒。",
       "input": "TextDetectRequest",
       "name": "快速文本检测",
       "output": "TextDetectResponse",
@@ -16641,7 +16641,7 @@
         {
           "disabled": false,
           "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "无",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -16650,7 +16650,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://xx/a.jpg",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/TextDetect/TextDetect2.jpg",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -16665,10 +16665,10 @@
         {
           "disabled": false,
           "document": "图片中是否包含文字。",
-          "example": "1",
+          "example": "false",
           "member": "bool",
           "name": "HasText",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

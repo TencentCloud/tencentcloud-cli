@@ -8,7 +8,7 @@ Input:
 tccli tsf DescribeSimpleGroups --cli-unfold-argument  \
     --Offset 0 \
     --Limit 20 \
-    --ApplicationId application-xxxxxxx
+    --ApplicationId application-6a79x94v
 ```
 
 Output: 
@@ -20,16 +20,19 @@ Output:
             "TotalCount": 1,
             "Content": [
                 {
-                    "GroupId": "group-xxxxxxx",
-                    "GroupName": "test",
-                    "ClusterId": "cls-xxxxxxx",
-                    "ClusterName": "test",
+                    "GroupId": "group-6a79x94v",
+                    "GroupName": "group-mock",
+                    "ClusterId": "cls-6a79x94v",
+                    "ClusterName": "cls-mock",
                     "ClusterType": "C",
-                    "NamespaceId": "namespace-xxxxxxx",
-                    "NamespaceName": "test",
-                    "ApplicationId": "application-xxxxxxx",
-                    "ApplicationName": "test",
-                    "ApplicationType": "C"
+                    "NamespaceId": "namespace-6a79x94v",
+                    "NamespaceName": "default",
+                    "ApplicationId": "application-6a79x94v",
+                    "ApplicationName": "java-service",
+                    "ApplicationType": "C",
+                    "AppMicroServiceType": "N",
+                    "GroupResourceType": "DEF",
+                    "StartupParameters": "-Dspring.application.name=java-service"
                 }
             ]
         }

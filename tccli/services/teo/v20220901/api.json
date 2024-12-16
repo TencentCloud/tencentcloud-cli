@@ -4540,7 +4540,7 @@
         {
           "disabled": false,
           "document": "失败的任务列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "FailReason",
           "name": "FailedList",
           "output_required": true,

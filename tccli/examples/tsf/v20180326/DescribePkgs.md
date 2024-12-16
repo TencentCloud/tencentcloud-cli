@@ -19,27 +19,27 @@ Output:
             "TotalCount": 0,
             "Content": [
                 {
-                    "PkgId": "abc",
-                    "PkgName": "abc",
-                    "PkgType": "abc",
-                    "PkgVersion": "abc",
-                    "PkgDesc": "abc",
-                    "UploadTime": "abc",
-                    "Md5": "abc",
+                    "PkgId": "pkg-6a79x94v",
+                    "PkgName": "java-consumer",
+                    "PkgType": "jar",
+                    "PkgVersion": "v1",
+                    "PkgDesc": "this is a desc",
+                    "UploadTime": "2020-11-12 09:12:33",
+                    "Md5": "2s78294s810xxxxxxxxxxx",
                     "PkgPubStatus": 0,
                     "PkgBindInfo": [
                         {
-                            "ApplicationId": "abc",
-                            "GroupId": "abc"
+                            "ApplicationId": "application-6a79x94v",
+                            "GroupId": "group-6a79x94v"
                         }
                     ]
                 }
             ],
-            "RepositoryId": "abc",
-            "RepositoryType": "abc",
-            "RepositoryName": "abc"
+            "RepositoryId": "repository-6a79x94v",
+            "RepositoryType": "cos",
+            "RepositoryName": "bucket-mock"
         },
-        "RequestId": "abc"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

@@ -19,7 +19,7 @@
     "CancelCertificateOrder": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=CancelCertificateOrder\n&CertificateId=hjejs**jsj\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelCertificateOrder\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehj***jsj\"\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"hjejs**jsj\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "取消证书订单"
       }
@@ -43,7 +43,7 @@
     "CommitCertificateInformation": [
       {
         "document": "提交证书订单",
-        "input": "https://ssl.tencentcloudapi.com/?Action=CommitCertificateInformation\n&CertificateId=djes**hh\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitCertificateInformation\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehj***jsj\",\n    \"VerifyType\": \"DNS\"\n}",
         "output": "{\n    \"Response\": {\n        \"OrderId\": \"SO8zRv29\",\n        \"Status\": 8,\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "提交证书订单"
       }
@@ -59,7 +59,7 @@
     "CreateCertificate": [
       {
         "document": "购买付费证书",
-        "input": "https://ssl.tencentcloudapi.com/?Action=CreateCertificate\n&ProductId=25\n&DomainNum=1\n&TimeSpan=1\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCertificate\n<公共请求参数>\n\n{\n    \"ProductId\": 25,\n    \"DomainNum\": 1,\n    \"TimeSpan\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateIds\": [\n            \"gf16kv3A\"\n        ],\n        \"DealIds\": [\n            \"20200923877000003022941\"\n        ],\n        \"RequestId\": \"5a3d8310-3d7e-42d3-923a-b81407fe495e\"\n    }\n}",
         "title": "创建证书"
       }
@@ -83,7 +83,7 @@
     "DeleteCertificate": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=DeleteCertificate\n&CertificateId=CertificateId\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hhe**jjsj\",\n    \"IsCheckResource\": false\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteResult\": true,\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\n    }\n}",
         "title": "删除证书"
       },
@@ -143,7 +143,7 @@
     "DescribeCertificate": [
       {
         "document": "获取证书信息",
-        "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificate\n&CertificateId=CertificateId\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hhe**jjsj\"\n}",
         "output": "{\n    \"Response\": {\n        \"OwnerUin\": \"100017***920\",\n        \"ProjectId\": \"0\",\n        \"From\": \"trustasia\",\n        \"CertificateType\": \"SVR\",\n        \"PackageType\": \"83\",\n        \"ProductZhName\": \"TrustAsia C1 DV Free\",\n        \"Domain\": \"zrhh.online\",\n        \"Alias\": \"\",\n        \"Status\": 1,\n        \"StatusMsg\": \"CA-REVIEWING\",\n        \"VerifyType\": \"DNS_AUTO\",\n        \"VulnerabilityStatus\": \"INACTIVE\",\n        \"CertBeginTime\": \"2024-11-27 08:00:00\",\n        \"CertEndTime\": \"2025-02-26 07:59:59\",\n        \"ValidityPeriod\": \"3\",\n        \"InsertTime\": \"2024-11-27 17:44:36\",\n        \"OrderId\": \"Hy***85G_mZOLxSuw\",\n        \"DvAuthDetail\": {\n            \"DvAuths\": null,\n            \"DvAuthKey\": null,\n            \"DvAuthValue\": null,\n            \"DvAuthDomain\": null,\n            \"DvAuthPath\": null,\n            \"DvAuthKeySubDomain\": \"\"\n        },\n        \"VulnerabilityReport\": null,\n        \"CertificateId\": \"Juz8JAxn\",\n        \"StatusName\": \"已颁发\",\n        \"SubjectAltName\": [\n            \"www.zrhh.online\"\n        ],\n        \"IsVip\": false,\n        \"IsWildcard\": false,\n        \"IsDv\": true,\n        \"IsVulnerability\": false,\n        \"RenewAble\": false,\n        \"SubmittedData\": null,\n        \"Deployable\": true,\n        \"Tags\": [],\n        \"CAEncryptAlgorithms\": [],\n        \"CACommonNames\": [],\n        \"CAEndTimes\": [],\n        \"DvRevokeAuthDetail\": [],\n        \"CertificateExtra\": {\n            \"SMCert\": 0,\n            \"ReplacedBy\": null,\n            \"OriginCertificateId\": null,\n            \"ReplacedFor\": null,\n            \"RenewOrder\": null,\n            \"DomainNumber\": \"1\",\n            \"CompanyType\": 1\n        },\n        \"PackageTypeName\": \"TrustAsia C1 DV Free\",\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
         "title": "获取证书信息"
       }
@@ -181,7 +181,7 @@
     "DescribeCertificateOperateLogs": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=DescribeCertificateOperateLogs\r\n&Limit=5\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCertificateOperateLogs\n<公共请求参数>\n\n{\n    \"Limit\": 5,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AllTotal\": 29,\n        \"TotalCount\": 5,\n        \"OperateLogs\": [\n            {\n                \"Action\": \"用户[uin: 100017155920] 删除 证书[id: JiDVp1SG]\",\n                \"CreatedOn\": \"2024-11-28 15:02:12\",\n                \"Uin\": \"100017155920\",\n                \"SubAccountUin\": \"100017155920\",\n                \"CertId\": \"JiDVp1SG\",\n                \"Type\": \"delete\"\n            },\n            {\n                \"Action\": \"用户[uin: --]  证书[id: JiDVp1SG]\",\n                \"CreatedOn\": \"2024-11-27 18:16:29\",\n                \"Uin\": \"100017155920\",\n                \"SubAccountUin\": \"--\",\n                \"CertId\": \"JiDVp1SG\",\n                \"Type\": \"revoked\"\n            },\n            {\n                \"Action\": \"用户[uin: 100017155920] 吊销 证书[id: JiDVp1SG]\",\n                \"CreatedOn\": \"2024-11-27 17:46:19\",\n                \"Uin\": \"100017155920\",\n                \"SubAccountUin\": \"100017155920\",\n                \"CertId\": \"JiDVp1SG\",\n                \"Type\": \"revoke\"\n            },\n            {\n                \"Action\": \"用户[uin: --] 签发 证书[id: Juz8JAxn]\",\n                \"CreatedOn\": \"2024-11-27 17:45:21\",\n                \"Uin\": \"100017155920\",\n                \"SubAccountUin\": \"--\",\n                \"CertId\": \"Juz8JAxn\",\n                \"Type\": \"issued\"\n            },\n            {\n                \"Action\": \"用户[uin: --] 签发 证书[id: Juz9IaDi]\",\n                \"CreatedOn\": \"2024-11-27 17:45:09\",\n                \"Uin\": \"100017155920\",\n                \"SubAccountUin\": \"--\",\n                \"CertId\": \"Juz9IaDi\",\n                \"Type\": \"issued\"\n            }\n        ],\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
         "title": "获取用户近15天前5条证书操作日志"
       }
@@ -373,7 +373,7 @@
     "DownloadCertificate": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=DownloadCertificate\r\n&CertificateId=CertificateId\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehx***hshj\"\n}",
         "output": "{\n    \"Response\": {\n        \"Content\": \"UEsD......vAAA\",\n        \"ContentType\": \"application/zip\",\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
         "title": "下载证书"
       }
@@ -381,8 +381,8 @@
     "ModifyCertificateAlias": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=ModifyCertificateAlias\n&CertificateId=abcb1234\n&Alias=others\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCertificateAlias\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehx***hshj\",\n    \"Alias\": \"others\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificateId\": \"hehx***hshj\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "修改证书备注"
       }
     ],
@@ -413,7 +413,7 @@
     "ReplaceCertificate": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=ReplaceCertificate\n&CertificateId=a91hoLqi\n&ValidType=DNS\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReplaceCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehx***hshj\",\n    \"ValidType\": \"DNS\"\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"a91hoLqo\",\n        \"RequestId\": \"91afa3b6-5b67-43e1-b312-9d3b9bf0f410\"\n    }\n}",
         "title": "重颁发证书"
       }
@@ -421,7 +421,7 @@
     "RevokeCertificate": [
       {
         "document": "吊销证书",
-        "input": "https://ssl.tencentcloudapi.com/?Action=RevokeCertificate\n&CertificateId=a91hoLqi\n&Reason=revoke\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehx***hshj\",\n    \"Reason\": \"revoke\"\n}",
         "output": "{\n    \"Response\": {\n        \"RevokeDomainValidateAuths\": [\n            {\n                \"DomainValidateAuthPath\": \"/.well-known/pki-validation/\",\n                \"DomainValidateAuthKey\": \"fileauth.txt\",\n                \"DomainValidateAuthValue\": \"2020091410184....fvkw2nv1z283lzfi66n\",\n                \"DomainValidateAuthDomain\": \"abc.com\"\n            }\n        ],\n        \"RequestId\": \"91afa3b6-5b67-43e1-b312-9d3b9bf0f410\"\n    }\n}",
         "title": "吊销证书"
       }
@@ -437,7 +437,7 @@
     "SubmitCertificateInformation": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=SubmitCertificateInformation\n&CertificateId=abcb1234\n&CsrType=online\n&CertificateDomain=*.test-dq342da.com\n&OrganizationName=Tencent\n&OrganizationDivision=Qcloud\n&OrganizationAddress=南山区腾讯大厦1000号\n&OrganizationCountry=CN\n&OrganizationCity=深圳市\n&OrganizationRegion=广东省\n&PhoneAreaCode=0755\n&PhoneNumber=86013388\n&AdminFirstName=test\n&AdminLastName=test\n&AdminPhoneNum=12345678901\n&AdminEmail=test@tencent.com\n&AdminPosition=developer\n&ContactFirstName=test\n&ContactLastName=test\n&ContactEmail=test@tencent.com\n&ContactNumber=12345678901\n&ContactPosition=developer\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitCertificateInformation\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abcb1234\",\n    \"CsrType\": \"online\",\n    \"CertificateDomain\": \"*.test-dq342da.com\",\n    \"OrganizationName\": \"Tencent\",\n    \"OrganizationDivision\": \"Qcloud\",\n    \"OrganizationAddress\": \"南山区腾讯大厦1000号\",\n    \"OrganizationCountry\": \"CN\",\n    \"OrganizationCity\": \"深圳市\",\n    \"OrganizationRegion\": \"广东省\",\n    \"PhoneAreaCode\": \"0755\",\n    \"PhoneNumber\": \"86013388\",\n    \"AdminFirstName\": \"test\",\n    \"AdminLastName\": \"test\",\n    \"AdminPhoneNum\": \"12345678901\",\n    \"AdminEmail\": \"test@tencent.com\",\n    \"AdminPosition\": \"developer\",\n    \"ContactFirstName\": \"test\",\n    \"ContactLastName\": \"test\",\n    \"ContactEmail\": \"test@tencent.com\",\n    \"ContactNumber\": \"12345678901\",\n    \"ContactPosition\": \"developer\"\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"abcb1234\",\n        \"RequestId\": \"9b397ac6-7d01-4fbc-8acc-52dd6ff0877b\"\n    }\n}",
         "title": "提交证书资料"
       }
@@ -491,7 +491,7 @@
     "UploadRevokeLetter": [
       {
         "document": "",
-        "input": "https://ssl.tencentcloudapi.com/?Action=UploadRevokeLetter\n&CertificateId=a91hoLqi\n&RevokeLetter=base64content\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadRevokeLetter\n<公共请求参数>\n\n{\n    \"CertificateId\": \"a91hoLqi\",\n    \"RevokeLetter\": \"hexhku6378***66hsnkxks\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"15dc3823-4089-4fd6-81a6-ec8baf5ec330\",\n        \"CertificateId\": \"a91hoLqi\",\n        \"IsSuccess\": true\n    }\n}",
         "title": "上传证书吊销确认函"
       }

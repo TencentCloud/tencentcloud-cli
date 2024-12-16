@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl DescribeCertificate --cli-unfold-argument  \
-    --CertificateId CertificateId
+    --CertificateId hhe**jjsj
 ```
 
 Output: 

@@ -7071,7 +7071,7 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "",
+          "example": "\"hehs**jjsj\"",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -7086,18 +7086,20 @@
         {
           "disabled": false,
           "document": "ZIP base64 编码内容，base64 解码后可保存为 ZIP 文件。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"hdejcjueujake******hdhhs\"",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "MIME 类型：application/zip = ZIP 压缩文件。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"application/zip\"",
           "member": "string",
           "name": "ContentType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7763,7 +7765,7 @@
           "example": "abcb1234",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8464,6 +8466,7 @@
           "example": "无",
           "member": "RevokeDomainValidateAuths",
           "name": "RevokeDomainValidateAuths",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8601,7 +8604,7 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -8610,7 +8613,7 @@
         {
           "disabled": false,
           "document": "CSR 生成方式：online = 在线生成, parse = 手动上传。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CsrType",
           "required": false,
@@ -8619,7 +8622,7 @@
         {
           "disabled": false,
           "document": "上传的 CSR 内容。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CsrContent",
           "required": false,
@@ -8628,7 +8631,7 @@
         {
           "disabled": false,
           "document": "绑定证书的域名。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CertificateDomain",
           "required": false,
@@ -8637,7 +8640,7 @@
         {
           "disabled": false,
           "document": "上传的域名数组（多域名证书可以上传）。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DomainList",
           "required": false,
@@ -8646,7 +8649,7 @@
         {
           "disabled": false,
           "document": "私钥密码（非必填）。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "KeyPassword",
           "required": false,
@@ -8655,7 +8658,7 @@
         {
           "disabled": false,
           "document": "公司名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -8664,7 +8667,7 @@
         {
           "disabled": false,
           "document": "部门名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationDivision",
           "required": false,
@@ -8673,7 +8676,7 @@
         {
           "disabled": false,
           "document": "公司详细地址。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationAddress",
           "required": false,
@@ -8682,7 +8685,7 @@
         {
           "disabled": false,
           "document": "国家名称，如中国：CN 。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationCountry",
           "required": false,
@@ -8691,7 +8694,7 @@
         {
           "disabled": false,
           "document": "公司所在城市。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationCity",
           "required": false,
@@ -8700,7 +8703,7 @@
         {
           "disabled": false,
           "document": "公司所在省份。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OrganizationRegion",
           "required": false,
@@ -8709,7 +8712,7 @@
         {
           "disabled": false,
           "document": "公司邮编。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PostalCode",
           "required": false,
@@ -8718,7 +8721,7 @@
         {
           "disabled": false,
           "document": "公司座机区号。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PhoneAreaCode",
           "required": false,
@@ -8727,7 +8730,7 @@
         {
           "disabled": false,
           "document": "公司座机号码。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -8736,7 +8739,7 @@
         {
           "disabled": false,
           "document": "证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "VerifyType",
           "required": false,
@@ -8745,7 +8748,7 @@
         {
           "disabled": false,
           "document": "管理人名。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminFirstName",
           "required": false,
@@ -8754,7 +8757,7 @@
         {
           "disabled": false,
           "document": "管理人姓。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminLastName",
           "required": false,
@@ -8763,7 +8766,7 @@
         {
           "disabled": false,
           "document": "管理人手机号码。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminPhoneNum",
           "required": false,
@@ -8772,7 +8775,7 @@
         {
           "disabled": false,
           "document": "管理人邮箱地址。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminEmail",
           "required": false,
@@ -8781,7 +8784,7 @@
         {
           "disabled": false,
           "document": "管理人职位。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AdminPosition",
           "required": false,
@@ -8790,7 +8793,7 @@
         {
           "disabled": false,
           "document": "联系人名。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactFirstName",
           "required": false,
@@ -8799,7 +8802,7 @@
         {
           "disabled": false,
           "document": "联系人姓。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactLastName",
           "required": false,
@@ -8808,7 +8811,7 @@
         {
           "disabled": false,
           "document": "联系人邮箱地址。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactEmail",
           "required": false,
@@ -8817,7 +8820,7 @@
         {
           "disabled": false,
           "document": "联系人手机号码。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactNumber",
           "required": false,
@@ -8826,11 +8829,20 @@
         {
           "disabled": false,
           "document": "联系人职位。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ContactPosition",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否DV证书。默认false",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDV",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8841,9 +8853,10 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "",
+          "example": "sada12",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10817,7 +10830,7 @@
           "example": "a91hoLqi",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10827,7 +10840,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsSuccess",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

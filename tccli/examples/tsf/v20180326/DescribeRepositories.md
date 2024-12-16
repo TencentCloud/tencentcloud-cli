@@ -20,19 +20,19 @@ Output:
             "TotalCount": 0,
             "Content": [
                 {
-                    "RepositoryId": "abc",
-                    "RepositoryName": "abc",
-                    "RepositoryType": "abc",
-                    "RepositoryDesc": "abc",
+                    "RepositoryId": "repo-6a79x94v",
+                    "RepositoryName": "repo-mock",
+                    "RepositoryType": "cos",
+                    "RepositoryDesc": "this is a desc",
                     "IsUsed": true,
-                    "CreateTime": "abc",
-                    "BucketName": "abc",
-                    "BucketRegion": "abc",
-                    "Directory": "abc"
+                    "CreateTime": "2019-12-20 09:33:22",
+                    "BucketName": "testBucket",
+                    "BucketRegion": "ap-guangzhou",
+                    "Directory": "/app"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```
