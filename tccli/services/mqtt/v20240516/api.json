@@ -554,7 +554,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -607,7 +607,7 @@
         },
         {
           "disabled": false,
-          "document": "设备连接时传递jwt的key；username-使用用户名字段传递；password-使用密码字段传递",
+          "document": "设备连接时传递jwt的key；\nusername-使用用户名字段传递；\npassword-使用密码字段传递",
           "example": "username",
           "member": "string",
           "name": "From",
@@ -790,7 +790,7 @@
         {
           "disabled": false,
           "document": "设备证书序列号",
-          "example": "无",
+          "example": "37593",
           "member": "string",
           "name": "DeviceCertificateSn",
           "required": true,
@@ -825,7 +825,7 @@
         },
         {
           "disabled": false,
-          "document": "认证器类型",
+          "document": "认证器类型:\nJWT：JWT认证器\nJWKS：JWKS认证器\nBYOC：一端一证认证器",
           "example": "JWKS",
           "member": "string",
           "name": "Type",
@@ -898,7 +898,7 @@
         {
           "disabled": false,
           "document": "设备证书序列号",
-          "example": "无",
+          "example": "37593",
           "member": "string",
           "name": "DeviceCertificateSn",
           "required": true,
@@ -969,7 +969,7 @@
         },
         {
           "disabled": false,
-          "document": "认证器类型",
+          "document": "认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 HTTP:HTTP认证器",
           "example": "JWKS",
           "member": "string",
           "name": "Type",
@@ -1127,8 +1127,8 @@
         },
         {
           "disabled": false,
-          "document": "证书序列号",
-          "example": "123",
+          "document": "Ca证书序列号",
+          "example": "1b1e3bf3702110125887a3a721a7e66f05522513",
           "member": "string",
           "name": "CaSn",
           "output_required": false,
@@ -1137,8 +1137,8 @@
         },
         {
           "disabled": false,
-          "document": "设备证书sn",
-          "example": "无",
+          "document": "设备证书序列号",
+          "example": "0eef68a582b94254296e54ce754f94d707a59911",
           "member": "string",
           "name": "DeviceCertificateSn",
           "output_required": false,
@@ -1147,8 +1147,8 @@
         },
         {
           "disabled": false,
-          "document": "证书内容",
-          "example": "无",
+          "document": "设备证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIEQjCCAyqgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmREwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
           "member": "string",
           "name": "DeviceCertificate",
           "output_required": false,
@@ -1157,8 +1157,8 @@
         },
         {
           "disabled": false,
-          "document": "设备证书cn",
-          "example": "无",
+          "document": "设备证书common name",
+          "example": "mqtt-test.xxx.tencent.com",
           "member": "string",
           "name": "DeviceCertificateCn",
           "output_required": false,
@@ -1229,7 +1229,7 @@
         {
           "disabled": false,
           "document": "过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索",
-          "example": "[]",
+          "example": "[{\"Name\":\"DeviceCertificateSn\",\"Values\":[\"mqtt\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1281,7 +1281,7 @@
         {
           "disabled": false,
           "document": "设备证书",
-          "example": "无",
+          "example": "[                     {                         \"ClientId\": \"mqtt_495bf0d1\",                         \"DeviceCertificateSn\": \"sn\",                         \"DeviceCertificateCn\": \"*.mqtt.tencenttdmq.com\",                         \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\r\\nMIIDtzCCAp+gAwIBAgIUDAmlFLEYRYrhNkFH+uRaU/0TZCswDQYJKoZIhvcNAQEL\\r\\n\\n-----END CERTIFICATE-----\\r\\n\",                         \"CaSn\": \"51e61225de8146bea80e793197d7cc3e7680d978\",                         \"Format\": \"PEM\",                         \"Status\": \"ACTIVE\",                         \"CertificateSource\": \"API\",                         \"LastActivationTime\": 1728893405812,                         \"LastInactivationTime\": 0,                         \"CreatedTime\": 1728893406000,                         \"UpdateTime\": 1728893850000,                         \"NotBeforeTime\": 1728893395000,                         \"NotAfterTime\": 1772093395000                     },                     {                         \"ClientId\": \"mqtt_495bf0d1\",                         \"DeviceCertificateSn\": \"sn\",                         \"DeviceCertificateCn\": \"client-test\",                         \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\r\\nMIIDrDCCApSgAwIBAgIUDAmlFLEYRYrhNkFH+uRaU/0TZCowDQYJKoZIhvcNAQEL\\r\\n-----END CERTIFICATE-----\\r\\n\",                         \"CaSn\": \"51e61225de8146bea80e793197d7cc3e7680d978\",                         \"Format\": \"PEM\",                         \"Status\": \"ACTIVE\",                         \"CertificateSource\": \"API\",                         \"LastActivationTime\": 1728892994189,                         \"LastInactivationTime\": 0,                         \"CreatedTime\": 1728892994000,                         \"UpdateTime\": 1728893891000,                         \"NotBeforeTime\": 1728892979000,                         \"NotAfterTime\": 1772092979000                     },                     {                         \"ClientId\": \" \",                         \"DeviceCertificateSn\": \"sn\",                         \"DeviceCertificateCn\": \"*.mqtt.tencenttdmq.com\",                         \"DeviceCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIIDrzCCApegAwIBAgIUV23UtXK/m8jslmJsfVgfxsECUNcwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n\",                         \"CaSn\": \"5c443401cd63e4840bb6839fc1e404ee7b719876\",                         \"Format\": \"PEM\",                         \"Status\": \"ACTIVE\",                         \"CertificateSource\": \"API\",                         \"LastActivationTime\": 1728725044431,                         \"LastInactivationTime\": 1728725012888,                         \"CreatedTime\": 1728725044000,                         \"UpdateTime\": 1728725048000,                         \"NotBeforeTime\": 1726115615000,                         \"NotAfterTime\": 1769315615000                     }                 ]",
           "member": "DeviceCertificateItem",
           "name": "Data",
           "output_required": true,
@@ -1377,7 +1377,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "rocketmq-xxxx",
+          "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1391,7 +1391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例类型，\nEXPERIMENT 体验版\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版",
+          "document": "实例类型\nBASIC 基础版\nPRO  专业版",
           "example": "BASIC",
           "member": "string",
           "name": "InstanceType",
@@ -1521,7 +1521,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端证书注册方式：JITP，API",
+          "document": "客户端证书注册方式：\nJITP：自动注册\nAPI：通过API手动注册",
           "example": "API",
           "member": "string",
           "name": "DeviceCertificateProvisionType",
@@ -1581,7 +1581,7 @@
         },
         {
           "disabled": false,
-          "document": "    TLS,单向认证\n    mTLS,双向认证\n    BYOC;一机一证",
+          "document": "TLS,单向认证    mTLS,双向认证    BYOC;一机一证",
           "example": "TLS",
           "member": "string",
           "name": "X509Mode",
@@ -2684,7 +2684,7 @@
         {
           "disabled": false,
           "document": "设备证书序列号",
-          "example": "无",
+          "example": "eef68a582b94254296e54ce754f94d707a59912",
           "member": "string",
           "name": "DeviceCertificateSn",
           "required": true,
@@ -2744,7 +2744,7 @@
         {
           "disabled": false,
           "document": "策略ID和优先级",
-          "example": "[]",
+          "example": "[ \t\t{ \t\t\t\"Id\": 1, \t\t\t\"Priority\": 3 \t\t}, \t\t{ \t\t\t\"Id\": 6, \t\t\t\"Priority\": 1 \t\t}, \t\t{ \t\t\t\"Id\": 7, \t\t\t\"Priority\": 2 \t\t} \t]",
           "member": "AuthorizationPolicyPriority",
           "name": "Priorities",
           "required": false,

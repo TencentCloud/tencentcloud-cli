@@ -15,7 +15,7 @@ Output:
     "Response": {
         "AppId": 251237400,
         "GroupId": "crs-rpl-oxsincth",
-        "GroupName": "test",
+        "GroupName": "group_name",
         "InstanceRole": "rw",
         "RegionId": 1,
         "RequestId": "02ef9326-3db7-47ab-8f65-c6d1a772f71c"

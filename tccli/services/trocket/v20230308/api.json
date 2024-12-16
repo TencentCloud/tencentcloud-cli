@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddUserPurchaseConfig": {
+      "document": "用于开启专享版购买白名单",
+      "input": "AddUserPurchaseConfigRequest",
+      "name": "增加用户可用区购买配置",
+      "output": "AddUserPurchaseConfigResponse",
+      "status": "online"
+    },
     "CreateClusterAdminInfo": {
       "document": "创建RocketMQClusterAdmin",
       "input": "CreateClusterAdminInfoRequest",
@@ -56,6 +63,13 @@
       "output": "CreateRoleResponse",
       "status": "online"
     },
+    "CreateSharedClusterBinding": {
+      "document": "新增物理集群和用户绑定关系。",
+      "input": "CreateSharedClusterBindingRequest",
+      "name": "新增物理集群和用户绑定关系",
+      "output": "CreateSharedClusterBindingResponse",
+      "status": "online"
+    },
     "CreateTopic": {
       "document": "创建主题",
       "input": "CreateTopicRequest",
@@ -68,6 +82,13 @@
       "input": "DeleteBrokerNodeRequest",
       "name": "CSM故障调度Broker节点剔除",
       "output": "DeleteBrokerNodeResponse",
+      "status": "online"
+    },
+    "DeleteClusterAdminInfo": {
+      "document": "删除5.X物理集群信息",
+      "input": "DeleteClusterAdminInfoRequest",
+      "name": "删除5.X物理集群信息",
+      "output": "DeleteClusterAdminInfoResponse",
       "status": "online"
     },
     "DeleteConsumerGroup": {
@@ -119,6 +140,13 @@
       "output": "DeleteRoleResponse",
       "status": "online"
     },
+    "DeleteSharedClusterBinding": {
+      "document": "删除物理集群和用户绑定关系。",
+      "input": "DeleteSharedClusterBindingRequest",
+      "name": "删除物理集群和用户绑定关系",
+      "output": "DeleteSharedClusterBindingResponse",
+      "status": "online"
+    },
     "DeleteTopic": {
       "document": "删除主题",
       "input": "DeleteTopicRequest",
@@ -131,6 +159,13 @@
       "input": "DescribeBrokerStatusRequest",
       "name": "CSM故障调度Broker节点切换进度查询",
       "output": "DescribeBrokerStatusResponse",
+      "status": "online"
+    },
+    "DescribeClusterAdminInfo": {
+      "document": "查询RocketMQClusterAdminInfo列表",
+      "input": "DescribeClusterAdminInfoRequest",
+      "name": "查询RocketMQClusterAdminInfo列表",
+      "output": "DescribeClusterAdminInfoResponse",
       "status": "online"
     },
     "DescribeConsumerGroup": {
@@ -273,6 +308,13 @@
       "output": "DescribeRoleListResponse",
       "status": "online"
     },
+    "DescribeSharedClusterBinding": {
+      "document": "查询共享集群后端物理集群",
+      "input": "DescribeSharedClusterBindingRequest",
+      "name": "查询共享集群后端物理集群",
+      "output": "DescribeSharedClusterBindingResponse",
+      "status": "online"
+    },
     "DescribeTopic": {
       "document": "查询主题详情，Offset和Limit参数是指订阅该主题的消费组查询分页参数，Filter参数使用说明如下：\n\nConsumerGroup，消费组名称过滤",
       "input": "DescribeTopicRequest",
@@ -285,6 +327,13 @@
       "input": "DescribeTopicListRequest",
       "name": "查询主题列表",
       "output": "DescribeTopicListResponse",
+      "status": "online"
+    },
+    "DescribeUserPurchaseConfigs": {
+      "document": "用于获取用户购买配置信息，比如区域，配置，可用区",
+      "input": "DescribeUserPurchaseConfigsRequest",
+      "name": "获取用户购买配置列表",
+      "output": "DescribeUserPurchaseConfigsResponse",
       "status": "online"
     },
     "ImportSourceClusterConsumerGroups": {
@@ -306,6 +355,13 @@
       "input": "ModifyBrokerNodeRequest",
       "name": "CSM故障调度Broker节点加回接口",
       "output": "ModifyBrokerNodeResponse",
+      "status": "online"
+    },
+    "ModifyClusterAdminInfo": {
+      "document": "创建RocketMQClusterAdmin",
+      "input": "ModifyClusterAdminInfoRequest",
+      "name": "修改5.X物理集群信息",
+      "output": "ModifyClusterAdminInfoResponse",
       "status": "online"
     },
     "ModifyConsumerGroup": {
@@ -364,11 +420,25 @@
       "output": "ModifyRoleResponse",
       "status": "online"
     },
+    "ModifySharedClusterBinding": {
+      "document": "修改RocketMQSharedClusterBinding",
+      "input": "ModifySharedClusterBindingRequest",
+      "name": "修改RocketMQSharedClusterBinding",
+      "output": "ModifySharedClusterBindingResponse",
+      "status": "online"
+    },
     "ModifyTopic": {
       "document": "修改主题属性",
       "input": "ModifyTopicRequest",
       "name": "修改主题属性",
       "output": "ModifyTopicResponse",
+      "status": "online"
+    },
+    "ModifyUserPurchaseConfig": {
+      "document": "修改用户购买配置，如节点数",
+      "input": "ModifyUserPurchaseConfigRequest",
+      "name": "修改用户购买配置",
+      "output": "ModifyUserPurchaseConfigResponse",
       "status": "online"
     }
   },
@@ -379,6 +449,117 @@
     "serviceShortName": "trocket"
   },
   "objects": {
+    "AddUserPurchaseConfigRequest": {
+      "document": "AddUserPurchaseConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddUserPurchaseConfigResponse": {
+      "document": "AddUserPurchaseConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ClusterAdminInfo": {
+      "document": "ClusterAdminInfo出参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "rm\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Room",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "env\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeployEnv",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ns\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NameServer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ak\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sk\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ConsumeGroupItem": {
       "document": "消费组信息",
       "members": [
@@ -1222,6 +1403,69 @@
       ],
       "type": "object"
     },
+    "CreateSharedClusterBindingRequest": {
+      "document": "CreateSharedClusterBinding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群名",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用，默认为true",
+          "example": "无",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的主账号",
+          "example": "无",
+          "member": "string",
+          "name": "BindingUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型列表，支持EXPERIMENT,     BASIC,     PRO,     PLATINUM",
+          "example": "[\"EXPERIMENT\",\"PRO\"]",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSharedClusterBindingResponse": {
+      "document": "CreateSharedClusterBinding返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTopicRequest": {
       "document": "CreateTopic请求参数结构体",
       "members": [
@@ -1379,6 +1623,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterAdminInfoRequest": {
+      "document": "DeleteClusterAdminInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群名",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterAdminInfoResponse": {
+      "document": "DeleteClusterAdminInfo返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1613,6 +1884,51 @@
       ],
       "type": "object"
     },
+    "DeleteSharedClusterBindingRequest": {
+      "document": "DeleteSharedClusterBinding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物理集群名",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的主账号",
+          "example": "无",
+          "member": "string",
+          "name": "BindingUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSharedClusterBindingResponse": {
+      "document": "DeleteSharedClusterBinding返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTopicRequest": {
       "document": "DeleteTopic请求参数结构体",
       "members": [
@@ -1684,6 +2000,62 @@
           "name": "TaskStatus",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAdminInfoRequest": {
+      "document": "DescribeClusterAdminInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAdminInfoResponse": {
+      "document": "DescribeClusterAdminInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "infos",
+          "example": "无",
+          "member": "ClusterAdminInfo",
+          "name": "ClusterAdminInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3579,6 +3951,43 @@
       ],
       "type": "object"
     },
+    "DescribeSharedClusterBindingRequest": {
+      "document": "DescribeSharedClusterBinding请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSharedClusterBindingResponse": {
+      "document": "DescribeSharedClusterBinding返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ClusterAdminInfos",
+          "example": "无",
+          "member": "SharedClusterBinding",
+          "name": "SharedClusterBinding",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicListRequest": {
       "document": "DescribeTopicList请求参数结构体",
       "members": [
@@ -3796,6 +4205,33 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPurchaseConfigsRequest": {
+      "document": "DescribeUserPurchaseConfigs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserPurchaseConfigsResponse": {
+      "document": "DescribeUserPurchaseConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5150,6 +5586,96 @@
       ],
       "type": "object"
     },
+    "ModifyClusterAdminInfoRequest": {
+      "document": "ModifyClusterAdminInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "5.1.2",
+          "member": "string",
+          "name": "ClusterVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "room名",
+          "example": "room1",
+          "member": "string",
+          "name": "Room",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境",
+          "example": "CLOUD",
+          "member": "string",
+          "name": "DeployEnv",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Nameserver",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ak",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sk",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAdminInfoResponse": {
+      "document": "ModifyClusterAdminInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyConsumerGroupRequest": {
       "document": "ModifyConsumerGroup请求参数结构体",
       "members": [
@@ -5636,6 +6162,51 @@
       ],
       "type": "object"
     },
+    "ModifySharedClusterBindingRequest": {
+      "document": "ModifySharedClusterBinding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT 体验版\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cluster",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的uin",
+          "example": "无",
+          "member": "string",
+          "name": "BindingUin",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySharedClusterBindingResponse": {
+      "document": "ModifySharedClusterBinding返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicRequest": {
       "document": "ModifyTopic请求参数结构体",
       "members": [
@@ -5689,6 +6260,23 @@
     },
     "ModifyTopicResponse": {
       "document": "ModifyTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserPurchaseConfigRequest": {
+      "document": "ModifyUserPurchaseConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyUserPurchaseConfigResponse": {
+      "document": "ModifyUserPurchaseConfig返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6026,6 +6614,144 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SharedClusterBinding": {
+      "document": "SharedClusterBinding结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "type\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "room1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Room",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeployEnv",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NameServer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ak\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sk\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

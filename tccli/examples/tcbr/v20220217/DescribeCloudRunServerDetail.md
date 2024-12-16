@@ -30,8 +30,8 @@ Input:
 
 ```
 tccli tcbr DescribeCloudRunServerDetail --cli-unfold-argument  \
-    --ServerName xx \
-    --EnvId xx
+    --EnvId abc \
+    --ServerName abc
 ```
 
 Output: 
@@ -39,35 +39,56 @@ Output:
 {
     "Response": {
         "BaseInfo": {
-            "Status": "xx",
-            "ServerName": "xx",
-            "CustomDomainName": "xx",
-            "UpdateTime": "xx",
-            "DefaultDomainName": "xx"
+            "ServerName": "abc",
+            "DefaultDomainName": "abc",
+            "CustomDomainName": "abc",
+            "Status": "abc",
+            "UpdateTime": "abc",
+            "AccessTypes": [
+                "abc"
+            ],
+            "CustomDomainNames": [
+                "abc"
+            ]
         },
         "ServerConfig": {
-            "EnvId": "xx",
-            "MaxNum": 1,
-            "BuildDir": "xx",
-            "Mem": 0.0,
-            "ServerName": "xx",
-            "InitialDelaySeconds": 1,
-            "CustomLogs": "xx",
-            "CreateTime": "xx",
+            "EnvId": "abc",
+            "ServerName": "abc",
+            "OpenAccessTypes": [
+                "abc"
+            ],
+            "Cpu": 0,
+            "Mem": 0,
             "MinNum": 1,
+            "MaxNum": 1,
+            "PolicyDetails": [
+                {
+                    "PolicyType": "abc",
+                    "PolicyThreshold": 1
+                }
+            ],
+            "CustomLogs": "abc",
+            "EnvParams": "abc",
+            "InitialDelaySeconds": 1,
+            "CreateTime": "abc",
+            "Port": 0,
             "HasDockerfile": true,
-            "EnvParams": "xx",
-            "Dockerfile": "xx",
-            "Port": "xx",
-            "Cpu": 0.0
+            "Dockerfile": "abc",
+            "BuildDir": "abc",
+            "LogType": "abc",
+            "LogSetId": "abc",
+            "LogTopicId": "abc",
+            "LogParseType": "abc",
+            "Tag": "abc"
         },
         "OnlineVersionInfos": [
             {
-                "VersionName": "test-001",
-                "ImageUrl": "test:01"
+                "VersionName": "abc",
+                "ImageUrl": "abc",
+                "FlowRatio": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

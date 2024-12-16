@@ -6,25 +6,25 @@ Input:
 
 ```
 tccli tcbr ReleaseGray --cli-unfold-argument  \
-    --EnvId xx \
+    --EnvId abc \
+    --ServerName abc \
+    --GrayType abc \
+    --VersionFlowItems.0.VersionName abc \
     --VersionFlowItems.0.FlowRatio 0 \
+    --VersionFlowItems.0.UrlParam.Key abc \
+    --VersionFlowItems.0.UrlParam.Value abc \
     --VersionFlowItems.0.Priority 0 \
-    --VersionFlowItems.0.UrlParam.Value xx \
-    --VersionFlowItems.0.UrlParam.Key xx \
     --VersionFlowItems.0.IsDefaultPriority True \
-    --VersionFlowItems.0.VersionName xx \
-    --ServerName xx \
-    --TrafficType xx \
-    --GrayType xx \
-    --GrayFlowRatio 0 \
-    --OperatorRemark xx
+    --TrafficType abc \
+    --OperatorRemark abc \
+    --GrayFlowRatio 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

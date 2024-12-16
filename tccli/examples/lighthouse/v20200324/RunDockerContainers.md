@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse RunDockerContainers --cli-unfold-argument  \
-    --Containers.0.Command  \
+    --Containers.0.Command ls -l \
     --Containers.0.ContainerImage nginx \
     --Containers.0.ContainerName mynginx \
     --Containers.0.Envs.0.Key Key1 \

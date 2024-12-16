@@ -9,7 +9,7 @@ tccli lighthouse CreateDisks --cli-unfold-argument  \
     --DiskCount 1 \
     --DiskChargePrepaid.Period 1 \
     --DiskChargePrepaid.TimeUnit m \
-    --DiskName test \
+    --DiskName disk_for_softwares \
     --DiskType CLOUD_PREMIUM \
     --DiskSize 20 \
     --Zone ap-hongkong-2 \

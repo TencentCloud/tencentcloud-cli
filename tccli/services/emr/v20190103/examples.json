@@ -8,6 +8,14 @@
         "title": "添加扩缩容规则成功示例"
       }
     ],
+    "AddUsersAgainForUserManager": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUsersAgainForUserManager\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxx\",\n    \"Users\": [\n        \"hadoop\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessUserList\": [\n            \"hadoop\"\n        ],\n        \"FailedUserList\": [],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "重新添加用户列表"
+      }
+    ],
     "AddUsersForUserManager": [
       {
         "document": "",
@@ -320,6 +328,30 @@
         "title": "查询Trino(PrestoSQL)查询信息"
       }
     ],
+    "DescribeUserManagerUserList": [
+      {
+        "document": "test",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserManagerUserList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f9b28a61-ad66-4b30-bbeb-9b1539a73ded\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeUserSecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserSecret\n<公共请求参数>\n\n{\n    \"User\": \"test\",\n    \"SecretType\": \"pwd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取用户密码"
+      }
+    ],
+    "DescribeUserTempSecret": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserTempSecret\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取临时密钥"
+      }
+    ],
     "DescribeUsersForUserManager": [
       {
         "document": "",
@@ -480,6 +512,14 @@
         "title": "Serverless HBase变配实例"
       }
     ],
+    "ModifyUserGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Users\": [\n        \"abc\"\n    ],\n    \"UserGroup\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改用户组"
+      }
+    ],
     "ModifyUserManagerPwd": [
       {
         "document": "test",
@@ -550,6 +590,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStopServiceOrMonitor\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-mfk\",\n    \"OpScope\": {\n        \"ServiceInfoList\": [\n            {\n                \"ComponentInfoList\": [\n                    {\n                        \"ComponentName\": \"NameNode\",\n                        \"IpList\": [\n                            \"0.0.0.0\"\n                        ]\n                    },\n                    {\n                        \"ComponentName\": \"ZKFailoverController\",\n                        \"IpList\": [\n                            \"0.0.0.0\"\n                        ]\n                    }\n                ],\n                \"ServiceName\": \"HDFS\"\n            }\n        ]\n    },\n    \"OpType\": \"StartService\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"017c3a6d-382a-4cb2-bd7d-67072b86f027\"\n    }\n}",
         "title": "StartStopServiceOrMonitor"
+      }
+    ],
+    "SyncCamUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncCamUsers\n<公共请求参数>\n\n{\n    \"Users\": [\n        {\n            \"Uin\": 1,\n            \"Name\": \"abc\"\n        }\n    ],\n    \"UserPwd\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "同步cam用户"
       }
     ],
     "SyncPodState": [

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddUserPurchaseConfig": [
+      {
+        "document": "添加成功响应",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserPurchaseConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"74cf1776-786c-42a4-aeab-77043c69a017\"\n    }\n}",
+        "title": "添加成功"
+      }
+    ],
     "CreateClusterAdminInfo": [
       {
         "document": "标准请求",
@@ -64,6 +72,14 @@
         "title": "添加角色"
       }
     ],
+    "CreateSharedClusterBinding": [
+      {
+        "document": "添加成功响应",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedClusterBinding\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rmq5-room-cd-1\",\n    \"Enabled\": true,\n    \"Remark\": \"dev\",\n    \"BindingUin\": \"123\",\n    \"InstanceTypes\": [\n        \"EXPERIMENT\"\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"94f23822-0f55-4930-8a31-abb84f3b2480\"\n    }\n}",
+        "title": "添加成功"
+      }
+    ],
     "CreateTopic": [
       {
         "document": "创建主题",
@@ -78,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocket-vip-basic-1\",\n    \"ZoneId\": \"10001\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"4ed3a07b-36ef-4522-968b-5434dff663da\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "Broker节点剔除"
+      }
+    ],
+    "DeleteClusterAdminInfo": [
+      {
+        "document": "删除成功响应",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteClusterAdminInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rmqbk-mqtt\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"ace49ef3-980c-4e39-9064-22a1be6ae793\"\n    }\n}",
+        "title": "删除成功"
       }
     ],
     "DeleteConsumerGroup": [
@@ -136,6 +160,14 @@
         "title": "删除角色"
       }
     ],
+    "DeleteSharedClusterBinding": [
+      {
+        "document": "删除成功响应",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSharedClusterBinding\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rmq5-room-cd-1\",\n    \"BindingUin\": \"123\",\n    \"InstanceTypes\": [\n        \"EXPERIMENT\"\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"2e229253-d9c4-4e2c-8cec-d2b327963a85\"\n    }\n}",
+        "title": "删除成功"
+      }
+    ],
     "DeleteTopic": [
       {
         "document": "删除主题",
@@ -150,6 +182,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocket-vip-basic-1\",\n    \"TaskId\": \"4ed3a07b-36ef-4522-968b-5434dff663da\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskStatus\": \"Completed\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "剔除或切回任务状态查询"
+      }
+    ],
+    "DescribeClusterAdminInfo": [
+      {
+        "document": "标准请求",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQClusterAdminInfo\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ClusterAdminInfos\": [\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmqbroker-cd-jazjroda\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmqbroker-cd-wdx43rwg\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmq5-room-cd-1\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmqbroker-cd-room1\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rocketmq-stable\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"4.9.3\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            }\n        ],\n        \"RequestId\": \"df71123b-cf52-4ccd-b667-439159f22566\",\n        \"TotalCount\": 5\n    }\n}",
+        "title": "标准请求"
       }
     ],
     "DescribeConsumerGroup": [
@@ -312,6 +352,14 @@
         "title": "查询角色列表"
       }
     ],
+    "DescribeSharedClusterBinding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedClusterBinding\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SharedClusterBinding\": [\n            {\n                \"Uin\": \"abc\",\n                \"InstanceType\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Enabled\": true,\n                \"Remark\": \"abc\",\n                \"ClusterStatus\": \"abc\",\n                \"ClusterVersion\": \"abc\",\n                \"Room\": \"abc\",\n                \"DeployEnv\": \"abc\",\n                \"NameServer\": \"abc\",\n                \"AccessKey\": \"abc\",\n                \"SecretKey\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "标准示例"
+      }
+    ],
     "DescribeTopic": [
       {
         "document": "查询主题详情",
@@ -326,6 +374,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"QueueNum\": 16,\n                \"Remark\": \"测试主题\",\n                \"Topic\": \"test_topic\",\n                \"TopicType\": \"NORMAL\"\n            }\n        ],\n        \"RequestId\": \"927cbd2c-be83-410e-a83f-24dcea1d88d9\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询主题列表"
+      }
+    ],
+    "DescribeUserPurchaseConfigs": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPurchaseConfigs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"81a4ee19-6daa-419f-bce0-bc877b5ff808\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "1"
       }
     ],
     "ImportSourceClusterConsumerGroups": [
@@ -350,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocket-vip-basic-1\",\n    \"ZoneId\": \"10001\"\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"4ed3a07b-36ef-4522-968b-5434dff663da\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "CSM故障调度Broker节点加回"
+      }
+    ],
+    "ModifyClusterAdminInfo": [
+      {
+        "document": "修改成功示例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAdminInfo\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rmqbk-mqtt\",\n    \"ClusterStatus\": \"RUNNING\",\n    \"ClusterVersion\": \"5\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"10b2fe93-3d51-45a7-8761-628fa3cd2274\"\n    }\n}",
+        "title": "修改成功"
       }
     ],
     "ModifyConsumerGroup": [
@@ -416,12 +480,28 @@
         "title": "修改角色"
       }
     ],
+    "ModifySharedClusterBinding": [
+      {
+        "document": "标准请求",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRocketMQSharedClusterBinding\n<公共请求参数>\n\n{\n    \"InstanceType\": \"PRO\",\n    \"ClusterId\": \"rocketmq-stable\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"fe2b749e-bbdd-4ca9-a3d1-a5d85e6b9056\"\n    }\n}",
+        "title": "标准请求"
+      }
+    ],
     "ModifyTopic": [
       {
         "document": "修改主题属性",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"QueueNum\": 1\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"945afc69-1c24-4891-a2ce-c5fa6032ba75\"\n    }\n}",
         "title": "修改主题属性"
+      }
+    ],
+    "ModifyUserPurchaseConfig": [
+      {
+        "document": "修改成功响应",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPurchaseConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"b361c02f-283e-4791-b8d5-34ed3f79deb5\"\n    }\n}",
+        "title": "修改成功"
       }
     ]
   },

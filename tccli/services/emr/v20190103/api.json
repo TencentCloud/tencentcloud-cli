@@ -7,6 +7,13 @@
       "output": "AddMetricScaleStrategyResponse",
       "status": "online"
     },
+    "AddUsersAgainForUserManager": {
+      "document": "该接口支持安装了OpenLdap组件的集群。",
+      "input": "AddUsersAgainForUserManagerRequest",
+      "name": "重新添加用户列表",
+      "output": "AddUsersAgainForUserManagerResponse",
+      "status": "online"
+    },
     "AddUsersForUserManager": {
       "document": "该接口支持安装了OpenLdap组件的集群。\n新增用户列表（用户管理）。",
       "input": "AddUsersForUserManagerRequest",
@@ -280,6 +287,27 @@
       "output": "DescribeTrinoQueryInfoResponse",
       "status": "online"
     },
+    "DescribeUserManagerUserList": {
+      "document": "查询用户列表（用户管理）",
+      "input": "DescribeUserManagerUserListRequest",
+      "name": "查询用户列表（用户管理）",
+      "output": "DescribeUserManagerUserListResponse",
+      "status": "online"
+    },
+    "DescribeUserSecret": {
+      "document": "用户管理-获取用户密码",
+      "input": "DescribeUserSecretRequest",
+      "name": "用户管理-获取用户密码",
+      "output": "DescribeUserSecretResponse",
+      "status": "online"
+    },
+    "DescribeUserTempSecret": {
+      "document": "用户管理-获取临时密钥",
+      "input": "DescribeUserTempSecretRequest",
+      "name": "用户管理-获取临时密钥",
+      "output": "DescribeUserTempSecretResponse",
+      "status": "online"
+    },
     "DescribeUsersForUserManager": {
       "document": "该接口支持安装了OpenLdap组件的集群。\n批量导出用户。对于kerberos集群，如果需要kertab文件下载地址，可以将NeedKeytabInfo设置为true；注意SupportDownLoadKeyTab为true，但是DownLoadKeyTabUrl为空字符串，表示keytab文件在后台没有准备好（正在生成）。",
       "input": "DescribeUsersForUserManagerRequest",
@@ -420,6 +448,13 @@
       "output": "ModifySLInstanceResponse",
       "status": "online"
     },
+    "ModifyUserGroup": {
+      "document": "用户管理-修改用户组",
+      "input": "ModifyUserGroupRequest",
+      "name": "用户管理-修改用户组",
+      "output": "ModifyUserGroupResponse",
+      "status": "online"
+    },
     "ModifyUserManagerPwd": {
       "document": "修改用户密码（用户管理）",
       "input": "ModifyUserManagerPwdRequest",
@@ -481,6 +516,13 @@
       "input": "StartStopServiceOrMonitorRequest",
       "name": "执行服务操作",
       "output": "StartStopServiceOrMonitorResponse",
+      "status": "online"
+    },
+    "SyncCamUsers": {
+      "document": "用户管理-修改用户组",
+      "input": "SyncCamUsersRequest",
+      "name": "用户管理-同步CAM用户",
+      "output": "SyncCamUsersResponse",
       "status": "online"
     },
     "SyncPodState": {
@@ -571,6 +613,62 @@
     "AddMetricScaleStrategyResponse": {
       "document": "AddMetricScaleStrategy返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUsersAgainForUserManagerRequest": {
+      "document": "AddUsersAgainForUserManager请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群字符串ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户信息列表",
+          "example": "[{\"UserName\":\"user1\",\"UserGroup\":\"group1\",\"PassWord\":\"123456\"}]",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddUsersAgainForUserManagerResponse": {
+      "document": "AddUsersAgainForUserManager返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加成功的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "SuccessUserList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "添加失败的用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "FailedUserList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1411,6 +1509,30 @@
         }
       ],
       "usage": "both"
+    },
+    "CamUserInfo": {
+      "document": "添加的用户信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子用户用户 ID",
+          "example": "42423353431",
+          "member": "uint64",
+          "name": "Uin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "dave",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CapacityGlobalConfig": {
       "document": "资源调度-容量调度器的全局设置",
@@ -7108,6 +7230,86 @@
       ],
       "type": "object"
     },
+    "DescribeUserManagerUserListRequest": {
+      "document": "DescribeUserManagerUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认空，容器版传\"native\"",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayStrategy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserManagerUserListResponse": {
+      "document": "DescribeUserManagerUserList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSecretRequest": {
+      "document": "DescribeUserSecret请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息列表",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "取值：\n- pwd：密码\n- keytab：keytab",
+          "example": "无",
+          "member": "string",
+          "name": "SecretType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSecretResponse": {
+      "document": "DescribeUserSecret返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserTempSecretRequest": {
+      "document": "DescribeUserTempSecret请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserTempSecretResponse": {
+      "document": "DescribeUserTempSecret返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUsersForUserManagerRequest": {
       "document": "DescribeUsersForUserManager请求参数结构体",
       "members": [
@@ -11923,6 +12125,42 @@
     },
     "ModifySLInstanceResponse": {
       "document": "ModifySLInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupRequest": {
+      "document": "ModifyUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息列表",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户组",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroup",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupResponse": {
+      "document": "ModifyUserGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17685,6 +17923,42 @@
         }
       ],
       "usage": "both"
+    },
+    "SyncCamUsersRequest": {
+      "document": "SyncCamUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息列表",
+          "example": "无",
+          "member": "CamUserInfo",
+          "name": "Users",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户初始密码",
+          "example": "无",
+          "member": "string",
+          "name": "UserPwd",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncCamUsersResponse": {
+      "document": "SyncCamUsers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SyncPodStateRequest": {
       "document": "SyncPodState请求参数结构体",

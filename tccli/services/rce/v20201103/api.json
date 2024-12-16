@@ -42,6 +42,13 @@
       "output": "DescribeNameListDetailResponse",
       "status": "online"
     },
+    "DescribeRiskAssessment": {
+      "document": "此接口用于查询风险评估结果",
+      "input": "DescribeRiskAssessmentRequest",
+      "name": "查询风险评估结果",
+      "output": "DescribeRiskAssessmentResponse",
+      "status": "online"
+    },
     "DescribeUserUsageCnt": {
       "document": "RCE控制台预付费和后付费次数展示",
       "input": "DescribeUserUsageCntRequest",
@@ -469,6 +476,43 @@
       ],
       "type": "object"
     },
+    "DescribeRiskAssessmentRequest": {
+      "document": "DescribeRiskAssessment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务参数",
+          "example": "无",
+          "member": "InputBizCryptoData",
+          "name": "BizCryptoData",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRiskAssessmentResponse": {
+      "document": "DescribeRiskAssessment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务出参",
+          "example": "无",
+          "member": "OutputRiskAssessment",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserUsageCntRequest": {
       "document": "DescribeUserUsageCnt请求参数结构体",
       "members": [],
@@ -532,6 +576,39 @@
         }
       ],
       "type": "object"
+    },
+    "InputBizCryptoData": {
+      "document": "查询风险评估结果入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否授权",
+          "example": "1",
+          "member": "string",
+          "name": "IsAuthorized",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密类型",
+          "example": "1",
+          "member": "string",
+          "name": "CryptoType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密内容",
+          "example": "无",
+          "member": "string",
+          "name": "CryptoContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "InputCreateNameListFront": {
       "document": "创建黑白名单入参",
@@ -2622,6 +2699,134 @@
           "name": "Value",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputRiskAssessment": {
+      "document": "查询风险评估结果出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputRiskAssessmentInfo",
+          "name": "Value",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UUid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputRiskAssessmentExtraInfoPair": {
+      "document": "风险评估扩展属性键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "brand",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apple",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OutputRiskAssessmentInfo": {
+      "document": "查询风险评估结果出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pass",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[101,201]",
+          "member": "int64",
+          "name": "RiskType",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "F802B8142******C4E40844D",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OutputRiskAssessmentExtraInfoPair",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "token生成时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1647330450369",
+          "member": "string",
+          "name": "TokenTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

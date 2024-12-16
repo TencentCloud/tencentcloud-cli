@@ -1,3 +1,80 @@
+# Release 3.0.1115.1
+
+## 人脸识别(iai) 版本：2020-03-03
+
+### 第 4 次发布
+
+发布时间：2024-12-16 01:21:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DetectFaceSimilarity](http://document.tencentcloudapi.woa.com/document/product/867/85525)
+
+
+
+## 人脸识别(iai) 版本：2018-03-01
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 58 次发布
+
+发布时间：2024-12-16 01:22:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* AssignTWeCallLicense
+* GetTWeCallPkgList
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 183 次发布
+
+发布时间：2024-12-16 01:34:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：IsDedicatedAddressPool
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 75 次发布
+
+发布时间：2024-12-16 01:36:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Pair](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Pair)
+
+	* 新增成员：Id
+
+
+
+
 # Release 3.0.1114.1
 
 ## 大模型图像创作引擎(aiart) 版本：2022-12-29

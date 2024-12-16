@@ -99,9 +99,9 @@
       "status": "online"
     },
     "GetCosKeysAndPrefix": {
-      "document": "获取COS临时密钥，限制当前子用户下的写入权限；\n同时支持对外提供的特定Uin对应COS桶的临时密钥；\n和GetCosTmpKey相比，应用范围更广，覆盖所有的安灯客户。",
+      "document": "废弃，仅仅保留内部的三个白名单调用，迁移完毕之后下线",
       "input": "GetCosKeysAndPrefixRequest",
-      "name": "获取COS临时密钥和前缀（限制到子账号权限）",
+      "name": "获取COS临时密钥（废弃，仅仅保留内部的三个白名单调用，迁移完毕之后下线）",
       "output": "GetCosKeysAndPrefixResponse",
       "status": "online"
     },

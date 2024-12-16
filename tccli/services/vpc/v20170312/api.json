@@ -4914,6 +4914,15 @@
         },
         {
           "disabled": false,
+          "document": "是否使用独占资源池，默认值：True\n- True：表示使用独占资源池\n- False：表示使用共享资源池\n\n说明：如需使用独占资源池，请 提交工单(https://console.cloud.tencent.com/workorder/category) 咨询，具体费用请咨询商务经理。",
+          "example": "False",
+          "member": "bool",
+          "name": "IsDedicatedAddressPool",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "网络出口，当前仅支持精品BGP、静态单线，这2种IP 地址类型的指定出口传入，默认值：center_egress1，其它可选值：center_egress2、center_egress3",
           "example": "center_egress1",
           "member": "string",
@@ -13216,6 +13225,15 @@
           "name": "SnapshotPolicies",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -13229,7 +13247,7 @@
           "example": "无",
           "member": "SnapshotPolicy",
           "name": "SnapshotPolicies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

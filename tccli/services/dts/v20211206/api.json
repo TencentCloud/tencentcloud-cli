@@ -5249,6 +5249,16 @@
         },
         {
           "disabled": false,
+          "document": "Kafka服务Broker的支撑环境地址，为了防止单点给出两个地址。白名单用户才有，非白名单返回 NOT_ALLOWED\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NOT_ALLOWED",
+          "member": "string",
+          "name": "BrokersIdc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "dmlAndDdl",
           "member": "string",
@@ -5356,6 +5366,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部Kafka版本的Kafka实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExternalKafkaInfo",
+          "name": "ExternalKafkaInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控制台监控页面使用",
+          "example": "tke",
+          "member": "string",
+          "name": "JobEngineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "控制台使用",
+          "example": "kafka",
+          "member": "string",
+          "name": "SubscribeVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6870,6 +6910,56 @@
         }
       ],
       "usage": "out"
+    },
+    "ExternalKafkaInfo": {
+      "document": "数据订阅外部Kafka版本外部Kafka配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Kafka实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ckafka-xxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内部字段，请忽略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Route",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GroupInfo": {
       "document": "kafka消费者组详情",

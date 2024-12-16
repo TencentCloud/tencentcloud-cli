@@ -7,9 +7,9 @@ Input:
 ```
 tccli mqtt ModifyJWKSAuthenticator --cli-unfold-argument  \
     --InstanceId mqtt-3w7vz9ko \
-    --Endpoint https://ywhcndybx2uj.authing.cn/660a91fa5d632f4057d0da2d/oidc/ \
+    --Endpoint https://127.0.0.1 \
     --RefreshInterval 222 \
-    --Remark 1
+    --Remark ramark
 ```
 
 Output: 

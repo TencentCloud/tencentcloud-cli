@@ -16,8 +16,8 @@ Output:
         "Description": "MyCustomParamTemplate",
         "Items": [
             {
-                "CurrentValue": "",
-                "Default": "\"\"",
+                "CurrentValue": "flushall",
+                "Default": "param_default_value",
                 "Description": "commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'",
                 "EnumValue": [
                     "flushall",

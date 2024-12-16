@@ -84,9 +84,10 @@
         {
           "disabled": false,
           "document": "基础镜像",
-          "example": "无",
+          "example": "image",
           "member": "string",
           "name": "BaseImage",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -94,9 +95,10 @@
         {
           "disabled": false,
           "document": "启动命令",
-          "example": "无",
+          "example": "[\"./app\"]",
           "member": "string",
           "name": "EntryPoint",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -107,6 +109,7 @@
           "example": "java",
           "member": "string",
           "name": "RepoLanguage",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -114,9 +117,10 @@
         {
           "disabled": false,
           "document": "上传文件名",
-          "example": "无",
+          "example": "fileName",
           "member": "string",
           "name": "UploadFilename",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -347,7 +351,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -406,48 +410,43 @@
           "member": "string",
           "name": "DeployType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "部署类型为image时传入",
-          "example": "无",
+          "example": "imageurl",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "部署类型为package时传入",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "PackageName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "部署类型为package时传入",
-          "example": "无",
+          "example": "version",
           "member": "string",
           "name": "PackageVersion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "部署备注",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "DeployRemark",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -456,8 +455,7 @@
           "member": "RepositoryInfo",
           "name": "RepoInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -466,18 +464,16 @@
           "member": "BuildPacksInfo",
           "name": "BuildPacks",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "发布类型 GRAY | FULL",
-          "example": "无",
+          "example": "FULL",
           "member": "string",
           "name": "ReleaseType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -570,7 +566,7 @@
           "example": "无",
           "member": "ServerBaseInfo",
           "name": "BaseInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -580,7 +576,7 @@
           "example": "无",
           "member": "ServerBaseConfig",
           "name": "ServerConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -590,7 +586,7 @@
           "example": "无",
           "member": "OnlineVersionInfo",
           "name": "OnlineVersionInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -645,17 +641,17 @@
           "example": "无",
           "member": "ServerBaseInfo",
           "name": "ServerList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -729,7 +725,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "1111",
+          "example": "1000",
           "member": "int64",
           "name": "TaskId",
           "required": true,
@@ -738,7 +734,7 @@
         {
           "disabled": false,
           "document": "操作标识",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -756,7 +752,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsExist",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -766,7 +762,7 @@
           "example": "无",
           "member": "ServerManageTaskInfo",
           "name": "Task",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -788,7 +784,7 @@
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -798,7 +794,7 @@
           "example": "Standard",
           "member": "string",
           "name": "PackageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -808,7 +804,7 @@
           "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -818,17 +814,17 @@
           "example": "2022-05-27 15:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "环境别名",
-          "example": "test",
+          "example": "alias",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -838,7 +834,7 @@
           "example": "normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -848,7 +844,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -858,7 +854,7 @@
           "example": "tcbr",
           "member": "string",
           "name": "EnvType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -868,7 +864,7 @@
           "example": "subnet-4l06atqr  cloud_run_cluster_pod_subnet3",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1236,17 +1232,17 @@
           "example": "test-001",
           "member": "string",
           "name": "VersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "镜像url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "imageurl",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1256,7 +1252,7 @@
           "example": "100",
           "member": "string",
           "name": "FlowRatio",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1287,7 +1283,7 @@
         {
           "disabled": false,
           "document": "任报Id",
-          "example": "1111",
+          "example": "1000",
           "member": "int64",
           "name": "TaskId",
           "required": true,
@@ -1305,7 +1301,7 @@
         {
           "disabled": false,
           "document": "操作标识",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -1341,7 +1337,7 @@
         {
           "disabled": false,
           "document": "服务名",
-          "example": "test",
+          "example": "test-server",
           "member": "string",
           "name": "ServerName",
           "required": true,
@@ -1377,7 +1373,7 @@
         {
           "disabled": false,
           "document": "操作标识",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -1460,7 +1456,7 @@
         {
           "disabled": false,
           "document": "服务名",
-          "example": "test",
+          "example": "server-name",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
@@ -1636,7 +1632,7 @@
         {
           "disabled": false,
           "document": "cls setId",
-          "example": "无",
+          "example": "dafslakfjkdal",
           "member": "string",
           "name": "LogSetId",
           "output_required": true,
@@ -1647,7 +1643,7 @@
         {
           "disabled": false,
           "document": "cls 主题id",
-          "example": "无",
+          "example": "sfafkslkfj",
           "member": "string",
           "name": "LogTopicId",
           "output_required": true,
@@ -1669,7 +1665,7 @@
         {
           "disabled": false,
           "document": "服务标签, function: 函数托管\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "function",
           "member": "string",
           "name": "Tag",
           "output_required": false,
@@ -1762,10 +1758,10 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "1111",
+          "example": "1000",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1775,17 +1771,17 @@
           "example": "test-1gbtbgkjf8f48e2c",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务名",
-          "example": "test",
+          "example": "server-name",
           "member": "string",
           "name": "ServerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1795,7 +1791,7 @@
           "example": "2022-05-27 15:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1805,7 +1801,7 @@
           "example": "CONFIG",
           "member": "string",
           "name": "ChangeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1815,7 +1811,7 @@
           "example": "GRAY",
           "member": "string",
           "name": "ReleaseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1825,7 +1821,7 @@
           "example": "package",
           "member": "string",
           "name": "DeployType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1835,7 +1831,7 @@
           "example": "test-001",
           "member": "string",
           "name": "PreVersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1845,17 +1841,17 @@
           "example": "test-002",
           "member": "string",
           "name": "VersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流水线Id",
-          "example": "111",
+          "example": "100",
           "member": "int64",
           "name": "PipelineId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1865,7 +1861,7 @@
           "example": "12121",
           "member": "int64",
           "name": "PipelineTaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1875,7 +1871,7 @@
           "example": "1212",
           "member": "int64",
           "name": "ReleaseId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1885,7 +1881,7 @@
           "example": "finished",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1895,27 +1891,27 @@
           "example": "无",
           "member": "TaskStepInfo",
           "name": "Steps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "无",
+          "example": "failed",
           "member": "string",
           "name": "FailReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作标识",
-          "example": "无",
+          "example": "remark",
           "member": "string",
           "name": "OperatorRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2056,10 +2052,10 @@
         {
           "disabled": false,
           "document": "步骤名",
-          "example": "无",
+          "example": "CreateEnv",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2069,7 +2065,7 @@
           "example": "failed",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2079,7 +2075,7 @@
           "example": "2022-05-27 15:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2089,7 +2085,7 @@
           "example": "2022-05-27 15:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2099,17 +2095,17 @@
           "example": "10",
           "member": "int64",
           "name": "CostTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "无",
+          "example": "failed",
           "member": "string",
           "name": "FailReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2167,7 +2163,7 @@
           "example": "env-example",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2177,7 +2173,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
