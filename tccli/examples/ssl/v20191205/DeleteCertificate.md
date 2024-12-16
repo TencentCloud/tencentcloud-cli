@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli ssl DeleteCertificate --cli-unfold-argument  \
-    --CertificateId CertificateId
+    --CertificateId hhe**jjsj \
+    --IsCheckResource False
 ```
 
 Output: 

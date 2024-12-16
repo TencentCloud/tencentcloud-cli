@@ -27,14 +27,14 @@ Output:
                     "TagName": "20190517xxxxxxx",
                     "CpuRequest": "",
                     "MemLimit": "4096.00",
-                    "GroupName": "test",
+                    "GroupName": "testGroup",
                     "RepoName": "tsf_410xxxxxxx/test",
                     "CreateTime": "",
                     "NamespaceId": "namespace-xxxxxxx",
                     "MemRequest": "",
                     "ClusterName": "示例",
-                    "NamespaceName": "test",
-                    "Alias": "test",
+                    "NamespaceName": "testNamespace",
+                    "Alias": "aliasNamespace",
                     "KubeInjectEnable": true,
                     "UpdatedTime": ""
                 }

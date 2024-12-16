@@ -40,6 +40,22 @@
         "title": "查询集群Binlog日志列表"
       }
     ],
+    "DescribeClusterDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"lhdbmysql-dzu7vipz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"Charset\": \"utf8\",\n            \"ClusterId\": \"lhdbmysql-dzu7vipz\",\n            \"ClusterName\": \"MySQL-3o9T\",\n            \"Cpu\": 1,\n            \"CreateTime\": \"2021-04-23 11:25:54\",\n            \"DbType\": \"MYSQL\",\n            \"DbVersion\": \"5.7\",\n            \"Memory\": 1,\n            \"Region\": \"ap-guangzhou\",\n            \"Status\": \"running\",\n            \"StatusDesc\": \"运行中\",\n            \"UsedStorage\": 0\n        },\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "查询集群详情"
+      }
+    ],
+    "DescribeClusters": [
+      {
+        "document": "查询集群",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusters\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Filter\": {\n        \"Name\": \"ClusterName\",\n        \"Values\": [\n            \"\"\n        ],\n        \"ExactMatch\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Clusters\": [\n            {\n                \"ClusterId\": \"cynosdbmysql-abcdefgh\",\n                \"ClusterName\": \"test_cluster\",\n                \"DbType\": \"MYSQL\",\n                \"DbVersion\": \"5.7\",\n                \"Status\": \"running\",\n                \"StatusDesc\": \"运行中\",\n                \"PeriodEndTime\": \"2099-12-31 23:59:59\",\n                \"CreateTime\": \"2000-01-01 00:00:00\",\n                \"UpdateTime\": \"2020-12-01 12:00:00\",\n                \"Cpu\": 0,\n                \"Mem\": 0,\n                \"StorageLimit\": 0,\n                \"Vip\": \"123.234.12.123\",\n                \"Vport\": 12345,\n                \"WanStatus\": \"init\",\n                \"WanDomain\": \"a.com\",\n                \"WanIp\": \"12.23.34.5\",\n                \"WanPort\": 2234,\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"RenewFlag\": 0\n            }\n        ],\n        \"RequestId\": \"req-123456789\"\n    }\n}",
+        "title": "查询集群列表"
+      }
+    ],
     "DescribeRenewResourceParams": [
       {
         "document": "",

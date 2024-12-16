@@ -5,7 +5,15 @@
 Input: 
 
 ```
-tccli trocket AddUserPurchaseConfig --cli-unfold-argument ```
+tccli trocket AddUserPurchaseConfig --cli-unfold-argument  \
+    --CustomerAppId 123 \
+    --CustomerUin 123 \
+    --ProductSpec rocket-vip-basic-0 \
+    --CustomerRegion 19 \
+    --Zones 190001 \
+    --MaxNodes 2 \
+    --MinNodes 1
+```
 
 Output: 
 ```

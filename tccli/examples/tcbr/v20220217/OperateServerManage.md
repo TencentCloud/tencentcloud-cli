@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tcbr OperateServerManage --cli-unfold-argument  \
-    --EnvId abc \
-    --ServerName abc \
-    --TaskId 0 \
-    --OperateType abc \
-    --OperatorRemark abc
+    --EnvId env-sdfsdf \
+    --ServerName server \
+    --TaskId 1001 \
+    --OperateType cancel \
+    --OperatorRemark remark
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dsafdsadfsasdffgfhgh"
     }
 }
 ```

@@ -7,9 +7,9 @@ Input:
 ```
 tccli intlpartnersmgt QueryPolicyProductListByCode --cli-unfold-argument  \
     --PolicyCode StandardPolicy2024 \
-    --ProductCode None \
-    --ProductName None \
-    --SubProductCode None \
+    --ProductCode  \
+    --ProductName  \
+    --SubProductCode  \
     --SubProductName CBM Memory Optimized BMM5
 ```
 

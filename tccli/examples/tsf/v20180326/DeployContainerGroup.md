@@ -12,11 +12,11 @@ tccli tsf DeployContainerGroup --cli-unfold-argument  \
     --Server ccr.ccs.tencentyun.com \
     --InstanceNum 1 \
     --RepoName tsf_10000617xxxx/test \
-    --TagName xxxx \
+    --TagName v1 \
     --CpuRequest 0.54 \
     --JvmOpts -Xms128m-Xmx512m-XX:MetaspaceSize=128m-XX:MaxMetaspaceSize=512m \
     --UpdateIvl 10 \
-    --GroupId group-xxxxxxx
+    --GroupId group-6a79x94v
 ```
 
 Output: 

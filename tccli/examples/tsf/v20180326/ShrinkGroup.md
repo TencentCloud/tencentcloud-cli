@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf ShrinkGroup --cli-unfold-argument  \
-    --GroupId group-xxxxxxx
+    --GroupId group-6a79x94v
 ```
 
 Output: 
@@ -14,9 +14,9 @@ Output:
 {
     "Response": {
         "Result": {
-            "TaskId": "xx"
+            "TaskId": "task-6a79x94v"
         },
-        "RequestId": "xx"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

@@ -16,47 +16,64 @@ Output:
 {
     "Response": {
         "Result": {
-            "TotalCount": 0,
+            "TotalCount": 1,
             "Content": [
                 {
-                    "ApplicationId": "abc",
-                    "ApplicationName": "abc",
-                    "ApplicationDesc": "abc",
-                    "ApplicationType": "abc",
-                    "MicroserviceType": "abc",
-                    "ProgLang": "abc",
-                    "CreateTime": "abc",
-                    "UpdateTime": "abc",
-                    "ApplicationResourceType": "abc",
-                    "ApplicationRuntimeType": "abc",
-                    "ApigatewayServiceId": "abc",
-                    "ApplicationRemarkName": "abc",
+                    "ApplicationId": "application-6a79x94v",
+                    "ApplicationName": "application-test-name",
+                    "ApplicationDesc": "this is a desc",
+                    "ApplicationType": "C",
+                    "MicroserviceType": "DEF",
+                    "ProgLang": "J",
+                    "CreateTime": "2020-11-22 09:16:12",
+                    "UpdateTime": "2021-11-22 09:16:12",
+                    "ApplicationResourceType": "C",
+                    "ApplicationRuntimeType": "konaJdk8",
+                    "ApigatewayServiceId": "ms-6a79x94v",
+                    "ApplicationRemarkName": "this is a remack name",
                     "ServiceConfigList": [
                         {
-                            "Name": "abc",
+                            "Name": "service-config-name",
                             "Ports": [
                                 {
-                                    "TargetPort": 1,
-                                    "Protocol": "abc"
+                                    "TargetPort": "8080",
+                                    "Protocol": "8080"
                                 }
                             ],
                             "HealthCheck": {
-                                "Path": "abc"
+                                "Path": "/health"
                             }
                         }
                     ],
                     "IgnoreCreateImageRepository": true,
-                    "ApmInstanceId": "abc",
-                    "ApmInstanceName": "abc",
+                    "ApmInstanceId": "apm-6a79x94v",
+                    "ApmInstanceName": "apm-test-name",
                     "SyncDeleteImageRepository": true,
-                    "MicroserviceSubType": "abc",
-                    "ProgramLanguage": "abc",
-                    "FrameworkType": "abc"
+                    "MicroserviceSubType": "N",
+                    "ProgramLanguage": "Java",
+                    "FrameworkType": "Spring Cloud",
+                    "ServiceGovernanceConfig": {
+                        "EnableGovernance": true,
+                        "GovernanceType": "Share",
+                        "ExclusiveInstances": [
+                            {
+                                "CenterType": "Config",
+                                "InstanceId": "ins-6a79x94v",
+                                "InstanceType": "polaris",
+                                "InstanceName": "test-name",
+                                "RegionId": "ap-guangzhou",
+                                "InstanceNamespaceId": "ns-6a79x94v"
+                            }
+                        ]
+                    },
+                    "MicroserviceTypeList": [
+                        "N"
+                    ],
+                    "CreateSameNameImageRepository": true
                 }
-            ],
-            "SpecTotalCount": 0
+            ]
         },
-        "RequestId": "abc"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

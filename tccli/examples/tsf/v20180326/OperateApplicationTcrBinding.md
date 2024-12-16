@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tsf OperateApplicationTcrBinding --cli-unfold-argument  \
-    --TcrRepoInfo.RegistryName xx \
-    --TcrRepoInfo.Namespace xx \
+    --TcrRepoInfo.RegistryName register-name \
+    --TcrRepoInfo.Namespace tsf_127273497 \
     --TcrRepoInfo.Region 1 \
-    --TcrRepoInfo.RegistryId xx \
-    --TcrRepoInfo.RepoName xx \
-    --Command xx \
-    --ApplicationId xx
+    --TcrRepoInfo.RegistryId ngxin \
+    --TcrRepoInfo.RepoName ngxin \
+    --Command bind \
+    --ApplicationId application-6a79x94v
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf CreateCluster --cli-unfold-argument  \
-    --VpcId vpc-xxxxxxx \
+    --VpcId vpc-6a79x94v \
     --ClusterName DEMO-DOCKER \
     --TsfZoneId 100004 \
     --ClusterType C \
@@ -18,8 +18,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": "abc",
-        "RequestId": "abc"
+        "Result": "cluster-6a79x94v",
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

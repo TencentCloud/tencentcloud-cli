@@ -7,7 +7,7 @@ Input:
 ```
 tccli tsf UpdateRepository --cli-unfold-argument  \
     --RepositoryId application-xxxxxxxx \
-    --RepositoryDesc aaa
+    --RepositoryDesc '"this is a new desc"'
 ```
 
 Output: 

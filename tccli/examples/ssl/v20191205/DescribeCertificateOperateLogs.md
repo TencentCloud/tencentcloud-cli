@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli ssl DescribeCertificateOperateLogs --cli-unfold-argument  \
-    --Limit 5
+    --Limit 5 \
+    --Offset 0
 ```
 
 Output: 

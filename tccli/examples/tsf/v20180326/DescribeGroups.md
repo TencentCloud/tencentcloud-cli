@@ -22,18 +22,22 @@ Output:
                 {
                     "ApplicationType": "V",
                     "MicroserviceType": "N",
-                    "GroupId": "group-xxxxxxx",
-                    "ClusterId": "cluster-xxxxxxx",
+                    "GroupId": "group-6a79x94v",
+                    "ClusterId": "cluster-6a79x94v",
                     "StartupParameters": "-Xms128m -Xmx512m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=512m",
-                    "ClusterName": "test",
-                    "ApplicationName": "test1",
-                    "NamespaceName": "test2",
-                    "GroupDesc": null,
+                    "ClusterName": "cls-mock",
+                    "ApplicationName": "app-mock",
+                    "NamespaceName": "default",
+                    "GroupDesc": "this is a desc",
                     "UpdateTime": "2019-03-11 16:51:55",
-                    "GroupName": "test",
-                    "NamespaceId": "namespace-xxxxxxx",
+                    "GroupName": "group-mock",
+                    "Alias": "group-alias",
+                    "DeployDesc": "描述",
+                    "NamespaceId": "namespace-6a79x94v",
+                    "GroupResourceType": "DEF",
                     "CreateTime": "2019-03-11 16:51:55",
-                    "ApplicationId": "application-xxxxxxx"
+                    "UpdatedTime": "17623946749",
+                    "ApplicationId": "application-6a79x94v"
                 }
             ]
         }

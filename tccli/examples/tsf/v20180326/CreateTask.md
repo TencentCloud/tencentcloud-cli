@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf CreateTask --cli-unfold-argument  \
-    --TaskName test \
+    --TaskName task-test \
     --TaskContent com.example.task.simpleTask \
     --TaskArgument taskArgumentTest \
     --ExecuteType UNICAST \

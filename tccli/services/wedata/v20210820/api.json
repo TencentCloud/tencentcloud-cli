@@ -9546,6 +9546,72 @@
       ],
       "usage": "both"
     },
+    "DataSourceConnectStatus": {
+      "document": "数据源云梯连接状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源id",
+          "example": "1",
+          "member": "string",
+          "name": "DatasourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接结果",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectError",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "1",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DataSourceInfo": {
       "document": "数据源对象",
       "members": [
@@ -9887,6 +9953,16 @@
           "name": "DevelopmentParams",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "DataSourceConnectStatus",
+          "name": "ConnectStatus",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -23871,9 +23947,123 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行机版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.8.1.20240507",
+          "member": "string",
+          "name": "ExecutorVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行机版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "执行机版本信息",
+          "member": "ExecutorWorkInfo",
+          "name": "ExecutorWorkInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "ExecutorWorkInfo": {
+      "document": "执行机部署信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "runner集合",
+          "example": "runner集合",
+          "member": "RunnerInfo",
+          "name": "RunnerList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "名称",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "心跳时间",
+          "example": "心跳时间",
+          "member": "string",
+          "name": "LastHeartbeatTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "版本",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "ip",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "端口",
+          "member": "string",
+          "name": "VPort",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否健康",
+          "example": "是否健康",
+          "member": "string",
+          "name": "IsHealth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "综合vip/vport/is_health/last_heartbeat_time 判断app是否健康",
+          "example": "综合vip/vport/is_health/last_heartbeat_time 判断app是否健康",
+          "member": "string",
+          "name": "IsComputeHealth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ExtResourceFlagDto": {
       "document": "扩展信息参数",
@@ -38007,6 +38197,78 @@
         }
       ],
       "type": "object"
+    },
+    "RunnerInfo": {
+      "document": "runner的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "RunnerTypeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "jar名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "RunnerJarName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "version",
+          "member": "string",
+          "name": "RunnerVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "下载路径",
+          "member": "string",
+          "name": "DownloadPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "jar的状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "jar的状态",
+          "member": "string",
+          "name": "RunnerJarStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "md5校验值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "md5",
+          "member": "string",
+          "name": "Md5Sum",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RuntimeInstanceCntTop": {
       "document": "指定时间窗口实例耗时排行",

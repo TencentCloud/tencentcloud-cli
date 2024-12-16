@@ -120,12 +120,28 @@
         "title": "创建数据转发"
       }
     ],
+    "CreateDeviceChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ChannelId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "创建设备通道示例"
+      }
+    ],
     "CreateForwardRule": [
       {
         "document": "创建转发规则",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateForwardRule\n<公共请求参数>\n\n{\n    \"Skey\": \"xrnWgKu0fCz7q8JIQYFiNP-XpyaziljFvrQg4A*Cidc_\",\n    \"ProductID\": \"TIUHIHHII\",\n    \"MsgType\": 3,\n    \"QueueRegion\": \"ap-guangzhou\",\n    \"QueueType\": 1,\n    \"QueueName\": \"hub_test_topic\",\n    \"InstanceId\": \"ckafka-cy614eit\",\n    \"InstanceName\": \"iot_test_no_delete\"\n}",
         "output": "{\n    \"Response\": {\n        \"ProductID\": \"TDCZ2WD29Z\",\n        \"InstanceId\": \"\",\n        \"InstanceName\": \"\",\n        \"Endpoint\": \"100004557990\",\n        \"Result\": 0,\n        \"QueueRegion\": \"ap-guangzhou\",\n        \"QueueName\": \"hub_test_topic\",\n        \"RoleName\": \"cmqIOTRole100004557990_1522374592\",\n        \"MsgType\": 3,\n        \"RoleID\": 16576,\n        \"ErrMsg\": \"\",\n        \"QueueType\": 1,\n        \"RequestId\": \"d5c0b643-8a2d-4f03-8207-40c4602c652d\"\n    }\n}",
         "title": "创建转发规则"
+      }
+    ],
+    "CreateFreeCloudStorage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"PackageId\": \"yc1m3d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Amount\": 0,\n        \"Price\": 0,\n        \"RequestId\": \"a9a9d232-01c0-494a-baa3-57c384463c3f\"\n    }\n}",
+        "title": "开通免费实例"
       }
     ],
     "CreateProduct": [

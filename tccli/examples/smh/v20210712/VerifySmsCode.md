@@ -9,7 +9,7 @@ tccli smh VerifySmsCode --cli-unfold-argument  \
     --Purpose BindSuperAdmin \
     --InstanceId n0v9tdme \
     --PhoneNumber 18999999999 \
-    --Code 1234
+    --Code 2261
 ```
 
 Output: 

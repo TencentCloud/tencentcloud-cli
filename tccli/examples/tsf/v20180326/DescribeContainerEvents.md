@@ -22,16 +22,16 @@ Output:
                 {
                     "FirstTimestamp": 0,
                     "LastTimestamp": 0,
-                    "Type": "abc",
-                    "Kind": "abc",
-                    "Name": "abc",
-                    "Reason": "abc",
-                    "Message": "abc",
+                    "Type": "instance",
+                    "Kind": "SERVER",
+                    "Name": "test-event",
+                    "Reason": "this is a reason",
+                    "Message": "this is a msg",
                     "Count": 0
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

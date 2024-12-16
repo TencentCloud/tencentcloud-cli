@@ -105,11 +105,25 @@
       "output": "CreateDataForwardResponse",
       "status": "online"
     },
+    "CreateDeviceChannel": {
+      "document": "创建设备通道",
+      "input": "CreateDeviceChannelRequest",
+      "name": "创建设备通道",
+      "output": "CreateDeviceChannelResponse",
+      "status": "online"
+    },
     "CreateForwardRule": {
       "document": "创建转发规则",
       "input": "CreateForwardRuleRequest",
       "name": "创建转发规则",
       "output": "CreateForwardRuleResponse",
+      "status": "online"
+    },
+    "CreateFreeCloudStorage": {
+      "document": "开通免费云存服务",
+      "input": "CreateFreeCloudStorageRequest",
+      "name": "开通云存卡服务",
+      "output": "CreateFreeCloudStorageResponse",
       "status": "online"
     },
     "CreateProduct": {
@@ -2274,6 +2288,51 @@
       ],
       "type": "object"
     },
+    "CreateDeviceChannelRequest": {
+      "document": "CreateDeviceChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeviceChannelResponse": {
+      "document": "CreateDeviceChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateForwardRuleRequest": {
       "document": "CreateForwardRule请求参数结构体",
       "members": [
@@ -2492,6 +2551,116 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFreeCloudStorageRequest": {
+      "document": "CreateFreeCloudStorage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云存套餐ID：\nlye1w3d：低功耗事件3天周套餐。\nye1w3d：事件3天周套餐",
+          "example": "lye1w3d",
+          "member": "string",
+          "name": "PackageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果当前设备已开启云存套餐，Override=1会使用新套餐覆盖原有套餐。不传此参数则默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Override",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。",
+          "example": "front",
+          "member": "string",
+          "name": "PackageQueue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订单id",
+          "example": "slfie21321",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云存视频存储区域，国内默认为ap-guangzhou。海外默认为东南亚ap-singapore，可选美东na-ashburn、欧洲eu-frankfurt。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFreeCloudStorageResponse": {
+      "document": "CreateFreeCloudStorage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单金额，单位为分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Price",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支付金额，单位为分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Amount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
