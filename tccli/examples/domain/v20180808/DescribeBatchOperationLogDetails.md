@@ -15,20 +15,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
+        "RequestId": "f376d0e6-f064-1234-b27f-a8ae3b054dfa",
         "DomainBatchDetailSet": [
             {
-                "Id": 0,
-                "Action": "abc",
-                "Domain": "abc",
-                "Status": "abc",
-                "Reason": "abc",
-                "CreatedOn": "abc",
-                "UpdatedOn": "abc",
-                "BigDealId": "abc"
+                "UpdatedOn": "2024-12-18 12:21:16",
+                "BigDealId": "",
+                "Action": "batch_modify_domain_dns1",
+                "Status": "failed",
+                "Domain": "***.com",
+                "CreatedOn": "2024-12-18 12:21:12",
+                "Reason": "域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】",
+                "Id": 1001
             }
-        ],
-        "RequestId": "abc"
+        ]
     }
 }
 ```

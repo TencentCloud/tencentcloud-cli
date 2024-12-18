@@ -8594,6 +8594,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始证件识别信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalCardInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10221,7 +10231,7 @@
         },
         {
           "disabled": false,
-          "document": "检测模式，参数取值如下：\n1：OCR+活体检测+人脸比对；\n2：活体检测+人脸比对；\n3：活体检测；\n默认值为2。",
+          "document": "检测模式，参数取值如下：\n1：OCR+活体检测+人脸比对；\n2：活体检测+人脸比对；\n3：活体检测；\n4：OCR;\n默认值为2。",
           "example": "1",
           "member": "int64",
           "name": "CheckMode",

@@ -6,67 +6,55 @@ Input:
 
 ```
 tccli domain CreateIntlTemplate --cli-unfold-argument  \
-    --RegistrantContact.FirstName abc \
-    --RegistrantContact.LastName abc \
-    --RegistrantContact.CompanyName abc \
-    --RegistrantContact.JobTitle abc \
-    --RegistrantContact.Country abc \
-    --RegistrantContact.Province abc \
-    --RegistrantContact.City abc \
-    --RegistrantContact.AddressLine abc \
-    --RegistrantContact.AddressLineTwo abc \
-    --RegistrantContact.ZipCode abc \
-    --RegistrantContact.Email abc \
-    --RegistrantContact.Phone abc \
-    --RegistrantContact.Fax abc \
-    --AdminContact.FirstName abc \
-    --AdminContact.LastName abc \
-    --AdminContact.CompanyName abc \
-    --AdminContact.JobTitle abc \
-    --AdminContact.Country abc \
-    --AdminContact.Province abc \
-    --AdminContact.City abc \
-    --AdminContact.AddressLine abc \
-    --AdminContact.AddressLineTwo abc \
-    --AdminContact.ZipCode abc \
-    --AdminContact.Email abc \
-    --AdminContact.Phone abc \
-    --AdminContact.Fax abc \
-    --TechnicalContact.FirstName abc \
-    --TechnicalContact.LastName abc \
-    --TechnicalContact.CompanyName abc \
-    --TechnicalContact.JobTitle abc \
-    --TechnicalContact.Country abc \
-    --TechnicalContact.Province abc \
-    --TechnicalContact.City abc \
-    --TechnicalContact.AddressLine abc \
-    --TechnicalContact.AddressLineTwo abc \
-    --TechnicalContact.ZipCode abc \
-    --TechnicalContact.Email abc \
-    --TechnicalContact.Phone abc \
-    --TechnicalContact.Fax abc \
-    --BillingContact.FirstName abc \
-    --BillingContact.LastName abc \
-    --BillingContact.CompanyName abc \
-    --BillingContact.JobTitle abc \
-    --BillingContact.Country abc \
-    --BillingContact.Province abc \
-    --BillingContact.City abc \
-    --BillingContact.AddressLine abc \
-    --BillingContact.AddressLineTwo abc \
-    --BillingContact.ZipCode abc \
-    --BillingContact.Email abc \
-    --BillingContact.Phone abc \
-    --BillingContact.Fax abc \
-    --TemplateType abc
+    --AdminContact.AddressLine ***, HongKong \
+    --AdminContact.City Hong Kong \
+    --AdminContact.CompanyName HONG KONG *** \
+    --AdminContact.Country HK \
+    --AdminContact.Email l***5@gmail.com \
+    --AdminContact.FirstName *GY \
+    --AdminContact.LastName *U \
+    --AdminContact.Phone +86.1** \
+    --AdminContact.Province Hong Kong \
+    --AdminContact.ZipCode **7 \
+    --BillingContact.AddressLine ***, HongKong \
+    --BillingContact.City Hong Kong \
+    --BillingContact.CompanyName HONG KONG *** \
+    --BillingContact.Country HK \
+    --BillingContact.Email l***5@gmail.com \
+    --BillingContact.FirstName *GY \
+    --BillingContact.LastName *U \
+    --BillingContact.Phone +86.1** \
+    --BillingContact.Province Hong Kong \
+    --BillingContact.ZipCode **7 \
+    --RegistrantContact.AddressLine ***, HongKong \
+    --RegistrantContact.City Hong Kong \
+    --RegistrantContact.CompanyName HONG KONG *** \
+    --RegistrantContact.Country HK \
+    --RegistrantContact.Email l***5@gmail.com \
+    --RegistrantContact.FirstName *GY \
+    --RegistrantContact.LastName *U \
+    --RegistrantContact.Phone +86.1** \
+    --RegistrantContact.Province Hong Kong \
+    --RegistrantContact.ZipCode **7 \
+    --TechnicalContact.AddressLine ***, HongKong \
+    --TechnicalContact.City Hong Kong \
+    --TechnicalContact.CompanyName HONG KONG *** \
+    --TechnicalContact.Country HK \
+    --TechnicalContact.Email l***5@gmail.com \
+    --TechnicalContact.FirstName *GY \
+    --TechnicalContact.LastName *U \
+    --TechnicalContact.Phone +86.1** \
+    --TechnicalContact.Province Hong Kong \
+    --TechnicalContact.ZipCode **7 \
+    --TemplateType E
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TemplateId": "abc",
-        "RequestId": "abc"
+        "TemplateId": "temp-2349derf",
+        "RequestId": "dwert-eeewr-fsdwe-fwert"
     }
 }
 ```

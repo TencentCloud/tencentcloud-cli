@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeBiddingDetail --cli-unfold-argument  \
-    --BusinessID xxxx
+    --BusinessID ***561
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
         "CurrentNickname": "feng",
         "CurrentPrice": 120,
         "DeleteTime": "2023-11-28 09:53:48",
-        "Domain": "sasdfzcccc2216.com",
+        "Domain": "***16.com",
         "ExpireTime": "2023-09-28 09:53:48",
         "RegTime": "2022-09-28 09:53:48",
         "RequestId": "5fdc5b55-514b-42f8-85a3-e269db61f752",

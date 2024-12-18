@@ -10126,7 +10126,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否允许欠费消费",
           "example": "true",
           "member": "bool",
@@ -10136,7 +10136,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否限制信用额度",
           "example": "true",
           "member": "bool",

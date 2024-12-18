@@ -15,21 +15,22 @@ Output:
     "Response": {
         "Data": [
             {
-                "CountTag": 1,
-                "TotalNum": 1,
-                "RunningNum": 1,
-                "StoppingNum": 1,
-                "StoppedNum": 1,
-                "FrozenNum": 1,
-                "YearNum": 1,
-                "MonthNum": 1,
-                "WeekNum": 1,
-                "DayNum": 1,
-                "HourNum": 1,
-                "MinuteNum": 1
+                "CountTag": 0,
+                "DayNum": 0,
+                "FrozenNum": 0,
+                "HourNum": 0,
+                "InvalidNum": 0,
+                "MinuteNum": 0,
+                "MonthNum": 0,
+                "RunningNum": 0,
+                "StoppedNum": 0,
+                "StoppingNum": 0,
+                "TotalNum": 0,
+                "WeekNum": 0,
+                "YearNum": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "717516e8-fece-4821-850b-43b4379c816d"
     }
 }
 ```

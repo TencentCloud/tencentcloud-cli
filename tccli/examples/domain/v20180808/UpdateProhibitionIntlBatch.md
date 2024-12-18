@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain UpdateProhibitionIntlBatch --cli-unfold-argument  \
-    --Domains abc \
+    --Domains test-a.com \
     --Status True
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "LogId": 0,
-        "RequestId": "abc"
+        "RequestId": "dwewr-fower-weqwe-focsd-fweqr"
     }
 }
 ```

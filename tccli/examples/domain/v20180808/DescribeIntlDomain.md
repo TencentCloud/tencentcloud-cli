@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeIntlDomain --cli-unfold-argument  \
-    --DomainId abc
+    --DomainId domain-eowerfeq
 ```
 
 Output: 
@@ -14,46 +14,48 @@ Output:
 {
     "Response": {
         "DomainInfo": {
-            "AutoRenew": 0,
-            "CreationDate": "abc",
-            "DomainId": "abc",
-            "DnsStatus": 0,
-            "DomainName": "abc",
+            "AutoRenew": 1,
+            "CreationDate": "2024-11-21",
+            "DnsStatus": 1,
+            "DomainId": "domain-***8vq",
+            "DomainName": "**j.com",
             "DomainStatus": [
-                "abc"
+                "ok"
             ],
-            "Status": "abc",
-            "ExpirationDate": "abc",
-            "ExpireMessage": 0,
-            "IsPremium": true,
+            "Status": "ok",
+            "ExpirationDate": "2025-11-21",
+            "ExpireMessage": 1,
+            "IsPremium": false,
             "Dns": [
-                "abc"
+                "a.dnspod.com",
+                "b.dnspod.com",
+                "c.dnspod.com"
             ],
-            "ContactInfo": {
-                "City": "abc",
-                "Country": "abc",
-                "Email": "abc",
-                "OrganizationName": "abc",
-                "Province": "abc",
-                "RegistrantName": "abc",
-                "RegistrantType": "abc",
-                "Street": "abc",
-                "Telephone": "abc",
-                "ZipCode": "abc",
-                "FirstName": "abc",
-                "LastName": "abc",
-                "CompanyName": "abc"
-            },
-            "CanRenewYears": 0,
-            "RegistrarType": "abc",
-            "Uin": "abc",
-            "TemplateId": "abc",
-            "SupportDnssec": true,
+            "CanRenewYears": 9,
+            "RegistrarType": "aceville",
+            "Uin": "***347",
+            "TemplateId": "tmpl-****f",
+            "SupportDnssec": false,
             "WhoisPrivacy": 0,
-            "ModifyStatus": "abc",
-            "DnsModifyStatus": "abc"
+            "ModifyStatus": "",
+            "DnsModifyStatus": "",
+            "ContactInfo": {
+                "City": "***e",
+                "Country": "US",
+                "Email": "***5@comcast.net",
+                "OrganizationName": "***",
+                "Province": "IN",
+                "RegistrantName": "**ny",
+                "RegistrantType": "E",
+                "Street": "** Ct",
+                "Telephone": "+1.61**",
+                "ZipCode": "**02",
+                "FirstName": "**h",
+                "LastName": "**ny",
+                "CompanyName": "**re"
+            }
         },
-        "RequestId": "abc"
+        "RequestId": "6d7bef38-fc4d-1234-978b-fb48b5f4daa3"
     }
 }
 ```

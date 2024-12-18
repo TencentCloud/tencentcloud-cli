@@ -22,14 +22,14 @@ Output:
                 "IpSet": [
                     "2.2.2.2"
                 ],
-                "DnsName": "bbbb"
+                "DnsName": "a1.dns.dns"
             },
             {
                 "IpSet": [
                     "8.8.9.9",
                     "3.3.3.3"
                 ],
-                "DnsName": "aaa"
+                "DnsName": "a2.dns.dns"
             }
         ]
     }

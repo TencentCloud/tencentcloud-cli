@@ -8,7 +8,7 @@ Input:
 tccli domain CreateIntlPhoneEmail --cli-unfold-argument  \
     --Type 1 \
     --Code 18766554433 \
-    --VerifyCode 123456
+    --VerifyCode 1024
 ```
 
 Output: 

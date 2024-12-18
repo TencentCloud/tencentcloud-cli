@@ -576,6 +576,14 @@
         "title": "容器网络创建网络策略删除任务示例"
       }
     ],
+    "DeleteRaspRules": [
+      {
+        "document": "删除漏洞防御白名单",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRaspRules\n<公共请求参数>\n\n{\n    \"IDs\": [\n        32\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c0fd9e1-8d54-4cf4-b339-7b5dc3afeb81\"\n    }\n}",
+        "title": "删除漏洞防御白名单"
+      }
+    ],
     "DeleteReverseShellEvents": [
       {
         "document": "",
@@ -1750,6 +1758,22 @@
         "title": "查询容器安全服务已购买信息"
       }
     ],
+    "DescribeRaspRuleVuls": [
+      {
+        "document": "查询漏洞白名单里的漏洞列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRaspRuleVuls\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"WhiteType\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CveID\": \"cveid\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9102851,\n                \"VulVulsName\": \"Weblogic T3/IIOP 反序列化漏洞\"\n            },\n            {\n                \"CveID\": \"cveid\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9102413,\n                \"VulVulsName\": \"xstream反序列化漏洞系列\"\n            },\n            {\n                \"CveID\": \"cveid\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9102408,\n                \"VulVulsName\": \"Jackson反序列化漏洞\"\n            },\n            {\n                \"CveID\": \"pcmgr-9102137\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9102137,\n                \"VulVulsName\": \"Apache Struts2 远程代码执行漏洞\"\n            },\n            {\n                \"CveID\": \"\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9102094,\n                \"VulVulsName\": \"java反序列化漏洞\"\n            },\n            {\n                \"CveID\": \"pcmgr-9102071\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9102071,\n                \"VulVulsName\": \"Fastjson 反序列化任意代码执行漏洞\"\n            },\n            {\n                \"CveID\": \"pcmgr-9100547\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9100547,\n                \"VulVulsName\": \"Fastjson 远程代码执行漏洞\"\n            },\n            {\n                \"CveID\": \"cveid\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9100414,\n                \"VulVulsName\": \"Fastjson 反序列化远程代码执行漏洞\"\n            },\n            {\n                \"CveID\": \"pcmgr-9100399\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9100399,\n                \"VulVulsName\": \"Fastjson 远程代码执行漏洞\"\n            },\n            {\n                \"CveID\": \"cveid\",\n                \"SupportDefense\": 1,\n                \"VulVulsID\": 9100388,\n                \"VulVulsName\": \"Fastjson 远程代码执行漏洞\"\n            }\n        ],\n        \"RequestId\": \"bbeddb8a-f99d-43a1-aadb-c32e148fdb94\",\n        \"TotalCount\": 215\n    }\n}",
+        "title": "查询漏洞白名单里的漏洞列表"
+      }
+    ],
+    "DescribeRaspRules": [
+      {
+        "document": "查询漏洞防御白名单",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRaspRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CreateTime\": \"2024-11-19 19:16:26\",\n                \"CveID\": \"CVE-2024-37032\",\n                \"Id\": 463,\n                \"ModifyTime\": \"2024-11-19 19:16:26\",\n                \"Status\": 0,\n                \"SupportDefense\": 2,\n                \"URLRegexp\": \"\",\n                \"VulVulsID\": 105333,\n                \"VulVulsName\": \"Ollama远程代码执行漏洞(CVE-2024-37032)\",\n                \"WhiteType\": 1\n            }\n        ],\n        \"RequestId\": \"43acddb3-20bf-41d2-a5ca-824cae917760\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询漏洞防御白名单"
+      }
+    ],
     "DescribeRefreshTask": [
       {
         "document": "",
@@ -2544,6 +2568,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyK8sApiAbnormalRuleStatus\n<公共请求参数>\n\n{\n    \"RuleID\": \"dsfsdfee2f4f\",\n    \"Status\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"522d7714-ef53-4940-b0ed-46d59a3cf0fd\"\n    }\n}",
         "title": "修改k8sapi异常事件规则状态"
+      }
+    ],
+    "ModifyRaspRules": [
+      {
+        "document": "添加漏洞防御白名单",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRaspRules\n<公共请求参数>\n\n{\n    \"VulVulsIDs\": [\n        105346\n    ],\n    \"WhiteType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8ff031f-094b-485d-949f-8b557b4d1b6d\"\n    }\n}",
+        "title": "添加漏洞防御白名单"
       }
     ],
     "ModifyReverseShellStatus": [

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli domain TransferInIntlDomainBatch --cli-unfold-argument  \
-    --TemplateId abc \
-    --PassWords abc \
-    --Domains abc \
+    --TemplateId temp-dwerfdw \
+    --PassWords password1 password2 \
+    --Domains transfer-domain1.com transfer-domain2.com \
     --PayMode 0 \
     --AutoRenewFlag True \
     --TransferProhibition True \

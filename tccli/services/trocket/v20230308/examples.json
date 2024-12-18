@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddBrokerCluster": [
+      {
+        "document": "添加共享集群信息",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddBrokerCluster\n<公共请求参数>\n\n{\n    \"ClusterName\": \"rmqbroker-cd-test-providre-haohua\",\n    \"Nameserver\": \"21.0.207.149:9876;11.141.103.146:9876\",\n    \"Room\": \"rmqnamesrv-cd-test-providre-haohua\",\n    \"AccessKey\": \"abc\",\n    \"SecretKey\": \"abc\",\n    \"Cpu\": 4,\n    \"Memory\": 8,\n    \"Disk\": 100,\n    \"Replicas\": 2\n}",
+        "output": "{\n    \"RequestId\": \"e246ff82-7392-45fd-a7eb-e143fd81f140\",\n    \"Response\": {\n        \"RequestId\": \"e246ff82-7392-45fd-a7eb-e143fd81f140\"\n    }\n}",
+        "title": "添加共享集群信息"
+      }
+    ],
     "AddUserPurchaseConfig": [
       {
         "document": "添加成功响应",
@@ -176,6 +184,14 @@
         "title": "删除主题"
       }
     ],
+    "DescribeBrokerClusterList": [
+      {
+        "document": "查询共享集群列表",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBrokerClusterList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"RequestId\": \"1d0f0115-d77a-47eb-8ca5-2b930b3977e7\",\n    \"Response\": {\n        \"ClusterList\": [\n            {\n                \"ClusterName\": \"rmqbroker-cd-room1\",\n                \"ComputeClusterCount\": 18,\n                \"Labels\": [],\n                \"Overselling\": 587,\n                \"Available\": true,\n                \"Room\": \"rmqnamsrv-cd-1\"\n            }\n        ],\n        \"RequestId\": \"1d0f0115-d77a-47eb-8ca5-2b930b3977e7\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询共享集群列表"
+      }
+    ],
     "DescribeBrokerStatus": [
       {
         "document": "CSM进行节点剔除或者加回时，查看任务是否完成",
@@ -190,6 +206,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQClusterAdminInfo\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"ClusterAdminInfos\": [\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmqbroker-cd-jazjroda\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmqbroker-cd-wdx43rwg\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmq5-room-cd-1\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rmqbroker-cd-room1\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"5.0\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            },\n            {\n                \"AccessKey\": \"ZlbUZYqqsvYaxlrZ\",\n                \"ClusterId\": \"rocketmq-stable\",\n                \"ClusterStatus\": \"RUNNING\",\n                \"ClusterVersion\": \"4.9.3\",\n                \"DeployEnv\": \"LEGACY\",\n                \"Room\": \"1\",\n                \"SecretKey\": \"ZlbUZYqqsvYaxlrZ\"\n            }\n        ],\n        \"RequestId\": \"df71123b-cf52-4ccd-b667-439159f22566\",\n        \"TotalCount\": 5\n    }\n}",
         "title": "标准请求"
+      }
+    ],
+    "DescribeClusterListOp": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Code\": 20000,\n    \"DataSources\": 0,\n    \"Message\": \"OK!\",\n    \"RequestId\": \"85bf89ac-aa06-49bc-9b5e-xxx\",\n    \"Response\": {\n        \"RequestId\": \"85bf89ac-aa06-49bc-9b5e-ed8a6ad11b04\"\n    },\n    \"TotalCount\": 49\n}",
+        "title": "1"
       }
     ],
     "DescribeConsumerGroup": [
@@ -336,6 +360,14 @@
         "title": "示例"
       }
     ],
+    "DescribeNodeListOp": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Code\": 20000,\n    \"DataSources\": 0,\n    \"Message\": \"OK!\",\n    \"RequestId\": \"eac156dd-56a6-4e13-8d97-c7577f924913\",\n    \"Response\": {\n        \"RequestId\": \"eac156dd-56a6-4e13-8d97-c7577f924913\"\n    },\n    \"TotalCount\": 77\n}",
+        "title": "1"
+      }
+    ],
     "DescribeProductSKUs": [
       {
         "document": "获取产品规格信息",
@@ -398,6 +430,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSourceClusterTopics\n<公共请求参数>\n\n{\n    \"TaskId\": \"215d3ec6-70c9\",\n    \"TopicList\": [\n        {\n            \"TopicName\": \"test_topic\",\n            \"TopicType\": \"Normal\",\n            \"QueueNum\": 3,\n            \"Remark\": \"测试导入\",\n            \"Namespace\": \"test_namespace\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c5d126b6-aeeb-40ad-81c0-a94abd43f157\"\n    }\n}",
         "title": "导入源集群主题列表"
+      }
+    ],
+    "ModifyBrokerCluster": [
+      {
+        "document": "修改共享集群标签",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBrokerCluster\n<公共请求参数>\n\n{\n    \"ClusterName\": \"rmqbroker-cd-room1\",\n    \"Labels\": [\n        {\n            \"Key\": \"k1\",\n            \"Value\": \"v1\"\n        }\n    ]\n}",
+        "output": "{\n    \"RequestId\": \"92bbe0de-c3de-44e3-9b10-2e5f6edba7e4\",\n    \"Response\": {\n        \"RequestId\": \"92bbe0de-c3de-44e3-9b10-2e5f6edba7e4\"\n    }\n}",
+        "title": "修改共享集群标签"
       }
     ],
     "ModifyBrokerNode": [

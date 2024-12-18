@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddBrokerCluster": {
+      "document": "内部使用，用于添加共享集群的信息",
+      "input": "AddBrokerClusterRequest",
+      "name": "添加共享存储集群信息",
+      "output": "AddBrokerClusterResponse",
+      "status": "online"
+    },
     "AddUserPurchaseConfig": {
       "document": "用于开启专享版购买白名单",
       "input": "AddUserPurchaseConfigRequest",
@@ -154,6 +161,13 @@
       "output": "DeleteTopicResponse",
       "status": "online"
     },
+    "DescribeBrokerClusterList": {
+      "document": "内部接口，用于查询共享集群",
+      "input": "DescribeBrokerClusterListRequest",
+      "name": "查询共享集群列表",
+      "output": "DescribeBrokerClusterListResponse",
+      "status": "online"
+    },
     "DescribeBrokerStatus": {
       "document": "CSM进行节点剔除或者加回时，查看任务状态",
       "input": "DescribeBrokerStatusRequest",
@@ -166,6 +180,13 @@
       "input": "DescribeClusterAdminInfoRequest",
       "name": "查询RocketMQClusterAdminInfo列表",
       "output": "DescribeClusterAdminInfoResponse",
+      "status": "online"
+    },
+    "DescribeClusterListOp": {
+      "document": "运营端查询集群列表",
+      "input": "DescribeClusterListOpRequest",
+      "name": "运营端查询集群列表",
+      "output": "DescribeClusterListOpResponse",
       "status": "online"
     },
     "DescribeConsumerGroup": {
@@ -294,6 +315,13 @@
       "output": "DescribeMQTTUserListResponse",
       "status": "online"
     },
+    "DescribeNodeListOp": {
+      "document": "运营端查询节点信息",
+      "input": "DescribeNodeListOpRequest",
+      "name": "运营端查询节点信息",
+      "output": "DescribeNodeListOpResponse",
+      "status": "online"
+    },
     "DescribeProductSKUs": {
       "document": "查询产品售卖规格，针对 RocketMQ 5.x 集群。",
       "input": "DescribeProductSKUsRequest",
@@ -348,6 +376,13 @@
       "input": "ImportSourceClusterTopicsRequest",
       "name": "导入 Topic 元数据",
       "output": "ImportSourceClusterTopicsResponse",
+      "status": "online"
+    },
+    "ModifyBrokerCluster": {
+      "document": "内部接口，修改共享集群的信息，如标签",
+      "input": "ModifyBrokerClusterRequest",
+      "name": "更新共享集群信息",
+      "output": "ModifyBrokerClusterResponse",
       "status": "online"
     },
     "ModifyBrokerNode": {
@@ -449,6 +484,123 @@
     "serviceShortName": "trocket"
   },
   "objects": {
+    "AddBrokerClusterRequest": {
+      "document": "AddBrokerCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "rmq-broker-gz-1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "nameserver的地址",
+          "example": "1.1.1.1:9876",
+          "member": "string",
+          "name": "Nameserver",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "nameserver的room名称",
+          "example": "rmqnamesrv-1",
+          "member": "string",
+          "name": "Room",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "broker的access key",
+          "example": "abc",
+          "member": "string",
+          "name": "AccessKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "broker的secret key",
+          "example": "cde",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单机节点的cpu数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Cpu",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单机内存大小GB",
+          "example": "8",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单机磁盘大小GB",
+          "example": "100",
+          "member": "uint64",
+          "name": "Disk",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群节点数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Replicas",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前登录者的英文id",
+          "example": "tigerweili",
+          "member": "string",
+          "name": "TencentUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群标签值",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddBrokerClusterResponse": {
+      "document": "AddBrokerCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddUserPurchaseConfigRequest": {
       "document": "AddUserPurchaseConfig请求参数结构体",
       "members": [
@@ -529,6 +681,72 @@
         }
       ],
       "type": "object"
+    },
+    "BrokerClusterItem": {
+      "document": "共享集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rmqbroker-gz-1",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "room名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rmqnamesrv-1",
+          "member": "string",
+          "name": "Room",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计算集群数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ComputeClusterCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超卖系数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Overselling",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Available",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ClusterAdminInfo": {
       "document": "ClusterAdminInfo出参数",
@@ -2038,6 +2256,71 @@
       ],
       "type": "object"
     },
+    "DescribeBrokerClusterListRequest": {
+      "document": "DescribeBrokerClusterList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前登录者的英文id",
+          "example": "tigerweili",
+          "member": "string",
+          "name": "TencentUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBrokerClusterListResponse": {
+      "document": "DescribeBrokerClusterList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群列表",
+          "example": "无",
+          "member": "BrokerClusterItem",
+          "name": "ClusterList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBrokerStatusRequest": {
       "document": "DescribeBrokerStatus请求参数结构体",
       "members": [
@@ -2131,6 +2414,114 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterListOpRequest": {
+      "document": "DescribeClusterListOp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前登录者的英文id",
+          "example": "tigerweili",
+          "member": "string",
+          "name": "TencentUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型列表",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含已删除数据",
+          "example": "无",
+          "member": "bool",
+          "name": "HasDeletedData",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "room名",
+          "example": "无",
+          "member": "string",
+          "name": "RoomName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "Broker/NameServer/TraceBroker/Proxy",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署类型",
+          "example": "Cvm/K8s",
+          "member": "string",
+          "name": "DeployType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享or独占",
+          "example": "无",
+          "member": "string",
+          "name": "ShareType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterListOpResponse": {
+      "document": "DescribeClusterListOp返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3933,6 +4324,60 @@
       ],
       "type": "object"
     },
+    "DescribeNodeListOpRequest": {
+      "document": "DescribeNodeListOp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库实体主键id",
+          "example": "11111",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前登录者的英文id",
+          "example": "tigerweili",
+          "member": "string",
+          "name": "TencentUserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeListOpResponse": {
+      "document": "DescribeNodeListOp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductSKUsRequest": {
       "document": "DescribeProductSKUs请求参数结构体",
       "members": [],
@@ -5093,6 +5538,34 @@
       ],
       "usage": "both"
     },
+    "Label": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key值",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签value值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MQTTClientSubscription": {
       "document": "MQTT 订阅关系",
       "members": [
@@ -5651,6 +6124,60 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyBrokerClusterRequest": {
+      "document": "ModifyBrokerCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "rmqbroker-gz-1",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前登录者的英文id",
+          "example": "tigerweili",
+          "member": "string",
+          "name": "TencentUserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群标签列表",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群是否可用",
+          "example": "false",
+          "member": "bool",
+          "name": "Available",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBrokerClusterResponse": {
+      "document": "ModifyBrokerCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyBrokerNodeRequest": {
       "document": "ModifyBrokerNode请求参数结构体",

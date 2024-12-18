@@ -17,15 +17,15 @@ Output:
     "Response": {
         "PriceList": [
             {
-                "Tld": "abc",
+                "Title": "com域名新注",
+                "Tld": ".com",
+                "Operation": "new",
                 "Year": 1,
-                "Price": 0,
-                "RealPrice": 0,
-                "Operation": "abc",
-                "Title": "abc"
+                "Price": 12.99,
+                "RealPrice": 12.99
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "dewer-dweq-pfwe-fpwer"
     }
 }
 ```
@@ -45,15 +45,15 @@ Output:
     "Response": {
         "PriceList": [
             {
-                "Tld": "abc",
+                "Title": "com域名新注",
+                "Tld": ".com",
+                "Operation": "new",
                 "Year": 1,
-                "Price": 0,
-                "RealPrice": 0,
-                "Operation": "abc",
-                "Title": "abc"
+                "Price": 12.99,
+                "RealPrice": 12.99
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "dewer-dweq-pfwe-fpwer"
     }
 }
 ```

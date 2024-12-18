@@ -12,14 +12,16 @@ tccli wedata CreateHiveTableByDDL --cli-unfold-argument  \
     --Incharge 231232 \
     --Privilege 0 \
     --ProjectId 124537 \
-    --Type HIVE
+    --Type HIVE \
+    --Async True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "true",
+        "Data": "tablename",
+        "TaskId": "25",
         "RequestId": "as1cs2c123asyi23bh213cc"
     }
 }

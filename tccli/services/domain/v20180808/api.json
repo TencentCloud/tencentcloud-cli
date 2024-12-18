@@ -1999,6 +1999,7 @@
           "example": "domain.com",
           "member": "string",
           "name": "DomainName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2008,15 +2009,17 @@
           "example": "1",
           "member": "bool",
           "name": "Available",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不能注册原因",
-          "example": "\"\"",
+          "example": "The suffix currently does not support Chinese domains. Select another domain",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2026,6 +2029,7 @@
           "example": "false",
           "member": "bool",
           "name": "Premium",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2035,6 +2039,7 @@
           "example": "35",
           "member": "float",
           "name": "Price",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2044,15 +2049,17 @@
           "example": "false",
           "member": "bool",
           "name": "BlackWord",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "溢价词描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "standard",
           "member": "string",
           "name": "Describe",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2062,6 +2069,7 @@
           "example": "1",
           "member": "float",
           "name": "FeeRenew",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2071,6 +2079,7 @@
           "example": "10",
           "member": "float",
           "name": "RealPrice",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2080,6 +2089,7 @@
           "example": "0",
           "member": "float",
           "name": "FeeTransfer",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -2089,6 +2099,7 @@
           "example": "0",
           "member": "float",
           "name": "FeeRestore",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2098,15 +2109,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不能注册原因，中文",
-          "example": "xx",
+          "example": "该后缀暂不支持中文域名注册，请选择其他域名",
           "member": "string",
           "name": "ReasonZh",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2116,6 +2129,7 @@
           "example": "1001",
           "member": "string",
           "name": "ResCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2750,7 +2764,7 @@
         {
           "disabled": false,
           "document": "验证码",
-          "example": "123456",
+          "example": "1024",
           "member": "string",
           "name": "VerifyCode",
           "required": true,
@@ -2828,7 +2842,7 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "无",
+          "example": "temp-1204dwer",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -3085,7 +3099,7 @@
         {
           "disabled": false,
           "document": "信息模板唯一ID",
-          "example": "xx",
+          "example": "temp-abdeeww",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -3310,7 +3324,7 @@
         {
           "disabled": false,
           "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"UpdatedOn\": \"2024-12-18 12:21:16\",\"BigDealId\": \"\",\"TransferDnsResult\": null,\"Action\": \"batch_modify_domain_dns1\",\"Status\": \"failed\",\"Domain\": \"***.com\",\"ReasonZh\": \"域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】\",\"CreatedOn\": \"2024-12-18 12:21:12\",\"Reason\": \"域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】\",\"PayStatus\": 0,\"Id\": 1001}]",
           "member": "DomainBatchDetailSet",
           "name": "DomainBatchDetailSet",
           "output_required": true,
@@ -4128,7 +4142,7 @@
         {
           "disabled": false,
           "document": "自定义DNS Host 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"IpSet\": [\"2.2.2.2\"],\"DnsName\": \"a1.dns.dns\"}]",
           "member": "CustomDnsHost",
           "name": "DnsHostSet",
           "output_required": true,
@@ -4175,7 +4189,7 @@
         {
           "disabled": false,
           "document": "域名信息",
-          "example": "[]",
+          "example": "{\"DomainId\": \"domain-xxxxx\",\"DomainName\": \"tencent.com\",\"NameServer\": [\"f1g1ns1.dnspod.net\", \"f1g1ns2.dnspod.net\"],\"RegistrarType\": \"epp\",\"DomainStatus\": [\"ok\"],\"BuyStatus\": \"ok\",\"RealNameAuditUnpassReason\": \"\",\"DomainNameAuditUnpassReason\": \"\",\"RealNameAuditStatus\": \"Approved\",\"ExpirationDate\": \"2020-11-14\",\"CreationDate\": \"2019-11-14\",\"DomainNameAuditStatus\": \"Approved\",\"LockTransfer\": true,\"LockEndTime\": \"2021-12-28 18:00:00\"}",
           "member": "DomainBaseInfo",
           "name": "DomainInfo",
           "output_required": true,
@@ -4185,7 +4199,7 @@
         {
           "disabled": false,
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1111",
+          "example": "100**328",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -4400,7 +4414,7 @@
         {
           "disabled": false,
           "document": "域名信息",
-          "example": "[]",
+          "example": "{\"RegistrantType\": \"I\", \"DomainId\": \"domain-**q\", \"OrganizationName\": \"**ng\", \"ExpirationDate\": \"2025-03-19\", \"DomainName\": \"*g.top\", \"RegistrarType\": \"epp\", \"LockEndTime\": \"\", \"OrganizationNameCN\": \"*铭\", \"RegistrantName\": \"**ng\", \"DomainStatus\": [\"clientTransferProhibited\", \"clientUpdateProhibited\"], \"BuyStatus\": \"ok\", \"RegistrantNameCN\": \"*铭\", \"RealNameAuditStatus\": \"Approved\", \"DomainNameAuditStatus\": \"Approved\", \"LockTransfer\": false, \"NameServer\": [\"expire01.dnspod.net\", \"expire02.dnspod.net\"], \"CreationDate\": \"2022-03-19\", \"RealNameAuditUnpassReason\": \"\", \"DomainNameAuditUnpassReason\": \"\"}",
           "member": "DomainSimpleInfo",
           "name": "DomainInfo",
           "output_required": true,
@@ -4410,7 +4424,7 @@
         {
           "disabled": false,
           "document": "账号ID",
-          "example": "123456",
+          "example": "100**328",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -4773,7 +4787,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "1",
+          "example": "domain-dweorteq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -4788,7 +4802,7 @@
         {
           "disabled": false,
           "document": "域名信息",
-          "example": "无",
+          "example": "{\"AutoRenew\": 1,\"CreationDate\": \"2024-11-21\",\"DnsStatus\": 1,\"DomainId\": \"domain-***8vq\",\"DomainName\": \"**j.com\",\"DomainStatus\": [\"ok\"],\"Status\": \"ok\",\"ExpirationDate\": \"2025-11-21\",\"ExpireMessage\": 1,\"IsPremium\": false,\"Dns\": [\"a.dnspod.com\", \"b.dnspod.com\", \"c.dnspod.com\"],\"CanRenewYears\": 9,\"RegistrarType\": \"aceville\",\"Uin\": \"***347\",\"TemplateId\": \"tmpl-****f\",\"SupportDnssec\": false,\"WhoisPrivacy\": 0,\"ModifyStatus\": \"\",\"DnsModifyStatus\": \"\",\"ContactInfo\": {\"City\": \"***e\",\"Country\": \"US\",\"Email\": \"***5@comcast.net\",\"OrganizationName\": \"***\",\"Province\": \"IN\",\"RegistrantName\": \"**ny\",\"RegistrantType\": \"E\",\"Street\": \"** Ct\",\"Telephone\": \"+1.61**\",\"ZipCode\": \"**02\",\"FirstName\": \"**h\",\"LastName\": \"**ny\",\"CompanyName\": \"**re\"}}",
           "member": "IntlDomainInfo",
           "name": "DomainInfo",
           "output_required": true,
@@ -4917,7 +4931,7 @@
         {
           "disabled": false,
           "document": "模板列表信息",
-          "example": "{}",
+          "example": "[{\"RegistrantContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"TechnicalContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"AdminContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"BillingContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"CreatedOn\": \"2024-11-05 07:17:12\",\"TemplateId\": \"tmpl-***j\",\"TemplateType\": \"I\",\"UpdatedOn\": \"2024-11-05 07:17:12\",\"Uin\": \"20***97\",\"IsDefault\": 0}]",
           "member": "IntlTemplate",
           "name": "TemplateSet",
           "output_required": true,
@@ -4927,7 +4941,7 @@
         {
           "disabled": false,
           "document": "总数量",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -4949,7 +4963,7 @@
         {
           "disabled": false,
           "document": "信息模板唯一ID",
-          "example": "xx",
+          "example": "temp-dwerfwqw",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -4964,7 +4978,7 @@
         {
           "disabled": false,
           "document": "模板详情",
-          "example": "无",
+          "example": "{\"RegistrantContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"TechnicalContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"AdminContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"BillingContact\": {\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"},\"CreatedOn\": \"2024-11-05 07:17:12\",\"TemplateId\": \"tmpl-***j\",\"TemplateType\": \"I\",\"UpdatedOn\": \"2024-11-05 07:17:12\",\"Uin\": \"20***97\",\"IsDefault\": 0}",
           "member": "IntlTemplateInfo",
           "name": "Template",
           "output_required": true,
@@ -5782,7 +5796,7 @@
         {
           "disabled": false,
           "document": "模板详细信息列表。",
-          "example": "[]",
+          "example": "[{\"AuditReason\": \"\",\"ContactInfo\": {\"Province\": \"hu nan sheng\",\"RegistrantType\": \"I\",\"OrganizationName\": \"org name\",\"OrganizationNameCN\": \"企业名称\",\"Country\": \"CN\",\"RegistrantName\": \"shi ming name\",\"ZipCode\": \"425000\",\"Telephone\": \"155*********\",\"City\": \"ce shi\",\"RegistrantNameCN\": \"实名人\",\"StreetCN\": \"咸嘉湖街道\",\"Street\": \"xian jia hu jie dao\",\"ProvinceCN\": \"湖南省\",\"CityCN\": \"长沙市\",\"CountryCN\": \"中国\",\"Email\": \"**d@dnspod.com\"},\"UpdatedOn\": \"2020-07-28 13:33:55\",\"AuditStatus\": \"InAudit\",\"IsBlack\": false,\"CreatedOn\": \"2020-07-28 12:50:23\",\"UserUin\": \"12334********\",\"IsDefault\": \"no\",\"TemplateId\": \"tmpl-dgmgwpe2\",\"InvalidReason\": \"\",\"IsValidTemplate\": 1,\"CertificateInfo\": {\"CertificateType\": \"SFZ\",\"CertificateCode\": \"12345679\",\"ImgUrl\": \"https://image.com/******\",\"OriginImgUrl\": \"https://tencentyun.com/******\",\"RegistrantCertificateCode\": \"12345679\",\"RegistrantCertificateType\": \"SFZ\",\"RegistrantImgUrl\": \"https://image.com/******\"}}]",
           "member": "TemplateInfo",
           "name": "TemplateSet",
           "output_required": true,
@@ -5803,8 +5817,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板ID",
-          "example": "",
+          "document": "模板ID(模板列表接口可获取)",
+          "example": "tmpl-itxxxxxx",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -5819,9 +5833,10 @@
         {
           "disabled": false,
           "document": "模板信息",
-          "example": "",
+          "example": "{\"AuditReason\": \"\",\"ContactInfo\": {\"Province\": \"hu nan sheng\",\"RegistrantType\": \"I\",\"OrganizationName\": \"ce shi\",\"OrganizationNameCN\": \"测试\",\"Country\": \"CN\",\"RegistrantName\": \"ce shi\",\"ZipCode\": \"425000\",\"Telephone\": \"155*********\",\"City\": \"ce shi\",\"RegistrantNameCN\": \"测试\",\"StreetCN\": \"咸嘉湖街道\",\"Street\": \"xian jia hu jie dao\",\"ProvinceCN\": \"湖南省\",\"CityCN\": \"长沙市\",\"CountryCN\": \"中国\",\"Email\": \"dnspod@dnspod.com\"},\"UpdatedOn\": \"2020-07-28 13:33:55\",\"AuditStatus\": \"InAudit\",\"CreatedOn\": \"2020-07-28 12:50:23\",\"UserUin\": \"12334********\",\"IsDefault\": \"no\",\"TemplateId\": \"tmpl-dgxxxxxx\",\"InvalidReason\": \"\",\"IsValidTemplate\": 1,\"CertificateInfo\": {\"CertificateType\": \"SFZ\",\"CertificateCode\": \"12345679\",\"ImgUrl\": \"https://tencentyun.com/******\"}}",
           "member": "TemplateInfo",
           "name": "Template",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7378,7 +7393,7 @@
         {
           "disabled": false,
           "document": "转入账户的uin。",
-          "example": "123456",
+          "example": "1000**238",
           "member": "string",
           "name": "NewOwnerUin",
           "required": true,
@@ -7396,7 +7411,7 @@
         {
           "disabled": false,
           "document": "转入账户的appid。",
-          "example": "123456",
+          "example": "10023322",
           "member": "string",
           "name": "NewOwnerAppId",
           "required": false,
@@ -7414,7 +7429,7 @@
           "example": "425",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7433,7 +7448,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "abc",
+          "example": "domain-222222q",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -7442,7 +7457,7 @@
         {
           "disabled": false,
           "document": "DNS Host",
-          "example": "abc",
+          "example": "ns1.dns.net",
           "member": "string",
           "name": "DnsName",
           "required": true,
@@ -9162,7 +9177,7 @@
           "example": "54",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9480,7 +9495,7 @@
         {
           "disabled": false,
           "document": "资质照片地址。",
-          "example": "xxxxx",
+          "example": "http://cos.url/image.jpg",
           "member": "string",
           "name": "AccessUrl",
           "output_required": true,
