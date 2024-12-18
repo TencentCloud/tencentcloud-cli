@@ -1199,16 +1199,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要过滤的维度信息：\nservice_metric视图支持：service.name（服务名）、span.kind（客户端/服务端视角）为维度进行过滤，service.name（服务名）必填。\nspan.kind:\n\tserver:服务端视角\n\tclient:客户端视角\n默认为服务端视角进行查询。\nruntime_metric视图支持：service.name（服务名）维度进行过滤，service.name（服务名）必填。\nsql_metric视图支持：service.name（服务名）、db.instance（数据库名称）、db.ip（数据库实例ip）维度进行过滤，查询service_slow_sql_count（慢sql）指标时service.name必填，查询sql_duration_avg（耗时）指标时db.instance（数据库名称）必填。",
-          "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
-          "member": "GeneralFilter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "需要查询的指标，不可自定义输入。\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。",
+          "document": "需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
           "example": "\"service_request_count\"、“service_duration”",
           "member": "string",
           "name": "Metrics",
@@ -1226,7 +1217,7 @@
         },
         {
           "disabled": false,
-          "document": "视图名称，不可自定义输入。支持：service_metric、runtime_metric、sql_metric。",
+          "document": "视图名称，不可自定义输入。[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
           "example": "service_metric",
           "member": "string",
           "name": "ViewName",
@@ -1235,7 +1226,16 @@
         },
         {
           "disabled": false,
-          "document": "聚合维度：\nservice_metric视图支持：service.name（服务名）、span.kind （客户端/服务端视角）维度进行聚合，service.name（服务名）必填。\nruntime_metric视图支持：service.name（服务名）维度进行聚合，service.name（服务名）必填。\nsql_metric视图支持：service.name（服务名）、db.statement（sql语句）维度进行聚合，查询service_slow_sql_count（慢sql）时service.name（服务名）必填，查询sql_duration_avg（耗时）指标时service.name（服务名）、db.statement（sql语句）必填。",
+          "document": "要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
+          "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
+          "member": "GeneralFilter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
           "example": "\"service.name\"、\"span.kind\"",
           "member": "string",
           "name": "GroupBy",
@@ -1271,7 +1271,7 @@
         },
         {
           "disabled": false,
-          "document": "对查询指标进行排序：\nservice_metric视图支持：service_request_count（总请求）、service_duration（平均响应时间）、service_error_req_rate（平均错误率）、service_slow_call_count（慢调用）、service_error_request_count（异常数量）。\nruntime_metric视图支持：service_gc_full_count（Full GC）。\nsql_metric视图支持：service_slow_sql_count（慢sql）、sql_duration_avg（耗时）。\nasc:对查询指标进行升序排序\ndesc：对查询指标进行降序排序",
+          "document": "对查询指标进行排序：\nKey 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)\nValue 填写排序方式：     \n- asc:对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
           "example": "\"OrderBy\": { \t\"Key\": \"sql_duration_avg\",         \"Value\": \"desc\"",
           "member": "OrderBy",
           "name": "OrderBy",
@@ -1296,10 +1296,10 @@
         {
           "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{     \"Response\": {         \"Records\": [             {                 \"Tags\": [],                 \"MetricName\": \"sql_duration_avg\",                 \"MetricNameCN\": \"平均响应时间\",                 \"TimeSerial\": [                     1734407820,                     1734407880,                     1734407940,                     1734408000,                     1734408060,                     1734408120,                     1734408180,                     1734408240,                     1734408300,                     1734408360,                     1734408420,                     1734408480,                     1734408540,                     1734408600,                     1734408660,                     1734408720,                     1734408780,                     1734408840,                     1734408900,                     1734408960,                     1734409020,                     1734409080,                     1734409140,                     1734409200,                     1734409260,                     1734409320,                     1734409380,                     1734409440,                     1734409500,                     1734409560,                     1734409620,                     1734409680,                     1734409740,                     1734409800,                     1734409860,                     1734409920,                     1734409980,                     1734410040,                     1734410100,                     1734410160,                     1734410220,                     1734410280,                     1734410340,                     1734410400,                     1734410460,                     1734410520,                     1734410580,                     1734410640,                     1734410700,                     1734410760,                     1734410820,                     1734410880,                     1734410940,                     1734411000,                     1734411060,                     1734411120,                     1734411180,                     1734411240,                     1734411300,                     1734411360                 ],                 \"DataSerial\": [                     135728.648236258,                     0.4060175286658243,                     0.3906675029805307,                     118792.06594650316,                     0.4067952115687377,                     0.41769455288609775,                     0.41074237375891975,                     0.40921561817335866,                     0.41119494805273527,                     135649.09198159442,                     0.4107937310707512,                     0.41151921192748936,                     0.4117117637368341,                     0.4152493163439583,                     0.5001134962935645,                     0.41283469768714603,                     0.3979470199363206,                     0.4083188880940849,                     0.40551133267100636,                     0.40927287475939206,                     0.41014323602968256,                     0.4012277709628799,                     0.40407118324057745,                     0.40985120011494,                     0.4071479930279269,                     0.3866005448018421,                     0.40619437076582554,                     0.40142698225557255,                     0.40432155746295745,                     0.4120485754463827,                     0.40451016228819175,                     135425.90797938255,                     135542.49266812875,                     0.40168924095565,                     0.4070559973437187,                     0.3987184602563491,                     0.4076715755099571,                     0.4026033027713935,                     118990.898319586,                     0.405708522267682,                     0.404107562330523,                     0.40059895515109356,                     0.4049696567832813,                     0.40152292066215045,                     0.3943229870897469,                     0.39939697181964084,                     0.42871168611138843,                     0.39514465476451965,                     0.39055195114837243,                     0.39710768149694586,                     0.40585406731762813,                     0.41346395100750705,                     0.4089005831960684,                     0.4018122312399444,                     0.3928633017418557,                     0.41502474452429317,                     0.4065864888888889,                     0.4112395803749857,                     0.4158375517725035,                     null                 ]             }         ],         \"RequestId\": \"test-test-test\"     } }",
           "member": "Line",
           "name": "Records",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

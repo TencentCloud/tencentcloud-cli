@@ -22,7 +22,7 @@ Output:
                 "CompanyAddress": "深南大道",
                 "CompanyPhone": "2132323",
                 "IdType": "",
-                "IdNumber": "xxx"
+                "IdNumber": ""
             }
         ],
         "RequestId": "5779b652-9c64-45b3-a6f4-641db7376a2e"

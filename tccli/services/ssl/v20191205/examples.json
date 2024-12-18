@@ -198,7 +198,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompanies\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Companies\": [\n            {\n                \"CompanyId\": 122,\n                \"CompanyName\": \"腾讯\",\n                \"CompanyCountry\": \"中国\",\n                \"CompanyProvince\": \"广东\",\n                \"CompanyCity\": \"深圳\",\n                \"CompanyAddress\": \"深南大道\",\n                \"CompanyPhone\": \"2132323\",\n                \"IdType\": \"\",\n                \"IdNumber\": \"xxx\"\n            }\n        ],\n        \"RequestId\": \"5779b652-9c64-45b3-a6f4-641db7376a2e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Companies\": [\n            {\n                \"CompanyId\": 122,\n                \"CompanyName\": \"腾讯\",\n                \"CompanyCountry\": \"中国\",\n                \"CompanyProvince\": \"广东\",\n                \"CompanyCity\": \"深圳\",\n                \"CompanyAddress\": \"深南大道\",\n                \"CompanyPhone\": \"2132323\",\n                \"IdType\": \"\",\n                \"IdNumber\": \"\"\n            }\n        ],\n        \"RequestId\": \"5779b652-9c64-45b3-a6f4-641db7376a2e\"\n    }\n}",
         "title": "查询公司列表"
       }
     ],

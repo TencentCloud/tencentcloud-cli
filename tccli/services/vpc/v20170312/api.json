@@ -10650,7 +10650,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "无",
+          "example": "{'Period':1, 'RenewFlag': 'NOTIFY_AND_AUTO_RENEW'}",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -10677,7 +10677,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10698,6 +10698,15 @@
           "example": "5",
           "member": "uint64",
           "name": "MaxConnection",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "BGP ASN。",
+          "example": "2",
+          "member": "uint64",
+          "name": "BgpAsn",
           "required": false,
           "type": "int"
         }
@@ -35744,7 +35753,7 @@
         {
           "disabled": false,
           "document": "网关带宽配额信息。",
-          "example": "null",
+          "example": "[{'Bandwidth': 5, 'Cname': '微小型', 'Name': 'cdmini'}, {'Bandwidth': 10, 'Cname': '小型', 'Name': 'cdsmall'}, {'Bandwidth': 20, 'Cname': '中型', 'Name': 'cdmiddle'}, {'Bandwidth': 50, 'Cname': '大型', 'Name': 'cdlarge'}, {'Bandwidth': 100, 'Cname': '超大型', 'Name': 'cdsuperLarge'}]",
           "member": "VpnGatewayQuota",
           "name": "VpnGatewayQuotaSet",
           "output_required": true,
@@ -35788,6 +35797,16 @@
           "member": "uint64",
           "name": "MaxConnection",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Bgp ASN",
+          "example": "61413",
+          "member": "uint64",
+          "name": "BgpAsn",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }

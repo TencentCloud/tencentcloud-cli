@@ -34,7 +34,7 @@ Output:
                 "Action": "ACCEPT",
                 "AppType": "HTTP(80)",
                 "CidrBlock": "0.0.0.0/0",
-                "FirewallRuleDescription": "test",
+                "FirewallRuleDescription": "放通TCP端口(80)",
                 "Port": "80",
                 "Protocol": "TCP"
             },

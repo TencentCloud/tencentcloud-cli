@@ -91,7 +91,7 @@
     "DeleteBidding": [
       {
         "document": "删除记录",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBidding\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBidding\n<公共请求参数>\n\n{\n    \"BusinessID\": \"*****2561\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5ae6a11-ad75-4196-8176-9d72bc287eda\"\n    }\n}",
         "title": "删除记录"
       }
@@ -140,7 +140,7 @@
       {
         "document": "",
         "input": "https://domain.tencentcloudapi.com/?Action=DescribeBatchOperationLogDetails\n&Offset=0\n&Limit=20\n&LogId=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"DomainBatchDetailSet\": [\n            {\n                \"Id\": 0,\n                \"Action\": \"abc\",\n                \"Domain\": \"abc\",\n                \"Status\": \"abc\",\n                \"Reason\": \"abc\",\n                \"CreatedOn\": \"abc\",\n                \"UpdatedOn\": \"abc\",\n                \"BigDealId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"f376d0e6-f064-1234-b27f-a8ae3b054dfa\",\n        \"DomainBatchDetailSet\": [\n            {\n                \"UpdatedOn\": \"2024-12-18 12:21:16\",\n                \"BigDealId\": \"\",\n                \"Action\": \"batch_modify_domain_dns1\",\n                \"Status\": \"failed\",\n                \"Domain\": \"***.com\",\n                \"CreatedOn\": \"2024-12-18 12:21:12\",\n                \"Reason\": \"域名已开启【禁止更新锁】保护域名信息安全，不能修改信息。如需操作，请先关闭【禁止更新锁】\",\n                \"Id\": 1001\n            }\n        ]\n    }\n}",
         "title": "批量操作日志详情"
       }
     ],
@@ -155,7 +155,7 @@
     "DescribeBiddingAppointDetail": [
       {
         "document": "我预定的域名-预约详情",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"***561\"\n}",
         "output": "{\n    \"Response\": {\n        \"AppointBondPrice\": 70,\n        \"AppointEndTime\": \"2023-10-28 09:53:48\",\n        \"AppointNum\": 1,\n        \"AppointPrice\": 105,\n        \"AppointStartTime\": \"2023-10-18 09:53:48\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"e0d60073-3fbb-4216-ba20-7ccad80d030a\",\n        \"Status\": 7\n    }\n}",
         "title": "我预定的域名-预约详情"
       }
@@ -164,15 +164,15 @@
       {
         "document": "我的预约列表",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingAppointList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"AppointList\": [\n            {\n                \"AppointBondPrice\": 70,\n                \"AppointEndTime\": \"2023-10-28T09:53:48+08:00\",\n                \"AppointNum\": 1,\n                \"AppointPrice\": 105,\n                \"BusinessID\": \"xxxx\",\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"02f51803-507c-40ad-b26a-9a0178fa7ffc\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppointList\": [\n            {\n                \"AppointBondPrice\": 70,\n                \"AppointEndTime\": \"2023-10-28T09:53:48+08:00\",\n                \"AppointNum\": 1,\n                \"AppointPrice\": 105,\n                \"BusinessID\": \"***561\",\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"02f51803-507c-40ad-b26a-9a0178fa7ffc\",\n        \"Total\": 1\n    }\n}",
         "title": "我的预约列表"
       }
     ],
     "DescribeBiddingDetail": [
       {
         "document": "我竞价的域名-竞价详情",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BiddingBondPrice\": 80,\n        \"BiddingBondRefund\": \"no\",\n        \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n        \"BiddingFlag\": 1,\n        \"BiddingNum\": 1,\n        \"BiddingPrice\": 150,\n        \"BiddingStartTime\": \"2023-10-28 09:53:48\",\n        \"CurrentNickname\": \"feng\",\n        \"CurrentPrice\": 120,\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"5fdc5b55-514b-42f8-85a3-e269db61f752\",\n        \"Status\": 2\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"***561\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BiddingBondPrice\": 80,\n        \"BiddingBondRefund\": \"no\",\n        \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n        \"BiddingFlag\": 1,\n        \"BiddingNum\": 1,\n        \"BiddingPrice\": 150,\n        \"BiddingStartTime\": \"2023-10-28 09:53:48\",\n        \"CurrentNickname\": \"feng\",\n        \"CurrentPrice\": 120,\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"***16.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"5fdc5b55-514b-42f8-85a3-e269db61f752\",\n        \"Status\": 2\n    }\n}",
         "title": "我竞价的域名-竞价详情"
       }
     ],
@@ -180,15 +180,15 @@
       {
         "document": "我的竞价列表",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"BiddingList\": [\n            {\n                \"BiddingBondPrice\": 0,\n                \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n                \"BiddingFlag\": 0,\n                \"BiddingNum\": 1,\n                \"BiddingPrice\": 0,\n                \"BusinessID\": \"xxxx\",\n                \"CurrentNickname\": \"feng\",\n                \"CurrentPrice\": 120,\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 7\n            },\n            {\n                \"BiddingBondPrice\": 80,\n                \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n                \"BiddingFlag\": 1,\n                \"BiddingNum\": 1,\n                \"BiddingPrice\": 150,\n                \"BusinessID\": \"xxxx\",\n                \"CurrentNickname\": \"feng\",\n                \"CurrentPrice\": 120,\n                \"Domain\": \"sasdfzcccc2216.com\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"560e00d9-ddf1-4d4b-a3d8-461eb8c8e40c\",\n        \"Total\": 2\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BiddingList\": [\n            {\n                \"BiddingBondPrice\": 0,\n                \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n                \"BiddingFlag\": 0,\n                \"BiddingNum\": 1,\n                \"BiddingPrice\": 0,\n                \"BusinessID\": \"***2561\",\n                \"CurrentNickname\": \"feng\",\n                \"CurrentPrice\": 120,\n                \"Domain\": \"s***16.com\",\n                \"Status\": 7\n            },\n            {\n                \"BiddingBondPrice\": 80,\n                \"BiddingEndTime\": \"2023-11-04 09:53:48\",\n                \"BiddingFlag\": 1,\n                \"BiddingNum\": 1,\n                \"BiddingPrice\": 150,\n                \"BusinessID\": \"***561\",\n                \"CurrentNickname\": \"feng\",\n                \"CurrentPrice\": 120,\n                \"Domain\": \"***16.com\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"560e00d9-ddf1-4d4b-a3d8-461eb8c8e40c\",\n        \"Total\": 2\n    }\n}",
         "title": "我的竞价列表"
       }
     ],
     "DescribeBiddingSuccessfulDetail": [
       {
         "document": "我得标的域名-得标详情",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"xxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BiddingBondPrice\": 80,\n        \"BiddingBondRefund\": \"no\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"sasdfzcccc2216.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"PayEndTime\": \"2023-11-07 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"7a179528-6d80-495b-8e6c-14b935eccec9\",\n        \"Status\": 5,\n        \"SuccessfulPrice\": 200,\n        \"SuccessfulTime\": \"2023-10-25 16:00:00\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBiddingSuccessfulDetail\n<公共请求参数>\n\n{\n    \"BusinessID\": \"***2561\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BiddingBondPrice\": 80,\n        \"BiddingBondRefund\": \"no\",\n        \"DeleteTime\": \"2023-11-28 09:53:48\",\n        \"Domain\": \"***16.com\",\n        \"ExpireTime\": \"2023-09-28 09:53:48\",\n        \"PayEndTime\": \"2023-11-07 09:53:48\",\n        \"RegTime\": \"2022-09-28 09:53:48\",\n        \"RequestId\": \"7a179528-6d80-495b-8e6c-14b935eccec9\",\n        \"Status\": 5,\n        \"SuccessfulPrice\": 200,\n        \"SuccessfulTime\": \"2023-10-25 16:00:00\"\n    }\n}",
         "title": "我得标的域名-得标详情"
       }
     ],
@@ -204,7 +204,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomDnsHostSet\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esysdasdgq\",\n    \"Offset\": 0,\n    \"Limit\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"bd4fc5332-23a2-49bd-8cab-48cfe5963651\",\n        \"DnsHostSet\": [\n            {\n                \"IpSet\": [\n                    \"2.2.2.2\"\n                ],\n                \"DnsName\": \"bbbb\"\n            },\n            {\n                \"IpSet\": [\n                    \"8.8.9.9\",\n                    \"3.3.3.3\"\n                ],\n                \"DnsName\": \"aaa\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"bd4fc5332-23a2-49bd-8cab-48cfe5963651\",\n        \"DnsHostSet\": [\n            {\n                \"IpSet\": [\n                    \"2.2.2.2\"\n                ],\n                \"DnsName\": \"a1.dns.dns\"\n            },\n            {\n                \"IpSet\": [\n                    \"8.8.9.9\",\n                    \"3.3.3.3\"\n                ],\n                \"DnsName\": \"a2.dns.dns\"\n            }\n        ]\n    }\n}",
         "title": "查询自定义DNS Host列表"
       }
     ],
@@ -212,7 +212,7 @@
       {
         "document": "",
         "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainBaseInfo\n&Domain=域名\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"DomainId\": \"domain-xxxxx\",\n            \"DomainName\": \"tencent.com\",\n            \"NameServer\": [\n                \"f1g1ns1.dnspod.net\",\n                \"f1g1ns2.dnspod.net\"\n            ],\n            \"RegistrarType\": \"epp\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"ExpirationDate\": \"2020-11-14\",\n            \"CreationDate\": \"2019-11-14\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": true,\n            \"LockEndTime\": \"2021-12-28 18:00:00\"\n        },\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\",\n        \"Uin\": \"1111\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"DomainId\": \"domain-xxxxx\",\n            \"DomainName\": \"tencent.com\",\n            \"NameServer\": [\n                \"f1g1ns1.dnspod.net\",\n                \"f1g1ns2.dnspod.net\"\n            ],\n            \"RegistrarType\": \"epp\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"ExpirationDate\": \"2020-11-14\",\n            \"CreationDate\": \"2019-11-14\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": true,\n            \"LockEndTime\": \"2021-12-28 18:00:00\"\n        },\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\",\n        \"Uin\": \"100**328\"\n    }\n}",
         "title": "获取域名基础信息"
       }
     ],
@@ -236,15 +236,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainSimpleInfo\n<公共请求参数>\n\n{\n    \"DomainName\": \"test.cn\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"RegistrantType\": \"E\",\n            \"DomainId\": \"domain-1234abcd\",\n            \"OrganizationName\": \"tencent cloud\",\n            \"ExpirationDate\": \"2018-08-08\",\n            \"DomainName\": \"cloud.tencent.com\",\n            \"RegistrarType\": \"qcloud\",\n            \"LockEndTime\": \"\",\n            \"OrganizationNameCN\": \"腾讯云\",\n            \"RegistrantName\": \"tencent\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RegistrantNameCN\": \"腾讯云\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": false,\n            \"NameServer\": [\n                \"ns2.qq.com\",\n                \"ns4.qq.com\",\n                \"ns3.qq.com\",\n                \"ns1.qq.com\"\n            ],\n            \"CreationDate\": \"2018-08-08\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\"\n        },\n        \"RequestId\": \"88888888-8888-8888-8888-888888888888\",\n        \"Uin\": \"100000000001\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DomainInfo\": {\n            \"RegistrantType\": \"E\",\n            \"DomainId\": \"domain-1234abcd\",\n            \"OrganizationName\": \"tencent cloud\",\n            \"ExpirationDate\": \"2018-08-08\",\n            \"DomainName\": \"cent.com\",\n            \"RegistrarType\": \"qcloud\",\n            \"LockEndTime\": \"\",\n            \"OrganizationNameCN\": \"腾讯云\",\n            \"RegistrantName\": \"tencent\",\n            \"DomainStatus\": [\n                \"ok\"\n            ],\n            \"BuyStatus\": \"ok\",\n            \"RegistrantNameCN\": \"腾讯云\",\n            \"RealNameAuditStatus\": \"Approved\",\n            \"DomainNameAuditStatus\": \"Approved\",\n            \"LockTransfer\": false,\n            \"NameServer\": [\n                \"ns2.qq.com\",\n                \"ns4.qq.com\",\n                \"ns3.qq.com\",\n                \"ns1.qq.com\"\n            ],\n            \"CreationDate\": \"2018-08-08\",\n            \"RealNameAuditUnpassReason\": \"\",\n            \"DomainNameAuditUnpassReason\": \"\"\n        },\n        \"RequestId\": \"88888888-8888-8888-8888-888888888888\",\n        \"Uin\": \"100000000001\"\n    }\n}",
         "title": "域名详情"
       }
     ],
     "DescribePayWaitDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePayWaitDetail\n<公共请求参数>\n\n{\n    \"BusinessId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Domain\": \"abc\",\n        \"Status\": \"abc\",\n        \"EndTime\": \"abc\",\n        \"RegTime\": \"abc\",\n        \"Price\": 0,\n        \"RetDeposit\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePayWaitDetail\n<公共请求参数>\n\n{\n    \"BusinessId\": \"***561\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"45559f25-13b9-42fd-b2ae-698842d91fd7\",\n        \"Domain\": \"*1.top\",\n        \"Status\": \"pay\",\n        \"EndTime\": \"2024-12-19 07:24:25\",\n        \"RegTime\": \"2023-11-11 07:24:25\",\n        \"Price\": 98,\n        \"RetDeposit\": 32\n    }\n}",
         "title": "等待支付详情接口"
       }
     ],
@@ -306,15 +306,15 @@
       {
         "document": "",
         "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplate\n&TemplateId=模板ID\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c209d0e-f244-435f-8222-d86741c3edbd\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"ContactInfo\": {\n                \"Province\": \"hu nan sheng\",\n                \"RegistrantType\": \"I\",\n                \"OrganizationName\": \"ce shi\",\n                \"OrganizationNameCN\": \"测试\",\n                \"Country\": \"CN\",\n                \"RegistrantName\": \"ce shi\",\n                \"ZipCode\": \"425000\",\n                \"Telephone\": \"155*********\",\n                \"City\": \"ce shi\",\n                \"RegistrantNameCN\": \"测试\",\n                \"StreetCN\": \"咸嘉湖街道\",\n                \"Street\": \"xian jia hu jie dao\",\n                \"ProvinceCN\": \"湖南省\",\n                \"CityCN\": \"长沙市\",\n                \"CountryCN\": \"中国\",\n                \"Email\": \"dnspod@dnspod.com\"\n            },\n            \"UpdatedOn\": \"2020-07-28 13:33:55\",\n            \"AuditStatus\": \"InAudit\",\n            \"CreatedOn\": \"2020-07-28 12:50:23\",\n            \"UserUin\": \"12334********\",\n            \"IsDefault\": \"no\",\n            \"TemplateId\": \"tmpl-dgmgwpe2\",\n            \"InvalidReason\": \"\",\n            \"IsValidTemplate\": 1,\n            \"CertificateInfo\": {\n                \"CertificateType\": \"SFZ\",\n                \"CertificateCode\": \"12345679\",\n                \"ImgUrl\": \"https://tencentyun.com/******\"\n            }\n        }\n    },\n    \"ResultStatus\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c209d0e-f244-435f-8222-d86741c3edbd\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"ContactInfo\": {\n                \"Province\": \"hu nan sheng\",\n                \"RegistrantType\": \"I\",\n                \"OrganizationName\": \"yan zheng org name\",\n                \"OrganizationNameCN\": \"验证的企业名称\",\n                \"Country\": \"CN\",\n                \"RegistrantName\": \"registrant name\",\n                \"ZipCode\": \"425000\",\n                \"Telephone\": \"155*********\",\n                \"City\": \"ce shi\",\n                \"RegistrantNameCN\": \"注册人名称\",\n                \"StreetCN\": \"咸嘉湖街道\",\n                \"Street\": \"xian jia hu jie dao\",\n                \"ProvinceCN\": \"湖南省\",\n                \"CityCN\": \"长沙市\",\n                \"CountryCN\": \"中国\",\n                \"Email\": \"dnspod@dnspod.com\"\n            },\n            \"UpdatedOn\": \"2020-07-28 13:33:55\",\n            \"AuditStatus\": \"InAudit\",\n            \"IsBlack\": false,\n            \"CreatedOn\": \"2020-07-28 12:50:23\",\n            \"UserUin\": \"12334********\",\n            \"IsDefault\": \"no\",\n            \"TemplateId\": \"tmpl-dgmgwpe2\",\n            \"InvalidReason\": \"\",\n            \"IsValidTemplate\": 1,\n            \"CertificateInfo\": {\n                \"CertificateType\": \"SFZ\",\n                \"CertificateCode\": \"12345679\",\n                \"ImgUrl\": \"https://image.com/******\",\n                \"OriginImgUrl\": \"https://tencentyun.com/******\",\n                \"RegistrantCertificateCode\": \"12345679\",\n                \"RegistrantCertificateType\": \"SFZ\",\n                \"RegistrantImgUrl\": \"https://image.com/******\"\n            }\n        }\n    }\n}",
         "title": "获取模板信息"
       }
     ],
     "DescribeTemplateList": [
       {
         "document": "信息模板列表",
-        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplateList\n&Offset=0\n&Limit=20\n&Status=InAudit\n&Type=E\n&Keyword=abc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TemplateSet\": [\n            {\n                \"AuditReason\": \"\",\n                \"ContactInfo\": {\n                    \"Province\": \"hu nan sheng\",\n                    \"RegistrantType\": \"I\",\n                    \"OrganizationName\": \"ce shi\",\n                    \"OrganizationNameCN\": \"测试\",\n                    \"Country\": \"CN\",\n                    \"RegistrantName\": \"ce shi\",\n                    \"ZipCode\": \"425000\",\n                    \"Telephone\": \"155*********\",\n                    \"City\": \"ce shi\",\n                    \"RegistrantNameCN\": \"测试\",\n                    \"StreetCN\": \"咸嘉湖街道\",\n                    \"Street\": \"xian jia hu jie dao\",\n                    \"ProvinceCN\": \"湖南省\",\n                    \"CityCN\": \"长沙市\",\n                    \"CountryCN\": \"中国\",\n                    \"Email\": \"dnspod@dnspod.com\"\n                },\n                \"UpdatedOn\": \"2020-07-28 13:33:55\",\n                \"AuditStatus\": \"InAudit\",\n                \"IsBlack\": false,\n                \"CreatedOn\": \"2020-07-28 12:50:23\",\n                \"UserUin\": \"12334********\",\n                \"IsDefault\": \"no\",\n                \"TemplateId\": \"tmpl-dgmgwpe2\",\n                \"InvalidReason\": \"\",\n                \"IsValidTemplate\": 1,\n                \"CertificateInfo\": {\n                    \"CertificateType\": \"SFZ\",\n                    \"CertificateCode\": \"12345679\",\n                    \"ImgUrl\": \"https://image.com/******\",\n                    \"OriginImgUrl\": \"https://tencentyun.com/******\",\n                    \"RegistrantCertificateCode\": \"12345679\",\n                    \"RegistrantCertificateType\": \"SFZ\",\n                    \"RegistrantImgUrl\": \"https://image.com/******\"\n                }\n            }\n        ],\n        \"RequestId\": \"skdwd-eoffew-dwdwq-dwdw\"\n    }\n}",
+        "input": "https://domain.tencentcloudapi.com/?Action=DescribeTemplateList\n&Offset=0\n&Limit=20\n&Status=InAudit\n&Type=E\n&Keyword=search_name\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TemplateSet\": [\n            {\n                \"AuditReason\": \"\",\n                \"ContactInfo\": {\n                    \"Province\": \"hu nan sheng\",\n                    \"RegistrantType\": \"I\",\n                    \"OrganizationName\": \"org name\",\n                    \"OrganizationNameCN\": \"企业名称\",\n                    \"Country\": \"CN\",\n                    \"RegistrantName\": \"shi ming name\",\n                    \"ZipCode\": \"425000\",\n                    \"Telephone\": \"155*********\",\n                    \"City\": \"ce shi\",\n                    \"RegistrantNameCN\": \"实名人\",\n                    \"StreetCN\": \"咸嘉湖街道\",\n                    \"Street\": \"xian jia hu jie dao\",\n                    \"ProvinceCN\": \"湖南省\",\n                    \"CityCN\": \"长沙市\",\n                    \"CountryCN\": \"中国\",\n                    \"Email\": \"**d@dnspod.com\"\n                },\n                \"UpdatedOn\": \"2020-07-28 13:33:55\",\n                \"AuditStatus\": \"InAudit\",\n                \"IsBlack\": false,\n                \"CreatedOn\": \"2020-07-28 12:50:23\",\n                \"UserUin\": \"12334********\",\n                \"IsDefault\": \"no\",\n                \"TemplateId\": \"tmpl-dgmgwpe2\",\n                \"InvalidReason\": \"\",\n                \"IsValidTemplate\": 1,\n                \"CertificateInfo\": {\n                    \"CertificateType\": \"SFZ\",\n                    \"CertificateCode\": \"12345679\",\n                    \"ImgUrl\": \"https://image.com/******\",\n                    \"OriginImgUrl\": \"https://tencentyun.com/******\",\n                    \"RegistrantCertificateCode\": \"12345679\",\n                    \"RegistrantCertificateType\": \"SFZ\",\n                    \"RegistrantImgUrl\": \"https://image.com/******\"\n                }\n            }\n        ],\n        \"RequestId\": \"skdwd-eoffew-dwdwq-dwdw\"\n    }\n}",
         "title": "信息模板列表"
       }
     ],
@@ -329,8 +329,8 @@
     "DescribeUnPreDomainDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnPreDomainDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Domain\": \"abc\",\n        \"PreCount\": 0,\n        \"RegTime\": \"abc\",\n        \"DeleteTime\": \"abc\",\n        \"ExpireTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"CurrentPrice\": 0,\n        \"AppointBondPrice\": 0,\n        \"IsAppoint\": true,\n        \"BusinessId\": \"abc\",\n        \"IsDomainUser\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUnPreDomainDetail\n<公共请求参数>\n\n{\n    \"Domain\": \"**m.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd4379ce-0fb7-1234-bc2f-5a68df5bcd20\",\n        \"Domain\": \"**m.com\",\n        \"PreCount\": 8,\n        \"RegTime\": \"2005-11-23 02:26:00\",\n        \"DeleteTime\": \"2025-01-23 02:26:00\",\n        \"ExpireTime\": \"2024-12-23 02:26:00\",\n        \"Status\": \"ing\",\n        \"CurrentPrice\": 198,\n        \"AppointBondPrice\": 90,\n        \"IsAppoint\": false,\n        \"BusinessId\": \"***046\",\n        \"IsDomainUser\": false\n    }\n}",
         "title": "查询预释放未预约域名详情接口"
       }
     ],
@@ -353,7 +353,7 @@
     "ModifyDomainOwnerBatch": [
       {
         "document": "域名批量过户",
-        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwnerBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"NewOwnerUin\": \"123456\"\n}",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwnerBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"NewOwnerUin\": \"100**238\"\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 425,\n        \"RequestId\": \"3c59eccc-efca-4109-1111-37e2e2bce25f\"\n    }\n}",
         "title": "域名过户"
       }
@@ -417,7 +417,7 @@
     "TransferInDomainBatch": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferInDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-xxxxx\",\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"PassWords\": [\n        \"123456\"\n    ],\n    \"PayMode\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferInDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-xxxxx\",\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"PassWords\": [\n        \"password\"\n    ],\n    \"PayMode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 54,\n        \"RequestId\": \"ac64c5c2-c0f0-11ea-ba13-080027f4585e\"\n    }\n}",
         "title": "批量域名转入"
       }
@@ -442,7 +442,7 @@
       {
         "document": "",
         "input": "https://domain.tencentcloudapi.com/?Action=UploadImage\n&ImageFile=资质照片\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessUrl\": \"xxxxx\",\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessUrl\": \"http://cos.url/image.jpg\",\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
         "title": "证件图片上传"
       }
     ]

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeBiddingAppointDetail --cli-unfold-argument  \
-    --BusinessID xxxx
+    --BusinessID ***561
 ```
 
 Output: 

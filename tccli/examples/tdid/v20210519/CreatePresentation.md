@@ -9,7 +9,7 @@ tccli tdid CreatePresentation --cli-unfold-argument  \
     --DAPId 1 \
     --CredentialList.0.Credential {"cptId":1,"issuer":"did:tdid:w1:0x379106c7232aed1a50e8600511655b479c76b149","expirationDate":"2124-06-29T15:25:00+08:00","issuanceDate":"2023-11-30T05:19:40+08:00","context":"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1","id":"0767cc1f93ad541e195bd9f5f00d665f","type":["VerifiableCredential"],"credentialSubject":{"action":"deactiveDid","age":17},"proof":{"created":"2023-11-30T05:19:40+08:00","creator":"did:tdid:w1:0x379106c7232aed1a50e8600511655b479c76b149#keys-0","signatureValue":"MEQCIEWnreXh0siSPnCaAqCldL1E+gTdrT6oSZjbTjAhwn6+AiBXn/ZIirpr69JknKsX3+MWRE7WeIXGdaOIXY10c36hoA==","type":"Secp256r1","metaDigest":"7d6435235cd5afdb7abd06a979eb2237d103401bdb54fa38ff6b8299c7529b76","vcDigest":"d014b006648f48e13c1aff9c16a39979e3d17e6f32c816065158d6a92632a132","privacy":"Public","salt":{"action":"YuzFn","age":"0zche"}}} \
     --Did did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8 \
-    --VerifyCode test \
+    --VerifyCode 1001 \
     --PolicyJson {"1":{"age":0}}
 ```
 

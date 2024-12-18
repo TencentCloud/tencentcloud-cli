@@ -5738,7 +5738,7 @@
         {
           "disabled": false,
           "document": "Access Key",
-          "example": "ak-xxx",
+          "example": "ak54jmdkpmao909550a62asd",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -5749,7 +5749,7 @@
         {
           "disabled": false,
           "document": "Secret Key",
-          "example": "sk-xxx",
+          "example": "skc955042d5a678asd",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
@@ -5760,7 +5760,7 @@
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "测试角色",
+          "example": "remark info",
           "member": "string",
           "name": "Remark",
           "output_required": true,

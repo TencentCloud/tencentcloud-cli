@@ -11,7 +11,7 @@
     "CreateDBInstance": [
       {
         "document": "客户需要通过API创建包年包月云数据库实例",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-2\r\n&UniqVpcId=vpc-0akbol5v\r\n&UniqSubnetId=subnet-fyrtjbqw\r\n&ProjectId=0\r\n&MongoVersion=MONGO_3_WT\r\n&MachineCode=TGIO\r\n&SecondaryNum=2\r\n&TimeSpan=1\r\n&Password=pwd123456\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-2\",\n    \"UniqVpcId\": \"vpc-0akbol5v\",\n    \"TimeSpan\": \"1\",\n    \"ProjectId\": \"0\",\n    \"MachineCode\": \"TGIO\",\n    \"GoodsNum\": \"1\",\n    \"Volume\": \"250\",\n    \"SecondaryNum\": \"2\",\n    \"UniqSubnetId\": \"subnet-fyrtjbqw\",\n    \"Memory\": \"4\",\n    \"MongoVersion\": \"MONGO_42_WT\",\n    \"Password\": \"pwd123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\n        \"DealId\": \"7142863\",\n        \"InstanceIds\": [\n            \"cmgo-po5f899l\"\n        ]\n    }\n}",
         "title": "创建包年包月的云数据库实例"
       }
@@ -28,7 +28,7 @@
       {
         "document": "",
         "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\n&InstanceId=cmgo-eqmoaxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Clients\": [\n            {\n                \"Count\": 1,\n                \"IP\": \"xx\"\n            },\n            {\n                \"Count\": 1,\n                \"IP\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Clients\": [\n            {\n                \"IP\": \"abc\",\n                \"Count\": 1\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询云数据库实例的客户端连接情况"
       }
     ],
@@ -75,7 +75,7 @@
     "SetPassword": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=SetPassword\n&InstanceId=cmgo-eqmoa5sf\n&UserName=test_user\n&Password=test_password123\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-eqmoa5sf\",\n    \"UserName\": \"test_user\",\n    \"Password\": \"test_password123\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 1082,\n        \"RequestId\": \"a02372cf-5e09-4d17-ab79-2ee3f60e86ff\"\n    }\n}",
         "title": "设置云数据库实例账户密码"
       }
@@ -91,7 +91,7 @@
     "UpgradeDBInstance": [
       {
         "document": "客户需要通过API升级包年包月的云数据库实例",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstance\r\n&Memory=4\r\n&Volume=250\r\n&InstanceId=cmgo-f555zzzz\r\n&OplogSize=26\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstance\n&Memory=4\n&Volume=250\n&InstanceId=cmgo-f555zzzz\n&OplogSize=26\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"be8f4a30-ea2e-4623-8b6b-0ccce04cd9f7\",\n        \"DealId\": \"19297475\"\n    }\n}",
         "title": "升级包年包月的云数据库实例"
       }

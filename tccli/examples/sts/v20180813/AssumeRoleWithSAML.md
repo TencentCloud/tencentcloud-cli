@@ -9,7 +9,7 @@ tccli sts AssumeRoleWithSAML --cli-unfold-argument  \
     --RoleArn qcs::cam::uin/798950673:roleName/OneLogin-Role \
     --PrincipalArn qcs::cam::uin/798950673:saml-provider/OneLogin \
     --SAMLAssertion c2FtbCBhc3NlcnRpb24= \
-    --RoleSessionName test
+    --RoleSessionName GetSamlRole
 ```
 
 Output: 

@@ -64,7 +64,7 @@
       "status": "online"
     },
     "SetPassword": {
-      "document": "本接口(SetPassword)用于设置（初始化）MongoDB云数据库实例账户密码。\n\n",
+      "document": "本接口(SetPassword)用于设置（初始化）MongoDB云数据库实例账户密码。",
       "input": "SetPasswordRequest",
       "name": "修改云数据库实例的账户密码",
       "output": "SetPasswordResponse",
@@ -347,7 +347,7 @@
         {
           "disabled": false,
           "document": "每个副本集内从节点个数",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "SecondaryNum",
           "required": true,
@@ -356,7 +356,7 @@
         {
           "disabled": false,
           "document": "实例内存大小，单位：GB",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -365,7 +365,7 @@
         {
           "disabled": false,
           "document": "实例硬盘大小，单位：GB",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -373,8 +373,8 @@
         },
         {
           "disabled": false,
-          "document": "版本号，当前支持 MONGO_3_WT、MONGO_3_ROCKS、MONGO_36_WT",
-          "example": "",
+          "document": "指版本信息。具体支持的版本信息 ，请通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 获取。 - MONGO_36_WT：MongoDB 3.6 WiredTiger存储引擎版本。 - MONGO_40_WT：MongoDB 4.0 WiredTiger存储引擎版本。 - MONGO_42_WT：MongoDB 4.2 WiredTiger存储引擎版本。 - MONGO_44_WT：MongoDB 4.4 WiredTiger存储引擎版本。 - MONGO_50_WT：MongoDB 5.0 WiredTiger存储引擎版本。 - MONGO_60_WT：MongoDB 6.0 WiredTiger存储引擎版本。",
+          "example": "MONGO_44_WT",
           "member": "string",
           "name": "MongoVersion",
           "required": true,
@@ -382,8 +382,8 @@
         },
         {
           "disabled": false,
-          "document": "机器类型，GIO：高IO版；TGIO：高IO万兆",
-          "example": "",
+          "document": "机器类型，HIO10G：高IO万兆。",
+          "example": "HIO10G",
           "member": "string",
           "name": "MachineCode",
           "required": true,
@@ -392,7 +392,7 @@
         {
           "disabled": false,
           "document": "实例数量，默认值为1, 最小值1，最大值为10",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
@@ -401,7 +401,7 @@
         {
           "disabled": false,
           "document": "实例所属区域名称，格式如：ap-guangzhou-2",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -410,7 +410,7 @@
         {
           "disabled": false,
           "document": "时长，购买月数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TimeSpan",
           "required": true,
@@ -419,7 +419,7 @@
         {
           "disabled": false,
           "document": "实例密码",
-          "example": "",
+          "example": "********",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -428,7 +428,7 @@
         {
           "disabled": false,
           "document": "项目ID，不填为默认项目",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -437,7 +437,7 @@
         {
           "disabled": false,
           "document": "安全组参数",
-          "example": "",
+          "example": "sg-1ad2****",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -446,7 +446,7 @@
         {
           "disabled": false,
           "document": "私有网络ID，如果不传则默认选择基础网络",
-          "example": "",
+          "example": "vpc-0akb****",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -455,9 +455,18 @@
         {
           "disabled": false,
           "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填",
-          "example": "",
+          "example": "subnet-fyrt****（",
           "member": "string",
           "name": "UniqSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型，REPLSET-副本集，SHARD-分片集群，默认为REPLSET",
+          "example": "REPLSET",
+          "member": "string",
+          "name": "InstanceType",
           "required": false,
           "type": "string"
         }
@@ -470,18 +479,20 @@
         {
           "disabled": false,
           "document": "订单ID",
-          "example": "",
+          "example": "7142863",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建的实例ID列表",
-          "example": "",
+          "example": "[\"cmgo-po5f****\"]",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -515,10 +526,10 @@
         {
           "disabled": false,
           "document": "客户端连接信息，包括客户端IP和对应IP的连接数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Count\":1,\"IP\":\"xx\"},{\"Count\":1,\"IP\":\"xx\"}]",
           "member": "ClientConnection",
           "name": "Clients",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -528,7 +539,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -546,8 +557,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。",
-          "example": "cmgo-7pjedvz7",
+          "document": "实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。",
+          "example": "cmgo-7pje****",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -628,7 +639,7 @@
         {
           "disabled": false,
           "document": "返回结果集排序的字段，目前支持： \n<ul><li>ProjectId： 按照项目ID排序</li><li>InstanceName：按照实例名称排序</li><li>CreateTime： 根据创建时间排序</li></ul>",
-          "example": "无",
+          "example": "InstanceName",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -637,7 +648,7 @@
         {
           "disabled": false,
           "document": "返回结果集排序方式，目前支持：\"ASC\"或者\"DESC\"。\n<ul><li>ASC： 顺序取值</li><li>DESC：倒序取值</li></ul>",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -655,17 +666,17 @@
           "example": "19",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例详细信息",
-          "example": "无",
+          "example": "{\"Response\":{\"InstanceDetails\":[],\"RequestId\":\"88c9e2c6-a116-4d68-b77e-8136c5e0****\",\"TotalCount\":0}}",
           "member": "MongoDBInstanceDetail",
           "name": "InstanceDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1381,8 +1392,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
-          "example": "cmgo-eqmoa5sf",
+          "document": "实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-eqmo****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1399,8 +1410,8 @@
         },
         {
           "disabled": false,
-          "document": "实例新密码，至少包含字母、数字和字符（!@#%^*()）中的两种，长度为8-16个字符",
-          "example": "test_password123",
+          "document": "指定账户的新密码， 密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种",
+          "example": "********",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1415,10 +1426,10 @@
         {
           "disabled": false,
           "document": "返回的异步任务ID",
-          "example": "1082",
+          "example": "1082****",
           "member": "uint64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1814,8 +1825,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
-          "example": "",
+          "document": "实例ID，格式如：cmgo-iga0****。与云数据库控制台页面中显示的实例ID相同",
+          "example": "cmgo-iga0****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1824,7 +1835,7 @@
         {
           "disabled": false,
           "document": "升级后的内存大小，单位：GB",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -1833,7 +1844,7 @@
         {
           "disabled": false,
           "document": "升级后的硬盘大小，单位：GB",
-          "example": "",
+          "example": "250",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -1842,7 +1853,7 @@
         {
           "disabled": false,
           "document": "升级后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%",
-          "example": "",
+          "example": "26",
           "member": "uint64",
           "name": "OplogSize",
           "required": false,
@@ -1857,9 +1868,10 @@
         {
           "disabled": false,
           "document": "订单ID",
-          "example": "",
+          "example": "19297475",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -1142,7 +1142,7 @@
         {
           "disabled": false,
           "document": "输入文本。总长度不超过 1024 个 Token，超过则会截断最后面的内容。",
-          "example": "无",
+          "example": "你好",
           "member": "string",
           "name": "Input",
           "required": false,
@@ -1151,7 +1151,7 @@
         {
           "disabled": false,
           "document": "输入文本数组。输入数组总长度不超过 200 。",
-          "example": "无",
+          "example": "[\"你好\", \"hello\"]",
           "member": "string",
           "name": "InputList",
           "required": false,
@@ -1526,7 +1526,7 @@
         {
           "disabled": false,
           "document": "输入文本",
-          "example": "无",
+          "example": "你是谁",
           "member": "string",
           "name": "Prompt",
           "required": true,
@@ -1561,7 +1561,7 @@
         {
           "disabled": false,
           "document": "切分后的列表",
-          "example": "无",
+          "example": "[\"你是\", \"谁\"]",
           "member": "string",
           "name": "Tokens",
           "output_required": false,
@@ -2261,7 +2261,7 @@
         },
         {
           "disabled": false,
-          "document": "助手 ID",
+          "document": "助手 ID（目前未使用，留空）",
           "example": "asst_x39o8phGyiIC8llpaVShxVmL",
           "member": "string",
           "name": "AssistantID",
@@ -2280,7 +2280,7 @@
         {
           "disabled": false,
           "document": "附加消息",
-          "example": "[]",
+          "example": "[{\"Role\":\"user\",\"Content\":\"你是谁\"}]",
           "member": "ThreadAdditionalMessage",
           "name": "AdditionalMessages",
           "required": false,

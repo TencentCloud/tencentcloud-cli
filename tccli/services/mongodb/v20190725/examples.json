@@ -106,9 +106,9 @@
     ],
     "DescribeCurrentOp": [
       {
-        "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeCurrentOp\n&InstanceId=cmgo-p8vnipr5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CurrentOps\": [\n            {\n                \"ReplicaSetName\": \"xx\",\n                \"NodeName\": \"xx\",\n                \"State\": \"xx\",\n                \"MicrosecsRunning\": 1,\n                \"Query\": \"xx\",\n                \"OpId\": 0,\n                \"Ns\": \"xx\",\n                \"Operation\": \"xx\",\n                \"Op\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "document": "查询云数据库实例的当前操作",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCurrentOp\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p8vn****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"CurrentOps\": [\n            {\n                \"OpId\": 1804858933,\n                \"Ns\": \"db.****\",\n                \"Query\": \"\",\n                \"Op\": \"command\",\n                \"ReplicaSetName\": \"salve-1\",\n                \"NodeName\": \"salve-1\",\n                \"Operation\": \"****\",\n                \"State\": \"Primary\",\n                \"MicrosecsRunning\": 30353723,\n                \"ExecNode\": \"从节点\"\n            }\n        ],\n        \"RequestId\": \"66956cf3-2d10-4c68-87c0-7bd558deae7e\"\n    }\n}",
         "title": "查询云数据库实例的当前操作"
       }
     ],
@@ -227,8 +227,8 @@
     "FlashBackDBInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlashBackDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"TargetFlashbackTime\": \"2023-08-04 14:00:00\",\n    \"TargetDatabases\": [\n        {\n            \"DBName\": \"my_test\",\n            \"Collections\": [\n                {\n                    \"CollectionName\": \"my_test1\",\n                    \"KeyValues\": [\n                        {\n                            \"Key\": \"name\",\n                            \"Value\": \"abc\"\n                        }\n                    ],\n                    \"TargetResultCollectionName\": \"my_test_bak0804143230\",\n                    \"FilterKey\": \"name\"\n                }\n            ]\n        }\n    ],\n    \"TargetInstanceId\": \"cmgo-05173fe7\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 1234567,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FlashBackDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"TargetFlashbackTime\": \"2023-08-04 14:00:00\",\n    \"TargetDatabases\": [\n        {\n            \"DBName\": \"my_test\",\n            \"Collections\": [\n                {\n                    \"CollectionName\": \"my_test1\",\n                    \"KeyValues\": [\n                        {\n                            \"Key\": \"name\",\n                            \"Value\": \"name-demo\"\n                        }\n                    ],\n                    \"TargetResultCollectionName\": \"my_test_bak0804143230\",\n                    \"FilterKey\": \"name\"\n                }\n            ]\n        }\n    ],\n    \"TargetInstanceId\": \"cmgo-0517****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1234567,\n        \"RequestId\": \"59b477da-6473-4ea8-85b3-7f4473744****\"\n    }\n}",
         "title": "执行按key回档"
       }
     ],

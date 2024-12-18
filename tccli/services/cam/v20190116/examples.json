@@ -418,7 +418,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=GetServiceLinkedRoleDeletionStatus\r\n&DeletionTaskId=100\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCEEDED\",\n        \"ServiceType\": \"cam\",\n        \"ServiceName\": \"访问管理\",\n        \"Reason\": \"{}\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"SUCCEEDED\",\n        \"ServiceType\": \"cam\",\n        \"ServiceName\": \"访问管理\",\n        \"Reason\": \"ok\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "获取服务相关角色删除状态"
       }
     ],
@@ -458,7 +458,7 @@
       {
         "document": "查询用户组3349关联的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedGroupPolicies\n&TargetGroupId=3349\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"OperateOwnerUin\": \"10001\",\n                \"PolicyName\": \"AdministratorAccess\",\n                \"Remark\": \"test policy remark\",\n                \"OperateUinType\": 1,\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"PolicyType\": \"User\",\n                \"PolicyId\": 1,\n                \"DeactivedDetail\": [\n                    \"test\"\n                ],\n                \"OperateUin\": \"10001\"\n            }\n        ],\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"OperateOwnerUin\": \"10001\",\n                \"PolicyName\": \"AdministratorAccess\",\n                \"Remark\": \"test policy remark\",\n                \"OperateUinType\": 1,\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"PolicyType\": \"User\",\n                \"PolicyId\": 1,\n                \"DeactivedDetail\": [\n                    \"ccs\"\n                ],\n                \"OperateUin\": \"10001\"\n            }\n        ],\n        \"RequestId\": \"836d7034-9854-44f0-9d4a-ee57842f8644\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "查询用户组关联的策略列表"
       }
     ],
@@ -466,7 +466,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedRolePolicies\n&RoleId=4611686018427397905\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyName\": \"QcloudAccessForASRole\",\n                \"Description\": \"xx\",\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2019-07-10 11:17:41\",\n                \"PolicyType\": \"QCS\",\n                \"PolicyId\": 13847366,\n                \"DeactivedDetail\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\",\n        \"TotalNum\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyName\": \"QcloudAccessForASRole\",\n                \"Description\": \"Free Access to AS Product\",\n                \"CreateMode\": 1,\n                \"Deactived\": 1,\n                \"AddTime\": \"2019-07-10 11:17:41\",\n                \"PolicyType\": \"QCS\",\n                \"PolicyId\": 13847366,\n                \"DeactivedDetail\": [\n                    \"bbs\"\n                ]\n            }\n        ],\n        \"RequestId\": \"60dc7f3f-5d8b-45e9-b703-5feefac9960c\",\n        \"TotalNum\": 1\n    }\n}",
         "title": "获取角色绑定的策略列表"
       }
     ],
@@ -482,7 +482,7 @@
       {
         "document": "查询绑定到子账号3449203261的策略列表",
         "input": "https://cam.tencentcloudapi.com/?Action=ListAttachedUserPolicies\n&TargetUin=3449203261\n&Page=1\n&Rp=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 109360057,\n                \"PolicyName\": \"test-0103\",\n                \"AddTime\": \"2022-01-03 10:38:28\",\n                \"CreateMode\": 3,\n                \"Remark\": \"\",\n                \"OperateOwnerUin\": null,\n                \"OperateUin\": null,\n                \"OperateUinType\": null,\n                \"PolicyType\": \"\",\n                \"Deactived\": 0,\n                \"DeactivedDetail\": []\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"db1cdf3f-9b1a-47c5-88b3-c49089aaa811\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 109360057,\n                \"PolicyName\": \"policygen-20240909141614\",\n                \"AddTime\": \"2024-09-09 15:51:40\",\n                \"CreateMode\": 3,\n                \"Remark\": \"cos policy\",\n                \"OperateOwnerUin\": \"100008847111\",\n                \"OperateUin\": \"100008847111\",\n                \"OperateUinType\": 0,\n                \"PolicyType\": \"User\",\n                \"Deactived\": 0,\n                \"DeactivedDetail\": [\n                    \"ccs\"\n                ]\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"db1cdf3f-9b1a-47c5-88b3-c49089aaa811\"\n    }\n}",
         "title": "查询子账号关联的策略列表"
       }
     ],
@@ -522,7 +522,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPolicies\n<公共请求参数>\n\n{\n    \"Rp\": \"1\",\n    \"Page\": \"10\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceTypeList\": [\n            \"scf\"\n        ],\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1,\n                \"UpdateTime\": \"2019-04-19 10:55:31\",\n                \"AttachEntityCount\": 0,\n                \"AttachEntityBoundaryCount\": 0\n            }\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PolicyId\": 16313162,\n                \"PolicyName\": \"QcloudAccessForCDNRole\",\n                \"AddTime\": \"2019-04-19 10:55:31\",\n                \"Type\": 2,\n                \"Description\": \"腾讯云内容分发网络(CDN)操作权限含日志服务(CLS)的增删改查日志集，增删改查日志主题，搜索下载上传日志。\",\n                \"CreateMode\": 2,\n                \"Attachments\": 0,\n                \"ServiceType\": \"cooperator\",\n                \"IsAttached\": 1,\n                \"Deactived\": 1,\n                \"DeactivedDetail\": [\n                    \"cvm\"\n                ],\n                \"IsServiceLinkedPolicy\": 1,\n                \"UpdateTime\": \"2019-04-19 10:55:31\",\n                \"AttachEntityCount\": 0,\n                \"AttachEntityBoundaryCount\": 0\n            }\n        ],\n        \"ServiceTypeList\": [\n            \"scf\"\n        ],\n        \"TotalNum\": 239,\n        \"RequestId\": \"ae2bd2b7-1d55-4b0a-8154-e02407a2b390\"\n    }\n}",
         "title": "查看策略列表"
       }
     ],
@@ -530,13 +530,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesGrantingServiceAccess\n<公共请求参数>\n\n{\n    \"TargetUin\": 100000001\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"-\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"cvm custom policy\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
         "title": "所有已授权服务"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPoliciesGrantingServiceAccess\n<公共请求参数>\n\n{\n    \"TargetUin\": 100000001,\n    \"ServiceType\": \"cvm\"\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"-\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Service\": {\n                    \"ServiceType\": \"cvm\",\n                    \"ServiceName\": \"云服务器\"\n                },\n                \"Action\": [\n                    {\n                        \"Name\": \"AddInstanceInDeployGroup\",\n                        \"Description\": \"新增实例部署组\"\n                    }\n                ],\n                \"Policy\": [\n                    {\n                        \"PolicyId\": \"73019980\",\n                        \"PolicyName\": \"policygen-20210xxxxxxx\",\n                        \"PolicyDescription\": \"cvm custom policy\",\n                        \"PolicyType\": \"Custom\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"6de4c96b-60be-4422-8fe8-5ac09707a116\"\n    }\n}",
         "title": "查看已授权服务中所有已授权接口"
       }
     ],

@@ -18,14 +18,14 @@ Output:
         "List": [
             {
                 "PolicyName": "QcloudAccessForASRole",
-                "Description": "xx",
+                "Description": "Free Access to AS Product",
                 "CreateMode": 1,
                 "Deactived": 1,
                 "AddTime": "2019-07-10 11:17:41",
                 "PolicyType": "QCS",
                 "PolicyId": 13847366,
                 "DeactivedDetail": [
-                    "xx"
+                    "bbs"
                 ]
             }
         ],

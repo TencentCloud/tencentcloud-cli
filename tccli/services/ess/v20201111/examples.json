@@ -1562,6 +1562,14 @@
         "title": "请求详细印章列表信息"
       }
     ],
+    "DescribeOrganizationVerifyStatus": [
+      {
+        "document": "当前企业在电子签已经认证，企业调用方进行调用",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationVerifyStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"49500cb4-ca5e-4da0-93fb-e15f3a710ed7\",\n        \"VerifyStatus\": 2\n    }\n}",
+        "title": "查询当前企业在电子签的认证状态"
+      }
+    ],
     "DescribePersonCertificate": [
       {
         "document": "1.张三已开通自动签署服务\n2.查询个人用户张三的自动签证书信息",

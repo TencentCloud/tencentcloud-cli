@@ -1154,6 +1154,14 @@
         "title": "修改参数模板"
       }
     ],
+    "ModifyProtectMode": [
+      {
+        "document": "",
+        "input": "https://cdb.tencentcloudapi.com/?Action=ModifyProtectMode\n&ProtectMode=1\n&InstanceId=cdb-ezq1vzem\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "修改实例同步方式"
+      }
+    ],
     "ModifyRemoteBackupConfig": [
       {
         "document": "无",

@@ -35,7 +35,7 @@
         {
           "disabled": false,
           "document": "代理角色临时密钥的Token",
-          "example": "",
+          "example": "yN8d0VyOqBvljYQw0MC",
           "member": "string",
           "name": "SessionKey",
           "required": true,
@@ -50,9 +50,10 @@
         {
           "disabled": false,
           "document": "渠道备案小程序二维码",
-          "example": "",
+          "example": "https://beianapi.cloud.tencent.com/?exchangeSkey=yN8d0VyOqBvljYQw0MC",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli lcic CreateRoom --cli-unfold-argument  \
-    --Name abc \
+    --Name abcdfdsf \
     --StartTime 1 \
     --EndTime 1 \
-    --TeacherId abc \
+    --TeacherId abcdfgdf \
     --SdkAppId 1 \
     --Resolution 1 \
     --MaxMicNumber 1 \
     --AutoMic 1 \
     --TurnOffMic 1 \
     --AudioQuality 1 \
-    --SubType abc \
+    --SubType abcdfgd \
     --DisableRecord 1 \
-    --Assistants abc \
+    --Assistants abcxdfgdfg \
     --AudienceType 1 \
     --RecordLayout 1 \
-    --GroupId abc \
+    --GroupId abcdfgdf \
     --InteractionMode 1 \
     --VideoOrientation 1 \
     --IsGradingRequiredPostClass 1 \
@@ -34,7 +34,7 @@ Output:
 {
     "Response": {
         "RoomId": 1,
-        "RequestId": "abc"
+        "RequestId": "abcdfgdfgfdrg"
     }
 }
 ```

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli mongodb CreateDBInstance --cli-unfold-argument  \
-    --Memory 4 \
-    --Volume 250 \
-    --GoodsNum 1 \
     --Zone ap-guangzhou-2 \
     --UniqVpcId vpc-0akbol5v \
-    --UniqSubnetId subnet-fyrtjbqw \
-    --ProjectId 0 \
-    --MongoVersion MONGO_3_WT \
-    --MachineCode TGIO \
-    --SecondaryNum 2 \
     --TimeSpan 1 \
+    --ProjectId 0 \
+    --MachineCode TGIO \
+    --GoodsNum 1 \
+    --Volume 250 \
+    --SecondaryNum 2 \
+    --UniqSubnetId subnet-fyrtjbqw \
+    --Memory 4 \
+    --MongoVersion MONGO_42_WT \
     --Password pwd123456
 ```
 

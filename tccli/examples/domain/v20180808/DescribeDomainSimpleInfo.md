@@ -18,7 +18,7 @@ Output:
             "DomainId": "domain-1234abcd",
             "OrganizationName": "tencent cloud",
             "ExpirationDate": "2018-08-08",
-            "DomainName": "cloud.tencent.com",
+            "DomainName": "cent.com",
             "RegistrarType": "qcloud",
             "LockEndTime": "",
             "OrganizationNameCN": "腾讯云",

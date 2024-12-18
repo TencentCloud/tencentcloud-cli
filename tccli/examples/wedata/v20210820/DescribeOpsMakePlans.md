@@ -23,44 +23,51 @@ Output:
             "PageSize": 0,
             "Items": [
                 {
-                    "CheckParent": false,
-                    "CompletePercent": 100,
-                    "CreateTime": "2023-05-28 23:02:46",
-                    "Creator": "creatorxxx",
-                    "CreatorId": "10000000xxxx",
-                    "IntegrationResourceGroup": "",
-                    "MakeDatetimeList": [
+                    "PlanId": "abc",
+                    "MakeName": "abc",
+                    "ProjectId": "abc",
+                    "CheckParent": true,
+                    "SameSelfDependType": true,
+                    "ParallelNum": 0,
+                    "SameCycle": true,
+                    "SourceTaskCycle": "abc",
+                    "TargetTaskCycle": "abc",
+                    "TargetTaskAction": 0,
+                    "MapParamList": [
                         {
-                            "EndDate": "2023-05-26",
-                            "EndTime": "03:59",
-                            "StartDate": "2023-05-26",
-                            "StartTime": "03:00"
+                            "K": "abc",
+                            "V": "abc"
                         }
                     ],
-                    "MakeName": "patch_20230528230215_xx",
-                    "MapParamList": [],
-                    "ParallelNum": 4,
-                    "PlanId": "e0bed861-0e95-44ca-9d10-28f2xxxxxxxx",
-                    "ProjectId": "14705616027xxxxxxxx",
-                    "Remark": null,
-                    "SameCycle": true,
-                    "SameSelfDependType": false,
-                    "SchedulerResourceGroup": "",
-                    "SourceTaskCycle": null,
-                    "SuccessPercent": 100,
-                    "TargetTaskAction": 1,
-                    "TargetTaskCycle": "month",
-                    "TaskCount": 1,
+                    "CreatorId": "abc",
+                    "Creator": "abc",
+                    "CreateTime": "abc",
                     "TaskIdList": [
-                        "2023052809431xxxx"
+                        "abc"
                     ],
-                    "SchedulerResourceGroupName": null,
-                    "IntegrationResourceGroupName": null,
-                    "CheckParentType": null
+                    "MakeDatetimeList": [
+                        {
+                            "StartDate": "abc",
+                            "EndDate": "abc",
+                            "StartTime": "abc",
+                            "EndTime": "abc"
+                        }
+                    ],
+                    "Remark": "abc",
+                    "SchedulerResourceGroup": "abc",
+                    "SchedulerResourceGroupName": "abc",
+                    "IntegrationResourceGroup": "abc",
+                    "IntegrationResourceGroupName": "abc",
+                    "TaskCount": 0,
+                    "CompletePercent": 0,
+                    "SuccessPercent": 0,
+                    "CheckParentType": "abc",
+                    "SameSelfWorkflowDependType": true,
+                    "SelfWorkflowDependency": "abc"
                 }
             ]
         },
-        "RequestId": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+        "RequestId": "abc"
     }
 }
 ```

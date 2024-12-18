@@ -21,10 +21,10 @@ Output:
                 "BiddingFlag": 0,
                 "BiddingNum": 1,
                 "BiddingPrice": 0,
-                "BusinessID": "xxxx",
+                "BusinessID": "***2561",
                 "CurrentNickname": "feng",
                 "CurrentPrice": 120,
-                "Domain": "sasdfzcccc2216.com",
+                "Domain": "s***16.com",
                 "Status": 7
             },
             {
@@ -33,10 +33,10 @@ Output:
                 "BiddingFlag": 1,
                 "BiddingNum": 1,
                 "BiddingPrice": 150,
-                "BusinessID": "xxxx",
+                "BusinessID": "***561",
                 "CurrentNickname": "feng",
                 "CurrentPrice": 120,
-                "Domain": "sasdfzcccc2216.com",
+                "Domain": "***16.com",
                 "Status": 2
             }
         ],

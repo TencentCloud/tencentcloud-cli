@@ -8,7 +8,7 @@ Input:
 tccli domain TransferInDomainBatch --cli-unfold-argument  \
     --TemplateId tmpl-xxxxx \
     --Domains h101.tencent.com \
-    --PassWords 123456 \
+    --PassWords password \
     --PayMode 0
 ```
 

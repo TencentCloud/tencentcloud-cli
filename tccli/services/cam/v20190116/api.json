@@ -1237,80 +1237,80 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "9420",
           "member": "uint64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "",
+          "example": "AdministratorAccess",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定时间",
-          "example": "",
+          "example": "2024-12-06 12:00:00",
           "member": "string",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略类型，User表示自定义策略，QCS表示预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "User",
           "member": "string",
           "name": "PolicyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略创建方式，1表示按产品功能或项目权限创建，其他表示按策略语法创建",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "CreateMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否已下线(0:否 1:是)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Deactived",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已下线的产品列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"ccs\"]",
           "member": "string",
           "name": "DeactivedDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "admin policy",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3664,10 +3664,10 @@
         {
           "disabled": false,
           "document": "策略版本详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"VersionId\":2,\"CreateDate\":\"2019-08-09T10:31:47Z\",\"IsDefaultVersion\":1,\"Document\":\"{\\\"version\\\":\\\"2.0\\\",\\\"statement\\\":[{\\\"effect\\\":\\\"allow\\\",\\\"action\\\":[\\\"name\\\\/cos:*\\\"],\\\"resource\\\":[\\\"*\\\"]}]}\"}",
           "member": "PolicyVersionDetail",
           "name": "PolicyVersion",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3686,7 +3686,7 @@
         {
           "disabled": false,
           "document": "角色ID",
-          "example": "",
+          "example": "4611686018441258642",
           "member": "string",
           "name": "RoleId",
           "required": true,
@@ -3701,45 +3701,50 @@
         {
           "disabled": false,
           "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "4221356",
           "member": "int64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "QcloudCOSAccessForCLSRole",
           "member": "string",
           "name": "PolicyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}}",
           "member": "string",
           "name": "PolicyDocument",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PolicyType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "CreateMode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3918,7 +3923,7 @@
         {
           "disabled": false,
           "document": "删除任务ID",
-          "example": "",
+          "example": "40082",
           "member": "string",
           "name": "DeletionTaskId",
           "required": true,
@@ -3933,36 +3938,40 @@
         {
           "disabled": false,
           "document": "状态：NOT_STARTED，IN_PROGRESS，SUCCEEDED，FAILED",
-          "example": "",
+          "example": "SUCCEEDED",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "",
+          "example": "ok",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "advisor",
           "member": "string",
           "name": "ServiceType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "云顾问",
           "member": "string",
           "name": "ServiceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4028,7 +4037,7 @@
         {
           "disabled": false,
           "document": "子账号Uin",
-          "example": "",
+          "example": "100000546547",
           "member": "int64",
           "name": "TargetUin",
           "required": true,
@@ -4043,45 +4052,50 @@
         {
           "disabled": false,
           "document": "策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "213465",
           "member": "int64",
           "name": "PolicyId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "QcloudCOSAccessForCLSRole",
           "member": "string",
           "name": "PolicyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略语法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"*\",\"resource\":\"*\"}]}}",
           "member": "string",
           "name": "PolicyDocument",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略类型：1.自定义策略，2.预设策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PolicyType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建方式：1.按产品功能或项目权限创建，2.按策略语法创建，3.按策略生成器创建，4.按标签授权创建，5.按权限边界规则创建\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "CreateMode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4521,7 +4535,7 @@
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "无",
+          "example": "[{\"OperateOwnerUin\":\"10001\",\"PolicyName\":\"AdministratorAccess\",\"Remark\":\"policy remark\",\"OperateUinType\":1,\"CreateMode\":1,\"Deactived\":1,\"AddTime\":\"2020-09-22 00:00:00\",\"PolicyType\":\"User\",\"PolicyId\":1,\"DeactivedDetail\":[\"bbs\"],\"OperateUin\":\"10001\"}]",
           "member": "AttachPolicyInfo",
           "name": "List",
           "output_required": true,
@@ -4570,7 +4584,7 @@
         {
           "disabled": false,
           "document": "角色名。用于指定角色，入参 RoleId 与 RoleName 二选一",
-          "example": "role_data",
+          "example": "dev_role",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -4588,7 +4602,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "searchKey",
+          "example": "readonly",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -4603,10 +4617,10 @@
         {
           "disabled": false,
           "document": "角色关联的策略列表",
-          "example": "无",
+          "example": "[{\"PolicyName\":\"QcloudAccessForASRole\",\"Description\":\"Free Access to AS Product\",\"CreateMode\":1,\"Deactived\":1,\"AddTime\":\"2019-07-10 11:17:41\",\"PolicyType\":\"QCS\",\"PolicyId\":13847366,\"DeactivedDetail\":[\"bbs\"]}]",
           "member": "AttachedPolicyOfRole",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4616,7 +4630,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4763,17 +4777,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "无",
+          "example": "{\"PolicyId\":109360057,\"PolicyName\":\"policygen-20220103141614\",\"AddTime\":\"2022-01-03 10:38:28\",\"CreateMode\":3,\"Remark\":\"cos policy\",\"OperateOwnerUin\":100008847111,\"OperateUin\":100008847111,\"OperateUinType\":0,\"PolicyType\":\"User\",\"Deactived\":0,\"DeactivedDetail\":[\"bbs\"]}]",
           "member": "AttachPolicyInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4948,30 +4962,30 @@
         {
           "disabled": false,
           "document": "服务",
-          "example": "无",
+          "example": "{\"ServiceType\":\"cvm\",\"ServiceName\":\"云服务器\"}",
           "member": "ListGrantServiceAccessService",
           "name": "Service",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "接口信息",
-          "example": "无",
+          "example": "{\"Name\":\"AddInstanceInDeployGroup\",\"Description\":\"新增实例部署组\"}",
           "member": "ListGrantServiceAccessActionNode",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "授权的策略",
-          "example": "无",
+          "example": "{\"PolicyId\":\"73019980\",\"PolicyName\":\"policygen-20210101\",\"PolicyDescription\":\"cvm custom policy\",\"PolicyType\":\"Custom\"}",
           "member": "ListGrantServiceAccessPolicy",
           "name": "Policy",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -5237,10 +5251,10 @@
         {
           "disabled": false,
           "document": "列表",
-          "example": "无",
+          "example": "[{\"Service\":{\"ServiceType\":\"cvm\",\"ServiceName\":\"云服务器\"},\"Action\":[{\"Name\":\"AddInstanceInDeployGroup\",\"Description\":\"新增实例部署组\"}],\"Policy\":[{\"PolicyId\":\"73019980\",\"PolicyName\":\"policygen-20210xxxxxxx\",\"PolicyDescription\":\"cvm custom policy\",\"PolicyType\":\"Custom\"}]}]",
           "member": "ListGrantServiceAccessNode",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5343,7 +5357,7 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "13847366",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -5358,9 +5372,10 @@
         {
           "disabled": false,
           "document": "策略版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"VersionId\":2,\"CreateDate\":\"2019-08-09T10:31:47Z\",\"IsDefaultVersion\":1},{\"VersionId\":3,\"CreateDate\":\"2019-08-09T10:31:47Z\",\"IsDefaultVersion\":0}]",
           "member": "PolicyVersionItem",
           "name": "Versions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5882,40 +5897,40 @@
         {
           "disabled": false,
           "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "VersionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2019-08-09T10:31:47Z",
           "member": "string",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "IsDefaultVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略语法文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"name\\/cos:*\"],\"resource\":[\"*\"]}]}",
           "member": "string",
           "name": "Document",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5928,30 +5943,30 @@
         {
           "disabled": false,
           "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "VersionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "策略版本创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2019-08-09T10:31:47Z",
           "member": "string",
           "name": "CreateDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否是正在生效的版本。0表示不是，1表示是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "IsDefaultVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -6841,7 +6856,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": "无",
+          "example": "[{\"Key\":\"AKey\",\"Value\":\"AValue\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "required": true,

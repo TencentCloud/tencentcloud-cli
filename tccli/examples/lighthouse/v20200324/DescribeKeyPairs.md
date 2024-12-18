@@ -17,7 +17,7 @@ Output:
         "KeyPairSet": [
             {
                 "KeyId": "lhkp-omd12oc1",
-                "KeyName": "test",
+                "KeyName": "koc1",
                 "PublicKey": "",
                 "AssociatedInstanceIds": [],
                 "CreatedTime": "2020-04-28T23:01:47Z",

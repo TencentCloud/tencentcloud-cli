@@ -7,8 +7,8 @@ Input:
 ```
 tccli tdid SetTDidAttribute --cli-unfold-argument  \
     --Did did:tdid:w1:0x0d342759f20005df531c50f671d414661e381c01 \
-    --Attributes.0.Key test \
-    --Attributes.0.Val test \
+    --Attributes.0.Key name \
+    --Attributes.0.Val 张三 \
     --DAPId 5
 ```
 

@@ -1044,7 +1044,7 @@
         {
           "disabled": false,
           "document": "设备证书sn",
-          "example": "123",
+          "example": "device-certificate-sn",
           "member": "string",
           "name": "DeviceCertificateSn",
           "required": true,

@@ -1750,6 +1750,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1.接入层 2.逻辑层 3. 数据层",
+          "example": "1",
+          "member": "int64",
+          "name": "ArchLayer",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3953,6 +3963,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "故障表现",
+          "example": "故障表现xxxx",
+          "member": "string",
+          "name": "FailurePerformance",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

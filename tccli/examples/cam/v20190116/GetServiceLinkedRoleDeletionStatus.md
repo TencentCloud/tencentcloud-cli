@@ -16,7 +16,7 @@ Output:
         "Status": "SUCCEEDED",
         "ServiceType": "cam",
         "ServiceName": "访问管理",
-        "Reason": "{}",
+        "Reason": "ok",
         "RequestId": "c3da1c1c-df35-467d-9335-99c68d993e0a"
     }
 }

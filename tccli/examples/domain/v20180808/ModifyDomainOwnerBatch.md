@@ -7,7 +7,7 @@ Input:
 ```
 tccli domain ModifyDomainOwnerBatch --cli-unfold-argument  \
     --Domains h101.tencent.com \
-    --NewOwnerUin 123456
+    --NewOwnerUin 100**238
 ```
 
 Output: 

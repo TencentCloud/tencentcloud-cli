@@ -973,6 +973,13 @@
       "output": "ModifyParamTemplateResponse",
       "status": "online"
     },
+    "ModifyProtectMode": {
+      "document": "该接口（ModifyProtectMode）用于修改实例的同步方式。",
+      "input": "ModifyProtectModeRequest",
+      "name": "修改实例的同步方式",
+      "output": "ModifyProtectModeResponse",
+      "status": "online"
+    },
     "ModifyRemoteBackupConfig": {
       "document": "本接口(ModifyRemoteBackupConfig)用于修改数据库异地备份配置信息。",
       "input": "ModifyRemoteBackupConfigRequest",
@@ -16813,6 +16820,42 @@
     },
     "ModifyParamTemplateResponse": {
       "document": "ModifyParamTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectModeRequest": {
+      "document": "ModifyProtectMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cdb-ezq1vzem",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProtectModeResponse": {
+      "document": "ModifyProtectMode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

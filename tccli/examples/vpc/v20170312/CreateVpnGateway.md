@@ -17,28 +17,34 @@ Output:
 {
     "Response": {
         "VpnGateway": {
-            "VpnGatewayQuotaSet": [],
-            "MaxConnection": 5,
-            "VpcId": "vpc-test",
-            "RenewFlag": "",
-            "Zone": "ap-bangkok-1",
-            "VpnGatewayName": "test",
-            "InstanceChargeType": "POSTPAID_BY_HOUR",
-            "CdcId": "",
-            "IsAddressBlocked": true,
-            "InternetMaxBandwidthOut": 10,
-            "State": "Pending",
-            "Version": "",
-            "VpnGatewayId": "vpngw-xxxxx",
-            "PublicIpAddress": "12.3.1.3",
-            "CreatedTime": "2020-09-22 00:00:00",
-            "NewPurchasePlan": "",
-            "ExpiredTime": "2020-09-22 00:00:00",
+            "VpnGatewayId": "vpngw-awdawc",
+            "VpcId": "vpc-adxczc",
+            "VpnGatewayName": "vpn-name",
             "Type": "IPSEC",
+            "State": "Pending",
+            "PublicIpAddress": "13.15.41.4",
+            "RenewFlag": "",
+            "InstanceChargeType": "POSTPAID_BY_HOUR",
+            "InternetMaxBandwidthOut": 10,
+            "CreatedTime": "2020-09-22 00:00:00",
+            "ExpiredTime": "2020-09-22 00:00:00",
+            "IsAddressBlocked": false,
+            "NewPurchasePlan": "",
+            "RestrictState": "NORMAL",
+            "Zone": "",
+            "VpnGatewayQuotaSet": [
+                {
+                    "Bandwidth": 5,
+                    "Cname": "微小型",
+                    "Name": "cdmini"
+                }
+            ],
+            "Version": "ver3.1",
             "NetworkInstanceId": "",
-            "RestrictState": "NORMAL"
+            "CdcId": "",
+            "MaxConnection": 10
         },
-        "RequestId": "fa15cd12-e329-1261-c585-3c3ae5c55211"
+        "RequestId": "b2187525-ab9d-42cb-82ee-998ead365bbe"
     }
 }
 ```

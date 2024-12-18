@@ -14,9 +14,6 @@ Output:
 ```
 {
     "Response": {
-        "ServiceTypeList": [
-            "scf"
-        ],
         "List": [
             {
                 "PolicyId": 16313162,
@@ -37,6 +34,9 @@ Output:
                 "AttachEntityCount": 0,
                 "AttachEntityBoundaryCount": 0
             }
+        ],
+        "ServiceTypeList": [
+            "scf"
         ],
         "TotalNum": 239,
         "RequestId": "ae2bd2b7-1d55-4b0a-8154-e02407a2b390"

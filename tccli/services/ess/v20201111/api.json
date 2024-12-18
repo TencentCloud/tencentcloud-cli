@@ -532,6 +532,13 @@
       "output": "DescribeOrganizationSealsResponse",
       "status": "online"
     },
+    "DescribeOrganizationVerifyStatus": {
+      "document": "仅且仅能查询企业本身在电子签的认证状态",
+      "input": "DescribeOrganizationVerifyStatusRequest",
+      "name": "查询本企业认证状态",
+      "output": "DescribeOrganizationVerifyStatusResponse",
+      "status": "online"
+    },
     "DescribePersonCertificate": {
       "document": "此接口（DescribePersonCertificate）用于查询个人数字证书信息。<br />注：`1.目前仅用于查询开通了医疗自动签署功能的个人数字证书。`<br />`2.调用此接口需要开通白名单，使用前请联系相关人员开通白名单。`",
       "input": "DescribePersonCertificateRequest",
@@ -9602,6 +9609,52 @@
           "name": "Seals",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationVerifyStatusRequest": {
+      "document": "DescribeOrganizationVerifyStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。 支持填入集团子公司经办人 userId 代发合同。  注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。\t",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationVerifyStatusResponse": {
+      "document": "DescribeOrganizationVerifyStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前企业认证状态\n<ul>\n<li> <b>0 </b>:未认证</li>\n<li> <b>1 </b> : 认证中</li>\n<li> <b>2 </b> : 已认证</li>\n</ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "VerifyStatus",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

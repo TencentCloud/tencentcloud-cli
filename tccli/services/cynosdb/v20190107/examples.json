@@ -378,6 +378,14 @@
         "title": "查询升降配运行参数对比"
       }
     ],
+    "DescribeClusterDatabaseTables": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDatabaseTables\n<公共请求参数>\n\n{\n    \"Db\": \"xxx\",\n    \"ClusterId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Tables\": [\n            \"testtable\"\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"198189\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取table列表"
+      }
+    ],
     "DescribeClusterDatabases": [
       {
         "document": "",

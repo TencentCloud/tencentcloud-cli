@@ -144,8 +144,7 @@
           "member": "uint64",
           "name": "CPTId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -154,8 +153,7 @@
           "member": "string",
           "name": "Issuer",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -164,8 +162,7 @@
           "member": "string",
           "name": "ExpirationDate",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -174,8 +171,7 @@
           "member": "string",
           "name": "ClaimJson",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -184,18 +180,16 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "多方签名的用户did",
-          "example": "[]",
+          "example": "[\"did:tdid:f34:0x996d0259c4c09359b8ef0fb1b530a2aa702cf092\",\"did:tdid:c97:0xc1f030ceeb858887f0cc400030d59534cf8098c8\"]",
           "member": "string",
           "name": "Parties",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -231,7 +225,7 @@
         {
           "disabled": false,
           "document": "凭证文本内容，FunctionArg和CredentialText任选其一",
-          "example": "credential",
+          "example": "{\"cptId\":1,\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"type\":[\"VerifiableCredential\"],\"credentialSubject\":{\"action\":\"setAge\",\"age\":17},\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"yol5B\"}}}",
           "member": "string",
           "name": "CredentialData",
           "required": false,
@@ -240,7 +234,7 @@
         {
           "disabled": false,
           "document": "披露策略文本",
-          "example": "{\"age\":1}",
+          "example": "{\"age\":0}",
           "member": "string",
           "name": "PolicyJson",
           "required": false,
@@ -264,7 +258,7 @@
         {
           "disabled": false,
           "document": "凭证字符串",
-          "example": "{}",
+          "example": "{\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"cptId\":1,\"credentialSubject\":{\"action\":\"setAge\",\"age\":\"0x7a5b0f3813c2bcd4a0b3e2c534aafdb4cf0337af1ad2bc308bd11c6aded91a3c\"},\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"0\"},\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\"},\"type\":[\"VerifiableCredential\"]}",
           "member": "string",
           "name": "CredentialData",
           "output_required": true,
@@ -295,7 +289,7 @@
         {
           "disabled": false,
           "document": "凭证列表",
-          "example": "[]",
+          "example": "[\"credential1\", \"credential2\"]",
           "member": "string",
           "name": "Credentials",
           "required": false,
@@ -313,7 +307,7 @@
         {
           "disabled": false,
           "document": "VP随机验证码",
-          "example": "test",
+          "example": "RIflyg",
           "member": "string",
           "name": "VerifyCode",
           "required": false,
@@ -322,7 +316,7 @@
         {
           "disabled": false,
           "document": "选择性披露策略",
-          "example": "{}",
+          "example": "{”action\":1}",
           "member": "string",
           "name": "PolicyJson",
           "required": false,
@@ -355,7 +349,7 @@
         {
           "disabled": false,
           "document": "可验证表达内容",
-          "example": "\"\"",
+          "example": "{\"context\":[\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\"],\"holder\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T11:12:22+08:00\",\"nonce\":\"RIflyg\",\"signatureValue\":\"eyJjb250ZXh0IjpbImh0dHBzOi8vZ2l0aHViLmNvbS9UZW5jZW50Q2xvdWQtQmxvY2tjaGFpbi9URElEL2Jsb2IvbWFpbi9jb250ZXh0L3YxIl0sImhvbGRlciI6ImRpZDp0ZGlkOmMxMToweGU0ZTA3NjY4OWIxMWRjYWExMTE4YWVmNjU0NzkxY2NhOTVjNzY4MjciLCJ0eXBlIjpbIlZlcmlmaWFibGVQcmVzZW50YXRpb24iXSwidmVyaWZpYWJsZUNyZWRlbnRpYWwiOlt7ImNvbnRleHQiOiJodHRwczovL2dpdGh1Yi5jb20vVGVuY2VudENsb3VkLUJsb2NrY2hhaW4vVERJRC9ibG9iL21haW4vY29udGV4dC92MSIsImNwdElkIjoxLCJjcmVkZW50aWFsU3ViamVjdCI6eyJhY3Rpb24iOiJzZXRBZ2UiLCJhZ2UiOiIweDdhNWIwZjM4MTNjMmJjZDRhMGIzZTJjNTM0YWFmZGI0Y2YwMzM3YWYxYWQyYmMzMDhiZDExYzZhZGVkOTFhM2MifSwiZXhwaXJhdGlvbkRhdGUiOiIyMTI0LTA2LTI5VDE1OjI1OjAwKzA4OjAwIiwiaWQiOiI2YWVlYTk0M2E4NTFhZDgzYWNhZTFlMTM4YzJlZGM2NyIsImlzc3VhbmNlRGF0ZSI6IjIwMjQtMTItMThUMTA6NTE6NDcrMDg6MDAiLCJpc3N1ZXIiOiJkaWQ6dGRpZDpjMTE6MHhlNGUwNzY2ODliMTFkY2FhMTExOGFlZjY1NDc5MWNjYTk1Yzc2ODI3IiwicHJvb2YiOnsiY3JlYXRlZCI6IjIwMjQtMTItMThUMTA6NTE6NDcrMDg6MDAiLCJjcmVhdG9yIjoiZGlkOnRkaWQ6YzExOjB4ZTRlMDc2Njg5YjExZGNhYTExMThhZWY2NTQ3OTFjY2E5NWM3NjgyNyNrZXlzLTAiLCJtZXRhRGlnZXN0IjoiNzljY2VmZTIzN2M5YmY2NWQ4MDQ3NDdjYTdmMjBmZjliOTg1MjQyZTRlMWU4NjM0NTg3YmJlYmUwN2I1MWM0NSIsInByaXZhY3kiOiJQdWJsaWMiLCJzYWx0Ijp7ImFjdGlvbiI6IlhHOVZBIiwiYWdlIjoiMCJ9LCJzaWduYXR1cmVWYWx1ZSI6Ik1FUUNJSEVUc0RySXBrYTgzOHk0TkhXVTJTMDcrWXdQUmIzTXB3cThXNVRMRE5zTkFpQlVCRlAwbWIrZU5wYzVjVGxhMTVNeHRJV0drMHU4QUFpVEFITGpZYlMyTWc9PSIsInR5cGUiOiJTZWNwMjU2cjEiLCJ2Y0RpZ2VzdCI6ImI4ZTE4NWZkZDYyM2QwOTQzNDQ2MGNlYWFlNmRkNTU2MzQxMWVkOWQ4YzdkZWQxNDQyNDg4MTNiYTBiNGJjZmMifSwidHlwZSI6WyJWZXJpZmlhYmxlQ3JlZGVudGlhbCJdfV0sInplcm9Qcm9vZiI6W1tdXX0=\",\"type\":\"Secp256r1\",\"verificationMethod\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"vpDigest\":\"61975d8175b3cf3f7f9f316350d94bcd2e980eb7b2e66ddecc170ab43bbb5183\"},\"type\":[\"VerifiablePresentation\"],\"verifiableCredential\":[{\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"cptId\":1,\"credentialSubject\":{\"action\":\"setAge\",\"age\":\"0x7a5b0f3813c2bcd4a0b3e2c534aafdb4cf0337af1ad2bc308bd11c6aded91a3c\"},\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"0\"},\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\"},\"type\":[\"VerifiableCredential\"]}],\"zeroProof\":[[]]}",
           "member": "string",
           "name": "PresentationData",
           "output_required": false,
@@ -386,7 +380,7 @@
         {
           "disabled": false,
           "document": "自定义DID文档json属性",
-          "example": "{}",
+          "example": "{\"name\":\"张三\"}",
           "member": "string",
           "name": "CustomAttribute",
           "required": false,
@@ -442,7 +436,7 @@
         {
           "disabled": false,
           "document": "pem格式的认证公钥",
-          "example": "test",
+          "example": "-----BEGIN PUBLIC KEY-----\\r\\nMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEdPxYz6u53NB5WqgESSaRYwDSPeBUuyke8CTlyWn7/BYpbRKQTzt3b3O+QYeMSJULvclDsj+pFCZPh9lLrBNU6w==\\r\\n-----END PUBLIC KEY-----",
           "member": "string",
           "name": "PublicKey",
           "required": false,
@@ -451,7 +445,7 @@
         {
           "disabled": false,
           "document": "自定义DID初始化属性json字符串",
-          "example": "{}",
+          "example": "{\"name\":\"李四\"}",
           "member": "string",
           "name": "CustomAttribute",
           "required": false,
@@ -702,22 +696,20 @@
         {
           "disabled": false,
           "document": "键名",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "键值",
-          "example": "1",
+          "example": "李四",
           "member": "string",
           "name": "Val",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -775,7 +767,7 @@
         {
           "disabled": false,
           "document": "凭证唯一Id",
-          "example": "a",
+          "example": "19d88ecb3f04997ccc64d425259ade0d",
           "member": "string",
           "name": "CredentialId",
           "required": false,
@@ -1004,7 +996,7 @@
         {
           "disabled": false,
           "document": "DID公钥数组",
-          "example": "[]",
+          "example": "[\"-----BEGIN PUBLIC KEY-----\\r\\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkb2grT3bobgV6CYqfa91ywqtBHeAR5HnVUQFbSzlG4irxRW7UfN69GISmRKtAWZY9hTD4sBeC0FA/2MSb7Rv7w==\\r\\n-----END PUBLIC KEY-----\"]",
           "member": "string",
           "name": "AuthPublicKeyList",
           "output_required": false,
@@ -1099,7 +1091,7 @@
         {
           "disabled": false,
           "document": "权威机构名称",
-          "example": "test",
+          "example": "某教育学院",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1114,7 +1106,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "test",
+          "example": "某教育学院",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1144,7 +1136,7 @@
         {
           "disabled": false,
           "document": "机构备注信息",
-          "example": "test",
+          "example": "职业教育",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -1200,7 +1192,7 @@
         {
           "disabled": false,
           "document": "凭证模板内容",
-          "example": "{}",
+          "example": "{\\n  \"cptType\" : \"original\",\\n  \"$schema\" : \"http://json-schema.org/draft-04/schema#\",\\n  \"description\" : \"operate temp credential\",\\n  \"title\" : \"operation\",\\n  \"type\" : \"object\",\\n  \"properties\" : {\\n    \"action\" : {\\n      \"description\" : \"操作类型\",\\n      \"type\" : \"string\"\\n    }\\n  },\\n  \"required\" : [ \"action\" ]\\n}",
           "member": "string",
           "name": "CPTJson",
           "output_required": true,
@@ -1397,7 +1389,7 @@
         {
           "disabled": false,
           "document": "凭证内容",
-          "example": "{}",
+          "example": "{\"cptId\":1,\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"type\":[\"VerifiableCredential\"],\"credentialSubject\":{\"action\":\"setAge\",\"age\":17},\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"yol5B\"}}}",
           "member": "string",
           "name": "CredentialData",
           "required": false,
@@ -1472,7 +1464,7 @@
         {
           "disabled": false,
           "document": "可验证表达内容",
-          "example": "{}",
+          "example": "{\"context\":[\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\"],\"holder\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T11:12:22+08:00\",\"nonce\":\"RIflyg\",\"signatureValue\":\"eyJjb250ZXh0IjpbImh0dHBzOi8vZ2l0aHViLmNvbS9UZW5jZW50Q2xvdWQtQmxvY2tjaGFpbi9URElEL2Jsb2IvbWFpbi9jb250ZXh0L3YxIl0sImhvbGRlciI6ImRpZDp0ZGlkOmMxMToweGU0ZTA3NjY4OWIxMWRjYWExMTE4YWVmNjU0NzkxY2NhOTVjNzY4MjciLCJ0eXBlIjpbIlZlcmlmaWFibGVQcmVzZW50YXRpb24iXSwidmVyaWZpYWJsZUNyZWRlbnRpYWwiOlt7ImNvbnRleHQiOiJodHRwczovL2dpdGh1Yi5jb20vVGVuY2VudENsb3VkLUJsb2NrY2hhaW4vVERJRC9ibG9iL21haW4vY29udGV4dC92MSIsImNwdElkIjoxLCJjcmVkZW50aWFsU3ViamVjdCI6eyJhY3Rpb24iOiJzZXRBZ2UiLCJhZ2UiOiIweDdhNWIwZjM4MTNjMmJjZDRhMGIzZTJjNTM0YWFmZGI0Y2YwMzM3YWYxYWQyYmMzMDhiZDExYzZhZGVkOTFhM2MifSwiZXhwaXJhdGlvbkRhdGUiOiIyMTI0LTA2LTI5VDE1OjI1OjAwKzA4OjAwIiwiaWQiOiI2YWVlYTk0M2E4NTFhZDgzYWNhZTFlMTM4YzJlZGM2NyIsImlzc3VhbmNlRGF0ZSI6IjIwMjQtMTItMThUMTA6NTE6NDcrMDg6MDAiLCJpc3N1ZXIiOiJkaWQ6dGRpZDpjMTE6MHhlNGUwNzY2ODliMTFkY2FhMTExOGFlZjY1NDc5MWNjYTk1Yzc2ODI3IiwicHJvb2YiOnsiY3JlYXRlZCI6IjIwMjQtMTItMThUMTA6NTE6NDcrMDg6MDAiLCJjcmVhdG9yIjoiZGlkOnRkaWQ6YzExOjB4ZTRlMDc2Njg5YjExZGNhYTExMThhZWY2NTQ3OTFjY2E5NWM3NjgyNyNrZXlzLTAiLCJtZXRhRGlnZXN0IjoiNzljY2VmZTIzN2M5YmY2NWQ4MDQ3NDdjYTdmMjBmZjliOTg1MjQyZTRlMWU4NjM0NTg3YmJlYmUwN2I1MWM0NSIsInByaXZhY3kiOiJQdWJsaWMiLCJzYWx0Ijp7ImFjdGlvbiI6IlhHOVZBIiwiYWdlIjoiMCJ9LCJzaWduYXR1cmVWYWx1ZSI6Ik1FUUNJSEVUc0RySXBrYTgzOHk0TkhXVTJTMDcrWXdQUmIzTXB3cThXNVRMRE5zTkFpQlVCRlAwbWIrZU5wYzVjVGxhMTVNeHRJV0drMHU4QUFpVEFITGpZYlMyTWc9PSIsInR5cGUiOiJTZWNwMjU2cjEiLCJ2Y0RpZ2VzdCI6ImI4ZTE4NWZkZDYyM2QwOTQzNDQ2MGNlYWFlNmRkNTU2MzQxMWVkOWQ4YzdkZWQxNDQyNDg4MTNiYTBiNGJjZmMifSwidHlwZSI6WyJWZXJpZmlhYmxlQ3JlZGVudGlhbCJdfV0sInplcm9Qcm9vZiI6W1tdXX0=\",\"type\":\"Secp256r1\",\"verificationMethod\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"vpDigest\":\"61975d8175b3cf3f7f9f316350d94bcd2e980eb7b2e66ddecc170ab43bbb5183\"},\"type\":[\"VerifiablePresentation\"],\"verifiableCredential\":[{\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"cptId\":1,\"credentialSubject\":{\"action\":\"setAge\",\"age\":\"0x7a5b0f3813c2bcd4a0b3e2c534aafdb4cf0337af1ad2bc308bd11c6aded91a3c\"},\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"0\"},\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\"},\"type\":[\"VerifiableCredential\"]}],\"zeroProof\":[[]]}",
           "member": "string",
           "name": "PresentationData",
           "required": false,
@@ -1515,7 +1507,7 @@
         {
           "disabled": false,
           "document": "验证返回码",
-          "example": "0",
+          "example": "1001",
           "member": "uint64",
           "name": "VerifyCode",
           "output_required": false,

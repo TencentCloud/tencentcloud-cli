@@ -13,18 +13,14 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "Clients": [
             {
-                "Count": 1,
-                "IP": "xx"
-            },
-            {
-                "Count": 1,
-                "IP": "xx"
+                "IP": "abc",
+                "Count": 1
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

@@ -18,16 +18,18 @@ Output:
         "List": [
             {
                 "PolicyId": 109360057,
-                "PolicyName": "test-0103",
-                "AddTime": "2022-01-03 10:38:28",
+                "PolicyName": "policygen-20240909141614",
+                "AddTime": "2024-09-09 15:51:40",
                 "CreateMode": 3,
-                "Remark": "",
-                "OperateOwnerUin": null,
-                "OperateUin": null,
-                "OperateUinType": null,
-                "PolicyType": "",
+                "Remark": "cos policy",
+                "OperateOwnerUin": "100008847111",
+                "OperateUin": "100008847111",
+                "OperateUinType": 0,
+                "PolicyType": "User",
                 "Deactived": 0,
-                "DeactivedDetail": []
+                "DeactivedDetail": [
+                    "ccs"
+                ]
             }
         ],
         "TotalNum": 1,

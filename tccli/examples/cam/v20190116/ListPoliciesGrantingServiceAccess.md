@@ -19,12 +19,17 @@ Output:
                     "ServiceType": "cvm",
                     "ServiceName": "云服务器"
                 },
-                "Action": [],
+                "Action": [
+                    {
+                        "Name": "AddInstanceInDeployGroup",
+                        "Description": "新增实例部署组"
+                    }
+                ],
                 "Policy": [
                     {
                         "PolicyId": "73019980",
                         "PolicyName": "policygen-20210xxxxxxx",
-                        "PolicyDescription": "-",
+                        "PolicyDescription": "cvm custom policy",
                         "PolicyType": "Custom"
                     }
                 ]
@@ -67,7 +72,7 @@ Output:
                     {
                         "PolicyId": "73019980",
                         "PolicyName": "policygen-20210xxxxxxx",
-                        "PolicyDescription": "-",
+                        "PolicyDescription": "cvm custom policy",
                         "PolicyType": "Custom"
                     }
                 ]
