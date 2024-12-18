@@ -42,6 +42,13 @@
       "output": "GetTrainingTextResponse",
       "status": "online"
     },
+    "GetVRSVoiceTypeInfo": {
+      "document": "该接口用于查询复刻音色详细信息。",
+      "input": "GetVRSVoiceTypeInfoRequest",
+      "name": "查询复刻音色信息",
+      "output": "GetVRSVoiceTypeInfoResponse",
+      "status": "online"
+    },
     "GetVRSVoiceTypes": {
       "document": "查询复刻音色",
       "input": "GetVRSVoiceTypesRequest",
@@ -629,6 +636,61 @@
       ],
       "type": "object"
     },
+    "GetVRSVoiceTypeInfoRequest": {
+      "document": "GetVRSVoiceTypeInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色id。",
+          "example": "200000000",
+          "member": "int64",
+          "name": "VoiceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0 - 除快速声音复刻外其他复刻类型（默认）； 5 - 快速声音复刻。 默认为0。",
+          "example": "5",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "快速复刻音色id。",
+          "example": "c0be5744e9804c5fae5708fbd71db20d",
+          "member": "string",
+          "name": "FastVoiceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVRSVoiceTypeInfoResponse": {
+      "document": "GetVRSVoiceTypeInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色信息",
+          "example": "无",
+          "member": "VoiceTypeInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetVRSVoiceTypesRequest": {
       "document": "GetVRSVoiceTypes请求参数结构体",
       "members": [
@@ -825,21 +887,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "准确度 (<75则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "准确度 (小于75则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "PronAccuracy",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "流畅度 (<0.95则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流畅度 (小于0.95则认为不合格)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
           "name": "PronFluency",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -849,7 +911,7 @@
           "example": "无",
           "member": "int64",
           "name": "Tag",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -859,7 +921,7 @@
           "example": "无",
           "member": "string",
           "name": "Word",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
