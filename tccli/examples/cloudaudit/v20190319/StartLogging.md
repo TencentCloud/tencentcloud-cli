@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cloudaudit StartLogging --cli-unfold-argument  \
-    --AuditName xxxxx
+    --AuditName audit_log
 ```
 
 Output: 

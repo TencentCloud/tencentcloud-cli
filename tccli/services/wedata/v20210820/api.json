@@ -7191,6 +7191,15 @@
           "name": "ProjectId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数资源文件类型",
+          "example": "JAR\\PYTHON",
+          "member": "string",
+          "name": "FunctionResourceFileType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14176,6 +14185,24 @@
           "name": "IncludeTaskFolder",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用最新模式展示目录树",
+          "example": "false",
+          "member": "bool",
+          "name": "NewFolderTreeMode",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "节点分类ID",
+          "example": "aaa_DLC",
+          "member": "string",
+          "name": "TaskNodeId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14249,6 +14276,15 @@
           "name": "DisplayType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否新模式展示目录树",
+          "example": "true",
+          "member": "bool",
+          "name": "NewFolderTreeMode",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -28571,6 +28607,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入到编排空间配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskImportInfo",
+          "name": "TaskImportInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务延迟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "BusinessLatency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前同步位点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "170000010000",
+          "member": "int64",
+          "name": "CurrentSyncPosition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -42068,7 +42137,7 @@
         {
           "disabled": false,
           "document": "表的全局唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "example": "3sURDHOlTaSQyx7lfuILJg",
           "member": "string",
           "name": "TableId",
           "output_required": true,
@@ -42098,7 +42167,7 @@
         {
           "disabled": false,
           "document": "数据源全局唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "9263",
           "member": "int64",
           "name": "DatasourceId",
           "output_required": true,
@@ -42308,7 +42377,7 @@
         {
           "disabled": false,
           "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "1",
           "member": "int64",
           "name": "LifeCycleTime",
           "output_required": true,
@@ -42328,7 +42397,7 @@
         {
           "disabled": false,
           "document": "数据源引擎的实例ID：如EMR集群实例ID/数据源实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "1333",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -42408,7 +42477,7 @@
         {
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "tbds-hoplnvlm",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -43660,6 +43729,89 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskImportInfo": {
+      "document": "集成任务导入到编排空间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否导入编排空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsImport",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否新建工作流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNewWorkFlow",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流所属目录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "WorkFlowFolderId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流所属目录名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称",
+          "member": "string",
+          "name": "WorkFlowFolderName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "WorkFlowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "工作流名称示例",
+          "member": "string",
+          "name": "WorkFlowName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重名任务处理策略, 0:跳过,不导入; 1: 重命名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskNameExistMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -1,3 +1,422 @@
+# Release 3.0.1117.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 19 次发布
+
+发布时间：2024-12-18 11:03:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ArchNodeDetail](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchNodeDetail)
+
+	* 新增成员：ParentDiagramId
+
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 71 次发布
+
+发布时间：2024-12-18 11:06:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
+
+	* 新增入参：NotifyMaxCount
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 121 次发布
+
+发布时间：2024-12-18 11:07:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyProtectMode](http://document.tencentcloudapi.woa.com/document/product/236/85526)
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 19 次发布
+
+发布时间：2024-12-18 11:08:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ObjectType](http://document.tencentcloudapi.woa.com/document/product/1694/79907#ObjectType)
+
+	* 新增成员：ArchLayer
+
+* [TemplateGroupAction](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TemplateGroupAction)
+
+	* 新增成员：FailurePerformance
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 13 次发布
+
+发布时间：2024-12-18 11:09:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetExportControlUnderwriting](http://document.tencentcloudapi.woa.com/document/product/1626/85541)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 97 次发布
+
+发布时间：2024-12-18 11:10:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckRechargeKafkaServer](http://document.tencentcloudapi.woa.com/document/product/614/81272)
+
+	* 新增入参：NetworkInfo
+
+* [CreateKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81271)
+
+	* 新增入参：NetworkInfo
+
+* [ModifyKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81268)
+
+	* 新增入参：NetworkInfo
+
+* [PreviewKafkaRecharge](http://document.tencentcloudapi.woa.com/document/product/614/81267)
+
+	* 新增入参：NetworkInfo
+
+
+新增数据结构：
+
+* [NetworkInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#NetworkInfo)
+* [PrivateDomainNames](http://document.tencentcloudapi.woa.com/document/product/614/56471#PrivateDomainNames)
+
+修改数据结构：
+
+* [KafkaProtocolInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaProtocolInfo)
+
+	* 新增成员：EnableClientCertificate, EnableServerCertificate, CACertificateId, SVRCertificateId
+
+* [KafkaRechargeInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#KafkaRechargeInfo)
+
+	* 新增成员：NetworkInfo
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 113 次发布
+
+发布时间：2024-12-18 11:11:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteRaspRules](http://document.tencentcloudapi.woa.com/document/product/296/85532)
+* [DescribeRaspMaxCpu](http://document.tencentcloudapi.woa.com/document/product/296/85531)
+* [DescribeRaspRuleVuls](http://document.tencentcloudapi.woa.com/document/product/296/85530)
+* [DescribeRaspRules](http://document.tencentcloudapi.woa.com/document/product/296/85529)
+* [ModifyRaspMaxCpu](http://document.tencentcloudapi.woa.com/document/product/296/85528)
+* [ModifyRaspRules](http://document.tencentcloudapi.woa.com/document/product/296/85527)
+
+新增数据结构：
+
+* [RaspRule](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspRule)
+* [RaspRuleVul](http://document.tencentcloudapi.woa.com/document/product/296/19867#RaspRuleVul)
+
+修改数据结构：
+
+* [BashEventNew](http://document.tencentcloudapi.woa.com/document/product/296/19867#BashEventNew)
+
+	* 新增成员：RegexExe
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 26 次发布
+
+发布时间：2024-12-18 11:14:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCheckSyncJob](http://document.tencentcloudapi.woa.com/document/product/571/78328)
+
+	* 新增入参：NoDdlCircleCheck
+
+* [StartSyncJob](http://document.tencentcloudapi.woa.com/document/product/571/78313)
+
+	* 新增入参：ProcessControl
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 115 次发布
+
+发布时间：2024-12-18 11:16:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeOrganizationVerifyStatus](http://document.tencentcloudapi.woa.com/document/product/1668/85542)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 170 次发布
+
+发布时间：2024-12-18 11:16:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增出参：PreviewUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 22 次发布
+
+发布时间：2024-12-18 11:18:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAndSendClientInvitationMail](http://document.tencentcloudapi.woa.com/document/product/1724/85543)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 60 次发布
+
+发布时间：2024-12-18 11:19:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* PublishBroadcastMessage
+* PublishRRPCMessage
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 12 次发布
+
+发布时间：2024-12-18 11:21:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReconstructDocumentSSE](http://document.tencentcloudapi.woa.com/document/product/1764/84923)
+
+	* 新增入参：FileBase64
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 33 次发布
+
+发布时间：2024-12-18 11:22:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CurrentOp](http://document.tencentcloudapi.woa.com/document/product/240/38576#CurrentOp)
+
+	* 新增成员：ExecNode
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 27 次发布
+
+发布时间：2024-12-18 11:25:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RegionDetail](http://document.tencentcloudapi.woa.com/document/product/1597/75228#RegionDetail)
+
+	* 新增成员：RegionType
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 127 次发布
+
+发布时间：2024-12-18 11:29:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateTenantQuotaOpt](http://document.tencentcloudapi.woa.com/document/product/1179/85544)
+
+修改接口：
+
+* [CreateRocketMQMigrationTask](http://document.tencentcloudapi.woa.com/document/product/1179/85508)
+
+	* 新增入参：Roles
+
+
+新增数据结构：
+
+* [RocketMQRoleConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQRoleConfig)
+
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 11 次发布
+
+发布时间：2024-12-18 11:33:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Words](http://document.tencentcloudapi.woa.com/document/product/1664/79152#Words)
+
+	* <font color="#dd0000">**修改成员**：</font>PronAccuracy, PronFluency, Tag, Word
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 77 次发布
+
+发布时间：2024-12-18 11:34:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCustomFunction](http://document.tencentcloudapi.woa.com/document/product/1607/77705)
+
+	* 新增入参：FunctionResourceFileType
+
+* [DescribeDsFolderTree](http://document.tencentcloudapi.woa.com/document/product/1607/82940)
+
+	* 新增入参：NewFolderTreeMode, TaskNodeId
+
+* [DescribeDsParentFolderTree](http://document.tencentcloudapi.woa.com/document/product/1607/82953)
+
+	* 新增入参：NewFolderTreeMode
+
+
+新增数据结构：
+
+* [TaskImportInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskImportInfo)
+
+修改数据结构：
+
+* [IntegrationTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#IntegrationTaskInfo)
+
+	* 新增成员：TaskImportInfo, BusinessLatency, CurrentSyncPosition
+
+
+
+
 # Release 3.0.1116.1
 
 ## 人脸核身(faceid) 版本：2018-03-01

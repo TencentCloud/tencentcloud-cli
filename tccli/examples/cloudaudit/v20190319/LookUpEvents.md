@@ -8,7 +8,7 @@ Input:
 tccli cloudaudit LookUpEvents --cli-unfold-argument  \
     --EndTime 1553056687 \
     --LookupAttributes.0.AttributeKey AccessKeyId \
-    --LookupAttributes.0.AttributeValue XXXX \
+    --LookupAttributes.0.AttributeValue a9266b0599ff \
     --StartTime 1553056487
 ```
 

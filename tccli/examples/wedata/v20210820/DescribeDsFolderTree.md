@@ -54,3 +54,27 @@ Output:
 }
 ```
 
+**Example 2: 错误示例**
+
+错误示例
+
+Input: 
+
+```
+tccli wedata DescribeDsFolderTree --cli-unfold-argument  \
+    --ProjectId 1111
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "当前用户角色或WeData版本没有权限，请进行角色授权或者升级WeData版本"
+        },
+        "RequestId": "78deafe3-7320-448e-a6a5-2fcb38a4e4a5"
+    }
+}
+```
+

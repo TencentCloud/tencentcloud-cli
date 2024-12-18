@@ -21,7 +21,7 @@
         {
           "disabled": false,
           "document": "跨库联查空间名称，支持模糊搜索",
-          "example": "无",
+          "example": "spaceName_default",
           "member": "string",
           "name": "SpaceName",
           "required": false,
@@ -30,7 +30,7 @@
         {
           "disabled": false,
           "document": "排序字段:created_at",
-          "example": "无",
+          "example": "created_at",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -39,7 +39,7 @@
         {
           "disabled": false,
           "document": "排序方式:desc/asc",
-          "example": "无",
+          "example": "desc",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -48,7 +48,7 @@
         {
           "disabled": false,
           "document": "查询开始位置",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -57,7 +57,7 @@
         {
           "disabled": false,
           "document": "列表查询数量",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -93,103 +93,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "唯一Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "唯一Id",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AppId应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "AppId应用Id",
+          "example": "101***929",
           "member": "int64",
           "name": "AppId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户id",
+          "example": "101***929",
           "member": "string",
           "name": "Uin",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子账号用户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "子账号用户id",
+          "example": "101***929",
           "member": "string",
           "name": "SubAccountUin",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跨库联查空间id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "跨库联查空间id",
+          "example": "space-abc",
           "member": "string",
           "name": "SpaceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "跨库联查空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "跨库联查空间名称",
+          "example": "spaceName_default",
           "member": "string",
           "name": "SpaceName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否默认空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否默认空间",
+          "example": "false",
           "member": "bool",
           "name": "DefaultSpace",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "资源id列表",
+          "example": "[\"dmc-1\",\"dmc-2\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建时间",
+          "example": "2023-12-17 16:00:00",
           "member": "string",
           "name": "CreatedAt",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "更新时间",
+          "example": "2023-12-17 16:00:00",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

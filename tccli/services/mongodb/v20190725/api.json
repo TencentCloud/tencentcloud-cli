@@ -1,7 +1,7 @@
 {
   "actions": {
     "AssignProject": {
-      "document": "本接口(AssignProject)用于指定云数据库实例的所属项目。\n",
+      "document": "本接口(AssignProject)用于指定云数据库实例的所属项目。",
       "input": "AssignProjectRequest",
       "name": "指定云数据库实例的所属项目",
       "output": "AssignProjectResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "DescribeAsyncRequestInfo": {
-      "document": "查询异步任务状态接口",
+      "document": "本接口（DescribeAsyncRequestInfo）用于查询异步任务状态接口。",
       "input": "DescribeAsyncRequestInfoRequest",
       "name": "查询异步任务状态接口",
       "output": "DescribeAsyncRequestInfoResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "DescribeCurrentOp": {
-      "document": "本接口(DescribeCurrentOp)用于查询MongoDB云数据库实例的当前正在执行的操作。",
+      "document": "本接口（DescribeCurrentOp）用于查询云数据库实例的当前正在执行的操作。",
       "input": "DescribeCurrentOpRequest",
       "name": "查询数据库实例当前正在执行的操作",
       "output": "DescribeCurrentOpResponse",
@@ -380,8 +380,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
-          "example": "[\"cmgo-eqmoa5sf\\r\\n\"]",
+          "document": "实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同",
+          "example": "[\"cmgo-eqmo****\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -390,7 +390,7 @@
         {
           "disabled": false,
           "document": "项目ID，用户已创建项目的唯一ID,非自定义",
-          "example": "12",
+          "example": "1118****",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -405,10 +405,10 @@
         {
           "disabled": false,
           "document": "返回的异步任务ID列表",
-          "example": "[1081]",
+          "example": "[1081****]",
           "member": "uint64",
           "name": "FlowIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1018,7 +1018,7 @@
         {
           "disabled": false,
           "document": "私有网络ID。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询确认正确的ID。 示例值：vpc-pxyzim13",
-          "example": "无",
+          "example": "vpc-k515****",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1027,7 +1027,7 @@
         {
           "disabled": false,
           "document": "私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche",
-          "example": "无",
+          "example": "subnet-60dr****",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1036,7 +1036,7 @@
         {
           "disabled": false,
           "document": "实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。",
-          "example": "无",
+          "example": "********",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1045,7 +1045,7 @@
         {
           "disabled": false,
           "document": "项目ID。\n- 若不设置该参数，则为默认项目。\n- 在 [MongoDB 控制台项目管理](https://console.cloud.tencent.com/project)页面，可获取项目ID。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1072,7 +1072,7 @@
         {
           "disabled": false,
           "document": "父实例 ID。当参数**Clone**为3或者4时，即实例为只读或灾备实例时，该参数必须配置。",
-          "example": "无",
+          "example": "cmgo-nh1o****",
           "member": "string",
           "name": "Father",
           "required": false,
@@ -1081,7 +1081,7 @@
         {
           "disabled": false,
           "document": "安全组 ID。",
-          "example": "无",
+          "example": "sg-abc****",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -1090,7 +1090,7 @@
         {
           "disabled": false,
           "document": "克隆实例回档时间。\n- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。\n- 回档时间范围：仅能回档7天内时间点的数据。",
-          "example": "无",
+          "example": "2022-09-10 15:04:05",
           "member": "string",
           "name": "RestoreTime",
           "required": false,
@@ -1099,7 +1099,7 @@
         {
           "disabled": false,
           "document": "实例名称。仅支持长度为60个字符的中文、英文、数字、下划线_、分隔符- 。",
-          "example": "无",
+          "example": "testInstance",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1108,7 +1108,7 @@
         {
           "disabled": false,
           "document": "若多可用区部署云数据库实例，指定多可用区列表。\n- 多可用区部署实例，参数 **Zone** 指定实例主可用区信息；**AvailabilityZoneList** 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。\n- 通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。\n",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "AvailabilityZoneList",
           "required": false,
@@ -1117,7 +1117,7 @@
         {
           "disabled": false,
           "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。\n",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "MongosCpu",
           "required": false,
@@ -1126,7 +1126,7 @@
         {
           "disabled": false,
           "document": "Mongos 内存大小。\n-  购买分片集群时，必须填写。\n- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。\n\n",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "MongosMemory",
           "required": false,
@@ -1135,7 +1135,7 @@
         {
           "disabled": false,
           "document": "Mongos 数量。购买分片集群时，必须填写。\n- 单可用区部署实例，其数量范围为[3,32]。\n- 多可用区部署实例，其数量范围为[6,32]。",
-          "example": "无",
+          "example": "3",
           "member": "uint64",
           "name": "MongosNodeNum",
           "required": false,
@@ -1144,7 +1144,7 @@
         {
           "disabled": false,
           "document": "只读节点数量，取值范围[0,5]。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
           "required": false,
@@ -1153,7 +1153,7 @@
         {
           "disabled": false,
           "document": "指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",
           "required": false,
@@ -1162,7 +1162,7 @@
         {
           "disabled": false,
           "document": "Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "HiddenZone",
           "required": false,
@@ -1171,7 +1171,7 @@
         {
           "disabled": false,
           "document": "参数模板 ID。参数模板是一组 MongoDB 的参数并为预设置了参数值的集合，将一组有相同诉求的参数及值 存为模板，在创建实例时，可直接引用参数值到新实例。合理使用参数模板，可以提高MongoDB数据库的效率。模板列表从 DescribeDBInstanceParamTpl 接口获取，注意模板支持的版本。",
-          "example": "tpl-0vswufxag",
+          "example": "tpl-0vswu****",
           "member": "string",
           "name": "ParamTemplateId",
           "required": false,
@@ -1186,7 +1186,7 @@
         {
           "disabled": false,
           "document": "订单ID。",
-          "example": "20190709160000003502416120946732",
+          "example": "2019070916000000350241612094****",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -1196,7 +1196,7 @@
         {
           "disabled": false,
           "document": "创建的实例ID列表。",
-          "example": "[\"cmgo-m26c6jsf\"]",
+          "example": "[\"cmgo-m26c****\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -1399,7 +1399,7 @@
         {
           "disabled": false,
           "document": "私有网络ID。请登录[私有网络控制台](https://console.cloud.tencent.com/vpc)查询确认正确的ID。 示例值：vpc-pxyzim13",
-          "example": "vpc-0akbol5v",
+          "example": "vpc-0akb****",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -1408,7 +1408,7 @@
         {
           "disabled": false,
           "document": "私有网络VPC的子网。请登录 [私有网络控制台](https://console.cloud.tencent.com/vpc) 查询子网列表确认正确的 ID。 示例值：subnet-7jbabche",
-          "example": "subnet-fyrtjbqw",
+          "example": "subnet-fyrt****",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -1417,7 +1417,7 @@
         {
           "disabled": false,
           "document": "实例密码。自定义密码长度为8-32个字符，至少包含字母、数字和字符（!@#%^*()_）中的两种。",
-          "example": "pwd123456",
+          "example": "********",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -1462,7 +1462,7 @@
         {
           "disabled": false,
           "document": "父实例 ID。当参数**Clone**为3或者4时，即实例为只读或灾备实例时，该参数必须配置。",
-          "example": "无",
+          "example": "cmgo-nh1o****",
           "member": "string",
           "name": "Father",
           "required": false,
@@ -1471,7 +1471,7 @@
         {
           "disabled": false,
           "document": "安全组 ID。 ",
-          "example": "无",
+          "example": "sg-di48****",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
@@ -1480,7 +1480,7 @@
         {
           "disabled": false,
           "document": "克隆实例回档时间，当Clone取值为5或6时为必填。- 若为克隆实例，则必须配置该参数。输入格式示例：2021-08-13 16:30:00。- 回档时间范围：仅能回档7天内时间点的数据。",
-          "example": "无",
+          "example": "2022-09-15 15:04:05",
           "member": "string",
           "name": "RestoreTime",
           "required": false,
@@ -1489,7 +1489,7 @@
         {
           "disabled": false,
           "document": "实例名称。仅支持长度为60个字符的中文、英文、数字、下划线_、分隔符- 。",
-          "example": "无",
+          "example": "myInstance",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1498,7 +1498,7 @@
         {
           "disabled": false,
           "document": "若多可用区部署云数据库实例，指定多可用区列表。\n- 多可用区部署实例，参数 **Zone** 指定实例主可用区信息；**AvailabilityZoneList** 指定所有可用区信息，包含主可用区。输入格式如：[ap-guangzhou-2,ap-guangzhou-3,ap-guangzhou-4]。\n- 通过接口 [DescribeSpecInfo](https://cloud.tencent.com/document/product/240/38567) 可获取云数据库不同地域规划的可用区信息，以便指定有效的可用区。\n- 多可用区部署节点只能部署在3个不同可用区。不支持将集群的大多数节点部署在同一个可用区。例如：3节点集群不支持2个节点部署在同一个区。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "AvailabilityZoneList",
           "required": false,
@@ -1507,7 +1507,7 @@
         {
           "disabled": false,
           "document": "Mongos CPU 核数，支持1、2、4、8、16。购买分片集群时，必须填写。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "MongosCpu",
           "required": false,
@@ -1516,7 +1516,7 @@
         {
           "disabled": false,
           "document": "Mongos 内存大小。\n-  购买分片集群时，必须填写。\n- 单位：GB，支持1核2GB、2核4GB、4核8GB、8核16GB、16核32GB。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "MongosMemory",
           "required": false,
@@ -1525,7 +1525,7 @@
         {
           "disabled": false,
           "document": "Mongos 数量。购买分片集群时，必须填写。\n- 单可用区部署实例，其数量范围为[3,32]。\n- 多可用区部署实例，其数量范围为[6,32]。",
-          "example": "无",
+          "example": "3",
           "member": "uint64",
           "name": "MongosNodeNum",
           "required": false,
@@ -1534,7 +1534,7 @@
         {
           "disabled": false,
           "document": "只读节点数量，取值范围[0,5]。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
           "required": false,
@@ -1543,7 +1543,7 @@
         {
           "disabled": false,
           "document": "指只读节点所属可用区数组。跨可用区部署实例，参数**ReadonlyNodeNum**不为**0**时，必须配置该参数。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ReadonlyNodeAvailabilityZoneList",
           "required": false,
@@ -1552,7 +1552,7 @@
         {
           "disabled": false,
           "document": "Hidden节点所属可用区。跨可用区部署实例，必须配置该参数。",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "HiddenZone",
           "required": false,
@@ -1561,7 +1561,7 @@
         {
           "disabled": false,
           "document": "参数模板 ID。参数模板是一组 MongoDB 的参数并为预设置了参数值的集合，将一组有相同诉求的参数及值 存为模板，在创建实例时，可直接引用参数值到新实例。合理使用参数模板，可以提高MongoDB数据库的效率。模板列表从 DescribeDBInstanceParamTpl 接口获取，注意模板支持的版本及实例类型。",
-          "example": "tpl-0vswufxag",
+          "example": "tpl-0vswu****",
           "member": "string",
           "name": "ParamTemplateId",
           "required": false,
@@ -1576,7 +1576,7 @@
         {
           "disabled": false,
           "document": "订单ID",
-          "example": "7142863",
+          "example": "714****",
           "member": "string",
           "name": "DealId",
           "output_required": true,
@@ -1586,7 +1586,7 @@
         {
           "disabled": false,
           "document": "创建的实例ID列表",
-          "example": "[\"cmgo-po5f899l\"]",
+          "example": "[\"cmgo-po5f****\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -1607,92 +1607,102 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作序号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作序号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-130987****",
           "member": "int64",
           "name": "OpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "操作所在的命名空间，形式如db.collection\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作所在的命名空间，形式如db.collection。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "db.test",
           "member": "string",
           "name": "Ns",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "操作执行语句\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作执行语句。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Query",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "update",
           "member": "string",
           "name": "Op",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "操作所在的分片名称",
-          "example": "",
+          "document": "操作所在的分片名称。",
+          "example": "无",
           "member": "string",
           "name": "ReplicaSetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "筛选条件，节点状态，可能的取值为：Primary、Secondary\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "State",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "操作详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "string",
-          "name": "Operation",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "操作所在的节点名称",
-          "example": "",
+          "document": "操作所在的节点名称。",
+          "example": "无",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作已执行时间（ms）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "操作详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，节点状态，可能的取值为：Primary、Secondary。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作已执行时间（ms）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MicrosecsRunning",
           "member": "uint64",
           "name": "MicrosecsRunning",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前操作所在节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "从节点",
+          "member": "string",
+          "name": "ExecNode",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -1877,7 +1887,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2134,8 +2144,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同",
-          "example": "cmgo-p8vnipr5",
+          "document": "指定要查询的实例 ID，例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。",
+          "example": "cmgo-p8vn****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2143,8 +2153,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件，操作所属的命名空间namespace，格式为db.collection",
-          "example": "无",
+          "document": "操作所属的命名空间 namespace，格式为 db.collection。",
+          "example": "data.user",
           "member": "string",
           "name": "Ns",
           "required": false,
@@ -2152,8 +2162,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件，操作已经执行的时间（单位：毫秒），结果将返回超过设置时间的操作，默认值为0，取值范围为[0, 3600000]",
-          "example": "无",
+          "document": "设置查询筛选条件为操作任务已经执行的时间。\n- 默认值为0，取值范围为[0, 3600000]，单位：毫秒。\n- 结果将返回超过设置时间的操作。",
+          "example": "20",
           "member": "uint64",
           "name": "MillisecondRunning",
           "required": false,
@@ -2161,8 +2171,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件，操作类型，可能的取值：none，update，insert，query，command，getmore，remove和killcursors",
-          "example": "无",
+          "document": "设置查询筛选条件为操作任务类型。取值包括：none、update、insert，query、command、getmore、remove 和 killcursors。",
+          "example": "update",
           "member": "string",
           "name": "Op",
           "required": false,
@@ -2170,8 +2180,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件，分片名称",
-          "example": "无",
+          "document": "筛选条件，分片名称。",
+          "example": "cmgo-nh1o****_0",
           "member": "string",
           "name": "ReplicaSetName",
           "required": false,
@@ -2179,8 +2189,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件，节点状态，可能的取值为：primary\nsecondary",
-          "example": "无",
+          "document": "设置查询筛选条件为节点角色。\n- primary：主节点。\n- secondary：从节点。",
+          "example": "primary",
           "member": "string",
           "name": "State",
           "required": false,
@@ -2207,7 +2217,7 @@
         {
           "disabled": false,
           "document": "返回结果集排序的字段，目前支持：\"MicrosecsRunning\"/\"microsecsrunning\"，默认为升序排序",
-          "example": "无",
+          "example": "MicrosecsRunning",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2216,7 +2226,7 @@
         {
           "disabled": false,
           "document": "返回结果集排序方式，可能的取值：\"ASC\"/\"asc\"或\"DESC\"/\"desc\"",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -2230,21 +2240,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的操作总数",
+          "document": "符合查询条件的操作总数。",
           "example": "19",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前操作列表",
+          "document": "当前操作列表。",
           "example": "无",
           "member": "CurrentOp",
           "name": "CurrentOps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2579,7 +2589,7 @@
         {
           "disabled": false,
           "document": "参数总个数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -2609,7 +2619,7 @@
         {
           "disabled": false,
           "document": "参数模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "my_tpl_demo",
           "member": "string",
           "name": "TplName",
           "output_required": true,
@@ -2683,7 +2693,7 @@
         {
           "disabled": false,
           "document": "参数模板总数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -2786,7 +2796,7 @@
         {
           "disabled": false,
           "document": "配置返回结果排序依据的字段。目前支持依据\"ProjectId\"、\"InstanceName\"、\"CreateTime\"排序。",
-          "example": "无",
+          "example": "ProjectId",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -2795,7 +2805,7 @@
         {
           "disabled": false,
           "document": "配置返回结果的排序方式。\n- ASC：升序。\n- DESC：降序。",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -2804,7 +2814,7 @@
         {
           "disabled": false,
           "document": "项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。",
-          "example": "无",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "ProjectIds",
           "required": false,
@@ -2813,7 +2823,7 @@
         {
           "disabled": false,
           "document": "指定查询搜索的关键词。支持设置为具体的实例ID、实例名称或者内网 IP 地址。",
-          "example": "无",
+          "example": "cmgo-glh5****",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -3302,7 +3312,7 @@
         {
           "disabled": false,
           "document": " [密钥管理系统（Key Management Service，KMS）](https://cloud.tencent.com/document/product/573/18809)服务所在地域，例如 ap-shanghai。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "KmsRegion",
           "required": true,
@@ -3311,7 +3321,7 @@
         {
           "disabled": false,
           "document": "密钥 ID。若不设置该参数，不指定具体的密钥 ID，由腾讯云自动生成密钥。",
-          "example": "无",
+          "example": "秘钥ID",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -3326,7 +3336,7 @@
         {
           "disabled": false,
           "document": "开启透明加密的异步流程id，用于查询流程状态。",
-          "example": "无",
+          "example": "17316505316",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
@@ -3372,7 +3382,7 @@
         {
           "disabled": false,
           "document": "开启按 Key 回档的实例 ID。",
-          "example": "cmgo-igjysqkr",
+          "example": "cmgo-iga0****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3399,7 +3409,7 @@
         {
           "disabled": false,
           "document": "数据最终写入的实例 ID。",
-          "example": "无",
+          "example": "cmgo-iga0****",
           "member": "string",
           "name": "TargetInstanceId",
           "required": false,
@@ -3414,7 +3424,7 @@
         {
           "disabled": false,
           "document": "回档数据异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "16033****",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
@@ -3781,8 +3791,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。",
-          "example": "[\"cmgo-8oij5631\\r\\n\"]",
+          "document": "实例ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同，接口单次最多只支持5个实例进行操作。",
+          "example": "[cmgo-8oij****]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3809,7 +3819,7 @@
           "example": "无",
           "member": "DBInstancePrice",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

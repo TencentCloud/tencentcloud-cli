@@ -1204,6 +1204,13 @@
       "output": "UnbindCmqDeadLetterResponse",
       "status": "online"
     },
+    "UpdateTenantQuotaOpt": {
+      "document": "运营端编辑虚拟集群（租户）配额",
+      "input": "UpdateTenantQuotaOptRequest",
+      "name": "运营端编辑虚拟集群（租户）配额",
+      "output": "UpdateTenantQuotaOptResponse",
+      "status": "online"
+    },
     "VerifyRocketMQConsume": {
       "document": "Rocketmq消费验证",
       "input": "VerifyRocketMQConsumeRequest",
@@ -5202,6 +5209,15 @@
           "example": "无",
           "member": "RocketMQGroupConfig",
           "name": "Groups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的角色列表",
+          "example": "role",
+          "member": "RocketMQRoleConfig",
+          "name": "Roles",
           "required": false,
           "type": "list"
         },
@@ -21436,6 +21452,57 @@
       ],
       "usage": "out"
     },
+    "RocketMQRoleConfig": {
+      "document": "RocketMQ角色配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名，对应SecretKey",
+          "example": "test_role",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "accessKey",
+          "example": "akTd0eozCSH78BYp1E",
+          "member": "string",
+          "name": "RoleToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "test_ns",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色权限",
+          "example": "[   \"produce\",   \"consume\" ]",
+          "member": "string",
+          "name": "Permissions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark info",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RocketMQSmoothMigrationTaskItem": {
       "document": "RocketMQ平滑迁移任务",
       "members": [
@@ -23764,6 +23831,123 @@
     },
     "UnbindCmqDeadLetterResponse": {
       "document": "UnbindCmqDeadLetter返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTenantQuotaOptRequest": {
+      "document": "UpdateTenantQuotaOpt请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "虚拟集群ID",
+          "example": "pulsar-nzw8q5b3g7b2",
+          "member": "string",
+          "name": "TenantId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户UIN",
+          "example": "100017511276",
+          "member": "string",
+          "name": "CustomerUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户APPID",
+          "example": "1000000",
+          "member": "string",
+          "name": "CustomerAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间配额",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxNamespaces",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Topic配额",
+          "example": "100000",
+          "member": "int64",
+          "name": "MaxTopics",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Exchange配额",
+          "example": "100000",
+          "member": "int64",
+          "name": "MaxExchanges",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Queue配额",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxQueues",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Topic分区配额",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxPartitions",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间最大堆积，byte为单",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxMsgBacklog",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最长保留时间，毫秒为单位",
+          "example": "64000000",
+          "member": "int64",
+          "name": "MaxRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicAccessEnabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTenantQuotaOptResponse": {
+      "document": "UpdateTenantQuotaOpt返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

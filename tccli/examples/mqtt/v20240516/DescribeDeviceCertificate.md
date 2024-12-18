@@ -18,7 +18,7 @@ Output:
     "Response": {
         "CaSn": "1b1e3bf3702110125887a3a721a7e66f05522513",
         "CertificateSource": "API",
-        "ClientId": "111",
+        "ClientId": "client1",
         "CreatedTime": 1724050379000,
         "DeviceCertificate": "-----BEGIN CERTIFICATE-----\nMIIEQjCCAyqgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmREwDQYJKoZIhvcNAQEL\n-----END CERTIFICATE-----\n",
         "DeviceCertificateCn": "mqtt-test.xxx.tencent.com",

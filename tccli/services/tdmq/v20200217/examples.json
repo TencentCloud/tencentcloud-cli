@@ -1406,6 +1406,14 @@
         "title": "解绑死信队列"
       }
     ],
+    "UpdateTenantQuotaOpt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTenantQuotaOpt\n<公共请求参数>\n\n{\n    \"CustomerAppId\": \"251199683\",\n    \"CustomerUin\": \"100000122146\",\n    \"MaxNamespaces\": 10,\n    \"MaxPartitions\": 256000,\n    \"MaxRetention\": 1296000000,\n    \"MaxTopics\": 1000,\n    \"TenantId\": \"rocketmq-w7e73xbxqw5k\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"029f3725-9dab-4f79-870e-b37d43704b7f\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "VerifyRocketMQConsume": [
       {
         "document": "",

@@ -21,6 +21,13 @@
       "output": "CreateAccountResponse",
       "status": "online"
     },
+    "CreateAndSendClientInvitationMail": {
+      "document": "该接口需要申请白名单后使用，如有需要请联系您的商务开白。具体使用流程如下；\n1、调用接口可以创建一个邀请链接，您可以向您指定的邮箱地址发送邀请链接。\n2、客户需要点击邮箱中的邀请链接，填写并提交相关信息。\n3、客户提交后，您可以在客户管理页面查看该子客的申请，并对其进行审核。\n\n注意：如指定的邮箱未收到邀请链接，您可以将接口返回的邀请链接通过人工的方式发送给客户。",
+      "input": "CreateAndSendClientInvitationMailRequest",
+      "name": "创建邀请客户链接",
+      "output": "CreateAndSendClientInvitationMailResponse",
+      "status": "online"
+    },
     "DescribeBillDetail": {
       "document": "子客查询自己的账单详情",
       "input": "DescribeBillDetailRequest",
@@ -977,6 +984,43 @@
           "member": "string",
           "name": "Uin",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndSendClientInvitationMailRequest": {
+      "document": "CreateAndSendClientInvitationMail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "邮箱地址，指定发送客户邀请链接的邮箱。",
+          "example": "abc@gmail.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndSendClientInvitationMailResponse": {
+      "document": "CreateAndSendClientInvitationMail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "邀请客户链接",
+          "example": "https://www.tencentcloud.com/reseller-customer/invitation?RegisterToken=28**********2f",
+          "member": "string",
+          "name": "InvitationLink",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

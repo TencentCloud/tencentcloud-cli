@@ -702,6 +702,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDsFolderTree\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1485413914375667733\",\n    \"FirstLevelPull\": true,\n    \"FolderId\": \"11265328-2c7d-11ee-8d13-a4ae120f8272\",\n    \"WorkflowId\": \"11265328-2c7d-11ee-8d13-a4ae120f8273\",\n    \"Keyword\": \"demoKey\",\n    \"IncludeWorkflow\": true,\n    \"IncludeTask\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Children\": [\n                    {\n                        \"Children\": [],\n                        \"Id\": \"156b3b03-2c7d-11ee-8d13-a4ae120f8272\",\n                        \"IsLeaf\": false,\n                        \"Params\": \"eyJzdWJtaXRGbGFnIjp0cnVlLCJvd25lcklkIjoiMTAwMDI5NDExMDU2Iiwid29ya2Zsb3dEZXNjIjoiIn0=\",\n                        \"ParentId\": \"11265328-2c7d-11ee-8d13-a4ae120f8272\",\n                        \"Title\": \"f1332\",\n                        \"Type\": \"workflow\"\n                    },\n                    {\n                        \"Children\": [],\n                        \"Id\": \"2f03778a-2c7d-11ee-8d13-a4ae120f8272\",\n                        \"IsLeaf\": false,\n                        \"Params\": \"eyJzdWJtaXRGbGFnIjp0cnVlLCJvd25lcklkIjoiMTAwMDI5NDExMDU2Iiwid29ya2Zsb3dEZXNjIjoiIn0=\",\n                        \"ParentId\": \"11265328-2c7d-11ee-8d13-a4ae120f8272\",\n                        \"Title\": \"f2\",\n                        \"Type\": \"workflow\"\n                    }\n                ],\n                \"Id\": \"11265328-2c7d-11ee-8d13-a4ae120f8272\",\n                \"IsLeaf\": false,\n                \"Params\": null,\n                \"ParentId\": \"\",\n                \"Title\": \"0_dengboxu\",\n                \"Type\": \"folder\"\n            }\n        ],\n        \"RequestId\": \"de4d6055-1501-46e4-86d3-7b6e47c5b8d5\"\n    }\n}",
         "title": "查询目录树"
+      },
+      {
+        "document": "错误示例",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDsFolderTree\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"当前用户角色或WeData版本没有权限，请进行角色授权或者升级WeData版本\"\n        },\n        \"RequestId\": \"78deafe3-7320-448e-a6a5-2fcb38a4e4a5\"\n    }\n}",
+        "title": "错误示例"
       }
     ],
     "DescribeDsParentFolderTree": [

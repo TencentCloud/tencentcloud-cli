@@ -192,6 +192,14 @@
         "title": "获取批次列表"
       }
     ],
+    "GetExportControlUnderwriting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetExportControlUnderwriting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f9dde13-0059-4d6b-9c18-f3a4a6eefa49\"\n    }\n}",
+        "title": "通过测算单获取出口管制"
+      }
+    ],
     "GetTreeNode": [
       {
         "document": "",

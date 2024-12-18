@@ -24,6 +24,14 @@
         "title": "申请创建客户账户"
       }
     ],
+    "CreateAndSendClientInvitationMail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndSendClientInvitationMail\n<公共请求参数>\n\n{\n    \"Email\": \"abc@gmail.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InvitationLink\": \"https://www.tencentcloud.com/reseller-customer/invitation?RegisterToken=28c******2f\",\n        \"RequestId\": \"91158930-****-496f-****-8f32f5edabcc\"\n    }\n}",
+        "title": "创建邀请客户链接"
+      }
+    ],
     "DescribeBillDetail": [
       {
         "document": "子客查询l3账单\n\t\nPOST / HTTP/1.1\n\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDetail\n<公共请求参数>\n\n",

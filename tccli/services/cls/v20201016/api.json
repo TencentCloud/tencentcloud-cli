@@ -2173,6 +2173,15 @@
           "name": "Protocol",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "网络信息参数",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5221,6 +5230,15 @@
           "name": "ConsumerGroupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络信息参数",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11033,7 +11051,7 @@
         {
           "disabled": false,
           "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。\n入参必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "sasl_plaintext",
+          "example": "sasl_ssl",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -11044,7 +11062,7 @@
         {
           "disabled": false,
           "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "PLAIN",
           "member": "string",
           "name": "Mechanism",
           "output_required": true,
@@ -11055,7 +11073,7 @@
         {
           "disabled": false,
           "document": "用户名。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -11066,10 +11084,54 @@
         {
           "disabled": false,
           "document": "用户密码。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "axxxxxx",
           "member": "string",
           "name": "Password",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启客户端证书验证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableClientCertificate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启服务端证书验证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableServerCertificate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云托管CA证书id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "K2xxxxxx",
+          "member": "string",
+          "name": "CACertificateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云托管服务端证书id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "K3xxxxxx",
+          "member": "string",
+          "name": "SVRCertificateId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11227,6 +11289,16 @@
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -13717,6 +13789,15 @@
           "name": "StatusControl",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络信息参数",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -14501,6 +14582,78 @@
       ],
       "usage": "in"
     },
+    "NetworkInfo": {
+      "document": "网络打通信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络类型。 0：公网，1：内网",
+          "example": "1",
+          "member": "uint64",
+          "name": "NetworkType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有网络所属用户app id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234xxx",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络服务类型。0：CVM，3：专线网关，11：云联网，1025：CLB\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "uint64",
+          "name": "VirtualGatewayType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专线网关id或者云联网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-xxxxx",
+          "member": "string",
+          "name": "VpcGatewayIndex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有域名映射地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrivateDomainNames",
+          "name": "PrivateDomainNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "NoticeContent": {
       "document": "通知内容模板详细配置",
       "members": [
@@ -15106,6 +15259,15 @@
           "name": "LogRechargeRule",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "网络连接参数",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -15221,6 +15383,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PrivateDomainNames": {
+      "document": "私有域名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "brokerxx.xxx.com",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.x.xx",
+          "member": "string",
+          "name": "IpAddr",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

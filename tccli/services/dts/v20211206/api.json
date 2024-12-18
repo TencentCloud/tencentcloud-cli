@@ -2115,6 +2115,15 @@
           "name": "JobId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传递true表示不做ddl环形校验，否则做环形校验",
+          "example": "true",
+          "member": "bool",
+          "name": "NoDdlCircleCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9756,6 +9765,15 @@
           "example": "sync-werwfs23",
           "member": "string",
           "name": "JobId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "manualPause表示启动后暂停",
+          "example": "manualPause",
+          "member": "string",
+          "name": "ProcessControl",
           "required": false,
           "type": "string"
         }
