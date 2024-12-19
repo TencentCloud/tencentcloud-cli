@@ -1956,7 +1956,7 @@
         {
           "disabled": false,
           "document": "搜索关键词，支持根据安全组 ID 或者安全组名称搜索。",
-          "example": "无",
+          "example": "sg-0klp2oyp",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -1974,7 +1974,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1984,7 +1984,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2208,7 +2208,7 @@
         {
           "disabled": false,
           "document": "项目ID。",
-          "example": "无",
+          "example": "[11322, 11321]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -2217,7 +2217,7 @@
         {
           "disabled": false,
           "document": "任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。",
-          "example": "无",
+          "example": "[\"032\",\"034\"]",
           "member": "string",
           "name": "TaskTypes",
           "required": false,
@@ -2262,7 +2262,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2272,7 +2272,7 @@
           "example": "无",
           "member": "TaskInfoDetail",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -71,7 +71,7 @@ Input:
 ```
 tccli iss ListOrganizationChannels --cli-unfold-argument  \
     --OrganizationId 182 \
-    --DeviceName abc \
+    --DeviceName SDK-NVR05 \
     --PageSize 5 \
     --PageNumber 1
 ```

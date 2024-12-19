@@ -850,6 +850,14 @@
         "title": "创建有数量或时间限制的合同流程签署二维码"
       }
     ],
+    "CreateOrganizationAuthFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationAuthFile\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRt2UUgygqxyp9yUuO4zjEwqXwsIljA\"\n    },\n    \"OrganizationCommonInfo\": {\n        \"OrganizationName\": \"典子签测试企业\",\n        \"UniformSocialCreditCode\": \"N26XXXXXX523\",\n        \"LegalName\": \"鹅鹅子\",\n        \"LegalIdCardType\": \"\",\n        \"LegalIdCardNumber\": \"110XXXXXX20\",\n        \"AdminName\": \"鹅鹅子\",\n        \"AdminMobile\": \"130XXXXX222\",\n        \"AdminIdCardType\": \"\",\n        \"AdminIdCardNumber\": \"110XXXXXX2020\"\n    },\n    \"Type\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=22c08eb99607114e98ae7397a78f7cdc393a2dd9863f9f7d2f68890fb3219769a075e4f8e9631cf756ec0f7f27af6532925007e4dbf226d9b61afa605493013d9c23f7ff0a1bf7f41658ee74b8c3f261d1bfdd3b9f184b780392a2323522175a6d80f469afe196e131bdd882200c95653994d7749a03b13ced4ba14af190898fb6463b19a80c78f22fe1ace31270ab77635505b55849fd7c89ee2b539faebe86\",\n        \"RequestId\": \"s1734597439220564890\"\n    }\n}",
+        "title": "生成企业认证超管授权书"
+      }
+    ],
     "CreateOrganizationAuthUrl": [
       {
         "document": "我们传递企业名称和企业的统一信用代码。同时，为了确保信息的准确性和合规性，我们要求在进行企业认证时，企业名称和统一信用代码必须与我们传递的信息完全一致。",

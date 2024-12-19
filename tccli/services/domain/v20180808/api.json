@@ -428,9 +428,9 @@
       "status": "online"
     },
     "ModifyDomainDNSBatch": {
-      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
+      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
       "input": "ModifyDomainDNSBatchRequest",
-      "name": "批量域名 DNS 修改",
+      "name": "批量域名 DNS 修改",
       "output": "ModifyDomainDNSBatchResponse",
       "status": "online"
     },
@@ -2942,7 +2942,7 @@
         {
           "disabled": false,
           "document": "模板信息",
-          "example": "[]",
+          "example": "{\"AuditReason\": \"\",\"IsValidTemplate\": 1,\"UpdatedOn\": \"2024-12-18 12:23:28\",\"AuditStatus\": \"InAudit\",\"CreatedOn\": \"2024-12-18 12:23:28\",\"IsBlack\": false,\"InvalidReason\": \"\",\"Tag\": 0,\"CertificateInfo\": {\"OriginImgUrl\": \"https://domain-***.com/1000***3.jpg\",\"CertificateCode\": \"***56\",\"RegistrantCertificateCode\": \"\",\"RegistrantImgUrl\": \"\",\"RegistrantCertificateType\": \"\",\"CertificateType\": \"SFZ\",\"ImgUrl\": \"https://domain-***.com/1000***3.jpg\"},\"TemplateId\": \"tmpl-***u\",\"UserUin\": \"***07\",\"ContactInfo\": {\"Province\": \"shang hai shi\",\"RegistrantType\": \"I\",\"OrganizationName\": \"*u\",\"OrganizationNameCN\": \"*名\",\"Country\": \"CN\",\"RegistrantName\": \"*名\",\"ZipCode\": \"***1\",\"Email\": \"*@qq.com\",\"City\": \"shang hai shi\",\"RegistrantNameCN\": \"*名\",\"StreetCN\": \"***117号\",\"Street\": \"***1117 Hao\",\"ProvinceCN\": \"上海市\",\"CountryCN\": \"中国\",\"CityCN\": \"上海市\",\"Telephone\": \"***29\"},\"IsDefault\": \"no\",\"MessageCheck\": 0}",
           "member": "TemplateInfo",
           "name": "Template",
           "output_required": true,
@@ -4377,7 +4377,7 @@
         {
           "disabled": false,
           "document": "域名价格列表",
-          "example": "[]",
+          "example": "[{\"Operation\": \"renew\",\"Price\": 266,\"Year\": 7,\"RealPrice\": 266,\"Tld\": \".pw\"}]",
           "member": "PriceInfo",
           "name": "PriceList",
           "output_required": true,
@@ -7365,7 +7365,7 @@
           "example": "54",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

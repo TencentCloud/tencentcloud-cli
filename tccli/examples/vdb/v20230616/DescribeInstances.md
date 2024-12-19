@@ -27,7 +27,7 @@ Output:
                 "InstanceId": "vdb-77qt0r46",
                 "IsNoExpired": false,
                 "Memory": 8,
-                "Name": "test",
+                "Name": "vector_search",
                 "Networks": [
                     {
                         "Port": 8100,
@@ -58,7 +58,7 @@ Output:
                 "InstanceId": "vdb-o2ovx6ko",
                 "IsNoExpired": false,
                 "Memory": 8,
-                "Name": "ha-test",
+                "Name": "embedding_search",
                 "Networks": [
                     {
                         "Port": 8100,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iss AddRecordBackupTemplate --cli-unfold-argument  \
-    --TemplateName 123456 \
+    --TemplateName 模板361 \
     --TimeSections.0.DayOfWeek 4 \
     --TimeSections.0.StartTime 00:00:00 \
     --TimeSections.0.EndTime 02:00:00 \
@@ -31,7 +31,7 @@ Output:
             ],
             "Scale": 1,
             "TemplateId": "abcdefgh-1234-5678-ijkl-1234567890ab",
-            "TemplateName": "123456",
+            "TemplateName": "模板361",
             "TimeSections": [
                 {
                     "DayOfWeek": 4,

@@ -54,7 +54,7 @@ Input:
 
 ```
 tccli iss DescribeUserDevice --cli-unfold-argument  \
-    --DeviceId aaa
+    --DeviceId AoiPcid9U
 ```
 
 Output: 

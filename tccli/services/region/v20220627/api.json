@@ -230,10 +230,10 @@
         {
           "disabled": false,
           "document": "产品详细信息列表。",
-          "example": "无",
+          "example": "[{ \"Name\": \"cvm\"}]",
           "member": "RegionProduct",
           "name": "Products",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -243,7 +243,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -411,6 +411,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -420,6 +421,7 @@
           "example": "参开输出示例",
           "member": "ZoneInfo",
           "name": "ZoneSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

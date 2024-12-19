@@ -7,14 +7,14 @@ Input:
 ```
 tccli mariadb DescribeDatabaseObjects --cli-unfold-argument  \
     --InstanceId tdsql-e9tklsgz \
-    --DbName test
+    --DbName product_db
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DbName": "test",
+        "DbName": "product_db",
         "Funcs": [],
         "InstanceId": "tdsql-e9tklsgz",
         "Procs": [

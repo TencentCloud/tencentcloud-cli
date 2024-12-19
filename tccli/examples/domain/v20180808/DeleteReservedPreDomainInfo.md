@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli domain DeleteReservedPreDomainInfo --cli-unfold-argument  \
-    --ResourceIdList abc
+    --ResourceIdList ***211
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "serft-dwer-31d4-d2de4"
     }
 }
 ```

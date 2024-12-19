@@ -26,7 +26,8 @@ Output:
                 "Result": 2,
                 "StartTime": "2022-03-10 11:44:15",
                 "TaskId": 1634784472,
-                "TaskType": "007"
+                "TaskType": "007",
+                "OperatorUin": "24732"
             },
             {
                 "EndTime": "2022-03-03 15:47:34",
@@ -37,7 +38,8 @@ Output:
                 "Result": 2,
                 "StartTime": "2022-03-03 15:46:58",
                 "TaskId": 1634784470,
-                "TaskType": "049"
+                "TaskType": "049",
+                "OperatorUin": "24732"
             }
         ],
         "TotalCount": 9

@@ -17,7 +17,7 @@ Output:
             "ClusterId": "12345678-abcd-efgh-ijkl-1234567890ab",
             "ClusterName": "上海一区",
             "CreatedAt": "2023-06-09T18:29:11+08:00",
-            "Description": "123456",
+            "Description": "网关10-13",
             "DeviceNum": 1,
             "GatewayId": "hijklmno-efgh-5678-ijkl-1234567890ab",
             "GwId": "2b8d8734bc**********3ff984a82f19",

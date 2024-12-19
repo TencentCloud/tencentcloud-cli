@@ -7,7 +7,7 @@ Input:
 ```
 tccli mariadb KillSession --cli-unfold-argument  \
     --InstanceId tdsql-2gk4nxyz \
-    --SessionId 1111 2222
+    --SessionId 11917970 11918810
 ```
 
 Output: 

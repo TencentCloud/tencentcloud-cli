@@ -11,7 +11,7 @@ tccli domain CreateDomainBatch --cli-unfold-argument  \
     --Domains abcd.xyz \
     --PayMode 0 \
     --AutoRenewFlag 0 \
-    --PackageResourceId  \
+    --PackageResourceId ***9 \
     --UpdateProhibition 0 \
     --TransferProhibition 0 \
     --ChannelFrom ChannelFrom \

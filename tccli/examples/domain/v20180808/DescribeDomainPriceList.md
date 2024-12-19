@@ -13,14 +13,14 @@ Output:
     "Response": {
         "PriceList": [
             {
-                "Tld": "abc",
-                "Year": 1,
-                "Price": 1,
-                "RealPrice": 1,
-                "Operation": "abc"
+                "Operation": "renew",
+                "Price": 266,
+                "Year": 7,
+                "RealPrice": 266,
+                "Tld": ".pw"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "derft-dwer-csge-eqwrt"
     }
 }
 ```

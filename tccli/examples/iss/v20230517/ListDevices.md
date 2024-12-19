@@ -49,7 +49,7 @@ Output:
                 "DeviceId": "2************************8",
                 "Name": "gb12138",
                 "OrganizationId": "191",
-                "Password": "123456",
+                "Password": "30******96",
                 "Status": 2,
                 "TransportProtocol": 1,
                 "Type": 2

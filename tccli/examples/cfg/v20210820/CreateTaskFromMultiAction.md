@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cfg CreateTaskFromMultiAction --cli-unfold-argument  \
-    --TaskInstances abc \
-    --TaskTitle abc \
-    --TaskDescription abc \
+    --TaskInstances ins-xxxxxxxx \
+    --TaskTitle title \
+    --TaskDescription desc \
     --TaskPauseDuration 1 \
     --TaskAction.0.TaskActionId 0 \
-    --TaskAction.0.TaskActionGeneralConfiguration abc \
-    --TaskAction.0.TaskActionCustomConfiguration abc
+    --TaskAction.0.TaskActionGeneralConfiguration {"duration": 0} \
+    --TaskAction.0.TaskActionCustomConfiguration {"timeout": 0}
 ```
 
 Output: 

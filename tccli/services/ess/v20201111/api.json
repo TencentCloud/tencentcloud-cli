@@ -245,6 +245,13 @@
       "output": "CreateMultiFlowSignQRCodeResponse",
       "status": "online"
     },
+    "CreateOrganizationAuthFile": {
+      "document": "生成合成后的各类企业授权书，包括：\n- 企业认证超管授权书\n- 超管变更授权书\n- 企业注销授权书\n\n注: 需自行保证传入真实的企业/法人/超管信息，否则后续的审核将会拒绝。",
+      "input": "CreateOrganizationAuthFileRequest",
+      "name": "生成企业授权书",
+      "output": "CreateOrganizationAuthFileResponse",
+      "status": "online"
+    },
     "CreateOrganizationAuthUrl": {
       "document": "本接口（CreateOrganizationAuthUrl）的主要功能是生成合作企业的认证链接。\n\n在生成链接的过程中，可以提供一部分已知信息，以便为对方进行认证流程提供便利。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/7ec91b79a0a4860e77c9ff9f4a5f13ad/channel_SyncProxyOrganization2.png)\n\n\n- **企业统一社会信用代码**: 对应上图中的**1**\n- **企业名称**: 对应上图中的**2**\n- **企业法定代表人的名字**:对应上图中的**3**\n- **企业详细住所**:对应上图中的**4**\n\n\n\n\n<b>注</b>：此接口需要 <font  color=\"red\"><b>购买单独的实名套餐包</b></font>方可调用，如有需求请联系对接人员评估",
       "input": "CreateOrganizationAuthUrlRequest",
@@ -930,7 +937,7 @@
         },
         {
           "disabled": false,
-          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n\n默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注：\n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
+          "document": "您可以指定签署方签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证，需进行人脸识别成功后才能签署合同；</li>\n<li>**2**：签署密码，需输入与用户在腾讯电子签设置的密码一致才能校验成功进行合同签署；</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息（名字、手机号、证件号）校验一致才能成功进行合同签署。（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n\n默认为：\n1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注：\n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/company/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -5338,6 +5345,70 @@
           "name": "SignUrls",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationAuthFileRequest": {
+      "document": "CreateOrganizationAuthFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业授权书信息参数， 需要自行保证这些参数跟营业执照中的信息一致。",
+          "example": "无",
+          "member": "OrganizationCommonInfo",
+          "name": "OrganizationCommonInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。<br/>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "授权书类型：\n- 0: 企业认证超管授权书\n- 1: 超管变更授权书\n- 2: 企业注销授权书",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationAuthFileResponse": {
+      "document": "CreateOrganizationAuthFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权书链接，有效期5分钟。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -13053,6 +13124,155 @@
       ],
       "usage": "out"
     },
+    "OrganizationCommonInfo": {
+      "document": "企业授权书信息参数， 需要保证这些参数跟营业执照中的信息一致。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "居民身份证",
+          "member": "string",
+          "name": "LegalIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管姓名。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管手机号。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminMobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管证件类型\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "居民身份证",
+          "member": "string",
+          "name": "AdminIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管证件号码\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldAdminName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldAdminMobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管证件类型",
+          "example": "居民身份证",
+          "member": "string",
+          "name": "OldAdminIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原超管证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "OldAdminIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OrganizationInfo": {
       "document": "机构信息",
       "members": [
@@ -13864,12 +14084,12 @@
       "usage": "in"
     },
     "RelieveInfo": {
-      "document": "解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。",
+      "document": "解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。下面各种字段在解除协议中的位置参考：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/5087164cfe5a15fa3ced3180842d5da9.png)",
       "members": [
         {
           "disabled": false,
           "document": "解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
-          "example": "无",
+          "example": "合同中的金额写错了",
           "member": "string",
           "name": "Reason",
           "required": true,
@@ -13878,7 +14098,7 @@
         {
           "disabled": false,
           "document": "解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。\n",
-          "example": "无",
+          "example": "买卖小狗的交易地点、小狗的品种",
           "member": "string",
           "name": "RemainInForceItem",
           "required": false,
@@ -13887,7 +14107,7 @@
         {
           "disabled": false,
           "document": "原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
-          "example": "无",
+          "example": "1000元",
           "member": "string",
           "name": "OriginalExpenseSettlement",
           "required": false,
@@ -13896,7 +14116,7 @@
         {
           "disabled": false,
           "document": "原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
-          "example": "无",
+          "example": "原合同中的补充条款依然生效",
           "member": "string",
           "name": "OriginalOtherSettlement",
           "required": false,
@@ -13904,8 +14124,8 @@
         },
         {
           "disabled": false,
-          "document": "其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
-          "example": "无",
+          "document": "其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
+          "example": "解除后1天内部签署新的合同",
           "member": "string",
           "name": "OtherDeals",
           "required": false,
@@ -14119,6 +14339,16 @@
           "name": "ExpiredTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "微信小程序二维码",
+          "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a976edda49eacc2b264c2df468c30fcd69023cd782421bdbedddf8a95c7859d4467844c38fb9ea20b47d4b2f89396717f8deac5dcb25f32d718f0c13b48f53a2f6f69096b3b301aad56de87d7a8499fe374e5e2891dd778bb0c82394640fe124be22c63ba4e022a046cbc298006d3341",
+          "member": "string",
+          "name": "WeixinQrCodeUrl",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

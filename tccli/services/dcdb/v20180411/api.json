@@ -797,30 +797,30 @@
         {
           "disabled": false,
           "document": "DB节点ID",
-          "example": "",
+          "example": "4ddc0ea18433",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "DB节点角色，取值为master或者slave",
-          "example": "",
+          "example": "master",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点所属分片的分片ID",
-          "example": "",
+          "example": "shard-ffj8mqzn",
           "member": "string",
           "name": "ShardId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1066,20 +1066,20 @@
         {
           "disabled": false,
           "document": "约束类型为section时的最小值",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "约束类型为section时的最大值",
-          "example": "",
+          "example": "65535",
           "member": "string",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2415,22 +2415,20 @@
         {
           "disabled": false,
           "document": "参数名称",
-          "example": "",
+          "example": "autocommit",
           "member": "string",
           "name": "Param",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "参数值",
-          "example": "",
+          "example": "ON",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2947,250 +2945,250 @@
         {
           "disabled": false,
           "document": "所属实例Id",
-          "example": "",
+          "example": "tdsqlshard-ffj8mqzn",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片SQL透传Id，用于将sql透传到指定分片执行",
-          "example": "",
+          "example": "set_1732083233_5",
           "member": "string",
           "name": "ShardSerialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "全局唯一的分片Id",
-          "example": "",
+          "example": "shard-fzqabc7d",
           "member": "string",
           "name": "ShardInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态：0 创建中，1 流程处理中， 2 运行中，3 分片未初始化",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态中文描述",
-          "example": "",
+          "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-11-20 11:18:30",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字符串格式的私有网络Id",
-          "example": "",
+          "example": "vpc-8tsjqux3",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字符串格式的私有网络子网Id",
-          "example": "",
+          "example": "subnet-7mbqdo2i",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "10074",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存大小，单位 GB",
-          "example": "",
+          "example": "4",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "存储大小，单位 GB",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "到期时间",
-          "example": "",
+          "example": "0000-00-00 00:00:00",
           "member": "datetime",
           "name": "PeriodEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点数，2 为一主一从， 3 为一主二从",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "存储使用率，单位为 %",
-          "example": "",
+          "example": "0.003",
           "member": "float",
           "name": "StorageUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存使用率，单位为 %",
-          "example": "",
+          "example": "0.128",
           "member": "float",
           "name": "MemoryUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数字分片Id（过时字段，请勿依赖该值）",
-          "example": "",
+          "example": "40889",
           "member": "int64",
           "name": "ShardId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品ProductID",
-          "example": "",
+          "example": "1001670",
           "member": "int64",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Proxy版本",
-          "example": "",
+          "example": "proxy-22.4.2",
           "member": "string",
           "name": "ProxyVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "付费模型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "postpaid",
           "member": "string",
           "name": "Paymode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分片的主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "ShardMasterZone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "分片的从可用区列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "ShardSlaveZones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "CPU核数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片ShardKey的范围（总共64个哈希值），例如： 0-31，32-63",
-          "example": "",
+          "example": "32-63",
           "member": "string",
           "name": "Range",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3203,10 +3201,10 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "",
+          "example": "aIgo",
           "member": "string",
           "name": "DbName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3219,10 +3217,10 @@
         {
           "disabled": false,
           "document": "函数名称",
-          "example": "",
+          "example": "CountProc2",
           "member": "string",
           "name": "Func",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3259,10 +3257,10 @@
         {
           "disabled": false,
           "document": "存储过程名称",
-          "example": "",
+          "example": "proc_tst",
           "member": "string",
           "name": "Proc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3275,10 +3273,10 @@
         {
           "disabled": false,
           "document": "表名",
-          "example": "",
+          "example": "t_preoss",
           "member": "string",
           "name": "Table",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3291,10 +3289,10 @@
         {
           "disabled": false,
           "document": "视图名称",
-          "example": "",
+          "example": "v_bpmn",
           "member": "string",
           "name": "View",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7513,40 +7511,40 @@
         {
           "disabled": false,
           "document": "Log最后修改时间",
-          "example": "",
+          "example": "15054029",
           "member": "uint64",
           "name": "Mtime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件长度",
-          "example": "",
+          "example": "1733814880",
           "member": "uint64",
           "name": "Length",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下载Log时用到的统一资源标识符",
-          "example": "",
+          "example": "cos_xtrabackup+1733814880+20241210+151440+471405052+xbstream.lz4",
           "member": "string",
           "name": "Uri",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件名",
-          "example": "",
+          "example": "/cos_backup%2Ftdsql%2Fset_1732784236_431669%2Fxtrabackup%2F2024-12-10%2Fcos_xtrabackup%2B1733814880%2B20241210%2B151440%2B471405052%2Bxbstream.lz4?q-sign-algorithm=sha1&q-ak=AKIDWGwkDTy3LOG3wfDtIKAYpBKOh3MVb41j&q-sign-time=1733884388%3B1733885288&q-key-time=1733884388%3B1733885288&q-header-list=host&q-url-param-list=&q-signature=f978b91c6f7031d47fce45bb07b5164b7192b3d9",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8381,20 +8379,20 @@
         {
           "disabled": false,
           "document": "DB节点ID",
-          "example": "",
+          "example": "4ddc0ea18433",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "DB节点角色，取值为master或者slave",
-          "example": "",
+          "example": "master",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8453,40 +8451,40 @@
         {
           "disabled": false,
           "document": "约束类型,如枚举enum，区间section",
-          "example": "",
+          "example": "section",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "约束类型为enum时的可选值列表",
-          "example": "",
+          "example": "ALL,OFF,FILTER",
           "member": "string",
           "name": "Enum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "约束类型为section时的范围\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"max\":\"65535\",\"min\":\"1\"}",
           "member": "ConstraintRange",
           "name": "Range",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "约束类型为string时的可选值列表",
-          "example": "",
+          "example": "REAL_AS_FLOAT,PIPES_AS_CONCAT,ANSI_QUOTES,IGNORE_SPACE,IGNORE_BAD_TABLE_OPTIONS,ONLY_FULL_GROUP_BY,NO_UNSIGNED_SUBTRACTION,NO_DIR_IN_CREATE,NO_KEY_OPTIONS,NO_TABLE_OPTIONS,NO_FIELD_OPTIONS,NO_AUTO_VALUE_ON_ZERO,NO_BACKSLASH_ESCAPES,STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ALLOW_INVALID_DATES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,HIGH_NOT_PRECEDENCE,NO_ENGINE_SUBSTITUTION,PAD_CHAR_TO_FULL_LENGTH",
           "member": "string",
           "name": "String",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8575,20 +8573,20 @@
         {
           "disabled": false,
           "document": "修改参数名字",
-          "example": "",
+          "example": "autocommit",
           "member": "string",
           "name": "Param",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数修改结果。0表示修改成功；-1表示修改失败；-2表示该参数值非法",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -8601,110 +8599,110 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "1035094",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源拥有者（主账号）uin",
-          "example": "",
+          "example": "70012255787",
           "member": "int64",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "应用Id",
-          "example": "",
+          "example": "1280075989",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目名称",
-          "example": "",
+          "example": "tdsql测试\t",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者uin",
-          "example": "",
+          "example": "70012255787\t",
           "member": "int64",
           "name": "CreatorUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源平台",
-          "example": "",
+          "example": "qcloud\t",
           "member": "string",
           "name": "SrcPlat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源AppId",
-          "example": "",
+          "example": "1280075989",
           "member": "int64",
           "name": "SrcAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目状态,0正常，-1关闭。默认项目为3",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-10-11 10:11:12\t",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否默认项目，1 是，0 不是",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述信息",
-          "example": "",
+          "example": "tdsql测试项目\t",
           "member": "string",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8717,50 +8715,50 @@
         {
           "disabled": false,
           "document": "地域英文ID",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域数字ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域中文名",
-          "example": "",
+          "example": "广州",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区列表",
-          "example": "",
+          "example": "[{\"Zone\":\"ap-guangzhou-1\",\"ZoneId\":100001,\"ZoneName\":\"广州一区\",\"OnSale\":true},{\"Zone\":\"ap-guangzhou-2\",\"ZoneId\":100002,\"ZoneName\":\"广州二区\",\"OnSale\":true}]",
           "member": "ZonesInfo",
           "name": "ZoneList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可选择的主可用区和从可用区",
-          "example": "",
+          "example": "[{ \"MasterZone\":{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, \"SlaveZones\":[{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, { \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }] }, { \"MasterZone\":{ \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }, \"SlaveZones\":[{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, { \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }] }]",
           "member": "ShardZoneChooseInfo",
           "name": "AvailableChoice",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -8984,20 +8982,20 @@
         {
           "disabled": false,
           "document": "Ip地址",
-          "example": "",
+          "example": "9.23.2.3",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "端口",
-          "example": "",
+          "example": "24001",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -9010,70 +9008,70 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "10068",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
-          "example": "",
+          "example": "2024-11-13 20:20:05\t",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组ID",
-          "example": "",
+          "example": "sg-iry0kj68",
           "member": "string",
           "name": "SecurityGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组名称",
-          "example": "",
+          "example": "TDSQL-for-tst",
           "member": "string",
           "name": "SecurityGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组备注",
-          "example": "",
+          "example": "自定义",
           "member": "string",
           "name": "SecurityGroupRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "入站规则",
-          "example": "",
+          "example": "[ { \"Action\": \"ACCEPT\", \"AddressModule\": \"\", \"CidrIp\": \"211.139.*\", \"Desc\": \"\", \"Id\": \"\", \"IpProtocol\": \"tcp\", \"PortRange\": \"80,443\", \"ServiceModule\": \"\" }, { \"Action\": \"ACCEPT\", \"AddressModule\": \"ipm-b0cywwyy\", \"CidrIp\": \"\", \"Desc\": \"成都出口IP\", \"Id\": \"\", \"IpProtocol\": \"tcp\", \"PortRange\": \"80,443\", \"ServiceModule\": \"\" } ]\t",
           "member": "SecurityGroupBound",
           "name": "Inbound",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "出站规则",
-          "example": "",
+          "example": "[ { \"Action\": \"ACCEPT\", \"AddressModule\": \"\", \"CidrIp\": \"0.0.0.0/0\", \"Desc\": \"\", \"Id\": \"\", \"IpProtocol\": \"ALL\", \"PortRange\": \"ALL\", \"ServiceModule\": \"\" }, { \"Action\": \"ACCEPT\", \"AddressModule\": \"\", \"CidrIp\": \"\", \"Desc\": \"\", \"Id\": \"\", \"IpProtocol\": \"ALL\", \"PortRange\": \"ALL\", \"ServiceModule\": \"\" } ]",
           "member": "SecurityGroupBound",
           "name": "Outbound",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9135,7 +9133,7 @@
           "example": "set_1612751240_1",
           "member": "string",
           "name": "ShardSerialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9145,7 +9143,7 @@
           "example": "shard-lbt0utcz",
           "member": "string",
           "name": "ShardInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9155,7 +9153,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9165,7 +9163,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9175,7 +9173,7 @@
           "example": "2021-02-08 10:25:08",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9185,7 +9183,7 @@
           "example": "2",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9195,7 +9193,7 @@
           "example": "10",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9205,7 +9203,7 @@
           "example": "8",
           "member": "int64",
           "name": "LogDisk",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9215,7 +9213,7 @@
           "example": "3",
           "member": "int64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9225,7 +9223,7 @@
           "example": "0.007",
           "member": "float",
           "name": "StorageUsage",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -9235,7 +9233,7 @@
           "example": "1.14.63-M-V2R667D003",
           "member": "string",
           "name": "ProxyVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9245,7 +9243,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ShardMasterZone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9255,7 +9253,7 @@
           "example": "[\"ap-guangzhou-1\", \"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ShardSlaveZones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9265,17 +9263,17 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "DB节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "[{\"NodeId\": \"4ddc0ea18433\", \"Role\": \"master\"}, { \"NodeId\": \"5d51cf1f018c\",\"Role\": \"slave\" }]",
           "member": "NodeInfo",
           "name": "NodesInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -9288,100 +9286,100 @@
         {
           "disabled": false,
           "document": "分片ID",
-          "example": "",
+          "example": "shard-1xb2mmed",
           "member": "string",
           "name": "ShardInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片Set ID",
-          "example": "",
+          "example": "set_1734060861_3",
           "member": "string",
           "name": "ShardSerialId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态：0 创建中，1 流程处理中， 2 运行中，3 分片未初始化，-2 分片已删除",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-12-13 11:31:10",
           "member": "string",
           "name": "Createtime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存大小，单位 GB",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "存储大小，单位 GB",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片数字ID",
-          "example": "",
+          "example": "17732",
           "member": "int64",
           "name": "ShardId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点数，2 为一主一从， 3 为一主二从",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品类型 Id（过时字段，请勿依赖该值）",
-          "example": "",
+          "example": "1001670",
           "member": "int64",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Cpu核数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -9394,20 +9392,20 @@
         {
           "disabled": false,
           "document": "主可用区",
-          "example": "",
+          "example": "{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }",
           "member": "ZonesInfo",
           "name": "MasterZone",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可选的从可用区",
-          "example": "",
+          "example": "[{ \"Zone\":\"ap-guangzhou-1\", \"ZoneId\":100001, \"ZoneName\":\"广州一区\", \"OnSale\":true }, { \"Zone\":\"ap-guangzhou-2\", \"ZoneId\":100002, \"ZoneName\":\"广州二区\", \"OnSale\":true }]",
           "member": "ZonesInfo",
           "name": "SlaveZones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9616,20 +9614,20 @@
         {
           "disabled": false,
           "document": "规格机型",
-          "example": "",
+          "example": "SH12",
           "member": "string",
           "name": "Machine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规格列表",
-          "example": "",
+          "example": "[{\"Cpu\":1,\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":3,\"Pid\":1001670,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"},{\"Cpu\":1,\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":4,\"Pid\":1001670,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"}]",
           "member": "SpecConfigInfo",
           "name": "SpecConfigInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9642,80 +9640,80 @@
         {
           "disabled": false,
           "document": "节点个数，2 表示一主一从，3 表示一主二从",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存大小，单位 GB",
-          "example": "",
+          "example": "8",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据盘规格最小值，单位 GB",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "MinStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据盘规格最大值，单位 GB",
-          "example": "",
+          "example": "3000",
           "member": "int64",
           "name": "MaxStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推荐的使用场景",
-          "example": "",
+          "example": "日独立用户数上千人的小型应用",
           "member": "string",
           "name": "SuitInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品类型 Id",
-          "example": "",
+          "example": "1001670",
           "member": "int64",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大 Qps 值",
-          "example": "",
+          "example": "6500",
           "member": "int64",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CPU核数",
-          "example": "",
+          "example": "4",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -9875,20 +9873,20 @@
         {
           "disabled": false,
           "document": "列名称",
-          "example": "",
+          "example": "name",
           "member": "string",
           "name": "Col",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "列类型",
-          "example": "",
+          "example": "varchar(256)",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9995,150 +9993,150 @@
         {
           "disabled": false,
           "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "128007987",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2024-10-11 10:00:11",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tdsqlshard-fortdsql-tst",
           "member": "string",
           "name": "InstanceRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "0:非临时实例 ,1:无效临时实例, 2:回档成功的有效临时实例\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TempType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例状态,0:待初始化,1:流程处理中,2:有效状态,-1:已隔离，-2：已下线\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例 ID，形如：tdsql-ow728lmc。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tdsqlshard-fortdsql",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例虚IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10.1.0.1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例虚端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "3306",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2024-12-11 10:00:11",
           "member": "datetime",
           "name": "PeriodEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "源实例 ID，形如：tdsql-ow728lmc。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tdsql-srctdsql",
           "member": "string",
           "name": "SrcInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例虚IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2402:4e00:*",
           "member": "string",
           "name": "Vipv6",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例IPv6标志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Ipv6Flag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -10476,110 +10474,110 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "",
+          "example": "15985",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户账户ID",
-          "example": "",
+          "example": "1282064859",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务状态，0-任务初始化中；1-任务运行中；2-任务成功；3-任务失败",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务类型，0-实例回档；1-实例创建；2-实例扩容；3-实例迁移；4-实例删除；5-实例重启",
-          "example": "",
+          "example": "6",
           "member": "int64",
           "name": "UserTaskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务创建时间",
-          "example": "",
+          "example": "2024-11-08 16:02:53\t",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务结束时间",
-          "example": "",
+          "example": "2024-11-08 16:02:55\t",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务错误信息",
-          "example": "",
+          "example": "instance status not ok\t",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端参数",
-          "example": "",
+          "example": "{\"AppId\":1251966477,\"UserType\":1,\"Uin\":\"3374998458\",\"Operator\":\"3374998458\",\"Ids\":[12989],\"RetreatedTime\":\"2019-04-26 14:40:47\"}\t",
           "member": "string",
           "name": "InputData",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "tdsqlshard-ow728lmc\t",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "",
+          "example": "tdsqlshard-ow728lmc-tst\t",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
