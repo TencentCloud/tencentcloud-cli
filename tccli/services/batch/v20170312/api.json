@@ -336,30 +336,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "场景类型，支持WINDOWS",
-          "example": "",
+          "document": "场景类型，支持WINDOWS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WINDOWS",
           "member": "string",
           "name": "Scene",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "运行Agent的User",
-          "example": "",
+          "document": "运行Agent的User\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12348349197419",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "运行Agent的Session",
-          "example": "",
+          "document": "运行Agent的Session\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "95af4dd1-c6cd-4294-9439-f55028895c62",
           "member": "string",
           "name": "Session",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -685,12 +691,11 @@
         {
           "disabled": false,
           "document": "CVM实例类型列表",
-          "example": "",
+          "example": "[\"SA2.MEDIUM4\",\"SA5.MEDIUM4\"]",
           "member": "string",
           "name": "InstanceTypes",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -701,110 +706,110 @@
         {
           "disabled": false,
           "document": "计算环境ID",
-          "example": "",
+          "example": "env-5o4gphir",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境名称",
-          "example": "",
+          "example": "first_env",
           "member": "string",
           "name": "EnvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "位置信息",
-          "example": "",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2020-11-11 15:00:33",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算节点统计指标",
-          "example": "",
+          "example": "无",
           "member": "ComputeNodeMetrics",
           "name": "ComputeNodeMetrics",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境类型",
-          "example": "",
+          "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算节点期望个数",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "DesiredComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境资源类型，当前为CVM和CPM（黑石）",
-          "example": "",
+          "example": "CVM",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下一步动作",
-          "example": "",
+          "example": "DELETING",
           "member": "string",
           "name": "NextAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户添加到计算环境中的计算节点个数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AttachedComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -817,120 +822,120 @@
         {
           "disabled": false,
           "document": "计算节点ID",
-          "example": "",
+          "example": "node-99xnkwf0",
           "member": "string",
           "name": "ComputeNodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算节点实例ID，对于CVM场景，即为CVM的InstanceId",
-          "example": "",
+          "example": "ins-mhkm3smc",
           "member": "string",
           "name": "ComputeNodeInstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算节点状态",
-          "example": "",
+          "example": "RUNNING",
           "member": "string",
           "name": "ComputeNodeState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CPU核数",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存容量，单位GiB",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "Mem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源创建完成时间",
-          "example": "",
+          "example": "2022-12-20 09:11:15",
           "member": "string",
           "name": "ResourceCreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算节点运行  TaskInstance 可用容量。0表示计算节点忙碌。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TaskInstanceNumAvailable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Batch Agent 版本",
-          "example": "",
+          "example": "1.4.4",
           "member": "string",
           "name": "AgentVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例内网IP",
-          "example": "",
+          "example": "172.16.18.127",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例公网IP",
-          "example": "",
+          "example": "119.1.1.1",
           "member": "string",
           "name": "PublicIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境资源类型，当前为CVM和CPM（黑石）",
-          "example": "",
+          "example": "CVM",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境资源来源。<br>BATCH_CREATED：由批量计算创建的实例资源。<br>\nUSER_ATTACHED：用户添加到计算环境中的实例资源。",
-          "example": "",
+          "example": "BATCH_CREATED",
           "member": "string",
           "name": "ResourceOrigin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -943,70 +948,70 @@
         {
           "disabled": false,
           "document": "已经完成提交的计算节点数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "SubmittedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建中的计算节点数量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "CreatingCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建失败的计算节点数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "CreationFailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "完成创建的计算节点数量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "CreatedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运行中的计算节点数量",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "RunningCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "销毁中的计算节点数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "DeletingCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异常的计算节点数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AbnormalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1426,21 +1431,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "依赖关系的起点任务名称",
-          "example": "",
+          "document": "依赖关系的起点任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TaskA",
           "member": "string",
           "name": "StartTask",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "依赖关系的终点任务名称",
-          "example": "",
+          "document": "依赖关系的终点任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TaskB",
           "member": "string",
           "name": "EndTask",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2570,7 +2579,7 @@
           "example": "job-97zcl3wt",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2580,7 +2589,7 @@
           "example": "A",
           "member": "string",
           "name": "TaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2590,7 +2599,7 @@
           "example": "SUCCEED",
           "member": "string",
           "name": "TaskState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2600,7 +2609,7 @@
           "example": "2018-02-07T09:29:09Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2610,7 +2619,7 @@
           "example": "2018-02-07T09:30:31Z",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2620,7 +2629,7 @@
           "example": "2",
           "member": "int64",
           "name": "TaskInstanceTotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2630,7 +2639,7 @@
           "example": "无",
           "member": "TaskInstanceView",
           "name": "TaskInstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2640,7 +2649,7 @@
           "example": "无",
           "member": "TaskInstanceMetrics",
           "name": "TaskInstanceMetrics",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3508,9 +3517,10 @@
         {
           "disabled": false,
           "document": "竞价相关选项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.12",
           "member": "SpotMarketOptions",
           "name": "SpotOptions",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -3518,9 +3528,10 @@
         {
           "disabled": false,
           "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "spot",
           "member": "string",
           "name": "MarketType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5276,7 +5287,7 @@
         {
           "disabled": false,
           "document": "竞价出价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.01",
           "member": "string",
           "name": "MaxPrice",
           "output_required": false,
@@ -5287,7 +5298,7 @@
         {
           "disabled": false,
           "document": "竞价请求类型，当前仅支持类型：one-time\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "one-time",
           "member": "string",
           "name": "SpotInstanceType",
           "output_required": false,

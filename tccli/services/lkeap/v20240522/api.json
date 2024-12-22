@@ -1540,11 +1540,20 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "属性标签引用",
           "example": "无",
           "member": "AttributeLabelReferItem",
           "name": "AttributeLabel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "属性标签引用",
+          "example": "无",
+          "member": "AttributeLabelReferItem",
+          "name": "AttributeLabels",
           "required": false,
           "type": "list"
         },

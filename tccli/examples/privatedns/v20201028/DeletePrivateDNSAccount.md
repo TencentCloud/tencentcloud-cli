@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns DeletePrivateDNSAccount --cli-unfold-argument  \
-    --Account.Uin 123456789
+    --Account.Uin 1002330010
 ```
 
 Output: 

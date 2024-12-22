@@ -29,9 +29,9 @@
       "status": "online"
     },
     "CreatePrivateDNSAccount": {
-      "document": "创建私有域解析账号",
+      "document": "跨账号关联VPC时绑定其他账号",
       "input": "CreatePrivateDNSAccountRequest",
-      "name": "创建私有域解析账号",
+      "name": "添加绑定账号",
       "output": "CreatePrivateDNSAccountResponse",
       "status": "online"
     },
@@ -252,9 +252,10 @@
         {
           "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
-          "example": "无",
+          "example": "vpc-hgje12gt",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -262,9 +263,10 @@
         {
           "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -272,9 +274,10 @@
         {
           "disabled": false,
           "document": "Vpc所属账号: 123456789\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456789",
+          "example": "10005630010",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -285,6 +288,7 @@
           "example": "testname",
           "member": "string",
           "name": "VpcName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -298,40 +302,40 @@
         {
           "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
-          "example": "无",
+          "example": "vpc-dfaqw1f",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Vpc所属账号: 123456789",
-          "example": "无",
+          "example": "100220029",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "vpc资源名称：testname",
-          "example": "无",
+          "example": "vpcname",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -452,7 +456,7 @@
         {
           "disabled": false,
           "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-sd23dfy",
           "member": "string",
           "name": "UniqId",
           "output_required": false,
@@ -474,40 +478,40 @@
         {
           "disabled": false,
           "document": "日志类型",
-          "example": "",
+          "example": "all",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志表名",
-          "example": "",
+          "example": "request_count",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志总数",
-          "example": "",
+          "example": "12548",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志列表",
-          "example": "",
+          "example": "[{\"Date\": \"2024-12-11 19:00:00\", \"OperatorUin\": \"10020023500\", \"Content\": \"修改私有域 aabc.com（zone-nseuk90\"}]",
           "member": "AuditLogInfo",
           "name": "DataSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -520,30 +524,30 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "2024-12-11 19:00:00",
           "member": "datetime",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作人uin",
-          "example": "",
+          "example": "10020023500",
           "member": "string",
           "name": "OperatorUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志内容",
-          "example": "",
+          "example": "修改私有域 aabc.com（zone-nseuk90）",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -989,7 +993,7 @@
         {
           "disabled": false,
           "document": "记录Id",
-          "example": "1111",
+          "example": "15421",
           "member": "string",
           "name": "RecordId",
           "output_required": true,
@@ -1054,7 +1058,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "创建私有域的同时，将其关联至VPC",
           "example": "无",
           "member": "VpcInfo",
@@ -1121,20 +1125,20 @@
         {
           "disabled": false,
           "document": "时间",
-          "example": "",
+          "example": "2024-12-11 00:00:00",
           "member": "datetime",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "值",
-          "example": "",
+          "example": "1435",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1174,7 +1178,7 @@
         {
           "disabled": false,
           "document": "转发规则ID数组",
-          "example": "无",
+          "example": " [\"fid-fd1b23c67\"]",
           "member": "string",
           "name": "RuleIdSet",
           "required": false,
@@ -1246,7 +1250,7 @@
         {
           "disabled": false,
           "document": "记录ID数组，RecordId 优先",
-          "example": "[]",
+          "example": "[\"2657842\",\"2657843\"]",
           "member": "string",
           "name": "RecordIdSet",
           "required": false,
@@ -1273,7 +1277,7 @@
         {
           "disabled": false,
           "document": "私有域ID",
-          "example": "1",
+          "example": "zone-qk26web2",
           "member": "string",
           "name": "ZoneId",
           "required": false,
@@ -1282,7 +1286,7 @@
         {
           "disabled": false,
           "document": "私有域ID数组，ZoneId 优先",
-          "example": "无",
+          "example": " [\"zone-qk26web2\", \"zone-hfgol776\"]",
           "member": "string",
           "name": "ZoneIdSet",
           "required": false,
@@ -1351,7 +1355,7 @@
         {
           "disabled": false,
           "document": "私有域id",
-          "example": "无",
+          "example": "zone-124das1",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -1381,7 +1385,7 @@
         {
           "disabled": false,
           "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "234137",
           "member": "string",
           "name": "UniqId",
           "output_required": false,
@@ -1403,7 +1407,7 @@
         {
           "disabled": false,
           "document": "关联账号的uin",
-          "example": "123456789",
+          "example": "10000000010",
           "member": "string",
           "name": "AccountUin",
           "required": true,
@@ -1412,7 +1416,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1421,7 +1425,7 @@
         {
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1445,10 +1449,10 @@
         {
           "disabled": false,
           "document": "VPC数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1458,7 +1462,7 @@
           "example": "无",
           "member": "AccountVpcInfoOut",
           "name": "VpcSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1607,7 +1611,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1616,7 +1620,7 @@
         {
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1640,7 +1644,7 @@
         {
           "disabled": false,
           "document": "终端节点总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1699,7 +1703,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1708,7 +1712,7 @@
         {
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1732,7 +1736,7 @@
         {
           "disabled": false,
           "document": "私有域数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1801,7 +1805,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1810,7 +1814,7 @@
         {
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1834,7 +1838,7 @@
         {
           "disabled": false,
           "document": "私有域解析账号数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1866,7 +1870,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1875,7 +1879,7 @@
         {
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1899,7 +1903,7 @@
         {
           "disabled": false,
           "document": "私有域数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -2005,7 +2009,7 @@
         {
           "disabled": false,
           "document": "域名，格式必须是标准的TLD",
-          "example": "无",
+          "example": "zone-dm1igr1",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -2254,27 +2258,27 @@
           "example": "zone",
           "member": "string",
           "name": "FlowType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包总额度",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "TotalQuantity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包可用额度",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "AvailableQuantity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2377,7 +2381,7 @@
         {
           "disabled": false,
           "document": "私有域绑定的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "VpcInfo",
           "name": "VpcSet",
           "output_required": true,
@@ -2397,7 +2401,7 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{TagKey: \"key1\", TagValue: \"val1\"}]",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
@@ -2413,30 +2417,30 @@
         {
           "disabled": false,
           "document": "资源描述",
-          "example": "无",
+          "example": "all",
           "member": "string",
           "name": "Resource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表名",
-          "example": "无",
+          "example": "request_count",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表数据",
-          "example": "无",
+          "example": "[{\"Date\":\"2024-12-11 00:00:00\", \"Value\": 1435}]",
           "member": "DatePoint",
           "name": "DataSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2446,7 +2450,7 @@
           "example": "100",
           "member": "int64",
           "name": "MetricCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -2807,9 +2811,10 @@
         {
           "disabled": false,
           "document": "主账号Uin",
-          "example": "123456789",
+          "example": "1000209830",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2820,6 +2825,7 @@
           "example": "privatedns@qcloud.com",
           "member": "string",
           "name": "Account",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2830,6 +2836,7 @@
           "example": "私有域解析用户",
           "member": "string",
           "name": "Nickname",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2913,7 +2920,7 @@
         {
           "disabled": false,
           "document": "绑定的Vpc列表",
-          "example": "[]",
+          "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "VpcInfo",
           "name": "VpcSet",
           "output_required": true,
@@ -2953,7 +2960,7 @@
         {
           "disabled": false,
           "document": "绑定的关联账号的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{Uin: \"1000783200\", UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "AccountVpcInfoOutput",
           "name": "AccountVpcSet",
           "output_required": true,
@@ -3023,7 +3030,7 @@
         {
           "disabled": false,
           "document": "已删除的vpc\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "VpcInfo",
           "name": "DeletedVpcSet",
           "output_required": false,
@@ -3149,7 +3156,7 @@
         {
           "disabled": false,
           "document": "附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "testextra",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -3389,9 +3396,10 @@
         {
           "disabled": false,
           "document": "VpcId： vpc-xadsafsdasd",
-          "example": "",
+          "example": "vpc-dsd8ulf",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3399,9 +3407,10 @@
         {
           "disabled": false,
           "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

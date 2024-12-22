@@ -1,3 +1,133 @@
+# Release 3.0.1120.1
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 21 次发布
+
+发布时间：2024-12-23 01:09:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ComputeNode](http://document.tencentcloudapi.woa.com/document/product/599/15912#ComputeNode)
+
+	* <font color="#dd0000">**修改成员**：</font>ComputeNodeInstanceId, ResourceCreatedTime, AgentVersion
+
+
+
+
+## 云数据库 KeeWiDB(keewidb) 版本：2022-03-08
+
+### 第 4 次发布
+
+发布时间：2024-12-23 01:23:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1712/80455#InstanceInfo)
+
+	* 新增成员：Compression
+
+	* <font color="#dd0000">**修改成员**：</font>MachineMemory, DiskShardSize, DiskShardNum, DiskReplicasNum
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 13 次发布
+
+发布时间：2024-12-23 01:24:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadDoc](http://document.tencentcloudapi.woa.com/document/product/1764/84928)
+
+	* 新增入参：AttributeLabels
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 22 次发布
+
+发布时间：2024-12-23 01:27:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrivateZone](http://document.tencentcloudapi.woa.com/document/product/1338/55946)
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 129 次发布
+
+发布时间：2024-12-23 01:32:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyPublicNetworkSecurityPolicy](http://document.tencentcloudapi.woa.com/document/product/1179/85561)
+
+	* 新增入参：InstanceId, PolicyList
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 45 次发布
+
+发布时间：2024-12-23 01:33:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateContentIdentifier](http://document.tencentcloudapi.woa.com/document/product/1738/85567)
+* [CreateDnsRecord](http://document.tencentcloudapi.woa.com/document/product/1738/85573)
+* [DeleteContentIdentifier](http://document.tencentcloudapi.woa.com/document/product/1738/85566)
+* [DeleteDnsRecords](http://document.tencentcloudapi.woa.com/document/product/1738/85572)
+* [DescribeContentIdentifiers](http://document.tencentcloudapi.woa.com/document/product/1738/85565)
+* [DescribeDnsRecords](http://document.tencentcloudapi.woa.com/document/product/1738/85571)
+* [ModifyContentIdentifier](http://document.tencentcloudapi.woa.com/document/product/1738/85564)
+* [ModifyDnsRecords](http://document.tencentcloudapi.woa.com/document/product/1738/85570)
+* [ModifyDnsRecordsStatus](http://document.tencentcloudapi.woa.com/document/product/1738/85569)
+
+新增数据结构：
+
+* [ContentIdentifier](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ContentIdentifier)
+* [DnsRecord](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DnsRecord)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.1119.1
 
 ## 批量计算(batch) 版本：2017-03-12

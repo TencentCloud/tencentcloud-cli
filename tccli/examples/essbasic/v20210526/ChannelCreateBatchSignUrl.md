@@ -109,8 +109,10 @@ tccli essbasic ChannelCreateBatchSignUrl --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId test_org_open_id \
     --Agent.AppId yDxbWUyKQ*******4zjEB8mxCcDjAyF \
     --FlowIds yDwFdUUckpsw******yQ0af8bHosXQtb yDR1AUUgygj******uO4zjE8gTG7xvgH \
-    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDC5yUUckpwexoz4UuoHfkT1DMEDQSG5 \
-    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDC5yUUckpwexozwUuoHfkTwB00zdfLo
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDwFdUUckpsw******yQ0af8bHosXQtb \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDC5yUUckpwexozwUuoHfkTwB00zdfLo \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yDR1AUUgygj******uO4zjE8gTG7xvgH \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yDCY3UUckp7tpp8rUEGRbNoRjQJ7t9bd
 ```
 
 Output: 

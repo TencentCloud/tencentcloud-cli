@@ -13,21 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "InstanceEnumParam": [
-            {
-                "CurrentValue": "yes",
-                "DefaultValue": "yes",
-                "EnumValue": [
-                    "yes",
-                    "no"
-                ],
-                "NeedRestart": "false",
-                "ParamName": "auto-failback",
-                "Status": 2,
-                "Tips": "After the failure recovery, the master node is automatically switched back to the master zone (Standard) or the master node group (cluster)",
-                "ValueType": "enum"
-            }
-        ],
+        "InstanceEnumParam": [],
         "InstanceIntegerParam": [
             {
                 "CurrentValue": "15000",
@@ -38,18 +24,18 @@ Output:
                 "ParamName": "cluster-node-timeout",
                 "Status": 2,
                 "Tips": "Cluster node timeout is the amount of milliseconds a node must be unreachable for it to be considered in failure state",
-                "Unit": "ms",
+                "Unit": "",
                 "ValueType": "integer"
             },
             {
-                "CurrentValue": "100",
-                "DefaultValue": "100",
-                "Max": "10000",
+                "CurrentValue": "500",
+                "DefaultValue": "500",
+                "Max": "1000",
                 "Min": "10",
                 "NeedRestart": "false",
                 "ParamName": "proxy-slowlog-log-slower-than",
                 "Status": 2,
-                "Tips": "the command will be record over this time in proxy",
+                "Tips": "the commands over this time will in proxy",
                 "Unit": "ms",
                 "ValueType": "integer"
             },
@@ -80,16 +66,40 @@ Output:
         ],
         "InstanceMultiParam": [
             {
-                "CurrentValue": "\"\"",
-                "DefaultValue": "\"\"",
+                "CurrentValue": "hgetall,eval",
+                "DefaultValue": "hgetall",
                 "EnumValue": [
-                    "flushall",
-                    "flushdb",
-                    "keys",
                     "hgetall",
                     "eval",
                     "evalsha",
-                    "script"
+                    "script",
+                    "scan",
+                    "psetex",
+                    "set",
+                    "hmset",
+                    "hset",
+                    "lpush",
+                    "rpush",
+                    "sadd",
+                    "zadd",
+                    "del",
+                    "mget",
+                    "mset",
+                    "bitop",
+                    "exists",
+                    "msetnx",
+                    "rpoplpush",
+                    "smove",
+                    "sunion",
+                    "sinter",
+                    "sdiff",
+                    "sunionstore",
+                    "sinterstore",
+                    "sdiffstore",
+                    "zunionstore",
+                    "zinterstore",
+                    "pfmerge",
+                    "pfcount"
                 ],
                 "NeedRestart": "false",
                 "ParamName": "disable-command-list",
@@ -98,32 +108,9 @@ Output:
                 "ValueType": "multi"
             }
         ],
-        "InstanceTextParam": [
-            {
-                "CurrentValue": "\"\"",
-                "DefaultValue": "\"\"",
-                "NeedRestart": "false",
-                "ParamName": "notify-keyspace-events",
-                "Status": 2,
-                "TextValue": [
-                    "K",
-                    "E",
-                    "g",
-                    "$",
-                    "l",
-                    "s",
-                    "h",
-                    "z",
-                    "x",
-                    "e",
-                    "A"
-                ],
-                "Tips": "Changes in key space notification to registered clients",
-                "ValueType": "text"
-            }
-        ],
-        "RequestId": "5585ef91-0749-478a-aa81-ecc7ee584143",
-        "TotalCount": 7
+        "InstanceTextParam": [],
+        "RequestId": "a4abf600-2813-4c5b-a3f8-fc4268efd151",
+        "TotalCount": 5
     }
 }
 ```

@@ -34,8 +34,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "region",
+                        "TagValue": "ap-gaugnzhou"
                     }
                 ]
             }

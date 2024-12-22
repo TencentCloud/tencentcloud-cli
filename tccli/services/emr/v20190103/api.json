@@ -4690,10 +4690,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "1",
+          "document": "10",
           "example": "无",
           "member": "int64",
           "name": "TotalCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4703,6 +4704,7 @@
           "example": "无",
           "member": "ServiceLayerIn",
           "name": "ServiceLayerIns",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

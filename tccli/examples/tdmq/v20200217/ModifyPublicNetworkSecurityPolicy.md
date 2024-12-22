@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli tdmq ModifyPublicNetworkSecurityPolicy --cli-unfold-argument ```
+tccli tdmq ModifyPublicNetworkSecurityPolicy --cli-unfold-argument  \
+    --InstanceId pulsar-47emajuiaoam \
+    --PolicyList.0.Route 1.1.1.1/24 \
+    --PolicyList.0.Policy True \
+    --PolicyList.0.Remark allow
+```
 
 Output: 
 ```

@@ -720,9 +720,9 @@
     ],
     "ModifyInstancesAttribute": [
       {
-        "document": "修改两个实例的名称",
-        "input": "https://lighthouse.tencentcloudapi.com/?Action=ModifyInstancesAttribute\n&InstanceIds.0=lhins-ruy9d2tw\n&InstanceIds.1=lhins-rusdke45\n&InstanceName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47421b28-de2c-486e-b244-e47e64bf7357\"\n    }\n}",
+        "document": "修改实例的名称\n",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesAttribute\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-rfiuey9w\"\n    ],\n    \"InstanceName\": \"new-instance-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b452bba8-c6b7-4de2-bd56-20e1682628b2\"\n    }\n}",
         "title": "修改实例名称"
       }
     ],
@@ -809,7 +809,7 @@
     "RerunDockerContainer": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RerunDockerContainer\n<公共请求参数>\n\n{\n    \"ContainerConfiguration\": {\n        \"Command\": \"\",\n        \"ContainerImage\": \"nginx\",\n        \"ContainerName\": \"mynginx\",\n        \"Envs\": [\n            {\n                \"Key\": \"Key1\",\n                \"Value\": \"Value1\"\n            }\n        ],\n        \"PublishPorts\": [\n            {\n                \"ContainerPort\": 80,\n                \"HostPort\": 8081\n            }\n        ],\n        \"Volumes\": [\n            {\n                \"ContainerPath\": \"/data/container\",\n                \"HostPath\": \"/data/host\"\n            }\n        ]\n    },\n    \"ContainerId\": \"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415\",\n    \"InstanceId\": \"lhins-nwycpjl3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RerunDockerContainer\n<公共请求参数>\n\n{\n    \"ContainerConfiguration\": {\n        \"Command\": \"ls -l\",\n        \"ContainerImage\": \"nginx\",\n        \"ContainerName\": \"mynginx\",\n        \"Envs\": [\n            {\n                \"Key\": \"Key1\",\n                \"Value\": \"Value1\"\n            }\n        ],\n        \"PublishPorts\": [\n            {\n                \"ContainerPort\": 80,\n                \"HostPort\": 8081\n            }\n        ],\n        \"Volumes\": [\n            {\n                \"ContainerPath\": \"/data/container\",\n                \"HostPath\": \"/data/host\"\n            }\n        ]\n    },\n    \"ContainerId\": \"809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415\",\n    \"InstanceId\": \"lhins-nwycpjl3\"\n}",
         "output": "{\n    \"Response\": {\n        \"DockerActivityId\": \"lhda-nn82v77w\",\n        \"RequestId\": \"2c715b55-de1f-4a46-94a8-caeeee86b0f1\"\n    }\n}",
         "title": "重新创建并运行Docker容器"
       }

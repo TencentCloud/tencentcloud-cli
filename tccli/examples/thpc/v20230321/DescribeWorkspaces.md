@@ -16,33 +16,28 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "0142a337-d8cf-4ae1-857f-d090c1f802fdafd",
         "SpaceSet": [
             {
-                "SpaceId": "abc",
-                "SpaceFamily": "abc",
-                "SpaceType": "abc",
-                "SpaceName": "abc",
-                "SpaceState": "abc",
-                "SpaceChargeType": "abc",
-                "ResourceId": "abc",
-                "RenewFlag": "abc",
-                "Tags": [
-                    {
-                        "Key": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "ExpiredTime": "2020-09-22T00:00:00+00:00",
+                "CreatedTime": "2024-09-22T00:00:00+00:00",
+                "ExpiredTime": "2024-09-22T00:00:00+00:00",
+                "LatestOperation": "CreateWorkspaces",
+                "LatestOperationState": "SUCCESS",
                 "Placement": {
-                    "Zone": "abc"
+                    "Zone": "ap-shanghai-8"
                 },
-                "LatestOperation": "abc",
-                "LatestOperationState": "abc"
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "ResourceId": "ins-3zjugd6z",
+                "SpaceChargeType": "PREPAID",
+                "SpaceFamily": "96AS",
+                "SpaceId": "wks-bfdafadfd",
+                "SpaceName": "workspace",
+                "SpaceState": "ONLINE",
+                "SpaceType": "96AS.4XLARGE160",
+                "Tags": []
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```
