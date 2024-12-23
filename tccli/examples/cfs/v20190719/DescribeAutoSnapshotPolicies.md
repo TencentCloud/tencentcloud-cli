@@ -13,38 +13,28 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "AutoSnapshotPolicies": [
             {
-                "AutoSnapshotPolicyId": "abc",
-                "PolicyName": "abc",
-                "CreationTime": "abc",
-                "FileSystemNums": 1,
-                "DayOfWeek": "abc",
-                "Hour": "abc",
-                "IsActivated": 1,
-                "NextActiveTime": "abc",
-                "Status": "abc",
+                "AliveDays": 30,
                 "AppId": 1,
-                "AliveDays": 1,
-                "RegionName": "abc",
-                "FileSystems": [
-                    {
-                        "CreationToken": "abc",
-                        "FileSystemId": "abc",
-                        "SizeByte": 1,
-                        "StorageType": "abc",
-                        "TotalSnapshotSize": 1,
-                        "CreationTime": "abc",
-                        "ZoneId": 1
-                    }
-                ],
-                "DayOfMonth": "abc",
-                "IntervalDays": 1,
-                "CrossRegionsAliveDays": 1
+                "AutoSnapshotPolicyId": "asp-12345",
+                "CreationTime": "2021-08-11 19:36:53",
+                "CrossRegionsAliveDays": 0,
+                "DayOfMonth": "",
+                "DayOfWeek": "1,2,3,4,5,6,7",
+                "FileSystemNums": 0,
+                "FileSystems": [],
+                "Hour": "11,12,13,14,15,16,17,18,19,20,21",
+                "IntervalDays": 0,
+                "IsActivated": 1,
+                "NextActiveTime": "2024-12-12 16:00:00",
+                "PolicyName": "default",
+                "RegionName": "ap-guangzhou",
+                "Status": "available"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "d803fa9b-cbd1-42a8-9098-c5f8a5bd763c",
+        "TotalCount": 1
     }
 }
 ```

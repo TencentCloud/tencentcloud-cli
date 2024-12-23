@@ -6,35 +6,31 @@ Input:
 
 ```
 tccli tsf CreateConfigWithDetailResp --cli-unfold-argument  \
-    --ConfigName abc \
-    --ConfigVersion abc \
-    --ConfigVersionDesc abc \
-    --ConfigValue abc \
-    --ApplicationId abc \
-    --ConfigType abc \
-    --EncodeWithBase64 True \
-    --ProgramIdList abc
+    --ConfigName app-config \
+    --ConfigVersion v1.0 \
+    --ConfigValue config: enabled \
+    --ApplicationId application-yx8m24ga
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "52fb20a9-efc0-443d-97e3-cf43478f1b0d",
         "Result": {
-            "ConfigId": "abc",
-            "ConfigName": "abc",
-            "ConfigVersion": "abc",
-            "ConfigVersionDesc": "abc",
-            "ConfigValue": "abc",
-            "ConfigType": "abc",
-            "CreationTime": "abc",
-            "ApplicationId": "abc",
-            "ApplicationName": "abc",
-            "DeleteFlag": true,
-            "LastUpdateTime": "abc",
-            "ConfigVersionCount": 0
-        },
-        "RequestId": "abc"
+            "ApplicationId": "application-yx8m24ga",
+            "ApplicationName": null,
+            "ConfigId": "dcfg-vw83k2zv",
+            "ConfigName": "app-config",
+            "ConfigType": null,
+            "ConfigValue": "config: enabled",
+            "ConfigVersion": "v1.0",
+            "ConfigVersionCount": null,
+            "ConfigVersionDesc": null,
+            "CreationTime": null,
+            "DeleteFlag": null,
+            "LastUpdateTime": null
+        }
     }
 }
 ```

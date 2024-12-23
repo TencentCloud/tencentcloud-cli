@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tsf CreateLane --cli-unfold-argument  \
-    --LaneName test \
-    --Remark test \
-    --LaneGroupList.0.GroupId group-9yn758ad \
-    --LaneGroupList.0.Entrance true
+    --LaneName app_lane \
+    --Remark This is desc \
+    --LaneGroupList.0.GroupId group-vwebgxzv \
+    --LaneGroupList.0.Entrance True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "xx"
+        "RequestId": "681d3bab-f5fd-4a27-8b81-f65d6eda0238",
+        "Result": "lane-vwdjqq29"
     }
 }
 ```

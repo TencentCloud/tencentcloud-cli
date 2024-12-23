@@ -43,8 +43,8 @@
     "BiddingPreRelease": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BiddingPreRelease\n<公共请求参数>\n\n{\n    \"BusinessId\": \"abc\",\n    \"Price\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"IsNeedPay\": true,\n        \"BillingParam\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BiddingPreRelease\n<公共请求参数>\n\n{\n    \"BusinessId\": \"P0011702977661022561\",\n    \"Price\": 100.0\n}",
+        "output": "{\n    \"Response\": {\n        \"IsNeedPay\": true,\n        \"BillingParam\": \">{\\\"uin\\\":\\\"100*****091\\\",\\\"ownerUin\\\":\\\"100*****091\\\",\\\"appId\\\":10000,\\\"goods\\\":[{\\\"goodsCategoryId\\\":100,\\\"regionId\\\":47,\\\"zoneId\\\":470004,\\\"goodsNum\\\":1,\\\"projectId\\\":0,\\\"payMode\\\":1,\\\"goodsDetail\\\":{\\\"pid\\\":1000,\\\"productCode\\\":\\\"p_d\\\",\\\"subProductCode\\\":\\\"sp_d_*\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"预释放竞价保证金订单\\\",\\\"value\\\":\\\"竞价域名：att.com\\\"}],\\\"domain\\\":\\\"att.com\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"p\\\",\\\"autoRenewFlag\\\":0,\\\"createType\\\":\\\"bid_deposit\\\",\\\"price\\\":10000,\\\"bondPrice\\\":0,\\\"biddingBondPrice\\\":100,\\\"sv_d\\\":1,\\\"businessId\\\":\\\"P0********945\\\",\\\"isAutoPay\\\":0,\\\"templateId\\\":\\\"\\\"}}]}\",\n        \"RequestId\": \"dwde-f405-gg33-fee223\"\n    }\n}",
         "title": "预释放出价"
       }
     ],

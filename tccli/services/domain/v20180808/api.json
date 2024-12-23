@@ -1419,7 +1419,7 @@
         {
           "disabled": false,
           "document": "计费请求参数，以Json字符串的形式进行返回。",
-          "example": "\"\"",
+          "example": ">{\\\"uin\\\":\\\"100*****091\\\",\\\"ownerUin\\\":\\\"100*****091\\\",\\\"appId\\\":10000,\\\"goods\\\":[{\\\"goodsCategoryId\\\":100,\\\"regionId\\\":47,\\\"zoneId\\\":470004,\\\"goodsNum\\\":1,\\\"projectId\\\":0,\\\"payMode\\\":1,\\\"goodsDetail\\\":{\\\"pid\\\":1000,\\\"productCode\\\":\\\"p_d\\\",\\\"subProductCode\\\":\\\"sp_d_*\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"预释放竞价保证金订单\\\",\\\"value\\\":\\\"竞价域名：att.com\\\"}],\\\"domain\\\":\\\"att.com\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"p\\\",\\\"autoRenewFlag\\\":0,\\\"createType\\\":\\\"bid_deposit\\\",\\\"price\\\":10000,\\\"bondPrice\\\":0,\\\"biddingBondPrice\\\":100,\\\"sv_d\\\":1,\\\"businessId\\\":\\\"P0********945\\\",\\\"isAutoPay\\\":0,\\\"templateId\\\":\\\"\\\"}}]}",
           "member": "string",
           "name": "BillingParam",
           "output_required": false,
@@ -6205,7 +6205,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "域名正在转出中，不可编辑",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -6330,7 +6330,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsPremium",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6340,7 +6340,7 @@
           "example": "'domain-acnsd121q'",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6350,7 +6350,7 @@
           "example": "xxxx.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6360,27 +6360,27 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "注册时间。",
-          "example": "xxxx",
+          "example": "2022-10-01 12:00:00",
           "member": "string",
           "name": "CreationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "到期时间。",
-          "example": "xxxx",
+          "example": "2025-10-01 12:00:00",
           "member": "string",
           "name": "ExpirationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6390,7 +6390,7 @@
           "example": ".com",
           "member": "string",
           "name": "Tld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6400,7 +6400,7 @@
           "example": ".com",
           "member": "string",
           "name": "CodeTld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6410,7 +6410,7 @@
           "example": "ok",
           "member": "string",
           "name": "BuyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6650,7 +6650,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6660,27 +6660,27 @@
           "example": "doing",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原因",
-          "example": "xx",
+          "example": "The domain registration failed. Please resubmit it later",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原因（中文）",
-          "example": "xx",
+          "example": "该域名注册失败，请稍后重新提交注册",
           "member": "string",
           "name": "ReasonZh",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6696,7 +6696,7 @@
           "example": "厦门",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6706,27 +6706,27 @@
           "example": "中国",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "xx",
+          "example": "s*@global.tencent.co",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名所有者",
-          "example": "xx",
+          "example": "org name",
           "member": "string",
           "name": "OrganizationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6736,17 +6736,17 @@
           "example": "福建省",
           "member": "string",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "注册人",
-          "example": "xx",
+          "example": "T*n",
           "member": "string",
           "name": "RegistrantName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6756,7 +6756,7 @@
           "example": "I",
           "member": "string",
           "name": "RegistrantType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6766,7 +6766,7 @@
           "example": "街道",
           "member": "string",
           "name": "Street",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6776,17 +6776,17 @@
           "example": "12345677890",
           "member": "string",
           "name": "Telephone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "邮编",
-          "example": "123456",
+          "example": "4**1",
           "member": "string",
           "name": "ZipCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6796,7 +6796,7 @@
           "example": "san",
           "member": "string",
           "name": "FirstName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6806,7 +6806,7 @@
           "example": "zhang",
           "member": "string",
           "name": "LastName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6816,7 +6816,7 @@
           "example": "xx公司",
           "member": "string",
           "name": "CompanyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7899,7 +7899,7 @@
           "example": ".com",
           "member": "string",
           "name": "Tld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7909,7 +7909,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Year",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7919,7 +7919,7 @@
           "example": "1.00",
           "member": "float",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7929,27 +7929,27 @@
           "example": "1.00",
           "member": "float",
           "name": "RealPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
-          "example": "xxx",
+          "example": "new",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "com域名新注",
           "member": "string",
           "name": "Title",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

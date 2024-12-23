@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfs DescribeCfsFileSystems --cli-unfold-argument  \
-    --FileSystemId cfs-12345
+    --FileSystemId cfs-318f2b7ba
 ```
 
 Output: 
@@ -15,49 +15,41 @@ Output:
     "Response": {
         "FileSystems": [
             {
-                "CreationTime": "abc",
-                "CreationToken": "abc",
-                "FileSystemId": "abc",
-                "LifeCycleState": "abc",
-                "SizeByte": 1,
-                "SizeLimit": 1,
-                "ZoneId": 1,
-                "Zone": "abc",
-                "Protocol": "abc",
-                "StorageType": "abc",
-                "StorageResourcePkg": "abc",
-                "BandwidthResourcePkg": "abc",
+                "AppId": 1300275735,
+                "AutoScaleUpRule": null,
+                "AutoSnapshotPolicyId": "",
+                "BandwidthLimit": 100,
+                "BandwidthResourcePkg": "",
+                "Capacity": 2097152,
+                "CreationTime": "2024-07-09 10:52:35",
+                "CreationToken": "denny-test-003",
+                "Encrypted": false,
+                "FileSystemId": "cfs-318f2b7ba",
+                "FsName": "denny-test-003",
+                "KmsKeyId": "",
+                "LifeCycleState": "available",
                 "PGroup": {
-                    "PGroupId": "abc",
-                    "Name": "abc"
+                    "Name": "默认权限组",
+                    "PGroupId": "pgroupbasic"
                 },
-                "FsName": "abc",
-                "Encrypted": true,
-                "KmsKeyId": "abc",
-                "AppId": 0,
-                "BandwidthLimit": 0,
-                "AutoSnapshotPolicyId": "abc",
-                "SnapStatus": "abc",
-                "Capacity": 1,
-                "Tags": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ],
-                "TieringState": "abc",
+                "Protocol": "NFS",
+                "SizeByte": 0,
+                "SizeLimit": 1000000,
+                "SnapStatus": "normal",
+                "StorageResourcePkg": "",
+                "StorageType": "SD",
+                "Tags": [],
                 "TieringDetail": {
-                    "TieringSizeInBytes": 0
+                    "SecondaryTieringSizeInBytes": -1,
+                    "TieringSizeInBytes": -1
                 },
-                "AutoScaleUpRule": {
-                    "Status": "abc",
-                    "ScaleThreshold": 1,
-                    "TargetThreshold": 1
-                }
+                "TieringState": "NotAvailable",
+                "Zone": "ap-guangzhou-2",
+                "ZoneId": 100002
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "8edb5b83-6bd2-4f0a-8ee9-d8ee96fff8dc",
+        "TotalCount": 1
     }
 }
 ```

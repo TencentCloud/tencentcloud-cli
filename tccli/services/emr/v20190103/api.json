@@ -10178,21 +10178,21 @@
         },
         {
           "disabled": false,
-          "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。",
-          "example": "[\"emr-vm-jv1s4zas\\r\\n\"]",
-          "member": "string",
-          "name": "ResourceIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "实例计费模式。此处只支持取值为1，表示包年包月。",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。",
+          "example": "[\"emr-vm-jv1s4zas\\r\\n\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -10229,6 +10229,24 @@
           "name": "ModifyPayMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要每个节点续费价格",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDetail",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群id，如果需要集群所有包年包月节点续费信息，可以填写该参数",
+          "example": "emr-21adfa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10274,6 +10292,16 @@
           "name": "TimeSpan",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "价格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceDetail",
+          "name": "PriceDetail",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -13948,9 +13976,10 @@
         {
           "disabled": false,
           "document": "外部资源提供者的标识符，例如\"cls-a1cd23fa\"。",
-          "example": "\"\"",
+          "example": "cls-a1cd2dsx",
           "member": "string",
           "name": "ResourceProviderIdentifier",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13958,9 +13987,10 @@
         {
           "disabled": false,
           "document": "外部资源提供者类型，例如\"tke\",当前仅支持\"tke\"。",
-          "example": "\"\"",
+          "example": "tke",
           "member": "string",
           "name": "ResourceProviderType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13968,9 +13998,10 @@
         {
           "disabled": false,
           "document": "资源的用途，即节点类型，当前仅支持\"TASK\"。",
-          "example": "\"\"",
+          "example": "TASK",
           "member": "string",
           "name": "NodeFlag",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13978,9 +14009,10 @@
         {
           "disabled": false,
           "document": "CPU核数。",
-          "example": "\"\"",
+          "example": "1",
           "member": "uint64",
           "name": "Cpu",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13988,9 +14020,10 @@
         {
           "disabled": false,
           "document": "内存大小，单位为GB。",
-          "example": "\"\"",
+          "example": "1",
           "member": "uint64",
           "name": "Memory",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13998,9 +14031,10 @@
         {
           "disabled": false,
           "document": "Eks集群-CPU类型，当前支持\"intel\"和\"amd\"",
-          "example": "\"\"",
+          "example": "intel",
           "member": "string",
           "name": "CpuType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14008,9 +14042,10 @@
         {
           "disabled": false,
           "document": "Pod节点数据目录挂载信息。",
-          "example": "\"\"",
+          "example": "[\"/data\"]",
           "member": "PodVolume",
           "name": "PodVolumes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -14018,9 +14053,10 @@
         {
           "disabled": false,
           "document": "是否浮动规格，默认否\n<li>true：代表是</li>\n<li>false：代表否</li>",
-          "example": "\"\"",
+          "example": "true",
           "member": "bool",
           "name": "EnableDynamicSpecFlag",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -14028,9 +14064,10 @@
         {
           "disabled": false,
           "document": "浮动规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "无",
           "member": "DynamicPodSpec",
           "name": "DynamicPodSpec",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -14038,9 +14075,10 @@
         {
           "disabled": false,
           "document": "代表vpc网络唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "vpc-se938xw9",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14048,9 +14086,10 @@
         {
           "disabled": false,
           "document": "代表vpc子网唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "sub-ei39s9xx",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14061,6 +14100,7 @@
           "example": "无",
           "member": "string",
           "name": "PodName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16088,6 +16128,26 @@
           "example": "1731833622-448635-8003549",
           "member": "string",
           "name": "TraceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1731867961-23673-5000362",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20241118053073481639521",
+          "member": "string",
+          "name": "BillId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

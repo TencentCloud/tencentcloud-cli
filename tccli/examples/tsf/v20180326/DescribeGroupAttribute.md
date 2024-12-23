@@ -22,7 +22,9 @@ Output:
             "PackageName": "consumer-demo-1.12.0-Edgware-SNAPSHOT.jar",
             "RunInstanceCount": 0,
             "GroupStatus": "Updating",
-            "OffInstanceCount": 1
+            "OffInstanceCount": 1,
+            "HealthCheckSettings": {},
+            "IsNotEqualServiceConfig": false
         }
     }
 }

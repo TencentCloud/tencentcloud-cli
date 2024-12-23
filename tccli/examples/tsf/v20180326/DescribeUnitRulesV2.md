@@ -6,53 +6,57 @@ Input:
 
 ```
 tccli tsf DescribeUnitRulesV2 --cli-unfold-argument  \
-    --GatewayInstanceId gw-ins-afsfas \
+    --GatewayInstanceId gw-ins-szesmg28 \
+    --SearchWord gwInsName \
+    --Status disabled \
     --Offset 0 \
-    --Limit 20 \
-    --SearchWord xxx
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "10b315b4-a034-44d3-a426-614fa6eae8ec",
         "Result": {
-            "TotalCount": 0,
             "Content": [
                 {
-                    "Id": "abc",
-                    "GatewayInstanceId": "abc",
-                    "Name": "abc",
-                    "Description": "abc",
-                    "Status": "abc",
+                    "CreatedTime": "2024-12-23 11:14:17",
+                    "Description": null,
+                    "GatewayInstanceId": "gw-ins-szesmg28",
+                    "Id": "unit-rl-cgd3l6jo",
+                    "Name": "gwInsName",
+                    "Status": "disabled",
                     "UnitRuleItemList": [
                         {
-                            "Id": "abc",
-                            "UnitRuleId": "abc",
-                            "Relationship": "abc",
-                            "DestNamespaceId": "abc",
-                            "DestNamespaceName": "abc",
-                            "Name": "abc",
+                            "CreatedTime": "2024-12-23 11:14:17",
+                            "Description": "this is desc",
+                            "DestNamespaceId": "namespace-vk5blxnv",
+                            "DestNamespaceName": "global_default",
+                            "Id": "unit-item-ghpuh9rn",
+                            "ItemIndex": 1,
+                            "Name": "Rule1",
                             "Priority": 0,
-                            "Description": "abc",
+                            "Relationship": "AND",
+                            "UnitRuleId": "unit-rl-cgd3l6jo",
                             "UnitRuleTagList": [
                                 {
-                                    "UnitRuleItemId": "abc",
-                                    "Id": "abc",
-                                    "TagType": "abc",
-                                    "TagField": "abc",
-                                    "TagOperator": "abc",
-                                    "TagValue": "abc"
+                                    "Id": "unit-tag-vmhijoic",
+                                    "TagField": "user",
+                                    "TagOperator": "IN",
+                                    "TagType": "U",
+                                    "TagValue": "1",
+                                    "UnitRuleItemId": "unit-item-ghpuh9rn"
                                 }
-                            ]
+                            ],
+                            "UpdatedTime": "2024-12-23 11:14:17"
                         }
                     ],
-                    "CreatedTime": "abc",
-                    "UpdatedTime": "abc"
+                    "UpdatedTime": "2024-12-23 11:14:17"
                 }
-            ]
-        },
-        "RequestId": "abc"
+            ],
+            "TotalCount": 1
+        }
     }
 }
 ```

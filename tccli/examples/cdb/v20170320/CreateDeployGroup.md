@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb CreateDeployGroup --cli-unfold-argument  \
     --DeployGroupName cdb-ezq1vzem \
-    --Description test
+    --Description 1区群组
 ```
 
 Output: 

@@ -30,7 +30,8 @@ Output:
             {
                 "Uin": "1000032110",
                 "UniqVpcId": "vpc-2314dae",
-                "Region": "ap-guangzhou"
+                "Region": "ap-guangzhou",
+                "VpcName": "vpc-testname"
             }
         ],
         "RequestId": "5cd964e2-b5e6-8a35-9ce5a1085860c845"

@@ -6763,21 +6763,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备型号",
-          "example": "",
+          "document": "设备型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SH12",
           "member": "string",
           "name": "Machine",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该机型对应的可售卖规格列表",
-          "example": "",
+          "document": "该机型对应的可售卖规格列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Cpu\":1,\"Machine\":\"TS85\",\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":5,\"Pid\":1002231,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"},{\"Cpu\":1,\"Machine\":\"TS85\",\"MaxStorage\":3000,\"Memory\":2,\"MinStorage\":10,\"NodeCount\":6,\"Pid\":1002231,\"Qps\":2100,\"SuitInfo\":\"日独立用户数上百人的小型应用\"}]",
           "member": "SpecConfigInfo",
           "name": "SpecInfos",
+          "output_required": true,
           "required": true,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8839,6 +8843,7 @@
           "member": "string",
           "name": "Machine",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8849,6 +8854,7 @@
           "member": "int64",
           "name": "Memory",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8859,6 +8865,7 @@
           "member": "int64",
           "name": "MinStorage",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8869,6 +8876,7 @@
           "member": "int64",
           "name": "MaxStorage",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8879,6 +8887,7 @@
           "member": "string",
           "name": "SuitInfo",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8889,6 +8898,7 @@
           "member": "int64",
           "name": "Qps",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8899,6 +8909,7 @@
           "member": "int64",
           "name": "Pid",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8909,6 +8920,7 @@
           "member": "int64",
           "name": "NodeCount",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8919,11 +8931,12 @@
           "member": "int64",
           "name": "Cpu",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "StartSmartDBARequest": {
       "document": "StartSmartDBA请求参数结构体",

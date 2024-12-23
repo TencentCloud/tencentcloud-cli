@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb CloseCDBProxy --cli-unfold-argument  \
-    --InstanceId cdb-test \
-    --ProxyGroupId proxy-test \
+    --InstanceId cdb-93hvfedd \
+    --ProxyGroupId proxy-ixw3ll2d \
     --OnlyCloseRW True
 ```
 

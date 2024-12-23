@@ -6,46 +6,42 @@ Input:
 
 ```
 tccli tsf DescribeGatewayAllGroupApis --cli-unfold-argument  \
-    --GatewayDeployGroupId group-zbyxk4aa
+    --GatewayDeployGroupId group-yd3b588a \
+    --SearchWord default
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "0a1c8ed2-7a69-4a12-87f0-a6ca4b6419f8",
+        "RequestId": "8d5aacf5-0ad5-40ed-85ca-d7ef71c85c57",
         "Result": {
-            "GatewayDeployGroupId": "group-zbyxk4aa",
-            "GatewayDeployGroupName": "sean-test",
+            "GatewayDeployGroupId": "group-yd3b588a",
+            "GatewayDeployGroupName": "group-zuul-1",
             "GroupNum": 1,
             "Groups": [
                 {
-                    "GroupId": "grp-aocm2u1n",
-                    "GroupName": "test",
-                    "GroupApiCount": 3,
+                    "GatewayInstanceId": "gw-ins-b09khqjq",
+                    "GatewayInstanceType": "none",
+                    "GroupApiCount": 2,
                     "GroupApis": [
                         {
-                            "ApiId": "api-3bpjclfs",
-                            "Path": "/v1/user/{userId}",
-                            "Method": "POST",
-                            "MicroserviceName": "provider-demo",
-                            "NamespaceName": "test-ns2"
-                        },
-                        {
-                            "ApiId": "api-5lf5r4i3",
-                            "Path": "/v1/user/create/user",
-                            "Method": "POST",
-                            "MicroserviceName": "provider-demo",
-                            "NamespaceName": "test-ns"
-                        },
-                        {
-                            "ApiId": "api-3e1583de",
-                            "Path": "/echo/{param}",
+                            "ApiId": "api-0i1r0zuh",
                             "Method": "GET",
                             "MicroserviceName": "provider-demo",
-                            "NamespaceName": "test-ns"
+                            "NamespaceName": "ns_default",
+                            "Path": "/checkToken"
+                        },
+                        {
+                            "ApiId": "api-m0csucjn",
+                            "Method": "GET",
+                            "MicroserviceName": "provider-demo",
+                            "NamespaceName": "ns_default",
+                            "Path": "/swagger/getMessageDetail"
                         }
-                    ]
+                    ],
+                    "GroupId": "grp-nb08ur29",
+                    "GroupName": "grp_app"
                 }
             ]
         }

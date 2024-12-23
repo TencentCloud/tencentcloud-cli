@@ -1,61 +1,64 @@
 **Example 1: 查询虚拟机部署组云主机列表**
 
-
+查询虚拟机部署组云主机列表
 
 Input: 
 
 ```
 tccli tsf DescribeGroupInstances --cli-unfold-argument  \
-    --GroupId group-xxxxxxx \
-    --Offset 0 \
-    --Limit 20
+    --GroupId group-v6743bka
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "26528f55-0b7e-4f9c-a122-974fbccd2ab3",
+        "RequestId": "57578845-90a3-4f98-b166-a1822f3a7223",
         "Result": {
-            "TotalCount": 1,
             "Content": [
                 {
-                    "InstanceId": "ins-xxxxxxx",
-                    "InstanceName": "test",
-                    "LanIp": "10.3.0.9",
-                    "WanIp": "",
-                    "NamespaceId": "cluster-xxxxxxx",
-                    "UpdateTime": null,
-                    "InstanceDesc": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "InstanceStatus": "Running",
-                    "InstanceAvailableStatus": "Running",
-                    "ServiceInstanceStatus": "Running",
-                    "ServiceSidecarStatus": "UnSupported",
-                    "OperationState": 0,
-                    "CountInTsf": null,
-                    "GroupId": "group-ov6wl65y",
-                    "GroupName": null,
+                    "AgentVersion": "1.44.0",
                     "ApplicationId": null,
                     "ApplicationName": null,
-                    "InstanceCreatedTime": null,
-                    "InstanceExpiredTime": null,
+                    "ApplicationResourceType": null,
+                    "ApplicationType": null,
+                    "ClusterId": "cluster-y4rb3qja",
+                    "ClusterName": null,
+                    "ClusterType": null,
+                    "CountInTsf": null,
+                    "GroupId": "group-v6743bka",
+                    "GroupName": null,
+                    "InstanceAvailableStatus": "Running",
                     "InstanceChargeType": null,
+                    "InstanceCreatedTime": null,
+                    "InstanceDesc": null,
+                    "InstanceExpiredTime": null,
+                    "InstanceId": "ins-660yl495",
+                    "InstanceImportMode": "M",
+                    "InstanceLimitCpu": null,
+                    "InstanceLimitMem": null,
+                    "InstanceName": "pepyzhang-Mesh升级测试1-勿删",
+                    "InstancePkgVersion": "20210826163718",
+                    "InstanceStatus": "Running",
                     "InstanceTotalCpu": null,
                     "InstanceTotalMem": null,
                     "InstanceUsedCpu": null,
                     "InstanceUsedMem": null,
-                    "InstanceLimitCpu": null,
-                    "InstanceLimitMem": null,
-                    "InstancePkgVersion": "20190527183200",
-                    "ClusterType": null,
                     "InstanceZoneId": null,
+                    "LanIp": "10.0.1.16",
+                    "NamespaceId": null,
+                    "NamespaceName": null,
+                    "NodeInstanceId": null,
+                    "OperationState": 0,
+                    "Reason": "请启用健康检查，以便更精确地反映应用运行状态",
                     "RestrictState": null,
-                    "InstanceImportMode": "R",
-                    "ApplicationType": null
+                    "ServiceInstanceStatus": "Running",
+                    "ServiceSidecarStatus": "Running",
+                    "UpdateTime": null,
+                    "WanIp": "121.4.178.105"
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

@@ -30,7 +30,8 @@ Output:
             {
                 "Uin": "100000236200",
                 "UniqVpcId": "vpc-dshgy2n",
-                "Region": "ap-guangzhou"
+                "Region": "ap-guangzhou",
+                "VpcName": "vpc-testname"
             }
         ],
         "UniqId": "vpc-dser2gtg",

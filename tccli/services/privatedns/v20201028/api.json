@@ -21,6 +21,13 @@
       "output": "CreateEndPointAndEndPointServiceResponse",
       "status": "online"
     },
+    "CreateExtendEndpoint": {
+      "document": "创建终端节点",
+      "input": "CreateExtendEndpointRequest",
+      "name": "创建增强型终端节点",
+      "output": "CreateExtendEndpointResponse",
+      "status": "online"
+    },
     "CreateForwardRule": {
       "document": "创建自定义转发规则",
       "input": "CreateForwardRuleRequest",
@@ -124,6 +131,13 @@
       "input": "DescribeEndPointRegionRequest",
       "name": "查询终端节点已经启用了的地域",
       "output": "DescribeEndPointRegionResponse",
+      "status": "online"
+    },
+    "DescribeExtendEndpointList": {
+      "document": "获取终端节点列表",
+      "input": "DescribeExtendEndpointListRequest",
+      "name": "获取增强型终端节点列表",
+      "output": "DescribeExtendEndpointListResponse",
       "status": "online"
     },
     "DescribeForwardRule": {
@@ -262,36 +276,36 @@
         },
         {
           "disabled": false,
-          "document": "Vpc所属地区: ap-guangzhou, ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Vpc所属地区: ap-guangzhou, ap-shanghai",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Vpc所属账号: 123456789\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Vpc所属账号: 123456789",
           "example": "10005630010",
           "member": "string",
           "name": "Uin",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc资源名称：testname\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc资源名称：testname",
           "example": "testname",
           "member": "string",
           "name": "VpcName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -455,13 +469,13 @@
         },
         {
           "disabled": false,
-          "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "唯一id",
           "example": "vpc-sd23dfy",
           "member": "string",
           "name": "UniqId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -767,6 +781,71 @@
           "name": "EndPointVipSet",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExtendEndpointRequest": {
+      "document": "CreateExtendEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出站终端节点名称",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndpointName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点所属地域，必须和转发目标VIP地域一致",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "EndpointRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转发目标",
+          "example": "参考示例",
+          "member": "ForwardIp",
+          "name": "ForwardIp",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExtendEndpointResponse": {
+      "document": "CreateExtendEndpoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点id",
+          "example": "eid-ax8skcs0dg",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点名称",
+          "example": "终端节点名",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1384,13 +1463,13 @@
         },
         {
           "disabled": false,
-          "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "唯一id",
           "example": "234137",
           "member": "string",
           "name": "UniqId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1653,13 +1732,13 @@
         },
         {
           "disabled": false,
-          "document": "终端节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "终端节点列表",
           "example": "无",
           "member": "EndPointInfo",
           "name": "EndPointSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1684,6 +1763,71 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendEndpointListRequest": {
+      "document": "DescribeExtendEndpointList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页限制数目， 最大100，默认20",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数，支持EndpointName,EndpointId",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendEndpointListResponse": {
+      "document": "DescribeExtendEndpointList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点列表",
+          "example": "无",
+          "member": "OutboundEndpoint",
+          "name": "OutboundEndpointSet",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2204,26 +2348,164 @@
         },
         {
           "disabled": false,
-          "document": "ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ap-guangzhou",
           "example": "地域编码",
           "member": "string",
           "name": "RegionCode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键值对集合",
           "example": "[{TagKey: \"testtag\", TagValue: \"testtag\"}]",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "EndpointService": {
+      "document": "PrivateDNS出站终端节点转发IP",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发目标IP网路接入类型\nCLB: 转发IP为内网CLBVIP\nCCN: 转发IP通过CCN路由",
+          "example": "CLB",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发目标IP",
+          "example": "10.1.1.1",
+          "member": "string",
+          "name": "Pip",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发IP端口号",
+          "example": "53",
+          "member": "int64",
+          "name": "Pport",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一 vpc id",
+          "example": "vpc-abcdefgh",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发目标IP代理IP",
+          "example": "11.11.11.11",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发目标IP代理端口",
+          "example": "111111",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发目标IP协议",
+          "example": "udp",
+          "member": "string",
+          "name": "Proto",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一子网id\n接入类型为 CCN 时必填",
+          "example": "subnet-abdedff",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ccn id\n接入类型为 CCN 时必填",
+          "example": "ccn-xxxxxxxx",
+          "member": "string",
+          "name": "AccessGatewayId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点SNAT 网段",
+          "example": "11.163.0.0/16",
+          "member": "string",
+          "name": "SnatVipCidr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点SNAT IP列表",
+          "example": "10.110.1.4;10.110.1.13",
+          "member": "string",
+          "name": "SnatVipSet",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点服务所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Filter": {
       "document": "筛选参数",
@@ -2284,6 +2566,89 @@
         }
       ],
       "usage": "out"
+    },
+    "ForwardIp": {
+      "document": "PrivateDNS出站终端节点转发IP",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转发目标IP网路接入类型\nCLB: 转发IP为内网CLBVIP\nCCN: 转发IP通过CCN路由",
+          "example": "CLB",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发目标IP",
+          "example": "10.1.1.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发IP端口号",
+          "example": "53",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点个数\n最小1个，最大6个",
+          "example": "1",
+          "member": "int64",
+          "name": "IpNum",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一 vpc id",
+          "example": "vpc-abcdefgh",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唯一子网id\n接入类型为 CCN 时必填",
+          "example": "subnet-abdedff",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ccn id\n接入类型为 CCN 时必填",
+          "example": "ccn-xxxxxxxx",
+          "member": "string",
+          "name": "AccessGatewayId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ForwardRule": {
       "document": "转发规则详情",
@@ -2380,13 +2745,13 @@
         },
         {
           "disabled": false,
-          "document": "私有域绑定的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有域绑定的vpc列表",
           "example": "[{UniqVpcId: \"vpc-ser4jo\", Region: \"ap-guangzhou\"}]",
           "member": "VpcInfo",
           "name": "VpcSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2400,13 +2765,13 @@
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "[{TagKey: \"key1\", TagValue: \"val1\"}]",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2804,6 +3169,100 @@
         }
       ],
       "type": "object"
+    },
+    "OutboundEndpoint": {
+      "document": "出站终端节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出站终端节点ID",
+          "example": "eid-xxxxxx",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点名",
+          "example": "出站终端节点名",
+          "member": "string",
+          "name": "EndpointName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tag标签",
+          "example": "[{\"owner\":\"demo\"}]",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出站终端节点信息\n仅在转发架构为 V2R的情况下返回",
+          "example": "无",
+          "member": "EndpointService",
+          "name": "EndpointServiceSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转发链接架构\nV2V: privatelink\nV2R: jnsgw",
+          "example": "V2V",
+          "member": "string",
+          "name": "ForwardLinkArch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点服务ID\n仅在转发架构为 V2V的情况下返回\n",
+          "example": "终端节点服务ID",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "终端节点VIP列表\n仅在转发架构为 V2V的情况下返回",
+          "example": "[10.0.0.17:53,10.0.0.18:53]",
+          "member": "string",
+          "name": "EndPointVipSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PrivateDNSAccount": {
       "document": "私有域解析账号",

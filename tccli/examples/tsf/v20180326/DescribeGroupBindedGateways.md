@@ -6,30 +6,49 @@ Input:
 
 ```
 tccli tsf DescribeGroupBindedGateways --cli-unfold-argument  \
-    --GroupId group-s7j2sk4 \
+    --GroupId grp-nb08ur29 \
+    --SearchWord zuul \
     --Offset 0 \
-    --Limit 10
+    --Limit 5
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "f5e456a5-94c9-46d3-96ab-27dd24948da5",
         "Result": {
             "Content": [
                 {
-                    "DeployGroupId": "xx",
-                    "ApplicationName": "xx",
-                    "GroupStatus": "xx",
-                    "ClusterType": "xx",
-                    "DeployGroupName": "xx",
-                    "ApplicationType": "xx",
-                    "ApplicationId": "xx"
+                    "ApplicationId": "application-ydopqnxa",
+                    "ApplicationName": "shedfree-gw",
+                    "ApplicationType": "V",
+                    "ClusterType": "V",
+                    "DeployGroupId": "group-yd3b588a",
+                    "DeployGroupName": "shed-zuul-1",
+                    "GroupStatus": "Running"
+                },
+                {
+                    "ApplicationId": "application-ydopqnxa",
+                    "ApplicationName": "shedfree-gw",
+                    "ApplicationType": "V",
+                    "ClusterType": "V",
+                    "DeployGroupId": "group-yq9d6wev",
+                    "DeployGroupName": "shed-zuul-3",
+                    "GroupStatus": "Running"
+                },
+                {
+                    "ApplicationId": "application-ydopqnxa",
+                    "ApplicationName": "shedfree-gw",
+                    "ApplicationType": "V",
+                    "ClusterType": "V",
+                    "DeployGroupId": "group-yx87px4a",
+                    "DeployGroupName": "shed-zuul-2",
+                    "GroupStatus": "Running"
                 }
             ],
-            "TotalCount": 1
-        },
-        "RequestId": "xx"
+            "TotalCount": 3
+        }
     }
 }
 ```

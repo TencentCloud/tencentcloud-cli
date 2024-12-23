@@ -8263,7 +8263,7 @@
         {
           "disabled": false,
           "document": "流程相关信息",
-          "example": "-",
+          "example": "1281",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -8273,7 +8273,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "-",
+          "example": "failed",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -8789,6 +8789,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-12-16 12:23:13",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

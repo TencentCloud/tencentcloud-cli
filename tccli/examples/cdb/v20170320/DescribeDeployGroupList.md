@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdb DescribeDeployGroupList --cli-unfold-argument  \
-    --DeployGroupId test \
-    --DeployGroupName test \
+    --DeployGroupId ps-7t11vrwf \
+    --DeployGroupName wy \
     --Limit 10 \
     --Offset 0
 ```
@@ -16,14 +16,17 @@ Output:
 ```
 {
     "Response": {
-        "Total": 100,
+        "Total": 1,
         "Items": [
             {
-                "DeployGroupId": "test",
-                "DeployGroupName": "test",
-                "Description": "test",
-                "Quota": 50,
-                "CreateTime": "2019-09-10 13:14:15"
+                "DeployGroupId": "ps-7t11vrwf",
+                "DeployGroupName": "wy",
+                "CreateTime": "2022-07-14 11:17:56",
+                "Quota": 3,
+                "Affinity": "1",
+                "LimitNum": 3,
+                "Description": "一区置放群组",
+                "DevClass": "TS85"
             }
         ],
         "RequestId": "b4a719b5-ffb34ab6-816c43c1-8c6a23eb"

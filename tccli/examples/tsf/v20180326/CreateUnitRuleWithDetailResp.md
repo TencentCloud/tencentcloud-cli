@@ -6,64 +6,58 @@ Input:
 
 ```
 tccli tsf CreateUnitRuleWithDetailResp --cli-unfold-argument  \
-    --GatewayInstanceId abc \
-    --Name abc \
-    --Description abc \
-    --UnitRuleItemList.0.Id abc \
-    --UnitRuleItemList.0.UnitRuleId abc \
-    --UnitRuleItemList.0.Relationship abc \
-    --UnitRuleItemList.0.DestNamespaceId abc \
-    --UnitRuleItemList.0.DestNamespaceName abc \
-    --UnitRuleItemList.0.Name abc \
-    --UnitRuleItemList.0.Priority 0 \
-    --UnitRuleItemList.0.Description abc \
-    --UnitRuleItemList.0.UnitRuleTagList.0.UnitRuleItemId abc \
-    --UnitRuleItemList.0.UnitRuleTagList.0.Id abc \
-    --UnitRuleItemList.0.UnitRuleTagList.0.TagType abc \
-    --UnitRuleItemList.0.UnitRuleTagList.0.TagField abc \
-    --UnitRuleItemList.0.UnitRuleTagList.0.TagOperator abc \
-    --UnitRuleItemList.0.UnitRuleTagList.0.TagValue abc
+    --GatewayInstanceId gw-ins-szesmg28 \
+    --Name unit_provider \
+    --UnitRuleItemList.0.Relationship AND \
+    --UnitRuleItemList.0.DestNamespaceId namespace-vk5blxnv \
+    --UnitRuleItemList.0.DestNamespaceName heihuli-global_default \
+    --UnitRuleItemList.0.Name Rule1 \
+    --UnitRuleItemList.0.Description this is desc \
+    --UnitRuleItemList.0.UnitRuleTagList.0.TagType U \
+    --UnitRuleItemList.0.UnitRuleTagList.0.TagField user \
+    --UnitRuleItemList.0.UnitRuleTagList.0.TagOperator IN \
+    --UnitRuleItemList.0.UnitRuleTagList.0.TagValue 1
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "ef567ab9-7b1b-43d7-92bc-67399ad748e4",
         "Result": {
-            "Id": "abc",
-            "GatewayInstanceId": "abc",
-            "Name": "abc",
-            "Description": "abc",
-            "Status": "abc",
+            "UpdatedTime": null,
+            "CreatedTime": null,
+            "Description": null,
+            "GatewayInstanceId": "gw-ins-szesmg28",
+            "Id": "unit-rl-cgd3l6jo",
+            "Name": "unit_provider",
+            "Status": "disabled",
             "UnitRuleItemList": [
                 {
-                    "Id": "abc",
-                    "UnitRuleId": "abc",
-                    "Relationship": "abc",
-                    "DestNamespaceId": "abc",
-                    "DestNamespaceName": "abc",
-                    "Name": "abc",
+                    "UpdatedTime": null,
+                    "CreatedTime": null,
+                    "Description": "this is desc",
+                    "DestNamespaceId": "namespace-vk5blxnv",
+                    "DestNamespaceName": "heihuli-global_default",
+                    "Id": "unit-item-ghpuh9rn",
+                    "ItemIndex": 1,
+                    "Name": "Rule1",
                     "Priority": 0,
-                    "Description": "abc",
+                    "Relationship": "AND",
+                    "UnitRuleId": "unit-rl-cgd3l6jo",
                     "UnitRuleTagList": [
                         {
-                            "UnitRuleItemId": "abc",
-                            "Id": "abc",
-                            "TagType": "abc",
-                            "TagField": "abc",
-                            "TagOperator": "abc",
-                            "TagValue": "abc"
+                            "Id": "unit-tag-vmhijoic",
+                            "TagField": "user",
+                            "TagOperator": "IN",
+                            "TagType": "U",
+                            "TagValue": "1",
+                            "UnitRuleItemId": "unit-item-ghpuh9rn"
                         }
-                    ],
-                    "ItemIndex": 0,
-                    "CreatedTime": "abc",
-                    "UpdatedTime": "abc"
+                    ]
                 }
-            ],
-            "CreatedTime": "abc",
-            "UpdatedTime": "abc"
-        },
-        "RequestId": "abc"
+            ]
+        }
     }
 }
 ```

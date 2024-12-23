@@ -7,7 +7,7 @@ Input:
 ```
 tccli cfs UpdateAutoSnapshotPolicy --cli-unfold-argument  \
     --AutoSnapshotPolicyId asp-12345 \
-    --PolicyName abc
+    --PolicyName abgaga
 ```
 
 Output: 

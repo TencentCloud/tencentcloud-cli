@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tsf DeleteApiRateLimitRule --cli-unfold-argument  \
-    --RuleId abc
+    --RuleId rule-597fkjfv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": true,
-        "RequestId": "abc"
+        "RequestId": "9e33031b-f8ec-4f98-b544-7d844814ef37",
+        "Result": true
     }
 }
 ```

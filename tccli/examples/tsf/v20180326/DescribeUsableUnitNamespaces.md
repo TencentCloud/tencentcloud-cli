@@ -5,22 +5,29 @@
 Input: 
 
 ```
-tccli tsf DescribeUsableUnitNamespaces --cli-unfold-argument ```
+tccli tsf DescribeUsableUnitNamespaces --cli-unfold-argument  \
+    --SearchWord container \
+    --Offset 0 \
+    --Limit 10
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "efa09114-e0c3-43ec-8347-5f4454696c61",
+        "RequestId": "8d5c97b6-73fb-4fa5-8648-4ebf8b3b9551",
         "Result": {
-            "TotalCount": 1,
             "Content": [
                 {
-                    "Id": "gw-xxxxxxx",
-                    "NamespaceId": "test",
-                    "NamespaceName": "”DASD“"
+                    "CreatedTime": null,
+                    "GatewayInstanceId": null,
+                    "Id": null,
+                    "NamespaceId": "namespace-ygo3djma",
+                    "NamespaceName": "cluster-container-jolyonzheng_default",
+                    "UpdatedTime": null
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

@@ -63,6 +63,13 @@
       "output": "CreateImageSpriteTemplateResponse",
       "status": "online"
     },
+    "CreateLiveRecordTemplate": {
+      "document": "创建直播录制模板",
+      "input": "CreateLiveRecordTemplateRequest",
+      "name": "创建直播录制模板",
+      "output": "CreateLiveRecordTemplateResponse",
+      "status": "online"
+    },
     "CreatePersonSample": {
       "document": "该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、内容不适宜等视频处理。",
       "input": "CreatePersonSampleRequest",
@@ -210,6 +217,13 @@
       "output": "DeleteImageSpriteTemplateResponse",
       "status": "online"
     },
+    "DeleteLiveRecordTemplate": {
+      "document": "删除直播录制模板",
+      "input": "DeleteLiveRecordTemplateRequest",
+      "name": "删除直播录制模板",
+      "output": "DeleteLiveRecordTemplateResponse",
+      "status": "online"
+    },
     "DeletePersonSample": {
       "document": "该接口用于根据素材 ID，删除素材样本。",
       "input": "DeletePersonSampleRequest",
@@ -334,6 +348,13 @@
       "input": "DescribeImageSpriteTemplatesRequest",
       "name": "获取雪碧图模板列表",
       "output": "DescribeImageSpriteTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeLiveRecordTemplates": {
+      "document": "获取直播录制模板",
+      "input": "DescribeLiveRecordTemplatesRequest",
+      "name": "获取直播录制模板",
+      "output": "DescribeLiveRecordTemplatesResponse",
       "status": "online"
     },
     "DescribeMediaMetaData": {
@@ -607,6 +628,13 @@
       "input": "ModifyImageSpriteTemplateRequest",
       "name": "修改雪碧图模板",
       "output": "ModifyImageSpriteTemplateResponse",
+      "status": "online"
+    },
+    "ModifyLiveRecordTemplate": {
+      "document": "修改直播录制模板",
+      "input": "ModifyLiveRecordTemplateRequest",
+      "name": "修改直播录制模板",
+      "output": "ModifyLiveRecordTemplateResponse",
       "status": "online"
     },
     "ModifyPersonSample": {
@@ -8974,6 +9002,61 @@
       ],
       "usage": "in"
     },
+    "CreateLiveRecordTemplateRequest": {
+      "document": "CreateLiveRecordTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HLS 配置参数",
+          "example": "无",
+          "member": "HLSConfigureInfo",
+          "name": "HLSConfigure",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板名称，长度限制：64 个字符。",
+          "example": "录制模板1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveRecordTemplateResponse": {
+      "document": "CreateLiveRecordTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制模板唯一标识。",
+          "example": "20001",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOutputInfo": {
       "document": "创建输出的配置信息。",
       "members": [
@@ -10629,6 +10712,33 @@
       ],
       "type": "object"
     },
+    "DeleteLiveRecordTemplateRequest": {
+      "document": "DeleteLiveRecordTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制模板唯一标识。",
+          "example": "20001",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveRecordTemplateResponse": {
+      "document": "DeleteLiveRecordTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePersonSampleRequest": {
       "document": "DeletePersonSample请求参数结构体",
       "members": [
@@ -12080,6 +12190,89 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeLiveRecordTemplatesRequest": {
+      "document": "DescribeLiveRecordTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[20001]",
+          "member": "int64",
+          "name": "Definitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板标识过滤条件，长度限制：64 个字符。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveRecordTemplatesResponse": {
+      "document": "DescribeLiveRecordTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制模板详情列表。",
+          "example": "无",
+          "member": "LiveRecordTemplate",
+          "name": "LiveRecordTemplateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeMediaMetaDataRequest": {
       "document": "DescribeMediaMetaData请求参数结构体",
@@ -16282,6 +16475,45 @@
       ],
       "usage": "in"
     },
+    "HLSConfigureInfo": {
+      "document": "HLS配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单个 TS 文件时长，单位：秒，取值范围 5-30 秒。\n\n不填默认为 30 秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ItemDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制周期，单位：秒，取值范围 10 分钟到  12 小时。\n\n不填默认为 10分钟（3600 秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续录等待时间，单位：秒。取值范围为60秒-1800秒。\n不填默认为0（不启用续录）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "ContinueTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "HLSPullSourceAddress": {
       "document": "创建的输入HLS拉流源站配置信息。",
       "members": [
@@ -17097,6 +17329,82 @@
         }
       ],
       "usage": "both"
+    },
+    "LiveRecordTemplate": {
+      "document": "直播录制模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制模板唯一标识。",
+          "example": "20001",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HLS 配置参数",
+          "example": "hls",
+          "member": "HLSConfigureInfo",
+          "name": "HLSConfigure",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制模板名称。",
+          "example": "“”",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息。",
+          "example": "“”",
+          "member": "string",
+          "name": "Comment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
+          "example": "“”",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LiveScheduleLiveRecordTaskResult": {
       "document": "直播编排直播录制任务结果类型",
@@ -21424,6 +21732,60 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyLiveRecordTemplateRequest": {
+      "document": "ModifyLiveRecordTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录制模板唯一标识。",
+          "example": "20001",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HLS 配置参数",
+          "example": "无",
+          "member": "HLSConfigureInfo",
+          "name": "HLSConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "录制模板名称，长度限制：64 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述信息，长度限制：256 个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveRecordTemplateResponse": {
+      "document": "ModifyLiveRecordTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyOutputInfo": {
       "document": "修改Output配置。",

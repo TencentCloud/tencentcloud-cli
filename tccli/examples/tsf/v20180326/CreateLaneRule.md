@@ -6,26 +6,21 @@ Input:
 
 ```
 tccli tsf CreateLaneRule --cli-unfold-argument  \
-    --RuleName abc \
-    --Remark abc \
-    --RuleTagList.0.TagId abc \
-    --RuleTagList.0.TagName abc \
-    --RuleTagList.0.TagOperator abc \
-    --RuleTagList.0.TagValue abc \
-    --RuleTagList.0.LaneRuleId abc \
-    --RuleTagList.0.CreateTime 0 \
-    --RuleTagList.0.UpdateTime 0 \
-    --RuleTagRelationship abc \
-    --LaneId abc \
-    --ProgramIdList abc
+    --RuleName app_rule \
+    --Remark This is desc \
+    --RuleTagList.0.TagName app_tag \
+    --RuleTagList.0.TagOperator EQUAL \
+    --RuleTagList.0.TagValue user \
+    --RuleTagRelationship RELEATION_AND \
+    --LaneId lane-y9o6w958
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "abc",
-        "RequestId": "abc"
+        "RequestId": "2d074caa-3966-42bd-a159-4bdd35534593",
+        "Result": "lane-r-yojkwwpr"
     }
 }
 ```

@@ -6,19 +6,47 @@ Input:
 
 ```
 tccli tsf DescribeUnitRule --cli-unfold-argument  \
-    --Id gw-ins-afsfas
+    --Id unit-rl-cgd3l6jo
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "efa09114-e0c3-43ec-8347-5f4454696c61",
+        "RequestId": "02d58cd1-7651-4c6e-9836-e87ec8dadbcd",
         "Result": {
-            "Id": "rule-xxxxxxx",
-            "GatewayInstanceId": "test",
-            "Name": null,
-            "Status": "enabled"
+            "CreatedTime": "2024-12-23 11:14:17",
+            "Description": null,
+            "GatewayInstanceId": "gw-ins-szesmg28",
+            "Id": "unit-rl-cgd3l6jo",
+            "Name": "unit_provider",
+            "Status": "disabled",
+            "UnitRuleItemList": [
+                {
+                    "CreatedTime": "2024-12-23 11:14:17",
+                    "Description": "this is desc",
+                    "DestNamespaceId": "namespace-vk5blxnv",
+                    "DestNamespaceName": "global_default",
+                    "Id": "unit-item-ghpuh9rn",
+                    "ItemIndex": 1,
+                    "Name": "Rule1",
+                    "Priority": 0,
+                    "Relationship": "AND",
+                    "UnitRuleId": "unit-rl-cgd3l6jo",
+                    "UnitRuleTagList": [
+                        {
+                            "Id": "unit-tag-vmhijoic",
+                            "TagField": "user",
+                            "TagOperator": "IN",
+                            "TagType": "U",
+                            "TagValue": "1",
+                            "UnitRuleItemId": "unit-item-ghpuh9rn"
+                        }
+                    ],
+                    "UpdatedTime": "2024-12-23 11:14:17"
+                }
+            ],
+            "UpdatedTime": "2024-12-23 11:14:17"
         }
     }
 }

@@ -376,9 +376,10 @@
         {
           "disabled": false,
           "document": "计算环境管理类型",
-          "example": "",
+          "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -386,9 +387,10 @@
         {
           "disabled": false,
           "document": "计算环境具体参数",
-          "example": "",
+          "example": "无",
           "member": "EnvData",
           "name": "EnvData",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -396,9 +398,10 @@
         {
           "disabled": false,
           "document": "数据盘挂载选项",
-          "example": "",
+          "example": "无",
           "member": "MountDataDisk",
           "name": "MountDataDisks",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -406,9 +409,10 @@
         {
           "disabled": false,
           "document": "agent运行模式，适用于Windows系统",
-          "example": "",
+          "example": "无",
           "member": "AgentRunningMode",
           "name": "AgentRunningMode",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -575,110 +579,110 @@
         {
           "disabled": false,
           "document": "计算环境 ID",
-          "example": "",
+          "example": "env-5o4gphir",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "demo",
           "member": "string",
           "name": "EnvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "计算环境描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "it is a first job",
           "member": "string",
           "name": "EnvDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "计算环境类型，仅支持“MANAGED”类型",
-          "example": "",
+          "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境参数",
-          "example": "",
+          "example": "无",
           "member": "EnvData",
           "name": "EnvData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据盘挂载选项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "MountDataDisk",
           "name": "MountDataDisks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "输入映射\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "InputMapping",
           "name": "InputMappings",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "授权信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Authentication",
           "name": "Authentications",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "通知信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Notification",
           "name": "Notifications",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "计算节点期望个数",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "DesiredComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算环境标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1068,7 +1072,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "19c018a8-e17b-4073-b7fb-84b56cb890f9",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1083,10 +1087,10 @@
         {
           "disabled": false,
           "document": "计算环境ID",
-          "example": "无",
+          "example": "env-2u17q5bl",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1160,7 +1164,7 @@
         {
           "disabled": false,
           "document": "任务模板名称",
-          "example": "A",
+          "example": "job1",
           "member": "string",
           "name": "TaskTemplateName",
           "required": true,
@@ -1178,7 +1182,7 @@
         {
           "disabled": false,
           "document": "任务模板描述",
-          "example": "test",
+          "example": "test template",
           "member": "string",
           "name": "TaskTemplateDescription",
           "required": false,
@@ -1205,7 +1209,7 @@
           "example": "task-tmpl-7vtx96n2",
           "member": "string",
           "name": "TaskTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1708,7 +1712,7 @@
         {
           "disabled": false,
           "document": "计算环境ID列表，与Filters参数不能同时指定。",
-          "example": "无",
+          "example": "[\"env-5o4gphir\"]",
           "member": "string",
           "name": "EnvIds",
           "required": false,
@@ -1753,7 +1757,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1763,7 +1767,7 @@
           "example": "无",
           "member": "ComputeEnvCreateInfo",
           "name": "ComputeEnvCreateInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1800,7 +1804,7 @@
           "example": "env-lcpcej85",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1810,7 +1814,7 @@
           "example": "test compute env",
           "member": "string",
           "name": "EnvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1820,7 +1824,7 @@
           "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1830,7 +1834,7 @@
           "example": "2018-03-08T11:48:43Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1840,7 +1844,7 @@
           "example": "无",
           "member": "ComputeNode",
           "name": "ComputeNodeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1850,7 +1854,7 @@
           "example": "无",
           "member": "ComputeNodeMetrics",
           "name": "ComputeNodeMetrics",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1860,7 +1864,7 @@
           "example": "2",
           "member": "uint64",
           "name": "DesiredComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1870,7 +1874,7 @@
           "example": "MANAGED",
           "member": "string",
           "name": "EnvType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1880,17 +1884,17 @@
           "example": "CVM",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下一步动作",
-          "example": "xx",
+          "example": "DELETING",
           "member": "string",
           "name": "NextAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1900,7 +1904,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AttachedComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1910,7 +1914,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2911,9 +2915,10 @@
         {
           "disabled": false,
           "document": "CVM实例类型，不能与InstanceTypes和InstanceTypeOptions同时出现。",
-          "example": "",
+          "example": "SA5.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2921,9 +2926,10 @@
         {
           "disabled": false,
           "document": "CVM镜像ID",
-          "example": "",
+          "example": "img-jsdt6r36",
           "member": "string",
           "name": "ImageId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2931,9 +2937,10 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息",
-          "example": "",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2941,9 +2948,10 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息",
-          "example": "",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2951,9 +2959,10 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置，与Zones和VirtualPrivateClouds不能同时指定。",
-          "example": "",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2961,9 +2970,10 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置",
-          "example": "",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2971,9 +2981,10 @@
         {
           "disabled": false,
           "document": "CVM实例显示名称",
-          "example": "",
+          "example": "demo",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2981,9 +2992,10 @@
         {
           "disabled": false,
           "document": "实例登录设置",
-          "example": "",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -2991,9 +3003,10 @@
         {
           "disabled": false,
           "document": "实例所属安全组",
-          "example": "",
+          "example": "[\"sg-dec9tgiy\"]",
           "member": "string",
           "name": "SecurityGroupIds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3001,19 +3014,21 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认开启云监控、云安全服务。",
-          "example": "",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CVM实例计费类型<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
-          "example": "",
+          "document": "CVM实例计费类型<br><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li><br>默认值：POSTPAID_BY_HOUR。",
+          "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3021,9 +3036,10 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数",
-          "example": "",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3031,9 +3047,10 @@
         {
           "disabled": false,
           "document": "CVM实例类型列表，不能与InstanceType和InstanceTypeOptions同时出现。指定该字段后，计算节点按照机型先后顺序依次尝试创建，直到实例创建成功，结束遍历过程。最多支持10个机型。",
-          "example": "",
+          "example": "[\"SA5.MEDIUM2\"]",
           "member": "string",
           "name": "InstanceTypes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3041,9 +3058,10 @@
         {
           "disabled": false,
           "document": "CVM实例机型配置。不能与InstanceType和InstanceTypes同时出现。",
-          "example": "",
+          "example": "无",
           "member": "InstanceTypeOptions",
           "name": "InstanceTypeOptions",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -3051,9 +3069,10 @@
         {
           "disabled": false,
           "document": "可用区列表，支持跨可用区创建CVM实例。与VirtualPrivateCloud和VirtualPrivateClouds不能同时指定。",
-          "example": "",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Zones",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3061,9 +3080,10 @@
         {
           "disabled": false,
           "document": "私有网络列表，支持跨私有网络创建CVM实例。与VirtualPrivateCloud和Zones不能同时指定。",
-          "example": "",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateClouds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4514,7 +4534,7 @@
         {
           "disabled": false,
           "document": "任务模板描述",
-          "example": "test",
+          "example": "first template",
           "member": "string",
           "name": "TaskTemplateDescription",
           "required": false,
@@ -5372,7 +5392,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由用户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "fbad0aef-8441-4615-b904-c16779e33b",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -5390,7 +5410,7 @@
           "example": "job-4yn0we13",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

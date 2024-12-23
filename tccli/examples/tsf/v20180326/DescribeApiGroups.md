@@ -1,4 +1,4 @@
-**Example 1: test**
+**Example 1: 查询API 分组信息列表**
 
 
 
@@ -6,102 +6,50 @@ Input:
 
 ```
 tccli tsf DescribeApiGroups --cli-unfold-argument  \
-    --Status 字符串 \
-    --OrderBy 字符串 \
-    --AuthType 字符串 \
-    --OrderType 1 \
-    --GroupType 字符串 \
-    --Limit 1 \
-    --GatewayInstanceId 字符串 \
-    --SearchWord 字符串 \
-    --Offset 1
+    --GatewayInstanceId gw-ins-szesmg28
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "685c0c8e-d107-44ed-bba0-723456e01783",
-        "Result": null
-    }
-}
-```
-
-**Example 2: test1**
-
-
-
-Input: 
-
-```
-tccli tsf DescribeApiGroups --cli-unfold-argument  \
-    --Status 字符串 \
-    --OrderBy 字符串 \
-    --AuthType 字符串 \
-    --OrderType 1 \
-    --GroupType 字符串 \
-    --Limit 1 \
-    --GatewayInstanceId 字符串 \
-    --SearchWord 字符串 \
-    --Offset 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "a1deb916-ce41-4f0e-9307-deea50b14d44",
-        "Result": null
-    }
-}
-```
-
-**Example 3: 查询API 分组信息列表**
-
-
-
-Input: 
-
-```
-tccli tsf DescribeApiGroups --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 20
-```
-
-Output: 
-```
-{
-    "Response": {
+        "RequestId": "db4da85c-a228-4dca-9326-460f19a689e6",
         "Result": {
             "Content": [
                 {
-                    "Status": "xx",
-                    "UpdatedTime": "xx",
-                    "AuthType": "xx",
-                    "Description": "xx",
+                    "AclMode": "none",
+                    "ApiCount": 4,
+                    "AuthType": "none",
                     "BindedGatewayDeployGroups": [
                         {
-                            "DeployGroupId": "xx",
-                            "ApplicationName": "xx",
-                            "GroupStatus": "xx",
-                            "ClusterType": "xx",
-                            "DeployGroupName": "xx",
-                            "ApplicationType": "xx",
-                            "ApplicationId": "xx"
+                            "ApplicationId": "application-yq58wpey",
+                            "ApplicationName": "heihuli-gw",
+                            "ApplicationType": "V",
+                            "ClusterType": "V",
+                            "DeployGroupId": "group-ym9mqx2a",
+                            "DeployGroupName": "heihuli-zuul-unit",
+                            "GroupStatus": null
                         }
                     ],
-                    "GroupType": "xx",
-                    "AclMode": "xx",
-                    "ApiCount": 0,
-                    "GroupName": "xx",
-                    "GroupContext": "xx",
-                    "CreatedTime": "xx",
-                    "GroupId": "xx"
+                    "CreatedTime": "2023-01-10 17:37:26",
+                    "Description": "",
+                    "GatewayInstanceId": "gw-ins-szesmg28",
+                    "GatewayInstanceIdList": null,
+                    "GatewayInstanceType": null,
+                    "GroupContext": "/heihuli",
+                    "GroupId": "grp-ptrhio2l",
+                    "GroupName": "heihuli",
+                    "GroupType": "ms",
+                    "NamespaceNameKey": null,
+                    "NamespaceNameKeyPosition": "path",
+                    "ServiceNameKey": null,
+                    "ServiceNameKeyPosition": "path",
+                    "Status": "released",
+                    "UpdatedTime": "2023-01-10 22:09:34"
                 }
             ],
             "TotalCount": 1
-        },
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a"
+        }
     }
 }
 ```
