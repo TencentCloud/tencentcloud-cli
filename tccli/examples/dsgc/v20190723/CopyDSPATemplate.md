@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dsgc CopyDSPATemplate --cli-unfold-argument  \
-    --DspaId abc \
+    --DspaId dspa-abcd1234 \
     --TemplateId 1
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "TemplateId": 0,
-        "RequestId": "abc"
+        "TemplateId": 2,
+        "RequestId": "test-002"
     }
 }
 ```

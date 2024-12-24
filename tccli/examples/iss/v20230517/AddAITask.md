@@ -7,7 +7,7 @@ Input:
 ```
 tccli iss AddAITask --cli-unfold-argument  \
     --Name ai-task \
-    --Desc 测试 \
+    --Desc 宠物识别 \
     --ChannelList ********************** \
     --CallbackUrl http://******* \
     --Templates.0.Tag AI \
@@ -39,7 +39,7 @@ Input:
 ```
 tccli iss AddAITask --cli-unfold-argument  \
     --Name ai-task \
-    --Desc 测试 \
+    --Desc 宠物识别 \
     --ChannelList 97308958-6122-4188-8c78-d5ff8010bdf7 \
     --CallbackUrl http://********** \
     --Templates.0.Tag AI \
@@ -59,7 +59,7 @@ Output:
                 "**********************"
             ],
             "CreatedTime": "2023-06-15 15:50:47",
-            "Desc": "测试",
+            "Desc": "宠物识别",
             "Name": "ai-task",
             "Status": "off",
             "TaskId": "at**********************8",

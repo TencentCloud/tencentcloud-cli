@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dsgc DescribeDSPAAssessmentRiskSideList --cli-unfold-argument  \
-    --DspaId abc \
-    --TemplateId 1
+    --DspaId dspa-abcd1234 \
+    --TemplateId 100118
 ```
 
 Output: 
@@ -16,11 +16,11 @@ Output:
     "Response": {
         "RiskSideItmeList": [
             {
-                "Key": "abc",
-                "Value": 0
+                "Key": "cloudstorage_security",
+                "Value": 3
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "test-001"
     }
 }
 ```

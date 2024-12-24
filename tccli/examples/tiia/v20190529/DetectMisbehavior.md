@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DetectMisbehavior --cli-unfold-argument  \
-    --ImageUrl http://www.test.com/a.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 

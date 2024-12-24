@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n注：查询实例创建状态可以根据返回值中的requestId访问[DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)接口\n\n限制说明\n实例属性维度限制：\n- 支持克隆网络计费模式为按量计费与包年包月的实例，包年包月实例克隆后的新实例网络计费模式会转换为按小时带宽计费，其带宽、规格与原实例设置保持一致。\n- 不支持克隆未关联实例计费项的 CLB。\n- 不支持克隆传统型负载均衡实例和高防 CLB。\n- 不支持克隆基础网络类型的实例。\n- 不支持克隆 Anycast 类型的实例。\n- 不支持克隆 IPv6 NAT64 版本的实例。\n- 不支持克隆被封禁或冻结的实例。\n- 执行克隆操作前，请确保实例上没有使用已过期证书，否则会导致克隆失败。\n配额维度限制：\n- 当实例的监听器个数超过 50 个时，不支持克隆。\n- 当共享型实例的公网带宽上限超过 2G 时，不支持克隆。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/1akuvsmyn0g)。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n注：查询实例创建状态可以根据返回值中的requestId访问[DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683)接口\n\n限制说明\n实例属性维度限制：\n- 支持克隆网络计费模式为按量计费与包年包月的实例，包年包月实例克隆后的新实例网络计费模式会转换为按小时带宽计费，其带宽、规格与原实例设置保持一致。\n- 不支持克隆未关联实例计费项的 CLB。\n- 不支持克隆传统型负载均衡实例和高防 CLB。\n- 不支持克隆基础网络类型的实例。\n- 不支持克隆 Anycast 类型的实例。\n- 不支持克隆 IPv6 NAT64 版本的实例。\n- 不支持克隆被封禁或冻结的实例。\n- 执行克隆操作前，请确保实例上没有使用已过期证书，否则会导致克隆失败。\n配额维度限制：\n- 当实例的监听器个数超过 50 个时，不支持克隆。\n- 当共享型实例的公网带宽上限超过 2G 时，不支持克隆。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse",
@@ -958,12 +958,22 @@
         {
           "disabled": false,
           "document": "解绑失败的监听器ID。",
-          "example": "[]",
+          "example": "[\"lbl-4ibs****\"]",
           "member": "string",
           "name": "FailListenerIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解绑失败错误原因信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IP x.x.x.x not found.",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1076,7 +1086,7 @@
         {
           "disabled": false,
           "document": "绑定失败的监听器ID，如为空表示全部绑定成功。",
-          "example": "[]",
+          "example": "[\"lbl-4ibs****\"]",
           "member": "string",
           "name": "FailListenerIdSet",
           "output_required": true,
@@ -1177,90 +1187,90 @@
         {
           "disabled": false,
           "document": "配置绑定的CLB ID",
-          "example": "",
+          "example": "lb-kxsr****",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置绑定的监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lbl-20sf****",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置绑定的域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "test.clb.cloud.tencent.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置绑定的规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "loc-4f30****",
           "member": "string",
           "name": "LocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "监听器名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lb-1fb1sdsa-tcp-80-443",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "监听器端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "location的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/index",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "pz-k2ns****",
           "member": "string",
           "name": "UconfigId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1273,30 +1283,30 @@
         {
           "disabled": false,
           "document": "黑名单IP",
-          "example": "",
+          "example": "172.40.86.244",
           "member": "string",
           "name": "IP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加入黑名单的时间",
-          "example": "",
+          "example": "2024-12-24 09:23:26",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "过期时间",
-          "example": "",
+          "example": "2025-05-24 11:16:04",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1381,9 +1391,10 @@
         {
           "disabled": false,
           "document": "认证类型，UNIDIRECTIONAL：单向认证，MUTUAL：双向认证",
-          "example": "",
+          "example": "UNIDIRECTIONAL",
           "member": "string",
           "name": "SSLMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1391,9 +1402,10 @@
         {
           "disabled": false,
           "document": "服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。",
-          "example": "",
+          "example": "Fm8Wpag8",
           "member": "string",
           "name": "CertId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1401,9 +1413,10 @@
         {
           "disabled": false,
           "document": "客户端证书的 ID，当监听器采用双向认证，即 SSLMode=MUTUAL 时，如果不填写此项则必须上传客户端证书，包括 CertCaContent，CertCaName。",
-          "example": "",
+          "example": "HcsGe9BH",
           "member": "string",
           "name": "CertCaId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1411,9 +1424,10 @@
         {
           "disabled": false,
           "document": "上传服务端证书的名称，如果没有 CertId，则此项必传。",
-          "example": "",
+          "example": "NewCert",
           "member": "string",
           "name": "CertName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1421,9 +1435,10 @@
         {
           "disabled": false,
           "document": "上传服务端证书的 key，如果没有 CertId，则此项必传。",
-          "example": "",
+          "example": "-----BEGIN RSA PRIVATE KEY----- certkey -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "CertKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1431,9 +1446,10 @@
         {
           "disabled": false,
           "document": "上传服务端证书的内容，如果没有 CertId，则此项必传。",
-          "example": "",
+          "example": "-----BEGIN CERTIFICATE----- certcontent -----END CERTIFICATE",
           "member": "string",
           "name": "CertContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1441,9 +1457,10 @@
         {
           "disabled": false,
           "document": "上传客户端 CA 证书的名称，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。",
-          "example": "",
+          "example": "new_certca",
           "member": "string",
           "name": "CertCaName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1451,9 +1468,10 @@
         {
           "disabled": false,
           "document": "上传客户端证书的内容，如果 SSLMode=mutual，如果没有 CertCaId，则此项必传。",
-          "example": "",
+          "example": "-----BEGIN CERTIFICATE----- certcontent -----END CERTIFICATE",
           "member": "string",
           "name": "CertCaContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1513,50 +1531,50 @@
         {
           "disabled": false,
           "document": "后端服务的内网 IP",
-          "example": "",
+          "example": "10.0.102.15",
           "member": "string",
           "name": "IP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后端服务的端口",
-          "example": "",
+          "example": "8080",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "负载均衡的监听端口",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "ListenerPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转发协议",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "健康检查结果，1 表示健康，0 表示不健康",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "HealthStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1755,20 +1773,20 @@
         {
           "disabled": false,
           "document": "后端实例ID",
-          "example": "",
+          "example": "ins-o8xk****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "负载均衡实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"lb-6xg1****\"]",
           "member": "string",
           "name": "LoadBalancerIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1781,70 +1799,70 @@
         {
           "disabled": false,
           "document": "后端服务的类型，可取值：CVM、ENI（即将支持）",
-          "example": "",
+          "example": "CVM",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后端服务的唯一 ID，可通过 DescribeInstances 接口返回字段中的 unInstanceId 字段获取",
-          "example": "",
+          "example": "ins-2yn****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后端服务的转发权重，取值范围：[0, 100]，默认为 10。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后端服务的外网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "125.205.211.150",
           "member": "string",
           "name": "PublicIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "后端服务的内网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "11.177.180.17",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "后端服务的实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tx.text.k8s-node01",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "后端服务的状态\n1：故障，2：运行中，3：创建中，4：已关机，5：已退还，6：退还中， 7：重启中，8：开机中，9：关机中，10：密码重置中，11：格式化中，12：镜像制作中，13：带宽设置中，14：重装系统中，19：升级中，21：热迁移中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "RunFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1857,22 +1875,20 @@
         {
           "disabled": false,
           "document": "后端实例ID",
-          "example": "",
+          "example": "ins-em3pxxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "权重，取值范围 [0, 100]",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Weight",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -2027,7 +2043,7 @@
         {
           "disabled": false,
           "document": "Stgw独占集群的标签。",
-          "example": "test",
+          "example": "ziyan",
           "member": "string",
           "name": "ClusterTag",
           "required": false,
@@ -2443,20 +2459,20 @@
         {
           "disabled": false,
           "document": "集群所在的主可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "MasterZone",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群所在的备可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"ap-guangzhou-3\"]",
           "member": "string",
           "name": "SlaveZone",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -5762,7 +5778,7 @@
         {
           "disabled": false,
           "document": "辅助描述信息，如失败原因等。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "更新LB失败",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -5878,22 +5894,20 @@
         {
           "disabled": false,
           "document": "过滤器的名称",
-          "example": "",
+          "example": "tag-key",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤器的值数组",
-          "example": "",
+          "example": "tke-clusterId",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5904,9 +5918,10 @@
         {
           "disabled": false,
           "document": "函数命名空间",
-          "example": "",
+          "example": "default",
           "member": "string",
           "name": "FunctionNamespace",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5914,9 +5929,10 @@
         {
           "disabled": false,
           "document": "函数名称",
-          "example": "",
+          "example": "bxs-open-api",
           "member": "string",
           "name": "FunctionName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5924,9 +5940,10 @@
         {
           "disabled": false,
           "document": "函数的版本名称或别名",
-          "example": "",
+          "example": "$LATEST",
           "member": "string",
           "name": "FunctionQualifier",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5934,9 +5951,10 @@
         {
           "disabled": false,
           "document": "标识 FunctionQualifier 参数的类型，可取值： VERSION（版本）、ALIAS（别名）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "VERSION",
           "member": "string",
           "name": "FunctionQualifierType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5950,9 +5968,10 @@
         {
           "disabled": false,
           "document": "云函数相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "FunctionInfo",
           "name": "Function",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -5960,9 +5979,10 @@
         {
           "disabled": false,
           "document": "权重",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6595,9 +6615,10 @@
         {
           "disabled": false,
           "document": "续费类型：AUTO_RENEW 自动续费，  MANUAL_RENEW 手动续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6605,9 +6626,10 @@
         {
           "disabled": false,
           "document": "购买时长，单位：月\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Period",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6621,40 +6643,40 @@
         {
           "disabled": false,
           "document": "lb的字符串id",
-          "example": "",
+          "example": "lb-p7v5xxxx",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "lb的vip",
-          "example": "",
+          "example": "43.140.72.100",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器规则",
-          "example": "",
+          "example": "无",
           "member": "ListenerItem",
           "name": "Listeners",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "LB所在地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6691,50 +6713,50 @@
         {
           "disabled": false,
           "document": "内网ip类型。“cvm”或“eni”",
-          "example": "",
+          "example": "cvm",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后端实例的内网ip。",
-          "example": "",
+          "example": "10.0.32.122",
           "member": "string",
           "name": "PrivateIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定后端实例的端口。",
-          "example": "",
+          "example": "8080",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "rs的vpcId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1433286",
           "member": "int64",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "rs的权重\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7059,50 +7081,50 @@
         {
           "disabled": false,
           "document": "监听器ID",
-          "example": "",
+          "example": "lbl-a8iarxxx",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lis-healthchk",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "监听器的协议",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器的端口",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器的转发规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "RuleHealth",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -7115,60 +7137,60 @@
         {
           "disabled": false,
           "document": "监听器ID",
-          "example": "",
+          "example": "lbl-m1ggxxxx",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器协议",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器端口",
-          "example": "",
+          "example": "80",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "RulesItems",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "四层绑定对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "LbRsTargets",
           "name": "Targets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "端口段监听器的结束端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "EndPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -8229,30 +8251,30 @@
         {
           "disabled": false,
           "document": "负载均衡实例ID",
-          "example": "",
+          "example": "lb-42mxxxx",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "负载均衡实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lb_healthchk",
           "member": "string",
           "name": "LoadBalancerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ListenerHealth",
           "name": "Listeners",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -10021,50 +10043,50 @@
         {
           "disabled": false,
           "document": "重定向目标的监听器ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lbl-q471xxxx",
           "member": "string",
           "name": "TargetListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "重定向目标的转发规则ID\n注意：此字段可能返回 null，表示无重定向。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "loc-188pxxxx",
           "member": "string",
           "name": "TargetLocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "重定向状态码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "302",
           "member": "int64",
           "name": "RewriteCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "重定向是否携带匹配的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "TakeUrl",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "重定向类型，Manual: 手动重定向，Auto:  自动重定向\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "Auto",
           "member": "string",
           "name": "RewriteType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10179,40 +10201,40 @@
         {
           "disabled": false,
           "document": "转发规则ID",
-          "example": "",
+          "example": "loc-lmf0xxxx",
           "member": "string",
           "name": "LocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转发规则的域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "test.clb.cloud.tencent.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "转发规则的Url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/health",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本规则上绑定的后端服务的健康检查状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TargetHealth",
           "name": "Targets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -10668,40 +10690,40 @@
         {
           "disabled": false,
           "document": "规则id",
-          "example": "",
+          "example": "loc-lmf0xxxx",
           "member": "string",
           "name": "LocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "test.clb.cloud.tencent.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "uri",
-          "example": "",
+          "example": "/rules",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定的后端对象",
-          "example": "",
+          "example": "无",
           "member": "LbRsTargets",
           "name": "Targets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

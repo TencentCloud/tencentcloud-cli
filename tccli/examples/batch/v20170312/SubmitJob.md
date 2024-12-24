@@ -7,8 +7,8 @@ Input:
 ```
 tccli batch SubmitJob --cli-unfold-argument  \
     --Placement.Zone ap-guangzhou-2 \
-    --Job.JobName test \
-    --Job.JobDescription test \
+    --Job.JobName normal_job \
+    --Job.JobDescription normal_job \
     --Job.Priority 1 \
     --Job.Tasks.0.TaskName hello2 \
     --Job.Tasks.0.TaskInstanceNum 1 \

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lighthouse RerunDockerContainer --cli-unfold-argument  \
-    --ContainerConfiguration.Command  \
+    --ContainerConfiguration.Command ls -l \
     --ContainerConfiguration.ContainerImage nginx \
     --ContainerConfiguration.ContainerName mynginx \
     --ContainerConfiguration.Envs.0.Key Key1 \

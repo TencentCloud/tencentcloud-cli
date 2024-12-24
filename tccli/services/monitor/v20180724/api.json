@@ -714,6 +714,13 @@
       "output": "DescribeRecordingRulesResponse",
       "status": "online"
     },
+    "DescribeRemoteURLs": {
+      "document": "获取多写配置详情",
+      "input": "DescribeRemoteURLsRequest",
+      "name": "获取多写配置详情",
+      "output": "DescribeRemoteURLsResponse",
+      "status": "online"
+    },
     "DescribeSSOAccount": {
       "document": "列出当前grafana实例的所有授权账号",
       "input": "DescribeSSOAccountRequest",
@@ -894,6 +901,13 @@
       "input": "ModifyPrometheusTempRequest",
       "name": "修改模板实例",
       "output": "ModifyPrometheusTempResponse",
+      "status": "online"
+    },
+    "ModifyRemoteURLs": {
+      "document": "修改多写配置",
+      "input": "ModifyRemoteURLsRequest",
+      "name": "修改多写配置",
+      "output": "ModifyRemoteURLsResponse",
       "status": "online"
     },
     "ResumeGrafanaInstance": {
@@ -2522,6 +2536,32 @@
           "member": "string",
           "name": "TaskConfig",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BasicAuth": {
+      "document": "url鉴权",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cherry",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -12966,6 +13006,52 @@
       ],
       "type": "object"
     },
+    "DescribeRemoteURLsRequest": {
+      "document": "DescribeRemoteURLs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "prom-jsbr",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "url数组",
+          "example": "[\"http://172.30.0.9:9090/api/v1/prom/write\"]",
+          "member": "string",
+          "name": "RemoteURLs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRemoteURLsResponse": {
+      "document": "DescribeRemoteURLs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多写配置",
+          "example": "无",
+          "member": "RemoteWrite",
+          "name": "RemoteWrites",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSSOAccountRequest": {
       "document": "DescribeSSOAccount请求参数结构体",
       "members": [
@@ -16159,6 +16245,42 @@
     },
     "ModifyPrometheusTempResponse": {
       "document": "ModifyPrometheusTemp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRemoteURLsRequest": {
+      "document": "ModifyRemoteURLs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多写配置",
+          "example": "无",
+          "member": "RemoteWrite",
+          "name": "RemoteWrites",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRemoteURLsResponse": {
+      "document": "ModifyRemoteURLs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -19390,6 +19512,106 @@
         }
       ],
       "usage": "out"
+    },
+    "RemoteWrite": {
+      "document": "多写配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多写url",
+          "example": "http://172.30.0.9:9090/api/v1/prom/write",
+          "member": "string",
+          "name": "URL",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RelabelConfig\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "URLRelabelConfig",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BasicAuth",
+          "name": "BasicAuth",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大block\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MaxBlockSize",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Label\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 额外添加的头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemoteWriteHeader",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RemoteWriteHeader": {
+      "document": "Remote Write 协议额外添加的 HTTP 头",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 头的键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "X-Custom-Header",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 头的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ResumeGrafanaInstanceRequest": {
       "document": "ResumeGrafanaInstance请求参数结构体",

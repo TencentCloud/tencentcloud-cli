@@ -770,6 +770,7 @@
           "example": "4",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -779,6 +780,7 @@
           "example": "无",
           "member": "ConfigRule",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

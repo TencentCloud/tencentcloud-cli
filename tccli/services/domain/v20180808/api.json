@@ -295,9 +295,9 @@
       "status": "online"
     },
     "ModifyDomainDNSBatch": {
-      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
+      "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
       "input": "ModifyDomainDNSBatchRequest",
-      "name": "批量域名 DNS 修改",
+      "name": "批量域名 DNS 修改",
       "output": "ModifyDomainDNSBatchResponse",
       "status": "online"
     },
@@ -500,30 +500,30 @@
         {
           "disabled": false,
           "document": "批量任务id",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功",
-          "example": "",
+          "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量任务类型",
-          "example": "",
+          "example": "batch_modify_owner",
           "member": "string",
           "name": "BatchAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -769,7 +769,7 @@
         {
           "disabled": false,
           "document": "计费请求参数，以Json字符串的形式进行返回。",
-          "example": "\"\"",
+          "example": ">{\\\"uin\\\":\\\"100*****091\\\",\\\"ownerUin\\\":\\\"100*****091\\\",\\\"appId\\\":10000,\\\"goods\\\":[{\\\"goodsCategoryId\\\":100,\\\"regionId\\\":47,\\\"zoneId\\\":470004,\\\"goodsNum\\\":1,\\\"projectId\\\":0,\\\"payMode\\\":1,\\\"goodsDetail\\\":{\\\"pid\\\":1000,\\\"productCode\\\":\\\"p_d\\\",\\\"subProductCode\\\":\\\"sp_d_*\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"预释放竞价保证金订单\\\",\\\"value\\\":\\\"竞价域名：att.com\\\"}],\\\"domain\\\":\\\"att.com\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"p\\\",\\\"autoRenewFlag\\\":0,\\\"createType\\\":\\\"bid_deposit\\\",\\\"price\\\":10000,\\\"bondPrice\\\":0,\\\"biddingBondPrice\\\":100,\\\"sv_d\\\":1,\\\"businessId\\\":\\\"P0********945\\\",\\\"isAutoPay\\\":0,\\\"templateId\\\":\\\"\\\"}}]}",
           "member": "string",
           "name": "BillingParam",
           "output_required": false,
@@ -1646,7 +1646,7 @@
         {
           "disabled": false,
           "document": "模板信息",
-          "example": "[]",
+          "example": "{\"AuditReason\": \"\",\"IsValidTemplate\": 1,\"UpdatedOn\": \"2024-12-18 12:23:28\",\"AuditStatus\": \"InAudit\",\"CreatedOn\": \"2024-12-18 12:23:28\",\"IsBlack\": false,\"InvalidReason\": \"\",\"Tag\": 0,\"CertificateInfo\": {\"OriginImgUrl\": \"https://domain-***.com/1000***3.jpg\",\"CertificateCode\": \"***56\",\"RegistrantCertificateCode\": \"\",\"RegistrantImgUrl\": \"\",\"RegistrantCertificateType\": \"\",\"CertificateType\": \"SFZ\",\"ImgUrl\": \"https://domain-***.com/1000***3.jpg\"},\"TemplateId\": \"tmpl-***u\",\"UserUin\": \"***07\",\"ContactInfo\": {\"Province\": \"shang hai shi\",\"RegistrantType\": \"I\",\"OrganizationName\": \"*u\",\"OrganizationNameCN\": \"*名\",\"Country\": \"CN\",\"RegistrantName\": \"*名\",\"ZipCode\": \"***1\",\"Email\": \"*@qq.com\",\"City\": \"shang hai shi\",\"RegistrantNameCN\": \"*名\",\"StreetCN\": \"***117号\",\"Street\": \"***1117 Hao\",\"ProvinceCN\": \"上海市\",\"CountryCN\": \"中国\",\"CityCN\": \"上海市\",\"Telephone\": \"***29\"},\"IsDefault\": \"no\",\"MessageCheck\": 0}",
           "member": "TemplateInfo",
           "name": "Template",
           "output_required": true,
@@ -2951,7 +2951,7 @@
         {
           "disabled": false,
           "document": "域名价格列表",
-          "example": "[]",
+          "example": "[{\"Operation\": \"renew\",\"Price\": 266,\"Year\": 7,\"RealPrice\": 266,\"Tld\": \".pw\"}]",
           "member": "PriceInfo",
           "name": "PriceList",
           "output_required": true,
@@ -4207,7 +4207,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "域名正在转出中，不可编辑",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -4332,7 +4332,7 @@
           "example": "1",
           "member": "bool",
           "name": "IsPremium",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4342,7 +4342,7 @@
           "example": "'domain-acnsd121q'",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4352,7 +4352,7 @@
           "example": "xxxx.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4362,27 +4362,27 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "注册时间。",
-          "example": "xxxx",
+          "example": "2022-10-01 12:00:00",
           "member": "string",
           "name": "CreationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "到期时间。",
-          "example": "xxxx",
+          "example": "2025-10-01 12:00:00",
           "member": "string",
           "name": "ExpirationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4392,7 +4392,7 @@
           "example": ".com",
           "member": "string",
           "name": "Tld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4402,7 +4402,7 @@
           "example": ".com",
           "member": "string",
           "name": "CodeTld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4412,7 +4412,7 @@
           "example": "ok",
           "member": "string",
           "name": "BuyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4731,7 +4731,7 @@
           "example": "54",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5142,50 +5142,50 @@
         {
           "disabled": false,
           "document": "域名后缀，例如.com",
-          "example": "",
+          "example": ".com",
           "member": "string",
           "name": "Tld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "购买年限，范围[1-10]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Year",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名原价",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名现价",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "RealPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
-          "example": "",
+          "example": "new",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5831,7 +5831,7 @@
         {
           "disabled": false,
           "document": "认证信息",
-          "example": "[]",
+          "example": "{\"OriginImgUrl\": \"https://image.cos..com/image1.jpg?\",\"CertificateCode\": \"1***12\",\"RegistrantCertificateCode\": \"\",\"RegistrantImgUrl\": \"\",\"RegistrantCertificateType\": \"\",\"CertificateType\": \"SFZ\",\"ImgUrl\": \"https://image.cos..com/image1.jpg?\"}",
           "member": "CertificateInfo",
           "name": "CertificateInfo",
           "output_required": true,
@@ -5841,7 +5841,7 @@
         {
           "disabled": false,
           "document": "联系人信息",
-          "example": "[]",
+          "example": "{\"Province\": \"*ng\",\"RegistrantType\": \"I\",\"OrganizationName\": \"*ng\",\"OrganizationNameCN\": \"*名\",\"Country\": \"CN\",\"RegistrantName\": \"*ng\",\"ZipCode\": \"0***0\",\"Email\": \"***@tencent.com\",\"City\": \"***hi\",\"RegistrantNameCN\": \"*名\",\"StreetCN\": \"***城\",\"Street\": \"***eng\",\"ProvinceCN\": \"*省\",\"CountryCN\": \"中国\",\"CityCN\": \"*市\",\"Telephone\": \"1***9\"}",
           "member": "ContactInfo",
           "name": "ContactInfo",
           "output_required": true,
@@ -5861,7 +5861,7 @@
         {
           "disabled": false,
           "document": "不符合规范原因",
-          "example": "\"\"",
+          "example": "该信息模板部分信息不规范，请重新填写",
           "member": "string",
           "name": "InvalidReason",
           "output_required": true,

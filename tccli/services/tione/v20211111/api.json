@@ -2891,7 +2891,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
-          "example": "[]",
+          "example": "[{Name: \"InstanceStatus\", Values: [\"RUNNING\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5123,7 +5123,7 @@
         {
           "disabled": false,
           "document": "计费项特性列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"COS\",\"CBS\",\"RDMA\",\"CFS\"]",
           "member": "string",
           "name": "SpecFeatures",
           "output_required": false,
@@ -5143,7 +5143,7 @@
         {
           "disabled": false,
           "document": "部署失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "RegisterJobNetworkError",
           "member": "string",
           "name": "ErrCode",
           "output_required": false,
@@ -5153,7 +5153,7 @@
         {
           "disabled": false,
           "document": "部署失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "registernode job noderegister-ins-fczfco95 network connect failed",
           "member": "string",
           "name": "ErrMsg",
           "output_required": false,

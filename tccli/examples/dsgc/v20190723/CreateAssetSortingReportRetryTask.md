@@ -7,7 +7,7 @@ Input:
 ```
 tccli dsgc CreateAssetSortingReportRetryTask --cli-unfold-argument  \
     --ReportTaskId 1 \
-    --DspaId abc
+    --DspaId dspa-12ab34dc
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "ReportTaskId": 1,
-        "RequestId": "abc"
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```

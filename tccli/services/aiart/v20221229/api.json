@@ -982,10 +982,19 @@
         {
           "disabled": false,
           "document": "对新背景的文本描述。\n最多支持256个 utf-8 字符，支持中、英文。",
-          "example": "彩色",
+          "example": "放在充满鲜花的环境里，简洁风格，清新自然，广告摄影",
           "member": "string",
           "name": "Prompt",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "反向提示词。\n最多支持256个 utf-8 字符，支持中、英文。",
+          "example": "黑白",
+          "member": "string",
+          "name": "NegativePrompt",
+          "required": false,
           "type": "string"
         },
         {
@@ -1380,7 +1389,7 @@
         {
           "disabled": false,
           "document": "反向文本描述。\n用于一定程度上从反面引导模型生成的走向，减少生成结果中出现描述内容的可能，但不能完全杜绝。\n推荐使用中文。最多可传256个 utf-8 字符。",
-          "example": "无",
+          "example": "黑色，雨",
           "member": "string",
           "name": "NegativePrompt",
           "required": false,
@@ -1389,7 +1398,7 @@
         {
           "disabled": false,
           "document": "绘画风格。\n请在 [智能文生图风格列表](https://cloud.tencent.com/document/product/1668/86249) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。",
-          "example": "无",
+          "example": "[\"101\"]",
           "member": "string",
           "name": "Styles",
           "required": false,
@@ -1397,8 +1406,8 @@
         },
         {
           "disabled": false,
-          "document": "生成图结果的配置，包括输出图片分辨率和尺寸等。\n\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3）、1080:1920（9:16）、1920:1080（16:9），不传默认使用768:768。\n",
-          "example": "无",
+          "document": "生成图结果的配置，包括输出图片分辨率和尺寸等。\n支持生成以下分辨率的图片：768:768（1:1）、768:1024（3:4）、1024:768（4:3）、1024:1024（1:1）、720:1280（9:16）、1280:720（16:9）、768:1280（3:5）、1280:768（5:3）、1080:1920（9:16）、1920:1080（16:9），不传默认使用768:768。\n",
+          "example": "768:768",
           "member": "ResultConfig",
           "name": "ResultConfig",
           "required": false,
@@ -1407,7 +1416,7 @@
         {
           "disabled": false,
           "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
@@ -1416,7 +1425,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "无",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -1425,7 +1434,7 @@
         {
           "disabled": false,
           "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
-          "example": "base64",
+          "example": "url",
           "member": "string",
           "name": "RspImgType",
           "required": false,
@@ -1440,7 +1449,7 @@
         {
           "disabled": false,
           "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
-          "example": "无",
+          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7",
           "member": "string",
           "name": "ResultImage",
           "output_required": true,

@@ -6,53 +6,45 @@ Input:
 
 ```
 tccli tsf DescribeGroupsWithPlugin --cli-unfold-argument  \
-    --PluginId pgn-33pk2soi \
-    --GatewayInstanceId gw-ins-33pk2soi \
-    --Bound false \
+    --PluginId pgn-iuyb0s7c \
+    --Bound True \
+    --SearchWord /grpCtx \
     --Offset 0 \
-    --Limit 10
+    --Limit 5 \
+    --GatewayInstanceId gw-ins-4qvyt5dc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "665d9f05-3e80-464f-beb0-64345fe5c61e",
         "Result": {
-            "TotalCount": 0,
             "Content": [
                 {
-                    "GroupId": "abc",
-                    "GroupName": "abc",
-                    "GroupContext": "abc",
-                    "AuthType": "abc",
-                    "Status": "abc",
-                    "CreatedTime": "abc",
-                    "UpdatedTime": "abc",
-                    "BindedGatewayDeployGroups": [
-                        {
-                            "DeployGroupId": "abc",
-                            "DeployGroupName": "abc",
-                            "ApplicationId": "abc",
-                            "ApplicationName": "abc",
-                            "ApplicationType": "abc",
-                            "GroupStatus": "abc",
-                            "ClusterType": "abc"
-                        }
-                    ],
+                    "AclMode": "none",
                     "ApiCount": 0,
-                    "AclMode": "abc",
-                    "Description": "abc",
-                    "GroupType": "abc",
-                    "GatewayInstanceType": "abc",
-                    "GatewayInstanceId": "abc",
-                    "NamespaceNameKey": "abc",
-                    "ServiceNameKey": "abc",
-                    "NamespaceNameKeyPosition": "abc",
-                    "ServiceNameKeyPosition": "abc"
+                    "AuthType": "secret",
+                    "BindedGatewayDeployGroups": [],
+                    "CreatedTime": "2024-11-04 14:21:53",
+                    "Description": "",
+                    "GatewayInstanceId": "gw-ins-4qvyt5dc",
+                    "GatewayInstanceIdList": null,
+                    "GatewayInstanceType": null,
+                    "GroupContext": "/grpCtx",
+                    "GroupId": "grp-v446jrhc",
+                    "GroupName": "grpName",
+                    "GroupType": "ms",
+                    "NamespaceNameKey": null,
+                    "NamespaceNameKeyPosition": "path",
+                    "ServiceNameKey": null,
+                    "ServiceNameKeyPosition": "path",
+                    "Status": "drafted",
+                    "UpdatedTime": "2024-11-04 14:24:41"
                 }
-            ]
-        },
-        "RequestId": "abc"
+            ],
+            "TotalCount": 1
+        }
     }
 }
 ```

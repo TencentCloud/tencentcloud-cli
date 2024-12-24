@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dsgc CreateDSPACategory --cli-unfold-argument  \
-    --DspaId dspa-001 \
-    --Name test
+    --DspaId dspa-ab50f3b1 \
+    --Name 公民财产信息
 ```
 
 Output: 

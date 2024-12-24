@@ -62,7 +62,7 @@ Output:
                 "Code": 0,
                 "Message": "实例升级任务完成",
                 "JobId": 68,
-                "AsyncRequestId": "",
+                "AsyncRequestId": "780b2e32-79cb0f4c-ec7854c5-44ff5372",
                 "TaskAttachInfo": [
                     {
                         "AttachKey": "FastUpgradeStatus",

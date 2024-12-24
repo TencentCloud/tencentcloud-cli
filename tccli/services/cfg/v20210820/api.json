@@ -626,7 +626,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与演练的实例ID",
+          "document": "参与演练的实例ID\nCVM ins-xxx\nMySQL cdb-xxx\nCLB lb-xxx\nRedis crs-xxx\nNAT网关 nat-xxx\nRedis crs-xxx\n专线-独享专用通道 dcx-xxx\n标准集群普通节点 {\"ClusterId\":\"cls-xxx\",\"InstanceId\":\"ins-xxx\",\"LanIP\":\"1.1.1.1\"}\n标准集群Pod {\"ClusterId\":\"cls-xxx\",\"PodName\":\"podname\",\"NodeName\":\"1.1.1.1\",\"NameSpace\":\"ns\",\"Workload\":\"workload\"}\nTDSQL-MySQL(InnoDB) tdsqlshard-xxx\nTDSQL-C cynosdbmysql-xxx\nVPC子网 subnet-xxxx\nCKafka ckafka-xxx\nMariaDB tdsql-xxxx\nPostgreSQL postgres-xxx\n云原生网关 gateway-xxx\n标准集群超级节点 {\"ClusterId\":\"cls-xxx\",\"InstanceId\":\"eklet-xxx\",\"LanIP\":\"1.1.1.1,\"NodePoolId\":\"np-xxx\"}\nServerless集群超级节点 {\"ClusterId\":\"cls-xxxx\",\"InstanceId\":\"eklet-xxxx\",\"LanIP\":\"1.1.1.1\"}\nElasticsearch集群 es-xxxx\nRabbitMQ amqp-xxxx",
           "example": "[\"ins-87b12frpq\"]",
           "member": "string",
           "name": "TaskInstances",
@@ -2895,13 +2895,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "动作组所关联的实例对象",
+          "document": "动作组所关联的实例对象\nCVM ins-xxx\nMySQL cdb-xxx\nCLB lb-xxx\nRedis crs-xxx\nNAT网关 nat-xxx\n专线-独享专用通道 dcx-xxx\n标准集群普通节点 {\"ClusterId\":\"cls-xxx\",\"InstanceId\":\"ins-xxx\",\"LanIP\":\"1.1.1.1\"}\n标准集群Pod {\"ClusterId\":\"cls-xxx\",\"PodName\":\"podname\",\"NodeName\":\"1.1.1.1\",\"NameSpace\":\"ns\",\"Workload\":\"workload\"}\nTDSQL-MySQL(InnoDB) tdsqlshard-xxx\nTDSQL-C cynosdbmysql-xxx\nVPC子网 subnet-xxxx\nCKafka ckafka-xxx\nMariaDB tdsql-xxxx\nPostgreSQL postgres-xxx\n云原生网关 gateway-xxx\n标准集群超级节点 {\"ClusterId\":\"cls-xxx\",\"InstanceId\":\"eklet-xxx\",\"LanIP\":\"1.1.1.1,\"NodePoolId\":\"np-xxx\"}\nServerless集群超级节点 {\"ClusterId\":\"cls-xxxx\",\"InstanceId\":\"eklet-xxxx\",\"LanIP\":\"1.1.1.1\"}\nElasticsearch集群 es-xxxx\nRabbitMQ amqp-xxxx",
           "example": "[\"ins-y5hy9gnh\", \"ins-y5hy9g21\"]",
           "member": "string",
           "name": "TaskGroupInstances",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2910,8 +2909,7 @@
           "member": "string",
           "name": "TaskGroupTitle",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2920,8 +2918,7 @@
           "member": "string",
           "name": "TaskGroupDescription",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2930,18 +2927,16 @@
           "member": "uint64",
           "name": "TaskGroupMode",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "动作组中的动作参数，不填默认使用经验中的动作参数，配置时可以只指定想要修改参数的动作",
-          "example": "[]",
+          "example": "[{\"duration\":0}]",
           "member": "TaskGroupActionConfig",
           "name": "TaskGroupActionsConfig",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

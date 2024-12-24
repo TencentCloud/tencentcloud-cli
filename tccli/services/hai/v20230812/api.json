@@ -662,7 +662,7 @@
         },
         {
           "disabled": false,
-          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示欠费隔离\nTERMINATING：表示销毁中。\nTERMINATED：表示已销毁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例状态：\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nARREARS：表示待回收\nSTOPPED_NO_CHARGE：表示关机不收费\nTERMINATING：表示销毁中\nTERMINATED：表示已销毁\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PENDING",
           "member": "string",
           "name": "InstanceState",

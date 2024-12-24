@@ -18,6 +18,7 @@ Output:
         "StatisticSet": [
             {
                 "CategoryId": 165,
+                "CategoryName": "ApiEdit",
                 "RuleCount": 2
             }
         ]

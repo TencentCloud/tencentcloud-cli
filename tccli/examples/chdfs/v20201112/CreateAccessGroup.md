@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli chdfs CreateAccessGroup --cli-unfold-argument  \
-    --AccessGroupName test \
-    --Description test \
+    --AccessGroupName access-group-test \
     --VpcType 1 \
-    --VpcId vpc-967aipkx
+    --VpcId vpc-0q1uxxxx \
+    --Description create access group example
 ```
 
 Output: 
@@ -17,14 +17,14 @@ Output:
 {
     "Response": {
         "AccessGroup": {
-            "AccessGroupId": "ag-f8xoises",
-            "AccessGroupName": "test",
-            "Description": "test",
-            "VpcType": 1,
-            "VpcId": "vpc-967aipkx",
-            "CreateTime": "2019-07-30T16:04:30+08:00"
+            "AccessGroupId": "ag-gei2xxxx",
+            "AccessGroupName": "access-group-test",
+            "CreateTime": "2024-12-24T20:00:47+08:00",
+            "Description": "create access group example",
+            "VpcId": "vpc-0q1uxxxx",
+            "VpcType": 1
         },
-        "RequestId": "ab3fff6b-7a36-4b7f-b2bb-bba87b5945a6"
+        "RequestId": "c363615f-1e62-49e8-b768-0606e75d2e5d"
     }
 }
 ```

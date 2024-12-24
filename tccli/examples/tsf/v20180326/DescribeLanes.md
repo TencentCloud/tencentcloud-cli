@@ -6,47 +6,33 @@ Input:
 
 ```
 tccli tsf DescribeLanes --cli-unfold-argument  \
-    --Limit 0 \
-    --Offset 10
+    --Limit 10 \
+    --Offset 0 \
+    --SearchWord lane \
+    --LaneIdList lane-ynmlnwm4 \
+    --DisableProgramAuthCheck True
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "c6dec7e1-dfcd-4a12-8977-986605343663",
         "Result": {
             "Content": [
                 {
-                    "Remark": "xx",
-                    "Entrance": true,
-                    "UpdateTime": 0,
-                    "LaneId": "xx",
-                    "NamespaceIdList": [
-                        "xx"
-                    ],
-                    "LaneGroupList": [
-                        {
-                            "ApplicationName": "xx",
-                            "Entrance": true,
-                            "NamespaceName": "xx",
-                            "LaneGroupId": "xx",
-                            "UpdateTime": 0,
-                            "ClusterType": "xx",
-                            "GroupName": "xx",
-                            "LaneId": "xx",
-                            "NamespaceId": "xx",
-                            "GroupId": "xx",
-                            "ApplicationId": "xx",
-                            "CreateTime": 0
-                        }
-                    ],
-                    "LaneName": "xx",
-                    "CreateTime": 0
+                    "CreateTime": 1726849955000,
+                    "Entrance": null,
+                    "LaneGroupList": null,
+                    "LaneId": "lane-ynmlnwm4",
+                    "LaneName": "lane_name",
+                    "NamespaceIdList": null,
+                    "Remark": "",
+                    "UpdateTime": 1726849955000
                 }
             ],
-            "TotalCount": 0
-        },
-        "RequestId": "xx"
+            "TotalCount": 1
+        }
     }
 }
 ```

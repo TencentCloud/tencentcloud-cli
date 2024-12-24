@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia RecognizeCar --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -57,7 +57,12 @@ Output:
                         "Y": 651
                     }
                 ],
-                "PlateContent": null
+                "PlateContent": null,
+                "PlateConfidence": null,
+                "TypeConfidence": null,
+                "ColorConfidence": null,
+                "Orientation": null,
+                "OrientationConfidence": null
             },
             {
                 "Serial": "君越",
@@ -84,34 +89,12 @@ Output:
                         "Y": 658
                     }
                 ],
-                "PlateContent": null
-            },
-            {
-                "Serial": "神行者2",
-                "Brand": "路虎",
-                "Type": "中型SUV",
-                "Color": "黑",
-                "Confidence": 13,
-                "Year": 2010,
-                "CarLocation": [
-                    {
-                        "X": 1013,
-                        "Y": 580
-                    },
-                    {
-                        "X": 1013,
-                        "Y": 433
-                    },
-                    {
-                        "X": 1202,
-                        "Y": 433
-                    },
-                    {
-                        "X": 1202,
-                        "Y": 580
-                    }
-                ],
-                "PlateContent": null
+                "PlateContent": null,
+                "PlateConfidence": null,
+                "TypeConfidence": null,
+                "ColorConfidence": null,
+                "Orientation": null,
+                "OrientationConfidence": null
             }
         ],
         "RequestId": "81235fb9-d91e-4a40-91ac-9ef5675954a2"

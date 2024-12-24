@@ -31,7 +31,7 @@ Output:
                     "Status": 0
                 }
             ],
-            "Describe": "abc",
+            "Describe": "某通道取回",
             "ChannelCount": 1
         },
         "RequestId": "fba7981b-d6a4-4177-b11d-e53a6110e4cd"

@@ -11,8 +11,8 @@
     "CreateAccessGroup": [
       {
         "document": "创建权限组",
-        "input": "https://chdfs.tencentcloudapi.com/?Action=CreateAccessGroup\n&AccessGroupName=test\n&Description=test\n&VpcType=1\n&VpcId=vpc-967aipkx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccessGroup\": {\n            \"AccessGroupId\": \"ag-f8xoises\",\n            \"AccessGroupName\": \"test\",\n            \"Description\": \"test\",\n            \"VpcType\": 1,\n            \"VpcId\": \"vpc-967aipkx\",\n            \"CreateTime\": \"2019-07-30T16:04:30+08:00\"\n        },\n        \"RequestId\": \"ab3fff6b-7a36-4b7f-b2bb-bba87b5945a6\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: chdfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccessGroup\n<公共请求参数>\n\n{\n    \"AccessGroupName\": \"access-group-test\",\n    \"VpcType\": 1,\n    \"VpcId\": \"vpc-0q1uxxxx\",\n    \"Description\": \"create access group example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessGroup\": {\n            \"AccessGroupId\": \"ag-gei2xxxx\",\n            \"AccessGroupName\": \"access-group-test\",\n            \"CreateTime\": \"2024-12-24T20:00:47+08:00\",\n            \"Description\": \"create access group example\",\n            \"VpcId\": \"vpc-0q1uxxxx\",\n            \"VpcType\": 1\n        },\n        \"RequestId\": \"c363615f-1e62-49e8-b768-0606e75d2e5d\"\n    }\n}",
         "title": "创建权限组"
       }
     ],

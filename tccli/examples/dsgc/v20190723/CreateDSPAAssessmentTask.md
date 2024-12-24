@@ -7,7 +7,7 @@ Input:
 ```
 tccli dsgc CreateDSPAAssessmentTask --cli-unfold-argument  \
     --DspaId dspa-92aabacd \
-    --Name test \
+    --Name 风险评估任务 \
     --BusinessName tx \
     --BusinessDept tx \
     --BusinessOwner tx \

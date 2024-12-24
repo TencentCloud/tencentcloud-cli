@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxx-xxx",
+        "RequestId": "xxx-12",
         "FlowId": 0,
         "ErrorMsg": ""
     }

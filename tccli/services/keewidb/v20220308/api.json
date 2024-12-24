@@ -1513,7 +1513,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1523,7 +1523,7 @@
           "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParam",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1533,7 +1533,7 @@
           "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParam",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1543,7 +1543,7 @@
           "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParam",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1553,7 +1553,7 @@
           "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParam",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1664,7 +1664,7 @@
         {
           "disabled": false,
           "document": "私有网络ID数组。数组下标从0开始，如果不传则默认选择基础网络，如：47525",
-          "example": "无",
+          "example": "47525",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -1673,7 +1673,7 @@
         {
           "disabled": false,
           "document": "子网ID数组，数组下标从0开始，如：56854",
-          "example": "无",
+          "example": "56854",
           "member": "string",
           "name": "SubnetIds",
           "required": false,
@@ -1682,7 +1682,7 @@
         {
           "disabled": false,
           "document": "项目ID 组成的数组，数组下标从0开始",
-          "example": "无",
+          "example": "[1289900]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -1691,7 +1691,7 @@
         {
           "disabled": false,
           "document": "查找关键字，可输入实例的ID或者实例名称。",
-          "example": "无",
+          "example": "模糊查询实例名称",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -1700,7 +1700,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "无",
+          "example": "example_InstanceName",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1709,7 +1709,7 @@
         {
           "disabled": false,
           "document": "私有网络ID数组，数组下标从0开始，如果不传则默认选择基础网络，如：vpc-sad23jfdfk",
-          "example": "无",
+          "example": "vpc-b6fsjaxt",
           "member": "string",
           "name": "UniqVpcIds",
           "required": false,
@@ -1718,7 +1718,7 @@
         {
           "disabled": false,
           "document": "子网ID数组，数组下标从0开始，如：subnet-fdj24n34j2",
-          "example": "无",
+          "example": "subnet-gqj66zh0",
           "member": "string",
           "name": "UniqSubnetIds",
           "required": false,
@@ -1727,7 +1727,7 @@
         {
           "disabled": false,
           "document": "实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1735,8 +1735,8 @@
         },
         {
           "disabled": false,
-          "document": "包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>",
-          "example": "无",
+          "document": "续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenew",
           "required": false,
@@ -1745,7 +1745,7 @@
         {
           "disabled": false,
           "document": "计费模式。<ul><li>postpaid：按量计费。</li><li>prepaid：包年包月。</li></ul>",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "BillingMode",
           "required": false,
@@ -1754,7 +1754,7 @@
         {
           "disabled": false,
           "document": "实例类型。<ul><li>13：标准版。</li><li>14：集群版。</li></ul>",
-          "example": "无",
+          "example": "13",
           "member": "int64",
           "name": "Type",
           "required": false,
@@ -1763,7 +1763,7 @@
         {
           "disabled": false,
           "document": "搜索关键词：支持实例 ID、实例名称、私有网络IP地址。",
-          "example": "无",
+          "example": "[\"kee-dagpcalj\"]",
           "member": "string",
           "name": "SearchKeys",
           "required": false,
@@ -1772,7 +1772,7 @@
         {
           "disabled": false,
           "document": "内部参数，用户可忽略。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TypeList",
           "required": false,
@@ -1781,7 +1781,7 @@
         {
           "disabled": false,
           "document": "内部参数，用户可忽略。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "MonitorVersion",
           "required": false,
@@ -1790,7 +1790,7 @@
         {
           "disabled": false,
           "document": "根据标签的 Key 和 Value 筛选资源。该参数不配置或者数组设置为空值，则不根据标签进行过滤。",
-          "example": "无",
+          "example": "具体参考数据结构。",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
           "required": false,
@@ -1799,7 +1799,7 @@
         {
           "disabled": false,
           "document": "根据标签的 Key 筛选资源，该参数不配置或者数组设置为空值，则不根据标签Key进行过滤。",
-          "example": "无",
+          "example": "keyname",
           "member": "string",
           "name": "TagKeys",
           "required": false,
@@ -1817,7 +1817,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1827,7 +1827,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1956,7 +1956,7 @@
         {
           "disabled": false,
           "document": "搜索关键词，支持根据安全组 ID 或者安全组名称搜索。",
-          "example": "无",
+          "example": "sg-0klp2oyp",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -1974,7 +1974,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1984,7 +1984,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2208,7 +2208,7 @@
         {
           "disabled": false,
           "document": "项目ID。",
-          "example": "无",
+          "example": "[11322, 11321]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -2217,7 +2217,7 @@
         {
           "disabled": false,
           "document": "任务类型。可设置为：FLOW_CREATE、FLOW_SETPWD、FLOW_CLOSE等。",
-          "example": "无",
+          "example": "[\"032\",\"034\"]",
           "member": "string",
           "name": "TaskTypes",
           "required": false,
@@ -2262,7 +2262,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2272,7 +2272,7 @@
           "example": "无",
           "member": "TaskInfoDetail",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2677,7 +2677,7 @@
           "example": "实例1",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2687,7 +2687,7 @@
           "example": "kee-7asi981q",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2697,7 +2697,7 @@
           "example": "12345",
           "member": "int64",
           "name": "Appid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2707,7 +2707,7 @@
           "example": "12",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2717,7 +2717,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2727,7 +2727,7 @@
           "example": "100001",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2737,7 +2737,7 @@
           "example": "75101",
           "member": "int64",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2747,7 +2747,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2757,7 +2757,7 @@
           "example": "10",
           "member": "int64",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2767,7 +2767,7 @@
           "example": "10.20.3.1",
           "member": "string",
           "name": "WanIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2777,7 +2777,7 @@
           "example": "6379",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2787,7 +2787,7 @@
           "example": "2022-01-15 10:20:00",
           "member": "string",
           "name": "Createtime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2797,7 +2797,7 @@
           "example": "1451",
           "member": "float",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2807,7 +2807,7 @@
           "example": "14",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2817,7 +2817,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2827,7 +2827,7 @@
           "example": "2022-02-15 10:20:00",
           "member": "string",
           "name": "DeadlineTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2837,7 +2837,7 @@
           "example": "无",
           "member": "string",
           "name": "Engine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2847,7 +2847,7 @@
           "example": "cluster",
           "member": "string",
           "name": "ProductType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2857,7 +2857,7 @@
           "example": "vpc-fk33jsf43kgv",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2867,7 +2867,7 @@
           "example": "subnet-fd3j6l35mm0",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2877,7 +2877,7 @@
           "example": "1",
           "member": "int64",
           "name": "BillingMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2887,7 +2887,7 @@
           "example": "实例运行中",
           "member": "string",
           "name": "InstanceTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2897,7 +2897,7 @@
           "example": "2022-02-15 10:20:00",
           "member": "string",
           "name": "OfflineTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2907,7 +2907,7 @@
           "example": "0",
           "member": "int64",
           "name": "SubStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2917,7 +2917,7 @@
           "example": "无",
           "member": "string",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2927,7 +2927,7 @@
           "example": "4096",
           "member": "int64",
           "name": "RedisShardSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2937,7 +2937,7 @@
           "example": "3",
           "member": "int64",
           "name": "RedisShardNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2947,7 +2947,7 @@
           "example": "1",
           "member": "int64",
           "name": "RedisReplicasNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2957,7 +2957,7 @@
           "example": "102638",
           "member": "int64",
           "name": "PriceId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2967,7 +2967,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "string",
           "name": "CloseTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2977,7 +2977,7 @@
           "example": "1",
           "member": "int64",
           "name": "SlaveReadWeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2987,7 +2987,7 @@
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "InstanceTags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2997,7 +2997,7 @@
           "example": "Default",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3007,7 +3007,7 @@
           "example": "true",
           "member": "bool",
           "name": "NoAuth",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3017,7 +3017,7 @@
           "example": "30000",
           "member": "int64",
           "name": "ClientLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3027,7 +3027,7 @@
           "example": "0",
           "member": "int64",
           "name": "DtsStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3037,7 +3037,7 @@
           "example": "1800",
           "member": "int64",
           "name": "NetLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3047,7 +3047,7 @@
           "example": "0",
           "member": "int64",
           "name": "PasswordFree",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3057,7 +3057,7 @@
           "example": "0",
           "member": "int64",
           "name": "ReadOnly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3067,7 +3067,7 @@
           "example": "无",
           "member": "string",
           "name": "Vip6",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3077,7 +3077,7 @@
           "example": "无",
           "member": "string",
           "name": "RemainBandwidthDuration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3087,7 +3087,7 @@
           "example": "400",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3097,7 +3097,7 @@
           "example": "5s",
           "member": "string",
           "name": "MonitorVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3107,7 +3107,7 @@
           "example": "1000",
           "member": "int64",
           "name": "ClientLimitMin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3117,7 +3117,7 @@
           "example": "10000",
           "member": "int64",
           "name": "ClientLimitMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3127,7 +3127,7 @@
           "example": "无",
           "member": "NodeInfo",
           "name": "NodeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3137,7 +3137,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3147,7 +3147,7 @@
           "example": "4",
           "member": "int64",
           "name": "MachineMemory",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3157,7 +3157,7 @@
           "example": "143360",
           "member": "int64",
           "name": "DiskShardSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3167,7 +3167,7 @@
           "example": "磁盘分片数",
           "member": "int64",
           "name": "DiskShardNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3177,9 +3177,19 @@
           "example": "磁盘副本数",
           "member": "int64",
           "name": "DiskReplicasNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON",
+          "member": "string",
+          "name": "Compression",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

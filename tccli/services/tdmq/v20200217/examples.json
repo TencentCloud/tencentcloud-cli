@@ -852,7 +852,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoles\n<公共请求参数>\n\n{\n    \"RoleName\": \"devRole\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ClusterId\": \"pulsar-xk3ne8k2qkp8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"RoleSets\": [\n            {\n                \"RoleName\": \"test_role_3\",\n                \"Token\": \"eyJzdddaWIiOiJ0ZXN0X3JvbGVfMyJ9.dbHR8m6gc4L4vZUrodhW_O9bDulZQ6lraNswNLtcUcY\",\n                \"Remark\": \"devRemark\",\n                \"CreateTime\": \"2020-08-04 11:59:06\",\n                \"UpdateTime\": \"2020-08-04 11:59:06\"\n            },\n            {\n                \"RoleName\": \"test_role_2\",\n                \"Token\": \"eyJzdWIiOiJ0asZsXN0X3JasdvbGVfMiJ9.KTbLPg1ax2HDa51vfWmoDK5AQRmEs-_3da8yU0O61D0\",\n                \"Remark\": \"devRemark\",\n                \"CreateTime\": \"2020-08-03 20:23:52\",\n                \"UpdateTime\": \"2020-08-03 20:23:52\"\n            },\n            {\n                \"RoleName\": \"test_role_1\",\n                \"Token\": \"eyJzddassWIiOiJ0ZXN0X3JvbGVfMSJ9.aatGv_WEZK5jqmXNX3dxQA7vWB0igKr_7eQitbweBoo\",\n                \"Remark\": \"devRemark\",\n                \"CreateTime\": \"2020-08-03 19:48:36\",\n                \"UpdateTime\": \"2020-08-03 20:22:21\"\n            },\n            {\n                \"RoleName\": \"test_role\",\n                \"Token\": \"eyJzdWIiOiJ0ZXsasdN0X3JvbGUifQ.xeU_xkiB5wSJ8u6sUJWW\",\n                \"Remark\": \"Remark1\",\n                \"CreateTime\": \"2020-08-03 17:22:09\",\n                \"UpdateTime\": \"2020-08-04 15:59:29\"\n            }\n        ],\n        \"RequestId\": \"1004f1de-6fb8-41d5-965e-3aae8c87183a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 4,\n        \"RoleSets\": [\n            {\n                \"RoleName\": \"test_role_3\",\n                \"Token\": \"eyJzdddaWIiOiJ0ZXN0X3****O9bDulZQ6lraNswNLtcUcY\",\n                \"Remark\": \"devRemark\",\n                \"CreateTime\": \"2020-08-04 11:59:06\",\n                \"UpdateTime\": \"2020-08-04 11:59:06\"\n            },\n            {\n                \"RoleName\": \"test_role_2\",\n                \"Token\": \"eyJzdWIiOiJ0asZsXN0X3Jasdv****AQRmEs-_3da8yU0O61D0\",\n                \"Remark\": \"devRemark\",\n                \"CreateTime\": \"2020-08-03 20:23:52\",\n                \"UpdateTime\": \"2020-08-03 20:23:52\"\n            },\n            {\n                \"RoleName\": \"test_role_1\",\n                \"Token\": \"eyJzddassWIiOiJ0ZXN0X3J****QA7vWB0igKr_7eQitbweBoo\",\n                \"Remark\": \"devRemark\",\n                \"CreateTime\": \"2020-08-03 19:48:36\",\n                \"UpdateTime\": \"2020-08-03 20:22:21\"\n            },\n            {\n                \"RoleName\": \"test_role\",\n                \"Token\": \"eyJzdWIiOiJ0ZXsas****5wSJ8u6sUJWW\",\n                \"Remark\": \"Remark1\",\n                \"CreateTime\": \"2020-08-03 17:22:09\",\n                \"UpdateTime\": \"2020-08-04 15:59:29\"\n            }\n        ],\n        \"RequestId\": \"1004f1de-6fb8-41d5-965e-3aae8c87183a\"\n    }\n}",
         "title": "获取角色列表"
       }
     ],
@@ -966,6 +966,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkAccessPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-jero744g\",\n    \"PublicNetworkAccessPointStatus\": true,\n    \"SwitchOwner\": \"Public\",\n    \"VpcId\": \"vpc-d\",\n    \"SubnetId\": \"subnet-67y9wil4\",\n    \"SelectIp\": \"10.1.0.1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"ModifyResult\": \"修改成功\"\n    }\n}",
         "title": "RabbitMQ专享版修改公网管控台，数据流开关"
+      }
+    ],
+    "ModifyPublicNetworkSecurityPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkSecurityPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"pulsar-47emajuiaoam\",\n    \"PolicyList\": [\n        {\n            \"Route\": \"1.1.1.1/24\",\n            \"Policy\": true,\n            \"Remark\": \"allow\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ModifyResult\": \"SUCCESS\",\n        \"InstanceId\": \"pulsar-47emajuiaoam\",\n        \"RequestId\": \"5d6c7091-e82c-4a9c-a18f-34d5fc46006e\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyRabbitMQUser": [

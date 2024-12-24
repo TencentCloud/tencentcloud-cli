@@ -16,7 +16,7 @@ Output:
         "Data": {
             "ChannelCount": 0,
             "CreateAt": "2023-06-05 14:32:04",
-            "Describe": "test",
+            "Describe": "这是一个计划",
             "LifeCycle": {
                 "Expiration": 0,
                 "Transition": 7

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tse DescribeGovernanceServiceContracts --cli-unfold-argument  \
-    --InstanceId abc \
-    --Namespace abc \
-    --Service abc \
-    --Name abc \
-    --ContractVersion abc \
-    --Protocol abc \
+    --InstanceId ins-id \
+    --Namespace namespace \
+    --Service service \
+    --Name name \
+    --ContractVersion 1.0 \
+    --Protocol tcp \
     --Brief True \
     --Offset 0 \
     --Limit 0
@@ -25,32 +25,32 @@ Output:
         "Size": 0,
         "ServiceContracts": [
             {
-                "Name": "abc",
-                "Namespace": "abc",
-                "Protocol": "abc",
-                "ID": "abc",
-                "Service": "abc",
-                "Version": "abc",
-                "Revision": "abc",
-                "Content": "abc",
-                "CreateTime": "abc",
-                "ModifyTime": "abc",
+                "Name": "name",
+                "Namespace": "namespace",
+                "Protocol": "tcp",
+                "ID": "id",
+                "Service": "service",
+                "Version": "1.0",
+                "Revision": "hash",
+                "Content": "content",
+                "CreateTime": "2024-10-08 10:00:00",
+                "ModifyTime": "2024-10-08 10:00:00",
                 "Interfaces": [
                     {
-                        "ID": "abc",
-                        "Method": "abc",
-                        "Path": "abc",
-                        "Content": "abc",
-                        "Source": "abc",
-                        "Revision": "abc",
-                        "CreateTime": "abc",
-                        "ModifyTime": "abc",
-                        "Name": "abc"
+                        "ID": "id",
+                        "Method": "get",
+                        "Path": "/path",
+                        "Content": "content",
+                        "Source": "api",
+                        "Revision": "hash",
+                        "CreateTime": "2024-10-08 10:00:00",
+                        "ModifyTime": "2024-10-08 10:00:00",
+                        "Name": "name"
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

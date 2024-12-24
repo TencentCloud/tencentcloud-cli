@@ -984,6 +984,14 @@
         "title": "查询预聚合规则"
       }
     ],
+    "DescribeRemoteURLs": [
+      {
+        "document": "获取多写配置",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRemoteURLs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-kewhrgvf\",\n    \"RemoteURLs\": [\n        \"http://172.0.0.1:9090/api/v1/prom/write\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RemoteWrites\": [\n            {\n                \"URL\": \"http://172.0.0.1:9090/api/v1/prom/write\",\n                \"URLRelabelConfig\": \"source_labels:asd\\n\",\n                \"BasicAuth\": {\n                    \"UserName\": \"user-name\",\n                    \"Password\": \"sklehrgb\"\n                },\n                \"MaxBlockSize\": \"1024\",\n                \"Label\": \"label-name=label-value\",\n                \"Headers\": [\n                    {\n                        \"Key\": \"X-Custom-Header\",\n                        \"Value\": \"custom-value\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"langy-akrbnf\"\n    }\n}",
+        "title": "获取多写配置"
+      }
+    ],
     "DescribeSSOAccount": [
       {
         "document": "列出当前grafana实例的所有授权账号",
@@ -1208,6 +1216,14 @@
         "input": "https://monitor.tencentcloudapi.com/?Action=ModifyPrometheusTemp\n&TemplateId=temp-xxx\n&Template.Describe=一个模板\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "修改模板描述"
+      }
+    ],
+    "ModifyRemoteURLs": [
+      {
+        "document": "修改多写配置",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRemoteURLs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-m4qf27hg\",\n    \"RemoteWrites\": [\n        {\n            \"URL\": \"http://172.30.0.9:9090/api/v1/prom/write\",\n            \"BasicAuth\": {\n                \"UserName\": \"cherry\",\n                \"Password\": \"xxx\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "修改多写配置"
       }
     ],
     "ResumeGrafanaInstance": [

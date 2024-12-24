@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli tsf DescribePathRewrite --cli-unfold-argument  \
-    --PathRewriteId rewrite-l6ymbvgd
+    --PathRewriteId rewrite-2vz5pdwv
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "bc1c265c-bce0-4d9b-82bc-592668daf7af",
         "Result": {
-            "Regex": "^(.*)^",
-            "PathRewriteId": "rewrite-l6ymbvgd",
-            "GatewayGroupId": "group-123",
-            "Replacement": "/s/ns/ms/$1",
-            "Order": 0,
-            "Blocked": "xx"
-        },
-        "RequestId": "xx"
+            "Blocked": "N",
+            "GatewayGroupId": "group-yd3b588a",
+            "Order": 1,
+            "PathRewriteId": "rewrite-2vz5pdwv",
+            "Regex": "/app",
+            "Replacement": "/user"
+        }
     }
 }
 ```

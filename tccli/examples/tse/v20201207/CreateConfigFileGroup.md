@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli tse CreateConfigFileGroup --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId ins-id \
     --ConfigFileGroup.Id 1 \
-    --ConfigFileGroup.Name abc \
-    --ConfigFileGroup.Namespace abc \
-    --ConfigFileGroup.Comment abc \
-    --ConfigFileGroup.CreateTime abc \
-    --ConfigFileGroup.CreateBy abc \
-    --ConfigFileGroup.ModifyTime abc \
-    --ConfigFileGroup.ModifyBy abc \
+    --ConfigFileGroup.Name name \
+    --ConfigFileGroup.Namespace namespace \
+    --ConfigFileGroup.Comment comment \
+    --ConfigFileGroup.CreateTime 2024-10-08 10:00:00 \
+    --ConfigFileGroup.CreateBy user \
+    --ConfigFileGroup.ModifyTime 2024-10-08 10:00:00 \
+    --ConfigFileGroup.ModifyBy user \
     --ConfigFileGroup.FileCount 1 \
-    --ConfigFileGroup.UserIds abc \
-    --ConfigFileGroup.GroupIds abc \
-    --ConfigFileGroup.RemoveUserIds abc \
-    --ConfigFileGroup.RemoveGroupIds abc \
+    --ConfigFileGroup.UserIds 101 \
+    --ConfigFileGroup.GroupIds groupa \
+    --ConfigFileGroup.RemoveUserIds 101 \
+    --ConfigFileGroup.RemoveGroupIds groupa \
     --ConfigFileGroup.Editable True \
-    --ConfigFileGroup.Owner abc
+    --ConfigFileGroup.Owner 101
 ```
 
 Output: 

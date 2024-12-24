@@ -7,7 +7,7 @@ Input:
 ```
 tccli iss AddRecordRetrieveTask --cli-unfold-argument  \
     --TaskName name \
-    --Describe  \
+    --Describe 某通道取回 \
     --StartTime 1687688595 \
     --EndTime 1687692195 \
     --Mode 1 \

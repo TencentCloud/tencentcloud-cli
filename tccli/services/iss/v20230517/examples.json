@@ -3,14 +3,14 @@
     "AddAITask": [
       {
         "document": "包含无效的通道ID",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"测试\",\n    \"ChannelList\": [\n        \"**********************\"\n    ],\n    \"CallbackUrl\": \"http://*******\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"宠物识别\",\n    \"ChannelList\": [\n        \"**********************\"\n    ],\n    \"CallbackUrl\": \"http://*******\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.ContainInvalidChannelId\",\n            \"Message\": \"包含无效的通道ID\"\n        },\n        \"RequestId\": \"d380c0bc-2be1-4620-bf39-9d4d4f512060\"\n    }\n}",
         "title": "失败示例"
       },
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"测试\",\n    \"ChannelList\": [\n        \"97308958-6122-4188-8c78-d5ff8010bdf7\"\n    ],\n    \"CallbackUrl\": \"http://**********\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://**********\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 15:50:47\",\n            \"Desc\": \"测试\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 15:50:47\"\n        },\n        \"RequestId\": \"4ea417f6-da0e-4211-9b97-6408070b9851\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAITask\n<公共请求参数>\n\n{\n    \"Name\": \"ai-task\",\n    \"Desc\": \"宠物识别\",\n    \"ChannelList\": [\n        \"97308958-6122-4188-8c78-d5ff8010bdf7\"\n    ],\n    \"CallbackUrl\": \"http://**********\",\n    \"Templates\": [\n        {\n            \"Tag\": \"AI\",\n            \"AIConfig\": {\n                \"DetectType\": \"Pet\",\n                \"TimeInterval\": 10,\n                \"OperTimeSlot\": [\n                    {\n                        \"Start\": \"10:00:00\",\n                        \"End\": \"20:00:00\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://**********\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 15:50:47\",\n            \"Desc\": \"宠物识别\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 15:50:47\"\n        },\n        \"RequestId\": \"4ea417f6-da0e-4211-9b97-6408070b9851\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -45,23 +45,23 @@
     "AddRecordBackupTemplate": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRecordBackupTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"123456\",\n    \"TimeSections\": [\n        {\n            \"DayOfWeek\": 4,\n            \"StartTime\": \"00:00:00\",\n            \"EndTime\": \"02:00:00\"\n        }\n    ],\n    \"DevTimeSections\": [\n        {\n            \"DayOfWeek\": 3,\n            \"StartTime\": \"00:00:00\",\n            \"EndTime\": \"01:00:00\"\n        }\n    ],\n    \"Scale\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateAt\": \"2023-06-21 15:20:35\",\n            \"DevTimeSections\": [\n                {\n                    \"DayOfWeek\": 3,\n                    \"EndTime\": \"01:00:00\",\n                    \"StartTime\": \"00:00:00\"\n                }\n            ],\n            \"Scale\": 1,\n            \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n            \"TemplateName\": \"123456\",\n            \"TimeSections\": [\n                {\n                    \"DayOfWeek\": 4,\n                    \"EndTime\": \"02:00:00\",\n                    \"StartTime\": \"00:00:00\"\n                }\n            ],\n            \"UpdateAt\": \"2023-06-21 15:20:35\"\n        },\n        \"RequestId\": \"391dfee3-dff2-445a-a8aa-37c9e9b3d185\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRecordBackupTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"模板361\",\n    \"TimeSections\": [\n        {\n            \"DayOfWeek\": 4,\n            \"StartTime\": \"00:00:00\",\n            \"EndTime\": \"02:00:00\"\n        }\n    ],\n    \"DevTimeSections\": [\n        {\n            \"DayOfWeek\": 3,\n            \"StartTime\": \"00:00:00\",\n            \"EndTime\": \"01:00:00\"\n        }\n    ],\n    \"Scale\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateAt\": \"2023-06-21 15:20:35\",\n            \"DevTimeSections\": [\n                {\n                    \"DayOfWeek\": 3,\n                    \"EndTime\": \"01:00:00\",\n                    \"StartTime\": \"00:00:00\"\n                }\n            ],\n            \"Scale\": 1,\n            \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n            \"TemplateName\": \"模板361\",\n            \"TimeSections\": [\n                {\n                    \"DayOfWeek\": 4,\n                    \"EndTime\": \"02:00:00\",\n                    \"StartTime\": \"00:00:00\"\n                }\n            ],\n            \"UpdateAt\": \"2023-06-21 15:20:35\"\n        },\n        \"RequestId\": \"391dfee3-dff2-445a-a8aa-37c9e9b3d185\"\n    }\n}",
         "title": "成功"
       }
     ],
     "AddRecordPlan": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRecordPlan\n<公共请求参数>\n\n{\n    \"PlanName\": \"name\",\n    \"TemplateId\": \"48676e89a8c**********baa36220fa4\",\n    \"Describe\": \"abc\",\n    \"RepairMode\": 1,\n    \"StreamType\": \"main\",\n    \"Channels\": [\n        {\n            \"DeviceId\": \"48676e89a8c**********baa36220fa4\",\n            \"ChannelId\": \"9ee325e9984**********a805c19b4e1\"\n        }\n    ],\n    \"OrganizationId\": [\n        \"10\"\n    ],\n    \"LifeCycle\": {\n        \"Transition\": 1,\n        \"Expiration\": 60\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PlanId\": \"88ac5ea6c1f**********24671d0f94f\",\n            \"PlanName\": \"name\",\n            \"TemplateId\": \"48676e89a8c**********baa36220fa4\",\n            \"Describe\": \"abc\",\n            \"RepairMode\": 1,\n            \"StreamType\": \"main\",\n            \"LifeCycle\": {\n                \"Transition\": 1,\n                \"Expiration\": 60\n            }\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRecordPlan\n<公共请求参数>\n\n{\n    \"PlanName\": \"name\",\n    \"TemplateId\": \"48676e89a8c**********baa36220fa4\",\n    \"Describe\": \"全天录像\",\n    \"RepairMode\": 1,\n    \"StreamType\": \"main\",\n    \"Channels\": [\n        {\n            \"DeviceId\": \"48676e89a8c**********baa36220fa4\",\n            \"ChannelId\": \"9ee325e9984**********a805c19b4e1\"\n        }\n    ],\n    \"OrganizationId\": [\n        \"10\"\n    ],\n    \"LifeCycle\": {\n        \"Transition\": 1,\n        \"Expiration\": 60\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PlanId\": \"88ac5ea6c1f**********24671d0f94f\",\n            \"PlanName\": \"name\",\n            \"TemplateId\": \"48676e89a8c**********baa36220fa4\",\n            \"Describe\": \"全天录像\",\n            \"RepairMode\": 1,\n            \"StreamType\": \"main\",\n            \"LifeCycle\": {\n                \"Transition\": 1,\n                \"Expiration\": 60\n            }\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
         "title": "成功"
       }
     ],
     "AddRecordRetrieveTask": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRecordRetrieveTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"name\",\n    \"Describe\": \"\",\n    \"StartTime\": 1687688595,\n    \"EndTime\": 1687692195,\n    \"Mode\": 1,\n    \"Expiration\": 3,\n    \"Channels\": [\n        {\n            \"DeviceId\": \"64505f15-67b1-****-****-0ad6c8ce6aef\",\n            \"ChannelId\": \"0001a415-b9c1-****-****-b13cfb96c778\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRecordRetrieveTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"name\",\n    \"Describe\": \"某通道取回\",\n    \"StartTime\": 1687688595,\n    \"EndTime\": 1687692195,\n    \"Mode\": 1,\n    \"Expiration\": 3,\n    \"Channels\": [\n        {\n            \"DeviceId\": \"64505f15-67b1-****-****-0ad6c8ce6aef\",\n            \"ChannelId\": \"0001a415-b9c1-****-****-b13cfb96c778\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"1133f5f9c3**********1c3389527532\",\n            \"TaskName\": \"name\",\n            \"StartTime\": 1687688595,\n            \"EndTime\": 1687692195,\n            \"Mode\": 1,\n            \"Expiration\": 3,\n            \"Status\": 2,\n            \"Capacity\": 0,\n            \"Describe\": \"\"\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
         "title": "成功"
       }
@@ -77,8 +77,8 @@
     "AddStreamAuth": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddStreamAuth\n<公共请求参数>\n\n{\n    \"Id\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n    \"PullState\": 0,\n    \"PullSecret\": \"123456\",\n    \"PullExpired\": 10,\n    \"PushState\": 0,\n    \"PushSecret\": \"123456\",\n    \"PushExpired\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": 1300000000,\n            \"Id\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"PullExpired\": 10,\n            \"PullSecret\": \"123456\",\n            \"PullState\": 0,\n            \"PushExpired\": 10,\n            \"PushSecret\": \"123456\",\n            \"PushState\": 0\n        },\n        \"RequestId\": \"b824ee63-1b76-4d6f-a97b-d26e4c3f4e30\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddStreamAuth\n<公共请求参数>\n\n{\n    \"Id\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n    \"PullState\": 0,\n    \"PullSecret\": \"a3f9ub8hgj\",\n    \"PullExpired\": 10,\n    \"PushState\": 0,\n    \"PushSecret\": \"a3f9ub8hgj\",\n    \"PushExpired\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": 1300000000,\n            \"Id\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"PullExpired\": 10,\n            \"PullSecret\": \"a3f9ub8hgj\",\n            \"PullState\": 0,\n            \"PushExpired\": 10,\n            \"PushSecret\": \"a3f9ub8hgj\",\n            \"PushState\": 0\n        },\n        \"RequestId\": \"b824ee63-1b76-4d6f-a97b-d26e4c3f4e30\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -103,8 +103,8 @@
       },
       {
         "document": "成功",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"testrtmp\",\n    \"AccessProtocol\": 1,\n    \"Type\": 1,\n    \"OrganizationId\": \"189\",\n    \"ClusterId\": \"4169d92e-****-****-****-************\",\n    \"TransportProtocol\": 0,\n    \"Password\": \"123\",\n    \"ProtocolType\": 0,\n    \"AppName\": \"testapp\",\n    \"StreamName\": \"teststream\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"AppId\": 1300056079,\n            \"ClusterId\": \"4169d92e-****-****-****-************\",\n            \"ClusterName\": \"上海一区\",\n            \"Code\": \"0HQq******\",\n            \"Description\": \"\",\n            \"DeviceId\": \"f1f9baae-****-****-****-************\",\n            \"GatewayId\": \"\",\n            \"Ip\": \"\",\n            \"Name\": \"testrtmp\",\n            \"OrganizationId\": 189,\n            \"Password\": \"123\",\n            \"Port\": 0,\n            \"ProtocolType\": 0,\n            \"Status\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\"\n        },\n        \"RequestId\": \"56d8591d-85cb-498d-a5b6-52133305e69c\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUserDevice\n<公共请求参数>\n\n{\n    \"Name\": \"testrtmp\",\n    \"AccessProtocol\": 1,\n    \"Type\": 1,\n    \"OrganizationId\": \"189\",\n    \"ClusterId\": \"4169d92e-****-****-****-************\",\n    \"TransportProtocol\": 0,\n    \"Password\": \"37********10\",\n    \"ProtocolType\": 0,\n    \"AppName\": \"testapp\",\n    \"StreamName\": \"teststream\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AccessProtocol\": 1,\n            \"AppId\": 1300056079,\n            \"ClusterId\": \"4169d92e-****-****-****-************\",\n            \"ClusterName\": \"上海一区\",\n            \"Code\": \"0HQq******\",\n            \"Description\": \"\",\n            \"DeviceId\": \"f1f9baae-****-****-****-************\",\n            \"GatewayId\": \"\",\n            \"Ip\": \"\",\n            \"Name\": \"testrtmp\",\n            \"OrganizationId\": 189,\n            \"Password\": \"37********10\",\n            \"Port\": 0,\n            \"ProtocolType\": 0,\n            \"Status\": 0,\n            \"TransportProtocol\": 0,\n            \"Type\": 1,\n            \"Username\": \"\"\n        },\n        \"RequestId\": \"56d8591d-85cb-498d-a5b6-52133305e69c\"\n    }\n}",
         "title": "success"
       }
     ],
@@ -187,8 +187,8 @@
     "DeleteDomain": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomain\n<公共请求参数>\n\n{\n    \"Id\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomain\n<公共请求参数>\n\n{\n    \"Id\": \"dipkiqpd-ksi0-1di0-skai189diems\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dipkiqpd-ksi0-1di0-skai189diem1\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -278,7 +278,7 @@
       {
         "document": "无",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"atc**********************8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://*******\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 15:50:47\",\n            \"Desc\": \"测试\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 15:50:47\"\n        },\n        \"RequestId\": \"971360c6-adf5-4845-9202-fd43f13ae0ba\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://*******\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 15:50:47\",\n            \"Desc\": \"宠物识别\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 15:50:47\"\n        },\n        \"RequestId\": \"971360c6-adf5-4845-9202-fd43f13ae0ba\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -322,7 +322,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePreset\n<公共请求参数>\n\n{\n    \"ChannelId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Index\": 1,\n                \"Name\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"31facf8f-d783-4c28-a27f-82757eb71244\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Index\": 1,\n                \"Name\": \"preset-1\"\n            }\n        ],\n        \"RequestId\": \"31facf8f-d783-4c28-a27f-82757eb71244\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -354,7 +354,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890ab\",\n            \"ClusterName\": \"上海一区\",\n            \"CreatedAt\": \"2023-06-09T18:29:11+08:00\",\n            \"Description\": \"123456\",\n            \"DeviceNum\": 1,\n            \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"GwId\": \"2b8d8734bc**********3ff984a82f19\",\n            \"Name\": \"网关1\",\n            \"Status\": 0,\n            \"Version\": null\n        },\n        \"RequestId\": \"8716314f-29c4-40ae-9b68-601bd7c40b21\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ClusterId\": \"12345678-abcd-efgh-ijkl-1234567890ab\",\n            \"ClusterName\": \"上海一区\",\n            \"CreatedAt\": \"2023-06-09T18:29:11+08:00\",\n            \"Description\": \"网关10-13\",\n            \"DeviceNum\": 1,\n            \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"GwId\": \"2b8d8734bc**********3ff984a82f19\",\n            \"Name\": \"网关1\",\n            \"Status\": 0,\n            \"Version\": null\n        },\n        \"RequestId\": \"8716314f-29c4-40ae-9b68-601bd7c40b21\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -400,7 +400,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordBackupPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ChannelCount\": 0,\n            \"CreateAt\": \"2023-06-05 14:32:04\",\n            \"Describe\": \"test\",\n            \"LifeCycle\": {\n                \"Expiration\": 0,\n                \"Transition\": 7\n            },\n            \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"PlanName\": \"test-plan-update\",\n            \"Status\": 1,\n            \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n            \"UpdateAt\": \"2023-06-05 15:05:25\"\n        },\n        \"RequestId\": \"1c508daa-c317-4e17-b313-79761aa81a6b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ChannelCount\": 0,\n            \"CreateAt\": \"2023-06-05 14:32:04\",\n            \"Describe\": \"这是一个计划\",\n            \"LifeCycle\": {\n                \"Expiration\": 0,\n                \"Transition\": 7\n            },\n            \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"PlanName\": \"test-plan-update\",\n            \"Status\": 1,\n            \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n            \"UpdateAt\": \"2023-06-05 15:05:25\"\n        },\n        \"RequestId\": \"1c508daa-c317-4e17-b313-79761aa81a6b\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -446,7 +446,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordRetrieveTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"d00a3e6f9b**********040cebcee7a6\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"d00a3e6f9b**********040cebcee7a6\",\n            \"TaskName\": \"name\",\n            \"StartTime\": 1687688595,\n            \"EndTime\": 1687692195,\n            \"Mode\": 1,\n            \"Expiration\": 3,\n            \"Status\": 0,\n            \"Capacity\": 10000,\n            \"Channels\": [\n                {\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"11\",\n                    \"ChannelId\": \"32525dd7-c3fc-****-****-d5beb4acd1e1\",\n                    \"ChannelName\": \"SDK-NVR05\",\n                    \"Status\": 0\n                }\n            ],\n            \"Describe\": \"abc\",\n            \"ChannelCount\": 1\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"d00a3e6f9b**********040cebcee7a6\",\n            \"TaskName\": \"name\",\n            \"StartTime\": 1687688595,\n            \"EndTime\": 1687692195,\n            \"Mode\": 1,\n            \"Expiration\": 3,\n            \"Status\": 0,\n            \"Capacity\": 10000,\n            \"Channels\": [\n                {\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"11\",\n                    \"ChannelId\": \"32525dd7-c3fc-****-****-d5beb4acd1e1\",\n                    \"ChannelName\": \"SDK-NVR05\",\n                    \"Status\": 0\n                }\n            ],\n            \"Describe\": \"某通道取回\",\n            \"ChannelCount\": 1\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -476,7 +476,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamAuth\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": 1300000000,\n            \"Id\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"PullExpired\": 10,\n            \"PullSecret\": \"123456\",\n            \"PullState\": 0,\n            \"PushExpired\": 10,\n            \"PushSecret\": \"123456\",\n            \"PushState\": 0\n        },\n        \"RequestId\": \"cf385ee3-30f4-4ee7-bfd4-a123f9a71380\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": 1300000000,\n            \"Id\": \"12345678-abcd-efgh-ijkl-1234567890abcd\",\n            \"PullExpired\": 10,\n            \"PullSecret\": \"uIyoP9U8Y7\",\n            \"PullState\": 0,\n            \"PushExpired\": 10,\n            \"PushSecret\": \"uIyoP9U8Y7\",\n            \"PushState\": 0\n        },\n        \"RequestId\": \"cf385ee3-30f4-4ee7-bfd4-a123f9a71380\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -497,7 +497,7 @@
       },
       {
         "document": "无效的设备Id",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"aaa\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"AoiPcid9U\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.InvalidDeviceId\",\n            \"Message\": \"无效的设备Id\"\n        },\n        \"RequestId\": \"97694623-ae7d-435c-aff7-f5a051fe9474\"\n    }\n}",
         "title": "无效的设备Id"
       },
@@ -554,7 +554,7 @@
       {
         "document": "无",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDevices\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"191\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessProtocol\": 2,\n                \"ChannelNum\": 1,\n                \"ClusterId\": \"4************************0\",\n                \"ClusterName\": \"上海一区\",\n                \"Code\": \"6************************4\",\n                \"Description\": \"\",\n                \"DeviceId\": \"2************************8\",\n                \"Name\": \"gb12138\",\n                \"OrganizationId\": \"191\",\n                \"Password\": \"123456\",\n                \"Status\": 2,\n                \"TransportProtocol\": 1,\n                \"Type\": 2\n            }\n        ],\n        \"RequestId\": \"d217472e-ca9b-4a4d-bb4b-c45326ce8e3e\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessProtocol\": 2,\n                \"ChannelNum\": 1,\n                \"ClusterId\": \"4************************0\",\n                \"ClusterName\": \"上海一区\",\n                \"Code\": \"6************************4\",\n                \"Description\": \"\",\n                \"DeviceId\": \"2************************8\",\n                \"Name\": \"gb12138\",\n                \"OrganizationId\": \"191\",\n                \"Password\": \"30******96\",\n                \"Status\": 2,\n                \"TransportProtocol\": 1,\n                \"Type\": 2\n            }\n        ],\n        \"RequestId\": \"d217472e-ca9b-4a4d-bb4b-c45326ce8e3e\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -570,7 +570,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListGateways\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ClusterId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n                    \"ClusterName\": \"上海一区\",\n                    \"CreatedAt\": \"2007-01-01T08:00:00+08:00\",\n                    \"Description\": \"123\",\n                    \"DeviceNum\": 0,\n                    \"GwId\": \"2b8d8734******************4a82f19\",\n                    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n                    \"Name\": \"you think who you are\",\n                    \"Status\": 0,\n                    \"Region\": \"ap-shanghai\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"8f541de2-e247-4c93-98b7-8243d9e4f0ef\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ClusterId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n                    \"ClusterName\": \"上海一区\",\n                    \"CreatedAt\": \"2007-01-01T08:00:00+08:00\",\n                    \"Description\": \"网管 211\",\n                    \"DeviceNum\": 0,\n                    \"GwId\": \"2b8d8734******************4a82f19\",\n                    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n                    \"Name\": \"you think who you are\",\n                    \"Status\": 0,\n                    \"Region\": \"ap-shanghai\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"8f541de2-e247-4c93-98b7-8243d9e4f0ef\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -591,7 +591,7 @@
       },
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOrganizationChannels\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"182\",\n    \"DeviceName\": \"abc\",\n    \"PageSize\": 5,\n    \"PageNumber\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListOrganizationChannels\n<公共请求参数>\n\n{\n    \"OrganizationId\": \"182\",\n    \"DeviceName\": \"SDK-NVR05\",\n    \"PageSize\": 5,\n    \"PageNumber\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ChannelId\": \"222c9da5-3e06-****-****-107c013b95a7\",\n                    \"ChannelName\": \"PTZ09\",\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"SDK-NVR05\",\n                    \"InPlan\": true\n                },\n                {\n                    \"ChannelId\": \"32525dd7-c3fc-****-****-d5beb4acd1e1\",\n                    \"ChannelName\": \"11\",\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"SDK-NVR05\",\n                    \"InPlan\": true\n                },\n                {\n                    \"ChannelId\": \"53ca64d3-9627-****-****-cea5122f6977\",\n                    \"ChannelName\": \"PTZ03\",\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"SDK-NVR05\",\n                    \"InPlan\": true\n                },\n                {\n                    \"ChannelId\": \"c80a0ebf-10ac-****-****-8083f18df240\",\n                    \"ChannelName\": \"PTZ17\",\n                    \"DeviceId\": \"389708b2-bcbb-****-****-a61f528b2a15\",\n                    \"DeviceName\": \"SDK-NVR05\",\n                    \"InPlan\": true\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 4,\n            \"TotalCount\": 4\n        },\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
         "title": "按照设备名称查询"
       },
@@ -614,7 +614,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRecordBackupPlans\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ChannelCount\": 0,\n                \"CreateAt\": \"2023-06-05 14:32:04\",\n                \"Describe\": \"test\",\n                \"LifeCycle\": {\n                    \"Expiration\": 0,\n                    \"Transition\": 7\n                },\n                \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n                \"PlanName\": \"test-plan-update\",\n                \"Status\": 1,\n                \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n                \"UpdateAt\": \"2023-06-05 14:56:51\"\n            }\n        ],\n        \"RequestId\": \"4427b009-03b4-42d9-ae3a-4bdf1582df4f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ChannelCount\": 0,\n                \"CreateAt\": \"2023-06-05 14:32:04\",\n                \"Describe\": \"计划 36\",\n                \"LifeCycle\": {\n                    \"Expiration\": 0,\n                    \"Transition\": 7\n                },\n                \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n                \"PlanName\": \"test-plan-update\",\n                \"Status\": 1,\n                \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n                \"UpdateAt\": \"2023-06-05 14:56:51\"\n            }\n        ],\n        \"RequestId\": \"4427b009-03b4-42d9-ae3a-4bdf1582df4f\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -765,14 +765,14 @@
     "UpdateAITask": [
       {
         "document": "AI任务不存在",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"Desc\": \"111\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************1\",\n    \"Desc\": \"宠物\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.AITaskNotExisted\",\n            \"Message\": \"AI任务不存在\"\n        },\n        \"RequestId\": \"7954b883-9141-4635-b116-4be839cfd810\"\n    }\n}",
         "title": "失败示例"
       },
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************8\",\n    \"Desc\": \"111\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://********\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 16:21:34\",\n            \"Desc\": \"111\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 16:21:34\"\n        },\n        \"RequestId\": \"b78d57bf-7742-4048-80c1-11709aaf14bf\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAITask\n<公共请求参数>\n\n{\n    \"TaskId\": \"at**********************8\",\n    \"Desc\": \"宠物\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CallbackUrl\": \"http://********\",\n            \"ChannelList\": [\n                \"**********************\"\n            ],\n            \"CreatedTime\": \"2023-06-15 16:21:34\",\n            \"Desc\": \"宠物\",\n            \"Name\": \"ai-task\",\n            \"Status\": \"off\",\n            \"TaskId\": \"at**********************8\",\n            \"Templates\": [\n                {\n                    \"AIConfig\": {\n                        \"DetectType\": \"Pet\",\n                        \"OperTimeSlot\": [\n                            {\n                                \"End\": \"20:00:00\",\n                                \"Start\": \"10:00:00\"\n                            }\n                        ],\n                        \"TimeInterval\": 10\n                    },\n                    \"Tag\": \"AI\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-06-15 16:21:34\"\n        },\n        \"RequestId\": \"b78d57bf-7742-4048-80c1-11709aaf14bf\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -809,8 +809,8 @@
     "UpdateGateway": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n    \"Description\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ClusterId\": \"hijklmno-efgh-5678-ijkl-1234567890abi\",\n            \"CreatedAt\": 0,\n            \"Description\": \"123\",\n            \"GwId\": \"2b8d873*****************84a82f19\",\n            \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"Name\": \"you think who you are\",\n            \"Secret\": \"0634***********432\",\n            \"Status\": 0,\n            \"Version\": \"\",\n            \"ClusterName\": \"上海 1\"\n        },\n        \"RequestId\": \"daf400f1-17b7-440d-8caf-f60d7749362f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGateway\n<公共请求参数>\n\n{\n    \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n    \"Description\": \"网关3314\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ClusterId\": \"hijklmno-efgh-5678-ijkl-1234567890abi\",\n            \"CreatedAt\": 0,\n            \"Description\": \"网关3314\",\n            \"GwId\": \"2b8d873*****************84a82f19\",\n            \"GatewayId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"Name\": \"you think who you are\",\n            \"Secret\": \"0634***********432\",\n            \"Status\": 0,\n            \"Version\": \"\",\n            \"ClusterName\": \"上海 1\"\n        },\n        \"RequestId\": \"daf400f1-17b7-440d-8caf-f60d7749362f\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -832,7 +832,7 @@
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordBackupPlan\n<公共请求参数>\n\n{\n    \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n    \"Mod\": {\n        \"PlanName\": \"test-plan-update\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ChannelCount\": 0,\n            \"CreateAt\": \"2023-06-05 14:32:04\",\n            \"Describe\": \"test\",\n            \"LifeCycle\": {\n                \"Expiration\": 0,\n                \"Transition\": 0\n            },\n            \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"PlanName\": \"test-plan-update\",\n            \"Status\": 1,\n            \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n            \"UpdateAt\": \"2023-06-05 15:05:25\"\n        },\n        \"RequestId\": \"6428c72b-e6aa-47f2-9062-a24e35a69da6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ChannelCount\": 0,\n            \"CreateAt\": \"2023-06-05 14:32:04\",\n            \"Describe\": \"计划29\",\n            \"LifeCycle\": {\n                \"Expiration\": 0,\n                \"Transition\": 0\n            },\n            \"PlanId\": \"hijklmno-efgh-5678-ijkl-1234567890ab\",\n            \"PlanName\": \"test-plan-update\",\n            \"Status\": 1,\n            \"TemplateId\": \"abcdefgh-1234-5678-ijkl-1234567890ab\",\n            \"UpdateAt\": \"2023-06-05 15:05:25\"\n        },\n        \"RequestId\": \"6428c72b-e6aa-47f2-9062-a24e35a69da6\"\n    }\n}",
         "title": "成功"
       }
     ],

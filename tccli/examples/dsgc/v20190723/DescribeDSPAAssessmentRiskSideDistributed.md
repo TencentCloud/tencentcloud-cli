@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dsgc DescribeDSPAAssessmentRiskSideDistributed --cli-unfold-argument  \
-    --DspaId abc \
+    --DspaId dspa-001 \
     --TemplateId 1
 ```
 
@@ -17,18 +17,18 @@ Output:
         "RiskSideDistributed": [
             {
                 "AssessmentRiskSide": {
-                    "Key": "abc",
-                    "Value": 0
+                    "Key": "风险面1",
+                    "Value": 3
                 },
                 "AssessmentRisk": [
                     {
-                        "Key": "abc",
-                        "Value": 0
+                        "Key": "风险类型1",
+                        "Value": 2
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "test-001"
     }
 }
 ```

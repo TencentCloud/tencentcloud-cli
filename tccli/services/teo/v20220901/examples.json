@@ -98,12 +98,40 @@
         "title": "为指定配置组创建新版本"
       }
     ],
+    "CreateContentIdentifier": [
+      {
+        "document": "创建内容标识符，同时绑定标签。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateContentIdentifier\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"TagKey\": \"test\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"PlanId\": \"edgeone-37q0w7qali10\",\n    \"Description\": \"content-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ContentId\": \"eocontent-27q0p1bali16\",\n        \"RequestId\": \"3c140219-cff9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "创建内容标识符"
+      }
+    ],
     "CreateCustomizeErrorPage": [
       {
         "document": "创建自定义错误页面接口",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomizeErrorPage\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Name\": \"web防护自定义错误页面\",\n    \"Description\": \"web防护自定义错误页面\",\n    \"ContentType\": \"application/json\",\n    \"Content\": \"{\\\"title\\\":\\\"自定义错误页\\\", \\\"Content\\\":\\\"自定义错误页面内容\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"PageId\": \"p-2kplomhisdcb\",\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
         "title": "创建自定义错误页面接口"
+      }
+    ],
+    "CreateDnsRecord": [
+      {
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，创建一个记录名为 www.example.com，记录类型为 A，记录内容为1.2.3.4，缓存时间为60秒的 DNS 记录。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDnsRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Name\": \"www.example.com\",\n    \"Type\": \"A\",\n    \"Content\": \"1.2.3.4\",\n    \"TTL\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"RecordId\": \"record-225rcy8bw85g\"\n    }\n}",
+        "title": "创建 DNS 记录"
+      },
+      {
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，创建一个记录名为 www.example.com，记录类型为 A，记录内容为1.2.3.4，缓存时间为60秒，记录权重为100的 DNS 记录。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDnsRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Name\": \"www.example.com\",\n    \"Type\": \"A\",\n    \"Content\": \"1.2.3.4\",\n    \"TTL\": 60,\n    \"Weight\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"RecordId\": \"record-225rcy8bw85g\"\n    }\n}",
+        "title": "创建分配权重的 DNS 记录"
+      },
+      {
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，创建一个记录名为 www.example.com，记录类型为 A，解析线路为北京（CN.BJ），记录内容为1.2.3.4，缓存时间为60秒的 DNS 记录。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDnsRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Name\": \"www.example.com\",\n    \"Type\": \"A\",\n    \"Location\": \"CN.BJ\",\n    \"Content\": \"1.2.3.4\",\n    \"TTL\": 60\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"RecordId\": \"record-225rcy8bw85g\"\n    }\n}",
+        "title": "创建配置解析线路的 DNS 记录"
       }
     ],
     "CreateFunction": [
@@ -378,12 +406,28 @@
         "title": "删除应用代理规则"
       }
     ],
+    "DeleteContentIdentifier": [
+      {
+        "document": "删除内容标识符 eocontent-27q0p0bali26。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteContentIdentifier\n<公共请求参数>\n\n{\n    \"ContentId\": \"eocontent-27q0p0bali26\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除内容标识符"
+      }
+    ],
     "DeleteCustomErrorPage": [
       {
         "document": "删除自定义错误页面接口",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
         "title": "删除自定义错误页面接口"
+      }
+    ],
+    "DeleteDnsRecords": [
+      {
+        "document": "在 ZoneId 为 zone-25ryyvog1qih 的站点下，删除记录 ID 为 record-25ryzh92h8qh 和 record-3suf7slrsobg 的 DNS 记录。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDnsRecords\n<公共请求参数>\n\n{\n    \"RecordIds\": [\n        \"record-25ryzh92h8qh\",\n        \"record-3suf7slrsobg\"\n    ],\n    \"ZoneId\": \"zone-25ryyvog1qih\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "title": "删除 DNS 记录"
       }
     ],
     "DeleteFunction": [
@@ -538,6 +582,14 @@
         "title": "查询版本列表"
       }
     ],
+    "DescribeContentIdentifiers": [
+      {
+        "document": "指定 ID 查询内容标识符",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContentIdentifiers\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"content-id\",\n            \"Values\": [\n                \"eocontent-27q0p0sali16\"\n            ],\n            \"Fuzzy\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b341-907877d6fb03\",\n        \"ContentIdentifiers\": [\n            {\n                \"ContentId\": \"eocontent-27q0p0sali16\",\n                \"Description\": \"content-test\",\n                \"PlanId\": \"edgeone-2ycvs8ml4zpq\",\n                \"ReferenceCount\": 10,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"ct\"\n                    }\n                ],\n                \"CreatedOn\": \"2023-10-05T15:30:45Z\",\n                \"ModifiedOn\": \"2023-10-05T15:30:45Z\",\n                \"DeletedOn\": null,\n                \"Status\": \"active\"\n            }\n        ]\n    }\n}",
+        "title": "查询内容标识符信息"
+      }
+    ],
     "DescribeContentQuota": [
       {
         "document": "",
@@ -592,6 +644,26 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomErrorPages\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3swlomhssdcb\",\n    \"EnvId\": \"env-2kpeomhisdwb\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Records\": [\n            {\n                \"ConfigGroupVersionInfos\": [\n                    {\n                        \"VersionId\": \"ver-2kplomhiqdcb\",\n                        \"VersionNumber\": \"1.0\",\n                        \"GroupId\": \"cg-2kplomhisdcb\",\n                        \"GroupType\": \"l7_acceleration\",\n                        \"Description\": \"测试版本\",\n                        \"Status\": \"active\",\n                        \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n                    }\n                ],\n                \"RecordId\": \"dr-2nvehs3fa40u\",\n                \"DeployTime\": \"2023-09-22T00:00:00+00:00\",\n                \"Status\": \"success\",\n                \"Message\": \"发布成功\"\n            }\n        ],\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e0-1c2db5e53631\"\n    }\n}",
         "title": "查询版本发布历史"
+      }
+    ],
+    "DescribeDnsRecords": [
+      {
+        "document": "在 ZoneId 为 zone-2zo8myp3av8i 的站点下，查询记录 ID 为 record-3277epj0rm2y 的 DNS 记录列表，并且按照记录创建时间进行降序排序。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsRecords\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2zo8myp3av8i\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Filters\": [\n        {\n            \"Fuzzy\": false,\n            \"Values\": [\n                \"record-3277epj0rm2y\"\n            ],\n            \"Name\": \"id\"\n        }\n    ],\n    \"SortBy\": \"created-on\",\n    \"SortOrder\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"DnsRecords\": [\n            {\n                \"ZoneId\": \"zone-2zo8myp3av8i\",\n                \"RecordId\": \"record-3277epj0rm2y\",\n                \"Name\": \"test.example.com\",\n                \"Type\": \"A\",\n                \"Location\": \"Default\",\n                \"Content\": \"1.1.1.1\",\n                \"TTL\": 300,\n                \"Weight\": -1,\n                \"Priority\": 5,\n                \"Status\": \"enable\",\n                \"CreatedOn\": \"2024-09-18T05:03:46Z\",\n                \"ModifiedOn\": \"2024-09-18T05:03:46Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询指定记录 ID 的 DNS 记录列表"
+      },
+      {
+        "document": "在 ZoneId 为 zone-2zo8myp3av8i 的站点下，模糊查询记录名为 example  的 DNS 记录列表，并且按照记录名进行升序排序。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsRecords\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2zo8myp3av8i\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"example\"\n            ],\n            \"Name\": \"name\"\n        }\n    ],\n    \"SortBy\": \"name\",\n    \"SortOrder\": \"asc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"DnsRecords\": [\n            {\n                \"ZoneId\": \"zone-2zo8myp3av8i\",\n                \"RecordId\": \"record-3277epj0rm2y\",\n                \"Name\": \"test.example.com\",\n                \"Type\": \"A\",\n                \"Location\": \"Default\",\n                \"Content\": \"1.1.1.1\",\n                \"TTL\": 300,\n                \"Weight\": 40,\n                \"Priority\": 5,\n                \"Status\": \"enable\",\n                \"CreatedOn\": \"2024-09-18T05:03:46Z\",\n                \"ModifiedOn\": \"2024-09-18T05:03:46Z\"\n            },\n            {\n                \"ZoneId\": \"zone-2zo8myp3av8i\",\n                \"RecordId\": \"record-3277epj0rm2y\",\n                \"Name\": \"test.example.com\",\n                \"Type\": \"A\",\n                \"Location\": \"Default\",\n                \"Content\": \"2.2.2.2\",\n                \"TTL\": 300,\n                \"Weight\": 60,\n                \"Priority\": 5,\n                \"Status\": \"enable\",\n                \"CreatedOn\": \"2024-09-18T05:03:46Z\",\n                \"ModifiedOn\": \"2024-09-18T05:03:46Z\"\n            }\n        ]\n    }\n}",
+        "title": "模糊查询指定记录名的 DNS 记录列表"
+      },
+      {
+        "document": "在 ZoneId 为 zone-2zo8myp3av8i 的站点下，查询记录类型为 CNAME  的 DNS 记录列表，并且按照记录内容进行升序排序。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsRecords\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2zo8myp3av8i\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Filters\": [\n        {\n            \"Fuzzy\": false,\n            \"Values\": [\n                \"CNAME\"\n            ],\n            \"Name\": \"type\"\n        }\n    ],\n    \"SortBy\": \"content\",\n    \"SortOrder\": \"asc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"DnsRecords\": [\n            {\n                \"ZoneId\": \"zone-2zo8myp3av8i\",\n                \"RecordId\": \"record-3277epj0rm2y\",\n                \"Name\": \"test.example.com\",\n                \"Type\": \"CNAME\",\n                \"Location\": \"CN.BJ\",\n                \"Content\": \"test1.eo.dnse2.com\",\n                \"TTL\": 300,\n                \"Weight\": -1,\n                \"Priority\": 0,\n                \"Status\": \"enable\",\n                \"CreatedOn\": \"2024-09-18T05:03:46Z\",\n                \"ModifiedOn\": \"2024-09-18T05:03:46Z\"\n            },\n            {\n                \"ZoneId\": \"zone-2zo8myp3av8i\",\n                \"RecordId\": \"record-3277epj0rm2y\",\n                \"Name\": \"test.example.com\",\n                \"Type\": \"CNAME\",\n                \"Location\": \"CN.FJ\",\n                \"Content\": \"test2.eo.dnse2.com\",\n                \"TTL\": 300,\n                \"Weight\": -1,\n                \"Priority\": 0,\n                \"Status\": \"enable\",\n                \"CreatedOn\": \"2024-09-18T05:03:46Z\",\n                \"ModifiedOn\": \"2024-09-18T05:03:46Z\"\n            }\n        ]\n    }\n}",
+        "title": "查询指定记录类型的 DNS 记录列表"
       }
     ],
     "DescribeEnvironments": [
@@ -1034,12 +1106,48 @@
         "title": "修改应用代理的状态"
       }
     ],
+    "ModifyContentIdentifier": [
+      {
+        "document": "将 eocontent-27q0p0bbli16 的内容标识符的描述修改为 content-new。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyContentIdentifier\n<公共请求参数>\n\n{\n    \"ContentId\": \"eocontent-27q0p0bbli16\",\n    \"Description\": \"content-new\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3b140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "修改内容标识符描述"
+      }
+    ],
     "ModifyCustomErrorPage": [
       {
         "document": "修改自定义错误页面。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Name\": \"web防护自定义错误页面\",\n    \"Description\": \"web防护自定义错误页面\",\n    \"ContentType\": \"application/json\",\n    \"Content\": \"{\\\"title\\\": \\\"自定义错误页面title\\\",\\\"content\\\": \\\"自定义错误页面内容\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
         "title": "修改自定义错误页面"
+      }
+    ],
+    "ModifyDnsRecords": [
+      {
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，将记录 ID 为 record-3d5dg39c 的 DNS 记录的记录名改成 eo-test1.com，记录类型改成 CNAME，记录内容改成 eo-test1.c4games.com.eo.dnse2.com；将记录 ID 为 record-gkd9gyrv 的 DNS 记录的记录名改成 eo-test2.com，记录类型改成 A，记录内容改成 1.2.3.4。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnsRecords\n<公共请求参数>\n\n{\n    \"DnsRecords\": [\n        {\n            \"RecordId\": \"record-3d5dg39c\",\n            \"Name\": \"eo-test1.com\",\n            \"Type\": \"CNAME\",\n            \"Content\": \"eo-test1.c4games.com.eo.dnse2.com\"\n        },\n        {\n            \"RecordId\": \"record-gkd9gyrv\",\n            \"Name\": \"eo-test2.com\",\n            \"Type\": \"A\",\n            \"Content\": \"1.2.3.4\"\n        }\n    ],\n    \"ZoneId\": \"zone-20hzkd4rdmy0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d08bed0d-15bf-4d65-ab56-906aee0c845\"\n    }\n}",
+        "title": "批量修改指定记录 ID 的 DNS 记录"
+      },
+      {
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，将记录 ID 为 record-3d5dg39c 的 DNS 记录的记录权重改成40；将记录 ID 为 record-gkd9gyrv 的 DNS 记录的记录权重改成60。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnsRecords\n<公共请求参数>\n\n{\n    \"DnsRecords\": [\n        {\n            \"RecordId\": \"record-3d5dg39c\",\n            \"Weight\": 40\n        },\n        {\n            \"RecordId\": \"record-gkd9gyrv\",\n            \"Weight\": 60\n        }\n    ],\n    \"ZoneId\": \"zone-20hzkd4rdmy0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d08bed0d-15bf-4d65-ab56-906aee0c845\"\n    }\n}",
+        "title": "批量修改指定记录 ID 的 DNS 记录的记录权重"
+      },
+      {
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，将记录 ID 为 record-3d5dg39c 的 DNS 记录的记录解析线路改成北京（CN.BJ），记录内容改成 eo-test1.c4games.com.eo.dnse2.com；将记录 ID 为 record-gkd9gyrv 的 DNS 记录的记录解析线路改成福建（CN.FJ），记录内容改成 eo-test2.c4games.com.eo.dnse2.com。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnsRecords\n<公共请求参数>\n\n{\n    \"DnsRecords\": [\n        {\n            \"RecordId\": \"record-3d5dg39c\",\n            \"Location\": \"CN.BJ\",\n            \"Content\": \"eo-test1.c4games.com.eo.dnse2.com\"\n        },\n        {\n            \"RecordId\": \"record-gkd9gyrv\",\n            \"Location\": \"CN.FJ\",\n            \"Content\": \"eo-test2.c4games.com.eo.dnse2.com\"\n        }\n    ],\n    \"ZoneId\": \"zone-20hzkd4rdmy0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d08bed0d-15bf-4d65-ab56-906aee0c845\"\n    }\n}",
+        "title": "批量修改指定记录 ID 的 DNS 记录的解析线路和记录内容"
+      }
+    ],
+    "ModifyDnsRecordsStatus": [
+      {
+        "document": "在 ZoneId 为 zone-25ryyvog1qih 的站点下，修改记录ID 为 record-25ryzh92h8qh 和 record-dldu75sgz4r1 的 DNS 记录状态为启用，修改记录ID 为 record-gkd9gyrvk8d7 和 record-lgubhs6rf9s3 的 DNS 记录状态为停用。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDnsRecordsStatus\n<公共请求参数>\n\n{\n    \"RecordsToEnable\": [\n        \"record-25ryzh92h8qh\",\n        \"record-dldu75sgz4r1\"\n    ],\n    \"RecordsToDisable\": [\n        \"record-gkd9gyrvk8d7\",\n        \"record-lgubhs6rf9s3\"\n    ],\n    \"ZoneId\": \"zone-25ryyvog1qih\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"952c708d-abaf-464c-84cf-d1447887cf65\"\n    }\n}",
+        "title": "批量修改 DNS 记录状态"
       }
     ],
     "ModifyFunction": [

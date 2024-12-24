@@ -25,7 +25,7 @@ Output:
                 ],
                 "Storage": {
                     "StorageName": "audit-cos",
-                    "StoragePrefix": "test",
+                    "StoragePrefix": "cloudtrail",
                     "StorageRegion": "ap-guangzhou",
                     "StorageType": "cos"
                 },

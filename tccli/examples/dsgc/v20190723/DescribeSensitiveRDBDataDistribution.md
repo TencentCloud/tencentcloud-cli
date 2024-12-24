@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 数据资产报告-查询rdb的敏感数据分布**
 
 接口调用示例
 
@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dsgc DescribeSensitiveRDBDataDistribution --cli-unfold-argument  \
-    --DspaId abc \
+    --DspaId dspa-a1b2c3 \
     --ComplianceId 0 \
-    --AssetList.0.DataSourceType abc \
-    --AssetList.0.DataSourceInfo.0.DataSourceId abc \
-    --AssetList.0.DataSourceInfo.0.BindList abc
+    --AssetList.0.DataSourceType cdb \
+    --AssetList.0.DataSourceInfo.0.DataSourceId cdb-a1b2c3 \
+    --AssetList.0.DataSourceInfo.0.BindList asset
 ```
 
 Output: 
@@ -19,27 +19,27 @@ Output:
     "Response": {
         "LevelDistribution": [
             {
-                "Key": "abc",
+                "Key": "high",
                 "Value": 0
             }
         ],
         "CategoryDistribution": [
             {
-                "Key": "abc",
-                "Value": 0
+                "Key": "个人信息",
+                "Value": 5
             }
         ],
         "RuleDistribution": [
             {
-                "RuleId": 0,
-                "RuleName": "abc",
-                "LevelId": 0,
-                "LevelName": "abc",
-                "RuleCnt": 0
+                "RuleId": 1,
+                "RuleName": "个人信息泄漏",
+                "LevelId": 3,
+                "LevelName": "高风险",
+                "RuleCnt": 2
             }
         ],
         "SensitiveDataNum": 0,
-        "RequestId": "abc"
+        "RequestId": "9f266ea1-30b1-4941-b513-417660be5e64"
     }
 }
 ```

@@ -805,7 +805,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "系统版本",
           "example": "21.8.12.29",
           "member": "string",
           "name": "ProductVersion",
@@ -851,7 +851,7 @@
         {
           "disabled": false,
           "document": "日志主题ID",
-          "example": "xx",
+          "example": "无",
           "member": "string",
           "name": "ClsLogSetId",
           "required": false,
@@ -868,8 +868,8 @@
         },
         {
           "disabled": false,
-          "document": "是否是裸盘挂载",
-          "example": "xx",
+          "document": "是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。",
+          "example": "0",
           "member": "int64",
           "name": "MountDiskType",
           "required": false,
@@ -931,7 +931,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "Not enough memory",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -3963,7 +3963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份桶列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"cos-bucket\"",
           "member": "string",
           "name": "CosBucketName",

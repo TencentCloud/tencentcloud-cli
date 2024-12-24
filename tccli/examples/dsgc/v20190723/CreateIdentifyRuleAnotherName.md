@@ -1,24 +1,24 @@
-**Example 1: xx**
+**Example 1: 示例**
 
-xx
+示例
 
 Input: 
 
 ```
 tccli dsgc CreateIdentifyRuleAnotherName --cli-unfold-argument  \
-    --DspaId abc \
-    --ComplianceId 0 \
-    --CategoryId 0 \
-    --RuleId 0 \
-    --RuleName abc \
-    --AnotherName abc
+    --DspaId dspa-abcd1234 \
+    --ComplianceId 100118 \
+    --CategoryId 1 \
+    --RuleId 128 \
+    --RuleName 身份证校验 \
+    --AnotherName id-card
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "test-002"
     }
 }
 ```

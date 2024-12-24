@@ -3807,7 +3807,7 @@
         {
           "disabled": false,
           "document": "EIP名称，用于申请EIP时用户自定义该EIP的个性化名称，默认值：未命名。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "AddressName",
           "required": false,
@@ -3879,7 +3879,7 @@
         {
           "disabled": false,
           "document": "弹性公网IPv6网络出口，可选值：\n\n- CENTER_EGRESS_1：中心出口一\n- CENTER_EGRESS_2：中心出口二\n- CENTER_EGRESS_3：中心出口三\n注意：不同运营商或资源类型对应的网络出口需要联系产品开白\n\n默认值：CENTER_EGRESS_1。",
-          "example": "无",
+          "example": "center_egress1",
           "member": "string",
           "name": "Egress",
           "required": false,
@@ -5185,7 +5185,7 @@
         {
           "disabled": false,
           "document": "云联网唯一ID",
-          "example": "-",
+          "example": "ccn-c21f68nb",
           "member": "string",
           "name": "CcnId",
           "output_required": true,
@@ -5195,7 +5195,7 @@
         {
           "disabled": false,
           "document": "云联网名称",
-          "example": "-",
+          "example": "ccn-01",
           "member": "string",
           "name": "CcnName",
           "output_required": true,
@@ -5205,7 +5205,7 @@
         {
           "disabled": false,
           "document": "云联网描述信息",
-          "example": "-",
+          "example": "ccn",
           "member": "string",
           "name": "CcnDescription",
           "output_required": true,
@@ -5215,7 +5215,7 @@
         {
           "disabled": false,
           "document": "关联实例数量",
-          "example": "-",
+          "example": "0",
           "member": "uint64",
           "name": "InstanceCount",
           "output_required": true,
@@ -5225,7 +5225,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "-",
+          "example": "2021-09-15 11:41:35",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
@@ -5254,28 +5254,28 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，PREPAID为预付费，POSTPAID为后付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费类型，PREPAID为预付费，POSTPAID为后付费。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。",
           "example": "INTER_REGION_LIMIT",
           "member": "string",
           "name": "BandwidthLimitType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签键值对。",
-          "example": "-",
+          "example": "[{'Key': 'key', 'Value': 'value'}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -5294,123 +5294,123 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的路由表个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例关联的路由表个数。",
           "example": "0",
           "member": "uint64",
           "name": "RouteTableCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启云联网多路由表特性。`False`：未开启，`True`：开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启云联网多路由表特性。`False`：未开启，`True`：开启。",
           "example": "True",
           "member": "bool",
           "name": "RouteTableFlag",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "`true`：实例已被封禁，流量不通，`false`:解封禁。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "`true`：实例已被封禁，流量不通，`false`:解封禁。",
+          "example": "False",
           "member": "bool",
           "name": "IsSecurityLock",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启云联网路由传播策略。`False` 未开启，`True` 开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启云联网路由传播策略。`False` 未开启，`True` 开启。",
           "example": "True",
           "member": "bool",
           "name": "RouteBroadcastPolicyFlag",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启等价路由功能。`False` 未开启，`True` 开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启等价路由功能。`False` 未开启，`True` 开启。",
           "example": "True",
           "member": "bool",
           "name": "RouteECMPFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启路由重叠功能。`False` 未开启，`True` 开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启路由重叠功能。`False` 未开启，`True` 开启。",
           "example": "True",
           "member": "bool",
           "name": "RouteOverlapFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启QOS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启QOS。",
           "example": "True",
           "member": "bool",
           "name": "TrafficMarkingPolicyFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启路由表选择策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启路由表选择策略。",
           "example": "True",
           "member": "bool",
           "name": "RouteSelectPolicyFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启二层云联网通道。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启二层云联网通道。",
           "example": "True",
           "member": "bool",
           "name": "DirectConnectAccelerateChannelFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否支持ipv6路由表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持ipv6路由表",
           "example": "True",
           "member": "bool",
           "name": "Ipv6Flag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否支持路由表聚合策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持路由表聚合策略",
           "example": "True",
           "member": "bool",
           "name": "MrtbAggregatePolicyFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否支持策略值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否支持策略值",
           "example": "True",
           "member": "bool",
           "name": "MrtbPolicyValueFlag",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7460,7 +7460,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "无",
+          "example": "[{'Key': 'name', 'Value': '123'}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -7475,9 +7475,10 @@
         {
           "disabled": false,
           "document": "云联网（CCN）对象。",
-          "example": "无",
+          "example": "{'CcnId': 'ccn-xxxxxxxx', 'CcnName': 'ccn', 'CcnDescription': 'ccn', 'InstanceCount': 0, 'CreateTime': '', 'State': 'AVAILABLE', 'QosLevel': 'PT', 'InstanceChargeType': 'POSTPAID', 'BandwidthLimitType': 'OUTER_REGION_LIMIT', 'RoutePriorityFlag': True}",
           "member": "CCN",
           "name": "Ccn",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15782,7 +15783,7 @@
         {
           "disabled": false,
           "document": "符合条件的 IPv6 数量。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -25874,7 +25875,7 @@
         {
           "disabled": false,
           "document": "弹性公网IPv6地址名称",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "IPv6AddressName",
           "required": false,

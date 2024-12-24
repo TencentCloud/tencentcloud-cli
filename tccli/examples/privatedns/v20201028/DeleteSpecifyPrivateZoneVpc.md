@@ -6,34 +6,35 @@ Input:
 
 ```
 tccli privatedns DeleteSpecifyPrivateZoneVpc --cli-unfold-argument  \
-    --ZoneId abc \
-    --VpcSet.0.UniqVpcId vpc-xxxxxxxx \
+    --ZoneId zone-sdasd12d \
+    --VpcSet.0.UniqVpcId vpc-dae2312 \
     --VpcSet.0.Region ap-guangzhou \
-    --AccountVpcSet.0.UniqVpcId vpc-xxxxxxxx \
+    --AccountVpcSet.0.UniqVpcId vpc-2314dae \
     --AccountVpcSet.0.Region ap-gangzhou \
-    --AccountVpcSet.0.Uin 888774747 \
-    --AccountVpcSet.0.VpcName abc
+    --AccountVpcSet.0.Uin 1000032110 \
+    --AccountVpcSet.0.VpcName vpc-testname
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ZoneId": "abc",
+        "ZoneId": "zone-sdasd12d",
         "VpcSet": [
             {
-                "UniqVpcId": "abc",
-                "Region": "abc"
+                "UniqVpcId": "vpc-dae2312",
+                "Region": "ap-guangzhou"
             }
         ],
         "AccountVpcSet": [
             {
-                "Uin": "123456789",
-                "UniqVpcId": "vpc-xxxxxxx",
-                "Region": "ap-guangzhou"
+                "Uin": "1000032110",
+                "UniqVpcId": "vpc-2314dae",
+                "Region": "ap-guangzhou",
+                "VpcName": "vpc-testname"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "5cd964e2-b5e6-8a35-9ce5a1085860c845"
     }
 }
 ```

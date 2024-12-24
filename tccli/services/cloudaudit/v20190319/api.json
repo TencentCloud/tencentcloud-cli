@@ -207,46 +207,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "跟踪集状态，1：开启，0：关闭",
+          "document": "跟踪集状态，1：开启，0：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "AuditStatus",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "COS存储桶名称",
-          "example": "xx",
+          "document": "COS存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gz_bucket",
           "member": "string",
           "name": "CosBucketName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "跟踪集名称",
-          "example": "xx",
+          "document": "跟踪集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "audit_track",
           "member": "string",
           "name": "AuditName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "日志前缀",
-          "example": "xx",
+          "document": "日志前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cloudtrail",
           "member": "string",
           "name": "LogFilePrefix",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CmqRegionInfo": {
       "document": "cmq地域信息",
@@ -799,7 +803,7 @@
         {
           "disabled": false,
           "document": "跟踪集列表",
-          "example": "*",
+          "example": "[{}]",
           "member": "Tracks",
           "name": "Tracks",
           "output_required": true,
@@ -1233,10 +1237,10 @@
         {
           "disabled": false,
           "document": "查询跟踪集概要集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": " {  \"AuditStatus\": 0, \"CosBucketName\": \"test bucket\",\"AuditName\": \"test\", \"LogFilePrefix\": \"audit\" }  ]",
           "member": "AuditSummary",
           "name": "AuditSummarys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1292,7 +1296,7 @@
         {
           "disabled": false,
           "document": "站点类型。zh表示中国区，en表示国际区。默认中国区。",
-          "example": "xx",
+          "example": "zh",
           "member": "string",
           "name": "WebsiteType",
           "required": false,
@@ -1307,7 +1311,7 @@
         {
           "disabled": false,
           "document": "操作审计支持的cos可用区",
-          "example": "xx",
+          "example": "[{}]",
           "member": "CosRegionInfo",
           "name": "EnableRegions",
           "output_required": true,

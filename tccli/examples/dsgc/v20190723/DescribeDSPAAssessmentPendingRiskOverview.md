@@ -1,12 +1,12 @@
-**Example 1: 示例**
+**Example 1: 查询待处理风险统计数**
 
-xx
+
 
 Input: 
 
 ```
 tccli dsgc DescribeDSPAAssessmentPendingRiskOverview --cli-unfold-argument  \
-    --DspaId abc \
+    --DspaId dspa-2mlc8asd \
     --TemplateId 2
 ```
 
@@ -14,10 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "PendingRiskCount": 0,
         "AffectedAssetCount": 0,
         "WeekRatio": 0,
-        "RequestId": "abc"
+        "PendingRiskCount": 0,
+        "RequestId": "2b0de1a7-b984-490b-b616-bbc67668e76a"
     }
 }
 ```

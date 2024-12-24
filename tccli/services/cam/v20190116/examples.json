@@ -107,7 +107,7 @@
     "CreateRole": [
       {
         "document": "以下示例将创建一个以日志服务和操作审计为载体的角色",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=abc\n&<公共请求参数>",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateRole\n&RoleName=test_1234544\n&PolicyDocument=%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22action%22%3A%22name%2Fsts%3AAssumeRole%22%2C%22effect%22%3A%22allow%22%2C%22principal%22%3A%7B%22service%22%3A%5B%22cloudaudit.cloud.tencent.com%22%2C%22cls.cloud.tencent.com%22%5D%7D%7D%5D%7D\n&Description=adminRole remark\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RoleId\": \"123456789000\",\n        \"RequestId\": \"0bac591a-6cc7-4e9d-8d01-74618f1a9611\"\n    }\n}",
         "title": "创建一个角色"
       }
@@ -123,8 +123,8 @@
     "CreateServiceLinkedRole": [
       {
         "document": "",
-        "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\n&QCSServiceName.0=ccs.qcloud.com\n&CustomSuffix=forTest\n&Description=ccsLinkedRole\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RoleId\": \"4611686018427411525\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
+        "input": "https://cam.tencentcloudapi.com/?Action=CreateServiceLinkedRole\n&QCSServiceName.0=ccs.qcloud.com\n&CustomSuffix=forAdmin\n&Description=ccsLinkedRole\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RoleId\": \"4611**************1\",\n        \"RequestId\": \"c3da1c1c-df35-467d-9335-99c68d993e0a\"\n    }\n}",
         "title": "创建服务相关角色"
       }
     ],
@@ -584,7 +584,7 @@
       {
         "document": "",
         "input": "https://cam.tencentcloudapi.com/?Action=ListWeChatWorkSubAccounts\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 100,\n        \"Data\": [\n            {\n                \"Uin\": 100000546533,\n                \"Name\": \"test124\",\n                \"Uid\": 1001774,\n                \"Remark\": \"test\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"10086\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"123@qq.com\",\n                \"WeChatWorkUserId\": \"xxx\",\n                \"CreateTime\": \"2020-10-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 100,\n        \"Data\": [\n            {\n                \"Uin\": 100000546533,\n                \"Name\": \"test124\",\n                \"Uid\": 1001774,\n                \"Remark\": \"account_test\",\n                \"ConsoleLogin\": 1,\n                \"PhoneNum\": \"10086\",\n                \"CountryCode\": \"86\",\n                \"Email\": \"123@qq.com\",\n                \"WeChatWorkUserId\": \"2343455\",\n                \"CreateTime\": \"2020-10-10 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"33674182-e53d-416b-b6ce-bd7e7536b5d6\"\n    }\n}",
         "title": "拉取企业微信子用户"
       }
     ],

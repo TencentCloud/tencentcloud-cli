@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DetectPet --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli tiia DetectPet --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 
@@ -43,10 +43,10 @@ Output:
                 "Score": 99,
                 "Name": "cat",
                 "Location": {
-                    "Y": 0,
-                    "X": 0,
-                    "Height": 0,
-                    "Width": 0
+                    "Y": 121,
+                    "X": 36,
+                    "Height": 203,
+                    "Width": 334
                 }
             }
         ]
@@ -62,7 +62,7 @@ Input:
 
 ```
 tccli tiia DetectPet --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 

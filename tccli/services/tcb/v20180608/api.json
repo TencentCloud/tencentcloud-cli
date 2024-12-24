@@ -9612,17 +9612,17 @@
           "example": "env-xxxxxx",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "tcb产品套餐ID，参考DescribePackages接口的返回值。",
-          "example": "default",
+          "example": "Default",
           "member": "string",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9632,7 +9632,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsAutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9642,7 +9642,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9652,7 +9652,7 @@
           "example": "PREPAYMENT",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9662,7 +9662,7 @@
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "IsolatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9672,7 +9672,7 @@
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9682,7 +9682,7 @@
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9692,7 +9692,7 @@
           "example": "2022-01-01 12:34:56",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9702,7 +9702,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsAlwaysFree",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9712,7 +9712,7 @@
           "example": "miniapp",
           "member": "string",
           "name": "PaymentChannel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9722,7 +9722,7 @@
           "example": "无",
           "member": "OrderInfo",
           "name": "OrderInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9732,7 +9732,7 @@
           "example": "basic",
           "member": "string",
           "name": "FreeQuota",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9742,7 +9742,7 @@
           "example": "无",
           "member": "bool",
           "name": "EnableOverrun",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -9752,9 +9752,29 @@
           "example": "baas",
           "member": "string",
           "name": "ExtPackageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否付费期环境，可取值：yes/no。",
+          "example": "yes",
+          "member": "string",
+          "name": "EnvCharged",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已激活，可取值：yes/no。",
+          "example": "yes",
+          "member": "string",
+          "name": "EnvActivated",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

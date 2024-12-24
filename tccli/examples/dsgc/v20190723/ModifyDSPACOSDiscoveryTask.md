@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli dsgc ModifyDSPACOSDiscoveryTask --cli-unfold-argument  \
-    --DspaId xx \
+    --DspaId dspa-a1b2c3 \
     --Enable 0 \
-    --Name xx \
+    --Name 北京cos-csv扫描 \
     --ComplianceGroupIds 1 \
     --GeneralRuleSetEnable 0 \
     --Period 0 \
-    --TimingStartTime xx \
+    --TimingStartTime 2022-09-10 00:00:00 \
     --FileSizeLimit 1000 \
     --TaskId 1 \
     --Plan 0 \
     --FileTypes .csv .txt \
-    --Description xx
+    --Description 北京cos-csv扫描
 ```
 
 Output: 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dsgc DescribeSensitiveCOSDataDistribution --cli-unfold-argument  \
-    --DspaId abc \
-    --ComplianceId 0 \
-    --AssetList.0.DataSourceType abc \
-    --AssetList.0.DataSourceInfo.0.DataSourceId abc \
-    --AssetList.0.DataSourceInfo.0.BindList abc
+    --DspaId dspa-abcd1234 \
+    --ComplianceId 1 \
+    --AssetList.0.DataSourceType 1 \
+    --AssetList.0.DataSourceInfo.0.DataSourceId cdb-ab2352sd \
+    --AssetList.0.DataSourceInfo.0.BindList lxldb01
 ```
 
 Output: 
@@ -19,27 +19,27 @@ Output:
     "Response": {
         "LevelDistribution": [
             {
-                "Key": "abc",
-                "Value": 0
+                "Key": "高",
+                "Value": 10
             }
         ],
         "CategoryDistribution": [
             {
-                "Key": "abc",
-                "Value": 0
+                "Key": "个人信息",
+                "Value": 30
             }
         ],
         "RuleDistribution": [
             {
-                "RuleId": 0,
-                "RuleName": "abc",
-                "LevelId": 0,
-                "LevelName": "abc",
-                "RuleCnt": 0
+                "RuleId": 106,
+                "RuleName": "身份证",
+                "LevelId": 102,
+                "LevelName": "高",
+                "RuleCnt": 3
             }
         ],
-        "SensitiveDataNum": 0,
-        "RequestId": "abc"
+        "SensitiveDataNum": 9,
+        "RequestId": "fagxc-23rs-f"
     }
 }
 ```

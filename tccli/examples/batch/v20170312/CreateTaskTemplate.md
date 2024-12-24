@@ -7,7 +7,7 @@ Input:
 ```
 tccli batch CreateTaskTemplate --cli-unfold-argument  \
     --TaskTemplateName A \
-    --TaskTemplateDescription test \
+    --TaskTemplateDescription demo_task_template \
     --TaskTemplateInfo.TaskName A \
     --TaskTemplateInfo.TaskInstanceNum 1 \
     --TaskTemplateInfo.Application.DeliveryForm LOCAL \

@@ -695,7 +695,7 @@
     "ModifyCloudProductLogTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: ModifyCloudProductLogTask\n      <公共请求参数>\n      \n    {\n  \"InstanceId\": \"ins-r8hr2upy\",\n  \"AssumerName\": \"cls\",\n  \"LogType\": \"default\",\n  \"CloudProductRegion\": \"ap-guangzhou\",\n  \"Extend\": \"{}\"\n}",
+        "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: ModifyCloudProductLogTask\n      <公共请求参数>\n      \n    {\n  \"InstanceId\": \"ins-r8hr2upy\",\n  \"AssumerName\": \"cls\",\n  \"LogType\": \"default\",\n  \"CloudProductRegion\": \"ap-guangzhou\",\n  \"Extend\": \"{\\\"ServiceName\\\":[\\\"HDFS\\\",\\\"KNOX\\\",\\\"YARN\\\",\\\"ZOOKEEPER\\\"],\\\"Policy\\\":0}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18687552-8133-4b7a-8e71-a4c646401ce9\"\n    }\n}",
         "title": "修改云产品日志投递任务"
       }

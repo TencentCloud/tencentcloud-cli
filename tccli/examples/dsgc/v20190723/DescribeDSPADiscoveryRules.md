@@ -1,15 +1,15 @@
 **Example 1: 获取分类分级规则列表**
 
-xx
+
 
 Input: 
 
 ```
 tccli dsgc DescribeDSPADiscoveryRules --cli-unfold-argument  \
-    --DspaId casb_1 \
+    --DspaId dspa-2asd28ax \
     --RuleId 1 \
     --Limit 10 \
-    --Name test_rule \
+    --Name 姓名 \
     --Offset 0
 ```
 
@@ -17,44 +17,57 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "Items": [
             {
-                "RuleId": 0,
-                "Name": "abc",
-                "Description": "abc",
-                "Source": 0,
+                "RuleId": 1,
+                "Name": "账户余额",
+                "Description": "账户余额",
+                "Source": 1,
                 "Status": 1,
                 "RDBRules": {
                     "Status": 0,
-                    "MatchOperator": "abc",
+                    "MatchOperator": "or",
                     "MetaRule": {
-                        "Operator": "abc",
+                        "Operator": "and",
                         "Contents": [
                             {
-                                "RuleType": "abc",
-                                "RuleContent": "abc",
+                                "RuleType": "keyword",
+                                "RuleContent": "账户|Account",
                                 "ExtendParameters": [
                                     {
-                                        "Name": "abc",
-                                        "Value": "abc"
+                                        "Name": "IsFullWordMatch",
+                                        "Value": "false"
+                                    },
+                                    {
+                                        "Name": "IsIgnoreCase",
+                                        "Value": "true"
+                                    }
+                                ]
+                            },
+                            {
+                                "RuleType": "keyword",
+                                "RuleContent": "余额|Balance",
+                                "ExtendParameters": [
+                                    {
+                                        "Name": "IsFullWordMatch",
+                                        "Value": "false"
+                                    },
+                                    {
+                                        "Name": "IsIgnoreCase",
+                                        "Value": "true"
                                     }
                                 ]
                             }
                         ]
                     },
                     "ContentRule": {
-                        "Operator": "abc",
+                        "Operator": "or",
                         "Contents": [
                             {
-                                "RuleType": "abc",
-                                "RuleContent": "abc",
-                                "ExtendParameters": [
-                                    {
-                                        "Name": "abc",
-                                        "Value": "abc"
-                                    }
-                                ]
+                                "RuleType": "regex",
+                                "RuleContent": "^(((¥|\\$)?(0|(([0]|([1-9][0-9]*(,\\d{3})*))\\.\\d{1,2}))(yuan|.?元)?)|(人民币)?([圆角分零壹贰叁肆伍陆柒捌玖拾佰仟万亿]+[圆角分]))$",
+                                "ExtendParameters": null
                             }
                         ]
                     }
@@ -62,37 +75,44 @@ Output:
                 "COSRules": {
                     "Status": 0,
                     "RegexRule": {
-                        "Operator": "abc",
+                        "Operator": "or",
                         "Contents": [
                             {
-                                "RuleContent": "abc",
+                                "RuleContent": "(?<=\\W)(((¥|\\$)?(0|(([0]|([1-9][0-9]*(,\\d{3})*))\\.\\d{1,2}))(yuan|.?元)?)|(人民币)?([圆角分零壹贰叁肆伍陆柒捌玖拾佰仟万亿]+[圆角分]))(?=\\W)",
                                 "IsIgnoreCase": true
                             }
                         ]
                     },
                     "KeywordRule": {
-                        "Operator": "abc",
+                        "Operator": "or",
                         "Contents": [
                             {
-                                "RuleContent": "abc",
+                                "RuleContent": "账户余额",
+                                "IsIgnoreCase": true
+                            },
+                            {
+                                "RuleContent": "Account Balance",
+                                "IsIgnoreCase": true
+                            },
+                            {
+                                "RuleContent": "AccountBalance",
+                                "IsIgnoreCase": true
+                            },
+                            {
+                                "RuleContent": "Account_Balance",
                                 "IsIgnoreCase": true
                             }
                         ]
                     },
                     "IgnoreStringRule": {
-                        "Operator": "abc",
-                        "Contents": [
-                            {
-                                "RuleContent": "abc",
-                                "IsIgnoreCase": true
-                            }
-                        ]
+                        "Operator": "or",
+                        "Contents": null
                     },
                     "MaxMatch": 0
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "5af5a48c-6eb7-4d81-8df6-6d0e316a32ef"
     }
 }
 ```

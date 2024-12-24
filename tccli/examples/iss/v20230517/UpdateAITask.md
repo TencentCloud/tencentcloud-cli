@@ -7,7 +7,7 @@ Input:
 ```
 tccli iss UpdateAITask --cli-unfold-argument  \
     --TaskId at**********************1 \
-    --Desc 111
+    --Desc 宠物
 ```
 
 Output: 
@@ -32,7 +32,7 @@ Input:
 ```
 tccli iss UpdateAITask --cli-unfold-argument  \
     --TaskId at**********************8 \
-    --Desc 111
+    --Desc 宠物
 ```
 
 Output: 
@@ -45,7 +45,7 @@ Output:
                 "**********************"
             ],
             "CreatedTime": "2023-06-15 16:21:34",
-            "Desc": "111",
+            "Desc": "宠物",
             "Name": "ai-task",
             "Status": "off",
             "TaskId": "at**********************8",

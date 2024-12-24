@@ -17,10 +17,10 @@ Output:
     "Response": {
         "Items": [
             {
-                "Date": "abc",
+                "Date": "2022-09-01",
                 "Unhandled": 1,
-                "Handled": 1,
-                "NewDiscoveryHandled": 1
+                "Handled": 2,
+                "NewDiscoveryHandled": 3
             }
         ],
         "RequestId": "abc"

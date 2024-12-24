@@ -13,7 +13,7 @@ tccli dsgc ModifyDSPADiscoveryTask --cli-unfold-argument  \
     --Period 0 \
     --TimingStartTime 2021/4/2 10:46:18 \
     --DspaId dspa-0001 \
-    --DataSourceId 123 \
+    --DataSourceId cdb-a1b2c3 \
     --Plan 0 \
     --TaskId 1 \
     --Condition db1,db_2 \

@@ -6,42 +6,37 @@ Input:
 
 ```
 tccli tsf CreateFileConfigWithDetailResp --cli-unfold-argument  \
-    --ConfigName abc \
-    --ConfigVersion abc \
-    --ConfigVersionDesc abc \
-    --ConfigFileName abc \
-    --ConfigFileValue abc \
-    --ConfigFileCode abc \
-    --ApplicationId abc \
-    --ConfigFilePath abc \
-    --ConfigPostCmd abc \
-    --EncodeWithBase64 True \
-    --ProgramIdList abc
+    --ConfigName app_config \
+    --ConfigVersion v1.0 \
+    --ConfigFileName config.txt \
+    --ConfigFileValue config=enabled \
+    --ApplicationId application-yx8m24ga \
+    --ConfigFilePath /root/app
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "a7d2e82d-0bf1-4e44-b296-ccf60bcdbb3c",
         "Result": {
-            "ConfigId": "abc",
-            "ConfigName": "abc",
-            "ConfigVersion": "abc",
-            "ConfigVersionDesc": "abc",
-            "ConfigFileName": "abc",
-            "ConfigFileValue": "abc",
-            "ConfigFileCode": "abc",
-            "CreationTime": "abc",
-            "ApplicationId": "abc",
-            "ApplicationName": "abc",
-            "DeleteFlag": true,
-            "ConfigVersionCount": 0,
-            "LastUpdateTime": "abc",
-            "ConfigFilePath": "abc",
-            "ConfigPostCmd": "abc",
-            "ConfigFileValueLength": 1
-        },
-        "RequestId": "abc"
+            "ApplicationId": "application-yx8m24ga",
+            "ApplicationName": null,
+            "ConfigFileCode": "UTF-8",
+            "ConfigFileName": "config.txt",
+            "ConfigFilePath": "/root/app",
+            "ConfigFileValue": "config=enabled",
+            "ConfigFileValueLength": 14,
+            "ConfigId": "dcfg-f-yq75blda",
+            "ConfigName": "app_config",
+            "ConfigPostCmd": "",
+            "ConfigVersion": "v1.0",
+            "ConfigVersionCount": null,
+            "ConfigVersionDesc": null,
+            "CreationTime": null,
+            "DeleteFlag": null,
+            "LastUpdateTime": null
+        }
     }
 }
 ```

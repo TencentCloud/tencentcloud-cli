@@ -2456,6 +2456,15 @@
           "name": "ModuleCollection",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "moduleId集合",
+          "example": "[“111”]",
+          "member": "string",
+          "name": "ModuleIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

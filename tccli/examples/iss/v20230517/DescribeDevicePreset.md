@@ -16,7 +16,7 @@ Output:
         "Data": [
             {
                 "Index": 1,
-                "Name": "abc"
+                "Name": "preset-1"
             }
         ],
         "RequestId": "31facf8f-d783-4c28-a27f-82757eb71244"

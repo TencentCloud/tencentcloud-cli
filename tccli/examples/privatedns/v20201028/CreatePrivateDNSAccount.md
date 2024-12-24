@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli privatedns CreatePrivateDNSAccount --cli-unfold-argument  \
-    --Account.Uin 123456789
+    --Account.Uin 10020060700
 ```
 
 Output: 

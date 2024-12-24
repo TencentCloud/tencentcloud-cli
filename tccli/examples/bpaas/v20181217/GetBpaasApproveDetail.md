@@ -39,7 +39,7 @@ Output:
                 "Opinion": {
                     "Type": 1,
                     "Content": [
-                        "abc"
+                        "同意"
                     ]
                 },
                 "ScfName": "get-names",

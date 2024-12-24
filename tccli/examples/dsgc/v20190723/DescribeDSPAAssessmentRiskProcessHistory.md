@@ -1,13 +1,13 @@
-**Example 1: xx**
+**Example 1: 查询风险的处理历史**
 
-xx
+查询风险的处理历史
 
 Input: 
 
 ```
 tccli dsgc DescribeDSPAAssessmentRiskProcessHistory --cli-unfold-argument  \
-    --DspaId abc \
-    --RiskId 0
+    --DspaId dspa-97538993 \
+    --RiskId 1
 ```
 
 Output: 
@@ -16,13 +16,13 @@ Output:
     "Response": {
         "ProcessHistory": [
             {
-                "Time": "abc",
-                "Status": 0,
-                "Handler": "abc",
-                "Note": "abc"
+                "Time": "2023-09-20 16:16:53",
+                "Status": 3,
+                "Handler": "系统（最近一次扫描未发现）",
+                "Note": "已处理"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1f1765cf-c01a-4a93-95b2-99108f4aa04f"
     }
 }
 ```

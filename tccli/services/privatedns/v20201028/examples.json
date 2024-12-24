@@ -3,15 +3,15 @@
     "AddSpecifyPrivateZoneVpc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxx\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-guangzhou\",\n            \"Uin\": \"334345\",\n            \"VpcName\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"abc\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"abc\",\n                \"Region\": \"abc\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"UniqId\": \"888888\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-dwuew12\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-sd23d2\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-guangzhou\",\n            \"Uin\": \"334345\",\n            \"VpcName\": \"vpc-testname\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-dwuew12\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"vpc-sd23d2\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"100000236200\",\n                \"UniqVpcId\": \"vpc-dshgy2n\",\n                \"Region\": \"ap-guangzhou\",\n                \"VpcName\": \"vpc-testname\"\n            }\n        ],\n        \"UniqId\": \"vpc-dser2gtg\",\n        \"RequestId\": \"ba171d86-1337-48ca-a593-c8cbe46cdec5\"\n    }\n}",
         "title": "追加与私有域关联的vpc"
       }
     ],
     "CreatePrivateDNSAccount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateDNSAccount\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Uin\": \"123456789\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateDNSAccount\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Uin\": \"10020060700\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "创建私有域解析账号"
       }
@@ -19,7 +19,7 @@
     "CreatePrivateZone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZone\n<公共请求参数>\n\n{\n    \"Domain\": \"a.com\",\n    \"TagSet\": [\n        {\n            \"TagKey\": \"owner\",\n            \"TagValue\": \"xxxxxxxxxx\"\n        }\n    ],\n    \"VpcSet\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-xxxxxl\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"Uin\": \"123456789\",\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-adsebmy1\",\n            \"VpcName\": \"vpcname\"\n        }\n    ],\n    \"Remark\": \"测试域名\",\n    \"DnsForwardStatus\": \"ENABLED\",\n    \"CnameSpeedupStatus\": \"ENABLED\"\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZone\n<公共请求参数>\n\n{\n    \"Domain\": \"a.com\",\n    \"TagSet\": [\n        {\n            \"TagKey\": \"owner\",\n            \"TagValue\": \"xxxxxxxxxx\"\n        }\n    ],\n    \"VpcSet\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-xxxxxl\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"Uin\": \"1000458200\",\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-adsebmy1\",\n            \"VpcName\": \"vpcname\"\n        }\n    ],\n    \"Remark\": \"测试域名\",\n    \"DnsForwardStatus\": \"ENABLED\",\n    \"CnameSpeedupStatus\": \"ENABLED\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"ZoneId\": \"41\",\n        \"Domain\": \"a.com\"\n    }\n}",
         "title": "创建私有域"
       }
@@ -28,26 +28,26 @@
       {
         "document": "添加A记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123456\",\n    \"RecordType\": \"A\",\n    \"SubDomain\": \"b\",\n    \"RecordValue\": \"3.3.3.3\",\n    \"Weight\": 100,\n    \"TTL\": 600\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"1111\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"15421\"\n    }\n}",
         "title": "私有域-添加A记录"
       },
       {
         "document": "添加MX记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123456\",\n    \"RecordType\": \"MX\",\n    \"SubDomain\": \"b\",\n    \"RecordValue\": \"3.3.3.3\",\n    \"Weight\": 100,\n    \"MX\": 5\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"1111\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"15421\"\n    }\n}",
         "title": "私有域-添加MX记录"
       },
       {
         "document": "添加反解析记录",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-123456\",\n    \"RecordType\": \"PTR\",\n    \"SubDomain\": \"1.1.1\",\n    \"RecordValue\": \"qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"1111\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a98891db-9d73-514a-8751422197b540cd\",\n        \"RecordId\": \"15421\"\n    }\n}",
         "title": "私有域-添加PTR记录"
       }
     ],
     "DeletePrivateDNSAccount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateDNSAccount\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Uin\": \"123456789\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateDNSAccount\n<公共请求参数>\n\n{\n    \"Account\": {\n        \"Uin\": \"1002330010\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "删除私有域解析账号"
       }
@@ -69,13 +69,13 @@
     "DeletePrivateZoneRecord": [
       {
         "document": "删除单条解析记录",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordId\": \"11111\"\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordId\": \"2657842\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a3ed908c-5848-1a98-d7aaa92528e28303\"\n    }\n}",
         "title": "删除私有域解析记录-单个"
       },
       {
         "document": "批量删除解析记录",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordIdSet\": [\n        \"10001\",\n        \"20201\",\n        \"33401\",\n        \"11111\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordIdSet\": [\n        \"2657842\",\n        \"2657843\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "删除私有域解析记录-批量"
       }
@@ -83,23 +83,23 @@
     "DeleteSpecifyPrivateZoneVpc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-gangzhou\",\n            \"Uin\": \"888774747\",\n            \"VpcName\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"abc\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"abc\",\n                \"Region\": \"abc\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-sdasd12d\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-dae2312\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-2314dae\",\n            \"Region\": \"ap-gangzhou\",\n            \"Uin\": \"1000032110\",\n            \"VpcName\": \"vpc-testname\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-sdasd12d\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"vpc-dae2312\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"1000032110\",\n                \"UniqVpcId\": \"vpc-2314dae\",\n                \"Region\": \"ap-guangzhou\",\n                \"VpcName\": \"vpc-testname\"\n            }\n        ],\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "删除私有域关联的VPC"
       }
     ],
     "DescribeAccountVpcList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountVpcList\n<公共请求参数>\n\n{\n    \"AccountUin\": \"123456789\",\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"Region\",\n            \"Values\": [\n                \"ap-guangzhou\"\n            ]\n        },\n        {\n            \"Name\": \"VpcName\",\n            \"Values\": [\n                \"test\"\n            ]\n        },\n        {\n            \"Name\": \"VpcId\",\n            \"Values\": [\n                \"vpc-sdfwadf1\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"443f1f2b-9be4-4a2c-b1a6-0494c2d980ff\",\n        \"TotalCount\": 1,\n        \"VpcSet\": [\n            {\n                \"VpcId\": \"vpc-ofnocfe1\",\n                \"VpcName\": \"testname\",\n                \"Uin\": 700000136857,\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountVpcList\n<公共请求参数>\n\n{\n    \"AccountUin\": \"10000000010\",\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"Region\",\n            \"Values\": [\n                \"ap-guangzhou\"\n            ]\n        },\n        {\n            \"Name\": \"VpcName\",\n            \"Values\": [\n                \"vpc-ofnocfe1\"\n            ]\n        },\n        {\n            \"Name\": \"VpcId\",\n            \"Values\": [\n                \"vpc-sdfwadf1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"443f1f2b-9be4-4a2c-b1a6-0494c2d980ff\",\n        \"TotalCount\": 1,\n        \"VpcSet\": [\n            {\n                \"VpcId\": \"vpc-ofnocfe1\",\n                \"VpcName\": \"testname\",\n                \"Uin\": \"10000000010\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
         "title": "获取私有域解析账号的VPC列表"
       }
     ],
     "DescribeAuditLog": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLog\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ZoneId\",\n            \"Values\": [\n                \"xxxxxxx\"\n            ]\n        },\n        {\n            \"Name\": \"Domain\",\n            \"Values\": [\n                \"a.com\"\n            ]\n        },\n        {\n            \"Name\": \"OperatorUin\",\n            \"Values\": [\n                \"xxxxx\"\n            ]\n        }\n    ],\n    \"TimeRangeBegin\": \"2020-11-22 00:00:00\",\n    \"TimeRangeEnd\": \"2020-11-23 23:59:59\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLog\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ZoneId\",\n            \"Values\": [\n                \"zone-dw12dhy\"\n            ]\n        },\n        {\n            \"Name\": \"Domain\",\n            \"Values\": [\n                \"a.com\"\n            ]\n        },\n        {\n            \"Name\": \"OperatorUin\",\n            \"Values\": [\n                \"10023400189\"\n            ]\n        }\n    ],\n    \"TimeRangeBegin\": \"2020-11-22 00:00:00\",\n    \"TimeRangeEnd\": \"2020-11-23 23:59:59\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5471b753-7d7a-8742-6cb079c6472692f2\",\n        \"Data\": [\n            {\n                \"Resource\": \"all\",\n                \"Metric\": \"request_count\",\n                \"TotalCount\": 48,\n                \"DataSet\": [\n                    {\n                        \"Date\": \"2020-11-22 00:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www(11111111111111) A , zone(777777)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 01:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www(11111111111111) A , zone(777777)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 02:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www.baidu.com 600 TXT aaaaaaaaaaaaaaaaaaaaaaaa zone(666666)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 03:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"www.baidu.com 600 TXT aaaaaaaaaaaaaaaaaaaaaaaa zone(666666)\"\n                    },\n                    {\n                        \"Date\": \"2020-11-22 04:00:00\",\n                        \"OperatorUin\": \"100000009719\",\n                        \"Content\": \"[子域名递归解析：关闭 -> 开启  ][], zone(444444)\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取操作日志列表"
       }
@@ -115,7 +115,7 @@
     "DescribePrivateDNSAccountList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateDNSAccountList\n<公共请求参数>\n\n{\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"AccountUin\",\n            \"Values\": [\n                \"123456789\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateDNSAccountList\n<公共请求参数>\n\n{\n    \"Limit\": 200,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"AccountUin\",\n            \"Values\": [\n                \"1000230100\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14413609-3e4e-9003-c5df01ee3e4b0df7\",\n        \"TotalCount\": 1,\n        \"AccountSet\": [\n            {\n                \"Uin\": \"1234567898\",\n                \"Account\": \"privatedns***@tencent.com\",\n                \"Nickname\": \"Private DNS体验账号\"\n            }\n        ]\n    }\n}",
         "title": "获取私有域解析账号列表"
       }
@@ -193,8 +193,8 @@
     "ModifyPrivateZoneVpc": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"1\",\n    \"VpcSet\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-xxxxxx\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"Uin\": \"123456789\",\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-xxxxxx\",\n            \"VpcName\": \"vpcName\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"ZoneId\": \"1\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"1\",\n    \"VpcSet\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-xxxxxx\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"Uin\": \"1002450010\",\n            \"Region\": \"ap-guangzhou\",\n            \"UniqVpcId\": \"vpc-xxxxxx\",\n            \"VpcName\": \"vpcName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\",\n        \"ZoneId\": \"1\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"1002450010\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
         "title": "修改私有域关联的VPC"
       }
     ],

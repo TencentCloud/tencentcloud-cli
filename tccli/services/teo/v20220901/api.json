@@ -70,11 +70,25 @@
       "output": "CreateConfigGroupVersionResponse",
       "status": "online"
     },
+    "CreateContentIdentifier": {
+      "document": "创建内容标识符，可以设置描述、标签等信息，同时需要绑定企业版套餐用于统计计费数据；一个内容标识符只能绑定一个计费套餐，一个计费套餐可以绑定多个内容标识符。该功能仅限白名单开放。",
+      "input": "CreateContentIdentifierRequest",
+      "name": "创建内容标识符",
+      "output": "CreateContentIdentifierResponse",
+      "status": "online"
+    },
     "CreateCustomizeErrorPage": {
       "document": "创建自定义错误页面。",
       "input": "CreateCustomizeErrorPageRequest",
       "name": "创建自定义响应页面",
       "output": "CreateCustomizeErrorPageResponse",
+      "status": "online"
+    },
+    "CreateDnsRecord": {
+      "document": "在创建完站点后，并且站点为 NS 模式接入时，您可以通过本接口创建 DNS 记录。",
+      "input": "CreateDnsRecordRequest",
+      "name": "创建 DNS 记录",
+      "output": "CreateDnsRecordResponse",
       "status": "online"
     },
     "CreateFunction": {
@@ -210,11 +224,25 @@
       "output": "DeleteApplicationProxyRuleResponse",
       "status": "online"
     },
+    "DeleteContentIdentifier": {
+      "document": "删除指定的内容标识符。该功能仅白名单开放。",
+      "input": "DeleteContentIdentifierRequest",
+      "name": "删除内容标识符",
+      "output": "DeleteContentIdentifierResponse",
+      "status": "online"
+    },
     "DeleteCustomErrorPage": {
       "document": "删除自定义错误页面。",
       "input": "DeleteCustomErrorPageRequest",
       "name": "删除自定义响应页面",
       "output": "DeleteCustomErrorPageResponse",
+      "status": "online"
+    },
+    "DeleteDnsRecords": {
+      "document": "您可以用本接口批量删除 DNS 记录。",
+      "input": "DeleteDnsRecordsRequest",
+      "name": "批量删除 DNS 记录",
+      "output": "DeleteDnsRecordsResponse",
       "status": "online"
     },
     "DeleteFunction": {
@@ -350,6 +378,13 @@
       "output": "DescribeConfigGroupVersionsResponse",
       "status": "online"
     },
+    "DescribeContentIdentifiers": {
+      "document": "批量查询内容标识符，可以根据 ID、描述、状态或者标签过滤。按照状态查询被删除的内容标识符仅保留三个月。该功能仅白名单开放。",
+      "input": "DescribeContentIdentifiersRequest",
+      "name": "批量查询内容标识符",
+      "output": "DescribeContentIdentifiersResponse",
+      "status": "online"
+    },
     "DescribeContentQuota": {
       "document": "查询内容管理接口配额",
       "input": "DescribeContentQuotaRequest",
@@ -397,6 +432,13 @@
       "input": "DescribeDeployHistoryRequest",
       "name": "查询版本发布历史",
       "output": "DescribeDeployHistoryResponse",
+      "status": "online"
+    },
+    "DescribeDnsRecords": {
+      "document": "您可以用过本接口查看站点下的 DNS 记录信息，包括 DNS 记录名、记录类型以及记录内容等信息。您可以查看站点下全部 DNS 记录的信息，也可以指定过滤条件查询对应的 DNS 记录信息。",
+      "input": "DescribeDnsRecordsRequest",
+      "name": "查询 DNS 记录列表",
+      "output": "DescribeDnsRecordsResponse",
       "status": "online"
     },
     "DescribeEnvironments": {
@@ -721,11 +763,32 @@
       "output": "ModifyApplicationProxyStatusResponse",
       "status": "online"
     },
+    "ModifyContentIdentifier": {
+      "document": "修改内容标识符，仅支持修改描述。该功能仅白名单开放。",
+      "input": "ModifyContentIdentifierRequest",
+      "name": "修改内容标识符",
+      "output": "ModifyContentIdentifierResponse",
+      "status": "online"
+    },
     "ModifyCustomErrorPage": {
       "document": "修改自定义错误页面。",
       "input": "ModifyCustomErrorPageRequest",
       "name": "修改自定义响应页面",
       "output": "ModifyCustomErrorPageResponse",
+      "status": "online"
+    },
+    "ModifyDnsRecords": {
+      "document": "您可以通过本接口批量修改 DNS 记录。",
+      "input": "ModifyDnsRecordsRequest",
+      "name": "批量修改 DNS 记录",
+      "output": "ModifyDnsRecordsResponse",
+      "status": "online"
+    },
+    "ModifyDnsRecordsStatus": {
+      "document": "您可以通过本接口批量修改 DNS 记录的状态，批量对记录进行开启和停用。",
+      "input": "ModifyDnsRecordsStatusRequest",
+      "name": "批量修改 DNS 记录状态",
+      "output": "ModifyDnsRecordsStatusResponse",
       "status": "online"
     },
     "ModifyFunction": {
@@ -3351,6 +3414,102 @@
       ],
       "usage": "both"
     },
+    "ContentIdentifier": {
+      "document": "内容标识符。该功能仅白名单开放。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容标识符 ID。",
+          "example": "content-3277epj0rm2y",
+          "member": "string",
+          "name": "ContentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容标识符描述。",
+          "example": "content-test",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被规则引擎引用的次数。",
+          "example": "10",
+          "member": "int64",
+          "name": "ReferenceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的套餐 ID。",
+          "example": "edgeone-2ycvr8ml4zpq",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的标签。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容标识符状态，取值有：\n<li> active：已生效； </li>\n<li> deleted：已删除。</li>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2023-10-05T15:30:45Z",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新一次更新时间，时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2023-10-05T15:30:45Z",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除时间，状态非 deleted 时候为空；时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-05T15:30:45Z",
+          "member": "datetime_iso",
+          "name": "DeletedOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateAccelerationDomainRequest": {
       "document": "CreateAccelerationDomain请求参数结构体",
       "members": [
@@ -3850,6 +4009,61 @@
       ],
       "type": "object"
     },
+    "CreateContentIdentifierRequest": {
+      "document": "CreateContentIdentifier请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容标识符的描述，长度限制不超过 20 个字符。",
+          "example": "content-test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待绑定的目标套餐 ID，仅限企业版可用。<li>当您账号下已存在套餐时，需要先前往 [套餐管理](https://console.cloud.tencent.com/edgeone/package) 获取套餐 ID，直接将内容标识符绑定至该套餐；</li><li>若您当前没有可绑定的套餐时，请先购买企业版套餐。</li>",
+          "example": "edgeone-2ycvr8ml4zpq",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签。该参数用于对内容标识符进行分权限管控。您需要先前往 [标签控制台](https://console.cloud.tencent.com/tag/taglist) 创建标签才可以在此处传入对应的标签键和标签值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateContentIdentifierResponse": {
+      "document": "CreateContentIdentifier返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的内容标识符 ID。创建完成之后您可以前往规则引擎在一定匹配条件下「设置内容标识符」。",
+          "example": "eocontent-27q0p0sali16",
+          "member": "string",
+          "name": "ContentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCustomizeErrorPageRequest": {
       "document": "CreateCustomizeErrorPage请求参数结构体",
       "members": [
@@ -3910,6 +4124,106 @@
           "example": "p-2kplomhisdcb",
           "member": "string",
           "name": "PageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDnsRecordRequest": {
+      "document": "CreateDnsRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-225qgrnvbi9w",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录名，如果是中文、韩文、日文域名，需要转换为 punycode 后输入。",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录类型，取值有：<li>A：将域名指向一个外网 IPv4 地址，如 8.8.8.8；</li><li>AAAA：将域名指向一个外网 IPv6 地址；</li><li>MX：用于邮箱服务器。存在多条 MX 记录时，优先级越低越优先；</li><li>CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址；</li><li>TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）；</li><li>NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录；</li><li>CAA：指定可为本站点颁发证书的 CA；</li><li>SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理。</li>\n不同的记录类型呢例如 SRV、CAA 记录对主机记录名称、记录值格式有不同的要求，各记录类型的详细说明介绍和格式示例请参考：[解析记录类型介绍](https://cloud.tencent.com/document/product/1552/90453#2f681022-91ab-4a9e-ac3d-0a6c454d954e)。",
+          "example": "A",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录内容，根据 Type 值填入与之相对应的内容，如果是中文、韩文、日文域名，需要转换为 punycode 后输入。",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录解析线路，不指定默认为 Default，表示默认解析线路，代表全部地域生效。\n\n- 解析线路配置仅适用于当 Type（DNS 记录类型）为 A、AAAA、CNAME 时。\n- 解析线路配置仅适用于标准版、企业版套餐使用，取值请参考：[解析线路及对应代码枚举](https://cloud.tencent.com/document/product/1552/112542)。",
+          "example": "Default",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缓存时间，用户可指定值范围 60~86400，数值越小，修改记录各地生效时间越快，默认为 300，单位：秒。",
+          "example": "60",
+          "member": "int64",
+          "name": "TTL",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录权重，用户可指定值范围 -1~100，设置为 0 时表示不解析，不指定默认为 -1，表示不设置权重。权重配置仅适用于当 Type（DNS 记录类型）为 A、AAAA、CNAME 时。<br>注意：同一个子域名下，相同解析线路的不同 DNS 记录，应保持同时设置权重或者同时都不设置权重。",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "MX 记录优先级，该参数仅在当 Type（DNS 记录类型）为 MX 时生效，值越小优先级越高，用户可指定值范围0~50，不指定默认为0。",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDnsRecordResponse": {
+      "document": "CreateDnsRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DNS 记录 ID。",
+          "example": "record-225rcy8bw85g",
+          "member": "string",
+          "name": "RecordId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5776,6 +6090,33 @@
       ],
       "type": "object"
     },
+    "DeleteContentIdentifierRequest": {
+      "document": "DeleteContentIdentifier请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容标识符 ID。",
+          "example": "eocontent-27q0p0bali16",
+          "member": "string",
+          "name": "ContentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteContentIdentifierResponse": {
+      "document": "DeleteContentIdentifier返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCustomErrorPageRequest": {
       "document": "DeleteCustomErrorPage请求参数结构体",
       "members": [
@@ -5802,6 +6143,42 @@
     },
     "DeleteCustomErrorPageResponse": {
       "document": "DeleteCustomErrorPage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDnsRecordsRequest": {
+      "document": "DeleteDnsRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-25ryyvog1qih",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的 DNS 记录 ID 列表，上限：1000。",
+          "example": "[\"record-25ryzh92h8\"]\t",
+          "member": "string",
+          "name": "RecordIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDnsRecordsResponse": {
+      "document": "DeleteDnsRecords返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6852,6 +7229,71 @@
       ],
       "type": "object"
     },
+    "DescribeContentIdentifiersRequest": {
+      "document": "DescribeContentIdentifiers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值：20，最大值：100。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters 的上限为 20，Filters.Values 的上限为 20。该参数不填写时，默认返回当前 AppId 下有权限的内容标识符。详细的过滤条件如下：<li>description：按照内容标识符描述批量进行过滤；例如：test；</li><li>content-id：按照内容标识符 ID 批量进行过滤；例如：eocontent-2noz78a8ev6k；</li><li>tag-key：按照标签键进行过滤；</li> <li>tag-value： 按照标签值进行过滤；</li><li>status：按照内容标识符状态进行过滤，取值有：active：生效中；deleted：已删除。</li>仅支持按照 description 模糊查询，其余字段需要精准查询。",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeContentIdentifiersResponse": {
+      "document": "DescribeContentIdentifiers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的内容标识符总数。\t",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容标识符详细内容列表。",
+          "example": "无",
+          "member": "ContentIdentifier",
+          "name": "ContentIdentifiers",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeContentQuotaRequest": {
       "document": "DescribeContentQuota请求参数结构体",
       "members": [
@@ -7456,6 +7898,107 @@
           "example": "无",
           "member": "DeployRecord",
           "name": "Records",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnsRecordsRequest": {
+      "document": "DescribeDnsRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-20hyebgyfsko",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目，默认值：20，上限：1000。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为20。详细的过滤条件如下：<li>id： 按照 DNS 记录 ID 进行过滤，支持模糊查询；</li><li>name：按照 DNS 记录名称进行过滤，支持模糊查询；</li><li>content：按照 DNS 记录内容进行过滤，支持模糊查询；</li><li>type：按照 DNS 记录类型进行过滤，不支持模糊查询。可选项：<br>   A：将域名指向一个外网 IPv4 地址，如 8.8.8.8；<br>   AAAA：将域名指向一个外网 IPv6 地址；<br>   CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址；<br>   TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）；<br>   NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录；<br>   CAA：指定可为本站点颁发证书的 CA；<br>   SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理；<br>   MX：指定收件人邮件服务器。</li><li>ttl：按照解析生效时间进行过滤，不支持模糊查询。</li>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序依据，取值有：<li>content：DNS 记录内容；</li><li>created-on：DNS 记录创建时间；</li><li>name：DNS 记录名称；</li><li>ttl：缓存时间；</li><li>type：DNS 记录类型。</li>默认根据 type, name 属性组合排序。",
+          "example": "recordName",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表排序方式，取值有：<li>asc：升序排列；</li><li>desc：降序排列。</li>默认值为 asc。",
+          "example": "asc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配方式，取值有：<li>all：返回匹配所有查询条件的记录；</li><li>any：返回匹配任意一个查询条件的记录。</li>默认值为 all。",
+          "example": "all",
+          "member": "string",
+          "name": "Match",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDnsRecordsResponse": {
+      "document": "DescribeDnsRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DNS 记录总数。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录列表。",
+          "example": "无",
+          "member": "DnsRecord",
+          "name": "DnsRecords",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9954,6 +10497,144 @@
         }
       ],
       "usage": "out"
+    },
+    "DnsRecord": {
+      "document": "DNS 记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。<br>注意：ZoneId 仅做出参使用，在 ModifyDnsRecords 不可作为入参使用，如有传此参数，会忽略。",
+          "example": "zone-20hyebgyfsko",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录 ID。",
+          "example": "record-3d5dg39c",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录名。",
+          "example": "www.a.com",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录类型，取值有：\n<li>A：将域名指向一个外网 IPv4 地址，如 8.8.8.8；</li>\n<li>AAAA：将域名指向一个外网 IPv6 地址；</li>\n<li>MX：用于邮箱服务器。存在多条 MX 记录时，优先级越低越优先；</li>\n<li>CNAME：将域名指向另一个域名，再由该域名解析出最终 IP 地址；</li>\n<li>TXT：对域名进行标识和说明，常用于域名验证和 SPF 记录（反垃圾邮件）；</li>\n<li>NS：如果需要将子域名交给其他 DNS 服务商解析，则需要添加 NS 记录。根域名无法添加 NS 记录；</li>\n<li>CAA：指定可为本站点颁发证书的 CA；</li>\n<li>SRV：标识某台服务器使用了某个服务，常见于微软系统的目录管理。</li>",
+          "example": "A",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录解析线路，不指定默认为 Default，表示默认解析线路，代表全部地域生效。<br>解析线路配置仅适用于当 Type（DNS 记录类型）为 A、AAAA、CNAME 时。<br>取值请参考：[解析线路及对应代码枚举](https://cloud.tencent.com/document/product/1552/112542)。",
+          "example": "Default",
+          "member": "string",
+          "name": "Location",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录内容。根据 Type 值填入与之相对应的内容。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存时间，取值范围 60~86400，数值越小，修改记录各地生效时间越快，单位：秒。",
+          "example": "60",
+          "member": "int64",
+          "name": "TTL",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录权重，取值范围 -1~100，为 -1 时表示不分配权重，为 0 时表示不解析。权重配置仅适用于当 Type（DNS 记录类型）为 A、AAAA、CNAME 时。",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MX 记录优先级，取值范围 0~50，数值越小越优先。",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录解析状态，取值有：<li>enable：已生效；</li><li>disable：已停用。</li>注意：Status 仅做出参使用，在 ModifyDnsRecords 不可作为入参使用，如有传此参数，会忽略。",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。<br>注意：CreatedOn 仅做出参使用，在 ModifyDnsRecords 不可作为入参使用，如有传此参数，会忽略。",
+          "example": "2020-09-22T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedOn",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间。<br>注意：ModifiedOn 仅做出参使用，在 ModifyDnsRecords 不可作为入参使用，如有传此参数，会忽略。",
+          "example": "2020-09-22T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "ModifiedOn",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DnsVerification": {
       "document": "CNAME 接入，使用 DNS 解析验证时所需的信息。",
@@ -13268,6 +13949,42 @@
       ],
       "type": "object"
     },
+    "ModifyContentIdentifierRequest": {
+      "document": "ModifyContentIdentifier请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容标识符 ID。",
+          "example": "eocontent-27q0p0bali16",
+          "member": "string",
+          "name": "ContentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内容标识符描述，长度限制不超过 20 个字符。",
+          "example": "identifier-test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyContentIdentifierResponse": {
+      "document": "ModifyContentIdentifier返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCustomErrorPageRequest": {
       "document": "ModifyCustomErrorPage请求参数结构体",
       "members": [
@@ -13330,6 +14047,87 @@
     },
     "ModifyCustomErrorPageResponse": {
       "document": "ModifyCustomErrorPage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnsRecordsRequest": {
+      "document": "ModifyDnsRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID 。",
+          "example": "zone-2psss4drfg29",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS 记录修改数据列表，一次最多修改100条。",
+          "example": "无",
+          "member": "DnsRecord",
+          "name": "DnsRecords",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnsRecordsResponse": {
+      "document": "ModifyDnsRecords返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnsRecordsStatusRequest": {
+      "document": "ModifyDnsRecordsStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-25ryyvog1qih",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待启用的 DNS 记录 ID 列表，上限：200。<br>注意：同个 DNS 记录 ID 不能同时存在于 RecordsToEnable 和 RecordsToDisable。",
+          "example": "[“record-25ryzh92h8qh”]",
+          "member": "string",
+          "name": "RecordsToEnable",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待停用的 DNS 记录 ID 列表，上限：200。<br>注意：同个 DNS 记录 ID 不能同时存在于 RecordsToEnable 和 RecordsToDisable。",
+          "example": "[“record-25ryzh92h8qh”]",
+          "member": "string",
+          "name": "RecordsToDisable",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDnsRecordsStatusResponse": {
+      "document": "ModifyDnsRecordsStatus返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

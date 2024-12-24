@@ -889,7 +889,7 @@
         {
           "disabled": false,
           "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
+          "example": "test",
           "member": "string",
           "name": "Database",
           "output_required": false,
@@ -900,7 +900,7 @@
         {
           "disabled": false,
           "document": "表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
+          "example": "test123",
           "member": "string",
           "name": "Table",
           "output_required": false,
@@ -911,7 +911,7 @@
         {
           "disabled": false,
           "document": "表总字节数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "23124",
           "member": "int64",
           "name": "TotalBytes",
           "output_required": false,
@@ -6039,7 +6039,7 @@
         {
           "disabled": false,
           "document": "流程相关信息",
-          "example": "-",
+          "example": "1281",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -6049,7 +6049,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "-",
+          "example": "failed",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -6565,6 +6565,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-12-16 12:23:13",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

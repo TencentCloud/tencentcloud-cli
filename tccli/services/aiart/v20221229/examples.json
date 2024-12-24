@@ -107,8 +107,8 @@
     "TextToImage": [
       {
         "document": "正常调用场景",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImage\n<公共请求参数>\n\n{\n    \"Prompt\": \"女孩\",\n    \"Styles\": [\n        \"101\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"/ashadaisojdad\",\n        \"RequestId\": \"b429894a-d0e5-4d5c-8dcf-6be8d05ef484\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToImage\n<公共请求参数>\n\n{\n    \"Prompt\": \"女孩\",\n    \"Styles\": [\n        \"101\"\n    ],\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\",\n        \"RequestId\": \"b429894a-d0e5-4d5c-8dcf-6be8d05ef484\"\n    }\n}",
         "title": "调用示例"
       }
     ],

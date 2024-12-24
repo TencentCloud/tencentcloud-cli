@@ -23,7 +23,8 @@ Output:
                 "InstanceStatus": 2,
                 "ManualBackup": 0,
                 "ShardId": "",
-                "StartTime": "2022-05-20 00:02:09"
+                "StartTime": "2022-05-20 00:02:09",
+                "StorageClass": "STANDARD"
             },
             {
                 "BackupType": "Data",
@@ -36,7 +37,8 @@ Output:
                 "InstanceStatus": 2,
                 "ManualBackup": 0,
                 "ShardId": "",
-                "StartTime": "2022-05-19 00:22:52"
+                "StartTime": "2022-05-19 00:22:52",
+                "StorageClass": "STANDARD"
             },
             {
                 "BackupType": "Data",
@@ -49,7 +51,8 @@ Output:
                 "InstanceStatus": 2,
                 "ManualBackup": 0,
                 "ShardId": "",
-                "StartTime": "2022-05-18 11:44:45"
+                "StartTime": "2022-05-18 11:44:45",
+                "StorageClass": "STANDARD"
             },
             {
                 "BackupType": "Binlog",
@@ -62,7 +65,8 @@ Output:
                 "InstanceStatus": 2,
                 "ManualBackup": 0,
                 "ShardId": "",
-                "StartTime": "2022-05-18 11:17:01"
+                "StartTime": "2022-05-18 11:17:01",
+                "StorageClass": "STANDARD"
             }
         ],
         "RequestId": "dce77e5f-57b9-4df5-9889-1a4b9f318659",

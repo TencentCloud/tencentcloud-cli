@@ -6,50 +6,52 @@ Input:
 
 ```
 tccli tsf DescribeGatewayApis --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1 \
-    --GatewayDeployGroupId group-e42d597 \
+    --GroupId grp-nb08ur29 \
+    --SearchWord /swagger \
     --Offset 0 \
-    --Limit 10
+    --Limit 5 \
+    --GatewayDeployGroupId group-yd3b588a \
+    --ReleaseStatus released
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "223e1309-700b-47be-bbc6-cddcc510ece4",
         "Result": {
-            "TotalCount": 0,
             "Content": [
                 {
-                    "ApiId": "abc",
-                    "NamespaceId": "abc",
-                    "NamespaceName": "abc",
-                    "MicroserviceId": "abc",
-                    "MicroserviceName": "abc",
-                    "Path": "abc",
-                    "PathMapping": "abc",
-                    "Method": "abc",
-                    "GroupId": "abc",
-                    "UsableStatus": "abc",
-                    "ReleaseStatus": "abc",
-                    "RateLimitStatus": "abc",
-                    "MockStatus": "abc",
-                    "CreatedTime": "abc",
-                    "UpdatedTime": "abc",
-                    "ReleasedTime": "abc",
-                    "GroupName": "abc",
-                    "Timeout": 0,
-                    "Host": "abc",
-                    "ApiType": "abc",
-                    "Description": "abc",
-                    "ApiMatchType": "abc",
-                    "RpcExt": "abc",
-                    "GatewayDeployGroupId": "abc",
-                    "Md5": "abc",
-                    "RpcType": "abc"
+                    "ApiId": "api-1eqe6556",
+                    "ApiMatchType": "normal",
+                    "ApiType": "ms",
+                    "CreatedTime": "2024-12-23 01:29:41",
+                    "Description": null,
+                    "GatewayDeployGroupId": null,
+                    "GroupId": "grp-nb08ur29",
+                    "GroupName": null,
+                    "Host": null,
+                    "Md5": "c35e5178b28d1844054982d61481912e",
+                    "Method": "GET",
+                    "MicroserviceId": "ms-ba2jlxvk",
+                    "MicroserviceName": "provider-demo",
+                    "MockStatus": "disabled",
+                    "NamespaceId": "namespace-qab7bq9v",
+                    "NamespaceName": "shedfree_default",
+                    "Path": "/swagger/getMessageBoxAddress",
+                    "PathMapping": null,
+                    "RateLimitStatus": null,
+                    "ReleaseStatus": "released",
+                    "ReleasedTime": null,
+                    "RpcExt": null,
+                    "RpcType": "http",
+                    "Timeout": null,
+                    "UpdatedTime": "2024-12-23 01:30:03",
+                    "UsableStatus": "enabled"
                 }
-            ]
-        },
-        "RequestId": "abc"
+            ],
+            "TotalCount": 7
+        }
     }
 }
 ```

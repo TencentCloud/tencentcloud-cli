@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tse DescribeGovernanceInstances --cli-unfold-argument  \
-    --Service abc \
-    --Namespace abc \
-    --Host abc \
-    --InstanceVersion abc \
-    --Protocol abc \
+    --Service service \
+    --Namespace namespace \
+    --Host 127.0.0.1 \
+    --InstanceVersion prod \
+    --Protocol tcp \
     --HealthStatus True \
     --Isolate True \
-    --Metadatas.0.Key abc \
-    --Metadatas.0.Value abc \
+    --Metadatas.0.Key key \
+    --Metadatas.0.Value value \
     --Offset 1 \
     --Limit 1 \
-    --InstanceId abc
+    --InstanceId ins-id
 ```
 
 Output: 
@@ -27,32 +27,32 @@ Output:
         "TotalCount": 1,
         "Content": [
             {
-                "Id": "abc",
-                "Service": "abc",
-                "Namespace": "abc",
-                "Host": "abc",
+                "Id": "id",
+                "Service": "service-name",
+                "Namespace": "namespace",
+                "Host": "127.0.0.1",
                 "Port": 1,
-                "Protocol": "abc",
-                "Version": "abc",
+                "Protocol": "tcp",
+                "Version": "1",
                 "Weight": 1,
                 "EnableHealthCheck": true,
                 "Healthy": true,
                 "Isolate": true,
-                "CreateTime": "abc",
-                "ModifyTime": "abc",
+                "CreateTime": "2024-10-08 10:00:00",
+                "ModifyTime": "2024-10-08 10:00:00",
                 "Metadatas": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "key",
+                        "Value": "value"
                     }
                 ],
                 "Ttl": 1,
-                "InstanceVersion": "abc",
-                "HealthStatus": "abc",
-                "Comment": "abc"
+                "InstanceVersion": "prod",
+                "HealthStatus": "health",
+                "Comment": "comment"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia AssessQuality --cli-unfold-argument  \
-    --ImageUrl https://test.jpg
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg
 ```
 
 Output: 

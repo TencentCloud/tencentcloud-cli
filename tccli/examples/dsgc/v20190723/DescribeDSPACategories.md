@@ -22,7 +22,8 @@ Output:
             {
                 "Source": 1,
                 "CategoryId": 1,
-                "Name": "财务信息"
+                "Name": "财务信息",
+                "RelateComplianceCount": 1
             }
         ]
     }

@@ -1,4 +1,4 @@
-**Example 1: xx**
+**Example 1: 查询es概览页列表**
 
 查询es概览页列表
 
@@ -6,37 +6,37 @@ Input:
 
 ```
 tccli dsgc DescribeDSPAESDataAssetDetail --cli-unfold-argument  \
-    --DspaId abc \
-    --ComplianceId 0 \
+    --DspaId dspa-abcd1234 \
+    --ComplianceId 1 \
     --Offset 0 \
-    --Limit 0 \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc
+    --Limit 10 \
+    --Filters.0.Name DbName \
+    --Filters.0.Values dsgc-es
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 20,
         "Details": [
             {
-                "DataSourceId": "abc",
-                "DataSourceName": "abc",
-                "DataSourceType": "abc",
-                "ResourceRegion": "abc",
-                "IndexName": "abc",
-                "FieldName": "abc",
-                "CategoryId": 0,
+                "DataSourceId": "es-",
+                "DataSourceName": "dsgc-es",
+                "DataSourceType": "es",
+                "ResourceRegion": "ap-guangzhou",
+                "IndexName": "dsgc-log",
+                "FieldName": "name",
+                "CategoryId": 1,
                 "CategoryArr": [
-                    "abc"
+                    "个人基本信息"
                 ],
-                "LevelRiskName": "abc",
-                "LevelRiskScore": 0,
-                "TrustedScore": 0
+                "LevelRiskName": "高",
+                "LevelRiskScore": 10,
+                "TrustedScore": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "test-006"
     }
 }
 ```

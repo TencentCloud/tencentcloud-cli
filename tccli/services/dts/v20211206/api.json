@@ -5204,7 +5204,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -5501,7 +5501,7 @@
         {
           "disabled": false,
           "document": "库名匹配规则，请填写正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test*",
+          "example": "db_*",
           "member": "string",
           "name": "DbPattern",
           "output_required": true,
@@ -5512,7 +5512,7 @@
         {
           "disabled": false,
           "document": "表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "*",
+          "example": "tabl_*",
           "member": "string",
           "name": "TablePattern",
           "output_required": true,
@@ -5523,7 +5523,7 @@
         {
           "disabled": false,
           "document": "列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "id",
+          "example": "[\"id\"]",
           "member": "string",
           "name": "Columns",
           "output_required": true,
@@ -5667,7 +5667,7 @@
         {
           "disabled": false,
           "document": "密码，对于访问需要用户名密码认证的实例必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "password_123",
           "member": "string",
           "name": "Password",
           "output_required": true,
@@ -5948,7 +5948,7 @@
         {
           "disabled": false,
           "document": "密码。作为入参时必填，作为出参时为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "qJ3e1Wd~",
           "member": "string",
           "name": "Password",
           "output_required": false,
@@ -6080,7 +6080,7 @@
         {
           "disabled": false,
           "document": "云联网网关所属的主账号uin、跨账号云联网需要。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "700000294281",
           "member": "string",
           "name": "CcnOwnerUin",
           "output_required": false,
@@ -6212,30 +6212,30 @@
         {
           "disabled": false,
           "document": "消费者组账号",
-          "example": "account-subs-47damshnra-3",
+          "example": "account-subs-47damshnra-group-1",
           "member": "string",
           "name": "Account",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费者组名称",
-          "example": "consumer-grp-subs-47damshnra-3",
+          "example": "consumer-grp-subs-47damshnra-jason",
           "member": "string",
           "name": "ConsumerGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费者组备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "binlog订阅",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6245,7 +6245,7 @@
           "example": "-1",
           "member": "int64",
           "name": "ConsumerGroupOffset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6255,7 +6255,7 @@
           "example": "0",
           "member": "int64",
           "name": "ConsumerGroupLag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6265,7 +6265,7 @@
           "example": "9",
           "member": "int64",
           "name": "Latency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6275,7 +6275,7 @@
           "example": "无",
           "member": "MonitorInfo",
           "name": "StateOfPartition",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6285,7 +6285,7 @@
           "example": "2022-03-25 17:31:31",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6295,7 +6295,7 @@
           "example": "2022-03-25 17:31:31",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6305,7 +6305,7 @@
           "example": "Stable",
           "member": "string",
           "name": "ConsumerGroupState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6315,7 +6315,7 @@
           "example": "无",
           "member": "PartitionAssignment",
           "name": "PartitionAssignment",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -6627,7 +6627,7 @@
         {
           "disabled": false,
           "document": "用于存储ddl的topic",
-          "example": "test",
+          "example": "topic-ddl",
           "member": "string",
           "name": "DDLTopicName",
           "output_required": true,
@@ -6923,7 +6923,7 @@
         {
           "disabled": false,
           "document": "订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。\n注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ObjectsType",
           "output_required": true,
@@ -6934,7 +6934,7 @@
         {
           "disabled": false,
           "document": "订阅数据库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "db_1",
           "member": "string",
           "name": "DatabaseName",
           "output_required": true,
@@ -6945,7 +6945,7 @@
         {
           "disabled": false,
           "document": "订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"tabl_1\"]",
           "member": "string",
           "name": "TableNames",
           "output_required": true,
@@ -7739,17 +7739,17 @@
           "example": "1",
           "member": "int64",
           "name": "PartitionNo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前分区的偏移量",
-          "example": "1111",
+          "example": "23859978",
           "member": "int64",
           "name": "ConsumerGroupOffset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7759,7 +7759,7 @@
           "example": "0",
           "member": "int64",
           "name": "ConsumerGroupLag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7769,7 +7769,7 @@
           "example": "1",
           "member": "int64",
           "name": "Latency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7980,6 +7980,17 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-25 12:00:00",
+          "member": "string",
+          "name": "StartPosition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -9349,7 +9360,7 @@
         {
           "disabled": false,
           "document": "报错信息",
-          "example": "invalid connection",
+          "example": "kafka: Failed to produce message to topic",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -9359,7 +9370,7 @@
         {
           "disabled": false,
           "document": "报错原因",
-          "example": "无",
+          "example": "kafka 异常 1. 如果是数据订阅链路，可能是内部Kafka组件生产异常，后端服务会自动重试并自愈，请刷新一下页面，关注任务的状态流转 2. 如果是数据同步到kafka链路，可能是用户的kafka异常，导致数据无法写入",
           "member": "string",
           "name": "Reason",
           "output_required": false,
@@ -9369,7 +9380,7 @@
         {
           "disabled": false,
           "document": "建议的修复方案",
-          "example": "无",
+          "example": "1. 如果数据订阅链路超过10分钟后刷新，状态仍然没有流转，请提交[工单](https://console.cloud.tencent.com/workorder/category)协助解决。 2. 如果是数据同步到kafka链路，请前往kafka控制台排查",
           "member": "string",
           "name": "Solution",
           "output_required": false,
@@ -9461,20 +9472,20 @@
         {
           "disabled": false,
           "document": "错误或告警的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "kafka: Failed to produce message to topic",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "帮助文档\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://cloud.tencent.com/document/product/571/92710",
           "member": "string",
           "name": "HelpDoc",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9497,7 +9508,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例的名称",
-          "example": "test",
+          "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
           "output_required": true,
@@ -9507,7 +9518,7 @@
         {
           "disabled": false,
           "document": "订阅实例发送数据的kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "topic-subs-l4d3a7izai-cmgo-24ifcx43",
+          "example": "topic-subs-l4d3a7izai-cdb-24ifcx43",
           "member": "string",
           "name": "Topic",
           "output_required": false,
@@ -9647,7 +9658,7 @@
         {
           "disabled": false,
           "document": "接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cdb",
           "member": "string",
           "name": "AccessType",
           "output_required": false,
@@ -9753,7 +9764,7 @@
         {
           "disabled": false,
           "document": "订阅的数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "databaseName",
+          "example": "db_1",
           "member": "string",
           "name": "Database",
           "output_required": true,
@@ -9764,7 +9775,7 @@
         {
           "disabled": false,
           "document": "订阅数据库中表的名称。如果 DatabaseType 为 mongodb，填集合名。mongodb只支持订阅单库或者单集合。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"tabl_1\"]",
           "member": "string",
           "name": "Tables",
           "output_required": true,
@@ -9947,7 +9958,7 @@
         {
           "disabled": false,
           "document": "同步任务名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "sync-btso140",
           "member": "string",
           "name": "JobName",
           "output_required": true,
@@ -10480,7 +10491,7 @@
         {
           "disabled": false,
           "document": "topic名。单topic时，所有的TopicName必须相同",
-          "example": "test",
+          "example": "topicName",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -10546,7 +10557,7 @@
         {
           "disabled": false,
           "document": "按列分区时需要选择配置列名，可以选择多列\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "c1",
           "member": "string",
           "name": "Columns",
           "output_required": false,
@@ -10573,7 +10584,7 @@
         {
           "disabled": false,
           "document": "上一次交易订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20220711715001047929340",
           "member": "string",
           "name": "LastDealName",
           "output_required": true,

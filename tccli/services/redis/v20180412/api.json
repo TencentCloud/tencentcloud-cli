@@ -427,6 +427,13 @@
       "output": "DescribeSSLStatusResponse",
       "status": "online"
     },
+    "DescribeSecondLevelBackupInfo": {
+      "document": "查询实例秒级备份信息",
+      "input": "DescribeSecondLevelBackupInfoRequest",
+      "name": "查询实例秒级备份信息",
+      "output": "DescribeSecondLevelBackupInfoResponse",
+      "status": "online"
+    },
     "DescribeSlowLog": {
       "document": "本接口（DescribeSlowLog）查询实例慢查询记录。",
       "input": "DescribeSlowLogRequest",
@@ -579,6 +586,13 @@
       "input": "ModifyInstanceAvailabilityZonesRequest",
       "name": "修改实例可用区",
       "output": "ModifyInstanceAvailabilityZonesResponse",
+      "status": "online"
+    },
+    "ModifyInstanceBackupMode": {
+      "document": "修改实例的备份模式",
+      "input": "ModifyInstanceBackupModeRequest",
+      "name": "修改实例备份模式",
+      "output": "ModifyInstanceBackupModeResponse",
       "status": "online"
     },
     "ModifyInstanceEvent": {
@@ -773,7 +787,7 @@
         {
           "disabled": false,
           "document": "账号名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "example_account_name",
           "member": "string",
           "name": "AccountName",
           "output_required": true,
@@ -1235,7 +1249,7 @@
           "example": "125639021",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1245,7 +1259,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1255,7 +1269,7 @@
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1265,7 +1279,7 @@
           "example": "crs-cdc-p8ktf94h",
           "member": "string",
           "name": "RedisClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1275,7 +1289,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1285,7 +1299,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1295,7 +1309,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1305,7 +1319,7 @@
           "example": "测试实例1",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1315,7 +1329,7 @@
           "example": "2022-05-06 20:01:23",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1325,7 +1339,7 @@
           "example": "2022-06-06 20:01:23",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1335,7 +1349,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1345,7 +1359,7 @@
           "example": "无",
           "member": "ResourceBundle",
           "name": "BaseBundles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1355,7 +1369,7 @@
           "example": "无",
           "member": "ResourceBundle",
           "name": "ResourceBundles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1365,7 +1379,7 @@
           "example": "cluster-0astoh6a",
           "member": "string",
           "name": "DedicatedClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5763,6 +5777,82 @@
       ],
       "type": "object"
     },
+    "DescribeSecondLevelBackupInfoRequest": {
+      "document": "DescribeSecondLevelBackupInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录Redis控制台在实例列表复制实例 ID。",
+          "example": "crs-asdasdas",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秒级备份时间戳，7天内",
+          "example": "1716449238",
+          "member": "int64",
+          "name": "BackupTimestamp",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecondLevelBackupInfoResponse": {
+      "document": "DescribeSecondLevelBackupInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份记录ID ",
+          "example": "12",
+          "member": "string",
+          "name": "BackupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份时间戳",
+          "example": "1716449238",
+          "member": "int64",
+          "name": "BackupTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份不存在的时间戳范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SecondLevelBackupMissingTimestamps",
+          "name": "MissingTimestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例开启秒级备份的时间戳",
+          "example": "1716449238",
+          "member": "int64",
+          "name": "StartTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSlowLogRequest": {
       "document": "DescribeSlowLog请求参数结构体",
       "members": [
@@ -6477,7 +6567,7 @@
         {
           "disabled": false,
           "document": "备注信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "备注信息",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -9176,6 +9266,52 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceBackupModeRequest": {
+      "document": "ModifyInstanceBackupMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的ID，长度在12-36之间。",
+          "example": "crs-asdasda2",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份模式：\n- SecondLevelBackup   秒级备份\n- NormalLevelBackup    普通备份",
+          "example": "SecondLevelBackup",
+          "member": "string",
+          "name": "BackupMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceBackupModeResponse": {
+      "document": "ModifyInstanceBackupMode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "95027",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceEventRequest": {
       "document": "ModifyInstanceEvent请求参数结构体",
       "members": [
@@ -11359,6 +11495,32 @@
         }
       ],
       "type": "object"
+    },
+    "SecondLevelBackupMissingTimestamps": {
+      "document": "秒级备份不存在的时间戳范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1716449238",
+          "member": "int64",
+          "name": "StartTimeStamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1716449238",
+          "member": "int64",
+          "name": "EndTimeStamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SecurityGroup": {
       "document": "安全组规则",

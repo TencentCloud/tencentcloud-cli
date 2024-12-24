@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli iss DeleteDomain --cli-unfold-argument  \
-    --Id abc
+    --Id dipkiqpd-ksi0-1di0-skai189diems
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "dipkiqpd-ksi0-1di0-skai189diem1"
     }
 }
 ```

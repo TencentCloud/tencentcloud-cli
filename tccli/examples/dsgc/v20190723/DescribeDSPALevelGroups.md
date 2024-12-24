@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dsgc DescribeDSPALevelGroups --cli-unfold-argument  \
-    --DspaId dspa-00000000 \
-    --Name test
+    --DspaId dspa-8u9cas2a \
+    --Name 内置分级组
 ```
 
 Output: 
@@ -20,9 +20,9 @@ Output:
             {
                 "LevelGroupId": 11985,
                 "RefComplianceCnt": 6,
-                "LevelGroupName": "系统-敏感程度",
+                "LevelGroupName": "内置分级组",
                 "Source": 1,
-                "LevelGroupDesc": "",
+                "LevelGroupDesc": "系统内置敏感等级",
                 "LevelDetail": [
                     {
                         "LevelGroupId": 11985,
@@ -39,26 +39,33 @@ Output:
                 ],
                 "RefCompliance": [
                     {
-                        "Name": "测试扫描任务抓包1",
+                        "Name": "扫描任务抓包1",
                         "LevelGroupId": 11985,
                         "ComplianceGroupRules": [
                             {
-                                "RuleName": "测试规则1",
+                                "RuleName": "规则1",
                                 "CategoryId": 10794,
                                 "LevelId": 12011,
                                 "RuleId": 228
                             }
                         ],
                         "ComplianceGroupType": 2,
-                        "Description": "",
+                        "Description": "关联的合规组",
                         "ComplianceGroupId": 14795
                     },
                     {
-                        "Name": "测试扫描任务抓包2",
+                        "Name": "扫描任务抓包2",
                         "LevelGroupId": 11985,
-                        "ComplianceGroupRules": [],
+                        "ComplianceGroupRules": [
+                            {
+                                "RuleName": "规则2",
+                                "CategoryId": 10762,
+                                "LevelId": 12054,
+                                "RuleId": 243
+                            }
+                        ],
                         "ComplianceGroupType": 2,
-                        "Description": "",
+                        "Description": "关联的合规组2",
                         "ComplianceGroupId": 14796
                     }
                 ]

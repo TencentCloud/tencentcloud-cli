@@ -96,7 +96,7 @@ Output:
                         "Description": "",
                         "Email": "",
                         "Mobile": "",
-                        "RecipientExtra": "{}",
+                        "RecipientExtra": "{{\"RecipientEnterpriseType\":1,\"SameWithPromoter\":true}}",
                         "RecipientId": "yDxZzUyKQDKuihUuO4zjEy09jfapyHjn",
                         "RecipientType": "INDIVIDUAL",
                         "RequireDelivery": false,

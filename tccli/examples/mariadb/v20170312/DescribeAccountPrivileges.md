@@ -9,8 +9,9 @@ tccli mariadb DescribeAccountPrivileges --cli-unfold-argument  \
     --InstanceId tdsql-fdpjf5zh \
     --UserName testuser1 \
     --Host 172.17.% \
-    --DbName * \
-    --Type *
+    --DbName product_db \
+    --Type table \
+    --Object prod_user_tbl
 ```
 
 Output: 

@@ -1,11 +1,11 @@
 {
   "actions": {
     "DeregisterMigrationTask": {
-      "document": "取消注册迁移任务",
+      "document": "接口已经废弃不再使用\n\n取消注册迁移任务",
       "input": "DeregisterMigrationTaskRequest",
       "name": "取消注册迁移任务",
       "output": "DeregisterMigrationTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeMigrationTask": {
       "document": "获取指定迁移任务详情",

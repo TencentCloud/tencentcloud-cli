@@ -24,7 +24,7 @@ Output:
                 "DbName": "performance_schema"
             },
             {
-                "DbName": "test"
+                "DbName": "product_db"
             }
         ],
         "InstanceId": "tdsql-e9tklsgz",

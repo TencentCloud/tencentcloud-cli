@@ -96,7 +96,7 @@
         {
           "disabled": false,
           "document": "是否开启自动扩容，默认值true。",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "EnableAutoExpansion",
           "required": false,
@@ -105,7 +105,7 @@
         {
           "disabled": false,
           "document": "是否开启自动缩容，默认值true。",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "EnableAutoShrink",
           "required": false,
@@ -114,7 +114,7 @@
         {
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -190,47 +190,47 @@
           "example": "hpc-2mv1i3d8",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群状态。取值范围：<br><li>PENDING：创建中<br><li>INITING：初始化中<br><li>INIT_FAILED：初始化失败<br><li>RUNNING：运行中<br><li>TERMINATING：销毁中",
+          "document": "集群状态。取值范围：<br><li>PENDING：创建中</li><br><li>INITING：初始化中</li><br><li>INIT_FAILED：初始化失败</li><br><li>RUNNING：运行中</li><br><li>TERMINATING：销毁中</li>",
           "example": "RUNNING",
           "member": "string",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群名称。",
-          "example": "无",
+          "example": "hpc-test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群位置信息。",
-          "example": "无",
+          "example": "{ \"Zone\": \"ap-guangzhou-6\" }\t",
           "member": "Placement",
           "name": "Placement",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群创建时间。",
-          "example": "无",
+          "example": "2024-12-18T13:46:34Z",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -240,7 +240,7 @@
           "example": "SGE",
           "member": "string",
           "name": "SchedulerType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -250,17 +250,17 @@
           "example": "1",
           "member": "int64",
           "name": "ComputeNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计算节点概览。",
-          "example": "无",
+          "example": "[{\"NodeId\":\"ins-riredadfj6\"},{\"NodeId\":\"ins-mdafdsai\"},{\"NodeId\":\"ins-5icofadac\"},{\"NodeId\":\"ins-icfdadfy\"}]",
           "member": "ComputeNodeOverview",
           "name": "ComputeNodeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -270,27 +270,27 @@
           "example": "1",
           "member": "int64",
           "name": "ManagerNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "管控节点概览。",
-          "example": "无",
+          "example": "[{\"NodeId\":\"node-rirfdafa\"}]",
           "member": "ManagerNodeOverview",
           "name": "ManagerNodeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "登录节点概览。",
-          "example": "无",
+          "example": "[{\"NodeId\":\"ins-riredadfj6\"},{\"NodeId\":\"ins-mdafdsai\"},{\"NodeId\":\"ins-5icofadac\"},{\"NodeId\":\"ins-icfdadfy\"}]",
           "member": "LoginNodeOverview",
           "name": "LoginNodeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -300,7 +300,7 @@
           "example": "1",
           "member": "int64",
           "name": "LoginNodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -892,13 +892,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。<br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。<br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
-          "example": "无",
+          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li><br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。</li><br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
+          "example": "test@123456",
           "member": "string",
           "name": "Password",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1001,15 +1000,16 @@
         {
           "disabled": false,
           "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "StorageOption": {
       "document": "描述集群文件系统选项",
@@ -1069,22 +1069,20 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "env",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

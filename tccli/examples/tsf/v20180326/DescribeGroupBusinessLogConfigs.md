@@ -31,7 +31,8 @@ Output:
                         "SchemaContent": null,
                         "SchemaDateFormat": "YYYY-MM-dd HH:mm:ss.SSS",
                         "SchemaMultilinePattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}",
-                        "SchemaCreateTime": "2019-03-15 18:57:17"
+                        "SchemaCreateTime": "2019-03-15 18:57:17",
+                        "SchemaPatternLayout": null
                     },
                     "ConfigAssociatedGroups": null
                 }

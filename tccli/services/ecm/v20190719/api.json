@@ -7175,30 +7175,30 @@
         {
           "disabled": false,
           "document": "配额名称，取值范围：\nTOTAL_EIP_QUOTA：用户当前地域下EIP的配额数；\nDAILY_EIP_APPLY：用户当前地域下今日申购次数；\nDAILY_PUBLIC_IP_ASSIGN：用户当前地域下，重新分配公网 IP次数。",
-          "example": "",
+          "example": "TOTAL_EIP_QUOTA",
           "member": "string",
           "name": "QuotaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "QuotaCurrent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "QuotaLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli dsgc DescribeDSPACOSTaskResultDetail --cli-unfold-argument  \
-    --DspaId dspa-001 \
-    --TaskId 0 \
+    --DspaId dspa-890asdj2 \
+    --TaskId 1 \
     --LevelId 10000 \
-    --FileName test.txt \
-    --Limit 0 \
-    --ComplianceId 0 \
+    --FileName file.txt \
+    --Limit 10 \
+    --ComplianceId 1 \
     --Offset 0 \
     --BucketResultId 1 \
     --BucketName bucket_1 \
-    --CategoryId 0
+    --CategoryId 1
 ```
 
 Output: 
@@ -25,23 +25,29 @@ Output:
         "TotalCount": 1,
         "Items": [
             {
-                "CategoryName": "身份证",
-                "RuleId": 0,
-                "LevelName": "高",
-                "FileType": ".csv",
-                "SensitiveDataCount": 0,
-                "LevelId": 10000,
-                "FileName": "test.txt",
-                "LevelRiskScore": 0,
-                "BucketName": "bucket_01",
-                "TaskId": 0,
-                "RuleName": "rule_01",
-                "KMSEncrypted": true,
-                "CategoryId": 0,
-                "FileSize": 0
+                "FileResultId": 1,
+                "TaskId": 1,
+                "ResultId": 1,
+                "FileName": "file.txt",
+                "ComplianceId": 1,
+                "BucketName": "bucket_1",
+                "RuleId": 10,
+                "RuleName": "手机",
+                "CategoryId": 1,
+                "CategoryName": "个人基本信息",
+                "CategoryFullPath": [
+                    "个人基本信息"
+                ],
+                "LevelId": 2,
+                "LevelName": "中",
+                "LevelRiskScore": 5,
+                "KMSEncrypted": false,
+                "FileSize": 0,
+                "FileType": "txt",
+                "SensitiveDataCount": 1
             }
         ],
-        "RequestId": "request_001"
+        "RequestId": "1f1765cf-c01a-4a93-95b2-99108f4aa04f"
     }
 }
 ```

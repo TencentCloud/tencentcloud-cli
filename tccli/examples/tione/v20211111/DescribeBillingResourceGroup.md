@@ -6,65 +6,51 @@ Input:
 
 ```
 tccli tione DescribeBillingResourceGroup --cli-unfold-argument  \
-    --ResourceGroupId abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --ResourceGroupId ersg-9hw7jfk6 \
+    --Filters.0.Name InstanceStatus \
+    --Filters.0.Values RUNNING \
     --Filters.0.Negative True \
     --Filters.0.Fuzzy True \
     --Offset 1 \
     --Limit 1 \
-    --Order abc \
-    --OrderField abc
+    --Order ASC \
+    --OrderField CreateTime
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 2,
         "InstanceSet": [
             {
-                "InstanceId": "abc",
+                "InstanceId": "sm-8r7jbnsz",
                 "UsedResource": {
-                    "Cpu": 1,
-                    "Memory": 1,
-                    "Gpu": 1,
-                    "GpuType": "abc",
-                    "RealGpu": 1,
-                    "RealGpuDetailSet": [
-                        {
-                            "Name": "abc",
-                            "Value": 1
-                        }
-                    ]
+                    "Cpu": 78200,
+                    "Memory": 349696,
+                    "Gpu": 400,
+                    "GpuType": "4090D",
+                    "RealGpu": 0,
+                    "RealGpuDetailSet": []
                 },
                 "TotalResource": {
-                    "Cpu": 1,
-                    "Memory": 1,
-                    "Gpu": 1,
-                    "GpuType": "abc",
-                    "RealGpu": 1,
-                    "RealGpuDetailSet": [
-                        {
-                            "Name": "abc",
-                            "Value": 1
-                        }
-                    ]
+                    "Cpu": 78200,
+                    "Memory": 349780,
+                    "Gpu": 400,
+                    "GpuType": "4090D",
+                    "RealGpu": 0,
+                    "RealGpuDetailSet": []
                 },
-                "InstanceStatus": "abc",
-                "SubUin": "abc",
-                "CreateTime": "abc",
-                "ExpireTime": "abc",
-                "AutoRenewFlag": "abc",
-                "SpecId": "abc",
-                "SpecAlias": "abc",
-                "SpecFeatures": [
-                    "abc"
-                ]
+                "InstanceStatus": "RUNNING",
+                "SubUin": "100023251204",
+                "CreateTime": "2024-12-19 15:36:44",
+                "ExpireTime": "",
+                "AutoRenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "SpecId": "sv_tio_platform_cloud_post_gpu_80c368g_44090d_sw",
+                "SpecAlias": "80核358GB 4090D*4"
             }
         ],
-        "ResourceGroupSWType": "NORMAL",
-        "RequestId": "abc"
+        "RequestId": "114e2564-3ce6-469c-b9c0-284a51247902"
     }
 }
 ```

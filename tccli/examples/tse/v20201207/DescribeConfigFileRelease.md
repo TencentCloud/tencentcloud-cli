@@ -18,23 +18,23 @@ Output:
     "Response": {
         "ConfigFileRelease": {
             "Id": 1,
-            "Name": "abc",
-            "Namespace": "abc",
-            "Group": "abc",
-            "FileName": "abc",
-            "Content": "abc",
-            "Comment": "abc",
-            "Md5": "abc",
+            "Name": "name",
+            "Namespace": "namespace",
+            "Group": "group",
+            "FileName": "a.yaml",
+            "Content": "content",
+            "Comment": "comment",
+            "Md5": "hash",
             "Version": 1,
-            "CreateTime": "abc",
-            "CreateBy": "abc",
-            "ModifyTime": "abc",
-            "ModifyBy": "abc",
-            "ReleaseDescription": "abc",
+            "CreateTime": "2024-10-08 10:00:00",
+            "CreateBy": "user",
+            "ModifyTime": "2024-10-08 10:00:00",
+            "ModifyBy": "user",
+            "ReleaseDescription": "desc",
             "Active": true,
-            "Format": "abc"
+            "Format": "yaml"
         },
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

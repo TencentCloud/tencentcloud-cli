@@ -272,6 +272,20 @@
         "title": "示例"
       }
     ],
+    "DescribeMessageTrace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTrace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":0,\\\"ProduceTime\\\":\\\"2023-05-09 14:43:27,127\\\",\\\"ProducerAddr\\\":\\\"30.174.57.21\\\",\\\"MsgKey\\\":\\\"testKey\\\",\\\"MsgTags\\\":\\\"testTag\\\",\\\"Duration\\\":76}\",\n                \"Stage\": \"produce\"\n            },\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":0,\\\"PersistTime\\\":\\\"2023-05-09 14:43:27,184\\\"}\",\n                \"Stage\": \"persist\"\n            },\n            {\n                \"Data\": \"{\\\"TotalCount\\\":1,\\\"RocketMqConsumeLogs\\\":[{\\\"MsgId\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"Status\\\":2,\\\"PushTime\\\":\\\"2023-05-09 14:43:27,205\\\",\\\"ConsumerAddr\\\":\\\"11.139.244.247\\\",\\\"ConsumerGroup\\\":\\\"group\\\",\\\"RetryTimes\\\":1}]}\",\n                \"Stage\": \"consume\"\n            }\n        ],\n        \"RequestId\": \"0112153a-8cba-44f1-b7a5-5e412d493940\",\n        \"ShowTopicName\": \"topic\"\n    }\n}",
+        "title": "查询普通消息的轨迹"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageTrace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-cdqzmmgz8o\",\n    \"Topic\": \"\",\n    \"MsgId\": \"010242ECB90067325E06F41EFF00000000\",\n    \"QueryDelayMessage\": true\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"010242ECB90067325E06F41EFF00000000\\\",\\\"Status\\\":0,\\\"ProduceTime\\\":\\\"2024-09-12 14:06:55,591\\\",\\\"ProducerAddr\\\":\\\"9.218.232.160:32038\\\",\\\"MsgKey\\\":\\\"topic1\\\",\\\"MsgTags\\\":\\\"tag0\\\",\\\"Duration\\\":2}\",\n                \"Stage\": \"produce\"\n            },\n            {\n                \"Data\": \"{\\\"MsgId\\\":\\\"010242ECB90067325E06F41EFF00000000\\\",\\\"Status\\\":0,\\\"PersistTime\\\":\\\"2024-09-12 14:06:55,590\\\"}\",\n                \"Stage\": \"persist\"\n            },\n            {\n                \"Data\": \"{\\\"TotalCount\\\":0,\\\"RocketMqConsumeLogs\\\":[]}\",\n                \"Stage\": \"consume\"\n            }\n        ],\n        \"RequestId\": \"2e4374f9-0c98-4d77-af20-2bc414ccaefd\",\n        \"ShowTopicName\": \"\"\n    }\n}",
+        "title": "查询延迟消息的轨迹"
+      }
+    ],
     "DescribeProductSKUs": [
       {
         "document": "获取产品规格信息",

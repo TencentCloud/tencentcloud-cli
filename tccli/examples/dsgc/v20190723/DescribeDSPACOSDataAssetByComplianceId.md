@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dsgc DescribeDSPACOSDataAssetByComplianceId --cli-unfold-argument  \
-    --DspaId dspa-00001 \
+    --DspaId dspa-3n34nzca \
     --ComplianceId 1
 ```
 
@@ -15,31 +15,31 @@ Output:
 {
     "Response": {
         "Stats": {
-            "DataAssetType": 0,
-            "TotalBucketCnt": 0,
-            "TotalObjectCnt": 0,
-            "SensitiveCategoryCnt": 0,
-            "SensitiveDataCnt": 0,
+            "DataAssetType": 1,
+            "TotalBucketCnt": 10,
+            "TotalObjectCnt": 10,
+            "SensitiveCategoryCnt": 5,
+            "SensitiveDataCnt": 5,
             "SensitiveLevel": [
                 {
-                    "LevelId": 0,
-                    "LevelCnt": 0,
-                    "LevelRiskName": "abc",
-                    "LevelRiskScore": 0
+                    "LevelId": 1,
+                    "LevelCnt": 5,
+                    "LevelRiskName": "高敏感",
+                    "LevelRiskScore": 10
                 }
             ],
-            "SensitiveBucketCnt": 0,
-            "SensitiveObjectCnt": 0,
+            "SensitiveBucketCnt": 1,
+            "SensitiveObjectCnt": 1,
             "CategoryDistributed": [
                 {
-                    "CategoryId": 0,
-                    "CategoryName": "abc",
+                    "CategoryId": 1,
+                    "CategoryName": "联系方式",
                     "Count": 1,
-                    "CategoryFullPath": "abc"
+                    "CategoryFullPath": "个人基本信息/联系方式"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "5af5a48c-6eb7-4d81-8df6-6d0e316a32ef"
     }
 }
 ```

@@ -17,7 +17,7 @@ Output:
         "RequestId": "128009ac-7df4-0530-cc92-52f0d945e191",
         "IsUpdated": true,
         "TaskNameSet": [
-            "aaa"
+            "asset"
         ]
     }
 }

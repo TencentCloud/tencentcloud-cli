@@ -1920,7 +1920,7 @@
         {
           "disabled": false,
           "document": "角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。",
-          "example": "test_1234544",
+          "example": "AdminRole",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -1938,7 +1938,7 @@
         {
           "disabled": false,
           "document": "角色描述",
-          "example": "abc",
+          "example": "管理角色",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1980,7 +1980,7 @@
         {
           "disabled": false,
           "document": "角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456789",
+          "example": "4611**************1",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
@@ -2066,7 +2066,7 @@
         {
           "disabled": false,
           "document": "自定义后缀，根据您提供的字符串，与服务提供的前缀组合在一起以形成完整的角色名称。",
-          "example": "forTest",
+          "example": "forAdmin",
           "member": "string",
           "name": "CustomSuffix",
           "required": false,
@@ -2084,7 +2084,7 @@
         {
           "disabled": false,
           "document": "角色绑定标签。",
-          "example": "无",
+          "example": "[{\"TagKey\":\"管理人员\",\"TagValue\":\"运营主管\"}]",
           "member": "RoleTags",
           "name": "Tags",
           "required": false,
@@ -2099,7 +2099,7 @@
         {
           "disabled": false,
           "document": "角色ID",
-          "example": "4611686018427411525",
+          "example": "4611**************1",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
@@ -5577,7 +5577,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -5586,7 +5586,7 @@
         {
           "disabled": false,
           "document": "限制数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -5601,18 +5601,20 @@
         {
           "disabled": false,
           "document": "企业微信子用户列表。",
-          "example": "",
+          "example": " [ {             \"Uin\": 1000005433333533,             \"Name\": \"test124\",             \"Uid\": 1001774,             \"Remark\": \"account_test\",             \"ConsoleLogin\": 1,             \"PhoneNum\": \"10086\",             \"CountryCode\": \"86\",             \"Email\": \"123@qq.com\",             \"WeChatWorkUserId\": \"45657\",             \"CreateTime\": \"2020-10-10 00:00:00\"         } ]",
           "member": "WeChatWorkSubAccount",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总数目。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7631,100 +7633,100 @@
         {
           "disabled": false,
           "document": "子用户用户 ID",
-          "example": "",
+          "example": "234234",
           "member": "uint64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "",
+          "example": "accountName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户 UID",
-          "example": "",
+          "example": "245423424",
           "member": "uint64",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "测试账号",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子用户能否登录控制台",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "手机号",
-          "example": "",
+          "example": "187******123",
           "member": "string",
           "name": "PhoneNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区号",
-          "example": "",
+          "example": "010",
           "member": "string",
           "name": "CountryCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "",
+          "example": "123@qq.com",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "企业微信UserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "23423424",
           "member": "string",
           "name": "WeChatWorkUserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2024-12-19 10:49:12",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

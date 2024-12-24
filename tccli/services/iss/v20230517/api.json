@@ -663,7 +663,7 @@
         {
           "disabled": false,
           "document": "AI 任务描述",
-          "example": "用于测试",
+          "example": "宠物识别",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -934,7 +934,7 @@
         {
           "disabled": false,
           "document": "AI 任务描述。仅支持中文、英文、数字、_、-，长度不超过128个字符",
-          "example": "用于测试",
+          "example": "宠物识别",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -2143,7 +2143,7 @@
         },
         {
           "disabled": false,
-          "document": "设备接入协议（1:RTMP,2:GB,3:GW,4:IVCP）",
+          "document": "设备接入协议（1:RTMP,2:GB,3:GW,6:ISUP）",
           "example": "2",
           "member": "int64",
           "name": "AccessProtocol",
@@ -2189,7 +2189,7 @@
         {
           "disabled": false,
           "document": "设备密码（国标，网关设备必填，长度为1-64个字符）",
-          "example": "111111",
+          "example": "37********10",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2500,7 +2500,7 @@
         {
           "disabled": false,
           "document": "返回数据",
-          "example": " ",
+          "example": "无 ",
           "member": "ISAPIOutputData",
           "name": "Data",
           "output_required": false,
@@ -6202,7 +6202,7 @@
         {
           "disabled": false,
           "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "<?xml version=\\\"1.0\\\"?>\\n<ResponseStatus></ResponseStatus>",
           "member": "string",
           "name": "OutputData",
           "output_required": false,
@@ -6396,7 +6396,7 @@
         {
           "disabled": false,
           "document": "设备密码",
-          "example": "111111",
+          "example": "53*****91",
           "member": "string",
           "name": "Password",
           "output_required": true,
@@ -6446,7 +6446,7 @@
         {
           "disabled": false,
           "document": "设备所属组织 ID",
-          "example": "123",
+          "example": "0",
           "member": "string",
           "name": "OrganizationId",
           "output_required": true,
@@ -6472,7 +6472,7 @@
         {
           "disabled": false,
           "document": "组织ID",
-          "example": "123",
+          "example": "0",
           "member": "string",
           "name": "OrganizationId",
           "required": true,
@@ -6544,7 +6544,7 @@
         {
           "disabled": false,
           "document": "当前用户Uin",
-          "example": "123456789",
+          "example": "21******35",
           "member": "uint64",
           "name": "CurrentUin",
           "required": false,
@@ -9332,7 +9332,7 @@
         {
           "disabled": false,
           "document": "AI 任务描述。仅支持中文、英文、数字、_、-，长度不超过128个字符",
-          "example": "用于测试",
+          "example": "宠物识别",
           "member": "string",
           "name": "Desc",
           "required": false,

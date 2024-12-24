@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia SearchImage --cli-unfold-argument  \
-    --ImageUrl http://test.com/1.jpg \
+    --ImageUrl https://liudhu-9527.cos.ap-guangzhou.myqcloud.com/input.jpeg \
     --Filter value > 10 \
     --MatchThreshold 1 \
     --Limit 30 \
@@ -18,52 +18,118 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "8bab9614-3f62-4b1d-bc9b-e773703c727e",
         "Count": 1,
         "ImageInfos": [
             {
-                "EntityId": "test1",
-                "PicName": "test2",
-                "Score": 100,
                 "CustomContent": "",
-                "Tags": "{}"
+                "EntityId": "work-1",
+                "PicName": "work-1-1",
+                "Score": 100,
+                "Tags": "{\"my_tag\": \"1\"}"
             }
         ],
         "Object": {
-            "Box": {
-                "Rect": {
-                    "Width": 447,
-                    "Height": 816,
-                    "X": 88,
-                    "Y": 264
-                },
-                "Score": 53
-            },
-            "Colors": [
+            "AllBox": [
                 {
-                    "Color": "0A0A0A",
-                    "Percentage": 15,
-                    "Label": "Black-black"
+                    "CategoryId": 0,
+                    "Rect": {
+                        "Height": 268,
+                        "Width": 193,
+                        "X": 278,
+                        "Y": 162
+                    },
+                    "Score": 60
                 },
                 {
-                    "Color": "8B4513",
-                    "Percentage": 11,
-                    "Label": "Brown-saddlebrown"
+                    "CategoryId": 4,
+                    "Rect": {
+                        "Height": 138,
+                        "Width": 132,
+                        "X": 337,
+                        "Y": 1053
+                    },
+                    "Score": 78
                 },
                 {
-                    "Percentage": 7,
-                    "Label": "Yellow-khaki",
-                    "Color": "D8C59D"
-                },
-                {
-                    "Label": "Yellow-darkkhaki",
-                    "Color": "BDB76B",
-                    "Percentage": 6
+                    "CategoryId": 5,
+                    "Rect": {
+                        "Height": 31,
+                        "Width": 83,
+                        "X": 356,
+                        "Y": 135
+                    },
+                    "Score": 27
                 }
             ],
-            "CategoryId": 5,
-            "Attributes": []
-        }
+            "Attributes": [
+                {
+                    "Details": "渐层",
+                    "Type": "图案"
+                },
+                {
+                    "Details": "街头",
+                    "Type": "风格"
+                },
+                {
+                    "Details": "灰色",
+                    "Type": "颜色"
+                },
+                {
+                    "Details": "尼龙",
+                    "Type": "材质"
+                },
+                {
+                    "Details": "连帽",
+                    "Type": "颈线设计"
+                },
+                {
+                    "Details": "男装",
+                    "Type": "类型"
+                },
+                {
+                    "Details": "加长款",
+                    "Type": "衣长"
+                },
+                {
+                    "Details": "连衣裤",
+                    "Type": "类别"
+                }
+            ],
+            "Box": {
+                "CategoryId": 0,
+                "Rect": {
+                    "Height": 268,
+                    "Width": 193,
+                    "X": 278,
+                    "Y": 162
+                },
+                "Score": 60
+            },
+            "CategoryId": 0,
+            "Colors": [
+                {
+                    "Color": "293133",
+                    "Label": "Black-darkgrey",
+                    "Percentage": 10
+                },
+                {
+                    "Color": "4A3D46",
+                    "Label": "Black-grapethistle",
+                    "Percentage": 8
+                },
+                {
+                    "Color": "808080",
+                    "Label": "Gray-gray",
+                    "Percentage": 7
+                },
+                {
+                    "Color": "555555",
+                    "Label": "Blue-ebony",
+                    "Percentage": 6
+                }
+            ]
+        },
+        "RequestId": "7ddbbc94-1adc-45f7-a114-8fdebaabf6d4"
     }
 }
 ```

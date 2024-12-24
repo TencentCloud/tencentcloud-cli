@@ -6047,6 +6047,15 @@
           "name": "UseMobileAccept",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "座席分机号（1 到 8 打头，4 - 6 位）",
+          "example": "1003",
+          "member": "string",
+          "name": "ExtensionNumber",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6830,7 +6839,7 @@
         {
           "disabled": false,
           "document": "座席关联的技能组列表",
-          "example": "\"\"",
+          "example": "[\"测试技能组\"]",
           "member": "string",
           "name": "SkillGroupNameList",
           "output_required": true,
@@ -6847,6 +6856,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席分机号（1 到 8 打头，4 - 6 位）",
+          "example": "1003",
+          "member": "string",
+          "name": "ExtensionNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7307,6 +7327,16 @@
           "name": "LastModifyTimestamp",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座席分机号（1 到 8 打头，4 - 6 位）",
+          "example": "1003",
+          "member": "string",
+          "name": "ExtensionNumber",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -94,7 +94,7 @@ tccli cdb DescribeAuditLogs --cli-unfold-argument  \
     --LogFilter.0.Value select \
     --LogFilter.1.Type sql \
     --LogFilter.1.Compare WINC \
-    --LogFilter.1.Value test_db \
+    --LogFilter.1.Value andy_db \
     --LogFilter.2.Type host \
     --LogFilter.2.Compare NEQ \
     --LogFilter.2.Value 10.0.0.1 100.0.0.1

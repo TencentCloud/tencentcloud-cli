@@ -9,7 +9,7 @@ tccli privatedns DescribePrivateDNSAccountList --cli-unfold-argument  \
     --Limit 200 \
     --Offset 0 \
     --Filters.0.Name AccountUin \
-    --Filters.0.Values 123456789
+    --Filters.0.Values 1000230100
 ```
 
 Output: 

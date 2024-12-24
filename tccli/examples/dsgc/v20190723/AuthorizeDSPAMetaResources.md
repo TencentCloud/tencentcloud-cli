@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 授权用户云资源**
 
 
 
@@ -11,8 +11,8 @@ tccli dsgc AuthorizeDSPAMetaResources --cli-unfold-argument  \
     --MetaType cdb \
     --ResourceRegion ap-guangzhou \
     --ResourcesAccount.0.ResourceId cdb-9loqa8ed \
-    --ResourcesAccount.0.UserName  \
-    --ResourcesAccount.0.Password 
+    --ResourcesAccount.0.UserName root \
+    --ResourcesAccount.0.Password password
 ```
 
 Output: 

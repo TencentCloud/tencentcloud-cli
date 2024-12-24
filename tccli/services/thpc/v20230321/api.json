@@ -211,7 +211,7 @@
         {
           "disabled": false,
           "document": "集群中实例所在的位置。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -220,7 +220,7 @@
         {
           "disabled": false,
           "document": "集群ID。",
-          "example": "无",
+          "example": "hpc-xxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -229,7 +229,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。",
-          "example": "无",
+          "example": "vpc-xxx",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": true,
@@ -238,7 +238,7 @@
         {
           "disabled": false,
           "document": "添加节点数量。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -247,7 +247,7 @@
         {
           "disabled": false,
           "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。公共镜像请参考[镜像限制](https://cloud.tencent.com/document/product/1527/64818#.E9.95.9C.E5.83.8F)",
-          "example": "无",
+          "example": "img-xxx",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -256,7 +256,7 @@
         {
           "disabled": false,
           "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><li>POSTPAID_BY_HOUR：按小时后付费</li><li>SPOTPAID：竞价付费</li>默认值：POSTPAID_BY_HOUR。",
-          "example": "无",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -265,7 +265,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
-          "example": "无",
+          "example": "{ \"Period\": 36, \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\" }\t",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -274,7 +274,7 @@
         {
           "disabled": false,
           "document": "节点机型。不同实例机型指定了不同的资源规格。<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>",
-          "example": "无",
+          "example": "S5.LARGE4",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -283,7 +283,7 @@
         {
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "无",
+          "example": "{ \"DiskSize\": 50 }\t",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -292,7 +292,7 @@
         {
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
-          "example": "无",
+          "example": "[ { \"DiskSize\": 50, \"DiskType\": \"CLOUD_PREMIUM\" } ]\t",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -301,7 +301,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "无",
+          "example": "{ \"PublicIpAssigned\": \"false\" }",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -310,7 +310,7 @@
         {
           "disabled": false,
           "document": "节点显示名称。\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
-          "example": "无",
+          "example": "server_{R:3}",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -319,7 +319,7 @@
         {
           "disabled": false,
           "document": "集群登录设置。",
-          "example": "无",
+          "example": "{ \"KeyIds\": [ \"skey-9tzxxb4j\" ] }",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -328,7 +328,7 @@
         {
           "disabled": false,
           "document": "集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "无",
+          "example": "[\"sg-ajhn9qtq\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -337,7 +337,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -346,7 +346,7 @@
         {
           "disabled": false,
           "document": "队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。</li><li>SGE默认队列为：all.q。</li>\n",
-          "example": "无",
+          "example": "compute",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -355,7 +355,7 @@
         {
           "disabled": false,
           "document": "添加节点角色。默认值：Compute<br><li>Compute：计算节点。</li><li>Login：登录节点。</li>",
-          "example": "无",
+          "example": "Compute",
           "member": "string",
           "name": "NodeRole",
           "required": false,
@@ -364,7 +364,7 @@
         {
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -373,7 +373,7 @@
         {
           "disabled": false,
           "document": "添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。</li><li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。</li>",
-          "example": "无",
+          "example": "STATIC",
           "member": "string",
           "name": "NodeType",
           "required": false,
@@ -382,7 +382,7 @@
         {
           "disabled": false,
           "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -1004,7 +1004,7 @@
         {
           "disabled": false,
           "document": "集群中实例所在的位置。",
-          "example": "无",
+          "example": "{ \"Zone\": \"ap-guangzhou-6\" }\t",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -1013,7 +1013,7 @@
         {
           "disabled": false,
           "document": "指定管理节点。",
-          "example": "无",
+          "example": "{\"InstanceType\": \"S2.SMALL2\"}",
           "member": "ManagerNode",
           "name": "ManagerNode",
           "required": false,
@@ -1022,7 +1022,7 @@
         {
           "disabled": false,
           "document": "指定管理节点的数量。默认取值：1。取值范围：1～2。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ManagerNodeCount",
           "required": false,
@@ -1031,7 +1031,7 @@
         {
           "disabled": false,
           "document": "指定计算节点。",
-          "example": "无",
+          "example": "{\"InstanceType\": \"S2.SMALL2\"}",
           "member": "ComputeNode",
           "name": "ComputeNode",
           "required": false,
@@ -1040,7 +1040,7 @@
         {
           "disabled": false,
           "document": "指定计算节点的数量。默认取值：0。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ComputeNodeCount",
           "required": false,
@@ -1067,7 +1067,7 @@
         {
           "disabled": false,
           "document": "指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前支持部分公有镜像和自定义镜像。公共镜像请参考[镜像限制](https://cloud.tencent.com/document/product/1527/64818#.E9.95.9C.E5.83.8F)",
-          "example": "无",
+          "example": "img-xxx",
           "member": "string",
           "name": "ImageId",
           "required": false,
@@ -1076,7 +1076,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。",
-          "example": "无",
+          "example": "{ \"VpcId\": \"vpc-rhfaxx31\", \"SubnetId\": \"subnet-x7vxgqe\" }",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
@@ -1085,7 +1085,7 @@
         {
           "disabled": false,
           "document": "集群登录设置。",
-          "example": "无",
+          "example": "{ \"KeyIds\": [ \"skey-9tzxxb4j\" ] }",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1094,7 +1094,7 @@
         {
           "disabled": false,
           "document": "集群中实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "无",
+          "example": "[\"sg-ajhn9qtq\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -1103,7 +1103,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1112,7 +1112,7 @@
         {
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -1130,7 +1130,7 @@
         {
           "disabled": false,
           "document": "集群显示名称。",
-          "example": "无",
+          "example": "cluster-test",
           "member": "string",
           "name": "ClusterName",
           "required": false,
@@ -1139,7 +1139,7 @@
         {
           "disabled": false,
           "document": "集群存储选项",
-          "example": "无",
+          "example": "{\"CFSOptions\":[{\"LocalPath\":\"/mnt/\",\"RemotePath\":\"127.0.0.1@tcp0:/test/cfs/\",\"Protocol\":\"TURBO\",\"StorageType\":\"TP\"}]}\t",
           "member": "StorageOption",
           "name": "StorageOption",
           "required": false,
@@ -1148,7 +1148,7 @@
         {
           "disabled": false,
           "document": "指定登录节点。",
-          "example": "无",
+          "example": "{\"InstanceType\": \"S2.SMALL2\"}",
           "member": "LoginNode",
           "name": "LoginNode",
           "required": false,
@@ -1157,7 +1157,7 @@
         {
           "disabled": false,
           "document": "指定登录节点的数量。默认取值：0。取值范围：0～10。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LoginNodeCount",
           "required": false,
@@ -1166,7 +1166,7 @@
         {
           "disabled": false,
           "document": "创建集群时同时绑定的标签对说明。",
-          "example": "无",
+          "example": "[{\"Key\": \"test\", \"Value\": \"test\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1175,7 +1175,7 @@
         {
           "disabled": false,
           "document": "弹性伸缩类型。默认值：THPC_AS",
-          "example": "无",
+          "example": "THPC_AS",
           "member": "string",
           "name": "AutoScalingType",
           "required": false,
@@ -1184,7 +1184,7 @@
         {
           "disabled": false,
           "document": "节点初始化脚本信息列表。",
-          "example": "无",
+          "example": "{\"ScriptPath\": \"cos://demo-xxxxxxxx.cos.ap-guangzhou.myqcloud.com/test/echo.sh\", \"Timeout\": \"30\"}",
           "member": "NodeScript",
           "name": "InitNodeScripts",
           "required": false,
@@ -1193,7 +1193,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
-          "example": "无",
+          "example": "hpc-xxx",
           "member": "string",
           "name": "HpcClusterId",
           "required": false,
@@ -1554,7 +1554,7 @@
         {
           "disabled": false,
           "document": "节点ID。",
-          "example": "无",
+          "example": "[\"node-xxx\"]",
           "member": "string",
           "name": "NodeIds",
           "required": true,
@@ -2358,8 +2358,7 @@
           "member": "string",
           "name": "LocalPath",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2368,18 +2367,16 @@
           "member": "string",
           "name": "RemotePath",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "文件系统master的ip和端口。",
-          "example": "无",
+          "example": "[\"172.16.0.2:55533\",\"172.16.0.3:55533\",\"172.16.0.4:55533\"]",
           "member": "string",
           "name": "Masters",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2624,7 +2621,7 @@
         {
           "disabled": false,
           "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：<br><li>Linux实例密码必须8到30位，至少包括两项[a-z]，[A-Z]、[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & *  - + = | { } [ ] : ; ' , . ? / ]中的特殊符号。</li><br><li>Windows实例密码必须12到30位，至少包括三项[a-z]，[A-Z]，[0-9] 和 [( ) \\` ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ' , . ? /]中的特殊符号。</li><br><br>若不指定该参数，则由系统随机生成密码，并通过站内信方式通知到用户。",
-          "example": "无",
+          "example": "test@123456",
           "member": "string",
           "name": "Password",
           "required": false,
@@ -2633,7 +2630,7 @@
         {
           "disabled": false,
           "document": "实例登录密钥",
-          "example": "无",
+          "example": "sky-xxx",
           "member": "string",
           "name": "KeyIds",
           "required": false,
@@ -2981,9 +2978,10 @@
         {
           "disabled": false,
           "document": "实例所属的可用区名称。该参数可以通过调用  [DescribeZones](https://cloud.tencent.com/document/product/213/15707) 的返回值中的Zone字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -3357,7 +3355,7 @@
         {
           "disabled": false,
           "document": "扩容队列配置列表。",
-          "example": "无",
+          "example": "{\"QueueName\":\"compute\"}",
           "member": "QueueConfig",
           "name": "QueueConfigs",
           "required": false,
@@ -3366,7 +3364,7 @@
         {
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会绑定弹性伸缩组。检查项包括是否填写了必需参数，请求格式，业务限制。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId。\nfalse（默认）：发送正常请求，通过检查后直接绑定弹性伸缩组。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -3722,7 +3720,7 @@
         {
           "disabled": false,
           "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
           "output_required": false,
@@ -3733,7 +3731,7 @@
         {
           "disabled": false,
           "document": "项目，默认是0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "output_required": false,
@@ -3937,7 +3935,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "tagname",
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -3948,7 +3946,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -3976,7 +3974,7 @@
         {
           "disabled": false,
           "document": "标签对列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Name\": \"env\", \"Value\": \"test\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,

@@ -881,22 +881,20 @@
         {
           "disabled": false,
           "document": "地域ID。",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "就近接入区域国家内部编码，编码列表可通过DescribeCountryAreaMapping接口获取。",
-          "example": "",
+          "example": "[\"101001\", \"101002\"]",
           "member": "string",
           "name": "NationCountryInnerList",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -988,30 +986,30 @@
         {
           "disabled": false,
           "document": "带宽范围。",
-          "example": "",
+          "example": "[0,20]",
           "member": "int64",
           "name": "BandwidthRange",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "在对应带宽范围内的单宽单价，单位：元/Mbps/天。",
-          "example": "",
+          "example": "130",
           "member": "float",
           "name": "BandwidthUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "带宽折扣价，单位：元/Mbps/天。",
-          "example": "",
+          "example": "130",
           "member": "float",
           "name": "DiscountBandwidthUnitPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -1136,50 +1134,50 @@
         {
           "disabled": false,
           "document": "源站的IP或域名",
-          "example": "",
+          "example": "192.168.1.2",
           "member": "string",
           "name": "RealServerIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源站ID",
-          "example": "",
+          "example": "rs-1234abcd",
           "member": "string",
           "name": "RealServerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源站名称",
-          "example": "",
+          "example": "rs_name",
           "member": "string",
           "name": "RealServerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{TagKey: \"test-john-22\", TagValue: \"test46-01\"}]",
           "member": "TagPair",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1254,90 +1252,90 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "cert-qk6jviq9",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书名称（旧参数，请使用CertificateAlias）。",
-          "example": "",
+          "example": "cert_name",
           "member": "string",
           "name": "CertificateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书类型。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "CertificateType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cert-name",
           "member": "string",
           "name": "CertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。",
-          "example": "",
+          "example": "1729242858",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1565637579",
           "member": "uint64",
           "name": "BeginTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1880997579",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书签发者通用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "issuer-cn",
           "member": "string",
           "name": "IssuerCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书主题通用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "server ssl",
           "member": "string",
           "name": "SubjectCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1350,20 +1348,20 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "cert-qk6jviq9",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书别名",
-          "example": "",
+          "example": "alias_name",
           "member": "string",
           "name": "CertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1376,100 +1374,100 @@
         {
           "disabled": false,
           "document": "证书ID。",
-          "example": "",
+          "example": "cert-qk6jviq9",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书类型。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "CertificateType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书名字。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "CertificateAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书内容。",
-          "example": "",
+          "example": "-----BEGIN CERTIFICATE----- MIIERzCCAq+gAwIBAgIBAjANBgkqhkiG9w0BAQsFADAoMQ0wCwYDVQQDEwR0ZXN0 MRcwFQYDVQQKEw50ZXJyYWZvcm0gdGVzdDAeFw0xOTA4MTMwMzE5MzlaFw0yOTA4 MTAwMzE5MzlaMC4xEzARBgNVBAMTCnNlcnZlciBzc2wxFzAVBgNVBAoTDnRlcnJh Zm9ybS10ZXN0MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA1Ryp+DKK SNFKZsPtwfR+jzOnQ8YFieIKYgakV688d8YgpolenbmeEPrzT87tunFD7G9f6ALG ND8rj7npj0AowxhOL/h/v1D9u0UsIaj5i2GWJrqNAhGLaxWiEB/hy5WOiwxDrGei gQqJkFM52Ep7G1Yx7PHJmKFGwN9FhIsFi1cNZfVRopZuCe/RMPNusNVZaIi+qcEf fsE1cmfmuSlG3Ap0RKOIyR0ajDEzqZn9/0R7VwWCF97qy8TNYk94K/1tq3zyhVzR Z83xOSfrTqEfb3so3AU2jyKgYdwr/FZS72VCHS8IslgnqJW4izIXZqgIKmHaRZtM N4jUloi6l/6lktt6Lsgh9xECecxziSJtPMaog88aC8HnMqJJ3kScGCL36GYG+Kaw 5PnDlWXBaeiDe8z/eWK9+Rr2M+rhTNxosAVGfDJyxAXyiX49LQ0v7f9qzwc/0JiD bvsUv1cm6OgpoEMP9SXqqBdwGqeKbD2/2jlP48xlYP6l1SoJG3GgZ8dbAgMBAAGj djB0MAwGA1UdEwEB/wQCMAAwEwYDVR0lBAwwCgYIKwYBBQUHAwEwDwYDVR0PAQH/ BAUDAweAADAdBgNVHQ4EFgQULwWKBQNLL9s3cb3tTnyPVg+mpCMwHwYDVR0jBBgw FoAUKwfrmq791mY831S6UHARHtgYnlgwDQYJKoZIhvcNAQELBQADggGBAMo5RglS AHdPgaicWJvmvjjexjF/42b7Rz4pPfMjYw6uYO8He/f4UZWv5CZLrbEe7MywaK3y 0OsfH8AhyN29pv2x8g9wbmq7omZIOZ0oCAGduEXs/A/qY/hFaCohdkz/IN8qi6JW VXreGli3SrpcHFchSwHTyJEXgkutcGAsOvdsOuVSmplOyrkLHc8uUe8SG4j8kGyg EzaszFjHkR7g1dVyDVUedc588mjkQxYeAamJgfkgIhljWKMa2XzkVMcVfQHfNpM1 n+bu8SmqRt9Wma2bMijKRG/Blm756LoI+skY+WRZmlDnq8zj95TT0vceGP0FUWh5 hKyiocABmpQs9OK9HMi8vgSWISP+fYgkm/bKtKup2NbZBoO5/VL2vCEPInYzUhBO jCbLMjNjtM5KriCaR7wDARgHiG0gBEPOEW1PIjZ9UOH+LtIxbNZ4eEIIINLHnBHf L+doVeZtS/gJc4G4Adr5HYuaS9ZxJ0W2uy0eQlOHzjyxR6Mf/rpnilJlcQ== -----END CERTIFICATE-----",
           "member": "string",
           "name": "CertificateContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密钥内容。仅当证书类型为SSL证书时，返回该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "Public Key Info: \tPublic Key Algorithm: RSA \tKey Security Level: High (3072 bits)  modulus: \t00:d5:1c:a9:f8:32:8a:48:d1:4a:66:c3:ed:c1:f4:7e \t8f:33:a7:43:c6:05:89:e2:0a:62:06:a4:57:af:3c:77 \tc6:20:a6:89:5e:9d:b9:9e:10:fa:f3:4f:ce:ed:ba:71 \t43:ec:6f:5f:e8:02:c6:34:3f:2b:8f:b9:e9:8f:40:28 \tc3:18:4e:2f:f8:7f:bf:50:fd:bb:45:2c:21:a8:f9:8b \t61:96:26:ba:8d:02:11:8b:6b:15:a2:10:1f:e1:cb:95 \t8e:8b:0c:43:ac:67:a2:81:0a:89:90:53:39:d8:4a:7b \t1b:56:31:ec:f1:c9:98:a1:46:c0:df:45:84:8b:05:8b \t57:0d:65:f5:51:a2:96:6e:09:ef:d1:30:f3:6e:b0:d5 \t59:68:88:be:a9:c1:1f:7e:c1:35:72:67:e6:b9:29:46 \tdc:0a:74:44:a3:88:c9:1d:1a:8c:31:33:a9:99:fd:ff \t44:7b:57:05:82:17:de:ea:cb:c4:cd:62:4f:78:2b:fd \t6d:ab:7c:f2:85:5c:d1:67:cd:f1:39:27:eb:4e:a1:1f \t6f:7b:28:dc:05:36:8f:22:a0:61:dc:2b:fc:56:52:ef \t65:42:1d:2f:08:b2:58:27:a8:95:b8:8b:32:17:66:a8 \t08:2a:61:da:45:9b:4c:37:88:d4:96:88:ba:97:fe:a5 \t92:db:7a:2e:c8:21:f7:11:02:79:cc:73:89:22:6d:3c \tc6:a8:83:cf:1a:0b:c1:e7:32:a2:49:de:44:9c:18:22 \tf7:e8:66:06:f8:a6:b0:e4:f9:c3:95:65:c1:69:e8:83 \t7b:cc:ff:79:62:bd:f9:1a:f6:33:ea:e1:4c:dc:68:b0 \t05:46:7c:32:72:c4:05:f2:89:7e:3d:2d:0d:2f:ed:ff \t6a:cf:07:3f:d0:98:83:6e:fb:14:bf:57:26:e8:e8:29 \ta0:43:0f:f5:25:ea:a8:17:70:1a:a7:8a:6c:3d:bf:da \t39:4f:e3:cc:65:60:fe:a5:d5:2a:09:1b:71:a0:67:c7 \t5b:  public exponent: \t01:00:01:  private exponent: \t00:b1:56:d0:fa:00:d4:a2:13:c7:5e:0c:dc:e4:f1:97 \tff:82:74:46:29:9a:a2:4a:bf:69:23:2d:ce:e9:bb:df \tcf:b7:8b:dd:f4:26:3c:38:14:d9:3f:6f:c2:3a:81:53 \t8f:ba:48:53:fe:b5:90:4a:19:e7:1e:0b:0f:18:6d:c3 \t7d:d5:d3:fa:87:47:86:e4:d6:bf:e7:a7:f9:ba:ab:2e \t19:5e:e1:8b:8b:9b:95:0d:f7:66:61:1e:19:e9:c3:88 \t08:be:1c:ce:93:c1:09:b1:68:1b:61:46:60:74:64:46 \t5d:51:34:ea:7f:a9:ca:a1:2a:47:85:84:4b:ef:84:05 \t97:c3:46:7d:06:19:ce:24:73:90:64:fb:df:16:d5:80 \t34:8e:90:7c:58:b6:a4:86:ce:30:b3:ab:52:8b:f2:95 \t4c:b6:46:5a:77:db:73:c0:0c:3f:6d:12:18:a8:54:7c \tff:77:c3:ca:89:9f:63:98:ef:48:2d:c1:09:70:6e:ea \tcb:bb:78:91:42:8a:22:3e:21:ef:a5:bf:16:ee:66:45 \te5:f0:26:6a:85:8e:e1:69:62:ac:05:00:a6:44:ba:c8 \tac:10:00:97:f5:51:65:7f:9a:1f:7b:99:9d:02:d4:87 \t50:ce:74:06:51:67:fa:fb:90:e4:33:79:f2:a8:61:ee \t45:1d:87:ca:22:5b:ac:e7:32:38:f8:2c:fd:55:92:1e \t3d:60:1e:7c:4b:fd:28:ff:e5:b1:02:6a:aa:22:f7:ae \ta8:36:90:7b:a6:f7:29:05:14:3a:21:da:36:05:f9:b0 \t9d:f7:fb:10:75:d7:2c:21:32:95:e7:f7:17:be:09:cb \t66:fe:f1:69:71:df:a4:5e:3f:fc:67:6c:37:65:b8:51 \tc6:22:38:fb:07:ce:89:54:50:43:71:44:3d:c3:51:5a \tbd:e5:c7:87:b2:ea:7b:64:0f:5d:34:9c:a1:52:b3:ce \t06:86:ba:7a:05:80:48:b3:6c:1b:79:74:9b:49:f2:30 \tc1:  prime1: \t00:e4:31:46:59:3d:24:f7:31:d9:22:26:af:c0:3e:f5 \tc1:6d:be:ba:d3:9e:3f:b9:2c:43:a0:d0:47:09:e4:35 \t63:19:a4:33:82:af:f9:76:3c:11:c2:cb:34:f9:a6:ab \tdd:ab:64:5a:6b:9c:c1:2a:52:89:64:7e:b5:a7:f0:4d \t29:13:a4:cf:17:f4:f2:0d:a0:6e:b9:5d:95:41:10:df \tae:f3:7a:13:49:21:66:73:2a:b7:e2:8d:7c:c2:34:e5 \t3f:bd:78:ca:fc:64:c5:1c:3a:66:7a:12:53:96:bd:b0 \tc3:7a:0c:ec:5e:55:c0:c3:3f:7f:25:72:f4:e2:19:94 \t9d:65:15:be:c8:82:20:57:12:97:b2:a8:4d:3d:e0:8f \te2:1f:d0:c8:49:aa:f4:34:fa:91:d1:d1:cc:98:bc:3d \t8b:b1:9b:8f:fd:ef:03:dd:92:fb:ca:99:45:af:cc:83 \t58:4c:bb:ba:73:9e:23:84:f9:7e:4f:40:fe:00:b5:bf \t6f:  prime2: \t00:ef:14:ef:73:fc:0c:fc:e3:87:d9:7f:a6:f8:55:86 \t57:63:8a:86:87:f5:ef:63:20:1f:b2:ae:28:dc:ab:59 \t80:8f:15:64:44:e2:bc:a5:7b:d7:69:ef:30:b1:83:b3 \tbd:09:fd:4a:0c:c6:31:5b:a4:79:d0:e5:d3:a8:31:fd \t59:ea:52:63:cf:17:a7:c1:54:bf:a8:11:9b:b1:85:47 \t5a:08:a6:9c:2f:47:9d:ac:5d:e8:7c:e4:31:6c:99:71 \t04:7d:20:98:be:8b:60:07:66:2d:b9:41:10:ea:dd:5b \t87:20:65:62:ea:75:a7:a6:04:a2:18:66:6b:db:5b:a4 \t9f:12:97:cb:7c:8c:d2:e0:ce:02:ef:1e:df:a1:9d:6a \tbc:00:38:18:36:a1:c5:97:16:be:7a:df:5f:4f:4f:de \ta3:cb:25:fe:f6:67:0d:31:aa:0a:d4:1b:be:df:91:2c \t05:14:20:37:cc:4f:50:33:a6:50:1b:90:f9:b2:08:80 \td5:  coefficient: \t47:d1:7f:ca:93:6a:14:9b:fe:85:8d:c2:15:11:52:a2 \ta5:bc:f5:6b:a2:69:76:49:1e:09:79:f1:15:bf:39:48 \t41:ff:92:78:af:bc:7d:6f:76:3b:32:9e:08:d2:42:06 \t04:5f:36:e0:be:a8:1d:21:5c:ec:39:09:e0:77:c5:86 \t06:e6:ce:98:16:fc:0f:30:de:a7:69:7a:8f:dd:01:42 \t2a:22:f5:b7:c2:fc:c8:90:5a:78:dc:b3:e0:4d:e7:2d \t98:6c:e3:34:1b:d7:e8:f8:90:57:7e:4d:41:d6:4a:29 \t81:92:eb:89:5b:45:85:dd:b9:16:20:63:cb:59:f6:06 \t59:c1:dd:3b:6b:92:0a:5e:5e:63:4a:f1:a7:d5:16:b9 \t8b:6c:d8:ad:76:0e:2d:3c:e0:b3:73:e0:6d:af:d4:a2 \tbc:4b:fd:6c:2d:d7:5d:4d:cd:28:03:64:b2:ef:9a:1d \t82:8d:53:40:c5:f8:fb:f3:63:de:8e:1a:21:b6:35:14 \t  exp1: \t00:9c:a5:8a:d2:65:dc:03:69:8f:d2:16:d6:9d:55:5b \t25:4e:ae:18:d8:7e:90:e6:10:11:d8:ca:41:89:f3:c4 \t06:64:aa:c8:c5:95:01:dd:fd:7c:7f:c9:39:73:8b:cb \tfd:9e:d3:84:12:cd:87:f9:02:b1:d8:6f:f7:49:f2:f7 \t35:14:8c:15:b2:2f:6f:1e:95:9c:8c:d9:46:45:65:4c \tf8:6f:a1:c4:ad:76:25:3b:37:ff:05:a1:f5:1b:e8:6d \tdb:64:b9:10:37:55:01:ce:cf:f4:5b:26:4b:85:76:70 \t6a:b0:55:40:c9:bd:7a:57:4e:36:7d:41:be:03:9c:65 \tdd:ea:6f:94:09:56:f2:d6:73:27:f9:f7:f9:16:5a:1a \tcb:b2:e5:83:28:b7:17:6f:6a:f7:41:1f:11:a1:63:cf \ta8:1e:e3:58:64:8c:78:8d:d9:81:c9:e1:8f:ea:0f:ad \tb6:a6:ee:54:1f:5c:56:ab:c9:0d:c1:60:2f:3d:d3:86 \t37:  exp2: \t64:12:b7:48:2d:30:a2:89:fa:cb:27:8b:94:56:f8:2c \t8c:15:e7:c9:f1:3f:8a:96:5f:ae:43:08:07:96:11:98 \ta6:4b:a5:f4:cf:93:77:11:27:51:c8:34:f1:98:d7:1b \t41:9b:2b:eb:bc:e9:dc:1a:34:83:24:30:3c:2e:f0:85 \t3a:77:d2:1f:55:1f:7a:e5:26:74:0b:2a:c8:5b:a9:4a \t1e:64:de:eb:4b:66:cc:47:62:91:24:53:2b:c9:ee:6c \t9a:93:92:5b:ef:aa:fa:6d:e2:a5:b0:7e:8c:50:ab:87 \t1c:20:54:0f:1f:c0:54:d5:8b:a3:fa:fb:1a:8e:79:91 \tbc:0e:9d:b6:3c:9b:e8:4d:53:1d:14:27:37:56:d4:de \t6c:99:0e:49:8f:dd:4d:28:d0:02:4e:8d:6e:7d:58:0b \te7:74:b8:0c:1b:86:82:4b:52:cd:05:f0:17:54:84:c0 \t7b:74:20:e6:fc:2b:ed:f2:a7:85:62:61:a2:0b:bd:21 \t   Public Key PIN: \tpin-sha256:t5OXXC5gYqMNtUMsTqRs3A3vhfK2BiXVOgYzIEYv7Y8= Public Key ID: \tsha256:b793975c2e6062a30db5432c4ea46cdc0def85f2b60625d53a063320462fed8f \tsha1:2f058a05034b2fdb3771bded4e7c8f560fa6a423  -----BEGIN RSA PRIVATE KEY----- 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 -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "CertificateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1729242858",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书生效起始时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1565637579",
           "member": "uint64",
           "name": "BeginTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书过期时间，采用Unix时间戳的方式，表示从1970年1月1日（UTC/GMT的午夜）开始所经过的秒数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1880997579",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书签发者通用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "IssuerCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书主题通用名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "server ssl",
           "member": "string",
           "name": "SubjectCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6487,8 +6485,7 @@
           "member": "int64",
           "name": "Vendor",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6497,28 +6494,25 @@
           "member": "int64",
           "name": "OS",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "设备唯一标识\nIOS 填写 IDFV\nAndroid 填写 IMEI",
-          "example": "无",
+          "example": "359881030314356",
           "member": "string",
           "name": "DeviceId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "用户手机号码",
-          "example": "无",
+          "example": "13112341234",
           "member": "string",
           "name": "PhoneNum",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6527,8 +6521,7 @@
           "member": "int64",
           "name": "Wireless",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -6692,60 +6685,60 @@
         {
           "disabled": false,
           "document": "就近接入区域",
-          "example": "",
+          "example": "[\"101001\"]",
           "member": "NationCountryInnerInfo",
           "name": "NationCountryInnerList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加速区域通道列表",
-          "example": "",
+          "example": "[{\"ProxyId\": \"link-f24qdw21\"}]",
           "member": "ProxyIdDict",
           "name": "ProxyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加速区域ID",
-          "example": "",
+          "example": "ap-beijing",
           "member": "string",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加速区域内部编码",
-          "example": "",
+          "example": "101000",
           "member": "string",
           "name": "GeographicalZoneInnerCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加速区域所属大洲内部编码",
-          "example": "",
+          "example": "100000",
           "member": "string",
           "name": "ContinentInnerCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加速区域别名",
-          "example": "",
+          "example": "中国大陆-华北",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6758,90 +6751,90 @@
         {
           "disabled": false,
           "document": "错误定制响应的配置ID",
-          "example": "",
+          "example": "errorPage-849daqt3",
           "member": "string",
           "name": "ErrorPageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器ID",
-          "example": "",
+          "example": "listener-p0cp5ier",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "borisautotestdomaincerts001.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原始错误码",
-          "example": "",
+          "example": "501|404",
           "member": "int64",
           "name": "ErrorNos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "新的错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "560",
           "member": "int64",
           "name": "NewErrorNo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "需要清理的响应头\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"Response\": {\"test res Body\"}}",
           "member": "string",
           "name": "ClearHeaders",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "需要设置的响应头\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"X-TEST\": \"test\"}",
           "member": "HttpHeaderParam",
           "name": "SetHeaders",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设置的响应体(不包括 HTTP头)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"X-TEST\", \"Content-Length\"]",
           "member": "string",
           "name": "Body",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "规则状态,0为成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7199,30 +7192,30 @@
         {
           "disabled": false,
           "document": "通道组ID",
-          "example": "",
+          "example": "lg-2sczm0nv",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通道组名称",
-          "example": "",
+          "example": "group_name",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通道组下通道列表",
-          "example": "",
+          "example": "[{\"ProxyId\": \"link-12sw13an\", \"ProxyName\": \"test\", \"ListenerList\": [{\"ListenerId\": \"listener-21xqe24q\".\"ListenerName\": \"test\", \"Port\": \"7070\", \"Protocol\": \"TCP\"}]}]",
           "member": "ProxySimpleInfo",
           "name": "ProxySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7507,9 +7500,10 @@
         {
           "disabled": false,
           "document": "HTTP头名",
-          "example": "",
+          "example": "X-HTTP-TEST-HEADER",
           "member": "string",
           "name": "HeaderName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7517,9 +7511,10 @@
         {
           "disabled": false,
           "document": "HTTP头值",
-          "example": "",
+          "example": "X-HTTP-TEST-VALUE",
           "member": "string",
           "name": "HeaderValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7766,40 +7761,40 @@
         {
           "disabled": false,
           "document": "监听器ID",
-          "example": "",
+          "example": "listener-1sd42afc",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器名称",
-          "example": "",
+          "example": "listener_name",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器监听端口",
-          "example": "",
+          "example": "8080",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器协议类型",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9061,20 +9056,20 @@
         {
           "disabled": false,
           "document": "源站ID",
-          "example": "",
+          "example": "rs-nd046035",
           "member": "string",
           "name": "RealServerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源站ip或域名",
-          "example": "",
+          "example": "192.168.1.2",
           "member": "string",
           "name": "RealServerIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9653,9 +9648,10 @@
         {
           "disabled": false,
           "document": "通道ID",
-          "example": "",
+          "example": "link-qr31dfs1",
           "member": "string",
           "name": "ProxyId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10045,30 +10041,30 @@
         {
           "disabled": false,
           "document": "通道ID",
-          "example": "",
+          "example": "link-1mfs42fq",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通道名称",
-          "example": "",
+          "example": "proxy_name",
           "member": "string",
           "name": "ProxyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器列表",
-          "example": "",
+          "example": "[{\"ProxyId\": \"link-12sw13an\", \"ProxyName\": \"test\", \"ListenerList\": [{\"ListenerId\": \"listener-21xqe24q\".\"ListenerName\": \"test\", \"Port\": \"7070\", \"Protocol\": \"TCP\"}]}]\t",
           "member": "ListenerInfo",
           "name": "ListenerList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -10464,7 +10460,7 @@
         {
           "disabled": false,
           "document": "规则信息",
-          "example": "xx",
+          "example": "rule-00miz243",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -10474,7 +10470,7 @@
         {
           "disabled": false,
           "document": "监听器信息",
-          "example": "xx",
+          "example": "listener-b3qpz69j",
           "member": "string",
           "name": "ListenerId",
           "output_required": true,
@@ -10484,7 +10480,7 @@
         {
           "disabled": false,
           "document": "规则域名",
-          "example": "xx",
+          "example": "www.test.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -10494,7 +10490,7 @@
         {
           "disabled": false,
           "document": "规则路径",
-          "example": "xx",
+          "example": "/index.html",
           "member": "string",
           "name": "Path",
           "output_required": true,
@@ -10504,7 +10500,7 @@
         {
           "disabled": false,
           "document": "源站类型",
-          "example": "xx",
+          "example": "IP",
           "member": "string",
           "name": "RealServerType",
           "output_required": true,
@@ -10514,7 +10510,7 @@
         {
           "disabled": false,
           "document": "监听器源站访问策略，其中：rr表示轮询；wrr表示加权轮询；lc表示最小连接数；lrtt表示最小时延。",
-          "example": "xx",
+          "example": "RR",
           "member": "string",
           "name": "Scheduler",
           "output_required": true,
@@ -10544,7 +10540,7 @@
         {
           "disabled": false,
           "document": "健康检查相关参数",
-          "example": "无",
+          "example": "{\"Method\":\"GET\"}",
           "member": "RuleCheckParams",
           "name": "CheckParams",
           "output_required": true,
@@ -10554,7 +10550,7 @@
         {
           "disabled": false,
           "document": "已绑定的源站相关信息",
-          "example": "无",
+          "example": "{\"RealServerId\":\"rs-123456\"}",
           "member": "BindRealServer",
           "name": "RealServerSet",
           "output_required": true,
@@ -10574,7 +10570,7 @@
         {
           "disabled": false,
           "document": "通道转发到源站的请求所携带的host，其中default表示直接转发接收到的host。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "www.host.com",
           "member": "string",
           "name": "ForwardHost",
           "output_required": true,
@@ -10584,7 +10580,7 @@
         {
           "disabled": false,
           "document": "服务器名称指示（ServerNameIndication，简称SNI）开关。ON表示开启，OFF表示关闭。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "OFF",
           "member": "string",
           "name": "ServerNameIndicationSwitch",
           "output_required": true,
@@ -10594,7 +10590,7 @@
         {
           "disabled": false,
           "document": "服务器名称指示（ServerNameIndication，简称SNI），当SNI开关打开时，该字段必填。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "SNI",
           "member": "string",
           "name": "ServerNameIndication",
           "output_required": true,
@@ -10620,52 +10616,47 @@
         {
           "disabled": false,
           "document": "请求来源IP或IP段。",
-          "example": "",
+          "example": "113.16.26.77",
           "member": "string",
           "name": "SourceCidr",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "策略：允许（ACCEPT）或拒绝（DROP）",
-          "example": "",
+          "example": "DROP",
           "member": "string",
           "name": "Action",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "规则别名",
-          "example": "",
+          "example": "policy_name",
           "member": "string",
           "name": "AliasName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "协议：TCP或UDP，ALL表示所有协议",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "目标端口，填写格式举例：\n单个端口: 80\n多个端口: 80,443\n连续端口: 3306-20000\n所有端口: ALL",
-          "example": "",
+          "example": "9300",
           "member": "string",
           "name": "DestPortRange",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -10994,17 +10985,17 @@
           "example": "link-bjkpdum1",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器名称",
-          "example": "test",
+          "example": "listener-name",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11014,7 +11005,7 @@
           "example": "443",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11024,7 +11015,7 @@
           "example": "332",
           "member": "uint64",
           "name": "RealServerPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11034,7 +11025,7 @@
           "example": "IP",
           "member": "string",
           "name": "RealServerType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11044,7 +11035,7 @@
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11054,7 +11045,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ListenerStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11064,7 +11055,7 @@
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11074,7 +11065,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ConnectTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11084,7 +11075,7 @@
           "example": "5",
           "member": "uint64",
           "name": "DelayLoop",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11094,7 +11085,7 @@
           "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11104,17 +11095,17 @@
           "example": "1",
           "member": "uint64",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器绑定的源站信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "{\"RealServerId\":\"rs-123456\"}",
           "member": "BindRealServer",
           "name": "RealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11124,7 +11115,7 @@
           "example": "1607071157",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11134,7 +11125,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ClientIPMethod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11144,7 +11135,7 @@
           "example": "5",
           "member": "uint64",
           "name": "HealthyThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11154,7 +11145,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UnhealthyThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11164,7 +11155,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailoverSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11174,7 +11165,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SessionPersist",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11184,7 +11175,7 @@
           "example": "link-bjkpdum1",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11194,7 +11185,7 @@
           "example": "lg-qz6ntod5",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11262,17 +11253,17 @@
           "example": "lg-h8fpr1vh",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器名称",
-          "example": "test",
+          "example": "listener-name",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11282,7 +11273,7 @@
           "example": "80",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11292,7 +11283,7 @@
           "example": "80",
           "member": "uint64",
           "name": "RealServerPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11302,7 +11293,7 @@
           "example": "IP",
           "member": "string",
           "name": "RealServerType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11312,7 +11303,7 @@
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11322,7 +11313,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ListenerStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11332,7 +11323,7 @@
           "example": "rr",
           "member": "string",
           "name": "Scheduler",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11342,17 +11333,17 @@
           "example": "0",
           "member": "uint64",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器绑定的源站信息",
-          "example": "无",
+          "example": "{\"RealServerId\":\"rs-123456\"}",
           "member": "BindRealServer",
           "name": "RealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11362,7 +11353,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11372,7 +11363,7 @@
           "example": "0",
           "member": "uint64",
           "name": "SessionPersist",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11382,7 +11373,7 @@
           "example": "20",
           "member": "uint64",
           "name": "DelayLoop",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11392,7 +11383,7 @@
           "example": "20",
           "member": "uint64",
           "name": "ConnectTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11402,7 +11393,7 @@
           "example": "5",
           "member": "uint64",
           "name": "HealthyThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11412,7 +11403,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UnhealthyThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11422,7 +11413,7 @@
           "example": "0",
           "member": "int64",
           "name": "FailoverSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11432,7 +11423,7 @@
           "example": "1",
           "member": "uint64",
           "name": "HealthCheck",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11442,7 +11433,7 @@
           "example": "PING",
           "member": "string",
           "name": "CheckType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11452,7 +11443,7 @@
           "example": "8888",
           "member": "int64",
           "name": "CheckPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11462,7 +11453,7 @@
           "example": "TEXT",
           "member": "string",
           "name": "ContextType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11472,7 +11463,7 @@
           "example": "helloworld",
           "member": "string",
           "name": "SendContext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11482,7 +11473,7 @@
           "example": "helloworld",
           "member": "string",
           "name": "RecvContext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11492,7 +11483,7 @@
           "example": "link-bjkpdum1",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11502,7 +11493,7 @@
           "example": "lg-qz6ntod5",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

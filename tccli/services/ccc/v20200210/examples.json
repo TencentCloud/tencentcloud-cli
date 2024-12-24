@@ -27,7 +27,7 @@
     "CreateAICall": [
       {
         "document": "本示例模拟某医院调用大模型对手术出院患者家长进行电话随访调查。",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"SystemPrompt\": \"你是人民医院友善、和蔼的的随访医生李医生，正在给患者小明的家长打电话。\",\n    \"WelcomeMessage\": \"您好\",\n    \"LLMType\": \"openai\",\n    \"Model\": \"gpt-4o-mini\",\n    \"APIKey\": \"sk-proj-xxxxx\",\n    \"APIUrl\": \"https://api.openai.com/v1/\",\n    \"VoiceType\": \"ZhiXi\",\n    \"EndFunctionEnable\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"SystemPrompt\": \"你是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话。\",\n    \"WelcomeMessage\": \"您好\",\n    \"LLMType\": \"openai\",\n    \"Model\": \"gpt-4o-mini\",\n    \"APIKey\": \"sk-proj-xxxxx\",\n    \"APIUrl\": \"https://api.openai.com/v1/\",\n    \"VoiceType\": \"ZhiXi\",\n    \"EndFunctionEnable\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
         "title": "创建AI通话示例（患者随访场景）"
       }

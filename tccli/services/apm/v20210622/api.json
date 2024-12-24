@@ -1791,36 +1791,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤方式（=, !=, in）",
+          "document": "过滤方式（=, !=, in）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "=",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "过滤维度名",
+          "document": "过滤维度名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "serviceName",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "过滤值，in过滤方式用逗号分割多个值",
+          "document": "过滤值，in过滤方式用逗号分割多个值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sso-api",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "GeneralFilter": {
       "document": "查询过滤参数",

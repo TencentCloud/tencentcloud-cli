@@ -18,38 +18,38 @@ Output:
         "AddressSet": [
             {
                 "AddressId": "eipv6-11112222",
-                "AddressName": "abc",
-                "AddressStatus": "abc",
-                "AddressIp": "abc",
-                "InstanceId": "abc",
+                "AddressName": "demo",
+                "AddressStatus": "BIND",
+                "AddressIp": "2402:4e00:1200:310d:0:9c6a:ffde:f722",
+                "InstanceId": "ins-qfuu0g3x",
                 "CreatedTime": "2020-09-22T00:00:00+00:00",
-                "NetworkInterfaceId": "abc",
-                "PrivateAddressIp": "abc",
+                "NetworkInterfaceId": "eni-gl7hf76q",
+                "PrivateAddressIp": "2402:4e00:1200:310d:0:9c6a:ffde:f722",
                 "IsArrears": true,
                 "IsBlocked": true,
                 "IsEipDirectConnection": true,
-                "AddressType": "abc",
+                "AddressType": "EIP6",
                 "CascadeRelease": true,
                 "EipAlgType": {
                     "Ftp": true,
                     "Sip": true
                 },
-                "InternetServiceProvider": "abc",
+                "InternetServiceProvider": "BGP",
                 "LocalBgp": true,
                 "Bandwidth": 1,
-                "InternetChargeType": "abc",
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "TagSet": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "name",
+                        "Value": "Sam"
                     }
                 ],
                 "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc",
-                "Egress": "abc"
+                "InstanceType": "CVM",
+                "Egress": "CENTER_EGRESS_1"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "95eb79b9-2e72-45b1-a1ac-03138778521a"
     }
 }
 ```

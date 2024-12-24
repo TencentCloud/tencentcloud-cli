@@ -10,7 +10,7 @@ tccli tsf AddInstances --cli-unfold-argument  \
     --ClusterId cluster-xxxxxxx \
     --InstanceImportMode R \
     --ImageId img-xxxxxxx \
-    --Password xxxxxxx
+    --Password pwd-xxxxxxx
 ```
 
 Output: 

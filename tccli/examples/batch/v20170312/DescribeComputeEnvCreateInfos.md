@@ -36,15 +36,15 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "test",
-                        "Key": "test-env"
+                        "Value": "demo-tag",
+                        "Key": "demo-env1"
                     }
                 ],
                 "Authentications": [
                     {
-                        "SecretKey": "xx",
-                        "SecretId": "xx",
-                        "Scene": "xx"
+                        "SecretKey": "AKIDUdi1************9ThAzpuXIjNx",
+                        "SecretId": "Udi16***********Q9ThAzpuXIjN",
+                        "Scene": "COS"
                     }
                 ],
                 "EnvData": {
@@ -58,10 +58,10 @@ Output:
                         ]
                     },
                     "LoginSettings": {
-                        "Password": "xx",
+                        "Password": "Aa12**5678",
                         "KeepImageLogin": "True",
                         "KeyIds": [
-                            "xx"
+                            "Qa123"
                         ]
                     },
                     "InstanceMarketOptions": {
@@ -73,7 +73,7 @@ Output:
                     },
                     "SystemDisk": {
                         "DiskSize": 0,
-                        "CdcId": "xx",
+                        "CdcId": "1",
                         "DiskId": "disk-sdfk23nw",
                         "DiskType": "CLOUD_SSD"
                     },
@@ -96,12 +96,12 @@ Output:
                         }
                     },
                     "SecurityGroupIds": [
-                        "xx"
+                        "sg-1234t1"
                     ],
                     "InternetAccessible": {
                         "PublicIpAssigned": true,
                         "InternetChargeType": "POSTPAID_BY_HOUR",
-                        "BandwidthPackageId": "xx",
+                        "BandwidthPackageId": "dcaew",
                         "InternetMaxBandwidthOut": 0
                     },
                     "VirtualPrivateClouds": [
@@ -129,20 +129,20 @@ Output:
                         {
                             "DeleteWithInstance": true,
                             "Encrypt": true,
-                            "CdcId": "xx",
+                            "CdcId": "2",
                             "DiskType": "CLOUD_SSD",
                             "ThroughputPerformance": 0,
                             "KmsKeyId": "kms-213k73kx",
                             "DiskSize": 0,
                             "SnapshotId": "snap-fsdekxe2",
-                            "DiskId": "xx"
+                            "DiskId": "disk-ecqwbck"
                         }
                     ]
                 },
                 "EnvDescription": "test-env",
                 "MountDataDisks": [
                     {
-                        "FileSystemType": "ext4",
+                        "FileSystemType": "EXT4",
                         "LocalPath": "/mnt"
                     }
                 ],

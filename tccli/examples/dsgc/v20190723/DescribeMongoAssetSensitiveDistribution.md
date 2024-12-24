@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dsgc DescribeMongoAssetSensitiveDistribution --cli-unfold-argument  \
-    --DspaId abc \
+    --DspaId dspa-a12fvc2d \
     --ComplianceId 0 \
-    --AssetList.0.DataSourceType abc \
-    --AssetList.0.DataSourceInfo.0.DataSourceId abc \
-    --AssetList.0.DataSourceInfo.0.BindList abc
+    --AssetList.0.DataSourceType mongo \
+    --AssetList.0.DataSourceInfo.0.DataSourceId cmgo-c1vsibl3 \
+    --AssetList.0.DataSourceInfo.0.BindList table1
 ```
 
 Output: 
@@ -27,11 +27,11 @@ Output:
         },
         "TopAsset": [
             {
-                "LevelName": "abc",
+                "LevelName": "分级名称",
                 "TopStat": [
                     {
-                        "DataSourceId": "abc",
-                        "SubData": "abc",
+                        "DataSourceId": "cmgo-c1vsibl3",
+                        "SubData": "table1",
                         "SensitiveCnt": 0
                     }
                 ]
@@ -39,22 +39,22 @@ Output:
         ],
         "MongoDetail": [
             {
-                "DataSourceId": "abc",
-                "DdName": "abc",
-                "DataType": "abc",
+                "DataSourceId": "cmgo-c1vsibl3",
+                "DdName": "table1",
+                "DataType": "mongo",
                 "ColNums": 0,
                 "SensitiveColNums": 0,
                 "FieldNums": 0,
                 "SensitiveFieldNums": 0,
                 "DistributionData": [
                     {
-                        "Key": "abc",
-                        "Value": 0
+                        "Key": "key1",
+                        "Value": 12
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```

@@ -1,25 +1,25 @@
-**Example 1: xx**
+**Example 1: 示例**
 
-xx
+示例
 
 Input: 
 
 ```
 tccli dsgc ModifyDSPAESTaskResult --cli-unfold-argument  \
-    --DspaId abc \
-    --FieldResultId 0 \
+    --DspaId dspa-abcd1234 \
+    --FieldResultId 1 \
     --IsSetNonSensitiveField True \
-    --DestRuleId 0 \
-    --DestCategoryId 0 \
-    --DestLevelId 0 \
-    --ComplianceId 0
+    --DestRuleId 128 \
+    --DestCategoryId 2 \
+    --DestLevelId 101 \
+    --ComplianceId 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "test-003"
     }
 }
 ```

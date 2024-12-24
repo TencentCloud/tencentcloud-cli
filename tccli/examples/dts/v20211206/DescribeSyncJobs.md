@@ -206,7 +206,8 @@ Output:
                         "DefaultLoadThread": 8,
                         "DefaultSinkerThread": 32,
                         "HasUserSetRateLimit": "no"
-                    }
+                    },
+                    "StartPosition": ""
                 },
                 "PayMode": "PostPay",
                 "RunMode": "Immediate",

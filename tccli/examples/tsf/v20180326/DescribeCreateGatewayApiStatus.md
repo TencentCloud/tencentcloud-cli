@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tsf DescribeCreateGatewayApiStatus --cli-unfold-argument  \
-    --GroupId grp-70cd2e25 \
-    --MicroserviceId test
+    --GroupId grp-nb08ur29 \
+    --MicroserviceId ms-a78gk87b
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "44466474-1d8c-4157-8448-c7f1fbb22599",
         "Result": true
     }
 }

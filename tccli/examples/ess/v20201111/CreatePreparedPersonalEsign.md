@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess CreatePreparedPersonalEsign --cli-unfold-argument  \
-    --Operator.UserId abc \
+    --Operator.UserId yDCYCUUckp7k0tlrUxLgPeIB2r7yVxrA \
     --UserName 印章归属个人姓名 \
     --IdCardType  \
     --IdCardNumber 身份证件号码 \
@@ -21,7 +21,7 @@ Output:
 {
     "Response": {
         "SealId": "sealid-1",
-        "RequestId": "abc"
+        "RequestId": "abc-3456-333-5555"
     }
 }
 ```

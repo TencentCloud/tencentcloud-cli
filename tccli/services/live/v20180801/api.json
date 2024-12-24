@@ -4804,7 +4804,7 @@
         {
           "disabled": false,
           "document": "推流参数。\n推流时携带自定义参数。\n示例：\nbak=1&test=2 。",
-          "example": "无",
+          "example": "bak=1&room=2",
           "member": "string",
           "name": "PushArgs",
           "required": false,
@@ -4813,7 +4813,7 @@
         {
           "disabled": false,
           "document": "选择需要回调的事件（不填则回调全部）：\nTaskStart：任务启动回调，\nTaskExit：任务停止回调，\nVodSourceFileStart：从点播源文件开始拉流回调，\nVodSourceFileFinish：从点播源文件拉流结束回调，\nResetTaskConfig：任务更新回调。\n\nTaskAlarm: 用于告警事件通知，AlarmType 示例:\nPullFileUnstable - 文件拉取不稳定，\nPushStreamUnstable - 推流不稳定，\nPullFileFailed - 文件拉取出错，\nPushStreamFailed - 推流出现失败，\nFileEndEarly - 文件提前结束。",
-          "example": "无",
+          "example": "[\"PushStreamFailed\"]",
           "member": "string",
           "name": "CallbackEvents",
           "required": false,
@@ -4840,7 +4840,7 @@
         {
           "disabled": false,
           "document": "自定义回调地址。\n拉流转推任务相关事件会回调到该地址。\n回调事件使用方法请查看：\nhttps://cloud.tencent.com/document/product/267/32744\nhttps://cloud.tencent.com/document/product/267/56208",
-          "example": "无",
+          "example": "http://my.callback.rcv/lvb/interface.php",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -4849,7 +4849,7 @@
         {
           "disabled": false,
           "document": "其他参数。\n示例: ignore_region  用于忽略传入地域, 内部按负载分配。",
-          "example": "无",
+          "example": "ignore_region",
           "member": "string",
           "name": "ExtraCmd",
           "required": false,
@@ -4858,7 +4858,7 @@
         {
           "disabled": false,
           "document": "自定义任务 ID。\n注：\n1. 该自定义 ID 为可选参数，如果传入，请确保该账号下传入的 ID 唯一。\n2. 该自定义 ID 用于防止重复发起请求时产生重复任务。后面也可以用 SpecifyTaskId 来修改或删除任务。",
-          "example": "无",
+          "example": "sfvdfsdfserfsdff",
           "member": "string",
           "name": "SpecifyTaskId",
           "required": false,
@@ -4876,11 +4876,29 @@
         {
           "disabled": false,
           "document": "完整目标 URL 地址。\n用法注意：如果使用该参数来传完整目标地址，则 DomainName, AppName, StreamName 需要传入空字符串，任务将会使用该 ToUrl 参数指定的目标地址。\n\n使用该方式传入目标地址支持的协议有：\nrtmp、rtmps、rtsp、rtp、srt。\n\n注意：签名时间需要超过任务结束时间，避免因签名过期造成任务失败。",
-          "example": "无",
+          "example": "rtmp://5000.livepush.myqcloud.com/live/myroom?txSecret=0065e4ef55825ab5883e2771a91017bd&txTime=687bfb41",
           "member": "string",
           "name": "ToUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定播放文件索引。\n注意： 1. 从1开始，不大于SourceUrls中文件个数。\n2. 该偏移仅在首次轮播时有效。\n3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。",
+          "example": "0",
+          "member": "int64",
+          "name": "FileIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定播放文件偏移。\n注意：\n1. 单位：秒，配合FileIndex使用。",
+          "example": "0",
+          "member": "int64",
+          "name": "OffsetTime",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4921,7 +4939,7 @@
         {
           "disabled": false,
           "document": "录制模板 ID。",
-          "example": "无",
+          "example": "19342",
           "member": "string",
           "name": "RecordTemplateId",
           "required": false,
@@ -4930,7 +4948,7 @@
         {
           "disabled": false,
           "document": "新的目标地址，用于任务同时推两路场景。",
-          "example": "无",
+          "example": "rtmp://5000.livepush.myqcloud.com/live/mybackroom?txSecret=58deaf30f95a7a134c7f0d8512e90b14&txTime=687bfb1d",
           "member": "string",
           "name": "BackupToUrl",
           "required": false,
@@ -4954,7 +4972,7 @@
         {
           "disabled": false,
           "document": "任务 Id 。",
-          "example": "无",
+          "example": "940323",
           "member": "string",
           "name": "TaskId",
           "output_required": true,

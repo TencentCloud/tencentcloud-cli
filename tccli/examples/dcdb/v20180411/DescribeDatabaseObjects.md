@@ -7,7 +7,7 @@ Input:
 ```
 tccli dcdb DescribeDatabaseObjects --cli-unfold-argument  \
     --InstanceId dcdbt-52s53yyh \
-    --DbName test
+    --DbName product_db
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
     "Response": {
         "RequestId": "742443a5-4683-48ba-b30e-5151d26cf62d",
         "InstanceId": "dcdbt-52s53yyh",
-        "DbName": "test",
+        "DbName": "product_db",
         "Tables": [],
         "Views": [],
         "Procs": [

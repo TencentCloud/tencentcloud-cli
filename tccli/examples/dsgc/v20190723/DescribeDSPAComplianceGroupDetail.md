@@ -18,7 +18,7 @@ Output:
         "Detail": {
             "Id": 5,
             "Name": "开发模板",
-            "Description": "",
+            "Description": "这是一个开发模版",
             "ComplianceGroupType": 2,
             "CreateTime": "2022-10-16 16:42:16",
             "ModifyTime": "2022-10-16 16:42:16",

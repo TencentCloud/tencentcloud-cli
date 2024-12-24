@@ -13,8 +13,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Result": "False"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe",
+        "Result": "false"
     }
 }
 ```

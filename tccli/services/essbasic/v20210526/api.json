@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ArchiveDynamicFlow": {
+      "document": "该接口用于结束动态签署方2.0的合同流程。\n\n\n**功能开通**\n- 动态签署方2.0功能的使用需要先<font color=\"red\">联系产品经理开通模块化计费功能</font>，然后到控制台中打开此功能。详细的使用说明请参考<a href=\"https://qian.tencent.com/developers/company/dynamic_signer_v2\" target=\"_blank\">动态签署方2.0</a>文档。\n\n**使用条件**\n- 此接口只能在<font color=\"red\">合同处于非终态且<b>所有的签署方都已经完成签署</b></font>。一旦合同进入终态（例如：过期、拒签、撤销或者调用过此接口成功过），将无法通过此接口结束合同流程。",
+      "input": "ArchiveDynamicFlowRequest",
+      "name": "结束动态签署流程",
+      "output": "ArchiveDynamicFlowResponse",
+      "status": "online"
+    },
     "ChannelBatchCancelFlows": {
       "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
       "input": "ChannelBatchCancelFlowsRequest",
@@ -43,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBatchSignUrl": {
-      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId。<font color=\"red\">请确保此OrganizationOpenId对应子客已经认证，且OpenId对应员工此子客下已经实名</font>。Name，Mobile, IdCard等信息此时可以不传，系统会查询此OpenId实名信息自动补充。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。",
+      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 使用此接口生成链接，需要提前开通 `个人签署方仅校验手机号` 功能，在 `腾讯电子签网页端-企业设置-拓展服务` 中可以找到。\n- 个人参与方点击链接后需短信验证码才能查看合同内容。\n- 个人用户批量签署，需要传Name，Mobile，IdCardNumber(IdCardType) 参数。\n- saas企业员工用户批量签署，在传递了姓名等基本信息参数的情况下，还需要传OrganizationName（参与方所在企业名称）参数生成签署链接，<font color=\"red\">请确保此企业已完成腾讯电子签企业认证</font>。\n- 子客企业员工用户批量签署，需要传递员工OpenId和子客企业的OrganizationOpenId。<font color=\"red\">请确保此OrganizationOpenId对应子客已经认证，且OpenId对应员工此子客下已经实名</font>。Name，Mobile, IdCard等信息此时可以不传，系统会查询此OpenId实名信息自动补充。\n- 生成批量签署链接时，合同目标参与方状态需为<font color=\"red\">待签署</font>状态。\n- 个人批量签署进行的合同的签名区， 全部变成<font color=\"red\">手写签名</font>（不管合同里边设置的签名限制）来进行。\n- 不支持签署方含有签批控件，或设置了签署方在签署时自行添加签署控件功能的合同进行批量签署。",
       "input": "ChannelCreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "ChannelCreateBatchSignUrlResponse",
@@ -61,6 +68,13 @@
       "input": "ChannelCreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
+      "status": "online"
+    },
+    "ChannelCreateDynamicFlowApprover": {
+      "document": "接口（ChannelCreateDynamicFlowApprover）用来补充<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>发起的动态合同的签署人信息\n**注**: \n<ul>\n<li>此接口需要保证：渠道企业已开启：模块化计费能力，</li>\n<li>此接口需要保证：渠道应用已开启：动态签署人2.0能力</li>\n<li>此接口需要保证：合同发起时指定开启了动态合同</li>\n<li>此接口补充的动态签署人传参规则，请参考接口：<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>的签署人传参规则</li>\n</ul>",
+      "input": "ChannelCreateDynamicFlowApproverRequest",
+      "name": "渠道版补充动态合同签署人接口",
+      "output": "ChannelCreateDynamicFlowApproverResponse",
       "status": "online"
     },
     "ChannelCreateEmbedWebUrl": {
@@ -404,6 +418,13 @@
       "input": "CreateLegalSealQrCodeRequest",
       "name": "获取到电子签小程序创建法人章二维码",
       "output": "CreateLegalSealQrCodeResponse",
+      "status": "online"
+    },
+    "CreateOrganizationAuthFile": {
+      "document": "生成合成后的各类企业授权书，包括：\n- 企业认证超管授权书\n- 超管变更授权书\n- 企业注销授权书\n\n注: 需自行保证传入真实的企业/法人/超管信息，否则后续的审核将会拒绝。",
+      "input": "CreateOrganizationAuthFileRequest",
+      "name": "生成企业授权书",
+      "output": "CreateOrganizationAuthFileResponse",
       "status": "online"
     },
     "CreatePartnerAutoSignAuthUrl": {
@@ -790,6 +811,62 @@
       ],
       "usage": "in"
     },
+    "ArchiveDynamicFlowRequest": {
+      "document": "ArchiveDynamicFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID",
+          "example": "\"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ArchiveDynamicFlowResponse": {
+      "document": "ArchiveDynamicFlow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态签署人的参与人信息",
+          "example": "无",
+          "member": "ChannelArchiveDynamicApproverData",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AuthFailMessage": {
       "document": "授权出错信息",
       "members": [
@@ -1172,6 +1249,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ChannelArchiveDynamicApproverData": {
+      "document": "动态签署2.0合同参与人信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\t",
+          "example": "06f2bc0f1772d8deac2f92b5df61a5ac",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。 填写控件和签署控件都与特定的角色编号关联。\t",
+          "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ChannelBatchCancelFlowsRequest": {
       "document": "ChannelBatchCancelFlows请求参数结构体",
@@ -1787,7 +1892,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>**ID_CARD** : 中国大陆居民身份证 (默认值)</li>\n<li>**HONGKONG_AND_MACAO** : 港澳居民来往内地通行证</li>\n<li>**HONGKONG_MACAO_AND_TAIWAN** : 港澳台居民居住证(格式同居民身份证)</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件类型，支持以下类型\n<ul><li>**ID_CARD** : 中国大陆居民身份证 (默认值)</li>\n<li>**HONGKONG_AND_MACAO** : 中国港澳居民来往内地通行证</li>\n<li>**HONGKONG_MACAO_AND_TAIWAN** : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n\n注：`请确保和合同中填入的一致`",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -1796,7 +1901,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -2036,6 +2141,52 @@
           "name": "TaskId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateDynamicFlowApproverRequest": {
+      "document": "ChannelCreateDynamicFlowApprover请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动态合同信息\n",
+          "example": "无",
+          "member": "DynamicFlowInfo",
+          "name": "FillDynamicFlowList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。 此接口下面信息必填。 <ul> <li>渠道应用标识: Agent.AppId</li> <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li> <li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li> </ul> 第三方平台子客企业和员工必须已经经过实名认证\t",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateDynamicFlowApproverResponse": {
+      "document": "ChannelCreateDynamicFlowApprover返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动态合同补充结果列表",
+          "example": "无",
+          "member": "DynamicFlowResult",
+          "name": "DynamicFlowResultList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2316,7 +2467,7 @@
         {
           "disabled": false,
           "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
-          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "example": "合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}",
           "member": "string",
           "name": "CustomShowMap",
           "required": false,
@@ -2420,6 +2571,15 @@
           "name": "PreviewType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启动态合同（动态签署人2.0）\n<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>\n<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>\n",
+          "example": "false",
+          "member": "bool",
+          "name": "OpenDynamicFlow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2450,7 +2610,7 @@
         {
           "disabled": false,
           "document": "预览链接，有效期5分钟\n注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL",
-          "example": "https://embed.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDAY0UUckp7ouj3qU3GpRQCZvA3aO2l0&codeType=QUICK&businessType=RESOURCE&businessId=yDCY0UUckp7oucf2UxAAGY1RtjPw9Pyt",
+          "example": "https://embed.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDAY0UUckp7ouj3qU3GpRQCZvA3aO2l0",
           "member": "string",
           "name": "PreviewUrl",
           "output_required": false,
@@ -3308,7 +3468,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码, 应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -3344,7 +3504,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -5670,7 +5830,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "ID_CARD ",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -5679,7 +5839,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。\n</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。\n</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "110101192008317114",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -6650,7 +6810,7 @@
         },
         {
           "disabled": false,
-          "document": "子客经办人身份证\n注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。",
+          "document": "子客经办人身份证\n注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。",
           "example": "无",
           "member": "string",
           "name": "ProxyOperatorIdCardNumber",
@@ -7169,6 +7329,61 @@
       ],
       "type": "object"
     },
+    "CreateOrganizationAuthFileRequest": {
+      "document": "CreateOrganizationAuthFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业授权书信息参数， 需要自行保证这些参数跟营业执照中的信息一致。",
+          "example": "无",
+          "member": "OrganizationCommonInfo",
+          "name": "OrganizationCommonInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "授权书类型：\n- 0: 企业认证超管授权书\n- 1: 超管变更授权书\n- 2: 企业注销授权书",
+          "example": "无",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationAuthFileResponse": {
+      "document": "CreateOrganizationAuthFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权书链接，有效期5分钟。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePartnerAutoSignAuthUrlRequest": {
       "document": "CreatePartnerAutoSignAuthUrl请求参数结构体",
       "members": [
@@ -7294,7 +7509,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型<ul><li> ID_CARD  : 居民身份证 (默认值)</li><li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li><li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>",
+          "document": "证件类型，支持以下类型<ul><li> ID_CARD  : 中国大陆居民身份证 (默认值)</li><li> HONGKONG_AND_MACAO  : 中国港澳居民来往内地通行证</li><li> HONGKONG_MACAO_AND_TAIWAN  : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -7303,7 +7518,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li><li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li><li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li><li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -7589,7 +7804,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -7598,7 +7813,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -8782,6 +8997,110 @@
       ],
       "usage": "in"
     },
+    "DynamicFlowApproverResult": {
+      "document": "动态合同签署人结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；\t",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署ID - 发起流程时系统自动补充 - 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息\t",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署人状态信息",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproverStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DynamicFlowInfo": {
+      "document": "动态合同信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。 - 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 - 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。 - <font color=\"red\">不建议继续使用</font>，请使用<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId指定合同\t",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程的参与方列表, 最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，不同类型的签署方传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)。 如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序, 请确保列表中参与人的顺序符合实际签署顺序。\t",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传： <ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签） </li><li> **OTHER** : 通用场景</li></ul> 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`\t",
+          "example": "E_PRESCRIPTION_AUTO_SIGN\t",
+          "member": "string",
+          "name": "AutoSignScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人校验方式 VerifyCheck: 人脸识别（默认） MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证） 参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverVerifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DynamicFlowResult": {
+      "document": "动态合同补充签署人结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 [点击查看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)\t",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态合同签署人补充结果信息列表",
+          "example": "无",
+          "member": "DynamicFlowApproverResult",
+          "name": "DynamicFlowApproverList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EmbedUrlOption": {
       "document": "创建嵌入式页面url个性化参数",
       "members": [
@@ -8965,7 +9284,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证</li>\n<li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `1.其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`\n`2.补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -8974,7 +9293,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
           "example": "无",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -9261,7 +9580,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -9270,7 +9589,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
@@ -9423,7 +9742,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署合同时的认证方式\n<ul><li> **1** :人脸认证</li>\n<li> **2** :签署密码</li>\n<li> **3** :运营商三要素（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n默认为1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注: \n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
+          "document": "签署人签署合同时的认证方式\n<ul><li> **1** :人脸认证</li>\n<li> **2** :签署密码</li>\n<li> **3** :运营商三要素（如果是港澳台客户，建议不要选择这个）</li>\n<li>**5**：设备指纹识别，需要对比手机机主预留的指纹信息，校验一致才能成功进行合同签署。（iOS系统暂不支持该校验方式）</li>\n<li>**6**：设备面容识别，需要对比手机机主预留的人脸信息，校验一致才能成功进行合同签署。（Android系统暂不支持该校验方式）</li></ul>\n\n默认为：\n1(人脸认证 ),2(签署密码),3(运营商三要素),5(设备指纹识别),6(设备面容识别)\n\n注: \n1. 用<font color='red'>模板创建合同场景</font>, 签署人的认证方式需要在配置模板的时候指定, <font color='red'>在创建合同重新指定无效</font>\n2. 运营商三要素认证方式对手机号运营商及前缀有限制,可以参考[运营商支持列表类](https://qian.tencent.com/developers/partner/mobile_support)得到具体的支持说明\n3. 校验方式不允许只包含<font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>，至少需要再增加一种其他校验方式。\n4. <font color='red'>设备指纹识别</font>和<font color='red'>设备面容识别</font>只支持小程序使用，其他端暂不支持。",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",
@@ -10594,7 +10913,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN 中国港澳台居民居住证(格式同中国大陆居民身份证)</li>\n<li>OTHER_CARD_TYPE 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "ApproverIdCardType",
@@ -10603,7 +10922,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "ApproverIdCardNumber",
@@ -10904,6 +11223,155 @@
         }
       ],
       "usage": "out"
+    },
+    "OrganizationCommonInfo": {
+      "document": "企业认证信息参数， 需要保证这些参数跟营业执照中的信息一致。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "居民身份证",
+          "member": "string",
+          "name": "LegalIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管姓名。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管手机号。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminMobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管证件类型\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "居民身份证",
+          "member": "string",
+          "name": "AdminIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管证件号码\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldAdminName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldAdminMobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "居民身份证",
+          "member": "string",
+          "name": "OldAdminIdCardType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原超管证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldAdminIdCardNumber",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "OrganizationInfo": {
       "document": "机构信息",
@@ -11371,7 +11839,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>\n",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO :  中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN :  中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n",
           "example": "ID_CARD ",
           "member": "string",
           "name": "IdCardType",
@@ -11646,7 +12114,7 @@
           "example": "深圳市南山区高新区科技中一路腾讯大厦35层",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -11678,7 +12146,7 @@
         },
         {
           "disabled": false,
-          "document": "经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>\n",
+          "document": "经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n",
           "example": "无",
           "member": "string",
           "name": "AdminIdCardType",
@@ -11765,7 +12233,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证(默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证(默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -11774,7 +12242,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。\n</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。\n</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -11848,57 +12316,52 @@
       "usage": "in"
     },
     "RelieveInfo": {
-      "document": "解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。",
+      "document": "解除协议文档中内容信息，包括但不限于：解除理由、解除后仍然有效的条款-保留条款、原合同事项处理-费用结算、原合同事项处理-其他事项、其他约定等。下面各种字段在解除协议中的位置参考：\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/5087164cfe5a15fa3ced3180842d5da9.png)",
       "members": [
         {
           "disabled": false,
-          "document": "解除理由，最大支持200个字",
-          "example": "xxx",
+          "document": "解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
+          "example": "合同中的金额写错了",
           "member": "string",
           "name": "Reason",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "解除后仍然有效的条款，保留条款，最大支持200个字",
-          "example": "xxx",
+          "document": "解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。\n",
+          "example": "买卖小狗的交易地点、小狗的品种",
           "member": "string",
           "name": "RemainInForceItem",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "原合同事项处理-费用结算，最大支持200个字",
-          "example": "xxx",
+          "document": "原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
+          "example": "1000元",
           "member": "string",
           "name": "OriginalExpenseSettlement",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "原合同事项处理-其他事项，最大支持200个字",
-          "example": "xxx",
+          "document": "原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
+          "example": "原合同中的补充条款依然生效",
           "member": "string",
           "name": "OriginalOtherSettlement",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "其他约定，最大支持200个字",
-          "example": "xxx",
+          "document": "其他约定（如约定的与解除协议存在冲突的，以【其他约定】为准），最大支持200个字，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
+          "example": "解除后1天内部签署新的合同",
           "member": "string",
           "name": "OtherDeals",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -12006,6 +12469,16 @@
           "name": "ExpiredTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "微信小程序二维码",
+          "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a976edda49eacc2b264c2df468c30fcd69023cd782421bdbedddf8a95c7859d4467844c38fb9ea20b47d4b2f89396717f8deac5dcb25f32d718f0c13b48f53a2f6f69096b3b301aad56de87d7a8499fe374e5e2891dd778bb0c82394640fe124be22c63ba4e022a046cbc298006d3341",
+          "member": "string",
+          "name": "WeixinQrCodeUrl",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12494,7 +12967,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业法定代表人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>\n注: `现在仅支持ID_CARD居民身份证类型`",
+          "document": "第三方平台子客企业法定代表人的证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li></ul>\n注: `现在仅支持ID_CARD中国大陆居民身份证类型`",
           "example": "无",
           "member": "string",
           "name": "ProxyLegalIdCardType",
@@ -12503,7 +12976,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业法定代表人的证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>",
+          "document": "第三方平台子客企业法定代表人的证件号码, 应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "ProxyLegalIdCardNumber",
@@ -12750,7 +13223,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名，最大长度不超过200字符",
+          "document": "文件的名字。\n文件名的最大长度应不超过200个字符，并且文件名的后缀必须反映其文件类型。\n例如，PDF文件应以“.pdf”结尾，如“XXX.pdf”，而Word文件应以“.doc”或“.docx”结尾，如“XXX.doc”或“XXX.docx”。",
           "example": "无",
           "member": "string",
           "name": "FileName",
@@ -12783,7 +13256,7 @@
         },
         {
           "disabled": false,
-          "document": "上传文件内容数组，最多支持上传20个文件。",
+          "document": "上传文件内容数组，一次最多可上传20个文件。\n\n<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。",
           "example": "FileInfos",
           "member": "UploadFile",
           "name": "FileInfos",
@@ -12817,7 +13290,7 @@
         },
         {
           "disabled": false,
-          "document": "文件资源ID数组，每个文件资源ID为32位字符串。\n建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。\n注:`有效期一个小时, 有效期内此文件id可以反复使用, 超过有效期无法使用`",
+          "document": "文件资源ID数组，每个文件资源ID为32位字符串。\n建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。\n注:`有效期一个小时（超过一小时后系统不定期清理，会有部分时间差）, 有效期内此文件id可以反复使用, 超过有效期无法使用`",
           "example": "无",
           "member": "string",
           "name": "FileIds",
@@ -12975,7 +13448,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -12984,7 +13457,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给香港居民，“M”字头签发给澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",

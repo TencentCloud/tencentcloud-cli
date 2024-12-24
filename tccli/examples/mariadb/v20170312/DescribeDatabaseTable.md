@@ -7,7 +7,7 @@ Input:
 ```
 tccli mariadb DescribeDatabaseTable --cli-unfold-argument  \
     --InstanceId tdsql-e9tklsgz \
-    --DbName test \
+    --DbName product_db \
     --Table region
 ```
 
@@ -33,7 +33,7 @@ Output:
                 "Type": "varchar(256)"
             }
         ],
-        "DbName": "test",
+        "DbName": "product_db",
         "InstanceId": "tdsql-e9tklsgz",
         "RequestId": "2de52957-ebe4-4d7b-8985-4e415b3fb360",
         "Table": "region"

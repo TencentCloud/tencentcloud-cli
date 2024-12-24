@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dsgc DescribeDSPASupportedMetas --cli-unfold-argument  \
-    --MetaTypes abc
+    --MetaTypes cdb
 ```
 
 Output: 
@@ -15,17 +15,17 @@ Output:
     "Response": {
         "Metas": [
             {
-                "MetaType": "abc",
+                "MetaType": "cdb",
                 "Regions": [
-                    "abc"
+                    "ap-guangzhou"
                 ],
                 "SupportedAuthTypes": [
-                    "abc"
+                    "automatic"
                 ]
             }
         ],
         "MaxDBInstanceLimit": 0,
-        "RequestId": "abc"
+        "RequestId": "18dafbf7-83d5-4159-aeaf-4a02f1975176"
     }
 }
 ```

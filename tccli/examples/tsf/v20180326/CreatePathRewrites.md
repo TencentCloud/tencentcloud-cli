@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tsf CreatePathRewrites --cli-unfold-argument  \
-    --PathRewrites.Regex xx \
-    --PathRewrites.GatewayGroupId xx \
-    --PathRewrites.Blocked xx \
-    --PathRewrites.Order 0 \
-    --PathRewrites.Replacement xx
+    --PathRewrites.GatewayGroupId group-yo476mrv \
+    --PathRewrites.Regex /provider \
+    --PathRewrites.Replacement /user \
+    --PathRewrites.Blocked N \
+    --PathRewrites.Order 1
 ```
 
 Output: 

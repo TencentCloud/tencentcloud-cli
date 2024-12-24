@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dsgc ListDSPACosMetaResources --cli-unfold-argument  \
-    --DspaId abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --DspaId dspa-a1b2c3d4 \
+    --Filters.0.Name Bucket \
+    --Filters.0.Values commontest-1252347619 \
     --Offset 1 \
     --Limit 1 \
-    --BindType abc
+    --BindType binded
 ```
 
 Output: 
@@ -21,18 +21,18 @@ Output:
         "TotalCount": 0,
         "Items": [
             {
-                "Bucket": "abc",
-                "CreateTime": "abc",
+                "Bucket": "commontest-1252347619",
+                "CreateTime": "2020-05-07 22:00:00",
                 "Valid": 0,
-                "ResourceId": "abc",
-                "ResourceRegion": "abc",
-                "BindStatus": "abc",
-                "Storage": 0,
+                "ResourceId": "cos-f265c921bb53ed2b24f5593768ad030c5e82220c",
+                "ResourceRegion": "ap-guangzhou",
+                "BindStatus": "binded",
+                "Storage": 3,
                 "GovernAuthStatus": 0
             }
         ],
-        "DspaId": "abc",
-        "RequestId": "abc"
+        "DspaId": "dspa-a1b2c3d4",
+        "RequestId": "0cf9a026-3679-4205-a676-5449211df926"
     }
 }
 ```

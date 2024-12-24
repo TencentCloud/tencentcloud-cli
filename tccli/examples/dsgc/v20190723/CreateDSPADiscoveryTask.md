@@ -7,18 +7,18 @@ Input:
 ```
 tccli dsgc CreateDSPADiscoveryTask --cli-unfold-argument  \
     --Enable 1 \
-    --Name task \
+    --Name 分类分级任务 \
     --ComplianceGroupIds 0 \
     --DataSourceType 1 \
     --GeneralRuleSetEnable 1 \
     --Period 0 \
-    --TimingStartTime 2021/4/2 10:46:18 \
-    --DspaId dspa-0001 \
-    --DataSourceId 123 \
+    --TimingStartTime 2021-11-11 10:46:18 \
+    --DspaId dspa-ab50f3b1 \
+    --DataSourceId cdb-6cmpe42v \
     --Plan 0 \
     --ResourceRegion ap-guangzhou \
     --Condition db1,db_2 \
-    --Description 扫描任务
+    --Description 分类分级扫描任务
 ```
 
 Output: 

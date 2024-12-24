@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dsgc EnableTrialVersion --cli-unfold-argument  \
-    --DspaId dspa-xxxxx \
+    --DspaId dspa-a1b2c3d4 \
     --TrialVersion standard
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "18dafbf7-83d5-4159-aeaf-4a02f1975176"
     }
 }
 ```

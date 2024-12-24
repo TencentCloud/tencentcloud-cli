@@ -7,7 +7,7 @@ Input:
 ```
 tccli cam CreateServiceLinkedRole --cli-unfold-argument  \
     --QCSServiceName ccs.qcloud.com \
-    --CustomSuffix forTest \
+    --CustomSuffix forAdmin \
     --Description ccsLinkedRole
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RoleId": "4611686018427411525",
+        "RoleId": "4611**************1",
         "RequestId": "c3da1c1c-df35-467d-9335-99c68d993e0a"
     }
 }

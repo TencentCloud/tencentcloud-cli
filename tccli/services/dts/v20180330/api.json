@@ -286,9 +286,10 @@
         {
           "disabled": false,
           "document": "数据内容检测参数。表中选出用来数据对比的行，占表的总行数的百分比。取值范围是整数[1-100]",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "SelectRowsPerTable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -296,9 +297,10 @@
         {
           "disabled": false,
           "document": "数据内容检测参数。迁移库表中，要进行数据内容检测的表，占所有表的百分比。取值范围是整数[1-100]",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "TablesSelectAll",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -306,9 +308,10 @@
         {
           "disabled": false,
           "document": "数据数量检测，检测表行数是否一致。迁移库表中，要进行数据数量检测的表，占所有表的百分比。取值范围是整数[1-100]",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "TablesSelectCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1288,9 +1291,10 @@
         {
           "disabled": false,
           "document": "目标实例地域，如ap-guangzhou",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1298,9 +1302,10 @@
         {
           "disabled": false,
           "document": "目标实例ID，如cdb-jd92ijd8",
-          "example": "无",
+          "example": "cdb-rx7stlmc",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1308,9 +1313,10 @@
         {
           "disabled": false,
           "document": "目标实例vip。已废弃，无需填写",
-          "example": "无",
+          "example": "192.168.0.12",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1318,9 +1324,10 @@
         {
           "disabled": false,
           "document": "目标实例vport。已废弃，无需填写",
-          "example": "无",
+          "example": "3306",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1328,9 +1335,10 @@
         {
           "disabled": false,
           "document": "目前只对MySQL有效。当为整实例迁移时，1-只读，0-可读写。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ReadOnly",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1338,9 +1346,10 @@
         {
           "disabled": false,
           "document": "目标数据库账号",
-          "example": "无",
+          "example": "dts",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1348,9 +1357,10 @@
         {
           "disabled": false,
           "document": "目标数据库密码",
-          "example": "无",
+          "example": "dts123456789",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1364,20 +1374,20 @@
         {
           "disabled": false,
           "document": "具体的报错日志, 包含错误码和错误信息",
-          "example": "",
+          "example": "invalid connection",
           "member": "string",
           "name": "ErrorLog",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "报错对应的帮助文档Ur",
-          "example": "",
+          "example": "http://api.qcloud.com",
           "member": "string",
           "name": "HelpDoc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1417,70 +1427,70 @@
         {
           "disabled": false,
           "document": "总步骤数",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "StepAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前步骤",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "StepNow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总进度,如：\"10\"",
-          "example": "",
+          "example": "30",
           "member": "string",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前步骤进度,如:\"1\"",
-          "example": "",
+          "example": "10",
           "member": "string",
           "name": "CurrentStepProgress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主从差距，MB；在增量同步阶段有效，目前支持产品为：redis和mysql",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "MasterSlaveDistance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主从差距，秒；在增量同步阶段有效，目前支持产品为：mysql",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "SecondsBehindMaster",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤信息",
-          "example": "",
+          "example": "无",
           "member": "MigrateStepDetailInfo",
           "name": "StepInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -1679,9 +1689,10 @@
         {
           "disabled": false,
           "document": "任务运行模式，值包括：1-立即执行，2-定时执行",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RunMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1689,9 +1700,10 @@
         {
           "disabled": false,
           "document": "期望执行时间，当runMode=2时，该字段必填，时间格式：yyyy-mm-dd hh:mm:ss",
-          "example": "",
+          "example": "2024-12-20 19:02:01",
           "member": "datetime",
           "name": "ExpectTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1699,9 +1711,10 @@
         {
           "disabled": false,
           "document": "数据迁移类型，值包括：1-结构迁移,2-全量迁移,3-全量+增量迁移",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "MigrateType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1709,9 +1722,10 @@
         {
           "disabled": false,
           "document": "迁移对象，1-整个实例，2-指定库表",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "MigrateObject",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1719,9 +1733,10 @@
         {
           "disabled": false,
           "document": "抽样数据一致性检测参数，1-未配置,2-全量检测,3-抽样检测, 4-仅校验不一致表,5-不检测",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "ConsistencyType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1729,9 +1744,10 @@
         {
           "disabled": false,
           "document": "是否用源库Root账户覆盖目标库，值包括：0-不覆盖，1-覆盖，选择库表或者结构迁移时应该为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "IsOverrideRoot",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1739,9 +1755,10 @@
         {
           "disabled": false,
           "document": "不同数据库用到的额外参数.以JSON格式描述. \nRedis可定义如下的参数: \n{ \n\t\"ClientOutputBufferHardLimit\":512, \t从机缓冲区的硬性容量限制(MB) \n\t\"ClientOutputBufferSoftLimit\":512, \t从机缓冲区的软性容量限制(MB) \n\t\"ClientOutputBufferPersistTime\":60, 从机缓冲区的软性限制持续时间(秒) \n\t\"ReplBacklogSize\":512, \t环形缓冲区容量限制(MB) \n\t\"ReplTimeout\":120，\t\t复制超时时间(秒) \n}\nMongoDB可定义如下的参数: \n{\n\t'SrcAuthDatabase':'admin', \n\t'SrcAuthFlag': \"1\", \n\t'SrcAuthMechanism':\"SCRAM-SHA-1\"\n}\nMySQL暂不支持额外参数设置。",
-          "example": "",
+          "example": "{\"ClientOutputBufferHardLimit\":512}",
           "member": "string",
           "name": "ExternParams",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1749,9 +1766,10 @@
         {
           "disabled": false,
           "document": "仅用于“抽样数据一致性检测”，ConsistencyType配置为抽样检测时，必选",
-          "example": "",
+          "example": "无",
           "member": "ConsistencyParams",
           "name": "ConsistencyParams",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -1765,50 +1783,50 @@
         {
           "disabled": false,
           "document": "步骤序列",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "StepNo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤展现名称",
-          "example": "",
+          "example": "全量导出",
           "member": "string",
           "name": "StepName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤英文标识",
-          "example": "",
+          "example": "dumper",
           "member": "string",
           "name": "StepId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2024-12-20 19:02:01",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2200,9 +2218,10 @@
         {
           "disabled": false,
           "document": "阿里云AccessKey。源库是阿里云RDS5.6适用",
-          "example": "",
+          "example": "aBcD******Z012345",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2210,9 +2229,10 @@
         {
           "disabled": false,
           "document": "实例的IP地址",
-          "example": "",
+          "example": "192.168.0.12",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2220,9 +2240,10 @@
         {
           "disabled": false,
           "document": "实例的端口",
-          "example": "",
+          "example": "3306",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2230,9 +2251,10 @@
         {
           "disabled": false,
           "document": "实例的用户名",
-          "example": "",
+          "example": "dts",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2240,9 +2262,10 @@
         {
           "disabled": false,
           "document": "实例的密码",
-          "example": "",
+          "example": "password123",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2250,9 +2273,10 @@
         {
           "disabled": false,
           "document": "阿里云RDS实例ID。源库是阿里云RDS5.6/5.6适用",
-          "example": "",
+          "example": "rds-dgyfhvf",
           "member": "string",
           "name": "RdsInstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2260,9 +2284,10 @@
         {
           "disabled": false,
           "document": "CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段",
-          "example": "",
+          "example": "ins-olgl39y8",
           "member": "string",
           "name": "CvmInstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2270,9 +2295,10 @@
         {
           "disabled": false,
           "document": "专线网关ID，格式如：dcg-0rxtqqxb",
-          "example": "",
+          "example": "dcg-0rxtqqxb",
           "member": "string",
           "name": "UniqDcgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2280,9 +2306,10 @@
         {
           "disabled": false,
           "document": "私有网络ID，格式如：vpc-92jblxto",
-          "example": "",
+          "example": "vpc-92jblxto",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2290,9 +2317,10 @@
         {
           "disabled": false,
           "document": "私有网络下的子网ID，格式如：subnet-3paxmkdz",
-          "example": "",
+          "example": "subnet-3paxmkdz",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2300,9 +2328,10 @@
         {
           "disabled": false,
           "document": "VPN网关ID，格式如：vpngw-9ghexg7q",
-          "example": "",
+          "example": "vpngw-9ghexg7q",
           "member": "string",
           "name": "UniqVpnGwId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2310,9 +2339,10 @@
         {
           "disabled": false,
           "document": "数据库实例ID，格式如：cdb-powiqx8q",
-          "example": "",
+          "example": "cdb-powiqx8q",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2320,9 +2350,10 @@
         {
           "disabled": false,
           "document": "地域英文名，如：ap-guangzhou",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2330,9 +2361,10 @@
         {
           "disabled": false,
           "document": "当实例为RDS实例时，填写为aliyun, 其他情况均填写others",
-          "example": "",
+          "example": "others",
           "member": "string",
           "name": "Supplier",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2340,9 +2372,10 @@
         {
           "disabled": false,
           "document": "云联网ID，如：ccn-afp6kltc\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ccn-afp6kltc",
           "member": "string",
           "name": "CcnId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2350,9 +2383,10 @@
         {
           "disabled": false,
           "document": "数据库版本，当实例为RDS实例时才有效，格式如：5.6或者5.7，默认为5.6",
-          "example": "",
+          "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2437,7 +2471,7 @@
         {
           "disabled": false,
           "document": "数据订阅的实例ID",
-          "example": "无",
+          "example": "subs-9jyki7hniw",
           "member": "string",
           "name": "SubscribeId",
           "output_required": true,
@@ -2448,7 +2482,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例的名称",
-          "example": "无",
+          "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
           "output_required": true,
@@ -2458,8 +2492,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例绑定的通道ID",
-          "example": "无",
+          "document": "数据订阅实例绑定的通道ID。kafka版订阅就是kafka topic",
+          "example": "topic-subs-l4d3a7izai-cdb-24ifcx43",
           "member": "string",
           "name": "ChannelId",
           "output_required": true,
@@ -2469,8 +2503,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅绑定实例对应的产品名称",
-          "example": "无",
+          "document": "订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)",
+          "example": "mysql",
           "member": "string",
           "name": "Product",
           "output_required": true,
@@ -2481,7 +2515,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例绑定的数据库实例ID",
-          "example": "无",
+          "example": "cdb-24ifcx43",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -2491,8 +2525,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例绑定的数据库实例状态",
-          "example": "无",
+          "document": "云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空",
+          "example": "running",
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
@@ -2502,8 +2536,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置",
-          "example": "无",
+          "document": "数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error",
+          "example": "running",
           "member": "string",
           "name": "SubsStatus",
           "output_required": true,
@@ -2513,8 +2547,8 @@
         },
         {
           "disabled": false,
-          "document": "上次修改时间",
-          "example": "无",
+          "document": "上次修改时间，时间格式如：Y-m-d h:m:s",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -2525,7 +2559,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -2535,8 +2569,8 @@
         },
         {
           "disabled": false,
-          "document": "隔离时间",
-          "example": "无",
+          "document": "隔离时间，时间格式如：Y-m-d h:m:s",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "IsolateTime",
           "output_required": true,
@@ -2546,8 +2580,8 @@
         },
         {
           "disabled": false,
-          "document": "到期时间",
-          "example": "无",
+          "document": "包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -2558,7 +2592,7 @@
         {
           "disabled": false,
           "document": "下线时间",
-          "example": "无",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "OfflineTime",
           "output_required": true,
@@ -2569,7 +2603,7 @@
         {
           "disabled": false,
           "document": "最近一次修改的消费时间起点，如果从未修改则为零值",
-          "example": "无",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "ConsumeStartTime",
           "output_required": true,
@@ -2579,8 +2613,8 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": true,
@@ -2591,7 +2625,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例所属地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -2602,7 +2636,7 @@
         {
           "disabled": false,
           "document": "计费方式，0 - 包年包月，1 - 按量计费",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PayType",
           "output_required": true,
@@ -2612,8 +2646,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例的Vip",
-          "example": "无",
+          "document": "旧版订阅通道的vip",
+          "example": "10.0.0.37",
           "member": "string",
           "name": "Vip",
           "output_required": true,
@@ -2624,7 +2658,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例的Vport",
-          "example": "无",
+          "example": "10086",
           "member": "int64",
           "name": "Vport",
           "output_required": true,
@@ -2635,7 +2669,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例Vip所在VPC的唯一ID",
-          "example": "无",
+          "example": "vpc-3l4t891i",
           "member": "string",
           "name": "UniqVpcId",
           "output_required": true,
@@ -2646,7 +2680,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例Vip所在子网的唯一ID",
-          "example": "无",
+          "example": "subnet-njj6i45t",
           "member": "string",
           "name": "UniqSubnetId",
           "output_required": true,
@@ -2656,8 +2690,8 @@
         },
         {
           "disabled": false,
-          "document": "数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线",
-          "example": "无",
+          "document": "数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -2668,7 +2702,7 @@
         {
           "disabled": false,
           "document": "SDK最后一条确认消息的时间戳，如果SDK一直消费，也可以作为SDK当前消费时间点",
-          "example": "无",
+          "example": "2023-05-15 21:29:05",
           "member": "string",
           "name": "SdkConsumedTime",
           "output_required": true,
@@ -2690,7 +2724,7 @@
         {
           "disabled": false,
           "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
           "output_required": true,
@@ -2707,9 +2741,10 @@
         {
           "disabled": false,
           "document": "数据订阅对象的类型，0-数据库，1-数据库内的表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ObjectsType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -2717,9 +2752,10 @@
         {
           "disabled": false,
           "document": "订阅数据库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "db_1",
           "member": "string",
           "name": "DatabaseName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2727,9 +2763,10 @@
         {
           "disabled": false,
           "document": "订阅数据库中表名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"tab_1\"]",
           "member": "string",
           "name": "TableNames",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -2743,22 +2780,20 @@
         {
           "disabled": false,
           "document": "标签键值",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "[value1, value2]",
           "member": "string",
           "name": "TagValue",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2769,9 +2804,10 @@
         {
           "disabled": false,
           "document": "标签键值",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2779,9 +2815,10 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "value",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

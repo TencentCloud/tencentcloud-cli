@@ -1,6 +1,12 @@
-**Example 1: 通过运行时roleId查询对应的软件 LICENSE**
+**Example 1: 从软件进程读取 LICENSE**
 
+软件进程对接 LICENSE 后，通过运行时角色申请临时密钥来调用，获取对应的 LICENSE 信息。
 
+获取到 LICENSE 后，请注意校验 LicenseStatus 是否有效，无效时软件可根据策略拒绝服务或者提供降级服务。同时，LICENSE 包含用户购买的规格信息，软件可根据规格来做运行的约束。
+
+对接 LICENSE 的详细方案，请参考文档：
+* [对接 LICENSE](https://cloud.tencent.com/document/product/1689/109428)
+* [通过运行时角色调用云 API](https://cloud.tencent.com/document/product/1689/109427)
 
 Input: 
 
@@ -36,7 +42,7 @@ Output:
             "ExpirationDate": "2020-09-23T00:00:00+00:00",
             "LifeSpanUnit": "D"
         },
-        "RequestId": "abc"
+        "RequestId": "845c8910-b0af-499e-87cd-f7dcc93a595a"
     }
 }
 ```

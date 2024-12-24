@@ -10,8 +10,8 @@ tccli dsgc CreateDSPAMetaResources --cli-unfold-argument  \
     --UpdateId 49f060ba-c12d-4643-98da-aa8bcc382091 \
     --UpdateStatus finished \
     --Items.0.ResourceVip 127.0.0.1 \
-    --Items.0.ResourceId cdb-xxxxxxxx \
-    --Items.0.ResourceCreateTime 2022-xx-xx xx:xx:xx \
+    --Items.0.ResourceId cdb-16cb45g7 \
+    --Items.0.ResourceCreateTime 2022-12-03 10:42:19 \
     --Items.0.ResourceUniqueSubnetId subnet-xx \
     --Items.0.ResourceUniqueVpcId vpc-xx \
     --Items.0.ResourceName name \

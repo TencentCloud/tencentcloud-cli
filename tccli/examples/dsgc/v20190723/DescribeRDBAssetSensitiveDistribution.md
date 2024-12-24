@@ -1,16 +1,16 @@
-**Example 1: 示例**
+**Example 1: 数据资产报告-查询关系型数据库的敏感资产报告**
 
-示例描述
+查询关系型数据库的敏感资产报告
 
 Input: 
 
 ```
 tccli dsgc DescribeRDBAssetSensitiveDistribution --cli-unfold-argument  \
-    --DspaId abc \
-    --ComplianceId 0 \
-    --AssetList.0.DataSourceType abc \
-    --AssetList.0.DataSourceInfo.0.DataSourceId abc \
-    --AssetList.0.DataSourceInfo.0.BindList abc
+    --DspaId dspa-a1b2c3 \
+    --ComplianceId 1 \
+    --AssetList.0.DataSourceType cdb \
+    --AssetList.0.DataSourceInfo.0.DataSourceId cdb-a1b2c3 \
+    --AssetList.0.DataSourceInfo.0.BindList asset
 ```
 
 Output: 
@@ -18,20 +18,20 @@ Output:
 {
     "Response": {
         "RDBAsset": {
-            "DbNums": 0,
-            "SensitiveDbNums": 0,
-            "TableNums": 0,
-            "SensitiveTableNums": 0,
-            "FieldNums": 0,
-            "SensitiveFieldNums": 0
+            "DbNums": 2,
+            "SensitiveDbNums": 1,
+            "TableNums": 5,
+            "SensitiveTableNums": 2,
+            "FieldNums": 7,
+            "SensitiveFieldNums": 4
         },
         "TopAsset": [
             {
-                "LevelName": "abc",
+                "LevelName": "高风险",
                 "TopStat": [
                     {
-                        "DataSourceId": "abc",
-                        "SubData": "abc",
+                        "DataSourceId": "cdb",
+                        "SubData": "high",
                         "SensitiveCnt": 0
                     }
                 ]
@@ -39,22 +39,22 @@ Output:
         ],
         "RDBDetail": [
             {
-                "DataSourceId": "abc",
-                "DdName": "abc",
-                "DataType": "abc",
+                "DataSourceId": "cdb",
+                "DdName": "asset",
+                "DataType": "cdb",
                 "TableNums": 0,
                 "SensitiveTableNums": 0,
                 "FieldNums": 0,
                 "SensitiveFieldNums": 0,
                 "DistributionData": [
                     {
-                        "Key": "abc",
+                        "Key": "high",
                         "Value": 0
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "9f266ea1-30b1-4941-b513-417660be5e64"
     }
 }
 ```

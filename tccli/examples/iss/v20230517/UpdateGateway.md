@@ -7,7 +7,7 @@ Input:
 ```
 tccli iss UpdateGateway --cli-unfold-argument  \
     --GatewayId hijklmno-efgh-5678-ijkl-1234567890ab \
-    --Description 123
+    --Description 网关3314
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
         "Data": {
             "ClusterId": "hijklmno-efgh-5678-ijkl-1234567890abi",
             "CreatedAt": 0,
-            "Description": "123",
+            "Description": "网关3314",
             "GwId": "2b8d873*****************84a82f19",
             "GatewayId": "hijklmno-efgh-5678-ijkl-1234567890ab",
             "Name": "you think who you are",

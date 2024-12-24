@@ -7,11 +7,11 @@ Input:
 ```
 tccli privatedns DescribeAuditLog --cli-unfold-argument  \
     --Filters.0.Name ZoneId \
-    --Filters.0.Values xxxxxxx \
+    --Filters.0.Values zone-dw12dhy \
     --Filters.1.Name Domain \
     --Filters.1.Values a.com \
     --Filters.2.Name OperatorUin \
-    --Filters.2.Values xxxxx \
+    --Filters.2.Values 10023400189 \
     --TimeRangeBegin 2020-11-22 00:00:00 \
     --TimeRangeEnd 2020-11-23 23:59:59 \
     --Offset 0 \

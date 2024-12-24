@@ -16,9 +16,9 @@ tccli cfs CreateMigrationTask --cli-unfold-argument  \
     --BucketName test-1-1256238147 \
     --FsPath /test/ \
     --MigrationType 0 \
-    --TaskName test \
+    --TaskName migrate1 \
     --SrcSecretId ************************************************** \
-    --FsName test
+    --FsName oldfs
 ```
 
 Output: 

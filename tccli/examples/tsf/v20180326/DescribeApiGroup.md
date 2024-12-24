@@ -6,38 +6,35 @@ Input:
 
 ```
 tccli tsf DescribeApiGroup --cli-unfold-argument  \
-    --GroupId grp-e42d597
+    --GroupId grp-ptrhio2l
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "32429659-3422-48be-aad2-93930c7abdaf",
         "Result": {
-            "Status": "xx",
-            "UpdatedTime": "xx",
-            "AuthType": "secret",
-            "Description": "xx",
-            "BindedGatewayDeployGroups": [
-                {
-                    "DeployGroupId": "grp-fdsfds",
-                    "ApplicationName": "xx",
-                    "GroupStatus": "drafted",
-                    "ClusterType": "xx",
-                    "DeployGroupName": "xx",
-                    "ApplicationType": "xx",
-                    "ApplicationId": "xx"
-                }
-            ],
+            "AclMode": "none",
+            "ApiCount": 4,
+            "AuthType": "none",
+            "BindedGatewayDeployGroups": [],
+            "CreatedTime": "2023-01-10 17:37:26",
+            "Description": "",
+            "GatewayInstanceId": "gw-ins-szesmg28",
+            "GatewayInstanceIdList": null,
+            "GatewayInstanceType": null,
+            "GroupContext": "/heihuli",
+            "GroupId": "grp-ptrhio2l",
+            "GroupName": "heihuli",
             "GroupType": "ms",
-            "AclMode": "xx",
-            "ApiCount": 0,
-            "GroupName": "xx",
-            "GroupContext": "/xx",
-            "CreatedTime": "xx",
-            "GroupId": "grp-dasdasdas"
-        },
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a"
+            "NamespaceNameKey": null,
+            "NamespaceNameKeyPosition": "path",
+            "ServiceNameKey": null,
+            "ServiceNameKeyPosition": "path",
+            "Status": "released",
+            "UpdatedTime": "2023-01-10 22:09:34"
+        }
     }
 }
 ```

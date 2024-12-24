@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli dsgc ListDSPAClusters --cli-unfold-argument ```
+tccli dsgc ListDSPAClusters --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 10 \
+    --Filters.0.Name Channel \
+    --Filters.0.Values dsgc
+```
 
 Output: 
 ```
@@ -14,28 +19,28 @@ Output:
         "TotalCount": 1,
         "InstanceList": [
             {
-                "DspaId": "abc",
-                "DspaName": "abc",
-                "DspaDescription": "abc",
+                "DspaId": "dpsa-a1b2c3d4",
+                "DspaName": "订单分类分级实例",
+                "DspaDescription": "上汽集团下级机构",
                 "DBAuthCount": 1,
                 "CosBindCount": 1,
-                "InstanceVersion": "abc",
-                "Status": "abc",
-                "ExpiredAt": 1,
-                "AppId": 1,
-                "TrialVersion": "abc",
-                "TrialEndAt": 1,
-                "DbTotalQuota": 0,
-                "CosTotalQuota": 0,
-                "CosQuotaUnit": "abc",
+                "InstanceVersion": "basic",
+                "Status": "enabled",
+                "ExpiredAt": 1730366388,
+                "AppId": 125500778,
+                "TrialVersion": "trial-standard",
+                "TrialEndAt": 0,
+                "DbTotalQuota": 3,
+                "CosTotalQuota": 3,
+                "CosQuotaUnit": "T",
                 "RenewFlag": 1,
-                "Channel": "abc",
+                "Channel": "wedata",
                 "InsAuthCount": 0,
                 "InsTotalQuota": 0
             }
         ],
         "DenyAll": true,
-        "RequestId": "abc"
+        "RequestId": "18dafbf7-83d5-4159-aeaf-4a02f1975176"
     }
 }
 ```

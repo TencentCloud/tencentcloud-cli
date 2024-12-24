@@ -494,6 +494,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeSecondLevelBackupInfo": [
+      {
+        "document": "查询秒级备份信息",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecondLevelBackupInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asdasdas\",\n    \"BackupTimestamp\": 1716449238\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupId\": \"154709612-5143180-1043869225\",\n        \"BackupTimestamp\": 1719563096,\n        \"MissingTimestamps\": null,\n        \"RequestId\": \"fa6ec05f-d469-41cd-862f-da6771c4554d\",\n        \"StartTimestamp\": 1719562435\n    }\n}",
+        "title": "查询秒级备份信息"
+      }
+    ],
     "DescribeSlowLog": [
       {
         "document": "通过 DescribeSlowLog 接口查询一实例的慢查询详情，包含：慢查询的命令、命令行信息、延迟时间、客户端地址、节点ID等信息。",
@@ -668,6 +676,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAvailabilityZones\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-rrhr1lm6\",\n    \"SwitchOption\": 1,\n    \"NodeSet\": [\n        {\n            \"NodeId\": 339472,\n            \"NodeType\": 0,\n            \"ZoneId\": 100004\n        },\n        {\n            \"NodeId\": 339473,\n            \"NodeType\": 1,\n            \"ZoneId\": 100003\n        },\n        {\n            \"NodeId\": 339549,\n            \"NodeType\": 1,\n            \"ZoneId\": 100003\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"27c0d6e8-9894-42e0-a03b-814a204437ba\",\n        \"TaskId\": 2031290200\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "ModifyInstanceBackupMode": [
+      {
+        "document": "修改实例的备份模式",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceBackupMode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asdasdas\",\n    \"BackupMode\": \"SecondLevelBackup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa6ec05f-d469-41cd-862f-da6771c4554d\",\n        \"TaskId\": 1719562435\n    }\n}",
+        "title": "修改实例的备份模式"
       }
     ],
     "ModifyInstanceEvent": [

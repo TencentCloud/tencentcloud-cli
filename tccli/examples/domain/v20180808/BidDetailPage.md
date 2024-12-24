@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli domain BidDetailPage --cli-unfold-argument  \
-    --BusinessId abc
+    --BusinessId P00***61
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Domain": "abc",
-        "CurrentPrice": 0,
-        "BidPrice": 0,
-        "CurrentPriceScope": 0,
+        "Domain": "dte.com",
+        "CurrentPrice": 120,
+        "BidPrice": 100,
+        "CurrentPriceScope": 50,
         "PriceScope": [
             {
                 "MaxPrice": 0,
@@ -25,8 +25,8 @@ Output:
                 "DepositPrice": 0
             }
         ],
-        "DepositPrice": 0,
-        "RequestId": "abc"
+        "DepositPrice": 120,
+        "RequestId": "dwert-dwer-werq-dwerg"
     }
 }
 ```

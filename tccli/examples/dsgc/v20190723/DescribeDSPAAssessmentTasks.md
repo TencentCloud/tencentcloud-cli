@@ -15,56 +15,53 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "Items": [
             {
-                "TaskId": "task-otxxxwu3",
-                "TaskName": "test_03",
-                "BusinessName": "tx",
-                "BusinessDept": "tx",
-                "BusinessOwner": "tx",
-                "TemplateId": "template-00000000",
-                "TemplateName": "系统基础自动化评估模板",
+                "TaskUid": 11500,
+                "TaskId": "task-yji1zgjm",
+                "TaskName": "一键评估1109-19491112127",
+                "BusinessName": "",
+                "BusinessDept": "",
+                "BusinessOwner": "",
+                "TemplateId": "template-Yzc2Z",
+                "TemplateUid": 10171,
+                "TemplateName": "身份认证",
                 "ComplianceGroupId": 1,
                 "ComplianceGroupName": "通用规则集",
                 "ControlItemCount": 0,
-                "RiskCount": 1,
+                "RiskCount": 24,
                 "RiskCountInfoList": [
                     {
-                        "RiskLevel": "高",
+                        "RiskLevel": "high",
+                        "RiskLevelName": "高",
                         "Count": 0
                     },
                     {
-                        "RiskLevel": "中",
-                        "Count": 1
+                        "RiskLevel": "medium",
+                        "RiskLevelName": "中",
+                        "Count": 24
                     },
                     {
-                        "RiskLevel": "低",
+                        "RiskLevel": "low",
+                        "RiskLevelName": "低",
                         "Count": 0
                     }
                 ],
-                "FinishedTime": "2022-06-27 20:34:07",
-                "CreatedTime": "2022-06-27 20:33:45",
+                "FinishedTime": "2024-11-09 19:51:33",
+                "CreatedTime": "2024-11-09 19:49:11",
                 "Status": "finished",
                 "DiscoveryCondition": {
-                    "RDBInstances": null,
-                    "COSInstances": [
-                        {
-                            "DataSourceId": "cos-af8bd626a70111239f744bb623a19aba82ff29e7",
-                            "BucketName": "casb-1265441191",
-                            "ResourceRegion": "ap-guangzhou"
-                        },
-                        {
-                            "DataSourceId": "cos-68437d4a123451387fa35fb72d931d97763f076f",
-                            "BucketName": "casb-automated-1654641191",
-                            "ResourceRegion": "ap-guangzhou"
-                        }
-                    ]
+                    "RDBInstances": [],
+                    "COSInstances": [],
+                    "NOSQLInstances": [],
+                    "ESInstances": []
                 },
-                "ErrorInfo": "DiscoveryTask Error,DiscoveryTaskName:COS-NDkxMzYy-对应评估任务-test_03"
+                "ErrorInfo": "",
+                "ProgressPercent": 100
             }
         ],
-        "RequestId": "9a9f5c32-95ab-4130-ae37-047cde38b943"
+        "RequestId": "c9950094-26b3-9163-4fe0-3d60ae5a2d95"
     }
 }
 ```

@@ -1,0 +1,3715 @@
+{
+  "actions": {
+    "GetDrugIndications": {
+      "document": "药品适应症接口",
+      "input": "GetDrugIndicationsRequest",
+      "name": "药品适应症接口",
+      "output": "GetDrugIndicationsResponse",
+      "status": "online"
+    },
+    "LoginHisTool": {
+      "document": "登录获取token",
+      "input": "LoginHisToolRequest",
+      "name": "登录获取辅诊访问Token",
+      "output": "LoginHisToolResponse",
+      "status": "online"
+    },
+    "LoginOutHisTool": {
+      "document": "登出",
+      "input": "LoginOutHisToolRequest",
+      "name": "登出his工具",
+      "output": "LoginOutHisToolResponse",
+      "status": "online"
+    },
+    "SmartDrugInfo": {
+      "document": "智能用药接口",
+      "input": "SmartDrugInfoRequest",
+      "name": "智能用药接口",
+      "output": "SmartDrugInfoResponse",
+      "status": "online"
+    },
+    "SmartPredict": {
+      "document": "辅诊智能预测接口",
+      "input": "SmartPredictRequest",
+      "name": "智能预测",
+      "output": "SmartPredictResponse",
+      "status": "online"
+    },
+    "SyncDepartment": {
+      "document": "用于院方科室管理，获取科室列表和状态、新增或修改科室信息、删除科室。",
+      "input": "SyncDepartmentRequest",
+      "name": "科室同步接口",
+      "output": "SyncDepartmentResponse",
+      "status": "online"
+    },
+    "SyncStandardDict": {
+      "document": "同步标准字典，如给药频次、给药途径、科室、诊断等",
+      "input": "SyncStandardDictRequest",
+      "name": "同步标准字典接口",
+      "output": "SyncStandardDictResponse",
+      "status": "online"
+    },
+    "UploadDrugs": {
+      "document": "药品同步，一次同步数据不要超过500个",
+      "input": "UploadDrugsRequest",
+      "name": "药品同步",
+      "output": "UploadDrugsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-03-23",
+    "api_brief": "提供了【AI 临床助手】标准化接入及获取服务的接口",
+    "serviceNameCN": "AI 临床助手",
+    "serviceShortName": "aca"
+  },
+  "objects": {
+    "Abnormals": {
+      "document": "异常提醒",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "PrescriptionError",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "人群特征不符",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常原因 PatientInfo 病人信息缺失；OrderInfo 医嘱信息缺失； PrescriptionError 处方异常提醒",
+          "example": "男性人群，与阴道炎诊断冲突",
+          "member": "string",
+          "name": "AbnormalReason",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CommonHeader": {
+      "document": "业务接口请求头",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机构ID",
+          "example": "1",
+          "member": "string",
+          "name": "HospitalId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合作方ID",
+          "example": "1",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CriticalInfo": {
+      "document": "危疾重症",
+      "members": [
+        {
+          "disabled": false,
+          "document": "危急重症类型 0:文字描述类 1:数值检查类",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示",
+          "example": "该患者存在以下危急重症：呼吸困难，考虑可能，请注意",
+          "member": "string",
+          "name": "Tips",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CurrentDiagnosis": {
+      "document": "当前诊断",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断疾病",
+          "example": "急性上呼吸道感染",
+          "member": "string",
+          "name": "DiagnoseDisease",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疾病指南信息",
+          "example": "http://127.0.0.1:8080/toolbox/AssistantDetail.html?detailid=1497818&type=disease&token=tai.MV8wXzgwMDAwMDUyOA%3D%3D.NQ%3D%3D.bb6f0c70-ff5a-11ed-8d21-2fc84f9d28c2",
+          "member": "string",
+          "name": "DiseaseGuideInfo",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标准名称",
+          "example": "急性上呼吸道感染",
+          "member": "string",
+          "name": "StandardName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Department": {
+      "document": "科室信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "科室ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "科室名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "综合门诊",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "科室类型 0:门诊  1:住院  2:门诊+住院\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "OutpatientOn",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "True",
+          "member": "bool",
+          "name": "InHospitalOn",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DiagnosisInfo": {
+      "document": "诊断、辅助内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认0，0:初诊-常规诊疗 1:复诊 2:检验检查/取药/咨询/疫苗 3:信息缺失 4:信息错误",
+          "example": "0",
+          "member": "int64",
+          "name": "IntentType",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断风险",
+          "example": "无",
+          "member": "string",
+          "name": "RiskInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疑似诊断列表",
+          "example": "无",
+          "member": "SuspectedDiagnosis",
+          "name": "SuspectedDiagnosis",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "转诊提醒",
+          "example": "无",
+          "member": "ReferralInfo",
+          "name": "ReferralInfo",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "危急重症",
+          "example": "无",
+          "member": "CriticalInfo",
+          "name": "CriticalInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命体征风险",
+          "example": "无",
+          "member": "VitalSignsInfo",
+          "name": "VitalSignsInfo",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴别诊断",
+          "example": "无",
+          "member": "DifferDiagnosis",
+          "name": "DifferDiagnosis",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "病历质控",
+          "example": "无",
+          "member": "RecordQuality",
+          "name": "RecordQuality",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前诊断",
+          "example": "无",
+          "member": "CurrentDiagnosis",
+          "name": "CurrentDiagnosis",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治疗方案",
+          "example": "无",
+          "member": "TreatmentGuide",
+          "name": "TreatmentGuide",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "病历质控",
+          "example": "无",
+          "member": "EmrQuality",
+          "name": "EmrQuality",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康处方",
+          "example": "无",
+          "member": "HealthPrescriptions",
+          "name": "HealthPrescriptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Dict": {
+      "document": "字典信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "给药频次编码",
+          "example": "qid",
+          "member": "string",
+          "name": "FreqCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "给药频次名称",
+          "example": "一日三次",
+          "member": "string",
+          "name": "FreqName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否禁用 0-启用 1-禁用",
+          "example": "false",
+          "member": "int64",
+          "name": "Disable",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "给药途径编码",
+          "example": "iv",
+          "member": "string",
+          "name": "UsageCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "给药途径名称",
+          "example": "肌肉注射",
+          "member": "string",
+          "name": "UsageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "科室ID",
+          "example": "a01",
+          "member": "string",
+          "name": "DeptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "科室名称",
+          "example": "内科",
+          "member": "string",
+          "name": "DeptName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "科室区域类型 0:门诊  1:住院  2:门诊+住院",
+          "example": "1",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "门诊开关",
+          "example": "True",
+          "member": "bool",
+          "name": "OutpatientOn",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "住院",
+          "example": "false",
+          "member": "bool",
+          "name": "InHospitalOn",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "诊断编码",
+          "example": "4567890",
+          "member": "string",
+          "name": "DiagCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "诊断名称",
+          "example": "痛经",
+          "member": "string",
+          "name": "DiagName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ICD代码",
+          "example": "N94.600",
+          "member": "string",
+          "name": "IcdCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DifferDiagnosis": {
+      "document": "鉴别诊断",
+      "members": [
+        {
+          "disabled": false,
+          "document": "鉴别名称",
+          "example": "过敏性鼻炎",
+          "member": "string",
+          "name": "DifferName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴别提示",
+          "example": "从症状鉴别：1、起病急骤、鼻腔发痒、喷嚏频繁、鼻涕呈清水样，无发热，咳嗽较少；2、多由过敏因素如螨虫、灰尘、动物皮毛、低温等刺激引起；3、如脱离过敏源，数分钟及1～2小时内症状即消失；从检查鉴别：1、体检可见鼻黏膜苍白、水肿；2、鼻分泌物涂片可见嗜酸性粒细胞增多",
+          "member": "string",
+          "name": "DifferTips",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疾病指南信息",
+          "example": "http://127.0.0.1:8080/toolbox/AssistantDetail.html?detailid=1498034&type=disease&token=tai.MV8wXzgwMDAwMDUyOA%3D%3D.NQ%3D%3D.bb6f0c70-ff5a-11ed-8d21-2fc84f9d28c2",
+          "member": "string",
+          "name": "DiseaseGuideInfo",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DocInfo": {
+      "document": "药品文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "123",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "诺氟沙星片",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "说明书地址",
+          "example": "http://ip:port/toolbox/AssistantDetail.html?detailid=04e2bd6dff6422772447fd8c7cd7b5723dd4f7d4&type=drug&token=tai.MV8wXzEwMDA2.NQ==.54724330-1878-11ed-b1d0-b72c69c6d6f1",
+          "member": "string",
+          "name": "DocUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DoctorInfo": {
+      "document": "医生信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "医生ID",
+          "example": "无",
+          "member": "string",
+          "name": "DoctorId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医生姓名",
+          "example": "无",
+          "member": "string",
+          "name": "DoctorName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医生电话",
+          "example": "无",
+          "member": "string",
+          "name": "DoctorPhone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Drug": {
+      "document": "药品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "医院药品id",
+          "example": "无",
+          "member": "string",
+          "name": "DrugOrgId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医院药品通用名",
+          "example": "无",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医院药品商品名",
+          "example": "无",
+          "member": "string",
+          "name": "DrugCommodityName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医院药品规格",
+          "example": "无",
+          "member": "string",
+          "name": "Specifications",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医院药品批准文号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNumber",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产厂商",
+          "example": "无",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剂型",
+          "example": "无",
+          "member": "string",
+          "name": "DosageForm",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用状态 0:启用 1:停用",
+          "example": "0",
+          "member": "int64",
+          "name": "Unuse",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剂型编码",
+          "example": "无",
+          "member": "string",
+          "name": "DosageFormCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抗菌药DDD值",
+          "example": "无",
+          "member": "string",
+          "name": "DefinedDailyDose",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品单价",
+          "example": "10",
+          "member": "string",
+          "name": "Amount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国家医保编码",
+          "example": "无",
+          "member": "string",
+          "name": "YbCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品本位码",
+          "example": "无",
+          "member": "string",
+          "name": "DrugBasicCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品属性",
+          "example": "无",
+          "member": "DurgPropertyInfo",
+          "name": "PropertyInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DrugList": {
+      "document": "药品列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "001",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "无",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档地址",
+          "example": "无",
+          "member": "string",
+          "name": "DocUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否找到",
+          "example": "false",
+          "member": "bool",
+          "name": "NotFound",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DrugUsage": {
+      "document": "处方药品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "01008",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "阿莫西林分散片",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日服药频次",
+          "example": "q4h",
+          "member": "string",
+          "name": "TimePerDay",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "给药途径",
+          "example": "静脉注射-注射",
+          "member": "string",
+          "name": "Usage",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处方ID，药品不同分组是传不同的处方ID",
+          "example": "752d07c9-af98-48be-870c-e798f4d78f92",
+          "member": "string",
+          "name": "PrescriptionId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每次剂量",
+          "example": "100",
+          "member": "string",
+          "name": "DosagePerTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每次剂量单位",
+          "example": "片",
+          "member": "string",
+          "name": "DosagePerTimeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单次服药时间",
+          "example": "餐前一小时",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "给药周期",
+          "example": "每隔四小时",
+          "member": "string",
+          "name": "Cycle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单日剂量",
+          "example": "1",
+          "member": "string",
+          "name": "DosagePerDay",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疗程",
+          "example": "2周一疗程",
+          "member": "string",
+          "name": "Course",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "给药速度",
+          "example": "5g本品于5～10分钟内滴完",
+          "member": "string",
+          "name": "Speed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处方生效时间戳，住院医嘱必须传(caseType =1)",
+          "example": "1660278229",
+          "member": "int64",
+          "name": "BeginTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处方失效时间戳，住院医嘱必须传(caseType =1)",
+          "example": "1660278229",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开具数量",
+          "example": "1",
+          "member": "string",
+          "name": "Package",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开具数量单位",
+          "example": "粒",
+          "member": "string",
+          "name": "PackageUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相同标志液体间进行配伍禁忌审核，不同标志间液体不进行配伍禁忌审核",
+          "example": "1",
+          "member": "string",
+          "name": "GroupInj",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处方金额",
+          "example": "10",
+          "member": "string",
+          "name": "PrescriptionCharge",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用药天数",
+          "example": "10",
+          "member": "string",
+          "name": "MedicationDays",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DurgPropertyInfo": {
+      "document": "药品属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品类型 1:西药,2:中成药,3:中药,4:化学药品,5:生物制药",
+          "example": "1",
+          "member": "int64",
+          "name": "DrugType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抗菌药分类 1:抗真菌药物, 2:抗细菌药物, 3:抗结核药物, 4:其他抗菌药, 0:普通药品",
+          "example": "1",
+          "member": "int64",
+          "name": "AntibacterialType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抗菌药级别 1:非限制级, 2:限制级, 3:特殊使用级 ",
+          "example": "1",
+          "member": "int64",
+          "name": "AntibacterialClass",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特殊药品类型 1:毒性药品, 2:麻醉药品, 3:放射药品, 4:精神一类药品, 5:精神二类药品, 6:其他特管药品， 7:贵重药品",
+          "example": "1",
+          "member": "int64",
+          "name": "SpeciallyDrugType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为基本药物 1:是, 2:否, 0:未知",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBasicDrug",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "社保药品 1:甲类药品, 2:乙类药品, 3:双跨药品, 4:自费药品, 0:未知",
+          "example": "2",
+          "member": "int64",
+          "name": "ChargeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EmrDiagnosises": {
+      "document": "诊断列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断名称",
+          "example": "急性上呼吸道感染",
+          "member": "string",
+          "name": "DiagnosisName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ICD代码",
+          "example": "J06.900",
+          "member": "string",
+          "name": "IcdCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EmrQuality": {
+      "document": "病历质控",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缺失体格检查项目",
+          "example": "无",
+          "member": "string",
+          "name": "MissPhysicalExamination",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetDrugIndicationsReqData": {
+      "document": "获取适应症请求",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询药品列表",
+          "example": "无",
+          "member": "IndicationsDrug",
+          "name": "Drugs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "GetDrugIndicationsRequest": {
+      "document": "GetDrugIndications请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "CommonHeader",
+          "name": "Header",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "获取适应症请求",
+          "example": "无",
+          "member": "GetDrugIndicationsReqData",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDrugIndicationsResp": {
+      "document": "药品适应症响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "适应症",
+          "example": "无",
+          "member": "string",
+          "name": "Indications",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品说明",
+          "example": "无",
+          "member": "DocInfo",
+          "name": "DocInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetDrugIndicationsResponse": {
+      "document": "GetDrugIndications返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适应症响应",
+          "example": "无",
+          "member": "GetDrugIndicationsResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "HealthPrescriptions": {
+      "document": "健康处方",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标题",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康处方链接",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键信息",
+          "example": "无",
+          "member": "string",
+          "name": "KeyInformation",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "IndicationsDrug": {
+      "document": "适应症药品请求",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "诺氟沙星片",
+          "member": "string",
+          "name": "DrugName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规格",
+          "example": "0.1g*36片/盒",
+          "member": "string",
+          "name": "Specifications",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批准文号",
+          "example": "国药准字H13022772",
+          "member": "string",
+          "name": "ApprovalNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生产厂家",
+          "example": "石药集团欧意药业有限公司",
+          "member": "string",
+          "name": "Manufacturer",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "123",
+          "member": "string",
+          "name": "DrugId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品名",
+          "example": "无",
+          "member": "string",
+          "name": "TradeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型 默认0 0-西药 2-中药",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "LoginData": {
+      "document": "登录请求对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "医生ID",
+          "example": "001",
+          "member": "string",
+          "name": "DoctorId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医生名称",
+          "example": "test",
+          "member": "string",
+          "name": "DoctorName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医生职级 主治医师、副主任医师、主任医师",
+          "example": "主治医师",
+          "member": "string",
+          "name": "DoctorLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医生科室 当前登录科室",
+          "example": "无",
+          "member": "string",
+          "name": "DoctorDepartment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "科室ID",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoginDataResp": {
+      "document": "登录返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "7200",
+          "member": "int64",
+          "name": "ExpiresIn",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端时间戳，时间戳校验失败时返回",
+          "example": "1730791776988",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoginHeader": {
+      "document": "登录接口请求头",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机构ID",
+          "example": "1",
+          "member": "string",
+          "name": "HospitalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合作方ID",
+          "example": "1",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密时间戳毫秒",
+          "example": "1730791776988",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "签名数据",
+          "example": "无",
+          "member": "string",
+          "name": "Signature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID，平台版登录时传入",
+          "example": "001",
+          "member": "string",
+          "name": "PlatformId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "LoginHisToolRequest": {
+      "document": "LoginHisTool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "{ \"hospitalId\": \"1\",     \"platformId\": \"0\",     \"partnerId\": \"2\" }",
+          "member": "LoginHeader",
+          "name": "Header",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "请求体",
+          "example": "{     \"doctorId\": \"123\",     \"doctorName\": \"医生\"   }",
+          "member": "LoginData",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginHisToolResponse": {
+      "document": "LoginHisTool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登录返回token信息",
+          "example": "无",
+          "member": "LoginDataResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOutData": {
+      "document": "登出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录获取的token",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoginOutHeader": {
+      "document": "登出header对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合作方ID",
+          "example": "2",
+          "member": "string",
+          "name": "PartnerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间戳毫秒数",
+          "example": "无",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "签名值",
+          "example": "无",
+          "member": "string",
+          "name": "Signature",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "医院ID 单院版传这个",
+          "example": "无",
+          "member": "string",
+          "name": "HospitalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "平台ID 平台版传这个",
+          "example": "无",
+          "member": "string",
+          "name": "PlatformId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "LoginOutHisToolRequest": {
+      "document": "LoginOutHisTool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登出请求header",
+          "example": "无",
+          "member": "LoginOutHeader",
+          "name": "Header",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "登出请求数据",
+          "example": "无",
+          "member": "LoginOutData",
+          "name": "Data",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOutHisToolResponse": {
+      "document": "LoginOutHisTool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "LoginOutResponseData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "LoginOutResponseData": {
+      "document": "登出数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器时间戳毫秒",
+          "example": "无",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OperateResp": {
+      "document": "操作结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "true",
+          "member": "bool",
+          "name": "Dummy",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PatientBaseInfo": {
+      "document": "患者信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "性别",
+          "example": "female",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身高 单位cm",
+          "example": "170",
+          "member": "string",
+          "name": "Height",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体重 单位kg",
+          "example": "110",
+          "member": "string",
+          "name": "Weight",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "患者ID",
+          "example": "无",
+          "member": "string",
+          "name": "PatientId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "姓名",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "22y",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出生地",
+          "example": "无",
+          "member": "string",
+          "name": "BirthPlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "居住地",
+          "example": "无",
+          "member": "string",
+          "name": "LivePlace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出生日期和年龄必须传一个",
+          "example": "2000-01-01 00:00:00",
+          "member": "string",
+          "name": "BirthDay",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PatientFamilyHistory": {
+      "document": "患者家族病史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "家族病史 如家族病史不能分开，可传入此字段",
+          "example": "无",
+          "member": "string",
+          "name": "FamilyDiseaseHistory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关系",
+          "example": "无",
+          "member": "string",
+          "name": "Relation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前情况",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentSituation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PatientHistory": {
+      "document": "患者过往病史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "病史",
+          "example": "无",
+          "member": "string",
+          "name": "DiseaseHistory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治疗史",
+          "example": "无",
+          "member": "string",
+          "name": "TreatmentHistory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PhysicalExam": {
+      "document": "体格检查",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脉搏，单位：次/分",
+          "example": "70",
+          "member": "string",
+          "name": "Pulse",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "呼吸，单位：次/分",
+          "example": "20",
+          "member": "string",
+          "name": "Breathe",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体重，单位KG",
+          "example": "无",
+          "member": "string",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体温，单位：℃ ",
+          "example": "无",
+          "member": "string",
+          "name": "BodyTemperature",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "舒张压， 单位：mmHg",
+          "example": "无",
+          "member": "string",
+          "name": "DiastolicPressure",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "收缩压， 单位：mmHg",
+          "example": "无",
+          "member": "string",
+          "name": "SystolicPressure",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RationalDrugInfo": {
+      "document": "合理用药信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否有风险",
+          "example": "true",
+          "member": "bool",
+          "name": "Hit",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品用量风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugUsages",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重复用药风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugRepeats",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用药途径风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugRoutes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特殊人群风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "SpecialPopulations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁忌症风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugTaboos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "相互作用风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugInteractions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配伍禁忌风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugIncompatibility",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过敏风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugAllergys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适应症风险",
+          "example": "无",
+          "member": "RiskInfo",
+          "name": "DrugIndications",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常提醒",
+          "example": "无",
+          "member": "Abnormals",
+          "name": "Abnormals",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品列表",
+          "example": "无",
+          "member": "DrugList",
+          "name": "DrugList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RecommendedUsage": {
+      "document": "推荐用法",
+      "members": [
+        {
+          "disabled": false,
+          "document": "给药途径",
+          "example": "口服",
+          "member": "string",
+          "name": "UsageRoute",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "给药频率 格式为“最小频次,最大频次,频次单位,频次周期”，如\"1,2,次,2\"， 表示2天内最少给药1次，最大给药2次。",
+          "example": "2.0,2.0,次,1.0",
+          "member": "string",
+          "name": "Frequency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "给药剂量 格式为\"最小剂量,最大剂量,剂量单位\"，如\"10,10,ml\"，<br>表示每次最大给药量为10ml，最小给药量为10ml。",
+          "example": "400,400,mg",
+          "member": "string",
+          "name": "SingleDose",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordQuality": {
+      "document": "病历质控",
+      "members": [
+        {
+          "disabled": false,
+          "document": "病历是否有问题",
+          "example": "True",
+          "member": "bool",
+          "name": "Hit",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完整性问题",
+          "example": "无",
+          "member": "string",
+          "name": "Completeness",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "及时性问题",
+          "example": "无",
+          "member": "string",
+          "name": "Timeliness",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑性问题",
+          "example": "病历中怀孕术语书写不规范，建议规范书写为：妊娠；病历中急性ST段抬高型前壁心肌梗塞术语书写不规范，建议规范书写为：",
+          "member": "string",
+          "name": "Logical",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ReferralInfo": {
+      "document": "转诊提醒",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命中",
+          "example": "True",
+          "member": "bool",
+          "name": "Hit",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示",
+          "example": "该患者患有急性上呼吸道感染，超出诊疗范围，建议转诊",
+          "member": "string",
+          "name": "Tips",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RequestCase": {
+      "document": "预测数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处方类型 0:门诊处方；1:住院医嘱；2:急诊处方 ",
+          "example": "0",
+          "member": "int64",
+          "name": "CaseType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主诉",
+          "example": "头疼一天",
+          "member": "string",
+          "name": "ChiefComplaint",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "科室",
+          "example": "口腔科",
+          "member": "string",
+          "name": "Department",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "病历文书ID\n医生每次书写病历文书的ID，文书内容包含主诉，病史，当前诊断等内容<br />门诊场景：门诊病历文书（带有主诉、病史、诊断及药品的）只有一份，这个编号只有一个。<br/>住院场景：假设住院3天，医生每天都会写一份病历文书（带有主诉、病史、诊断及医嘱药品的文书），那么有对应三个病历文书编号，每次调用预测接口都要传入不同的病历文书编号。注意：如两次调用预测接口，传相同的caseid，则在药师端管理平台的上一次审方记录中的诊断会被本次接口传入的诊断更新。",
+          "example": "a123",
+          "member": "string",
+          "name": "CaseId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "病历更新时间",
+          "example": "2022-08-11 16:57:28",
+          "member": "string",
+          "name": "CaseTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "就诊ID\n门诊处方传门诊号，住院医嘱传住院号；备注：门诊场景：用户挂一次号，看一个医生，这时候会有一个代表变成就诊的编号，下一次挂号就诊，这个编号会变。<br/>住院场景：用户本次办理入院，会有一个住院编号，仅代表本次住院，如果下次再住院，这个编号会变。",
+          "example": "1234",
+          "member": "string",
+          "name": "VisitId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "患者信息",
+          "example": "无",
+          "member": "PatientBaseInfo",
+          "name": "PatientBaseinfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "医生信息",
+          "example": "无",
+          "member": "DoctorInfo",
+          "name": "DoctorInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "现病史",
+          "example": "胸痛5年；支气管扩张2年；一月前出现过一过性高血糖昏迷。",
+          "member": "string",
+          "name": "PresentIllness",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "患者其他信息，包含过敏史等",
+          "example": "无",
+          "member": "string",
+          "name": "PatientOther",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "患者过往病史",
+          "example": "无",
+          "member": "PatientHistory",
+          "name": "PatientHistory",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "患者家族病史",
+          "example": "无",
+          "member": "PatientFamilyHistory",
+          "name": "PatientFamilyHistory",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体格检查",
+          "example": "无",
+          "member": "PhysicalExam",
+          "name": "PhysicalExam",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断列表，第一个为首要诊断",
+          "example": "无",
+          "member": "EmrDiagnosises",
+          "name": "EmrDiagnosises",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处方列表",
+          "example": "无",
+          "member": "DrugUsage",
+          "name": "Prescriptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RiskInfo": {
+      "document": "风险信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "无",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "无",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级：低级风险、中级风险、高级风险",
+          "example": "低级风险",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险提示",
+          "example": "无",
+          "member": "string",
+          "name": "RiskTips",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "FDA分级",
+          "example": "无",
+          "member": "string",
+          "name": "FdaLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联药品名称",
+          "example": "无",
+          "member": "string",
+          "name": "RelatedDrugName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联处方ID",
+          "example": "无",
+          "member": "string",
+          "name": "RelatedPrescriptionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartDrugInfoData": {
+      "document": "智能用药请求数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "诺氟沙星片",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格",
+          "example": "0.1g*36片/盒",
+          "member": "string",
+          "name": "Specifications",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批准文号",
+          "example": "国药准字H13022772",
+          "member": "string",
+          "name": "ApprovalNumber",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产厂家",
+          "example": "石药集团欧意药业有限公司",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "123",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断",
+          "example": "尿路感染",
+          "member": "string",
+          "name": "Diagnosis",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "20",
+          "member": "float",
+          "name": "Age",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartDrugInfoRequest": {
+      "document": "SmartDrugInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "CommonHeader",
+          "name": "Header",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "药品信息",
+          "example": "无",
+          "member": "SmartDrugInfoData",
+          "name": "Data",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SmartDrugInfoResp": {
+      "document": "智能用药响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品ID",
+          "example": "123",
+          "member": "string",
+          "name": "DrugId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "序列ID",
+          "example": "10031837",
+          "member": "int64",
+          "name": "SequenceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品哈希ID",
+          "example": "3f8ce4e9cbc3ab786bb48f8f9ea252df1eec9e92",
+          "member": "string",
+          "name": "DrugHashId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片URL",
+          "example": "https://p.qpic.cn/wyp_pic/Q3auHgzwzM6n8rbxOAOExJI4ch8eCtfG61UEvbvPSQLdHoMs8I9V28uHdDBujXsCOe1lwDjm9aIWHia198RMb3zQzviaCt5Und/0",
+          "member": "string",
+          "name": "ImgUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品名称",
+          "example": "诺氟沙星片",
+          "member": "string",
+          "name": "DrugName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品名",
+          "example": "无",
+          "member": "string",
+          "name": "TradeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文名称",
+          "example": "Norfloxacin Tablets",
+          "member": "string",
+          "name": "EnglishName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文商品名",
+          "example": "无",
+          "member": "string",
+          "name": "EnglishTradeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拼音",
+          "example": "NuoFuShaXingPian",
+          "member": "string",
+          "name": "Pinyin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他名称",
+          "example": "无",
+          "member": "string",
+          "name": "OtherNames",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "化学名称",
+          "example": "无",
+          "member": "string",
+          "name": "ChemicalName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "英文化学名称",
+          "example": "无",
+          "member": "string",
+          "name": "EnglishChemicalName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批准文号",
+          "example": "国药准字H13022772",
+          "member": "string",
+          "name": "ApprovalNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品属性标签 多个标签时 | 分隔，如抗菌药|抗生素|贵重药品",
+          "example": "无",
+          "member": "string",
+          "name": "Property",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品成分",
+          "example": "无",
+          "member": "string",
+          "name": "Ingredients",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品性状",
+          "example": "本品为糖衣片。除去糖衣后显淡黄色。对光、热、湿较稳定。",
+          "member": "string",
+          "name": "PhenotypicTrait",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "适应症",
+          "example": "适用于敏感细菌所引起的急、慢性肾盂肾炎、膀胱炎、前列腺炎、细菌性痢疾、胆囊炎、伤寒、产前产后感染、盆腔炎、中耳炎、鼻窦炎、急性扁桃腺炎及皮肤软组织感染等，也可作为腹腔手术的预防用药。",
+          "member": "string",
+          "name": "Indications",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规格",
+          "example": "0.1g*24片/盒",
+          "member": "string",
+          "name": "Specifications",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用法用量",
+          "example": "空腹口服：成人一次0.1～0.2g，一日3～4次；重症酌情加量，一日1.6g，分4次服用。",
+          "member": "string",
+          "name": "UsageAndDosage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐用法",
+          "example": "无",
+          "member": "RecommendedUsage",
+          "name": "RecommendedUsage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不良反应",
+          "example": "可偶有头晕、头痛及消化道反应等症状，个别病人可有血清谷丙氨基转移酶及尿素氮升高，偶有过敏皮疹，停药后症状消失。",
+          "member": "string",
+          "name": "AdverseReaction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "禁忌",
+          "example": "对本品及氟喹诺酮类药过敏的患者禁用。",
+          "member": "string",
+          "name": "Contraindication",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注意事项",
+          "example": "有过敏史者及严重肾功能不全者慎用石药诺氟沙星片。",
+          "member": "string",
+          "name": "Attentions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药物过量",
+          "example": "尚不明确。",
+          "member": "string",
+          "name": "Overdose",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "孕妇及哺乳期妇女用药",
+          "example": "曾用猴进行繁殖研究，剂量高达人用量的10倍，发现本品可致流产。该剂量在猴的血浆峰浓度(Cmax)约为人的2倍。本品在动物中并未证实有致畸作用。然而，在孕妇并未进行合适的、有良好对照的研究，因此本品不宜用于孕妇。本品是否经乳汁分泌尚缺乏资料。当乳妇应用200mg本品时，乳汁中不能检出该药。然而，由于研究剂量较小，且本类药物的其他品种经乳汁分泌，加之对新生儿及婴幼儿潜在的严重不良反应，乳妇应避免应用本品或于应用时停止哺乳。",
+          "member": "string",
+          "name": "PregnantAndLactatingWomen",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "老年患者用药",
+          "example": "老年患者常有肾功能减退，因本品部分经肾排出，需减量应用。",
+          "member": "string",
+          "name": "ElderlyPatients",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "儿童用药",
+          "example": "18岁以下的患者禁用。",
+          "member": "string",
+          "name": "PediatricDrugs",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药物相互作用",
+          "example": "1．尿碱化剂可减低本品在尿中的溶解度，导致结晶尿和肾毒性。2．本品与茶碱类合用时可能由于与细胞色素P450结合部位的竞争性抑制，导致茶碱类的肝清除明显减少，血消除半衰期(t1/2β)延长，血药浓度升高，出现茶碱中毒症状，如恶心、呕吐、震颤、不安、激动、抽搐、心悸等，故合用时应测定茶碱类血药浓度和调整剂量。3．环孢素与本品合用，可使前者的血药浓度升高，必须监测环孢素血药浓度，并调整剂量。4．本品与抗凝药华法林同用时可增强后者的抗凝作用，合用时应严密监测患者的凝血酶原时间。5．丙磺舒可减少本品自肾小管分泌约50%，合用时可因本品血浓度增高而产生毒性。6．本品与呋喃妥因具拮抗作用，不推荐联合应用。7．多种维生素，或其他含铁、锌离子的制剂及含铝或镁的制酸药可减少本品的吸收，建议避免合用，不能避免时在本品服药前2小时，或服药后6小时服用。8．去羟肌苷(didanosine，DDI)可减少本品的口服吸收，因其制剂中含铝及镁，可与氟喹诺酮类螯合，故不宜合用。9．本品干扰咖啡因的代谢，从而导致咖啡因清除减少，血消除半衰期(t1/2β)延长，并可能产生中枢神经系统毒性。",
+          "member": "string",
+          "name": "Interactions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临床研究",
+          "example": "无",
+          "member": "string",
+          "name": "ClinicalResearch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药理毒理",
+          "example": "无",
+          "member": "string",
+          "name": "PharmacologyToxicology",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药代动力学",
+          "example": "健康成人空腹一次口服本品0.4克，1～2小时血药峰浓度(Cmax)为1.32mg/ml，8小时后尚有0.33μg/ml，吸收半衰期为0.41小时，分布相半衰期(t1/2α)为0.41小时，消除相半衰期(t1/2β)为2.54小时。12小时内尿中平均排出量占给药量的27.88%，其中22.56%在6小时内排出。 大鼠口服本品后，迅速分布各组织间，肾、肝、淋巴结、脾、颚下腺、血浆等的药物浓度均较高，上颚扁桃体及兔的皮肤也有分布。",
+          "member": "string",
+          "name": "Pharmacokinetics",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "警告",
+          "example": "无",
+          "member": "string",
+          "name": "Warning",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期",
+          "example": "24 月",
+          "member": "string",
+          "name": "ExpireDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "贮藏",
+          "example": "遮光，密封保存。",
+          "member": "string",
+          "name": "Storage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包装",
+          "example": "铝塑泡罩包装，12片/板×2板/盒。",
+          "member": "string",
+          "name": "Pack",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产企业",
+          "example": "石药集团欧意药业有限公司",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产企业地址",
+          "example": "河北省石家庄市经济技术开发区扬子路6号",
+          "member": "string",
+          "name": "ManufacturerAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产企业电话",
+          "example": "0311-85900000",
+          "member": "string",
+          "name": "ManufacturerPhone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产企业邮箱",
+          "example": "info@cspc.com",
+          "member": "string",
+          "name": "ManufacturerEmail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产企业网站",
+          "example": "http://www.cspc.com",
+          "member": "string",
+          "name": "ManufacturerWebsite",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "说明书制定和修订时间",
+          "example": "无",
+          "member": "string",
+          "name": "DocRevisionTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参考文献",
+          "example": "无",
+          "member": "string",
+          "name": "References",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剂型",
+          "example": "无",
+          "member": "string",
+          "name": "DrugDosageForm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "给药途径",
+          "example": "无",
+          "member": "string",
+          "name": "DrugRoute",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "药品本位码",
+          "example": "无",
+          "member": "string",
+          "name": "DrugBasicCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "OCT标签",
+          "example": "无",
+          "member": "string",
+          "name": "OctTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SmartDrugInfoResponse": {
+      "document": "SmartDrugInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能用药信息",
+          "example": "无",
+          "member": "SmartDrugInfoResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SmartPredictReqData": {
+      "document": "智能预测接口请求对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "病历和处方信息",
+          "example": "无",
+          "member": "RequestCase",
+          "name": "RequestCase",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0--默认值，同时返回**疾病预测**和**用药审查**结果<br>1--仅返回**疾病预测**结果<br>2--仅返回**用药审查**结果<br>已同时激活两个模块时，可按需使用 ",
+          "example": "0",
+          "member": "int64",
+          "name": "RequestType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartPredictRequest": {
+      "document": "SmartPredict请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "CommonHeader",
+          "name": "Header",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "请求体",
+          "example": "无",
+          "member": "SmartPredictReqData",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SmartPredictRespData": {
+      "document": "智能问诊响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断辅助内容",
+          "example": "无",
+          "member": "DiagnosisInfo",
+          "name": "DiagnosisInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用药风险信息",
+          "example": "无",
+          "member": "RationalDrugInfo",
+          "name": "RationalDrugInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartPredictResponse": {
+      "document": "SmartPredict返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能预测内容",
+          "example": "无",
+          "member": "SmartPredictRespData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SuspectedDiagnosis": {
+      "document": "疑似诊断",
+      "members": [
+        {
+          "disabled": false,
+          "document": "疾病名称",
+          "example": "高血压",
+          "member": "string",
+          "name": "DiseaseName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ICD代码",
+          "example": "xxx",
+          "member": "string",
+          "name": "IcdCode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "症状",
+          "example": "头晕，头痛，颈项板紧，疲劳，心悸，视物模糊，胸闷，心绞痛，气短，多汗，鼻出血",
+          "member": "string",
+          "name": "Symptom",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体征",
+          "example": "心界扩大，第二心音亢进，血管杂音",
+          "member": "string",
+          "name": "Physi",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查",
+          "example": "心电图，肝功能，肾功能，电解质，尿常规，血脂，血糖，心脏彩超，肾脏彩超，颈动脉彩超，胸部X线，眼底动脉造影",
+          "member": "string",
+          "name": "Inspection",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疾病指南信息",
+          "example": "http://127.0.0.1:8080/toolbox/AssistantDetail.html?detailid=1497901&type=disease&token=tai.MV8wXzgwMDAwMDUyOA%3D%3D.NQ%3D%3D.bb6f0c70-ff5a-11ed-8d21-2fc84f9d28c2",
+          "member": "string",
+          "name": "DiseaseGuideInfo",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "置信度",
+          "example": "0.25",
+          "member": "float",
+          "name": "Probability",
+          "output_required": false,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SyncDepartmentData": {
+      "document": "同步科室信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型 1:获取科室列表  2:同步科室信息（增、改） 3:删除科室",
+          "example": "1",
+          "member": "int64",
+          "name": "Cmd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "科室列表",
+          "example": "无",
+          "member": "Department",
+          "name": "List",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "SyncDepartmentRequest": {
+      "document": "SyncDepartment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "CommonHeader",
+          "name": "Header",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "同步数据",
+          "example": "无",
+          "member": "SyncDepartmentData",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncDepartmentRespData": {
+      "document": "同步科室信息返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "科室列表",
+          "example": "无",
+          "member": "Department",
+          "name": "List",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SyncDepartmentResponse": {
+      "document": "SyncDepartment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "无",
+          "member": "SyncDepartmentRespData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncDictData": {
+      "document": "同步字典数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "医院ID",
+          "example": "001",
+          "member": "string",
+          "name": "HospitalId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字典类型 1-给药频次 2-给药途径 3-科室 4-诊断",
+          "example": "1",
+          "member": "int64",
+          "name": "DictType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字典数据",
+          "example": "无",
+          "member": "Dict",
+          "name": "Dicts",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "SyncStandardDictRequest": {
+      "document": "SyncStandardDict请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头",
+          "example": "无",
+          "member": "CommonHeader",
+          "name": "Header",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "字典数据",
+          "example": "无",
+          "member": "SyncDictData",
+          "name": "Data",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncStandardDictResponse": {
+      "document": "SyncStandardDict返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TreatmentGuide": {
+      "document": "治疗方案",
+      "members": [
+        {
+          "disabled": false,
+          "document": "医生诊断",
+          "example": "急性上呼吸道感染",
+          "member": "string",
+          "name": "DoctorDiagnosis",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "疾病名称",
+          "example": "急性上呼吸道感染",
+          "member": "string",
+          "name": "DiseaseName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治疗详情链接",
+          "example": "http://127.0.0.1:8080/toolbox/AssistantDetail.html?detailid=1497818&type=disease&token=tai.MV8wXzgwMDAwMDUyOA%3D%3D.NQ%3D%3D.bb6f0c70-ff5a-11ed-8d21-2fc84f9d28c2&anchor=治疗方案",
+          "member": "string",
+          "name": "TreatDetailUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治疗方案",
+          "example": "1、对症治疗\n 对有急性咳嗽、鼻后滴漏和咽干的病人可予以伪麻黄碱治疗以减轻鼻部充血，也可局部滴鼻应用，必要时加用解热镇痛药物，有哮喘病史忌用阿司匹林。\n2、抗生素治疗\n 普通感冒不需要使用抗生素，有白细胞升高、咽部脓苔、咳黄痰和流鼻涕等细菌感染证据，可根据当地流行病学和经验选用口服青霉素类、第一代头孢菌素、大环内酯类药物或喹诺酮，极少需要根据病原学选用敏感抗生素。\n3、抗病毒治疗\n 对无发热、免疫功能正常、发病不超过2天的病人一般无需应用抗病毒药物，对免疫缺陷病人，可早期常规使用。奥司他韦、利巴韦林有较广的抗病毒谱。\n4、中药治疗\n 辩证给与清热解毒或辛温解表和有抗病毒作用的中药，有助于改善症状，缩短病程。",
+          "member": "string",
+          "name": "TreatPlan",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "治疗原则",
+          "example": "目前无特效抗病毒药物,以对症治疗为主,同时戒烟、注意休息、多饮水、保持室内空气流通和防治继发性细菌感染。",
+          "member": "string",
+          "name": "TreatPrinciple",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UploadDrugData": {
+      "document": "上传药品数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "药品列表",
+          "example": "无",
+          "member": "Drug",
+          "name": "Drugs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "UploadDrugsRequest": {
+      "document": "UploadDrugs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求头数据",
+          "example": "无",
+          "member": "CommonHeader",
+          "name": "Header",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "药品上传数据",
+          "example": "无",
+          "member": "UploadDrugData",
+          "name": "Data",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadDrugsResponse": {
+      "document": "UploadDrugs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作信息",
+          "example": "无",
+          "member": "OperateResp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VitalSignsInfo": {
+      "document": "生命体征风险",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否包含风险",
+          "example": "true",
+          "member": "bool",
+          "name": "Hit",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示",
+          "example": "无",
+          "member": "string",
+          "name": "Tips",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

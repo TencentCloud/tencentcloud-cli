@@ -10749,7 +10749,7 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "7hex***j",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -10758,7 +10758,7 @@
         {
           "disabled": false,
           "document": "base64编码后的证书确认函文件，格式应为jpg、jpeg、png、pdf，大小应在1kb与1.4M之间。",
-          "example": "",
+          "example": "\"/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkIC",
           "member": "string",
           "name": "ConfirmLetter",
           "required": true,
@@ -10773,18 +10773,20 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "7hex***j",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "IsSuccess",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

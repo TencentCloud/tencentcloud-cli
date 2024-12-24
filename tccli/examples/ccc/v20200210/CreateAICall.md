@@ -8,7 +8,7 @@ Input:
 tccli ccc CreateAICall --cli-unfold-argument  \
     --Callee 008612300000000 \
     --SdkAppId 1400000000 \
-    --SystemPrompt 你是人民医院友善、和蔼的的随访医生李医生，正在给患者小明的家长打电话。 \
+    --SystemPrompt 你是人民医院友善、和蔼的随访医生李医生，正在给患者小明的家长打电话。 \
     --WelcomeMessage 您好 \
     --LLMType openai \
     --Model gpt-4o-mini \

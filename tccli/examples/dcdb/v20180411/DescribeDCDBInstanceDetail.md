@@ -58,7 +58,7 @@ Output:
                         "Role": "slave"
                     }
                 ],
-                "ProxyVersion": "\"1.17.6-M-V2.0R723D002\"",
+                "ProxyVersion": "proxy-22.3.2",
                 "ShardInstanceId": "shard-ngbrea6b",
                 "ShardMasterZone": "ap-guangzhou-1",
                 "ShardSerialId": "set_1643096858_1",
@@ -86,7 +86,7 @@ Output:
                         "Role": "slave"
                     }
                 ],
-                "ProxyVersion": "\"1.17.6-M-V2.0R723D002\"",
+                "ProxyVersion": "proxy-22.3.2",
                 "ShardInstanceId": "shard-5zf65smf",
                 "ShardMasterZone": "ap-guangzhou-1",
                 "ShardSerialId": "set_1643096949_3",

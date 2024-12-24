@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dcdb SwitchDBInstanceHA --cli-unfold-argument  \
-    --InstanceId tdsql-f35wr6wj \
-    --Zone ap-guangzhou-1
+    --InstanceId tdsqlshard-b0uoxwvh \
+    --Zone ap-guangzhou-3
 ```
 
 Output: 

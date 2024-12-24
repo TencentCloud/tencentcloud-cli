@@ -11,8 +11,8 @@
     "BidDetailPage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BidDetailPage\n<公共请求参数>\n\n{\n    \"BusinessId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Domain\": \"abc\",\n        \"CurrentPrice\": 0,\n        \"BidPrice\": 0,\n        \"CurrentPriceScope\": 0,\n        \"PriceScope\": [\n            {\n                \"MaxPrice\": 0,\n                \"MinPrice\": 0,\n                \"Price\": 0,\n                \"DepositPrice\": 0\n            }\n        ],\n        \"DepositPrice\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BidDetailPage\n<公共请求参数>\n\n{\n    \"BusinessId\": \"P00***61\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"dte.com\",\n        \"CurrentPrice\": 120,\n        \"BidPrice\": 100,\n        \"CurrentPriceScope\": 50,\n        \"PriceScope\": [\n            {\n                \"MaxPrice\": 0,\n                \"MinPrice\": 0,\n                \"Price\": 0,\n                \"DepositPrice\": 0\n            }\n        ],\n        \"DepositPrice\": 120,\n        \"RequestId\": \"dwert-dwer-werq-dwerg\"\n    }\n}",
         "title": "预释放详情页出价"
       }
     ],
@@ -27,8 +27,8 @@
     "BiddingPreRelease": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BiddingPreRelease\n<公共请求参数>\n\n{\n    \"BusinessId\": \"abc\",\n    \"Price\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"IsNeedPay\": true,\n        \"BillingParam\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BiddingPreRelease\n<公共请求参数>\n\n{\n    \"BusinessId\": \"P0011702977661022561\",\n    \"Price\": 100.0\n}",
+        "output": "{\n    \"Response\": {\n        \"IsNeedPay\": true,\n        \"BillingParam\": \">{\\\"uin\\\":\\\"100*****091\\\",\\\"ownerUin\\\":\\\"100*****091\\\",\\\"appId\\\":10000,\\\"goods\\\":[{\\\"goodsCategoryId\\\":100,\\\"regionId\\\":47,\\\"zoneId\\\":470004,\\\"goodsNum\\\":1,\\\"projectId\\\":0,\\\"payMode\\\":1,\\\"goodsDetail\\\":{\\\"pid\\\":1000,\\\"productCode\\\":\\\"p_d\\\",\\\"subProductCode\\\":\\\"sp_d_*\\\",\\\"productInfo\\\":[{\\\"name\\\":\\\"预释放竞价保证金订单\\\",\\\"value\\\":\\\"竞价域名：att.com\\\"}],\\\"domain\\\":\\\"att.com\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"p\\\",\\\"autoRenewFlag\\\":0,\\\"createType\\\":\\\"bid_deposit\\\",\\\"price\\\":10000,\\\"bondPrice\\\":0,\\\"biddingBondPrice\\\":100,\\\"sv_d\\\":1,\\\"businessId\\\":\\\"P0********945\\\",\\\"isAutoPay\\\":0,\\\"templateId\\\":\\\"\\\"}}]}\",\n        \"RequestId\": \"dwde-f405-gg33-fee223\"\n    }\n}",
         "title": "预释放出价"
       }
     ],
@@ -59,7 +59,7 @@
     "CreateDomainBatch": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-acxxxxxx\",\n    \"Period\": 1,\n    \"Domains\": [\n        \"abcd.xyz\"\n    ],\n    \"PayMode\": 0,\n    \"AutoRenewFlag\": 0,\n    \"PackageResourceId\": \"\",\n    \"UpdateProhibition\": 0,\n    \"TransferProhibition\": 0,\n    \"ChannelFrom\": \"ChannelFrom\",\n    \"OrderFrom\": \"OrderFrom\",\n    \"ActivityId\": \"10001\"\n}",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainBatch\n<公共请求参数>\n\n{\n    \"TemplateId\": \"tmpl-acxxxxxx\",\n    \"Period\": 1,\n    \"Domains\": [\n        \"abcd.xyz\"\n    ],\n    \"PayMode\": 0,\n    \"AutoRenewFlag\": 0,\n    \"PackageResourceId\": \"***9\",\n    \"UpdateProhibition\": 0,\n    \"TransferProhibition\": 0,\n    \"ChannelFrom\": \"ChannelFrom\",\n    \"OrderFrom\": \"OrderFrom\",\n    \"ActivityId\": \"10001\"\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 318,\n        \"RequestId\": \"1684afa4-0bf7-49f8-a630-ab460e5c038e\"\n    }\n}",
         "title": "批量域名注册"
       }
@@ -83,8 +83,8 @@
     "CreateTemplate": [
       {
         "document": "创建模板",
-        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTemplate\n<公共请求参数>\n\n{\n    \"ContactInfo\": {\n        \"Province\": \"sheng\",\n        \"OrganizationNameCN\": \"xx企业\",\n        \"OrganizationName\": \"xx企业\",\n        \"City\": \"abc\",\n        \"CityCN\": \"abc\",\n        \"RegistrantName\": \"张三\",\n        \"Telephone\": \"13788888888\",\n        \"ZipCode\": \"qweqwe\",\n        \"RegistrantNameCN\": \"qweqwe\",\n        \"StreetCN\": \"asdqw\",\n        \"Street\": \"sdqw\",\n        \"ProvinceCN\": \"sdw\",\n        \"Country\": \"CN\",\n        \"RegistrantType\": \"E\",\n        \"CountryCN\": \"abc\",\n        \"Email\": \"23124@qq.com\"\n    },\n    \"CertificateInfo\": {\n        \"CertificateType\": \"SFZ\",\n        \"CertificateCode\": \"430234123\",\n        \"ImgUrl\": \"--\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Template\": {\n            \"TemplateId\": \"abc\",\n            \"AuditStatus\": \"abc\",\n            \"CreatedOn\": \"abc\",\n            \"UpdatedOn\": \"abc\",\n            \"UserUin\": \"abc\",\n            \"IsDefault\": \"abc\",\n            \"AuditReason\": \"abc\",\n            \"CertificateInfo\": {\n                \"CertificateCode\": \"abc\",\n                \"CertificateType\": \"abc\",\n                \"ImgUrl\": \"abc\",\n                \"OriginImgUrl\": \"abc\",\n                \"RegistrantCertificateCode\": \"abc\",\n                \"RegistrantCertificateType\": \"abc\",\n                \"RegistrantImgUrl\": \"abc\"\n            },\n            \"ContactInfo\": {\n                \"OrganizationNameCN\": \"abc\",\n                \"OrganizationName\": \"abc\",\n                \"RegistrantNameCN\": \"abc\",\n                \"RegistrantName\": \"abc\",\n                \"ProvinceCN\": \"abc\",\n                \"Province\": \"abc\",\n                \"CityCN\": \"abc\",\n                \"City\": \"abc\",\n                \"StreetCN\": \"abc\",\n                \"Street\": \"abc\",\n                \"CountryCN\": \"abc\",\n                \"Country\": \"abc\",\n                \"Telephone\": \"abc\",\n                \"Email\": \"abc\",\n                \"ZipCode\": \"abc\",\n                \"RegistrantType\": \"abc\"\n            },\n            \"IsValidTemplate\": 0,\n            \"InvalidReason\": \"abc\",\n            \"IsBlack\": true\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTemplate\n<公共请求参数>\n\n{\n    \"ContactInfo\": {\n        \"Province\": \"sheng\",\n        \"OrganizationNameCN\": \"xx企业\",\n        \"OrganizationName\": \"xx企业\",\n        \"City\": \"shang hai\",\n        \"CityCN\": \"上海\",\n        \"RegistrantName\": \"张三\",\n        \"Telephone\": \"1***88\",\n        \"ZipCode\": \"qweqwe\",\n        \"RegistrantNameCN\": \"qweqwe\",\n        \"StreetCN\": \"asdqw\",\n        \"Street\": \"sdqw\",\n        \"ProvinceCN\": \"sdw\",\n        \"Country\": \"CN\",\n        \"RegistrantType\": \"E\",\n        \"CountryCN\": \"上海\",\n        \"Email\": \"**@qq.com\"\n    },\n    \"CertificateInfo\": {\n        \"CertificateType\": \"SFZ\",\n        \"CertificateCode\": \"430234123\",\n        \"ImgUrl\": \"--\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca29ee8d-3034-1234-9060-699a971e9f5f\",\n        \"Template\": {\n            \"AuditReason\": \"\",\n            \"IsValidTemplate\": 1,\n            \"UpdatedOn\": \"2024-12-18 12:23:28\",\n            \"AuditStatus\": \"InAudit\",\n            \"CreatedOn\": \"2024-12-18 12:23:28\",\n            \"IsBlack\": false,\n            \"InvalidReason\": \"\",\n            \"CertificateInfo\": {\n                \"OriginImgUrl\": \"https://domain-***.com/1000***3.jpg\",\n                \"CertificateCode\": \"***56\",\n                \"RegistrantCertificateCode\": \"\",\n                \"RegistrantImgUrl\": \"\",\n                \"RegistrantCertificateType\": \"\",\n                \"CertificateType\": \"SFZ\",\n                \"ImgUrl\": \"https://domain-***.com/1000***3.jpg\"\n            },\n            \"TemplateId\": \"tmpl-***u\",\n            \"UserUin\": \"***07\",\n            \"ContactInfo\": {\n                \"Province\": \"shang hai shi\",\n                \"RegistrantType\": \"I\",\n                \"OrganizationName\": \"*u\",\n                \"OrganizationNameCN\": \"*名\",\n                \"Country\": \"CN\",\n                \"RegistrantName\": \"*名\",\n                \"ZipCode\": \"***1\",\n                \"Email\": \"*@qq.com\",\n                \"City\": \"shang hai shi\",\n                \"RegistrantNameCN\": \"*名\",\n                \"StreetCN\": \"***117号\",\n                \"Street\": \"***1117 Hao\",\n                \"ProvinceCN\": \"上海市\",\n                \"CountryCN\": \"中国\",\n                \"CityCN\": \"上海市\",\n                \"Telephone\": \"***29\"\n            },\n            \"IsDefault\": \"no\"\n        }\n    }\n}",
         "title": "创建模板"
       }
     ],
@@ -115,8 +115,8 @@
     "DeleteReservedPreDomainInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"ResourceIdList\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedPreDomainInfo\n<公共请求参数>\n\n{\n    \"ResourceIdList\": [\n        \"***211\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"serft-dwer-31d4-d2de4\"\n    }\n}",
         "title": "成功示例"
       }
     ],
@@ -228,7 +228,7 @@
       {
         "document": "获取域名价格列表",
         "input": "https://domain.tencentcloudapi.com/?Action=DescribeDomainPriceList\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"PriceList\": [\n            {\n                \"Tld\": \"abc\",\n                \"Year\": 1,\n                \"Price\": 1,\n                \"RealPrice\": 1,\n                \"Operation\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PriceList\": [\n            {\n                \"Operation\": \"renew\",\n                \"Price\": 266,\n                \"Year\": 7,\n                \"RealPrice\": 266,\n                \"Tld\": \".pw\"\n            }\n        ],\n        \"RequestId\": \"derft-dwer-csge-eqwrt\"\n    }\n}",
         "title": "获取域名价格列表"
       }
     ],
@@ -343,6 +343,12 @@
       }
     ],
     "ModifyDomainDNSBatch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainDNSBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"Dns\": [\n        \"f1g1ns2.dnspod.net\",\n        \"f1g1ns2.dnspod.net\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 54,\n        \"RequestId\": \"ac64c5c2-c0f0-11ea-ba13-080027f4585e\"\n    }\n}",
+        "title": "批量域名 DNS 修改"
+      },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainDNSBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"Dns\": [\n        \"f1g1ns2.dnspod.net\",\n        \"f1g1ns2.dnspod.net\"\n    ]\n}",

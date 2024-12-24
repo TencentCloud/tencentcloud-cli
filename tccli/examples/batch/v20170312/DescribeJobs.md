@@ -40,9 +40,9 @@ Output:
                     "Zone": "ap-guangzhou-4",
                     "ProjectId": 0,
                     "HostIds": [
-                        "abc"
+                        "host-o5i742go"
                     ],
-                    "HostId": "abc"
+                    "HostId": "host-o5i742go"
                 },
                 "JobName": "hello-test-job",
                 "CreateTime": "2020-09-22T07:14:54Z"
@@ -76,9 +76,9 @@ Output:
                     "Zone": "ap-guangzhou-4",
                     "ProjectId": 1,
                     "HostIds": [
-                        "abc"
+                        "host-o5i737go"
                     ],
-                    "HostId": "abc"
+                    "HostId": "host-o5i737go"
                 },
                 "JobName": "hello-test-job",
                 "CreateTime": "2020-09-21T08:57:01Z"

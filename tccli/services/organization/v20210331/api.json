@@ -1717,21 +1717,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
-          "example": "1",
-          "member": "uint64",
-          "name": "ServiceId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "委派管理员Uin列表。 最大长度20个",
           "example": "[111111111111]",
           "member": "int64",
           "name": "MemberUins",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "cloudaudit",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2661,21 +2670,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
-          "example": "1",
-          "member": "uint64",
-          "name": "ServiceId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "委派管理员Uin。",
           "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "1",
+          "member": "uint64",
+          "name": "ServiceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "cloudaudit",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6432,12 +6450,21 @@
         },
         {
           "disabled": false,
-          "document": "集团服务ID。可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "document": "集团服务ID。和集团服务产品标识二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
           "example": "1",
           "member": "uint64",
           "name": "ServiceId",
-          "required": true,
+          "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集团服务产品标识。和集团服务ID二选一必填，可以通过[ListOrganizationService](https://cloud.tencent.com/document/product/850/109561)获取",
+          "example": "cloudaudit",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

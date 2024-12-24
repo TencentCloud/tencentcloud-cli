@@ -1,4 +1,4 @@
-**Example 1: 新增COS分类分级扫描任务**
+**Example 1: CreateDSPACOSDiscoveryTask输入输出示例**
 
 
 
@@ -6,29 +6,26 @@ Input:
 
 ```
 tccli dsgc CreateDSPACOSDiscoveryTask --cli-unfold-argument  \
-    --DspaId dspa-001 \
-    --Enable 0 \
-    --Name 测试任务 \
-    --ComplianceGroupIds 1 \
-    --Bucket bucket_1 \
-    --GeneralRuleSetEnable 0 \
+    --DspaId dspa-ab50dca1 \
+    --Name 对象存储扫描任务 \
+    --Enable 1 \
     --Period 0 \
-    --TimingStartTime xx \
-    --FileSizeLimit 0 \
     --Plan 0 \
-    --FileTypes .csv .txt \
-    --DataSourceId xx \
-    --Description xx \
-    --ResourceRegion ap-guangzhou
+    --ComplianceGroupIds 13108 \
+    --FileSizeLimit 102400 \
+    --Bucket cos-test \
+    --DataSourceId cos-d653b \
+    --ResourceRegion ap-guangzhou \
+    --FileTypes .txt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239",
-        "TaskId": 1,
-        "ResultId": 1
+        "RequestId": "1eb522ff-0d62-45f6-ae15-11f801e42673",
+        "TaskId": 14253,
+        "ResultId": 4146
     }
 }
 ```

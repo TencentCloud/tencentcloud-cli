@@ -6,10 +6,12 @@ Input:
 
 ```
 tccli dsgc DescribeDSPACOSDiscoveryTasks --cli-unfold-argument  \
-    --DspaId dspa-01 \
-    --Limit 0 \
+    --DspaId dspa-12cd45g7 \
     --TaskId 0 \
-    --Offset 0
+    --Name apple \
+    --StatusList 0 \
+    --Offset 0 \
+    --Limit 10
 ```
 
 Output: 
@@ -18,23 +20,37 @@ Output:
     "Response": {
         "Items": [
             {
-                "Enable": 0,
-                "Name": "xx",
-                "GeneralRuleSetEnable": 0,
+                "Name": "cos分类分级任务",
+                "Description": "cos分类分级任务",
                 "Period": 0,
-                "TimingStartTime": "20201-08-20 09:20:20",
-                "Result": {
-                    "Status": 0,
-                    "EndTime": "2021-08-20 09:30:00",
-                    "Id": 0,
-                    "Result": "123"
-                },
                 "Plan": 0,
-                "Description": "test_result"
+                "Enable": 1,
+                "DataSourceInfo": {
+                    "ResourceRegion": "ap-guangzhou",
+                    "DataSourceId": "cos-d653b75c5bac583e5003012eff6cf40ecbadfe3c",
+                    "DataSourceName": "kyrie-cos-test-251007922",
+                    "ProxyAddress": [],
+                    "Condition": {
+                        "Bucket": "kyrie-cos-test-251007922",
+                        "FileTypes": [
+                            ".txt"
+                        ],
+                        "FileSizeLimit": 102400
+                    }
+                },
+                "GeneralRuleSetEnable": 0,
+                "TimingStartTime": "2024-11-07 22:40:19",
+                "ComplianceUpdate": true,
+                "Result": {
+                    "Id": 1,
+                    "EndTime": "2024-11-07 22:41:19",
+                    "Status": 4,
+                    "Result": "ComplianceConfigError"
+                }
             }
         ],
-        "RequestId": "request_1",
-        "TotalCount": 1
+        "RequestId": "0f3bffa9-2993-0df7-0301-4a8c9fe74aa7",
+        "TotalCount": 0
     }
 }
 ```

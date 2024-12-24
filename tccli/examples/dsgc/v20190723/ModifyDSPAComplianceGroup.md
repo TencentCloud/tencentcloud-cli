@@ -9,6 +9,9 @@ tccli dsgc ModifyDSPAComplianceGroup --cli-unfold-argument  \
     --Name task \
     --DspaId dspa-001 \
     --LevelGroupId 1 \
+    --ComplianceGroupRules.0.RuleId 2 \
+    --ComplianceGroupRules.0.CategoryId 3 \
+    --ComplianceGroupRules.0.LevelId 2 \
     --ComplianceGroupId 1 \
     --Description 1
 ```

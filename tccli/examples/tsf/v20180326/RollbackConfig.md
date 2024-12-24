@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli tsf RollbackConfig --cli-unfold-argument  \
-    --ConfigReleaseLogId 11111
+    --ConfigReleaseLogId dcfgrl-a2qj3qoa \
+    --ReleaseDesc This is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8007ea57-6d26-43db-aa75-ad72cb3669ca",
+        "RequestId": "78ee9cc9-b798-4596-961d-4391b6157ddf",
         "Result": true
     }
 }

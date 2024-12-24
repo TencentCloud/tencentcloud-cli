@@ -17,17 +17,17 @@ Output:
     "Response": {
         "Replicas": [
             {
-                "Name": "abc",
-                "Role": "abc",
-                "Status": "abc",
-                "SubnetId": "abc",
-                "Zone": "abc",
-                "ZoneId": "abc",
-                "VpcId": "abc"
+                "Name": "name",
+                "Role": "node",
+                "Status": "running",
+                "SubnetId": "subnet-id",
+                "Zone": "ap-guangzhou-1",
+                "ZoneId": "100001",
+                "VpcId": "vpc-id"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

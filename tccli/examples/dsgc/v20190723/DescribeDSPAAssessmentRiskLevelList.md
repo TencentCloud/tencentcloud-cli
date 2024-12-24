@@ -1,12 +1,12 @@
-**Example 1: xx**
+**Example 1: 查询风险等级的列表**
 
-xx
+
 
 Input: 
 
 ```
 tccli dsgc DescribeDSPAAssessmentRiskLevelList --cli-unfold-argument  \
-    --DspaId abc \
+    --DspaId dspa-90zcads3 \
     --Limit 0 \
     --Offset 0
 ```
@@ -15,17 +15,17 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "RiskLevelList": [
             {
-                "Id": 0,
-                "RiskLevelName": "abc",
-                "RiskLevelDescription": "abc",
-                "IdentifyComplianceName": "abc",
-                "Type": "abc"
+                "Id": 1,
+                "RiskLevelName": "默认风险级别",
+                "RiskLevelDescription": "自动化测试，勿删",
+                "IdentifyComplianceName": "通用规则集",
+                "Type": "system"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "61ad9ba2-83b7-48cd-aa70-e140525770c8"
     }
 }
 ```

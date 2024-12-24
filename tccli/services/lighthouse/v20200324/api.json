@@ -7597,7 +7597,7 @@
         {
           "disabled": false,
           "document": "密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"lhkp-2hqb9khu\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": true,
@@ -7658,10 +7658,10 @@
         {
           "disabled": false,
           "document": "更改实例套餐后需要补的差价。",
-          "example": "{}",
+          "example": "无",
           "member": "Price",
           "name": "ModifyPrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7671,27 +7671,27 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "ModifyBundleState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐信息。",
-          "example": "{}",
+          "example": "无",
           "member": "Bundle",
           "name": "Bundle",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "不支持升级至该套餐。",
           "member": "string",
           "name": "NotSupportModifyMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8313,7 +8313,7 @@
           "example": "无",
           "member": "InstancePrice",
           "name": "InstancePrice",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -9382,31 +9382,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情唯一键。",
-          "example": "",
+          "document": "软件的属性标识",
+          "example": "BTPanelPort",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详情标题。",
-          "example": "",
+          "document": "软件的属性标识描述",
+          "example": "面板端口",
           "member": "string",
           "name": "Title",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "详情值。",
-          "example": "",
+          "document": "软件的属性值",
+          "example": "默认为8888，您可以在登录面板后修改面板端口",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

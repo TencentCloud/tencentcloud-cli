@@ -362,7 +362,7 @@
       {
         "document": "调整节点状态",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodeStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"11\",\n    \"NodeInfos\": [\n        {\n            \"Status\": 0,\n            \"Ip\": \"11\",\n            \"NodeRole\": \"11\",\n            \"NodeName\": \"11\"\n        }\n    ],\n    \"OperationCode\": \"11\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-12\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "调整节点状态"
       }
     ],

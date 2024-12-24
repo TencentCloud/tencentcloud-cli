@@ -8,7 +8,7 @@ Input:
 tccli batch ModifyTaskTemplate --cli-unfold-argument  \
     --TaskTemplateId task-tmpl-606i415o \
     --TaskTemplateName A \
-    --TaskTemplateDescription test \
+    --TaskTemplateDescription demo_task \
     --TaskTemplateInfo.TaskName A \
     --TaskTemplateInfo.TaskInstanceNum 1 \
     --TaskTemplateInfo.Application.DeliveryForm LOCAL \

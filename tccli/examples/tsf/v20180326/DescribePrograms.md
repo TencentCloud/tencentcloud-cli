@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli tsf DescribePrograms --cli-unfold-argument ```
+tccli tsf DescribePrograms --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 20 \
+    --SearchWord program-xxxx
+```
 
 Output: 
 ```

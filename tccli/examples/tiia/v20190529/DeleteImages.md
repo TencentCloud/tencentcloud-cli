@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tiia DeleteImages --cli-unfold-argument  \
-    --GroupId  \
-    --EntityId 1 \
-    --PicName test
+    --GroupId test_group \
+    --EntityId 7263 \
+    --PicName test_pic
 ```
 
 Output: 
@@ -32,9 +32,9 @@ Input:
 
 ```
 tccli tiia DeleteImages --cli-unfold-argument  \
-    --GroupId 123 \
-    --EntityId 1 \
-    --PicName test
+    --GroupId my_group \
+    --EntityId 7263 \
+    --PicName test_pic
 ```
 
 Output: 

@@ -17,7 +17,7 @@ Output:
         "RequestId": "20569756-56ba-4a13-b545-e1528d5cb239",
         "Items": [
             {
-                "DataSample": "test"
+                "DataSample": "1000"
             }
         ]
     }

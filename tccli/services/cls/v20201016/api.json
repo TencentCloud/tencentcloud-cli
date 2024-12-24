@@ -3607,7 +3607,7 @@
         {
           "disabled": false,
           "document": "用户自定义告警内容",
-          "example": "\"\"",
+          "example": "{{range .AnalysisResult.sync}}\\n\\n集群{{.ClusterID}}中节点{{.InvolvedObjectObjName}}在5分钟内发生了{{.errorCount}}次ipamd同步Node失败\\n\\n{{end}}",
           "member": "string",
           "name": "MessageTemplate",
           "required": false,
@@ -11138,7 +11138,7 @@
         {
           "disabled": false,
           "document": "通知渠道组名称。",
-          "example": "test",
+          "example": "Demo访问日志通知渠道组",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11210,7 +11210,7 @@
         {
           "disabled": false,
           "document": "免登录操作告警开关。\n\n参数值： \n        1：关闭\n        2：开启（默认开启）",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "AlarmShieldStatus",
           "required": false,
@@ -11246,7 +11246,7 @@
         {
           "disabled": false,
           "document": "告警策略名称",
-          "example": "test",
+          "example": "访问拦截告警",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11345,7 +11345,7 @@
         {
           "disabled": false,
           "document": "用户自定义告警内容",
-          "example": "\"\"",
+          "example": "{{.Label}}",
           "member": "string",
           "name": "MessageTemplate",
           "required": false,
@@ -11498,7 +11498,7 @@
         {
           "disabled": false,
           "document": "规则状态。只有规则状态为生效中（status:1）时，才能将其修改为已失效（status:2）。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -11561,7 +11561,7 @@
         {
           "disabled": false,
           "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
-          "example": "无",
+          "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
           "required": false,
@@ -11650,8 +11650,8 @@
         },
         {
           "disabled": false,
-          "document": "日志格式化方式，用于容器采集场景。\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
-          "example": "无",
+          "document": "日志格式化方式，用于容器采集场景。目前已经废弃\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
+          "example": "stdout-containerd",
           "member": "string",
           "name": "LogFormat",
           "required": false,
@@ -11678,7 +11678,7 @@
         {
           "disabled": false,
           "document": "组合解析采集规则，用于复杂场景下的日志采集。\n- 取值参考：[使用组合解析提取模式采集日志\n](https://cloud.tencent.com/document/product/614/61310)",
-          "example": "无",
+          "example": "{\\\"processors\\\": [{\\\"type\\\": \\\"processor_multiline_fullregex\\\", \\\"detail\\\": {\\\"ExtractRegex\\\": \\\"\\\\\\\\w+\\\\\\\\n(\\\\\\\\d.*).*\\\", \\\"ExtractKeys\\\": [\\\"test\\\"], \\\"BeginRegex\\\": \\\"[a-zA-Z].*\\\"}, \\\"processors\\\": [{\\\"type\\\": \\\"processor_split_delimiter\\\", \\\"detail\\\": {\\\"ExtractKeys\\\": [\\\"line_number\\\", \\\"log_time\\\", \\\"json_log\\\"], \\\"Delimiter\\\": \\\"&\\\", \\\"SourceKey\\\": \\\"test\\\"}, \\\"processors\\\": [{\\\"type\\\": \\\"processor_json\\\", \\\"detail\\\": {\\\"ExtractKeys\\\": [\\\"filter\\\", \\\"file_name\\\", \\\"var_length\\\"], \\\"SourceKey\\\": \\\"json_log\\\"}}]}]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -12362,7 +12362,7 @@
         {
           "disabled": false,
           "document": "Kafka导入配置名称",
-          "example": "test",
+          "example": "kafka导入",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -12632,7 +12632,7 @@
         {
           "disabled": false,
           "document": "通知内容模板名称。",
-          "example": "test",
+          "example": "内部监控告警专用",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -12758,7 +12758,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "test",
+          "example": "scheduler_sql任务1",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -13037,7 +13037,7 @@
         {
           "disabled": false,
           "document": "取消切换存储任务的id",
-          "example": "无",
+          "example": "87b94286-1b33-44df-8568-924eb250ef4e",
           "member": "string",
           "name": "CancelTopicAsyncTaskID",
           "required": false,
@@ -13766,7 +13766,7 @@
         {
           "disabled": false,
           "document": "日志样例，PreviewType为2时返回",
-          "example": "无",
+          "example": "{\\\"__PKG_ID__\\\":\\\"61E93B596600E6D3-2B2B0\\\",\\\"__PKG_LOGID__\\\":65536,\\\"__TAG__.container_name\\\":\\\"main\\\",\\\"__TAG__.namespace\\\":\\\"sync-mysql\\\",\\\"__TAG__.pod_name\\\":\\\"sync-kxjyxkfe-start-vg7vz-1887219422\\\",\\\"__TIMESTAMP__\\\":1734519599010}",
           "member": "string",
           "name": "LogSample",
           "output_required": true,
@@ -13776,7 +13776,7 @@
         {
           "disabled": false,
           "document": "日志预览结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\\\"__PKG_ID__\\\":\\\"61E93B596600E6D3-2B2B0\\\",\\\"__PKG_LOGID__\\\":65536,\\\"__TAG__.container_name\\\":\\\"main\\\",\\\"__TAG__.namespace\\\":\\\"sync-mysql\\\",\\\"__TAG__.pod_name\\\":\\\"sync-kxjyxkfe-start-vg7vz-1887219422\\\",\\\"__TIMESTAMP__\\\":1734519599010}",
           "member": "string",
           "name": "LogData",
           "output_required": true,
@@ -13913,7 +13913,7 @@
         {
           "disabled": false,
           "document": "指标查询结果",
-          "example": "无",
+          "example": "[{\\\"metric\\\":{\\\"code\\\":\\\"InternalError\\\",\\\"region\\\":\\\"广州\\\",\\\"service_name\\\":\\\"service1\\\",\\\"url\\\":\\\"api1\\\"},\\\"value\\\":[1735040730,\\\"412\\\"]}]",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -13996,7 +13996,7 @@
         {
           "disabled": false,
           "document": "指标查询结果",
-          "example": "无",
+          "example": "[{\\\"metric\\\":{\\\"code\\\":\\\"InternalError\\\",\\\"region\\\":\\\"广州\\\",\\\"service_name\\\":\\\"service1\\\",\\\"url\\\":\\\"api1\\\"},\\\"values\\\":[[1735040190,\\\"100\\\"],[1735040205,\\\"91\\\"],[1735040310,\\\"98\\\"],[1735040325,\\\"85\\\"],[1735040340,\\\"76\\\"],[1735040730,\\\"100\\\"]]}]",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -14515,7 +14515,7 @@
         {
           "disabled": false,
           "document": "匹配到的存储桶下的某个文件的前几行数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"xxxxx\",\"xxxxx\"]",
+          "example": "[{\"metric\":{\"code\":\"InternalError\",\"region\":\"广州\",\"service_name\":\"service1\",\"url\":\"api1\"},\"values\":[[1735040190,\"100\"],[1735040205,\"91\"],[1735040310,\"98\"],[1735040325,\"85\"],[1735040340,\"76\"],[1735040730,\"100\"]]}]",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -14545,7 +14545,7 @@
         {
           "disabled": false,
           "document": "预览获取数据失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "授权失败，请确认授权",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -14857,7 +14857,7 @@
         {
           "disabled": false,
           "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\\\"action\\\"]",
           "member": "string",
           "name": "ColNames",
           "output_required": true,

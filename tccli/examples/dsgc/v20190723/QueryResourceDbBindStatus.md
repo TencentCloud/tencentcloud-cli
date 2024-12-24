@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dsgc QueryResourceDbBindStatus --cli-unfold-argument  \
-    --DspaId abc \
-    --ResourceId abc \
-    --ResourceRegion abc \
-    --MetaType abc
+    --DspaId dspa-12cd45g7 \
+    --ResourceId cdb-adhyf85f \
+    --ResourceRegion ap-guangzhou \
+    --MetaType cdb
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
     "Response": {
         "BindDbNums": 1,
         "UnbindDbNums": 1,
-        "RequestId": "abc"
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```

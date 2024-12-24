@@ -25,7 +25,7 @@ Output:
         "KeyId": "34",
         "IsEnableKmsEncry": 0,
         "KmsRegion": "hk",
-        "KmsAlias": "test",
+        "KmsAlias": "cloudtrail",
         "RequestId": "e23ee347-d011-482a-83fa-12e7d318dd9f"
     }
 }

@@ -1,4 +1,4 @@
-**Example 1: xx**
+**Example 1: 概览页**
 
 概览页
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dsgc DescribeDSPAESDataAssetByComplianceId --cli-unfold-argument  \
-    --DspaId abc \
-    --ComplianceId 0
+    --DspaId dspa-acfd125b \
+    --ComplianceId 1
 ```
 
 Output: 
@@ -15,30 +15,30 @@ Output:
 {
     "Response": {
         "Stats": {
-            "DataAssetType": 0,
-            "SensitiveIndexCnt": 0,
-            "TotalIndexCnt": 0,
-            "SensitiveFieldCnt": 0,
-            "TotalFieldCnt": 0,
-            "SensitiveCategoryCnt": 0,
+            "DataAssetType": 1,
+            "SensitiveIndexCnt": 3,
+            "TotalIndexCnt": 15,
+            "SensitiveFieldCnt": 5,
+            "TotalFieldCnt": 60,
+            "SensitiveCategoryCnt": 2,
             "SensitiveLevel": [
                 {
-                    "LevelId": 0,
-                    "LevelCnt": 0,
-                    "LevelRiskName": "abc",
-                    "LevelRiskScore": 0
+                    "LevelId": 102,
+                    "LevelCnt": 2,
+                    "LevelRiskName": "高",
+                    "LevelRiskScore": 10
                 }
             ],
             "CategoryDistributed": [
                 {
-                    "CategoryId": 0,
-                    "CategoryName": "abc",
+                    "CategoryId": 103,
+                    "CategoryName": "个人基本信息",
                     "Count": 1,
-                    "CategoryFullPath": "abc"
+                    "CategoryFullPath": "[\"个人基本信息\"]"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```

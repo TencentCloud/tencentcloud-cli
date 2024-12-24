@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tiia DetectLabel --cli-unfold-argument  \
-    --ImageUrl https://123.jpg
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Input:
 
 ```
 tccli tiia DetectLabel --cli-unfold-argument  \
-    --ImageUrl https://test.jpg \
+    --ImageUrl https://cos.ap-singapore.myqcloud.com/input.png \
     --Scenes WEB CAMERA ALBUM
 ```
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dsgc DescribeDSPACOSDataAssetDetail --cli-unfold-argument  \
-    --DspaId dspa-001 \
+    --DspaId dspa-1f96daa1 \
     --ComplianceId 1
 ```
 
@@ -14,20 +14,32 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Details": [
             {
-                "BucketName": "bucket-xxxx",
-                "FileName": "test.txt",
-                "RuleName": "住址",
-                "CategoryName": "个人基本信息",
-                "LevelRiskName": "中",
+                "BucketName": "bucekt_1",
+                "FileName": "cds.txt",
+                "RuleName": "通用",
+                "SensitiveDataCount": 0,
+                "CategoryName": "个人身份信息",
+                "LevelRiskName": "系统-敏感",
                 "KMSEncrypted": true,
-                "FileType": "text",
-                "FileSize": "32B"
+                "FileType": ".txt",
+                "FileSize": "10000",
+                "LevelRiskScore": 1,
+                "DataSourceId": "cos-d653df8923hjrhjc9",
+                "RuleId": 100,
+                "ResourceRegion": "ap-guangzhou",
+                "CategoryId": 12,
+                "LevelId": 8,
+                "FileResultId": 0,
+                "DataSourceName": "bucekt_1",
+                "CategoryFullPath": "[\"个人基本信息\"]",
+                "IdentifyType": 0,
+                "CheckStatus": 0
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 1,
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```

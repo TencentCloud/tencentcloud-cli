@@ -1,14 +1,14 @@
-**Example 1: 示例**
+**Example 1: 查询DB绑定的列表**
 
-示例
+查询DB绑定的列表
 
 Input: 
 
 ```
 tccli dsgc DescribeBindDBList --cli-unfold-argument  \
-    --DataSourceType abc \
-    --DataSourceId abc \
-    --DspaId abc
+    --DataSourceType cdb \
+    --DataSourceId cdb-2345ffsdf2 \
+    --DspaId dspa-abcd1234
 ```
 
 Output: 
@@ -16,20 +16,20 @@ Output:
 {
     "Response": {
         "BindDBList": [
-            "abc"
+            "szffsd0212"
         ],
         "BindList": [
             {
-                "ResourceId": "abc",
+                "ResourceId": "cdb-2g345",
                 "DbInfos": [
                     {
-                        "DbName": "abc",
-                        "ValidStatus": "abc"
+                        "DbName": "db2212",
+                        "ValidStatus": "1"
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "afsdfs-fg234sc"
     }
 }
 ```

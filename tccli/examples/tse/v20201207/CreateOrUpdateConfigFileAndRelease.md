@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tse CreateOrUpdateConfigFileAndRelease --cli-unfold-argument  \
-    --InstanceId abc \
-    --ConfigFilePublishInfo.ReleaseName abc \
-    --ConfigFilePublishInfo.Namespace abc \
-    --ConfigFilePublishInfo.Group abc \
-    --ConfigFilePublishInfo.FileName abc \
-    --ConfigFilePublishInfo.Content abc \
-    --ConfigFilePublishInfo.Comment abc \
-    --ConfigFilePublishInfo.Format abc \
-    --ConfigFilePublishInfo.CreateBy abc \
-    --ConfigFilePublishInfo.ModifyBy abc \
-    --ConfigFilePublishInfo.Tags.0.Key abc \
-    --ConfigFilePublishInfo.Tags.0.Value abc
+    --InstanceId ins-id \
+    --ConfigFilePublishInfo.ReleaseName name \
+    --ConfigFilePublishInfo.Namespace namespace \
+    --ConfigFilePublishInfo.Group group \
+    --ConfigFilePublishInfo.FileName a.yaml \
+    --ConfigFilePublishInfo.Content content \
+    --ConfigFilePublishInfo.Comment comment \
+    --ConfigFilePublishInfo.Format yaml \
+    --ConfigFilePublishInfo.CreateBy user \
+    --ConfigFilePublishInfo.ModifyBy user \
+    --ConfigFilePublishInfo.Tags.0.Key key \
+    --ConfigFilePublishInfo.Tags.0.Value value
 ```
 
 Output: 
@@ -25,7 +25,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

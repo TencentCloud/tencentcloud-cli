@@ -6,44 +6,44 @@ Input:
 
 ```
 tccli tsf DescribeGroupUseDetail --cli-unfold-argument  \
-    --Count 10 \
-    --GroupId group-i54lzdrq \
-    --EndTime '2020-09-22 00:00:00' \
-    --StartTime '2020-09-22 00:00:00' \
-    --GatewayDeployGroupId group-dasdas
+    --GatewayDeployGroupId group-yd3b588a \
+    --GroupId grp-nb08ur29 \
+    --StartTime 2024-12-16 16:36:40 \
+    --EndTime 2024-12-23 16:36:40 \
+    --Count 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "76917645-69a0-4692-9555-75e8da464914",
         "Result": {
-            "TopReqAmount": [
+            "TopAvgTimeCost": [
                 {
-                    "ApiPath": "/v1/user/{userId}",
+                    "ApiId": "api-dtbc5cf0",
+                    "ApiPath": "/echo/{param}",
                     "ServiceName": "provider-demo",
-                    "ApiId": "xx",
-                    "Value": "16000"
+                    "Value": "12.22782"
                 }
             ],
             "TopFailureRate": [
                 {
-                    "ApiPath": "/v1/user/{userId}",
+                    "ApiId": "api-dtbc5cf0",
+                    "ApiPath": "/echo/{param}",
                     "ServiceName": "provider-demo",
-                    "ApiId": "xx",
-                    "Value": "0.80000"
+                    "Value": "0.02182"
                 }
             ],
-            "TopAvgTimeCost": [
+            "TopReqAmount": [
                 {
-                    "ApiPath": "/v1/user/{userId}",
+                    "ApiId": "api-dtbc5cf0",
+                    "ApiPath": "/echo/{param}",
                     "ServiceName": "provider-demo",
-                    "ApiId": "xx",
-                    "Value": "0.23265"
+                    "Value": "1.3412689E7"
                 }
             ]
-        },
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a"
+        }
     }
 }
 ```

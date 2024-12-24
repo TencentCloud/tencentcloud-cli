@@ -1,16 +1,16 @@
-**Example 1: 示例**
+**Example 1: 查询cos资产分布详情**
 
-示例描述
+查询cos资产分布详情
 
 Input: 
 
 ```
 tccli dsgc DescribeCOSAssetSensitiveDistribution --cli-unfold-argument  \
-    --DspaId abc \
-    --ComplianceId 0 \
-    --AssetList.0.DataSourceType abc \
-    --AssetList.0.DataSourceInfo.0.DataSourceId abc \
-    --AssetList.0.DataSourceInfo.0.BindList abc
+    --DspaId dspa-abcd1234 \
+    --ComplianceId 1 \
+    --AssetList.0.DataSourceType 2 \
+    --AssetList.0.DataSourceInfo.0.DataSourceId cdb-tsf1ewdfr \
+    --AssetList.0.DataSourceInfo.0.BindList predb01
 ```
 
 Output: 
@@ -18,39 +18,39 @@ Output:
 {
     "Response": {
         "CosAsset": {
-            "BucketNums": 0,
-            "SensitiveBucketNums": 0,
-            "FileNums": 0,
-            "SensitiveFileNums": 0
+            "BucketNums": 3,
+            "SensitiveBucketNums": 1,
+            "FileNums": 20,
+            "SensitiveFileNums": 6
         },
         "TopAsset": [
             {
-                "LevelName": "abc",
+                "LevelName": "中",
                 "TopStat": [
                     {
-                        "DataSourceId": "abc",
-                        "SubData": "abc",
-                        "SensitiveCnt": 0
+                        "DataSourceId": "cdb-tsf1ewdfr",
+                        "SubData": "数据",
+                        "SensitiveCnt": 1
                     }
                 ]
             }
         ],
         "CosDetail": [
             {
-                "Bucket": "abc",
-                "DataType": "abc",
-                "FileNums": 0,
-                "SensitiveFileNums": 0,
+                "Bucket": "cos-atgwr0234",
+                "DataType": "2",
+                "FileNums": 16,
+                "SensitiveFileNums": 6,
                 "DistributionData": [
                     {
-                        "Key": "abc",
-                        "Value": 0
+                        "Key": "103",
+                        "Value": 5
                     }
                 ],
-                "MatchedNum": 0
+                "MatchedNum": 3
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "sfwtgw-gsdf-23rsfs"
     }
 }
 ```

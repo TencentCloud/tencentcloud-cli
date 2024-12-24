@@ -1,4 +1,4 @@
-**Example 1: xx**
+**Example 1: 获取ES的分类分级任务结果详情**
 
 查询es的分类分级扫描任务结果详情
 
@@ -6,13 +6,11 @@ Input:
 
 ```
 tccli dsgc DescribeDSPAESDiscoveryTaskResultDetail --cli-unfold-argument  \
-    --DspaId abc \
-    --TaskId 0 \
-    --ComplianceId 0 \
-    --CategoryIdList 0 \
-    --LevelId 0 \
+    --DspaId dspa-9as8cz2s \
+    --TaskId 1 \
+    --ComplianceId 1 \
     --Offset 0 \
-    --Limit 0
+    --Limit 10
 ```
 
 Output: 
@@ -21,22 +19,23 @@ Output:
     "Response": {
         "Items": [
             {
-                "Id": 0,
-                "TaskId": 0,
-                "FieldName": "abc",
-                "RuleId": 0,
-                "RuleName": "abc",
-                "CategoryId": 0,
-                "CategoryName": "abc",
+                "Id": 1,
+                "TaskId": 1,
+                "FieldName": "name",
+                "RuleName": "姓名",
+                "RuleId": 14,
+                "CategoryId": 103,
+                "CategoryName": "个人基本信息",
                 "CategoryArr": [
-                    "abc"
+                    "个人基本信息"
                 ],
-                "LevelId": 0,
-                "LevelName": "abc"
+                "LevelId": 2,
+                "LevelName": "中",
+                "LevelRiskScore": 5
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 1,
+        "RequestId": "826f0635-b168-52a7-8db9-45b1d46d2c8a"
     }
 }
 ```

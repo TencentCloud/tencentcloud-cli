@@ -517,7 +517,7 @@
         {
           "disabled": false,
           "document": "售卖状态。可选值有 sale_out 售罄、saling可售、no_saling不可销售",
-          "example": "无",
+          "example": "sale_out",
           "member": "string",
           "name": "SaleStatus",
           "output_required": true,
@@ -527,7 +527,7 @@
         {
           "disabled": false,
           "document": "协议类型。可选值有 NFS、CIFS、TURBO",
-          "example": "无",
+          "example": "NFS",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -1386,7 +1386,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretId",
-          "example": "12345",
+          "example": "agKID0FnEWgyGnEUbBAmtZ8Yt59B49dKdgc",
           "member": "string",
           "name": "SrcSecretId",
           "required": true,
@@ -1395,7 +1395,7 @@
         {
           "disabled": false,
           "document": "数据源账号的SecretKey",
-          "example": "12345",
+          "example": "bo2KVXSzpX9qPn4C9zBaq0DHBybtghadg",
           "member": "string",
           "name": "SrcSecretKey",
           "required": true,
@@ -1509,7 +1509,7 @@
         {
           "disabled": false,
           "document": "迁移任务Id",
-          "example": "无",
+          "example": "tasgagagagi",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -2210,7 +2210,7 @@
           "example": "无",
           "member": "PGroupInfo",
           "name": "PGroupList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2576,10 +2576,10 @@
         {
           "disabled": false,
           "document": "快照ID",
-          "example": "xx",
+          "example": "snapcfs-4gbaklnk",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2589,7 +2589,7 @@
           "example": "无",
           "member": "SnapshotOperateLog",
           "name": "SnapshotOperates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2758,60 +2758,60 @@
         {
           "disabled": false,
           "document": "文件系统IP地址",
-          "example": "",
+          "example": "10.0.2.3",
           "member": "string",
           "name": "CfsVip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端IP地址",
-          "example": "",
+          "example": "10.0.2.2",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统所属VPCID",
-          "example": "",
+          "example": "vpc-agabral",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区名称，例如ap-beijing-1，请参考 概览文档中的地域与可用区列表",
-          "example": "",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区中文名称",
-          "example": "",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该文件系统被挂载到客户端上的路径信息",
-          "example": "",
+          "example": "/cfs/data",
           "member": "string",
           "name": "MountDirectory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2844,7 +2844,7 @@
         {
           "disabled": false,
           "document": "文件系统 ID",
-          "example": "cfs-xx",
+          "example": "cfs-gabtqtq",
           "member": "string",
           "name": "FileSystemId",
           "output_required": true,
@@ -2974,7 +2974,7 @@
         {
           "disabled": false,
           "document": "加密所使用的密钥，可以为密钥的 ID 或者 ARN",
-          "example": "无",
+          "example": "gaglkjgfpnggagalkinebn14tw",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": true,
@@ -3004,7 +3004,7 @@
         {
           "disabled": false,
           "document": "文件系统关联的快照策略",
-          "example": "无",
+          "example": "asp-gabgat",
           "member": "string",
           "name": "AutoSnapshotPolicyId",
           "output_required": true,
@@ -3053,33 +3053,33 @@
         },
         {
           "disabled": false,
-          "document": "分层存储详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分层存储详情",
           "example": "\"TieringSizeInBytes\": 0",
           "member": "TieringDetailInfo",
           "name": "TieringDetail",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统自动扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统自动扩容策略",
           "example": "\"Status\":close",
           "member": "AutoScaleUpRule",
           "name": "AutoScaleUpRule",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统版本",
           "example": "v1.0",
           "member": "string",
           "name": "Version",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3153,53 +3153,53 @@
         },
         {
           "disabled": false,
-          "document": "数据源桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源桶名称",
           "example": "xx-123455",
           "member": "string",
           "name": "BucketName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据源桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源桶地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据源桶地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源桶地址",
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com",
           "member": "string",
           "name": "BucketAddress",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "清单地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "清单地址",
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com/list.csv",
           "member": "string",
           "name": "ListAddress",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件系统实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件系统实例名称",
           "example": "testcfs",
           "member": "string",
           "name": "FsName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3243,13 +3243,13 @@
         },
         {
           "disabled": false,
-          "document": "完成/终止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "完成/终止时间",
           "example": "2023-01-20 15:03:57",
           "member": "int64",
           "name": "EndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3263,103 +3263,103 @@
         },
         {
           "disabled": false,
-          "document": "文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件数量",
           "example": "10",
           "member": "uint64",
           "name": "FileTotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已迁移文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已迁移文件数量",
           "example": "10",
           "member": "uint64",
           "name": "FileMigratedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "迁移失败文件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移失败文件数量",
           "example": "10",
           "member": "uint64",
           "name": "FileFailedCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件容量，单位Byte",
           "example": "1024",
           "member": "int64",
           "name": "FileTotalSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已迁移文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已迁移文件容量，单位Byte",
           "example": "1024",
           "member": "int64",
           "name": "FileMigratedSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "迁移失败文件容量，单位Byte\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "迁移失败文件容量，单位Byte",
           "example": "512",
           "member": "int64",
           "name": "FileFailedSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "全部清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "全部清单",
           "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileTotalList",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已完成文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已完成文件清单",
           "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileCompletedList",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "失败文件清单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败文件清单",
           "example": "https://cfs-migrate-xxxxx.cos.ap-chongqing.myqcloud.com/cfs-migrate-results/cfsmigrate-3d2cf062",
           "member": "string",
           "name": "FileFailedList",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源桶路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源桶路径",
           "example": "https://xx-12345.cos.ap-shanghai.myqcloud.com",
           "member": "string",
           "name": "BucketPath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3682,7 +3682,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "rule-gabatga4",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -3692,7 +3692,7 @@
         {
           "disabled": false,
           "document": "允许访问的客户端IP",
-          "example": "无",
+          "example": "10.0.0.2",
           "member": "string",
           "name": "AuthClientIp",
           "output_required": true,
@@ -3702,7 +3702,7 @@
         {
           "disabled": false,
           "document": "读写权限, ro为只读，rw为读写",
-          "example": "无",
+          "example": "ro",
           "member": "string",
           "name": "RWPermission",
           "output_required": true,
@@ -3712,7 +3712,7 @@
         {
           "disabled": false,
           "document": "all_squash：所有访问用户（含 root 用户）都会被映射为匿名用户或用户组。\nno_all_squash：所有访问用户（含 root 用户）均保持原有的 UID/GID 信息。\nroot_squash：将来访的 root 用户映射为匿名用户或用户组，非 root 用户保持原有的 UID/GID 信息。\nno_root_squash：与 no_all_squash 效果一致，所有访问用户（含 root 用户）均保持原有的 UID/GID 信息\n",
-          "example": "无",
+          "example": "all_squash",
           "member": "string",
           "name": "UserPermission",
           "output_required": true,
@@ -3722,7 +3722,7 @@
         {
           "disabled": false,
           "document": "规则优先级，1-100。 其中 1 为最高，100为最低",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Priority",
           "output_required": true,
@@ -4156,7 +4156,7 @@
         {
           "disabled": false,
           "document": "迁移任务Id",
-          "example": "无",
+          "example": "atagckgtl",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -4188,7 +4188,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "abc",
+          "example": "部门",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
@@ -4199,7 +4199,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "abc",
+          "example": "产品一部",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
@@ -4215,14 +4215,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "低频存储容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "低频存储容量",
           "example": "100",
           "member": "int64",
           "name": "TieringSizeInBytes",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4299,7 +4299,7 @@
         {
           "disabled": false,
           "document": "快照策略名称",
-          "example": "test",
+          "example": "cfspolicygz",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -4417,7 +4417,7 @@
           "example": "test",
           "member": "string",
           "name": "CreationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4427,7 +4427,7 @@
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4437,7 +4437,7 @@
           "example": "test",
           "member": "string",
           "name": "FsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4557,7 +4557,7 @@
         {
           "disabled": false,
           "document": "权限组名称，1-64个字符且只能为中文，字母，数字，下划线或横线",
-          "example": "test",
+          "example": "gzgroup",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4566,7 +4566,7 @@
         {
           "disabled": false,
           "document": "权限组描述信息，1-255个字符。 Name和Descinfo不能同时为空",
-          "example": "test",
+          "example": "gz_group_test",
           "member": "string",
           "name": "DescInfo",
           "required": false,
@@ -4900,25 +4900,25 @@
         },
         {
           "disabled": false,
-          "document": "容量使用，单位GiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容量使用，单位GiB",
           "example": "9",
           "member": "uint64",
           "name": "CapacityUsed",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件使用个数，单位个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件使用个数，单位个",
           "example": "9999",
           "member": "uint64",
           "name": "FileUsed",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4933,14 +4933,14 @@
         },
         {
           "disabled": false,
-          "document": "配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置规则状态，inavailable---配置中，available --已生效，deleting--删除中，deleted 已删除，failed--配置失败",
           "example": "available",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -6291,7 +6291,7 @@
         {
           "disabled": false,
           "document": "集群镜像版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "version-xxx",
           "member": "string",
           "name": "ImageVersionId",
           "output_required": true,
@@ -6302,7 +6302,7 @@
         {
           "disabled": false,
           "document": "集群镜像小版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "version-xxxx",
           "member": "string",
           "name": "ChildImageVersionId",
           "output_required": true,
@@ -6313,7 +6313,7 @@
         {
           "disabled": false,
           "document": "集群镜像版本名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "version-xxx",
           "member": "string",
           "name": "ImageVersionName",
           "output_required": true,
@@ -6517,6 +6517,61 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持AI，false: 不支持；true：支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSupportAI",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dataengine-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "GatewayState",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否能执行AI任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAIGateway",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:AI引擎，0:非AI引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAIEngine",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -14542,7 +14597,7 @@
           "example": "small",
           "member": "string",
           "name": "DriverSize",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14552,7 +14607,7 @@
           "example": "small",
           "member": "string",
           "name": "ExecutorSize",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14562,7 +14617,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExecutorNumbers",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14652,7 +14707,67 @@
           "example": "1",
           "member": "uint64",
           "name": "ExecutorMaxNumbers",
-          "output_required": true,
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "session类型，group：资源组下session independent：独立资源session， 不依赖资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group",
+          "member": "string",
+          "name": "SessionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dataengine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rg-xxx",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rg-xxx",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "session，pod大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "PodSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PodNumbers",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -14911,6 +15026,46 @@
           "member": "string",
           "name": "SparkUiUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "session类型，group：资源组session independent：独立资源session，不依赖资源组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group",
+          "member": "string",
+          "name": "SessionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dataengine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rg-xxx",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rg-xxx",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

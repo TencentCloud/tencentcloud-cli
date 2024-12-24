@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tsf DisableLaneRule --cli-unfold-argument  \
-    --RuleId test
+    --RuleId lane-r-yqg4kmbd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": true,
-        "RequestId": "abc"
+        "RequestId": "42070bc6-afad-43c2-9646-3b0e1bca8d3f",
+        "Result": true
     }
 }
 ```

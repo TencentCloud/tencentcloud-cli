@@ -22,6 +22,7 @@ tccli essbasic ChannelCreateFlowApprovers --cli-unfold-argument  \
     --Approvers.0.ApproverName 典子谦 \
     --Approvers.0.ApproverMobile 13200000000 \
     --Approvers.0.OrganizationName ***有限公司 \
+    --Approvers.0.OrganizationOpenId org_diziqian \
     --Approvers.1.RecipientId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
     --Approvers.1.ApproverName 张三 \
     --Approvers.1.ApproverMobile 18888888888

@@ -387,16 +387,18 @@
           "member": "string",
           "name": "Bucket",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "COS文件地址。",
-          "example": "cos://bucket-12345678/path/to/file",
+          "example": "/path/to/file",
           "member": "string",
           "name": "Uri",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -407,11 +409,12 @@
           "member": "string",
           "name": "Region",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CreateEnvironmentRequest": {
       "document": "CreateEnvironment请求参数结构体",
@@ -3135,6 +3138,15 @@
           "name": "VolumeIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作流入口文件，不填使用默认入口文件。",
+          "example": "entry.nf",
+          "member": "string",
+          "name": "Entrypoint",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

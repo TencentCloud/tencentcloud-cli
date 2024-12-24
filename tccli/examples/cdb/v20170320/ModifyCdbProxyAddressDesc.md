@@ -8,14 +8,14 @@ Input:
 tccli cdb ModifyCdbProxyAddressDesc --cli-unfold-argument  \
     --ProxyGroupId proxy-il2nlsdn \
     --ProxyAddressId proxyaddr-mc0efsw0 \
-    --Desc test
+    --Desc 一区代理
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx-xxx"
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }
 ```

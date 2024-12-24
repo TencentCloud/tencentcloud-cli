@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dsgc QueryDSPAMetaResourceDbList --cli-unfold-argument  \
-    --DspaId abc \
-    --ResourceId abc \
-    --ResourceRegion abc \
-    --MetaType abc
+    --DspaId dspa-ab32dc78 \
+    --ResourceId cdb-5bcpe42v \
+    --ResourceRegion ap-guangzhou \
+    --MetaType cdb
 ```
 
 Output: 
@@ -18,12 +18,12 @@ Output:
     "Response": {
         "DbRelationStatusItems": [
             {
-                "DbName": "abc",
-                "BindStatus": "abc",
-                "ValidStatus": "abc"
+                "DbName": "test001",
+                "BindStatus": "binded",
+                "ValidStatus": "valid"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```

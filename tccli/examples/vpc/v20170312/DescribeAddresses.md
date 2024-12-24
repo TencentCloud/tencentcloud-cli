@@ -138,7 +138,7 @@ Input:
 
 ```
 tccli vpc DescribeAddresses --cli-unfold-argument  \
-    --AddressIds eip-hxlqja90
+    --AddressIds eip-12345678
 ```
 
 Output: 
@@ -149,7 +149,7 @@ Output:
         "AddressSet": [
             {
                 "AddressId": "eip-12345678",
-                "AddressName": "abc",
+                "AddressName": "demo",
                 "AddressStatus": "UNBIND",
                 "AddressIp": "34.3.4.5.6",
                 "InstanceId": "ins-12345678",
@@ -171,16 +171,16 @@ Output:
                 "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
                 "TagSet": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "name",
+                        "Value": "Sam"
                     }
                 ],
                 "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc",
-                "Egress": "abc"
+                "InstanceType": "CVM",
+                "Egress": "CENTER_EGRESS_1"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "95eb79b9-2e72-45b1-a1ac-03138778521a"
     }
 }
 ```

@@ -8,8 +8,11 @@ Input:
 tccli dsgc CreateDSPAComplianceGroup --cli-unfold-argument  \
     --LevelGroupId 1 \
     --DspaId dspa-001 \
+    --ComplianceGroupRules.0.RuleId 2 \
+    --ComplianceGroupRules.0.CategoryId 3 \
+    --ComplianceGroupRules.0.LevelId 2 \
     --Name task \
-    --Description 扫描任务
+    --Description 分类分级模版描述
 ```
 
 Output: 

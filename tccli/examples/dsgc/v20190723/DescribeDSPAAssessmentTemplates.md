@@ -15,27 +15,36 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "Items": [
             {
-                "Id": 0,
-                "TemplateId": "abc",
-                "TemplateName": "abc",
-                "Description": "abc",
-                "Source": "abc",
-                "UseType": "abc",
-                "CreatedTime": "abc",
-                "ControlItemCount": 0,
-                "AppliedItemCount": 0,
-                "Status": "abc",
+                "Id": 2,
+                "TemplateId": "template-00000002",
+                "TemplateName": "系统基础评估模板",
+                "Description": "自动化测试，勿删",
+                "Source": "system",
+                "UseType": "auto",
+                "CreatedTime": "2023-05-13 14:01:45",
+                "ControlItemCount": 194,
+                "AppliedItemCount": 63,
+                "Status": "launched",
                 "SupportDataSource": [
-                    "abc"
+                    "mysql",
+                    "pgsql",
+                    "mongodb",
+                    "oracle",
+                    "mssql",
+                    "es",
+                    "cos",
+                    "cam",
+                    "db2",
+                    "apigateway"
                 ],
-                "IsASMTemplate": true,
-                "IdentifyComplianceId": 0
+                "IsASMTemplate": false,
+                "IdentifyComplianceId": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "0db4a846-ad6e-4446-b393-6d5169c88778"
     }
 }
 ```

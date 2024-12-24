@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tse DescribeConfigFileReleases --cli-unfold-argument  \
-    --InstanceId abc \
-    --Namespace abc \
-    --Group abc \
-    --FileName abc \
+    --InstanceId ins-id \
+    --Namespace namespace \
+    --Group group \
+    --FileName a.yaml \
     --OnlyUse True \
-    --ReleaseName abc \
-    --OrderField abc \
-    --OrderDesc abc \
+    --ReleaseName releaseName \
+    --OrderField version \
+    --OrderDesc desc \
     --Limit 0 \
     --Offset 0
 ```
@@ -26,24 +26,24 @@ Output:
         "Releases": [
             {
                 "Id": 1,
-                "Name": "abc",
-                "Namespace": "abc",
-                "Group": "abc",
-                "FileName": "abc",
-                "Content": "abc",
-                "Comment": "abc",
-                "Md5": "abc",
+                "Name": "name",
+                "Namespace": "namespace",
+                "Group": "group",
+                "FileName": "a.yaml",
+                "Content": "content",
+                "Comment": "comment",
+                "Md5": "hash",
                 "Version": 1,
-                "CreateTime": "abc",
-                "CreateBy": "abc",
-                "ModifyTime": "abc",
-                "ModifyBy": "abc",
-                "ReleaseDescription": "abc",
+                "CreateTime": "2024-10-08 10:00:00",
+                "CreateBy": "user",
+                "ModifyTime": "2024-10-08 10:00:00",
+                "ModifyBy": "user",
+                "ReleaseDescription": "desc",
                 "Active": true,
-                "Format": "abc"
+                "Format": "yaml"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```
