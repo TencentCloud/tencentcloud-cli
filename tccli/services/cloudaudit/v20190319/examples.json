@@ -28,7 +28,7 @@
       {
         "document": "查询跟踪集详情",
         "input": "https://cloudaudit.tencentcloudapi.com/?Action=DescribeAudit\n&AuditName=xxxxx_cloudaudit_2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AuditName\": \"xxxxx_cloudaudit_2\",\n        \"CmqQueueName\": \"xxxxx-cloudaudit-2\",\n        \"CmqRegion\": \"hk\",\n        \"CosBucketName\": \"xxxxx-cloudaudit-2\",\n        \"CosRegion\": \"ap-hongkong\",\n        \"IsEnableCmqNotify\": 1,\n        \"LogFilePrefix\": \"xxx2312\",\n        \"ReadWriteAttribute\": 1,\n        \"AuditStatus\": 1,\n        \"KeyId\": \"34\",\n        \"IsEnableKmsEncry\": 0,\n        \"KmsRegion\": \"hk\",\n        \"KmsAlias\": \"test\",\n        \"RequestId\": \"e23ee347-d011-482a-83fa-12e7d318dd9f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditName\": \"xxxxx_cloudaudit_2\",\n        \"CmqQueueName\": \"xxxxx-cloudaudit-2\",\n        \"CmqRegion\": \"hk\",\n        \"CosBucketName\": \"xxxxx-cloudaudit-2\",\n        \"CosRegion\": \"ap-hongkong\",\n        \"IsEnableCmqNotify\": 1,\n        \"LogFilePrefix\": \"xxx2312\",\n        \"ReadWriteAttribute\": 1,\n        \"AuditStatus\": 1,\n        \"KeyId\": \"34\",\n        \"IsEnableKmsEncry\": 0,\n        \"KmsRegion\": \"hk\",\n        \"KmsAlias\": \"cloudtrail\",\n        \"RequestId\": \"e23ee347-d011-482a-83fa-12e7d318dd9f\"\n    }\n}",
         "title": "查询跟踪集详情"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "在控制台或者使用接口，查看已经创建的跟踪集列表",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTracks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Tracks\": [\n            {\n                \"TrackId\": 1,\n                \"Name\": \"audit\",\n                \"ActionType\": \"Read\",\n                \"ResourceType\": \"audit\",\n                \"EventNames\": [\n                    \"LookUpEvents\"\n                ],\n                \"Storage\": {\n                    \"StorageName\": \"audit-cos\",\n                    \"StoragePrefix\": \"test\",\n                    \"StorageRegion\": \"ap-guangzhou\",\n                    \"StorageType\": \"cos\"\n                },\n                \"Status\": 1,\n                \"CreateTime\": \"2021-01-14 14:43:38\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Tracks\": [\n            {\n                \"TrackId\": 1,\n                \"Name\": \"audit\",\n                \"ActionType\": \"Read\",\n                \"ResourceType\": \"audit\",\n                \"EventNames\": [\n                    \"LookUpEvents\"\n                ],\n                \"Storage\": {\n                    \"StorageName\": \"audit-cos\",\n                    \"StoragePrefix\": \"cloudtrail\",\n                    \"StorageRegion\": \"ap-guangzhou\",\n                    \"StorageType\": \"cos\"\n                },\n                \"Status\": 1,\n                \"CreateTime\": \"2021-01-14 14:43:38\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
         "title": "查询操作审计跟踪集列表"
       }
     ],
@@ -76,7 +76,7 @@
       {
         "document": "查询跟踪集概要",
         "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListAudits\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AuditSummarys\": [\n            {\n                \"AuditName\": \"xxxxxx\",\n                \"CosBucketName\": \"ccczzz\",\n                \"LogFilePrefix\": \"xxxx\",\n                \"AuditStatus\": 1\n            }\n        ],\n        \"RequestId\": \"c4496845-6b3b-4e23-8045-e2060b0405a4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditSummarys\": [\n            {\n                \"AuditStatus\": 0,\n                \"CosBucketName\": \"bucket\",\n                \"AuditName\": \"test\",\n                \"LogFilePrefix\": \"audit\"\n            }\n        ],\n        \"RequestId\": \"4c17b8ae-6b1e-4e68-bcff-825d73916011\"\n    }\n}",
         "title": "查询跟踪集概要"
       }
     ],

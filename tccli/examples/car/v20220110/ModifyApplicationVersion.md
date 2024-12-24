@@ -8,7 +8,7 @@ Input:
 tccli car ModifyApplicationVersion --cli-unfold-argument  \
     --ApplicationId app-dgxeqlc \
     --ApplicationVersionId ver-hert4hq \
-    --ApplicationVersionName xxx
+    --ApplicationVersionName version_name
 ```
 
 Output: 

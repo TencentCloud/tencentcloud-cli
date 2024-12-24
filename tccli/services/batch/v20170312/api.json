@@ -1028,22 +1028,20 @@
         {
           "disabled": false,
           "document": "黑石私有网络ID",
-          "example": "",
+          "example": "vpc-oq2tyq8w",
           "member": "string",
           "name": "VpcId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "黑石子网ID",
-          "example": "",
+          "example": "subnet-dsca232",
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6086,60 +6084,60 @@
         {
           "disabled": false,
           "document": "任务模板ID",
-          "example": "",
+          "example": "task-tmpl-0brmi1lm",
           "member": "string",
           "name": "TaskTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务模板名称",
-          "example": "",
+          "example": "testbatch",
           "member": "string",
           "name": "TaskTemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务模板描述",
-          "example": "",
+          "example": "test batch is a example ,just for a demo.",
           "member": "string",
           "name": "TaskTemplateDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务模板信息",
-          "example": "",
+          "example": "无",
           "member": "Task",
           "name": "TaskTemplateInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2018-03-19 15:40:06",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务模板绑定的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

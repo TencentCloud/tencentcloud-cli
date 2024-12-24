@@ -8988,7 +8988,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，本字段用于指定模板Id进行查询。\nKey：template-id Values：需要查询的模板Id列表",
+          "document": "搜索条件，本字段用于指定模板Id进行查询。\n- Key：template-id Values：需要查询的模板Id列表\n- Key：template-name Values：需要查询的模板名称列表\n",
           "example": "Filters",
           "member": "Filter",
           "name": "Filters",

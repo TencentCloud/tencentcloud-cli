@@ -7,7 +7,7 @@ Input:
 ```
 tccli car DescribeApplicationFileInfo --cli-unfold-argument  \
     --ApplicationId app-dafe32hr \
-    --FilePathList xxx/file1.exe
+    --FilePathList Windows\test.exe
 ```
 
 Output: 
@@ -17,8 +17,8 @@ Output:
         "RequestId": "4eb17e58-68da-4e9a-b298-0894723c9022",
         "FileInfoList": [
             {
-                "FilePath": "xxx/file1.exe",
-                "FileState": "EXIST"
+                "FilePath": "Windows\\test.exe",
+                "FileState": "NO_EXIST"
             }
         ]
     }

@@ -20,21 +20,21 @@ Output:
         "UserApplicationList": [
             {
                 "ApplicationId": "app-6get57ac",
-                "ApplicationName": "xxx",
+                "ApplicationName": "app_name",
                 "ApplicationType": "Application3D",
-                "ApplicationExePath": "xxx",
-                "ApplicationInterList": "xxx",
-                "ApplicationParams": "xxx",
+                "ApplicationExePath": "CloudXR\\test.exe",
+                "ApplicationInterList": "test_inter.exe",
+                "ApplicationParams": "-param 123",
                 "ApplicationCreateTime": "2021-08-29T08:00:30Z",
-                "ApplicationRunStatus": "xxx",
-                "ApplicationUpdateStatus": "xxx",
+                "ApplicationRunStatus": "ApplicationRunning",
+                "ApplicationUpdateStatus": "ApplicationUpdateNormal",
                 "ApplicationUpdateProgress": 100,
                 "ApplicationVersions": [
                     {
                         "ApplicationVersionId": "ver-gq4c5eq",
                         "ApplicationVersionSize": 1024,
-                        "ApplicationVersionStatus": "xxx",
-                        "ApplicationVersionName": "xxx",
+                        "ApplicationVersionStatus": "Usable",
+                        "ApplicationVersionName": "version_name",
                         "ApplicationVersionRegions": [
                             "ap-chinese-mainland",
                             "na-north-america-fusion"
@@ -45,8 +45,8 @@ Output:
                 ],
                 "ApplicationBaseInfo": {
                     "WindowUseType": "ApplicationWindow",
-                    "WindowName": "xxx",
-                    "WindowClassName": "xxx",
+                    "WindowName": "window _name",
+                    "WindowClassName": "class_name",
                     "WindowCaptureMode": "HOOK"
                 },
                 "ApplicationNature": "PUBLIC",
@@ -56,14 +56,14 @@ Output:
                         "CosRegion": "ap-guangzhou",
                         "StoreType": "LOG",
                         "StoreState": "ON",
-                        "StorePath": "xxx"
+                        "StorePath": "CloudXR\\log"
                     },
                     {
                         "CosBucket": "bucket-123456",
                         "CosRegion": "ap-guangzhou",
                         "StoreType": "ARCHIVE",
                         "StoreState": "OFF",
-                        "StorePath": "xxx"
+                        "StorePath": "CloudXR\\archive"
                     }
                 ]
             }
@@ -71,7 +71,7 @@ Output:
         "UserMobileApplicationList": [
             {
                 "ApplicationId": "app-a1b2c3",
-                "ApplicationName": "abc",
+                "ApplicationName": "app_name",
                 "ApplicationType": "ApplicationAPK",
                 "ApplicationRunStatus": "ApplicationRunning",
                 "ApplicationUpdateStatus": "ApplicationUpdateCreating",
@@ -80,7 +80,7 @@ Output:
                     {
                         "ApplicationVersionId": "ver-a1b2c3",
                         "ApplicationVersionStatus": "Uploading",
-                        "ApplicationVersionName": "abc",
+                        "ApplicationVersionName": "version_name",
                         "CreateTime": "2020-09-22T00:00:00+00:00",
                         "ApplicationVersionRegions": [],
                         "ApplicationVersionUpdateMode": "",

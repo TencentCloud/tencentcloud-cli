@@ -13,13 +13,13 @@ Output:
     "Response": {
         "AuditSummarys": [
             {
-                "AuditName": "xxxxxx",
-                "CosBucketName": "ccczzz",
-                "LogFilePrefix": "xxxx",
-                "AuditStatus": 1
+                "AuditStatus": 0,
+                "CosBucketName": "bucket",
+                "AuditName": "test",
+                "LogFilePrefix": "audit"
             }
         ],
-        "RequestId": "c4496845-6b3b-4e23-8045-e2060b0405a4"
+        "RequestId": "4c17b8ae-6b1e-4e68-bcff-825d73916011"
     }
 }
 ```

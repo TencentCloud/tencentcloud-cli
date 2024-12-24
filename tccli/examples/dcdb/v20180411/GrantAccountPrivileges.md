@@ -9,8 +9,9 @@ tccli dcdb GrantAccountPrivileges --cli-unfold-argument  \
     --InstanceId dcdbt-fdpjf5zh \
     --UserName testuser1 \
     --Host 172.17.% \
-    --DbName * \
-    --Type * \
+    --DbName product_db \
+    --Type table \
+    --Object prod_user_tbl \
     --Privileges select update
 ```
 

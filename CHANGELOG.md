@@ -1,3 +1,269 @@
+# Release 3.0.1122.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 123 次发布
+
+发布时间：2024-12-25 01:17:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBRoutes](http://document.tencentcloudapi.woa.com/document/product/236/77140)
+
+	* 新增入参：OpResourceId
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 98 次发布
+
+发布时间：2024-12-25 01:24:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56466)
+
+	* 新增入参：AlarmTemplateInfo
+
+
+新增数据结构：
+
+* [AlarmTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTemplateConfig)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 124 次发布
+
+发布时间：2024-12-25 01:33:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：IsSupportAI, GatewayId, GatewayState, IsAIGateway, IsAIEngine
+
+* [NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)
+
+	* 新增成员：SessionType, DataEngineId, ResourceGroupId, ResourceGroupName, PodSize, PodNumbers
+
+* [NotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessions)
+
+	* 新增成员：SessionType, DataEngineId, ResourceGroupId, ResourceGroupName
+
+* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
+
+	* 新增成员：FrameType, ImageType, ImageName, ImageVersion, Size, PythonSize, IsDefault, ResourceGroupScene, PythonCuSpec
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 37 次发布
+
+发布时间：2024-12-25 01:35:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BatchDomainBuyLog](http://document.tencentcloudapi.woa.com/document/product/242/38895#BatchDomainBuyLog)
+
+	* <font color="#dd0000">**修改成员**：</font>Success, Doing, Failed, BigDealId, PayStatus
+
+* [IntlTemplate](http://document.tencentcloudapi.woa.com/document/product/242/38895#IntlTemplate)
+
+	* <font color="#dd0000">**修改成员**：</font>TemplateType, Uin
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 28 次发布
+
+发布时间：2024-12-25 01:36:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SubscribeCheckStepTip](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeCheckStepTip)
+
+	* <font color="#dd0000">**修改成员**：</font>Message, HelpDoc
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 173 次发布
+
+发布时间：2024-12-25 01:39:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1595/85584)
+* [ChannelCreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/85583)
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增入参：OpenDynamicFlow
+
+
+新增数据结构：
+
+* [ChannelArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelArchiveDynamicApproverData)
+* [DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowApproverResult)
+* [DynamicFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowInfo)
+* [DynamicFlowResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowResult)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 迁移服务平台(msp) 版本：2018-03-19
+
+### 第 4 次发布
+
+发布时间：2024-12-25 01:54:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DeregisterMigrationTask
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 17 次发布
+
+发布时间：2024-12-25 01:56:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunWorkflow](http://document.tencentcloudapi.woa.com/document/product/1725/82465)
+
+	* 新增入参：Entrypoint
+
+
+修改数据结构：
+
+* [CosFileInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#CosFileInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Region
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 77 次发布
+
+发布时间：2024-12-25 02:14:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
+
+	* 新增入参：RequestBuffering, ResponseBuffering
+
+* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
+
+	* 新增入参：RequestBuffering, ResponseBuffering
+
+
+修改数据结构：
+
+* [ConfigFileTemplate](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ConfigFileTemplate)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, Name, Content, Format, Comment, CreateTime, CreateBy, ModifyTime, ModifyBy
+
+* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
+
+	* 新增成员：RequestBuffering, ResponseBuffering
+
+* [NacosReplica](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NacosReplica)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId
+
+* [ZookeeperReplica](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ZookeeperReplica)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 185 次发布
+
+发布时间：2024-12-25 02:18:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCcn](http://document.tencentcloudapi.woa.com/document/product/215/19204)
+
+	* 新增入参：InstanceMeteringType
+
+
+修改数据结构：
+
+* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+
+	* 新增成员：InstanceMeteringType
+
+
+
+
 # Release 3.0.1121.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

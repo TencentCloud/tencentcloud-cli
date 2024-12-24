@@ -11019,6 +11019,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群版readonly节点",
+          "example": "cdb-xxx|readonly",
+          "member": "string",
+          "name": "OpResourceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11029,10 +11038,10 @@
         {
           "disabled": false,
           "document": "路由信息数组",
-          "example": "无",
+          "example": "[{\"VipType\": 4,\"VipList\": [{\"Vip\": \"100.99.102.3\",\"Vport\": 14257}]},{\"VipType\": 3,\"VipList\": [{\"Vip\": \"10.66.133.177\",\"Vport\": 3306}]}]",
           "member": "Route",
           "name": "Routers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

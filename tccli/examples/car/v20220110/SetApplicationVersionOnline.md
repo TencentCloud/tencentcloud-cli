@@ -16,24 +16,26 @@ Output:
     "Response": {
         "Versions": [
             {
-                "ApplicationVersionId": "ver-cebgkd",
-                "ApplicationVersionSize": 1024,
-                "ApplicationVersionStatus": "Inuse",
-                "ApplicationVersionName": "xxx",
-                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "ApplicationVersionId": "ver-855fr3i4",
+                "ApplicationVersionName": "steamvr",
                 "ApplicationVersionRegions": [
-                    "ap-tokyo"
-                ]
+                    "ap-chinese-mainland"
+                ],
+                "ApplicationVersionSize": 5612961473,
+                "ApplicationVersionStatus": "Usable",
+                "ApplicationVersionUpdateMode": "",
+                "CreateTime": "2023-05-25T09:22:10Z"
             },
             {
-                "ApplicationVersionId": "ver-grshefa",
-                "ApplicationVersionSize": 2048,
-                "ApplicationVersionStatus": "Usable",
-                "ApplicationVersionName": "xxx",
-                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "ApplicationVersionId": "ver-qi5inuk4",
+                "ApplicationVersionName": "test",
                 "ApplicationVersionRegions": [
-                    "ap-tokyo"
-                ]
+                    "ap-chinese-mainland"
+                ],
+                "ApplicationVersionSize": 1978592076,
+                "ApplicationVersionStatus": "Inuse",
+                "ApplicationVersionUpdateMode": "",
+                "CreateTime": "2024-07-25T10:39:57Z"
             }
         ],
         "RequestId": "4eb17e58-68da-4e9a-b298-0894723c9022"

@@ -662,7 +662,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeDBRoutes\n&InstanceId=cdb-q0ltezep\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Routers\": [\n            {\n                \"VipType\": 4,\n                \"VipList\": [\n                    {\n                        \"Vip\": \"100.99.102.3\",\n                        \"Vport\": 14257\n                    }\n                ]\n            },\n            {\n                \"VipType\": 3,\n                \"VipList\": [\n                    {\n                        \"Vip\": \"10.66.133.177\",\n                        \"Vport\": 3306\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"76c03fcf-6d45-4d18-a759-339638c1eaf1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Routers\": [\n            {\n                \"VipType\": 3,\n                \"VipList\": [\n                    {\n                        \"Vip\": \"100.99.102.3\",\n                        \"Vport\": 14257,\n                        \"SnatIpList\": [\n                            \"\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"76c03fcf-6d45-4d18-a759-339638c1eaf1\"\n    }\n}",
         "title": "查询云数据库实例的路由示例"
       }
     ],

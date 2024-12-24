@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli car CreateApplication --cli-unfold-argument  \
-    --ApplicationName xxx \
+    --ApplicationName app_name \
     --ApplicationType Application3D
 ```
 

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tse DescribeGovernanceServiceContractVersions --cli-unfold-argument  \
-    --InstanceId abc \
-    --Namespace abc \
-    --Service abc
+    --InstanceId ins-id \
+    --Namespace namespace \
+    --Service service
 ```
 
 Output: 
@@ -17,12 +17,12 @@ Output:
     "Response": {
         "GovernanceServiceContractVersions": [
             {
-                "Version": "abc",
-                "Name": "abc",
-                "Key": "abc"
+                "Version": "1.0",
+                "Name": "name",
+                "Key": "key"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

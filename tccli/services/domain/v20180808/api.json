@@ -584,6 +584,7 @@
           "example": "Test",
           "member": "string",
           "name": "FirstName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -594,6 +595,7 @@
           "example": "Test",
           "member": "string",
           "name": "LastName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -604,6 +606,7 @@
           "example": "CN",
           "member": "string",
           "name": "Country",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -614,6 +617,7 @@
           "example": "Guangdong",
           "member": "string",
           "name": "Province",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -624,6 +628,7 @@
           "example": "Shenzhen",
           "member": "string",
           "name": "City",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -634,6 +639,7 @@
           "example": "Nanshan Road",
           "member": "string",
           "name": "AddressLine",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -644,6 +650,7 @@
           "example": "816000",
           "member": "string",
           "name": "ZipCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -654,6 +661,7 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -664,6 +672,7 @@
           "example": "+86.1360000000",
           "member": "string",
           "name": "Phone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -671,9 +680,10 @@
         {
           "disabled": false,
           "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "org name",
           "member": "string",
           "name": "CompanyName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -681,9 +691,10 @@
         {
           "disabled": false,
           "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "job title",
           "member": "string",
           "name": "JobTitle",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -691,9 +702,10 @@
         {
           "disabled": false,
           "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "address info",
           "member": "string",
           "name": "AddressLineTwo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -701,9 +713,10 @@
         {
           "disabled": false,
           "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "861***28",
           "member": "string",
           "name": "Fax",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -879,50 +892,50 @@
         {
           "disabled": false,
           "document": "日志ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量操作类型  new:域名注册  batch_transfer_prohibition_on:开启禁止转移 batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新 batch_update_prohibition_off:关闭禁止更新",
-          "example": "无",
+          "example": "new",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Number",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行状态  doing 执行中   done执行完成",
-          "example": "无",
+          "example": "done",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "提交时间",
-          "example": "无",
+          "example": "2024-10-01 12:21:2",
           "member": "string",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -932,7 +945,7 @@
           "example": "0",
           "member": "int64",
           "name": "Success",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -942,7 +955,7 @@
           "example": "0",
           "member": "int64",
           "name": "Doing",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -952,7 +965,7 @@
           "example": "0",
           "member": "int64",
           "name": "Failed",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -962,17 +975,17 @@
           "example": "20230516807032418894611",
           "member": "string",
           "name": "BigDealId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否支付\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "PayStatus",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -1150,30 +1163,30 @@
         {
           "disabled": false,
           "document": "批量任务id",
-          "example": "",
+          "example": "1001",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量任务状态  doing：进行中  success：成功  failed：失败  partial_success：部分成功",
-          "example": "",
+          "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批量任务类型",
-          "example": "",
+          "example": "batch_modify_owner",
           "member": "string",
           "name": "BatchAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1566,6 +1579,7 @@
           "example": "Test",
           "member": "string",
           "name": "FirstName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1576,6 +1590,7 @@
           "example": "Test",
           "member": "string",
           "name": "LastName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1586,6 +1601,7 @@
           "example": "CN",
           "member": "string",
           "name": "Country",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1596,6 +1612,7 @@
           "example": "Guangdong",
           "member": "string",
           "name": "Province",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1606,6 +1623,7 @@
           "example": "Shenzhen",
           "member": "string",
           "name": "City",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1616,6 +1634,7 @@
           "example": "Nanshan Road",
           "member": "string",
           "name": "AddressLine",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1626,6 +1645,7 @@
           "example": "816000",
           "member": "string",
           "name": "ZipCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1636,6 +1656,7 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1646,6 +1667,7 @@
           "example": "+86.1360000000",
           "member": "string",
           "name": "Phone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1653,9 +1675,10 @@
         {
           "disabled": false,
           "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "org name",
           "member": "string",
           "name": "CompanyName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1663,9 +1686,10 @@
         {
           "disabled": false,
           "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "job title",
           "member": "string",
           "name": "JobTitle",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1673,9 +1697,10 @@
         {
           "disabled": false,
           "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "address info",
           "member": "string",
           "name": "AddressLineTwo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1683,9 +1708,10 @@
         {
           "disabled": false,
           "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "86***28",
           "member": "string",
           "name": "Fax",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7071,40 +7097,40 @@
         {
           "disabled": false,
           "document": "注册联系人",
-          "example": "{}",
+          "example": "{\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"}",
           "member": "RegistrantContact",
           "name": "RegistrantContact",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后台联系人",
-          "example": "{}",
+          "example": "{\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"}",
           "member": "AdminContact",
           "name": "AdminContact",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "技术联系人",
-          "example": "{}",
+          "example": "{\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"}",
           "member": "TechnicalContact",
           "name": "TechnicalContact",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账单联系人",
-          "example": "{}",
+          "example": "{\"Province\": \"广东\",\"City\": \"深圳\",\"Fax\": \"\",\"AddressLine\": \"地址\",\"FirstName\": \"*n\",\"CompanyName\": \"\",\"JobTitle\": \"\",\"ZipCode\": \"**412000\",\"AddressLineTwo\": \"\",\"Country\": \"China\",\"LastName\": \"*i\",\"Phone\": \"+86.1***55\",\"Email\": \"***ng@tencent.com\"}",
           "member": "BillingContact",
           "name": "BillingContact",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7114,7 +7140,7 @@
           "example": "2021-08-13 11:00:00",
           "member": "datetime",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7124,17 +7150,17 @@
           "example": "tmpl-123121",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板类型",
-          "example": "无",
+          "example": "E",
           "member": "string",
           "name": "TemplateType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7144,7 +7170,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7154,17 +7180,17 @@
           "example": "2021-08-13 11:00:00",
           "member": "datetime",
           "name": "UpdatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Uin",
-          "example": "无",
+          "example": "200**233",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7840,50 +7866,50 @@
         {
           "disabled": false,
           "document": "域名后缀，例如.com",
-          "example": "",
+          "example": ".com",
           "member": "string",
           "name": "Tld",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "购买年限，范围[1-10]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Year",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名原价",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名现价",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "RealPrice",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品的购买类型，新购，续费，赎回，转入，续费并转入",
-          "example": "",
+          "example": "new",
           "member": "string",
           "name": "Operation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8011,6 +8037,7 @@
           "example": "Test",
           "member": "string",
           "name": "FirstName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8021,6 +8048,7 @@
           "example": "Test",
           "member": "string",
           "name": "LastName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8031,6 +8059,7 @@
           "example": "CN",
           "member": "string",
           "name": "Country",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8041,6 +8070,7 @@
           "example": "Guangdong",
           "member": "string",
           "name": "Province",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8051,6 +8081,7 @@
           "example": "Shenzhen",
           "member": "string",
           "name": "City",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8061,6 +8092,7 @@
           "example": "Nanshan Road",
           "member": "string",
           "name": "AddressLine",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8071,6 +8103,7 @@
           "example": "816000",
           "member": "string",
           "name": "ZipCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8081,6 +8114,7 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8091,6 +8125,7 @@
           "example": "+86.1360000000",
           "member": "string",
           "name": "Phone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8098,9 +8133,10 @@
         {
           "disabled": false,
           "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "org name\t",
           "member": "string",
           "name": "CompanyName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8108,9 +8144,10 @@
         {
           "disabled": false,
           "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "job title\t",
           "member": "string",
           "name": "JobTitle",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8118,9 +8155,10 @@
         {
           "disabled": false,
           "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "address info\t",
           "member": "string",
           "name": "AddressLineTwo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8128,9 +8166,10 @@
         {
           "disabled": false,
           "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "86***28\t",
           "member": "string",
           "name": "Fax",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8800,6 +8839,7 @@
           "example": "Test",
           "member": "string",
           "name": "FirstName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8810,6 +8850,7 @@
           "example": "Test",
           "member": "string",
           "name": "LastName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8820,6 +8861,7 @@
           "example": "CN",
           "member": "string",
           "name": "Country",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8830,6 +8872,7 @@
           "example": "Guangdong",
           "member": "string",
           "name": "Province",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8840,6 +8883,7 @@
           "example": "Shenzhen",
           "member": "string",
           "name": "City",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8850,6 +8894,7 @@
           "example": "Nanshan Road",
           "member": "string",
           "name": "AddressLine",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8860,6 +8905,7 @@
           "example": "816000",
           "member": "string",
           "name": "ZipCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8870,6 +8916,7 @@
           "example": "123@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8880,6 +8927,7 @@
           "example": "+86.1360000000",
           "member": "string",
           "name": "Phone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8887,9 +8935,10 @@
         {
           "disabled": false,
           "document": "公司/机构\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "org name\t",
           "member": "string",
           "name": "CompanyName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8897,9 +8946,10 @@
         {
           "disabled": false,
           "document": "职称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "job title\t",
           "member": "string",
           "name": "JobTitle",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8907,9 +8957,10 @@
         {
           "disabled": false,
           "document": "地址行2\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "address info\t",
           "member": "string",
           "name": "AddressLineTwo",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8917,9 +8968,10 @@
         {
           "disabled": false,
           "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "86***28\t",
           "member": "string",
           "name": "Fax",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9003,7 +9055,7 @@
         {
           "disabled": false,
           "document": "认证信息",
-          "example": "[]",
+          "example": "{\"OriginImgUrl\": \"https://image.cos..com/image1.jpg?\",\"CertificateCode\": \"1***12\",\"RegistrantCertificateCode\": \"\",\"RegistrantImgUrl\": \"\",\"RegistrantCertificateType\": \"\",\"CertificateType\": \"SFZ\",\"ImgUrl\": \"https://image.cos..com/image1.jpg?\"}",
           "member": "CertificateInfo",
           "name": "CertificateInfo",
           "output_required": true,
@@ -9013,7 +9065,7 @@
         {
           "disabled": false,
           "document": "联系人信息",
-          "example": "[]",
+          "example": "{\"Province\": \"*ng\",\"RegistrantType\": \"I\",\"OrganizationName\": \"*ng\",\"OrganizationNameCN\": \"*名\",\"Country\": \"CN\",\"RegistrantName\": \"*ng\",\"ZipCode\": \"0***0\",\"Email\": \"***@tencent.com\",\"City\": \"***hi\",\"RegistrantNameCN\": \"*名\",\"StreetCN\": \"***城\",\"Street\": \"***eng\",\"ProvinceCN\": \"*省\",\"CountryCN\": \"中国\",\"CityCN\": \"*市\",\"Telephone\": \"1***9\"}",
           "member": "ContactInfo",
           "name": "ContactInfo",
           "output_required": true,
@@ -9033,7 +9085,7 @@
         {
           "disabled": false,
           "document": "不符合规范原因",
-          "example": "\"\"",
+          "example": "该信息模板部分信息不规范，请重新填写",
           "member": "string",
           "name": "InvalidReason",
           "output_required": true,

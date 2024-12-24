@@ -13,14 +13,14 @@ Output:
 ```
 {
     "Response": {
-        "InstanceId": "abc",
+        "InstanceId": "ins-id",
         "TagInfos": [
             {
-                "TagKey": "abc",
-                "TagValue": "abc"
+                "TagKey": "tag-key",
+                "TagValue": "tag-value"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

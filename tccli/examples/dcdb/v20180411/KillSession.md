@@ -8,7 +8,7 @@ Input:
 tccli dcdb KillSession --cli-unfold-argument  \
     --InstanceId tdsqlshard-2gk4nxyz \
     --ShardId shard-ljilb4st \
-    --SessionId 1111 2222
+    --SessionId 11917970 11918810
 ```
 
 Output: 

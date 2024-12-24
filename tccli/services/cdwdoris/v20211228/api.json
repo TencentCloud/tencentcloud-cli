@@ -1047,7 +1047,7 @@
         {
           "disabled": false,
           "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
+          "example": "test",
           "member": "string",
           "name": "Database",
           "output_required": false,
@@ -1058,7 +1058,7 @@
         {
           "disabled": false,
           "document": "表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
+          "example": "test123",
           "member": "string",
           "name": "Table",
           "output_required": false,
@@ -1069,7 +1069,7 @@
         {
           "disabled": false,
           "document": "表总字节数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "example": "23124",
           "member": "int64",
           "name": "TotalBytes",
           "output_required": false,
@@ -1123,14 +1123,14 @@
         },
         {
           "disabled": false,
-          "document": "是否置灰",
+          "document": "是否置灰\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsGray",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

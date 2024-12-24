@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tse DeleteConfigFileReleases --cli-unfold-argument  \
-    --InstanceId abc \
-    --ConfigFileReleases.0.Namespace abc \
-    --ConfigFileReleases.0.Group abc \
-    --ConfigFileReleases.0.FileName abc \
-    --ConfigFileReleases.0.ReleaseVersion abc
+    --InstanceId ins-id \
+    --ConfigFileReleases.0.Namespace namespace \
+    --ConfigFileReleases.0.Group group \
+    --ConfigFileReleases.0.FileName a.yaml \
+    --ConfigFileReleases.0.ReleaseVersion 1.0
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

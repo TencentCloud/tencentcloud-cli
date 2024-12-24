@@ -6989,7 +6989,7 @@
         {
           "disabled": false,
           "document": "文件名",
-          "example": "/cos_backup%2Ftdsql%2Fset_1732784236_431669%2Fxtrabackup%2F2024-12-10%2Fcos_xtrabackup%2B1733814880%2B20241210%2B151440%2B471405052%2Bxbstream.lz4?q-sign-algorithm=sha1&q-ak=AKIDWGwkDTy3LOG3wfDtIKAYpBKOh3MVb41j&q-sign-time=1733884388%3B1733885288&q-key-time=1733884388%3B1733885288&q-header-list=host&q-url-param-list=&q-signature=f978b91c6f7031d47fce45bb07b5164b7192b3d9",
+          "example": "/cos_backup%2Ftdsql%2Fset_1732784236_431669%2Fxtrabackup%2F2024-12-10%2Fcos_xtrabackup%2B1733814880%2B20241210%2B151440%2B471405052%2Bxbstream.lz4?q-sign-algorithm=sha1&q-ak=AKIDxxxx&q-sign-time=1733884388%3B1733885288&q-key-time=1733884388%3B1733885288&q-header-list=host&q-url-param-list=&q-signature=f978b91c6f7031d47fce45bb07b5164b7192b3d9",
           "member": "string",
           "name": "FileName",
           "output_required": true,

@@ -10,7 +10,7 @@ tccli config ListAggregateConfigRules --cli-unfold-argument  \
     --Limit 10 \
     --OrderType  \
     --State ACTIVE \
-    --ComplianceResult abc \
+    --ComplianceResult COMPLIANT \
     --RuleName  \
     --RuleOwnerId 1 \
     --AccountGroupId ca-sdfs7734h24h3
@@ -36,11 +36,17 @@ Output:
                     "ins-asdasd"
                 ],
                 "Annotation": null,
+                "RuleOwnerId": 23424,
                 "CompliancePackId": "cp-xzfz0vu007feuhwi8auv",
                 "CompliancePackName": "合规1",
+                "AccountGroupId": "ca-sdfs7734h24h3",
+                "AccountGroupName": "账号组",
                 "ComplianceResult": "NON_COMPLIANT",
                 "ConfigRuleId": "cr-13vkg9c31dixgabkepxe",
                 "ConfigRuleInvokedTime": null,
+                "ManageTriggerType": [
+                    "SCHEDULE"
+                ],
                 "CreateTime": "2022-11-16 14:25:01",
                 "Description": "帐号访问管理中用户至少关联一个用户组，则符合规则。",
                 "Identifier": "cam-user-group-bound",

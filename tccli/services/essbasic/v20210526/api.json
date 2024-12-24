@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ArchiveDynamicFlow": {
+      "document": "该接口用于结束动态签署方2.0的合同流程。\n\n\n**功能开通**\n- 动态签署方2.0功能的使用需要先<font color=\"red\">联系产品经理开通模块化计费功能</font>，然后到控制台中打开此功能。详细的使用说明请参考<a href=\"https://qian.tencent.com/developers/company/dynamic_signer_v2\" target=\"_blank\">动态签署方2.0</a>文档。\n\n**使用条件**\n- 此接口只能在<font color=\"red\">合同处于非终态且<b>所有的签署方都已经完成签署</b></font>。一旦合同进入终态（例如：过期、拒签、撤销或者调用过此接口成功过），将无法通过此接口结束合同流程。",
+      "input": "ArchiveDynamicFlowRequest",
+      "name": "结束动态签署流程",
+      "output": "ArchiveDynamicFlowResponse",
+      "status": "online"
+    },
     "ChannelBatchCancelFlows": {
       "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n批量撤销结果可以通过接口返回的TaskId关联[批量撤销任务结果回调](https://qian.tencent.com/developers/partner/callback_types_contracts_sign#%E4%B9%9D-%E6%89%B9%E9%87%8F%E6%92%A4%E9%94%80%E7%BB%93%E6%9E%9C%E5%9B%9E%E8%B0%83)或通过接口[查询批量撤销合同结果](https://qian.tencent.com/developers/partnerApis/operateFlows/DescribeCancelFlowsTask)主动查询。\n\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人（并已经授予撤销权限）或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>\n- <font color='red'>只有撤销没有参与方签署过或只有自动签署签署过的合同，才会返还合同额度。</font>\n- 撤销后可以看合同PDF内容的人员： 发起方的超管， 发起方自己，发起方撤销合同的操作人员，已经签署合同、已经填写合同、邀请填写已经补充信息的参与人员， 其他参与人员看不到合同的内容。",
       "input": "ChannelBatchCancelFlowsRequest",
@@ -61,6 +68,13 @@
       "input": "ChannelCreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
+      "status": "online"
+    },
+    "ChannelCreateDynamicFlowApprover": {
+      "document": "接口（ChannelCreateDynamicFlowApprover）用来补充<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>发起的动态合同的签署人信息\n**注**: \n<ul>\n<li>此接口需要保证：渠道企业已开启：模块化计费能力，</li>\n<li>此接口需要保证：渠道应用已开启：动态签署人2.0能力</li>\n<li>此接口需要保证：合同发起时指定开启了动态合同</li>\n<li>此接口补充的动态签署人传参规则，请参考接口：<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>的签署人传参规则</li>\n</ul>",
+      "input": "ChannelCreateDynamicFlowApproverRequest",
+      "name": "渠道版补充动态合同签署人接口",
+      "output": "ChannelCreateDynamicFlowApproverResponse",
       "status": "online"
     },
     "ChannelCreateEmbedWebUrl": {
@@ -797,6 +811,62 @@
       ],
       "usage": "in"
     },
+    "ArchiveDynamicFlowRequest": {
+      "document": "ArchiveDynamicFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程ID",
+          "example": "\"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ArchiveDynamicFlowResponse": {
+      "document": "ArchiveDynamicFlow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态签署人的参与人信息",
+          "example": "无",
+          "member": "ChannelArchiveDynamicApproverData",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AuthFailMessage": {
       "document": "授权出错信息",
       "members": [
@@ -1179,6 +1249,34 @@
         }
       ],
       "usage": "in"
+    },
+    "ChannelArchiveDynamicApproverData": {
+      "document": "动态签署2.0合同参与人信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。 可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\t",
+          "example": "06f2bc0f1772d8deac2f92b5df61a5ac",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。 填写控件和签署控件都与特定的角色编号关联。\t",
+          "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ChannelBatchCancelFlowsRequest": {
       "document": "ChannelBatchCancelFlows请求参数结构体",
@@ -2054,6 +2152,52 @@
       ],
       "type": "object"
     },
+    "ChannelCreateDynamicFlowApproverRequest": {
+      "document": "ChannelCreateDynamicFlowApprover请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动态合同信息\n",
+          "example": "无",
+          "member": "DynamicFlowInfo",
+          "name": "FillDynamicFlowList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。 此接口下面信息必填。 <ul> <li>渠道应用标识: Agent.AppId</li> <li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li> <li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li> </ul> 第三方平台子客企业和员工必须已经经过实名认证\t",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateDynamicFlowApproverResponse": {
+      "document": "ChannelCreateDynamicFlowApprover返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动态合同补充结果列表",
+          "example": "无",
+          "member": "DynamicFlowResult",
+          "name": "DynamicFlowResultList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateEmbedWebUrlRequest": {
       "document": "ChannelCreateEmbedWebUrl请求参数结构体",
       "members": [
@@ -2323,7 +2467,7 @@
         {
           "disabled": false,
           "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
-          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "example": "合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}",
           "member": "string",
           "name": "CustomShowMap",
           "required": false,
@@ -2427,6 +2571,15 @@
           "name": "PreviewType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启动态合同（动态签署人2.0）\n<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>\n<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>\n",
+          "example": "false",
+          "member": "bool",
+          "name": "OpenDynamicFlow",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2457,7 +2610,7 @@
         {
           "disabled": false,
           "document": "预览链接，有效期5分钟\n注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL",
-          "example": "https://embed.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDAY0UUckp7ouj3qU3GpRQCZvA3aO2l0&codeType=QUICK&businessType=RESOURCE&businessId=yDCY0UUckp7oucf2UxAAGY1RtjPw9Pyt",
+          "example": "https://embed.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDAY0UUckp7ouj3qU3GpRQCZvA3aO2l0",
           "member": "string",
           "name": "PreviewUrl",
           "output_required": false,
@@ -8853,6 +9006,110 @@
         }
       ],
       "usage": "in"
+    },
+    "DynamicFlowApproverResult": {
+      "document": "动态合同签署人结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；\t",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署ID - 发起流程时系统自动补充 - 创建签署链接时，可以通过查询详情接口获得签署人的SignId，然后可传入此值为该签署人创建签署链接，无需再传姓名、手机号、证件号等其他信息\t",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署人状态信息",
+          "example": "无",
+          "member": "int64",
+          "name": "ApproverStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DynamicFlowInfo": {
+      "document": "动态合同信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。 - 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 - 可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。 - <font color=\"red\">不建议继续使用</font>，请使用<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#fillapproverinfo/\" target=\"_blank\">补充签署人结构体</a>中的FlowId指定合同\t",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合同流程的参与方列表, 最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，不同类型的签署方传参方式可以参考文档 [签署方入参指引](https://qian.tencent.com/developers/partner/flow_approver)。 如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序, 请确保列表中参与人的顺序符合实际签署顺序。\t",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApprovers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传： <ul><li> **E_PRESCRIPTION_AUTO_SIGN**：电子处方单（医疗自动签） </li><li> **OTHER** : 通用场景</li></ul> 注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`\t",
+          "example": "E_PRESCRIPTION_AUTO_SIGN\t",
+          "member": "string",
+          "name": "AutoSignScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人校验方式 VerifyCheck: 人脸识别（默认） MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证） 参数说明：可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverVerifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DynamicFlowResult": {
+      "document": "动态合同补充签署人结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。 建议开发者妥善保存此流程ID，以便于顺利进行后续操作。 [点击查看FlowId在控制台上的位置](https://qcloudimg.tencent-cloud.cn/raw/05af26573d5106763b4cfbb9f7c64b41.png)\t",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动态合同签署人补充结果信息列表",
+          "example": "无",
+          "member": "DynamicFlowApproverResult",
+          "name": "DynamicFlowApproverList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EmbedUrlOption": {
       "document": "创建嵌入式页面url个性化参数",

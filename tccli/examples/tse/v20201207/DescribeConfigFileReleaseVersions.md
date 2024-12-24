@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tse DescribeConfigFileReleaseVersions --cli-unfold-argument  \
-    --InstanceId abc \
-    --Namespace abc \
-    --Group abc \
-    --FileName abc
+    --InstanceId ins-id \
+    --Namespace namespace \
+    --Group group \
+    --FileName a.yaml
 ```
 
 Output: 
@@ -18,11 +18,11 @@ Output:
     "Response": {
         "ReleaseVersions": [
             {
-                "Name": "abc",
+                "Name": "a.yaml",
                 "Active": true
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

@@ -1,7 +1,7 @@
 {
   "actions": {
     "VerifyLicense": {
-      "document": "通过运行时roleId查询对应的软件 LICENSE",
+      "document": "从软件进程读取 LICENSE。",
       "input": "VerifyLicenseRequest",
       "name": "从应用软件进程验证授权信息",
       "output": "VerifyLicenseResponse",

@@ -6,47 +6,65 @@ Input:
 
 ```
 tccli api DescribeZones --cli-unfold-argument  \
-    --Product xx
+    --Product cvm
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 5,
+        "RequestId": "7285e882-98f7-4b03-8ae0-a186d186e78e",
+        "TotalCount": 4,
         "ZoneSet": [
             {
-                "ZoneState": "UNAVAILABLE",
-                "ZoneId": "100001",
-                "Zone": "ap-guangzhou-1",
-                "ZoneName": "广州一区"
+                "MachineRoomTypeMC": null,
+                "ParentZone": "",
+                "ParentZoneId": "",
+                "ParentZoneName": "",
+                "Zone": "ap-beijing-3",
+                "ZoneId": "800003",
+                "ZoneIdMC": null,
+                "ZoneName": "北京三区",
+                "ZoneState": "AVAILABLE",
+                "ZoneType": "availability-zone"
             },
             {
+                "MachineRoomTypeMC": null,
+                "ParentZone": "",
+                "ParentZoneId": "",
+                "ParentZoneName": "",
+                "Zone": "ap-beijing-6",
+                "ZoneId": "800006",
+                "ZoneIdMC": null,
+                "ZoneName": "北京六区",
                 "ZoneState": "AVAILABLE",
-                "ZoneId": "100002",
-                "Zone": "ap-guangzhou-2",
-                "ZoneName": "广州二区"
+                "ZoneType": "availability-zone"
             },
             {
+                "MachineRoomTypeMC": null,
+                "ParentZone": "",
+                "ParentZoneId": "",
+                "ParentZoneName": "",
+                "Zone": "ap-beijing-7",
+                "ZoneId": "800007",
+                "ZoneIdMC": null,
+                "ZoneName": "北京七区",
                 "ZoneState": "AVAILABLE",
-                "ZoneId": "100003",
-                "Zone": "ap-guangzhou-3",
-                "ZoneName": "广州三区"
+                "ZoneType": "availability-zone"
             },
             {
+                "MachineRoomTypeMC": null,
+                "ParentZone": "",
+                "ParentZoneId": "",
+                "ParentZoneName": "",
+                "Zone": "ap-beijing-8",
+                "ZoneId": "800008",
+                "ZoneIdMC": null,
+                "ZoneName": "北京八区",
                 "ZoneState": "AVAILABLE",
-                "ZoneId": "100004",
-                "Zone": "ap-guangzhou-4",
-                "ZoneName": "广州四区"
-            },
-            {
-                "ZoneState": "AVAILABLE",
-                "ZoneId": "100005",
-                "Zone": "ap-guangzhou-5",
-                "ZoneName": "广州五区"
+                "ZoneType": "availability-zone"
             }
-        ],
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+        ]
     }
 }
 ```

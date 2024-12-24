@@ -18,7 +18,7 @@ Output:
                 "ApplicationVersionId": "ver-uechqlx",
                 "ApplicationVersionSize": 1024,
                 "ApplicationVersionStatus": "Inuse",
-                "ApplicationVersionName": "xxx",
+                "ApplicationVersionName": "version_name",
                 "ApplicationVersionRegions": [
                     "ap-chinese-mainland",
                     "na-north-america-fusion"

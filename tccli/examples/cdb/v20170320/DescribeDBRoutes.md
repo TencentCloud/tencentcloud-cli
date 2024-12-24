@@ -15,20 +15,14 @@ Output:
     "Response": {
         "Routers": [
             {
-                "VipType": 4,
-                "VipList": [
-                    {
-                        "Vip": "100.99.102.3",
-                        "Vport": 14257
-                    }
-                ]
-            },
-            {
                 "VipType": 3,
                 "VipList": [
                     {
-                        "Vip": "10.66.133.177",
-                        "Vport": 3306
+                        "Vip": "100.99.102.3",
+                        "Vport": 14257,
+                        "SnatIpList": [
+                            ""
+                        ]
                     }
                 ]
             }

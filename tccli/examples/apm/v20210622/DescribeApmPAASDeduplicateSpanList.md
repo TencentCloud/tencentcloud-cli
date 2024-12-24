@@ -6,13 +6,15 @@ Input:
 
 ```
 tccli apm DescribeApmPAASDeduplicateSpanList --cli-unfold-argument  \
-    --OrderBy.Value xx \
-    --OrderBy.Key xx \
-    --Filters.0.Key traceID \
-    --Filters.0.Type in \
-    --Filters.0.Value 663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac \
-    --InstanceId 52Dpv13GR \
-    --BusinessName tdmq
+    --OrderBy.Key abc \
+    --OrderBy.Value abc \
+    --StartTime 0 \
+    --EndTime 0 \
+    --InstanceId abc \
+    --Filters.0.Type abc \
+    --Filters.0.Key abc \
+    --Filters.0.Value abc \
+    --BusinessName abc
 ```
 
 Output: 
@@ -20,54 +22,55 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
         "Spans": [
             {
-                "TraceID": "xx",
+                "TraceID": "abc",
                 "Logs": [
                     {
                         "Timestamp": 0,
                         "Fields": [
                             {
-                                "Type": "xx",
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Type": "abc",
+                                "Key": "abc",
+                                "Value": "abc"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Type": "abc",
+                        "Key": "abc",
+                        "Value": "abc"
                     }
                 ],
                 "Process": {
-                    "ServiceName": "xx",
+                    "ServiceName": "abc",
                     "Tags": [
                         {
-                            "Type": "xx",
-                            "Value": "xx",
-                            "Key": "xx"
+                            "Type": "abc",
+                            "Key": "abc",
+                            "Value": "abc"
                         }
                     ]
                 },
                 "Timestamp": 0,
-                "OperationName": "xx",
+                "OperationName": "abc",
                 "References": [
                     {
-                        "RefType": "xx",
-                        "SpanID": "xx",
-                        "TraceID": "xx"
+                        "RefType": "abc",
+                        "SpanID": "abc",
+                        "TraceID": "abc"
                     }
                 ],
                 "StartTime": 0,
                 "Duration": 0,
-                "SpanID": "xx",
-                "StartTimeMillis": 0
+                "SpanID": "abc",
+                "StartTimeMillis": 0,
+                "ParentSpanID": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

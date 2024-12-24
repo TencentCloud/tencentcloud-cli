@@ -7,10 +7,10 @@ Input:
 ```
 tccli dcdb ModifyAccountConfig --cli-unfold-argument  \
     --InstanceId tdsqlshard-lfkz0geb \
-    --UserName user_test \
+    --UserName user_ops \
     --Host % \
     --Configs.0.Config max_user_connections \
-    --Configs.0.Value 123
+    --Configs.0.Value 90
 ```
 
 Output: 

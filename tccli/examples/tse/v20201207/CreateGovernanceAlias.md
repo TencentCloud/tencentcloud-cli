@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli tse CreateGovernanceAlias --cli-unfold-argument  \
-    --InstanceId abc \
-    --Alias abc \
-    --AliasNamespace abc \
-    --Service abc \
-    --Namespace abc \
-    --Comment abc
+    --InstanceId ins-id \
+    --Alias alias \
+    --AliasNamespace alias-namespace \
+    --Service service \
+    --Namespace namespace \
+    --Comment comment
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

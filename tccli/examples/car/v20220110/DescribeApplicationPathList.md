@@ -15,7 +15,8 @@ Output:
 {
     "Response": {
         "PathList": [
-            "xxxx\\xxx.exe"
+            "AppXR\\CLOUD\\UnityCrashHandler64.exe",
+            "AppXR\\CLOUD\\XR CLOUD.exe"
         ],
         "RequestId": "4eb17e58-68da-4e9a-b298-0894723c9022"
     }

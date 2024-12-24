@@ -217,60 +217,60 @@
         {
           "disabled": false,
           "document": "权限组ID",
-          "example": "",
+          "example": "ag-gei2xxxx",
           "member": "string",
           "name": "AccessGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权限组名称",
-          "example": "",
+          "example": "access-group-test",
           "member": "string",
           "name": "AccessGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权限组描述",
-          "example": "",
+          "example": "create access group example",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-12-24T20:00:47+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC网络类型（1：CVM；2：黑石1.0）",
-          "example": "",
+          "document": "VPC网络类型（1：CVM）",
+          "example": "1",
           "member": "uint64",
           "name": "VpcType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "VPC网络ID",
-          "example": "",
+          "example": "vpc-0q1xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -375,7 +375,7 @@
         {
           "disabled": false,
           "document": "权限组名称",
-          "example": "test",
+          "example": "access-group-test",
           "member": "string",
           "name": "AccessGroupName",
           "required": true,
@@ -383,7 +383,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC网络类型（1：CVM；2：黑石1.0）",
+          "document": "VPC网络类型（1：CVM）",
           "example": "1",
           "member": "uint64",
           "name": "VpcType",
@@ -393,7 +393,7 @@
         {
           "disabled": false,
           "document": "VPC网络ID",
-          "example": "vpc-967aipkx",
+          "example": "vpc-0q1uxxxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -402,7 +402,7 @@
         {
           "disabled": false,
           "document": "权限组描述，默认为空字符串",
-          "example": "test",
+          "example": "create access group example",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -420,6 +420,7 @@
           "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroup",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

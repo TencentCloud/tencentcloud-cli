@@ -843,7 +843,7 @@
         {
           "disabled": false,
           "document": "应用名称",
-          "example": "\"xxx\"",
+          "example": "\"app_name\"",
           "member": "string",
           "name": "ApplicationName",
           "required": true,
@@ -967,7 +967,7 @@
         {
           "disabled": false,
           "document": "应用版本数据（新增）",
-          "example": "\"\"",
+          "example": "{       \"ApplicationFileName\": \"\",       \"ApplicationVersionId\": \"ver-ug59y45y\",       \"ApplicationVersionName\": \"test\",       \"ApplicationVersionRegions\": [         \"ap-chinese-mainland\"       ],       \"ApplicationVersionSize\": 0,       \"ApplicationVersionStatus\": \"Creating\",       \"ApplicationVersionUpdateMode\": \"FULL\",       \"CreateTime\": \"2024-12-23T11:13:55Z\"     }",
           "member": "UserApplicationVersion",
           "name": "Version",
           "output_required": true,
@@ -1179,7 +1179,7 @@
         {
           "disabled": false,
           "document": "应用文件路径列表",
-          "example": "\"\"",
+          "example": "[\"Windows\\\\\\\\test.exe\"]",
           "member": "string",
           "name": "FilePathList",
           "required": false,
@@ -1193,13 +1193,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用文件数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "应用文件数据列表",
+          "example": "[       {         \"FilePath\": \"Windows\\\\\\\\test.exe\",         \"FileState\": \"NO_EXIST\"       }     ]",
           "member": "UserApplicationFileInfo",
           "name": "FileInfoList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1234,7 +1234,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "\"\"",
+          "example": "[{\"Name\":\"ApplicationId\",\"Values\":[\"app-utxfohff\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1258,7 +1258,7 @@
         {
           "disabled": false,
           "document": "应用列表信息",
-          "example": "\"\"",
+          "example": "[{  \"ApplicationBaseInfo\": {           \"WindowCaptureMode\": \"\",           \"WindowClassName\": \"\",           \"WindowName\": \"\",           \"WindowUseType\": \"\"         },         \"ApplicationCreateTime\": \"2023-05-25T09:09:47Z\",         \"ApplicationExePath\": \"C:/Program Files (x86)/Steam/steamapps/common/SteamVR/bin/win64/vrstartup.exe\",         \"ApplicationId\": \"app-o4onb571\",         \"ApplicationInterList\": \"vrserver.exe\",         \"ApplicationName\": \"XR应用测试\",         \"ApplicationNature\": \"PRIVATE\",         \"ApplicationParams\": \"\",         \"ApplicationRunStatus\": \"ApplicationRunning\",         \"ApplicationStores\": [           {             \"CosBucket\": \"cos-1300055477-ap-guangzhou\",             \"CosRegion\": \"ap-guangzhou\",             \"StorePath\": \"C:\\\\Users\\\\Administrator\\\\AppData\\\\LocalLow\\\\bk-test\",             \"StoreState\": \"ON\",             \"StoreType\": \"LOG\"           },           {             \"CosBucket\": \"\",             \"CosRegion\": \"\",             \"StorePath\": \"\",             \"StoreState\": \"OFF\",             \"StoreType\": \"ARCHIVE\"           }         ],         \"ApplicationType\": \"ApplicationXR\",         \"ApplicationUpdateProgress\": 100,         \"ApplicationUpdateStatus\": \"ApplicationUpdateNoReleased\",         \"ApplicationVersions\": [           {             \"ApplicationFileName\": \"\",             \"ApplicationVersionId\": \"ver-855fr3i4\",             \"ApplicationVersionName\": \"steamvr\",             \"ApplicationVersionRegions\": [               \"ap-chinese-mainland\"             ],             \"ApplicationVersionSize\": 5612961473,             \"ApplicationVersionStatus\": \"Inuse\",             \"ApplicationVersionUpdateMode\": \"\",             \"CreateTime\": \"2023-05-25T09:22:10Z\"           },           {             \"ApplicationFileName\": \"\",             \"ApplicationVersionId\": \"ver-qi5inuk4\",             \"ApplicationVersionName\": \"test\",             \"ApplicationVersionRegions\": [               \"ap-chinese-mainland\"             ],             \"ApplicationVersionSize\": 1978592076,             \"ApplicationVersionStatus\": \"Normal\",             \"ApplicationVersionUpdateMode\": \"\",             \"CreateTime\": \"2024-07-25T10:39:57Z\"           }         ]       }]",
           "member": "UserApplicationInfo",
           "name": "UserApplicationList",
           "output_required": true,
@@ -1278,7 +1278,7 @@
         {
           "disabled": false,
           "document": "移动应用列表信息",
-          "example": "\"\"",
+          "example": "[ { \"ApplicationCreateTime\": \"2024-05-16T03:22:41Z\",         \"ApplicationId\": \"app-utxfohff\",         \"ApplicationName\": \"云APK测试-修改名字\",         \"ApplicationNature\": \"PRIVATE\",         \"ApplicationRunStatus\": \"ApplicationRunning\",         \"ApplicationType\": \"ApplicationAPK\",         \"ApplicationUpdateStatus\": \"ApplicationUpdateNormal\",         \"ApplicationVersions\": [           {             \"ApplicationFileName\": \"\",             \"ApplicationVersionId\": \"ver-l8xiv1yy\",             \"ApplicationVersionName\": \"BiliPlayer-bili\",             \"ApplicationVersionRegions\": null,             \"ApplicationVersionSize\": 0,             \"ApplicationVersionStatus\": \"Usable\",             \"ApplicationVersionUpdateMode\": \"\",             \"CreateTime\": \"2024-05-16T03:58:50Z\"           },           {             \"ApplicationFileName\": \"\",             \"ApplicationVersionId\": \"ver-c64ucz0d\",             \"ApplicationVersionName\": \"MissEvan\",             \"ApplicationVersionRegions\": null,             \"ApplicationVersionSize\": 0,             \"ApplicationVersionStatus\": \"Inuse\",             \"ApplicationVersionUpdateMode\": \"\",             \"CreateTime\": \"2024-05-16T04:10:31Z\"           }         ]       } ]",
           "member": "UserMobileApplicationInfo",
           "name": "UserMobileApplicationList",
           "output_required": true,
@@ -1323,13 +1323,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用 exe 文件路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "应用 exe 文件路径列表",
+          "example": "[\"App\\\\XR CLOUD\\\\UnityCrashHandler64.exe\", \"App\\\\XR CLOUD\\\\XR CLOUD.exe\"]",
           "member": "string",
           "name": "PathList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1619,7 +1619,7 @@
         {
           "disabled": false,
           "document": "应用版本列表",
-          "example": "\"\"",
+          "example": " [       {         \"ApplicationVersionId\": \"ver-uechqlx\",         \"ApplicationVersionSize\": 1024,         \"ApplicationVersionStatus\": \"Inuse\",         \"ApplicationVersionName\": \"version_name\",         \"ApplicationVersionRegions\": [           \"ap-chinese-mainland\",           \"na-north-america-fusion\"         ],         \"ApplicationVersionUpdateMode\": \"FULL\",         \"CreateTime\": \"2021-08-29T08:00:30Z\"       }     ]",
           "member": "UserApplicationVersion",
           "name": "Versions",
           "output_required": true,
@@ -1814,7 +1814,7 @@
         {
           "disabled": false,
           "document": "Cos SecretID",
-          "example": "\"xxx\"",
+          "example": "\"AKID_QiA9Vot9jsOFViCVxkg2ji_6CohydMxozhDBY7kGaYUD-kOFIBMT2xpxSxxx19m\"",
           "member": "string",
           "name": "SecretID",
           "output_required": true,
@@ -1824,7 +1824,7 @@
         {
           "disabled": false,
           "document": "Cos SecretKey",
-          "example": "\"xxx\"",
+          "example": "\"XGSdS1K8lD6+qAPfQg6XSKrb1TgGEgPLdH62JeJgP0o=\"",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
@@ -1834,7 +1834,7 @@
         {
           "disabled": false,
           "document": "Cos SessionToken",
-          "example": "\"xxx\"",
+          "example": "\"OTyZlgQWTZKJ6jvOk3cvXQc91jCOLpGafb87702476f6cf4d23819b8d072de7320ze_i8PUZIIKEL9XVGO56mQzj0bLOs2J-qxuwYJ60-eCHKO7Gk-jaiQTZPql6ctGgfxnjNb8bnVw_-DS-DfOKFe8c0Q21roQFfiKYuBDwiIbh9-dZ0sXtE7qwcQKA-VEn_RrOBDonB9oa4lISOpapdmws4cKU0CpQTef4syDi2ixC-9CWnAcVveVSSgGLBKG7pGwBRX5Wx7BhtEQRdZnwvWdlqjunihHwxbi0KK1fEXjHa77MG5OPitJt_NxqTFm4sAJ4vSytHU-lNtFYzneTOkXvS191SlMC0sTcz25rhgxbRwZXjWa5NPI0daIrhcHaOY3qWBr2P2b-Ccda8NOHOdNnc7c9G85I76EBq9VGYU_mJj0qH6nARdhzXkzJ2Oq4Km_6_Awjyz_K3EqcS0r2kKzfEEo0lN0PduNlVfHlKRBi_NVDumIJAV-5Cvbt7wvJ6YAukG1Ea-rbMxZJY-WCyCkl1ExlcbYBT9ilm6rx6YHjuocJLSdozAtiS9uuGYCHiHrF3KADZlLNDomSRI1l1IB84GSaDe6Nkxc36B3z7aDewPA-OlFPJPKHKjLxGuQu2EcdvmJqhuq0E2MxtCbecL2le7yAjxZY0vi0iD56kNDlmWJ57cIM8bW2s03gGSN\"",
           "member": "string",
           "name": "SessionToken",
           "output_required": true,
@@ -1844,7 +1844,7 @@
         {
           "disabled": false,
           "document": "Cos Bucket",
-          "example": "\"xxx\"",
+          "example": "\"application-test-1300543887\"",
           "member": "string",
           "name": "CosBucket",
           "output_required": true,
@@ -1854,7 +1854,7 @@
         {
           "disabled": false,
           "document": "Cos Region",
-          "example": "\"xxx\"",
+          "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CosRegion",
           "output_required": true,
@@ -1864,7 +1864,7 @@
         {
           "disabled": false,
           "document": "Cos 操作路径",
-          "example": "\"xxx\"",
+          "example": "\"/1300055477/app-a1b2c3d4/ver-a1b2c3d4.zip\"",
           "member": "string",
           "name": "Path",
           "output_required": true,
@@ -1874,7 +1874,7 @@
         {
           "disabled": false,
           "document": "Cos 密钥的起始时间",
-          "example": "15000000",
+          "example": "1734950306",
           "member": "int64",
           "name": "StartTime",
           "output_required": true,
@@ -1884,7 +1884,7 @@
         {
           "disabled": false,
           "document": "Cos 密钥的失效时间",
-          "example": "10000000",
+          "example": "1734971906",
           "member": "int64",
           "name": "ExpiredTime",
           "output_required": true,
@@ -1984,7 +1984,7 @@
         {
           "disabled": false,
           "document": "应用基础数据",
-          "example": "\"\"",
+          "example": "{\"WindowUseType\":\"ApplicationDesktop\"}",
           "member": "ApplicationBaseInfo",
           "name": "ApplicationBaseInfo",
           "required": true,
@@ -2002,7 +2002,7 @@
         {
           "disabled": false,
           "document": "应用名称",
-          "example": "\"\"",
+          "example": "\"app_name\"",
           "member": "string",
           "name": "ApplicationName",
           "required": false,
@@ -2011,7 +2011,7 @@
         {
           "disabled": false,
           "document": "应用仓库信息列表",
-          "example": "\"\"",
+          "example": "[{\"CosBucket\":\"application-log-1300543887\",\"CosRegion\":\"ap-guangzhou\",\"StoreType\":\"LOG\",\"StoreState\":\"ON\",\"StorePath\":\"WindowsNoEditor705/log\"}]",
           "member": "UserApplicationStore",
           "name": "ApplicationStores",
           "required": false,
@@ -2227,7 +2227,7 @@
         {
           "disabled": false,
           "document": "应用版本名称",
-          "example": "\"xxx\"",
+          "example": "\"version_name\"",
           "member": "string",
           "name": "ApplicationVersionName",
           "required": false,
@@ -2377,7 +2377,7 @@
         {
           "disabled": false,
           "document": "应用版本列表",
-          "example": "\"\"",
+          "example": "[       {         \"ApplicationFileName\": \"\",         \"ApplicationVersionId\": \"ver-855fr3i4\",         \"ApplicationVersionName\": \"steamvr\",         \"ApplicationVersionRegions\": [           \"ap-chinese-mainland\"         ],         \"ApplicationVersionSize\": 5612961473,         \"ApplicationVersionStatus\": \"Usable\",         \"ApplicationVersionUpdateMode\": \"\",         \"CreateTime\": \"2023-05-25T09:22:10Z\"       },       {         \"ApplicationFileName\": \"\",         \"ApplicationVersionId\": \"ver-qi5inuk4\",         \"ApplicationVersionName\": \"test\",         \"ApplicationVersionRegions\": [           \"ap-chinese-mainland\"         ],         \"ApplicationVersionSize\": 1978592076,         \"ApplicationVersionStatus\": \"Inuse\",         \"ApplicationVersionUpdateMode\": \"\",         \"CreateTime\": \"2024-07-25T10:39:57Z\"       }     ]",
           "member": "UserApplicationVersion",
           "name": "Versions",
           "output_required": true,
@@ -2796,7 +2796,7 @@
         {
           "disabled": false,
           "document": "仓库路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxx\"",
+          "example": "\"Windows\\\\log\"",
           "member": "string",
           "name": "StorePath",
           "output_required": true,
@@ -2843,7 +2843,7 @@
         {
           "disabled": false,
           "document": "应用版本名称",
-          "example": "\"xxx\"",
+          "example": "\"version_name\"",
           "member": "string",
           "name": "ApplicationVersionName",
           "output_required": true,

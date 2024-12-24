@@ -18,10 +18,10 @@ Output:
         "TotalCount": 1,
         "Content": [
             {
-                "Interface": "abc"
+                "Interface": "/heartbeat"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

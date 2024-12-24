@@ -6429,7 +6429,7 @@
         {
           "disabled": false,
           "document": "实例总数",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "InstanceNum",
           "output_required": true,
@@ -6439,7 +6439,7 @@
         {
           "disabled": false,
           "document": "已启动实例总数",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "CurrentNum",
           "output_required": true,
@@ -6449,7 +6449,7 @@
         {
           "disabled": false,
           "document": "负载均衡DNS地址",
-          "example": "无",
+          "example": "dns.com",
           "member": "string",
           "name": "LbDns",
           "output_required": false,
@@ -6459,7 +6459,7 @@
         {
           "disabled": false,
           "document": "负载均衡ip",
-          "example": "无",
+          "example": "10.2.3.4",
           "member": "string",
           "name": "LbIp",
           "output_required": true,
@@ -6469,7 +6469,7 @@
         {
           "disabled": false,
           "document": "Service ip",
-          "example": "无",
+          "example": "10.3.2.1",
           "member": "string",
           "name": "ClusterIp",
           "output_required": true,
@@ -6479,7 +6479,7 @@
         {
           "disabled": false,
           "document": "服务状态，请参考后面的状态定义",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -6489,7 +6489,7 @@
         {
           "disabled": false,
           "document": "服务状态，请参考后面的状态定义",
-          "example": "无",
+          "example": "this is a msg",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -6509,7 +6509,7 @@
         {
           "disabled": false,
           "document": "Service NodePort\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "30111",
           "member": "uint64",
           "name": "NodePort",
           "output_required": true,
@@ -6519,7 +6519,7 @@
         {
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "subnet-2j9sh3",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -6539,7 +6539,7 @@
         {
           "disabled": false,
           "document": "服务配置信息是否匹配\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsNotEqualServiceConfig",
           "output_required": true,
@@ -27544,20 +27544,20 @@
         {
           "disabled": false,
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ServiceStatisticsResult",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

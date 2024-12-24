@@ -15,18 +15,18 @@ Output:
     "Response": {
         "Replicas": [
             {
-                "Name": "abc",
+                "Name": "name",
                 "Role": "Leader",
                 "Status": "running",
-                "SubnetId": "subnet-xxx",
+                "SubnetId": "subnet-id",
                 "Zone": "ap-guangzhou-1",
                 "ZoneId": "100000",
-                "AliasName": "abc",
-                "VpcId": "vpc-xxx"
+                "AliasName": "aliasName",
+                "VpcId": "vpc-id"
             }
         ],
         "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

@@ -12,19 +12,11 @@ tccli car ModifyApplicationBaseInfo --cli-unfold-argument  \
     --ApplicationInterList test.exe|xxx.exe \
     --ApplicationParams -b -param \
     --ApplicationBaseInfo.WindowUseType ApplicationDesktop \
-    --ApplicationBaseInfo.WindowName xxx \
-    --ApplicationBaseInfo.WindowClassName xxx \
-    --ApplicationBaseInfo.WindowCaptureMode  \
-    --ApplicationStores.0.CosBucket bucket-123456 \
+    --ApplicationStores.0.CosBucket application-log-1300543887 \
     --ApplicationStores.0.CosRegion ap-guangzhou \
-    --ApplicationStores.0.StoreType ARCHIVE \
-    --ApplicationStores.0.StoreState OFF \
-    --ApplicationStores.0.StorePath xxx \
-    --ApplicationStores.1.CosBucket bucket-123456 \
-    --ApplicationStores.1.CosRegion ap-guangzhou \
-    --ApplicationStores.1.StoreType LOG \
-    --ApplicationStores.1.StoreState ON \
-    --ApplicationStores.1.StorePath xxx
+    --ApplicationStores.0.StoreType LOG \
+    --ApplicationStores.0.StoreState ON \
+    --ApplicationStores.0.StorePath WindowsNoEditor705/log
 ```
 
 Output: 

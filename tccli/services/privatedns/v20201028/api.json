@@ -1782,7 +1782,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，从0开始",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1791,7 +1791,7 @@
         {
           "disabled": false,
           "document": "分页限制数目， 最大100，默认20",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1815,7 +1815,7 @@
         {
           "disabled": false,
           "document": "终端节点总数",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,

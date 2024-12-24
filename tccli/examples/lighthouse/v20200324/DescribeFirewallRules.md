@@ -26,7 +26,7 @@ Output:
                 "Action": "ACCEPT",
                 "AppType": "自定义",
                 "CidrBlock": "0.0.0.0/0",
-                "FirewallRuleDescription": "test",
+                "FirewallRuleDescription": "放通TCP端口(88)",
                 "Port": "88",
                 "Protocol": "TCP"
             },
