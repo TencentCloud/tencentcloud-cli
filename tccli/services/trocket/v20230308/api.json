@@ -238,6 +238,20 @@
       "output": "DescribeMQTTUserListResponse",
       "status": "online"
     },
+    "DescribeMessage": {
+      "document": "查询消息详情",
+      "input": "DescribeMessageRequest",
+      "name": "查询消息详情",
+      "output": "DescribeMessageResponse",
+      "status": "online"
+    },
+    "DescribeMessageList": {
+      "document": "查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。",
+      "input": "DescribeMessageListRequest",
+      "name": "查询消息列表",
+      "output": "DescribeMessageListResponse",
+      "status": "online"
+    },
     "DescribeMessageTrace": {
       "document": "根据消息 ID 查询消息轨迹。",
       "input": "DescribeMessageTraceRequest",
@@ -348,6 +362,13 @@
       "input": "ModifyTopicRequest",
       "name": "修改主题属性",
       "output": "ModifyTopicResponse",
+      "status": "online"
+    },
+    "ResendDeadLetterMessage": {
+      "document": "重新发送死信消息",
+      "input": "ResendDeadLetterMessageRequest",
+      "name": "重新发送死信消息",
+      "output": "ResendDeadLetterMessageResponse",
       "status": "online"
     }
   },
@@ -3294,6 +3315,332 @@
       ],
       "type": "object"
     },
+    "DescribeMessageListRequest": {
+      "document": "DescribeMessageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1672502400000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1672504200000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一次查询标识",
+          "example": "901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d",
+          "member": "string",
+          "name": "TaskRequestId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 ID",
+          "example": "01963F0B14BAF09F27077D244F00000000",
+          "member": "string",
+          "name": "MsgId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 Key",
+          "example": "test_key",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询最近N条消息 最大不超过1024，默认-1为其他查询条件",
+          "example": "100",
+          "member": "int64",
+          "name": "RecentMessageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询死信消息",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDeadLetterMessage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "消息 Tag",
+          "example": "test_tag",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageListResponse": {
+      "document": "DescribeMessageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {         \"MsgId\": \"01963F0B14BAF09F27077D244F00000000\",     } ]",
+          "member": "MessageItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一次查询ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d",
+          "member": "string",
+          "name": "TaskRequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageRequest": {
+      "document": "DescribeMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID",
+          "example": "01963F0B14BAF09F27077D244F00000000",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否是死信消息",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDeadLetterMessage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否是延时消息",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDelayMessage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageResponse": {
+      "document": "DescribeMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息体",
+          "example": "This is a normal message for Apache RocketMQ",
+          "member": "string",
+          "name": "Body",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情参数",
+          "example": "{     \"UNIQ_KEY\": \"01963F0B14BAF09F27077D244F00000000\",     \"__CLIENT_HOST\": \"113.142.183.133:46728\" }",
+          "member": "string",
+          "name": "Properties",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产时间",
+          "example": "2023-01-01 00:00:01",
+          "member": "string",
+          "name": "ProduceTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01963F0B14BAF09F27077D244F00000000",
+          "member": "string",
+          "name": "MessageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产者地址",
+          "example": "113.142.183.133:46728",
+          "member": "string",
+          "name": "ProducerAddr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息消费情况列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[     {         \"ConsumerGroup\": \"test_group\",         \"TrackType\": \"NOT_ONLINE\",     } ]",
+          "member": "MessageTrackItem",
+          "name": "MessageTracks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Topic",
+          "example": "test_topic",
+          "member": "string",
+          "name": "ShowTopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息消费情况列表总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MessageTracksCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMessageTraceRequest": {
       "document": "DescribeMessageTrace请求参数结构体",
       "members": [
@@ -5003,6 +5350,82 @@
       ],
       "usage": "out"
     },
+    "MessageItem": {
+      "document": "消息记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "MsgId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keys",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProducerAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息发送时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "死信重发次数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DeadLetterResendTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "死信重发成功次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DeadLetterResendSuccessTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MessageTraceItem": {
       "document": "消息轨迹",
       "members": [
@@ -5022,6 +5445,52 @@
           "example": "无",
           "member": "string",
           "name": "Data",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MessageTrackItem": {
+      "document": "MessageTrack",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费状态, CONSUMED: 已消费 CONSUMED_BUT_FILTERED: 已过滤 NOT_CONSUME: 未消费 ENTER_RETRY: 进入重试队列 ENTER_DLQ: 进入死信队列 UNKNOWN: 查询不到消费状态",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumeStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "track类型",
+          "example": "无",
+          "member": "string",
+          "name": "TrackType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExceptionDesc",
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5814,6 +6283,61 @@
         }
       ],
       "usage": "both"
+    },
+    "ResendDeadLetterMessageRequest": {
+      "document": "ResendDeadLetterMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "死信消息ID列表",
+          "example": "[\"01963F0B14BAF09F27077D244F00000000\"]",
+          "member": "string",
+          "name": "MessageIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResendDeadLetterMessageResponse": {
+      "document": "ResendDeadLetterMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重发消息结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ResendResult",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RoleItem": {
       "document": "角色信息",

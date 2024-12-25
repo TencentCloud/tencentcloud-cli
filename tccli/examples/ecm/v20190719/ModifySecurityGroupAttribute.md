@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli ecm ModifySecurityGroupAttribute --cli-unfold-argument  \
-    --Version 2019-07-19 \
     --SecurityGroupId esg-33ocnj9n \
-    --GroupName TestGroupNewName \
-    --GroupDescription test-group-desc
+    --GroupName demo \
+    --GroupDescription demo
 ```
 
 Output: 
 ```
 {
-    "Response": {}
+    "Response": {
+        "RequestId": "354f4ac3-8546-4516-8c8a-69e3ab73aa8a"
+    }
 }
 ```
 

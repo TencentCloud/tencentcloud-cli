@@ -584,8 +584,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "无",
+          "document": "实例ID。",
+          "example": "cmgo-ca2n****",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -595,7 +595,7 @@
         {
           "disabled": false,
           "document": "备份方式，0-自动备份，1-手动备份",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "BackupType",
           "output_required": true,
@@ -605,7 +605,7 @@
         {
           "disabled": false,
           "document": "备份名称",
-          "example": "无",
+          "example": "cmgo-ca2n****_2021-12-13 02:02",
           "member": "string",
           "name": "BackupName",
           "output_required": true,
@@ -615,7 +615,7 @@
         {
           "disabled": false,
           "document": "备份备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "系统后台每日定时自动备份",
           "member": "string",
           "name": "BackupDesc",
           "output_required": true,
@@ -625,7 +625,7 @@
         {
           "disabled": false,
           "document": "备份文件大小，单位KB\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "326594030",
           "member": "uint64",
           "name": "BackupSize",
           "output_required": true,
@@ -635,7 +635,7 @@
         {
           "disabled": false,
           "document": "备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2021-12-13 02:02:51",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -645,7 +645,7 @@
         {
           "disabled": false,
           "document": "备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2021-12-13 03:02:51",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
@@ -655,7 +655,7 @@
         {
           "disabled": false,
           "document": "备份状态，1-备份中，2-备份成功",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -665,7 +665,7 @@
         {
           "disabled": false,
           "document": "备份方法，0-逻辑备份，1-物理备份",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "BackupMethod",
           "output_required": true,
@@ -675,7 +675,7 @@
         {
           "disabled": false,
           "document": "备份记录id",
-          "example": "无",
+          "example": "6997433",
           "member": "int64",
           "name": "BackId",
           "output_required": false,
@@ -685,7 +685,7 @@
         {
           "disabled": false,
           "document": "备份删除时间",
-          "example": "无",
+          "example": "2099-01-01 00:00:00",
           "member": "string",
           "name": "DeleteTime",
           "output_required": false,
@@ -695,7 +695,7 @@
         {
           "disabled": false,
           "document": "异地备份地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BackupRegion",
           "output_required": false,
@@ -1628,7 +1628,7 @@
         {
           "disabled": false,
           "document": "操作执行语句。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "执行语句",
           "member": "string",
           "name": "Query",
           "output_required": true,
@@ -1648,7 +1648,7 @@
         {
           "disabled": false,
           "document": "操作所在的分片名称。",
-          "example": "无",
+          "example": "cmgo-12asa***_0",
           "member": "string",
           "name": "ReplicaSetName",
           "output_required": true,
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "操作所在的节点名称。",
-          "example": "无",
+          "example": "9.18.157.***:70**:234****",
           "member": "string",
           "name": "NodeName",
           "output_required": true,
@@ -1668,7 +1668,7 @@
         {
           "disabled": false,
           "document": "操作详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "操作详情",
           "member": "string",
           "name": "Operation",
           "output_required": true,
@@ -1678,7 +1678,7 @@
         {
           "disabled": false,
           "document": "筛选条件，节点状态，可能的取值为：Primary、Secondary。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Secondary",
           "member": "string",
           "name": "State",
           "output_required": true,
@@ -1714,20 +1714,20 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "cmgo-12sad****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域信息",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1740,7 +1740,7 @@
         {
           "disabled": false,
           "document": "单价\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.17",
           "member": "float",
           "name": "UnitPrice",
           "output_required": true,
@@ -1751,7 +1751,7 @@
         {
           "disabled": false,
           "document": "原价",
-          "example": "无",
+          "example": "210",
           "member": "float",
           "name": "OriginalPrice",
           "output_required": true,
@@ -1762,7 +1762,7 @@
         {
           "disabled": false,
           "document": "折扣价",
-          "example": "无",
+          "example": "198",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": true,
@@ -3358,7 +3358,7 @@
         {
           "disabled": false,
           "document": "用于按key回档过滤的key",
-          "example": "无",
+          "example": "fbKey",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -3367,7 +3367,7 @@
         {
           "disabled": false,
           "document": "用于按key回档过滤的value",
-          "example": "无",
+          "example": "fbValue",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -3400,7 +3400,7 @@
         {
           "disabled": false,
           "document": "源数据所在的库表信息。",
-          "example": "无",
+          "example": "[{\"DBName\":\"mydb\",\"Collections\":[{\"CollectionName\":\"my_collection\",\"KeyValues\":[{\"Key\":\"_id\",\"Value\":\"\\\"******\\\"\"}],",
           "member": "FlashbackDatabase",
           "name": "TargetDatabases",
           "required": true,
@@ -3423,13 +3423,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "回档数据异步任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回档数据异步任务 ID。",
           "example": "16033****",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3446,7 +3446,7 @@
         {
           "disabled": false,
           "document": "按key回档指定的集合名",
-          "example": "无",
+          "example": "my_collection",
           "member": "string",
           "name": "CollectionName",
           "required": true,
@@ -3455,7 +3455,7 @@
         {
           "disabled": false,
           "document": "按key回档到的目标集合名",
-          "example": "无",
+          "example": "my_collection_re",
           "member": "string",
           "name": "TargetResultCollectionName",
           "required": true,
@@ -3464,7 +3464,7 @@
         {
           "disabled": false,
           "document": "上传到cos的文件的value所对应的key值",
-          "example": "无",
+          "example": "fKey",
           "member": "string",
           "name": "FilterKey",
           "required": true,
@@ -3473,7 +3473,7 @@
         {
           "disabled": false,
           "document": "用于按key回档过滤的键值对",
-          "example": "无",
+          "example": "fValue",
           "member": "FBKeyValue",
           "name": "KeyValues",
           "required": false,
@@ -3488,7 +3488,7 @@
         {
           "disabled": false,
           "document": "按key回档源数据所在库",
-          "example": "无",
+          "example": "my-db",
           "member": "string",
           "name": "DBName",
           "required": true,
@@ -3497,7 +3497,7 @@
         {
           "disabled": false,
           "document": "按key回档的集群数组",
-          "example": "无",
+          "example": "my-collection",
           "member": "FlashbackCollection",
           "name": "Collections",
           "required": true,
@@ -3838,7 +3838,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36。默认为1。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": false,
@@ -3847,7 +3847,7 @@
         {
           "disabled": false,
           "document": "自动续费标识。取值范围：\n- NOTIFY_AND_AUTO_RENEW：通知过期且自动续费。在账户余额充足的情况下，实例到期后将按月自动续费。\n- NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费。默认为NOTIFY_AND_MANUAL_RENEW。\n- DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费。",
-          "example": "无",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -3862,7 +3862,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "cmgo-7pjedvz7",
+          "example": "cmgo-7pje****",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -3892,7 +3892,7 @@
         {
           "disabled": false,
           "document": "项目ID。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ProjectId",
           "output_required": true,
@@ -3912,7 +3912,7 @@
         {
           "disabled": false,
           "document": "地域信息。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -3922,7 +3922,7 @@
         {
           "disabled": false,
           "document": "可用区信息。",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -3942,7 +3942,7 @@
         {
           "disabled": false,
           "document": "私有网络的ID。",
-          "example": "vpc-0vjmgwtn",
+          "example": "vpc-0vjm****",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -3952,7 +3952,7 @@
         {
           "disabled": false,
           "document": "私有网络的子网ID。",
-          "example": "subnet-emtfpj2o",
+          "example": "subnet-emtf****",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -3972,7 +3972,7 @@
         {
           "disabled": false,
           "document": "实例IP。",
-          "example": "10.100.0.0",
+          "example": "10.100.0.**",
           "member": "string",
           "name": "Vip",
           "output_required": true,
@@ -4242,7 +4242,7 @@
         {
           "disabled": false,
           "document": "实例当前可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "ZoneList",
           "output_required": true,
@@ -4427,7 +4427,7 @@
           "example": "\"100\"",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4437,7 +4437,7 @@
           "example": "\"100\"",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4447,7 +4447,7 @@
           "example": "\"65536\"",
           "member": "string",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4457,7 +4457,7 @@
           "example": "\"0\"",
           "member": "string",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4467,7 +4467,7 @@
           "example": "\"1\"",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4477,7 +4477,7 @@
           "example": "\"operation.profiling.slowOpThresholdMs\"",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4487,7 +4487,7 @@
           "example": "[\"数据库profiler确定慢查询的阈值，单位毫秒，默认值100\",\"The Performance Advisor re\"]",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4497,7 +4497,7 @@
           "example": "\"integer\"",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4507,17 +4507,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "冗余字段，可忽略。",
-          "example": "\"\"",
+          "example": "1",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4533,7 +4533,7 @@
           "example": "\"01:00\"",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4543,7 +4543,7 @@
           "example": "NULL",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4553,7 +4553,7 @@
           "example": "[\"00:00\",\"23:00\" ]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4563,7 +4563,7 @@
           "example": "\"1\"",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4573,7 +4573,7 @@
           "example": "\"openBalance.window\"",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4583,7 +4583,7 @@
           "example": "\"1\"",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4593,7 +4593,7 @@
           "example": "[\"负载均衡时间窗\",\"balance.window\"]",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4603,7 +4603,7 @@
           "example": "\"multi\"",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4616,80 +4616,80 @@
         {
           "disabled": false,
           "document": "参数当前值。",
-          "example": "\"\"",
+          "example": "textParam",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数默认值。",
-          "example": "\"\"",
+          "example": "textParam",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改参数值之后是否需要重启。",
-          "example": "\"\"",
+          "example": "1",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数名称。",
-          "example": "\"\"",
+          "example": "operationProfiling.****",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Text 类型参数对应的值。",
-          "example": "\"\"",
+          "example": "currentTtext",
           "member": "string",
           "name": "TextValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数说明。",
-          "example": "\"\"",
+          "example": "参数描述",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数值类型说明。",
-          "example": "\"\"",
+          "example": "txt",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为运行中的参数值。\n- 1：运行中参数值。\n- 0：非运行中参数值。",
-          "example": "\"\"",
+          "example": "1",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4739,7 +4739,7 @@
         {
           "disabled": false,
           "document": "主密钥 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "e648b6c-584a-11ef-a5d2-5254002****",
           "member": "string",
           "name": "KeyId",
           "output_required": false,
@@ -4750,7 +4750,7 @@
         {
           "disabled": false,
           "document": "主密钥名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "stg02-ai-bj-kms-******",
           "member": "string",
           "name": "KeyName",
           "output_required": false,
@@ -4761,7 +4761,7 @@
         {
           "disabled": false,
           "document": "实例与密钥绑定时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2021-01-02 15:04:05",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -4772,7 +4772,7 @@
         {
           "disabled": false,
           "document": "密钥状态。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Enabled",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -4783,7 +4783,7 @@
         {
           "disabled": false,
           "document": "密钥用途。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ENCRYPT_DECRYPT",
           "member": "string",
           "name": "KeyUsage",
           "output_required": false,
@@ -4794,13 +4794,24 @@
         {
           "disabled": false,
           "document": "密钥来源。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TENCENT_KMS",
           "member": "string",
           "name": "KeyOrigin",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kms所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KmsRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5193,7 +5204,7 @@
         {
           "disabled": false,
           "document": "需要修改的参数名称，请严格参考通过 DescribeInstanceParams 获取的当前实例支持的参数名。",
-          "example": "\"operationProfiling.mode\"",
+          "example": "\"operationProfiling.****\"",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -5202,7 +5213,7 @@
         {
           "disabled": false,
           "document": "需要修改的参数名称对应的值，请严格参考通过 DescribeInstanceParams 获取的参数对应的值的范围。",
-          "example": "无",
+          "example": "off",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -5867,7 +5878,7 @@
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5877,7 +5888,7 @@
           "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5887,7 +5898,7 @@
           "example": "80,443",
           "member": "string",
           "name": "PortRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5897,47 +5908,47 @@
           "example": "tcp",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组id代表的地址集合",
-          "example": "无",
+          "example": "sg-",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地址组id代表的地址集合",
-          "example": "无",
+          "example": "地址集合",
           "member": "string",
           "name": "AddressModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务组id代表的协议和端口集合",
-          "example": "无",
+          "example": "协议和端口集合",
           "member": "string",
           "name": "ServiceModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "my-SecurityGroupBound",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6506,9 +6517,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "myTag",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6516,9 +6528,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "myTagValue",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

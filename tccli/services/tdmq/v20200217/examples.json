@@ -1112,6 +1112,14 @@
         "title": "重置消费位点"
       }
     ],
+    "RetryRocketMQDlqMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRocketMQDlqMessage\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"test_ns\",\n    \"ClusterId\": \"rocketmq-a52qova7x97b\",\n    \"GroupName\": \"test_group\",\n    \"MessageIds\": [\n        \"01963F0B14BAF09F27077D244F00000000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"90760e40-5db2-4150-807f-5760c2a03804\"\n    }\n}",
+        "title": "重发死信消息"
+      }
+    ],
     "RewindCmqQueue": [
       {
         "document": "",

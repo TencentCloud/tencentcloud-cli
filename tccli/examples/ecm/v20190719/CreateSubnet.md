@@ -7,7 +7,7 @@ Input:
 ```
 tccli ecm CreateSubnet --cli-unfold-argument  \
     --VpcId vpc-ila64qtl \
-    --SubnetName subnet_test \
+    --SubnetName demo \
     --CidrBlock 10.0.1.0/24 \
     --Zone ap-hangzhou-ecm-1 \
     --Tags.0.Key city \
@@ -27,7 +27,7 @@ Output:
             "Zone": "ap-hangzhou-ecm-1",
             "Ipv6CidrBlock": "",
             "Region": "ap-hangzhou-ecm",
-            "SubnetName": "subnet_test",
+            "SubnetName": "demo",
             "AvailableIpAddressCount": 253,
             "IsRemoteVpcSnat": false,
             "SubnetId": "subnet-heaa1hzo",

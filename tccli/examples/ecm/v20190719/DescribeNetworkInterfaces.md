@@ -15,8 +15,8 @@ Output:
         "NetworkInterfaceSet": [
             {
                 "NetworkInterfaceId": "eni-dqcedwp7",
-                "NetworkInterfaceName": "TEST",
-                "NetworkInterfaceDescription": "TEST",
+                "NetworkInterfaceName": "demo",
+                "NetworkInterfaceDescription": "demo",
                 "SubnetId": "subnet-o6pv7si8",
                 "VpcId": "vpc-j8s8351p",
                 "GroupSet": [
@@ -31,7 +31,7 @@ Output:
                         "Primary": true,
                         "PublicIpAddress": "60.28.209.138",
                         "AddressId": "",
-                        "Description": "TEST",
+                        "Description": "demo",
                         "IsWanIpBlocked": true,
                         "State": "AVAILABLE"
                     }
@@ -56,8 +56,8 @@ Output:
                 ],
                 "TagSet": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "env",
+                        "Value": "prod"
                     }
                 ],
                 "EniType": 1,

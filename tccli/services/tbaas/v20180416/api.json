@@ -352,50 +352,50 @@
         {
           "disabled": false,
           "document": "区块编号",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BlockNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区块数据Hash数值",
-          "example": "",
+          "example": "6a3f18885016cafea3380732d8d867cdb655799135c466f1cd4a0456291fed13 ",
           "member": "string",
           "name": "DataHash",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区块ID，与区块编号一致",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BlockId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "前一个区块Hash",
-          "example": "",
+          "example": "1d40d9c1fc8929c0b5ba4048f6a756543695664976cec7c8ac76e587587dfa01 ",
           "member": "string",
           "name": "PreHash",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区块内的交易数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TxCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -524,7 +524,7 @@
         {
           "disabled": false,
           "document": "合约执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "[{\\\"contract_name\\\":\\\"ChainMakerDemo\\\",\\\"contract_version\\\":\\\"v1\\\"}]",
           "member": "string",
           "name": "ContractEvent",
           "output_required": true,
@@ -778,7 +778,7 @@
         {
           "disabled": false,
           "document": "交易所属合约",
-          "example": "abc",
+          "example": "fact",
           "member": "string",
           "name": "ChaincodeName",
           "output_required": false,
@@ -788,7 +788,7 @@
         {
           "disabled": false,
           "document": "交易数据，base64编码，解码后为json化的字符串",
-          "example": "eyJjaGFpbmNvZGVfc3BlYyI6eyJjaGFpbmNvZGVfaWQiOnsibmFtZSI6Il9saWZlY3ljbGUiLCJwYXRoIjoiIiwidmVyc2lvbiI6IiJ9LCJpbnB1dCI6eyJhcmdzIjpbIkNvbW1pdENoYWluY29kZURlZmluaXRpb24iLCJcdTAwMDhcdTAwMDFcdTAwMTJcdTAwMDNteWNcdTAwMWFcdTAwMDR2MS4wXCJcdTAwMDRlc2NjKlx1MDAwNHZzY2MyMVxuL1x1MDAxMlx1MDAwOFx1MDAxMlx1MDAwNlx1MDAwOFx1MDAwMVx1MDAxMlx1MDAwMlx1MDAwOFx1MDAwMFx1MDAxYSNcdTAwMTIhXG5cdTAwMWZvcmctMjUxMDA1NzQ2LmZhYnJpYy02NXo0MnFpMTUwOlx1MDAwMCJdLCJkZWNvcmF0aW9ucyI6e30sImlzX2luaXQiOmZhbHNlfSwidGltZW91dCI6MCwidHlwZSI6IlVOREVGSU5FRCJ9fQ==",
+          "example": "eyJjaGFpbmNvZGVfc3BlYyI6eyJ0aW1lb3V0IjowLCJ0eXBlIjoiVU5ERUZJTkVEIn19",
           "member": "string",
           "name": "TransactionData",
           "output_required": false,
@@ -912,20 +912,20 @@
         {
           "disabled": false,
           "document": "背书组织名称",
-          "example": "",
+          "example": "org1",
           "member": "string",
           "name": "EndorserGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "背书节点列表",
-          "example": "",
+          "example": "[\"peer-org1\",\"peer-org2\"]",
           "member": "string",
           "name": "EndorserPeerList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2030,7 +2030,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约管理中获取",
-          "example": "test",
+          "example": "fact",
           "member": "string",
           "name": "ContractName",
           "required": true,
@@ -2075,6 +2075,7 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2111,7 +2112,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约列表或合约详情获取",
-          "example": "test",
+          "example": "fact",
           "member": "string",
           "name": "ChaincodeName",
           "required": true,
@@ -2333,22 +2334,20 @@
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "",
+          "example": "peer1-org1.fabric-xdfsdss",
           "member": "string",
           "name": "PeerName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "组织名称",
-          "example": "",
+          "example": "org1.fabric-xdfsdss",
           "member": "string",
           "name": "OrgName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2611,7 +2610,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约管理中获取",
-          "example": "test",
+          "example": "fact",
           "member": "string",
           "name": "ContractName",
           "required": true,
@@ -2647,6 +2646,7 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2791,7 +2791,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约列表或合约详情获取",
-          "example": "test",
+          "example": "fact",
           "member": "string",
           "name": "ChaincodeName",
           "required": true,
@@ -2979,18 +2979,16 @@
           "member": "string",
           "name": "CertMark",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "用户申请签名证书所需要的证书请求文件的base64编码",
-          "example": "test",
+          "example": "-----BEGINCERTIFICATEREQUEST-----",
           "member": "string",
           "name": "SignCsrContent",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3073,7 +3071,7 @@
         {
           "disabled": false,
           "document": "交易ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "af5b8ec2e660461f9a32ec3c9ec151688a1c83e6ebb94815a21e84fbc29cf7c2",
           "member": "string",
           "name": "TxId",
           "output_required": false,
@@ -3139,80 +3137,80 @@
         {
           "disabled": false,
           "document": "交易ID",
-          "example": "",
+          "example": "0af5b0ae129b0435aa4ec8547c7500f428673dee363331f2f5f8d61d49e43e68",
           "member": "string",
           "name": "TransactionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易hash",
-          "example": "",
+          "example": "b5e398182b07bbde523e63804ee24690323bd5e190db99da079a00af2d71b652",
           "member": "string",
           "name": "TransactionHash",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建交易的组织名",
-          "example": "",
+          "example": "org1",
           "member": "string",
           "name": "CreateOrgName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易所在区块号",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "BlockId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易类型（普通交易和配置交易）",
-          "example": "",
+          "example": "ENDORSER_TRANSACTION",
           "member": "string",
           "name": "TransactionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易创建时间",
-          "example": "",
+          "example": "2020-01-06 22:18:15",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易所在区块高度",
-          "example": "",
+          "example": "3",
           "member": "uint64",
           "name": "BlockHeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易状态",
-          "example": "",
+          "example": "VALID",
           "member": "string",
           "name": "TransactionStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

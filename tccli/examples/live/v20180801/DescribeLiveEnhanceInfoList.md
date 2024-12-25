@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli live DescribeLiveEnhanceInfoList --cli-unfold-argument  \
-    --StartTime abc \
-    --EndTime abc \
+    --StartTime 2024-12-24T10:43:22+08:00 \
+    --EndTime 2024-12-25T10:43:22+08:00 \
     --Granularity 0 \
-    --DomainNames abc \
-    --Type abc \
-    --Resolution abc \
-    --Fps abc
+    --DomainNames 5000.livepull.stream.com \
+    --Type SUPER_RESOLUTION \
+    --Resolution 720P \
+    --Fps 30
 ```
 
 Output: 
@@ -21,15 +21,15 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "Domain": "abc",
-                "Time": "abc",
+                "Domain": "5000.livepull.stream.com",
+                "Time": "2024-12-25T10:43:22+08:00",
                 "Duration": 0,
-                "Fps": "abc",
-                "Resolution": "abc",
-                "Type": "abc"
+                "Fps": "30",
+                "Resolution": "720P",
+                "Type": "SUPER_RESOLUTION"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

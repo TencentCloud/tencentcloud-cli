@@ -7,7 +7,7 @@ Input:
 ```
 tccli chdfs ModifyMountPoint --cli-unfold-argument  \
     --MountPointId f4mnvilzmdd-Tx5f \
-    --MountPointName test \
+    --MountPointName mp-test \
     --MountPointStatus 2
 ```
 

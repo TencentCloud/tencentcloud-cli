@@ -8,11 +8,11 @@ Input:
 tccli sqlserver RollbackInstance --cli-unfold-argument  \
     --InstanceId mssql-aj89iq78 \
     --Type 1 \
-    --DBs abc \
+    --DBs db1 \
     --Time 2020-09-22 00:00:00 \
     --TargetInstanceId mssql-aj89iq79 \
-    --RenameRestore.0.OldName abc \
-    --RenameRestore.0.NewName abc
+    --RenameRestore.0.OldName db1 \
+    --RenameRestore.0.NewName db2
 ```
 
 Output: 

@@ -272,6 +272,22 @@
         "title": "示例"
       }
     ],
+    "DescribeMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Body\": \"testBody\",\n        \"MessageId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n        \"MessageTracks\": [\n            {\n                \"ConsumeStatus\": \"CONSUMED\",\n                \"ConsumerGroup\": \"group\",\n                \"ExceptionDesc\": null,\n                \"TrackType\": \"CONSUMED\"\n            }\n        ],\n        \"ProduceTime\": \"2023-05-09 14:43:27\",\n        \"ProducerAddr\": \"30.174.57.21\",\n        \"Properties\": \"{\\\"TRACE_ON\\\":\\\"true\\\",\\\"MSG_REGION\\\":\\\"cd\\\",\\\"KEYS\\\":\\\"testKey\\\",\\\"UNIQ_KEY\\\":\\\"1EAE3915000721B8D17C2C5BB31638D1\\\",\\\"CLUSTER\\\":\\\"rmqbroker-cd-1\\\",\\\"WAIT\\\":\\\"true\\\",\\\"TAGS\\\":\\\"testTag\\\"}\",\n        \"RequestId\": \"8e97b978-376b-4d94-96cc-db0ead5f2f99\",\n        \"ShowTopicName\": \"topic\"\n    }\n}",
+        "title": "查询普通消息"
+      }
+    ],
+    "DescribeMessageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"topic\",\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n    \"StartTime\": 1683613796174,\n    \"EndTime\": 1683613796174,\n    \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": \"test_key\",\n                \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",\n                \"ProduceTime\": \"2023-05-09 14:43:27\",\n                \"ProducerAddr\": \"30.174.57.21\",\n                \"Tags\": \"test_tag\"\n            }\n        ],\n        \"RequestId\": \"7426c613-085b-48c4-9257-87a208a8adcc\",\n        \"TaskRequestId\": \"901a6956-1ab9-7fb7-3bf5-9f02b7aa2a7d\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询消息列表"
+      }
+    ],
     "DescribeMessageTrace": [
       {
         "document": "",
@@ -404,6 +420,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Topic\": \"test_topic\",\n    \"QueueNum\": 1\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"945afc69-1c24-4891-a2ce-c5fa6032ba75\"\n    }\n}",
         "title": "修改主题属性"
+      }
+    ],
+    "ResendDeadLetterMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResendDeadLetterMessage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"ConsumerGroup\": \"test_group\",\n    \"MessageIds\": [\n        \"01963F0B14BAF09F27077D244F00000000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4f1d3ba-3ed2-4e03-b741-9f6f696b9689\"\n    }\n}",
+        "title": "重发死信消息"
       }
     ]
   },

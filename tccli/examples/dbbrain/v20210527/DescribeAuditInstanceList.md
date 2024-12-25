@@ -37,7 +37,7 @@ Output:
                     "AppId": 251009273,
                     "InstanceId": "tdsql-lq5ue8p7",
                     "ResourceTags": [
-                        "abc"
+                        "tag_abc"
                     ],
                     "ProjectId": 0,
                     "Region": "ap-guangzhou"

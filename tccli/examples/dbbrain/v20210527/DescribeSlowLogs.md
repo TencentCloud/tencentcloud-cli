@@ -7,7 +7,7 @@ Input:
 ```
 tccli dbbrain DescribeSlowLogs --cli-unfold-argument  \
     --Product mysql \
-    --InstanceId test \
+    --InstanceId cdb-insde12 \
     --Md5 12323242323 \
     --Limit 10 \
     --Offset 0 \

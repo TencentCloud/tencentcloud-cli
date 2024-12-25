@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli dts ModifySubscribeVipVport --cli-unfold-argument  \
-    --SubscribeId subs-ieuwi83j2e \
-    --DstVip 192.168.0.1 \
-    --DstPort 7575
+    --SubscribeId subs-jvxbbos7c0 \
+    --DstUniqSubnetId subnet-njj6i45t \
+    --DstIp 10.0.0.37 \
+    --DstPort 10086
 ```
 
 Output: 

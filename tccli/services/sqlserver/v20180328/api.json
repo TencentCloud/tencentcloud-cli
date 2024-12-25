@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CutXEvents": {
-      "document": "本接口(CutXEvents)用于手动切割阻塞日志和死锁日志。",
+      "document": "本接口（CutXEvents）用于手动切割阻塞日志和死锁日志。",
       "input": "CutXEventsRequest",
       "name": "手动切割阻塞日志和死锁日志",
       "output": "CutXEventsResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DescribeBackupFiles": {
-      "document": "本接口(DescribeBackupFiles)用于查询单库备份明细",
+      "document": "本接口（DescribeBackupFiles）用于查询单库备份明细。",
       "input": "DescribeBackupFilesRequest",
       "name": "查询单库备份文件明细",
       "output": "DescribeBackupFilesResponse",
@@ -1138,7 +1138,7 @@
         {
           "disabled": false,
           "document": "账户备注",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -1198,7 +1198,7 @@
         {
           "disabled": false,
           "document": "该账户对相关db的读写权限信息",
-          "example": "无",
+          "example": "[{\"DBName\": \"db1\",\"Privilege\": \"ReadOnly\"}]",
           "member": "DBPrivilege",
           "name": "Dbs",
           "output_required": true,
@@ -1377,25 +1377,27 @@
         {
           "disabled": false,
           "document": "账户名",
-          "example": "",
+          "example": "tom",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对应账户新的备注信息",
-          "example": "",
+          "example": "部门一",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AssociateSecurityGroupsRequest": {
       "document": "AssociateSecurityGroups请求参数结构体",
@@ -1995,7 +1997,7 @@
         {
           "disabled": false,
           "document": "关闭互通的实例ID集合",
-          "example": "无",
+          "example": " [\"mssql-hlh6yka1\",\"mssql-gfh54fg2\"]",
           "member": "string",
           "name": "InstanceIdSet",
           "required": true,
@@ -2010,10 +2012,10 @@
         {
           "disabled": false,
           "document": "实例和异步流程ID",
-          "example": "无",
+          "example": "[{\"FlowId\": 100374,\"InstanceId\": \"mssql-hlh6yka1\"}]",
           "member": "InterInstanceFlow",
           "name": "InterInstanceFlowSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2106,20 +2108,20 @@
         {
           "disabled": false,
           "document": "备份名称",
-          "example": "",
+          "example": "mssql-backup",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份大小",
-          "example": "",
+          "example": "859",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2459,7 +2461,7 @@
         {
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "xxx",
+          "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -2495,7 +2497,7 @@
         {
           "disabled": false,
           "document": "新建实例绑定的标签集合",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -2778,7 +2780,7 @@
           "example": "FileName",
           "member": "string",
           "name": "FileTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2905,7 +2907,7 @@
         {
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "xxxxx",
+          "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -2977,7 +2979,7 @@
         {
           "disabled": false,
           "document": "新建实例绑定的标签集合",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -3000,6 +3002,24 @@
           "name": "TimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。",
+          "example": "false",
+          "member": "bool",
+          "name": "MultiNodes",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "DrZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3212,7 +3232,7 @@
         {
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "xxx",
+          "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -3221,7 +3241,7 @@
         {
           "disabled": false,
           "document": "新建实例绑定的标签集合",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -3366,7 +3386,7 @@
         {
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "xxxxx",
+          "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -3447,7 +3467,7 @@
         {
           "disabled": false,
           "document": "新建实例绑定的标签集合",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -3470,6 +3490,24 @@
           "name": "TimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否多节点架构实例，默认值为false。当MultiNodes = true时，参数MultiZones必须取值为true。",
+          "example": "false",
+          "member": "bool",
+          "name": "MultiNodes",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备节点可用区，默认为空。当MultiNodes = true时，主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "DrZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3521,7 +3559,7 @@
         {
           "disabled": false,
           "document": "数据库创建信息",
-          "example": "无",
+          "example": "[{ \"DBName\": \"db1\",\"Charset\": \"Chinese_PRC_CI_AS\",\"Accounts\": [{\"UserName\": \"andy\",\"Privilege\": \"ReadOnly\",\"AccountType\": \"L1\"}],\"Remark\": \"andy\"}]",
           "member": "DBCreateInfo",
           "name": "DBs",
           "required": true,
@@ -3536,10 +3574,10 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "100364",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3939,7 +3977,7 @@
         {
           "disabled": false,
           "document": "代金券ID数组，目前单个订单只能使用一张",
-          "example": "xxx",
+          "example": "VoucherIds",
           "member": "string",
           "name": "VoucherIds",
           "required": false,
@@ -3948,7 +3986,7 @@
         {
           "disabled": false,
           "document": "新建实例绑定的标签集合",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "required": false,
@@ -4068,7 +4106,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4078,7 +4116,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4088,7 +4126,7 @@
           "example": "mssql-xxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4098,7 +4136,7 @@
           "example": "name",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4108,17 +4146,17 @@
           "example": "enable",
           "member": "string",
           "name": "CrossBackupEnabled",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "跨地域备份目标地域",
-          "example": "[]",
+          "example": "[\"ap-beijing\",\"ap-shanghai\"]",
           "member": "string",
           "name": "CrossRegions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4128,7 +4166,7 @@
           "example": "2022-06-21 11:47:17",
           "member": "string",
           "name": "LastBackupStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4138,7 +4176,7 @@
           "example": "7",
           "member": "int64",
           "name": "CrossBackupSaveDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4148,7 +4186,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DataBackupSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4158,7 +4196,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DataBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4168,7 +4206,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LogBackupSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4178,7 +4216,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LogBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4188,7 +4226,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ActualUsedSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4198,7 +4236,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ActualUsedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4284,70 +4322,70 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "无",
+          "example": "db1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字符集",
-          "example": "无",
+          "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "Charset",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库创建时间",
-          "example": "无",
+          "example": "2024-11-14 14:29:38",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库状态。1--创建中， 2--运行中， 3--修改中，-1--删除中",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库账号权限信息",
-          "example": "无",
+          "example": "[{\"UserName\": \"andy\",\"Privilege\": \"ReadOnly\",\"AccountType\": \"L0\"}]",
           "member": "AccountPrivilege",
           "name": "Accounts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内部状态。ONLINE表示运行中",
-          "example": "无",
+          "example": "ONLINE",
           "member": "string",
           "name": "InternalStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4357,7 +4395,7 @@
           "example": "disable",
           "member": "string",
           "name": "Encryption",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4968,22 +5006,20 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "",
+          "example": "db1",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "备注信息",
-          "example": "",
+          "example": "andy",
           "member": "string",
           "name": "Remark",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5044,22 +5080,20 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "",
+          "example": "db1",
           "member": "string",
           "name": "DataBaseName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据库权限变更信息",
-          "example": "",
+          "example": "[{\"UserName\": \"andy\",\"Privilege\": \"ReadOnly\",\"AccountType\": \"\tL0\"}]",
           "member": "AccountPrivilege",
           "name": "AccountPrivileges",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5070,22 +5104,20 @@
         {
           "disabled": false,
           "document": "发布数据库名称",
-          "example": "",
+          "example": "db1",
           "member": "string",
           "name": "PublishDatabase",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "订阅数据库名称",
-          "example": "",
+          "example": "db2",
           "member": "string",
           "name": "SubscribeDatabase",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5096,40 +5128,40 @@
         {
           "disabled": false,
           "document": "发布数据库名称",
-          "example": "",
+          "example": "db1",
           "member": "string",
           "name": "PublishDatabase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订阅数据库名称",
-          "example": "",
+          "example": "db2",
           "member": "string",
           "name": "SubscribeDatabase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近一次同步时间",
-          "example": "",
+          "example": "2024-12-23 00:24:26",
           "member": "string",
           "name": "LastSyncTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库之间的发布订阅状态 running，success，fail，unknow",
-          "example": "",
+          "example": "running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5162,7 +5194,7 @@
         {
           "disabled": false,
           "document": "开启CT之后是否自动清理 0：否 1：是",
-          "example": "\"\"",
+          "example": "0",
           "member": "string",
           "name": "IsAutoCleanupOn",
           "output_required": true,
@@ -5292,7 +5324,7 @@
         {
           "disabled": false,
           "document": "保留天数",
-          "example": "\"\"",
+          "example": "7",
           "member": "string",
           "name": "RetentionPeriod",
           "output_required": true,
@@ -5348,30 +5380,30 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "",
+          "example": "db1",
           "member": "string",
           "name": "DBName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可回档开始时间",
-          "example": "",
+          "example": "2024-12-20 00:24:26",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可回档结束时间",
-          "example": "",
+          "example": "2024-12-23 00:24:26",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5384,60 +5416,60 @@
         {
           "disabled": false,
           "document": "订单名",
-          "example": "",
+          "example": "20230101872736",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商品数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关联的流程 ID，可用于查询流程执行状态",
-          "example": "",
+          "example": "100367",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "只有创建实例的订单会填充该字段，表示该订单创建的实例的 ID。",
-          "example": "",
+          "example": "[\"mssql-6f4ddx2f\"]",
           "member": "string",
           "name": "InstanceIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "所属账号",
-          "example": "",
+          "example": "10000****5643",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例付费类型",
-          "example": "",
+          "example": "POSTPAID",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5567,7 +5599,7 @@
         {
           "disabled": false,
           "document": "文件名称集合",
-          "example": "无",
+          "example": "[\"andy.xlsx\"]",
           "member": "string",
           "name": "FileNameSet",
           "required": true,
@@ -5919,7 +5951,7 @@
         {
           "disabled": false,
           "document": "账号名称",
-          "example": "test_sa",
+          "example": "andy_sa",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5955,17 +5987,17 @@
           "example": "mssql-632eyp63",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "账户信息列表",
-          "example": "无",
+          "example": "[{\"Status\": 2,\"Remark\": \"--\",\"AccountType\": \"L0\",\"Host\": \"127.0.0.1\",\"Name\": \"xiaowei\",\"IsAdmin\": true,\"UpdateTime\": \"2020-09-22 00:00:00\",\"InternalStatus\": \"enable\",\"Authentication\": \"win-windows\",\"PassTime\": \"2020-09-22 00:00:00\",\"Dbs\": [{\"Privilege\": \"ReadOnly\",\"DBName\": \"db1\"}],\"CreateTime\": \"2020-09-22 00:00:00\"}]",
           "member": "AccountDetail",
           "name": "Accounts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5975,7 +6007,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6233,7 +6265,7 @@
         {
           "disabled": false,
           "document": "单库备份的聚合ID, 可通过接口DescribeBackups获取（不支持查询打包备份记录）",
-          "example": "123456789",
+          "example": "241259",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -6294,7 +6326,7 @@
         {
           "disabled": false,
           "document": "备份文件列表详情",
-          "example": "无",
+          "example": " [{\"CrossExternalAddr\": \"https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c\",             \"CrossInternalAddr\": \"https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db2_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3df977b8f1afee59225e41a9e766b035953ef9527c\",\"CrossRegion\": \"ap-singapore\"}],\"Region\": \"ap-singapore\",\"DBs\": [\"db1\"],\"DownloadLink\": \"https://sqlserver-bucket-sg-1258415541.cos.ap-singapore.myqcloud.com/1251966477%2fsqlserver%2fmssql-mz23h8n7%2fbackup%2fmanual_specific_58002_db1_2021_09_14144312.bak?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1631605556%3b1631606456%26q-key-time%3d1631605556%3b1631606456%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3de5e61bfbccf44f6c3dd8a710296108dc95ba16db\",\"FileName\": \"manual_specific_58002_db1_2021_09_14144312.bak\",\"Id\": 36074,\"Size\": 184}]",
           "member": "BackupFile",
           "name": "BackupFiles",
           "output_required": true,
@@ -6905,7 +6937,7 @@
         {
           "disabled": false,
           "document": "增量导入任务ID",
-          "example": "无",
+          "example": "mssql-incremental-migration-kp7bgv8p",
           "member": "string",
           "name": "IncrementalMigrationId",
           "required": false,
@@ -6920,10 +6952,10 @@
         {
           "disabled": false,
           "document": "已上传的备份的信息",
-          "example": "无",
+          "example": "[{\"FileName\": \"db_cvm_1_20200927204209_2log2_2noreconvery2.bak\",\"Size\": 28672},{\"FileName\": \"db_cvm_3_20200927204219_2log2_2noreconvery2.bak\",\"Size\": 40960}]",
           "member": "CosUploadBackupFile",
           "name": "CosUploadBackupFileSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7187,17 +7219,17 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件部署任务集合",
-          "example": "无",
+          "example": " [{\"Action\": {\"AllAction\": [\"view\",\"remark\",\"delete\"],\"AllowedAction\": [\"view\",\"remark\",\"delete\"]},\"CreateTime\": \"2022-08-05 14:14:17\",\"EndTime\": \"2022-08-06 00:00:00\",\"FileMd5\": \"\",\"FileName\": \"test.xlsx\",\"FilePath\": \"D:\\\\SSIS\\\\\",\"FileSize\": 0,\"FileType\": \"FLAT\",\"FileURL\": \"http://sqlserver-gz-test-1251966477.cos.ap-guangzhou.myqcloud.com/test.xlsx\",\"InstanceId\": \"mssqlbi-fo2dwujt\",\"Message\": \"\",\"Remark\": \"Remark\",\"StartTime\": \"0000-00-00 00:00:00\",\"Status\": 1}]",
           "member": "BusinessIntelligenceFile",
           "name": "BackupMigrationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7520,7 +7552,7 @@
         {
           "disabled": false,
           "document": "实例版本代号列表",
-          "example": "无",
+          "example": "[\"2008R2\"]",
           "member": "string",
           "name": "VersionSet",
           "required": false,
@@ -7556,15 +7588,17 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "互通组内实例信息详情",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"mssql-30vft2ix\",\"InterPort\": 1028,\"InterVip\": \"192.168.0.1\",\"Name\": \"andy\",\"Region\": \"ap-guangzhou\",\"Status\": 1,\"Version\": \"2012SP3\",\"VersionName\": \"SQL Server 2012 Enterprise\",\"Vip\": \"192.168.0.2\",\"Vport\": 1433,\"Zone\": \"ap-guangzhou-3\"}]",
           "member": "InterInstance",
           "name": "InterInstanceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8728,7 +8762,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-单节点型,cvmHA-新版高可用,cvmRO-新版只读",
+          "document": "购买实例的类型 HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-单节点型,cvmHA-新版高可用,cvmRO-新版只读，MultiHA-多节点，cvmMultiHA-云盘多节点",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -8788,6 +8822,15 @@
           "name": "MachineType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备节点可用区，默认为空。如果是多节点架构时必传，并且备机可用区集合最小为2个，最大不超过5个。",
+          "example": "[\"ap-guangzhou-1\"]",
+          "member": "string",
+          "name": "DrZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8798,7 +8841,7 @@
         {
           "disabled": false,
           "document": "计费参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " \"{\\\"uin\\\":\\\"2919041563\\\",\\\"ownerUin\\\":\\\"2919041563\\\",\\\"resInfo\\\":[{\\\"goodsCategoryId\\\":1025890,\\\"goodsNum\\\":1,\\\"payMode\\\":1,\\\"regionId\\\":1,\\\"zoneId\\\":100006,\\\"goodsDetail\\\":{\\\"pid\\\":1019180,\\\"productCode\\\":\\\"p_sqlserver\\\",\\\"subProductCode\\\":\\\"sp_sqlserver_dual_exclusive_cloud\\\",\\\"timeSpan\\\":1,\\\"timeUnit\\\":\\\"m\\\",\\\"goodsSubType\\\":\\\"sp_sqlserver_dual_exclusive_cloud\\\",\\\"sv_sqlserver_cpu_dual_exclusive_cloud_enterprise\\\":2,\\\"sv_sqlserver_cpu_dual_exclusive_cloud_standard\\\":0,\\\"sv_sqlserver_mem_dual_exclusive_cloud_enterprise\\\":4,\\\"sv_sqlserver_mem_dual_exclusive_cloud_standard\\\":0,\\\"sv_sqlserver_disk_dual_enhancedssd\\\":0,\\\"sv_sqlserver_disk_dual_fastssd\\\":0,\\\"sv_sqlserver_disk_dual_universalssd\\\":200},\\\"platform\\\":1}]}\\n\"",
           "member": "string",
           "name": "Parameter",
           "output_required": true,
@@ -9344,7 +9387,7 @@
         {
           "disabled": false,
           "document": "迁移源实例密码",
-          "example": "123456",
+          "example": "Qy2255778899",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -9362,7 +9405,7 @@
           "example": "3",
           "member": "int64",
           "name": "Amount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9372,7 +9415,7 @@
           "example": "[\"Biz-test1\",\"Biz-test2\",\"Biz-test3\"]",
           "member": "string",
           "name": "MigrateDBSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9567,7 +9610,7 @@
         {
           "disabled": false,
           "document": "迁移任务的名称，模糊匹配",
-          "example": "测试",
+          "example": "andy_Migrate",
           "member": "string",
           "name": "MigrateName",
           "required": false,
@@ -9621,17 +9664,17 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "查询结果的列表",
-          "example": "无",
+          "example": "[{\"MigrateId\": 2734,\"MigrateName\": \"andy_Migrate\",\"AppId\": 1251006373,\"Region\": \"ap-guangzhou\",\"SourceType\": 5,\"CreateTime\": \"2018-08-09 11:46:15\",\"StartTime\": \"2024-10-01 00:00:00\",\"EndTime\": \"2024-10-02 00:00:00\",\"Status\": 1,\"Message\": \"\",\"CheckFlag\": 0,\"Progress\": 0,\"MigrateDetail\": {\"StepName\": \"\",\"Progress\": 0}}]",
           "member": "MigrateTask",
           "name": "MigrateTaskSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10743,7 +10786,7 @@
         {
           "disabled": false,
           "document": "回档任务记录列表",
-          "example": "无",
+          "example": "[{\"TargetInstanceId\": \"mssql-892932uiu\",\"TargetInstanceName\": \"andy\", \"TargetInstanceStatus\": 2,\"TargetRegion\": \"ap-guangzhou\",\"TargetType\": 0,\"EndTime\": \"0000-00-00 00:00:00\",\"RestoreId\": 1012,\"RestoreTime\": \"2023-01-12 16:22:48\",\"RestoreType\": 0,\"StartTime\": \"2023-01-12 16:22:55\",\"Status\": 0,\"FlowId\": 100}]",
           "member": "RestoreTask",
           "name": "Tasks",
           "output_required": true,
@@ -10969,7 +11012,7 @@
         {
           "disabled": false,
           "document": "实例规格ID，可通过DescribeProductConfig接口获取。",
-          "example": "无",
+          "example": " [62]",
           "member": "uint64",
           "name": "SpecIdSet",
           "required": true,
@@ -10987,7 +11030,7 @@
         {
           "disabled": false,
           "document": "产品ID，可通过DescribeProductConfig接口获取。",
-          "example": "123456",
+          "example": "100456",
           "member": "uint64",
           "name": "Pid",
           "required": true,
@@ -11020,9 +11063,10 @@
         {
           "disabled": false,
           "document": "规格在不同地域状态集合",
-          "example": "无",
+          "example": "[{\"Architecture\": \"SINGLE\",\"Id\": \"11000036233\",\"InstanceType\": \"SI\",\"MultiZonesStatus\": \"Invalid\",\"PayModeStatus\": \"ALL\",\"Price\": {\"PostpaidPrice\": 47,\"PostpaidPriceUnit\": \"H\",\"PrepaidPrice\": 26000,\"PrepaidPriceUnit\": \"M\"},\"SpecId\": 62,\"Status\": 1,\"Style\": \"EXCLUSIVE\",\"Version\": \"2016SP1\",\"ZoneStatusSet\": [{\"Region\": \"ap-guangzhou\",\"Status\": 1,\"Zone\": \"ap-guangzhou-3\"}, {\"Region\": \"ap-guangzhou\",\"Status\": 3,\"Zone\": \"ap-guangzhou-4\"}, {\"Region\": \"ap-guangzhou\",\"Status\": 1,\"Zone\": \"ap-guangzhou-6\"}, {\"Region\": \"ap-singapore\",\"Status\": 1,\"Zone\": \"ap-singapore-2\"}, {\"Region\": \"ap-singapore\",\"Status\": 1,\"Zone\": \"ap-singapore-1\"}, {\"Region\": \"ap-hongkong\",\"Status\": 1,\"Zone\": \"ap-hongkong-2\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-2\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-3\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-4\"}, {\"Region\": \"ap-shanghai\",\"Status\": 1,\"Zone\": \"ap-shanghai-5\"}, {\"Region\": \"ap-beijing\",\"Status\": 1,\"Zone\": \"ap-beijing-2\"}, {\"Region\": \"ap-beijing\",\"Status\": 1,\"Zone\": \"ap-beijing-3\"}, {\"Region\": \"ap-beijing\",\"Status\": 1,\"Zone\": \"ap-beijing-5\"}}]}]",
           "member": "SpecSellStatus",
           "name": "DescribeSpecSellStatusSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11683,7 +11727,7 @@
           "example": "100",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11693,7 +11737,7 @@
           "example": "*.xel",
           "member": "string",
           "name": "FileName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11703,7 +11747,7 @@
           "example": "1024",
           "member": "int64",
           "name": "Size",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11713,7 +11757,7 @@
           "example": "slow",
           "member": "string",
           "name": "EventType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11723,7 +11767,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11733,7 +11777,7 @@
           "example": "2023-01-01 12:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11743,27 +11787,27 @@
           "example": "2023-01-01 12:05:00",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网下载地址",
-          "example": "无",
+          "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
           "member": "string",
           "name": "InternalAddr",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "外网下载地址",
-          "example": "无",
+          "example": "https://cosback-appid.cos.ap-guangzhou.myqcloud.com/appid%2fsqlserver%2fmssql-mgq355n0%2fbackup%2fautoed_instance_58037_20200728011545.bak.tar?sign=q-sign-algorithm%3dsha1%26q-ak%3d*************************%26q-sign-time%3d1596176966%3b1596177266%26q-key-time%3d1596176966%3b1596177266%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d3ea8139b631fa13d54b2c03313cbf3850d1e0c2c",
           "member": "string",
           "name": "ExternalAddr",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11779,17 +11823,17 @@
           "example": "view",
           "member": "string",
           "name": "AllAction",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前状态允许的操作，AllAction的子集,为空表示禁止所有操作",
-          "example": "无",
+          "example": "view",
           "member": "string",
           "name": "AllowedAction",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -12095,22 +12139,20 @@
         {
           "disabled": false,
           "document": "实例ID，形如mssql-j8kv137v",
-          "example": "",
+          "example": "mssql-j8kv137v",
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "实例续费标记。0：正常续费，1：自动续费，2：到期不续",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -12121,80 +12163,80 @@
         {
           "disabled": false,
           "document": "唯一id",
-          "example": "",
+          "example": "100374",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Job类型",
-          "example": "",
+          "example": "62",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Job状态",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "进度百分比0~100",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "",
+          "example": "2024-08-15 14:25:20",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "",
+          "example": "2024-08-15 14:26:22",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误代码",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息描述",
-          "example": "",
+          "example": "Asynchronous task failed",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12349,9 +12391,10 @@
         {
           "disabled": false,
           "document": "迁移数据库的名称",
-          "example": "",
+          "example": "db1",
           "member": "string",
           "name": "DBName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12365,20 +12408,20 @@
         {
           "disabled": false,
           "document": "当前环节的名称",
-          "example": "",
+          "example": "Back Up Database",
           "member": "string",
           "name": "StepName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前环节的进度（单位是%）",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -12391,9 +12434,10 @@
         {
           "disabled": false,
           "document": "迁移源实例的ID，MigrateType=1(TencentDB for SQLServers)时使用，格式如：mssql-si2823jyl",
-          "example": "",
+          "example": "mssql-si2823jyl",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12401,9 +12445,10 @@
         {
           "disabled": false,
           "document": "迁移源Cvm的ID，MigrateType=2(云服务器自建SQLServer数据库)时使用",
-          "example": "",
+          "example": "ins-62dhd3d1",
           "member": "string",
           "name": "CvmId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12411,9 +12456,10 @@
         {
           "disabled": false,
           "document": "迁移源Cvm的Vpc网络标识，MigrateType=2(云服务器自建SQLServer数据库)时使用，格式如：vpc-6ys9ont9",
-          "example": "",
+          "example": "vpc-6ys9ont9",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12421,9 +12467,10 @@
         {
           "disabled": false,
           "document": "迁移源Cvm的Vpc下的子网标识，MigrateType=2(云服务器自建SQLServer数据库)时使用，格式如：subnet-h9extioi",
-          "example": "",
+          "example": "subnet-h9extioi",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12431,9 +12478,10 @@
         {
           "disabled": false,
           "document": "用户名，MigrateType=1或MigrateType=2使用",
-          "example": "",
+          "example": "andy",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12441,9 +12489,10 @@
         {
           "disabled": false,
           "document": "密码，MigrateType=1或MigrateType=2使用",
-          "example": "",
+          "example": "Zh22448899",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12451,9 +12500,10 @@
         {
           "disabled": false,
           "document": "迁移源Cvm自建库的内网IP，MigrateType=2(云服务器自建SQLServer数据库)时使用",
-          "example": "",
+          "example": "172.1.1.5",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12461,9 +12511,10 @@
         {
           "disabled": false,
           "document": "迁移源Cvm自建库的端口号，MigrateType=2(云服务器自建SQLServer数据库)时使用",
-          "example": "",
+          "example": "22",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -12471,9 +12522,10 @@
         {
           "disabled": false,
           "document": "离线迁移的源备份地址，MigrateType=4或MigrateType=5使用",
-          "example": "",
+          "example": "http://gz-oncvm-1254065710.cosgz.myqcloud.com/test4_20180724021516.bak",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -12481,9 +12533,10 @@
         {
           "disabled": false,
           "document": "离线迁移的源备份密码，MigrateType=4或MigrateType=5使用",
-          "example": "",
+          "example": "Ps55336622",
           "member": "string",
           "name": "UrlPassword",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12497,9 +12550,10 @@
         {
           "disabled": false,
           "document": "迁移目标实例的ID，格式如：mssql-si2823jyl",
-          "example": "",
+          "example": "mssql-si2823jyl",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12507,9 +12561,10 @@
         {
           "disabled": false,
           "document": "迁移目标实例的用户名",
-          "example": "",
+          "example": "andy",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12517,9 +12572,10 @@
         {
           "disabled": false,
           "document": "迁移目标实例的密码",
-          "example": "",
+          "example": "Zh22446688",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -12533,130 +12589,130 @@
         {
           "disabled": false,
           "document": "迁移任务ID",
-          "example": "",
+          "example": "2728",
           "member": "uint64",
           "name": "MigrateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务名称",
-          "example": "",
+          "example": "andy-Migrate",
           "member": "string",
           "name": "MigrateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务所属的用户ID",
-          "example": "",
+          "example": "1254**5710",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务所属的地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移源的类型 1:TencentDB for SQLServer 2:云服务器自建SQLServer数据库 4:SQLServer备份还原 5:SQLServer备份还原（COS方式）",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "SourceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务的创建时间",
-          "example": "",
+          "example": "2024-08-06 17:44:58",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务的开始时间",
-          "example": "",
+          "example": "2024-08-06 17:45:58",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务的结束时间",
-          "example": "",
+          "example": "2024-08-06 17:50:58",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务的状态（1:初始化,4:迁移中,5.迁移失败,6.迁移成功,7已中止,8已删除,9中止中,10完成中,11中止失败,12完成失败）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "信息",
-          "example": "",
+          "example": "Message",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否迁移任务经过检查（0:未校验,1:校验成功,2:校验失败,3:校验中）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "CheckFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务当前进度（单位%）",
-          "example": "",
+          "example": "50",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "迁移任务进度细节",
-          "example": "",
+          "example": "[{\"StepName\": \"Back Up Database\",\"Progress\": \"50\"}]",
           "member": "MigrateDetail",
           "name": "MigrateDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -12845,20 +12901,20 @@
         {
           "disabled": false,
           "document": "支持的所有操作，值包括：view(查看任务) ，modify(修改任务)， start(启动任务)，incremental(创建增量任务)，delete(删除任务)，upload(获取上传权限)。",
-          "example": "",
+          "example": "[\"view\"]",
           "member": "string",
           "name": "AllAction",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前状态允许的操作，AllAction的子集,为空表示禁止所有操作",
-          "example": "",
+          "example": "[\"view\"]",
           "member": "string",
           "name": "AllowedAction",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -12871,40 +12927,40 @@
         {
           "disabled": false,
           "document": "总步骤数",
-          "example": "",
+          "example": "4",
           "member": "int64",
           "name": "StepAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前步骤",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "StepNow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总进度,如：\"30\"表示30%",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤信息，null表示还未开始迁移\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"StepNo\": \"1\",\"StepName\": \"back up datebase\",\"StepId\": \"ConnectDBCheck\",\"Status\": \"1\"}]",
           "member": "MigrationStep",
           "name": "StepInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -12917,40 +12973,40 @@
         {
           "disabled": false,
           "document": "步骤序列",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "StepNo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤展现名称",
-          "example": "",
+          "example": "back up datebase",
           "member": "string",
           "name": "StepName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "英文ID标识",
-          "example": "",
+          "example": "ConnectDBCheck",
           "member": "string",
           "name": "StepId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤状态:0-默认值,1-成功,2-失败,3-执行中,4-未执行",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -13769,6 +13825,33 @@
           "name": "WaitSwitch",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否被KMS加密保护，0-表示否，1表示被KMS保护，默认取值0",
+          "example": "0",
+          "member": "int64",
+          "name": "IsKMS",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IsKMS为1时必填",
+          "example": "df*******************************52",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IsKMS为1时必填",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13870,10 +13953,10 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "100281",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13946,7 +14029,7 @@
         {
           "disabled": false,
           "document": "备机网络ID，不填默认和主实例保持一致",
-          "example": "无",
+          "example": "vpc-jh8ah7",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -13955,7 +14038,7 @@
         {
           "disabled": false,
           "document": "备机网络子网ID，不填默认和主实例保持一致",
-          "example": "无",
+          "example": "sub-i90aoa",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -13963,10 +14046,19 @@
         },
         {
           "disabled": false,
-          "document": "指定的备机只读vip，不填自动分配",
-          "example": "无",
+          "document": "指定的备机只读vip，不填自动分配。多节点SingleReadOnly模式不支持指定vip。",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备机只读模式，多节点架构默认取值BalancedReadOnly。SingleReadOnly-每个备机各对应一个只读地址（多节点架构），BalancedReadOnly-所有备机共用一个只读地址。当实例是双节点架构时，固定取值SingleReadOnly。",
+          "example": "BalancedReadOnly",
+          "member": "string",
+          "name": "ReadMode",
           "required": false,
           "type": "string"
         }
@@ -14375,7 +14467,7 @@
         },
         {
           "disabled": false,
-          "document": "证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。",
+          "document": "证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，kms-表示使用kms的CMK证书，默认取值self。",
           "example": "self",
           "member": "string",
           "name": "CertificateAttribution",
@@ -14385,9 +14477,27 @@
         {
           "disabled": false,
           "document": "引用的其他主账号ID，当CertificateAttribution 为others时必填。",
-          "example": "无",
+          "example": "1000****6845",
           "member": "string",
           "name": "QuoteUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CertificateAttribution为kms时必填",
+          "example": "df4fd19c-ea4e-11ed-8c28-525400b4ad52",
+          "member": "string",
+          "name": "KeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CertificateAttribution为kms时必填",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KeyRegion",
           "required": false,
           "type": "string"
         }
@@ -14400,7 +14510,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "0",
+          "example": "12098283",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -14422,7 +14532,7 @@
         {
           "disabled": false,
           "document": "实例短 ID 列表",
-          "example": "无",
+          "example": "[“mssql-bm5e51kb”]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -14431,7 +14541,7 @@
         {
           "disabled": false,
           "document": "要修改的参数列表。每一个元素是 Name 和 CurrentValue 的组合。Name 是参数名，CurrentValue 是要修改的值。<b>注意</b>：如果修改的参数需要<b>重启</b>实例，那么您的实例将会在执行修改时<b>重启</b>。您可以通过DescribeInstanceParams接口查询修改参数时是否会重启实例，以免导致您的实例不符合预期重启。",
-          "example": "无",
+          "example": "[{\"Name\": \"fill factor (%)\",\"CurrentValue\": \"50\"}]",
           "member": "Parameter",
           "name": "ParamList",
           "required": true,
@@ -15165,30 +15275,30 @@
         {
           "disabled": false,
           "document": "地域ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区ID",
-          "example": "",
+          "example": "100002",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置信息",
-          "example": "",
+          "example": "[{\"CPU\": 1,\"MachineType\": \"TS85\",\"MachineTypeName\": \"高IO\",\"MaxStorage\": 3000,\"Memory\": 2000000,\"MinStorage\": 10,\"PayModeStatus\": \"ALL\",\"Pid\": 10908,\"PostPid\": [10908],\"QPS\": 2100,\"SpecId\": 15,\"SuitInfo\": \"独立用户数上百人的小型应用\",\"Version\": \"2008R2\",\"VersionName\": \"SQL Server 2008 Enterprise\"}],\"RegionId\": 1,\"ZoneId\": 100002}]",
           "member": "SpecInfo",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -15201,90 +15311,90 @@
         {
           "disabled": false,
           "document": "发布订阅ID",
-          "example": "",
+          "example": "172631",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发布订阅名称",
-          "example": "",
+          "example": "sqlPublishSubscribe",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发布实例ID",
-          "example": "",
+          "example": "mssql-2cwisu23",
           "member": "string",
           "name": "PublishInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发布实例名称",
-          "example": "",
+          "example": "mssql-andy",
           "member": "string",
           "name": "PublishInstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发布实例IP",
-          "example": "",
+          "example": "172.1.1.1",
           "member": "string",
           "name": "PublishInstanceIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订阅实例ID",
-          "example": "",
+          "example": "mssql-hlh6yka1",
           "member": "string",
           "name": "SubscribeInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订阅实例名称",
-          "example": "",
+          "example": "mssql-toto",
           "member": "string",
           "name": "SubscribeInstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订阅实例IP",
-          "example": "",
+          "example": "172.2.2.2",
           "member": "string",
           "name": "SubscribeInstanceIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库的订阅发布关系集合",
-          "example": "",
+          "example": "[{\"PublishDatabase\": \"db1\",\"SubscribeDatabase\": \"db2\",\"LastSyncTime\": \"2024-12-23 00:24:26\",\"Status\": \"\trunning\"}]",
           "member": "DatabaseTupleStatus",
           "name": "DatabaseTupleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -15354,7 +15464,7 @@
         {
           "disabled": false,
           "document": "只读组ID",
-          "example": "无",
+          "example": "mssqlrg-dj5i29c5n",
           "member": "string",
           "name": "ReadOnlyGroupId",
           "output_required": true,
@@ -15364,7 +15474,7 @@
         {
           "disabled": false,
           "document": "只读组名称",
-          "example": "无",
+          "example": "default_name",
           "member": "string",
           "name": "ReadOnlyGroupName",
           "output_required": true,
@@ -15374,7 +15484,7 @@
         {
           "disabled": false,
           "document": "只读组的地域ID，与主实例相同",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
           "output_required": true,
@@ -15384,7 +15494,7 @@
         {
           "disabled": false,
           "document": "只读组的可用区ID，与主实例相同",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "ZoneId",
           "output_required": true,
@@ -15394,7 +15504,7 @@
         {
           "disabled": false,
           "document": "是否启动超时剔除功能，0-不开启剔除功能，1-开启剔除功能",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsOfflineDelay",
           "output_required": true,
@@ -15404,7 +15514,7 @@
         {
           "disabled": false,
           "document": "启动超时剔除功能后，使用的超时阈值",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "ReadOnlyMaxDelayTime",
           "output_required": true,
@@ -15414,7 +15524,7 @@
         {
           "disabled": false,
           "document": "启动超时剔除功能后，只读组至少保留的只读副本数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "MinReadOnlyInGroup",
           "output_required": true,
@@ -15424,7 +15534,7 @@
         {
           "disabled": false,
           "document": "只读组vip",
-          "example": "无",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
           "output_required": true,
@@ -15434,7 +15544,7 @@
         {
           "disabled": false,
           "document": "只读组vport",
-          "example": "无",
+          "example": "1433",
           "member": "int64",
           "name": "Vport",
           "output_required": true,
@@ -15444,7 +15554,7 @@
         {
           "disabled": false,
           "document": "只读组私有网络ID",
-          "example": "无",
+          "example": "vpc-kw88teud",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -15454,7 +15564,7 @@
         {
           "disabled": false,
           "document": "只读组私有网络子网ID",
-          "example": "无",
+          "example": "subnet-8z5n8tcg",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
@@ -15464,7 +15574,7 @@
         {
           "disabled": false,
           "document": "只读组状态: 1-申请成功运行中，5-申请中",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -15474,7 +15584,7 @@
         {
           "disabled": false,
           "document": "主实例ID，形如mssql-sgeshe3th",
-          "example": "无",
+          "example": "mssql-sgeshe3th",
           "member": "string",
           "name": "MasterInstanceId",
           "output_required": true,
@@ -15494,7 +15604,7 @@
         {
           "disabled": false,
           "document": "RO组外网地址域名",
-          "example": "无",
+          "example": "gz.xxx.sqlserver.tencent.com",
           "member": "string",
           "name": "DnsPodDomain",
           "output_required": true,
@@ -15504,7 +15614,7 @@
         {
           "disabled": false,
           "document": "RO组外网地址端口",
-          "example": "无",
+          "example": "2032",
           "member": "uint64",
           "name": "TgwWanVPort",
           "output_required": true,
@@ -15523,27 +15633,27 @@
           "example": "mssql-dj5i29c5n",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "只读副本名称",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "只读副本唯一UID",
-          "example": "无",
+          "example": "gamedb.gz000.cdb.db",
           "member": "string",
           "name": "Uid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15553,7 +15663,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15563,7 +15673,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15573,7 +15683,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15583,7 +15693,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15593,7 +15703,7 @@
           "example": "2",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15603,7 +15713,7 @@
           "example": "100",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15613,7 +15723,7 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15623,7 +15733,7 @@
           "example": "2008R2",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15633,7 +15743,7 @@
           "example": "TS85",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15643,7 +15753,7 @@
           "example": "2",
           "member": "int64",
           "name": "Model",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15653,7 +15763,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15663,7 +15773,7 @@
           "example": "1",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15673,7 +15783,7 @@
           "example": "1",
           "member": "string",
           "name": "DelayTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15683,7 +15793,7 @@
           "example": "Init",
           "member": "string",
           "name": "SynStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15693,7 +15803,7 @@
           "example": "db1",
           "member": "string",
           "name": "DatabaseDifference",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15703,7 +15813,7 @@
           "example": "ac1",
           "member": "string",
           "name": "AccountDifference",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15713,7 +15823,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15723,7 +15833,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15733,7 +15843,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "string",
           "name": "IsolateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15743,7 +15853,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15753,7 +15863,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15766,22 +15876,20 @@
         {
           "disabled": false,
           "document": "只读实例ID，格式如：mssqlro-3l3fgqn7",
-          "example": "",
+          "example": "mssqlro-3l3fgqn7",
           "member": "string",
           "name": "ReadOnlyInstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "只读实例权重 ，范围是0-100",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "ReadOnlyWeight",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -15875,40 +15983,40 @@
         {
           "disabled": false,
           "document": "地域英文ID，类似ap-guanghou",
-          "example": "",
+          "example": "ap-guanghou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域中文名称",
-          "example": "",
+          "example": "广州",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域数字ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该地域目前是否可以售卖，UNAVAILABLE-不可售卖；AVAILABLE-可售卖",
-          "example": "",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16147,9 +16255,10 @@
         {
           "disabled": false,
           "document": "标签key",
-          "example": "无",
+          "example": "created-by",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16157,9 +16266,10 @@
         {
           "disabled": false,
           "document": "标签value",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -16471,7 +16581,7 @@
         {
           "disabled": false,
           "document": "按照ReNameRestoreDatabase中的库进行重命名，仅在Type = 1重命名回档方式有效；不填则按照默认方式命名库，DBs参数确定要恢复的库",
-          "example": "无",
+          "example": "[{\"OldName\": \"db1\",\"NewName\": \"db2\"}]",
           "member": "RenameRestoreDatabase",
           "name": "RenameRestore",
           "required": false,
@@ -16486,9 +16596,10 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "1234",
+          "example": "100023",
           "member": "uint64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16570,6 +16681,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是KMS的CMK证书",
+          "example": "0",
+          "member": "int64",
+          "name": "IsKMS",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "KMS中购买的用户主密钥ID（CMK）",
+          "example": "asdafga",
+          "member": "string",
+          "name": "CMKId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CMK所属的地域，不同地域的CMK数据不互通",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CMKRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16580,70 +16721,70 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "172632",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
-          "example": "",
+          "example": "2024-12-23 00:23:13",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "入站规则",
-          "example": "",
+          "example": "[{\"Action\": \"ACCEPT\",\"CidrIp\": \"0.0.0.0/0\",\"Dir\": \"INPUT\",\"IpProtocol\": \"ALL\",\"PortRange\": \"ALL\"}]",
           "member": "SecurityGroupPolicy",
           "name": "InboundSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "出站规则",
-          "example": "",
+          "example": "[{\"Action\": \"ACCEPT\",\"CidrIp\": \"0.0.0.0/0\",\"Dir\": \"OUTPUT\",\"IpProtocol\": \"ALL\",\"PortRange\": \"ALL\"}]",
           "member": "SecurityGroupPolicy",
           "name": "OutboundSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组ID",
-          "example": "",
+          "example": "sg-igw86yth",
           "member": "string",
           "name": "SecurityGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组名称",
-          "example": "",
+          "example": "default",
           "member": "string",
           "name": "SecurityGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组备注",
-          "example": "",
+          "example": "System created security group",
           "member": "string",
           "name": "SecurityGroupRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16656,50 +16797,50 @@
         {
           "disabled": false,
           "document": "策略，ACCEPT 或者 DROP",
-          "example": "",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "目的 IP 或 IP 段，例如172.16.0.0/12",
-          "example": "",
+          "example": "172.16.0.0/12",
           "member": "string",
           "name": "CidrIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "端口或者端口范围",
-          "example": "",
+          "example": "1433",
           "member": "string",
           "name": "PortRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络协议，支持 UDP、TCP等",
-          "example": "",
+          "example": "TCP",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则限定的方向，OUTPUT-出战规则  INPUT-进站规则",
-          "example": "",
+          "example": " INPUT",
           "member": "string",
           "name": "Dir",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16753,80 +16894,80 @@
         {
           "disabled": false,
           "document": "慢查询日志文件唯一标识",
-          "example": "",
+          "example": "30304577",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件生成的开始时间",
-          "example": "",
+          "example": "2020-11-05 20:10:05",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件生成的结束时间",
-          "example": "",
+          "example": "2020-11-05 20:17:14",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件大小（KB）",
-          "example": "",
+          "example": "1024",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件中log条数",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网下载地址",
-          "example": "",
+          "example": "https://sqlserver-bucket-gz-1258415541.cos.ap-guangzhou.myqcloud.com/1251966477%2fsqlserver%2fmssql-9aajrcn7%2fslow%2fTRACE_20201105201000.trc?sign=q-sign-algorithm%3dsha1%26q-ak%3d***********************%26q-sign-time%3d1604580096%3b1604580996%26q-key-time%3d1604580096%3b1604580996%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d583b4db2ec94fa10e55da9b95e1e3d8943eaa386",
           "member": "string",
           "name": "InternalAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "外网下载地址",
-          "example": "",
+          "example": "https://sqlserver-bucket-gz-1258415541.cos.ap-guangzhou.myqcloud.com/1251966477%2fsqlserver%2fmssql-9aajrcn7%2fslow%2fTRACE_20201105201000.trc?sign=q-sign-algorithm%3dsha1%26q-ak%3d**************************%26q-sign-time%3d1604580096%3b1604580996%26q-key-time%3d1604580096%3b1604580996%26q-header-list%3d%26q-url-param-list%3d%26q-signature%3d583b4db2ec94fa10e55da9b95e1e3d8943eaa386",
           "member": "string",
           "name": "ExternalAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态（1成功 2失败）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -16925,160 +17066,160 @@
         {
           "disabled": false,
           "document": "实例规格ID，利用DescribeZones返回的SpecId，结合DescribeProductConfig返回的可售卖规格信息，可获悉某个可用区下可购买什么规格的实例",
-          "example": "",
+          "example": "22",
           "member": "int64",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型ID",
-          "example": "",
+          "example": "TS85",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机型中文名称",
-          "example": "",
+          "example": "高IO",
           "member": "string",
           "name": "MachineTypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据库版本信息。取值为2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）",
-          "example": "",
+          "example": "2008R2",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Version字段对应的版本名称",
-          "example": "",
+          "example": "SQL Server 2008 Enterprise",
           "member": "string",
           "name": "VersionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内存大小，单位GB",
-          "example": "",
+          "example": "128",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CPU核数",
-          "example": "",
+          "example": "16",
           "member": "int64",
           "name": "CPU",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此规格下最小的磁盘大小，单位GB",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "MinStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此规格下最大的磁盘大小，单位GB",
-          "example": "",
+          "example": "3000",
           "member": "int64",
           "name": "MaxStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此规格对应的QPS大小",
-          "example": "",
+          "example": "61000",
           "member": "int64",
           "name": "QPS",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此规格的中文描述信息",
-          "example": "",
+          "example": "独立用户数上千万人的大型应用",
           "member": "string",
           "name": "SuitInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此规格对应的包年包月Pid",
-          "example": "",
+          "example": "10908",
           "member": "int64",
           "name": "Pid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "此规格对应的按量计费Pid列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[10908]",
           "member": "int64",
           "name": "PostPid",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "此规格下支持的付费模式，POST-仅支持按量计费 PRE-仅支持包年包月 ALL-支持所有",
-          "example": "",
+          "example": "ALL",
           "member": "string",
           "name": "PayModeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品类型，HA-高可用型(包括双机高可用，alwaysOn集群)，RO-只读副本型，SI-基础版本型",
-          "example": "",
+          "document": "购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点\n示例值：HA",
+          "example": "HA",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "跨可用区类型，MultiZones-只支持跨可用区，SameZones-只支持同可用区，ALL-支持所有",
-          "example": "",
+          "example": "ALL",
           "member": "string",
           "name": "MultiZonesStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -17094,7 +17235,7 @@
           "example": "1",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17104,7 +17245,7 @@
           "example": "23",
           "member": "uint64",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17114,17 +17255,17 @@
           "example": "ALL",
           "member": "string",
           "name": "PayModeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品类型",
+          "document": "产品类型，购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17134,17 +17275,17 @@
           "example": "SameZones",
           "member": "string",
           "name": "MultiZonesStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点",
+          "document": "架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点 MULTI-多节点\n示例值：SINGLE",
           "example": "SINGLE",
           "member": "string",
           "name": "Architecture",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17154,7 +17295,7 @@
           "example": "EXCLUSIVE",
           "member": "string",
           "name": "Style",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17164,7 +17305,7 @@
           "example": "2008R2",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17174,7 +17315,7 @@
           "example": "无",
           "member": "ZoneStatus",
           "name": "ZoneStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17184,7 +17325,7 @@
           "example": "无",
           "member": "Price",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17194,7 +17335,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17381,30 +17522,30 @@
         {
           "disabled": false,
           "document": "具体步骤返回信息",
-          "example": "",
+          "example": "检查数据传输服务器是否能连通源数据库",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前步骤状态，0成功，-2未开始",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "步骤名称",
-          "example": "",
+          "example": "源库连接性检查",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -17457,7 +17598,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17467,7 +17608,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17477,17 +17618,17 @@
           "example": "mssql-7vfv3rk3",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "test",
+          "example": "andy",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17497,7 +17638,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ActualUsedSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17507,7 +17648,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DataBackupSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17517,7 +17658,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DataBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17527,7 +17668,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LogBackupSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17537,7 +17678,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LogBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17547,7 +17688,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoBackupSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17557,7 +17698,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17567,7 +17708,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ManualBackupSpace",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17577,7 +17718,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ManualBackupCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17587,7 +17728,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -17705,7 +17846,7 @@
           "example": "disable",
           "member": "string",
           "name": "Encryption",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17715,19 +17856,39 @@
           "example": "self",
           "member": "string",
           "name": "CertificateAttribution",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开通TDE加密时引用的其他主账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000****6845",
           "member": "string",
           "name": "QuoteUin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "KMS中购买的用户主密钥ID（CMK）",
+          "example": "sdfadfa",
+          "member": "string",
+          "name": "CMKId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CMK所属的地域，不同地域的CMK不互通",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CMKRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17883,50 +18044,50 @@
         {
           "disabled": false,
           "document": "可用区英文ID，形如ap-guangzhou-1，表示广州一区",
-          "example": "",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区中文名称",
-          "example": "",
+          "example": "广州一区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区数字ID",
-          "example": "",
+          "example": "100004",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该可用区目前可售卖的规格ID，利用SpecId，结合接口DescribeProductConfig返回的数据，可获悉该可用区目前可售卖的规格大小",
-          "example": "",
+          "example": "22",
           "member": "int64",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前可用区与规格下，可售卖的数据库版本，形如2008R2（表示SQL Server 2008 R2）。其可选值有2008R2（表示SQL Server 2008 R2），2012SP3（表示SQL Server 2012），2016SP1（表示SQL Server 2016 SP1）",
-          "example": "",
+          "example": "2008R2",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

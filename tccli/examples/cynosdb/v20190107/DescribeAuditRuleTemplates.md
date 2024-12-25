@@ -38,14 +38,14 @@ Output:
                         "Compare": "NEQ",
                         "Type": "user",
                         "Value": [
-                            "test"
+                            "andy"
                         ]
                     },
                     {
                         "Compare": "INC",
                         "Type": "dbName",
                         "Value": [
-                            "test"
+                            "db1"
                         ]
                     }
                 ],

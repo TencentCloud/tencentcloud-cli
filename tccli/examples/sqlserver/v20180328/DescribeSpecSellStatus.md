@@ -5,7 +5,14 @@
 Input: 
 
 ```
-tccli sqlserver DescribeSpecSellStatus --cli-unfold-argument ```
+tccli sqlserver DescribeSpecSellStatus --cli-unfold-argument  \
+    --Currency CNY \
+    --DBVersion 2016SP1 \
+    --PayMode POST \
+    --Pid 1003456 \
+    --SpecIdSet 62 \
+    --Zone ap-guangzhou-3
+```
 
 Output: 
 ```

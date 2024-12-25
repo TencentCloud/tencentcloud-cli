@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cdb DescribeBackupDecryptionKey --cli-unfold-argument  \
-    --InstanceId cdb-XXXX \
-    --BackupId 12345
+    --InstanceId cdb-fybaegd8 \
+    --BackupId 12445233
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DecryptionKey": "XXXXXXXXXXX",
+        "DecryptionKey": "your_key",
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }

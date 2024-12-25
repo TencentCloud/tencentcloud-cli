@@ -7,7 +7,7 @@ Input:
 ```
 tccli ecm ModifySubnetAttribute --cli-unfold-argument  \
     --SubnetId subnet-ae71tjp6 \
-    --SubnetName subnet_test_modify \
+    --SubnetName demo \
     --EcmRegion ap-hangzhou-ecm
 ```
 

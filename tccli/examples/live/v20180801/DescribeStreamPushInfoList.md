@@ -8,7 +8,7 @@ Input:
 tccli live DescribeStreamPushInfoList --cli-unfold-argument  \
     --EndTime 2019-06-21T12:01:02+08:00 \
     --StartTime 2019-06-21T12:00:00+08:00 \
-    --StreamName abcd
+    --StreamName stream1
 ```
 
 Output: 
@@ -17,18 +17,18 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "Time": "abc",
-                "PushDomain": "abc",
-                "AppName": "abc",
-                "ClientIp": "abc",
-                "BeginPushTime": "abc",
-                "Resolution": "abc",
-                "VCodec": "abc",
-                "ACodec": "abc",
-                "Sequence": "abc",
-                "VideoFps": 1,
+                "Time": "2019-06-21T12:01:02+08:00",
+                "PushDomain": "5000.livepush.com",
+                "AppName": "live",
+                "ClientIp": "43.12.9.2",
+                "BeginPushTime": "2019-06-21T12:00:00+08:00",
+                "Resolution": "720P",
+                "VCodec": "h264",
+                "ACodec": "aac",
+                "Sequence": "4543453324532",
+                "VideoFps": 20,
                 "VideoRate": 1,
-                "AudioFps": 1,
+                "AudioFps": 15,
                 "AudioRate": 1,
                 "LocalTs": 1,
                 "VideoTs": 1,
@@ -36,13 +36,13 @@ Output:
                 "MetaVideoRate": 1,
                 "MetaAudioRate": 1,
                 "MateFps": 1,
-                "StreamParam": "abc",
+                "StreamParam": "param1=my",
                 "Bandwidth": 0,
                 "Flux": 0,
-                "ServerIp": "abc"
+                "ServerIp": "127.0.0.1"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

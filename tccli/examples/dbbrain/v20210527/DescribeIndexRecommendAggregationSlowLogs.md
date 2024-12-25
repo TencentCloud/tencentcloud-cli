@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli dbbrain DescribeIndexRecommendAggregationSlowLogs --cli-unfold-argument  \
-    --Product abc \
-    --InstanceId abc \
-    --Db abc \
-    --Collection abc \
-    --Signs abc
+    --Product mongodb \
+    --InstanceId cmgo-2jrxxlx \
+    --Db demo_db \
+    --Collection demo_collection \
+    --Signs d6e6fe0025c258592dd6f442312f26ww
 ```
 
 Output: 

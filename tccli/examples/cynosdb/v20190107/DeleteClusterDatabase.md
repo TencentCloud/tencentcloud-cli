@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cynosdb DeleteClusterDatabase --cli-unfold-argument  \
-    --DbNames test \
-    --ClusterId cynosdbmysql-xxxxxx
+    --DbNames db1 \
+    --ClusterId cynosdbmysql-j9i41hfv
 ```
 
 Output: 

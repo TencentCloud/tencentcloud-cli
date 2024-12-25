@@ -50,8 +50,8 @@ Output:
                         "Max": "10000",
                         "ParamType": "integer",
                         "EnumValue": [
-                            "tste",
-                            "test2"
+                            "21",
+                            "22"
                         ],
                         "ParamName": "param2",
                         "NeedReboot": 0

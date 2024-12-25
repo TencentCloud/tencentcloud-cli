@@ -23,8 +23,8 @@ Output:
                 "InstanceId": "cdb-uns231ns",
                 "Tags": [
                     {
-                        "TagKey": "test",
-                        "TagValue": "1231"
+                        "TagKey": "name",
+                        "TagValue": "zhang"
                     }
                 ]
             }

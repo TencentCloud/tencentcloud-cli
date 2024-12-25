@@ -1,7 +1,7 @@
 {
   "actions": {
     "ActivateInstance": {
-      "document": "本接口(ActivateInstance)用于恢复已隔离的实例访问。",
+      "document": "本接口（ActivateInstance）用于恢复已隔离的实例访问。",
       "input": "ActivateInstanceRequest",
       "name": "恢复实例访问",
       "output": "ActivateInstanceResponse",
@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CloseProxyEndPoint": {
-      "document": "关闭数据库代理连接地址",
+      "document": "本接口（CloseProxyEndPoint）用于关闭数据库代理连接地址。",
       "input": "CloseProxyEndPointRequest",
       "name": "关闭数据库代理连接地址",
       "output": "CloseProxyEndPointResponse",
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "DescribeAuditRuleWithInstanceIds": {
-      "document": "获取实例的审计规则",
+      "document": "本接口（DescribeAuditRuleWithInstanceIds）用于获取实例的审计规则。",
       "input": "DescribeAuditRuleWithInstanceIdsRequest",
       "name": "获取实例的审计规则",
       "output": "DescribeAuditRuleWithInstanceIdsResponse",
@@ -456,7 +456,7 @@
       "status": "online"
     },
     "DescribeInstancesWithinSameCluster": {
-      "document": "本接口(DescribeInstancesWithinSameCluster)用于查询同一集群下实例列表",
+      "document": "本接口（DescribeInstancesWithinSameCluster）用于查询同一集群下实例列表",
       "input": "DescribeInstancesWithinSameClusterRequest",
       "name": "查询同一集群下实例列表",
       "output": "DescribeInstancesWithinSameClusterResponse",
@@ -1309,7 +1309,7 @@
         {
           "disabled": false,
           "document": "任务流id",
-          "example": "123",
+          "example": "147842",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -1364,7 +1364,7 @@
         {
           "disabled": false,
           "document": "异步FlowId",
-          "example": "12345",
+          "example": "147184",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -1422,7 +1422,7 @@
         {
           "disabled": false,
           "document": "实例机器类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -1521,7 +1521,7 @@
         {
           "disabled": false,
           "document": "参数列表，ParamTemplateId 传入时InstanceParams才有效",
-          "example": "无",
+          "example": "[{\"ParamName\": \"auto_increment_increment\",\"CurrentValue\": \"2\",\"OldValue\": \"1\",\"Component\": \"libracdc\"}]",
           "member": "ModifyParamItem",
           "name": "InstanceParams",
           "required": false,
@@ -1539,7 +1539,7 @@
         {
           "disabled": false,
           "document": "proxy同步升级",
-          "example": "无",
+          "example": "{\"Cpu\": 4,\"Mem\": 8000,\"ReloadBalance\": \"auto\",\"ProxyZones\": [{\"ProxyNodeZone\": \"ap-guangzhou-3\",\"ProxyNodeCount\": 1}]}",
           "member": "UpgradeProxy",
           "name": "UpgradeProxy",
           "required": false,
@@ -1564,7 +1564,7 @@
         {
           "disabled": false,
           "document": "后付费订单号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[123]",
+          "example": "[\"182711111\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -1574,7 +1574,7 @@
         {
           "disabled": false,
           "document": "发货资源id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[cynosmysql-xxxxxxxx]",
+          "example": "[\"cynosdbmysql-mwg712mm\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
@@ -1584,7 +1584,7 @@
         {
           "disabled": false,
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[234]",
+          "example": "[\"202411073872\"]",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
@@ -1723,7 +1723,7 @@
         {
           "disabled": false,
           "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "Tag",
           "name": "TagList",
           "output_required": true,
@@ -2167,7 +2167,7 @@
         {
           "disabled": false,
           "document": "单条审计规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"RuleFilters\": [{\"Type\": \"host\",\"Compare\": \"INC\",\"Value\": [\"172.1.1.1\"]}]}]",
           "member": "RuleFilters",
           "name": "RuleFilters",
           "output_required": false,
@@ -2204,7 +2204,7 @@
         {
           "disabled": false,
           "document": "规则模板的过滤条件",
-          "example": "无",
+          "example": "[{\"RuleFilters\": [{\"Type\": \"host\",\"Compare\": \"INC\",\"Value\": [\"172.1.1.1\"]}]}]",
           "member": "RuleFilters",
           "name": "RuleFilters",
           "output_required": true,
@@ -2274,7 +2274,7 @@
         {
           "disabled": false,
           "document": "规则模板应用在哪些在实例。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"cynosdbmysql-ins-6dgls111\",\"cynosdbmysql-ins-6dgls222\"]",
           "member": "string",
           "name": "AffectedInstances",
           "output_required": false,
@@ -2300,7 +2300,7 @@
         {
           "disabled": false,
           "document": "备份文件名",
-          "example": "无",
+          "example": "andy_20241127040007",
           "member": "string",
           "name": "FileName",
           "output_required": true,
@@ -2310,7 +2310,7 @@
         {
           "disabled": false,
           "document": "备份文件大小",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "FileSize",
           "output_required": true,
@@ -2320,7 +2320,7 @@
         {
           "disabled": false,
           "document": "备份开始时间",
-          "example": "无",
+          "example": "2024-11-27 04:02:19",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -2330,7 +2330,7 @@
         {
           "disabled": false,
           "document": "备份完成时间",
-          "example": "无",
+          "example": "2024-11-27 04:03:03",
           "member": "string",
           "name": "FinishTime",
           "output_required": true,
@@ -2340,7 +2340,7 @@
         {
           "disabled": false,
           "document": "备份类型：snapshot，快照备份；logic，逻辑备份",
-          "example": "无",
+          "example": "snapshot",
           "member": "string",
           "name": "BackupType",
           "output_required": true,
@@ -2350,7 +2350,7 @@
         {
           "disabled": false,
           "document": "备份方式：auto，自动备份；manual，手动备份",
-          "example": "无",
+          "example": "auto",
           "member": "string",
           "name": "BackupMethod",
           "output_required": true,
@@ -2360,7 +2360,7 @@
         {
           "disabled": false,
           "document": "备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "BackupStatus",
           "output_required": true,
@@ -2370,7 +2370,7 @@
         {
           "disabled": false,
           "document": "备份文件时间",
-          "example": "无",
+          "example": "2024-11-27 04:00:06",
           "member": "string",
           "name": "SnapshotTime",
           "output_required": true,
@@ -2380,7 +2380,7 @@
         {
           "disabled": false,
           "document": "备份ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2009211",
           "member": "int64",
           "name": "BackupId",
           "output_required": true,
@@ -2390,7 +2390,7 @@
         {
           "disabled": false,
           "document": "快照类型，可选值：full，全量；increment，增量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "full",
           "member": "string",
           "name": "SnapShotType",
           "output_required": true,
@@ -2400,7 +2400,7 @@
         {
           "disabled": false,
           "document": "备份文件备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "andy",
           "member": "string",
           "name": "BackupName",
           "output_required": true,
@@ -2534,7 +2534,7 @@
         {
           "disabled": false,
           "document": "binlog保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "7",
           "member": "int64",
           "name": "BinlogSaveDays",
           "output_required": false,
@@ -2556,7 +2556,7 @@
         {
           "disabled": false,
           "document": "binlog异地地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "BinlogCrossRegions",
           "output_required": false,
@@ -3168,7 +3168,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147185",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -3190,7 +3190,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-j9i41hdd",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3199,7 +3199,7 @@
         {
           "disabled": false,
           "document": "数据库代理组ID",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
@@ -3214,7 +3214,7 @@
         {
           "disabled": false,
           "document": "异步流程ID",
-          "example": "无",
+          "example": "147186",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -3224,7 +3224,7 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "无",
+          "example": "148273",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -3329,7 +3329,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "无",
+          "example": "cynosdbmysql-ins-qvni5o11",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -3344,7 +3344,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "734",
+          "example": "17342",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -3718,7 +3718,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147188",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -3958,7 +3958,7 @@
         {
           "disabled": false,
           "document": "备份的库, 只在 BackupType 为 logic 时有效",
-          "example": "无",
+          "example": "[\"db1\"]",
           "member": "string",
           "name": "BackupDatabases",
           "required": false,
@@ -3967,7 +3967,7 @@
         {
           "disabled": false,
           "document": "备份的表, 只在 BackupType 为 logic 时有效",
-          "example": "无",
+          "example": "[{\"Database\": \"db1\",\"Tables\": [\"table1\"]}]",
           "member": "DatabaseTables",
           "name": "BackupTables",
           "required": false,
@@ -3991,7 +3991,7 @@
         {
           "disabled": false,
           "document": "异步任务流ID",
-          "example": "12345",
+          "example": "147189",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -4428,7 +4428,7 @@
         {
           "disabled": false,
           "document": "集群创建需要绑定的tag数组信息",
-          "example": "无",
+          "example": "[{\"TagKey\": \"created-by\",\"TagValue\": \"andy\"}]",
           "member": "Tag",
           "name": "ResourceTags",
           "required": false,
@@ -4491,7 +4491,7 @@
         {
           "disabled": false,
           "document": "安全组id数组",
-          "example": "无",
+          "example": "[\"sg-ajr1jzgj\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -4500,7 +4500,7 @@
         {
           "disabled": false,
           "document": "告警策略Id数组",
-          "example": "无",
+          "example": "[\"policy-jylgsf32\"]",
           "member": "string",
           "name": "AlarmPolicyIds",
           "required": false,
@@ -4509,7 +4509,7 @@
         {
           "disabled": false,
           "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
-          "example": "无",
+          "example": "[{\"ParamName\": \"character_set_server\",\"CurrentValue\": \"utf8\",\"OldValue\": \"utf8mb4\"}]",
           "member": "ParamItem",
           "name": "ClusterParams",
           "required": false,
@@ -4545,7 +4545,7 @@
         {
           "disabled": false,
           "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
-          "example": "无",
+          "example": "[{\"Cpu\": 1,\"Memory\": 2,\"InstanceType\": \"rw\",\"InstanceCount\": 1,\"MinRoCount\": 1,\"MaxRoCount\": 2,\"MinRoCpu\": 1,\"MaxRoCpu\": 4}]",
           "member": "InstanceInitInfo",
           "name": "InstanceInitInfos",
           "required": false,
@@ -4713,7 +4713,7 @@
         {
           "disabled": false,
           "document": "私有网络ID，默认与集群私有网络ID保持一致",
-          "example": "无",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqueVpcId",
           "required": true,
@@ -4722,7 +4722,7 @@
         {
           "disabled": false,
           "document": "私有网络子网ID，默认与集群子网ID保持一致",
-          "example": "无",
+          "example": "subnet-b5v6id11",
           "member": "string",
           "name": "UniqueSubnetId",
           "required": true,
@@ -4767,7 +4767,7 @@
         {
           "disabled": false,
           "document": "描述说明",
-          "example": "无",
+          "example": "代理1",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4785,7 +4785,7 @@
         {
           "disabled": false,
           "document": "权重模式：\nsystem-系统分配，custom-自定义",
-          "example": "无",
+          "example": "system",
           "member": "string",
           "name": "WeightMode",
           "required": false,
@@ -4794,7 +4794,7 @@
         {
           "disabled": false,
           "document": "是否自动添加只读实例，yes-是，no-不自动添加",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
           "required": false,
@@ -4803,7 +4803,7 @@
         {
           "disabled": false,
           "document": "是否开启故障转移。\nyes：开启\nno：不开启。\n数据库代理出现故障时，链接地址将会路由到主实例",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "FailOver",
           "required": false,
@@ -4812,7 +4812,7 @@
         {
           "disabled": false,
           "document": "一致性类型：\neventual,global,session",
-          "example": "无",
+          "example": "session",
           "member": "string",
           "name": "ConsistencyType",
           "required": false,
@@ -4821,7 +4821,7 @@
         {
           "disabled": false,
           "document": "读写属性：\nREADWRITE,READONLY",
-          "example": "无",
+          "example": "READONLY",
           "member": "string",
           "name": "RwType",
           "required": false,
@@ -4830,7 +4830,7 @@
         {
           "disabled": false,
           "document": "一致性超时时间。取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待",
-          "example": "无",
+          "example": "1000",
           "member": "int64",
           "name": "ConsistencyTimeOut",
           "required": false,
@@ -4839,7 +4839,7 @@
         {
           "disabled": false,
           "document": "是否开启事务拆分。在一个事务中拆分读和写到不同的实例上去执行",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "TransSplit",
           "required": false,
@@ -4848,7 +4848,7 @@
         {
           "disabled": false,
           "document": "连接模式：\nnearby,balance",
-          "example": "无",
+          "example": "balance",
           "member": "string",
           "name": "AccessMode",
           "required": false,
@@ -4857,7 +4857,7 @@
         {
           "disabled": false,
           "document": "实例权重",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"cynosdbmysql-ins-ifq10f11\",\"Weight\": \"10\"}]",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
           "required": false,
@@ -4872,7 +4872,7 @@
         {
           "disabled": false,
           "document": "异步流程ID",
-          "example": "无",
+          "example": "147189",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -4882,7 +4882,7 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "无",
+          "example": "276387",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -4892,7 +4892,7 @@
         {
           "disabled": false,
           "document": "数据库代理组ID",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
           "output_required": false,
@@ -4941,7 +4941,7 @@
         {
           "disabled": false,
           "document": "私有网络ID，默认与集群私有网络ID保持一致",
-          "example": "无",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqueVpcId",
           "required": false,
@@ -4950,7 +4950,7 @@
         {
           "disabled": false,
           "document": "私有网络子网ID，默认与集群子网ID保持一致",
-          "example": "无",
+          "example": "subnet-b5v6id11",
           "member": "string",
           "name": "UniqueSubnetId",
           "required": false,
@@ -5004,7 +5004,7 @@
         {
           "disabled": false,
           "document": "描述说明",
-          "example": "无",
+          "example": "一区代理",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -5013,7 +5013,7 @@
         {
           "disabled": false,
           "document": "数据库节点信息（该参数与ProxyCount需要任选一个输入）",
-          "example": "无",
+          "example": "[{\"ProxyNodeZone\": \"ap-guangzhou-3\",\"ProxyNodeCount\": \"2\"}]",
           "member": "ProxyZone",
           "name": "ProxyZones",
           "required": false,
@@ -5148,7 +5148,7 @@
         {
           "disabled": false,
           "document": "付费总订单号",
-          "example": "无",
+          "example": "[\"1263512387***3612735012\"]",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
@@ -5158,7 +5158,7 @@
         {
           "disabled": false,
           "document": "每个物品对应一个dealName，业务需要根据dealName保证发货接口幂等",
-          "example": "无",
+          "example": "[\"20240522112283\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -6204,27 +6204,27 @@
           "example": "0",
           "member": "int64",
           "name": "Timestamp",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "日志等级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "note",
           "member": "string",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Aborted connection 562579 to db: 'unconnected' user: 'unauthenticated' host: '169.214.18.1' (Got an error reading communication packets)",
           "member": "string",
           "name": "Content",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7591,7 +7591,7 @@
         {
           "disabled": false,
           "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "db1",
           "member": "string",
           "name": "Db",
           "output_required": false,
@@ -7602,7 +7602,7 @@
         {
           "disabled": false,
           "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"DROP\",\"EXECUTE\"]",
           "member": "string",
           "name": "Privileges",
           "output_required": false,
@@ -7622,6 +7622,7 @@
           "example": "db",
           "member": "string",
           "name": "Database",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7629,9 +7630,10 @@
         {
           "disabled": false,
           "document": "表名称列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"table1\", \"table2\"]",
           "member": "string",
           "name": "Tables",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -7645,7 +7647,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "test",
+          "example": "db1",
           "member": "string",
           "name": "DbName",
           "output_required": true,
@@ -7705,7 +7707,7 @@
         {
           "disabled": false,
           "document": "数据库ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "0",
           "member": "int64",
           "name": "DbId",
           "output_required": true,
@@ -7715,7 +7717,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-09-22 00:00:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -7725,7 +7727,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-09-22 00:00:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": true,
@@ -7735,7 +7737,7 @@
         {
           "disabled": false,
           "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1334**643",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -7745,7 +7747,7 @@
         {
           "disabled": false,
           "document": "用户Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10000****383",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -7755,7 +7757,7 @@
         {
           "disabled": false,
           "document": "集群Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cynosdbmysql-j9i41hfv",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -7959,7 +7961,7 @@
         {
           "disabled": false,
           "document": "日志类型",
-          "example": "无",
+          "example": "slow",
           "member": "string",
           "name": "LogType",
           "required": false,
@@ -7968,7 +7970,7 @@
         {
           "disabled": false,
           "document": "是否维护时间运行",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "IsInMaintainPeriod",
           "required": false,
@@ -7983,7 +7985,7 @@
         {
           "disabled": false,
           "document": "异步任务id\n",
-          "example": "123456",
+          "example": "165782",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -8005,7 +8007,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-j9i41hfv",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8014,7 +8016,7 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "[\"db1\"]",
           "member": "string",
           "name": "DbNames",
           "required": true,
@@ -8362,7 +8364,7 @@
         {
           "disabled": false,
           "document": "查询实例列表的过滤条件。",
-          "example": "无",
+          "example": "[{\"Name\": \"InstanceId\",\"ExactMatch\": true,\"Values\": [\"cynosdbmysql-ins-ifq10fec\"]}]",
           "member": "AuditInstanceFilters",
           "name": "Filters",
           "required": false,
@@ -8404,7 +8406,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的实例总数。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -8414,7 +8416,7 @@
         {
           "disabled": false,
           "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"AuditAll\": true,\"AuditStatus\": \"ON\",\"BillingAmount\": 0,\"CreateAt\": \"2024-08-07 20:36:59\",\"Deliver\": \"OFF\",\"DeliverSummary\": [],\"HighLogExpireDay\": 7,\"HighRealStorage\": 0,\"InstanceId\": \"cynosdbmysql-ins-3v52nx11\",\"InstanceInfo\": {\"ProjectId\": 0,\"TagList\": []},\"LogExpireDay\": 30,\"LowLogExpireDay\": 23,\"LowRealStorage\": 0,\"RealStorage\": 0,\"RuleTemplateIds\": cynosdb-art-c1jo4q11}]",
           "member": "InstanceAuditStatus",
           "name": "Items",
           "output_required": true,
@@ -8689,7 +8691,7 @@
         {
           "disabled": false,
           "document": "符合查询条件的实例总数。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -8699,7 +8701,7 @@
         {
           "disabled": false,
           "document": "规则模板详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"AffectedInstances\": null,\"AlarmLevel\": 1,\"AlarmPolicy\": 0,\"CreateAt\": \"2023-04-24 15:06:04\",\"Description\": \"\",\"RuleFilters\": [{\"Compare\": \"INC\",\"Type\": \"user\",\"Value\": [\"d\"]}],\"RuleTemplateId\": \"cynosdb-art-c1jo4ql8\",\"RuleTemplateName\": \"dhui2\",\"Status\": 0,\"UpdateAt\": \"2023-04-24 15:06:04\"}]",
           "member": "AuditRuleTemplateInfo",
           "name": "Items",
           "output_required": true,
@@ -8736,7 +8738,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -8746,7 +8748,7 @@
         {
           "disabled": false,
           "document": "实例审计规则信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"RuleFilters\": [{\"Compare\": \"INC\",\"Type\": \"sql\",\"Value\": [\"select\"]},{\"Compare\": \"EQS\",\"Type\": \"dbName\",\"Value\": [\"db1\"]}]}]",
           "member": "InstanceAuditRule",
           "name": "Items",
           "output_required": true,
@@ -9074,7 +9076,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cynosdbmysql-ck8fmk11",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9089,7 +9091,7 @@
         {
           "disabled": false,
           "document": "Binlog跨地域配置更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-22 15:02:46",
           "member": "string",
           "name": "BinlogCrossRegionsConfigUpdateTime",
           "output_required": false,
@@ -9099,7 +9101,7 @@
         {
           "disabled": false,
           "document": "Binlog配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"BinlogCrossRegions\": ,\"BinlogCrossRegionsEnable\": \"OFF\",\"BinlogSaveDays\": 7}",
           "member": "BinlogConfigInfo",
           "name": "BinlogConfig",
           "output_required": false,
@@ -9352,7 +9354,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-ck8fmk11",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9361,7 +9363,7 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "xxx",
+          "example": "db1",
           "member": "string",
           "name": "Db",
           "required": true,
@@ -9388,7 +9390,7 @@
         {
           "disabled": false,
           "document": "数据表类型。\n\"view\"表示只返回 view，\"base_table\" 表示只返回基本表，\"all\" 表示返回 view 和表。默认为 all。",
-          "example": "无",
+          "example": "view",
           "member": "string",
           "name": "TableType",
           "required": false,
@@ -9455,7 +9457,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-ck8fmk11",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9508,7 +9510,7 @@
         {
           "disabled": false,
           "document": "数据库列表",
-          "example": "[]",
+          "example": "[\"database_1\",\"database_2\"]",
           "member": "string",
           "name": "Databases",
           "output_required": true,
@@ -9567,7 +9569,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "test",
+          "example": "db1",
           "member": "string",
           "name": "DbName",
           "required": false,
@@ -9582,7 +9584,7 @@
         {
           "disabled": false,
           "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": " [{\"Status\": \"running\", \"UserHostPrivileges\": [], \"UpdateTime\": \"0001-01-01T00:00:00Z\", \"Description\": \"\", \"DbId\": 0, \"CharacterSet\": \"\", \"ClusterId\": \"\", \"DbName\": \"mysql\", \"Uin\": \"\", \"AppId\": 0, \"CollateRule\": \"\", \"CreateTime\": \"0001-01-01T00:00:00Z\"}]",
           "member": "DbInfo",
           "name": "DbInfos",
           "output_required": true,
@@ -10014,7 +10016,7 @@
         {
           "disabled": false,
           "document": "加密秘钥id",
-          "example": "无",
+          "example": "9d112608-76f7-11ee-****-525400368ae8",
           "member": "string",
           "name": "KeyId",
           "output_required": false,
@@ -10024,7 +10026,7 @@
         {
           "disabled": false,
           "document": "加密秘钥地域\n",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "KeyRegion",
           "output_required": false,
@@ -10184,7 +10186,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147186",
           "member": "int64",
           "name": "FlowId",
           "required": true,
@@ -10230,7 +10232,7 @@
         {
           "disabled": false,
           "document": "日志类型",
-          "example": "无",
+          "example": "slow",
           "member": "string",
           "name": "LogType",
           "required": false,
@@ -10245,7 +10247,7 @@
         {
           "disabled": false,
           "document": "总数量\n",
-          "example": "123",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -10377,7 +10379,7 @@
         {
           "disabled": false,
           "document": "日志等级，有error、warning、note三种，支持多个等级同时搜索",
-          "example": "无",
+          "example": "note",
           "member": "string",
           "name": "LogLevels",
           "required": false,
@@ -10386,7 +10388,7 @@
         {
           "disabled": false,
           "document": "关键字，支持模糊搜索",
-          "example": "无",
+          "example": "unconnected",
           "member": "string",
           "name": "KeyWords",
           "required": false,
@@ -10411,7 +10413,7 @@
         {
           "disabled": false,
           "document": "错误日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [\"Content\": \"Aborted connection 562579 to db: 'unconnected' user: 'unauthenticated' host: '169.*.*.*' (Got an error reading communication packets)\",\"Level\": \"note\",\"Timestamp\": 1730182001}]",
           "member": "CynosdbErrorLogItem",
           "name": "ErrorLogs",
           "output_required": true,
@@ -10433,7 +10435,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cynosdbmysql-mywcr111",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -10442,7 +10444,7 @@
         {
           "disabled": false,
           "document": "实例ID，支持批量查询",
-          "example": "无",
+          "example": "[\"cynosdbmysql-ins-kzavku11\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -10451,7 +10453,7 @@
         {
           "disabled": false,
           "document": "参数名搜索条件，支持模糊匹配",
-          "example": "无",
+          "example": "auto_increment",
           "member": "string",
           "name": "ParamKeyword",
           "required": false,
@@ -10475,7 +10477,7 @@
         {
           "disabled": false,
           "document": "实例参数列表",
-          "example": "无",
+          "example": " [{\"CurrentValue\": \"1\",\"Default\": \"1\",\"Description\": \"Controls the interval between successive column values.\",\"EnumValue\": [],\"Func\": \"\",\"IsFunc\": false,\"IsGlobal\": 1,\"MatchType\": \"\",\"MatchValue\": \"\",\"Max\": \"65535\",\"Min\": \"1\",\"ModifiableInfo\": {\"ForbiddenModifiableReason\": \"\",\"IsCynosVersionSupport\": 1,\"IsModifiable\": 1},\"NeedReboot\": 0,\"ParamName\": \"auto_increment_increment\",\"ParamType\": \"integer\",\"FuncPattern\": \"{MAX(DBInitCpu/%d,%d)},2,4\"}]}]",
           "member": "InstanceParamItem",
           "name": "Items",
           "output_required": true,
@@ -10643,7 +10645,7 @@
         {
           "disabled": false,
           "document": "实例机器类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -10658,7 +10660,7 @@
         {
           "disabled": false,
           "document": "规格信息",
-          "example": "无",
+          "example": "[{\"Cpu\": 1,\"Memory\": 1,\"MaxStorageSize\": 1,\"MinStorageSize\": 1,\"HasStock\": true,\"MachineType\": \"exclusive\",\"MaxIops\": 0,\"MaxIoBandWidth\": 0,\"ZoneStockInfos\": [{\"Zone\": \"ap-beijing-3\",\"HasStock\": true,\"StockCount\": 0,\"NetworkStockInfos\": [{\"NetworkType\": \"hole_rdma\",\"StockCount\": 0,\"HasStock\": true}]}],\"StockCount\": 0}]",
           "member": "InstanceSpec",
           "name": "InstanceSpecSet",
           "output_required": true,
@@ -10790,7 +10792,7 @@
         {
           "disabled": false,
           "document": "vpcId",
-          "example": "xx",
+          "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -10799,7 +10801,7 @@
         {
           "disabled": false,
           "document": "vip",
-          "example": "xx",
+          "example": "subnet-b5v6id11",
           "member": "string",
           "name": "Vip",
           "required": true,
@@ -10824,7 +10826,7 @@
         {
           "disabled": false,
           "document": "实例ID列表",
-          "example": "无",
+          "example": " [\"cynosdbmysql-ins-pgbpxt11\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
@@ -10995,7 +10997,7 @@
         {
           "disabled": false,
           "document": "参数模板ID",
-          "example": "无",
+          "example": "15412",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -11010,7 +11012,7 @@
         {
           "disabled": false,
           "document": "参数模板ID",
-          "example": "无",
+          "example": "15412",
           "member": "int64",
           "name": "TemplateId",
           "output_required": true,
@@ -11020,7 +11022,7 @@
         {
           "disabled": false,
           "document": "参数模板名称",
-          "example": "无",
+          "example": "ceshi1",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -11030,7 +11032,7 @@
         {
           "disabled": false,
           "document": "参数模板描述",
-          "example": "无",
+          "example": "andymuban",
           "member": "string",
           "name": "TemplateDescription",
           "output_required": true,
@@ -11040,7 +11042,7 @@
         {
           "disabled": false,
           "document": "引擎版本",
-          "example": "无",
+          "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
           "output_required": true,
@@ -11050,7 +11052,7 @@
         {
           "disabled": false,
           "document": "参数总条数",
-          "example": "无",
+          "example": "83",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -11060,7 +11062,7 @@
         {
           "disabled": false,
           "document": "参数列表",
-          "example": "无",
+          "example": "[{\"CurrentValue\": \"1\",\"Default\": \"1\",\"Description\": \"Controls the interval between successive column values.\",\"EnumValue\": [],\"Func\": \"\",\"FuncPattern\": \"\",\"IsFunc\": false,\"IsGlobal\": 1,\"MatchType\": \"\",\"MatchValue\": \"\",\"Max\": \"65535\",\"Min\": \"1\",\"ModifiableInfo\": {\"IsModifiable\": 1},\"NeedReboot\": 0,\"ParamName\": \"auto_increment_increment\",\"ParamType\": \"integer\",\"SupportFunc\": false}]",
           "member": "ParamDetail",
           "name": "Items",
           "output_required": true,
@@ -11070,7 +11072,7 @@
         {
           "disabled": false,
           "document": "数据库类型，可选值：NORMAL，SERVERLESS",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "DbMode",
           "output_required": true,
@@ -11092,7 +11094,7 @@
         {
           "disabled": false,
           "document": "数据库引擎版本号",
-          "example": "无",
+          "example": "[\"5.7\"]",
           "member": "string",
           "name": "EngineVersions",
           "required": false,
@@ -11101,7 +11103,7 @@
         {
           "disabled": false,
           "document": "模板名称",
-          "example": "无",
+          "example": "[\"高稳定性模板\"]",
           "member": "string",
           "name": "TemplateNames",
           "required": false,
@@ -11110,7 +11112,7 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "无",
+          "example": "[55001]",
           "member": "int64",
           "name": "TemplateIds",
           "required": false,
@@ -11119,7 +11121,7 @@
         {
           "disabled": false,
           "document": "数据库类型，可选值：NORMAL，SERVERLESS",
-          "example": "无",
+          "example": "[\"NORMAL\"]",
           "member": "string",
           "name": "DbModes",
           "required": false,
@@ -11128,7 +11130,7 @@
         {
           "disabled": false,
           "document": "查询偏移量",
-          "example": "无",
+          "example": "5",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -11137,7 +11139,7 @@
         {
           "disabled": false,
           "document": "查询限制条数",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11173,7 +11175,7 @@
         {
           "disabled": false,
           "document": "返回结果的排序字段",
-          "example": "无",
+          "example": "CREATETIME",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -11182,7 +11184,7 @@
         {
           "disabled": false,
           "document": "排序方式（asc、desc）",
-          "example": "无",
+          "example": "asc",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -11256,7 +11258,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "无",
+          "example": "sg-9stjv111",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -11271,7 +11273,7 @@
         {
           "disabled": false,
           "document": "安全组详情",
-          "example": "无",
+          "example": "[{\"CreateTime\": \"2024-11-01 14:32:12\",\"Inbound\": [{\"Action\": \"ACCEPT\",\"AddressModule\": \"\",\"CidrIp\": \"115.1.1.1\",\"Desc\": \"\",\"Id\": \"\",\"IpProtocol\": \"ALL\",\"PortRange\": \"ALL\",\"ServiceModule\": \"\"}\"Outbound\": [{\"Action\": \"ACCEPT\",\"AddressModule\": \"\",\"CidrIp\": \"0.0.0.0/0\",\"Desc\": \"\",\"Id\": \"\",\"IpProtocol\": \"ALL\",\"PortRange\": \"ALL\",\"ServiceModule\": \"\"}\"ProjectId\": 0,\"SecurityGroupId\": \"sg-9stjvjn9\",\"SecurityGroupName\": \"TDSQL-C专用-勿动\",\"SecurityGroupRemark\": \"TDSQL-C专用\"}]",
           "member": "SecurityGroup",
           "name": "Groups",
           "output_required": true,
@@ -11626,7 +11628,7 @@
         {
           "disabled": false,
           "document": "资源包唯一ID",
-          "example": "无",
+          "example": "package-aqmi9111",
           "member": "string",
           "name": "PackageId",
           "required": false,
@@ -11635,7 +11637,7 @@
         {
           "disabled": false,
           "document": "资源包名称",
-          "example": "无",
+          "example": "edison",
           "member": "string",
           "name": "PackageName",
           "required": false,
@@ -11644,7 +11646,7 @@
         {
           "disabled": false,
           "document": "资源包类型\nCCU-计算资源包，DISK-存储资源包",
-          "example": "无",
+          "example": "CCU",
           "member": "string",
           "name": "PackageType",
           "required": false,
@@ -11653,7 +11655,7 @@
         {
           "disabled": false,
           "document": "资源包使用地域\nchina-中国内地通用，overseas-港澳台及海外通用",
-          "example": "无",
+          "example": "china",
           "member": "string",
           "name": "PackageRegion",
           "required": false,
@@ -11662,7 +11664,7 @@
         {
           "disabled": false,
           "document": "资源包状态\ncreating-创建中；\nusing-使用中；\nexpired-已过期；\nnormal_finish-使用完；\napply_refund-申请退费中；\nrefund-已退费。",
-          "example": "无",
+          "example": "using",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -11671,7 +11673,7 @@
         {
           "disabled": false,
           "document": "排序条件，支持排序条件:startTime-生效时间，\nexpireTime-过期时间，packageUsedSpec-使用容量，packageTotalSpec-总存储量。\n按照数组顺序排列；",
-          "example": "无",
+          "example": "packageUsedSpec",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -11680,7 +11682,7 @@
         {
           "disabled": false,
           "document": "排序方式，DESC-降序，ASC-升序",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "OrderDirection",
           "required": false,
@@ -11689,7 +11691,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -11698,7 +11700,7 @@
         {
           "disabled": false,
           "document": "限制",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11723,7 +11725,7 @@
         {
           "disabled": false,
           "document": "资源包明细\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [{\"AppId\": 12311134,\"PackageId\": \"package-cbhsysss\",\"PackageName\": \"MyPackageName\",\"PackageType\": \"CCU\",\"PackageRegion\": \"chineseMainland\",\"Status\": \"using\",\"PackageTotalSpec\": 10000000,\"PackageUsedSpec\": 2394.3,\"HasQuota\": true,\"BindInstanceInfos\": [{\"InstanceId\": \"cynosdbpg-ins-bzkxx111\",\"InstanceRegion\": \"ap-guangzhou\",\"InstanceType\": \"cynosdb-serverless\"}],\"StartTime\": \"2023-12-10 00:00:00\",\"ExpireTime\": \"2025-11-10 00:00:00\"}]",
           "member": "Package",
           "name": "Detail",
           "output_required": true,
@@ -12079,7 +12081,7 @@
         {
           "disabled": false,
           "document": "支持的数据库代理版本集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"1.3.7\",\"1.3.9\",\"1.2.1\",\"1.3.14\"]",
           "member": "string",
           "name": "SupportProxyVersions",
           "output_required": true,
@@ -12099,7 +12101,7 @@
         {
           "disabled": false,
           "document": "代理版本详情",
-          "example": "无",
+          "example": "[{\"ProxyVersion\": \"1.3.7\",\"ProxyVersionType\": \"DEPRECATED\"},{\"ProxyVersion\": \"1.3.9\",\"ProxyVersionType\": \"DEPRECATED\"}]",
           "member": "ProxyVersionInfo",
           "name": "SupportProxyVersionDetail",
           "output_required": false,
@@ -12298,6 +12300,7 @@
           "example": "2019-04-17 00:00:00",
           "member": "string",
           "name": "Timestamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12308,6 +12311,7 @@
           "example": "note",
           "member": "string",
           "name": "Level",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12315,9 +12319,10 @@
         {
           "disabled": false,
           "document": "日志内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Aborted connection 562579 to db: 'unconnected' user: 'unauthenticated' host: '169.214.18.1' (Got an error reading communication packets)",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12428,7 +12433,7 @@
         {
           "disabled": false,
           "document": "日志等级",
-          "example": "无",
+          "example": "error",
           "member": "string",
           "name": "LogLevels",
           "required": false,
@@ -12437,7 +12442,7 @@
         {
           "disabled": false,
           "document": "关键字",
-          "example": "无",
+          "example": "reading communication packets",
           "member": "string",
           "name": "KeyWords",
           "required": false,
@@ -12463,8 +12468,8 @@
         },
         {
           "disabled": false,
-          "document": "ASC或DESC",
-          "example": "排序类型",
+          "document": "排序类型，ASC 或 DESC。",
+          "example": "ASC",
           "member": "string",
           "name": "OrderByType",
           "required": false,
@@ -12479,7 +12484,7 @@
         {
           "disabled": false,
           "document": "错误日志导出内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Timestamp\": \"2019-07-04 16:45:32\",\"Level\": \"error\",\"Content\": \"Got an error reading communication packets\"}]",
           "member": "ErrorLogItemExport",
           "name": "ErrorLogItems",
           "output_required": true,
@@ -12606,7 +12611,7 @@
         {
           "disabled": false,
           "document": "慢查询导出内容",
-          "example": "无",
+          "example": "\"执行时间,SQL语句,客户端地址,用户名,数据库名,执行时长(秒),加锁时长(秒),解析行数,返回行数,远程读取次数,远程读取的字节数,远程读取所花费的时间（微秒）,远程写入次数,远程写入的字节数,远程写入所花费的时间（微秒）,事务提交延迟（微秒）\\n2024-10-11 16:36:18,\\\"INSERT IGNORE INTO sbtest14(id, k, c, pad) VALUES(NULL, 779102\\\",1.1.1.1,root,db,1.227114,0.000003,0,0,0,0,0,0,0,0,0\"",
           "member": "string",
           "name": "FileContent",
           "output_required": true,
@@ -12637,7 +12642,7 @@
         {
           "disabled": false,
           "document": "使用资源包容量的cynos集群ID",
-          "example": "无",
+          "example": "[\"cynosdbmysql-3whdf111\"]",
           "member": "string",
           "name": "ClusterIds",
           "required": false,
@@ -12791,22 +12796,20 @@
         {
           "disabled": false,
           "document": "账号",
-          "example": "",
+          "example": "andy",
           "member": "string",
           "name": "AccountName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "主机，默认‘%’",
-          "example": "",
+          "example": "%",
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -12853,7 +12856,7 @@
         {
           "disabled": false,
           "document": "实例设备类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -12922,7 +12925,7 @@
         {
           "disabled": false,
           "document": "实例价格",
-          "example": "无",
+          "example": "{\"ChargeUnit\":\"\",\"Discount\":100,\"TotalPrice\":200,\"TotalPriceDiscount\":200,\"UnitPrice\":0,\"UnitPriceDiscount\":0}",
           "member": "TradePrice",
           "name": "InstancePrice",
           "output_required": true,
@@ -12932,7 +12935,7 @@
         {
           "disabled": false,
           "document": "存储价格",
-          "example": "无",
+          "example": "{\"ChargeUnit\":\"GB*h\",\"Discount\":100,\"TotalPrice\":0,\"TotalPriceDiscount\":0,\"UnitPrice\":350,\"UnitPriceDiscount\":350}",
           "member": "TradePrice",
           "name": "StoragePrice",
           "output_required": true,
@@ -12954,7 +12957,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cynosdbmysql-2u2mh111",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -12990,7 +12993,7 @@
         {
           "disabled": false,
           "document": "实例ID，计算资源变配必传: ClusterId,InstanceId,Cpu,Memory ",
-          "example": "无",
+          "example": "cynosdbmysql-ins-d6l1z111",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -12999,7 +13002,7 @@
         {
           "disabled": false,
           "document": "实例设备类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -13008,7 +13011,7 @@
         {
           "disabled": false,
           "document": "serverless实例ccu大小",
-          "example": "无",
+          "example": "0.5",
           "member": "float",
           "name": "Ccu",
           "required": false,
@@ -13023,7 +13026,7 @@
         {
           "disabled": false,
           "document": "实例价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ChargeUnit\":\"\",\"Discount\":100,\"TotalPrice\":200,\"TotalPriceDiscount\":200,\"UnitPrice\":0,\"UnitPriceDiscount\":0}",
           "member": "TradePrice",
           "name": "InstancePrice",
           "output_required": true,
@@ -13033,7 +13036,7 @@
         {
           "disabled": false,
           "document": "存储价格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ChargeUnit\":\"GB*h\",\"Discount\":100,\"TotalPrice\":0,\"TotalPriceDiscount\":0,\"UnitPrice\":350,\"UnitPriceDiscount\":350}",
           "member": "TradePrice",
           "name": "StoragePrice",
           "output_required": true,
@@ -13175,7 +13178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤项。目前支持以下搜索条件：\n\n包含、不包含、包含（分词维度）、不包含（分词维度）: sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id\n\n等于、不等于、包含、不包含： host - 客户端地址； user - 用户名； dbName - 数据库名称；\n\n等于、不等于： sqlType - SQL类型； errCode - 错误码； threadId - 线程ID；\n\n范围搜索（时间类型统一为微秒）： execTime - 执行时间； lockWaitTime - 执行时间； ioWaitTime - IO等待时间； trxLivingTime - 事物持续时间； cpuTime - cpu时间； checkRows - 扫描行数； affectRows - 影响行数； sentRows - 返回行数。",
+          "document": "过滤项。目前支持以下搜索条件：\n\n包含、不包含、包含（分词维度）、不包含（分词维度）: sql - SQL详情；alarmLevel - 告警等级；ruleTemplateId - 规则模板Id\n\n等于、不等于、包含、不包含： host - 客户端地址； user - 用户名； dbName - 数据库名称；\n\n等于、不等于： sqlType - SQL类型； errCode - 错误码； threadId - 线程ID；\n\n范围搜索（时间类型统一为微秒）： execTime - 执行时间； lockWaitTime - 执行时间； ioWaitTime - IO等待时间； trxLivingTime - 事务持续时间； cpuTime - cpu时间； checkRows - 扫描行数； affectRows - 影响行数； sentRows - 返回行数。",
           "example": "host",
           "member": "string",
           "name": "Type",
@@ -13385,7 +13388,7 @@
         {
           "disabled": false,
           "document": "实例所应用的规则模板。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"cynosdb-art-l1mlbo59\"]",
           "member": "string",
           "name": "RuleTemplateIds",
           "output_required": false,
@@ -13431,7 +13434,7 @@
         {
           "disabled": false,
           "document": "实例name\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cynosdbmysql-ins-nwc5ao8g",
           "member": "string",
           "name": "InstanceName",
           "output_required": false,
@@ -13441,7 +13444,7 @@
         {
           "disabled": false,
           "document": "日志主题id\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "8c392615-b4c0-4f70-b07d-1fb5cd688f60",
           "member": "string",
           "name": "TopicId",
           "output_required": false,
@@ -13451,7 +13454,7 @@
         {
           "disabled": false,
           "document": "日志主题name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "cloud_lala_topic",
           "member": "string",
           "name": "TopicName",
           "output_required": false,
@@ -13461,7 +13464,7 @@
         {
           "disabled": false,
           "document": "日志集id\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "95a03fb4-395b-4ce7-802b-4ce10c7431dd",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
@@ -13471,7 +13474,7 @@
         {
           "disabled": false,
           "document": "日志集name\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "cloud_haha_logset",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
@@ -13501,7 +13504,7 @@
         {
           "disabled": false,
           "document": "日志类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "slow",
           "member": "string",
           "name": "LogType",
           "output_required": false,
@@ -13589,7 +13592,7 @@
         {
           "disabled": false,
           "document": "实例机器类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -13720,7 +13723,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "cynosdbmysql-ins-4vdteidd",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -13730,7 +13733,7 @@
         {
           "disabled": false,
           "document": "实例参数列表",
-          "example": "无",
+          "example": "[{\"CurrentValue\": \"1\",\"Default\": \"1\",\"Description\": \"Controls the interval between successive column values.\",\"EnumValue\": [],\"Func\": \"\",\"IsFunc\": false,\"IsGlobal\": 1,\"Max\": \"65535\",\"Min\": \"1\",\"NeedReboot\": 0,\"ParamName\": \"auto_increment_increment\",\"ParamType\": \"integer\",\"FuncPattern\": \"{MAX(DBInitCpu/%d,%d)},2,4\"}]",
           "member": "ParamItemDetail",
           "name": "ParamsItems",
           "output_required": true,
@@ -13746,90 +13749,90 @@
         {
           "disabled": false,
           "document": "实例CPU，单位：核",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例内存，单位：GB",
-          "example": "无",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例最大可用存储，单位：GB",
-          "example": "无",
+          "example": "156000",
           "member": "uint64",
           "name": "MaxStorageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例最小可用存储，单位：GB",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "MinStorageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否有库存",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "HasStock",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "机器类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "MachineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大IOPS",
-          "example": "无",
+          "example": "48000",
           "member": "int64",
           "name": "MaxIops",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大IO带宽",
-          "example": "无",
+          "example": "6",
           "member": "int64",
           "name": "MaxIoBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域库存信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Zone\": \"ap-beijing-3\",\"HasStock\": true,\"StockCount\": 0}]",
           "member": "ZoneStockInfo",
           "name": "ZoneStockInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13839,7 +13842,7 @@
           "example": "1",
           "member": "int64",
           "name": "StockCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -13977,7 +13980,7 @@
         {
           "disabled": false,
           "document": "任务流id",
-          "example": "123",
+          "example": "147285",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -14066,7 +14069,7 @@
         {
           "disabled": false,
           "document": "自动逻辑备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "LogicBackupTimeBeg",
           "output_required": false,
@@ -14077,7 +14080,7 @@
         {
           "disabled": false,
           "document": "自动逻辑备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "6",
           "member": "uint64",
           "name": "LogicBackupTimeEnd",
           "output_required": false,
@@ -14088,7 +14091,7 @@
         {
           "disabled": false,
           "document": "自动逻辑备份保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "7",
           "member": "uint64",
           "name": "LogicReserveDuration",
           "output_required": false,
@@ -14099,7 +14102,7 @@
         {
           "disabled": false,
           "document": "是否开启跨地域逻辑备份\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "LogicCrossRegionsEnable",
           "output_required": false,
@@ -14110,7 +14113,7 @@
         {
           "disabled": false,
           "document": "逻辑备份所跨地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "LogicCrossRegions",
           "output_required": false,
@@ -14173,7 +14176,7 @@
         {
           "disabled": false,
           "document": "参数是否可被修改, 1:可以 0:不可以",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsModifiable",
           "output_required": true,
@@ -14594,7 +14597,7 @@
         {
           "disabled": false,
           "document": "逻辑备份配置",
-          "example": "无",
+          "example": "[{\"LogicBackupEnable\": \"ON\",\"LogicBackupTimeBeg\": \"2023-04-24 15:06:04\",\"LogicBackupTimeEnd\": \"2024-04-24 15:06:04\",\"LogicReserveDuration\": \"60\",\"LogicCrossRegionsEnable\": \"yes\",\"LogicCrossRegions\": [\"ap-guangzhou\"]}]",
           "member": "LogicBackupConfigInfo",
           "name": "LogicBackupConfig",
           "required": false,
@@ -14603,7 +14606,7 @@
         {
           "disabled": false,
           "document": "是否删除自动逻辑备份",
-          "example": "无",
+          "example": "ture",
           "member": "bool",
           "name": "DeleteAutoLogicBackup",
           "required": false,
@@ -14648,7 +14651,7 @@
         {
           "disabled": false,
           "document": "备注名，长度不能超过60个字符",
-          "example": "无",
+          "example": "2024-1月备份",
           "member": "string",
           "name": "BackupName",
           "required": true,
@@ -14675,7 +14678,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cynosdbmysql-2u2mh111",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -14684,7 +14687,7 @@
         {
           "disabled": false,
           "document": "Binlog配置信息",
-          "example": "无",
+          "example": "{\"BinlogSaveDays\": 7,\"BinlogCrossRegionsEnable\": \"yes\",\"BinlogCrossRegions\": [\"ap-guangzhou\"]}",
           "member": "BinlogConfigInfo",
           "name": "BinlogConfig",
           "required": true,
@@ -14756,7 +14759,7 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "db_andy",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -14765,7 +14768,7 @@
         {
           "disabled": false,
           "document": "新授权用户主机权限",
-          "example": "无",
+          "example": "[{\"DbUserName\": \"andy\",\"DbHost\": \"1.1.11.1\",\"DbPrivilege\": \"readonly\"}]",
           "member": "UserHostPrivilege",
           "name": "NewUserHostPrivileges",
           "required": false,
@@ -14774,7 +14777,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "test",
+          "example": "andy授权",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -14783,7 +14786,7 @@
         {
           "disabled": false,
           "document": "历史授权用户主机权限",
-          "example": "无",
+          "example": "[{\"DbUserName\": \"andy\",\"DbHost\": \"%\",\"DbPrivilege\": \"readonly\"}]",
           "member": "UserHostPrivilege",
           "name": "OldUserHostPrivileges",
           "required": false,
@@ -14955,7 +14958,7 @@
         {
           "disabled": false,
           "document": "数据字典",
-          "example": "无",
+          "example": "[\"admin\"]",
           "member": "string",
           "name": "ValidatePasswordDictionary",
           "required": false,
@@ -14970,7 +14973,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147283",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -15034,7 +15037,7 @@
         {
           "disabled": false,
           "document": "异步FlowId",
-          "example": "12345",
+          "example": "147285",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -15353,7 +15356,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cynosdbmysql-j8zw5111",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -15362,7 +15365,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "cynosdbmysql-ins-1rfvx111",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -15371,7 +15374,7 @@
         {
           "disabled": false,
           "document": "集群参数列表，例如 [{           \"CurrentValue\":\"2\",        \"ParamName\":\"auto_increment_increment\"}]",
-          "example": "无",
+          "example": "[{\"CurrentValue\":\"2\",\"OldValue\":\"1\",\"ParamName\":\"auto_increment_increment\"}]",
           "member": "ModifyParamItem",
           "name": "ClusterParamList",
           "required": false,
@@ -15380,7 +15383,7 @@
         {
           "disabled": false,
           "document": "实例参数列表，例如[{           \"CurrentValue\":\"2\",        \"ParamName\":\"innodb_stats_transient_sample_pages\"}]",
-          "example": "无",
+          "example": "[{\"CurrentValue\":\"2\",\"OldValue\":\"1\",\"ParamName\":\"auto_increment_increment\"}]",
           "member": "ModifyParamItem",
           "name": "InstanceParamList",
           "required": false,
@@ -15389,7 +15392,7 @@
         {
           "disabled": false,
           "document": "yes：在运维时间窗内修改，no：立即执行（默认值）",
-          "example": "无",
+          "example": "no",
           "member": "string",
           "name": "IsInMaintainPeriod",
           "required": false,
@@ -15404,7 +15407,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "147286",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -15525,7 +15528,7 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "无",
+          "example": "auto_increment_increment",
           "member": "string",
           "name": "ParamName",
           "output_required": true,
@@ -15536,7 +15539,7 @@
         {
           "disabled": false,
           "document": "参数当前值",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "CurrentValue",
           "output_required": true,
@@ -15564,7 +15567,7 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "无",
+          "example": "15412",
           "member": "int64",
           "name": "TemplateId",
           "required": true,
@@ -15573,7 +15576,7 @@
         {
           "disabled": false,
           "document": "模板名",
-          "example": "无",
+          "example": "andy5.7",
           "member": "string",
           "name": "TemplateName",
           "required": false,
@@ -15582,7 +15585,7 @@
         {
           "disabled": false,
           "document": "模板描述",
-          "example": "无",
+          "example": "andyuse",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,
@@ -15591,7 +15594,7 @@
         {
           "disabled": false,
           "document": "参数列表",
-          "example": "无",
+          "example": "[{\"CurrentValue\":\"2\",\"OldValue\":\"1\",\"ParamName\":\"auto_increment_increment\"}]",
           "member": "ModifyParamItem",
           "name": "ParamList",
           "required": false,
@@ -15663,7 +15666,7 @@
         {
           "disabled": false,
           "document": "数据库代理组ID",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-5mwohl11",
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
@@ -15672,7 +15675,7 @@
         {
           "disabled": false,
           "document": "数据库代理描述",
-          "example": "无",
+          "example": "andy_proxy",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -15699,7 +15702,7 @@
         {
           "disabled": false,
           "document": "集群ID，例如cynosdbmysql-asd123",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-j8zw5111",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -15708,7 +15711,7 @@
         {
           "disabled": false,
           "document": "数据库代理组ID，例如cynosdbmysql-proxy-qwe123",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-5mwoh111",
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
@@ -15717,7 +15720,7 @@
         {
           "disabled": false,
           "document": "一致性类型；“eventual\"-最终一致性, \"session\"-会话一致性, \"global\"-全局一致性",
-          "example": "无",
+          "example": "session",
           "member": "string",
           "name": "ConsistencyType",
           "required": false,
@@ -15726,7 +15729,7 @@
         {
           "disabled": false,
           "document": "一致性超时时间。\n取值范围：0~1000000（微秒）,设置0则表示若只读实例出现延迟, 导致一致性策略不满足, 请求将一直等待。",
-          "example": "无",
+          "example": "100",
           "member": "string",
           "name": "ConsistencyTimeOut",
           "required": false,
@@ -15735,7 +15738,7 @@
         {
           "disabled": false,
           "document": "读写权重分配模式；系统自动分配：\"system\"， 自定义：\"custom\"",
-          "example": "无",
+          "example": "custom",
           "member": "string",
           "name": "WeightMode",
           "required": false,
@@ -15744,7 +15747,7 @@
         {
           "disabled": false,
           "document": "实例只读权重。\n该参数必填。",
-          "example": "无",
+          "example": "[{\"InstanceId\": \"cynosdbmysql-ins-1rfvx111\",\"Weight\": \"10\"}]",
           "member": "ProxyInstanceWeight",
           "name": "InstanceWeights",
           "required": false,
@@ -15753,7 +15756,7 @@
         {
           "disabled": false,
           "document": "是否开启故障转移，代理出现故障后，连接地址将路由到主实例，取值：\"yes\" , \"no\"",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "FailOver",
           "required": false,
@@ -15762,7 +15765,7 @@
         {
           "disabled": false,
           "document": "是否自动添加只读实例，取值：\"yes\" , \"no\"",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "AutoAddRo",
           "required": false,
@@ -15771,7 +15774,7 @@
         {
           "disabled": false,
           "document": "是否打开读写分离。\n该参数已废弃，请通过RwType设置读写属性。",
-          "example": "无",
+          "example": "no",
           "member": "string",
           "name": "OpenRw",
           "required": false,
@@ -15780,7 +15783,7 @@
         {
           "disabled": false,
           "document": "读写类型：\nREADWRITE,READONLY",
-          "example": "无",
+          "example": "READONLY",
           "member": "string",
           "name": "RwType",
           "required": false,
@@ -15789,7 +15792,7 @@
         {
           "disabled": false,
           "document": "事务拆分。\n在一个事务中拆分读和写到不同的实例上去执行。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "TransSplit",
           "required": false,
@@ -15798,7 +15801,7 @@
         {
           "disabled": false,
           "document": "连接模式：\nnearby,balance",
-          "example": "无",
+          "example": "nearby",
           "member": "string",
           "name": "AccessMode",
           "required": false,
@@ -15807,7 +15810,7 @@
         {
           "disabled": false,
           "document": "是否打开连接池：\nyes,no",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
           "required": false,
@@ -15816,7 +15819,7 @@
         {
           "disabled": false,
           "document": "连接池类型：\nSessionConnectionPool",
-          "example": "无",
+          "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
           "required": false,
@@ -15825,7 +15828,7 @@
         {
           "disabled": false,
           "document": "连接池时间。\n可选范围:0~300（秒）",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
           "required": false,
@@ -15840,7 +15843,7 @@
         {
           "disabled": false,
           "document": "异步FlowId",
-          "example": "无",
+          "example": "147286",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -15850,7 +15853,7 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "无",
+          "example": "148762",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -16496,7 +16499,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147286",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -16542,7 +16545,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147286",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -16726,7 +16729,7 @@
         {
           "disabled": false,
           "document": "数据字典",
-          "example": "无",
+          "example": "[\"admin\"]",
           "member": "string",
           "name": "ValidatePasswordDictionary",
           "required": false,
@@ -16741,7 +16744,7 @@
         {
           "disabled": false,
           "document": "任务流ID",
-          "example": "123",
+          "example": "147285",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -16860,7 +16863,7 @@
         {
           "disabled": false,
           "document": "异步任务id\n",
-          "example": "12345",
+          "example": "147263",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -16882,7 +16885,7 @@
         {
           "disabled": false,
           "document": "请使用 [集群信息描述](https://cloud.tencent.com/document/api/1003/48086) 获取 clusterId。",
-          "example": "cynosdbmysql-12345678",
+          "example": "cynosdbmysql-bdcl1n11",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16891,7 +16894,7 @@
         {
           "disabled": false,
           "document": "请使用 [集群信息描述](https://cloud.tencent.com/document/api/1003/48086) 获取 instanceId。",
-          "example": "cynosdbmysql-ins-12345678",
+          "example": "cynosdbmysql-ins-foddsm11",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -16900,7 +16903,7 @@
         {
           "disabled": false,
           "document": "指定的 vpc ID，请使用 [查询私有网络列表](https://cloud.tencent.com/document/api/215/15778) 获取 vpc ID。",
-          "example": "vpc-12345678",
+          "example": "vpc-74h05211",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -16909,7 +16912,7 @@
         {
           "disabled": false,
           "document": "指定的子网 ID，如果设置了 vpc ID，则 SubnetId 必填，请使用 [查询子网列表](https://cloud.tencent.com/document/api/215/15784) 获取 SubnetId。",
-          "example": "subnet-12345678",
+          "example": "subnet-d16fxg11",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -16918,7 +16921,7 @@
         {
           "disabled": false,
           "document": "用户自定义的端口。",
-          "example": "1234",
+          "example": "3306",
           "member": "int64",
           "name": "Port",
           "required": true,
@@ -16927,7 +16930,7 @@
         {
           "disabled": false,
           "document": "安全组 ID，请使用 [查看安全组](https://cloud.tencent.com/document/api/215/15808) 获取 SecurityGroupId。",
-          "example": "[SecurityGroupIds1,SecurityGroupIds2]",
+          "example": "[\"sg-nm4bjh11\",\"sg-nm4bjh22\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -16942,7 +16945,7 @@
         {
           "disabled": false,
           "document": "开通流程ID",
-          "example": "12345",
+          "example": "147284",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -16973,7 +16976,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "cynosdbmysql-ins-ifq10f11",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -16982,7 +16985,7 @@
         {
           "disabled": false,
           "document": "实例组id",
-          "example": "无",
+          "example": "cynosdbmysql-grp-o48ssqs5",
           "member": "string",
           "name": "InstanceGroupId",
           "required": false,
@@ -17265,7 +17268,7 @@
         {
           "disabled": false,
           "document": "参数名称",
-          "example": "无",
+          "example": "max_user_connections",
           "member": "string",
           "name": "ParamName",
           "output_required": true,
@@ -17275,7 +17278,7 @@
         {
           "disabled": false,
           "document": "参数类型：integer，enum，float，string，func",
-          "example": "无",
+          "example": "integer",
           "member": "string",
           "name": "ParamType",
           "output_required": true,
@@ -17285,7 +17288,7 @@
         {
           "disabled": false,
           "document": "true-支持\"func\"，false-不支持公式",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "SupportFunc",
           "output_required": true,
@@ -17295,7 +17298,7 @@
         {
           "disabled": false,
           "document": "默认值",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Default",
           "output_required": true,
@@ -17305,7 +17308,7 @@
         {
           "disabled": false,
           "document": "参数描述",
-          "example": "无",
+          "example": "The maximum permitted number of simultaneous client connections per user.",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -17315,7 +17318,7 @@
         {
           "disabled": false,
           "document": "参数当前值",
-          "example": "无",
+          "example": "100",
           "member": "string",
           "name": "CurrentValue",
           "output_required": true,
@@ -17325,7 +17328,7 @@
         {
           "disabled": false,
           "document": "修改参数后，是否需要重启数据库以使参数生效。0-不需要重启，1-需要重启。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "NeedReboot",
           "output_required": true,
@@ -17335,7 +17338,7 @@
         {
           "disabled": false,
           "document": "参数容许的最大值",
-          "example": "无",
+          "example": "10240",
           "member": "string",
           "name": "Max",
           "output_required": true,
@@ -17345,7 +17348,7 @@
         {
           "disabled": false,
           "document": "参数容许的最小值",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Min",
           "output_required": true,
@@ -17365,7 +17368,7 @@
         {
           "disabled": false,
           "document": "1：全局参数，0：非全局参数",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "IsGlobal",
           "output_required": true,
@@ -17375,7 +17378,7 @@
         {
           "disabled": false,
           "document": "匹配类型，multiVal",
-          "example": "无",
+          "example": "multiVal",
           "member": "string",
           "name": "MatchType",
           "output_required": true,
@@ -17395,7 +17398,7 @@
         {
           "disabled": false,
           "document": "true-为公式，false-非公式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsFunc",
           "output_required": true,
@@ -17425,7 +17428,7 @@
         {
           "disabled": false,
           "document": "支持公式的参数的默认公式样式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{MAX(DBInitCpu/%d,%d)},2,4",
           "member": "string",
           "name": "FuncPattern",
           "output_required": true,
@@ -17822,10 +17825,10 @@
         {
           "disabled": false,
           "document": "参数模板ID",
-          "example": "1234",
+          "example": "10001",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17835,7 +17838,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17845,7 +17848,7 @@
           "example": "\"cynosdbmysqltemplste\"",
           "member": "string",
           "name": "TemplateDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17855,7 +17858,7 @@
           "example": "\"5.7\"",
           "member": "string",
           "name": "EngineVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17865,7 +17868,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "DbMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17875,7 +17878,7 @@
           "example": "[{\"\"}]",
           "member": "TemplateParamInfo",
           "name": "ParamInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -17934,7 +17937,7 @@
         {
           "disabled": false,
           "document": "策略，ACCEPT或者DROP",
-          "example": "",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -17944,7 +17947,7 @@
         {
           "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16",
-          "example": "",
+          "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrIp",
           "output_required": true,
@@ -17954,7 +17957,7 @@
         {
           "disabled": false,
           "document": "端口",
-          "example": "",
+          "example": "ALL",
           "member": "string",
           "name": "PortRange",
           "output_required": true,
@@ -17964,7 +17967,7 @@
         {
           "disabled": false,
           "document": "网络协议，支持udp、tcp等",
-          "example": "",
+          "example": "ALL",
           "member": "string",
           "name": "IpProtocol",
           "output_required": true,
@@ -17974,7 +17977,7 @@
         {
           "disabled": false,
           "document": "协议端口ID或者协议端口组ID。",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "ServiceModule",
           "output_required": true,
@@ -17984,7 +17987,7 @@
         {
           "disabled": false,
           "document": "IP地址ID或者ID地址组ID。",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "AddressModule",
           "output_required": true,
@@ -17994,7 +17997,7 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "",
+          "example": "000",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -18004,7 +18007,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "",
+          "example": "放通全部",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -18327,9 +18330,10 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "cynosdbmysql-ins-xxxxxxx",
+          "example": "cynosdbmysql-ins-hs6bgfi7",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18337,9 +18341,10 @@
         {
           "disabled": false,
           "document": "实例权重",
-          "example": "0",
+          "example": "10",
           "member": "int64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -18678,7 +18683,7 @@
         {
           "disabled": false,
           "document": "数据库代理组ID",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
           "required": true,
@@ -18693,7 +18698,7 @@
         {
           "disabled": false,
           "document": "异步流程ID",
-          "example": "无",
+          "example": "147285",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -18703,7 +18708,7 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "无",
+          "example": "148726",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -18725,7 +18730,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-bdcl1n11",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -18749,7 +18754,7 @@
         {
           "disabled": false,
           "document": "异步FlowId",
-          "example": "12345",
+          "example": "147264",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -18813,20 +18818,20 @@
         {
           "disabled": false,
           "document": "预付费总订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "[\"202411210540***90590481\",\"202411210540***90590481\"]",
           "member": "string",
           "name": "BigDealIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "退款订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[134]",
+          "example": "[\"202411210540***90634651\",\"202411210540***90634661\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18836,27 +18841,27 @@
           "example": "0",
           "member": "string",
           "name": "TranId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "每个订单号对应的发货资源id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"cynosdbmysql-ins-btx2ns9jk\",\"cynosdbmysql-ins-m9ts6h7y\"]",
           "member": "string",
           "name": "ResourceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"cynosdbmysql-vx29id0o\"]",
           "member": "string",
           "name": "ClusterIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18983,7 +18988,7 @@
         {
           "disabled": false,
           "document": "异步任务id",
-          "example": "123",
+          "example": "147262",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -19342,7 +19347,7 @@
         {
           "disabled": false,
           "document": "旧数据库名称",
-          "example": "xxx",
+          "example": "db1",
           "member": "string",
           "name": "OldDatabase",
           "output_required": true,
@@ -19353,7 +19358,7 @@
         {
           "disabled": false,
           "document": "新数据库名称",
-          "example": "xxx",
+          "example": "db2",
           "member": "string",
           "name": "NewDatabase",
           "output_required": true,
@@ -19628,7 +19633,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "xxx",
+          "example": "db1",
           "member": "string",
           "name": "Database",
           "output_required": true,
@@ -19639,7 +19644,7 @@
         {
           "disabled": false,
           "document": "数据库表",
-          "example": "xxx",
+          "example": "[\"OldTable\": \"tb1\", \"NewTable\": \"tb2\"]",
           "member": "RollbackTableInfo",
           "name": "Tables",
           "output_required": true,
@@ -19656,7 +19661,7 @@
         {
           "disabled": false,
           "document": "旧表名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "tb1",
           "member": "string",
           "name": "OldTable",
           "output_required": false,
@@ -19667,7 +19672,7 @@
         {
           "disabled": false,
           "document": "新表名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "tb2",
           "member": "string",
           "name": "NewTable",
           "output_required": false,
@@ -20061,7 +20066,7 @@
         {
           "disabled": false,
           "document": "规则模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "andy",
           "member": "string",
           "name": "RuleTemplateName",
           "output_required": false,
@@ -20101,7 +20106,7 @@
         {
           "disabled": false,
           "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "andy_RuleTemplate",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -20354,7 +20359,7 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "db1",
           "member": "string",
           "name": "Database",
           "required": false,
@@ -20378,7 +20383,7 @@
         {
           "disabled": false,
           "document": "数据库列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"db1\"]",
           "member": "string",
           "name": "Databases",
           "output_required": true,
@@ -20409,7 +20414,7 @@
         {
           "disabled": false,
           "document": "数据库名",
-          "example": "test",
+          "example": "db1",
           "member": "string",
           "name": "Database",
           "required": false,
@@ -20442,7 +20447,7 @@
         {
           "disabled": false,
           "document": "数据表列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"Database\": \"db1\",\"Tables\": [\"audit_log\",\"core_user\"]}]",
           "member": "DatabaseTables",
           "name": "Tables",
           "output_required": true,
@@ -20464,7 +20469,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "",
+          "example": "11954",
           "member": "int64",
           "name": "ProjectId",
           "output_required": true,
@@ -20474,7 +20479,7 @@
         {
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss",
-          "example": "",
+          "example": "2024-04-13 15:00:06",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -20484,7 +20489,7 @@
         {
           "disabled": false,
           "document": "入站规则",
-          "example": "",
+          "example": "无",
           "member": "PolicyRule",
           "name": "Inbound",
           "output_required": true,
@@ -20494,7 +20499,7 @@
         {
           "disabled": false,
           "document": "出站规则",
-          "example": "",
+          "example": "无",
           "member": "PolicyRule",
           "name": "Outbound",
           "output_required": true,
@@ -20504,7 +20509,7 @@
         {
           "disabled": false,
           "document": "安全组ID",
-          "example": "",
+          "example": "sg-ajr1jzgj",
           "member": "string",
           "name": "SecurityGroupId",
           "output_required": true,
@@ -20514,7 +20519,7 @@
         {
           "disabled": false,
           "document": "安全组名称",
-          "example": "",
+          "example": "CynosDB",
           "member": "string",
           "name": "SecurityGroupName",
           "output_required": true,
@@ -20524,7 +20529,7 @@
         {
           "disabled": false,
           "document": "安全组备注",
-          "example": "",
+          "example": "andy",
           "member": "string",
           "name": "SecurityGroupRemark",
           "output_required": true,
@@ -20754,7 +20759,7 @@
         {
           "disabled": false,
           "document": "备可用区是否有库存\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "HasStock",
           "output_required": false,
@@ -20974,7 +20979,7 @@
         {
           "disabled": false,
           "document": "日志类型",
-          "example": "无",
+          "example": "slow",
           "member": "string",
           "name": "LogType",
           "required": false,
@@ -20983,7 +20988,7 @@
         {
           "disabled": false,
           "document": "是否维护时间运行",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "IsInMaintainPeriod",
           "required": false,
@@ -20998,7 +21003,7 @@
         {
           "disabled": false,
           "document": "异步任务id",
-          "example": "123456",
+          "example": "1472831",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -21100,7 +21105,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "xxx",
+          "example": "cynosdbmysql-hr7oi711",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -21109,7 +21114,7 @@
         {
           "disabled": false,
           "document": "字符串vpc id",
-          "example": "xx",
+          "example": "vpc-74h05211",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -21118,7 +21123,7 @@
         {
           "disabled": false,
           "document": "字符串子网id",
-          "example": "xx",
+          "example": "subnet-d16fxg11",
           "member": "string",
           "name": "UniqSubnetId",
           "required": true,
@@ -21127,7 +21132,7 @@
         {
           "disabled": false,
           "document": "旧地址回收时间",
-          "example": "xx",
+          "example": "24",
           "member": "int64",
           "name": "OldIpReserveHours",
           "required": true,
@@ -21142,7 +21147,7 @@
         {
           "disabled": false,
           "document": "异步任务id。",
-          "example": "123",
+          "example": "1472365",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -21164,7 +21169,7 @@
         {
           "disabled": false,
           "document": "集群Id",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-hr7oi711",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -21206,7 +21211,7 @@
         {
           "disabled": false,
           "document": "异步FlowId",
-          "example": "12345",
+          "example": "1473274",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -21228,7 +21233,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "xxx",
+          "example": "cynosdbmysql-hr7oi711",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -21237,7 +21242,7 @@
         {
           "disabled": false,
           "document": "字符串vpc id",
-          "example": "xx",
+          "example": "vpc-74h05211",
           "member": "string",
           "name": "UniqVpcId",
           "required": true,
@@ -21246,7 +21251,7 @@
         {
           "disabled": false,
           "document": "字符串子网id",
-          "example": "xx",
+          "example": "subnet-d16fxg11",
           "member": "string",
           "name": "UniqSubnetId",
           "required": true,
@@ -21255,7 +21260,7 @@
         {
           "disabled": false,
           "document": "旧地址回收时间",
-          "example": "xx",
+          "example": "24",
           "member": "int64",
           "name": "OldIpReserveHours",
           "required": true,
@@ -21264,7 +21269,7 @@
         {
           "disabled": false,
           "document": "数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
           "required": false,
@@ -21279,7 +21284,7 @@
         {
           "disabled": false,
           "document": "异步任务id。",
-          "example": "123",
+          "example": "1476232",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -21301,7 +21306,7 @@
         {
           "disabled": false,
           "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "db1",
           "member": "string",
           "name": "Db",
           "output_required": false,
@@ -21312,7 +21317,7 @@
         {
           "disabled": false,
           "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tb1",
           "member": "string",
           "name": "TableName",
           "output_required": false,
@@ -21323,7 +21328,7 @@
         {
           "disabled": false,
           "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"CREATE\",\"ALTER\"]",
           "member": "string",
           "name": "Privileges",
           "output_required": false,
@@ -21340,7 +21345,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
@@ -21351,7 +21356,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "zhang",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
@@ -21635,7 +21640,7 @@
         {
           "disabled": false,
           "document": "异步任务id",
-          "example": "123",
+          "example": "1472831",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -21693,7 +21698,7 @@
         {
           "disabled": false,
           "document": "实例机器类型",
-          "example": "无",
+          "example": "exclusive",
           "member": "string",
           "name": "DeviceType",
           "required": false,
@@ -21747,7 +21752,7 @@
         {
           "disabled": false,
           "document": "proxy同步升级",
-          "example": "无",
+          "example": "{\"Cpu\": 2,\"Mem\": 4000,\"ReloadBalance\": \"auto\",\"ProxyZones\": [{\"ProxyNodeZone\": \"ap-guangzhou-3\",\"ProxyNodeCount\": 2}]}",
           "member": "UpgradeProxy",
           "name": "UpgradeProxy",
           "required": false,
@@ -21772,7 +21777,7 @@
         {
           "disabled": false,
           "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[123456]",
+          "example": "[\"202411042983\"]",
           "member": "string",
           "name": "BigDealIds",
           "output_required": true,
@@ -21782,7 +21787,7 @@
         {
           "disabled": false,
           "document": "订单号",
-          "example": "[234567]",
+          "example": "[\"202411040738\"]",
           "member": "string",
           "name": "DealNames",
           "output_required": true,
@@ -21965,7 +21970,7 @@
         {
           "disabled": false,
           "document": "数据库代理当前版本",
-          "example": "无",
+          "example": "1.3.13",
           "member": "string",
           "name": "SrcProxyVersion",
           "required": true,
@@ -21974,7 +21979,7 @@
         {
           "disabled": false,
           "document": "数据库代理升级版本",
-          "example": "无",
+          "example": "1.3.14",
           "member": "string",
           "name": "DstProxyVersion",
           "required": true,
@@ -21983,7 +21988,7 @@
         {
           "disabled": false,
           "document": "数据库代理组ID",
-          "example": "无",
+          "example": "cynosdbmysql-proxy-lti34611",
           "member": "string",
           "name": "ProxyGroupId",
           "required": false,
@@ -22007,7 +22012,7 @@
         {
           "disabled": false,
           "document": "异步流程ID",
-          "example": "无",
+          "example": "1472631",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
@@ -22017,7 +22022,7 @@
         {
           "disabled": false,
           "document": "异步任务id",
-          "example": "无",
+          "example": "1482673",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -22078,7 +22083,7 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "无",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -22088,7 +22093,7 @@
         {
           "disabled": false,
           "document": "是否有库存",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "HasStock",
           "output_required": true,

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DeleteAccounts --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId cdb-0zgqlqmd \
     --Accounts.0.Host 192.168.1.1 \
     --Accounts.0.User user1
 ```

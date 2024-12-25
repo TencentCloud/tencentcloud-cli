@@ -7,7 +7,7 @@ Input:
 ```
 tccli dts ModifySubscribeName --cli-unfold-argument  \
     --SubscribeId subs-ieuwi83j2e \
-    --SubscribeName test
+    --SubscribeName binlog订阅
 ```
 
 Output: 

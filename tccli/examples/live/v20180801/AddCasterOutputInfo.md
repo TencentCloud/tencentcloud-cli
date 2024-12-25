@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live AddCasterOutputInfo --cli-unfold-argument  \
-    --CasterId 1234 \
+    --CasterId 63501 \
     --OutputInfo.OutputIndex 1 \
     --OutputInfo.OutputUrl rtmp://example.third.push.domain/live/push_stream_id
 ```

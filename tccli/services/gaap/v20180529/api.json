@@ -7807,20 +7807,20 @@
         {
           "disabled": false,
           "document": "指标名称",
-          "example": "",
+          "example": "InBandwidth",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标统计数据",
-          "example": "",
+          "example": "{   \"MetricName\": \"InBandwidth\",   \"MetricData\": [     {       \"Time\": 1735056000,       \"Data\": 0     }   ] }",
           "member": "StatisticsDataInfo",
           "name": "MetricData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -9665,7 +9665,7 @@
         {
           "disabled": false,
           "document": "（旧参数，请使用ProxyId）通道实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"link-12345\"",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -9815,7 +9815,7 @@
         {
           "disabled": false,
           "document": "通道组ID，当通道归属于某一通道组时，存在该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"lg-123456\"",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -9835,7 +9835,7 @@
         {
           "disabled": false,
           "document": "接入地域详细信息，包括地域ID和地域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"RegionId\":\"NorthChina\"}\"}",
           "member": "RegionDetail",
           "name": "AccessRegionInfo",
           "output_required": true,
@@ -9845,7 +9845,7 @@
         {
           "disabled": false,
           "document": "源站地域详细信息，包括地域ID和地域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"RegionId\":\"SouthChina\"}\"}",
           "member": "RegionDetail",
           "name": "RealServerRegionInfo",
           "output_required": true,
@@ -9895,7 +9895,7 @@
         {
           "disabled": false,
           "document": "关联了解析的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "www.test.com",
           "member": "string",
           "name": "RelatedGlobalDomains",
           "output_required": true,
@@ -9975,7 +9975,7 @@
         {
           "disabled": false,
           "document": "IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"ip\": \"1.2.3.4\"}]",
           "member": "IPDetail",
           "name": "IPList",
           "output_required": true,
@@ -10215,40 +10215,40 @@
         {
           "disabled": false,
           "document": "源站ID。",
-          "example": "“”",
+          "example": "rs-123456",
           "member": "string",
           "name": "RealServerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "0表示未被绑定 1表示被规则或者监听器绑定。",
-          "example": "“”",
+          "example": "0",
           "member": "int64",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定此源站的通道ID，没有绑定时为空字符串。",
-          "example": "“”",
+          "example": "link-123456",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定此源站的通道组ID，没有绑定时为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "example": "lg-123456",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11224,20 +11224,20 @@
         {
           "disabled": false,
           "document": "资源类型，其中：\nProxy表示通道，\nProxyGroup表示通道组，\nRealServer表示源站",
-          "example": "",
+          "example": "domain",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源ID",
-          "example": "",
+          "example": "dm-kbwkcklz",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

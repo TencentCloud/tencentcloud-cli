@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sqlserver DescribeMigrations --cli-unfold-argument  \
-    --MigrateName 测试 \
+    --MigrateName andy_Migrate \
     --Limit 10 \
     --Offset 0 \
     --OrderBy name \
@@ -23,7 +23,7 @@ Output:
         "MigrateTaskSet": [
             {
                 "MigrateId": 2734,
-                "MigrateName": "测试迁移",
+                "MigrateName": "andy_Migrate",
                 "AppId": 1251006373,
                 "Region": "ap-guangzhou",
                 "SourceType": 5,
@@ -41,7 +41,7 @@ Output:
             },
             {
                 "MigrateId": 2732,
-                "MigrateName": "测试接口",
+                "MigrateName": "andy_Migrate2",
                 "AppId": 1251006373,
                 "Region": "ap-guangzhou",
                 "SourceType": 5,

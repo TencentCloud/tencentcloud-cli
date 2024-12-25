@@ -20,8 +20,8 @@ Output:
         "SecurityGroupSet": [
             {
                 "SecurityGroupId": "esg-05bb4upy",
-                "SecurityGroupName": "TestGroup",
-                "SecurityGroupDesc": "test-group-desc",
+                "SecurityGroupName": "demo",
+                "SecurityGroupDesc": "demo",
                 "IsDefault": "true",
                 "TagSet": []
             }

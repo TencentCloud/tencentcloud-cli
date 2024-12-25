@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb CreateParamTemplate --cli-unfold-argument  \
     --TemplateType HIGH_STABILITY \
-    --Name test \
+    --Name mysql1 \
     --ParamList.0.CurrentValue MIXED \
     --ParamList.0.Name binlog_format \
     --ParamList.1.CurrentValue 1 \

@@ -9,8 +9,8 @@ tccli cynosdb InquirePriceModify --cli-unfold-argument  \
     --Cpu 0 \
     --Memory 0 \
     --StorageLimit 0 \
-    --ClusterId abc \
-    --InstanceId abc
+    --ClusterId cynosdbmysql-j9i41hdd \
+    --InstanceId cynosdbmysql-ins-4vdtei11
 ```
 
 Output: 
@@ -23,7 +23,7 @@ Output:
             "TotalPriceDiscount": 0,
             "UnitPrice": 0,
             "UnitPriceDiscount": 0,
-            "ChargeUnit": "abc"
+            "ChargeUnit": ""
         },
         "StoragePrice": {
             "TotalPrice": 0,
@@ -31,9 +31,9 @@ Output:
             "TotalPriceDiscount": 0,
             "UnitPrice": 0,
             "UnitPriceDiscount": 0,
-            "ChargeUnit": "abc"
+            "ChargeUnit": "GB*h"
         },
-        "RequestId": "abc"
+        "RequestId": "8f291dbc-3840-40f9-aa39-841437c247fb"
     }
 }
 ```

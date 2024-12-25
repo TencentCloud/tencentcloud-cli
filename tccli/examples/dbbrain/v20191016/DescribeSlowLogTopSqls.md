@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeSlowLogTopSqls --cli-unfold-argument  \
-    --InstanceId test \
+    --InstanceId cdb-test1234 \
     --SortBy QueryTime \
     --OrderBy ASC \
     --Limit 10 \
@@ -39,6 +39,7 @@ Output:
                 "LockTime": 0,
                 "RowsSent": 0,
                 "RowsSentMin": 0,
+                "Md5": "868339165626254691",
                 "LockTimeMax": 0,
                 "RowsSentRatio": 0,
                 "RowsExamined": 0,

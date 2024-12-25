@@ -28,7 +28,7 @@ Output:
                     "SecurityGroupId": "",
                     "CidrBlock": "20.0.0.0/16",
                     "Action": "ACCEPT",
-                    "PolicyDescription": "test1",
+                    "PolicyDescription": "demo",
                     "AddressTemplate": {
                         "AddressId": "",
                         "AddressGroupId": ""
@@ -47,7 +47,7 @@ Output:
                     },
                     "SecurityGroupId": "",
                     "Action": "ACCEPT",
-                    "PolicyDescription": "test-2",
+                    "PolicyDescription": "demo",
                     "AddressTemplate": {
                         "AddressId": "",
                         "AddressGroupId": ""

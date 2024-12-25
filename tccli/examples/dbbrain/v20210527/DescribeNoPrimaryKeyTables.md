@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeNoPrimaryKeyTables --cli-unfold-argument  \
-    --InstanceId cdb-test \
+    --InstanceId cdb-c1nl9rpv \
     --Date 2022-04-12
 ```
 
@@ -17,8 +17,8 @@ Output:
         "RequestId": "8108c1c0-bbcc-11ec-adb9-eb9c1358e03a",
         "NoPrimaryKeyTables": [
             {
-                "TableSchema": "test",
-                "TableName": "test",
+                "TableSchema": "demo_schema",
+                "TableName": "demo_table",
                 "Engine": "InnoDB",
                 "TotalLength": 0,
                 "TableRows": 0

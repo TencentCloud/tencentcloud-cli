@@ -24,7 +24,7 @@ Output:
                 "TaskId": 1997098,
                 "ModifyBeforeInfo": {
                     "RuleTemplateId": "cdb-art-8qx2kcr7",
-                    "RuleTemplateName": "wy_test",
+                    "RuleTemplateName": "wy_1",
                     "RuleFilters": [
                         {
                             "Type": "sqlType",
@@ -36,11 +36,11 @@ Output:
                     ],
                     "AlarmLevel": 1,
                     "AlarmPolicy": 0,
-                    "Description": ""
+                    "Description": "andyaudit"
                 },
                 "ModifyAfterInfo": {
                     "RuleTemplateId": "cdb-art-8qx2kcr7",
-                    "RuleTemplateName": "wy_test",
+                    "RuleTemplateName": "wy_1",
                     "RuleFilters": [
                         {
                             "Type": "sqlType",
@@ -53,7 +53,7 @@ Output:
                     ],
                     "AlarmLevel": 2,
                     "AlarmPolicy": 0,
-                    "Description": ""
+                    "Description": "andyrule2"
                 },
                 "AffectedInstances": [
                     "cdb-nzg4gv35",

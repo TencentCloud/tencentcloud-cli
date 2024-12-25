@@ -8,7 +8,7 @@ Input:
 tccli live StopLivePadProcessor --cli-unfold-argument  \
     --PushDomainName 5000.livepush.myqcloud.com \
     --AppName live \
-    --StreamName test
+    --StreamName mystreamname
 ```
 
 Output: 

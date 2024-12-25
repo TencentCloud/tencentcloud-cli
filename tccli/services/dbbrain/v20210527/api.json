@@ -606,7 +606,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "demo template",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -636,7 +636,7 @@
         {
           "disabled": false,
           "document": "接收类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[1,2]",
           "member": "int64",
           "name": "ReceiveType",
           "output_required": false,
@@ -646,7 +646,7 @@
         {
           "disabled": false,
           "document": "接收用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"ReceiveGroup\":[{\"GroupName\":\"demoUserGrp\",\"GroupId\":\"196400\"}],\"EndReceiveTime\":\"23:59:59\",\"ReceiveName\":\"通知操作1\",\"SendChannel\":[8,4,32],\"StartReceiveTime\":\"00:00:00\",\"ReceiveUin\":[{\"UinName\":\"demoUser\",\"Uin\":\"100018983000\"}]}]",
           "member": "ReceiveInfo",
           "name": "ReceiveInfo",
           "output_required": false,
@@ -656,7 +656,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-04 17:16:35",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -666,7 +666,7 @@
         {
           "disabled": false,
           "document": "模板名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demoTemplateName",
           "member": "string",
           "name": "TemplateName",
           "output_required": false,
@@ -915,7 +915,7 @@
           "example": "1235675344",
           "member": "int64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -925,7 +925,7 @@
           "example": "1",
           "member": "int64",
           "name": "AuditStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -935,7 +935,7 @@
           "example": "tdsql-ijlopwe",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -945,7 +945,7 @@
           "example": "test-env",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -955,7 +955,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -965,17 +965,17 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源Tags。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "[\"tag_abc\"]",
           "member": "string",
           "name": "ResourceTags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -988,10 +988,10 @@
         {
           "disabled": false,
           "document": "审计日志文件生成异步任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "173",
           "member": "int64",
           "name": "AsyncRequestId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1001,7 +1001,7 @@
           "example": "tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz",
           "member": "string",
           "name": "FileName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1011,7 +1011,7 @@
           "example": "2019-03-20 17:09:13",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1021,7 +1021,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1031,27 +1031,27 @@
           "example": "233",
           "member": "float",
           "name": "FileSize",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审计日志下载地址。",
-          "example": "无",
+          "example": "https://dbbrain-gz-xxx.cos.ap-guangzhou.tencentcos.cn/tdsql-8fyt6dkd_20230417-151100_to_20230417-151403_1681717077964.tar.gz?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDkMfJhxjhBTahcIaNgNsBKDwZx74pmsY3%2638be613391610",
           "member": "string",
           "name": "DownloadUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "无",
+          "example": "failed",
           "member": "string",
           "name": "ErrMsg",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1061,7 +1061,7 @@
           "example": "20",
           "member": "float",
           "name": "Progress",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1071,7 +1071,7 @@
           "example": "2019-03-20 17:09:13",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1088,18 +1088,16 @@
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "数据库名称。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "DBName",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1108,8 +1106,7 @@
           "member": "string",
           "name": "User",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1118,8 +1115,7 @@
           "member": "int64",
           "name": "SentRows",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1128,8 +1124,7 @@
           "member": "int64",
           "name": "AffectRows",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1138,8 +1133,7 @@
           "member": "int64",
           "name": "ExecTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -1254,27 +1248,27 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "联系人姓名。",
-          "example": "test",
+          "example": "zhangsan",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "联系人绑定的邮箱。",
-          "example": "test@qq.com",
+          "example": "zhangsan@qq.com",
           "member": "string",
           "name": "Mail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1368,7 +1362,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "test",
+          "example": "cdb-6396zzr5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1437,7 +1431,7 @@
         {
           "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "129632",
+          "example": "129542924",
           "member": "int64",
           "name": "AsyncRequestId",
           "required": true,
@@ -1642,7 +1636,7 @@
         {
           "disabled": false,
           "document": "邮件配置内容。",
-          "example": "-",
+          "example": "{\"Language\":\"zh\",\"MailConfiguration\":{\"Region\":[\"ap-guangzhou\"],\"SendMail\":1,\"ContactPerson\":[24332],\"ContactGroup\":[],\"HealthStatus\":[\"HIGH_RISK\"],\"SendTime\":\"10:00-12:00\"}}",
           "member": "ProfileInfo",
           "name": "ProfileInfo",
           "required": true,
@@ -1660,7 +1654,7 @@
         {
           "disabled": false,
           "document": "配置名称，需要保持唯一性，数据库巡检邮件配置名称自拟；定期生成邮件配置命名格式：\"scheduler_\" + {instanceId}，如\"schduler_cdb-test\"。",
-          "example": "test",
+          "example": "schduler_cdb-test1234",
           "member": "string",
           "name": "ProfileName",
           "required": true,
@@ -1978,7 +1972,7 @@
         {
           "disabled": false,
           "document": "关键字，用于筛选SQL语句，多个关键字用英文逗号分隔，逗号不能作为关键词，多个关键词之间的关系为“逻辑与”。",
-          "example": "test",
+          "example": "foo,bar,foobar",
           "member": "string",
           "name": "FilterKey",
           "required": true,
@@ -2029,9 +2023,10 @@
         {
           "disabled": false,
           "document": "限流任务ID。",
-          "example": "123",
+          "example": "1433287",
           "member": "int64",
           "name": "FilterId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2267,7 +2262,7 @@
         {
           "disabled": false,
           "document": "限流任务ID列表。",
-          "example": "1234",
+          "example": "1432970",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
@@ -2276,7 +2271,7 @@
         {
           "disabled": false,
           "document": "通过VerifyUserAccount获取有效期为5分钟的会话token，使用后会自动延长token有效期至五分钟后。",
-          "example": "cauth",
+          "example": "aOqcrCnPLZgCh41VqZVHda2Y+HI=:26872060",
           "member": "string",
           "name": "SessionToken",
           "required": false,
@@ -2312,7 +2307,7 @@
         {
           "disabled": false,
           "document": "搜索字段",
-          "example": "test",
+          "example": "demoAlarmTemplate",
           "member": "string",
           "name": "TemplateNameRegexp",
           "required": true,
@@ -2568,7 +2563,7 @@
         {
           "disabled": false,
           "document": "实例详情。",
-          "example": "{}",
+          "example": "[{\"BillingConfirmed\":1,\"AuditStatus\":\"ON\",\"ColdLogExpireDay\":23,\"InstanceId\":\"tdsql-lq5ue8p7\",\"LogExpireDay\":30,\"CreateTime\":\"2023-06-08 19:48:19\",\"HotLogSize\":0,\"HotLogExpireDay\":7,\"BillingAmount\":0,\"ColdLogSize\":0,\"InstanceInfo\":{\"InstanceName\":\"DBbrain测试_fanzhi_MySQL8.0\",\"AuditStatus\":1,\"AppId\":251009273,\"InstanceId\":\"tdsql-lq5ue8p7\",\"ResourceTags\":[\"tag_abc\"],\"ProjectId\":0,\"Region\":\"ap-guangzhou\"}}]",
           "member": "AuditInstance",
           "name": "Items",
           "output_required": true,
@@ -2589,7 +2584,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB。",
+          "document": "服务产品类型，支持值包括： \"dcdb\" - 云数据库 Tdsql， \"mariadb\" - 云数据库 MariaDB for MariaDB， \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 CynosDB for MySQL， \"postgres\" - 云数据库 PostgreSQL",
           "example": "dcdb",
           "member": "string",
           "name": "Product",
@@ -2598,7 +2593,7 @@
         },
         {
           "disabled": false,
-          "document": "与Product保持一致。如：\"dcdb\" ,\"mariadb\"",
+          "document": "该字段规则如下： 当product为\"dcdb\"则输入\"dcdb\"， 当product为\"mariadb\"则输入\"mariadb\"， 当product为\"mysql\"则输入\"mysql\"， 当product为\"cynosdb\"则输入\"mysql\"， 当product为\"postgres\"则输入\"postgres\"。",
           "example": "dcdb",
           "member": "string",
           "name": "NodeRequestType",
@@ -2641,18 +2636,20 @@
         {
           "disabled": false,
           "document": "符合条件的审计日志文件个数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "审计日志文件详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"Status\":\"creating\",\"Progress\":36,\"AsyncRequestId\":129544793,\"ErrMsg\":\"\",\"CreateTime\":\"2024-12-23 20:27:19\",\"FileName\":null,\"FileSize\":0}",
           "member": "AuditLogFile",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2671,7 +2668,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2734,7 +2731,7 @@
         {
           "disabled": false,
           "document": "诊断事件详情，若无附加解释信息则输出为空。",
-          "example": "[]",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"慢会话详情\"}},[{\"Layout\":\"vertical\",\"DataType\":\"table\",\"Data\":{\"Names\":[\"Schema\",{\"Type\":\"sql\",\"Name\":\"SqlText\"}],\"Data\":[{\"Schema\":\"demo\",\"SqlText\":\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\"}]}}]]",
           "member": "string",
           "name": "Explanation",
           "required": true,
@@ -2784,7 +2781,7 @@
         {
           "disabled": false,
           "document": "诊断建议，若无建议则输出为空。",
-          "example": "[]",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"SQL优化\"}},[{\"DataType\":\"sqlAdvice\",\"Data\":{\"Advices\":[{\"TableName\":\"t1\",\"TableSchema\":\"demo\",\"Keys\":[{\"SqlText\":\"alter table `demo`.`t1` add index index_0(`c_time`);\"}]}],\"Comments\":[],\"Schema\":\"demo\",\"SqlPlan\":{\"Before\":[{\"Format\":\"Table\",\"Data\":{\"Names\":[\"id\",\"select_type\",\"table\",\"partitions\",\"type\",\"possible_keys\",\"key\",\"key_len\",\"ref\",\"rows\",\"filtered\",\"Extra\"],\"Data\":[[1,\"SIMPLE\",\"t2\",null,\"ALL\",null,null,null,null,161663,100,null],[1,\"SIMPLE\",\"t1\",null,\"ALL\",null,null,null,null,655801,3.33,null]]}}],\"After\":[{\"Format\":\"Table\",\"Data\":{\"Names\":[\"id\",\"select_type\",\"table\",\"partitions\",\"type\",\"possible_keys\",\"key\",\"key_len\",\"ref\",\"rows\",\"filtered\",\"Extra\"],\"Data\":[[1,\"SIMPLE\",\"t2\",null,\"ALL\",null,null,null,null,161663,100,null],[1,\"SIMPLE\",\"t1\",null,\"ALL\",\"index_0\",null,null,null,655801,33.33,null]]}}]},\"SqlText\":\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\",\"Tables\":[{\"TableName\":\"t1\",\"TableSchema\":\"demo\",\"TableDDL\":\"CREATE TABLE `t1` (\\n  `id` int NOT NULL AUTO_INCREMENT,\\n  `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\\n  `name` varchar(32) DEFAULT NULL,\\n  `age` int NOT NULL DEFAULT '0',\\n  PRIMARY KEY (`id`)\\n) ENGINE=InnoDB AUTO_INCREMENT=786393 DEFAULT CHARSET=utf8mb3\"},{\"TableName\":\"t2\",\"TableSchema\":\"demo\",\"TableDDL\":\"CREATE TABLE `t2` (\\n  `id` int NOT NULL AUTO_INCREMENT,\\n  `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\\n  `name` varchar(32) DEFAULT NULL,\\n  `age` int NOT NULL DEFAULT '0',\\n  PRIMARY KEY (`id`)\\n) ENGINE=InnoDB AUTO_INCREMENT=1507180 DEFAULT CHARSET=utf8mb3\"}],\"Cost\":{\"Before\":1.060202269597E10,\"After\":1.060202269597E10,\"Ratio\":0}}}]]",
           "member": "string",
           "name": "Suggestions",
           "required": true,
@@ -2794,7 +2791,7 @@
         {
           "disabled": false,
           "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "innodb_rows_read_per_qps",
           "member": "string",
           "name": "Metric",
           "required": true,
@@ -3370,7 +3367,7 @@
         {
           "disabled": false,
           "document": "数据库名称。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "Db",
           "required": true,
@@ -3379,7 +3376,7 @@
         {
           "disabled": false,
           "document": "表明。",
-          "example": "test.collection",
+          "example": "demo_collection",
           "member": "string",
           "name": "Collection",
           "required": true,
@@ -3403,7 +3400,7 @@
         {
           "disabled": false,
           "document": "查询实例慢查询聚合结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"AvgExecTime\":179,\"AvgDocsExamined\":68818,\"SlowLogCount\":259,\"SlowLogs\":[\"Mon Dec 23 18:43:37.203 I COMMAND  [conn49740688] command demo_db.demo_collection command: find { find: \\\"demo_collection\\\", filter: { userId: \\\"65001072666xxxx\\\", img.url: \\\"https://zh.demo.com/m-1/atom-render/render/generate-from-demo/65001072666xxxx/demo/d2a640196ffed78xxx.png\\\", action: \\\"API-smart\\\" }, limit: 1, batchSize: 1, shardVersion: [ Timestamp(0, 0), ObjectId('000000000000000000000000') ], lsid: { id: UUID(\\\"994478dc-813f-42c0-8328-1107bxxxx\\\"), uid: BinData(0, F1B0A328B38C64201EE9214999B268A480B7F225C476879D9B842498000) }, $clusterTime: { clusterTime: Timestamp(1734950616, 2), signature: { hash: BinData(0, 76AD2803276E9B2E223ABACCA4830998000), keyId: 7429087055960000 } }, $client: { driver: { name: \\\"nodejs|Mongoose\\\", version: \\\"4.17.2|6.13.5\\\" }, platform: \\\"Node.js v18.9.0, LE\\\", os: { name: \\\"linux\\\", architecture: \\\"x64\\\", version: \\\"5.4.119-1-tlinux4-0010.2\\\", type: \\\"Linux\\\" }, mongos: { host: \\\"TENCENT64.site:6016\\\", client: \\\"10.10.10.10:50168\\\", version: \\\"3.6.3-cmongo-\\\" } }, $configServerState: { opTime: { ts: Timestamp(1734950616, 2), t: 1 } }, $db: \\\"demo_db\\\" } planSummary: IXSCAN { userId: 1, from: 1, action: 1, createdAt: -1 } keysExamined:72992 docsExamined:72990 cursorExhausted:1 numYields:570 nreturned:0 reslen:363 locks:{ Global: { acquireCount: { r: 1142 } }, Database: { acquireCount: { r: 571 } }, Collection: { acquireCount: { r: 571 } } } protocol:op_msg 171ms\"],\"SortCount\":0}",
           "member": "Aggregation",
           "name": "Aggregation",
           "output_required": true,
@@ -3572,7 +3569,7 @@
         {
           "disabled": false,
           "document": "邮件配置详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "[{\"ProfileId\":\"1433288\",\"ProfileType\":\"dbScan_mail_configuration\",\"ProfileLevel\":\"User\",\"ProfileName\":\"测试uin\",\"ProfileInfo\":{\"MailConfiguration\":{\"HealthStatus\":[\"HEALTH\",\"SUB_HEALTH\",\"RISK\",\"HIGH_RISK\"],\"Region\":[\"ap-guangzhou\"],\"ContactGroup\":[],\"SendMail\":0,\"ContactPerson\":[24332]},\"Language\":\"zh\"}}]",
           "member": "UserProfile",
           "name": "ProfileList",
           "output_required": true,
@@ -3640,7 +3637,7 @@
         {
           "disabled": false,
           "document": "线程的操作数据库，用于筛选线程列表。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "DB",
           "required": false,
@@ -3804,6 +3801,7 @@
           "example": "10000",
           "member": "int64",
           "name": "NoPrimaryKeyTableCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3813,6 +3811,7 @@
           "example": "0",
           "member": "int64",
           "name": "NoPrimaryKeyTableCountDiff",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3822,6 +3821,7 @@
           "example": "1000",
           "member": "int64",
           "name": "NoPrimaryKeyTableRecordCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3831,6 +3831,7 @@
           "example": "无",
           "member": "Table",
           "name": "NoPrimaryKeyTables",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3840,6 +3841,7 @@
           "example": "1618890295",
           "member": "int64",
           "name": "Timestamp",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3949,7 +3951,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "crs-test1",
+          "example": "crs-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3958,7 +3960,7 @@
         {
           "disabled": false,
           "document": "kill 会话异步任务 ID,  接口 CreateProxySessionKillTask 调用成功后获取。",
-          "example": "[1234]",
+          "example": "[10474110]",
           "member": "int64",
           "name": "AsyncRequestIds",
           "required": true,
@@ -3982,10 +3984,10 @@
         {
           "disabled": false,
           "document": "kill 任务的详情。",
-          "example": "无",
+          "example": "[{\"Progress\":100,\"InstProxyList\":[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\",\"2ce994dadc0e2b27e76ae13d04ab9eadd9665397\",\"db0fcd29867e65eb999ce99383d7a06cd21ca077\"],\"InternalTaskStatus\":\"finished\",\"AsyncRequestId\":10474110,\"EndTime\":\"2020-09-22T00:00:00+00:00\",\"InstProxyCount\":3,\"InstanceId\":\"crs-test1234\",\"CreateTime\":\"2020-09-22T00:00:00+00:00\",\"StartTime\":\"2020-09-22T00:00:00+00:00\",\"TaskStatus\":\"finished\",\"FinishedProxyList\":[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\",\"2ce994dadc0e2b27e76ae13d04ab9eadd9665397\",\"db0fcd29867e65eb999ce99383d7a06cd21ca077\"],\"FailedProxyList\":[]}]",
           "member": "TaskInfo",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3995,7 +3997,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4484,7 +4486,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4903,15 +4905,17 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "慢日志明细",
-          "example": "无",
+          "example": "[{\"LockTime\":0,\"UserHost\":\"169.254.128.9\",\"RowsSent\":1,\"UserName\":\"root\",\"Database\":\"information_schema\",\"SqlText\":\"/* dbbrain user mark */select SLEEP(10)\",\"QueryTime\":10,\"RowsExamined\":0,\"Timestamp\":\"2023-03-31 10:47:35\"},{\"LockTime\":0,\"UserHost\":\"169.254.128.9\",\"RowsSent\":1,\"UserName\":\"root\",\"Database\":\"information_schema\",\"SqlText\":\"/* dbbrain user mark */select SLEEP(8)\",\"QueryTime\":8,\"RowsExamined\":0,\"Timestamp\":\"2023-03-31 10:47:45\"}]",
           "member": "SlowLogInfoItem",
           "name": "Rows",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4939,7 +4943,7 @@
         {
           "disabled": false,
           "document": "任务ID列表，用于筛选任务列表。",
-          "example": "1234",
+          "example": "[1234]",
           "member": "int64",
           "name": "FilterIds",
           "required": false,
@@ -4993,6 +4997,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5002,6 +5007,7 @@
           "example": "无",
           "member": "SQLFilter",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5020,7 +5026,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "cdb-c1nl9rpv",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5029,7 +5035,7 @@
         {
           "disabled": false,
           "document": "数据库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "Schema",
           "required": true,
@@ -5062,10 +5068,10 @@
         {
           "disabled": false,
           "document": "数据库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "Schema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5075,7 +5081,7 @@
           "example": "select * from test limit 10",
           "member": "string",
           "name": "SqlText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5085,7 +5091,7 @@
           "example": "Select",
           "member": "string",
           "name": "SqlType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5095,17 +5101,17 @@
           "example": "select * from test limit ?",
           "member": "string",
           "name": "SqlTemplate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "SQL模版ID。",
-          "example": "123",
+          "example": "-5602209514906915428",
           "member": "int64",
           "name": "SqlId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5280,7 +5286,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5340,10 +5346,10 @@
         {
           "disabled": false,
           "document": "返回的Top表空间统计信息的时序数据列表。",
-          "example": "无",
+          "example": "[{\"TableName\":\"demo_table\",\"TableSchema\":\"demo_db\",\"SeriesData\":{\"Series\":[{\"Values\":[0],\"Metric\":\"DataFree\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"DataLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"IndexLength\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"TotalLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"FragRatio\",\"Unit\":\"%\"},{\"Values\":[9],\"Metric\":\"TableRows\",\"Unit\":\"\"},{\"Values\":[0.1],\"Metric\":\"PhysicalFileSize\",\"Unit\":\"MB\"}],\"Timestamp\":[1588089600]},\"Engine\":\"InnoDB\"},{\"TableName\":\"test22\",\"TableSchema\":\"test_bak\",\"SeriesData\":{\"Series\":[{\"Values\":[0],\"Metric\":\"DataFree\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"DataLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"IndexLength\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"TotalLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"FragRatio\",\"Unit\":\"%\"},{\"Values\":[6],\"Metric\":\"TableRows\",\"Unit\":\"\"},{\"Values\":[0.1],\"Metric\":\"PhysicalFileSize\",\"Unit\":\"MB\"}],\"Timestamp\":[1588089600]},\"Engine\":\"InnoDB\"}]",
           "member": "TableSpaceTimeSeries",
           "name": "TopSpaceTableTimeSeries",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5362,7 +5368,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5407,7 +5413,7 @@
           "example": "无",
           "member": "TableSpaceData",
           "name": "TopSpaceTables",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5417,7 +5423,7 @@
           "example": "1603819881",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5454,7 +5460,7 @@
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "Schema",
           "required": false,
@@ -5481,7 +5487,7 @@
           "example": "PossibleKeys",
           "member": "string",
           "name": "Advices",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5491,7 +5497,7 @@
           "example": "SQL解析不通过",
           "member": "string",
           "name": "Comments",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5501,17 +5507,17 @@
           "example": "select * from t1",
           "member": "string",
           "name": "SqlText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "Schema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5521,7 +5527,7 @@
           "example": "TableDDL",
           "member": "string",
           "name": "Tables",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5531,7 +5537,7 @@
           "example": "Before",
           "member": "string",
           "name": "SqlPlan",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5541,7 +5547,7 @@
           "example": "After",
           "member": "string",
           "name": "Cost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5560,40 +5566,40 @@
         {
           "disabled": false,
           "document": "诊断类型。",
-          "example": "无",
+          "example": "事务未提交",
           "member": "string",
           "name": "DiagType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束时间。",
-          "example": "无",
+          "example": "2021-05-27 00:01:20",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开始时间。",
-          "example": "无",
+          "example": "2021-05-27 00:01:10",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件唯一ID 。",
-          "example": "1",
+          "example": "330858512",
           "member": "int64",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5603,57 +5609,57 @@
           "example": "1",
           "member": "int64",
           "name": "Severity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断概要。",
-          "example": "无",
+          "example": "存在未提交事务",
           "member": "string",
           "name": "Outline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断项说明。",
-          "example": "无",
+          "example": "事务未提交",
           "member": "string",
           "name": "DiagItem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "cdb-test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cpu_use_rate",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "地域。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5666,10 +5672,10 @@
         {
           "disabled": false,
           "document": "事件 ID 。",
-          "example": "123456",
+          "example": "165387",
           "member": "int64",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5679,7 +5685,7 @@
           "example": "复制",
           "member": "string",
           "name": "DiagType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5689,7 +5695,7 @@
           "example": "2019-01-01T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5699,7 +5705,7 @@
           "example": "2019-01-01T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5709,7 +5715,7 @@
           "example": "复制IO线程中断",
           "member": "string",
           "name": "Outline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5719,7 +5725,7 @@
           "example": "1",
           "member": "int64",
           "name": "Severity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5729,7 +5735,7 @@
           "example": "5",
           "member": "int64",
           "name": "ScoreLost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5739,7 +5745,7 @@
           "example": "slave_io_running",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5749,7 +5755,7 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5765,17 +5771,17 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "组名称。",
-          "example": "test",
+          "example": "group1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5785,7 +5791,7 @@
           "example": "1",
           "member": "int64",
           "name": "MemberCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6026,7 +6032,7 @@
         {
           "disabled": false,
           "document": "签名。",
-          "example": "无",
+          "example": "[\"1a59c167379c9bb7b799b3fe1db95fe2\"]",
           "member": "string",
           "name": "Signs",
           "output_required": true,
@@ -6092,7 +6098,7 @@
         {
           "disabled": false,
           "document": "索引名。",
-          "example": "test",
+          "example": "userId_1_from_1_action_1",
           "member": "string",
           "name": "IndexName",
           "output_required": true,
@@ -6111,17 +6117,17 @@
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "test",
+          "example": "dbbrain-test",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6131,7 +6137,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6141,7 +6147,7 @@
           "example": "3600",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6151,7 +6157,7 @@
           "example": "MySQL",
           "member": "string",
           "name": "Product",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6161,7 +6167,7 @@
           "example": "5.6",
           "member": "string",
           "name": "EngineVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6196,7 +6202,7 @@
         {
           "disabled": false,
           "document": "redis大key分析的自定义分割符，仅redis使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\",\",\";\",\":\",\"+\",\"@\",\"=\",\"|\",\"#\",\".\"]",
           "member": "string",
           "name": "KeyDelimiters",
           "output_required": false,
@@ -6250,7 +6256,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "cdb-test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -6470,7 +6476,7 @@
         {
           "disabled": false,
           "document": "实例巡检/概览的状态。",
-          "example": "-",
+          "example": "{\"DiagFlag\":\"Yes\",\"OverviewDisplay\":\"Yes\",\"DailyInspection\":\"No\"}",
           "member": "InstanceConfs",
           "name": "InstanceConf",
           "output_required": true,
@@ -6530,7 +6536,7 @@
         {
           "disabled": false,
           "document": "内网vip。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.5.0.9",
           "member": "string",
           "name": "InternalVip",
           "output_required": true,
@@ -6540,7 +6546,7 @@
         {
           "disabled": false,
           "document": "内网port。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "9090",
           "member": "int64",
           "name": "InternalVport",
           "output_required": true,
@@ -6550,7 +6556,7 @@
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2021-02-25 16:33:26",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -6560,7 +6566,7 @@
         {
           "disabled": false,
           "document": "所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cynosdbmysql-92r4lpsa",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -6570,7 +6576,7 @@
         {
           "disabled": false,
           "document": "所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "开发-测试库",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -6826,7 +6832,7 @@
         {
           "disabled": false,
           "document": "新策略名",
-          "example": "test",
+          "example": "demoProfileName",
           "member": "string",
           "name": "NewProfileName",
           "required": true,
@@ -6835,7 +6841,7 @@
         {
           "disabled": false,
           "document": "旧策略名",
-          "example": "test",
+          "example": "oldProfileName",
           "member": "string",
           "name": "ProfileName",
           "required": true,
@@ -6853,7 +6859,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "空",
+          "example": "demo profile",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -7052,7 +7058,7 @@
         {
           "disabled": false,
           "document": "SQL限流任务ID列表。",
-          "example": "1234",
+          "example": "[1433288]",
           "member": "int64",
           "name": "FilterIds",
           "required": true,
@@ -7126,7 +7132,7 @@
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "Db",
           "output_required": true,
@@ -7218,20 +7224,20 @@
         {
           "disabled": false,
           "document": "监控指标。",
-          "example": "无",
+          "example": "[{\"Values\":[0],\"Metric\":\"DataFree\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"DataLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"IndexLength\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"TotalLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"FragRatio\",\"Unit\":\"%\"},{\"Values\":[9],\"Metric\":\"TableRows\",\"Unit\":\"\"},{\"Values\":[0.1],\"Metric\":\"PhysicalFileSize\",\"Unit\":\"MB\"}]",
           "member": "MonitorFloatMetric",
           "name": "Series",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监控指标对应的时间戳。",
-          "example": "1621934398",
+          "example": "[1621934398]",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7247,7 +7253,7 @@
           "example": "cpu_use_rate",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7257,17 +7263,17 @@
           "example": "%",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0.25",
+          "example": "[0.25,0.26]",
           "member": "float",
           "name": "Values",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -7280,20 +7286,20 @@
         {
           "disabled": false,
           "document": "监控指标。",
-          "example": "无",
+          "example": "[{\"Values\":[1.0,1.0],\"Metric\":\"cpu_use_rate\",\"Unit\":\"%\"}]",
           "member": "MonitorMetric",
           "name": "Series",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监控指标对应的时间戳。",
-          "example": "1622087758",
+          "example": "[1622087750,1622087760]",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7309,7 +7315,7 @@
           "example": "12",
           "member": "string",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7319,7 +7325,7 @@
           "example": "root",
           "member": "string",
           "name": "User",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7329,17 +7335,17 @@
           "example": "127.0.0.1:41528",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "线程的操作数据库。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "DB",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7349,7 +7355,7 @@
           "example": "updating",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7359,7 +7365,7 @@
           "example": "Execute",
           "member": "string",
           "name": "Command",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7369,7 +7375,7 @@
           "example": "1225",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7379,7 +7385,7 @@
           "example": "DELETE FROM `test` WHERE time<=1",
           "member": "string",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7590,6 +7596,7 @@
           "example": "zh",
           "member": "string",
           "name": "Language",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7597,9 +7604,10 @@
         {
           "disabled": false,
           "document": "邮件模板的内容。",
-          "example": "无",
+          "example": "{\"HealthStatus\":[\"HEALTH\",\"SUB_HEALTH\",\"RISK\",\"HIGH_RISK\"],\"Region\":[\"ap-guangzhou\"],\"ContactGroup\":[],\"SendMail\":0,\"ContactPerson\":[24332]}",
           "member": "MailConfiguration",
           "name": "MailConfiguration",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -7613,7 +7621,7 @@
         {
           "disabled": false,
           "document": "接收组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[196444,196445]",
           "member": "int64",
           "name": "ReceiveGroup",
           "output_required": false,
@@ -7623,7 +7631,7 @@
         {
           "disabled": false,
           "document": "最后接收时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "23:59:59",
           "member": "string",
           "name": "EndReceiveTime",
           "output_required": false,
@@ -7643,7 +7651,7 @@
         {
           "disabled": false,
           "document": "推送渠道\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[1,2,32]",
           "member": "int64",
           "name": "SendChannel",
           "output_required": false,
@@ -7653,7 +7661,7 @@
         {
           "disabled": false,
           "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "00:00:00",
           "member": "string",
           "name": "StartReceiveTime",
           "output_required": false,
@@ -7663,7 +7671,7 @@
         {
           "disabled": false,
           "document": "接收用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"UinName\":\"zhangsan\",\"Uin\":\"100020880953\"}]",
           "member": "ReceiveUin",
           "name": "ReceiveUin",
           "output_required": false,
@@ -7679,7 +7687,7 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "zhangsan",
           "member": "string",
           "name": "UinName",
           "output_required": false,
@@ -7781,10 +7789,10 @@
         {
           "disabled": false,
           "document": "key名。",
-          "example": "test",
+          "example": "test-key",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7794,7 +7802,7 @@
           "example": "string",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7804,7 +7812,7 @@
           "example": "string",
           "member": "string",
           "name": "Encoding",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7814,7 +7822,7 @@
           "example": "0",
           "member": "int64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7824,7 +7832,7 @@
           "example": "72",
           "member": "int64",
           "name": "Length",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7834,7 +7842,7 @@
           "example": "1",
           "member": "int64",
           "name": "ItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7844,7 +7852,7 @@
           "example": "10",
           "member": "int64",
           "name": "MaxElementSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7854,7 +7862,7 @@
           "example": "10",
           "member": "int64",
           "name": "AveElementSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7864,7 +7872,7 @@
           "example": "1",
           "member": "string",
           "name": "ShardId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7943,10 +7951,10 @@
         {
           "disabled": false,
           "document": "任务ID。",
-          "example": "1234",
+          "example": "187639",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7956,7 +7964,7 @@
           "example": "FINISHED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7966,7 +7974,7 @@
           "example": "SELECT",
           "member": "string",
           "name": "SqlType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7976,7 +7984,7 @@
           "example": "t1",
           "member": "string",
           "name": "OriginKeys",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7986,7 +7994,7 @@
           "example": "SELECT, t1",
           "member": "string",
           "name": "OriginRule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7996,7 +8004,7 @@
           "example": "100",
           "member": "int64",
           "name": "RejectedSqlCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8006,7 +8014,7 @@
           "example": "0",
           "member": "int64",
           "name": "CurrentConcurrency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8016,7 +8024,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxConcurrency",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8026,7 +8034,7 @@
           "example": "2022-04-14 14:00:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8036,7 +8044,7 @@
           "example": "2022-04-14 15:00:00",
           "member": "datetime_iso",
           "name": "CurrentTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8046,7 +8054,7 @@
           "example": "2022-04-14 14:30:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8059,12 +8067,11 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "test",
+          "example": "dbName",
           "member": "string",
           "name": "Schema",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8075,10 +8082,10 @@
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "test_db",
           "member": "string",
           "name": "TableSchema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8088,7 +8095,7 @@
           "example": "2.2",
           "member": "float",
           "name": "DataLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8098,7 +8105,7 @@
           "example": "1.0",
           "member": "float",
           "name": "IndexLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8108,7 +8115,7 @@
           "example": "0",
           "member": "float",
           "name": "DataFree",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8118,7 +8125,7 @@
           "example": "3.2",
           "member": "float",
           "name": "TotalLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8128,7 +8135,7 @@
           "example": "0",
           "member": "float",
           "name": "FragRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8138,7 +8145,7 @@
           "example": "10",
           "member": "int64",
           "name": "TableRows",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8148,7 +8155,7 @@
           "example": "0.2",
           "member": "float",
           "name": "PhysicalFileSize",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -8161,10 +8168,10 @@
         {
           "disabled": false,
           "document": "库名",
-          "example": "test",
+          "example": "test_db",
           "member": "string",
           "name": "TableSchema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8174,7 +8181,7 @@
           "example": "无",
           "member": "MonitorMetricSeriesData",
           "name": "SeriesData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -8951,20 +8958,20 @@
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "demo_schema",
           "member": "string",
           "name": "TableSchema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表名。",
-          "example": "test",
+          "example": "demo_table",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8974,7 +8981,7 @@
           "example": "InnoDB",
           "member": "string",
           "name": "Engine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8984,7 +8991,7 @@
           "example": "2000",
           "member": "int64",
           "name": "TableRows",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8994,7 +9001,7 @@
           "example": "0.02",
           "member": "float",
           "name": "TotalLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -9007,20 +9014,20 @@
         {
           "disabled": false,
           "document": "表名。",
-          "example": "test",
+          "example": "demo_table",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "TableSchema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9030,7 +9037,7 @@
           "example": "InnoDB",
           "member": "string",
           "name": "Engine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9040,7 +9047,7 @@
           "example": "2.00",
           "member": "float",
           "name": "DataLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -9050,7 +9057,7 @@
           "example": "2.00",
           "member": "float",
           "name": "IndexLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -9060,7 +9067,7 @@
           "example": "2.00",
           "member": "float",
           "name": "DataFree",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -9070,7 +9077,7 @@
           "example": "2.00",
           "member": "float",
           "name": "TotalLength",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -9080,27 +9087,27 @@
           "example": "2.00",
           "member": "float",
           "name": "FragRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "行数。",
-          "example": "2",
+          "example": "9",
           "member": "int64",
           "name": "TableRows",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "表对应的独立物理文件大小（MB）。",
-          "example": "2.00",
+          "example": "0.1",
           "member": "float",
           "name": "PhysicalFileSize",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -9113,20 +9120,20 @@
         {
           "disabled": false,
           "document": "表名。",
-          "example": "test",
+          "example": "demo_table",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "库名。",
-          "example": "test",
+          "example": "demo_db",
           "member": "string",
           "name": "TableSchema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9136,17 +9143,17 @@
           "example": "InnoDB",
           "member": "string",
           "name": "Engine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单位时间间隔内的空间指标数据。",
-          "example": "无",
+          "example": "{\"Series\":[{\"Values\":[0],\"Metric\":\"DataFree\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"DataLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"IndexLength\",\"Unit\":\"MB\"},{\"Values\":[0.1],\"Metric\":\"TotalLength\",\"Unit\":\"MB\"},{\"Values\":[0],\"Metric\":\"FragRatio\",\"Unit\":\"%\"},{\"Values\":[9],\"Metric\":\"TableRows\",\"Unit\":\"\"},{\"Values\":[0.1],\"Metric\":\"PhysicalFileSize\",\"Unit\":\"MB\"}],\"Timestamp\":[1588089600]}",
           "member": "MonitorFloatMetricSeriesData",
           "name": "SeriesData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -9159,10 +9166,10 @@
         {
           "disabled": false,
           "document": "异步任务 ID。",
-          "example": "1234",
+          "example": "187649",
           "member": "int64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9172,7 +9179,7 @@
           "example": "[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\"]",
           "member": "string",
           "name": "InstProxyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9182,7 +9189,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstProxyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9192,7 +9199,7 @@
           "example": "\"2022-02-11 10:22:46\"",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9202,7 +9209,7 @@
           "example": "\"2022-02-11 10:22:46\"",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9212,7 +9219,7 @@
           "example": "\"finished\"",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9222,7 +9229,7 @@
           "example": "[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\"]",
           "member": "string",
           "name": "FinishedProxyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9232,7 +9239,7 @@
           "example": "[\"6511ec503b047be913e30c1bbf1f2c8c861e8347\"]",
           "member": "string",
           "name": "FailedProxyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9242,7 +9249,7 @@
           "example": "\"2022-02-11 10:22:46\"",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9252,7 +9259,7 @@
           "example": "100",
           "member": "int64",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9262,7 +9269,7 @@
           "example": "crs-test1",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9284,7 +9291,7 @@
         {
           "disabled": false,
           "document": "模板名",
-          "example": "测试",
+          "example": "demoTemplate",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -9415,10 +9422,10 @@
         {
           "disabled": false,
           "document": "配置的id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "1433288",
           "member": "string",
           "name": "ProfileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9428,7 +9435,7 @@
           "example": "dbScan_mail_configuration",
           "member": "string",
           "name": "ProfileType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9438,27 +9445,27 @@
           "example": "User",
           "member": "string",
           "name": "ProfileLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "demoProfile",
           "member": "string",
           "name": "ProfileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置详情。",
-          "example": "-",
+          "example": "{\"MailConfiguration\":{\"HealthStatus\":[\"HEALTH\",\"SUB_HEALTH\",\"RISK\",\"HIGH_RISK\"],\"Region\":[\"ap-guangzhou\"],\"ContactGroup\":[],\"SendMail\":0,\"ContactPerson\":[24332]},\"Language\":\"zh\"}",
           "member": "ProfileInfo",
           "name": "ProfileInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live CopyCaster --cli-unfold-argument  \
-    --CasterId 1234 \
+    --CasterId 63501 \
     --OutputStreamId copy_output_example \
     --CasterName copy_example
 ```
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
-        "CasterId": 1235
+        "CasterId": 63502
     }
 }
 ```

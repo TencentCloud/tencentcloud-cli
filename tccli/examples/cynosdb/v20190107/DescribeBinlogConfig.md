@@ -6,20 +6,22 @@ Input:
 
 ```
 tccli cynosdb DescribeBinlogConfig --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-xxx
+    --ClusterId DescribeBinlogConffv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BinlogCrossRegionsConfigUpdateTime": "abc",
         "BinlogConfig": {
-            "BinlogSaveDays": 0,
-            "BinlogCrossRegionsEnable": "abc",
-            "BinlogCrossRegions": "abc"
+            "BinlogCrossRegions": [
+                "ap-guangzhou"
+            ],
+            "BinlogCrossRegionsEnable": "ON",
+            "BinlogSaveDays": 7
         },
-        "RequestId": "abc"
+        "BinlogCrossRegionsConfigUpdateTime": "2024-12-23 19:27:09",
+        "RequestId": "e01e2fd6-10bc-45a0-b715-0d29a5fb317d"
     }
 }
 ```

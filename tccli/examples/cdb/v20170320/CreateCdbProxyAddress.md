@@ -28,8 +28,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "111-1314-333-2321212",
-        "AsyncRequestId": "test"
+        "RequestId": "3689c0eb-a92d-77ce-0ee2-17d99f604e64",
+        "AsyncRequestId": "a6040589-3b098df5-b551d9e5-81c6bfdc"
     }
 }
 ```

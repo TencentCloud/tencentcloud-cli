@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb DescribeFlow --cli-unfold-argument  \
-    --FlowId 123
+    --FlowId 147186
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Status": 0,
-        "RequestId": "186253"
+        "RequestId": "c32019ab-0d57-4b3d-80ea-5f52c12b523f"
     }
 }
 ```

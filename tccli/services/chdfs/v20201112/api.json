@@ -283,7 +283,7 @@
         {
           "disabled": false,
           "document": "权限规则ID",
-          "example": "",
+          "example": "900",
           "member": "uint64",
           "name": "AccessRuleId",
           "required": false,
@@ -293,7 +293,7 @@
         {
           "disabled": false,
           "document": "权限规则地址（网段或IP）",
-          "example": "",
+          "example": "10.0.0.0/24",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -303,7 +303,7 @@
         {
           "disabled": false,
           "document": "权限规则访问模式（1：只读；2：读写）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AccessMode",
           "required": false,
@@ -313,7 +313,7 @@
         {
           "disabled": false,
           "document": "优先级（取值范围1~100，值越小优先级越高）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Priority",
           "required": false,
@@ -323,7 +323,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-12-25T19:35:20+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "required": false,
@@ -448,7 +448,7 @@
         {
           "disabled": false,
           "document": "权限组ID",
-          "example": "ag-jwmfdcul",
+          "example": "ag-gei2xxxx",
           "member": "string",
           "name": "AccessGroupId",
           "required": true,
@@ -485,20 +485,11 @@
         {
           "disabled": false,
           "document": "文件系统名称",
-          "example": "test",
+          "example": "fs-test",
           "member": "string",
           "name": "FileSystemName",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍",
-          "example": "1073741824",
-          "member": "uint64",
-          "name": "CapacityQuota",
-          "required": true,
-          "type": "int"
         },
         {
           "disabled": false,
@@ -512,11 +503,20 @@
         {
           "disabled": false,
           "document": "文件系统描述，默认为空字符串",
-          "example": "test",
+          "example": "create an example fs",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统容量（byte），下限为1GB，上限为1PB，且必须是1GB的整数倍",
+          "example": "1073741824",
+          "member": "uint64",
+          "name": "CapacityQuota",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -584,6 +584,7 @@
           "example": "无",
           "member": "FileSystem",
           "name": "FileSystem",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -638,7 +639,7 @@
         {
           "disabled": false,
           "document": "挂载点名称",
-          "example": "test",
+          "example": "mp-test",
           "member": "string",
           "name": "MountPointName",
           "required": true,
@@ -647,7 +648,7 @@
         {
           "disabled": false,
           "document": "文件系统ID",
-          "example": "f4mnvilzmdd",
+          "example": "f14mrrxxxxxx",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -674,7 +675,7 @@
           "example": "无",
           "member": "MountPoint",
           "name": "MountPoint",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -882,7 +883,7 @@
           "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroup",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -928,7 +929,7 @@
           "example": "无",
           "member": "AccessGroup",
           "name": "AccessGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1002,7 +1003,7 @@
           "example": "无",
           "member": "FileSystem",
           "name": "FileSystem",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1012,7 +1013,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CapacityUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1022,7 +1023,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ArchiveCapacityUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1032,7 +1033,7 @@
           "example": "0",
           "member": "uint64",
           "name": "StandardCapacityUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1042,7 +1043,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DegradeCapacityUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1052,7 +1053,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DeepArchiveCapacityUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1062,7 +1063,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IntelligentCapacityUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1162,7 +1163,7 @@
           "example": "无",
           "member": "MountPoint",
           "name": "MountPoint",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1217,7 +1218,7 @@
           "example": "无",
           "member": "MountPoint",
           "name": "MountPoints",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1349,27 +1350,27 @@
           "example": "1000000",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统名称",
-          "example": "test",
+          "example": "fs-test",
           "member": "string",
           "name": "FileSystemName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统描述",
-          "example": "test",
+          "example": "create an example fs",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1379,17 +1380,17 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件系统ID",
-          "example": "f4mhaqkciq0",
+          "example": "f14mrrxxxxxx",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1399,7 +1400,7 @@
           "example": "1629099694",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1409,7 +1410,7 @@
           "example": "4194304",
           "member": "uint64",
           "name": "BlockSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1419,7 +1420,7 @@
           "example": "1073741824",
           "member": "uint64",
           "name": "CapacityQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1429,7 +1430,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1439,7 +1440,7 @@
           "example": "[\"hadoop\"]",
           "member": "string",
           "name": "SuperUsers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1449,7 +1450,7 @@
           "example": "true",
           "member": "bool",
           "name": "PosixAcl",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1459,7 +1460,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableRanger",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1469,7 +1470,7 @@
           "example": "[\"127.0.0.1:8080\"]",
           "member": "string",
           "name": "RangerServiceAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1485,6 +1486,7 @@
           "example": "1",
           "member": "uint64",
           "name": "LifeCycleRuleId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1492,9 +1494,10 @@
         {
           "disabled": false,
           "document": "生命周期规则名称",
-          "example": "test",
+          "example": "lc-delete",
           "member": "string",
           "name": "LifeCycleRuleName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1502,9 +1505,10 @@
         {
           "disabled": false,
           "document": "生命周期规则路径（目录或文件）",
-          "example": "/test",
+          "example": "/delete_path",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1515,6 +1519,7 @@
           "example": "无",
           "member": "Transition",
           "name": "Transitions",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -1525,6 +1530,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1535,6 +1541,7 @@
           "example": "2019-07-30T16:24:38+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1545,6 +1552,7 @@
           "example": "无",
           "member": "Summary",
           "name": "Summary",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -1552,9 +1560,10 @@
         {
           "disabled": false,
           "document": "Summary更新时间",
-          "example": "无",
+          "example": "2019-07-30T16:34:38+08:00",
           "member": "datetime_iso",
           "name": "LastSummaryTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1577,7 +1586,7 @@
         {
           "disabled": false,
           "document": "权限组名称",
-          "example": "test",
+          "example": "access-group-test",
           "member": "string",
           "name": "AccessGroupName",
           "required": false,
@@ -1586,7 +1595,7 @@
         {
           "disabled": false,
           "document": "权限组描述",
-          "example": "test",
+          "example": "group-example",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1649,7 +1658,7 @@
         {
           "disabled": false,
           "document": "文件系统名称",
-          "example": "test",
+          "example": "fs-test",
           "member": "string",
           "name": "FileSystemName",
           "required": false,
@@ -1658,7 +1667,7 @@
         {
           "disabled": false,
           "document": "文件系统描述",
-          "example": "test",
+          "example": "fs-example",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1766,7 +1775,7 @@
         {
           "disabled": false,
           "document": "挂载点名称",
-          "example": "test",
+          "example": "mp-test",
           "member": "string",
           "name": "MountPointName",
           "required": false,
@@ -1838,7 +1847,7 @@
         {
           "disabled": false,
           "document": "挂载点ID",
-          "example": "",
+          "example": "f14mrrxxxxxx-C1Yv",
           "member": "string",
           "name": "MountPointId",
           "required": true,
@@ -1848,7 +1857,7 @@
         {
           "disabled": false,
           "document": "挂载点名称",
-          "example": "",
+          "example": "mp-test",
           "member": "string",
           "name": "MountPointName",
           "required": false,
@@ -1858,7 +1867,7 @@
         {
           "disabled": false,
           "document": "文件系统ID",
-          "example": "",
+          "example": "f14mrrxxxxxx",
           "member": "string",
           "name": "FileSystemId",
           "required": true,
@@ -1868,7 +1877,7 @@
         {
           "disabled": false,
           "document": "挂载点状态（1：打开；2：关闭）",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -1878,7 +1887,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-12-25T19:15:28+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "required": true,
@@ -1888,7 +1897,7 @@
         {
           "disabled": false,
           "document": "绑定的权限组ID列表",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AccessGroupIds",
           "required": true,
@@ -1969,66 +1978,72 @@
       "members": [
         {
           "disabled": false,
-          "document": "已使用容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用容量（byte）",
           "example": "5",
           "member": "uint64",
           "name": "CapacityUsed",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用COS标准存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用COS标准存储容量（byte）",
           "example": "1",
           "member": "uint64",
           "name": "StandardCapacityUsed",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用COS低频存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用COS低频存储容量（byte）",
           "example": "1",
           "member": "uint64",
           "name": "DegradeCapacityUsed",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用COS归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用COS归档存储容量（byte）",
           "example": "1",
           "member": "uint64",
           "name": "ArchiveCapacityUsed",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用COS深度归档存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用COS深度归档存储容量（byte）",
           "example": "1",
           "member": "uint64",
           "name": "DeepArchiveCapacityUsed",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用COS智能分层存储容量（byte）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已使用COS智能分层存储容量（byte）",
           "example": "1",
           "member": "uint64",
           "name": "IntelligentCapacityUsed",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "Tag": {
       "document": "资源标签。",
@@ -2036,9 +2051,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2046,9 +2062,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

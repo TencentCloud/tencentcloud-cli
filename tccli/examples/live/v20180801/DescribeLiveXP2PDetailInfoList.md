@@ -20,13 +20,13 @@ Output:
                 "OnlinePeople": 0,
                 "Request": 0,
                 "RequestSuccess": 0,
-                "Time": "abc",
-                "Type": "abc",
-                "StreamName": "abc",
-                "AppId": "abc"
+                "Time": "2022-02-23T23:32:00+08:00",
+                "Type": "live",
+                "StreamName": "stream1",
+                "AppId": "1393244"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

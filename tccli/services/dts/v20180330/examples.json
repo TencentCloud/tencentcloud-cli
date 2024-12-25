@@ -101,8 +101,8 @@
     "DescribeSubscribes": [
       {
         "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSubscribes\n&Status.0=isolate\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"ChannelId\": \"dts-channel-C9rS58f2rFx11ZEZ\",\n                \"ConsumeStartTime\": \"2019-12-19 16:23:45\",\n                \"CreateTime\": \"2019-12-20 14:59:07\",\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\n                \"InstanceId\": \"cdb-forsubsc\",\n                \"InstanceStatus\": \"running\",\n                \"IsolateTime\": \"0000-00-00 00:00:00\",\n                \"ModifyTime\": \"2019-12-20 18:06:26\",\n                \"OfflineTime\": \"0000-00-00 00:00:00\",\n                \"PayType\": 1,\n                \"Product\": \"mysql\",\n                \"Region\": \"ap-guangzhou\",\n                \"SdkConsumedTime\": \"0000-00-00 00:00:00\",\n                \"Status\": \"normal\",\n                \"SubsStatus\": \"configured\",\n                \"SubscribeId\": \"subs-58zcu8bax0\",\n                \"SubscribeName\": \"测试实例\",\n                \"UniqSubnetId\": \"subnet-4p1hpsj8\",\n                \"UniqVpcId\": \"vpc-fbg8gh1j\",\n                \"Vip\": \"192.168.1.143\",\n                \"Vport\": 7507,\n                \"SubscribeVersion\": \"kafka\",\n                \"AutoRenewFlag\": 0,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "input": "https://dts.tencentcloudapi.com/?Action=DescribeSubscribes\n&Status.0=isolated\n&Offset=0\n&Limit=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"Items\": [\n            {\n                \"ChannelId\": \"dts-channel-C9rS58f2rFx11ZEZ\",\n                \"ConsumeStartTime\": \"2019-12-19 16:23:45\",\n                \"CreateTime\": \"2019-12-20 14:59:07\",\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\n                \"InstanceId\": \"cdb-forsubsc\",\n                \"InstanceStatus\": \"running\",\n                \"IsolateTime\": \"0000-00-00 00:00:00\",\n                \"ModifyTime\": \"2019-12-20 18:06:26\",\n                \"OfflineTime\": \"0000-00-00 00:00:00\",\n                \"PayType\": 1,\n                \"Product\": \"mysql\",\n                \"Region\": \"ap-guangzhou\",\n                \"SdkConsumedTime\": \"0000-00-00 00:00:00\",\n                \"Status\": \"normal\",\n                \"SubsStatus\": \"configured\",\n                \"SubscribeId\": \"subs-58zcu8bax0\",\n                \"SubscribeName\": \"测试实例\",\n                \"UniqSubnetId\": \"subnet-4p1hpsj8\",\n                \"UniqVpcId\": \"vpc-fbg8gh1j\",\n                \"Vip\": \"192.168.1.143\",\n                \"Vport\": 7507,\n                \"SubscribeVersion\": \"kafka\",\n                \"AutoRenewFlag\": 0,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"负责人\",\n                        \"TagValue\": \"jason\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "查询数据订阅实例列表"
       }
     ],
@@ -141,7 +141,7 @@
     "ModifySubscribeName": [
       {
         "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeName\n&SubscribeId=subs-ieuwi83j2e\n&SubscribeName=test\n&<公共请求参数>",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeName\n&SubscribeId=subs-ieuwi83j2e\n&SubscribeName=binlog订阅\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "修改数据订阅实例的名称"
       }
@@ -157,7 +157,7 @@
     "ModifySubscribeVipVport": [
       {
         "document": "",
-        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeVipVport\r\n&SubscribeId=subs-ieuwi83j2e\r\n&DstVip=192.168.0.1\r\n&DstPort=7575\r\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubscribeName\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-jvxbbos7c0\",\n    \"DstUniqSubnetId\": \"subnet-njj6i45t\",\n    \"DstIp\": \"10.0.0.37\",\n    \"DstPort\": 10086\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "修改数据订阅实例的IP和端口号"
       }

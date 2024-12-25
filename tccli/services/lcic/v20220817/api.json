@@ -6673,7 +6673,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率。1 标清\n2 高清\n3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",

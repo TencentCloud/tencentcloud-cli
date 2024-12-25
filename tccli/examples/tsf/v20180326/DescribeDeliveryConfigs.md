@@ -15,47 +15,47 @@ Output:
             "TotalCount": 0,
             "Content": [
                 {
-                    "ConfigId": "abc",
-                    "ConfigName": "abc",
+                    "ConfigId": "apm-busi-log-cfg-6a79x94v",
+                    "ConfigName": "toKafkaCfg",
                     "CollectPath": [
-                        "abc"
+                        "/var/log"
                     ],
                     "Groups": [
                         {
-                            "GroupId": "abc",
-                            "GroupName": "abc",
-                            "ClusterId": "abc",
-                            "ClusterName": "abc",
-                            "ClusterType": "abc",
-                            "NamespaceName": "abc",
-                            "AssociateTime": "abc"
+                            "GroupId": "group-6a79x94v",
+                            "GroupName": "java-demo",
+                            "ClusterId": "cls-6a79x94v",
+                            "ClusterName": "k8s-cls",
+                            "ClusterType": "C",
+                            "NamespaceName": "default",
+                            "AssociateTime": "2022-12-23 10:23:12"
                         }
                     ],
-                    "CreateTime": "abc",
-                    "KafkaVIp": "abc",
-                    "KafkaAddress": "abc",
-                    "KafkaVPort": "abc",
-                    "Topic": "abc",
-                    "LineRule": "abc",
-                    "CustomRule": "abc",
+                    "CreateTime": "2022-12-22 10:12:32",
+                    "KafkaVIp": "10.23.0.4",
+                    "KafkaAddress": "kafka.tencent.com",
+                    "KafkaVPort": "30111",
+                    "Topic": "TO_KAFKA_TOPIC",
+                    "LineRule": ".*",
+                    "CustomRule": ".*",
                     "EnableGlobalLineRule": true,
                     "EnableAuth": true,
-                    "Username": "abc",
-                    "Password": "abc",
+                    "Username": "root",
+                    "Password": "passxxxxxxxxx",
                     "KafkaInfos": [
                         {
-                            "Topic": "abc",
+                            "Topic": "TO_KAFKA_TOPIC",
                             "Path": [
-                                "abc"
+                                "/var/log"
                             ],
-                            "LineRule": "abc",
-                            "CustomRule": "abc"
+                            "LineRule": ".*",
+                            "CustomRule": "null"
                         }
                     ]
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "f1183607-d21b-dde1-d99c-94643d32c62e"
     }
 }
 ```

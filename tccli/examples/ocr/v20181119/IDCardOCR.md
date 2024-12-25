@@ -78,7 +78,7 @@ Output:
 {
     "Response": {
         "Address": "",
-        "AdvancedInfo": "{}",
+        "AdvancedInfo": "{\"WarnInfos\":[]}",
         "Authority": "上海市公安局南山分局",
         "Birth": "",
         "IdNum": "",

@@ -7,7 +7,7 @@ Input:
 ```
 tccli dbbrain ModifySqlFilters --cli-unfold-argument  \
     --InstanceId cdb-test \
-    --FilterIds 1234 \
+    --FilterIds 1433288 \
     --Status TERMINATED
 ```
 

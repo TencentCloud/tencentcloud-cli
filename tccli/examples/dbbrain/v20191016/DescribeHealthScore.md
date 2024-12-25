@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeHealthScore --cli-unfold-argument  \
-    --InstanceId test \
+    --InstanceId cdb-test1234 \
     --Time 2019-01-01T00:00:00+08:00 \
     --Product mysql
 ```

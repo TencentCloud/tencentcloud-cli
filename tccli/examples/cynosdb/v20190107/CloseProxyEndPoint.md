@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cynosdb CloseProxyEndPoint --cli-unfold-argument  \
-    --ClusterId abc \
-    --ProxyGroupId abc
+    --ClusterId cynosdbmysql-j9i41hdd \
+    --ProxyGroupId cynosdbmysql-proxy-lti34611
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 0,
-        "TaskId": 0,
-        "RequestId": "abc"
+        "FlowId": 147186,
+        "TaskId": 148273,
+        "RequestId": "51169b54-61d4-4604-a07e-e519a5527923"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live RestartLivePullStreamTask --cli-unfold-argument  \
-    --TaskId 123 \
+    --TaskId 953215 \
     --Operator admin
 ```
 

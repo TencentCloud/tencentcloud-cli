@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DescribeAuditRuleTemplates --cli-unfold-argument  \
-    --RuleTemplateNames template_test \
+    --RuleTemplateNames template_1 \
     --Limit 10 \
     --Offset 0
 ```
@@ -38,14 +38,14 @@ Output:
                         "Compare": "NEQ",
                         "Type": "user",
                         "Value": [
-                            "test"
+                            "lue"
                         ]
                     },
                     {
                         "Compare": "INC",
                         "Type": "dbName",
                         "Value": [
-                            "test"
+                            "lue"
                         ]
                     }
                 ],

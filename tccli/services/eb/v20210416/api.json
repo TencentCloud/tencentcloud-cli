@@ -327,7 +327,7 @@
           "example": "{\"key2\": \"value2\"}",
           "member": "string",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1965,7 +1965,7 @@
           "example": "无",
           "member": "Transformation",
           "name": "Transformations",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

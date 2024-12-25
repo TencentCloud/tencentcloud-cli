@@ -8,7 +8,7 @@ Input:
 tccli live DescribeLiveStreamPublishedList --cli-unfold-argument  \
     --DomainName 5000.livepush.myqcloud.com \
     --AppName live \
-    --StreamName test \
+    --StreamName myroomname \
     --PageNum 1 \
     --PageSize 10 \
     --StartTime 2015-06-25T03:30:50Z \

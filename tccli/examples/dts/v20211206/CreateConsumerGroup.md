@@ -7,9 +7,9 @@ Input:
 ```
 tccli dts CreateConsumerGroup --cli-unfold-argument  \
     --SubscribeId subs-9jyki7hniw \
-    --ConsumerGroupName test \
-    --AccountName test \
-    --Password 123 \
+    --ConsumerGroupName group-1 \
+    --AccountName jason \
+    --Password qJ3e1Wd~ \
     --Description this is a test account
 ```
 

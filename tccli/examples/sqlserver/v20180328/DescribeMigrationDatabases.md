@@ -8,7 +8,7 @@ Input:
 tccli sqlserver DescribeMigrationDatabases --cli-unfold-argument  \
     --InstanceId mssql-si2823jyl \
     --UserName sqlserver_admin \
-    --Password 123456
+    --Password Qy2255778899
 ```
 
 Output: 

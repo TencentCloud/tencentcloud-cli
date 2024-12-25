@@ -1839,7 +1839,7 @@
         {
           "disabled": false,
           "document": "消费组名称，以数字、字母(大小写)或者_ - .开头，以数字、字母(大小写)结尾。实际生成的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
-          "example": "test",
+          "example": "group-1",
           "member": "string",
           "name": "ConsumerGroupName",
           "required": true,
@@ -1848,7 +1848,7 @@
         {
           "disabled": false,
           "document": "账号名称。以数字、字母(大小写)或者_ - .开头，以数字、字母(大小写)结尾。实际生成的账户全称形如：account-#{SubscribeId}-#{AccountName}",
-          "example": "test",
+          "example": "jason",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -1857,7 +1857,7 @@
         {
           "disabled": false,
           "document": "消费组密码，长度必须大于3",
-          "example": "123",
+          "example": "qJ3e1Wd~",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -1866,7 +1866,7 @@
         {
           "disabled": false,
           "document": "消费组备注",
-          "example": "无",
+          "example": "binlog订阅",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2128,7 +2128,7 @@
         {
           "disabled": false,
           "document": "任务名，自定义",
-          "example": "test",
+          "example": "binlog订阅",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4425,7 +4425,7 @@
         {
           "disabled": false,
           "document": "数据订阅实例的名称",
-          "example": "test",
+          "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
           "output_required": true,
@@ -4716,7 +4716,7 @@
         {
           "disabled": false,
           "document": "订阅名称，前缀模糊匹配",
-          "example": "test",
+          "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
           "required": false,
@@ -4761,7 +4761,7 @@
         {
           "disabled": false,
           "document": "数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -4770,7 +4770,7 @@
         {
           "disabled": false,
           "document": "数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error",
-          "example": "无",
+          "example": "running",
           "member": "string",
           "name": "SubsStatus",
           "required": false,
@@ -4868,7 +4868,7 @@
         {
           "disabled": false,
           "document": "实例是否支持退还/退货",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "IsReturnable",
           "output_required": true,
@@ -4878,7 +4878,7 @@
         {
           "disabled": false,
           "document": "不支持退还的原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "实例已经隔离或者下线，不能退还",
           "member": "string",
           "name": "ReturnFailMessage",
           "output_required": true,
@@ -7088,7 +7088,7 @@
         {
           "disabled": false,
           "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
-          "example": "consumer-grp-subs-9jyki7hniw-1",
+          "example": "consumer-grp-subs-9jyki7hniw-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
           "required": true,
@@ -7097,7 +7097,7 @@
         {
           "disabled": false,
           "document": "账户名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
-          "example": "account-subs-9jyki7hniw-1",
+          "example": "account-subs-9jyki7hniw-jason",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -7106,7 +7106,7 @@
         {
           "disabled": false,
           "document": "修改之后的消费组描述",
-          "example": "无",
+          "example": "binlog订阅",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -7142,7 +7142,7 @@
         {
           "disabled": false,
           "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}",
-          "example": "account-subs-9jyki7hniw-1",
+          "example": "account-subs-9jyki7hniw-jason",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -7151,18 +7151,9 @@
         {
           "disabled": false,
           "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
-          "example": "consumer-grp-subs-9jyki7hniw-1",
+          "example": "consumer-grp-subs-9jyki7hniw-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "旧密码",
-          "example": "123",
-          "member": "string",
-          "name": "OldPassword",
           "required": true,
           "type": "string"
         },
@@ -7173,6 +7164,15 @@
           "member": "string",
           "name": "NewPassword",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧密码，非必选",
+          "example": "qJ3e1Wd~",
+          "member": "string",
+          "name": "OldPassword",
+          "required": false,
           "type": "string"
         }
       ],
@@ -7520,7 +7520,7 @@
         {
           "disabled": false,
           "document": "修改后的数据订阅实例的名称，长度限制为[1,60]",
-          "example": "subscribe-test",
+          "example": "binlog订阅",
           "member": "string",
           "name": "SubscribeName",
           "required": true,
@@ -7984,8 +7984,8 @@
         },
         {
           "disabled": false,
-          "document": "同步到kafka链路指定位点。目前只支持时间格式：yyyy-mm-dd hh:mm:ss。如果没有指定位点，为空。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-07-25 12:00:00",
+          "document": "同步到kafka链路指定位点。目前只支持时间格式：2023-12-20T19:24:23+08:00。如果没有指定位点，为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-20T19:24:23+08:00",
           "member": "string",
           "name": "StartPosition",
           "output_required": false,
@@ -8433,7 +8433,7 @@
         {
           "disabled": false,
           "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
-          "example": "consumer-grp-subs-7l2ly86kao-1",
+          "example": "consumer-grp-subs-7l2ly86kao-group-1",
           "member": "string",
           "name": "ConsumerGroupName",
           "required": true,
@@ -8442,7 +8442,7 @@
         {
           "disabled": false,
           "document": "需要修改offset的分区编号",
-          "example": "无",
+          "example": "[0,1,2,3]",
           "member": "int64",
           "name": "PartitionNos",
           "required": true,

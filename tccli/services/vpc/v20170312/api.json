@@ -8995,7 +8995,7 @@
         {
           "disabled": false,
           "document": "私网网关名称",
-          "example": "test",
+          "example": "NATDemo",
           "member": "string",
           "name": "NatGatewayName",
           "required": true,
@@ -9022,7 +9022,7 @@
         {
           "disabled": false,
           "document": "实例标签",
-          "example": "无",
+          "example": "{\"Key\": \"Creator\",\"Value\":\"TencentCloud\"}",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -16395,7 +16395,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定NatGatewayIds和Filters。每次请求的Filters的上限为10，Filter.Values的上限为5。\n<li>nat-gateway-id - String - （过滤条件）协议端口模板实例ID，形如：`nat-123xx454`。</li>\n<li>vpc-id - String - （过滤条件）私有网络 唯一ID，形如：`vpc-123xx454`。</li>\n<li>nat-gateway-name - String - （过滤条件）协议端口模板实例ID，形如：`test_nat`。</li>\n<li>tag-key - String - （过滤条件）标签键，形如：`test-key`。</li>",
-          "example": "无",
+          "example": "{\"Name\": \"nat-gateway-id\", \"Values\":[\"nat-94cdyvfr\", \"nat-6eeis68f\", \"nat-dimeg9zd\"]}",
           "member": "Filter",
           "name": "Filters",
           "required": false,

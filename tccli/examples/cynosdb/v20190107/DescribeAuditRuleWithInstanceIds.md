@@ -30,7 +30,7 @@ Output:
                                 "Compare": "EQS",
                                 "Type": "dbName",
                                 "Value": [
-                                    "testdb"
+                                    "db1"
                                 ]
                             }
                         ]

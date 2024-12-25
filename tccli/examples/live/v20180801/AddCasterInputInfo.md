@@ -10,7 +10,7 @@ tccli live AddCasterInputInfo --cli-unfold-argument  \
     --InputInfo.InputIndex 1 \
     --InputInfo.InputType 1 \
     --InputInfo.InputUrl http://www.example.com/vod/example.mp4 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

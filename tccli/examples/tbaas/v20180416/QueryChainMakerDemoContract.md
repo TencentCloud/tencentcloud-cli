@@ -8,7 +8,7 @@ Input:
 tccli tbaas QueryChainMakerDemoContract --cli-unfold-argument  \
     --ChainId chain_test \
     --ClusterId chainmaker-demo \
-    --ContractName test \
+    --ContractName fact \
     --FuncParam {"file_hash":"1234567"} \
     --FuncName find_by_file_hash
 ```

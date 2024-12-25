@@ -10,17 +10,17 @@ Input:
 
 ```
 tccli cdb DeleteRotationPassword --cli-unfold-argument  \
-    --InstanceId abc \
-    --User abc \
-    --Host abc \
-    --Password abc
+    --InstanceId cdb-0zgqlqmd \
+    --User andy \
+    --Host 192.1.1.1 \
+    --Password Andy454545
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }
 ```

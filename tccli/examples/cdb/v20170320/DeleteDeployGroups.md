@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DeleteDeployGroups --cli-unfold-argument  \
-    --DeployGroupIds test
+    --DeployGroupIds andy
 ```
 
 Output: 

@@ -143,7 +143,7 @@
     "CreateAuditRuleTemplate": [
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditRuleTemplate\n<公共请求参数>\n\n{\n    \"RuleFilters\": [\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"100.122.76.176\",\n                \"10.0.0.9\"\n            ]\n        },\n        {\n            \"Type\": \"user\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"wy\",\n                \"test\"\n            ]\n        },\n        {\n            \"Type\": \"sqlType\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"Update\",\n                \"Delete\"\n            ]\n        }\n    ],\n    \"RuleTemplateName\": \"test\",\n    \"Description\": \"用于测试的规则模板\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditRuleTemplate\n<公共请求参数>\n\n{\n    \"RuleFilters\": [\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"100.122.76.176\",\n                \"10.0.0.9\"\n            ]\n        },\n        {\n            \"Type\": \"user\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"wy\",\n                \"test\"\n            ]\n        },\n        {\n            \"Type\": \"sqlType\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"Update\",\n                \"Delete\"\n            ]\n        }\n    ],\n    \"RuleTemplateName\": \"andy\",\n    \"Description\": \"用于测试的规则模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"RuleTemplateId\": \"cdb-rt-ws23fwu8\",\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
         "title": "创建审计规则模板"
       }
@@ -168,7 +168,7 @@
       {
         "document": "创建数据库代理地址",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCdbProxyAddress\n<公共请求参数>\n\n{\n    \"ProxyGroupId\": \"proxy-il2nlsdn\",\n    \"UniqVpcId\": \"vpc-ixw3ll2d\",\n    \"UniqSubnetId\": \"subnet-0z3r56vq\",\n    \"IsKickOut\": true,\n    \"MinCount\": 1,\n    \"MaxDelay\": 10,\n    \"WeightMode\": \"custom\",\n    \"FailOver\": true,\n    \"AutoAddRo\": true,\n    \"ReadOnly\": false,\n    \"TransSplit\": false,\n    \"ConnectionPool\": true,\n    \"ProxyAllocation\": [\n        {\n            \"Region\": \"ap-guangzhou\",\n            \"Zone\": \"ap-guangzhou-2\",\n            \"ProxyInstance\": [\n                {\n                    \"InstanceId\": \"cdb-aykuksx3\",\n                    \"Weight\": 100\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"111-1314-333-2321212\",\n        \"AsyncRequestId\": \"test\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3689c0eb-a92d-77ce-0ee2-17d99f604e64\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "创建数据库代理地址"
       }
     ],
@@ -183,13 +183,13 @@
     "CreateDBImportJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBImportJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ids6j1b3\",\n    \"Password\": \"xxxxxxxxxx\",\n    \"User\": \"xxxxx\",\n    \"FileName\": \"test.sql\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBImportJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ids6j1b3\",\n    \"Password\": \"Andy454545\",\n    \"User\": \"andy\",\n    \"FileName\": \"andy.sql\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"be9f64a6-fa652dc6-f5c878b6-a6a50746\"\n    }\n}",
         "title": "创建数据导入任务"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBImportJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ids6j1b3\",\n    \"CosUrl\": \"https://test-bulk-XXXXX.cos.ap-chengdu.myqcloud.com/myFile/create_db.sql\",\n    \"Password\": \"xxxxxxxxxx\",\n    \"User\": \"xxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBImportJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ids6j1b3\",\n    \"CosUrl\": \"https://test-bulk-XXXXX.cos.ap-chengdu.myqcloud.com/myFile/create_db.sql\",\n    \"Password\": \"Andy454545\",\n    \"User\": \"andy\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"be9f64a6-fa652dc6-f5c878b6-a6a50746\"\n    }\n}",
         "title": "使用COS地址创建数据导入任务"
       }
@@ -219,8 +219,8 @@
     "CreateDatabase": [
       {
         "document": "创建数据库",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"DBName\": \"db_test\",\n    \"CharacterSetName\": \"utf8\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatabase\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"DBName\": \"db1\",\n    \"CharacterSetName\": \"utf8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建数据库"
       }
     ],
@@ -235,7 +235,7 @@
     "CreateParamTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateType\": \"HIGH_STABILITY\",\n    \"Name\": \"test\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"MIXED\",\n            \"Name\": \"binlog_format\"\n        },\n        {\n            \"CurrentValue\": \"1\",\n            \"Name\": \"auto_increment_increment\"\n        }\n    ],\n    \"EngineVersion\": \"5.7\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateParamTemplate\n<公共请求参数>\n\n{\n    \"TemplateType\": \"HIGH_STABILITY\",\n    \"Name\": \"mysql1\",\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"MIXED\",\n            \"Name\": \"binlog_format\"\n        },\n        {\n            \"CurrentValue\": \"1\",\n            \"Name\": \"auto_increment_increment\"\n        }\n    ],\n    \"EngineVersion\": \"5.7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"756bb037-a44a-4b4f-abe0-6efd34a6c792\",\n        \"TemplateId\": 2333\n    }\n}",
         "title": "创建参数模板"
       }
@@ -251,15 +251,15 @@
     "CreateRotationPassword": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRotationPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Accounts\": [\n        {\n            \"User\": \"abc\",\n            \"Host\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRotationPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-0zgqlqmd\",\n    \"Accounts\": [\n        {\n            \"User\": \"andy\",\n            \"Host\": \"192.1.1.1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "开启密码轮转"
       }
     ],
     "DeleteAccounts": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Accounts\": [\n        {\n            \"Host\": \"192.168.1.1\",\n            \"User\": \"user1\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-0zgqlqmd\",\n    \"Accounts\": [\n        {\n            \"Host\": \"192.168.1.1\",\n            \"User\": \"user1\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "删除云数据库的账号"
       }
@@ -315,7 +315,7 @@
     "DeleteDeployGroups": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteDeployGroups\n&DeployGroupIds.0=test\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteDeployGroups\n&DeployGroupIds.0=andy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
         "title": "删除置放群组"
       }
@@ -323,7 +323,7 @@
     "DeleteParamTemplate": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteParamTemplate\n&TemplateId=1234\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DeleteParamTemplate\n&TemplateId=17192\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "删除参数模板"
       }
@@ -331,8 +331,8 @@
     "DeleteRotationPassword": [
       {
         "document": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRotationPassword\n<公共请求参数>",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRotationPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"User\": \"abc\",\n    \"Host\": \"abc\",\n    \"Password\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRotationPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-0zgqlqmd\",\n    \"User\": \"andy\",\n    \"Host\": \"192.1.1.1\",\n    \"Password\": \"Andy454545\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "关闭实例账户密码轮转"
       }
     ],
@@ -356,7 +356,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAccounts\n&InstanceId=cdb-f35wr6wj\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 2,\n        \"MaxUserConnections\": 10240,\n        \"Items\": [\n            {\n                \"Notes\": \"test\",\n                \"Host\": \"localhost\",\n                \"User\": \"test_user\",\n                \"ModifyTime\": \"2020-11-10 01:00:00\",\n                \"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\n                \"CreateTime\": \"2020-11-10 01:00:00\",\n                \"MaxUserConnections\": 20\n            },\n            {\n                \"Notes\": \"test2\",\n                \"Host\": \"localhost\",\n                \"User\": \"root\",\n                \"ModifyTime\": \"2020-11-10 01:00:00\",\n                \"ModifyPasswordTime\": \"2020-11-10 01:00:00\",\n                \"CreateTime\": \"2020-11-10 01:00:00\",\n                \"MaxUserConnections\": 20\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Notes\": \"andy1\",\n                \"Host\": \"172.1.1.1\",\n                \"User\": \"andy\",\n                \"ModifyTime\": \"2020-09-22 00:00:00\",\n                \"ModifyPasswordTime\": \"2020-09-22 00:00:00\",\n                \"CreateTime\": \"2020-09-22 00:00:00\",\n                \"MaxUserConnections\": 20,\n                \"OpenCam\": true\n            }\n        ],\n        \"MaxUserConnections\": 20,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询云数据库的所有账号信息"
       }
     ],
@@ -380,7 +380,7 @@
       {
         "document": "无",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditInstanceList\n<公共请求参数>\n\n{\n    \"AuditMode\": 0,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"cdb-euu5fkcj\"\n            ],\n            \"Name\": \"InstanceId\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"AuditSwitch\": 0,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\",\n        \"Items\": [\n            {\n                \"BillingAmount\": 0,\n                \"LowRealStorage\": 0,\n                \"InstanceId\": \"cdb-euu5fkcj\",\n                \"AuditTask\": 1,\n                \"CreateAt\": \"2022-03-02 10:09:08\",\n                \"AuditStatus\": \"1\",\n                \"LogExpireDay\": 1,\n                \"AuditAll\": true,\n                \"InstanceInfo\": {\n                    \"ProjectId\": 0,\n                    \"TagList\": [\n                        {\n                            \"TagKey\": \"test\",\n                            \"TagValue\": \"1\"\n                        }\n                    ]\n                },\n                \"HighRealStorage\": 0,\n                \"HighLogExpireDay\": 30,\n                \"LowLogExpireDay\": 7\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"InstanceId\": \"cdb-euu5fkcj\",\n                \"AuditStatus\": \"1\",\n                \"AuditTask\": 1,\n                \"LogExpireDay\": 1,\n                \"HighLogExpireDay\": 1,\n                \"LowLogExpireDay\": 1,\n                \"BillingAmount\": 0,\n                \"HighRealStorage\": 0,\n                \"LowRealStorage\": 0,\n                \"AuditAll\": true,\n                \"CreateAt\": \"2022-03-02 10:09:08\",\n                \"InstanceInfo\": {\n                    \"ProjectId\": 0,\n                    \"TagList\": [\n                        {\n                            \"TagKey\": \"andy\",\n                            \"TagValue\": \"1\"\n                        }\n                    ],\n                    \"DbType\": \"MYSQL\",\n                    \"DbVersion\": \"5.7\"\n                },\n                \"RealStorage\": 0,\n                \"OldRule\": true,\n                \"RuleTemplateIds\": [\n                    \"cdb-art-nuf7ej8d\"\n                ]\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "获取审计实例列表"
       }
     ],
@@ -388,7 +388,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditLogFiles\n&InstanceId=cdb-qwerasdf\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"FileName\": \"test.txt\",\n                \"Status\": \"running\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"FileSize\": 3,\n                \"DownloadUrl\": \"http://xxxxxx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"FileName\": \"andy.txt\",\n                \"Status\": \"running\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"FileSize\": 3,\n                \"DownloadUrl\": \"http://xxxxxx\"\n            }\n        ]\n    }\n}",
         "title": "查询审计日志文件"
       }
     ],
@@ -416,7 +416,7 @@
       {
         "document": "",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditPolicies\n&InstanceId=cdb-qwerasdf\n&PolicyId=cdbpolicy-asdfqwer\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"PolicyId\": \"cdbpolicy-asdfqwer\",\n                \"Status\": \"running\",\n                \"InstanceId\": \"cdb-qwerasdf\",\n                \"InstanceName\": \"test\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ModifyTime\": \"2019-03-20 17:09:13\",\n                \"PolicyName\": \"audit_policy_1\",\n                \"RuleId\": \"cdbrule-asdfqwer\",\n                \"RuleName\": \"audit1\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"PolicyId\": \"cdbpolicy-asdfqwer\",\n                \"Status\": \"running\",\n                \"InstanceId\": \"cdb-qwerasdf\",\n                \"InstanceName\": \"andy1\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ModifyTime\": \"2019-03-20 17:09:13\",\n                \"PolicyName\": \"audit_policy_1\",\n                \"RuleId\": \"cdbrule-asdfqwer\",\n                \"RuleName\": \"audit1\"\n            }\n        ]\n    }\n}",
         "title": "查询审计策略"
       }
     ],
@@ -424,15 +424,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleTemplateModifyHistory\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cdb-art-8qx2kcr7\"\n    ],\n    \"StartTime\": \"2023-07-26 00:00:00\",\n    \"EndTime\": \"2023-07-27 00:00:00\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"DESC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TaskId\": 1997098,\n                \"ModifyBeforeInfo\": {\n                    \"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\n                    \"RuleTemplateName\": \"wy_test\",\n                    \"RuleFilters\": [\n                        {\n                            \"Type\": \"sqlType\",\n                            \"Compare\": \"EQS\",\n                            \"Value\": [\n                                \"DROP\"\n                            ]\n                        }\n                    ],\n                    \"AlarmLevel\": 1,\n                    \"AlarmPolicy\": 0,\n                    \"Description\": \"\"\n                },\n                \"ModifyAfterInfo\": {\n                    \"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\n                    \"RuleTemplateName\": \"wy_test\",\n                    \"RuleFilters\": [\n                        {\n                            \"Type\": \"sqlType\",\n                            \"Compare\": \"EQS\",\n                            \"Value\": [\n                                \"DROP\",\n                                \"DELETE\"\n                            ]\n                        }\n                    ],\n                    \"AlarmLevel\": 2,\n                    \"AlarmPolicy\": 0,\n                    \"Description\": \"\"\n                },\n                \"AffectedInstances\": [\n                    \"cdb-nzg4gv35\",\n                    \"cdb-12y4cjjd\"\n                ],\n                \"Operator\": \"700000579947\",\n                \"UpdateTime\": \"2023-07-26 00:09:00\"\n            }\n        ],\n        \"RequestId\": \"186905b7-756c-4aae-a403-a40568aa5952\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TaskId\": 1997098,\n                \"ModifyBeforeInfo\": {\n                    \"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\n                    \"RuleTemplateName\": \"wy_1\",\n                    \"RuleFilters\": [\n                        {\n                            \"Type\": \"sqlType\",\n                            \"Compare\": \"EQS\",\n                            \"Value\": [\n                                \"DROP\"\n                            ]\n                        }\n                    ],\n                    \"AlarmLevel\": 1,\n                    \"AlarmPolicy\": 0,\n                    \"Description\": \"andyaudit\"\n                },\n                \"ModifyAfterInfo\": {\n                    \"RuleTemplateId\": \"cdb-art-8qx2kcr7\",\n                    \"RuleTemplateName\": \"wy_1\",\n                    \"RuleFilters\": [\n                        {\n                            \"Type\": \"sqlType\",\n                            \"Compare\": \"EQS\",\n                            \"Value\": [\n                                \"DROP\",\n                                \"DELETE\"\n                            ]\n                        }\n                    ],\n                    \"AlarmLevel\": 2,\n                    \"AlarmPolicy\": 0,\n                    \"Description\": \"andyrule2\"\n                },\n                \"AffectedInstances\": [\n                    \"cdb-nzg4gv35\",\n                    \"cdb-12y4cjjd\"\n                ],\n                \"Operator\": \"700000579947\",\n                \"UpdateTime\": \"2023-07-26 00:09:00\"\n            }\n        ],\n        \"RequestId\": \"186905b7-756c-4aae-a403-a40568aa5952\"\n    }\n}",
         "title": "正确返回"
       }
     ],
     "DescribeAuditRuleTemplates": [
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateNames\": [\n        \"template_test\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateAt\": \"2022-12-06 00:54:01\",\n                \"Description\": \"all_template_des\",\n                \"RuleFilters\": [\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"sqlType\",\n                        \"Value\": [\n                            \"ALTER\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"EQS\",\n                        \"Type\": \"host\",\n                        \"Value\": [\n                            \"10.0.0.2\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"NEQ\",\n                        \"Type\": \"user\",\n                        \"Value\": [\n                            \"test\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"dbName\",\n                        \"Value\": [\n                            \"test\"\n                        ]\n                    }\n                ],\n                \"RuleTemplateId\": \"cdb-art-lcpm4as3\",\n                \"RuleTemplateName\": \"template_test\"\n            }\n        ],\n        \"RequestId\": \"a19ebcfb-8b35-40f4-85ee-383109c9134b\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateNames\": [\n        \"template_1\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateAt\": \"2022-12-06 00:54:01\",\n                \"Description\": \"all_template_des\",\n                \"RuleFilters\": [\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"sqlType\",\n                        \"Value\": [\n                            \"ALTER\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"EQS\",\n                        \"Type\": \"host\",\n                        \"Value\": [\n                            \"10.0.0.2\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"NEQ\",\n                        \"Type\": \"user\",\n                        \"Value\": [\n                            \"lue\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"dbName\",\n                        \"Value\": [\n                            \"lue\"\n                        ]\n                    }\n                ],\n                \"RuleTemplateId\": \"cdb-art-lcpm4as3\",\n                \"RuleTemplateName\": \"template_test\"\n            }\n        ],\n        \"RequestId\": \"a19ebcfb-8b35-40f4-85ee-383109c9134b\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询审计规则模板信息"
       }
     ],
@@ -455,8 +455,8 @@
     "DescribeBackupDecryptionKey": [
       {
         "document": "查询备份文件解密密钥",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDecryptionKey\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-XXXX\",\n    \"BackupId\": 12345\n}",
-        "output": "{\n    \"Response\": {\n        \"DecryptionKey\": \"XXXXXXXXXXX\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupDecryptionKey\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-fybaegd8\",\n    \"BackupId\": 12445233\n}",
+        "output": "{\n    \"Response\": {\n        \"DecryptionKey\": \"your_key\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "查询备份文件解密密钥"
       }
     ],
@@ -520,7 +520,7 @@
       {
         "document": "查询代理信息",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCdbProxyInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-aykuksx3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProxyInfos\": [\n            {\n                \"ConnectionPoolLimit\": 5,\n                \"ProxyAddress\": [\n                    {\n                        \"AutoAddRo\": true,\n                        \"ConnectionPool\": false,\n                        \"Desc\": \"\",\n                        \"FailOver\": true,\n                        \"IsKickOut\": false,\n                        \"MaxDelay\": 0,\n                        \"MinCount\": 0,\n                        \"ProxyAddressId\": \"proxyaddr-test\",\n                        \"AccessMode\": \"balance\",\n                        \"ProxyAllocation\": [\n                            {\n                                \"ProxyInstance\": [\n                                    {\n                                        \"InstanceId\": \"cdb-test\",\n                                        \"InstanceName\": \"测试\",\n                                        \"InstanceType\": \"1\",\n                                        \"Region\": \"ap-nanjing\",\n                                        \"Status\": 1,\n                                        \"Weight\": 0,\n                                        \"Zone\": \"ap-nanjing-1\"\n                                    }\n                                ],\n                                \"Region\": \"ap-nanjing\",\n                                \"Zone\": \"ap-nanjing-1\"\n                            }\n                        ],\n                        \"ReadOnly\": false,\n                        \"TransSplit\": false,\n                        \"UniqSubnetId\": \"subnet-test\",\n                        \"UniqVpcId\": \"vpc-test\",\n                        \"VPort\": 3306,\n                        \"Vip\": \"10.0.0.0\",\n                        \"WeightMode\": \"custom\"\n                    }\n                ],\n                \"ProxyGroupId\": \"proxy-mfxftest\",\n                \"ProxyNode\": [\n                    {\n                        \"Cpu\": 2,\n                        \"Mem\": 4000,\n                        \"ProxyId\": \"proxynode-test\",\n                        \"Region\": \"ap-nanjing\",\n                        \"Status\": \"online\",\n                        \"Zone\": \"ap-nanjing-1\",\n                        \"Connection\": 1\n                    }\n                ],\n                \"ProxyVersion\": \"1.3.7\",\n                \"Status\": \"online\",\n                \"SupportCreateProxyAddress\": false,\n                \"SupportUpgradeProxyMysqlVersion\": \"20211030\",\n                \"SupportUpgradeProxyVersion\": \"1.3.7\",\n                \"TaskStatus\": \"ProxyModifyAddress\"\n            }\n        ],\n        \"RequestId\": \"69d4c061-9730-4e2f-btttbb2-a74624bc9a6c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProxyInfos\": [\n            {\n                \"ConnectionPoolLimit\": 5,\n                \"ProxyAddress\": [\n                    {\n                        \"AutoAddRo\": true,\n                        \"ConnectionPool\": false,\n                        \"Desc\": \"andy\",\n                        \"FailOver\": true,\n                        \"IsKickOut\": false,\n                        \"MaxDelay\": 0,\n                        \"MinCount\": 0,\n                        \"ProxyAddressId\": \"proxyaddr-kti9m7dd\",\n                        \"AccessMode\": \"balance\",\n                        \"ProxyAllocation\": [\n                            {\n                                \"ProxyInstance\": [\n                                    {\n                                        \"InstanceId\": \"cdb-aykuksx3\",\n                                        \"InstanceName\": \"andydb\",\n                                        \"InstanceType\": \"1\",\n                                        \"Region\": \"ap-nanjing\",\n                                        \"Status\": 1,\n                                        \"Weight\": 0,\n                                        \"Zone\": \"ap-nanjing-1\"\n                                    }\n                                ],\n                                \"Region\": \"ap-nanjing\",\n                                \"Zone\": \"ap-nanjing-1\"\n                            }\n                        ],\n                        \"ReadOnly\": false,\n                        \"TransSplit\": false,\n                        \"UniqSubnetId\": \"subnet-ndhje\",\n                        \"UniqVpcId\": \"vpc-eujshe\",\n                        \"VPort\": 3306,\n                        \"Vip\": \"10.0.0.0\",\n                        \"WeightMode\": \"custom\"\n                    }\n                ],\n                \"ProxyGroupId\": \"proxy-mfxfthsne\",\n                \"ProxyNode\": [\n                    {\n                        \"Cpu\": 2,\n                        \"Mem\": 4000,\n                        \"ProxyId\": \"proxynode-2u0c1tdd\",\n                        \"Region\": \"ap-nanjing\",\n                        \"Status\": \"online\",\n                        \"Zone\": \"ap-nanjing-1\",\n                        \"Connection\": 1\n                    }\n                ],\n                \"ProxyVersion\": \"1.3.7\",\n                \"Status\": \"online\",\n                \"SupportCreateProxyAddress\": false,\n                \"SupportUpgradeProxyMysqlVersion\": \"20211030\",\n                \"SupportUpgradeProxyVersion\": \"1.3.7\",\n                \"TaskStatus\": \"ProxyModifyAddress\"\n            }\n        ],\n        \"RequestId\": \"69d4c061-9730-4e2f-btttbb2-a74624bc9a6c\"\n    }\n}",
         "title": "查询代理信息"
       }
     ],
@@ -536,7 +536,7 @@
       {
         "document": "查询克隆列表",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloneList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-9303wd4x\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Items\": [\n            {\n                \"SrcInstanceId\": \"cdb-4bblpca3\",\n                \"RollbackTargetTime\": \"2019-11-15 12:34:56\",\n                \"CloneJobId\": 80,\n                \"SrcRegionId\": 0,\n                \"TaskStatus\": \"initial\",\n                \"NewRegionId\": 8,\n                \"RollbackStrategy\": \"test\",\n                \"StartTime\": \"2019-12-26 18:05:42\",\n                \"DstInstanceId\": \"cdb-9ubfzt6x\",\n                \"EndTime\": \"\"\n            },\n            {\n                \"SrcInstanceId\": \"cdb-4bblpca3\",\n                \"RollbackTargetTime\": \"2019-11-15 16:13:31\",\n                \"CloneJobId\": 81,\n                \"SrcRegionId\": 4,\n                \"TaskStatus\": \"initial\",\n                \"StartTime\": \"2019-12-26 17:16:58\",\n                \"RollbackStrategy\": \"backupset\",\n                \"NewRegionId\": 0,\n                \"DstInstanceId\": \"cdb-awbsatzq\",\n                \"EndTime\": \"\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Items\": [\n            {\n                \"SrcInstanceId\": \"cdb-4bblpca3\",\n                \"RollbackTargetTime\": \"2019-11-15 12:34:56\",\n                \"CloneJobId\": 80,\n                \"SrcRegionId\": 0,\n                \"TaskStatus\": \"initial\",\n                \"NewRegionId\": 8,\n                \"RollbackStrategy\": \"timepoint\",\n                \"StartTime\": \"2019-12-26 18:05:42\",\n                \"DstInstanceId\": \"cdb-9ubfzt6x\",\n                \"EndTime\": \"2019-12-27 18:05:42\"\n            },\n            {\n                \"SrcInstanceId\": \"cdb-4bblpca3\",\n                \"RollbackTargetTime\": \"2019-11-15 16:13:31\",\n                \"CloneJobId\": 81,\n                \"SrcRegionId\": 4,\n                \"TaskStatus\": \"initial\",\n                \"StartTime\": \"2019-12-26 17:16:58\",\n                \"RollbackStrategy\": \"backupset\",\n                \"NewRegionId\": 0,\n                \"DstInstanceId\": \"cdb-awbsatzq\",\n                \"EndTime\": \"2019-12-27 18:05:42\"\n            }\n        ]\n    }\n}",
         "title": "查询克隆列表"
       }
     ],
@@ -608,7 +608,7 @@
       {
         "document": "实例日志管理中，慢日志、错误日志投递CLS的配置",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-70zdmgg1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorLog\": {\n            \"Status\": \"ON\",\n            \"LogSetId\": \"test\",\n            \"LogTopicId\": \"test\"\n        },\n        \"SlowLog\": {\n            \"Status\": \"OFF\",\n            \"LogSetId\": \"test\",\n            \"LogTopicId\": \"test\"\n        },\n        \"RequestId\": \"8a96c7fec3c747adb83cb0868c0107d5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorLog\": {\n            \"Status\": \"ON\",\n            \"LogSetId\": \"8dff8d62-fa10-4d6c-bee0-6e31a0ade975\",\n            \"LogTopicId\": \"09c3c2d1-ac46-4e4e-b688-b73950e64682\"\n        },\n        \"SlowLog\": {\n            \"Status\": \"OFF\",\n            \"LogSetId\": \"8dff8d62-fa10-4d6c-bee0-6e31a0ade976\",\n            \"LogTopicId\": \"09c3c2d1-ac46-4e4e-b688-b73950e64681\"\n        },\n        \"RequestId\": \"8a96c7fec3c747adb83cb0868c0107d5\"\n    }\n}",
         "title": "查询实例日志投递CLS配置"
       }
     ],
@@ -709,8 +709,8 @@
     "DescribeInstanceAlarmEvents": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAlarmEvents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-fbd5agyt\",\n    \"StartTime\": \"2024-11-15 00:00:00\",\n    \"EndTime\": \"2024-12-15 00:00:00\",\n    \"EventName\": [\n        \"PlannedSwitch\"\n    ],\n    \"EventStatus\": \"-\",\n    \"Limit\": \"100\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"EventName\": \"PlannedSwitch\",\n                \"EventStatus\": \"-\",\n                \"InstanceId\": \"cdb-fbd5agyt\",\n                \"NodeId\": \"\",\n                \"OccurTime\": \"2024-11-25 14:46:42\"\n            }\n        ],\n        \"RequestId\": \"971e2860-c55b-4323-a831-0001\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAlarmEvents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-fbd5agyt\",\n    \"StartTime\": \"2024-11-15 00:00:00\",\n    \"EndTime\": \"2024-12-15 00:00:00\",\n    \"EventName\": [\n        \"PlannedSwitch\"\n    ],\n    \"EventStatus\": \"1\",\n    \"Limit\": \"100\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"EventName\": \"PlannedSwitch\",\n                \"EventStatus\": \"1\",\n                \"InstanceId\": \"cdb-fbd5agyt\",\n                \"NodeId\": \"\",\n                \"OccurTime\": \"2024-11-25 14:46:42\"\n            }\n        ],\n        \"RequestId\": \"971e2860-c55b-4323-a831-0001\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询实例事件信息"
       }
     ],
@@ -758,7 +758,7 @@
       {
         "document": "该接口用于查询参数模板详细详情。",
         "input": "https://cdb.tencentcloudapi.com/?Action=DescribeParamTemplateInfo\n&TemplateId=233\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TemplateId\": 233,\n        \"Name\": \"test\",\n        \"EngineVersion\": \"5.7\",\n        \"Description\": \"test\",\n        \"TotalCount\": 72,\n        \"TemplateType\": \"HIGH_STABILITY\",\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\",\n        \"EngineType\": \"InnoDB\",\n        \"Items\": [\n            {\n                \"CurrentValue\": \"1\",\n                \"Default\": \"1\",\n                \"Description\": \"Controls the interval between successive column values.\",\n                \"EnumValue\": [],\n                \"Max\": 65535,\n                \"MaxFunc\": \"\",\n                \"Min\": 1,\n                \"MinFunc\": \"\",\n                \"Name\": \"auto_increment_increment\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"1\",\n                \"Default\": \"1\",\n                \"Description\": \"Determines the starting point for the AUTO_INCREMENT column value.\",\n                \"EnumValue\": [],\n                \"Max\": 65535,\n                \"MaxFunc\": \"\",\n                \"Min\": 1,\n                \"MinFunc\": \"\",\n                \"Name\": \"auto_increment_offset\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"integer\"\n            },\n            {\n                \"CurrentValue\": \"800\",\n                \"Default\": \"{MIN(DBInitMemory/4+500,1000000)}\",\n                \"Description\": \"The maximum permitted number of simultaneous client connections.\",\n                \"EnumValue\": [],\n                \"Max\": 100000,\n                \"MaxFunc\": \"100000\",\n                \"Min\": 1,\n                \"MinFunc\": \"1\",\n                \"Name\": \"max_connections\",\n                \"NeedReboot\": 0,\n                \"ParamType\": \"func\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 2333,\n        \"Name\": \"andy\",\n        \"EngineVersion\": \"5.7\",\n        \"TotalCount\": 72,\n        \"Items\": [\n            {\n                \"Name\": \"andy1\",\n                \"ParamType\": \"intege\",\n                \"Default\": \"1\",\n                \"Description\": \"Determines the starting point for the AUTO_INCREMENT column value.\",\n                \"CurrentValue\": \"1\",\n                \"NeedReboot\": 0,\n                \"Max\": 65535,\n                \"Min\": 0,\n                \"EnumValue\": [\n                    \"\"\n                ],\n                \"MaxFunc\": \"10000\",\n                \"MinFunc\": \"1\",\n                \"IsNotSupportEdit\": true\n            }\n        ],\n        \"Description\": \"The maximum permitted number of simultaneous client connections.\",\n        \"TemplateType\": \"HIGH_STABILITY\",\n        \"EngineType\": \"InnoDB\",\n        \"RequestId\": \"92131c95-aa65-44db-8c3c-e8cd67883b58\"\n    }\n}",
         "title": "查询参数模板详情"
       }
     ],
@@ -878,7 +878,7 @@
       {
         "document": "获取实例标签信息",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagsOfInstanceIds\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"InstanceIds\": [\n        \"cdb-uns231ns\"\n    ],\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Offset\": 0,\n        \"Limit\": 10,\n        \"Rows\": [\n            {\n                \"InstanceId\": \"cdb-uns231ns\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"1231\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"Offset\": 0,\n        \"Limit\": 10,\n        \"Rows\": [\n            {\n                \"InstanceId\": \"cdb-uns231ns\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"name\",\n                        \"TagValue\": \"zhang\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "获取实例标签信息"
       }
     ],
@@ -933,7 +933,7 @@
     "ModifyAccountDescription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountDescription\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Accounts\": [\n        {\n            \"Host\": \"192.168.1.1\",\n            \"User\": \"user1\"\n        }\n    ],\n    \"Description\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountDescription\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-1hindhe\",\n    \"Accounts\": [\n        {\n            \"Host\": \"192.168.1.1\",\n            \"User\": \"user1\"\n        }\n    ],\n    \"Description\": \"andy\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
         "title": "修改云数据库实例账号的备注信息"
       }
@@ -989,7 +989,7 @@
     "ModifyAuditRuleTemplates": [
       {
         "document": "无",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cdb-rt-ws23fwu8\"\n    ],\n    \"RuleTemplateName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cdb-rt-ws23fwu8\"\n    ],\n    \"RuleTemplateName\": \"andyrule\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
         "title": "修改审计规则模板"
       }
@@ -1109,7 +1109,7 @@
     "ModifyInstanceParam": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParam\n<公共请求参数>\n\n{\n    \"NotSyncDr\": true,\n    \"NotSyncRo\": true,\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"TemplateId\": 0,\n    \"InstanceIds\": [\n        \"cdb-atjl8gns\"\n    ],\n    \"WaitSwitch\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceParam\n<公共请求参数>\n\n{\n    \"NotSyncDr\": true,\n    \"NotSyncRo\": true,\n    \"ParamList\": [\n        {\n            \"CurrentValue\": \"1\",\n            \"Name\": \"auto_increment_increment\"\n        }\n    ],\n    \"TemplateId\": 0,\n    \"InstanceIds\": [\n        \"cdb-atjl8gns\"\n    ],\n    \"WaitSwitch\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"38265324-dd030463-3d46a793-4a0420b1\"\n    }\n}",
         "title": "修改实例参数"
       }
@@ -1117,8 +1117,8 @@
     "ModifyInstancePasswordComplexity": [
       {
         "document": "",
-        "input": "InstanceIds.0=cdb-3gqxxxx&ParamList.0.Name=validate_password.number_count&ParamList.0.CurrentValue=14",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"02e874af-e4876fb4-4c672e64-86f17866\",\n        \"RequestId\": \"d5b053f3-d58e-4048-aef9-b8cc9f044951\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancePasswordComplexity\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdb-93hvf1d\"\n    ],\n    \"ParamList\": [\n        {\n            \"Name\": \"validate_password.length\",\n            \"CurrentValue\": \"10\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"988d3e5b-4cc7bac7-b92977cf-274603c0\",\n        \"RequestId\": \"11fa4b07-11b0-4c48-a472-2d835d9bf165\"\n    }\n}",
         "title": "修改实例密码复杂度"
       }
     ],
@@ -1174,13 +1174,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupInfo\n<公共请求参数>\n\n{\n    \"RoGroupId\": \"cdbrg-iup41a4t\",\n    \"RoGroupInfo\": {\n        \"RoOfflineDelay\": \"1\",\n        \"MinRoInGroup\": \"1\",\n        \"RoMaxDelayTime\": \"10\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AsyncRequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfdc\"\n    }\n}",
         "title": "设置RO组的延迟剔除策略"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoGroupInfo\n<公共请求参数>\n\n{\n    \"RoWeightValues\": [\n        {\n            \"InstanceId\": \"cdbr0-test1234\",\n            \"Weight\": \"70\"\n        },\n        {\n            \"InstanceId\": \"cdbr0-iup41a4t\",\n            \"Weight\": \"30\"\n        }\n    ],\n    \"IsBalanceRoLoad\": \"1\",\n    \"RoGroupId\": \"cdbrg-iup41a4t\",\n    \"RoGroupInfo\": {\n        \"WeightMode\": \"custom\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AsyncRequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54Ad\",\n        \"AsyncRequestId\": \"a6040589-3b098df5-b551d9e5-81c6bfd1\"\n    }\n}",
         "title": "重新均衡RO组内实例的权重"
       }
     ],

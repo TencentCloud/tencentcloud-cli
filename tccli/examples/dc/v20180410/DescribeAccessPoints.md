@@ -1,6 +1,6 @@
 **Example 1: 获取全量接入点信息**
 
-获取全量接入点信息，其中AVAILABLE是可以使用的接入点，UNAVAILABLE是不可以使用的接入点。
+获取全量接入点信息。
 
 Input: 
 
@@ -11,107 +11,92 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 6,
         "AccessPointSet": [
             {
+                "AccessPointName": "新加坡-C-泰戈尔",
+                "AccessPointId": "ap-singapore-c-tagore",
+                "City": "新加坡",
+                "Area": "其它",
+                "RegionId": "ap-singapore",
+                "Location": "新加坡Dodid泰戈尔AC",
+                "Coordinate": {
+                    "Lat": 1.3885116,
+                    "Lng": 103.8277551
+                },
+                "AccessPointType": "VXLAN",
                 "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
                     "InternationalOperator"
                 ],
-                "RegionId": "ap-beijing",
-                "AccessPointId": "ap-cn-beijing-hx",
-                "State": "AVAILABLE",
-                "Location": "北京市顺义区后沙峪镇中国航信高科技产业园 ",
-                "AccessPointName": "北京航信"
-            },
-            {
-                "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
+                "AvailablePortType": [
+                    "1000BASE-LX",
+                    "1000BASE-ZX",
+                    "10GBASE-LR",
+                    "10GBASE-ZR",
+                    "100GBASE-LR4L",
+                    "100GBASE-LR4",
+                    "100GBASE-40KM",
+                    "QSFPDD-400G-FR4",
+                    "QSFPDD-400G-LR4"
                 ],
-                "RegionId": "ap-beijing",
-                "AccessPointId": "ap-cn-beijing-jxq",
-                "State": "AVAILABLE",
-                "Location": "北京朝阳区电子城IT产业园 ",
-                "AccessPointName": "北京万红路"
-            },
-            {
-                "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
+                "AvailablePortInfo": [
+                    {
+                        "InternationalName": "1000BASE-LX",
+                        "Specification": 1000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "1000BASE-ZX",
+                        "Specification": 1000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "10GBASE-LR",
+                        "Specification": 10000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "10GBASE-ZR",
+                        "Specification": 10000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "100GBASE-LR4L",
+                        "Specification": 100000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "100GBASE-LR4",
+                        "Specification": 100000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "100GBASE-40KM",
+                        "Specification": 100000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "QSFPDD-400G-FR4",
+                        "Specification": 400000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "QSFPDD-400G-LR4",
+                        "Specification": 400000,
+                        "PortType": "X"
+                    }
                 ],
-                "RegionId": "ap-beijing",
-                "AccessPointId": "ap-cn-beijing-yz",
-                "State": "UNAVAILABLE",
-                "Location": "北京市大兴区亦庄开发区同济中路15号",
-                "AccessPointName": "北京世纪互联1"
-            },
-            {
-                "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
-                ],
-                "RegionId": "ap-beijing",
-                "AccessPointId": "ap-cn-beijing-zj",
-                "State": "AVAILABLE",
-                "Location": "北京亦庄经济技术开发区博兴八路1号",
-                "AccessPointName": "北京中金"
-            },
-            {
-                "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
-                ],
-                "RegionId": "ap-beijing",
-                "AccessPointId": "ap-cn-beijing-yf",
-                "State": "UNAVAILABLE",
-                "Location": "北京市海淀区丰慧中路11号安泰科技园C区B4栋",
-                "AccessPointName": "北京永丰"
-            },
-            {
-                "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
-                ],
-                "RegionId": "ap-beijing",
-                "AccessPointId": "ap-cn-beijing-kc",
-                "State": "AVAILABLE",
-                "Location": "北京市经济技术开发区科创九街十五号",
-                "AccessPointName": "北京科创"
+                "State": "AVAILABLE"
             }
         ],
-        "RequestId": "d591e41a-f3a5-4990-abf0-acdd88f238d9"
+        "RequestId": "b6aa097b-3cd9-4c79-bf41-bb0d2427ffa2",
+        "TotalCount": 98
     }
 }
 ```
 
-**Example 2: 获取单地域接入点信息**
+**Example 2: 获取指定地域接入点信息**
 
-获取单地域接入点信息，其中AVAILABLE是可以使用的接入点，UNAVAILABLE是不可以使用的接入点。
+获取指定地域接入点信息。
 
 Input: 
 
@@ -124,40 +109,95 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 2,
         "AccessPointSet": [
             {
+                "AccessPointName": "重庆-A-泰和",
+                "AccessPointId": "ap-chongqing-a-th",
+                "City": "重庆",
+                "Area": "西南",
+                "RegionId": "ap-chongqing",
+                "Location": "重庆腾讯泰和DC",
+                "Coordinate": {
+                    "Lat": 29.790833,
+                    "Lng": 106.523072
+                },
+                "AccessPointType": "VXLAN",
                 "LineOperator": [
                     "ChinaTelecom",
                     "ChinaMobile",
                     "ChinaUnicom",
                     "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
+                    "ChinaOther"
                 ],
-                "RegionId": "ap-chongqing",
-                "AccessPointId": "ap-cn-chongqing-yf",
-                "State": "AVAILABLE",
-                "Location": "重庆电信云福DC",
-                "AccessPointName": "重庆云福"
-            },
-            {
-                "LineOperator": [
-                    "ChinaTelecom",
-                    "ChinaMobile",
-                    "ChinaUnicom",
-                    "In-houseWiring",
-                    "ChinaOther",
-                    "InternationalOperator"
+                "AvailablePortType": [
+                    "1000BASE-LX",
+                    "1000BASE-T",
+                    "1000BASE-ZX",
+                    "10GBASE-LR",
+                    "10GBASE-ZR",
+                    "100GBASE-LR4L",
+                    "100GBASE-LR4",
+                    "100GBASE-40KM",
+                    "QSFPDD-400G-FR4",
+                    "QSFPDD-400G-LR4"
                 ],
-                "RegionId": "ap-chongqing",
-                "AccessPointId": "ap-cn-chongqing-yx",
-                "State": "AVAILABLE",
-                "Location": "重庆联通云祥DC",
-                "AccessPointName": "重庆云祥"
+                "AvailablePortInfo": [
+                    {
+                        "InternationalName": "1000BASE-LX",
+                        "Specification": 1000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "1000BASE-T",
+                        "Specification": 1000,
+                        "PortType": "T"
+                    },
+                    {
+                        "InternationalName": "1000BASE-ZX",
+                        "Specification": 1000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "10GBASE-LR",
+                        "Specification": 10000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "10GBASE-ZR",
+                        "Specification": 10000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "100GBASE-LR4L",
+                        "Specification": 100000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "100GBASE-LR4",
+                        "Specification": 100000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "100GBASE-40KM",
+                        "Specification": 100000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "QSFPDD-400G-FR4",
+                        "Specification": 400000,
+                        "PortType": "X"
+                    },
+                    {
+                        "InternationalName": "QSFPDD-400G-LR4",
+                        "Specification": 400000,
+                        "PortType": "X"
+                    }
+                ],
+                "State": "AVAILABLE"
             }
         ],
-        "RequestId": "b6aa097b-3cd9-4c79-bf41-bb0d2427ffa1"
+        "RequestId": "b6aa097b-3cd9-4c79-bf41-bb0d2427ffa3",
+        "TotalCount": 3
     }
 }
 ```

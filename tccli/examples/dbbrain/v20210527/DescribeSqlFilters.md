@@ -7,7 +7,7 @@ Input:
 ```
 tccli dbbrain DescribeSqlFilters --cli-unfold-argument  \
     --Product mysql \
-    --InstanceId cdb-test \
+    --InstanceId cdb-test1234 \
     --Statuses RUNNING \
     --Offset 0 \
     --Limit 10
@@ -28,7 +28,7 @@ Output:
                 "CurrentConcurrency": 5,
                 "RejectedSqlCount": 1000,
                 "SqlType": "SELECT",
-                "OriginRule": "xxxx",
+                "OriginRule": "SELECT,300,10,k1,k2",
                 "OriginKeys": "k1,k2"
             }
         ],

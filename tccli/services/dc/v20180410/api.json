@@ -198,7 +198,7 @@
           "example": "成都-A-西区",
           "member": "string",
           "name": "AccessPointName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -208,7 +208,7 @@
           "example": "ap-chengdu-a-xq",
           "member": "string",
           "name": "AccessPointId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -218,7 +218,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -228,7 +228,7 @@
           "example": "成都电信西区803DC",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -238,7 +238,7 @@
           "example": "[\"ChinaTelecom\"]",
           "member": "string",
           "name": "LineOperator",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -248,59 +248,69 @@
           "example": "cd",
           "member": "string",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km。",
           "example": "[\"1000BASE-T\", \"1000BASE-LX\"]",
           "member": "string",
           "name": "AvailablePortType",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入点经纬度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入点经纬度。",
           "example": "{\"Lat\": \"0.0\", \"Lng\": \"0.0\"}",
           "member": "Coordinate",
           "name": "Coordinate",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入点所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入点所在城市。",
           "example": "成都",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入点地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入点地域名称。",
           "example": "华北",
           "member": "string",
           "name": "Area",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接入点类型。VXLAN/QCPL/QCAR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入点类型。VXLAN/QCPL/QCAR",
           "example": "VXLAN",
           "member": "string",
           "name": "AccessPointType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口规格信息。",
+          "example": "无",
+          "member": "PortSpecification",
+          "name": "AvailablePortInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -366,9 +376,10 @@
         {
           "disabled": false,
           "document": "健康检查次数",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "ProbeFailedTimes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -376,9 +387,10 @@
         {
           "disabled": false,
           "document": "健康检查间隔",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "Interval",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -392,20 +404,20 @@
         {
           "disabled": false,
           "document": "腾讯侧主互联IP BGP状态",
-          "example": "",
+          "example": "Established",
           "member": "string",
           "name": "TencentAddressBgpState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "腾讯侧备互联IP BGP状态",
-          "example": "",
+          "example": "Established",
           "member": "string",
           "name": "TencentBackupAddressBgpState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -642,20 +654,20 @@
         {
           "disabled": false,
           "document": "纬度",
-          "example": "",
+          "example": "80.0",
           "member": "float",
           "name": "Lat",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "经度",
-          "example": "",
+          "example": "108.0",
           "member": "float",
           "name": "Lng",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -1249,6 +1261,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数，支持：access-point-id、isp",
+          "example": "[\"Name\": \"access-point-id\", \"Values\": [\"ap-beijing-a-kc\"]]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1259,9 +1280,10 @@
         {
           "disabled": false,
           "document": "接入点信息。",
-          "example": "[]",
+          "example": "无",
           "member": "AccessPoint",
           "name": "AccessPointSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1271,6 +1293,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2910,22 +2933,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "",
+          "example": "Version",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "",
+          "example": "V3",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -3502,9 +3523,10 @@
         {
           "disabled": false,
           "document": "健康检查次数",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "ProbeFailedTimes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3512,9 +3534,10 @@
         {
           "disabled": false,
           "document": "健康检查间隔",
-          "example": "",
+          "example": "5",
           "member": "int64",
           "name": "Interval",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3522,15 +3545,52 @@
         {
           "disabled": false,
           "document": "健康检查地址",
-          "example": "",
+          "example": "8.8.8.8",
           "member": "string",
           "name": "DestinationIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "PortSpecification": {
+      "document": "端口规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口名称",
+          "example": "10GBASE-LR",
+          "member": "string",
+          "name": "InternationalName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口规格（M）",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Specification",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口类型：T-电口，X-光口",
+          "example": "X",
+          "member": "string",
+          "name": "PortType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RejectDirectConnectTunnelRequest": {
       "document": "RejectDirectConnectTunnel请求参数结构体",

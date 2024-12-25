@@ -15,7 +15,7 @@ tccli cdb CreateAuditRuleTemplate --cli-unfold-argument  \
     --RuleFilters.2.Type sqlType \
     --RuleFilters.2.Compare EQS \
     --RuleFilters.2.Value Update Delete \
-    --RuleTemplateName test \
+    --RuleTemplateName andy \
     --Description 用于测试的规则模板
 ```
 

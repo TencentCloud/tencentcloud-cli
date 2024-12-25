@@ -175,8 +175,8 @@
     "CreateDomainVerifyRecord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainVerifyRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DNSVerifyInfo\": {\n            \"SubDomain\": \"abc\",\n            \"Record\": \"abc\",\n            \"RecordType\": \"abc\"\n        },\n        \"FileVerifyInfo\": {\n            \"FileVerifyUrl\": \"abc\",\n            \"FileVerifyDomains\": [\n                \"abc\"\n            ],\n            \"FileVerifyName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainVerifyRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.explame.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DNSVerifyInfo\": {\n            \"SubDomain\": \"_cdnauth\",\n            \"Record\": \"20241211104123bab0a442ce4c4618209f\",\n            \"RecordType\": \"TXT\"\n        },\n        \"FileVerifyInfo\": {\n            \"FileVerifyUrl\": \"http://explame.com/verification.html\",\n            \"FileVerifyDomains\": [\n                \"explame.com\",\n                \"abc.explame.com\"\n            ],\n            \"FileVerifyName\": \"verification.html\"\n        },\n        \"RequestId\": \"bffb15f07530b57bc1aabb01fac74bcb\"\n    }\n}",
         "title": "生成域名解析记录"
       }
     ],

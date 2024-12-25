@@ -8,7 +8,7 @@ Input:
 tccli cynosdb DescribeClusterDetailDatabases --cli-unfold-argument  \
     --ClusterId cynosdbpg-xxxxxxx \
     --Limit 20 \
-    --DbName test \
+    --DbName db1 \
     --Offset 0
 ```
 

@@ -332,6 +332,15 @@
           "name": "Stop",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "推荐问答开关。\n说明：\n1. 未传值时默认关闭。\n2. 开启后，返回值里将增加 RecommendedQuestions 字段返回推荐问答， 最多只返回3条。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableRecommendedQuestions",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -425,6 +434,16 @@
           "example": "无",
           "member": "Replace",
           "name": "Replaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐问答。",
+          "example": "无",
+          "member": "string",
+          "name": "RecommendedQuestions",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -630,8 +649,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "内容类型\n注意：\n当前只支持传入单张图片，传入多张图片时，以第一个图片为准。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"text\", \"image_url\"]",
+          "document": "内容类型\n注意：\n当前只支持传入单张图片，传入多张图片时，以第一个图片为准。\n参数值可选范围：[text\", \"image_url\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
           "member": "string",
           "name": "Type",
           "output_required": false,

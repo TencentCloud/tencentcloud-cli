@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DeletePullStreamConfig --cli-unfold-argument  \
-    --ConfigId 123
+    --ConfigId 9745632
 ```
 
 Output: 

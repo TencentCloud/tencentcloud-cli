@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live CreateCasterPgm --cli-unfold-argument  \
-    --CasterId 1234 \
+    --CasterId 63501 \
     --PgmDisplayInfo.LayoutIndex 1
 ```
 

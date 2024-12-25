@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live SwitchBackupStream --cli-unfold-argument  \
-    --PushDomainName abc \
-    --AppName abc \
-    --StreamName abc \
+    --PushDomainName 5000.livepush.com \
+    --AppName live \
+    --StreamName stream1 \
     --UpstreamSequence 843110096313761792
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

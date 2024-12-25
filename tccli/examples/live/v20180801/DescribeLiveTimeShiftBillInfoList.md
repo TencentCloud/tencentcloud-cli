@@ -17,14 +17,14 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "Domain": "abc",
+                "Domain": "start-push.elliotxing.com",
                 "Duration": 0,
                 "StoragePeriod": 0,
                 "Time": "2023-08-10 20:00:00",
                 "TotalDuration": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```
