@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli subcontract ExportPrOrder --cli-unfold-argument  \
-    --PoId xx
+    --PoId 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "PoId": "xx",
-        "Url": "xx",
-        "RequestId": "xx"
+        "PoId": "",
+        "Url": "",
+        "RequestId": ""
     }
 }
 ```

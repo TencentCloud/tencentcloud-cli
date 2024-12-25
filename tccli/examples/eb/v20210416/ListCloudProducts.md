@@ -15,7 +15,8 @@ Output:
         "CloudProducts": [
             {
                 "ProductName": "云服务器",
-                "ProductType": "cvm"
+                "ProductType": "cvm",
+                "Type": "Cloud"
             }
         ]
     }

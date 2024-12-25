@@ -30,7 +30,7 @@ Output:
                 "Dbs": [
                     {
                         "Privilege": "ReadOnly",
-                        "DBName": "test"
+                        "DBName": "db1"
                     }
                 ],
                 "CreateTime": "2020-09-22 00:00:00"

@@ -11,7 +11,7 @@ tccli tbaas InvokeChainMakerDemoContract --cli-unfold-argument  \
     --ClusterId chainmaker-demo \
     --FuncName save \
     --AsyncFlag 0 \
-    --ContractName test
+    --ContractName fact
 ```
 
 Output: 

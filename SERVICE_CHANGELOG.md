@@ -2,28 +2,9 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 123 次发布
+### 第 124 次发布
 
-发布时间：2024-12-25 01:17:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDBRoutes](http://document.tencentcloudapi.woa.com/document/product/236/77140)
-
-	* 新增入参：OpResourceId
-
-
-
-
-## 日志服务(cls) 版本：2020-10-16
-
-### 第 98 次发布
-
-发布时间：2024-12-25 01:24:01
+发布时间：2024-12-26 01:12:04
 
 本次发布包含了以下内容：
 
@@ -31,86 +12,184 @@
 
 修改接口：
 
-* [CreateAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56466)
+* [CreateBackup](http://document.tencentcloudapi.woa.com/document/product/236/15844)
 
-	* 新增入参：AlarmTemplateInfo
+	* 新增入参：EncryptionFlag
+
+
+修改数据结构：
+
+* [AccountInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AccountInfo)
+
+	* 新增成员：OpenCam
+
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditInstanceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ProjectId, TagList, DbType, DbVersion
+
+* [ParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ParamTemplateInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>EngineType
+
+* [ParameterDetail](http://document.tencentcloudapi.woa.com/document/product/236/15878#ParameterDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>IsNotSupportEdit
+
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
+
+	* 新增成员：PolarisAddr
+
+* [SlaveInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#SlaveInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Second
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 47 次发布
+
+发布时间：2024-12-26 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)
+
+	* 新增入参：ReserveStoragePolicy
+
+
+
+
+## 云 HDFS(chdfs) 版本：2020-11-12
+
+### 第 6 次发布
+
+发布时间：2024-12-26 01:16:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFileSystem](http://document.tencentcloudapi.woa.com/document/product/1105/51148)
+
+	* <font color="#dd0000">**修改入参**：</font>CapacityQuota
+
+
+修改数据结构：
+
+* [Summary](http://document.tencentcloudapi.woa.com/document/product/1105/51158#Summary)
+
+	* <font color="#dd0000">**修改成员**：</font>CapacityUsed, StandardCapacityUsed
+
+
+
+
+## 云 HDFS(chdfs) 版本：2019-07-18
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 115 次发布
+
+发布时间：2024-12-26 01:20:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbErrorLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbErrorLogItem)
+
+	* <font color="#dd0000">**修改成员**：</font>Timestamp, Level, Content
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 32 次发布
+
+发布时间：2024-12-26 01:25:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditInstanceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, AuditStatus, InstanceId, InstanceName, ProjectId, Region, ResourceTags
+
+* [AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditLogFile)
+
+	* <font color="#dd0000">**修改成员**：</font>AsyncRequestId, FileName, CreateTime, Status, FileSize, DownloadUrl, ErrMsg, Progress, FinishTime
+
+* [RedisKeySpaceData](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisKeySpaceData)
+
+	* <font color="#dd0000">**修改成员**：</font>AveElementSize, ShardId
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 8 次发布
+
+发布时间：2024-12-26 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccessPoints](http://document.tencentcloudapi.woa.com/document/product/216/34827)
+
+	* 新增入参：Filters
 
 
 新增数据结构：
 
-* [AlarmTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTemplateConfig)
-
-
-
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
-
-### 第 124 次发布
-
-发布时间：2024-12-25 01:33:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
+* [PortSpecification](http://document.tencentcloudapi.woa.com/document/product/216/18418#PortSpecification)
 
 修改数据结构：
 
-* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+* [AccessPoint](http://document.tencentcloudapi.woa.com/document/product/216/18418#AccessPoint)
 
-	* 新增成员：IsSupportAI, GatewayId, GatewayState, IsAIGateway, IsAIEngine
-
-* [NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)
-
-	* 新增成员：SessionType, DataEngineId, ResourceGroupId, ResourceGroupName, PodSize, PodNumbers
-
-* [NotebookSessions](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessions)
-
-	* 新增成员：SessionType, DataEngineId, ResourceGroupId, ResourceGroupName
-
-* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
-
-	* 新增成员：FrameType, ImageType, ImageName, ImageVersion, Size, PythonSize, IsDefault, ResourceGroupScene, PythonCuSpec
-
-
-
-
-## 域名注册(domain) 版本：2018-08-08
-
-### 第 37 次发布
-
-发布时间：2024-12-25 01:35:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BatchDomainBuyLog](http://document.tencentcloudapi.woa.com/document/product/242/38895#BatchDomainBuyLog)
-
-	* <font color="#dd0000">**修改成员**：</font>Success, Doing, Failed, BigDealId, PayStatus
-
-* [IntlTemplate](http://document.tencentcloudapi.woa.com/document/product/242/38895#IntlTemplate)
-
-	* <font color="#dd0000">**修改成员**：</font>TemplateType, Uin
+	* 新增成员：AvailablePortInfo
 
 
 
 
 ## 数据传输服务(dts) 版本：2021-12-06
 
-### 第 28 次发布
+### 第 29 次发布
 
-发布时间：2024-12-25 01:36:12
+发布时间：2024-12-26 01:29:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+修改接口：
 
-* [SubscribeCheckStepTip](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeCheckStepTip)
+* [ModifyConsumerGroupPassword](http://document.tencentcloudapi.woa.com/document/product/571/82906)
 
-	* <font color="#dd0000">**修改成员**：</font>Message, HelpDoc
+	* <font color="#dd0000">**修改入参**：</font>OldPassword
 
 
 
@@ -119,34 +198,68 @@
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 边缘计算机器(ecm) 版本：2019-07-19
 
-### 第 173 次发布
+### 第 24 次发布
 
-发布时间：2024-12-25 01:39:54
+发布时间：2024-12-26 01:31:07
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改数据结构：
 
-* [ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1595/85584)
-* [ChannelCreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/85583)
+* [RouteConflict](http://document.tencentcloudapi.woa.com/document/product/1108/42574#RouteConflict)
+
+	* <font color="#dd0000">**修改成员**：</font>RouteTableId
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 118 次发布
+
+发布时间：2024-12-26 01:33:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改接口：
 
-* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+* [CreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81950)
 
-	* 新增入参：OpenDynamicFlow
+	* 新增入参：UrlUseEnv
+
+* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
+
+	* 新增入参：UrlUseEnv
 
 
-新增数据结构：
 
-* [ChannelArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelArchiveDynamicApproverData)
-* [DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowApproverResult)
-* [DynamicFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowInfo)
-* [DynamicFlowResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowResult)
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 174 次发布
+
+发布时间：2024-12-26 01:34:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+	* 新增入参：UrlUseEnv
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+	* 新增入参：UrlUseEnv
+
 
 
 
@@ -154,11 +267,11 @@
 
 
 
-## 迁移服务平台(msp) 版本：2018-03-19
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 4 次发布
+### 第 63 次发布
 
-发布时间：2024-12-25 01:54:52
+发布时间：2024-12-26 01:38:08
 
 本次发布包含了以下内容：
 
@@ -166,15 +279,39 @@
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* DeregisterMigrationTask
+* DescribeInstanceLoginKeyPairAttribute
+* ModifyInstancesLoginKeyPairAttribute
 
 
 
-## 腾讯健康组学平台(omics) 版本：2022-11-28
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
 
-### 第 17 次发布
+### 第 34 次发布
 
-发布时间：2024-12-25 01:56:28
+发布时间：2024-12-26 01:41:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail)
+
+	* 新增成员：KmsRegion
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 45 次发布
+
+发布时间：2024-12-26 01:45:03
 
 本次发布包含了以下内容：
 
@@ -182,85 +319,110 @@
 
 修改接口：
 
-* [RunWorkflow](http://document.tencentcloudapi.woa.com/document/product/1725/82465)
+* [CreateCloudDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77816)
 
-	* 新增入参：Entrypoint
+	* 新增入参：MultiNodes, DrZones
+
+* [CreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/19973)
+
+	* 新增入参：MultiNodes, DrZones
+
+* [DescribeInquiryPriceParameter](http://document.tencentcloudapi.woa.com/document/product/238/82676)
+
+	* 新增入参：DrZones
+
+* [ModifyDBInstanceSSL](http://document.tencentcloudapi.woa.com/document/product/238/82767)
+
+	* 新增入参：IsKMS, KeyId, KeyRegion
+
+* [ModifyDReadable](http://document.tencentcloudapi.woa.com/document/product/238/83412)
+
+	* 新增入参：ReadMode
+
+* [ModifyInstanceEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/238/80982)
+
+	* 新增入参：KeyId, KeyRegion
 
 
 修改数据结构：
 
-* [CosFileInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#CosFileInfo)
+* [AccountRemark](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountRemark)
 
-	* <font color="#dd0000">**修改成员**：</font>Region
+	* <font color="#dd0000">**修改成员**：</font>UserName, Remark
+
+* [DBDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>Encryption
+
+* [Events](http://document.tencentcloudapi.woa.com/document/product/238/19976#Events)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, FileName, Size, EventType, Status, StartTime, EndTime, InternalAddr, ExternalAddr
+
+* [SSLConfig](http://document.tencentcloudapi.woa.com/document/product/238/19976#SSLConfig)
+
+	* 新增成员：IsKMS, CMKId, CMKRegion
+
+* [TDEConfigAttribute](http://document.tencentcloudapi.woa.com/document/product/238/19976#TDEConfigAttribute)
+
+	* 新增成员：CMKId, CMKRegion
+
+	* <font color="#dd0000">**修改成员**：</font>Encryption, CertificateAttribution, QuoteUin
 
 
 
 
-## 微服务引擎(tse) 版本：2020-12-07
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
-### 第 77 次发布
+### 第 130 次发布
 
-发布时间：2024-12-25 02:14:38
+发布时间：2024-12-26 01:50:09
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
-
-	* 新增入参：RequestBuffering, ResponseBuffering
-
-* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
-
-	* 新增入参：RequestBuffering, ResponseBuffering
-
-
-修改数据结构：
-
-* [ConfigFileTemplate](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ConfigFileTemplate)
-
-	* <font color="#dd0000">**修改成员**：</font>Id, Name, Content, Format, Comment, CreateTime, CreateBy, ModifyTime, ModifyBy
-
-* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
-
-	* 新增成员：RequestBuffering, ResponseBuffering
-
-* [NacosReplica](http://document.tencentcloudapi.woa.com/document/product/1364/54942#NacosReplica)
-
-	* <font color="#dd0000">**修改成员**：</font>VpcId
-
-* [ZookeeperReplica](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ZookeeperReplica)
-
-	* <font color="#dd0000">**修改成员**：</font>VpcId
+* [RetryRocketMQDlqMessage](http://document.tencentcloudapi.woa.com/document/product/1179/85585)
 
 
 
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
-## 私有网络(vpc) 版本：2017-03-12
+### 第 31 次发布
 
-### 第 185 次发布
-
-发布时间：2024-12-25 02:18:36
+发布时间：2024-12-26 01:52:02
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增接口：
 
-* [CreateCcn](http://document.tencentcloudapi.woa.com/document/product/215/19204)
+* [DescribeMessage](http://document.tencentcloudapi.woa.com/document/product/1739/85588)
+* [DescribeMessageList](http://document.tencentcloudapi.woa.com/document/product/1739/85587)
+* [ResendDeadLetterMessage](http://document.tencentcloudapi.woa.com/document/product/1739/85586)
 
-	* 新增入参：InstanceMeteringType
+新增数据结构：
+
+* [MessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageItem)
+* [MessageTrackItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTrackItem)
 
 
-修改数据结构：
 
-* [CCN](http://document.tencentcloudapi.woa.com/document/product/215/15824#CCN)
+## 微服务平台 TSF(tsf) 版本：2018-03-26
 
-	* 新增成员：InstanceMeteringType
+### 第 56 次发布
 
+发布时间：2024-12-26 01:53:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ReassociateBusinessLogConfig
 
 
 
@@ -15124,6 +15286,48 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 124 次发布
+
+发布时间：2024-12-26 01:12:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBackup](http://document.tencentcloudapi.woa.com/document/product/236/15844)
+
+	* 新增入参：EncryptionFlag
+
+
+修改数据结构：
+
+* [AccountInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AccountInfo)
+
+	* 新增成员：OpenCam
+
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditInstanceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ProjectId, TagList, DbType, DbVersion
+
+* [ParamTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#ParamTemplateInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>EngineType
+
+* [ParameterDetail](http://document.tencentcloudapi.woa.com/document/product/236/15878#ParameterDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>IsNotSupportEdit
+
+* [ProxyAddress](http://document.tencentcloudapi.woa.com/document/product/236/15878#ProxyAddress)
+
+	* 新增成员：PolarisAddr
+
+* [SlaveInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#SlaveInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Second
+
+
 ### 第 123 次发布
 
 发布时间：2024-12-25 01:17:55
@@ -19680,6 +19884,21 @@
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
+### 第 47 次发布
+
+发布时间：2024-12-26 01:15:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)
+
+	* 新增入参：ReserveStoragePolicy
+
+
 ### 第 46 次发布
 
 发布时间：2024-12-24 01:14:05
@@ -23237,6 +23456,28 @@
 
 
 ## 云 HDFS(chdfs) 版本：2020-11-12
+
+### 第 6 次发布
+
+发布时间：2024-12-26 01:16:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFileSystem](http://document.tencentcloudapi.woa.com/document/product/1105/51148)
+
+	* <font color="#dd0000">**修改入参**：</font>CapacityQuota
+
+
+修改数据结构：
+
+* [Summary](http://document.tencentcloudapi.woa.com/document/product/1105/51158#Summary)
+
+	* <font color="#dd0000">**修改成员**：</font>CapacityUsed, StandardCapacityUsed
+
 
 ### 第 5 次发布
 
@@ -28290,7 +28531,7 @@
 
 新增数据结构：
 
-* [[AlarmTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTemplateConfig)](http://document.tencentcloudapi.woa.com/document/product/614/56471#[AlarmTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTemplateConfig))
+* [AlarmTemplateConfig](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmTemplateConfig)
 
 ### 第 97 次发布
 
@@ -39721,6 +39962,21 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 115 次发布
+
+发布时间：2024-12-26 01:20:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbErrorLogItem](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbErrorLogItem)
+
+	* <font color="#dd0000">**修改成员**：</font>Timestamp, Level, Content
+
+
 ### 第 114 次发布
 
 发布时间：2024-12-19 01:16:00
@@ -43368,6 +43624,29 @@
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
+### 第 32 次发布
+
+发布时间：2024-12-26 01:25:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditInstanceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, AuditStatus, InstanceId, InstanceName, ProjectId, Region, ResourceTags
+
+* [AuditLogFile](http://document.tencentcloudapi.woa.com/document/product/1130/57812#AuditLogFile)
+
+	* <font color="#dd0000">**修改成员**：</font>AsyncRequestId, FileName, CreateTime, Status, FileSize, DownloadUrl, ErrMsg, Progress, FinishTime
+
+* [RedisKeySpaceData](http://document.tencentcloudapi.woa.com/document/product/1130/57812#RedisKeySpaceData)
+
+	* <font color="#dd0000">**修改成员**：</font>AveElementSize, ShardId
+
+
 ### 第 31 次发布
 
 发布时间：2024-09-03 01:15:24
@@ -44020,6 +44299,32 @@
 
 
 ## 专线接入(dc) 版本：2018-04-10
+
+### 第 8 次发布
+
+发布时间：2024-12-26 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAccessPoints](http://document.tencentcloudapi.woa.com/document/product/216/34827)
+
+	* 新增入参：Filters
+
+
+新增数据结构：
+
+* [[PortSpecification](http://document.tencentcloudapi.woa.com/document/product/216/18418#PortSpecification)](http://document.tencentcloudapi.woa.com/document/product/216/18418#[PortSpecification](http://document.tencentcloudapi.woa.com/document/product/216/18418#PortSpecification))
+
+修改数据结构：
+
+* [AccessPoint](http://document.tencentcloudapi.woa.com/document/product/216/18418#AccessPoint)
+
+	* 新增成员：AvailablePortInfo
+
 
 ### 第 7 次发布
 
@@ -49706,6 +50011,21 @@
 
 ## 数据传输服务(dts) 版本：2021-12-06
 
+### 第 29 次发布
+
+发布时间：2024-12-26 01:29:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyConsumerGroupPassword](http://document.tencentcloudapi.woa.com/document/product/571/82906)
+
+	* <font color="#dd0000">**修改入参**：</font>OldPassword
+
+
 ### 第 28 次发布
 
 发布时间：2024-12-25 01:36:12
@@ -50880,6 +51200,21 @@
 
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 24 次发布
+
+发布时间：2024-12-26 01:31:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RouteConflict](http://document.tencentcloudapi.woa.com/document/product/1108/42574#RouteConflict)
+
+	* <font color="#dd0000">**修改成员**：</font>RouteTableId
+
 
 ### 第 23 次发布
 
@@ -55443,6 +55778,25 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 118 次发布
+
+发布时间：2024-12-26 01:33:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81950)
+
+	* 新增入参：UrlUseEnv
+
+* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
+
+	* 新增入参：UrlUseEnv
+
+
 ### 第 117 次发布
 
 发布时间：2024-12-24 01:22:27
@@ -57920,6 +58274,25 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 174 次发布
+
+发布时间：2024-12-26 01:34:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+	* 新增入参：UrlUseEnv
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+	* 新增入参：UrlUseEnv
+
+
 ### 第 173 次发布
 
 发布时间：2024-12-25 01:39:54
@@ -57930,8 +58303,8 @@
 
 新增接口：
 
-* [[ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1595/85584)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ChannelCreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/85583)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ArchiveDynamicFlow](http://document.tencentcloudapi.woa.com/document/product/1595/85584)
+* [ChannelCreateDynamicFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/85583)
 
 修改接口：
 
@@ -57942,10 +58315,10 @@
 
 新增数据结构：
 
-* [[ChannelArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelArchiveDynamicApproverData)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[ChannelArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelArchiveDynamicApproverData))
-* [[DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowApproverResult)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowApproverResult))
-* [[DynamicFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[DynamicFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowInfo))
-* [[DynamicFlowResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowResult)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[DynamicFlowResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowResult))
+* [ChannelArchiveDynamicApproverData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelArchiveDynamicApproverData)
+* [DynamicFlowApproverResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowApproverResult)
+* [DynamicFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowInfo)
+* [DynamicFlowResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#DynamicFlowResult)
 
 ### 第 172 次发布
 
@@ -71815,6 +72188,19 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 63 次发布
+
+发布时间：2024-12-26 01:38:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeInstanceLoginKeyPairAttribute
+* ModifyInstancesLoginKeyPairAttribute
+
 ### 第 62 次发布
 
 发布时间：2024-11-28 01:51:20
@@ -77481,6 +77867,21 @@
 
 
 ## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 34 次发布
+
+发布时间：2024-12-26 01:41:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KMSInfoDetail](http://document.tencentcloudapi.woa.com/document/product/240/38576#KMSInfoDetail)
+
+	* 新增成员：KmsRegion
+
 
 ### 第 33 次发布
 
@@ -94699,6 +95100,66 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 45 次发布
+
+发布时间：2024-12-26 01:45:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/77816)
+
+	* 新增入参：MultiNodes, DrZones
+
+* [CreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/19973)
+
+	* 新增入参：MultiNodes, DrZones
+
+* [DescribeInquiryPriceParameter](http://document.tencentcloudapi.woa.com/document/product/238/82676)
+
+	* 新增入参：DrZones
+
+* [ModifyDBInstanceSSL](http://document.tencentcloudapi.woa.com/document/product/238/82767)
+
+	* 新增入参：IsKMS, KeyId, KeyRegion
+
+* [ModifyDReadable](http://document.tencentcloudapi.woa.com/document/product/238/83412)
+
+	* 新增入参：ReadMode
+
+* [ModifyInstanceEncryptAttributes](http://document.tencentcloudapi.woa.com/document/product/238/80982)
+
+	* 新增入参：KeyId, KeyRegion
+
+
+修改数据结构：
+
+* [AccountRemark](http://document.tencentcloudapi.woa.com/document/product/238/19976#AccountRemark)
+
+	* <font color="#dd0000">**修改成员**：</font>UserName, Remark
+
+* [DBDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DBDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>Encryption
+
+* [Events](http://document.tencentcloudapi.woa.com/document/product/238/19976#Events)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, FileName, Size, EventType, Status, StartTime, EndTime, InternalAddr, ExternalAddr
+
+* [SSLConfig](http://document.tencentcloudapi.woa.com/document/product/238/19976#SSLConfig)
+
+	* 新增成员：IsKMS, CMKId, CMKRegion
+
+* [TDEConfigAttribute](http://document.tencentcloudapi.woa.com/document/product/238/19976#TDEConfigAttribute)
+
+	* 新增成员：CMKId, CMKRegion
+
+	* <font color="#dd0000">**修改成员**：</font>Encryption, CertificateAttribution, QuoteUin
+
+
 ### 第 44 次发布
 
 发布时间：2024-10-17 02:09:09
@@ -104333,6 +104794,18 @@
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 130 次发布
+
+发布时间：2024-12-26 01:50:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[RetryRocketMQDlqMessage](http://document.tencentcloudapi.woa.com/document/product/1179/85585)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 129 次发布
 
@@ -115150,6 +115623,25 @@
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
 
+### 第 31 次发布
+
+发布时间：2024-12-26 01:52:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeMessage](http://document.tencentcloudapi.woa.com/document/product/1739/85588)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeMessageList](http://document.tencentcloudapi.woa.com/document/product/1739/85587)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ResendDeadLetterMessage](http://document.tencentcloudapi.woa.com/document/product/1739/85586)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[MessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageItem)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageItem))
+* [[MessageTrackItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTrackItem)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[MessageTrackItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTrackItem))
+
 ### 第 30 次发布
 
 发布时间：2024-12-24 01:41:59
@@ -119344,6 +119836,18 @@
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 56 次发布
+
+发布时间：2024-12-26 01:53:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ReassociateBusinessLogConfig
 
 ### 第 55 次发布
 

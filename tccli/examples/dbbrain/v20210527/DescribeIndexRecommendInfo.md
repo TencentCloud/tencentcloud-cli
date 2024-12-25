@@ -7,50 +7,50 @@ Input:
 ```
 tccli dbbrain DescribeIndexRecommendInfo --cli-unfold-argument  \
     --Product mongodb \
-    --InstanceId cmog-ahshjbdwe
+    --InstanceId cmgo-2jrxxlx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CollectionNum": 0,
-        "IndexNum": 0,
+        "CollectionNum": 2,
+        "IndexNum": 2,
         "Items": [
             {
-                "ClusterId": "abc",
-                "Collection": "abc",
-                "Db": "abc",
+                "ClusterId": "cmgo-2jrxxlx",
+                "Collection": "t_socket_resource",
+                "Db": "proxyx",
                 "Level": 0,
                 "Score": 0,
                 "IndexesToBuild": [
                     {
-                        "Id": 0,
-                        "IndexCommand": "abc",
-                        "IndexStr": "abc",
-                        "Level": 0,
-                        "Score": 0,
+                        "Id": 3626848,
+                        "IndexCommand": "db.t_socket_resource.createIndex({ status: 1, expireTimestamp: 1 }, { background: true })",
+                        "IndexStr": "{ status: 1, expireTimestamp: 1 }",
+                        "Level": 4,
+                        "Score": 20,
                         "Signs": [
-                            "abc"
+                            "1a59c167379c9bb7b799b3fe1db95fe2"
                         ],
                         "Status": 0
                     }
                 ],
                 "IndexesToDrop": [
                     {
-                        "IndexStr": "abc",
-                        "Score": 0,
-                        "Reason": "abc",
-                        "IndexCommand": "abc",
-                        "IndexName": "abc"
+                        "IndexStr": "{ userId: 1, from: 1, action: 1 }",
+                        "Score": 15,
+                        "Reason": "与索引 { userId: 1, from: 1, action: 1, createdAt: -1 } 重复",
+                        "IndexCommand": "db.editrecords.dropIndex(\"userId_1_from_1_action_1\")",
+                        "IndexName": "userId_1_from_1_action_1"
                     }
                 ]
             }
         ],
-        "Level": 0,
+        "Level": 4,
         "Optimized": 0,
         "OptimizedCount": 0,
-        "RequestId": "abc"
+        "RequestId": "17fa8e11-c19c-11ef-82da-5f2abf40a8f2"
     }
 }
 ```

@@ -18,7 +18,7 @@
     ],
     "CheckTransformation": [
       {
-        "document": "",
+        "document": "检查转换器",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckTransformation\n<公共请求参数>\n\n{\n    \"Input\": \"{\\\"data\\\":{\\\"msgBody\\\":\\\"{\\\\\\\"city\\\\\\\":\\\\\\\"shenzhen\\\\\\\",\\\\\\\"temp\\\\\\\":32,\\\\\\\"weather\\\\\\\":\\\\\\\"sunny\\\\\\\"}\\\"}}\",\n    \"Transformations\": [\n        {\n            \"Extraction\": {\n                \"ExtractionInputPath\": \"$.data.msgBody\",\n                \"Format\": \"JSON\",\n                \"TextParams\": {\n                    \"Separator\": \":\",\n                    \"Regex\": \"shenzhen\"\n                }\n            },\n            \"EtlFilter\": {\n                \"Filter\": \"{\\\"city\\\":[{\\\"contain\\\":\\\"shen\\\"}]}\"\n            },\n            \"Transform\": {\n                \"OutputStructs\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"$.city\",\n                        \"ValueType\": \"JSONPATH\"\n                    },\n                    {\n                        \"Key\": \"const\",\n                        \"Value\": \"11\",\n                        \"ValueType\": \"NUMBER\"\n                    },\n                    {\n                        \"Key\": \"sdate\",\n                        \"Value\": \"date\",\n                        \"ValueType\": \"SYS_VARIABLE\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"589fd30c-49c9-11ec-9ad1-5254006e5bc5\",\n        \"Output\": \"{\\\"sdate\\\":\\\"2021-11-20T14:16:06+08:00\\\",\\\"city\\\":\\\"shenzhen\\\",\\\"const\\\":11}\"\n    }\n}",
         "title": "检查转换器"
@@ -136,7 +136,7 @@
       {
         "document": "查询事件模版",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCloudEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"cvm:ErrorEvent:DiskReadonly\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"EventTemplate\": \"{\\n\\\"specversion\\\": \\\"1.0\\\",\\n\\\"id\\\": \\\"6ad369be-d54e-43e5-bbfd-5c301fa61eff\\\",\\n\\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n\\\"type\\\": \\\"cvm:ErrorEvent:DiskReadonly\\\",\\n\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\\"time\\\": 1677727912553,\\n\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\\"tags\\\": {\\n\\\"key1\\\": \\\"value1\\\",\\n\\\"key2\\\": \\\"value2\\\"\\n},\\n\\\"status\\\": \\\"1\\\",\\n\\\"data\\\": {\\n\\\"appId\\\": 1250000000,\\n\\\"eventId\\\": 39,\\n\\\"uin\\\": \\\"123456\\\",\\n\\\"subAccountUin\\\": \\\"123456\\\"\\n}\\n}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ad369be-d54e-43e5-bbfd-5c301fa61eff\",\n        \"EventTemplate\": \"{\\n\\\"specversion\\\": \\\"1.0\\\",\\n\\\"id\\\": \\\"6ad369be-d54e-43e5-bbfd-5c301fa61eff\\\",\\n\\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n\\\"type\\\": \\\"cvm:ErrorEvent:DiskReadonly\\\",\\n\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\\"time\\\": 1677727912553,\\n\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\\"tags\\\": {\\n\\\"key1\\\": \\\"value1\\\",\\n\\\"key2\\\": \\\"value2\\\"\\n},\\n\\\"status\\\": \\\"1\\\",\\n\\\"data\\\": {\\n\\\"appId\\\": 1250000000,\\n\\\"eventId\\\": 39,\\n\\\"uin\\\": \\\"123456\\\",\\n\\\"subAccountUin\\\": \\\"123456\\\"\\n}\\n}\"\n    }\n}",
         "title": "查询事件模版"
       }
     ],
@@ -144,7 +144,7 @@
       {
         "document": "查询连接器事件模版",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetConnectorEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"ckafka\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"EventTemplate\": \"{\\n\\\"specversion\\\": \\\"1.0\\\",\\n\\\"id\\\": \\\"6ad369be-d54e-43e5-bbfd-5c301fa61eff\\\",\\n\\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n\\\"type\\\": \\\"cvm:ErrorEvent:DiskReadonly\\\",\\n\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\\"time\\\": 1677727912553,\\n\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\\"tags\\\": {\\n\\\"key1\\\": \\\"value1\\\",\\n\\\"key2\\\": \\\"value2\\\"\\n},\\n\\\"status\\\": \\\"1\\\",\\n\\\"data\\\": {\\n\\\"appId\\\": 1250000000,\\n\\\"eventId\\\": 39,\\n\\\"uin\\\": \\\"123456\\\",\\n\\\"subAccountUin\\\": \\\"123456\\\"\\n}\\n}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ad369be-d54e-43e5-bbfd-5c301fa61eff\",\n        \"EventTemplate\": \"{\\n\\\"specversion\\\": \\\"1.0\\\",\\n\\\"id\\\": \\\"6ad369be-d54e-43e5-bbfd-5c301fa61eff\\\",\\n\\\"source\\\": \\\"cvm.cloud.tencent\\\",\\n\\\"type\\\": \\\"cvm:ErrorEvent:DiskReadonly\\\",\\n\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\\"time\\\": 1677727912553,\\n\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\\"tags\\\": {\\n\\\"key1\\\": \\\"value1\\\",\\n\\\"key2\\\": \\\"value2\\\"\\n},\\n\\\"status\\\": \\\"1\\\",\\n\\\"data\\\": {\\n\\\"appId\\\": 1250000000,\\n\\\"eventId\\\": 39,\\n\\\"uin\\\": \\\"123456\\\",\\n\\\"subAccountUin\\\": \\\"123456\\\"\\n}\\n}\"\n    }\n}",
         "title": "查询连接器事件模版"
       }
     ],
@@ -184,7 +184,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTransformation\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxx\",\n    \"RuleId\": \"rule-xxxxxxxxx\",\n    \"TransformationId\": \"tsfm-xxxxxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Transformations\": [\n            {\n                \"EtlFilter\": {\n                    \"Filter\": \"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"\n                },\n                \"Extraction\": {\n                    \"ExtractionInputPath\": \"$\",\n                    \"Format\": \"JSON\",\n                    \"TextParams\": {\n                        \"Separator\": \",\"\n                    }\n                },\n                \"Transform\": {\n                    \"OutputStructs\": [\n                        {\n                            \"Key\": \"age\",\n                            \"Value\": \"$.age\",\n                            \"ValueType\": \"NUMBER\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b\",\n        \"Transformations\": [\n            {\n                \"EtlFilter\": {\n                    \"Filter\": \"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"\n                },\n                \"Extraction\": {\n                    \"ExtractionInputPath\": \"$\",\n                    \"Format\": \"JSON\",\n                    \"TextParams\": {\n                        \"Separator\": \",\"\n                    }\n                },\n                \"Transform\": {\n                    \"OutputStructs\": [\n                        {\n                            \"Key\": \"age\",\n                            \"Value\": \"$.age\",\n                            \"ValueType\": \"NUMBER\"\n                        }\n                    ]\n                }\n            }\n        ]\n    }\n}",
         "title": "获取转换器详情"
       }
     ],
@@ -208,7 +208,7 @@
       {
         "document": "获取云产品列表",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCloudProducts\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"CloudProducts\": [\n            {\n                \"ProductName\": \"云服务器\",\n                \"ProductType\": \"cvm\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"CloudProducts\": [\n            {\n                \"ProductName\": \"云服务器\",\n                \"ProductType\": \"cvm\",\n                \"Type\": \"Cloud\"\n            }\n        ]\n    }\n}",
         "title": "获取云产品列表"
       }
     ],

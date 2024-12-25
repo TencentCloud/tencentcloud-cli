@@ -25,7 +25,7 @@ Output:
                 "Zone": "ap-hangzhou-ecm-1",
                 "Ipv6CidrBlock": "",
                 "Region": "ap-hangzhou-ecm",
-                "SubnetName": "subnet_test",
+                "SubnetName": "demo",
                 "AvailableIpAddressCount": 253,
                 "IsRemoteVpcSnat": false,
                 "SubnetId": "subnet-ae71tjp6",

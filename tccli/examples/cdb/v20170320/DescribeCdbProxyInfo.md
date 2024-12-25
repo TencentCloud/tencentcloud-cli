@@ -21,19 +21,19 @@ Output:
                     {
                         "AutoAddRo": true,
                         "ConnectionPool": false,
-                        "Desc": "",
+                        "Desc": "andy",
                         "FailOver": true,
                         "IsKickOut": false,
                         "MaxDelay": 0,
                         "MinCount": 0,
-                        "ProxyAddressId": "proxyaddr-test",
+                        "ProxyAddressId": "proxyaddr-kti9m7dd",
                         "AccessMode": "balance",
                         "ProxyAllocation": [
                             {
                                 "ProxyInstance": [
                                     {
-                                        "InstanceId": "cdb-test",
-                                        "InstanceName": "测试",
+                                        "InstanceId": "cdb-aykuksx3",
+                                        "InstanceName": "andydb",
                                         "InstanceType": "1",
                                         "Region": "ap-nanjing",
                                         "Status": 1,
@@ -47,19 +47,19 @@ Output:
                         ],
                         "ReadOnly": false,
                         "TransSplit": false,
-                        "UniqSubnetId": "subnet-test",
-                        "UniqVpcId": "vpc-test",
+                        "UniqSubnetId": "subnet-ndhje",
+                        "UniqVpcId": "vpc-eujshe",
                         "VPort": 3306,
                         "Vip": "10.0.0.0",
                         "WeightMode": "custom"
                     }
                 ],
-                "ProxyGroupId": "proxy-mfxftest",
+                "ProxyGroupId": "proxy-mfxfthsne",
                 "ProxyNode": [
                     {
                         "Cpu": 2,
                         "Mem": 4000,
-                        "ProxyId": "proxynode-test",
+                        "ProxyId": "proxynode-2u0c1tdd",
                         "Region": "ap-nanjing",
                         "Status": "online",
                         "Zone": "ap-nanjing-1",

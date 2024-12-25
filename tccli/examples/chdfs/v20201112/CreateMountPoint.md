@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli chdfs CreateMountPoint --cli-unfold-argument  \
-    --MountPointName test \
-    --FileSystemId f4mnvilzmdd \
+    --MountPointName mp-test \
+    --FileSystemId f14mrrxxxxxx \
     --MountPointStatus 1
 ```
 
@@ -16,14 +16,14 @@ Output:
 {
     "Response": {
         "MountPoint": {
-            "MountPointId": "f4mnvilzmdd-Tx5f",
-            "MountPointName": "test",
-            "FileSystemId": "f4mnvilzmdd",
             "AccessGroupIds": [],
-            "Status": 1,
-            "CreateTime": "2019-07-30T18:19:18+08:00"
+            "CreateTime": "2024-12-25T19:15:28+08:00",
+            "FileSystemId": "f14mrrxxxxxx",
+            "MountPointId": "f14mrrxxxxxx-C1Yv",
+            "MountPointName": "mp-test",
+            "Status": 1
         },
-        "RequestId": "b3caa32f-5e39-4360-91e4-5724369b78a6"
+        "RequestId": "a7474fac-2e8d-456f-8283-9def4c0ff559"
     }
 }
 ```

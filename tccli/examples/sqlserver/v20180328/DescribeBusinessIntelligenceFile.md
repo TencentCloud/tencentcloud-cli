@@ -11,7 +11,7 @@ tccli sqlserver DescribeBusinessIntelligenceFile --cli-unfold-argument  \
     --OrderByType desc \
     --OrderBy create_time \
     --InstanceId mssqlbi-fo2dwujt \
-    --FileName test \
+    --FileName andy \
     --FileType FLAT \
     --StatusSet 1
 ```

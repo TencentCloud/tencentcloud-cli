@@ -11,10 +11,10 @@ tccli dbbrain ModifyAlarmPolicy --cli-unfold-argument  \
     --InstanceIds.0.InstanceId cdb-k9p7oscf \
     --InstanceIds.1.InstanceId cdb-5jqzedc \
     --NewProfileLevel Instance \
-    --NewProfileName test \
-    --ProfileName test \
+    --NewProfileName demoProfileName \
+    --ProfileName oldProfileName \
     --ProfileType alarm_policy \
-    --Remark test \
+    --Remark remark info \
     --RuleType 0 \
     --QuickRule fatal \
     --TemplateInfo.0.TemplateId 23002 \

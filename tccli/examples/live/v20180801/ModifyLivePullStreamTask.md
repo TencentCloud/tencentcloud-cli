@@ -9,7 +9,7 @@ tccli live ModifyLivePullStreamTask --cli-unfold-argument  \
     --Operator yourname \
     --EndTime 2020-04-17T12:02:00Z \
     --StartTime 2020-04-16T11:02:00Z \
-    --TaskId 123 \
+    --TaskId 985452 \
     --SourceUrls rtmp://your.domainname.com/live/stream1
 ```
 

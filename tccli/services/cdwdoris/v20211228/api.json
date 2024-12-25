@@ -9654,7 +9654,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "0默认 1cos恢复",
           "example": "1",
           "member": "int64",
@@ -9663,7 +9663,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "CosSourceInfo对象",
           "example": "无",
           "member": "CosSourceInfo",
@@ -9672,7 +9672,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "0默认 1定期执行",
           "example": "1",
           "member": "int64",
@@ -9681,7 +9681,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "年-月-日 时:分:秒",
           "example": "\"2023-09-11 21:38:36\"",
           "member": "string",
@@ -9690,7 +9690,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "调度名称",
           "example": "无",
           "member": "string",
@@ -9699,7 +9699,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "create update",
           "example": "create",
           "member": "string",
@@ -9710,7 +9710,7 @@
         {
           "disabled": false,
           "document": "恢复粒度：All全量、Database按库、Table按表",
-          "example": "无",
+          "example": "All",
           "member": "string",
           "name": "RecoverScope",
           "required": false,
@@ -9724,6 +9724,15 @@
           "name": "RecoverDatabase",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:恢复后，不保留降冷策略，数据变为热数据；\n2:恢复后，沿用备份表的降冷策略；\n0:默认值，该版本没有这个配置（2.1版本2.1.8之前；2.0版本2.0.16之前）",
+          "example": "2",
+          "member": "int64",
+          "name": "ReserveStoragePolicy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

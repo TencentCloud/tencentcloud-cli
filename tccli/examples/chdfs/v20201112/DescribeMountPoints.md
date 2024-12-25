@@ -16,7 +16,7 @@ Output:
         "MountPoints": [
             {
                 "MountPointId": "f4mnvilzmdd-Tx5f",
-                "MountPointName": "test",
+                "MountPointName": "mp-test-1",
                 "FileSystemId": "f4mnvilzmdd",
                 "AccessGroupIds": [
                     "ag-fmfpk1hk"
@@ -26,7 +26,7 @@ Output:
             },
             {
                 "MountPointId": "f4mnvilzmdd-fj7A",
-                "MountPointName": "test",
+                "MountPointName": "mp-test-2",
                 "FileSystemId": "f4mnvilzmdd",
                 "AccessGroupIds": [
                     "ag-fmfpk1hk"
@@ -36,7 +36,7 @@ Output:
             },
             {
                 "MountPointId": "f4mnvilzmdd-k2tC",
-                "MountPointName": "test",
+                "MountPointName": "mp-test-3",
                 "FileSystemId": "f4mnvilzmdd",
                 "AccessGroupIds": [
                     "ag-fmfpk1hk"

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdb DeleteParamTemplate --cli-unfold-argument  \
-    --TemplateId 1234
+    --TemplateId 17192
 ```
 
 Output: 

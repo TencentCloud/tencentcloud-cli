@@ -17,7 +17,7 @@ Output:
     "Response": {
         "DataInfoList": [
             {
-                "StreamName": "test",
+                "StreamName": "stream1",
                 "StartTime": "2019-03-01 01:00",
                 "EndTime": "2019-03-01 04:00",
                 "Duration": 8,

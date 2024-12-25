@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli sqlserver CutXEvents --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId mssql-o3851odd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "eaf9efa1-3d73-45f9-97f5-f0ea26040b93"
     }
 }
 ```

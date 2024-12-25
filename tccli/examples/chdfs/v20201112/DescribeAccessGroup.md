@@ -15,8 +15,8 @@ Output:
     "Response": {
         "AccessGroup": {
             "AccessGroupId": "ag-f8xoises",
-            "AccessGroupName": "test",
-            "Description": "test",
+            "AccessGroupName": "ag-test",
+            "Description": "access group test",
             "VpcType": 1,
             "VpcId": "vpc-967aipkx",
             "CreateTime": "2019-07-30T16:04:30+08:00"

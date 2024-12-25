@@ -18,11 +18,11 @@ Output:
 {
     "Response": {
         "NetworkInterface": {
-            "NetworkInterfaceId": "eni-12121212",
-            "VpcId": "vpc-1111111",
-            "SubnetId": "subnet-22222222",
-            "NetworkInterfaceName": "Test",
-            "NetworkInterfaceDescription": "Test",
+            "NetworkInterfaceId": "eni-ms7c7gcr",
+            "VpcId": "vpc-4tw1bxlq",
+            "SubnetId": "subnet-6zwa44xm",
+            "NetworkInterfaceName": "demo",
+            "NetworkInterfaceDescription": "demo",
             "MacAddress": "20:90:6F:62:33:E2",
             "PrivateIpAddressSet": [
                 {
@@ -44,7 +44,8 @@ Output:
             "Ipv6AddressSet": [],
             "EcmRegion": "ap-hangzhou-ecm",
             "EniType": 0,
-            "TagSet": []
+            "TagSet": [],
+            "Business": ""
         },
         "RequestId": "5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1"
     }

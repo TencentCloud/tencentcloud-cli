@@ -9,7 +9,7 @@ tccli dbbrain DeleteSqlFilters --cli-unfold-argument  \
     --Product mysql \
     --InstanceId cdb-hxuthiy6 \
     --FilterIds 1089146 \
-    --SessionToken xxxxxx
+    --SessionToken aOqcrCnPLZgCh41VqZVHda2Y+HI=:26872060
 ```
 
 Output: 

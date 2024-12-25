@@ -57,7 +57,7 @@ Output:
         "Status": "normal",
         "SubsStatus": "running",
         "SubscribeId": "subs-0b2up6hk4u",
-        "SubscribeName": "test",
+        "SubscribeName": "binlog订阅",
         "SubscribeMode": "all",
         "Topic": "topic-subs-0b2up6hk4u-cdb-kdxona7h",
         "RequestId": "7bd11a40-9406-11ee-9689-216abbbe2107"

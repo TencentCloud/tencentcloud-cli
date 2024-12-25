@@ -8,8 +8,8 @@ Input:
 tccli cdb ModifyInstanceParam --cli-unfold-argument  \
     --NotSyncDr True \
     --NotSyncRo True \
-    --ParamList.0.CurrentValue xx \
-    --ParamList.0.Name xx \
+    --ParamList.0.CurrentValue 1 \
+    --ParamList.0.Name auto_increment_increment \
     --TemplateId 0 \
     --InstanceIds cdb-atjl8gns \
     --WaitSwitch 0

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc CreatePrivateNatGateway --cli-unfold-argument  \
-    --NatGatewayName test \
+    --NatGatewayName PrivateNatDemo \
     --VpcId vpc-m7sr81gh
 ```
 
@@ -16,10 +16,11 @@ Output:
     "Response": {
         "PrivateNatGatewaySet": [
             {
+                "NatType": "DCG",
                 "Status": "AVILIABLE",
                 "VpcId": "vpc-noanwmed",
                 "CrossDomain": false,
-                "NatGatewayName": "test_nat",
+                "NatGatewayName": "PrivateNatDemo",
                 "NatGatewayId": "intranat-0g3blj80",
                 "TagSet": [],
                 "DirectConnectGatewayIds": [],

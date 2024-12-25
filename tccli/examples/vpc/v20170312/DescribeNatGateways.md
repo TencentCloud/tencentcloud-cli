@@ -19,18 +19,21 @@ Output:
         "NatGatewaySet": [
             {
                 "NatGatewayId": "nat-3isn9hr0",
-                "NatGatewayName": "test",
+                "NatGatewayName": "NatDemo",
                 "VpcId": "vpc-0yi4hekt",
                 "CreatedTime": "2017-09-20 20:28:24",
                 "State": "AVAILABLE",
                 "NetworkState": "RUNNING",
+                "SmartScheduleMode": true,
+                "DedicatedClusterId": "cluster-8zkaer1h",
                 "InternetMaxBandwidthOut": 100,
                 "MaxConcurrentConnection": 1000000,
                 "PublicIpAddressSet": [
                     {
                         "AddressId": "eip-7qcdm91q",
                         "PublicIpAddress": "139.199.232.238",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": ""
                     }
                 ],
                 "DestinationIpPortTranslationNatRuleSet": [
@@ -48,14 +51,14 @@ Output:
                         "PublicPort": 8989,
                         "PrivateIpAddress": "10.80.80.41",
                         "PrivatePort": 8989,
-                        "Description": "test_dnapt"
+                        "Description": "dnapt"
                     }
                 ],
                 "Zone": "ap-guangzhou-1",
                 "TagSet": [
                     {
-                        "Key": "test-key",
-                        "Value": "test-value3"
+                        "Key": "Creator",
+                        "Value": "TencentCloud"
                     }
                 ],
                 "SecurityGroupSet": [],
@@ -69,11 +72,13 @@ Output:
             },
             {
                 "NatGatewayId": "nat-7xh58vea",
-                "NatGatewayName": "test_create",
+                "NatGatewayName": "Nat-create",
                 "VpcId": "vpc-0yi4hekt",
                 "CreatedTime": "2019-05-04 15:01:11",
                 "State": "PENDING",
                 "NetworkState": "RUNNING",
+                "SmartScheduleMode": true,
+                "DedicatedClusterId": "",
                 "InternetMaxBandwidthOut": 100,
                 "MaxConcurrentConnection": 1000000,
                 "PublicIpAddressSet": [],
@@ -81,8 +86,8 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "TagSet": [
                     {
-                        "Key": "test-key",
-                        "Value": "test-value4"
+                        "Key": "Creator",
+                        "Value": "TencentCloud"
                     }
                 ],
                 "SecurityGroupSet": [],
@@ -121,11 +126,13 @@ Output:
         "NatGatewaySet": [
             {
                 "NatGatewayId": "nat-3isn9hr0",
-                "NatGatewayName": "test",
+                "NatGatewayName": "PublicDemo",
                 "VpcId": "vpc-0yi4hekt",
                 "CreatedTime": "2017-09-20 20:28:24",
                 "State": "AVAILABLE",
                 "NetworkState": "RUNNING",
+                "SmartScheduleMode": true,
+                "DedicatedClusterId": "cluster-acdz123k",
                 "InternetMaxBandwidthOut": 100,
                 "MaxConcurrentConnection": 1000000,
                 "SecurityGroupSet": [],
@@ -138,7 +145,8 @@ Output:
                     {
                         "AddressId": "eip-7qcdm91q",
                         "PublicIpAddress": "139.199.232.238",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": ""
                     }
                 ],
                 "DestinationIpPortTranslationNatRuleSet": [
@@ -162,8 +170,8 @@ Output:
                 "Zone": "ap-guangzhou-1",
                 "TagSet": [
                     {
-                        "Key": "test-key",
-                        "Value": "test-value1"
+                        "Key": "Creator",
+                        "Value": "TencentCloud"
                     }
                 ],
                 "RestrictState": "NORMAL",
@@ -171,11 +179,13 @@ Output:
             },
             {
                 "NatGatewayId": "nat-mxkohguo",
-                "NatGatewayName": "aaaaaa",
+                "NatGatewayName": "Nat_Demo",
                 "VpcId": "vpc-m7sihqw5",
                 "CreatedTime": "2018-07-25 11:37:29",
                 "State": "PENDING",
                 "NetworkState": "UNAVAILABLE",
+                "SmartScheduleMode": true,
+                "DedicatedClusterId": "",
                 "InternetMaxBandwidthOut": 100,
                 "MaxConcurrentConnection": 1000000,
                 "PublicIpAddressSet": [],
@@ -183,8 +193,8 @@ Output:
                 "Zone": "ap-guangzhou-1",
                 "TagSet": [
                     {
-                        "Key": "test-key",
-                        "Value": "test-value2"
+                        "Key": "Creator",
+                        "Value": "TencentCloud"
                     }
                 ],
                 "SecurityGroupSet": [],

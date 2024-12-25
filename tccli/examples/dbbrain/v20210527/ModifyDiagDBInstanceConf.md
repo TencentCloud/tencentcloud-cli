@@ -33,7 +33,7 @@ tccli dbbrain ModifyDiagDBInstanceConf --cli-unfold-argument  \
     --Regions All \
     --InstanceIds crs-pz1raq11 \
     --InstanceConfs.AnalysisTopKey Yes \
-    --InstanceConfs.KeyDelimiters _ - :
+    --InstanceConfs.KeyDelimiters , ; : _ + @ = | # .
 ```
 
 Output: 

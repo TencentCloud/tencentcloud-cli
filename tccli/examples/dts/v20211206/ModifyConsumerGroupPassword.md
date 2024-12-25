@@ -7,9 +7,9 @@ Input:
 ```
 tccli dts ModifyConsumerGroupPassword --cli-unfold-argument  \
     --SubscribeId subs-9jyki7hniw \
-    --AccountName account-subs-9jyki7hniw-1 \
-    --ConsumerGroupName consumer-grp-subs-9jyki7hniw-1 \
-    --OldPassword 123 \
+    --AccountName account-subs-9jyki7hniw-group-1 \
+    --ConsumerGroupName consumer-grp-subs-9jyki7hniw-jason \
+    --OldPassword qJ3e1Wd~ \
     --NewPassword asdiouy09
 ```
 

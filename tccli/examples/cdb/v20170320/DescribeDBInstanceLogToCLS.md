@@ -15,13 +15,13 @@ Output:
     "Response": {
         "ErrorLog": {
             "Status": "ON",
-            "LogSetId": "test",
-            "LogTopicId": "test"
+            "LogSetId": "8dff8d62-fa10-4d6c-bee0-6e31a0ade975",
+            "LogTopicId": "09c3c2d1-ac46-4e4e-b688-b73950e64682"
         },
         "SlowLog": {
             "Status": "OFF",
-            "LogSetId": "test",
-            "LogTopicId": "test"
+            "LogSetId": "8dff8d62-fa10-4d6c-bee0-6e31a0ade976",
+            "LogTopicId": "09c3c2d1-ac46-4e4e-b688-b73950e64681"
         },
         "RequestId": "8a96c7fec3c747adb83cb0868c0107d5"
     }

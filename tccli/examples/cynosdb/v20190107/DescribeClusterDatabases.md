@@ -18,8 +18,8 @@ Output:
         "Offset": 0,
         "RequestId": "806fe1c8-5567-4aa8-a521-ea2414c793b4",
         "Databases": [
-            "test_database_1",
-            "test_database_2"
+            "database_1",
+            "database_2"
         ]
     }
 }

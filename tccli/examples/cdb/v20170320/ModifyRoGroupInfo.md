@@ -16,8 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "AsyncRequestId": "xx"
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
+        "AsyncRequestId": "a6040589-3b098df5-b551d9e5-81c6bfdc"
     }
 }
 ```
@@ -43,8 +43,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "AsyncRequestId": "xx"
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54Ad",
+        "AsyncRequestId": "a6040589-3b098df5-b551d9e5-81c6bfd1"
     }
 }
 ```

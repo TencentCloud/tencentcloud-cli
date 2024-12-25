@@ -24,12 +24,10 @@ tccli tsf CreateProgram --cli-unfold-argument  \
     --ProgramItemList.0.Resource.CanSelectAll True \
     --ProgramItemList.0.Resource.SearchWordField programName \
     --ProgramItemList.0.Resource.Index 0 \
-    --ProgramItemList.0.ValueList abc \
     --ProgramItemList.0.IsAll True \
     --ProgramItemList.0.CreationTime 0 \
     --ProgramItemList.0.LastUpdateTime 0 \
-    --ProgramItemList.0.DeleteFlag True \
-    --ProgramItemList.0.ProgramId abc
+    --ProgramItemList.0.DeleteFlag True
 ```
 
 Output: 

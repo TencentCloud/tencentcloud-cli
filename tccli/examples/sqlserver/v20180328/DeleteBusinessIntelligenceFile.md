@@ -7,7 +7,7 @@ Input:
 ```
 tccli sqlserver DeleteBusinessIntelligenceFile --cli-unfold-argument  \
     --InstanceId mssqlbi-fo2dwujt \
-    --FileNameSet test.xlsx
+    --FileNameSet andy.xlsx
 ```
 
 Output: 

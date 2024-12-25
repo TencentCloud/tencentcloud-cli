@@ -3,8 +3,8 @@
     "ExportPrOrder": [
       {
         "document": "导出PO单",
-        "input": "POST / HTTP/1.1\nHost: subcontract.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportPrOrder\n<公共请求参数>\n\n{\n    \"PoId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PoId\": \"xx\",\n        \"Url\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: subcontract.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportPrOrder\n<公共请求参数>\n\n{\n    \"PoId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PoId\": \"\",\n        \"Url\": \"\",\n        \"RequestId\": \"\"\n    }\n}",
         "title": "导出PO单"
       }
     ],

@@ -15,7 +15,7 @@ Output:
     "Response": {
         "MountPoint": {
             "MountPointId": "f4mnvilzmdd-Tx5f",
-            "MountPointName": "test",
+            "MountPointName": "mp-test",
             "FileSystemId": "f4mnvilzmdd",
             "AccessGroupIds": [
                 "ag-fmfpk1hk"

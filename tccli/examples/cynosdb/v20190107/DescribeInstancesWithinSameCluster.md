@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli cynosdb DescribeInstancesWithinSameCluster --cli-unfold-argument  \
-    --UniqVpcId abc \
-    --Vip abc
+    --UniqVpcId vpc-gy34u12n \
+    --Vip 172.1.1.1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 1,
         "InstanceIds": [
-            "abc"
+            "cynosdbmysql-ins-pgbpxt11"
         ],
-        "RequestId": "abc"
+        "RequestId": "51169b54-61d4-4604-a07e-e519a5527923"
     }
 }
 ```

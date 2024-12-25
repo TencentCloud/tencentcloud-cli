@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdb ModifyAuditRuleTemplates --cli-unfold-argument  \
     --RuleTemplateIds cdb-rt-ws23fwu8 \
-    --RuleTemplateName test
+    --RuleTemplateName andyrule
 ```
 
 Output: 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeTopSpaceTableTimeSeries --cli-unfold-argument  \
-    --InstanceId cdb-test \
+    --InstanceId cdb-test1234 \
     --Limit 2 \
     --StartDate 2020-01-01 \
     --EndDate 2020-01-01
@@ -19,8 +19,8 @@ Output:
         "RequestId": "d97eacb0-cebd-40b6-963b-579092454f05",
         "TopSpaceTableTimeSeries": [
             {
-                "TableName": "test",
-                "TableSchema": "test_bak",
+                "TableName": "demo_table",
+                "TableSchema": "demo_db",
                 "SeriesData": {
                     "Series": [
                         {

@@ -5,14 +5,18 @@
 Input: 
 
 ```
-tccli cdb ModifyInstancePasswordComplexity --cli-unfold-argument ```
+tccli cdb ModifyInstancePasswordComplexity --cli-unfold-argument  \
+    --InstanceIds cdb-93hvf1d \
+    --ParamList.0.Name validate_password.length \
+    --ParamList.0.CurrentValue 10
+```
 
 Output: 
 ```
 {
     "Response": {
-        "AsyncRequestId": "02e874af-e4876fb4-4c672e64-86f17866",
-        "RequestId": "d5b053f3-d58e-4048-aef9-b8cc9f044951"
+        "AsyncRequestId": "988d3e5b-4cc7bac7-b92977cf-274603c0",
+        "RequestId": "11fa4b07-11b0-4c48-a472-2d835d9bf165"
     }
 }
 ```

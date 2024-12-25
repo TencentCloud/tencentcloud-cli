@@ -13,29 +13,21 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "TotalCount": 2,
-        "MaxUserConnections": 10240,
+        "TotalCount": 1,
         "Items": [
             {
-                "Notes": "test",
-                "Host": "localhost",
-                "User": "test_user",
-                "ModifyTime": "2020-11-10 01:00:00",
-                "ModifyPasswordTime": "2020-11-10 01:00:00",
-                "CreateTime": "2020-11-10 01:00:00",
-                "MaxUserConnections": 20
-            },
-            {
-                "Notes": "test2",
-                "Host": "localhost",
-                "User": "root",
-                "ModifyTime": "2020-11-10 01:00:00",
-                "ModifyPasswordTime": "2020-11-10 01:00:00",
-                "CreateTime": "2020-11-10 01:00:00",
-                "MaxUserConnections": 20
+                "Notes": "andy1",
+                "Host": "172.1.1.1",
+                "User": "andy",
+                "ModifyTime": "2020-09-22 00:00:00",
+                "ModifyPasswordTime": "2020-09-22 00:00:00",
+                "CreateTime": "2020-09-22 00:00:00",
+                "MaxUserConnections": 20,
+                "OpenCam": true
             }
-        ]
+        ],
+        "MaxUserConnections": 20,
+        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }
 ```

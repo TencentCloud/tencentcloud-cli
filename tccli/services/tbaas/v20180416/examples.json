@@ -121,7 +121,7 @@
     "InvokeChainMakerDemoContract": [
       {
         "document": "调用长安链体验网络合约执行交易",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_test\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"2021-07-26\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": \"0\",\n    \"ContractName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_test\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"2021-07-26\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": \"0\",\n    \"ContractName\": \"fact\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2974e7ac-72e2-49c3-ae39-bc2bc6a7330b\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"963b8210f10e45e6ab6fe5cd37ba7f6719db5948a38c494ca9137fa2b8c9033d\",\n            \"GasUsed\": 9573483,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链体验网络合约执行交易"
       }
@@ -129,7 +129,7 @@
     "InvokeFabricChaincode": [
       {
         "document": "InvokeFabricChaincode",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeFabricChaincode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"fabric-65z42qi150\",\n    \"ChannelId\": \"channel-9xej4d\",\n    \"ChaincodeName\": \"mytest\",\n    \"FuncName\": \"Set\",\n    \"FuncParam\": [\n        \"D\",\n        \"40\"\n    ],\n    \"WithAsyncResult\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeFabricChaincode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"fabric-65z42qi150\",\n    \"ChannelId\": \"channel-9xej4d\",\n    \"ChaincodeName\": \"fact\",\n    \"FuncName\": \"Set\",\n    \"FuncParam\": [\n        \"D\",\n        \"40\"\n    ],\n    \"WithAsyncResult\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bab100f3-be40-415c-b29b-3a44c77b25fe\",\n        \"TxId\": \"0595a33e308170b035e0d97c1a79274ac55badf048c0c8fc569719e14a2990c5\",\n        \"TxResult\": \"\",\n        \"TxStatus\": \"VALID\"\n    }\n}",
         "title": "InvokeFabricChaincode"
       }
@@ -169,7 +169,7 @@
     "QueryChainMakerDemoContract": [
       {
         "document": "调用长安链体验网络合约查询",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_test\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"ContractName\": \"test\",\n    \"FuncParam\": \"{\\\"file_hash\\\":\\\"1234567\\\"}\",\n    \"FuncName\": \"find_by_file_hash\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerDemoContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_test\",\n    \"ClusterId\": \"chainmaker-demo\",\n    \"ContractName\": \"fact\",\n    \"FuncParam\": \"{\\\"file_hash\\\":\\\"1234567\\\"}\",\n    \"FuncName\": \"find_by_file_hash\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fac6ef5a-7637-4a75-a2d3-0f7d87b5b8b5\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"3ae794a658af4a219f849f5891d7a390eae524de4d614339ace2411059aaa19c\",\n            \"GasUsed\": 6100540,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链体验网络合约查询"
       }
@@ -193,7 +193,7 @@
     "QueryFabricChaincode": [
       {
         "document": "QueryFabricChaincode",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFabricChaincode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"fabric-65z42qi150\",\n    \"ChannelId\": \"channel-9xej4d\",\n    \"ChaincodeName\": \"mytest\",\n    \"FuncName\": \"Get\",\n    \"FuncParam\": [\n        \"A\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryFabricChaincode\n<公共请求参数>\n\n{\n    \"ClusterId\": \"fabric-65z42qi150\",\n    \"ChannelId\": \"channel-9xej4d\",\n    \"ChaincodeName\": \"fact\",\n    \"FuncName\": \"Get\",\n    \"FuncParam\": [\n        \"A\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e431d04c-2a5c-43b4-a480-f127b3f46eb6\",\n        \"TxId\": \"030acb112f9f2aa2ce537fea9d94d2f3c9ec6cf8e05aa62f5d3746167825dbe8\",\n        \"TxResult\": \"10\",\n        \"TxStatus\": \"VALID\"\n    }\n}",
         "title": "QueryFabricChaincode"
       }

@@ -15,7 +15,7 @@ Output:
     "Response": {
         "FileSystem": {
             "AppId": 1251006373,
-            "FileSystemName": "test",
+            "FileSystemName": "fs-test",
             "Description": "",
             "Region": "ap-guangzhou",
             "FileSystemId": "f4mhaqkciq0",

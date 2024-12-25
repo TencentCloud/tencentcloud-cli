@@ -23,10 +23,10 @@ Output:
                 "SrcRegionId": 0,
                 "TaskStatus": "initial",
                 "NewRegionId": 8,
-                "RollbackStrategy": "test",
+                "RollbackStrategy": "timepoint",
                 "StartTime": "2019-12-26 18:05:42",
                 "DstInstanceId": "cdb-9ubfzt6x",
-                "EndTime": ""
+                "EndTime": "2019-12-27 18:05:42"
             },
             {
                 "SrcInstanceId": "cdb-4bblpca3",
@@ -38,7 +38,7 @@ Output:
                 "RollbackStrategy": "backupset",
                 "NewRegionId": 0,
                 "DstInstanceId": "cdb-awbsatzq",
-                "EndTime": ""
+                "EndTime": "2019-12-27 18:05:42"
             }
         ]
     }

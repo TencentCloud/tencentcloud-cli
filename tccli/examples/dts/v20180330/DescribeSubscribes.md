@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dts DescribeSubscribes --cli-unfold-argument  \
-    --Status isolate \
+    --Status isolated \
     --Offset 0 \
     --Limit 1
 ```
@@ -43,8 +43,8 @@ Output:
                 "AutoRenewFlag": 0,
                 "Tags": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "负责人",
+                        "TagValue": "jason"
                     }
                 ]
             }

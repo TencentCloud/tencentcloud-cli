@@ -16,7 +16,7 @@ Output:
     "Response": {
         "RequestId": "176466",
         "Databases": [
-            "testDb"
+            "Db1"
         ]
     }
 }

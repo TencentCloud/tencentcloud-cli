@@ -20,18 +20,18 @@ Output:
     "Response": {
         "Result": [
             {
-                "MetricName": "abc",
-                "MetricFunction": "abc",
+                "MetricName": "cpu",
+                "MetricFunction": "findOne",
                 "MetricDataPoints": [
                     {
-                        "Key": "abc",
-                        "Value": "abc",
-                        "Tag": "abc"
+                        "Key": "time",
+                        "Value": "60",
+                        "Tag": "time"
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "f1183607-d21b-dde1-d99c-94643d32c62e"
     }
 }
 ```

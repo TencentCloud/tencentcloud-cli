@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live EnableOptimalSwitching --cli-unfold-argument  \
-    --StreamName abc \
+    --StreamName stream1 \
     --EnableSwitch 1
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

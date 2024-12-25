@@ -19,42 +19,42 @@ Output:
                 {
                     "RetryInterval": 0,
                     "BelongFlowIds": [
-                        "xx"
+                        "flow-6a79x94v"
                     ],
-                    "TriggerType": "xx",
+                    "TriggerType": "auto",
                     "TimeOut": 3000,
                     "TaskRule": {
                         "RepeatInterval": 1,
-                        "RuleType": "xx",
-                        "Expression": "xx"
+                        "RuleType": "unicast",
+                        "Expression": "* 30 * * * *"
                     },
-                    "TaskState": "xx",
+                    "TaskState": "Running",
                     "SuccessRatio": 0,
-                    "TaskContent": "xx",
-                    "TaskArgument": "xx",
+                    "TaskContent": "this is desc",
+                    "TaskArgument": "1,1,1",
                     "AdvanceSettings": {
                         "SubTaskConcurrency": 0
                     },
                     "RetryCount": 0,
-                    "SuccessOperator": "xx",
-                    "TaskId": "xx",
-                    "TaskType": "xx",
+                    "SuccessOperator": "null",
+                    "TaskId": "task-6a79x94v",
+                    "TaskType": "unicast",
                     "ShardCount": 0,
-                    "ExecuteType": "xx",
-                    "TaskName": "xx",
+                    "ExecuteType": "unicast",
+                    "TaskName": "task-name",
                     "ShardArguments": [
                         {
-                            "ShardValue": "xx",
+                            "ShardValue": "1",
                             "ShardKey": 1
                         }
                     ],
-                    "GroupId": "xx",
-                    "TaskLogId": "xx"
+                    "GroupId": "group-6a79x94v",
+                    "TaskLogId": "tlog-6a79x94v"
                 }
             ],
             "TotalCount": 7
         },
-        "RequestId": "xx"
+        "RequestId": "sj28sk-m2ia2-k2901-9sjwj"
     }
 }
 ```

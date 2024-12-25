@@ -27,7 +27,7 @@ Output:
         "Tasks": [
             {
                 "TargetInstanceId": "mssql-892932uiu",
-                "TargetInstanceName": "test",
+                "TargetInstanceName": "andy",
                 "TargetInstanceStatus": 2,
                 "TargetRegion": "ap-guangzhou",
                 "TargetType": 0,

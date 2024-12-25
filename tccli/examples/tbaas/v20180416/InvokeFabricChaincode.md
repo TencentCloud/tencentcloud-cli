@@ -8,7 +8,7 @@ Input:
 tccli tbaas InvokeFabricChaincode --cli-unfold-argument  \
     --ClusterId fabric-65z42qi150 \
     --ChannelId channel-9xej4d \
-    --ChaincodeName mytest \
+    --ChaincodeName fact \
     --FuncName Set \
     --FuncParam D 40 \
     --WithAsyncResult False

@@ -6,13 +6,10 @@ Input:
 
 ```
 tccli chdfs CreateFileSystem --cli-unfold-argument  \
-    --FileSystemName test \
-    --Description test \
-    --CapacityQuota 1073741824 \
-    --SuperUsers hadoop \
-    --PosixAcl true \
-    --RootInodeUser hadoop \
-    --RootInodeGroup supergroup
+    --FileSystemName fs-test \
+    --PosixAcl True \
+    --Description create an example fs \
+    --CapacityQuota 1073741824
 ```
 
 Output: 
@@ -20,25 +17,21 @@ Output:
 {
     "Response": {
         "FileSystem": {
-            "AppId": 1251006373,
-            "FileSystemName": "test",
-            "Description": "test",
-            "Region": "ap-guangzhou",
-            "FileSystemId": "f4mhaqkciq0",
-            "CreateTime": "2019-07-30T16:51:41+08:00",
+            "AppId": 1251660000,
             "BlockSize": 4194304,
             "CapacityQuota": 1073741824,
-            "SuperUsers": [
-                "hadoop"
-            ],
-            "PosixAcl": true,
-            "Status": 1,
+            "CreateTime": "2024-12-24T20:12:43+08:00",
+            "Description": "create an example fs",
             "EnableRanger": false,
-            "RangerServiceAddresses": [
-                "127.0.0.1:8080"
-            ]
+            "FileSystemId": "f14mrrxxxxxx",
+            "FileSystemName": "fs-test",
+            "PosixAcl": true,
+            "RangerServiceAddresses": [],
+            "Region": "ap-guangzhou",
+            "Status": 1,
+            "SuperUsers": []
         },
-        "RequestId": "ecba2ede-de08-41d5-99cc-b5444912b7f2"
+        "RequestId": "63b54170-aca3-410b-8e24-2e42dbfa83e1"
     }
 }
 ```

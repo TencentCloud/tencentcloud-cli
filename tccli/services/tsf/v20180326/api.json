@@ -1303,11 +1303,11 @@
       "status": "online"
     },
     "ReassociateBusinessLogConfig": {
-      "document": "重关联业务日志配置",
+      "document": "后端服务已经删除这个接口,  API 接口下线处理\n\n重关联业务日志配置",
       "input": "ReassociateBusinessLogConfigRequest",
       "name": "重关联业务日志配置",
       "output": "ReassociateBusinessLogConfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RedoTask": {
       "document": "重新执行任务",
@@ -12927,7 +12927,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "group-id",
+          "example": "group-ab958z6y",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -14159,7 +14159,7 @@
           "example": "无",
           "member": "VmGroup",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14785,7 +14785,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "",
+          "example": "[{\"name\":\"id\",\"values\":[\"ins-xxxxxx\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14794,7 +14794,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -14803,7 +14803,7 @@
         {
           "disabled": false,
           "document": "分页个数，默认为20，最大100",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -14818,9 +14818,10 @@
         {
           "disabled": false,
           "document": "机器列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"TotalCount\":0,\"Content\":[]}",
           "member": "InstanceEnrichedInfoPage",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -15176,7 +15177,7 @@
         {
           "disabled": false,
           "document": "查询的实例Id",
-          "example": "",
+          "example": "ins-6a79x94v",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -15185,7 +15186,7 @@
         {
           "disabled": false,
           "document": "实例所属应用Id",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -15194,7 +15195,7 @@
         {
           "disabled": false,
           "document": "时间粒度,单位:秒",
-          "example": "",
+          "example": "60",
           "member": "int64",
           "name": "TimeGranularity",
           "required": true,
@@ -15203,7 +15204,7 @@
         {
           "disabled": false,
           "document": "查询数据起始时间格式(yyyy-MM-dd HH:mm:ss)",
-          "example": "",
+          "example": "2022-12-30 12:32:56",
           "member": "string",
           "name": "From",
           "required": true,
@@ -15212,7 +15213,7 @@
         {
           "disabled": false,
           "document": "查询数据结束时间格式(yyyy-MM-dd HH:mm:ss)",
-          "example": "",
+          "example": "2022-12-30 14:32:56",
           "member": "string",
           "name": "To",
           "required": true,
@@ -15221,7 +15222,7 @@
         {
           "disabled": false,
           "document": "查询的监控图列表,以返回值属性名作为入参",
-          "example": "",
+          "example": "SQL",
           "member": "string",
           "name": "RequiredPictures",
           "required": true,
@@ -15230,7 +15231,7 @@
         {
           "disabled": false,
           "document": "扩展字段",
-          "example": "",
+          "example": "time",
           "member": "string",
           "name": "Tag",
           "required": false,
@@ -15245,9 +15246,10 @@
         {
           "disabled": false,
           "document": "Java实例jvm监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "JvmMonitorData",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17384,7 +17386,7 @@
         {
           "disabled": false,
           "document": "模糊查询关键字，支持任务ID和任务名称。",
-          "example": "test",
+          "example": "taskName",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -17429,7 +17431,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"task-6a79x94v\"]",
           "member": "string",
           "name": "Ids",
           "required": false,
@@ -17447,7 +17449,7 @@
           "example": "无",
           "member": "TaskRecordPage",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -26708,7 +26710,7 @@
         {
           "disabled": false,
           "document": "排序方式，取值\"asc\"或\"desc\"，默认值\"desc\"",
-          "example": "无",
+          "example": "asc",
           "member": "string",
           "name": "OrderType",
           "required": false,
@@ -26717,7 +26719,7 @@
         {
           "disabled": false,
           "document": "检索关键词",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "SearchWords",
           "required": false,
@@ -26726,7 +26728,7 @@
         {
           "disabled": false,
           "document": "部署组ID列表，不传表示全部部署组",
-          "example": "[\"group-gvkqkdjv\\r\\n\"]",
+          "example": "[\"group-gvkqkdjv\"]",
           "member": "string",
           "name": "GroupIds",
           "required": false,
@@ -26735,7 +26737,7 @@
         {
           "disabled": false,
           "document": "检索类型，取值\"LUCENE\", \"REGEXP\", \"NORMAL\"",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "SearchWordType",
           "required": false,
@@ -26744,7 +26746,7 @@
         {
           "disabled": false,
           "document": "批量请求类型，取值\"page\"或\"scroll\"",
-          "example": "无",
+          "example": "scroll",
           "member": "string",
           "name": "BatchType",
           "required": false,
@@ -26753,7 +26755,7 @@
         {
           "disabled": false,
           "document": "游标ID",
-          "example": "无",
+          "example": "scroll-gvkqkdjv",
           "member": "string",
           "name": "ScrollId",
           "required": false,
@@ -26789,7 +26791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器实例ID",
+          "document": "机器实例ID， 和  实例 ID 二者必选其一，不能同时为空",
           "example": "msjw-uniform-payment-5ffb678dbf-mctr7",
           "member": "string",
           "name": "InstanceId",
@@ -26808,7 +26810,7 @@
         {
           "disabled": false,
           "document": "检索关键词",
-          "example": "无",
+          "example": "demo",
           "member": "string",
           "name": "SearchWords",
           "required": false,
@@ -26825,8 +26827,8 @@
         },
         {
           "disabled": false,
-          "document": "部署组ID",
-          "example": "无",
+          "document": "部署组ID，和 InstanceId 二者必选其一，不能同时为空",
+          "example": "group-mctr7",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -26835,7 +26837,7 @@
         {
           "disabled": false,
           "document": "查询结束时间",
-          "example": "无",
+          "example": "2020-11-12 14:34:36",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -26844,7 +26846,7 @@
         {
           "disabled": false,
           "document": "请求偏移量，取值范围大于等于0，默认值为\n0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -26853,7 +26855,7 @@
         {
           "disabled": false,
           "document": "排序规则，默认值\"time\"",
-          "example": "无",
+          "example": "time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -26862,7 +26864,7 @@
         {
           "disabled": false,
           "document": "排序方式，取值\"asc\"或\"desc\"，默认\n值\"desc\"",
-          "example": "无",
+          "example": "asc",
           "member": "string",
           "name": "OrderType",
           "required": false,
@@ -26871,7 +26873,7 @@
         {
           "disabled": false,
           "document": "检索类型，取值\"LUCENE\", \"REGEXP\",\n\"NORMAL\"",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "SearchWordType",
           "required": false,
@@ -26880,7 +26882,7 @@
         {
           "disabled": false,
           "document": "批量请求类型，取值\"page\"或\"scroll\"，默认\n值\"page\"",
-          "example": "无",
+          "example": "scroll",
           "member": "string",
           "name": "BatchType",
           "required": false,
@@ -26889,7 +26891,7 @@
         {
           "disabled": false,
           "document": "游标ID",
-          "example": "无",
+          "example": "scroll-mctr7",
           "member": "string",
           "name": "ScrollId",
           "required": false,
@@ -26907,7 +26909,7 @@
           "example": "无",
           "member": "TsfPageStdoutLogV2",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

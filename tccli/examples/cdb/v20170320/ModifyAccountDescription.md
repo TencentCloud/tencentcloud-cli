@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdb ModifyAccountDescription --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId cdb-1hindhe \
     --Accounts.0.Host 192.168.1.1 \
     --Accounts.0.User user1 \
-    --Description test
+    --Description andy
 ```
 
 Output: 

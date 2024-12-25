@@ -10,7 +10,7 @@ tccli ecm CreateRoutes --cli-unfold-argument  \
     --Routes.0.DestinationCidrBlock 192.168.0.0/16 \
     --Routes.0.GatewayType NORMAL_CVM \
     --Routes.0.GatewayId 10.212.0.13 \
-    --Routes.0.RouteDescription TEST-ROUTE
+    --Routes.0.RouteDescription demo
 ```
 
 Output: 
@@ -21,15 +21,19 @@ Output:
             {
                 "VpcId": "vpc-k23blx7p",
                 "RouteTableId": "rtb-n0yejvje",
-                "RouteTableName": "TestRoutes",
+                "RouteTableName": "demo",
                 "AssociationSet": [],
                 "RouteSet": [
                     {
+                        "RouteTableId": "rtb-n0yejvje",
                         "RouteItemId": "rti-12345678",
                         "DestinationCidrBlock": "192.168.0.0/16",
                         "GatewayType": "NORMAL_CVM",
                         "GatewayId": "10.212.0.13",
-                        "RouteDescription": "TEST-ROUTE"
+                        "RouteDescription": "demo",
+                        "Enabled": true,
+                        "RouteId": 0,
+                        "RouteType": "USER"
                     }
                 ],
                 "Main": false,

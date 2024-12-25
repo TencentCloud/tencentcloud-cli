@@ -10,7 +10,7 @@ tccli cdb DescribeInstanceAlarmEvents --cli-unfold-argument  \
     --StartTime 2024-11-15 00:00:00 \
     --EndTime 2024-12-15 00:00:00 \
     --EventName PlannedSwitch \
-    --EventStatus - \
+    --EventStatus 1 \
     --Limit 100
 ```
 
@@ -21,7 +21,7 @@ Output:
         "Items": [
             {
                 "EventName": "PlannedSwitch",
-                "EventStatus": "-",
+                "EventStatus": "1",
                 "InstanceId": "cdb-fbd5agyt",
                 "NodeId": "",
                 "OccurTime": "2024-11-25 14:46:42"

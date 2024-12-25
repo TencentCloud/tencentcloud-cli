@@ -719,7 +719,7 @@
           "example": "{\"key2\": \"value2\"}",
           "member": "string",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2110,6 +2110,7 @@
           "example": "磁盘只读",
           "member": "string",
           "name": "EventName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2120,6 +2121,7 @@
           "example": "无",
           "member": "string",
           "name": "EventType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2130,6 +2132,7 @@
           "example": "24",
           "member": "int64",
           "name": "EventId",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2358,6 +2361,7 @@
           "example": "24",
           "member": "int64",
           "name": "EventId",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2368,6 +2372,7 @@
           "example": "磁盘只读",
           "member": "string",
           "name": "EventName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2378,6 +2383,7 @@
           "example": "无",
           "member": "string",
           "name": "EventPattern",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2469,6 +2475,7 @@
           "example": "无",
           "member": "string",
           "name": "EventTemplate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2505,6 +2512,7 @@
           "example": "无",
           "member": "string",
           "name": "EventTemplate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2894,7 +2902,7 @@
           "example": "无",
           "member": "Transformation",
           "name": "Transformations",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

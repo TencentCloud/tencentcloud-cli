@@ -9,7 +9,7 @@ tccli ecm ModifyIpv6AddressesAttribute --cli-unfold-argument  \
     --EcmRegion ap-guangzhou-ecm-cu2 \
     --NetworkInterfaceId eni-9c8zkfev \
     --Ipv6Addresses.0.Address 3402:4e00:20:1202::7 \
-    --Ipv6Addresses.0.Description abc
+    --Ipv6Addresses.0.Description demo
 ```
 
 Output: 

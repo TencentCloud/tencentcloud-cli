@@ -18,6 +18,8 @@ Output:
         "RequestId": "273aa44b-85d2-4279-9840-91b742eed7d0",
         "Result": {
             "TotalCount": 165,
+            "Status": null,
+            "ScrollId": null,
             "Content": [
                 {
                     "InstanceId": "msjw-uniform-payment-5ffb678dbf-mctr7",

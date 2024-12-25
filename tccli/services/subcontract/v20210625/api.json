@@ -46,6 +46,7 @@
           "example": "无",
           "member": "string",
           "name": "PoId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55,6 +56,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
