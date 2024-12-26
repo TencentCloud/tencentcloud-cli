@@ -8,7 +8,7 @@ Input:
 tccli sms AddSmsTemplate --cli-unfold-argument  \
     --SmsType 3 \
     --International 0 \
-    --Remark test \
+    --Remark 业务验证码 \
     --TemplateContent your code is {1} \
     --TemplateName 腾讯云
 ```

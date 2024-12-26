@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms DeleteSmsTemplate --cli-unfold-argument  \
-    --TemplateId 1234
+    --TemplateId 1110
 ```
 
 Output: 

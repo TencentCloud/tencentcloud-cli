@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli sms DescribeSmsSignList --cli-unfold-argument  \
-    --SignIdSet 1110 1111 \
-    --International 0
+    --International 0 \
+    --SignIdSet 1110 1112
 ```
 
 Output: 
@@ -18,18 +18,18 @@ Output:
         "DescribeSignListStatusSet": [
             {
                 "SignName": "腾讯云",
-                "International": 1,
-                "SignId": 1,
+                "International": 0,
+                "SignId": 1110,
                 "ReviewReply": "",
-                "CreateTime": 1,
+                "CreateTime": 1617508800,
                 "StatusCode": 0
             },
             {
                 "SignName": "Tencent",
-                "International": 1,
-                "SignId": 1,
+                "International": 0,
+                "SignId": 1112,
                 "ReviewReply": "",
-                "CreateTime": 1,
+                "CreateTime": 1617508801,
                 "StatusCode": 0
             }
         ]

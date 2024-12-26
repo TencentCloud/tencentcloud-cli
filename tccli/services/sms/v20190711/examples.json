@@ -11,7 +11,7 @@
     "AddSmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"test\",\n    \"TemplateContent\": \"your code is {1}\",\n    \"TemplateName\": \"腾讯云\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"your code is {1}\",\n    \"TemplateName\": \"腾讯云\"\n}",
         "output": "{\n    \"Response\": {\n        \"AddTemplateStatus\": {\n            \"TemplateId\": \"1110\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -27,7 +27,7 @@
     "DeleteSmsSign": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsSign\n<公共请求参数>\n\n{\n    \"SignId\": \"1234\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsSign\n<公共请求参数>\n\n{\n    \"SignId\": \"1110\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteSignStatus\": {\n            \"DeleteTime\": 1578988506,\n            \"DeleteStatus\": \"return successfully!\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -35,7 +35,7 @@
     "DeleteSmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1234\"\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"1110\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeleteTemplateStatus\": {\n            \"DeleteTime\": 1578988506,\n            \"DeleteStatus\": \"return successfully!\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
@@ -43,16 +43,16 @@
     "DescribeSmsSignList": [
       {
         "document": "",
-        "input": "https://sms.tencentcloudapi.com/?Action=DescribeSmsSignList\n&SignIdSet.0=1110\n&SignIdSet.1=1111\n&International=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\",\n        \"DescribeSignListStatusSet\": [\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 1,\n                \"SignId\": 1,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1,\n                \"StatusCode\": 0\n            },\n            {\n                \"SignName\": \"Tencent\",\n                \"International\": 1,\n                \"SignId\": 1,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1,\n                \"StatusCode\": 0\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmsSignList\n<公共请求参数>\n\n{\n    \"International\": 0,\n    \"SignIdSet\": [\n        1110,\n        1112\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\",\n        \"DescribeSignListStatusSet\": [\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 0,\n                \"SignId\": 1110,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1617508800,\n                \"StatusCode\": 0\n            },\n            {\n                \"SignName\": \"Tencent\",\n                \"International\": 0,\n                \"SignId\": 1112,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1617508801,\n                \"StatusCode\": 0\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],
     "DescribeSmsTemplateList": [
       {
         "document": "",
-        "input": "https://sms.tencentcloudapi.com/?Action=DescribeSmsTemplateList\n&TemplateIdSet.0=1110\n&TemplateIdSet.1=1111\n&International=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DescribeTemplateStatusSet\": [\n            {\n                \"TemplateId\": 1110,\n                \"International\": 0,\n                \"StatusCode\": 0,\n                \"ReviewReply\": \"xxx\",\n                \"TemplateName\": \"xxx\",\n                \"CreateTime\": 1578899900\n            },\n            {\n                \"TemplateId\": 1111,\n                \"International\": 0,\n                \"StatusCode\": 0,\n                \"ReviewReply\": \"xxx\",\n                \"TemplateName\": \"xxx\",\n                \"CreateTime\": 1578899901\n            }\n        ],\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSmsTemplateList\n<公共请求参数>\n\n{\n    \"International\": 0,\n    \"TemplateIdSet\": [\n        1110,\n        1112\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DescribeTemplateStatusSet\": [\n            {\n                \"TemplateId\": 1110,\n                \"International\": 0,\n                \"StatusCode\": 0,\n                \"ReviewReply\": \"通过\",\n                \"TemplateName\": \"业务验证码\",\n                \"CreateTime\": 1578899900\n            },\n            {\n                \"TemplateId\": 1112,\n                \"International\": 0,\n                \"StatusCode\": 0,\n                \"ReviewReply\": \"通过\",\n                \"TemplateName\": \"业务验证码\",\n                \"CreateTime\": 1578899901\n            }\n        ],\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -67,7 +67,7 @@
     "ModifySmsTemplate": [
       {
         "document": "",
-        "input": "https://sms.tencentcloudapi.com/?Action=ModifySmsTemplate\n&TemplateId=1110\n&TemplateName=腾讯云\n&TemplateContent=\"xxx\"\n&SmsType=3\n&International=0\n&Remark=“xxx”\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySmsTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 1110,\n    \"SmsType\": 3,\n    \"International\": 0,\n    \"Remark\": \"业务验证码\",\n    \"TemplateContent\": \"您的验证码是{1}\",\n    \"TemplateName\": \"验证码\"\n}",
         "output": "{\n    \"Response\": {\n        \"ModifyTemplateStatus\": {\n            \"TemplateId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }

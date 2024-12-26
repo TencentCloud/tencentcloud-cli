@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli sms DeleteSmsSign --cli-unfold-argument  \
-    --SignId 1234
+    --SignId 1110
 ```
 
 Output: 

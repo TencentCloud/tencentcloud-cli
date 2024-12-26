@@ -7,11 +7,11 @@ Input:
 ```
 tccli sms ModifySmsTemplate --cli-unfold-argument  \
     --TemplateId 1110 \
-    --TemplateName 腾讯云 \
-    --TemplateContent "xxx" \
     --SmsType 3 \
     --International 0 \
-    --Remark “xxx”
+    --Remark 业务验证码 \
+    --TemplateContent 您的验证码是{1} \
+    --TemplateName 验证码
 ```
 
 Output: 

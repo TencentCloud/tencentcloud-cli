@@ -121,25 +121,25 @@
   },
   "objects": {
     "AddSignStatus": {
-      "document": "添加签名响应 ",
+      "document": "添加签名响应",
       "members": [
         {
           "disabled": false,
           "document": "签名Id。",
-          "example": "",
+          "example": "1110",
           "member": "uint64",
           "name": "SignId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "签名申请Id。",
-          "example": "",
+          "example": "2110",
           "member": "uint64",
           "name": "SignApplyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -152,7 +152,7 @@
         {
           "disabled": false,
           "document": "签名名称。\n注：不能重复申请已通过或待审核的签名。",
-          "example": "test",
+          "example": "腾讯云",
           "member": "string",
           "name": "SignName",
           "required": true,
@@ -197,7 +197,7 @@
         {
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
-          "example": "xxx",
+          "example": "base64",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -206,7 +206,7 @@
         {
           "disabled": false,
           "document": "委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。",
-          "example": "xxx",
+          "example": "base64",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -215,7 +215,7 @@
         {
           "disabled": false,
           "document": "签名的申请备注。",
-          "example": "xxx",
+          "example": "业务自用申请",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -320,15 +320,15 @@
       "type": "object"
     },
     "AddTemplateStatus": {
-      "document": "添加模板参数响应 ",
+      "document": "添加模板参数响应",
       "members": [
         {
           "disabled": false,
           "document": "模板参数",
-          "example": "",
+          "example": "1110",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -341,90 +341,90 @@
         {
           "disabled": false,
           "document": "短信回执量统计。",
-          "example": "",
+          "example": "1745",
           "member": "uint64",
           "name": "CallbackCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信提交成功量统计。",
-          "example": "",
+          "example": "1880",
           "member": "uint64",
           "name": "RequestSuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信回执失败量统计。",
-          "example": "",
+          "example": "401",
           "member": "uint64",
           "name": "CallbackFailCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信回执成功量统计。",
-          "example": "",
+          "example": "1344",
           "member": "uint64",
           "name": "CallbackSuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商内部错误统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "InternalErrorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "号码无效或空号统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "InvalidNumberCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "停机、关机等错误统计。",
-          "example": "",
+          "example": "401",
           "member": "uint64",
           "name": "ShutdownErrorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "号码拉入黑名单统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "BlackListCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商频率限制统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "FrequencyLimitCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -538,7 +538,7 @@
         {
           "disabled": false,
           "document": "待删除的签名 ID。",
-          "example": "1234",
+          "example": "1110",
           "member": "uint64",
           "name": "SignId",
           "required": true,
@@ -575,7 +575,7 @@
         {
           "disabled": false,
           "document": "待删除的模板 ID。",
-          "example": "1234",
+          "example": "1110",
           "member": "uint64",
           "name": "TemplateId",
           "required": true,
@@ -612,20 +612,20 @@
         {
           "disabled": false,
           "document": "删除状态信息。",
-          "example": "",
+          "example": "return successfully!",
           "member": "string",
           "name": "DeleteStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "删除时间，UNIX 时间戳（单位：秒）。",
-          "example": "",
+          "example": "1578988506",
           "member": "uint64",
           "name": "DeleteTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -638,7 +638,7 @@
         {
           "disabled": false,
           "document": "签名Id",
-          "example": "无",
+          "example": "1110",
           "member": "uint64",
           "name": "SignId",
           "output_required": true,
@@ -648,7 +648,7 @@
         {
           "disabled": false,
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "International",
           "output_required": true,
@@ -658,7 +658,7 @@
         {
           "disabled": false,
           "document": "申请签名状态。其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "StatusCode",
           "output_required": true,
@@ -668,7 +668,7 @@
         {
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
-          "example": "无",
+          "example": "通过",
           "member": "string",
           "name": "ReviewReply",
           "output_required": true,
@@ -678,7 +678,7 @@
         {
           "disabled": false,
           "document": "签名名称。",
-          "example": "无",
+          "example": "腾讯云",
           "member": "string",
           "name": "SignName",
           "output_required": true,
@@ -688,7 +688,7 @@
         {
           "disabled": false,
           "document": "提交审核时间，UNIX 时间戳（单位：秒）。",
-          "example": "无",
+          "example": "1620734188",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -857,25 +857,25 @@
       "usage": "out"
     },
     "ModifySignStatus": {
-      "document": "修改签名响应 ",
+      "document": "修改签名响应",
       "members": [
         {
           "disabled": false,
           "document": "签名Id",
-          "example": "",
+          "example": "1110",
           "member": "uint64",
           "name": "SignId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "签名修改申请Id",
-          "example": "",
+          "example": "2110",
           "member": "string",
           "name": "SignApplyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -897,7 +897,7 @@
         {
           "disabled": false,
           "document": "签名名称。",
-          "example": "test",
+          "example": "腾讯云",
           "member": "string",
           "name": "SignName",
           "required": true,
@@ -1015,7 +1015,7 @@
         {
           "disabled": false,
           "document": "新的模板内容。",
-          "example": "腾讯云",
+          "example": "您的验证码是{1}",
           "member": "string",
           "name": "TemplateContent",
           "required": true,
@@ -1042,7 +1042,7 @@
         {
           "disabled": false,
           "document": "模板备注，例如申请原因，使用场景等。",
-          "example": "xxxx",
+          "example": "业务验证码",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -1074,15 +1074,15 @@
       "type": "object"
     },
     "ModifyTemplateStatus": {
-      "document": "修改模板参数响应 ",
+      "document": "修改模板参数响应",
       "members": [
         {
           "disabled": false,
           "document": "模板参数",
-          "example": "",
+          "example": "1110",
           "member": "uint64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1576,7 +1576,7 @@
         {
           "disabled": false,
           "document": "国内短信无senderid，无需填写该项；若需开通国际/港澳台短信senderid，请联系smshelper。",
-          "example": "1234",
+          "example": "Qsms",
           "member": "string",
           "name": "SenderId",
           "required": false,
@@ -1591,7 +1591,7 @@
         {
           "disabled": false,
           "document": "短信发送状态。",
-          "example": "[{\"SerialNo\":\"5000:1045710669157053657849499619\", \"PhoneNumber\":\"+8618501234444\", \"Fee\":1, \"SessionContext\":\"outsid_1729495320_1011\", \"Code\":\"Ok\", \"Message\":\"send success\", \"IsoCode\":\"CN\"}]",
+          "example": "无",
           "member": "SendStatus",
           "name": "SendStatusSet",
           "output_required": true,
@@ -1689,30 +1689,30 @@
         {
           "disabled": false,
           "document": "短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。",
-          "example": "",
+          "example": "149",
           "member": "uint64",
           "name": "FeeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信提交量统计。",
-          "example": "",
+          "example": "150",
           "member": "uint64",
           "name": "RequestCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信提交成功量统计。",
-          "example": "",
+          "example": "149",
           "member": "uint64",
           "name": "RequestSuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1798,100 +1798,100 @@
         {
           "disabled": false,
           "document": "套餐包创建时间，标准时间，例如：2019-10-08 17:18:37。",
-          "example": "",
+          "example": "2024-12-01 16:00:00",
           "member": "string",
           "name": "PackageCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包创建时间，UNIX 时间戳（单位：秒）。",
-          "example": "",
+          "example": "1733040000",
           "member": "uint64",
           "name": "PackageCreateUnixTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包生效时间，标准时间，例如：2019-10-08 17:18:37。",
-          "example": "",
+          "example": "2024-12-01 16:00:00",
           "member": "string",
           "name": "PackageEffectiveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包生效时间，UNIX 时间戳（单位：秒）。",
-          "example": "",
+          "example": "1733040000",
           "member": "uint64",
           "name": "PackageEffectiveUnixTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包过期时间，标准时间，例如：2019-10-08 17:18:37。",
-          "example": "",
+          "example": "2026-12-01 16:00:00",
           "member": "string",
           "name": "PackageExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包过期时间，UNIX 时间戳（单位：秒）。",
-          "example": "",
+          "example": "1796112000",
           "member": "uint64",
           "name": "PackageExpiredUnixTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包条数。",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "AmountOfPackage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "0表示赠送套餐包，1表示购买套餐包。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TypeOfPackage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包 ID。",
-          "example": "",
+          "example": "1000876572",
           "member": "uint64",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前使用量。",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "CurrentUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

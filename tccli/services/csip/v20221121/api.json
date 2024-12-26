@@ -70,6 +70,13 @@
       "output": "DescribeCVMAssetsResponse",
       "status": "online"
     },
+    "DescribeClusterAssets": {
+      "document": "集群列表",
+      "input": "DescribeClusterAssetsRequest",
+      "name": "集群列表",
+      "output": "DescribeClusterAssetsResponse",
+      "status": "online"
+    },
     "DescribeClusterPodAssets": {
       "document": "集群pod列表",
       "input": "DescribeClusterPodAssetsRequest",
@@ -117,6 +124,13 @@
       "input": "DescribeNICAssetsRequest",
       "name": "网卡列表",
       "output": "DescribeNICAssetsResponse",
+      "status": "online"
+    },
+    "DescribeOrganizationInfo": {
+      "document": "查询集团账号详情",
+      "input": "DescribeOrganizationInfoRequest",
+      "name": "查询集团账号详情",
+      "output": "DescribeOrganizationInfoResponse",
       "status": "online"
     },
     "DescribeOrganizationUserInfo": {
@@ -210,6 +224,13 @@
       "output": "DescribeSearchBugInfoResponse",
       "status": "online"
     },
+    "DescribeSubUserInfo": {
+      "document": "查询集团的子账号列表",
+      "input": "DescribeSubUserInfoRequest",
+      "name": "查询集团的子账号列表",
+      "output": "DescribeSubUserInfoResponse",
+      "status": "online"
+    },
     "DescribeSubnetAssets": {
       "document": "获取子网列表",
       "input": "DescribeSubnetAssetsRequest",
@@ -236,6 +257,13 @@
       "input": "DescribeTopAttackInfoRequest",
       "name": "查询TOP攻击信息",
       "output": "DescribeTopAttackInfoResponse",
+      "status": "online"
+    },
+    "DescribeUebaRule": {
+      "document": "查询用户行为分析策略列表",
+      "input": "DescribeUebaRuleRequest",
+      "name": "查询用户行为分析策略列表",
+      "output": "DescribeUebaRuleResponse",
       "status": "online"
     },
     "DescribeVULRiskAdvanceCFGList": {
@@ -285,6 +313,13 @@
       "input": "ModifyRiskCenterScanTaskRequest",
       "name": "修改风险中心扫描任务",
       "output": "ModifyRiskCenterScanTaskResponse",
+      "status": "online"
+    },
+    "ModifyUebaRuleSwitch": {
+      "document": "更新自定义策略的开关",
+      "input": "ModifyUebaRuleSwitchRequest",
+      "name": "更新自定义策略的开关",
+      "output": "ModifyUebaRuleSwitchResponse",
       "status": "online"
     },
     "StopRiskCenterTask": {
@@ -1947,6 +1982,282 @@
           "member": "uint64",
           "name": "ProtectedDay",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetCluster": {
+      "document": "集群列表\n\n集群防护状态，左边枚举,右边为显示\n集群防护状态 \n0:未接入\n1:未防护 \n2:部分防护 \n3:防护中 \n4:接入异常 \n5:接入中 \n6:卸载中 \n7:卸载异常",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户id",
+          "example": "1002532",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户uin",
+          "example": "124123362",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户昵称",
+          "example": "nick-test",
+          "member": "string",
+          "name": "Nick",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cluster-1we2",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "tke-test",
+          "member": "string",
+          "name": "AssetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "tke",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群创建时间",
+          "example": "2024-08-22 20:52:16",
+          "member": "string",
+          "name": "InstanceCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "runing",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群防护状态，左边枚举,右边为显示\n集群防护状态 \n0:未接入\n1:未防护 \n2:部分防护 \n3:防护中 \n4:接入异常 \n5:接入中 \n6:卸载中 \n7:卸载异常",
+          "example": "0",
+          "member": "int64",
+          "name": "ProtectStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入信息，不为空表示有接入异常信息",
+          "example": "error info",
+          "member": "string",
+          "name": "ProtectInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络id",
+          "example": "vpc-w24et",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络名称",
+          "example": "vpc-default",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kubernetes版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "KubernetesVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时组件",
+          "example": "nginx",
+          "member": "string",
+          "name": "Component",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时组件版本",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "ComponentVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件状态",
+          "example": "running",
+          "member": "string",
+          "name": "ComponentStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体检时间",
+          "example": "2024-08-22 20:52:16",
+          "member": "string",
+          "name": "CheckTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联主机数",
+          "example": "1",
+          "member": "int64",
+          "name": "MachineCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联pod数",
+          "example": "0",
+          "member": "int64",
+          "name": "PodCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联service数",
+          "example": "4",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞风险",
+          "example": "2",
+          "member": "int64",
+          "name": "VulRisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置风险",
+          "example": "1",
+          "member": "int64",
+          "name": "CFGRisk",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "体检数",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否核心：1:核心，2:非核心",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCore",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否新资产 1新",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsNewAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云资产类型：0：腾讯云，1：aws，2：azure",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4784,6 +5095,42 @@
       ],
       "usage": "out"
     },
+    "CloudCountDesc": {
+      "document": "多云账户统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0表示腾讯云\n1表示AWS",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户数量",
+          "example": "10",
+          "member": "int64",
+          "name": "CloudCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该云账号类型描述",
+          "example": "AWS",
+          "member": "string",
+          "name": "CloudDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreateDomainAndIpRequest": {
       "document": "CreateDomainAndIp请求参数结构体",
       "members": [
@@ -6149,6 +6496,132 @@
       ],
       "type": "object"
     },
+    "DescribeClusterAssetsRequest": {
+      "document": "DescribeClusterAssets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤",
+          "example": "[   {     \"Name\": \"TimeRange\",     \"Values\": [       \"2\"     ],     \"OperatorType\": 7   } ]",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterAssetsResponse": {
+      "document": "DescribeClusterAssets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "[     {         \"AppId\": 1302396215,         \"AssetId\": \"cls-bc1916ky\",         \"AssetName\": \"benben\"     } ]",
+          "member": "AssetCluster",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "8",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型枚举",
+          "example": "[     {         \"Text\": \"托管集群\",         \"Value\": \"managed_cluster\"     } ]",
+          "member": "FilterDataObject",
+          "name": "ClusterTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态枚举",
+          "example": "[         {           \"Text\": \"运行中\",           \"Value\": \"running\"         }       ]",
+          "member": "FilterDataObject",
+          "name": "ClusterStatusList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件状态枚举",
+          "example": "[         {           \"Text\": \"未安装\",           \"Value\": \"defender_uninstall\"         }       ]",
+          "member": "FilterDataObject",
+          "name": "ComponentStatusList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络枚举",
+          "example": "[     {         \"Text\": \"wy conflict\",         \"Value\": \"vpc-39sc6ru5\"     } ]",
+          "member": "FilterDataObject",
+          "name": "VpcList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域枚举",
+          "example": "[         {           \"Text\": \"广州\",           \"Value\": \"ap-guangzhou\"         }       ]",
+          "member": "FilterDataObject",
+          "name": "RegionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户枚举",
+          "example": "[         {           \"Text\": \"1300448058\",           \"Value\": \"1300448058\"         }       ]",
+          "member": "FilterDataObject",
+          "name": "AppIdList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群防护状态枚举",
+          "example": "[{\"Text\":\"未接入\",\"Value\":\"0\"},{\"Text\":\"未防护\",\"Value\":\"1\"},{\"Text\":\"防护中\",\"Value\":\"3\"}]",
+          "member": "FilterDataObject",
+          "name": "ProtectStatusList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClusterPodAssetsRequest": {
       "document": "DescribeClusterPodAssets请求参数结构体",
       "members": [
@@ -6737,6 +7210,53 @@
           "example": "[   {     \"Value\": \"1894\",     \"Text\": \"1894\"   } ]",
           "member": "FilterDataObject",
           "name": "AppIdList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationInfoRequest": {
+      "document": "DescribeOrganizationInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationInfoResponse": {
+      "document": "DescribeOrganizationInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团用户列表",
+          "example": "[{\"NickName\":\"声声乌龙\",\"NodeName\":\"Root\",\"CFWProtect\":\"Ultimate\",\"WAFProtect\":\"\",\"CWPProtect\":\"Ultimate\",\"Role\":\"admin\"}]",
+          "member": "OrganizationInfo",
+          "name": "Data",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -8017,6 +8537,82 @@
       ],
       "type": "object"
     },
+    "DescribeSubUserInfoRequest": {
+      "document": "DescribeSubUserInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "{\"Filter\":{\"Filters\":[{\"Name\":\"OwnerAppID\",\"Values\":[\"1300448058\"],\"OperatorType\":7}],\"Limit\":10,\"Offset\":0}}",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubUserInfoResponse": {
+      "document": "DescribeSubUserInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子用户列表",
+          "example": "[{         \"ID\": 54673597,         \"NickName\": \"TC_20241224_Wez4\",         \"OwnerAppID\": \"1330959198\" }]",
+          "member": "SubUserInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "厂商枚举列表",
+          "example": "[{\"Text\": \"腾讯云\",\"Value\": \"0\"},{\"Text\": \"亚马逊云\",\"Value\": \"1\"}]",
+          "member": "FilterDataObject",
+          "name": "CloudTypeLst",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属主账号appid枚举",
+          "example": "[     {         \"Text\": \"天空之蓝\",         \"Value\": \"13***448058\"     } ]",
+          "member": "FilterDataObject",
+          "name": "OwnerAppIDLst",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubnetAssetsRequest": {
       "document": "DescribeSubnetAssets请求参数结构体",
       "members": [
@@ -8286,6 +8882,72 @@
           "example": "{                 \"Name\": \"漏洞攻击\",                 \"Count\": 13             }",
           "member": "TagCount",
           "name": "TopAttackInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUebaRuleRequest": {
+      "document": "DescribeUebaRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUebaRuleResponse": {
+      "document": "DescribeUebaRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "12",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略列表",
+          "example": "[{\"RuleID\":\"rule-k23p01f\",\"RuleName\":\"11\",\"RuleStatus\":true,\"HitCount\":0,\"AppID\":\"192**01\",\"CloudType\":0}]",
+          "member": "UebaRule",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义策略对应的告警类别枚举",
+          "example": "[     {         \"Text\": \"用户异常行为\",         \"Value\": \"AbnormalUserBehavior\"     } ]",
+          "member": "FilterDataObject",
+          "name": "AlterType",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10145,6 +10807,71 @@
       ],
       "type": "object"
     },
+    "ModifyUebaRuleSwitchRequest": {
+      "document": "ModifyUebaRuleSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "rule-a2b13cf",
+          "member": "string",
+          "name": "RuleID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开关状态",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUebaRuleSwitchResponse": {
+      "document": "ModifyUebaRuleSwitch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0成功，1失败",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NICAsset": {
       "document": "网卡资产",
       "members": [
@@ -10478,6 +11205,282 @@
         }
       ],
       "usage": "in"
+    },
+    "OrganizationInfo": {
+      "document": "集团账号详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员账号名称",
+          "example": "名称",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部门节点名称，账号所属部门",
+          "example": "部门名",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Member/Admin/DelegatedAdmin/EntityAdmin; 成员/管理员/委派管理员/主体管理员",
+          "example": "Member",
+          "member": "string",
+          "name": "Role",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员账号id",
+          "example": "mem-12c2bg363",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号加入方式,create/invite",
+          "example": "create",
+          "member": "string",
+          "name": "JoinType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团名称",
+          "example": "腾讯科技",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号名称",
+          "example": "安全管理员",
+          "member": "string",
+          "name": "AdminName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员Uin",
+          "example": "10251**2146",
+          "member": "string",
+          "name": "AdminUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2022-01-01 12:12:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "部门数",
+          "example": "10",
+          "member": "int64",
+          "name": "NodeCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员数",
+          "example": "10",
+          "member": "int64",
+          "name": "MemberCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号数",
+          "example": "10",
+          "member": "int64",
+          "name": "SubAccountCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常子账号数量",
+          "example": "2",
+          "member": "int64",
+          "name": "AbnormalSubUserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团关系策略权限",
+          "example": "[\"read\"]",
+          "member": "string",
+          "name": "GroupPermission",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员关系策略权限",
+          "example": "[     \"查看账单\",     \"查看余额\",     \"资金划拨\",     \"合并出账\",     \"开票\" ]",
+          "member": "string",
+          "name": "MemberPermission",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集团付费模式；0/自付费，1/代付费",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupPayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "个人付费模式；0/自付费，1/代付费",
+          "example": "1",
+          "member": "int64",
+          "name": "MemberPayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本",
+          "example": "common",
+          "member": "string",
+          "name": "CFWProtect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本",
+          "example": "common",
+          "member": "string",
+          "name": "WAFProtect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本",
+          "example": "common",
+          "member": "string",
+          "name": "CWPProtect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有部门的集合数组",
+          "example": "[     \"Root\",     \"开发组\",     \"测试组\" ]",
+          "member": "string",
+          "name": "Departments",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成员创建时间",
+          "example": "2022-01-01 12:12:12",
+          "member": "string",
+          "name": "MemberCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Advanced/Enterprise/Ultimate ",
+          "example": "Advanced",
+          "member": "string",
+          "name": "CSIPProtect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1表示配额消耗方",
+          "example": "1",
+          "member": "int64",
+          "name": "QuotaConsumer",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员/委派管理员 已开启数量",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableAdminCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户多云信息统计，数组形式，具体参考CloudCountDesc描述",
+          "example": "[     {         \"CloudType\": 0,         \"CloudCount\": 14,         \"CloudDesc\": \"腾讯云\"     } ]",
+          "member": "CloudCountDesc",
+          "name": "CloudCountDesc",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员/委派管理员 总数量",
+          "example": "2",
+          "member": "int64",
+          "name": "AdminCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OrganizationUserInfo": {
       "document": "集团账号成员详情",
@@ -12253,6 +13256,34 @@
       ],
       "usage": "out"
     },
+    "StatisticalFilter": {
+      "document": "用户行为分析 统计条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0:不基于统计检测\n1:发生次数高于固定值\n2:发生次数高于周期平均值的百分之\n3:发生次数高于用户平均值的百分之\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "OperatorType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21.2",
+          "member": "float",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "StopRiskCenterTaskRequest": {
       "document": "StopRiskCenterTask请求参数结构体",
       "members": [
@@ -12298,6 +13329,192 @@
         }
       ],
       "type": "object"
+    },
+    "SubUserInfo": {
+      "document": "子账号详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID，无业务意义\n仅作为唯一键",
+          "example": "601606",
+          "member": "int64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号Appid",
+          "example": "1325**26086",
+          "member": "string",
+          "name": "AppID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号UIn",
+          "example": "100*3**012345",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号名称",
+          "example": "张三",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号Appid",
+          "example": "132586**086",
+          "member": "string",
+          "name": "OwnerAppID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号Uin",
+          "example": "10033**12345",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号名称",
+          "example": "张三的老板",
+          "member": "string",
+          "name": "OwnerNickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属主账号memberid",
+          "example": "mem-abx0gds1",
+          "member": "string",
+          "name": "OwnerMemberID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户类型，0为腾讯云账户，1为AWS账户",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问服务数量",
+          "example": "20",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问接口数量",
+          "example": "100",
+          "member": "int64",
+          "name": "InterfaceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可访问资源数量",
+          "example": "2122",
+          "member": "int64",
+          "name": "AssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问/行为日志数量",
+          "example": "10259",
+          "member": "int64",
+          "name": "LogCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限配置风险",
+          "example": "5",
+          "member": "int64",
+          "name": "ConfigRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "危险行为告警",
+          "example": "3",
+          "member": "int64",
+          "name": "ActionRiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否接入云审计日志",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAccessCloudAudit",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否配置风险的安全体检",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAccessCheck",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否配置用户行为管理策略",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAccessUeba",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SubnetAsset": {
       "document": "子网资产",
@@ -12975,6 +14192,319 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UebaCustomRule": {
+      "document": "用户行为分析  自定义策略结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "资产高危访问行为",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1: 云账号\n2: 自定义用户",
+          "example": "1",
+          "member": "int64",
+          "name": "UserType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发生时间\n1：10分钟\n2：1小时\n3：一天\n4：一周\n5：一个月",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeInterval",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发生事件",
+          "example": "{     \"EventType\": 2,     \"Content\": \"zero**\" }",
+          "member": "UebaEventContent",
+          "name": "EventContent",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警名称",
+          "example": "AbnormalUserBehavior",
+          "member": "string",
+          "name": "AlertName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警类型\n0:  提示\n1:  低危\n2:  中危\n3:  高危\n4:  严重",
+          "example": "0",
+          "member": "int64",
+          "name": "AlterLevel",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者",
+          "example": "[\"userid\",\"instance_id\"]",
+          "member": "string",
+          "name": "Operator",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作对象",
+          "example": "[\"instance_id\",\"asset\",\"account_id\"]",
+          "member": "string",
+          "name": "OperateObject",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作方式",
+          "example": "[\"port\",\"content\",\"method\"]",
+          "member": "string",
+          "name": "OperateMethod",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "8_1",
+          "member": "string",
+          "name": "LogType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志中文名",
+          "example": "云审计读日志",
+          "member": "string",
+          "name": "LogTypeStr",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UebaEventContent": {
+      "document": "用户行为分析 发生事件结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发生事件类型\n1:语句检索\n2:过滤检索",
+          "example": "1",
+          "member": "int64",
+          "name": "EventType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语句检索内容",
+          "example": "(src_ip:\"78.188.30.9\") AND (dst_ip:\"175.178.224.50\")",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索条件\n",
+          "example": "[     {         \"Name\": \"appid\",         \"Values\": [             \"1302396215\"         ],         \"OperatorType\": 0     } ]",
+          "member": "WhereFilter",
+          "name": "Filters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计条件",
+          "example": "{     \"Value\": 20,     \"OperatorType\": 3 }",
+          "member": "StatisticalFilter",
+          "name": "StatisticalFilter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UebaRule": {
+      "document": "用户行为分析策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rule-abc1234",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "海外IP调用高危接口",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略类型\n0:系统策略\n1:自定义策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "系统策略",
+          "member": "int64",
+          "name": "RuleType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略等级\n0:提示\n1:低危\n2:中危\n3:高危\n4:严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "严重",
+          "member": "int64",
+          "name": "RuleLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是一个策略内容描述",
+          "member": "string",
+          "name": "RuleContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "RuleStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234",
+          "member": "uint64",
+          "name": "HitCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属账号Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "125000000",
+          "member": "string",
+          "name": "AppID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多账号，成员ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MemberID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则具体内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义规则具体内容",
+          "member": "UebaCustomRule",
+          "name": "CustomRuleDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云类型\n腾讯云：0\naws：1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
