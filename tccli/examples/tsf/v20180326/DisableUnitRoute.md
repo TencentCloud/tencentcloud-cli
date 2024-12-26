@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DisableUnitRoute --cli-unfold-argument  \
-    --Id gw-ins-l6ymbvgd
+    --Id gw-ins-szesmg28
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "6e650435-e3b2-472d-af7a-5d5452db8bf3",
         "Result": true
     }
 }

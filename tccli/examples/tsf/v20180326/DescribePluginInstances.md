@@ -6,30 +6,32 @@ Input:
 
 ```
 tccli tsf DescribePluginInstances --cli-unfold-argument  \
-    --ScopeValue grp-83wrlmav \
-    --Bound true \
+    --ScopeValue grp-v446jrhc \
+    --Bound True \
     --Offset 0 \
-    --Limit 10
+    --Limit 10 \
+    --Type QQMiniProgramLogin \
+    --SearchWord pgnName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fa153f44-22b6-4ea3-86ef-6e257d440f26",
+        "RequestId": "b6b81196-b506-4758-a2ea-80ee688cf3b3",
         "Result": {
-            "TotalCount": 1,
             "Content": [
                 {
-                    "Id": "pgn-33pk2soi",
-                    "Name": "Tag认证插件",
-                    "Type": "Tag",
-                    "Description": "this is description",
-                    "CreatedTime": "2019-11-02 15:43:09",
-                    "UpdatedTime": "2019-11-02 17:30:51",
-                    "Status": "drafted"
+                    "CreatedTime": "2023-11-28 16:11:28",
+                    "Description": "This is desc",
+                    "Id": "pgn-if8otbfp",
+                    "Name": "pgnName",
+                    "Status": "released",
+                    "Type": "QQMiniProgramLogin",
+                    "UpdatedTime": "2023-11-28 16:11:27"
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

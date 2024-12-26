@@ -6,31 +6,32 @@ Input:
 
 ```
 tccli tsf ReleaseConfigWithDetailResp --cli-unfold-argument  \
-    --ConfigId configId-xxxxxxx \
-    --GroupId gourp-xxxxxx \
-    --ReleaseDesc demo config realse
+    --ConfigId dcfg-yo82mmra \
+    --GroupId group-aln2284v \
+    --ReleaseDesc This is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "1892e2c1-9223-4979-bf25-1935c7eeed12",
         "Result": {
-            "ConfigReleaseId": "dcfgr-xxxxxx",
-            "ConfigId": "null",
-            "ConfigName": "null",
-            "ConfigVersion": "null",
-            "ReleaseTime": "null",
-            "GroupId": "null",
-            "GroupName": "null",
-            "NamespaceId": "null",
-            "NamespaceName": "null",
-            "ClusterId": "null",
-            "ClusterName": "null",
-            "ReleaseDesc": "null",
-            "ApplicationId": "null"
-        },
-        "RequestId": "36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3"
+            "ApplicationId": null,
+            "ClusterId": null,
+            "ClusterName": null,
+            "ConfigCenters": null,
+            "ConfigId": null,
+            "ConfigName": null,
+            "ConfigReleaseId": "dcfgr-yxd366ov",
+            "ConfigVersion": null,
+            "GroupId": null,
+            "GroupName": null,
+            "NamespaceId": null,
+            "NamespaceName": null,
+            "ReleaseDesc": null,
+            "ReleaseTime": null
+        }
     }
 }
 ```

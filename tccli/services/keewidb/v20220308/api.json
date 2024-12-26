@@ -328,7 +328,7 @@
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -338,27 +338,27 @@
           "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
           "member": "string",
           "name": "BackupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份类型。<ul><li>1：手动备份，指根据业务运维排障需求，立即执行备份任务的操作。</li> <li>0：自动备份，指根据自动备份策略定时自动发起的备份任务。</li></ul>",
+          "document": "备份类型。<ul><li>1：手动备份，指根据业务运维排障需求，立即执行备份任务的操作。</li> <li>0：自动备份，指根据自动备份策略定时自动发起的备份任务。</li><li>2：生成RDB，指根据业务需求，发起的生成文件为rdb类型的备份任务。</li></ul>",
           "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份的备注信息.",
-          "example": "\"\"",
+          "example": "备份测试",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -368,7 +368,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -378,7 +378,7 @@
           "example": "0",
           "member": "int64",
           "name": "Locked",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3418,22 +3418,20 @@
         {
           "disabled": false,
           "document": "设置参数的名字",
-          "example": "无",
+          "example": "hz",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "设置参数的值",
-          "example": "无",
+          "example": "10",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3444,50 +3442,50 @@
         {
           "disabled": false,
           "document": "参数名称",
-          "example": "无",
+          "example": "hz",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改前值",
-          "example": "无",
+          "example": "10",
           "member": "string",
           "name": "PreValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后值",
-          "example": "无",
+          "example": "20",
           "member": "string",
           "name": "NewValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "无",
+          "example": "2024-12-02 10:52:47",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4413,10 +4411,10 @@
         {
           "disabled": false,
           "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "c70aa82ff684f36f8fe8b7c61cb77e568**********",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4576,40 +4574,40 @@
         {
           "disabled": false,
           "document": "节点 ID。",
-          "example": "无",
+          "example": "125101",
           "member": "int64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点组的名称，主节点为空。",
-          "example": "无",
+          "example": "ng-1",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点的可用区ID，比如ap-guangzhou-1。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>",
-          "example": "无",
+          "example": "master",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4619,7 +4617,7 @@
           "example": "无",
           "member": "KeeWiDBNode",
           "name": "KeeWiDBNodes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4819,7 +4817,7 @@
           "example": "16481",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4829,17 +4827,17 @@
           "example": "2022-03-12 15:06:23",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "FLOW_BACKUPINSTANCE",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4849,7 +4847,7 @@
           "example": "实例1",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4859,7 +4857,7 @@
           "example": "kee-4hyqewjs",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4869,7 +4867,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4879,7 +4877,7 @@
           "example": "0",
           "member": "float",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4889,7 +4887,7 @@
           "example": "2022-03-12 15:08:23",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4899,7 +4897,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4909,7 +4907,7 @@
           "example": "10112432xxx",
           "member": "string",
           "name": "OperatorUin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4978,20 +4976,20 @@
         {
           "disabled": false,
           "document": "订单号ID，调用云API时使用此ID\t",
-          "example": "无",
+          "example": "192314****",
           "member": "string",
           "name": "DealId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "长订单ID，反馈订单问题给官方客服使用此ID\t",
-          "example": "无",
+          "example": "2024112**",
           "member": "string",
           "name": "DealName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5001,7 +4999,7 @@
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5011,47 +5009,47 @@
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建用户uin",
-          "example": "无",
+          "example": "10001464****",
           "member": "string",
           "name": "Creater",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单创建时间",
-          "example": "无",
+          "example": "2024-11-25 18:12:34",
           "member": "string",
           "name": "CreatTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单超时时间",
-          "example": "无",
+          "example": "2024-12-10 18:12:34",
           "member": "string",
           "name": "OverdueTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单完成时间",
-          "example": "无",
+          "example": "2024-11-25 18:30:34",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5061,37 +5059,37 @@
           "example": "4",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单状态描述",
-          "example": "无",
+          "example": "发货中",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单实际总价，单位：分",
-          "example": "无",
+          "example": "1039",
           "member": "float",
           "name": "Price",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "100035***,100036***",
           "member": "string",
           "name": "InstanceIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

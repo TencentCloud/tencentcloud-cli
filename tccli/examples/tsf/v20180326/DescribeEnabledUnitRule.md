@@ -13,40 +13,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "480c7535-a008-4851-8a36-2d921893ea1e",
+        "RequestId": "b378cebf-7ee2-4105-9ea0-58413051ea8e",
         "Result": {
-            "CreatedTime": "2023-01-17 11:41:36",
-            "Description": "sssase",
+            "CreatedTime": "2024-12-25 11:46:00",
+            "Description": "this is desc",
             "GatewayInstanceId": "gw-ins-szesmg28",
-            "Id": "unit-rl-2kdqa2my",
-            "Name": "test",
+            "Id": "unit-rl-u0643wrg",
+            "Name": "rule_app",
             "Status": "enabled",
             "UnitRuleItemList": [
                 {
-                    "CreatedTime": "2023-02-10 16:36:12",
-                    "Description": "gsshhshs",
-                    "DestNamespaceId": "namespace-vk5blxnv",
-                    "DestNamespaceName": "heihuli-global_default",
-                    "Id": "unit-item-04futugp",
+                    "CreatedTime": "2024-12-25 11:46:00",
+                    "Description": "this is desc",
+                    "DestNamespaceId": "namespace-aem6w6nv",
+                    "DestNamespaceName": "heihuli-c_default",
+                    "Id": "unit-item-vnj5nf3m",
                     "ItemIndex": 1,
-                    "Name": "Rule1",
+                    "Name": "rule_user",
                     "Priority": 0,
                     "Relationship": "AND",
-                    "UnitRuleId": "unit-rl-2kdqa2my",
+                    "UnitRuleId": "unit-rl-u0643wrg",
                     "UnitRuleTagList": [
                         {
-                            "Id": "unit-tag-s2v06uy5",
-                            "TagField": "test",
+                            "Id": "unit-tag-8p9bpwh4",
+                            "TagField": "user",
                             "TagOperator": "IN",
                             "TagType": "U",
-                            "TagValue": "test222",
-                            "UnitRuleItemId": "unit-item-04futugp"
+                            "TagValue": "1",
+                            "UnitRuleItemId": "unit-item-vnj5nf3m"
                         }
                     ],
-                    "UpdatedTime": "2023-02-10 16:36:12"
+                    "UpdatedTime": "2024-12-25 11:46:00"
                 }
             ],
-            "UpdatedTime": "2023-02-23 17:42:23"
+            "UpdatedTime": "2024-12-25 11:50:01"
         }
     }
 }

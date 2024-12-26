@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DeleteMicroservice --cli-unfold-argument  \
-    --MicroserviceId ms-xxxxxxx
+    --MicroserviceId ms-vzg9kzj3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "97f5554f-8d66-4eac-802d-2f36dc2a7124",
+        "RequestId": "ea8639e6-a455-49f7-84f2-ae6d0a9b05b1",
         "Result": true
     }
 }

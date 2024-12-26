@@ -1603,6 +1603,13 @@
       "output": "DescribeDryRunUSGQuotaInternalResponse",
       "status": "online"
     },
+    "DescribeEipDataSummary": {
+      "document": "本接口 (DescribeEipDataSummary) 用于查询EIP运营数据",
+      "input": "DescribeEipDataSummaryRequest",
+      "name": "查询Eip运营数据",
+      "output": "DescribeEipDataSummaryResponse",
+      "status": "online"
+    },
     "DescribeEipInfos": {
       "document": "本接口（DescribeEipInfos）用于合规查询EIP信息。",
       "input": "DescribeEipInfosRequest",
@@ -2758,11 +2765,32 @@
       "output": "InquirePricePrivateNatGatewayResponse",
       "status": "online"
     },
+    "InquiryPriceAllocateAddresses": {
+      "document": "本接口（InquiryPriceAllocateAddresses）用于新购弹性公网IP询价。",
+      "input": "InquiryPriceAllocateAddressesRequest",
+      "name": "弹性公网IP询价",
+      "output": "InquiryPriceAllocateAddressesResponse",
+      "status": "online"
+    },
     "InquiryPriceCreateVpnGateway": {
       "document": "本接口（InquiryPriceCreateVpnGateway）用于创建VPN网关询价。",
       "input": "InquiryPriceCreateVpnGatewayRequest",
       "name": "创建VPN网关询价",
       "output": "InquiryPriceCreateVpnGatewayResponse",
+      "status": "online"
+    },
+    "InquiryPriceModifyAddressesBandwidth": {
+      "document": "EIP修改带宽询价",
+      "input": "InquiryPriceModifyAddressesBandwidthRequest",
+      "name": "弹性公网IP调整带宽询价",
+      "output": "InquiryPriceModifyAddressesBandwidthResponse",
+      "status": "online"
+    },
+    "InquiryPriceRenewAddresses": {
+      "document": "本接口（InquiryPriceRenewAddresses）用于续费预付费弹性公网IP询价。",
+      "input": "InquiryPriceRenewAddressesRequest",
+      "name": "弹性公网IP续费询价",
+      "output": "InquiryPriceRenewAddressesResponse",
       "status": "online"
     },
     "InquiryPriceRenewVpnGateway": {
@@ -20592,6 +20620,98 @@
       ],
       "type": "object"
     },
+    "DescribeEipDataSummaryRequest": {
+      "document": "DescribeEipDataSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API 中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API 中的相关小节。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据协议",
+          "example": "cEip_common",
+          "member": "string",
+          "name": "WatchScheme",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DataRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回数据总数量",
+          "example": "true",
+          "member": "bool",
+          "name": "TotalEnabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEipDataSummaryResponse": {
+      "document": "DescribeEipDataSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据总量",
+          "example": "10000",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据列表",
+          "example": "无",
+          "member": "EipDataSummary",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEipInfosRequest": {
       "document": "DescribeEipInfos请求参数结构体",
       "members": [],
@@ -34988,6 +35108,62 @@
       ],
       "type": "object"
     },
+    "EipDataSummary": {
+      "document": "通用Eip数据运营对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据所在表",
+          "example": "cEip",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据所在检测协议",
+          "example": "cEip_common",
+          "member": "string",
+          "name": "WatchScheme",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据唯一标识；同一个（Region, TableName, WatchScheme）范围内，唯一",
+          "example": "2034",
+          "member": "uint64",
+          "name": "RecordId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始数据",
+          "example": "{\"uin\":123,\"resourceId\":\"eip-ra11111\",\"tagKey\":\"test_tag\",\"tagValue\":\"test_value\",\"id\":1111}",
+          "member": "string",
+          "name": "RawContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EnableCcnRoutesRequest": {
       "document": "EnableCcnRoutes请求参数结构体",
       "members": [
@@ -37067,6 +37243,70 @@
       ],
       "type": "object"
     },
+    "InquiryPriceAllocateAddressesRequest": {
+      "document": "InquiryPriceAllocateAddresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EIP计费方式。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值：<ul>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：带宽按小时后付费</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：包月按带宽预付费</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：流量按小时后付费</li></ul>默认值：TRAFFIC_POSTPAID_BY_HOUR。</li>\n</ul>",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InternetChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "EIP出带宽上限，单位：Mbps。\n<ul style=\"margin:0\"><li>账号为标准账户类型的用户，可选值范围取决于EIP计费方式：<ul>\n<li>BANDWIDTH_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li>\n<li>BANDWIDTH_PREPAID_BY_MONTH：1 Mbps 至 200 Mbps</li>\n<li>TRAFFIC_POSTPAID_BY_HOUR：1 Mbps 至 100 Mbps</li></ul>默认值：1 Mbps。</li>\n<li>账号为传统账户类型的用户，EIP出带宽上限取决于与其绑定的实例的公网出带宽上限，无需传递此参数。</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递",
+          "example": "无",
+          "member": "AddressChargePrepaid",
+          "name": "AddressChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "EIP类型。默认值：EIP。\n\n<ul style=\"margin:0\"><li>精品IP，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul><ul style=\"margin:0\">\n        <li>高防IP，可选值：<ul>\n                <li>AntiDDoSEIP：高防IP</li>\n            </ul>\n        </li>\n    </ul>",
+          "example": "EIP",
+          "member": "string",
+          "name": "AddressType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceAllocateAddressesResponse": {
+      "document": "InquiryPriceAllocateAddresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IP价格",
+          "example": "无",
+          "member": "InternetPrice",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InquiryPriceCreateVpnGatewayRequest": {
       "document": "InquiryPriceCreateVpnGateway请求参数结构体",
       "members": [
@@ -37126,6 +37366,98 @@
           "document": "商品价格。",
           "example": "{       \"InstancePrice\": {         \"OriginalPrice\": 380,         \"DiscountPrice\": 380,         \"UnitPrice\": 0,         \"ChargeUnit\": \"none\"       },       \"BandwidthPrice\": {         \"OriginalPrice\": 0,         \"DiscountPrice\": 0,         \"UnitPrice\": 0,         \"ChargeUnit\": \"none\"       }     }",
           "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceModifyAddressesBandwidthRequest": {
+      "document": "InquiryPriceModifyAddressesBandwidth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EIP唯一ID",
+          "example": "eip-e7yggyi0",
+          "member": "string",
+          "name": "AddressIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "新带宽值",
+          "example": "1",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceModifyAddressesBandwidthResponse": {
+      "document": "InquiryPriceModifyAddressesBandwidth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IP调整带宽询价结果",
+          "example": "Price",
+          "member": "InternetPrice",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewAddressesRequest": {
+      "document": "InquiryPriceRenewAddresses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "续费资源实例ID。",
+          "example": "eip-test1234",
+          "member": "string",
+          "name": "AddressIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "包月按带宽预付费EIP的计费参数。EIP为包月按带宽预付费时，该参数必传，其余场景不需传递。",
+          "example": "12",
+          "member": "AddressChargePrepaid",
+          "name": "AddressChargePrepaid",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewAddressesResponse": {
+      "document": "InquiryPriceRenewAddresses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网IP续费价格。",
+          "example": "无",
+          "member": "InternetPrice",
           "name": "Price",
           "output_required": true,
           "type": "object",
@@ -37374,6 +37706,68 @@
           "name": "InstanceCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InternetPrice": {
+      "document": "公网询价出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网IP询价详细参数。",
+          "example": "无",
+          "member": "InternetPriceDetail",
+          "name": "AddressPrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InternetPriceDetail": {
+      "document": "公网IP询价出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "付费单价，单位：元，仅后付费价格查询返回。",
+          "example": "80",
+          "member": "float",
+          "name": "UnitPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣后的价格，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOUR",
+          "member": "string",
+          "name": "ChargeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原价，单位：元，仅预付费价格查询返回。",
+          "example": "80",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

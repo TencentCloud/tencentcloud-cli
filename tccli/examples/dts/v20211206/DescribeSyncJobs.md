@@ -174,6 +174,7 @@ Output:
                     }
                 },
                 "OfflineTime": "0000-00-00 00:00:00",
+                "OptObjStatus": "Normal",
                 "Options": {
                     "AddAdditionalColumn": false,
                     "AutoRetryTimeRangeMinutes": 0,

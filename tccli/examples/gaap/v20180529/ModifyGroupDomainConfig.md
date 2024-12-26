@@ -8,7 +8,7 @@ Input:
 tccli gaap ModifyGroupDomainConfig --cli-unfold-argument  \
     --DefaultDnsIp 1.1.1.1 \
     --GroupId lg-b7h4d02f \
-    --AccessRegionList.0.RegionId 111
+    --AccessRegionList.0.RegionId Beijing
 ```
 
 Output: 

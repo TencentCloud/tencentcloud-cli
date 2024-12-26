@@ -25,10 +25,10 @@ tccli dts CreateMigrateJob --cli-unfold-argument  \
     --DstInfo.ReadOnly 0 \
     --DstInfo.User root \
     --DstInfo.Password yourPassword \
-    --DatabaseInfo [{"Database":"test","Table":["user","log"]}] \
+    --DatabaseInfo  \
     --Tags.0.TagKey 负责人 \
     --Tags.0.TagValue bob \
-    --MigrateOption.ExternParams {} \
+    --MigrateOption.ExternParams  \
     --MigrateOption.MigrateObject 1 \
     --MigrateOption.RunMode 1 \
     --MigrateOption.ExpectTime 2020-09-22 00:00:00 \
@@ -69,10 +69,10 @@ tccli dts CreateMigrateJob --cli-unfold-argument  \
     --DstInfo.ReadOnly 0 \
     --DstInfo.User root \
     --DstInfo.Password yourPassword \
-    --DatabaseInfo [] \
+    --DatabaseInfo  \
     --Tags.0.TagKey 负责人 \
     --Tags.0.TagValue bob \
-    --MigrateOption.ExternParams {} \
+    --MigrateOption.ExternParams  \
     --MigrateOption.MigrateObject 1 \
     --MigrateOption.RunMode 1 \
     --MigrateOption.ExpectTime 2020-09-22 00:00:00 \
@@ -115,10 +115,10 @@ tccli dts CreateMigrateJob --cli-unfold-argument  \
     --DstInfo.ReadOnly 0 \
     --DstInfo.User root \
     --DstInfo.Password yourPassword \
-    --DatabaseInfo [] \
+    --DatabaseInfo  \
     --Tags.0.TagKey 负责人 \
     --Tags.0.TagValue bob \
-    --MigrateOption.ExternParams {} \
+    --MigrateOption.ExternParams  \
     --MigrateOption.MigrateObject 1 \
     --MigrateOption.RunMode 1 \
     --MigrateOption.ExpectTime 2020-09-22 00:00:00 \

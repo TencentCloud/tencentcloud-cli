@@ -291,7 +291,19 @@
     },
     "ApplicationConcurrentPackage": {
       "document": "云应用并发包",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "并发包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cac-j6x242r6",
+          "member": "string",
+          "name": "ConcurrentId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "ApplicationProject": {
@@ -617,7 +629,7 @@
         {
           "disabled": false,
           "document": "并发包ID列表",
-          "example": "[\"\"]",
+          "example": "[\"cac-j6x242r6\"]",
           "member": "string",
           "name": "ConcurrentIds",
           "required": true,
@@ -626,7 +638,7 @@
         {
           "disabled": false,
           "document": "云应用项目ID",
-          "example": "\"\"",
+          "example": "cap-lhze1cs5",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -820,13 +832,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "生成的项目ID",
+          "example": "cap-lhze1cs5",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -967,7 +979,7 @@
         {
           "disabled": false,
           "document": "应用版本数据（新增）",
-          "example": "{       \"ApplicationFileName\": \"\",       \"ApplicationVersionId\": \"ver-ug59y45y\",       \"ApplicationVersionName\": \"test\",       \"ApplicationVersionRegions\": [         \"ap-chinese-mainland\"       ],       \"ApplicationVersionSize\": 0,       \"ApplicationVersionStatus\": \"Creating\",       \"ApplicationVersionUpdateMode\": \"FULL\",       \"CreateTime\": \"2024-12-23T11:13:55Z\"     }",
+          "example": "无",
           "member": "UserApplicationVersion",
           "name": "Version",
           "output_required": true,
@@ -1360,123 +1372,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用启动参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxx\"",
+          "document": "应用启动参数",
+          "example": "\"param 1980\"",
           "member": "string",
           "name": "ApplicationParams",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分辨率，格式为“宽x高”，例如1920x1080\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分辨率，格式为“宽x高”，例如1920x1080",
           "example": "\"1920*1680\"",
           "member": "string",
           "name": "Resolution",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "帧率，取值 0 | 30 | 60\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "帧率，取值 0 | 30 | 60",
+          "example": "30",
           "member": "int64",
           "name": "FPS",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最小码率（单位 Mbs）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "最小码率（单位 Mbs）",
+          "example": "3",
           "member": "int64",
           "name": "MinBitrate",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大码率（单位 Mbs）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "最大码率（单位 Mbs）",
+          "example": "6",
           "member": "int64",
           "name": "MaxBitrate",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用等待预启动时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "应用等待预启动时长",
+          "example": "60s",
           "member": "string",
           "name": "PreloadDuration",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "等待重连时长\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "等待重连时长",
+          "example": "60s",
           "member": "string",
           "name": "ReconnectTimeout",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上行音频选项。\nDisableMixIntoStreamPush：推流不混入上行音频\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上行音频选项。\nDisableMixIntoStreamPush：推流不混入上行音频\n",
           "example": "DisableMixIntoStreamPush",
           "member": "string",
           "name": "UpstreamAudioOption",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频编码配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "视频编码配置",
+          "example": "{       \"StreamPushGOPSeconds\": 3     }",
           "member": "VideoEncodeConfig",
           "name": "VideoEncodeConfig",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "XR 应用分辨率上限。\n如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "XR 应用分辨率上限。\n如果项目的并发类型为 L、L2，最大上限为 5000；如果项目的并发类型为 XL2，最大上限为 6000",
           "example": "5000",
           "member": "uint64",
           "name": "XRMaxWidth",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "背景图信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "背景图信息",
           "example": "无",
           "member": "BackgroundImage",
           "name": "BackgroundImage",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "禁用编码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "禁用编码列表",
           "example": "[\"H265\"]",
           "member": "string",
           "name": "DisableVideoCodecs",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1534,23 +1546,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目列表",
           "example": "无",
           "member": "ApplicationProject",
           "name": "Projects",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "0",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1720,13 +1732,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "0",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1734,7 +1746,7 @@
           "example": "无",
           "member": "ApplicationConcurrentPackage",
           "name": "ConcurrentPackages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1906,7 +1918,7 @@
         {
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
-          "example": "abc",
+          "example": "639d069e-a13a-437a-a10b-64a33ecb8e78",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -1942,7 +1954,7 @@
         {
           "disabled": false,
           "document": "过滤值集合（当过滤 Name 为 ApplicationRunStatus 时，Values 取值为 [ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、ApplicationNoConfigured 主执行程序路径未配置 ]。当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值 [ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、ApplicationUpdateNormal 无]）",
-          "example": "\"\"",
+          "example": "[\"app-a1b2c3d4\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -2254,7 +2266,7 @@
         {
           "disabled": false,
           "document": "并发包ID",
-          "example": "xxx",
+          "example": "cac-j6x242r6",
           "member": "string",
           "name": "ConcurrentId",
           "required": true,
@@ -2263,7 +2275,7 @@
         {
           "disabled": false,
           "document": "并发包名称",
-          "example": "xxx",
+          "example": "concurrent_name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2377,7 +2389,7 @@
         {
           "disabled": false,
           "document": "应用版本列表",
-          "example": "[       {         \"ApplicationFileName\": \"\",         \"ApplicationVersionId\": \"ver-855fr3i4\",         \"ApplicationVersionName\": \"steamvr\",         \"ApplicationVersionRegions\": [           \"ap-chinese-mainland\"         ],         \"ApplicationVersionSize\": 5612961473,         \"ApplicationVersionStatus\": \"Usable\",         \"ApplicationVersionUpdateMode\": \"\",         \"CreateTime\": \"2023-05-25T09:22:10Z\"       },       {         \"ApplicationFileName\": \"\",         \"ApplicationVersionId\": \"ver-qi5inuk4\",         \"ApplicationVersionName\": \"test\",         \"ApplicationVersionRegions\": [           \"ap-chinese-mainland\"         ],         \"ApplicationVersionSize\": 1978592076,         \"ApplicationVersionStatus\": \"Inuse\",         \"ApplicationVersionUpdateMode\": \"\",         \"CreateTime\": \"2024-07-25T10:39:57Z\"       }     ]",
+          "example": "无",
           "member": "UserApplicationVersion",
           "name": "Versions",
           "output_required": true,
@@ -2498,7 +2510,7 @@
         {
           "disabled": false,
           "document": "并发包ID列表",
-          "example": "[\"\"]",
+          "example": "[\"cac-j6x242r6\"]",
           "member": "string",
           "name": "ConcurrentIds",
           "required": true,
@@ -2507,7 +2519,7 @@
         {
           "disabled": false,
           "document": "云应用项目ID",
-          "example": "\"\"",
+          "example": "cap-lhze1cs5",
           "member": "string",
           "name": "ProjectId",
           "required": false,

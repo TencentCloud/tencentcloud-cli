@@ -28,11 +28,11 @@ Output:
                 "ErrCode": 0,
                 "Host": "10.0.0.1",
                 "SentRows": 0,
-                "User": "test",
+                "User": "andy",
                 "Sql": "SELECT * FROM test LIMIT 1;",
                 "SqlType": "SELECT",
-                "InstanceName": "test",
-                "DBName": "test_db"
+                "InstanceName": "cynosdbandy",
+                "DBName": "db1"
             }
         ]
     }

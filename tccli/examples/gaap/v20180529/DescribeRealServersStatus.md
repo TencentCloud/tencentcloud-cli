@@ -14,13 +14,13 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "xx",
+        "RequestId": "dad2a717-3c7d-444d-8f98-0cca9c897ff3",
         "RealServerStatusSet": [
             {
-                "ProxyId": "xx",
+                "ProxyId": "link-123456",
                 "BindStatus": 0,
-                "RealServerId": "xx",
-                "GroupId": "xx"
+                "RealServerId": "rs-123456",
+                "GroupId": "lg-123456"
             }
         ]
     }

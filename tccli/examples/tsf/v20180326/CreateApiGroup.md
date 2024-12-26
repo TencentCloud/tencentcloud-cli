@@ -6,10 +6,12 @@ Input:
 
 ```
 tccli tsf CreateApiGroup --cli-unfold-argument  \
-    --GroupName zuul_test_group \
-    --GroupContext %2Fuser \
+    --GroupName grp_user \
+    --GroupContext /grp_user \
     --AuthType none \
-    --Description test \
+    --Description This is desc \
+    --GroupType ms \
+    --GatewayInstanceId gw-ins-szesmg28 \
     --NamespaceNameKey TSF-NamespaceName \
     --ServiceNameKey TSF-ServiceName \
     --NamespaceNameKeyPosition path \
@@ -20,8 +22,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
-        "Result": "grp-57at58po"
+        "RequestId": "156db4f2-9d4e-48bc-87eb-539a46919107",
+        "Result": "grp-rzn41l1w"
     }
 }
 ```

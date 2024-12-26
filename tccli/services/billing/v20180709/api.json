@@ -22763,6 +22763,36 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配商品信息",
+          "example": "无",
+          "member": "string",
+          "name": "Goods",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不匹配商品信息",
+          "example": "无",
+          "member": "string",
+          "name": "NotMatchedGoods",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代金券使用说明",
+          "example": "允许使用",
+          "member": "string",
+          "name": "PolicyRemark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22878,6 +22908,26 @@
           "name": "ExcludedProducts",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用说明/批次备注",
+          "example": "不限使用",
+          "member": "string",
+          "name": "PolicyRemark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发券时间",
+          "example": "2017-03-08 15:25:20",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

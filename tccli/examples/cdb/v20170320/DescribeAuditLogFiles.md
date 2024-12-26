@@ -21,7 +21,8 @@ Output:
                 "Status": "running",
                 "CreateTime": "2019-03-20 17:09:13",
                 "FileSize": 3,
-                "DownloadUrl": "http://xxxxxx"
+                "DownloadUrl": "http://xxxxxx",
+                "ErrMsg": ""
             }
         ]
     }

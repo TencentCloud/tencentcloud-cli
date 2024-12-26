@@ -6,16 +6,20 @@ Input:
 
 ```
 tccli tsf CreatePublicConfig --cli-unfold-argument  \
-    --ConfigName testconfig \
-    --ConfigVersion 1.3 \
-    --ConfigValue tsf.inventory.password.encrypt2:%20ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo
+    --ConfigName config_pub_app \
+    --ConfigVersion v1 \
+    --ConfigVersionDesc This is desc \
+    --ConfigValue config: enabled \
+    --ConfigType public \
+    --EncodeWithBase64 True \
+    --ProgramIdList program-6a79x94v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3d600e1f-87c3-4aa6-afa5-a4f8330fa181",
+        "RequestId": "a1563762-2470-42d0-a35f-6a03a05d2457",
         "Result": true
     }
 }

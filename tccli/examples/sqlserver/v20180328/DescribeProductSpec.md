@@ -31,7 +31,9 @@ Output:
                         "SpecId": 15,
                         "SuitInfo": "独立用户数上百人的小型应用",
                         "Version": "2008R2",
-                        "VersionName": "SQL Server 2008 Enterprise"
+                        "VersionName": "SQL Server 2008 Enterprise",
+                        "InstanceType": "HA",
+                        "MultiZonesStatus": "ALL"
                     },
                     {
                         "CPU": 1,
@@ -49,7 +51,9 @@ Output:
                         "SpecId": 15,
                         "SuitInfo": "独立用户数上百人的小型应用",
                         "Version": "2012SP3",
-                        "VersionName": "SQL Server 2012 Enterprise"
+                        "VersionName": "SQL Server 2012 Enterprise",
+                        "InstanceType": "HA",
+                        "MultiZonesStatus": "ALL"
                     },
                     {
                         "CPU": 1,
@@ -67,7 +71,9 @@ Output:
                         "SpecId": 15,
                         "SuitInfo": "独立用户数上百人的小型应用",
                         "Version": "2016SP1",
-                        "VersionName": "SQL Server 2016 Enterprise"
+                        "VersionName": "SQL Server 2016 Enterprise",
+                        "InstanceType": "HA",
+                        "MultiZonesStatus": "ALL"
                     }
                 ],
                 "RegionId": 1,

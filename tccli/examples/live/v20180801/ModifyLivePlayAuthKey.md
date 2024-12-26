@@ -8,9 +8,9 @@ Input:
 tccli live ModifyLivePlayAuthKey --cli-unfold-argument  \
     --DomainName 5000.livepush.myqcloud.com \
     --Enable 0 \
-    --AuthKey xxxx \
+    --AuthKey AKID0QJ82oYdLJ \
     --AuthDelta 300 \
-    --AuthBackKey xxxx
+    --AuthBackKey IgAQlbPUl5VIKKFB1KazNB
 ```
 
 Output: 

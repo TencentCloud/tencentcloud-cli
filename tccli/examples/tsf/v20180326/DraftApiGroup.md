@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DraftApiGroup --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1
+    --GroupId grp-d45mlt3o
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
+        "RequestId": "5024ce23-0ac6-4ca3-9061-e1c4666c9c0d",
         "Result": true
     }
 }

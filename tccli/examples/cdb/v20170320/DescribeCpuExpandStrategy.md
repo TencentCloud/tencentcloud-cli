@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cdb DescribeCpuExpandStrategy --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId cdb-sad1dsfa
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Type": "abc",
-        "ExpandCpu": "abc",
-        "AutoStrategy": "abc",
-        "RequestId": "abc"
+        "Type": "auto",
+        "ExpandCpu": "4",
+        "AutoStrategy": "auto",
+        "RequestId": "dasdqw13-dasdhd3-123v-1234-v432"
     }
 }
 ```

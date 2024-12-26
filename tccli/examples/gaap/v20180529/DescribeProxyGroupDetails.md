@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DescribeProxyGroupDetails --cli-unfold-argument  \
-    --GroupId lg
+    --GroupId lg-123456
 ```
 
 Output: 
@@ -18,44 +18,44 @@ Output:
             "ProjectId": 0,
             "ProxyNum": 0,
             "Status": 0,
-            "OwnerUin": "abc",
-            "CreateUin": "abc",
-            "GroupName": "abc",
-            "DnsDefaultIp": "abc",
-            "Domain": "abc",
+            "OwnerUin": "12345678",
+            "CreateUin": "12345678",
+            "GroupName": "grup-name",
+            "DnsDefaultIp": "127.0.0.1",
+            "Domain": "www.domain.com",
+            "PolicyId": "gsp-123456",
             "RealServerRegionInfo": {
-                "RegionId": "abc",
-                "RegionName": "abc",
-                "RegionArea": "abc",
-                "RegionAreaName": "abc",
-                "IDCType": "abc",
+                "RegionId": "Beijing",
+                "RegionName": "BEIJING",
+                "RegionArea": "NorthChina",
+                "RegionAreaName": "NorthChina",
+                "IDCType": "dc",
                 "FeatureBitmap": 1,
                 "SupportFeature": {
                     "NetworkType": [
-                        "abc"
+                        "normal"
                     ]
                 }
             },
             "IsOldGroup": true,
-            "GroupId": "abc",
+            "GroupId": "lg-123456",
             "TagSet": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "tag_key",
+                    "TagValue": "tag_value"
                 }
             ],
-            "PolicyId": "abc",
-            "Version": "abc",
+            "Version": "3.0",
             "ClientIPMethod": [
                 0
             ],
-            "IPAddressVersion": "abc",
-            "PackageType": "abc",
+            "IPAddressVersion": "IPv4",
+            "PackageType": "BGP",
             "Http3Supported": 0,
             "FeatureBitmap": 0,
             "IsSupportTLSChoice": 1
         },
-        "RequestId": "abc"
+        "RequestId": "bf46572b-700d-4797-831c-7fcf8232358a"
     }
 }
 ```

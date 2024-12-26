@@ -6,21 +6,24 @@ Input:
 
 ```
 tccli tsf CreateFileConfig --cli-unfold-argument  \
-    --ApplicationId application-dapbkdgy \
-    --ConfigName war-config \
-    --ConfigVersion 1 \
-    --ConfigFileName update \
+    --ConfigName config_app \
+    --ConfigVersion v1 \
+    --ConfigVersionDesc This is desc \
+    --ConfigFileName conf.txt \
+    --ConfigFileValue config=enabled \
     --ConfigFileCode utf-8 \
-    --ConfigPostCmd /usr/bin/bash \
-    --ConfigFileValue workdir \
-    --ConfigFilePath /root
+    --ApplicationId application-5yr26r9a \
+    --ConfigFilePath /root \
+    --ConfigPostCmd sh start.sh \
+    --EncodeWithBase64 True \
+    --ProgramIdList program-6a79x94v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3063d6c8-9801-4ed0-b306-be14b89f6133",
+        "RequestId": "880b83c3-1018-4922-ab11-1822d5d5981d",
         "Result": true
     }
 }

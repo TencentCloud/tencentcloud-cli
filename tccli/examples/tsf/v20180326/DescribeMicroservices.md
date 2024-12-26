@@ -6,30 +6,36 @@ Input:
 
 ```
 tccli tsf DescribeMicroservices --cli-unfold-argument  \
+    --SearchWord consumer \
+    --NamespaceId namespace-v6b2exey \
+    --OrderBy create_time \
+    --OrderType 1 \
     --Offset 0 \
-    --Limit 1 \
-    --NamespaceId namespace-xxxxxxx \
-    --SearchWord ms-xxxxxxx
+    --Limit 10 \
+    --Status single_online \
+    --MicroserviceIdList ms-yqwbbpxl \
+    --MicroserviceNameList consumer-demo
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3eab4695-2d7e-4f78-a8d2-ea93bab87dfd",
+        "RequestId": "31c18b1c-4e2e-4cb1-8b82-de820d178f12",
         "Result": {
-            "TotalCount": 1,
             "Content": [
                 {
-                    "MicroserviceId": "ms-xxxxxxx",
-                    "NamespaceId": "namespace-xxxxxxx",
+                    "CreateTime": null,
+                    "CriticalInstanceCount": 0,
+                    "MicroserviceDesc": "",
+                    "MicroserviceId": "ms-yqwbbpxl",
                     "MicroserviceName": "consumer-demo",
-                    "MicroserviceDesc": null,
-                    "CreateTime": 1553673084000,
-                    "UpdateTime": 1553673084000,
-                    "RunInstanceCount": 1
+                    "NamespaceId": "namespace-v6b2exey",
+                    "RunInstanceCount": 1,
+                    "UpdateTime": null
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

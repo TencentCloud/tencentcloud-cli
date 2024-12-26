@@ -12,7 +12,7 @@ tccli live ModifyCasterMarkPicInfo --cli-unfold-argument  \
     --MarkPicInfo.MarkPicLocationX 0.2 \
     --MarkPicInfo.MarkPicLocationY 0.2 \
     --MarkPicInfo.MarkPicWidth 0.3 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

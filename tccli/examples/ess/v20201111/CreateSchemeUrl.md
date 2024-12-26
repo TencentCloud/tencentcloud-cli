@@ -259,3 +259,34 @@ Output:
 }
 ```
 
+**Example 10: 获取合同组动态签署人补充链接（短链）并预设企业名**
+
+获取获取合同组动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充，预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同
+注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
+
+Input: 
+
+```
+tccli ess CreateSchemeUrl --cli-unfold-argument  \
+    --FlowGroupId yDCYrUUckp7wjc20UyJSA20yS1P4dmSm \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.FlowId yDCYrUUckp7wjc2pUyJSA20EjrlF0gPe \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.RecipientId yDCYrUUckp7wjc2kUyJSA20SqFHqApZP \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.FlowId yDCYrUUckp7wjc2dUyJSA20SjfZAyBQW \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.RecipientId yDCYrUUckp7wjc2sUyJSA20Euq5xR6FM \
+    --OrganizationName 典子谦有限公司 \
+    --PathType 3 \
+    --EndPoint HTTP_SHORT_URL \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1693829642597082849",
+        "SchemeQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d01********************************f313b0728621415f3f14724c1d784e7737421333bf96a",
+        "SchemeUrl": "https://essurl.cn/i3am**5Y9W"
+    }
+}
+```
+

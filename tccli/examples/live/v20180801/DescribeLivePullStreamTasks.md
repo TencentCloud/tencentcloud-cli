@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeLivePullStreamTasks --cli-unfold-argument  \
-    --TaskId 123
+    --TaskId 9654231
 ```
 
 Output: 
@@ -37,7 +37,7 @@ Output:
                 "StartTime": "2020-04-20T00:30:00Z",
                 "Status": "enable",
                 "StreamName": "teststream",
-                "Comment": "abc",
+                "Comment": "重要活动",
                 "TaskId": "10054",
                 "UpdateBy": "",
                 "UpdateTime": "2020-04-23T05:07:43Z",

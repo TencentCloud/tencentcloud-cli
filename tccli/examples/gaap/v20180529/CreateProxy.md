@@ -7,7 +7,7 @@ Input:
 ```
 tccli gaap CreateProxy --cli-unfold-argument  \
     --ProjectId 0 \
-    --ProxyName test \
+    --ProxyName proxy-name \
     --AccessRegion Hongkong \
     --Bandwidth 10 \
     --Concurrent 2 \

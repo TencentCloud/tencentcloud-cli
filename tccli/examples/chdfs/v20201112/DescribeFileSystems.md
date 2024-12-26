@@ -14,10 +14,10 @@ Output:
         "FileSystems": [
             {
                 "AppId": 1251006373,
-                "FileSystemName": "test",
+                "FileSystemName": "fs-test",
                 "Description": "",
                 "Region": "ap-guangzhou",
-                "FileSystemId": "f4mnvilzmdd",
+                "FileSystemId": "f4mnvilxxxx",
                 "CreateTime": "2019-07-30T17:03:20+08:00",
                 "BlockSize": 4194304,
                 "CapacityQuota": 1073741824,

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli car CreateApplicationProject --cli-unfold-argument  \
-    --Name abc \
-    --ApplicationId abc \
-    --Type abc \
+    --Name project_name \
+    --ApplicationId app-s324or12 \
+    --Type S1 \
     --IsPreload True \
-    --ApplicationParams abc \
-    --Resolution abc \
-    --ProjectType abc \
+    --ApplicationParams -params \
+    --Resolution 1920x1080 \
+    --ProjectType EXCLUSIVE \
     --FPS 0 \
     --PreloadDuration 10s \
     --ReconnectTimeout 20s \
@@ -24,8 +24,8 @@ Output:
 ```
 {
     "Response": {
-        "ProjectId": "abc",
-        "RequestId": "abc"
+        "ProjectId": "cap-lhze1cs5",
+        "RequestId": "25b6f399-bd7c-4e5e-99a3-9a6f4b11e1b7"
     }
 }
 ```

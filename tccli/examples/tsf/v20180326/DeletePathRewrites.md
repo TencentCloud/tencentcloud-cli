@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DeletePathRewrites --cli-unfold-argument  \
-    --PathRewriteIds rewrite-l6ymbvgd rewrite-s7j2kkh39
+    --PathRewriteIds rewrite-qv3rrlnv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "ded2dfb4-4eea-4eea-970c-ace085804bf3",
         "Result": true
     }
 }

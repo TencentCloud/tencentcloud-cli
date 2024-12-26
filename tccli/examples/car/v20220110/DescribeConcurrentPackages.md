@@ -7,8 +7,8 @@ Input:
 ```
 tccli car DescribeConcurrentPackages --cli-unfold-argument  \
     --Limit 0 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Values cac-j6x242r6 \
+    --Filters.0.Name ConcurrentId \
     --Offset 0
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "25b6f399-bd7c-4e5e-99a3-9a6f4b11e1b7",
         "Total": 0,
         "ConcurrentPackages": []
     }

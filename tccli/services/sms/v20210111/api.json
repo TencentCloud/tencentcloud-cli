@@ -345,90 +345,90 @@
         {
           "disabled": false,
           "document": "短信回执量统计。",
-          "example": "",
+          "example": "1745",
           "member": "uint64",
           "name": "CallbackCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信提交成功量统计。",
-          "example": "",
+          "example": "1880",
           "member": "uint64",
           "name": "RequestSuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信回执失败量统计。",
-          "example": "",
+          "example": "401",
           "member": "uint64",
           "name": "CallbackFailCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信回执成功量统计。",
-          "example": "",
+          "example": "1344",
           "member": "uint64",
           "name": "CallbackSuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商内部错误统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "InternalErrorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "号码无效或空号统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "InvalidNumberCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "停机、关机等错误统计。",
-          "example": "",
+          "example": "401",
           "member": "uint64",
           "name": "ShutdownErrorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "号码拉入黑名单统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "BlackListCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商频率限制统计。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "FrequencyLimitCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -616,20 +616,20 @@
         {
           "disabled": false,
           "document": "删除状态信息。",
-          "example": "",
+          "example": "return successfully!",
           "member": "string",
           "name": "DeleteStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "删除时间，UNIX 时间戳（单位：秒）。",
-          "example": "",
+          "example": "1578988506",
           "member": "uint64",
           "name": "DeleteTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -956,7 +956,7 @@
         {
           "disabled": false,
           "document": "签名名称。",
-          "example": "test",
+          "example": "腾讯云",
           "member": "string",
           "name": "SignName",
           "required": true,
@@ -1905,30 +1905,30 @@
         {
           "disabled": false,
           "document": "短信计费条数统计，例如提交成功量为100条，其中有20条是长短信（长度为80字）被拆分成2条，则计费条数为： ```80 * 1 + 20 * 2 = 120``` 条。",
-          "example": "",
+          "example": "149",
           "member": "uint64",
           "name": "FeeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信提交量统计。",
-          "example": "",
+          "example": "150",
           "member": "uint64",
           "name": "RequestCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "短信提交成功量统计。",
-          "example": "",
+          "example": "149",
           "member": "uint64",
           "name": "RequestSuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2014,30 +2014,30 @@
         {
           "disabled": false,
           "document": "套餐包创建时间，UNIX 时间戳（单位：秒）。",
-          "example": "1617206400",
+          "example": "1733040000",
           "member": "uint64",
           "name": "PackageCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包生效时间，UNIX 时间戳（单位：秒）。",
-          "example": "1617206400",
+          "example": "1733040000",
           "member": "uint64",
           "name": "PackageEffectiveTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐包过期时间，UNIX 时间戳（单位：秒）。",
-          "example": "1619798400",
+          "example": "1796112000",
           "member": "uint64",
           "name": "PackageExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2047,7 +2047,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "PackageAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2057,7 +2057,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PackageType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2067,7 +2067,7 @@
           "example": "1000791745",
           "member": "uint64",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2077,7 +2077,7 @@
           "example": "100",
           "member": "uint64",
           "name": "CurrentUsage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

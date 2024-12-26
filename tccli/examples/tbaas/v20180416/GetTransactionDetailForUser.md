@@ -23,7 +23,7 @@ Output:
         "BlockHeight": 1,
         "BlockId": 0,
         "ChannelName": "tyler",
-        "ContractName": "",
+        "ContractName": "fact",
         "CreateOrgName": "org2",
         "CreateTime": "2019-10-28 18:48:28",
         "EndorserOrgList": [
@@ -35,8 +35,8 @@ Output:
             }
         ],
         "RequestId": "a13c4aed-ba4a-4357-850a-66707d7d5e74",
-        "TransactionData": "\"\"",
-        "TransactionHash": "",
+        "TransactionData": "{\"chaincode_spec\":{\"timeout\":0,\"type\":\"UNDEFINED\"}}",
+        "TransactionHash": "42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0",
         "TransactionId": "42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0",
         "TransactionStatus": "VALID",
         "TransactionType": "CONFIG"

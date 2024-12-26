@@ -221,7 +221,7 @@
         {
           "disabled": false,
           "document": "游戏相关参数",
-          "example": "{}",
+          "example": "{\"Key\": \"Value\"}",
           "member": "string",
           "name": "GameContext",
           "required": false,
@@ -395,7 +395,7 @@
         {
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
-          "example": "123123",
+          "example": "639d069e-a13a-437a-a10b-64a33ecb8e79",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -503,7 +503,7 @@
         {
           "disabled": false,
           "document": "唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）",
-          "example": "123123",
+          "example": "639d069e-a13a-437a-a10b-64a33ecb8e79",
           "member": "string",
           "name": "UserId",
           "required": true,

@@ -159,3 +159,34 @@ Output:
 }
 ```
 
+**Example 6: 生成动态签署人批量领取链接-并且预设平台子客企业OpenId**
+
+按照合同发起时候返回的合同信息生成批量签署链接，通过FlowIds参数对用户可以批签的合同进行限制，并指定批量领取的动态签署方，预设了平台子客企业OpenId后进入领取链接只能以该平台子客企业企业身份去领取并签署合同
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId test_open_id \
+    --Agent.ProxyOrganizationOpenId test_org_open_id \
+    --Agent.AppId yDxbWUyKQ*******4zjEB8mxCcDjAyF \
+    --FlowIds yDwFdUUckpsw******yQ0af8bHosXQtb yDR1AUUgygj******uO4zjE8gTG7xvgH \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.FlowId yDwFdUUckpsw******yQ0af8bHosXQtb \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.0.RecipientId yDC5yUUckpwexozwUuoHfkTwB00zdfLo \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.FlowId yDR1AUUgygj******uO4zjE8gTG7xvgH \
+    --FlowBatchUrlInfo.FlowBatchApproverInfos.1.RecipientId yDCY3UUckp7tpp8rUEGRbNoRjQJ7t9bd \
+    --OrganizationOpenId test_org_open_id
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ExpiredTime": 1735801457,
+        "MiniAppPath": "pages/guide/index?shortKey=yDCYSUx7LAQNwHZxaR93",
+        "RequestId": "s1735196657684290155",
+        "SignUrl": "https://essurl.cn/exssUH2TNe"
+    }
+}
+```
+

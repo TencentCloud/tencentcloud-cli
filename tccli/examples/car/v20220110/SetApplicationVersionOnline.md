@@ -28,7 +28,7 @@ Output:
             },
             {
                 "ApplicationVersionId": "ver-qi5inuk4",
-                "ApplicationVersionName": "test",
+                "ApplicationVersionName": "version_name",
                 "ApplicationVersionRegions": [
                     "ap-chinese-mainland"
                 ],

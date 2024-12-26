@@ -6,62 +6,40 @@ Input:
 
 ```
 tccli tsf DescribeConfigSummary --cli-unfold-argument  \
+    --ApplicationId application-5yr26r9a \
+    --SearchWord config_app \
     --Offset 0 \
-    --Limit 20 \
-    --SearchWord driver
+    --Limit 10 \
+    --OrderBy creation_time \
+    --OrderType 1 \
+    --ConfigTagList config_app-application-5yr26r9a \
+    --DisableProgramAuthCheck True \
+    --ConfigIdList dcfg-vzk36owv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2b151339-278f-47ed-b5fe-a86273a203de",
+        "RequestId": "0e8d31d3-e16a-4070-9248-cce94db7fae5",
         "Result": {
-            "TotalCount": 3,
             "Content": [
                 {
-                    "ConfigId": null,
-                    "ConfigName": "dev-driverapi-config",
-                    "ConfigVersion": null,
-                    "ConfigVersionDesc": null,
+                    "ApplicationId": "application-5yr26r9a",
+                    "ApplicationName": "amp-consumer",
+                    "ConfigId": "dcfg-vzk36owv",
+                    "ConfigName": "config_app",
+                    "ConfigType": null,
                     "ConfigValue": null,
-                    "CreationTime": null,
-                    "LastUpdateTime": "2019-04-16 12:38:45",
-                    "ConfigVersionCount": 2,
-                    "ApplicationId": "application-maegorqv",
-                    "ApplicationName": "gactravel_dev_driverapi",
-                    "DeleteFlag": null,
-                    "ConfigType": null
-                },
-                {
-                    "ConfigId": null,
-                    "ConfigName": "ruqi_travel_driverapi",
                     "ConfigVersion": null,
+                    "ConfigVersionCount": 1,
                     "ConfigVersionDesc": null,
-                    "ConfigValue": null,
                     "CreationTime": null,
-                    "LastUpdateTime": "2019-04-16 12:29:55",
-                    "ConfigVersionCount": 3,
-                    "ApplicationId": "application-ov6mxrka",
-                    "ApplicationName": "ruqi_travel_driverapi",
                     "DeleteFlag": null,
-                    "ConfigType": null
-                },
-                {
-                    "ConfigId": null,
-                    "ConfigName": "test-driverapi-config",
-                    "ConfigVersion": null,
-                    "ConfigVersionDesc": null,
-                    "ConfigValue": null,
-                    "CreationTime": null,
-                    "LastUpdateTime": "2019-04-23 11:16:26",
-                    "ConfigVersionCount": 2,
-                    "ApplicationId": "application-jy9w6lka",
-                    "ApplicationName": "ruqitest_travel_driverapi",
-                    "DeleteFlag": null,
-                    "ConfigType": null
+                    "LastUpdateTime": "2024-12-24 18:04:02"
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

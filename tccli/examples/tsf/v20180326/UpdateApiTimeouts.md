@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tsf UpdateApiTimeouts --cli-unfold-argument  \
-    --ApiIds api-d5970cd api-d5971cd \
+    --ApiIds api-tnvxy4ta \
     --UsableStatus enabled \
-    --Timeout 10000
+    --Timeout 2000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "30356074-f0ce-46a3-86fd-30da5fcf336e",
         "Result": true
     }
 }

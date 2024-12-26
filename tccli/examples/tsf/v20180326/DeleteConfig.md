@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DeleteConfig --cli-unfold-argument  \
-    --ConfigId dcfg-gvkgdjyo
+    --ConfigId dcfg-a7rl7w4v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "aa19a76d-340f-4ed3-a8d7-b4c12a62ee3e",
+        "RequestId": "b1ec0d59-5901-4265-9a4c-9c0489a2cbcd",
         "Result": true
     }
 }

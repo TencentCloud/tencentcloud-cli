@@ -13,17 +13,18 @@ Output:
     "Response": {
         "Templates": [
             {
-                "UpdateTime": "xx",
-                "Description": "xx",
-                "TemplateName": "xx",
-                "Url": "xx",
+                "UpdateTime": "2020-01-01 08:00:00",
+                "Description": "template",
+                "TemplateName": "mytemplate",
+                "Url": "https://test.com/a.mp4",
                 "TemplateId": 1,
-                "CreateTime": "xx",
+                "CreateTime": "2020-01-01 08:00:00",
                 "WaitDuration": 1,
-                "MaxDuration": 1
+                "MaxDuration": 1,
+                "Type": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1047d0dc-6dc8-4898-a7f3-03726a822b0e"
     }
 }
 ```

@@ -7,7 +7,7 @@ Input:
 ```
 tccli cynosdb RollBackCluster --cli-unfold-argument  \
     --RollbackId 1 \
-    --ClusterId cynosdbmysql-xxxxxxxx \
+    --ClusterId cynosdbmysql-j9i41hff \
     --ExpectTimeThresh 1 \
     --RollbackStrategy snapRollback \
     --RollbackTables.0.Tables.0.OldTable old_table \
@@ -22,8 +22,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "128046",
-        "FlowId": "123"
+        "RequestId": "347698da-03e4-4078-8d96-9a8b219c01a5",
+        "FlowId": "147283"
     }
 }
 ```

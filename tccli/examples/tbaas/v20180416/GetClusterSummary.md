@@ -9,7 +9,7 @@ tccli tbaas GetClusterSummary --cli-unfold-argument  \
     --Module cluster_mng \
     --Operation cluster_summary \
     --ClusterId 251005746bc0f03q8u93j \
-    --GroupId 0 \
+    --GroupId 12 \
     --GroupName liulanOrg
 ```
 
@@ -17,21 +17,22 @@ Output:
 ```
 {
     "Response": {
-        "ClientCertCount": 2,
-        "JoinChannelCount": 1,
-        "MyChaincodeCount": 1,
-        "MyChannelCount": 1,
-        "MyGroupCount": 1,
-        "MyPeerCount": 2,
-        "PeerCertCount": 2,
-        "RecentChaincodeCount": 1,
-        "RequestId": "8646a1d8-bae3-4b41-8732-06b8c004eaa5",
-        "TlsCertCount": 4,
-        "TotalCertCount": 8,
+        "MyPeerCount": 1,
+        "ClientCertCount": 1,
         "TotalChaincodeCount": 1,
         "TotalChannelCount": 1,
+        "TlsCertCount": 1,
+        "OrderCount": 1,
+        "RecentChaincodeCount": 1,
+        "PeerCertCount": 1,
+        "MyChaincodeCount": 1,
+        "RequestId": "aeae4ed4-a4ce-4ffd-9826-1aae7669bb7c",
+        "TotalCertCount": 1,
+        "MyGroupCount": 1,
+        "MyChannelCount": 1,
         "TotalGroupCount": 1,
-        "TotalPeerCount": 2
+        "JoinChannelCount": 1,
+        "TotalPeerCount": 1
     }
 }
 ```

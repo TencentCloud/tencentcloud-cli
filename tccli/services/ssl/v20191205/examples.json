@@ -83,7 +83,7 @@
     "CreateCSR": [
       {
         "document": "申请CSR",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCSR\n<公共请求参数>\n\n{\n    \"Domain\": \"abc12\",\n    \"Organization\": \"abc12\",\n    \"Department\": \"abc12\",\n    \"Email\": \"abc@qq.com\",\n    \"Province\": \"abc\",\n    \"City\": \"abc\",\n    \"Country\": \"abc\",\n    \"EncryptAlgo\": \"ECC\",\n    \"KeyParameter\": \"prime256v1\",\n    \"Generate\": false\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCSR\n<公共请求参数>\n\n{\n    \"Domain\": \"www.***.com\",\n    \"Organization\": \"Tencent\",\n    \"Department\": \"It\",\n    \"Email\": \"abc@qq.com\",\n    \"Province\": \"Hunan\",\n    \"City\": \"Changsha\",\n    \"Country\": \"China\",\n    \"EncryptAlgo\": \"ECC\",\n    \"KeyParameter\": \"prime256v1\",\n    \"Generate\": false\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 733,\n        \"RequestId\": \"f00f136b-c0c8-476a-8097-b1bdfc9d330f\"\n    }\n}",
         "title": "申请CSR"
       }
@@ -357,8 +357,8 @@
     "DescribeHostTeoInstanceList": [
       {
         "document": "获取EdgeOne网关实例列表",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostTeoInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Host\": \"abc\",\n                \"CertId\": \"abc\",\n                \"ZoneId\": \"abc\",\n                \"Status\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostTeoInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"YT****j\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"domainMatch\",\n            \"FilterValue\": \"1\"\n        }\n    ],\n    \"ResourceType\": \"teo\",\n    \"OldCertificateId\": \"k****j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Host\": \"www.zrh.com\",\n                \"CertId\": \"jk****L\",\n                \"ZoneId\": \"zone-*****\",\n                \"Status\": \"online\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
         "title": "获取EdgeOne实例列表"
       }
     ],
@@ -374,7 +374,7 @@
       {
         "document": "查询证书云资源更新记录列表",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostUpdateRecord\n<公共请求参数>\n\n{\n    \"OldCertificateId\": \"zYrIXwpu\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeployRecordList\": [\n            {\n                \"Id\": 73839,\n                \"CertId\": \"jdjenhss\",\n                \"OldCertId\": \"zYrIXwpu\",\n                \"ResourceTypes\": [\n                    \"clb\"\n                ],\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-18 12:00:00\",\n                \"UpdateTime\": \"2023-12-18 12:11:00\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DeployRecordList\": [\n            {\n                \"Id\": 73839,\n                \"CertId\": \"jdjenhss\",\n                \"OldCertId\": \"zYrIXwpu\",\n                \"ResourceTypes\": [\n                    \"clb\"\n                ],\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"Status\": 1,\n                \"CreateTime\": \"2023-12-18 12:00:00\",\n                \"UpdateTime\": \"2023-12-18 12:11:00\"\n            }\n        ],\n        \"RequestId\": \"d9aa752b-dbd8-49c9-958f-75c051eddfe2\"\n    }\n}",
         "title": "查询证书云资源更新记录列表"
       }
     ],
@@ -437,7 +437,7 @@
     "ModifyCSR": [
       {
         "document": "修改CSR",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCSR\n<公共请求参数>\n\n{\n    \"CSRId\": 662,\n    \"Generate\": false,\n    \"Domain\": \"abc123.com\",\n    \"Organization\": \"abc123\",\n    \"Department\": \"abc123\",\n    \"Email\": \"abc@qq.com\",\n    \"Province\": \"abc12\",\n    \"City\": \"abc\",\n    \"Country\": \"abc123\",\n    \"EncryptAlgo\": \"RSA\",\n    \"KeyParameter\": \"2048\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCSR\n<公共请求参数>\n\n{\n    \"CSRId\": 662,\n    \"Generate\": false,\n    \"Domain\": \"hywh**.com\",\n    \"Organization\": \"tencent\",\n    \"Department\": \"it\",\n    \"Email\": \"heysh**hhe@qq.com\",\n    \"Province\": \"hunan\",\n    \"City\": \"changsha\",\n    \"Country\": \"china\",\n    \"EncryptAlgo\": \"RSA\",\n    \"KeyParameter\": \"2048\"\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 662,\n        \"RequestId\": \"f00f136b-c0c8-476a-8097-b1bdfc9d330f\"\n    }\n}",
         "title": "修改CSR"
       }

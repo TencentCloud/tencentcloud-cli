@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli live ModifyLiveStreamMonitor --cli-unfold-argument  \
-    --MonitorId abc \
-    --MonitorName abc \
-    --OutputInfo.OutputStreamName abc \
+    --MonitorId caster-124 \
+    --MonitorName caster-124 \
+    --OutputInfo.OutputStreamName stream1 \
     --OutputInfo.OutputStreamWidth 1 \
     --OutputInfo.OutputStreamHeight 1 \
-    --OutputInfo.OutputDomain abc \
-    --OutputInfo.OutputApp abc \
-    --InputList.0.InputStreamName abc \
-    --InputList.0.InputDomain abc \
-    --InputList.0.InputApp abc \
-    --InputList.0.InputUrl abc \
-    --InputList.0.Description abc \
+    --OutputInfo.OutputDomain  \
+    --OutputInfo.OutputApp live \
+    --InputList.0.InputStreamName stream2 \
+    --InputList.0.InputDomain live.monitor.push.com \
+    --InputList.0.InputApp live \
+    --InputList.0.InputUrl rtmp://live.monitor.push.com/live/stream1 \
+    --InputList.0.Description stream 1 \
     --NotifyPolicy.NotifyPolicyType 1 \
-    --NotifyPolicy.CallbackUrl abc \
+    --NotifyPolicy.CallbackUrl www.baidu.com \
     --AsrLanguage 1 \
     --OcrLanguage 1 \
     --AiAsrInputIndexList 1 \

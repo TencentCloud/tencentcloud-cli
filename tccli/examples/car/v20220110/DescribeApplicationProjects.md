@@ -11,14 +11,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "25b6f399-bd7c-4e5e-99a3-9a6f4b11e1b7",
         "Projects": [
             {
                 "IsPreload": true,
                 "Description": "app",
                 "ProjectId": "cap-a1b2c3",
                 "ApplicationStatus": "NoConcurrent",
-                "ApplicationName": "abc",
+                "ApplicationName": "app_name",
                 "Resolution": "1920x1080",
                 "ProjectType": "SHARED",
                 "Purpose": "EXPERIENCE",

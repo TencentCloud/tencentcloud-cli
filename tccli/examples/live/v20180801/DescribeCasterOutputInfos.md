@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeCasterOutputInfos --cli-unfold-argument  \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

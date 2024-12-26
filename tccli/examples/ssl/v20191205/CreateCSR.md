@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli ssl CreateCSR --cli-unfold-argument  \
-    --Domain abc12 \
-    --Organization abc12 \
-    --Department abc12 \
+    --Domain www.***.com \
+    --Organization Tencent \
+    --Department It \
     --Email abc@qq.com \
-    --Province abc \
-    --City abc \
-    --Country abc \
+    --Province Hunan \
+    --City Changsha \
+    --Country China \
     --EncryptAlgo ECC \
     --KeyParameter prime256v1 \
     --Generate False

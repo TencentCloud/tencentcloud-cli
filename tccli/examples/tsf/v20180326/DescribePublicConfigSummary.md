@@ -6,47 +6,39 @@ Input:
 
 ```
 tccli tsf DescribePublicConfigSummary --cli-unfold-argument  \
+    --SearchWord app \
     --Offset 0 \
-    --Limit 20
+    --Limit 10 \
+    --OrderBy creation_time \
+    --OrderType 1 \
+    --ConfigTagList app-config \
+    --DisableProgramAuthCheck True \
+    --ConfigIdList dcfg-p-vkj5dnky
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "cc75758b-a2e3-4ded-a97a-c541817b4efe",
+        "RequestId": "d6da2add-172a-4a4d-8f30-8abca66e314f",
         "Result": {
-            "TotalCount": 2,
             "Content": [
                 {
-                    "ConfigId": null,
-                    "ConfigName": "global",
-                    "ConfigVersion": null,
-                    "ConfigVersionDesc": null,
-                    "ConfigValue": null,
-                    "CreationTime": null,
-                    "LastUpdateTime": "2019-05-24 20:39:12",
-                    "ConfigVersionCount": 6,
                     "ApplicationId": null,
                     "ApplicationName": null,
-                    "DeleteFlag": null,
-                    "ConfigType": null
-                },
-                {
-                    "ConfigId": null,
-                    "ConfigName": "tsf",
-                    "ConfigVersion": null,
-                    "ConfigVersionDesc": null,
+                    "ConfigId": "dcfg-p-vkj5dnky",
+                    "ConfigName": "app-config",
+                    "ConfigType": null,
                     "ConfigValue": null,
+                    "ConfigVersion": null,
+                    "ConfigVersionCount": 1,
+                    "ConfigVersionDesc": null,
                     "CreationTime": null,
-                    "LastUpdateTime": "2019-05-21 14:50:13",
-                    "ConfigVersionCount": 4,
-                    "ApplicationId": null,
-                    "ApplicationName": null,
                     "DeleteFlag": null,
-                    "ConfigType": null
+                    "LastUpdateTime": "2024-12-20 19:16:10"
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

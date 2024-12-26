@@ -1044,9 +1044,9 @@
       "status": "online"
     },
     "ModifyProtectionStatus": {
-      "document": "获取基础安全防护（WAF开关）状态",
+      "document": "开启、关闭WAF开关",
       "input": "ModifyProtectionStatusRequest",
-      "name": "获取基础安全防护（WAF开关）状态",
+      "name": "开启、关闭WAF开关",
       "output": "ModifyProtectionStatusResponse",
       "status": "online"
     },
@@ -19415,7 +19415,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "1：开启WAF开关，0：关闭WAF开关",
           "example": "0",
           "member": "uint64",
           "name": "Status",

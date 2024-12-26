@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap SetTlsVersion --cli-unfold-argument  \
-    --ListenerId abc \
+    --ListenerId lgl-123456 \
     --TLSSupportVersion TLSv1.2 \
     --TLSCiphers GAAP_TLS_CIPHERS_GENERAL
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "wqdcasdca-da-wedqfc"
+        "RequestId": "dad2a717-3c7d-444d-8f98-0cca9c897ff3"
     }
 }
 ```

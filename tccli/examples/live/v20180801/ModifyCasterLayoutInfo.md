@@ -9,7 +9,7 @@ tccli live ModifyCasterLayoutInfo --cli-unfold-argument  \
     --LayoutInfo.LayoutIndex 1 \
     --LayoutInfo.InputIndexList 2|3 \
     --LayoutInfo.LayoutTemplateId 20 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

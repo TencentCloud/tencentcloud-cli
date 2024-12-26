@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live DeleteLiveTimeShiftRule --cli-unfold-argument  \
-    --DomainName xx \
-    --StreamName xx \
-    --AppName xx
+    --DomainName domain.com \
+    --StreamName streamname \
+    --AppName appname
 ```
 
 Output: 

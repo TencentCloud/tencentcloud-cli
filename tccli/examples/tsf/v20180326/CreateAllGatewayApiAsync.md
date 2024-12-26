@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli tsf CreateAllGatewayApiAsync --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1 \
-    --MicroserviceId ms-2vz549vp
+    --GroupId grp-notmqbpe \
+    --MicroserviceId ms-y5w8n5e9 \
+    --NamespaceId namespace-v3gw3lna
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "2471e0f2-59f2-4bc0-bc2b-4cbe457247b9",
         "Result": true
     }
 }

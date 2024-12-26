@@ -7,7 +7,7 @@ Input:
 ```
 tccli car CreateApplicationVersion --cli-unfold-argument  \
     --ApplicationId app-a1b2c3d4 \
-    --ApplicationFileName test.zip \
+    --ApplicationFileName test_file.zip \
     --ApplicationVersionRegions ap-chinese-mainland na-north-america-fusion \
     --ApplicationVersionUpdateMode FULL
 ```
@@ -18,7 +18,7 @@ Output:
     "Response": {
         "Version": {
             "ApplicationVersionId": "ver-ug59y45y",
-            "ApplicationVersionName": "test",
+            "ApplicationVersionName": "version_name",
             "ApplicationVersionRegions": [
                 "ap-chinese-mainland"
             ],

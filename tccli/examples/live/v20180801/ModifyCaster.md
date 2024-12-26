@@ -8,7 +8,7 @@ Input:
 tccli live ModifyCaster --cli-unfold-argument  \
     --RecordStatus 1 \
     --RecordTemplateId 1 \
-    --CasterId 10 \
+    --CasterId 63501 \
     --CasterName Modify Caster
 ```
 

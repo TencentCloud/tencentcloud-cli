@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gs StartPublishStream --cli-unfold-argument  \
-    --UserId 123123 \
+    --UserId 639d069e-a13a-437a-a10b-64a33ecb8e79 \
     --PublishUrl rtmp://live.stream.com/publish
 ```
 

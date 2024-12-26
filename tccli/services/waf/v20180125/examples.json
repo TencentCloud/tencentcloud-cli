@@ -1233,7 +1233,7 @@
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=ModifyProtectionStatus\r\n&Domain=www.test.com\r\n&Status=0\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d680b87a-8c4a-4840-af18-3acb5c9f0e54\"\n    }\n}",
-        "title": "waf斯巴达-waf开关"
+        "title": "关闭WAF开关"
       }
     ],
     "ModifySpartaProtection": [

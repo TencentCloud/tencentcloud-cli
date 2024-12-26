@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DeleteLiveWatermark --cli-unfold-argument  \
-    --WatermarkId 123
+    --WatermarkId 43527
 ```
 
 Output: 

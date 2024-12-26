@@ -7,7 +7,7 @@ Input:
 ```
 tccli cynosdb ModifyAccountPrivileges --cli-unfold-argument  \
     --ClusterId cynosdbmysql-xxxxxxx \
-    --Account.AccountName test \
+    --Account.AccountName andy \
     --Account.Host 1.1.1.1 \
     --GlobalPrivileges CREATE \
     --DatabasePrivileges.0.Db testDb \
@@ -21,7 +21,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "147706"
+        "RequestId": "51169b54-61d4-4604-a07e-e519a5527923"
     }
 }
 ```

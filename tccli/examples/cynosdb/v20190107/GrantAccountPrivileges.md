@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli cynosdb GrantAccountPrivileges --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-xxxxxxxx \
+    --ClusterId cynosdbmysql-j9i41hdd \
     --DbTablePrivileges ALTER DROP \
-    --Account.AccountName test \
+    --Account.AccountName andy \
     --Account.Host % \
-    --DbTables.0.Db test1 \
+    --DbTables.0.Db db1 \
     --DbTables.0.TableName user1 \
-    --DbTables.1.Db test2
+    --DbTables.1.Db db2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "147706"
+        "RequestId": "51169b54-61d4-4604-a07e-e519a5527923"
     }
 }
 ```

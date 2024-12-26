@@ -27,7 +27,7 @@ Output:
                         "Time": 1
                     }
                 ],
-                "MetricName": "xx"
+                "MetricName": "bandwidth"
             },
             {
                 "MetricData": [
@@ -40,10 +40,10 @@ Output:
                         "Time": 1
                     }
                 ],
-                "MetricName": "xx"
+                "MetricName": "bandwidth"
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "hlkjlk4-5435jlk-kjl",
         "StatisticsData": [
             {
                 "Data": 0.0,

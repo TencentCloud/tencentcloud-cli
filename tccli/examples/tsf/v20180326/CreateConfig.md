@@ -6,17 +6,21 @@ Input:
 
 ```
 tccli tsf CreateConfig --cli-unfold-argument  \
-    --ApplicationId application-gyq2xry5 \
-    --ConfigName test_openapi_config \
-    --ConfigVersion v1.0 \
-    --ConfigValue 'api.invok.limit: 5000'
+    --ConfigName config_app \
+    --ConfigVersion v1 \
+    --ConfigVersionDesc This is desc \
+    --ConfigValue config: enabled \
+    --ApplicationId application-5yr26r9a \
+    --ConfigType application \
+    --EncodeWithBase64 True \
+    --ProgramIdList program-6a79x94v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8007ea57-6d26-43db-aa75-ad72cb3669ca",
+        "RequestId": "fa979523-5509-4073-89b8-65c2bf86ff9a",
         "Result": true
     }
 }

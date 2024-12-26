@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tsf ModifyLane --cli-unfold-argument  \
-    --LaneId 1 \
-    --LaneName 1 \
-    --Remark 1
+    --LaneId lane-ap62k7ol \
+    --LaneName rule_app \
+    --Remark This is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": true,
-        "RequestId": "abc"
+        "RequestId": "3ad3847e-b102-4b45-8f90-bb64112cc27f",
+        "Result": true
     }
 }
 ```

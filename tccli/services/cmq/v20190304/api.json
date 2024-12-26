@@ -1,18 +1,18 @@
 {
   "actions": {
     "ClearQueue": {
-      "document": "清除queue中的所有消息",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n清除queue中的所有消息",
       "input": "ClearQueueRequest",
       "name": "清空消息队列中的消息",
       "output": "ClearQueueResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ClearSubscriptionFilterTags": {
-      "document": "清空订阅者消息标签",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n清空订阅者消息标签",
       "input": "ClearSubscriptionFilterTagsRequest",
       "name": "清空订阅者消息标签",
       "output": "ClearSubscriptionFilterTagsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateQueue": {
       "document": "创建队列接口\n",
@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CreateSubscribe": {
-      "document": "创建订阅接口",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n创建订阅接口",
       "input": "CreateSubscribeRequest",
       "name": "创建订阅接口",
       "output": "CreateSubscribeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateTopic": {
       "document": "创建主题",
@@ -43,25 +43,25 @@
       "status": "online"
     },
     "DeleteSubscribe": {
-      "document": "删除订阅",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n删除订阅",
       "input": "DeleteSubscribeRequest",
       "name": "删除订阅",
       "output": "DeleteSubscribeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteTopic": {
-      "document": "删除主题",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n删除主题",
       "input": "DeleteTopicRequest",
       "name": "删除主题",
       "output": "DeleteTopicResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDeadLetterSourceQueues": {
-      "document": "枚举死信队列源队列",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n枚举死信队列源队列",
       "input": "DescribeDeadLetterSourceQueuesRequest",
       "name": "枚举死信队列源队列",
       "output": "DescribeDeadLetterSourceQueuesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeQueueDetail": {
       "document": "枚举队列列表",
@@ -92,32 +92,32 @@
       "status": "online"
     },
     "ModifySubscriptionAttribute": {
-      "document": "修改订阅属性",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n修改订阅属性",
       "input": "ModifySubscriptionAttributeRequest",
       "name": "修改订阅属性",
       "output": "ModifySubscriptionAttributeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyTopicAttribute": {
-      "document": "修改主题属性",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n修改主题属性",
       "input": "ModifyTopicAttributeRequest",
       "name": "修改主题属性",
       "output": "ModifyTopicAttributeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RewindQueue": {
-      "document": "回溯队列",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n回溯队列",
       "input": "RewindQueueRequest",
       "name": "回溯队列",
       "output": "RewindQueueResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "UnbindDeadLetter": {
-      "document": "解绑死信队列",
+      "document": "下线老cmq云API 3.0 无调用量接口\n\n解绑死信队列",
       "input": "UnbindDeadLetterRequest",
       "name": "解绑死信队列",
       "output": "UnbindDeadLetterResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

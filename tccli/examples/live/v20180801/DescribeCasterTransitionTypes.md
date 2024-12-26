@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeCasterTransitionTypes --cli-unfold-argument  \
-    --CasterId 10
+    --CasterId 63501
 ```
 
 Output: 

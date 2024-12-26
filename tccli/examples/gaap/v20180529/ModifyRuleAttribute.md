@@ -8,7 +8,7 @@ Input:
 tccli gaap ModifyRuleAttribute --cli-unfold-argument  \
     --ListenerId listener-0s9kb7qt \
     --RuleId rule-o8aq26zj \
-    --Path / \
+    --Path /path \
     --ForwardHost www.baidu.com \
     --ForcedRedirect  \
     --Scheduler rr \
@@ -17,7 +17,7 @@ tccli gaap ModifyRuleAttribute --cli-unfold-argument  \
     --CheckParams.DelayLoop 30 \
     --CheckParams.FailedThreshold 5 \
     --CheckParams.BlockInter 600 \
-    --CheckParams.Path / \
+    --CheckParams.Path /path \
     --CheckParams.Method HEAD \
     --CheckParams.StatusCode 100 200 300 400 500 \
     --CheckParams.FailedCountInter 60 \

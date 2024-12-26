@@ -8,13 +8,13 @@ Input:
 tccli ssl ModifyCSR --cli-unfold-argument  \
     --CSRId 662 \
     --Generate False \
-    --Domain abc123.com \
-    --Organization abc123 \
-    --Department abc123 \
-    --Email abc@qq.com \
-    --Province abc12 \
-    --City abc \
-    --Country abc123 \
+    --Domain hywh**.com \
+    --Organization tencent \
+    --Department it \
+    --Email heysh**hhe@qq.com \
+    --Province hunan \
+    --City changsha \
+    --Country china \
     --EncryptAlgo RSA \
     --KeyParameter 2048
 ```

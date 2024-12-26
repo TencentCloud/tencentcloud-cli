@@ -230,6 +230,12 @@
         "input": "POST / HTTP/1.1\nHost:  ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2******uO4zjEwg0vjoimj\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ],\n    \"FlowBatchUrlInfo\": {\n        \"FlowBatchApproverInfos\": [\n            {\n                \"FlowId\": \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n                \"RecipientId\": \"yDC5SUUckp******sumxxsjT3EEMVG\"\n            },\n            {\n                \"FlowId\": \"yDR1AUUgygj******uO4zjE8gTG7xvgH\",\n                \"RecipientId\": \"yDC5SUUckp*****sumxEeTQ3Xcn0B\"\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1714533495,\n        \"MiniAppPath\": \"pages/guide/index?shortKey=yDC5tUf****tMb93lb5\",\n        \"RequestId\": \"s1713928695416440124\",\n        \"SignUrl\": \"https://test.essurl.cn/uBS****do7\"\n    }\n}",
         "title": "生成动态签署人批量领取链接"
+      },
+      {
+        "document": "1.按照合同发起时候返回的合同信息生成批量签署链接，通过FlowIds参数对用户可以批签的合同进行限制，并指定批量领取的动态签署方。\n2.通过 参数 OrganizationName 预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2******uO4zjEwg0vjoimj\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ],\n    \"FlowBatchUrlInfo\": {\n        \"FlowBatchApproverInfos\": [\n            {\n                \"FlowId\": \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n                \"RecipientId\": \"yDC5SUUckp******sumxxsjT3EEMVG\"\n            },\n            {\n                \"FlowId\": \"yDR1AUUgygj******uO4zjE8gTG7xvgH\",\n                \"RecipientId\": \"yDC5SUUckp*****sumxEeTQ3Xcn0B\"\n            }\n        ]\n    },\n    \"OrganizationName\": \"典子谦有限公司\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1714533495,\n        \"MiniAppPath\": \"pages/guide/index?shortKey=yDC5tUf****tMb93lb5\",\n        \"RequestId\": \"s1713928695416440124\",\n        \"SignUrl\": \"https://test.essurl.cn/uBS****do7\"\n    }\n}",
+        "title": "生成动态签署人批量领取链接-并且预设企业名称"
       }
     ],
     "CreateConvertTaskApi": [
@@ -1086,6 +1092,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"RecipientId\": \"yDw7aUUckpkxxmljUE0xkKk1DlvwRdfK\",\n    \"OrganizationName\": \"典子谦有限公司\",\n    \"PathType\": 3,\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693829642597082849\",\n        \"SchemeQrcodeUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d01********************************f313b0728621415f3f14724c1d784e7737421333bf96a\",\n        \"SchemeUrl\": \"https://essurl.cn/i3am**5Y9W\"\n    }\n}",
         "title": "获取动态签署人补充链接（短链）并预设企业名"
+      },
+      {
+        "document": "获取获取合同组动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充，预设了企业名称后进入领取链接只能以该企业身份去领取并签署合同\n注：`获取动态签署人补充链接需指定PathType值为1或3，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowGroupId\": \"yDCYrUUckp7wjc20UyJSA20yS1P4dmSm\",\n    \"FlowGroupUrlInfo\": {\n        \"FlowGroupApproverInfos\": [\n            {\n                \"FlowId\": \"yDCYrUUckp7wjc2pUyJSA20EjrlF0gPe\",\n                \"RecipientId\": \"yDCYrUUckp7wjc2kUyJSA20SqFHqApZP\"\n            },\n            {\n                \"FlowId\": \"yDCYrUUckp7wjc2dUyJSA20SjfZAyBQW\",\n                \"RecipientId\": \"yDCYrUUckp7wjc2sUyJSA20Euq5xR6FM\"\n            }\n        ]\n    },\n    \"OrganizationName\": \"典子谦有限公司\",\n    \"PathType\": 3,\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693829642597082849\",\n        \"SchemeQrcodeUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d01********************************f313b0728621415f3f14724c1d784e7737421333bf96a\",\n        \"SchemeUrl\": \"https://essurl.cn/i3am**5Y9W\"\n    }\n}",
+        "title": "获取合同组动态签署人补充链接（短链）并预设企业名"
       }
     ],
     "CreateSeal": [

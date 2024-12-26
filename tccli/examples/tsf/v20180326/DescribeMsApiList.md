@@ -6,40 +6,27 @@ Input:
 
 ```
 tccli tsf DescribeMsApiList --cli-unfold-argument  \
-    --Offset 0 \
-    --Limit 20 \
-    --MicroserviceId ms-opy5kjy4
+    --MicroserviceId ms-y5w8n5e9 \
+    --SearchWord echo-feign-url \
+    --Limit 10 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "056cc966-4963-4506-ac4c-c4e7209a41e3",
+        "RequestId": "17a35767-819f-4683-bc3f-5430e6d4513f",
         "Result": {
-            "TotalCount": 4,
             "Content": [
                 {
-                    "Path": "/echo-async-rest/{str}",
+                    "Description": "",
                     "Method": "GET",
-                    "Description": "(无)"
-                },
-                {
-                    "Path": "/echo-rest/{str}",
-                    "Method": "GET",
-                    "Description": "(无)"
-                },
-                {
-                    "Path": "/user-feign",
-                    "Method": "GET",
-                    "Description": "(无)"
-                },
-                {
-                    "Path": "/echo-feign/{str}",
-                    "Method": "GET",
-                    "Description": "(无)"
+                    "Path": "/echo-feign-url/{str}",
+                    "Status": 1
                 }
-            ]
+            ],
+            "TotalCount": 1
         }
     }
 }

@@ -11,7 +11,7 @@ tccli cdb ModifyDBInstanceVipVport --cli-unfold-argument  \
     --DstPort 1025 \
     --UniqVpcId 11357 \
     --UniqSubnetId 23789 \
-    --ReleaseDuration 12
+    --ReleaseDuration 24
 ```
 
 Output: 

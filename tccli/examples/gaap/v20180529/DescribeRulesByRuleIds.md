@@ -22,7 +22,7 @@ Output:
                     "DelayLoop": 30,
                     "Domain": "baidu.com",
                     "Method": "HEAD",
-                    "Path": "/",
+                    "Path": "/path",
                     "StatusCode": [
                         100,
                         200,
@@ -36,7 +36,7 @@ Output:
                 "ForwardHost": "baidu.com",
                 "HealthCheck": 0,
                 "ListenerId": "listener-qjm2tftd",
-                "Path": "/",
+                "Path": "/path",
                 "RealServerSet": [
                     {
                         "DownIPList": [],

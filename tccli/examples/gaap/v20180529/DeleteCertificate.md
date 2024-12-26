@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gaap DeleteCertificate --cli-unfold-argument  \
-    --CertificateId xxxx
+    --CertificateId cert-l2l4l545
 ```
 
 Output: 

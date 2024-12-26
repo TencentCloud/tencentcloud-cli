@@ -15,12 +15,14 @@ Output:
             {
                 "TemplateId": 1000,
                 "TemplateName": "testName",
-                "Description": "test",
+                "Description": "回调模版",
                 "StreamBeginNotifyUrl": "http://www.qq.com/api/notify?action=streamBegin",
                 "StreamEndNotifyUrl": "http://www.qq.com/api/notify?action=streamEnd",
                 "StreamMixNotifyUrl": "",
                 "RecordNotifyUrl": "http://www.qq.com/api/notify?action=record",
                 "SnapshotNotifyUrl": "http://www.qq.com/api/notify?action=record",
+                "AudioAuditNotifyUrl": "http://www.qq.com/api/notify?action=record",
+                "PushExceptionNotifyUrl": "http://www.qq.com/api/notify?action=record",
                 "PornCensorshipNotifyUrl": "http://www.qq.com/api/notify?action=porn",
                 "CallbackKey": "adafas1412423432"
             }

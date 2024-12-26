@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "RoleNumber": "1",
-        "ServerSession": "abc",
+        "ServerSession": "e30=",
         "Role": "Player",
         "RequestId": "req123"
     }

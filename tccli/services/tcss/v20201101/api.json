@@ -4148,12 +4148,39 @@
         },
         {
           "disabled": false,
-          "document": "”授权&扫描\"开关",
+          "document": "是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像",
           "example": "true",
           "member": "bool",
           "name": "NeedScan",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "同步方式，0全量同步，1增量同步",
+          "example": "0",
+          "member": "uint64",
+          "name": "SyncMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "webhook接入地址",
+          "example": "http://u.yd.qcloud.com/tcss/registry/webhook_id",
+          "member": "string",
+          "name": "WebhookUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "webhook接入token",
+          "example": "token",
+          "member": "string",
+          "name": "WebhookToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16492,6 +16519,46 @@
           "example": "1",
           "member": "string",
           "name": "InstanceID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步方式，0全量同步，1增量同步",
+          "example": "0",
+          "member": "uint64",
+          "name": "SyncMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedScan",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "webhook接入地址",
+          "example": "http://up.yd.qcloud.com/tcss/registry/webhook_id\t",
+          "member": "string",
+          "name": "WebhookUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "webhook接入token\t",
+          "example": "token",
+          "member": "string",
+          "name": "WebhookToken",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -33728,6 +33795,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步方式，0全量同步，1增量同步\t",
+          "example": "0",
+          "member": "uint64",
+          "name": "SyncMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -43161,7 +43238,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "10021",
+          "example": "10021s",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -43247,6 +43324,24 @@
           "name": "RegistryId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "同步方式，0全量同步，1增量同步",
+          "example": "0",
+          "member": "uint64",
+          "name": "SyncMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动授权&扫描，选择增量同步时参数生效，包含所有新增镜像",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedScan",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

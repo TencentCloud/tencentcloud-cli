@@ -16,10 +16,13 @@ Output:
         "RequestId": "",
         "MPSResult": {
             "AiAsrResults": [],
-            "AiOcrResults": []
+            "AiOcrResults": [],
+            "StreamQuaCtrlResults": []
         },
         "DiagnoseResult": {
-            "StreamBrokenResults": []
+            "StreamBrokenResults": [],
+            "StreamFormatResults": [],
+            "LowFrameRateResults": []
         }
     }
 }

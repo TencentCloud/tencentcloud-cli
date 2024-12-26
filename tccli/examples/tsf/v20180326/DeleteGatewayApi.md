@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tsf DeleteGatewayApi --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1 \
-    --ApiIdList api-d5970cd2 api-d5970cd3
+    --GroupId grp-notmqbpe \
+    --ApiList api-8c7538te
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "d54416e7-d75b-4fdd-860b-612f465db1f4",
         "Result": true
     }
 }

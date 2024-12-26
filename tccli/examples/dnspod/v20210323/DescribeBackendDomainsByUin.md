@@ -50,6 +50,7 @@ Output:
             }
         ],
         "DomainTotal": 27,
+        "BigCustomer": true,
         "RequestId": "0bcd9764-6846-4058-b378-3c65a7149dac"
     }
 }

@@ -1,13 +1,13 @@
 **Example 1: 请求示例**
 
-删除导播台1234的输入源1。
+删除导播台63501的输入源1。
 
 Input: 
 
 ```
 tccli live DeleteCasterInputInfo --cli-unfold-argument  \
     --InputIndex 1 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

@@ -12,7 +12,7 @@ tccli tbaas ApplyUserCert --cli-unfold-argument  \
     --GroupName youtuOrg \
     --UserIdentity kyloz \
     --Applicant 优图SDK \
-    --IdentityNum 123 \
+    --IdentityNum 3503******2342 \
     --CsrData -----BEGINCERTIFICATEREQUEST-----
 MIIBSTCB8AIBADCBjTELMAkGA1UEBhMCQ04xEjAQBgNVBAgMCUd1YW5nWmhvdTER
 MA8GA1UEBwwIU2hlblpoZW4xFDASBgNVBAoMC2V4YW1wbGUuY29tMQ8wDQYDVQQL
@@ -22,7 +22,7 @@ z+JMfmZjPEJ8x4H8a/CnqBIwcCaJjg5cMqOi+VyFHkCM9Sv4MFOqPAK7rE62m9XF
 s4B8hfKgADAKBggqhkjOPQQDAgNIADBFAiEAtl/h0DHfRJl170U6OGpCkN34jX0a
 GGGSHbFu2KxLUHsCIAFxXa6UsQOf93vT0FQldeBodbVCbNhM8/jtVqfZ/lhB
 -----ENDCERTIFICATEREQUEST----- \
-    --Notes test
+    --Notes fact
 ```
 
 Output: 

@@ -6,14 +6,15 @@ Input:
 
 ```
 tccli tsf ModifyMicroservice --cli-unfold-argument  \
-    --MicroserviceId ms-xxxxxxx
+    --MicroserviceId ms-yd8dr5bx \
+    --MicroserviceDesc This is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "4304b189-8663-453d-8863-1f238f6c4fb0",
+        "RequestId": "414386f9-834d-42ce-af55-532202e82031",
         "Result": true
     }
 }

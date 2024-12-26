@@ -7,7 +7,7 @@ Input:
 ```
 tccli cynosdb DeleteAuditLogFile --cli-unfold-argument  \
     --InstanceId cynosdbmysql-ins-qwerasdf \
-    --FileName aaa
+    --FileName andy.csv
 ```
 
 Output: 

@@ -13,56 +13,86 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "3fefec28-3f95-4055-8a22-714cc271251e",
         "Template": {
-            "TemplateId": 1000,
-            "Mp4Param": {
-                "ClassId": 0,
-                "StorageMode": "xx",
-                "StorageTime": 0,
-                "VodSubAppId": 0,
-                "VodFileName": "xx",
-                "Enable": 0,
-                "RecordInterval": 0,
-                "Procedure": "xx"
-            },
             "AacParam": {
-                "ClassId": 0,
-                "StorageMode": "xx",
-                "StorageTime": 0,
-                "VodSubAppId": 0,
-                "VodFileName": "xx",
+                "ClassId": null,
+                "CosBucketName": "",
+                "CosBucketPath": "",
+                "CosBucketRegion": "",
                 "Enable": 0,
-                "RecordInterval": 0,
-                "Procedure": "xx"
-            },
-            "Mp3Param": {
-                "ClassId": 0,
-                "StorageMode": "xx",
-                "StorageTime": 0,
-                "VodSubAppId": 0,
-                "VodFileName": "xx",
-                "Enable": 0,
-                "RecordInterval": 0,
-                "Procedure": "xx"
-            },
-            "TemplateName": "testName",
-            "Description": "test",
-            "FlvParam": {
-                "Enable": 1,
+                "Procedure": "",
                 "RecordInterval": 1800,
-                "StorageTime": 600
+                "StorageMode": "normal",
+                "StorageTime": 0,
+                "VodFileName": "",
+                "VodSubAppId": 251006352
+            },
+            "CosStore": 0,
+            "Description": "",
+            "FlvParam": {
+                "ClassId": null,
+                "CosBucketName": "",
+                "CosBucketPath": "",
+                "CosBucketRegion": "",
+                "Enable": 1,
+                "Procedure": "",
+                "RecordInterval": 1800,
+                "StorageMode": "normal",
+                "StorageTime": 123,
+                "VodFileName": "",
+                "VodSubAppId": 251006352
+            },
+            "FlvSpecialParam": {
+                "UploadInRecording": true
             },
             "HlsParam": {
+                "ClassId": null,
+                "CosBucketName": "",
+                "CosBucketPath": "",
+                "CosBucketRegion": "",
                 "Enable": 0,
+                "Procedure": "",
                 "RecordInterval": 1800,
-                "StorageTime": 600
+                "StorageMode": "normal",
+                "StorageTime": 0,
+                "VodFileName": "",
+                "VodSubAppId": 251006352
+            },
+            "HlsSpecialParam": {
+                "FlowContinueDuration": 0
             },
             "IsDelayLive": 0,
-            "HlsSpecialParam": {
-                "FlowContinueDuration": 60
-            }
-        },
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+            "Mp3Param": {
+                "ClassId": null,
+                "CosBucketName": "",
+                "CosBucketPath": "",
+                "CosBucketRegion": "",
+                "Enable": 0,
+                "Procedure": "",
+                "RecordInterval": 1800,
+                "StorageMode": "normal",
+                "StorageTime": 0,
+                "VodFileName": "",
+                "VodSubAppId": 251006352
+            },
+            "Mp4Param": {
+                "ClassId": null,
+                "CosBucketName": "",
+                "CosBucketPath": "",
+                "CosBucketRegion": "",
+                "Enable": 0,
+                "Procedure": "",
+                "RecordInterval": 1800,
+                "StorageMode": "normal",
+                "StorageTime": 0,
+                "VodFileName": "",
+                "VodSubAppId": 251006352
+            },
+            "RemoveWatermark": true,
+            "TemplateId": 1370613,
+            "TemplateName": "victor0001"
+        }
     }
 }
 ```

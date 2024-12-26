@@ -7,7 +7,7 @@ Input:
 ```
 tccli live CreateCasterInputPushUrl --cli-unfold-argument  \
     --InputIndex 1 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

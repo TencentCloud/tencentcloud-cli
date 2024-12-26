@@ -35,7 +35,7 @@ Input:
 ```
 tccli live CreateLiveRecordTemplate --cli-unfold-argument  \
     --TemplateName templat \
-    --Description test \
+    --Description 录制规则 \
     --FlvParam.Enable 0 \
     --FlvParam.RecordInterval 1800 \
     --FlvParam.StorageTime 600 \

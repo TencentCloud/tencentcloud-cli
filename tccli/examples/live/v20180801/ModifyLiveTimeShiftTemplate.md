@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli live ModifyLiveTimeShiftTemplate --cli-unfold-argument  \
-    --Description xx \
-    --TranscodeTemplateIds 0 \
-    --RemoveWatermark True \
-    --TemplateName xx \
-    --ItemDuration 1 \
     --TemplateId 1 \
+    --TemplateName timeshift \
+    --Description timeshift \
     --Duration 1 \
-    --Area xx
+    --ItemDuration 1 \
+    --RemoveWatermark True \
+    --TranscodeTemplateIds 0 \
+    --Area 0
 ```
 
 Output: 
