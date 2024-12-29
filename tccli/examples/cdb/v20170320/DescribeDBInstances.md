@@ -113,7 +113,7 @@ Output:
                                 "Weight": 0,
                                 "PayType": 1,
                                 "InstanceType": 3,
-                                "Vip": "test",
+                                "Vip": "127.0.0.1",
                                 "Qps": 1000,
                                 "Vport": 3306
                             }
@@ -157,7 +157,7 @@ Output:
                                 "Weight": 0,
                                 "PayType": 1,
                                 "InstanceType": 3,
-                                "Vip": "test",
+                                "Vip": "127.0.0.1",
                                 "Qps": 1000,
                                 "Vport": 3306
                             }

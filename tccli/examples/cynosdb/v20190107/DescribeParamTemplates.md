@@ -28,7 +28,8 @@ Output:
                         "Max": "10000",
                         "ParamType": "integer",
                         "EnumValue": [
-                            "test"
+                            "ON",
+                            "OFF"
                         ],
                         "ParamName": "param1",
                         "NeedReboot": 0

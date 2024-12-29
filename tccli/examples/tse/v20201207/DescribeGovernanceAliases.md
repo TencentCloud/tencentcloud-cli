@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tse DescribeGovernanceAliases --cli-unfold-argument  \
-    --Service abc \
-    --Namespace abc \
-    --Alias abc \
-    --AliasNamespace abc \
-    --Comment abc \
+    --Service service \
+    --Namespace namespace \
+    --Alias alias \
+    --AliasNamespace alias-namespace \
+    --Comment comment \
     --Offset 1 \
     --Limit 1 \
-    --InstanceId abc
+    --InstanceId ins-id
 ```
 
 Output: 
@@ -23,18 +23,18 @@ Output:
         "TotalCount": 1,
         "Content": [
             {
-                "Alias": "abc",
-                "AliasNamespace": "abc",
-                "Service": "abc",
-                "Namespace": "abc",
-                "Comment": "abc",
-                "CreateTime": "abc",
-                "ModifyTime": "abc",
-                "Id": "abc",
+                "Alias": "alias",
+                "AliasNamespace": "alias-namespace",
+                "Service": "service",
+                "Namespace": "namespace",
+                "Comment": "comment",
+                "CreateTime": "2024-10-08 10:00:00",
+                "ModifyTime": "2024-10-08 10:00:00",
+                "Id": "id",
                 "Editable": true
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

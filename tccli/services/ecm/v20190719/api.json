@@ -659,7 +659,7 @@
       "status": "online"
     },
     "ModifyAddressesBandwidth": {
-      "document": "调整弹性公网IP带宽\n",
+      "document": "调整弹性公网IP带宽",
       "input": "ModifyAddressesBandwidthRequest",
       "name": "调整弹性公网IP带宽",
       "output": "ModifyAddressesBandwidthResponse",
@@ -1217,7 +1217,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "无",
+          "example": "ap-xian-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -1226,7 +1226,7 @@
         {
           "disabled": false,
           "document": "EIP数量。默认值：1。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "AddressCount",
           "required": false,
@@ -1235,7 +1235,7 @@
         {
           "disabled": false,
           "document": "CMCC：中国移动\nCTCC：中国电信\nCUCC：中国联通",
-          "example": "无",
+          "example": "CTCC",
           "member": "string",
           "name": "InternetServiceProvider",
           "required": false,
@@ -1244,7 +1244,7 @@
         {
           "disabled": false,
           "document": "1 Mbps 至 5000 Mbps，默认值：1 Mbps。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
@@ -1262,7 +1262,7 @@
         {
           "disabled": false,
           "document": "要绑定的实例 ID。",
-          "example": "无",
+          "example": "ins-11112222",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1271,7 +1271,7 @@
         {
           "disabled": false,
           "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。",
-          "example": "无",
+          "example": "eni-11112222",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": false,
@@ -1280,7 +1280,7 @@
         {
           "disabled": false,
           "document": "要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。",
-          "example": "无",
+          "example": "10.0.0.13",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": false,
@@ -1295,20 +1295,20 @@
         {
           "disabled": false,
           "document": "申请到的 EIP 的唯一 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"eip-11112222\"]",
           "member": "string",
           "name": "AddressSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用DescribeTaskResult接口查询任务状态。",
-          "example": "无",
+          "example": "1234567",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1802,7 +1802,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-chongqing-ecm2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -1811,7 +1811,7 @@
         {
           "disabled": false,
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。",
-          "example": "",
+          "example": "eip-aihfuscm",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -1820,7 +1820,7 @@
         {
           "disabled": false,
           "document": "要绑定的实例 ID。",
-          "example": "",
+          "example": "ins-jfaukmsn",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1829,7 +1829,7 @@
         {
           "disabled": false,
           "document": "要绑定的弹性网卡 ID。 弹性网卡 ID 形如：eni-11112222。NetworkInterfaceId 与 InstanceId 不可同时指定。弹性网卡 ID 可通过DescribeNetworkInterfaces接口返回值中的networkInterfaceId获取。",
-          "example": "",
+          "example": "eni-ea173k1x",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": false,
@@ -1838,7 +1838,7 @@
         {
           "disabled": false,
           "document": "要绑定的内网 IP。如果指定了 NetworkInterfaceId 则也必须指定 PrivateIpAddress ，表示将 EIP 绑定到指定弹性网卡的指定内网 IP 上。同时要确保指定的 PrivateIpAddress 是指定的 NetworkInterfaceId 上的一个内网 IP。指定弹性网卡的内网 IP 可通过DescribeNetworkInterfaces接口返回值中的privateIpAddress获取。",
-          "example": "",
+          "example": "10.0.2.27",
           "member": "string",
           "name": "PrivateIpAddress",
           "required": false,
@@ -1853,9 +1853,10 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用DescribeTaskResult接口查询任务状态。",
-          "example": "",
+          "example": "202869021",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4004,7 +4005,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -4019,9 +4020,10 @@
         {
           "disabled": false,
           "document": "账户 EIP 配额信息。",
-          "example": "",
+          "example": "无",
           "member": "EipQuota",
           "name": "QuotaSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4040,7 +4042,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-chongqing-ecm2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -4049,7 +4051,7 @@
         {
           "disabled": false,
           "document": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：eip-11112222。参数不支持同时指定AddressIds和Filters。",
-          "example": "",
+          "example": "[\"eip-aihfuscm\"]",
           "member": "string",
           "name": "AddressIds",
           "required": false,
@@ -4058,7 +4060,7 @@
         {
           "disabled": false,
           "document": "每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定AddressIds和Filters。详细的过滤条件如下：\naddress-id - String - 是否必填：否 - （过滤条件）按照 EIP 的唯一 ID 过滤。EIP 唯一 ID 形如：eip-11112222。\naddress-name - String - 是否必填：否 - （过滤条件）按照 EIP 名称过滤。不支持模糊过滤。\naddress-ip - String - 是否必填：否 - （过滤条件）按照 EIP 的 IP 地址过滤。\naddress-status - String - 是否必填：否 - （过滤条件）按照 EIP 的状态过滤。取值范围：详见EIP状态列表。\ninstance-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的实例 ID 过滤。实例 ID 形如：ins-11112222。\nprivate-ip-address - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的内网 IP 过滤。\nnetwork-interface-id - String - 是否必填：否 - （过滤条件）按照 EIP 绑定的弹性网卡 ID 过滤。弹性网卡 ID 形如：eni-11112222。\nis-arrears - String - 是否必填：否 - （过滤条件）按照 EIP 是否欠费进行过滤。（TRUE：EIP 处于欠费状态|FALSE：EIP 费用状态正常）",
-          "example": "",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -4067,7 +4069,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4076,7 +4078,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100。",
-          "example": "",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4091,18 +4093,20 @@
         {
           "disabled": false,
           "document": "符合条件的 EIP 数量。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "EIP 详细信息列表。",
-          "example": "",
+          "example": "无",
           "member": "Address",
           "name": "AddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6597,7 +6601,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -6606,7 +6610,7 @@
         {
           "disabled": false,
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。",
-          "example": "",
+          "example": "eip-aihfuscm",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -6615,7 +6619,7 @@
         {
           "disabled": false,
           "document": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：\nTRUE：表示解绑 EIP 之后分配普通公网 IP。\nFALSE：表示解绑 EIP 之后不分配普通公网 IP。\n默认取值：FALSE。\n\n只有满足以下条件时才能指定该参数：\n只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。\n解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 DescribeAddressQuota 接口获取。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "ReallocateNormalPublicIp",
           "required": false,
@@ -6630,9 +6634,10 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用DescribeTaskResult接口查询任务状态。",
-          "example": "",
+          "example": "954361",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9512,7 +9517,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-chongqing-ecm2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -9521,7 +9526,7 @@
         {
           "disabled": false,
           "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：eip-11112222。",
-          "example": "",
+          "example": "eip-48d9e6ff",
           "member": "string",
           "name": "AddressId",
           "required": true,
@@ -9530,7 +9535,7 @@
         {
           "disabled": false,
           "document": "修改后的 EIP 名称。长度上限为20个字符。",
-          "example": "",
+          "example": "demo",
           "member": "string",
           "name": "AddressName",
           "required": false,
@@ -9539,7 +9544,7 @@
         {
           "disabled": false,
           "document": "设定EIP是否直通，\"TRUE\"表示直通，\"FALSE\"表示非直通。注意该参数仅对EIP直通功能可见的用户可以设定。",
-          "example": "",
+          "example": "false",
           "member": "string",
           "name": "EipDirectConnection",
           "required": false,
@@ -9566,7 +9571,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-chongqing-ecm2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -9575,7 +9580,7 @@
         {
           "disabled": false,
           "document": "EIP唯一标识ID，形如'eip-xxxxxxx'",
-          "example": "",
+          "example": "[\"eip-85de31gh\"]",
           "member": "string",
           "name": "AddressIds",
           "required": true,
@@ -9584,7 +9589,7 @@
         {
           "disabled": false,
           "document": "调整带宽目标值",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": true,
@@ -9599,9 +9604,10 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。",
-          "example": "",
+          "example": "1268459",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9863,7 +9869,7 @@
         {
           "disabled": false,
           "document": "IPV6地址。Ipv6Addresses和Ipv6AddressId必须且只能传一个",
-          "example": "无",
+          "example": "[\"2402:4e00:1000:200:0:8d8a:60b7:87f8\"]",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
@@ -9872,7 +9878,7 @@
         {
           "disabled": false,
           "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ipv6Addresses和Ipv6AddressId必须且只能传一个",
-          "example": "无",
+          "example": "[\"eip-265fg963\"]",
           "member": "string",
           "name": "Ipv6AddressIds",
           "required": false,
@@ -12470,7 +12476,7 @@
         {
           "disabled": false,
           "document": "ECM 地域",
-          "example": "",
+          "example": "ap-chongqing-ecm2",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -12479,7 +12485,7 @@
         {
           "disabled": false,
           "document": "标识 EIP 的唯一 ID 列表。",
-          "example": "",
+          "example": "[\"eip-fg5896sc\"]",
           "member": "string",
           "name": "AddressIds",
           "required": true,
@@ -12494,9 +12500,10 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。可以使用DescribeTaskResult接口查询任务状态。",
-          "example": "",
+          "example": "7456321",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12524,7 +12531,7 @@
         {
           "disabled": false,
           "document": "IPV6地址。Ipv6Addresses和Ipv6AddressIds必须且只能传一个。",
-          "example": "无",
+          "example": "[\"2402:4e00:1000:200:0:8d8a:60b7:87f8\"]",
           "member": "string",
           "name": "Ipv6Addresses",
           "required": false,
@@ -12533,7 +12540,7 @@
         {
           "disabled": false,
           "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ipv6Addresses和Ipv6AddressIds必须且只能传一个。",
-          "example": "无",
+          "example": "[\"eip-1534fc12\"]",
           "member": "string",
           "name": "Ipv6AddressIds",
           "required": false,
@@ -12548,10 +12555,10 @@
         {
           "disabled": false,
           "document": "异步任务TaskId。",
-          "example": "无",
+          "example": "3568421",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

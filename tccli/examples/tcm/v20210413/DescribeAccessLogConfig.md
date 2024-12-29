@@ -13,35 +13,35 @@ Output:
 ```
 {
     "Response": {
-        "File": "abc",
-        "Format": "abc",
-        "Encoding": "abc",
+        "File": "/dev/stdout",
+        "Format": "{xxx: xxx}",
+        "Encoding": "JSON",
         "SelectedRange": {
             "Items": [
                 {
-                    "Namespace": "abc",
-                    "ClusterName": "abc",
-                    "ItemName": "abc",
+                    "Namespace": "test",
+                    "ClusterName": "cls-xxxxxxxx",
+                    "ItemName": "test",
                     "Gateways": [
-                        "abc"
+                        "test"
                     ]
                 }
             ],
             "All": true
         },
-        "Template": "abc",
+        "Template": "test",
         "CLS": {
             "Enable": true,
-            "LogSet": "abc",
-            "Topic": "abc",
+            "LogSet": "test",
+            "Topic": "test",
             "NeedDelete": true,
-            "Region": "abc"
+            "Region": "sh"
         },
-        "Address": "abc",
+        "Address": "x.x.x.x",
         "EnableServer": true,
         "EnableStdout": true,
         "Enable": true,
-        "RequestId": "abc"
+        "RequestId": "xxxxxxxxxxxxxxxxxxx"
     }
 }
 ```

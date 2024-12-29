@@ -27,10 +27,10 @@ Output:
                 "FileName": "monkey_1501490864.sql",
                 "Process": 5,
                 "CreateTime": "2017-11-09 14:26:31",
-                "FileSize": 12,
+                "FileSize": "12",
                 "Message": "lock_inst.cgi: 某些实例id不存在对应的实例记录",
                 "JobId": 16242,
-                "DbName": "test",
+                "DbName": "db1",
                 "AsyncRequestId": "a4788d0a-df23758a-ac961e5a-af414d33"
             },
             {
@@ -60,7 +60,7 @@ Output:
                 "FileSize": "2",
                 "Message": "lock_inst.cgi: 某些实例id不存在对应的实例记录",
                 "JobId": 16222,
-                "DbName": "test",
+                "DbName": "db1",
                 "AsyncRequestId": "9706dfbf-0d1bc6df-5f18f4e1-bb86f2f4"
             },
             {

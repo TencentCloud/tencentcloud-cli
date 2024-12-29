@@ -490,50 +490,50 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "svc-******",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "hannafeta",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hehs**hes",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "使用协议",
-          "example": "无",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -546,7 +546,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -566,7 +566,7 @@
         {
           "disabled": false,
           "document": "该地域下apigateway实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -576,7 +576,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no service",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -818,7 +818,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -828,7 +828,7 @@
         {
           "disabled": false,
           "document": "关联资源总数",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -838,7 +838,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no result",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -880,7 +880,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -900,7 +900,7 @@
         {
           "disabled": false,
           "document": "地域下总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -910,7 +910,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": false,
@@ -1156,7 +1156,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.***.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -1166,7 +1166,7 @@
         {
           "disabled": false,
           "document": "已部署证书ID",
-          "example": "无",
+          "example": "heys**ejj",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -1176,7 +1176,7 @@
         {
           "disabled": false,
           "document": "域名状态",
-          "example": "无",
+          "example": "enable",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -1186,7 +1186,7 @@
         {
           "disabled": false,
           "document": "域名计费状态",
-          "example": "无",
+          "example": "on",
           "member": "string",
           "name": "HttpsBillingSwitch",
           "output_required": true,
@@ -1202,7 +1202,7 @@
         {
           "disabled": false,
           "document": "该地域下CDN域名总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -1222,7 +1222,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no result",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -1260,7 +1260,7 @@
         {
           "disabled": false,
           "document": "证书指纹",
-          "example": "无",
+          "example": "881be953a4fd8cab401409b530ee75d1bd171075",
           "member": "string",
           "name": "Fingerprint",
           "output_required": false,
@@ -1271,7 +1271,7 @@
         {
           "disabled": false,
           "document": "证书有效期开始时间",
-          "example": "无",
+          "example": "2020-09-08 20:00:00",
           "member": "string",
           "name": "ValidFrom",
           "output_required": false,
@@ -1282,7 +1282,7 @@
         {
           "disabled": false,
           "document": "证书有效期结束时间",
-          "example": "无",
+          "example": "2020-12-09 20:00:00",
           "member": "string",
           "name": "ValidTo",
           "output_required": false,
@@ -1327,7 +1327,7 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "无",
+          "example": "heysh**he",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -1337,7 +1337,7 @@
         {
           "disabled": false,
           "document": "证书绑定的域名",
-          "example": "无",
+          "example": "www.***.com",
           "member": "string",
           "name": "DnsNames",
           "output_required": true,
@@ -1347,7 +1347,7 @@
         {
           "disabled": false,
           "document": "根证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hesy**nnn",
           "member": "string",
           "name": "CertCaId",
           "output_required": false,
@@ -1357,7 +1357,7 @@
         {
           "disabled": false,
           "document": "证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "UNIDIRECTIONAL",
           "member": "string",
           "name": "SSLMode",
           "output_required": false,
@@ -1373,7 +1373,7 @@
         {
           "disabled": false,
           "document": "证书可配置域名数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DomainNumber",
           "output_required": true,
@@ -1383,7 +1383,7 @@
         {
           "disabled": false,
           "document": "原始证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heysh**h",
           "member": "string",
           "name": "OriginCertificateId",
           "output_required": true,
@@ -1393,7 +1393,7 @@
         {
           "disabled": false,
           "document": "重颁发证书原始 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "etsvs**he",
           "member": "string",
           "name": "ReplacedBy",
           "output_required": true,
@@ -1403,7 +1403,7 @@
         {
           "disabled": false,
           "document": "重颁发证书新 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vsgev**hs",
           "member": "string",
           "name": "ReplacedFor",
           "output_required": true,
@@ -1413,7 +1413,7 @@
         {
           "disabled": false,
           "document": "新订单证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "eyrud**jjs",
           "member": "string",
           "name": "RenewOrder",
           "output_required": true,
@@ -1423,7 +1423,7 @@
         {
           "disabled": false,
           "document": "是否是国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "SMCert",
           "output_required": true,
@@ -1433,7 +1433,7 @@
         {
           "disabled": false,
           "document": "公司类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CompanyType",
           "output_required": true,
@@ -1449,7 +1449,7 @@
         {
           "disabled": false,
           "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "815836472",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
@@ -1459,7 +1459,7 @@
         {
           "disabled": false,
           "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "27383",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -1469,7 +1469,7 @@
         {
           "disabled": false,
           "document": "证书来源。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "upload",
           "member": "string",
           "name": "From",
           "output_required": true,
@@ -1479,7 +1479,7 @@
         {
           "disabled": false,
           "document": "证书套餐类型：\n2 = TrustAsia TLS RSA CA，3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = Wotrus 国密域名型证书，34 = Wotrus 国密域名型多域名证书，35 = Wotrus 国密域名型通配符证书，37 = Wotrus 国密企业型证书，38 = Wotrus 国密企业型多域名证书，39 = Wotrus 国密企业型通配符证书，40 = Wotrus 国密增强型证书，41 = Wotrus 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书，43 = DNSPod-企业型(OV)SSL证书，44 = DNSPod-企业型(OV)通配符SSL证书，45 = DNSPod-企业型(OV)多域名SSL证书， 46 = DNSPod-增强型(EV)SSL证书，47 = DNSPod-增强型(EV)多域名SSL证书，48 = DNSPod-域名型(DV)SSL证书，49 = DNSPod-域名型(DV)通配符SSL证书，50 = DNSPod-域名型(DV)多域名SSL证书，51 = DNSPod（国密）-企业型(OV)SSL证书，52 = DNSPod（国密）-企业型(OV)通配符SSL证书，53 = DNSPod（国密）-企业型(OV)多域名SSL证书，54 = DNSPod（国密）-域名型(DV)SSL证书，55 = DNSPod（国密）-域名型(DV)通配符SSL证书， 56 = DNSPod（国密）-域名型(DV)多域名SSL证书，57 = SecureSite 企业型专业版多域名(OV Pro)，58 = SecureSite 企业型多域名(OV)，59 = SecureSite 增强型专业版多域名(EV Pro)，60 = SecureSite 增强型多域名(EV)，61 = Geotrust 增强型多域名(EV)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "string",
           "name": "PackageType",
           "output_required": true,
@@ -1489,7 +1489,7 @@
         {
           "disabled": false,
           "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CA",
           "member": "string",
           "name": "CertificateType",
           "output_required": true,
@@ -1499,7 +1499,7 @@
         {
           "disabled": false,
           "document": "颁发者。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Wosign",
           "member": "string",
           "name": "ProductZhName",
           "output_required": true,
@@ -1509,7 +1509,7 @@
         {
           "disabled": false,
           "document": "主域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.***.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -1519,7 +1519,7 @@
         {
           "disabled": false,
           "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hello",
           "member": "string",
           "name": "Alias",
           "output_required": true,
@@ -1529,7 +1529,7 @@
         {
           "disabled": false,
           "document": "状态。0：审核中，1：已通过，2：审核失败，3：已过期，4：验证方式为 DNS_AUTO 类型的证书， 已添加DNS记录，5：企业证书，待提交，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函，9：证书吊销中，10：已吊销，11：重颁发中，12：待上传吊销确认函，13：免费证书待提交资料状态，14：已退款，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -1549,7 +1549,7 @@
         {
           "disabled": false,
           "document": "漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "INACTIVE",
           "member": "string",
           "name": "VulnerabilityStatus",
           "output_required": true,
@@ -1559,7 +1559,7 @@
         {
           "disabled": false,
           "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "wait-issue",
           "member": "string",
           "name": "StatusMsg",
           "output_required": true,
@@ -1569,7 +1569,7 @@
         {
           "disabled": false,
           "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DNS_AUTO",
           "member": "string",
           "name": "VerifyType",
           "output_required": true,
@@ -1579,7 +1579,7 @@
         {
           "disabled": false,
           "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CertBeginTime",
           "output_required": true,
@@ -1589,7 +1589,7 @@
         {
           "disabled": false,
           "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2019-09-18 20:00:00",
           "member": "string",
           "name": "CertEndTime",
           "output_required": true,
@@ -1599,7 +1599,7 @@
         {
           "disabled": false,
           "document": "证书有效期，单位（月）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ValidityPeriod",
           "output_required": true,
@@ -1609,7 +1609,7 @@
         {
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "InsertTime",
           "output_required": true,
@@ -1619,7 +1619,7 @@
         {
           "disabled": false,
           "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heys**he",
           "member": "string",
           "name": "CertificateId",
           "output_required": true,
@@ -1629,7 +1629,7 @@
         {
           "disabled": false,
           "document": "证书包含的多个域名（包含主域名）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.hey**.com\"]",
           "member": "string",
           "name": "SubjectAltName",
           "output_required": true,
@@ -1639,7 +1639,7 @@
         {
           "disabled": false,
           "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rustAsia TLS RSA CA",
           "member": "string",
           "name": "PackageTypeName",
           "output_required": true,
@@ -1649,7 +1649,7 @@
         {
           "disabled": false,
           "document": "状态名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "证书已颁发",
           "member": "string",
           "name": "StatusName",
           "output_required": true,
@@ -1659,7 +1659,7 @@
         {
           "disabled": false,
           "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsVip",
           "output_required": true,
@@ -1669,7 +1669,7 @@
         {
           "disabled": false,
           "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDv",
           "output_required": true,
@@ -1679,7 +1679,7 @@
         {
           "disabled": false,
           "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsWildcard",
           "output_required": true,
@@ -1689,7 +1689,7 @@
         {
           "disabled": false,
           "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsVulnerability",
           "output_required": true,
@@ -1699,7 +1699,7 @@
         {
           "disabled": false,
           "document": "是否可续费。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "RenewAble",
           "output_required": true,
@@ -1719,7 +1719,7 @@
         {
           "disabled": false,
           "document": "关联的云资源，暂不可用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"clb\"]",
           "member": "string",
           "name": "BoundResource",
           "output_required": true,
@@ -1729,7 +1729,7 @@
         {
           "disabled": false,
           "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Deployable",
           "output_required": true,
@@ -1749,7 +1749,7 @@
         {
           "disabled": false,
           "document": "是否已忽略到期通知\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsIgnore",
           "output_required": true,
@@ -1759,7 +1759,7 @@
         {
           "disabled": false,
           "document": "是否国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsSM",
           "output_required": true,
@@ -1769,7 +1769,7 @@
         {
           "disabled": false,
           "document": "证书算法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RSA",
           "member": "string",
           "name": "EncryptAlgorithm",
           "output_required": true,
@@ -1779,7 +1779,7 @@
         {
           "disabled": false,
           "document": "上传CA证书的加密算法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"RSA\"]",
           "member": "string",
           "name": "CAEncryptAlgorithms",
           "output_required": true,
@@ -1789,7 +1789,7 @@
         {
           "disabled": false,
           "document": "上传CA证书的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"2018-09-18 20:00:00\"]",
           "member": "string",
           "name": "CAEndTimes",
           "output_required": true,
@@ -1799,7 +1799,7 @@
         {
           "disabled": false,
           "document": "上传CA证书的通用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"RootCa\"]",
           "member": "string",
           "name": "CACommonNames",
           "output_required": true,
@@ -1819,7 +1819,7 @@
         {
           "disabled": false,
           "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": true,
@@ -1829,7 +1829,7 @@
         {
           "disabled": false,
           "document": "托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 \n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "HostingStatus",
           "output_required": true,
@@ -1839,7 +1839,7 @@
         {
           "disabled": false,
           "document": "托管完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "HostingCompleteTime",
           "output_required": true,
@@ -1849,7 +1849,7 @@
         {
           "disabled": false,
           "document": "托管新证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "gegsh**hs",
           "member": "string",
           "name": "HostingRenewCertId",
           "output_required": true,
@@ -1859,7 +1859,7 @@
         {
           "disabled": false,
           "document": "存在的续费证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "he**hehs",
           "member": "string",
           "name": "HasRenewOrder",
           "output_required": true,
@@ -1869,7 +1869,7 @@
         {
           "disabled": false,
           "document": "重颁发证书原证书是否删除\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ReplaceOriCertIsDelete",
           "output_required": true,
@@ -1879,7 +1879,7 @@
         {
           "disabled": false,
           "document": "是否即将过期， 证书即将到期的30天内为即将过期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsExpiring",
           "output_required": true,
@@ -1889,7 +1889,7 @@
         {
           "disabled": false,
           "document": "DV证书添加验证截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "DVAuthDeadline",
           "output_required": true,
@@ -1899,7 +1899,7 @@
         {
           "disabled": false,
           "document": "域名验证通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "ValidationPassedTime",
           "output_required": true,
@@ -1909,7 +1909,7 @@
         {
           "disabled": false,
           "document": "证书关联的多域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "CertSANs",
           "output_required": true,
@@ -1919,7 +1919,7 @@
         {
           "disabled": false,
           "document": "域名验证驳回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no right",
           "member": "string",
           "name": "AwaitingValidationMsg",
           "output_required": true,
@@ -1929,7 +1929,7 @@
         {
           "disabled": false,
           "document": "是否允许下载\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "AllowDownload",
           "output_required": true,
@@ -1939,7 +1939,7 @@
         {
           "disabled": false,
           "document": "证书域名是否全部在DNSPOD托管解析\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDNSPODResolve",
           "output_required": true,
@@ -1949,7 +1949,7 @@
         {
           "disabled": false,
           "document": "是否是权益点购买的证书\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsPackage",
           "output_required": true,
@@ -1959,7 +1959,7 @@
         {
           "disabled": false,
           "document": "是否存在私钥密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "KeyPasswordCustomFlag",
           "output_required": true,
@@ -1979,7 +1979,7 @@
         {
           "disabled": false,
           "document": "证书吊销完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CertRevokedTime",
           "output_required": false,
@@ -1989,7 +1989,7 @@
         {
           "disabled": false,
           "document": "托管资源类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"clb\"]",
           "member": "string",
           "name": "HostingResourceTypes",
           "output_required": false,
@@ -2191,20 +2191,20 @@
         {
           "disabled": false,
           "document": "CLB实例ID",
-          "example": "无",
+          "example": "lb-*****",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CLB实例名称",
-          "example": "无",
+          "example": "zrhclb",
           "member": "string",
           "name": "LoadBalancerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2214,7 +2214,7 @@
           "example": "无",
           "member": "ClbListener",
           "name": "Listeners",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2227,7 +2227,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -2247,7 +2247,7 @@
         {
           "disabled": false,
           "document": "该地域下Clb实例总数",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -2257,7 +2257,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -2273,40 +2273,40 @@
         {
           "disabled": false,
           "document": "监听器ID",
-          "example": "无",
+          "example": "lbl-*****",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器名称",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否开启SNI，1为开启，0为关闭",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SniSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监听器协议类型， HTTPS|TCP_SSL",
-          "example": "无",
+          "example": "HTTPS",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2316,7 +2316,7 @@
           "example": "无",
           "member": "Certificate",
           "name": "Certificate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2326,17 +2326,17 @@
           "example": "无",
           "member": "ClbListenerRule",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "不匹配域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.****.com\"]",
           "member": "string",
           "name": "NoMatchDomains",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2349,7 +2349,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "loc-fcyk****",
           "member": "string",
           "name": "LocationId",
           "output_required": true,
@@ -2359,7 +2359,7 @@
         {
           "disabled": false,
           "document": "规则绑定的域名",
-          "example": "无",
+          "example": "www.****.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -2369,7 +2369,7 @@
         {
           "disabled": false,
           "document": "规则是否匹配待绑定证书的域名",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsMatch",
           "output_required": true,
@@ -2389,7 +2389,7 @@
         {
           "disabled": false,
           "document": "不匹配域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "NoMatchDomains",
           "output_required": true,
@@ -2399,7 +2399,7 @@
         {
           "disabled": false,
           "document": "规则绑定的路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/url",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -2471,7 +2471,7 @@
         {
           "disabled": false,
           "document": "公司名称",
-          "example": "无",
+          "example": "Tencent",
           "member": "string",
           "name": "CompanyName",
           "output_required": true,
@@ -2481,7 +2481,7 @@
         {
           "disabled": false,
           "document": "公司ID",
-          "example": "无",
+          "example": "178283",
           "member": "int64",
           "name": "CompanyId",
           "output_required": true,
@@ -2491,7 +2491,7 @@
         {
           "disabled": false,
           "document": "公司所在国家",
-          "example": "无",
+          "example": "China",
           "member": "string",
           "name": "CompanyCountry",
           "output_required": true,
@@ -2501,7 +2501,7 @@
         {
           "disabled": false,
           "document": "公司所在省份",
-          "example": "无",
+          "example": "Guangdong",
           "member": "string",
           "name": "CompanyProvince",
           "output_required": true,
@@ -2511,7 +2511,7 @@
         {
           "disabled": false,
           "document": "公司所在城市",
-          "example": "无",
+          "example": "Shenzhen",
           "member": "string",
           "name": "CompanyCity",
           "output_required": true,
@@ -2521,7 +2521,7 @@
         {
           "disabled": false,
           "document": "公司所在详细地址",
-          "example": "无",
+          "example": "Binhai****",
           "member": "string",
           "name": "CompanyAddress",
           "output_required": true,
@@ -2531,7 +2531,7 @@
         {
           "disabled": false,
           "document": "公司电话",
-          "example": "无",
+          "example": "27384893",
           "member": "string",
           "name": "CompanyPhone",
           "output_required": true,
@@ -2541,7 +2541,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "IdType",
           "output_required": true,
@@ -2551,7 +2551,7 @@
         {
           "disabled": false,
           "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "178383",
           "member": "string",
           "name": "IdNumber",
           "output_required": true,
@@ -2614,50 +2614,50 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.***.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heysy**hshw",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "ENABLED: 域名上线状态\nDISABLED:域名下线状态",
-          "example": "无",
+          "example": "ENABLED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cos-*****",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3144,50 +3144,50 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.hr**.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "ddos-****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "协议类型",
-          "example": "无",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.***.com",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "转发端口",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "VirtualPort",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3200,7 +3200,7 @@
         {
           "disabled": false,
           "document": "该地域下ddos域名总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -3220,7 +3220,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -3395,7 +3395,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "188939",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -3405,7 +3405,7 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "无",
+          "example": "hesg**heh",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -3415,7 +3415,7 @@
         {
           "disabled": false,
           "document": "异步查询结果： 0表示任务进行中、 1表示任务成功、 2表示任务失败、3表示未授权服务角色导致任务失败、4表示有未解绑的云资源导致任务失败、5表示查询关联云资源超时导致任务失败",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -3425,7 +3425,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -3435,7 +3435,7 @@
         {
           "disabled": false,
           "document": "当前结果缓存时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CacheTime",
           "output_required": true,
@@ -3445,7 +3445,7 @@
         {
           "disabled": false,
           "document": "包含的域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.**.com\"]",
           "member": "string",
           "name": "Domains",
           "output_required": true,
@@ -3617,7 +3617,7 @@
         {
           "disabled": false,
           "document": "部署记录详情ID",
-          "example": "无",
+          "example": "17990",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -3627,7 +3627,7 @@
         {
           "disabled": false,
           "document": "部署证书ID",
-          "example": "无",
+          "example": "heysh**nens",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -3637,7 +3637,7 @@
         {
           "disabled": false,
           "document": "原绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ehy**nsn",
           "member": "string",
           "name": "OldCertId",
           "output_required": true,
@@ -3647,7 +3647,7 @@
         {
           "disabled": false,
           "document": "部署实例ID",
-          "example": "无",
+          "example": "lb-****",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -3657,7 +3657,7 @@
         {
           "disabled": false,
           "document": "部署实例名称",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -3667,7 +3667,7 @@
         {
           "disabled": false,
           "document": "部署监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lbl-****",
           "member": "string",
           "name": "ListenerId",
           "output_required": true,
@@ -3677,7 +3677,7 @@
         {
           "disabled": false,
           "document": "部署域名列表",
-          "example": "无",
+          "example": "[\"www.**.com\"]",
           "member": "string",
           "name": "Domains",
           "output_required": true,
@@ -3687,7 +3687,7 @@
         {
           "disabled": false,
           "document": "部署监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -3697,7 +3697,7 @@
         {
           "disabled": false,
           "document": "部署状态",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -3707,7 +3707,7 @@
         {
           "disabled": false,
           "document": "部署错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no domain",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -3717,7 +3717,7 @@
         {
           "disabled": false,
           "document": "部署记录详情创建时间",
-          "example": "无",
+          "example": "2028-09-08 23:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3727,7 +3727,7 @@
         {
           "disabled": false,
           "document": "部署记录详情最后一次更新时间",
-          "example": "无",
+          "example": "2028-09-08 24:00:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -3737,7 +3737,7 @@
         {
           "disabled": false,
           "document": "部署监听器名称",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "ListenerName",
           "output_required": true,
@@ -3747,7 +3747,7 @@
         {
           "disabled": false,
           "document": "是否开启SNI",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "SniSwitch",
           "output_required": true,
@@ -3757,7 +3757,7 @@
         {
           "disabled": false,
           "document": "COS存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cos-****",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -3767,7 +3767,7 @@
         {
           "disabled": false,
           "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zrhname",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -3777,7 +3777,7 @@
         {
           "disabled": false,
           "document": "secret名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "testSc",
           "member": "string",
           "name": "SecretName",
           "output_required": true,
@@ -3787,7 +3787,7 @@
         {
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "90",
           "member": "int64",
           "name": "Port",
           "output_required": true,
@@ -3797,7 +3797,7 @@
         {
           "disabled": false,
           "document": "TCB环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tcb-****",
           "member": "string",
           "name": "EnvId",
           "output_required": false,
@@ -3807,7 +3807,7 @@
         {
           "disabled": false,
           "document": "部署的TCB类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tcb",
           "member": "string",
           "name": "TCBType",
           "output_required": false,
@@ -3827,7 +3827,7 @@
         {
           "disabled": false,
           "document": "部署CLB监听器的Url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"/test1\",\"/test2\"]",
+          "example": "[\"/zrh1\",\"/zrh2\"]",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -3843,70 +3843,70 @@
         {
           "disabled": false,
           "document": "部署记录ID",
-          "example": "无",
+          "example": "1783883",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署证书ID",
-          "example": "无",
+          "example": "jejeus**he",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署资源类型",
-          "example": "无",
+          "example": "CLB",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署状态",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署时间",
-          "example": "无",
+          "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近一次更新时间",
-          "example": "无",
+          "example": "2018-09-19 20:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4245,8 +4245,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID，根据任务ID查询绑定云资源结果",
-          "example": "无",
+          "document": "任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果",
+          "example": "178883",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4255,7 +4255,7 @@
         {
           "disabled": false,
           "document": "每页展示数量， 默认10，最大值100; 分页总数为云资源地域下实例总数， 即第一页会拉群每个云资源的地域下面Limit数量实例",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Limit",
           "required": false,
@@ -4264,7 +4264,7 @@
         {
           "disabled": false,
           "document": "当前偏移量",
-          "example": "无",
+          "example": "10",
           "member": "string",
           "name": "Offset",
           "required": false,
@@ -4273,7 +4273,7 @@
         {
           "disabled": false,
           "document": "查询资源类型的结果详情， 不传则查询所有",
-          "example": "无",
+          "example": "[\"clb\"]",
           "member": "string",
           "name": "ResourceTypes",
           "required": false,
@@ -4282,7 +4282,7 @@
         {
           "disabled": false,
           "document": "查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持",
-          "example": "无",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "Regions",
           "required": false,
@@ -4397,7 +4397,7 @@
         {
           "disabled": false,
           "document": "关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -4407,7 +4407,7 @@
         {
           "disabled": false,
           "document": "当前结果缓存时间",
-          "example": "无",
+          "example": "2018-09-08 20:00:00",
           "member": "string",
           "name": "CacheTime",
           "output_required": true,
@@ -4449,7 +4449,7 @@
         {
           "disabled": false,
           "document": "任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果， 最大支持100个",
-          "example": "无",
+          "example": "[\"1783883\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -6438,7 +6438,7 @@
         {
           "disabled": false,
           "document": "部署记录ID",
-          "example": "无",
+          "example": "17993",
           "member": "string",
           "name": "DeployRecordId",
           "required": true,
@@ -6471,7 +6471,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -6491,7 +6491,7 @@
         {
           "disabled": false,
           "document": "成功总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "SuccessTotalCount",
           "output_required": true,
@@ -6501,7 +6501,7 @@
         {
           "disabled": false,
           "document": "失败总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "FailedTotalCount",
           "output_required": true,
@@ -6511,7 +6511,7 @@
         {
           "disabled": false,
           "document": "部署中总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RunningTotalCount",
           "output_required": true,
@@ -7770,7 +7770,7 @@
           "example": "qq.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7780,7 +7780,7 @@
           "example": "DNS",
           "member": "string",
           "name": "VerifyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7790,7 +7790,7 @@
           "example": "1",
           "member": "int64",
           "name": "LocalCheck",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7800,27 +7800,27 @@
           "example": "1",
           "member": "int64",
           "name": "CaCheck",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "检查失败原因。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "fail",
           "member": "string",
           "name": "LocalCheckFailReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "检查到的值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.**.com\"]",
           "member": "string",
           "name": "CheckValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7830,7 +7830,7 @@
           "example": "false",
           "member": "bool",
           "name": "Frequently",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7840,7 +7840,7 @@
           "example": "false",
           "member": "bool",
           "name": "Issued",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -7966,7 +7966,7 @@
         {
           "disabled": false,
           "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "_895b7ee8eb1662e895c90a649c01bc2e.ning****g.online",
           "member": "string",
           "name": "DvAuthKey",
           "output_required": true,
@@ -7976,7 +7976,7 @@
         {
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "f0923331a7c7598def3fe522dbaab630.7bbc2a79620205e7edf2e3f8028f08dc.cmcdt3ax6qhp87.trust-provider.com",
           "member": "string",
           "name": "DvAuthValue",
           "output_required": true,
@@ -7986,7 +7986,7 @@
         {
           "disabled": false,
           "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ning****ng.online",
           "member": "string",
           "name": "DvAuthDomain",
           "output_required": true,
@@ -7996,7 +7996,7 @@
         {
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/path",
           "member": "string",
           "name": "DvAuthPath",
           "output_required": true,
@@ -8006,7 +8006,7 @@
         {
           "disabled": false,
           "document": "DV 认证子域名，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "_895b7ee8eb1662e895c90a649c01bc2e",
           "member": "string",
           "name": "DvAuthSubDomain",
           "output_required": true,
@@ -8016,7 +8016,7 @@
         {
           "disabled": false,
           "document": "DV 认证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CNAME",
           "member": "string",
           "name": "DvAuthVerifyType",
           "output_required": true,
@@ -8032,7 +8032,7 @@
         {
           "disabled": false,
           "document": "异常错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "FailedOperation.AutoRenewCertificateTypeInvalid",
           "member": "string",
           "name": "Code",
           "output_required": true,
@@ -8042,7 +8042,7 @@
         {
           "disabled": false,
           "document": "异常错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "证书类型不支持自动续费",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -8084,7 +8084,7 @@
         {
           "disabled": false,
           "document": "网关证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "api-gate-***",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -8094,7 +8094,7 @@
         {
           "disabled": false,
           "document": "网关证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8104,7 +8104,7 @@
         {
           "disabled": false,
           "document": "绑定域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.***.com",
           "member": "string",
           "name": "BindDomains",
           "output_required": false,
@@ -8114,7 +8114,7 @@
         {
           "disabled": false,
           "document": "证书来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "upload",
           "member": "string",
           "name": "CertSource",
           "output_required": false,
@@ -8124,7 +8124,7 @@
         {
           "disabled": false,
           "document": "当前绑定的SSL证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heysh**he",
           "member": "string",
           "name": "CertId",
           "output_required": false,
@@ -8140,7 +8140,7 @@
         {
           "disabled": false,
           "document": "托管资源替换时间， 默认为证书过期前30天存在续费证书则替换\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "15",
           "member": "int64",
           "name": "ReplaceTime",
           "output_required": false,
@@ -8151,7 +8151,7 @@
         {
           "disabled": false,
           "document": "托管发送消息类型：0，托管开始前消息提醒（没有续费证书也会收到该提示消息）； 1， 托管开始消息提醒（存在续费证书才会收到消息提醒）； 2， 托管资源替换失败消息提醒； 3 托管资源替换成功消息提醒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "MessageTypes",
           "output_required": false,
@@ -8162,7 +8162,7 @@
         {
           "disabled": false,
           "document": "资源替换开始时间",
-          "example": "无",
+          "example": "12:00:00",
           "member": "string",
           "name": "ReplaceStartTime",
           "output_required": false,
@@ -8173,7 +8173,7 @@
         {
           "disabled": false,
           "document": "资源替换结束时间",
-          "example": "无",
+          "example": "23:00:00",
           "member": "string",
           "name": "ReplaceEndTime",
           "output_required": false,
@@ -8190,40 +8190,40 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "asfgas",
+          "example": "lh-*****",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "gsehsd",
+          "example": "zrh-self",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "IP地址",
-          "example": "无",
+          "example": "[\"192.0.9.1\"]",
           "member": "string",
           "name": "IP",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可选择域名",
-          "example": "无",
+          "example": "[\"www.h**.com\"]",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -8236,30 +8236,30 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "ww.***.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heysh**h",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "-1：域名未关联证书。\n1： 域名https已开启。\n0： 域名https已关闭。",
-          "example": "无",
+          "example": "-1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -8272,7 +8272,7 @@
         {
           "disabled": false,
           "document": "该地域下live实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -8292,7 +8292,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -8308,7 +8308,7 @@
         {
           "disabled": false,
           "document": "状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期",
-          "example": "无",
+          "example": "audit",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -8318,7 +8318,7 @@
         {
           "disabled": false,
           "document": "管理人姓名",
-          "example": "无",
+          "example": "luke",
           "member": "string",
           "name": "ManagerFirstName",
           "output_required": true,
@@ -8328,7 +8328,7 @@
         {
           "disabled": false,
           "document": "管理人姓名",
-          "example": "无",
+          "example": "sky",
           "member": "string",
           "name": "ManagerLastName",
           "output_required": true,
@@ -8338,7 +8338,7 @@
         {
           "disabled": false,
           "document": "管理人职位",
-          "example": "无",
+          "example": "Waibao",
           "member": "string",
           "name": "ManagerPosition",
           "output_required": true,
@@ -8348,7 +8348,7 @@
         {
           "disabled": false,
           "document": "管理人电话",
-          "example": "无",
+          "example": "188**77373",
           "member": "string",
           "name": "ManagerPhone",
           "output_required": true,
@@ -8358,7 +8358,7 @@
         {
           "disabled": false,
           "document": "管理人邮箱",
-          "example": "无",
+          "example": "173**@qq.com",
           "member": "string",
           "name": "ManagerMail",
           "output_required": true,
@@ -8368,7 +8368,7 @@
         {
           "disabled": false,
           "document": "管理人所属部门",
-          "example": "无",
+          "example": "IT",
           "member": "string",
           "name": "ManagerDepartment",
           "output_required": true,
@@ -8378,7 +8378,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-10 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -8388,7 +8388,7 @@
         {
           "disabled": false,
           "document": "管理人域名数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "DomainCount",
           "output_required": true,
@@ -8398,7 +8398,7 @@
         {
           "disabled": false,
           "document": "管理人证书数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CertCount",
           "output_required": true,
@@ -8408,7 +8408,7 @@
         {
           "disabled": false,
           "document": "管理人ID",
-          "example": "无",
+          "example": "17777",
           "member": "int64",
           "name": "ManagerId",
           "output_required": true,
@@ -8418,7 +8418,7 @@
         {
           "disabled": false,
           "document": "审核有效到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2019-09-10 00:00:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -8428,7 +8428,7 @@
         {
           "disabled": false,
           "document": "最近一次提交审核时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-10 00:00:00",
           "member": "string",
           "name": "SubmitAuditTime",
           "output_required": true,
@@ -8438,7 +8438,7 @@
         {
           "disabled": false,
           "document": "审核通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-10 00:00:00",
           "member": "string",
           "name": "VerifyTime",
           "output_required": true,
@@ -8474,7 +8474,7 @@
         {
           "disabled": false,
           "document": "审核类型，枚举值：ov,ev,cs,ev_cs\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ov",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -8484,7 +8484,7 @@
         {
           "disabled": false,
           "document": "审核状态，枚举值：pending,completed,invalid,submitted,expiring,expired\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pending",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -8494,7 +8494,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-10 20:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -8504,7 +8504,7 @@
         {
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2019-09-10 20:00:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
@@ -8850,7 +8850,7 @@
         {
           "disabled": false,
           "document": "操作证书动作。",
-          "example": "无",
+          "example": "revoke",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -8860,7 +8860,7 @@
         {
           "disabled": false,
           "document": "操作时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "datetime",
           "name": "CreatedOn",
           "output_required": true,
@@ -8870,7 +8870,7 @@
         {
           "disabled": false,
           "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18777374",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -8880,7 +8880,7 @@
         {
           "disabled": false,
           "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "19993484",
           "member": "string",
           "name": "SubAccountUin",
           "output_required": false,
@@ -8890,7 +8890,7 @@
         {
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heysh*8he",
           "member": "string",
           "name": "CertId",
           "output_required": false,
@@ -8900,7 +8900,7 @@
         {
           "disabled": false,
           "document": "操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "revoke",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -8916,100 +8916,100 @@
         {
           "disabled": false,
           "document": "权益包ID。",
-          "example": "无",
+          "example": "pid-*****",
           "member": "string",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权益包内权益点总量。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权益包内权益点余量。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Balance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权益包名称。",
-          "example": "无",
+          "example": "zrh权益包",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权益点是转入时，来源信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1784894993",
           "member": "uint64",
           "name": "SourceUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "权益点状态。",
-          "example": "无",
+          "example": "used",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "过期时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "生成时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源类型。",
-          "example": "无",
+          "example": "source",
           "member": "string",
           "name": "SourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9019,7 +9019,7 @@
           "example": "无",
           "member": "PackageTransferOutInfo",
           "name": "TransferOutInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -9032,100 +9032,100 @@
         {
           "disabled": false,
           "document": "权益包ID。",
-          "example": "无",
+          "example": "pid-****",
           "member": "string",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转移码。",
-          "example": "无",
+          "example": "trans-****",
           "member": "string",
           "name": "TransferCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次转移点数。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TransferCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转入的PackageID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pid-****",
           "member": "string",
           "name": "ReceivePackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "本次转移过期时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次转移生成时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次转移更新时间。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转移状态。",
-          "example": "无",
+          "example": "done",
           "member": "string",
           "name": "TransferStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "接收者uin。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18747373",
           "member": "uint64",
           "name": "ReceiverUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "接收时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "ReceiveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9141,7 +9141,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9151,17 +9151,17 @@
           "example": "1",
           "member": "int64",
           "name": "NowPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "证书预审核管理人ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "187377",
           "member": "string",
           "name": "ManagerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9340,22 +9340,20 @@
         {
           "disabled": false,
           "document": "云资源类型",
-          "example": "无",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "地域列表",
-          "example": "无",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "Regions",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -9802,7 +9800,7 @@
         {
           "disabled": false,
           "document": "CSR 类型，（online = 在线生成CSR，parse = 粘贴 CSR）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "online",
           "member": "string",
           "name": "CsrType",
           "output_required": true,
@@ -9813,7 +9811,7 @@
         {
           "disabled": false,
           "document": "CSR 内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "content******",
           "member": "string",
           "name": "CsrContent",
           "output_required": true,
@@ -9824,7 +9822,7 @@
         {
           "disabled": false,
           "document": "域名信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.q**.com",
           "member": "string",
           "name": "CertificateDomain",
           "output_required": true,
@@ -9835,7 +9833,7 @@
         {
           "disabled": false,
           "document": "DNS 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "DomainList",
           "output_required": true,
@@ -9846,7 +9844,7 @@
         {
           "disabled": false,
           "document": "私钥密码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "password",
           "member": "string",
           "name": "KeyPassword",
           "output_required": true,
@@ -9857,7 +9855,7 @@
         {
           "disabled": false,
           "document": "企业或单位名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Tencent",
           "member": "string",
           "name": "OrganizationName",
           "output_required": true,
@@ -9868,7 +9866,7 @@
         {
           "disabled": false,
           "document": "部门。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "It",
           "member": "string",
           "name": "OrganizationDivision",
           "output_required": true,
@@ -9879,7 +9877,7 @@
         {
           "disabled": false,
           "document": "地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Shenzhen",
           "member": "string",
           "name": "OrganizationAddress",
           "output_required": true,
@@ -9890,7 +9888,7 @@
         {
           "disabled": false,
           "document": "国家。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "China",
           "member": "string",
           "name": "OrganizationCountry",
           "output_required": true,
@@ -9901,7 +9899,7 @@
         {
           "disabled": false,
           "document": "市。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Shenzhen",
           "member": "string",
           "name": "OrganizationCity",
           "output_required": true,
@@ -9912,7 +9910,7 @@
         {
           "disabled": false,
           "document": "省。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Guangdong",
           "member": "string",
           "name": "OrganizationRegion",
           "output_required": true,
@@ -9923,7 +9921,7 @@
         {
           "disabled": false,
           "document": "邮政编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "137000",
           "member": "string",
           "name": "PostalCode",
           "output_required": true,
@@ -9934,7 +9932,7 @@
         {
           "disabled": false,
           "document": "座机区号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "021",
           "member": "string",
           "name": "PhoneAreaCode",
           "output_required": true,
@@ -9945,7 +9943,7 @@
         {
           "disabled": false,
           "document": "座机号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "021-6367***",
           "member": "string",
           "name": "PhoneNumber",
           "output_required": true,
@@ -9956,7 +9954,7 @@
         {
           "disabled": false,
           "document": "管理员名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "luke",
           "member": "string",
           "name": "AdminFirstName",
           "output_required": true,
@@ -9967,7 +9965,7 @@
         {
           "disabled": false,
           "document": "管理员姓。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sky",
           "member": "string",
           "name": "AdminLastName",
           "output_required": true,
@@ -9978,7 +9976,7 @@
         {
           "disabled": false,
           "document": "管理员电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1886**63636",
           "member": "string",
           "name": "AdminPhoneNum",
           "output_required": true,
@@ -9989,7 +9987,7 @@
         {
           "disabled": false,
           "document": "管理员邮箱地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ttt**@qq.com",
           "member": "string",
           "name": "AdminEmail",
           "output_required": true,
@@ -10000,7 +9998,7 @@
         {
           "disabled": false,
           "document": "管理员职位。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "boss",
           "member": "string",
           "name": "AdminPosition",
           "output_required": true,
@@ -10011,7 +10009,7 @@
         {
           "disabled": false,
           "document": "联系人名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "luke",
           "member": "string",
           "name": "ContactFirstName",
           "output_required": true,
@@ -10022,7 +10020,7 @@
         {
           "disabled": false,
           "document": "联系人姓。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sky",
           "member": "string",
           "name": "ContactLastName",
           "output_required": true,
@@ -10033,7 +10031,7 @@
         {
           "disabled": false,
           "document": "联系人电话号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "188**777372",
           "member": "string",
           "name": "ContactNumber",
           "output_required": true,
@@ -10044,7 +10042,7 @@
         {
           "disabled": false,
           "document": "联系人邮箱地址，\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ttt**@qq.com",
           "member": "string",
           "name": "ContactEmail",
           "output_required": true,
@@ -10055,7 +10053,7 @@
         {
           "disabled": false,
           "document": "联系人职位。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Waibao",
           "member": "string",
           "name": "ContactPosition",
           "output_required": true,
@@ -10066,7 +10064,7 @@
         {
           "disabled": false,
           "document": "验证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DNS",
           "member": "string",
           "name": "VerifyType",
           "output_required": true,
@@ -10083,7 +10081,7 @@
         {
           "disabled": false,
           "document": "是否可以下载nginx可用格式",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "NGINX",
           "output_required": true,
@@ -10093,7 +10091,7 @@
         {
           "disabled": false,
           "document": "是否可以下载apache可用格式",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "APACHE",
           "output_required": true,
@@ -10103,7 +10101,7 @@
         {
           "disabled": false,
           "document": "是否可以下载tomcat可用格式",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "TOMCAT",
           "output_required": true,
@@ -10113,7 +10111,7 @@
         {
           "disabled": false,
           "document": "是否可以下载iis可用格式",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IIS",
           "output_required": true,
@@ -10123,7 +10121,7 @@
         {
           "disabled": false,
           "document": "是否可以下载JKS可用格式",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "JKS",
           "output_required": true,
@@ -10133,7 +10131,7 @@
         {
           "disabled": false,
           "document": "是否可以下载其他格式",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "OTHER",
           "output_required": true,
@@ -10143,7 +10141,7 @@
         {
           "disabled": false,
           "document": "是否可以下载根证书",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ROOT",
           "output_required": true,
@@ -10159,7 +10157,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "无",
+          "example": "1763773",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -10179,7 +10177,7 @@
         {
           "disabled": false,
           "document": "关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -10199,7 +10197,7 @@
         {
           "disabled": false,
           "document": "当前结果缓存时间",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CacheTime",
           "output_required": true,
@@ -10215,7 +10213,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.he**.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -10225,7 +10223,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -10235,7 +10233,7 @@
         {
           "disabled": false,
           "document": "统一域名状态\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "UnionStatus",
           "output_required": false,
@@ -10245,7 +10243,7 @@
         {
           "disabled": false,
           "document": "是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "bool",
           "name": "IsPreempted",
           "output_required": false,
@@ -10255,7 +10253,7 @@
         {
           "disabled": false,
           "document": "icp黑名单封禁状态，0-未封禁，1-封禁\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ICPStatus",
           "output_required": false,
@@ -10265,7 +10263,7 @@
         {
           "disabled": false,
           "document": "已绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heyhs*8he",
           "member": "string",
           "name": "OldCertificateId",
           "output_required": false,
@@ -10307,7 +10305,7 @@
         {
           "disabled": false,
           "document": "唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tcb-****",
           "member": "string",
           "name": "ID",
           "output_required": false,
@@ -10317,7 +10315,7 @@
         {
           "disabled": false,
           "document": "来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "original",
           "member": "string",
           "name": "Source",
           "output_required": false,
@@ -10327,7 +10325,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -10337,7 +10335,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -10389,7 +10387,7 @@
         {
           "disabled": false,
           "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.**.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -10399,7 +10397,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -10409,7 +10407,7 @@
         {
           "disabled": false,
           "document": "解析状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "DNSStatus",
           "output_required": false,
@@ -10419,7 +10417,7 @@
         {
           "disabled": false,
           "document": "已绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "heys*8he",
           "member": "string",
           "name": "OldCertificateId",
           "output_required": false,
@@ -10445,7 +10443,7 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -10461,7 +10459,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -10481,7 +10479,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -10497,7 +10495,7 @@
         {
           "disabled": false,
           "document": "网关ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "gateway-2ae9****",
           "member": "string",
           "name": "GatewayId",
           "output_required": false,
@@ -10507,7 +10505,7 @@
         {
           "disabled": false,
           "document": "网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zrh-gateway",
           "member": "string",
           "name": "GatewayName",
           "output_required": false,
@@ -10543,7 +10541,7 @@
         {
           "disabled": false,
           "document": "该地域下TSE实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -10553,7 +10551,7 @@
         {
           "disabled": false,
           "document": "地域\t",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -10563,7 +10561,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -10661,7 +10659,7 @@
         {
           "disabled": false,
           "document": "edgeone实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -10671,7 +10669,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -10687,30 +10685,30 @@
         {
           "disabled": false,
           "document": "ingress名称",
-          "example": "无",
+          "example": "ingress-***",
           "member": "string",
           "name": "IngressName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "tls域名列表",
-          "example": "无",
+          "example": "[\"hhh**.com\"]",
           "member": "string",
           "name": "TlsDomains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "ingress域名列表",
-          "example": "无",
+          "example": "[\"hhh**.com\"]",
           "member": "string",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -10723,7 +10721,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cls-lqet***",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -10733,7 +10731,7 @@
         {
           "disabled": false,
           "document": "集群名称",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -10753,7 +10751,7 @@
         {
           "disabled": false,
           "document": "集群类型",
-          "example": "无",
+          "example": "MANAGED_CLUSTER",
           "member": "string",
           "name": "ClusterType",
           "output_required": true,
@@ -10763,7 +10761,7 @@
         {
           "disabled": false,
           "document": "集群版本",
-          "example": "无",
+          "example": "1.26.1",
           "member": "string",
           "name": "ClusterVersion",
           "output_required": true,
@@ -10779,7 +10777,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -10799,7 +10797,7 @@
         {
           "disabled": false,
           "document": "该地域下tke实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -10809,7 +10807,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -10825,10 +10823,10 @@
         {
           "disabled": false,
           "document": "namespace名称",
-          "example": "无",
+          "example": "tke-zrh",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10838,7 +10836,7 @@
           "example": "无",
           "member": "TkeSecretDetail",
           "name": "SecretList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -10851,20 +10849,20 @@
         {
           "disabled": false,
           "document": "secret名称",
-          "example": "无",
+          "example": "secret-***",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "无",
+          "example": "heys**he",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10874,17 +10872,17 @@
           "example": "无",
           "member": "TkeIngressDetail",
           "name": "IngressList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "和新证书不匹配的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.h**m.com\"]",
           "member": "string",
           "name": "NoMatchDomains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -11126,7 +11124,7 @@
         {
           "disabled": false,
           "document": "详情记录id",
-          "example": "无",
+          "example": "178383",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -11136,7 +11134,7 @@
         {
           "disabled": false,
           "document": "新证书ID",
-          "example": "无",
+          "example": "heysh**heh",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -11146,7 +11144,7 @@
         {
           "disabled": false,
           "document": "旧证书ID",
-          "example": "无",
+          "example": "hens*8hsh",
           "member": "string",
           "name": "OldCertId",
           "output_required": true,
@@ -11156,7 +11154,7 @@
         {
           "disabled": false,
           "document": "部署域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.hhh**.com\"]",
           "member": "string",
           "name": "Domains",
           "output_required": true,
@@ -11166,7 +11164,7 @@
         {
           "disabled": false,
           "document": "部署资源类型",
-          "example": "无",
+          "example": "CLB",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -11176,7 +11174,7 @@
         {
           "disabled": false,
           "document": "部署地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -11186,7 +11184,7 @@
         {
           "disabled": false,
           "document": "部署状态",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -11196,7 +11194,7 @@
         {
           "disabled": false,
           "document": "部署错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
@@ -11206,7 +11204,7 @@
         {
           "disabled": false,
           "document": "部署时间",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -11216,7 +11214,7 @@
         {
           "disabled": false,
           "document": "最后一次更新时间",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -11226,7 +11224,7 @@
         {
           "disabled": false,
           "document": "部署实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cls-*****",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -11236,7 +11234,7 @@
         {
           "disabled": false,
           "document": "部署实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -11246,7 +11244,7 @@
         {
           "disabled": false,
           "document": "部署监听器ID（CLB专用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lbl-****",
           "member": "string",
           "name": "ListenerId",
           "output_required": true,
@@ -11256,7 +11254,7 @@
         {
           "disabled": false,
           "document": "部署监听器名称（CLB专用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zrh",
           "member": "string",
           "name": "ListenerName",
           "output_required": true,
@@ -11266,7 +11264,7 @@
         {
           "disabled": false,
           "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -11276,7 +11274,7 @@
         {
           "disabled": false,
           "document": "是否开启SNI（CLB专用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SniSwitch",
           "output_required": true,
@@ -11286,7 +11284,7 @@
         {
           "disabled": false,
           "document": "bucket名称（COS专用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cos-****",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -11296,7 +11294,7 @@
         {
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "90",
           "member": "int64",
           "name": "Port",
           "output_required": true,
@@ -11306,7 +11304,7 @@
         {
           "disabled": false,
           "document": "命名空间（TKE专用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tke-***",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -11316,7 +11314,7 @@
         {
           "disabled": false,
           "document": "secret名称（TKE专用）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "secret-***",
           "member": "string",
           "name": "SecretName",
           "output_required": true,
@@ -11326,7 +11324,7 @@
         {
           "disabled": false,
           "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lowcode-1gvf5xts7*****",
           "member": "string",
           "name": "EnvId",
           "output_required": false,
@@ -11336,7 +11334,7 @@
         {
           "disabled": false,
           "document": "TCB部署类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "product",
           "member": "string",
           "name": "TCBType",
           "output_required": false,
@@ -11346,7 +11344,7 @@
         {
           "disabled": false,
           "document": "监听器Url(clb专属)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "/zrh",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -11362,10 +11360,10 @@
         {
           "disabled": false,
           "document": "部署资源类型",
-          "example": "无",
+          "example": "CLB",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11375,17 +11373,17 @@
           "example": "无",
           "member": "UpdateRecordDetail",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该部署资源总数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -11398,80 +11396,80 @@
         {
           "disabled": false,
           "document": "记录ID",
-          "example": "无",
+          "example": "178837",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "新证书ID",
-          "example": "无",
+          "example": "hey**heh",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原证书ID",
-          "example": "无",
+          "example": "hesy*8he",
           "member": "string",
           "name": "OldCertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署资源类型列表",
-          "example": "无",
+          "example": "[\"CLB\"]",
           "member": "string",
           "name": "ResourceTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "Regions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "部署状态",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "部署时间",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最后一次更新时间",
-          "example": "无",
+          "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11484,7 +11482,7 @@
         {
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CLB",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -11504,7 +11502,7 @@
         {
           "disabled": false,
           "document": "异步更新进度状态：0， 待处理， 1 已处理， 3 处理中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -11520,7 +11518,7 @@
         {
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "地域",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -11530,7 +11528,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "总数",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -11540,7 +11538,7 @@
         {
           "disabled": false,
           "document": "执行完成数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "偏移量",
+          "example": "2",
           "member": "int64",
           "name": "OffsetCount",
           "output_required": true,
@@ -11550,7 +11548,7 @@
         {
           "disabled": false,
           "document": "异步更新进度状态：0， 待处理， 1 已处理， 3 处理中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -11807,7 +11805,7 @@
         {
           "disabled": false,
           "document": "该地域下vod实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -11817,7 +11815,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
@@ -11896,7 +11894,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "无",
+          "example": "www.hy**.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -11906,7 +11904,7 @@
         {
           "disabled": false,
           "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hey*hhs",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -11916,7 +11914,7 @@
         {
           "disabled": false,
           "document": "是否保持长连接，1是，0 否\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Keepalive",
           "output_required": true,
@@ -11932,7 +11930,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "无",
+          "example": "ap-guanzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -11952,7 +11950,7 @@
         {
           "disabled": false,
           "document": "该地域下waf实例总数\t",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -11962,7 +11960,7 @@
         {
           "disabled": false,
           "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,

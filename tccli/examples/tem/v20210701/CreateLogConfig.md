@@ -6,27 +6,15 @@ Input:
 
 ```
 tccli tem CreateLogConfig --cli-unfold-argument  \
-    --EnvironmentId en-xxxxxx \
-    --ApplicationId app-xxxxxx \
-    --Name abc \
-    --LogsetId abc-xxx \
-    --TopicId abc-xxxxx \
+    --EnvironmentId en-dpxydze5 \
+    --ApplicationId app-5vaz8x85 \
+    --LogsetId 7a126551-62d1-4e12-b426-84bd5b2fdbca \
+    --TopicId 6c69fdb7-5e4c-4e52-8437-32c2c729b85a \
     --InputType container_stdout \
     --LogType json_log \
-    --BeginningRegex abc \
-    --LogPath /abc \
-    --FilePattern abc \
-    --ExtractRule.BeginningRegex abc \
-    --ExtractRule.Keys abc \
-    --ExtractRule.FilterKeys abc \
-    --ExtractRule.FilterRegex abc \
-    --ExtractRule.LogRegex abc \
-    --ExtractRule.TimeKey abc \
-    --ExtractRule.TimeFormat abc \
-    --ExtractRule.UnMatchUpload abc \
-    --ExtractRule.UnMatchedKey abc \
-    --ExtractRule.Backtracking abc \
-    --ExtractRule.Delimiter abc
+    --Name log-cfg-xxx \
+    --ExtractRule.UnMatchUpload true \
+    --ExtractRule.UnMatchedKey LogParseFailure
 ```
 
 Output: 

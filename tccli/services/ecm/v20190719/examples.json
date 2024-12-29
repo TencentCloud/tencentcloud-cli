@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=AllocateAddresses\n&AddressCount=1\n&InternetServiceProvider=CTCC\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-11112222\"\n        ],\n        \"TaskId\": \"123\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-11112222\"\n        ],\n        \"TaskId\": \"202869021\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "创建EIP"
       }
     ],
@@ -60,7 +60,7 @@
       {
         "document": "实例主网卡无外网IP条件下，将EIP绑定到实例主网卡",
         "input": "https://ecm.tencentcloudapi.com/?Action=AssociateAddress\n&AddressId=eip-11112222\n&InstanceId=ins-11221122\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"123\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"202869021\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "绑定EIP到实例上"
       }
     ],
@@ -378,7 +378,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeAddresses\r\n&AddressIds.0=eip-11221122\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-11221122\",\n                \"AddressName\": \"test\",\n                \"AddressIp\": \"123.121.34.33\",\n                \"AddressStatus\": \"BINDED\",\n                \"InstanceId\": \"ins-11221122\",\n                \"NetworkInterfaceId\": null,\n                \"PrivateAddressIp\": null,\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"CreatedTime\": \"2020-01-12T07:52:00Z\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-11221122\",\n                \"AddressName\": \"demo\",\n                \"AddressIp\": \"123.121.34.33\",\n                \"AddressStatus\": \"BINDED\",\n                \"AddressType\": \"EIP\",\n                \"InstanceId\": \"ins-11221122\",\n                \"NetworkInterfaceId\": \"eni-2regnhmp\",\n                \"PrivateAddressIp\": \"10.212.0.26\",\n                \"IsArrears\": false,\n                \"IsBlocked\": false,\n                \"IsEipDirectConnection\": true,\n                \"CascadeRelease\": false,\n                \"CreatedTime\": \"2024-12-03T02:19:31Z\",\n                \"Bandwidth\": 2048,\n                \"PayMode\": \"BANDWIDTH_PACKAGE\",\n                \"InternetServiceProvider\": \"CUCC\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "使用AddressIds查询EIP"
       }
     ],
@@ -726,7 +726,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=DisassociateAddress\n&AddressId=eip-11112222\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"123\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"824963\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "解绑 EIP"
       }
     ],
@@ -804,7 +804,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=ModifyAddressesBandwidth\n&InternetMaxBandwidthOut=1000\n&AddressIds.0=eip-11112222\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"123\",\n        \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"3594621\",\n        \"RequestId\": \"24cfceab-3492-482c-b86f-27f598b1b044\"\n    }\n}",
         "title": "调整EIP带宽"
       }
     ],
@@ -1012,7 +1012,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=ReleaseAddresses\r\n&AddressIds.0=eip-11112222\r\n&EcmRegion=ap-hangzhou-ecm\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"123\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"4569821\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "释放弹性公网IP"
       }
     ],
@@ -1028,7 +1028,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=ReleaseIpv6AddressesBandwidth\n&EcmRegion=ap-xian-ecm\n&Ipv6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": 202869021,\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"2568423\",\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
         "title": "释放弹性公网IPv6地址带宽"
       }
     ],

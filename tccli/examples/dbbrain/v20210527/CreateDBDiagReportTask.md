@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain CreateDBDiagReportTask --cli-unfold-argument  \
-    --InstanceId test \
+    --InstanceId cdb-test1234 \
     --StartTime 2019-01-01T00:00:00+08:00 \
     --EndTime 2019-01-02T00:00:00+08:00 \
     --SendMailFlag 1 \

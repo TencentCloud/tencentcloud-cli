@@ -14,28 +14,23 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "85435f86-a454-4bf8-8e8c-074a51f55bb2",
         "Result": {
-            "EnvironmentId": "en-xxxxxx",
-            "NamespaceName": "abc",
-            "Region": "ap-shanghai",
-            "VpcId": "vpc-xxxxxx",
+            "EnvironmentId": "en-l5mmxey5",
+            "EnvironmentName": "bugfix-gz",
+            "Region": "ap-guangzhou",
+            "VpcId": "vpc-9xcgo41t",
             "SubnetIds": [
-                "subnet-xxxxxx"
+                "subnet-orcy48cy"
             ],
-            "Description": "abc",
-            "CreatedDate": "abc",
-            "EnvironmentName": "abc",
-            "ApmInstanceId": "abc",
+            "Description": "这是一个描述",
+            "CreatedDate": "2024-07-01 17:48:35",
+            "ApmInstanceId": "",
             "Locked": 0,
-            "Tags": [
-                {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
-                }
-            ],
-            "EnvType": "abc"
-        },
-        "RequestId": "abc-xxx-xxx"
+            "NamespaceName": "",
+            "Tags": [],
+            "EnvType": "prod"
+        }
     }
 }
 ```

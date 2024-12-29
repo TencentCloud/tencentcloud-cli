@@ -6,45 +6,49 @@ Input:
 
 ```
 tccli ssl DescribeHostDeployRecordDetail --cli-unfold-argument  \
-    --DeployRecordId 1
+    --DeployRecordId 74889
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FailedTotalCount": 1,
-        "SuccessTotalCount": 1,
         "TotalCount": 1,
-        "RequestId": "xx111",
-        "RunningTotalCount": 1,
+        "SuccessTotalCount": 1,
+        "FailedTotalCount": 0,
+        "RunningTotalCount": 0,
         "DeployRecordDetailList": [
             {
+                "Id": 182241,
+                "CertId": "Fvu**OA",
+                "OldCertId": "FxG***jc",
                 "Status": 1,
-                "Bucket": "test-1302189209",
-                "UpdateTime": "xx1",
-                "CertId": "xx1",
-                "Protocol": "xx1",
-                "InstanceId": "xx1",
-                "ErrorMsg": "xx1",
-                "ListenerId": "xx1",
-                "CreateTime": "xaax",
-                "OldCertId": "xaax",
-                "EnvId": "ssl-xx",
-                "TCBType": "HostService",
-                "Region": "ap-shanghai",
-                "SniSwitch": 1,
-                "SecretName": "asdasd",
-                "ListenerName": "asdasd",
-                "Port": "123",
-                "Namespace": "asdasd",
+                "ErrorMsg": "",
+                "CreateTime": "2024-06-26T11:36:33.000000Z",
+                "UpdateTime": "2024-06-26T11:37:40.000000Z",
+                "InstanceId": "lb-jaj**fy",
+                "InstanceName": "zrhtest2",
+                "ListenerId": "lbl-fx***3l2",
+                "ListenerName": "zrhtest7",
                 "Domains": [
-                    "xx1"
+                    "ni***uang.online"
                 ],
-                "InstanceName": "xx2",
-                "Id": 1
+                "Protocol": "HTTPS",
+                "SniSwitch": 1,
+                "Bucket": "",
+                "Namespace": "",
+                "SecretName": "",
+                "EnvId": "",
+                "TCBType": "",
+                "Region": "",
+                "Port": 0,
+                "Url": [
+                    "/zrh1",
+                    "/zrh2"
+                ]
             }
-        ]
+        ],
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

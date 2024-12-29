@@ -84,120 +84,120 @@
         {
           "disabled": false,
           "document": "快照文件ID，已废弃，请使用BackupId",
-          "example": "无",
+          "example": "38846321",
           "member": "uint64",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份文件名",
-          "example": "无",
+          "example": "andy_20241225163707",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份文件大小",
-          "example": "无",
+          "example": "1024",
           "member": "uint64",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份开始时间",
-          "example": "无",
+          "example": "2024-12-25 16:37:18",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份完成时间",
-          "example": "无",
+          "example": "2024-12-25 16:37:26",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份类型：snapshot，快照备份；logic，逻辑备份",
-          "example": "无",
+          "example": "logic",
           "member": "string",
           "name": "BackupType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份方式：auto，自动备份；manual，手动备份",
-          "example": "无",
+          "example": "manual",
           "member": "string",
           "name": "BackupMethod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份文件状态：success：备份成功；fail：备份失败；creating：备份文件创建中；deleting：备份文件删除中",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "BackupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份文件时间",
-          "example": "无",
+          "example": "2024-12-25 16:37:07",
           "member": "string",
           "name": "SnapshotTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3889813",
           "member": "int64",
           "name": "BackupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "快照类型，可选值：full，全量；increment，增量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "full",
           "member": "string",
           "name": "SnapShotType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "备份文件备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "andybackup",
           "member": "string",
           "name": "BackupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -210,7 +210,7 @@
         {
           "disabled": false,
           "document": "Binlog文件名称",
-          "example": "无",
+          "example": "1_mysql-bin.001002",
           "member": "string",
           "name": "FileName",
           "output_required": true,
@@ -220,7 +220,7 @@
         {
           "disabled": false,
           "document": "文件大小，单位：字节",
-          "example": "无",
+          "example": "357",
           "member": "int64",
           "name": "FileSize",
           "output_required": true,
@@ -230,7 +230,7 @@
         {
           "disabled": false,
           "document": "事务最早时间",
-          "example": "无",
+          "example": "2024-12-23 16:37:25",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
@@ -240,7 +240,7 @@
         {
           "disabled": false,
           "document": "事务最晚时间",
-          "example": "无",
+          "example": "2024-12-23 16:37:35",
           "member": "string",
           "name": "FinishTime",
           "output_required": true,
@@ -250,7 +250,7 @@
         {
           "disabled": false,
           "document": "Binlog文件ID",
-          "example": "无",
+          "example": "25088182",
           "member": "int64",
           "name": "BinlogId",
           "output_required": true,
@@ -602,7 +602,7 @@
         {
           "disabled": false,
           "document": "normal\tpitr类型，可选值：normal, redo_pitr\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "normal",
           "member": "string",
           "name": "PITRType",
           "output_required": false,
@@ -622,7 +622,7 @@
         {
           "disabled": false,
           "document": "实例到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-30 19:32:51",
           "member": "string",
           "name": "PeriodEndTime",
           "output_required": false,
@@ -632,7 +632,7 @@
         {
           "disabled": false,
           "document": "主实例iD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lhdbmysql-8z0dd154",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -642,7 +642,7 @@
         {
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "17232",
           "member": "int64",
           "name": "ProjectID",
           "output_required": false,
@@ -937,7 +937,7 @@
         {
           "disabled": false,
           "document": "备份ID",
-          "example": "无",
+          "example": "[\"100032\"]",
           "member": "int64",
           "name": "BackupIds",
           "required": false,
@@ -991,7 +991,7 @@
         {
           "disabled": false,
           "document": "备份文件名，模糊查询",
-          "example": "无",
+          "example": "[\"andy_20241226040002\"]",
           "member": "string",
           "name": "FileNames",
           "required": false,
@@ -1000,7 +1000,7 @@
         {
           "disabled": false,
           "document": "备份备注名，模糊查询",
-          "example": "无",
+          "example": "[\"andybackup\"]",
           "member": "string",
           "name": "BackupNames",
           "required": false,
@@ -1009,7 +1009,7 @@
         {
           "disabled": false,
           "document": "快照备份Id列表",
-          "example": "无",
+          "example": "[3889813]",
           "member": "int64",
           "name": "SnapshotIdList",
           "required": false,
@@ -1314,22 +1314,20 @@
         {
           "disabled": false,
           "document": "账号",
-          "example": "",
+          "example": "andy",
           "member": "string",
           "name": "AccountName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "主机，默认‘%’",
-          "example": "",
+          "example": "%",
           "member": "string",
           "name": "Host",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1391,7 +1389,7 @@
         {
           "disabled": false,
           "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1207003",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -1401,7 +1399,7 @@
         {
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "taskDtsLockResource",
           "member": "string",
           "name": "TaskType",
           "output_required": true,
@@ -1411,7 +1409,7 @@
         {
           "disabled": false,
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "processing",
           "member": "string",
           "name": "TaskStatus",
           "output_required": true,
@@ -1421,7 +1419,7 @@
         {
           "disabled": false,
           "document": "任务ID（集群ID|实例组ID|实例ID）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "lhdbmysql-8z0dd154",
           "member": "string",
           "name": "ObjectId",
           "output_required": true,
@@ -1431,7 +1429,7 @@
         {
           "disabled": false,
           "document": "任务对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "taskObjTypeCluster",
           "member": "string",
           "name": "ObjectType",
           "output_required": true,
@@ -1462,7 +1460,7 @@
         {
           "disabled": false,
           "document": "任务Id",
-          "example": "123",
+          "example": "100273",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,

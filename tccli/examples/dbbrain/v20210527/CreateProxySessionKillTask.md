@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "AsyncRequestId": 123456,
-        "RequestId": "xx"
+        "AsyncRequestId": 14672492,
+        "RequestId": "17351ed0-c126-11ef-9567-2ff75b8b0530"
     }
 }
 ```

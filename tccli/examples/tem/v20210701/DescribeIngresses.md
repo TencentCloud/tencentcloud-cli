@@ -19,20 +19,20 @@ Output:
         "RequestId": "81f74023-563c-437d-abf7-8139449ef178",
         "Result": [
             {
-                "ClusterId": "abc",
-                "EnvironmentId": "abc",
-                "IngressName": "abc",
+                "ClusterId": "cls-xxxxxx",
+                "EnvironmentId": "en-xxxxxx",
+                "IngressName": "ingress-name-xxx",
                 "ClusterNamespace": "default",
                 "AddressIPVersion": "IPV4",
                 "ClbId": "clb-xxxx",
-                "Vip": "abc",
+                "Vip": "10.xx.xx.xx",
                 "Rules": [
                     {
                         "Host": "",
                         "Http": {
                             "Paths": [
                                 {
-                                    "Path": "/",
+                                    "Path": "/path",
                                     "Backend": {
                                         "ServiceName": "kubernetes",
                                         "ServicePort": 443
@@ -47,13 +47,13 @@ Output:
                         "Hosts": [
                             "xxx.com"
                         ],
-                        "SecretName": "xxx"
+                        "SecretName": "secret-name-xxx"
                     }
                 ],
-                "CreateTime": "abc",
+                "CreateTime": "2024-12-04 20:46:29",
                 "Mixed": true,
-                "RewriteType": "abc",
-                "Domain": "abc"
+                "RewriteType": "AUTO",
+                "Domain": "xxx.xxx.com"
             }
         ]
     }

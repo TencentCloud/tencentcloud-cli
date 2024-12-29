@@ -2768,7 +2768,7 @@
     "InquiryPriceAllocateAddresses": {
       "document": "本接口（InquiryPriceAllocateAddresses）用于新购弹性公网IP询价。",
       "input": "InquiryPriceAllocateAddressesRequest",
-      "name": "弹性公网IP询价",
+      "name": "弹性公网IP新购询价",
       "output": "InquiryPriceAllocateAddressesResponse",
       "status": "online"
     },
@@ -10448,7 +10448,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "无",
+          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10457,7 +10457,7 @@
         {
           "disabled": false,
           "document": "BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。",
-          "example": "无",
+          "example": "51613",
           "member": "int64",
           "name": "BgpAsn",
           "required": false,
@@ -10475,6 +10475,7 @@
           "example": "无",
           "member": "CustomerGateway",
           "name": "CustomerGateway",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15344,50 +15345,50 @@
         {
           "disabled": false,
           "document": "用户网关唯一ID",
-          "example": "无",
+          "example": "cgw-021cr501",
           "member": "string",
           "name": "CustomerGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网关名称",
-          "example": "无",
+          "example": "对端网关-1",
           "member": "string",
           "name": "CustomerGatewayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "公网地址",
-          "example": "无",
+          "example": "12.31.451.4",
           "member": "string",
           "name": "IpAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-11-15 10:33:22",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "BGP ASN。",
-          "example": "无",
+          "example": "2731",
           "member": "uint64",
           "name": "BgpAsn",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17998,7 +17999,7 @@
         {
           "disabled": false,
           "document": "异步任务ID。",
-          "example": "123",
+          "example": "15415",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -24461,6 +24462,15 @@
           "name": "OrderDirection",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回默认规则。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedDefaultAclEntryInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -30957,7 +30967,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定SslVpnClientIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID形如：vpngw-5aluhh9t。</li>\n<li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID形如：vpns-1j2w6xpx。</li>\n<li>ssl-vpn-client-id - String - （过滤条件）SSL-VPN-CLIENT实例ID形如：vpnc-3rlxp4nd。</li>\n<li>ssl-vpn-client-name - String - （过滤条件）SSL-VPN-CLIENT实例名称。</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"vpc-id\",\"Values\":[\"vpc-xxxxxxxx\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -30984,7 +30994,7 @@
         {
           "disabled": false,
           "document": "SSL-VPN-CLIENT实例ID。形如：\t\nvpns-1jww3xpx。每次请求的实例的上限为100。参数不支持同时指定SslVpnClientIds和Filters。",
-          "example": "无",
+          "example": "['vpnc-mgp33pll']",
           "member": "string",
           "name": "SslVpnClientIds",
           "required": false,
@@ -30993,7 +31003,7 @@
         {
           "disabled": false,
           "document": "VPN门户网站使用。默认是False。",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "IsVpnPortal",
           "required": false,
@@ -34592,7 +34602,7 @@
         {
           "disabled": false,
           "document": "异步任务实例ID。",
-          "example": "1234",
+          "example": "678123",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -35039,7 +35049,7 @@
         {
           "disabled": false,
           "document": "SAML Token（SAML令牌）。",
-          "example": "无",
+          "example": "TGYICwnqislmIMHCRgaCumpW8XdgOR3Qz",
           "member": "string",
           "name": "SamlToken",
           "required": false,
@@ -35048,7 +35058,7 @@
         {
           "disabled": false,
           "document": "VPN门户网站使用。默认False",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "IsVpnPortal",
           "required": false,
@@ -35072,7 +35082,7 @@
         {
           "disabled": false,
           "document": "SSL-VPN 客户端配置。",
-          "example": "无",
+          "example": "\"{\\\"SslVpnClientConfiguration\\\": \\\"-config-\\\"...}\"",
           "member": "string",
           "name": "SslClientConfigsSet",
           "output_required": true,
@@ -35082,7 +35092,7 @@
         {
           "disabled": false,
           "document": "SSL-VPN 客户端配置。",
-          "example": "无",
+          "example": "[{\"SslVpnClientConfiguration\": \"config...\",\"SslVpnRootCert\": \"CERTIFICATE...\",...}]",
           "member": "SslClientConfig",
           "name": "SslClientConfig",
           "output_required": true,
@@ -35401,7 +35411,7 @@
         {
           "disabled": false,
           "document": "异步任务实例ID。",
-          "example": "1234",
+          "example": "678123",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -37478,7 +37488,7 @@
         {
           "disabled": false,
           "document": "VPN网关实例ID。",
-          "example": "",
+          "example": "vpngw-ac13cgez",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
@@ -37487,7 +37497,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "",
+          "example": "{'Period': 36}",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,
@@ -37502,9 +37512,10 @@
         {
           "disabled": false,
           "document": "商品价格。",
-          "example": "",
+          "example": "无",
           "member": "Price",
           "name": "Price",
+          "output_required": true,
           "type": "object"
         },
         {
@@ -40604,7 +40615,7 @@
         {
           "disabled": false,
           "document": "网络ACL五元组规则集。NetworkAclEntrySet和NetworkAclQuintupleSet只能输入一个。",
-          "example": "[]",
+          "example": "{   \"Ingress\": [     {       \"Protocol\": \"TCP\",       \"Description\": \"TCP TEST\",       \"SourcePort\": \"80\",       \"SourceCidr\": \"192.168.0.0/24\",       \"DestinationPort\": \"8080\",       \"DestinationCidr\": \"10.0.0.0/24\",       \"Action\": \"ACCEPT\",       \"Priority\": 1     }   ] }",
           "member": "NetworkAclQuintupleEntries",
           "name": "NetworkAclQuintupleSet",
           "required": false,
@@ -40616,6 +40627,15 @@
           "example": "true",
           "member": "bool",
           "name": "EnableUpdateAclEntries",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要考虑 IPV6白名单。默认false 认为没开启白名单 - IPV6默认规则是放通",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableAclIPv6WhiteList",
           "required": false,
           "type": "bool"
         }
@@ -42000,7 +42020,7 @@
         {
           "disabled": false,
           "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
-          "example": "无",
+          "example": "[{'LocalCidrBlock': '10.40.1.12/24','RemoteCidrBlock': ['172.123.10.5/16', '10.7.10.0/16']}]",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
           "required": false,
@@ -42009,7 +42029,7 @@
         {
           "disabled": false,
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议。",
-          "example": "无",
+          "example": "{'LocalIdentity': 'ADDRESS','LocalAddress': 'dddd'}",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": false,
@@ -42018,7 +42038,7 @@
         {
           "disabled": false,
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置。",
-          "example": "无",
+          "example": "{'IPSECSaLifetimeSeconds': 7200}",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": false,
@@ -42027,7 +42047,7 @@
         {
           "disabled": false,
           "document": "是否启用通道健康检查，默认为False。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -42036,7 +42056,7 @@
         {
           "disabled": false,
           "document": "本端通道探测IP。",
-          "example": "无",
+          "example": "169.254.128.1",
           "member": "string",
           "name": "HealthCheckLocalIp",
           "required": false,
@@ -42045,7 +42065,7 @@
         {
           "disabled": false,
           "document": "对端通道探测IP。",
-          "example": "无",
+          "example": "169.254.128.2",
           "member": "string",
           "name": "HealthCheckRemoteIp",
           "required": false,
@@ -42099,7 +42119,7 @@
         {
           "disabled": false,
           "document": "健康检查配置",
-          "example": "无",
+          "example": "{'ProbeType': 'NQA','ProbeInterval': 30,'ProbeThreshold': 10,'ProbeTimeout': 60}",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
           "required": false,
@@ -42398,7 +42418,7 @@
         {
           "disabled": false,
           "document": "SAML-DATA",
-          "example": "无",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu",
           "member": "string",
           "name": "SamlData",
           "required": false,
@@ -42413,7 +42433,7 @@
         {
           "disabled": false,
           "document": "异步任务TASKID",
-          "example": "123",
+          "example": "5671",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -45626,7 +45646,7 @@
         {
           "disabled": false,
           "document": "VPN网关实例ID。",
-          "example": "",
+          "example": "vpngw-cxkeaff3",
           "member": "string",
           "name": "VpnGatewayId",
           "required": true,
@@ -45635,7 +45655,7 @@
         {
           "disabled": false,
           "document": "预付费计费模式。",
-          "example": "",
+          "example": "{             'Period': 1,             'RenewFlag': 'NOTIFY_AND_MANUAL_RENEW'         }",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": true,

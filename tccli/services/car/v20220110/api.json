@@ -312,7 +312,7 @@
         {
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"cap-op8pfan8\"",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -323,7 +323,7 @@
         {
           "disabled": false,
           "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"project_name\"",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -334,7 +334,7 @@
         {
           "disabled": false,
           "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"project test\"",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -356,7 +356,7 @@
         {
           "disabled": false,
           "document": "云应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"app-a1b2c3d4\"",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
@@ -400,7 +400,7 @@
         {
           "disabled": false,
           "document": "应用状态，NoConcurrent-未配置并发包，Online-已上线，其他状态为云应用的状态：applicationCreating-创建中，applicationCreateFail-创建失败，applicationDeleting-删除中，applicationNoConfigured-启动参数未配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"NoConcurrent\"",
           "member": "string",
           "name": "ApplicationStatus",
           "output_required": true,
@@ -411,7 +411,7 @@
         {
           "disabled": false,
           "document": "应用启动参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"param -b\"",
           "member": "string",
           "name": "ApplicationParams",
           "output_required": true,
@@ -422,7 +422,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"2024-06-20T08:55:38.255Z\"",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -433,7 +433,7 @@
         {
           "disabled": false,
           "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"app_name\"",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
@@ -578,47 +578,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "COS 文件 Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS 文件 Id",
           "example": "cf-abcd1234",
           "member": "string",
           "name": "COSFileId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下载 url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载 url",
           "example": "https://abc",
           "member": "string",
           "name": "URL",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "123.png",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-07-02T10:15:36Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2545,23 +2545,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用文件路径",
           "example": "\"windows/test\"",
           "member": "string",
           "name": "FilePath",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件状态，NO_EXIST 不存在，EXIST 存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件状态，NO_EXIST 不存在，EXIST 存在",
           "example": "\"EXIST|NO_EXIST\"",
           "member": "string",
           "name": "FileState",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2763,58 +2763,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "Cos 桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cos 桶名称",
           "example": "\"examplebucket-1250000000\"",
           "member": "string",
           "name": "CosBucket",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Cos 桶所在区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cos 桶所在区域",
           "example": "\"ap-guangzhou\"",
           "member": "string",
           "name": "CosRegion",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库类型，LOG : 应用日志  ARCHIVE: 应用存档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库类型，LOG : 应用日志  ARCHIVE: 应用存档",
           "example": "\"LOG|ARCHIVE\"",
           "member": "string",
           "name": "StoreType",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库状态，ON: 打开 OFF:关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库状态，ON: 打开 OFF:关闭",
           "example": "\"ON|OFF\"",
           "member": "string",
           "name": "StoreState",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "仓库路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "仓库路径",
           "example": "\"Windows\\\\log\"",
           "member": "string",
           "name": "StorePath",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2874,23 +2874,23 @@
         },
         {
           "disabled": false,
-          "document": "应用版本分发区域（\n标准区：\nap-chinese-mainland ： 中国大陆、\nna-north-america : 北美、\neu-frankfurt ：法兰克福、\nap-mumbai ： 孟买、\nap-tokyo ： 东京、\nap-seoul ： 首尔、\nap-singapore ： 新加坡、\nap-bangkok ： 曼谷、\nap-hongkong ： 中国香港、\n融合区:\nme-middle-east-fusion ：中东\nna-north-america-fusion ：北美\nsa-south-america-fusion ：南美\nap-tokyo-fusion ： 东京\nap-seoul-fusion ： 首尔\neu-frankfurt-fusion ：法兰克福\nap-singapore-fusion ： 新加坡\nap-hongkong-fusion ： 中国香港\n）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用版本分发区域（\n标准区：\nap-chinese-mainland ： 中国大陆、\nna-north-america : 北美、\neu-frankfurt ：法兰克福、\nap-mumbai ： 孟买、\nap-tokyo ： 东京、\nap-seoul ： 首尔、\nap-singapore ： 新加坡、\nap-bangkok ： 曼谷、\nap-hongkong ： 中国香港、\n融合区:\nme-middle-east-fusion ：中东\nna-north-america-fusion ：北美\nsa-south-america-fusion ：南美\nap-tokyo-fusion ： 东京\nap-seoul-fusion ： 首尔\neu-frankfurt-fusion ：法兰克福\nap-singapore-fusion ： 新加坡\nap-hongkong-fusion ： 中国香港\n）",
           "example": "\"[\"ap-chinese-mainland\",\"sa-south-america-fusion\"]\"",
           "member": "string",
           "name": "ApplicationVersionRegions",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用版本更新方式：\nFULL：全量更新、\nINCREMENT：增量更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用版本更新方式：\nFULL：全量更新、\nINCREMENT：增量更新",
           "example": "\"FULL|INCREMENT\"",
           "member": "string",
           "name": "ApplicationVersionUpdateMode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2986,14 +2986,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "推流 GOP 长度，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推流 GOP 长度，单位秒",
           "example": "3",
           "member": "uint64",
           "name": "StreamPushGOPSeconds",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

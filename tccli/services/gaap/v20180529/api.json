@@ -1068,7 +1068,7 @@
           "example": "rs-123456",
           "member": "string",
           "name": "RealServerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1078,7 +1078,7 @@
           "example": "192.168.1.1",
           "member": "string",
           "name": "RealServerIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1088,7 +1088,7 @@
           "example": "1",
           "member": "int64",
           "name": "RealServerWeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1098,7 +1098,7 @@
           "example": "1",
           "member": "int64",
           "name": "RealServerStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1108,17 +1108,17 @@
           "example": "443",
           "member": "int64",
           "name": "RealServerPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "当源站为域名时，域名被解析成一个或者多个IP，该字段表示其中异常的IP列表。状态异常，但该字段为空时，表示域名解析异常。",
-          "example": "[]",
+          "example": "[\"127.0.0.1\"]",
           "member": "string",
           "name": "DownIPList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1128,7 +1128,7 @@
           "example": "master",
           "member": "string",
           "name": "RealServerFailoverRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2411,7 +2411,7 @@
         {
           "disabled": false,
           "document": "客户端CA单证书ID，仅当双向认证时设置该参数或PolyClientCertificateIds参数",
-          "example": "xx",
+          "example": "cert-12345",
           "member": "string",
           "name": "ClientCertificateId",
           "required": false,
@@ -2420,7 +2420,7 @@
         {
           "disabled": false,
           "document": "新的客户端多CA证书ID，仅当双向认证时设置该参数或设置ClientCertificateId参数",
-          "example": "[]",
+          "example": "[\"cert-123456\"]",
           "member": "string",
           "name": "PolyClientCertificateIds",
           "required": false,
@@ -2429,7 +2429,7 @@
         {
           "disabled": false,
           "document": "通道组ID，与ProxyId之间只能设置一个。表示创建通道组的监听器。",
-          "example": "xx",
+          "example": "lg-12345",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -2456,7 +2456,7 @@
           "example": "listener-o0f3at99",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4710,7 +4710,7 @@
         {
           "disabled": false,
           "document": "通道组ID。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
-          "example": "xx",
+          "example": "lg-12345",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -4719,7 +4719,7 @@
         {
           "disabled": false,
           "document": "过滤条件，根据监听器ID进行精确查询。ListenerId、ProxyId、GroupId须至少填写一个，且ProxyId与GroupId至多只能填写其中一个。",
-          "example": "xx",
+          "example": "listener-12345",
           "member": "string",
           "name": "ListenerId",
           "required": false,
@@ -4728,7 +4728,7 @@
         {
           "disabled": false,
           "document": "过滤条件，根据监听器名称进行精确查询。",
-          "example": "xx",
+          "example": "listener-name",
           "member": "string",
           "name": "ListenerName",
           "required": false,
@@ -4764,7 +4764,7 @@
         {
           "disabled": false,
           "document": "过滤条件，支持按照端口或监听器名称进行模糊查询",
-          "example": "xx",
+          "example": "listener-search-name",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -6613,40 +6613,40 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "xx",
+          "example": "dm-12345",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "完整域名记录",
-          "example": "xx",
+          "example": "www.test.com",
           "member": "string",
           "name": "FullDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "别名",
-          "example": "xx",
+          "example": "domai-alias",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "类型",
-          "example": "xx",
+          "example": "IP",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6656,7 +6656,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6666,7 +6666,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6676,7 +6676,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6686,37 +6686,37 @@
           "example": "2",
           "member": "uint64",
           "name": "ProxyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，使用UNIX时间戳",
-          "example": "123456",
+          "example": "1716065151",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间，使用UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "1716065151",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"TagKey\":\"tag-key\", \"TagValue\":\"tag-value\"}]",
           "member": "TagPair",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6726,7 +6726,7 @@
           "example": "RECOVER",
           "member": "string",
           "name": "BanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6901,7 +6901,7 @@
         {
           "disabled": false,
           "document": "转发规则域名。",
-          "example": "xx",
+          "example": "www.domain.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -6911,7 +6911,7 @@
         {
           "disabled": false,
           "document": "该域名对应的转发规则列表。",
-          "example": "[]",
+          "example": "无",
           "member": "RuleInfo",
           "name": "RuleSet",
           "output_required": true,
@@ -6921,7 +6921,7 @@
         {
           "disabled": false,
           "document": "该域名对应的服务器证书ID，值为default时，表示使用默认证书（监听器配置的证书）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-12345",
           "member": "string",
           "name": "CertificateId",
           "output_required": true,
@@ -6931,7 +6931,7 @@
         {
           "disabled": false,
           "document": "该域名对应服务器证书名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-alias",
           "member": "string",
           "name": "CertificateAlias",
           "output_required": true,
@@ -6941,7 +6941,7 @@
         {
           "disabled": false,
           "document": "该域名对应的客户端证书ID，值为default时，表示使用默认证书（监听器配置的证书）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-54321",
           "member": "string",
           "name": "ClientCertificateId",
           "output_required": true,
@@ -6951,7 +6951,7 @@
         {
           "disabled": false,
           "document": "该域名对应客户端证书名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-alias",
           "member": "string",
           "name": "ClientCertificateAlias",
           "output_required": true,
@@ -6961,7 +6961,7 @@
         {
           "disabled": false,
           "document": "该域名对应基础认证配置ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "base-auth",
           "member": "string",
           "name": "BasicAuthConfId",
           "output_required": true,
@@ -6981,7 +6981,7 @@
         {
           "disabled": false,
           "document": "该域名对应基础认证配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "base-alias",
           "member": "string",
           "name": "BasicAuthConfAlias",
           "output_required": true,
@@ -6991,7 +6991,7 @@
         {
           "disabled": false,
           "document": "该域名对应源站认证证书ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-12345",
           "member": "string",
           "name": "RealServerCertificateId",
           "output_required": true,
@@ -7011,7 +7011,7 @@
         {
           "disabled": false,
           "document": "该域名对应源站认证证书名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-12345",
           "member": "string",
           "name": "RealServerCertificateAlias",
           "output_required": true,
@@ -7021,7 +7021,7 @@
         {
           "disabled": false,
           "document": "该域名对应通道认证证书ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-12345",
           "member": "string",
           "name": "GaapCertificateId",
           "output_required": true,
@@ -7041,7 +7041,7 @@
         {
           "disabled": false,
           "document": "该域名对应通道认证证书名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "cert-alias",
           "member": "string",
           "name": "GaapCertificateAlias",
           "output_required": true,
@@ -7051,7 +7051,7 @@
         {
           "disabled": false,
           "document": "源站认证域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "www.domain.com",
           "member": "string",
           "name": "RealServerCertificateDomain",
           "output_required": true,
@@ -7174,22 +7174,20 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤值",
-          "example": "无",
+          "example": "value",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -7378,7 +7376,7 @@
         {
           "disabled": false,
           "document": "监听器名称",
-          "example": "test",
+          "example": "listener-name",
           "member": "string",
           "name": "ListenerName",
           "output_required": true,
@@ -9294,60 +9292,60 @@
         {
           "disabled": false,
           "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"NorthChina\"",
           "member": "string",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "地域名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"NorthChina\"",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "通道ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"link-xxxxx\"",
           "member": "string",
           "name": "ProxyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "通道接入ip\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"1.1.1.1\"",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "三网通道VIP列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "IPDetail",
           "name": "VipList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "接入点IDC类型。ec或dc\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"DC\"",
           "member": "string",
           "name": "SourceRegionIdcType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9596,7 +9594,7 @@
         {
           "disabled": false,
           "document": "通道组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"test\"",
+          "example": "\"group-name\"",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -9656,7 +9654,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "example": "1716065151",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,

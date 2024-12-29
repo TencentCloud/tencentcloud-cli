@@ -31,7 +31,7 @@ Input:
 ```
 tccli gaap CreateCertificate --cli-unfold-argument  \
     --CertificateType 2 \
-    --CertificateAlias 123 \
+    --CertificateAlias cert-alias \
     --CertificateKey -----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAn7CUY5bRNtt/YVT9BBDtfyqmF09KXzI+BCrIvrGDrjxRdIsT
 Hs0xZL5EbZXt7uc5leXJ47RnVAQtNMCOuqeYtFWNMzGydVchMkImBHEsATE+ukqs

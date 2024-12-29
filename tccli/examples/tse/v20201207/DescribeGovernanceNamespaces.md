@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tse DescribeGovernanceNamespaces --cli-unfold-argument  \
-    --Name abc \
+    --Name name \
     --Offset 1 \
     --Limit 1 \
-    --InstanceId abc
+    --InstanceId ins-id
 ```
 
 Output: 
@@ -19,18 +19,18 @@ Output:
         "TotalCount": 1,
         "Content": [
             {
-                "Name": "abc",
-                "Comment": "abc",
-                "CreateTime": "abc",
-                "ModifyTime": "abc",
+                "Name": "name",
+                "Comment": "comment",
+                "CreateTime": "2024-10-08 10:00:00",
+                "ModifyTime": "2024-10-08 10:00:00",
                 "TotalServiceCount": 0,
                 "TotalHealthInstanceCount": 0,
                 "TotalInstanceCount": 0,
-                "Id": "abc",
+                "Id": "id",
                 "Editable": true
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

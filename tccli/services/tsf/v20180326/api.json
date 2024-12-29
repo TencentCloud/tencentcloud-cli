@@ -3222,7 +3222,7 @@
         {
           "disabled": false,
           "document": "配置项id",
-          "example": "dddd",
+          "example": "send-data-to-kafka-6a79x94v",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -3249,7 +3249,7 @@
         {
           "disabled": false,
           "document": "命名空间id",
-          "example": "namespace-xxxx",
+          "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -3258,7 +3258,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "cls-xxxx",
+          "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -3267,7 +3267,7 @@
         {
           "disabled": false,
           "document": "模糊搜索关键词",
-          "example": "xxx",
+          "example": "config-template",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -3285,7 +3285,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -13184,7 +13184,7 @@
         {
           "disabled": false,
           "document": "部署组id",
-          "example": "group-xxxxxxx",
+          "example": "group-ab958z6y",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -13221,7 +13221,7 @@
         {
           "disabled": false,
           "document": "投递配置id",
-          "example": "",
+          "example": "config-2k8sh4s",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -13236,9 +13236,10 @@
         {
           "disabled": false,
           "document": "投递kafka配置",
-          "example": "",
+          "example": "无",
           "member": "KafkaDeliveryConfig",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13330,7 +13331,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -13339,7 +13340,7 @@
         {
           "disabled": false,
           "document": "程序包ID",
-          "example": "",
+          "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -13348,7 +13349,7 @@
         {
           "disabled": false,
           "document": "程序包仓库ID",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
           "required": false,
@@ -13357,7 +13358,7 @@
         {
           "disabled": false,
           "document": "程序包仓库类型",
-          "example": "",
+          "example": "tcr",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -13372,9 +13373,10 @@
         {
           "disabled": false,
           "document": "COS鉴权信息",
-          "example": "",
+          "example": "无",
           "member": "CosDownloadInfo",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18195,7 +18197,7 @@
         {
           "disabled": false,
           "document": "配置项id",
-          "example": "",
+          "example": "apm-busi-log-cfg-6a79x94v",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -18204,7 +18206,7 @@
         {
           "disabled": false,
           "document": "部署组id",
-          "example": "",
+          "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIds",
           "required": false,
@@ -18219,9 +18221,10 @@
         {
           "disabled": false,
           "document": "解除绑定是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -23820,7 +23823,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -23829,7 +23832,7 @@
         {
           "disabled": false,
           "document": "调用DescribeUploadInfo接口时返回的软件包ID",
-          "example": "",
+          "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -23838,7 +23841,7 @@
         {
           "disabled": false,
           "document": "COS返回上传结果（默认为0：成功，其他值表示失败）",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Result",
           "required": true,
@@ -23847,7 +23850,7 @@
         {
           "disabled": false,
           "document": "程序包MD5",
-          "example": "",
+          "example": "bsij82y9sdnowxohwosjxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Md5",
           "required": true,
@@ -23856,7 +23859,7 @@
         {
           "disabled": false,
           "document": "程序包大小（单位字节）",
-          "example": "",
+          "example": "2048",
           "member": "uint64",
           "name": "Size",
           "required": false,
@@ -23865,7 +23868,7 @@
         {
           "disabled": false,
           "document": "程序包仓库类型",
-          "example": "",
+          "example": "personal",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -23874,7 +23877,7 @@
         {
           "disabled": false,
           "document": "程序包仓库id",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
           "required": false,
@@ -25793,7 +25796,7 @@
         {
           "disabled": false,
           "document": "配置ID",
-          "example": "",
+          "example": "dcfg-p-vkj5dnky",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -25802,7 +25805,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "",
+          "example": "namespace-vw46q85y",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -25811,7 +25814,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
           "required": false,
@@ -25826,7 +25829,7 @@
         {
           "disabled": false,
           "document": "true：发布成功；false：发布失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26268,7 +26271,7 @@
         {
           "disabled": false,
           "document": "配置项发布ID",
-          "example": "",
+          "example": "dcfgr-y84o2xla",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -26283,7 +26286,7 @@
         {
           "disabled": false,
           "document": "true：回滚成功；false：回滚失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26304,7 +26307,7 @@
         {
           "disabled": false,
           "document": "配置项发布ID",
-          "example": "",
+          "example": "dcfgr-a7rldd9v",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -26319,7 +26322,7 @@
         {
           "disabled": false,
           "document": "true：撤销成功；false：撤销失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26340,7 +26343,7 @@
         {
           "disabled": false,
           "document": "配置项发布ID",
-          "example": "",
+          "example": "dcfgr-f-aeon99ry",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -26355,7 +26358,7 @@
         {
           "disabled": false,
           "document": "撤回结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26936,9 +26939,10 @@
         {
           "disabled": false,
           "document": "服务名",
-          "example": "",
+          "example": "java-demo",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -26946,9 +26950,10 @@
         {
           "disabled": false,
           "document": "端口信息列表",
-          "example": "",
+          "example": "无",
           "member": "Ports",
           "name": "Ports",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -26956,9 +26961,10 @@
         {
           "disabled": false,
           "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheck",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -29829,7 +29835,7 @@
         {
           "disabled": false,
           "document": "分组网关id列表",
-          "example": "",
+          "example": "[{\"GatewayDeployGroupId\":\"group-yo99lney\",\"GroupId\":\"grp-notmqbpe\"}]",
           "member": "GatewayGroupIds",
           "name": "GroupGatewayList",
           "required": true,
@@ -29844,7 +29850,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -30350,7 +30356,7 @@
         {
           "disabled": false,
           "document": "限流规则ID",
-          "example": "",
+          "example": "rule-8qlpdumd",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -30359,7 +30365,7 @@
         {
           "disabled": false,
           "document": "开启/禁用，enabled/disabled",
-          "example": "",
+          "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
           "required": true,
@@ -30368,7 +30374,7 @@
         {
           "disabled": false,
           "document": "qps值，开启限流规则时，必填",
-          "example": "",
+          "example": "2000",
           "member": "int64",
           "name": "MaxQps",
           "required": false,
@@ -30383,7 +30389,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -30404,7 +30410,7 @@
         {
           "disabled": false,
           "document": "API ID 列表",
-          "example": "",
+          "example": "[\"api-b1sd366q\"]",
           "member": "string",
           "name": "ApiIds",
           "required": true,
@@ -30413,7 +30419,7 @@
         {
           "disabled": false,
           "document": "开启/禁用，enabled/disabled",
-          "example": "",
+          "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
           "required": true,
@@ -30422,7 +30428,7 @@
         {
           "disabled": false,
           "document": "QPS值。开启限流规则时，必填",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "MaxQps",
           "required": false,
@@ -30437,7 +30443,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -30586,7 +30592,7 @@
         {
           "disabled": false,
           "document": "API ID",
-          "example": "",
+          "example": "api-zwua4plw",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -30595,7 +30601,7 @@
         {
           "disabled": false,
           "document": "API 路径",
-          "example": "",
+          "example": "/echo-user",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -30604,7 +30610,7 @@
         {
           "disabled": false,
           "document": "Api 请求方法",
-          "example": "",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -30613,7 +30619,7 @@
         {
           "disabled": false,
           "document": "请求映射",
-          "example": "",
+          "example": "/echo-user",
           "member": "string",
           "name": "PathMapping",
           "required": false,
@@ -30622,7 +30628,7 @@
         {
           "disabled": false,
           "document": "api所在服务host",
-          "example": "",
+          "example": "http://www.qq.com",
           "member": "string",
           "name": "Host",
           "required": false,
@@ -30631,7 +30637,7 @@
         {
           "disabled": false,
           "document": "api描述信息",
-          "example": "",
+          "example": "this is desc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -30646,7 +30652,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",

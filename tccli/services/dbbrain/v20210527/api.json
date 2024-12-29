@@ -1448,7 +1448,7 @@
           "example": "129542924",
           "member": "int64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1746,10 +1746,10 @@
         {
           "disabled": false,
           "document": "创建 kill 会话任务返回的异步任务 id",
-          "example": "123456",
+          "example": "14672492",
           "member": "int64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

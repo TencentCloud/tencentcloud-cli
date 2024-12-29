@@ -2960,6 +2960,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Unack消息数量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "UnackedMsgNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Permits消息数量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "PermitsMsgNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3213,6 +3233,26 @@
           "name": "MsgRateExpired",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Unack消息数量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "UnackedMsgNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Permits消息数量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "PermitsMsgNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4016,6 +4056,15 @@
           "name": "AutoSubscriptionCreation",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "DefaultPolicy表示当订阅下达到最大未确认消息数 5000 时，服务端将不再向当前订阅下的所有消费者推送消息，DynamicPolicy表示动态调整订阅下的最大未确认消息数，具体配额是在 5000 和消费者数量*20之间取最大值。每个消费者默认最大 unack 消息数为 20，超过该限制时仅影响该消费者，不影响其他消费者。",
+          "example": "DefaultPolicy",
+          "member": "string",
+          "name": "UnackPolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5952,6 +6001,15 @@
           "name": "MsgTTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不传默认是原生策略，DefaultPolicy表示当订阅下达到最大未确认消息数 5000 时，服务端将不再向当前订阅下的所有消费者推送消息，DynamicPolicy表示动态调整订阅下的最大未确认消息数，具体配额是在 5000 和消费者数量*20之间取最大值。每个消费者默认最大 unack 消息数为 20，超过该限制时仅影响该消费者，不影响其他消费者。",
+          "example": "DefaultPolicy",
+          "member": "string",
+          "name": "UnackPolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13995,6 +14053,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DefaultPolicy表示当订阅下达到最大未确认消息数 5000 时，服务端将不再向当前订阅下的所有消费者推送消息，DynamicPolicy表示动态调整订阅下的最大未确认消息数，具体配额是在 5000 和消费者数量*20之间取最大值。每个消费者默认最大 unack 消息数为 20，超过该限制时仅影响该消费者，不影响其他消费者。\n",
+          "example": "DefaultPolicy",
+          "member": "string",
+          "name": "UnackPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15455,6 +15523,15 @@
           "name": "AutoSubscriptionCreation",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "DefaultPolicy表示当订阅下达到最大未确认消息数 5000 时，服务端将不再向当前订阅下的所有消费者推送消息，DynamicPolicy表示动态调整订阅下的最大未确认消息数，具体配额是在 5000 和消费者数量*20之间取最大值。每个消费者默认最大 unack 消息数为 20，超过该限制时仅影响该消费者，不影响其他消费者。",
+          "example": "DefaultPolicy",
+          "member": "string",
+          "name": "UnackPolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16827,6 +16904,15 @@
           "name": "MsgTTL",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "不传默认是原生策略，DefaultPolicy表示当订阅下达到最大未确认消息数 5000 时，服务端将不再向当前订阅下的所有消费者推送消息，DynamicPolicy表示动态调整订阅下的最大未确认消息数，具体配额是在 5000 和消费者数量*20之间取最大值。每个消费者默认最大 unack 消息数为 20，超过该限制时仅影响该消费者，不影响其他消费者。",
+          "example": "DefaultPolicy",
+          "member": "string",
+          "name": "UnackPolicy",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23558,6 +23644,26 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息过滤类型，TagFilter 和 SqlFilter，两种，如果两种都不涉及，为空字符串\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TagFilter",
+          "member": "string",
+          "name": "MsgFilterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息过滤规则\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag1,tag2",
+          "member": "string",
+          "name": "MsgFilterProperty",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -23866,6 +23972,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DefaultPolicy表示当订阅下达到最大未确认消息数 5000 时，服务端将不再向当前订阅下的所有消费者推送消息，DynamicPolicy表示动态调整订阅下的最大未确认消息数，具体配额是在 5000 和消费者数量*20之间取最大值。每个消费者默认最大 unack 消息数为 20，超过该限制时仅影响该消费者，不影响其他消费者。\n",
+          "example": "DefaultPolicy",
+          "member": "string",
+          "name": "UnackPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

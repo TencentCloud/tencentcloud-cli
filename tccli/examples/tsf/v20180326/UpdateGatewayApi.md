@@ -6,17 +6,19 @@ Input:
 
 ```
 tccli tsf UpdateGatewayApi --cli-unfold-argument  \
-    --ApiId api-5yk7oor1 \
-    --Path /user/find \
-    --Method POST \
-    --PathMapping /user/find
+    --ApiId api-zwua4plw \
+    --Path /echo-user \
+    --Method GET \
+    --PathMapping /echo-user \
+    --Host http://www.qq.com \
+    --Description this is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "c17753d4-a08b-4d4a-b8f5-a4160ff02c6d",
         "Result": true
     }
 }

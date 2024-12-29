@@ -55,7 +55,7 @@ Output:
             "ForwardIP": "124.222.42.242;118.25.142.34;",
             "TagSet": [
                 {
-                    "TagKey": "test",
+                    "TagKey": "tag-key",
                     "TagValue": "10"
                 }
             ],

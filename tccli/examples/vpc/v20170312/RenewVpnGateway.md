@@ -1,14 +1,14 @@
 **Example 1: 续费VPN网关**
 
-
+续费VPN网关
 
 Input: 
 
 ```
 tccli vpc RenewVpnGateway --cli-unfold-argument  \
-    --Version 2017-03-12 \
     --VpnGatewayId vpngw-lazly92z \
-    --InstanceChargePrepaid.Period 2
+    --InstanceChargePrepaid.Period 1 \
+    --InstanceChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW
 ```
 
 Output: 

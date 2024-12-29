@@ -7,7 +7,7 @@ Input:
 ```
 tccli tem ModifyEnvironment --cli-unfold-argument  \
     --EnvironmentName name-xxx \
-    --Description 描述 \
+    --Description 这是一个描述 \
     --EnvironmentId en-xxxxxx \
     --SubnetIds subnet-xxxxxx \
     --SourceChannel 0 \

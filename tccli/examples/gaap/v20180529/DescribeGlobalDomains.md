@@ -19,7 +19,7 @@ Output:
             {
                 "DomainId": "dm-00ye8ek7",
                 "FullDomain": "gd-qbsrvjtf.gaapqcloud.com.cn",
-                "Alias": "abc",
+                "Alias": "alias-name",
                 "Type": "IP",
                 "Status": 0,
                 "ProjectId": 0,
@@ -30,7 +30,7 @@ Output:
                 "TagSet": [
                     {
                         "TagKey": "project",
-                        "TagValue": "abc"
+                        "TagValue": "tag-value"
                     }
                 ],
                 "BanStatus": "RECOVER"

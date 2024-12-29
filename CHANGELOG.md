@@ -1,3 +1,370 @@
+# Release 3.0.1125.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 42 次发布
+
+发布时间：2024-12-30 01:09:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceSettings](http://document.tencentcloudapi.woa.com/document/product/377/20453#ServiceSettings)
+
+	* 新增成员：DesiredCapacitySyncWithMaxMinSize
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 75 次发布
+
+发布时间：2024-12-30 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddNodeResourceConfig](http://document.tencentcloudapi.woa.com/document/product/589/85608)
+* [AttachDisks](http://document.tencentcloudapi.woa.com/document/product/589/85603)
+* [DeleteNodeResourceConfig](http://document.tencentcloudapi.woa.com/document/product/589/85607)
+* [DescribeNodeDataDisks](http://document.tencentcloudapi.woa.com/document/product/589/85605)
+* [DescribeNodeResourceConfigFast](http://document.tencentcloudapi.woa.com/document/product/589/85609)
+* [ModifyInstanceBasic](http://document.tencentcloudapi.woa.com/document/product/589/85606)
+* [ModifyResource](http://document.tencentcloudapi.woa.com/document/product/589/85602)
+* [ResizeDataDisks](http://document.tencentcloudapi.woa.com/document/product/589/85601)
+* [SetNodeResourceConfigDefault](http://document.tencentcloudapi.woa.com/document/product/589/85604)
+
+新增数据结构：
+
+* [CBSInstance](http://document.tencentcloudapi.woa.com/document/product/589/33981#CBSInstance)
+* [DescribeResourceConfig](http://document.tencentcloudapi.woa.com/document/product/589/33981#DescribeResourceConfig)
+* [NodeResource](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeResource)
+* [NodeSpecDiskV2](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeSpecDiskV2)
+
+修改数据结构：
+
+* [SchedulerTaskDetail](http://document.tencentcloudapi.woa.com/document/product/589/33981#SchedulerTaskDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>JobId
+
+* [YarnApplication](http://document.tencentcloudapi.woa.com/document/product/589/33981#YarnApplication)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, User, Name, Queue, ApplicationType, ElapsedTime, State, FinalStatus, Progress, StartedTime, FinishedTime, AllocatedMB, AllocatedVCores, RunningContainers, MemorySeconds, VCoreSeconds, QueueUsagePercentage, ClusterUsagePercentage, PreemptedResourceMB, PreemptedResourceVCores, NumNonAMContainerPreempted, NumAMContainerPreempted, MapsTotal, MapsCompleted, ReducesTotal, ReducesCompleted, AvgMapTime, AvgReduceTime, AvgShuffleTime, AvgMergeTime, FailedReduceAttempts, KilledReduceAttempts, SuccessfulReduceAttempts, FailedMapAttempts, KilledMapAttempts, SuccessfulMapAttempts, GcTimeMillis, VCoreMillisMaps, MbMillisMaps, VCoreMillisReduces, MbMillisReduces, TotalLaunchedMaps, TotalLaunchedReduces, MapInputRecords, MapOutputRecords, ReduceInputRecords, ReduceOutputRecords, HDFSBytesWritten, HDFSBytesRead
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 120 次发布
+
+发布时间：2024-12-30 01:21:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79346)
+
+	* <font color="#dd0000">**修改入参**：</font>CcInfos
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 23 次发布
+
+发布时间：2024-12-30 01:27:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateQos
+* DeleteQos
+* DescribeQos
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 76 次发布
+
+发布时间：2024-12-30 01:28:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SegmentRecognitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#SegmentRecognitionItem)
+
+	* 新增成员：AudioUrl, AudioBeginTime, AudioEndTime, PersonPositionUrl
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 59 次发布
+
+发布时间：2024-12-30 01:29:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJobConfig](http://document.tencentcloudapi.woa.com/document/product/849/52004)
+
+	* 新增入参：JobManagerCpu, JobManagerMem, TaskManagerCpu, TaskManagerMem
+
+* [DescribeResources](http://document.tencentcloudapi.woa.com/document/product/849/54668)
+
+	* 新增入参：SystemResource
+
+* [DescribeSystemResources](http://document.tencentcloudapi.woa.com/document/product/849/51999)
+
+	* 新增入参：WorkSpaceId
+
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：TotalCpu, TotalMem, RunningCpu, RunningMem
+
+* [ClusterGroupSetItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterGroupSetItem)
+
+	* 新增成员：TotalCpu, TotalMem, RunningCpu, RunningMem
+
+* [JobConfig](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobConfig)
+
+	* 新增成员：JobManagerCpu, JobManagerMem, TaskManagerCpu, TaskManagerMem, JobConfigItem
+
+* [ResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResourceItem)
+
+	* 新增成员：Connector, ConnectorVersion, ConnectionMethod, RelatedResourceId, Icon, ConnectorName, ConnectorUrl
+
+	* <font color="#dd0000">**修改成员**：</font>ResourceId, Name, ResourceType, ResourceLoc, Region, AppId, OwnerUin, CreatorUin, CreateTime, UpdateTime, LatestResourceConfigVersion, Remark, VersionCount, RefJobCount, IsJobRun, FileName, WorkSpaceId, RefJobStatusCountSet
+
+* [ResourceRefDetail](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResourceRefDetail)
+
+	* 新增成员：Connector
+
+* [SqlGatewayItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#SqlGatewayItem)
+
+	* 新增成员：Cpu, Mem
+
+* [SubEks](http://document.tencentcloudapi.woa.com/document/product/849/52010#SubEks)
+
+	* 新增成员：TotalCpu, TotalMem, RunningCpu, RunningMem
+
+* [SystemResourceItem](http://document.tencentcloudapi.woa.com/document/product/849/52010#SystemResourceItem)
+
+	* 新增成员：SystemProvide
+
+* [TreeJobSets](http://document.tencentcloudapi.woa.com/document/product/849/52010#TreeJobSets)
+
+	* 新增成员：ScalingType, RunningCpu, RunningMem
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 74 次发布
+
+发布时间：2024-12-30 01:32:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClbListener](http://document.tencentcloudapi.woa.com/document/product/400/41679#ClbListener)
+
+	* <font color="#dd0000">**修改成员**：</font>NoMatchDomains
+
+* [UpdateRecordDetails](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateRecordDetails)
+
+	* <font color="#dd0000">**修改成员**：</font>TotalCount
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 131 次发布
+
+发布时间：2024-12-30 01:35:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1179/46081)
+
+	* 新增入参：UnackPolicy
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46088)
+
+	* 新增入参：UnackPolicy
+
+* [ModifyEnvironmentAttributes](http://document.tencentcloudapi.woa.com/document/product/1179/46077)
+
+	* 新增入参：UnackPolicy
+
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46085)
+
+	* 新增入参：UnackPolicy
+
+
+修改数据结构：
+
+* [Consumer](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Consumer)
+
+	* 新增成员：UnackedMsgNum, PermitsMsgNum
+
+* [ConsumersSchedule](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumersSchedule)
+
+	* 新增成员：UnackedMsgNum, PermitsMsgNum
+
+* [Environment](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Environment)
+
+	* 新增成员：UnackPolicy
+
+* [Subscription](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Subscription)
+
+	* 新增成员：MsgFilterType, MsgFilterProperty
+
+* [Topic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Topic)
+
+	* 新增成员：UnackPolicy
+
+
+
+
+## 弹性微服务(tem) 版本：2021-07-01
+
+### 第 38 次发布
+
+发布时间：2024-12-30 01:36:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ModifyIngress
+
+修改数据结构：
+
+* [DescribeRunPodPage](http://document.tencentcloudapi.woa.com/document/product/1371/60171#DescribeRunPodPage)
+
+	* <font color="#dd0000">**修改成员**：</font>Offset, Limit, TotalCount, RequestId, PodList
+
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#NodeInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Zone, SubnetId, AvailableIpCount, Cidr
+
+* [RunVersionPod](http://document.tencentcloudapi.woa.com/document/product/1371/60171#RunVersionPod)
+
+	* <font color="#dd0000">**修改成员**：</font>Webshell, PodId, Status, CreateTime, PodIp, Zone, DeployVersion, RestartCount, Ready, ContainerState, NodeInfo, StartTime, Unhealthy, UnhealthyWarningMsg, VersionId, ApplicationName
+
+* [WorkloadInfo](http://document.tencentcloudapi.woa.com/document/product/1371/60171#WorkloadInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ApplicationName, VersionName, ReadyReplicas, Replicas, UpdatedReplicas, UpdatedReadyReplicas, UpdateRevision, CurrentRevision
+
+
+
+
+## 弹性微服务(tem) 版本：2020-12-21
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 78 次发布
+
+发布时间：2024-12-30 01:40:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeGovernanceNamespaces](http://document.tencentcloudapi.woa.com/document/product/1364/83477)
+
+	* 新增入参：SyncToGlobalRegistry
+
+* [DescribeGovernanceServices](http://document.tencentcloudapi.woa.com/document/product/1364/83469)
+
+	* 新增入参：SyncToGlobalRegistry
+
+
+修改数据结构：
+
+* [GovernanceNamespace](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespace)
+
+	* 新增成员：ServiceExportTo
+
+* [GovernanceNamespaceInput](http://document.tencentcloudapi.woa.com/document/product/1364/54942#GovernanceNamespaceInput)
+
+	* 新增成员：ServiceExportTo
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 187 次发布
+
+发布时间：2024-12-30 01:43:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNetworkAcls](http://document.tencentcloudapi.woa.com/document/product/215/42160)
+
+	* 新增入参：NeedDefaultAclEntryInfo
+
+* [ModifyNetworkAclEntries](http://document.tencentcloudapi.woa.com/document/product/215/42107)
+
+	* 新增入参：EnableAclIPv6WhiteList
+
+
+修改数据结构：
+
+* [CustomerGateway](http://document.tencentcloudapi.woa.com/document/product/215/15824#CustomerGateway)
+
+	* <font color="#dd0000">**修改成员**：</font>BgpAsn
+
+
+
+
 # Release 3.0.1124.1
 
 ## 费用中心(billing) 版本：2018-07-09

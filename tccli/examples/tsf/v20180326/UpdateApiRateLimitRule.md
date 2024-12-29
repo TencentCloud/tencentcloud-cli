@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tsf UpdateApiRateLimitRule --cli-unfold-argument  \
-    --RuleId rule-d5970cd2 \
+    --RuleId rule-8qlpdumd \
     --UsableStatus enabled \
-    --MaxQps 1000
+    --MaxQps 2000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
-        "Result": false
+        "RequestId": "ebba8f15-b795-4bdc-b881-049e33ef3fcb",
+        "Result": true
     }
 }
 ```

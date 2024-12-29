@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tse DescribeConfigFile --cli-unfold-argument  \
-    --InstanceId abc \
-    --Namespace abc \
-    --Group abc \
-    --Name abc
+    --InstanceId ins-id \
+    --Namespace namespace \
+    --Group group \
+    --Name name
 ```
 
 Output: 
@@ -18,27 +18,27 @@ Output:
     "Response": {
         "ConfigFile": {
             "Id": 1,
-            "Name": "abc",
-            "Namespace": "abc",
-            "Group": "abc",
-            "Content": "abc",
-            "Format": "abc",
-            "Comment": "abc",
-            "Status": "abc",
+            "Name": "name",
+            "Namespace": "namespace",
+            "Group": "group",
+            "Content": "content",
+            "Format": "yaml",
+            "Comment": "comment",
+            "Status": "status",
             "Tags": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "key",
+                    "Value": "value"
                 }
             ],
-            "CreateTime": "abc",
-            "CreateBy": "abc",
-            "ModifyTime": "abc",
-            "ModifyBy": "abc",
-            "ReleaseTime": "abc",
-            "ReleaseBy": "abc"
+            "CreateTime": "2024-10-08 10:00:00",
+            "CreateBy": "user",
+            "ModifyTime": "2024-10-08 10:00:00",
+            "ModifyBy": "user",
+            "ReleaseTime": "2024-10-08 10:00:00",
+            "ReleaseBy": "user"
         },
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

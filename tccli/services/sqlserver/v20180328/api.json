@@ -4778,48 +4778,48 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例隔离操作",
           "example": "User",
           "member": "string",
           "name": "IsolateOperator",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发布订阅标识，SUB-订阅实例，PUB-发布实例，空值-没有发布订阅的普通实例",
           "example": "SUB",
           "member": "string",
           "name": "SubFlag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读标识，RO-只读实例，MASTER-有RO实例的主实例，空值-没有只读组的非RO实例",
           "example": "MASTER",
           "member": "string",
           "name": "ROFlag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "容灾类型，MIRROR-镜像，ALWAYSON-AlwaysOn, SINGLE-单例",
           "example": "MIRROR",
           "member": "string",
           "name": "HAFlag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "['Tag1']",
           "member": "ResourceTag",
           "name": "ResourceTags",
           "output_required": true,
@@ -4828,23 +4828,23 @@
         },
         {
           "disabled": false,
-          "document": "备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份模式，master_pkg-主节点打包备份(默认) ；master_no_pkg-主节点不打包备份；slave_pkg-从节点打包备份(always on集群有效)；slave_no_pkg-从节点不打包备份(always on集群有效)；只读副本对该值无效。",
           "example": "master_pkg",
           "member": "string",
           "name": "BackupModel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例备份信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "实例备份信息",
+          "example": "instance note",
           "member": "string",
           "name": "InstanceNote",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

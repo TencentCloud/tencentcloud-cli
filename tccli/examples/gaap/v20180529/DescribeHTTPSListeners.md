@@ -18,34 +18,34 @@ Output:
         "TotalCount": 1,
         "ListenerSet": [
             {
-                "ListenerId": "abc",
-                "ListenerName": "abc",
+                "ListenerId": "listener-12345",
+                "ListenerName": "listener-name",
                 "Port": 1,
-                "Protocol": "abc",
+                "Protocol": "TCP",
                 "ListenerStatus": 1,
-                "CertificateId": "abc",
-                "ForwardProtocol": "abc",
+                "CertificateId": "cert-12345",
+                "ForwardProtocol": "TCP",
                 "CreateTime": 1,
-                "CertificateAlias": "abc",
-                "ClientCertificateId": "abc",
+                "CertificateAlias": "alias-name",
+                "ClientCertificateId": "cert-54321",
                 "AuthType": 0,
-                "ClientCertificateAlias": "abc",
+                "ClientCertificateAlias": "alias-name",
                 "PolyClientCertificateAliasInfo": [
                     {
-                        "CertificateId": "abc",
-                        "CertificateAlias": "abc"
+                        "CertificateId": "cert-12345",
+                        "CertificateAlias": "cert-alias"
                     }
                 ],
                 "Http3Supported": 0,
-                "ProxyId": "abc",
-                "GroupId": "abc",
+                "ProxyId": "link-12345",
+                "GroupId": "lg-12345",
                 "TLSSupportVersion": [
-                    "abc"
+                    "TLSv1.1"
                 ],
-                "TLSCiphers": "abc"
+                "TLSCiphers": "GAAP_TLS_CIPHERS_WIDE"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "209e95b9-488d-4a58-bc86-810859577af3"
     }
 }
 ```

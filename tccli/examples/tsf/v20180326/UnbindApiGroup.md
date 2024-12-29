@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tsf UnbindApiGroup --cli-unfold-argument  \
-    --GroupGatewayList.0.GatewayDeployGroupId group-qabo8xyl \
-    --GroupGatewayList.0.GroupId grp-i54lzdrq
+    --GroupGatewayList.0.GatewayDeployGroupId group-yo99lney \
+    --GroupGatewayList.0.GroupId grp-notmqbpe
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
+        "RequestId": "e602a33a-7ddd-44ad-b55b-790afb4eac25",
         "Result": true
     }
 }

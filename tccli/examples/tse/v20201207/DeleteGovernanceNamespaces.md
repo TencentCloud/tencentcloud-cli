@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse DeleteGovernanceNamespaces --cli-unfold-argument  \
-    --InstanceId abc \
-    --GovernanceNamespaces.0.Name abc
+    --InstanceId ins-id \
+    --GovernanceNamespaces.0.Name name
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

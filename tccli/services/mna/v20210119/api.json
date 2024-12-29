@@ -43,11 +43,11 @@
       "status": "online"
     },
     "CreateQos": {
-      "document": "移动网络发起Qos加速过程",
+      "document": "产品下线\n\n移动网络发起Qos加速过程",
       "input": "CreateQosRequest",
       "name": "发起Qos加速过程",
       "output": "CreateQosResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteDevice": {
       "document": "删除设备信息",
@@ -71,18 +71,18 @@
       "status": "online"
     },
     "DeleteQos": {
-      "document": "移动网络停止Qos加速过程",
+      "document": "产品下线\n\n移动网络停止Qos加速过程",
       "input": "DeleteQosRequest",
       "name": "停止Qos加速过程",
       "output": "DeleteQosResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeQos": {
-      "document": "获取Qos加速状态",
+      "document": "产品下线\n\n获取Qos加速状态",
       "input": "DescribeQosRequest",
       "name": "获取Qos加速状态",
       "output": "DescribeQosResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetDevice": {
       "document": "通过指定设备的ID查找设备详细信息",
@@ -301,7 +301,7 @@
         {
           "disabled": false,
           "document": "厂商名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "vendor1",
           "member": "string",
           "name": "Vendor",
           "output_required": true,
@@ -312,7 +312,7 @@
         {
           "disabled": false,
           "document": "设备SN序列号",
-          "example": "xxx",
+          "example": "AN",
           "member": "string",
           "name": "SN",
           "output_required": true,
@@ -323,7 +323,7 @@
         {
           "disabled": false,
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "mna-w795bzezug",
           "member": "string",
           "name": "DeviceName",
           "output_required": true,
@@ -334,7 +334,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "test",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -378,7 +378,7 @@
         {
           "disabled": false,
           "document": "设备分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "cliGrp-xf8rboasbh",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
@@ -389,7 +389,7 @@
         {
           "disabled": false,
           "document": "设备分组名称，预留参数，需要分组时传入GroupId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "group-name",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
@@ -411,7 +411,7 @@
         {
           "disabled": false,
           "document": "激活后的设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "mna-xxxxxx",
+          "example": "mna-w795bzezug",
           "member": "string",
           "name": "DeviceId",
           "output_required": false,
@@ -1187,7 +1187,7 @@
         {
           "disabled": false,
           "document": "设备唯一ID",
-          "example": "\"mna-xxx\"",
+          "example": "\"mna-2x2tllhb18\"",
           "member": "string",
           "name": "DeviceId",
           "output_required": true,
@@ -1197,7 +1197,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "\"xxx\"",
+          "example": "\"mna-2x2tllhb18\"",
           "member": "string",
           "name": "DeviceName",
           "output_required": true,
@@ -1227,7 +1227,7 @@
         {
           "disabled": false,
           "document": "设备的备注",
-          "example": "\"xxx\"",
+          "example": "\"test\"",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -1267,7 +1267,7 @@
         {
           "disabled": false,
           "document": "设备分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxx\"",
+          "example": "\"cliGrp-xf8rboasbh\"",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -1277,7 +1277,7 @@
         {
           "disabled": false,
           "document": "设备分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxx\"",
+          "example": "\"cliGrp-xf8rboasbh\"",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -1297,7 +1297,7 @@
         {
           "disabled": false,
           "document": "设备sn\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
+          "example": "\"AN\"",
           "member": "string",
           "name": "Sn",
           "output_required": false,
@@ -1307,7 +1307,7 @@
         {
           "disabled": false,
           "document": "厂商\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"abc\"",
+          "example": "\"vendor\"",
           "member": "string",
           "name": "Vendor",
           "output_required": false,

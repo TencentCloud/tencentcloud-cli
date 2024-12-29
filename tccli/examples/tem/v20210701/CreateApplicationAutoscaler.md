@@ -9,27 +9,22 @@ tccli tem CreateApplicationAutoscaler --cli-unfold-argument  \
     --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
     --EnvironmentId en-xxxxxx \
-    --Autoscaler.MinReplicas 0 \
-    --Autoscaler.MaxReplicas 0 \
-    --Autoscaler.HorizontalAutoscaler.0.MinReplicas 0 \
-    --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 0 \
-    --Autoscaler.HorizontalAutoscaler.0.Metrics abc \
-    --Autoscaler.HorizontalAutoscaler.0.Threshold 0 \
+    --Autoscaler.MinReplicas 1 \
+    --Autoscaler.MaxReplicas 3 \
+    --Autoscaler.AutoscalerName pk-test-1 \
+    --Autoscaler.Description 这是一个描述 \
+    --Autoscaler.Enabled False \
+    --Autoscaler.HorizontalAutoscaler.0.MinReplicas 1 \
+    --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 3 \
+    --Autoscaler.HorizontalAutoscaler.0.Metrics CPU \
+    --Autoscaler.HorizontalAutoscaler.0.DoubleThreshold 50 \
     --Autoscaler.HorizontalAutoscaler.0.Enabled True \
-    --Autoscaler.HorizontalAutoscaler.0.DoubleThreshold 0 \
-    --Autoscaler.CronHorizontalAutoscaler.0.Name abc \
-    --Autoscaler.CronHorizontalAutoscaler.0.Period abc \
-    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.StartAt abc \
-    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.TargetReplicas 0 \
+    --Autoscaler.CronHorizontalAutoscaler.0.Name policy-test \
+    --Autoscaler.CronHorizontalAutoscaler.0.Period * * * \
+    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.StartAt 00:00 \
+    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.TargetReplicas 1 \
     --Autoscaler.CronHorizontalAutoscaler.0.Enabled True \
-    --Autoscaler.CronHorizontalAutoscaler.0.Priority 0 \
-    --Autoscaler.AutoscalerId abc \
-    --Autoscaler.AutoscalerName abc \
-    --Autoscaler.Description abc \
-    --Autoscaler.CreateDate abc \
-    --Autoscaler.ModifyDate abc \
-    --Autoscaler.EnableDate abc \
-    --Autoscaler.Enabled True
+    --Autoscaler.CronHorizontalAutoscaler.0.Priority 0
 ```
 
 Output: 

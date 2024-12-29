@@ -21,8 +21,8 @@ Output:
             {
                 "CertificateId": "cert-8k1l0pat",
                 "SubjectCN": "lagameft01.xyz",
-                "CertificateAlias": "test",
-                "CertificateName": "test",
+                "CertificateAlias": "alias-name",
+                "CertificateName": "cert-name",
                 "BeginTime": 1554134400,
                 "CertificateType": 2,
                 "EndTime": 1585713600,
