@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tse CreateGovernanceServices --cli-unfold-argument  \
-    --InstanceId abc \
-    --GovernanceServices.0.Name abc \
-    --GovernanceServices.0.Namespace abc \
-    --GovernanceServices.0.Comment abc \
-    --GovernanceServices.0.Metadatas.0.Key abc \
-    --GovernanceServices.0.Metadatas.0.Value abc \
-    --GovernanceServices.0.Department abc \
-    --GovernanceServices.0.Business abc \
-    --GovernanceServices.0.UserIds abc \
-    --GovernanceServices.0.GroupIds abc \
-    --GovernanceServices.0.RemoveUserIds abc \
-    --GovernanceServices.0.RemoveGroupIds abc
+    --InstanceId ins-id \
+    --GovernanceServices.0.Name name \
+    --GovernanceServices.0.Namespace namespace \
+    --GovernanceServices.0.Comment comment \
+    --GovernanceServices.0.Metadatas.0.Key key \
+    --GovernanceServices.0.Metadatas.0.Value value \
+    --GovernanceServices.0.Department dev \
+    --GovernanceServices.0.Business web \
+    --GovernanceServices.0.UserIds 101 \
+    --GovernanceServices.0.GroupIds groupa \
+    --GovernanceServices.0.RemoveUserIds 101 \
+    --GovernanceServices.0.RemoveGroupIds groupa
 ```
 
 Output: 
@@ -25,7 +25,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

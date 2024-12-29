@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeAddon --cli-unfold-argument  \
-    --ClusterId cls-123deabc \
+    --ClusterId cls-kihzth22 \
     --AddonName cbs
 ```
 
@@ -17,11 +17,14 @@ Output:
         "Addons": [
             {
                 "AddonName": "cbs",
-                "AddonVersion": "1.1.0",
-                "RawValues": ""
+                "AddonVersion": "1.1.7",
+                "CreateTime": "2024-12-23T13:06:44Z",
+                "Phase": "Succeeded",
+                "RawValues": "e30=",
+                "Reason": ""
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "7eb2cf94-6cc3-40d0-8843-3ac1314e61e5"
     }
 }
 ```

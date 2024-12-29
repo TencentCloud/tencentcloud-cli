@@ -14,34 +14,34 @@ Output:
 {
     "Response": {
         "Image": {
-            "ImageId": "abc",
-            "OsName": "abc",
-            "ImageType": "abc",
+            "ImageId": "img-xxx",
+            "OsName": "Xserver",
+            "ImageType": "PRIVATE_IMAGE",
             "CreatedTime": "2020-09-22T00:00:00+00:00",
-            "ImageName": "abc",
-            "ImageDescription": "abc",
+            "ImageName": "myImg",
+            "ImageDescription": "",
             "ImageSize": 0,
-            "Architecture": "abc",
-            "ImageState": "abc",
-            "Platform": "abc",
-            "ImageCreator": "abc",
-            "ImageSource": "abc",
+            "Architecture": "x86_64",
+            "ImageState": "NORMAL",
+            "Platform": "Windows",
+            "ImageCreator": "tencent",
+            "ImageSource": "CREATE_IMAGE",
             "SyncPercent": 0,
             "IsSupportCloudinit": true,
             "SnapshotSet": [
                 {
-                    "SnapshotId": "abc",
-                    "DiskUsage": "abc",
+                    "SnapshotId": "snap-nbxxx56",
+                    "DiskUsage": "SYSTEM_DISK",
                     "DiskSize": 0
                 }
             ],
             "Tags": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "myKey",
+                    "Value": "myValue"
                 }
             ],
-            "LicenseType": "abc",
+            "LicenseType": "TencentCloud",
             "ImageFamily": "business-daily-update",
             "ImageDeprecated": false
         },

@@ -28,7 +28,7 @@ Output:
                 "ListenerId": "listener-gkzl9e7t",
                 "UnhealthyThreshold": 1,
                 "ListenerStatus": 1,
-                "ListenerName": "test",
+                "ListenerName": "listener-name",
                 "Scheduler": "rr",
                 "ClientIPMethod": 1,
                 "FailoverSwitch": 1,

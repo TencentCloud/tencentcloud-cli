@@ -13,18 +13,20 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
+        "RequestId": "6dad49b1-6a37-4288-9068-0be2ab6ce19b",
         "DomainInfo": {
-            "Name": "abc.com",
-            "Type": 1,
+            "Name": "push.livhub.net",
+            "Type": 0,
             "Status": 1,
-            "CreateTime": "2018-08-29 10:00:00",
-            "BCName": 1,
-            "TargetDomain": "yourdomain.test2.com",
-            "CurrentCName": "yourdomain.test.com",
+            "PlayType": 1,
             "IsDelayLive": 0,
+            "IsMiniProgramLive": 0,
+            "CreateTime": "2023-10-30 14:01:48",
+            "BCName": 1,
+            "CurrentCName": "push.livhub.net.tlivepush.com.",
+            "TargetDomain": "push.livhub.net.tlivepush.com",
             "RentTag": 0,
-            "RentExpireTime": "0000-00-00 00:00:00"
+            "RentExpireTime": "78894"
         }
     }
 }

@@ -18,7 +18,7 @@ Output:
         "Content": [
             {
                 "InstanceId": "ins-a123456",
-                "Name": "test",
+                "Name": "instance-name",
                 "Edition": "1.8.6",
                 "Status": "creating",
                 "SpecId": "spec-id",

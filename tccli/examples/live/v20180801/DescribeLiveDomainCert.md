@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeLiveDomainCert --cli-unfold-argument  \
-    --DomainName 5000.livepush.myqcloud.com
+    --DomainName 5000.liveplay.myqcloud.com
 ```
 
 Output: 
@@ -18,11 +18,15 @@ Output:
             "CertName": "testName",
             "Description": "testDesc",
             "CreateTime": "2018-11-30T15:50:12Z",
-            "HttpsCrt": "xxx",
+            "HttpsCrt": "fsgfdsfsdfdsfd",
             "CertType": 0,
             "CertExpireTime": "2018-12-30T15:50:12Z",
             "DomainName": "5000.livepush.play.com",
-            "Status": 1
+            "Status": 1,
+            "CertDomains": [
+                "*.play.com"
+            ],
+            "CloudCertId": "sfrsfvdf"
         },
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }

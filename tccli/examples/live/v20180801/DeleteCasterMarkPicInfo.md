@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DeleteCasterMarkPicInfo --cli-unfold-argument  \
-    --CasterId 1234 \
+    --CasterId 63501 \
     --MarkPicIndex 1
 ```
 

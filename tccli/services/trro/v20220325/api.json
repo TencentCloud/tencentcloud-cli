@@ -285,7 +285,7 @@
         {
           "disabled": false,
           "document": "设备id",
-          "example": "\"xxx\"",
+          "example": "\"trro_dev\"",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -294,7 +294,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "\"xxx\"",
+          "example": "\"m82k5408n123phvb\"",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -691,7 +691,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "xxx",
+          "example": "m82k5408n123phvb",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -718,7 +718,7 @@
         {
           "disabled": false,
           "document": "设备ID",
-          "example": "xx",
+          "example": "trro_dev",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -754,7 +754,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -764,7 +764,7 @@
           "example": "无",
           "member": "SessionInfo",
           "name": "DeviceSessionList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -774,7 +774,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -820,7 +820,7 @@
         {
           "disabled": false,
           "document": "模糊匹配关键字，不填默认不进行模糊匹配",
-          "example": "test",
+          "example": "trro",
           "member": "string",
           "name": "SearchWords",
           "required": false,
@@ -856,7 +856,7 @@
           "example": "black",
           "member": "string",
           "name": "PolicyMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -866,7 +866,7 @@
           "example": "true",
           "member": "bool",
           "name": "PolicyEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -876,7 +876,7 @@
           "example": "无",
           "member": "PolicyInfo",
           "name": "PolicyInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -886,7 +886,7 @@
           "example": "1",
           "member": "int64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -896,7 +896,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1048,7 +1048,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "xxx",
+          "example": "m82k5408n123phvb",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1075,7 +1075,7 @@
         {
           "disabled": false,
           "document": "设备ID，支持过滤远端设备或现场设备",
-          "example": "xx",
+          "example": "trro_dev1",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -1111,7 +1111,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1121,7 +1121,7 @@
           "example": "无",
           "member": "RecentSessionInfo",
           "name": "RecentSessionList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1131,7 +1131,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1553,7 +1553,7 @@
         {
           "disabled": false,
           "document": "项目 ID",
-          "example": "\"xxx\"",
+          "example": "m82k5408n123phvb",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -1562,7 +1562,7 @@
         {
           "disabled": false,
           "document": "设备ID",
-          "example": "\"xxx\"",
+          "example": "trro_dev",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -1587,7 +1587,7 @@
         {
           "disabled": false,
           "document": "列表数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1676,7 +1676,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNum",
           "required": true,
@@ -1685,7 +1685,7 @@
         {
           "disabled": false,
           "document": "页面数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -1694,7 +1694,7 @@
         {
           "disabled": false,
           "document": "projectId",
-          "example": "xxx",
+          "example": "m82k5408n123phvb",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -1703,7 +1703,7 @@
         {
           "disabled": false,
           "document": "DeviceId",
-          "example": "xxx",
+          "example": "trro_dev",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -1930,7 +1930,7 @@
         {
           "disabled": false,
           "document": "添加关联失败的现场设备ID列表",
-          "example": "无",
+          "example": "[\"trro_dev1\"]",
           "member": "string",
           "name": "FailedInsertIds",
           "output_required": false,
@@ -1940,7 +1940,7 @@
         {
           "disabled": false,
           "document": "解除关联失败的现场设备ID列表",
-          "example": "无",
+          "example": "[\"trro_dev2\"]",
           "member": "string",
           "name": "FailedDeleteIds",
           "output_required": false,

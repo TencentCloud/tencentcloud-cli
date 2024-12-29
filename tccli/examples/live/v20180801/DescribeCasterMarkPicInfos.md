@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeCasterMarkPicInfos --cli-unfold-argument  \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

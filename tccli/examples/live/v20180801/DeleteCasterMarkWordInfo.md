@@ -7,7 +7,7 @@ Input:
 ```
 tccli live DeleteCasterMarkWordInfo --cli-unfold-argument  \
     --MarkWordIndex 1 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

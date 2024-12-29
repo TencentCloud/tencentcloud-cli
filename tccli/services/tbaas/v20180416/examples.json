@@ -11,7 +11,7 @@
     "ApplyUserCert": [
       {
         "document": "",
-        "input": "https://tbaas.tencentcloudapi.com/?Action=ApplyUserCert\n&Module=cert_mng\n&Operation=cert_apply_for_user\n&ClusterId=251005746bckuobc41mpu\n&GroupName=youtuOrg\n&UserIdentity=kyloz\n&Applicant=优图SDK\n&IdentityNum=123\n&CsrData=-----BEGINCERTIFICATEREQUEST-----\nMIIBSTCB8AIBADCBjTELMAkGA1UEBhMCQ04xEjAQBgNVBAgMCUd1YW5nWmhvdTER\nMA8GA1UEBwwIU2hlblpoZW4xFDASBgNVBAoMC2V4YW1wbGUuY29tMQ8wDQYDVQQL\nDAZjbGllbnQxMDAuBgNVBAMMJ0FkbWluLm9yZzJAb3JnMi5leGFtcGxlLmNvbSx0\neXBlPWNsaWVudDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMIrWeLZjivbTLwy\nz+JMfmZjPEJ8x4H8a/CnqBIwcCaJjg5cMqOi+VyFHkCM9Sv4MFOqPAK7rE62m9XF\ns4B8hfKgADAKBggqhkjOPQQDAgNIADBFAiEAtl/h0DHfRJl170U6OGpCkN34jX0a\nGGGSHbFu2KxLUHsCIAFxXa6UsQOf93vT0FQldeBodbVCbNhM8/jtVqfZ/lhB\n-----ENDCERTIFICATEREQUEST-----\n&Notes=test\n&<公共请求参数>",
+        "input": "https://tbaas.tencentcloudapi.com/?Action=ApplyUserCert\n&Module=cert_mng\n&Operation=cert_apply_for_user\n&ClusterId=251005746bckuobc41mpu\n&GroupName=youtuOrg\n&UserIdentity=kyloz\n&Applicant=优图SDK\n&IdentityNum=3503******2342\n&CsrData=-----BEGINCERTIFICATEREQUEST-----\nMIIBSTCB8AIBADCBjTELMAkGA1UEBhMCQ04xEjAQBgNVBAgMCUd1YW5nWmhvdTER\nMA8GA1UEBwwIU2hlblpoZW4xFDASBgNVBAoMC2V4YW1wbGUuY29tMQ8wDQYDVQQL\nDAZjbGllbnQxMDAuBgNVBAMMJ0FkbWluLm9yZzJAb3JnMi5leGFtcGxlLmNvbSx0\neXBlPWNsaWVudDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABMIrWeLZjivbTLwy\nz+JMfmZjPEJ8x4H8a/CnqBIwcCaJjg5cMqOi+VyFHkCM9Sv4MFOqPAK7rE62m9XF\ns4B8hfKgADAKBggqhkjOPQQDAgNIADBFAiEAtl/h0DHfRJl170U6OGpCkN34jX0a\nGGGSHbFu2KxLUHsCIAFxXa6UsQOf93vT0FQldeBodbVCbNhM8/jtVqfZ/lhB\n-----ENDCERTIFICATEREQUEST-----\n&Notes=fact\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"CertDn\": \"C=CN,ST=ShenZhen,L=4ShenZhen,O=org1,OU=client,CN=kylouse@org1.bcdk3eis17qe@client\",\n        \"CertId\": 172634,\n        \"RequestId\": \"16824370-6058-4f38-a32d-c19b1eaefaee\"\n    }\n}",
         "title": "用户证书申请"
       }
@@ -20,7 +20,7 @@
       {
         "document": "DescribeFabricBlock",
         "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFabricBlock\n<公共请求参数>\n\n{\n    \"ClusterId\": \"fabric-65z42qi150\",\n    \"ChannelId\": \"channel-9xej4d\",\n    \"BlockHeight\": 4\n}",
-        "output": "{\n    \"Response\": {\n        \"BlockHash\": \"e0421ecc20340425a2cf01808469b2523651f8100da92a0287b3769115e57370\",\n        \"BlockHeight\": 4,\n        \"CreateTimestamp\": \"2023-08-05 07:44:04\",\n        \"PreBlockHash\": \"f69b2b5a1884e5bbb077a3025378e2210b83bbada23b5c17045b0bf537a53bd0\",\n        \"ProposerOrg\": \"区块链测试机构pettychen\",\n        \"RequestId\": \"a6288649-01c0-4d8f-bdd4-ba02163d0721\",\n        \"TransactionList\": [\n            {\n                \"BlockHeight\": 4,\n                \"ChaincodeName\": \"_lifecycle\",\n                \"CreateTime\": \"2023-08-05 15:44:04\",\n                \"Sender\": \"区块链测试机构pettychen\",\n                \"TxId\": \"03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229\"\n            }\n        ],\n        \"TxCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BlockHash\": \"e0421ecc20340425a2cf01808469b2523651f8100da92a0287b3769115e57370\",\n        \"BlockHeight\": 4,\n        \"CreateTimestamp\": \"2023-08-05 07:44:04\",\n        \"PreBlockHash\": \"f69b2b5a1884e5bbb077a3025378e2210b83bbada23b5c17045b0bf537a53bd0\",\n        \"ProposerOrg\": \"区块链测试机构pettychen\",\n        \"RequestId\": \"a6288649-01c0-4d8f-bdd4-ba02163d0721\",\n        \"TransactionList\": [\n            {\n                \"BlockHeight\": 4,\n                \"ChaincodeName\": \"_lifecycle\",\n                \"CreateTime\": \"2023-08-05 15:44:04\",\n                \"Sender\": \"区块链测试机构\",\n                \"TxId\": \"03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229\"\n            }\n        ],\n        \"TxCount\": 1\n    }\n}",
         "title": "DescribeFabricBlock"
       }
     ],
@@ -59,8 +59,8 @@
     "GetClusterSummary": [
       {
         "document": "",
-        "input": "https://tbaas.tencentcloudapi.com/?Action=GetClusterSummary\n&Module=cluster_mng\n&Operation=cluster_summary\n&ClusterId=251005746bc0f03q8u93j\n&GroupId=0\n&GroupName=liulanOrg\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ClientCertCount\": 2,\n        \"JoinChannelCount\": 1,\n        \"MyChaincodeCount\": 1,\n        \"MyChannelCount\": 1,\n        \"MyGroupCount\": 1,\n        \"MyPeerCount\": 2,\n        \"PeerCertCount\": 2,\n        \"RecentChaincodeCount\": 1,\n        \"RequestId\": \"8646a1d8-bae3-4b41-8732-06b8c004eaa5\",\n        \"TlsCertCount\": 4,\n        \"TotalCertCount\": 8,\n        \"TotalChaincodeCount\": 1,\n        \"TotalChannelCount\": 1,\n        \"TotalGroupCount\": 1,\n        \"TotalPeerCount\": 2\n    }\n}",
+        "input": "https://tbaas.tencentcloudapi.com/?Action=GetClusterSummary\n&Module=cluster_mng\n&Operation=cluster_summary\n&ClusterId=251005746bc0f03q8u93j\n&GroupId=12\n&GroupName=liulanOrg\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"MyPeerCount\": 1,\n        \"ClientCertCount\": 1,\n        \"TotalChaincodeCount\": 1,\n        \"TotalChannelCount\": 1,\n        \"TlsCertCount\": 1,\n        \"OrderCount\": 1,\n        \"RecentChaincodeCount\": 1,\n        \"PeerCertCount\": 1,\n        \"MyChaincodeCount\": 1,\n        \"RequestId\": \"aeae4ed4-a4ce-4ffd-9826-1aae7669bb7c\",\n        \"TotalCertCount\": 1,\n        \"MyGroupCount\": 1,\n        \"MyChannelCount\": 1,\n        \"TotalGroupCount\": 1,\n        \"JoinChannelCount\": 1,\n        \"TotalPeerCount\": 1\n    }\n}",
         "title": "GetClusterSummary"
       }
     ],
@@ -92,7 +92,7 @@
       {
         "document": "",
         "input": "https://tbaas.tencentcloudapi.com/?Action=GetTransactionDetailForUser\n&Module=transaction\n&Operation=transaction_detail_for_user\n&ClusterId=251005746bcd6xjfka7pi\n&GroupName=org2\n&ChannelName=tyler\n&BlockId=0\n&TransactionId=42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BlockHash\": \"a0f1bd5819e1e664873c3d903d005f9f24661986c2c4c541a185f613fdeaff52\",\n        \"BlockHeight\": 1,\n        \"BlockId\": 0,\n        \"ChannelName\": \"tyler\",\n        \"ContractName\": \"\",\n        \"CreateOrgName\": \"org2\",\n        \"CreateTime\": \"2019-10-28 18:48:28\",\n        \"EndorserOrgList\": [\n            {\n                \"EndorserGroupName\": \"org2\",\n                \"EndorserPeerList\": [\n                    \"Admin.org2.bcd6xjfka7pi\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a13c4aed-ba4a-4357-850a-66707d7d5e74\",\n        \"TransactionData\": \"\\\"\\\"\",\n        \"TransactionHash\": \"\",\n        \"TransactionId\": \"42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0\",\n        \"TransactionStatus\": \"VALID\",\n        \"TransactionType\": \"CONFIG\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BlockHash\": \"a0f1bd5819e1e664873c3d903d005f9f24661986c2c4c541a185f613fdeaff52\",\n        \"BlockHeight\": 1,\n        \"BlockId\": 0,\n        \"ChannelName\": \"tyler\",\n        \"ContractName\": \"fact\",\n        \"CreateOrgName\": \"org2\",\n        \"CreateTime\": \"2019-10-28 18:48:28\",\n        \"EndorserOrgList\": [\n            {\n                \"EndorserGroupName\": \"org2\",\n                \"EndorserPeerList\": [\n                    \"Admin.org2.bcd6xjfka7pi\"\n                ]\n            }\n        ],\n        \"RequestId\": \"a13c4aed-ba4a-4357-850a-66707d7d5e74\",\n        \"TransactionData\": \"{\\\"chaincode_spec\\\":{\\\"timeout\\\":0,\\\"type\\\":\\\"UNDEFINED\\\"}}\",\n        \"TransactionHash\": \"42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0\",\n        \"TransactionId\": \"42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0\",\n        \"TransactionStatus\": \"VALID\",\n        \"TransactionType\": \"CONFIG\"\n    }\n}",
         "title": "获取交易详情"
       }
     ],
@@ -113,7 +113,7 @@
     "InvokeChainMakerContract": [
       {
         "document": "调用长安链合约执行交易",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_dcwtt\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"2021-07-26\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-j1juwsmndn\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": \"0\",\n    \"ContractName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeChainMakerContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_dcwtt\",\n    \"FuncParam\": \"{\\\"time\\\":\\\"2021-07-26\\\",\\\"file_hash\\\":\\\"123456\\\",\\\"file_name\\\":\\\"test.jpg\\\"}\",\n    \"ClusterId\": \"chainmaker-j1juwsmndn\",\n    \"FuncName\": \"save\",\n    \"AsyncFlag\": \"0\",\n    \"ContractName\": \"fact\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2974e7ac-72e2-49c3-ae39-bc2bc6a7330b\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"963b8210f10e45e6ab6fe5cd37ba7f6719db5948a38c494ca9137fa2b8c9033d\",\n            \"GasUsed\": 9573483,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链合约执行交易"
       }
@@ -153,7 +153,7 @@
     "QueryChainMakerContract": [
       {
         "document": "调用长安链合约查询",
-        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_dcwtt\",\n    \"ClusterId\": \"chainmaker-j1juwsmndn\",\n    \"ContractName\": \"test\",\n    \"FuncParam\": \"{\\\"file_hash\\\":\\\"1234567\\\"}\",\n    \"FuncName\": \"find_by_file_hash\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tbaas.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryChainMakerContract\n<公共请求参数>\n\n{\n    \"ChainId\": \"chain_dcwtt\",\n    \"ClusterId\": \"chainmaker-j1juwsmndn\",\n    \"ContractName\": \"fact\",\n    \"FuncParam\": \"{\\\"file_hash\\\":\\\"1234567\\\"}\",\n    \"FuncName\": \"find_by_file_hash\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fac6ef5a-7637-4a75-a2d3-0f7d87b5b8b5\",\n        \"Result\": {\n            \"Code\": 0,\n            \"CodeMessage\": \"OK\",\n            \"Message\": \"\",\n            \"TxId\": \"3ae794a658af4a219f849f5891d7a390eae524de4d614339ace2411059aaa19c\",\n            \"GasUsed\": 6100540,\n            \"Result\": \"b2s=\"\n        }\n    }\n}",
         "title": "调用长安链合约查询"
       }

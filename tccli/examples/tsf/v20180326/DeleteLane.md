@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tsf DeleteLane --cli-unfold-argument  \
-    --LaneId lane-6ymrl42a
+    --LaneId lane-y9o6w958
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": true,
-        "RequestId": "abc"
+        "RequestId": "40bb8670-043a-478c-b85f-157b1f552d56",
+        "Result": true
     }
 }
 ```

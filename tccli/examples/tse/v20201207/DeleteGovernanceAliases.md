@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli tse DeleteGovernanceAliases --cli-unfold-argument  \
-    --InstanceId abc \
-    --GovernanceAliases.0.Alias abc \
-    --GovernanceAliases.0.AliasNamespace abc \
-    --GovernanceAliases.0.Service abc \
-    --GovernanceAliases.0.Namespace abc
+    --InstanceId ins-id \
+    --GovernanceAliases.0.Alias alias \
+    --GovernanceAliases.0.AliasNamespace alias-namespace \
+    --GovernanceAliases.0.Service service \
+    --GovernanceAliases.0.Namespace namespace
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

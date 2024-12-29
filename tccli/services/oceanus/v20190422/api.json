@@ -908,6 +908,46 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总的CPU",
+          "example": "0",
+          "member": "float",
+          "name": "TotalCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总的内存",
+          "example": "0",
+          "member": "float",
+          "name": "TotalMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行的CPU",
+          "example": "0",
+          "member": "float",
+          "name": "RunningCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行的内存",
+          "example": "0",
+          "member": "float",
+          "name": "RunningMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1124,6 +1164,46 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TotalCpu",
+          "example": "0",
+          "member": "float",
+          "name": "TotalCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TotalMem",
+          "example": "0",
+          "member": "float",
+          "name": "TotalMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RunningCpu",
+          "example": "0",
+          "member": "float",
+          "name": "RunningCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RunningMem",
+          "example": "0",
+          "member": "float",
+          "name": "RunningMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1934,6 +2014,42 @@
           "name": "FlinkVersion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "JobManager cpu",
+          "example": "1",
+          "member": "float",
+          "name": "JobManagerCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "JobManager 内存",
+          "example": "1",
+          "member": "float",
+          "name": "JobManagerMem",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "TaskManager cpu",
+          "example": "1",
+          "member": "float",
+          "name": "TaskManagerCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "TaskManager 内存",
+          "example": "1",
+          "member": "float",
+          "name": "TaskManagerMem",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"
@@ -2601,7 +2717,7 @@
           "example": "true",
           "member": "bool",
           "name": "Delete",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3654,6 +3770,15 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，0=用户，1系统connector，2=用户自定义connector",
+          "example": "1",
+          "member": "uint64",
+          "name": "SystemResource",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3744,6 +3869,15 @@
           "example": "Flink-1.11",
           "member": "string",
           "name": "FlinkVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间",
+          "example": "space-123qew",
+          "member": "string",
+          "name": "WorkSpaceId",
           "required": false,
           "type": "string"
         }
@@ -4860,6 +4994,56 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "jm使用cpu数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "JobManagerCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "jm使用内存数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "JobManagerMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tm使用cpu数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "float",
+          "name": "TaskManagerCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tm使用mem数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "float",
+          "name": "TaskManagerMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行中配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "JobConfig",
+          "name": "JobConfigItem",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5472,7 +5656,7 @@
         {
           "disabled": false,
           "document": "使用内存数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无1",
+          "example": "1",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
@@ -6072,7 +6256,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ResourceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6082,7 +6266,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6092,7 +6276,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ResourceType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6102,7 +6286,7 @@
           "example": "0",
           "member": "ResourceLoc",
           "name": "ResourceLoc",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6112,7 +6296,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6122,7 +6306,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6132,7 +6316,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "OwnerUin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6142,7 +6326,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "CreatorUin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6152,7 +6336,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6162,7 +6346,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6172,7 +6356,7 @@
           "example": "0",
           "member": "int64",
           "name": "LatestResourceConfigVersion",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6182,7 +6366,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6192,7 +6376,7 @@
           "example": "0",
           "member": "int64",
           "name": "VersionCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6202,19 +6386,19 @@
           "example": "0",
           "member": "int64",
           "name": "RefJobCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "作业运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "作业运行状态",
           "example": "0",
           "member": "int64",
           "name": "IsJobRun",
-          "required": false,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6222,7 +6406,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "FileName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6232,7 +6416,7 @@
           "example": "0",
           "member": "int64",
           "name": "WorkSpaceId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6242,9 +6426,79 @@
           "example": "无",
           "member": "RefJobStatusCountItem",
           "name": "RefJobStatusCountSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连接器名称",
+          "example": "mysql",
+          "member": "string",
+          "name": "Connector",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器版本",
+          "example": "1.1",
+          "member": "string",
+          "name": "ConnectorVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接方式",
+          "example": "1",
+          "member": "string",
+          "name": "ConnectionMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "connector关联的资源id",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "RelatedResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图标",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Icon",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器中文名",
+          "example": "\"Kafka\"",
+          "member": "string",
+          "name": "ConnectorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器官网链接",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "ConnectorUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6353,51 +6607,61 @@
         {
           "disabled": false,
           "document": "资源id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源版本，-1表示使用最新版本",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "1: 主资源",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "1: 系统内置资源",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "SystemProvide",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Connector",
+          "example": "kafka",
+          "member": "string",
+          "name": "Connector",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7209,6 +7473,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Cpu",
+          "example": "0",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Mem",
+          "example": "0",
+          "member": "float",
+          "name": "Mem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7368,6 +7652,50 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总的CPU",
+          "example": "0",
+          "member": "float",
+          "name": "TotalCpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总的内存",
+          "example": "0",
+          "member": "float",
+          "name": "TotalMem",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行的CPU",
+          "example": "0",
+          "member": "float",
+          "name": "RunningCpu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行的内存",
+          "example": "0",
+          "member": "float",
+          "name": "RunningMem",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7407,7 +7735,7 @@
           "example": "resource-9ds0xim0",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7417,7 +7745,7 @@
           "example": "SampleProgram",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7427,7 +7755,7 @@
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7437,7 +7765,7 @@
           "example": "我的测试程序包",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7447,7 +7775,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7457,7 +7785,17 @@
           "example": "2",
           "member": "int64",
           "name": "LatestResourceConfigVersion",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1 是系统提供资源 2 用户提供CONNECTOR",
+          "example": "1",
+          "member": "int64",
+          "name": "SystemProvide",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7534,7 +7872,7 @@
         {
           "disabled": false,
           "document": "作业名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "sql1",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -7570,6 +7908,36 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:代表没开启调优任务，1:开启智能调优，2:代表定时调优\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ScalingType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RunningCpu",
+          "example": "0",
+          "member": "float",
+          "name": "RunningCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RunningMem",
+          "example": "0",
+          "member": "float",
+          "name": "RunningMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

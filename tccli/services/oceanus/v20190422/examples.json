@@ -122,7 +122,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWorkSpace\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"space-1327\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Delete\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Delete\": true,\n        \"RequestId\": \"a123\"\n    }\n}",
         "title": "删除空间"
       }
     ],

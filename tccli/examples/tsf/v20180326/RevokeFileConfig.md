@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf RevokeFileConfig --cli-unfold-argument  \
-    --ConfigReleaseId dcfgr-f-dapp63ao
+    --ConfigReleaseId dcfgr-f-aeon99ry
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3641f31a-a1ac-4733-8430-efe9f4c9f1d7",
+        "RequestId": "f5788a08-6f8c-4c64-8c7c-89abf3f35c86",
         "Result": true
     }
 }

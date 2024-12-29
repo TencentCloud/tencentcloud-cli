@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tse DescribeInstanceTagInfos --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId instance-id
 ```
 
 Output: 

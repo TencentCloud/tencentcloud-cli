@@ -8,7 +8,7 @@ Input:
 tccli gaap CreateProxyGroup --cli-unfold-argument  \
     --ProjectId 0 \
     --RealServerRegion EastChina \
-    --GroupName test
+    --GroupName group-name
 ```
 
 Output: 

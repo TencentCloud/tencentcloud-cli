@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DeleteCasterLayoutInfo --cli-unfold-argument  \
-    --CasterId 1234 \
+    --CasterId 63501 \
     --LayoutIndex 1
 ```
 

@@ -26,7 +26,7 @@ Output:
                 "BlockHeight": 4,
                 "ChaincodeName": "_lifecycle",
                 "CreateTime": "2023-08-05 15:44:04",
-                "Sender": "区块链测试机构pettychen",
+                "Sender": "区块链测试机构",
                 "TxId": "03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229"
             }
         ],

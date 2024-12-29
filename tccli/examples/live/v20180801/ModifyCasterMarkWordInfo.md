@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live ModifyCasterMarkWordInfo --cli-unfold-argument  \
-    --CasterId 1234 \
+    --CasterId 63501 \
     --MarkWordInfo.MarkWordIndex 1 \
     --MarkWordInfo.MarkWordFontSize 18 \
     --MarkWordInfo.MarkWordText Modify example \

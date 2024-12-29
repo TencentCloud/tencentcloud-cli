@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DeletePublicConfig --cli-unfold-argument  \
-    --ConfigId dcfg-p-zvwgl6y8
+    --ConfigId dcfg-p-vzk36rov
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "839449d1-9ea3-45a8-94b9-4f9beecb8a45",
+        "RequestId": "32ea862f-ecbc-477a-9edd-0c8597f881f1",
         "Result": true
     }
 }

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tke DeleteBackupStorageLocation --cli-unfold-argument  \
-    --Name abc
+    --Name tke-storage-backup
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "0878bad3-d0aa-4886-beac-7f4d450d55fa"
+        "RequestId": "ebc80be1-c6a7-4c1f-870e-74eba8471969"
     }
 }
 ```

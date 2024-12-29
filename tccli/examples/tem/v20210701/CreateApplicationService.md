@@ -10,18 +10,18 @@ tccli tem CreateApplicationService --cli-unfold-argument  \
     --SourceChannel 0 \
     --EnvironmentId en-xxxxxx \
     --Service.Type VPC \
-    --Service.ServiceName abc \
-    --Service.ClusterIp abc \
-    --Service.ExternalIp abc \
-    --Service.SubnetId abc \
-    --Service.VpcId abc \
-    --Service.LoadBalanceId abc \
-    --Service.Yaml abc \
+    --Service.ServiceName svc-name-xxx \
+    --Service.ClusterIp 10.xx.xx.xx \
+    --Service.ExternalIp 10.xx.xx.xx \
+    --Service.SubnetId subnet-xxxxxx \
+    --Service.VpcId vpc-xxxxxx \
+    --Service.LoadBalanceId 10.xx.xx.xx \
+    --Service.Yaml yaml-apiVersion-xxx \
     --Service.Ports 0 \
-    --Service.PortMappingItemList.0.Port 0 \
-    --Service.PortMappingItemList.0.TargetPort 0 \
-    --Service.PortMappingItemList.0.Protocol abc \
-    --Service.ExternalDomain abc
+    --Service.PortMappingItemList.0.Port 8080 \
+    --Service.PortMappingItemList.0.TargetPort 8080 \
+    --Service.PortMappingItemList.0.Protocol TCP \
+    --Service.ExternalDomain ext.domain.xxx
 ```
 
 Output: 

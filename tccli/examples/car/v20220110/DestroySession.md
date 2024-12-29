@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli car DestroySession --cli-unfold-argument  \
-    --UserId abc
+    --UserId 639d069e-a13a-437a-a10b-64a33ecb8e78
 ```
 
 Output: 

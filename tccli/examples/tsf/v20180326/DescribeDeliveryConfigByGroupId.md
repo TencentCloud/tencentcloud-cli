@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf DescribeDeliveryConfigByGroupId --cli-unfold-argument  \
-    --GroupId dddd
+    --GroupId group-ab958z6y
 ```
 
 Output: 
@@ -14,10 +14,10 @@ Output:
 {
     "Response": {
         "Result": {
-            "ConfigId": "abc",
-            "ConfigName": "abc"
+            "ConfigId": "apm-busi-log-cfg-ab958z6y",
+            "ConfigName": "log-demo"
         },
-        "RequestId": "abc"
+        "RequestId": "96561cf1-738a-47d6-943b-dec7ebbccabe"
     }
 }
 ```

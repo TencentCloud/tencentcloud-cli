@@ -6,76 +6,42 @@ Input:
 
 ```
 tccli tsf DescribeConfigReleaseLogs --cli-unfold-argument  \
+    --GroupId group-aln2284v \
     --Offset 0 \
-    --Limit 20
+    --Limit 10 \
+    --NamespaceId namespace-vj3z3zgy \
+    --ClusterId cluster-yne99jdy
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "cd8be98a-c557-43ef-bece-069f014bb2dd",
+        "RequestId": "66410802-5243-4b39-8823-21843a2bf669",
         "Result": {
-            "TotalCount": 3,
             "Content": [
                 {
-                    "ConfigReleaseLogId": "dcfgrl-6ymq4b5v",
-                    "ConfigId": "dcfg-6a79x94v",
-                    "ConfigName": "[配置项已被删除]",
-                    "ConfigVersion": "[配置项已被删除]",
-                    "GroupId": "group-mae5orra",
-                    "GroupName": "[部署组已被删除]",
-                    "NamespaceId": null,
-                    "NamespaceName": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseTime": "2019-05-28 09:41:40",
-                    "ReleaseDesc": null,
+                    "ClusterId": "cluster-yne99jdy",
+                    "ClusterName": "cluster-app",
+                    "ConfigId": "dcfg-yo82mmra",
+                    "ConfigName": "app-config",
+                    "ConfigReleaseLogId": "dcfgrl-yq75nn3a",
+                    "ConfigVersion": "v3",
+                    "GroupId": "group-aln2284v",
+                    "GroupName": "group-provider-1",
+                    "LastConfigId": "dcfg-yo82mmra",
+                    "LastConfigName": "config_app",
+                    "LastConfigVersion": "v1",
+                    "NamespaceId": "namespace-vw8oox6v",
+                    "NamespaceName": "cluster-jolyonzheng_default",
+                    "ReleaseDesc": "This is desc",
                     "ReleaseStatus": "S",
-                    "LastConfigId": null,
-                    "LastConfigName": null,
-                    "LastConfigVersion": null,
-                    "RollbackFlag": false
-                },
-                {
-                    "ConfigReleaseLogId": "dcfgrl-ba228ppa",
-                    "ConfigId": "dcfg-6a79x94v",
-                    "ConfigName": "[配置项已被删除]",
-                    "ConfigVersion": "[配置项已被删除]",
-                    "GroupId": "group-mae5orra",
-                    "GroupName": "[部署组已被删除]",
-                    "NamespaceId": null,
-                    "NamespaceName": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseTime": "2019-05-28 09:36:52",
-                    "ReleaseDesc": "删除配置项",
-                    "ReleaseStatus": "DS",
-                    "LastConfigId": "dcfg-6a79x94v",
-                    "LastConfigName": "[配置项已被删除]",
-                    "LastConfigVersion": "[配置项已被删除]",
-                    "RollbackFlag": false
-                },
-                {
-                    "ConfigReleaseLogId": "dcfgrl-evjjbjlv",
-                    "ConfigId": "dcfg-6a79x94v",
-                    "ConfigName": "[配置项已被删除]",
-                    "ConfigVersion": "[配置项已被删除]",
-                    "GroupId": "group-mae5orra",
-                    "GroupName": "[部署组已被删除]",
-                    "NamespaceId": null,
-                    "NamespaceName": null,
-                    "ClusterId": null,
-                    "ClusterName": null,
-                    "ReleaseTime": "2019-05-28 09:30:55",
-                    "ReleaseDesc": null,
-                    "ReleaseStatus": "S",
-                    "LastConfigId": null,
-                    "LastConfigName": null,
-                    "LastConfigVersion": null,
+                    "ReleaseTime": "2024-12-24 15:57:15",
+                    "ReleasedConfigCenter": "SHARE",
                     "RollbackFlag": false
                 }
-            ]
+            ],
+            "TotalCount": 6
         }
     }
 }

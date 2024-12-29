@@ -50,8 +50,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "test",
-                        "Key": "test"
+                        "Value": "myKey",
+                        "Key": "myValue"
                     }
                 ],
                 "InstanceId": "ins-xlsyru2j",
@@ -78,7 +78,7 @@ Output:
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
-                "InstanceName": "test",
+                "InstanceName": "myInstance",
                 "DataDisks": [
                     {
                         "DeleteWithInstance": true,
@@ -270,8 +270,8 @@ Output:
                 ],
                 "Tags": [
                     {
-                        "Value": "test",
-                        "Key": "test"
+                        "Value": "myKey",
+                        "Key": "myValue"
                     }
                 ],
                 "InstanceId": "ins-xlsyru2j",
@@ -298,7 +298,7 @@ Output:
                 "SecurityGroupIds": [
                     "sg-p1ezv4wz"
                 ],
-                "InstanceName": "test",
+                "InstanceName": "myInstance",
                 "DataDisks": [
                     {
                         "DeleteWithInstance": true,

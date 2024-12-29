@@ -14,14 +14,14 @@ Output:
 {
     "Response": {
         "Template": {
-            "Profile": "xx",
+            "Profile": "baseline",
             "AudioBitrate": 15,
             "Rotate": 0,
             "BitrateToOrig": 0,
-            "TemplateName": "xx",
+            "TemplateName": "mytemplate",
             "VideoBitrate": 30,
             "ShortEdgeAsHeight": 0,
-            "Vcodec": "xx",
+            "Vcodec": "h264",
             "AdaptBitratePercent": 0.0,
             "AiTransCode": 0,
             "Height": 250,
@@ -30,11 +30,13 @@ Output:
             "FpsToOrig": 0,
             "Fps": 30,
             "TemplateId": 1000,
-            "Description": "xx",
+            "Description": "desc",
             "HeightToOrig": 0,
             "NeedVideo": 1,
             "Gop": 3,
-            "Acodec": "xx"
+            "Acodec": "aac",
+            "DRMTracks": "AUDIO",
+            "DRMType": "widevine"
         },
         "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }

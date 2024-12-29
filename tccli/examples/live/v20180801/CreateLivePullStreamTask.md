@@ -9,7 +9,7 @@ tccli live CreateLivePullStreamTask --cli-unfold-argument  \
     --SourceType PullLivePushLive \
     --DomainName 5000.livepush.myqcloud.com \
     --SourceUrls rtmp://5000.liveplay.myqcloud.com/live/stream1 \
-    --StreamName test \
+    --StreamName stream1 \
     --AppName live \
     --StartTime 2019-12-16T11:02:00Z \
     --Operator vinson \

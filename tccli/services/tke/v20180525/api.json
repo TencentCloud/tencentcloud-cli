@@ -1938,40 +1938,40 @@
         {
           "disabled": false,
           "document": "addon名称",
-          "example": "无",
+          "example": "cbs",
           "member": "string",
           "name": "AddonName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "addon的版本",
-          "example": "无",
+          "example": "1.1.8",
           "member": "string",
           "name": "AddonVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "addon的参数，是一个json格式的base64转码后的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "e30=",
           "member": "string",
           "name": "RawValues",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "addon的状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Succeeded",
           "member": "string",
           "name": "Phase",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1981,9 +1981,19 @@
           "example": "无",
           "member": "string",
           "name": "Reason",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "addon的创建时间",
+          "example": "2024-12-26T09:10:58Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4483,7 +4493,7 @@
         {
           "disabled": false,
           "document": "对象存储桶名称，如果是COS必须是tke-backup前缀开头",
-          "example": "tke-backup-xxx",
+          "example": "tke-backup-test",
           "member": "string",
           "name": "Bucket",
           "required": true,
@@ -4492,7 +4502,7 @@
         {
           "disabled": false,
           "document": "备份仓库名称",
-          "example": "test",
+          "example": "tke-storage-backup",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4510,7 +4520,7 @@
         {
           "disabled": false,
           "document": "对象存储桶路径",
-          "example": "test",
+          "example": "tke",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -7083,7 +7093,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cls-kihzth22",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7092,7 +7102,7 @@
         {
           "disabled": false,
           "document": "addon名称",
-          "example": "无",
+          "example": "nvidia-gpu",
           "member": "string",
           "name": "AddonName",
           "required": true,
@@ -7119,7 +7129,7 @@
         {
           "disabled": false,
           "document": "备份仓库名称",
-          "example": "test",
+          "example": "tke-storage-backup",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8266,7 +8276,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cls-kihzth22",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8275,7 +8285,7 @@
         {
           "disabled": false,
           "document": "addon名称（不传时会返回集群下全部的addon）",
-          "example": "无",
+          "example": "cbs",
           "member": "string",
           "name": "AddonName",
           "required": false,
@@ -8293,6 +8303,7 @@
           "example": "无",
           "member": "Addon",
           "name": "Addons",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8311,7 +8322,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cls-kihzth22",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -8320,7 +8331,7 @@
         {
           "disabled": false,
           "document": "addon名称",
-          "example": "无",
+          "example": "nvidia-gpu",
           "member": "string",
           "name": "AddonName",
           "required": true,
@@ -8334,7 +8345,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数列表，如果addon已安装，会使用已设置的参数做渲染，是一个json格式的字符串",
+          "document": "参数列表，如果addon已安装，会使用已设置的参数和chart里的默认参数做渲染，是一个json格式的字符串，未安装addon时返回为空值。",
           "example": "无",
           "member": "string",
           "name": "Values",
@@ -8344,7 +8355,7 @@
         },
         {
           "disabled": false,
-          "document": "addon支持的参数列表，使用默认值，是一个json格式的字符串",
+          "document": "addon支持的参数列表，值为chart的默认值，是一个json格式的字符串。",
           "example": "无",
           "member": "string",
           "name": "DefaultValues",
@@ -14482,7 +14493,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "xxx",
+          "example": "cls-2r8kckml",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16689,7 +16700,7 @@
         {
           "disabled": false,
           "document": "app类型，取值log,scheduler,network,storage,monitor,dns,image,other,invisible",
-          "example": "无",
+          "example": "network",
           "member": "string",
           "name": "Kind",
           "required": false,
@@ -16707,7 +16718,7 @@
         {
           "disabled": false,
           "document": "集群类型，取值tke、eks",
-          "example": "无",
+          "example": "eks",
           "member": "string",
           "name": "ClusterType",
           "required": false,
@@ -17174,8 +17185,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
-          "example": "无",
+          "document": "集群ID（仅支持标准tke集群）",
+          "example": "cls-12345678",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -17184,7 +17195,7 @@
         {
           "disabled": false,
           "document": "addon名称",
-          "example": "无",
+          "example": "cbs",
           "member": "string",
           "name": "AddonName",
           "required": true,
@@ -24723,50 +24734,50 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cls-a0pa8wse",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审计开关的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"LogsetId\":\"\",\"TopicId\":\"\",\"TopicRegion\":\"\",\"UpgradeAble\":false,\"Version\":\"\"}",
           "member": "SwitchInfo",
           "name": "Audit",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "事件开关的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"LogsetId\":\"\",\"TopicId\":\"\",\"TopicRegion\":\"\",\"UpgradeAble\":false,\"Version\":\"\"}",
           "member": "SwitchInfo",
           "name": "Event",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "普通日志的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":true,\"LogsetId\":\"\",\"TopicId\":\"\",\"TopicRegion\":\"\",\"UpgradeAble\":true,\"Version\":\"1.1.17\"}",
           "member": "SwitchInfo",
           "name": "Log",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "master 日志详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Enable\":false,\"LogsetId\":\"\",\"TopicId\":\"\",\"TopicRegion\":\"\",\"UpgradeAble\":false,\"Version\":\"\"}",
           "member": "SwitchInfo",
           "name": "MasterLog",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -25257,7 +25268,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-123deabc",
+          "example": "cls-12345678",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -25284,7 +25295,7 @@
         {
           "disabled": false,
           "document": "addon的参数，是一个json格式的base64转码后的字符串（addon参数由DescribeAddonValues获取，不传RawValues时AddonVersion必传））",
-          "example": "WyJyZWdpc3RyeS5hZGRyZXNzPWh0dHBzOi8vY2NyLmNjcy50ZW5jZW50eXVuLmNvbSIsImFnZW50LmRvd25sb2FkUmF0ZT0yMDk3MTUyMCIsImt1YmV2ZXJzaW9uPTEuMjYuMSIsInJlcGxpY2FzPTIiXQ==",
+          "example": "eyJ2cGNDbmkiOnsic2VjdXJpdHlHcm91cHMiOnsic2VjdXJpdHlHcm91cHMiOltdfX19",
           "member": "string",
           "name": "RawValues",
           "required": false,

@@ -67,8 +67,8 @@
     "CreateBackupStorageLocation": [
       {
         "document": "创建TKE存储仓库",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupStorageLocation\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-guangzhou\",\n    \"Provider\": \"tencentcloud\",\n    \"Bucket\": \"tke-backup-xxx\",\n    \"Path\": \"\",\n    \"Name\": \"test-registry-1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4bef4bc7-edf2-4de6-a2e1-684bfc37185f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupStorageLocation\n<公共请求参数>\n\n{\n    \"StorageRegion\": \"ap-guangzhou\",\n    \"Bucket\": \"tke-backup-test\",\n    \"Name\": \"tke-storage-backup\",\n    \"Provider\": \"tencentcloud\",\n    \"Path\": \"tke\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6b4cf747-ecfb-42ae-a1fb-a0132353c80b\"\n    }\n}",
         "title": "创建TKE存储仓库"
       }
     ],
@@ -331,16 +331,16 @@
     "DeleteAddon": [
       {
         "document": "删除一个addon",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kihzth22\",\n    \"AddonName\": \"nvidia-gpu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0edfedeb-47cd-41b1-bab9-79dcc88d4e66\"\n    }\n}",
         "title": "删除addon"
       }
     ],
     "DeleteBackupStorageLocation": [
       {
         "document": "删除备份仓库，注意，此接口不会清理备份仓库底层存储数据",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupStorageLocation\n<公共请求参数>\n\n{\n    \"Name\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0878bad3-d0aa-4886-beac-7f4d450d55fa\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupStorageLocation\n<公共请求参数>\n\n{\n    \"Name\": \"tke-storage-backup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ebc80be1-c6a7-4c1f-870e-74eba8471969\"\n    }\n}",
         "title": "删除备份仓库"
       }
     ],
@@ -583,16 +583,16 @@
     "DescribeAddon": [
       {
         "document": "获取一个或多个addon列表",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Addons\": [\n            {\n                \"AddonName\": \"cbs\",\n                \"AddonVersion\": \"1.1.0\",\n                \"RawValues\": \"\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kihzth22\",\n    \"AddonName\": \"cbs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Addons\": [\n            {\n                \"AddonName\": \"cbs\",\n                \"AddonVersion\": \"1.1.7\",\n                \"CreateTime\": \"2024-12-23T13:06:44Z\",\n                \"Phase\": \"Succeeded\",\n                \"RawValues\": \"e30=\",\n                \"Reason\": \"\"\n            }\n        ],\n        \"RequestId\": \"7eb2cf94-6cc3-40d0-8843-3ac1314e61e5\"\n    }\n}",
         "title": "获取addon列表"
       }
     ],
     "DescribeAddonValues": [
       {
         "document": "获取一个addon的参数",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddonValues\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"eniipamd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Values\": \"\",\n        \"DefaultValues\": \"\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddonValues\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-kihzth22\",\n    \"AddonName\": \"nvidia-gpu\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DefaultValues\": \"{\\\"config\\\":{\\\"disablehealthchecks\\\":\\\"\\\",\\\"waituvm\\\":false},\\\"exporter\\\":{\\\"tag\\\":\\\"v1.0.18\\\"},\\\"global\\\":{\\\"cluster\\\":{\\\"appid\\\":1255429800,\\\"clustertype\\\":\\\"MANAGED_CLUSTER\\\",\\\"id\\\":\\\"cls-kihzth22\\\",\\\"kubeminor\\\":\\\"30.0\\\",\\\"kubeversion\\\":\\\"1.30.0-tke.2\\\",\\\"longregion\\\":\\\"ap-guangzhou\\\",\\\"region\\\":\\\"gz\\\",\\\"subuin\\\":100040133055,\\\"type\\\":\\\"tke\\\",\\\"uin\\\":100002743387},\\\"image\\\":{\\\"host\\\":\\\"ccr.ccs.tencentyun.com\\\"}},\\\"plugin\\\":{\\\"tag\\\":\\\"v0.14.3\\\"},\\\"pluginInit\\\":{\\\"tag\\\":\\\"v1.0\\\"}}\",\n        \"RequestId\": \"4fb715e9-8233-4f82-9730-afe743ea89a7\",\n        \"Values\": \"{\\\"config\\\":{\\\"disablehealthchecks\\\":\\\"\\\",\\\"waituvm\\\":false},\\\"exporter\\\":{\\\"tag\\\":\\\"v1.0.18\\\"},\\\"global\\\":{\\\"cluster\\\":{\\\"appid\\\":1255429800,\\\"clustertype\\\":\\\"MANAGED_CLUSTER\\\",\\\"id\\\":\\\"cls-kihzth22\\\",\\\"kubeminor\\\":\\\"30.0\\\",\\\"kubeversion\\\":\\\"1.30.0-tke.2\\\",\\\"longregion\\\":\\\"ap-guangzhou\\\",\\\"region\\\":\\\"gz\\\",\\\"subuin\\\":100040133055,\\\"type\\\":\\\"tke\\\",\\\"uin\\\":100002743387},\\\"image\\\":{\\\"host\\\":\\\"ccr.ccs.tencentyun.com\\\"}},\\\"plugin\\\":{\\\"tag\\\":\\\"v0.14.3\\\"},\\\"pluginInit\\\":{\\\"tag\\\":\\\"v1.0\\\"}}\"\n    }\n}",
         "title": "获取addon的参数"
       }
     ],
@@ -1530,10 +1530,10 @@
     ],
     "GetTkeAppChartList": [
       {
-        "document": "获取TKE支持的AppChart列表",
-        "input": "https://tke.tencentcloudapi.com/?Action=GetTkeAppChartList\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bbe22a77-0366-442d-97ef-b7bc59fa0520\",\n        \"AppCharts\": []\n    }\n}",
-        "title": "获取TKE支持的AppChart列表"
+        "document": "获取EKS支持的网络 AppChart列表",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTkeAppChartList\n<公共请求参数>\n\n{\n    \"Kind\": \"network\",\n    \"ClusterType\": \"eks\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppCharts\": [\n            {\n                \"Label\": \"{\\\"amd64\\\":\\\"true\\\",\\\"eks\\\":\\\"true\\\",\\\"kind\\\":\\\"network\\\",\\\"network\\\":\\\"true\\\",\\\"tke\\\":\\\"true\\\"}\",\n                \"LatestVersion\": \"1.5.1\",\n                \"Name\": \"ingressnginx\"\n            }\n        ],\n        \"RequestId\": \"566fdd07-fa79-4dc1-8d22-78907dedd607\"\n    }\n}",
+        "title": "获取EKS支持的网络 AppChart列表"
       }
     ],
     "GetUpgradeInstanceProgress": [
@@ -1546,10 +1546,28 @@
     ],
     "InstallAddon": [
       {
-        "document": "为目标集群安装一个addon",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "安装addon"
+        "document": "用户安装cbs组件时支持通过RawValues配置自定义参数，比如设置容忍调度，可以将 {\"tolerations\":[{\"effect\":\"NoExecute\",\"key\":\"gpu-not-ready\",\"operator\":\"Equal\",\"tolerationSeconds\":300,\"value\":\"true\"},{\"key\":\"ip-not-ready\",\"operator\":\"Exists\"}]} 进行base64编码后放入到 RawValues 参数中。cbs组件支持的自定义配置参数说明如下：\n```\n{\n  \"tolerations\": [\n    {\n      \"effect\": \"string, 效果，例如：NoExecute\",\n      \"key\": \"string，标签值，例如：gpu-not-ready\",\n      \"operator\": \"string，操作符，例如：Equal\",\n      \"tolerationSeconds\": \"int，容忍时间（秒），例如：300\",\n      \"value\": \"string，标签值，例如：true\"\n    },\n    {\n      \"key\": \"string，标签值，例如：ip-not-ready\",\n      \"operator\": \"string，操作符，例如：Exists\"\n    }\n  ]\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-12345678\",\n    \"AddonName\": \"cbs\",\n    \"RawValues\": \"eyJ0b2xlcmF0aW9ucyI6W3siZWZmZWN0IjoiTm9FeGVjdXRlIiwia2V5IjoiZ3B1LW5vdC1yZWFkeSIsIm9wZXJhdG9yIjoiRXF1YWwiLCJ0b2xlcmF0aW9uU2Vjb25kcyI6MzAwLCJ2YWx1ZSI6InRydWUifSx7ImtleSI6ImlwLW5vdC1yZWFkeSIsIm9wZXJhdG9yIjoiRXhpc3RzIn1dfQ==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b583f05e-d4f4-4963-8082-b651605hg432\"\n    }\n}",
+        "title": "安装cbs组件"
+      },
+      {
+        "document": "用户安装eniipamd组件时支持通过RawValues配置自定义参数，比如添加安全组，可以将 {\"vpcCni\":{\"securityGroups\":{\"securityGroups\":[\"sg-12345678\"]}}} 进行base64编码后放入到 RawValues 参数中。eniipamd组件支持的自定义配置参数说明如下：\n```\n{\n  \"clusterId\": \"string, 集群ID, 例如：cls-12345678\",\n  \"vpcCni\": {\n    \"vpcId\": \"string, VPC的ID, 例如：vpc-12345678\",\n    \"enableVpcCni\": \"bool, 是否启用VPC CNI, 例如：true\",\n    \"routeEni\": {\n      \"ipMinWarmTarget\": \"int, 新增节点共享网卡辅助IP的最小预绑定值, 例如：5\",\n      \"ipMaxWarmTarget\": \"int, 新增节点共享网卡辅助IP的最大预绑定值, 例如：5\"\n    },\n    \"ipam\": {\n      \"subnetIds\": \"array, 用于IP地址分配的Pod子网ID列表, 例如：[\\\"subnet-12345678\\\"]\"\n    }, \n    \"securityGroups\": {\n      \"enableSecurityGroups\": \"bool, 是否启用安全组, 例如：true\",\n      \"securityGroups\": [\n        \"string, 安全组ID, 例如：sg-12345678\"\n      ]\n    }\n  },\n  \"agent\": {\n    \"kubeClient\": {\n      \"masterAddr\": \"string, kubeClient主节点地址, 例如: 169.254.128.54:60002\"\n    }\n  }\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-12345678\",\n    \"AddonName\": \"eniipamd\",\n    \"RawValues\": \"eyJ2cGNDbmkiOnsic2VjdXJpdHlHcm91cHMiOnsic2VjdXJpdHlHcm91cHMiOlsic2ctMTIzNDU2NzgiXX19fQ==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b583f05e-d4f4-4963-8082-b651605jh275\"\n    }\n}",
+        "title": "安装eniipamd组件"
+      },
+      {
+        "document": "用户安装tke-log-agent组件时支持通过RawValues配置自定义参数，比如设置启用kafkalistener，可以将 {\"kafkalistener\":{\"enabled\":true}} 进行base64编码后放入到 RawValues 参数中。tke-log-agent 组件支持的自定义配置参数说明如下：\n```\n{\n    \"global\": {\n        \"clsHost\": \"string, cls服务域名，例如：ap-chengdu.cls.tencentyun.com\",\n        \"cluster\": {\n            \"clustertype\": \"string，集群管理类型，例如：MANAGED_CLUSTER 或 INDEPENDENT_CLUSTER\",\n            \"kubeminor\": \"string，集群版本，例如：minor 30.0\",\n            \"kubeversion\": \"string，集群k8s版本，例如：1.30.0\",\n            \"type\": \"string，集群类型，例如：tke 或 eks\"\n        },\n        \"clusterID\": \"string，集群ID，例如：cls-12345678\",\n        \"hostNetwork\": \"bool，是否使用hostNetwork，例如：false\",\n        \"localRegion\": \"string，集群所在地域，例如：ap-chengdu\",\n        \"registry\": \"string，镜像仓库，例如：ccr.ccs.tencentyun.com\",\n        \"sources\": \"string，鉴权方式，例如：norm\"\n    },\n    \"kafkalistener\": {\n        \"enabled\": \"bool，是否启用kafkalistener，例如：true\",\n    },\n    \"logAgent\": {\n        \"enabled\": \"bool，是否启用logAgent，例如：true\",\n    },\n    \"loglistener\": {\n        \"enabled\": \"bool，是否启用loglistener\",\n    },\n    \"provisioner\": {\n        \"replicaCount\": \"int，cls-provisioner副本数，例如：2\",\n        \"sources\": \"string，cls-provisioner鉴权方式，例如：norm\"\n    }\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"tke-log-agent\",\n    \"RawValues\": \"eyJrYWZrYWxpc3RlbmVyIjp7ImVuYWJsZWQiOnRydWV9fQ==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b583f05e-d4f4-4963-8082-b651605ca427\"\n    }\n}",
+        "title": "安装tke-log-agent组件"
+      },
+      {
+        "document": "用户可以通过 RawValues 参数制定组件需要的配置参数，比如 imagePullSecretsCrs。 tcr 组件支持的配置参数示例如下：\n```\n{\n    \"global\": {\n        \"imagePullSecretsCrs\": [\n            {\n                \"name\": \"string，imagePullSecretsCr 的名称，例如：tcr-12345678-public\",\n                \"namespaces\": \"string，免密功能作用范围，例如：* 表示所有命名空间\",\n                \"serviceAccounts\": \"string，免密功能作用范围，例如：* 表示所有k8s服务账户\",\n                \"type\": \"string，必须为 docker\",\n                \"dockerUsername\": \"string，镜像仓库登录用户名\",\n                \"dockerPassword\": \"string，镜像仓库登录密码\",\n                \"dockerServer\": \"string，镜像仓库服务器地址\"\n            }\n        ]\n    }\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-12345678\",\n    \"AddonName\": \"tcr\",\n    \"RawValues\": \"eyJnbG9iYWwiOnsiaW1hZ2VQdWxsU2VjcmV0c0NycyI6W3sibmFtZSI6InRjci1kZzI4NGltcS1wdWJsaWMiLCJuYW1lc3BhY2VzIjoiKiIsInNlcnZpY2VBY2NvdW50cyI6IioiLCJ0eXBlIjoiZG9ja2VyIiwiZG9ja2VyVXNlcm5hbWUiOiIxMDAwMTQzNjQ4MjIiLCJkb2NrZXJQYXNzd29yZCI6IjEyMzQ1Njc4IiwiZG9ja2VyU2VydmVyIjoibmljb2thbmctdGNyLWd6LnRlbmNlbnRjbG91ZGNyLmNvbSJ9XX19\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b583f05e-d4f4-4963-8082-b651605ca765\"\n    }\n}",
+        "title": "安装tcr组件"
       }
     ],
     "InstallEdgeLogAgent": [
@@ -1902,10 +1920,22 @@
     ],
     "UpdateAddon": [
       {
-        "document": "获取一个addon的版本和参数",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-123deabc\",\n    \"AddonName\": \"cbs\",\n    \"AddonVersion\": \"1.1.0\"\n}",
+        "document": "用户可以通过RawValues参数更新eniipamd组件支持的自定义配置参数，比如清空已配置的安全组，可以将 {\"vpcCni\":{\"securityGroups\":{\"securityGroups\":[]}}} 进行base64编码后放入到 RawValues 参数中。eniipamd组件支持的自定义配置参数说明如下：\n```\n{\n  \"clusterId\": \"string, 集群ID, 例如：cls-12345678\",\n  \"vpcCni\": {\n    \"vpcId\": \"string, VPC的ID, 例如：vpc-12345678\",\n    \"enableVpcCni\": \"bool, 是否启用VPC CNI, 例如：true\",\n    \"routeEni\": {\n      \"ipMinWarmTarget\": \"int, 新增节点共享网卡辅助IP的最小预绑定值, 例如：5\",\n      \"ipMaxWarmTarget\": \"int, 新增节点共享网卡辅助IP的最大预绑定值, 例如：5\"\n    },\n    \"ipam\": {\n      \"subnetIds\": \"array, 用于IP地址分配的Pod子网ID列表, 例如：[\\\"subnet-12345678\\\"]\"\n    }, \n  \t\"securityGroups\": {\n      \"enableSecurityGroups\": \"bool, 是否启用安全组, 例如：true\",\n      \"securityGroups\": [\n        \"string, 安全组ID, 例如：sg-12345678\"\n      ]\n    }\n  },\n  \"agent\": {\n    \"kubeClient\": {\n      \"masterAddr\": \"string, kubeClient主节点地址, 例如: 169.254.128.54:60002\"\n    }\n  }\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-12345678\",\n    \"AddonName\": \"eniipamd\",\n    \"RawValues\": \"eyJ2cGNDbmkiOnsic2VjdXJpdHlHcm91cHMiOnsic2VjdXJpdHlHcm91cHMiOltdfX19\",\n    \"UpdateStrategy\": \"merge\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f55aaa93-c681-47c9-860a-59ae16ade268\"\n    }\n}",
-        "title": "更新一个addon"
+        "title": "更新eniipamd组件参数"
+      },
+      {
+        "document": "用户可以通过RawValues参数更新cbs组件支持的自定义配置参数，比如修改容忍调度设置，可以将 {\"tolerations\":[{\"effect\":\"NoExecute\",\"key\":\"gpu-not-ready\",\"operator\":\"Equal\",\"tolerationSeconds\":300,\"value\":\"true\"},{\"key\":\"ip-not-ready\",\"operator\":\"Exists\"}]}  进行base64编码后放入到 RawValues 参数中。cbs组件支持的自定义配置参数说明如下：\n```\n{\n  \"tolerations\": [\n    {\n      \"effect\": \"string，效果，例如：NoExecute\",\n      \"key\": \"string，标签值，例如：gpu-not-ready\",\n      \"operator\": \"string，操作符，例如：Equal\",\n      \"tolerationSeconds\": \"int，容忍时间（秒），例如：300\",\n      \"value\": \"string，标签值，例如：true\"\n    },\n    {\n      \"key\": \"string，标签值，例如：ip-not-ready\",\n      \"operator\": \"string，操作符，例如：Exists\"\n    }\n  ]\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-12345678\",\n    \"AddonName\": \"cbs\",\n    \"RawValues\": \"eyJ0b2xlcmF0aW9ucyI6W3siZWZmZWN0IjoiTm9FeGVjdXRlIiwia2V5IjoiZ3B1LW5vdC1yZWFkeSIsIm9wZXJhdG9yIjoiRXF1YWwiLCJ0b2xlcmF0aW9uU2Vjb25kcyI6MzAwLCJ2YWx1ZSI6InRydWUifSx7ImtleSI6ImlwLW5vdC1yZWFkeSIsIm9wZXJhdG9yIjoiRXhpc3RzIn1dfQ==\",\n    \"UpdateStrategy\": \"merge\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f55aaa93-c681-47c9-860a-59ae16af648\"\n    }\n}",
+        "title": "更新cbs组件参数"
+      },
+      {
+        "document": "用户可以通过RawValues参数更新tke-log-agent组件支持的自定义配置参数，比如设置启用kafkalistener，可以将 {\"kafkalistener\":{\"enabled\":true}} 进行base64编码后放入到 RawValues 参数中。tke-log-agent 组件支持的自定义配置参数说明如下：\n```\n{\n    \"global\": {\n        \"clsHost\": \"string, cls服务域名，例如：ap-chengdu.cls.tencentyun.com\",\n        \"cluster\": {\n            \"clustertype\": \"string，集群管理类型，例如：MANAGED_CLUSTER 或 INDEPENDENT_CLUSTER\",\n            \"kubeminor\": \"string，集群版本，例如：minor 30.0\",\n            \"kubeversion\": \"string，集群k8s版本，例如：1.30.0\",\n            \"type\": \"string，集群类型，例如：tke 或 eks\"\n        },\n        \"clusterID\": \"string，集群ID，例如：cls-12345678\",\n        \"hostNetwork\": \"bool，是否使用hostNetwork，例如：false\",\n        \"localRegion\": \"string，集群所在地域，例如：ap-chengdu\",\n        \"registry\": \"string，镜像仓库，例如：ccr.ccs.tencentyun.com\",\n        \"sources\": \"string，鉴权方式，例如：norm\"\n    },\n    \"kafkalistener\": {\n        \"enabled\": \"bool，是否启用kafkalistener，例如：true\",\n    },\n    \"logAgent\": {\n        \"enabled\": \"bool，是否启用logAgent，例如：true\",\n    },\n    \"loglistener\": {\n        \"enabled\": \"bool，是否启用loglistener\",\n    },\n    \"provisioner\": {\n        \"replicaCount\": \"int，cls-provisioner副本数，例如：2\",\n        \"sources\": \"string，cls-provisioner鉴权方式，例如：norm\"\n    }\n}\n```",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAddon\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-12345678\",\n    \"AddonName\": \"tke-log-agent\",\n    \"RawValues\": \"eyJrYWZrYWxpc3RlbmVyIjp7ImVuYWJsZWQiOnRydWV9fQ==\",\n    \"UpdateStrategy\": \"merge\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f55aaa93-c681-47c9-860a-59ae16ajgf1\"\n    }\n}",
+        "title": "更新tke-log-agent组件参数"
       }
     ],
     "UpdateClusterKubeconfig": [

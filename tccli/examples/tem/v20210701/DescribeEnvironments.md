@@ -11,47 +11,42 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "a438e9af-34a0-47d8-bdfc-fc42f652ad6f",
         "Result": {
+            "Pages": 1,
             "Records": [
                 {
                     "EnvironmentId": "en-xxxxxx",
-                    "Channel": "0",
-                    "EnvironmentName": "abc",
-                    "Region": "ap-shanghai",
-                    "Description": "abc",
-                    "Status": 0,
-                    "Vpc": "vpc-xxxxxx",
-                    "CreateDate": "abc",
-                    "ModifyDate": "abc",
-                    "Modifier": "abc",
-                    "Creator": "abc",
+                    "AppId": "130573xxx",
                     "ApplicationNum": 0,
                     "RunInstancesNum": 0,
-                    "SubnetId": "abc",
-                    "ClusterStatus": "abc",
-                    "EnableTswTraceService": true,
+                    "Uin": "10001905xxx",
+                    "SubAccountUin": "100000799xxx",
+                    "EnvironmentName": "test-cluster",
+                    "Region": "ap-guangzhou",
+                    "RegionId": "1",
+                    "Description": "",
+                    "ClusterId": "cls-qtqz9mxx",
+                    "ClusterStatus": "NORMAL",
+                    "Vpc": "vpc-3le4yaxx",
+                    "SubnetId": "subnet-pm9fq4xx",
+                    "CreateDate": "2024-11-07 16:57:21",
+                    "ModifyDate": "2024-11-07 16:57:21",
+                    "Modifier": "100019051593",
+                    "Creator": "100019051593",
                     "Locked": 0,
-                    "AppId": "abc",
-                    "Uin": "abc",
-                    "SubAccountUin": "abc",
-                    "ClusterId": "abc",
-                    "Tags": [
-                        {
-                            "TagKey": "abc",
-                            "TagValue": "abc"
-                        }
-                    ],
-                    "HasAuthority": true,
-                    "EnvType": "abc",
-                    "RegionId": "abc"
+                    "Channel": "",
+                    "Status": 1,
+                    "EnableTswTraceService": false,
+                    "Tags": [],
+                    "EnvType": "prod",
+                    "HasAuthority": true
                 }
             ],
-            "Total": 0,
-            "Size": 0,
-            "Pages": 0,
-            "Current": 0
-        },
-        "RequestId": "abc"
+            "Total": 1,
+            "Size": 20,
+            "Current": 1
+        }
     }
 }
 ```

@@ -6,15 +6,22 @@ Input:
 
 ```
 tccli tsf UpdateApiGroup --cli-unfold-argument  \
-    --GroupName new-name \
-    --GroupId grp-grp-5yk7oor1
+    --GroupId grp-notmqbpe \
+    --GroupName grp_app \
+    --Description This is desc \
+    --AuthType none \
+    --GroupContext /grp_app \
+    --NamespaceNameKey TSF-NamespaceName \
+    --ServiceNameKey TSF-ServiceName \
+    --NamespaceNameKeyPosition path \
+    --ServiceNameKeyPosition path
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
+        "RequestId": "9bcb4936-f3e5-4fdc-acd8-71fd041429e8",
         "Result": true
     }
 }

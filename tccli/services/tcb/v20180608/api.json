@@ -3142,7 +3142,7 @@
         {
           "disabled": false,
           "document": "环境变量",
-          "example": "[]",
+          "example": "[{\"key\":\"value\"}]",
           "member": "KVPair",
           "name": "Parameters",
           "required": false,
@@ -3160,7 +3160,7 @@
         {
           "disabled": false,
           "document": "rc.json的内容",
-          "example": "{}",
+          "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "RcJson",
           "required": false,
@@ -3169,7 +3169,7 @@
         {
           "disabled": false,
           "document": "插件配置内容",
-          "example": "{}",
+          "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "AddonConfig",
           "required": false,
@@ -3187,7 +3187,7 @@
         {
           "disabled": false,
           "document": "网络配置",
-          "example": "{}",
+          "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "NetworkConfig",
           "required": false,
@@ -3232,7 +3232,7 @@
           "example": "envcool-212i1i21",
           "member": "string",
           "name": "EnvId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5350,7 +5350,7 @@
         {
           "disabled": false,
           "document": "环境id",
-          "example": "xx",
+          "example": "env-asdasfa",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -5359,7 +5359,7 @@
         {
           "disabled": false,
           "document": "服务名",
-          "example": "xx",
+          "example": "service-name",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -5368,7 +5368,7 @@
         {
           "disabled": false,
           "document": "build类型,枚举值有: cloudbaserun, framework-ci",
-          "example": "xx",
+          "example": "cloudbaserun",
           "member": "string",
           "name": "CIBusiness",
           "required": false,
@@ -5377,7 +5377,7 @@
         {
           "disabled": false,
           "document": "服务版本",
-          "example": "xx",
+          "example": "service-name-0.1",
           "member": "string",
           "name": "ServiceVersion",
           "required": false,
@@ -5401,7 +5401,7 @@
         {
           "disabled": false,
           "document": "上传url",
-          "example": "xxx",
+          "example": "http://uploadurl",
           "member": "string",
           "name": "UploadUrl",
           "output_required": true,
@@ -5411,7 +5411,7 @@
         {
           "disabled": false,
           "document": "上传header",
-          "example": "xxx",
+          "example": "[{\"key\":\"value\"}]",
           "member": "KVPair",
           "name": "UploadHeaders",
           "output_required": true,
@@ -5421,7 +5421,7 @@
         {
           "disabled": false,
           "document": "包名",
-          "example": "xxx",
+          "example": "packageName",
           "member": "string",
           "name": "PackageName",
           "output_required": true,
@@ -5431,7 +5431,7 @@
         {
           "disabled": false,
           "document": "包版本",
-          "example": "xxx",
+          "example": "0.0.1",
           "member": "string",
           "name": "PackageVersion",
           "output_required": true,
@@ -5441,7 +5441,7 @@
         {
           "disabled": false,
           "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "http://downloadurl",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,
@@ -5451,7 +5451,7 @@
         {
           "disabled": false,
           "document": "下载Httpheader\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "[{\"key\":\"value\"}]",
           "member": "KVPair",
           "name": "DownloadHeaders",
           "output_required": true,
@@ -5593,7 +5593,7 @@
         {
           "disabled": false,
           "document": "项目名称",
-          "example": "xx",
+          "example": "projectName",
           "member": "string",
           "name": "ProjectName",
           "required": true,
@@ -5644,7 +5644,7 @@
         {
           "disabled": false,
           "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0.0.1",
           "member": "CloudBaseProjectVersion",
           "name": "ProjectVersions",
           "output_required": true,
@@ -5654,7 +5654,7 @@
         {
           "disabled": false,
           "document": "总个数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,

@@ -6,127 +6,60 @@ Input:
 
 ```
 tccli tsf DescribeApiDetail --cli-unfold-argument  \
-    --MicroserviceId ms-2vzprpyp \
-    --Path /facade/supplier/test \
-    --Method POST \
-    --ApplicationId application-gvkw2ejv \
-    --PkgVersion jenkins-prod-supplier-1
+    --MicroserviceId ms-y5w8n5e9 \
+    --Path /user-feign \
+    --Method GET \
+    --PkgVersion 20210625192924 \
+    --ApplicationId application-yn3zdj9v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "b8427f00-c974-47b1-9827-978cdb043b9d",
+        "RequestId": "93c8e28a-196e-46a3-b903-b74ddcf7ce26",
         "Result": {
-            "Request": [
-                {
-                    "Name": "supplierId",
-                    "Type": "string",
-                    "Description": "supplierId",
-                    "Required": true,
-                    "In": "query"
-                }
-            ],
-            "Response": [
-                {
-                    "Name": "Res«Supplier»",
-                    "Type": "#/Definitions/Res«Supplier»",
-                    "Description": "OK"
-                }
-            ],
+            "CanRun": true,
             "Definitions": [
                 {
-                    "Name": "Supplier",
+                    "Name": "",
                     "Properties": [
                         {
-                            "Name": "abbrName",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "coordinatesSystem",
-                            "Type": "integer(int32)"
-                        },
-                        {
-                            "Name": "createTime",
-                            "Type": "string(date-time)"
-                        },
-                        {
-                            "Name": "id",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "invoiceLineNum",
-                            "Type": "integer(int32)"
-                        },
-                        {
-                            "Name": "invoiceMaxFee",
-                            "Type": "integer(int64)"
-                        },
-                        {
-                            "Name": "invoiceMinFee",
-                            "Type": "integer(int64)"
-                        },
-                        {
-                            "Name": "invoiceType",
-                            "Type": "integer(int32)"
-                        },
-                        {
-                            "Name": "isActive",
-                            "Type": "integer(int32)"
-                        },
-                        {
-                            "Name": "isTripEnable",
-                            "Type": "integer(int32)"
-                        },
-                        {
-                            "Name": "logo",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "name",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "priceRuleUrl",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "servicePhone",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "signKey",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "updateTime",
-                            "Type": "string(date-time)"
-                        }
-                    ]
-                },
-                {
-                    "Name": "Res«Supplier»",
-                    "Properties": [
-                        {
-                            "Name": "code",
-                            "Type": "integer(int32)"
-                        },
-                        {
-                            "Name": "data",
-                            "Type": "#/Definitions/Supplier"
-                        },
-                        {
-                            "Name": "errmsg",
-                            "Type": "string"
-                        },
-                        {
-                            "Name": "success",
-                            "Type": "boolean"
+                            "Description": "",
+                            "Name": "",
+                            "Type": ""
                         }
                     ]
                 }
-            ]
+            ],
+            "Description": "feignMeshUser",
+            "Request": [
+                {
+                    "DefaultValue": null,
+                    "Description": "tagName",
+                    "In": "query",
+                    "Name": "tagName",
+                    "Required": false,
+                    "Type": "string"
+                },
+                {
+                    "DefaultValue": null,
+                    "Description": "tagValue",
+                    "In": "query",
+                    "Name": "tagValue",
+                    "Required": false,
+                    "Type": "string"
+                }
+            ],
+            "RequestContentType": null,
+            "Response": [
+                {
+                    "Description": "OK",
+                    "Name": "_RESPONSE",
+                    "Type": "string"
+                }
+            ],
+            "Status": 1
         }
     }
 }

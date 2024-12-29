@@ -38,14 +38,14 @@
     "GetBlockList": {
       "document": "查看当前网络下的所有区块列表，分页展示",
       "input": "GetBlockListRequest",
-      "name": "查询区块列表",
+      "name": "查询fabric的区块列表",
       "output": "GetBlockListResponse",
       "status": "online"
     },
     "GetBlockTransactionListForUser": {
-      "document": "获取区块内的交易列表",
+      "document": "获取区块内交易列表",
       "input": "GetBlockTransactionListForUserRequest",
-      "name": "获取区块内的交易列表",
+      "name": "获取区块内交易列表",
       "output": "GetBlockTransactionListForUserResponse",
       "status": "online"
     },
@@ -78,9 +78,9 @@
       "status": "online"
     },
     "GetTransactionDetailForUser": {
-      "document": "获取交易详情",
+      "document": "获取交易的详情",
       "input": "GetTransactionDetailForUserRequest",
-      "name": "获取交易详情",
+      "name": "获取交易的详情",
       "output": "GetTransactionDetailForUserResponse",
       "status": "online"
     },
@@ -235,7 +235,7 @@
         {
           "disabled": false,
           "document": "模块名，固定字段：cert_mng",
-          "example": "",
+          "example": "cert_mng",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -244,7 +244,7 @@
         {
           "disabled": false,
           "document": "操作名，固定字段：cert_apply_for_user",
-          "example": "",
+          "example": "cert_apply_for_user",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -253,7 +253,7 @@
         {
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
-          "example": "",
+          "example": "251005746bckuobc41mpu",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -262,7 +262,7 @@
         {
           "disabled": false,
           "document": "申请证书的组织名称，可以在组织管理列表中获取当前组织的名称",
-          "example": "",
+          "example": "youtuOrg",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -271,7 +271,7 @@
         {
           "disabled": false,
           "document": "用户证书标识，用于标识用户证书，要求由纯小写字母组成，长度小于10",
-          "example": "",
+          "example": "usercert",
           "member": "string",
           "name": "UserIdentity",
           "required": true,
@@ -280,7 +280,7 @@
         {
           "disabled": false,
           "document": "证书申请实体，使用腾讯云账号实名认证的名称",
-          "example": "",
+          "example": "优图SDK",
           "member": "string",
           "name": "Applicant",
           "required": true,
@@ -289,7 +289,7 @@
         {
           "disabled": false,
           "document": "证件号码。如果腾讯云账号对应的实名认证类型为企业认证，填入“0”；如果腾讯云账号对应的实名认证类型为个人认证，填入个人身份证号码",
-          "example": "",
+          "example": "3452***321",
           "member": "string",
           "name": "IdentityNum",
           "required": true,
@@ -298,7 +298,7 @@
         {
           "disabled": false,
           "document": "csr p10证书文件。需要用户根据文档生成证书的CSR文件",
-          "example": "",
+          "example": "-----BEGINCERTIFICATEREQUEST-----",
           "member": "string",
           "name": "CsrData",
           "required": true,
@@ -307,7 +307,7 @@
         {
           "disabled": false,
           "document": "证书备注信息",
-          "example": "",
+          "example": "user",
           "member": "string",
           "name": "Notes",
           "required": false,
@@ -322,18 +322,20 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "172634",
           "member": "uint64",
           "name": "CertId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书DN",
-          "example": "",
+          "example": "C=CN,ST=ShenZhen,L=4ShenZhen,O=org1,OU=client,CN=kylouse@org1.bcdk3eis17qe@client",
           "member": "string",
           "name": "CertDn",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -603,7 +605,7 @@
         {
           "disabled": false,
           "document": "区块Hash",
-          "example": "abc",
+          "example": "90af8cff95cfc2b9caeafc9d53bc04a699ef47e381143d66e5d03548deab1aa5 ",
           "member": "string",
           "name": "BlockHash",
           "output_required": false,
@@ -613,7 +615,7 @@
         {
           "disabled": false,
           "document": "前置区块Hash",
-          "example": "abc",
+          "example": "1d40d9c1fc8929c0b5ba4048f6a756543695664976cec7c8ac76e587587dfa01",
           "member": "string",
           "name": "PreBlockHash",
           "output_required": false,
@@ -633,7 +635,7 @@
         {
           "disabled": false,
           "document": "区块中交易列表",
-          "example": "[]",
+          "example": "无",
           "member": "Transaction",
           "name": "TransactionList",
           "output_required": false,
@@ -938,7 +940,7 @@
         {
           "disabled": false,
           "document": "模块名称，固定字段：block",
-          "example": "",
+          "example": "block",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -947,7 +949,7 @@
         {
           "disabled": false,
           "document": "操作名称，固定字段：block_list",
-          "example": "",
+          "example": "block_list",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -956,7 +958,7 @@
         {
           "disabled": false,
           "document": "通道ID，固定字段：0",
-          "example": "",
+          "example": "12",
           "member": "uint64",
           "name": "ChannelId",
           "required": true,
@@ -965,7 +967,7 @@
         {
           "disabled": false,
           "document": "组织ID，固定字段：0",
-          "example": "",
+          "example": "32",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
@@ -974,7 +976,7 @@
         {
           "disabled": false,
           "document": "需要查询的通道名称，可在通道详情或列表中获取",
-          "example": "",
+          "example": "factch",
           "member": "string",
           "name": "ChannelName",
           "required": true,
@@ -983,7 +985,7 @@
         {
           "disabled": false,
           "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
-          "example": "",
+          "example": "liulanOrg",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -992,7 +994,7 @@
         {
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
-          "example": "",
+          "example": "251005746bc0f03q8u93j",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1001,7 +1003,7 @@
         {
           "disabled": false,
           "document": "需要获取的起始交易偏移",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1010,7 +1012,7 @@
         {
           "disabled": false,
           "document": "需要获取的交易数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1025,18 +1027,20 @@
         {
           "disabled": false,
           "document": "区块数量",
-          "example": "",
+          "example": "6",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区块列表",
-          "example": "",
+          "example": "无",
           "member": "Block",
           "name": "BlockList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1055,7 +1059,7 @@
         {
           "disabled": false,
           "document": "模块名，固定字段：transaction",
-          "example": "",
+          "example": "transaction",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1064,7 +1068,7 @@
         {
           "disabled": false,
           "document": "操作名，固定字段：block_transaction_list_for_user",
-          "example": "",
+          "example": "block_transaction_list_for_user",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -1073,7 +1077,7 @@
         {
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
-          "example": "",
+          "example": "251005746bcdk3eis17qe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1082,7 +1086,7 @@
         {
           "disabled": false,
           "document": "参与交易的组织名称，可以在组织管理列表中获取当前组织的名称",
-          "example": "",
+          "example": "org1",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1091,7 +1095,7 @@
         {
           "disabled": false,
           "document": "业务所属通道名称，可在通道详情或列表中获取",
-          "example": "",
+          "example": "fronttest3",
           "member": "string",
           "name": "ChannelName",
           "required": true,
@@ -1100,7 +1104,7 @@
         {
           "disabled": false,
           "document": "区块ID，通过GetInvokeTx接口可以获取交易所在的区块ID",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "BlockId",
           "required": true,
@@ -1109,7 +1113,7 @@
         {
           "disabled": false,
           "document": "查询的交易列表起始偏移地址",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1118,7 +1122,7 @@
         {
           "disabled": false,
           "document": "查询的交易列表数量",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1133,18 +1137,20 @@
         {
           "disabled": false,
           "document": "交易总数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易列表",
-          "example": "",
+          "example": "无",
           "member": "TransactionItem",
           "name": "TransactionList",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1163,7 +1169,7 @@
         {
           "disabled": false,
           "document": "模块名称，固定字段：cluster_mng",
-          "example": "",
+          "example": "cluster_mng",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1172,7 +1178,7 @@
         {
           "disabled": false,
           "document": "操作名称，固定字段：cluster_summary",
-          "example": "",
+          "example": "cluster_summary",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -1181,7 +1187,7 @@
         {
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
-          "example": "",
+          "example": "251005746bc0f03q8u93j",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1190,7 +1196,7 @@
         {
           "disabled": false,
           "document": "组织ID，固定字段：0",
-          "example": "",
+          "example": "12",
           "member": "uint64",
           "name": "GroupId",
           "required": true,
@@ -1199,7 +1205,7 @@
         {
           "disabled": false,
           "document": "调用接口的组织名称，可以在组织管理列表中获取当前组织的名称",
-          "example": "",
+          "example": "liulanOrg",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1214,135 +1220,150 @@
         {
           "disabled": false,
           "document": "网络通道总数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalChannelCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织创建的通道数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "MyChannelCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织加入的通道数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "JoinChannelCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络节点总数量",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "TotalPeerCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织创建的节点数量",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "MyPeerCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "其他组织创建的节点数量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "OrderCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络组织总数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalGroupCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织创建的组织数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "MyGroupCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络智能合约总数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalChaincodeCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最近7天发起的智能合约数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "RecentChaincodeCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织发起的智能合约数量",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "MyChaincodeCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织的证书总数量",
-          "example": "",
+          "example": "8",
           "member": "uint64",
           "name": "TotalCertCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "颁发给当前组织的证书数量",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "TlsCertCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络背书节点证书数量",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "PeerCertCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前组织业务证书数量",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "ClientCertCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1733,7 +1754,7 @@
         {
           "disabled": false,
           "document": "模块名，固定字段：transaction",
-          "example": "",
+          "example": "transaction",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -1742,7 +1763,7 @@
         {
           "disabled": false,
           "document": "操作名，固定字段：transaction_detail_for_user",
-          "example": "",
+          "example": "transaction_detail_for_user",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -1751,7 +1772,7 @@
         {
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
-          "example": "",
+          "example": "251005746bcd6xjfka7pi",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -1760,7 +1781,7 @@
         {
           "disabled": false,
           "document": "参与交易的组织名称，可以在组织管理列表中获取当前组织的名称",
-          "example": "",
+          "example": "org2",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1769,7 +1790,7 @@
         {
           "disabled": false,
           "document": "业务所属通道名称，可在通道详情或列表中获取",
-          "example": "",
+          "example": "factch",
           "member": "string",
           "name": "ChannelName",
           "required": true,
@@ -1778,7 +1799,7 @@
         {
           "disabled": false,
           "document": "区块ID，通过GetInvokeTx接口可以获取交易所在的区块ID",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BlockId",
           "required": true,
@@ -1787,7 +1808,7 @@
         {
           "disabled": false,
           "document": "交易ID，需要查询的详情的交易ID",
-          "example": "",
+          "example": "42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0",
           "member": "string",
           "name": "TransactionId",
           "required": true,
@@ -1802,117 +1823,130 @@
         {
           "disabled": false,
           "document": "交易ID",
-          "example": "",
+          "example": "42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0",
           "member": "string",
           "name": "TransactionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易hash",
-          "example": "",
+          "example": "42c562517707bf53f08fe6e5a1cf5f50c784352ff0d8166e77514ebe518bd6c0",
           "member": "string",
           "name": "TransactionHash",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建交易的组织名",
-          "example": "",
+          "example": "org2",
           "member": "string",
           "name": "CreateOrgName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易类型（普通交易和配置交易）",
-          "example": "",
+          "example": "CONFIG",
           "member": "string",
           "name": "TransactionType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易状态",
-          "example": "",
+          "example": "VALID",
           "member": "string",
           "name": "TransactionStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易创建时间",
-          "example": "",
+          "example": "2019-10-28 18:48:28",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易数据",
-          "example": "",
+          "example": "eyJjaGFpbmNvZGVfc3BlYyI6eyJ0aW1lb3V0IjowLCJ0eXBlIjoiVU5ERUZJTkVEIn19",
           "member": "string",
           "name": "TransactionData",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易所在区块号",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BlockId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易所在区块哈希",
-          "example": "",
+          "example": "a0f1bd5819e1e664873c3d903d005f9f24661986c2c4c541a185f613fdeaff52",
           "member": "string",
           "name": "BlockHash",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易所在区块高度",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "BlockHeight",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通道名称",
-          "example": "",
+          "example": "factch",
           "member": "string",
           "name": "ChannelName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易所在合约名称",
-          "example": "",
+          "example": "fact",
           "member": "string",
           "name": "ContractName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "背书组织列表",
-          "example": "",
+          "example": "无",
           "member": "EndorserGroup",
           "name": "EndorserOrgList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1949,7 +1983,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约管理中获取",
-          "example": "test",
+          "example": "fact",
           "member": "string",
           "name": "ContractName",
           "required": true,
@@ -1994,6 +2028,7 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2457,7 +2492,7 @@
         {
           "disabled": false,
           "document": "合约名称，可在合约管理中获取",
-          "example": "test",
+          "example": "fact",
           "member": "string",
           "name": "ContractName",
           "required": true,
@@ -2493,6 +2528,7 @@
           "example": "无",
           "member": "ChainMakerContractResult",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

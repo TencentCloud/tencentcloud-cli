@@ -15,351 +15,466 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "b86d4065-771d-485c-9130-8914fe5fd1bc",
         "Result": {
-            "VersionId": "abc",
-            "ApplicationId": "abc",
-            "DeployMode": "abc",
-            "JdkVersion": "abc",
-            "Description": "abc",
-            "DeployVersion": "abc",
-            "PublishMode": "abc",
-            "JvmOpts": "abc",
-            "InitPodNum": 0,
-            "CpuSpec": 0,
-            "MemorySpec": 0,
-            "ImgRepo": "abc",
-            "ImgName": "abc",
-            "ImgVersion": "abc",
-            "EsInfo": {
-                "MinAliveInstances": 0,
-                "MaxAliveInstances": 0,
-                "EsStrategy": 0,
-                "VersionId": "abc",
-                "Threshold": 1
-            },
+            "AppId": "1305738457",
+            "SubAccountUin": "100000799529",
+            "Uin": "100019051593",
+            "Region": "ap-shanghai",
+            "VersionId": "revision-jorxnl6j",
+            "VersionName": "20241202165113",
+            "ApplicationId": "app-5vaz8x85",
+            "Vpc": "vpc-e3ay8qku",
+            "SubnetId": "subnet-kctzw7nj,subnet-8indzsuv,subnet-qau65gm1",
+            "DeployMode": "JAR",
+            "JdkVersion": "KONA:11",
+            "Description": "",
+            "DeployVersion": "20241202165113",
+            "GroupId": "group-job6vv75",
+            "PublishMode": "",
+            "InitPodNum": 3,
+            "CpuSpec": 1,
+            "MemorySpec": 2,
+            "ImgRepo": "",
+            "ImgName": "tem-100019051593-sfuw/app0925",
+            "ImgVersion": "20241202165113",
+            "EsInfo": null,
             "EnvConf": [
                 {
-                    "Key": "abc",
-                    "Value": "abc",
-                    "Type": "abc",
-                    "Config": "abc",
-                    "Secret": "abc"
-                }
-            ],
-            "StorageConfs": [
+                    "Key": "TEM_APM_TOKEN",
+                    "Value": "DBaxEudGGxxOFmAYNBuq",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
                 {
-                    "StorageVolName": "abc",
-                    "StorageVolPath": "abc",
-                    "StorageVolIp": "abc"
-                }
-            ],
-            "Status": "abc",
-            "Vpc": "abc",
-            "SubnetId": "abc",
-            "CreateDate": "abc",
-            "ModifyDate": "abc",
-            "StorageMountConfs": [
+                    "Key": "TEM_APM_COLLECTOR_SKYWALKING",
+                    "Value": "pl.ap-shanghai.apm.tencentcs.com:11800",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
                 {
-                    "VolumeName": "abc",
-                    "MountPath": "abc"
+                    "Key": "TEM_APM_COLLECTOR_JAEGER",
+                    "Value": "pl.ap-shanghai.apm.tencentcs.com:14250",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "TEM_APM_COLLECTOR_OPENTELEMETRY",
+                    "Value": "pl.ap-shanghai.apm.tencentcs.com:4317",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "TEM_APM_INSTANCE_ID",
+                    "Value": "apm-JcXK7eNzw",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_INSTANCE_ID",
+                    "Value": "prom-hdiellob",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_TOKEN",
+                    "Value": ";F1Lh7zVs-LFhT&+3dRqUA5bhdl",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_REMOTE_WRITE_URL",
+                    "Value": "http://10.0.30.147:9090/api/v1/prom/write",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_REMOTE_READ_URL",
+                    "Value": "http://10.0.30.147:9090/api/v1/read",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_PUSH_GATEWAY_ADDR",
+                    "Value": "10.0.30.147:9090",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_HTTP_API",
+                    "Value": "http://10.0.30.147:9090/api/v1",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
+                },
+                {
+                    "Key": "PROMETHEUS_GRAFANA_ADDR",
+                    "Value": "",
+                    "Type": "reserved",
+                    "Config": "",
+                    "Secret": ""
                 }
             ],
-            "VersionName": "abc",
-            "LogOutputConf": {
-                "OutputType": "abc",
-                "ClsLogsetName": "abc",
-                "ClsLogTopicId": "abc",
-                "ClsLogsetId": "abc",
-                "ClsLogTopicName": "abc"
-            },
-            "ApplicationName": "abc",
-            "ApplicationDescription": "abc",
-            "EnvironmentName": "abc",
-            "EnvironmentId": "abc",
-            "PublicDomain": "abc",
-            "EnablePublicAccess": true,
-            "CurrentInstances": 0,
-            "ExpectedInstances": 0,
-            "CodingLanguage": "abc",
-            "PkgName": "abc",
-            "EsEnable": 0,
-            "EsStrategy": 0,
-            "ImageTag": "abc",
-            "LogEnable": 0,
-            "MinAliveInstances": "abc",
-            "SecurityGroupIds": [
-                "abc"
+            "SettingConfs": [
+                {
+                    "ConfigDataName": "pk-test-1",
+                    "SecretDataName": "",
+                    "MountedPath": "/data",
+                    "Data": [
+                        {
+                            "Key": "name",
+                            "Value": "value",
+                            "Type": "",
+                            "Config": "",
+                            "Secret": ""
+                        }
+                    ]
+                }
             ],
-            "ImageCommand": "abc",
-            "ImageArgs": [
-                "abc"
-            ],
-            "UseRegistryDefaultConfig": true,
+            "LogConfs": [],
+            "LogOutputConf": null,
+            "PostStart": "/bin/sh\n-c\ncurl localhost:8080/postStart",
+            "PostStartEncoded": "",
+            "PreStop": "/bin/sh\n-c\nwget --server-response --spider -S --no-verbose --header=\"Content-Type:application/json\" --post-data='{\"serverName\":\"api-basic\"}' \"http://localhost:9900/actuator/stopmsg\"\nsleep 30s",
+            "PreStopEncoded": "",
+            "StorageConfs": [],
+            "StorageMountConfs": [],
+            "JvmOpts": "-Xms128m -XX:MetaspaceSize=128m",
             "Service": {
-                "Name": "abc",
-                "Ports": [
-                    0
-                ],
-                "Yaml": "abc",
-                "ApplicationName": "abc",
-                "VersionName": "abc",
-                "ClusterIp": [
-                    "abc"
-                ],
-                "ExternalIp": "abc",
-                "Type": "abc",
-                "SubnetId": "abc",
-                "LoadBalanceId": "abc",
-                "PortMappings": [
-                    {
-                        "Port": 0,
-                        "TargetPort": 0,
-                        "Protocol": "abc",
-                        "ServiceName": "abc"
-                    }
-                ],
+                "PortMappings": [],
+                "LoadBalanceId": "",
+                "SubnetId": "",
+                "Type": "",
+                "Name": "",
+                "ApplicationName": "app0925",
+                "ClusterIp": [],
+                "ExternalIp": "",
+                "ExternalDomain": "",
+                "VersionName": "",
+                "Ports": [],
+                "Yaml": "",
+                "ApplicationId": "app-5vaz8x85",
                 "ServicePortMappingList": [
                     {
-                        "Type": "abc",
-                        "ServiceName": "abc",
-                        "ClusterIp": "abc",
-                        "ExternalIp": "abc",
-                        "SubnetId": "abc",
-                        "VpcId": "abc",
-                        "LoadBalanceId": "abc",
-                        "Yaml": "abc",
+                        "Type": "CLUSTER",
+                        "ServiceName": "k8s-svc-test",
+                        "ClusterIp": "172.16.56.122",
+                        "ExternalIp": "",
+                        "ExternalDomain": "",
+                        "SubnetId": "",
+                        "VpcId": "",
+                        "LoadBalanceId": "",
+                        "Yaml": "apiVersion: xxxx",
                         "Ports": [
-                            0
+                            8080
                         ],
                         "PortMappingItemList": [
                             {
-                                "Port": 0,
-                                "TargetPort": 0,
-                                "Protocol": "abc"
+                                "Port": 8080,
+                                "TargetPort": 8080,
+                                "Protocol": "TCP"
                             }
+                        ]
+                    },
+                    {
+                        "Type": "CLUSTER",
+                        "ServiceName": "pk-svc",
+                        "ClusterIp": "172.16.52.35",
+                        "ExternalIp": "",
+                        "ExternalDomain": "",
+                        "SubnetId": "",
+                        "VpcId": "",
+                        "LoadBalanceId": "",
+                        "Yaml": "apiVersion: xxxx",
+                        "Ports": [
+                            8080
                         ],
-                        "ExternalDomain": "abc"
+                        "PortMappingItemList": [
+                            {
+                                "Port": 8080,
+                                "TargetPort": 8080,
+                                "Protocol": "TCP"
+                            }
+                        ]
                     }
                 ],
-                "FlushAll": true,
+                "FlushAll": false,
                 "EnableRegistryNextDeploy": 0,
-                "ApplicationId": "abc",
-                "AllIpDone": true,
-                "ExternalDomain": "abc"
+                "AllIpDone": true
             },
-            "SettingConfs": [
-                {
-                    "ConfigDataName": "abc",
-                    "MountedPath": "abc",
-                    "Data": [
-                        {
-                            "Key": "abc",
-                            "Value": "abc",
-                            "Type": "abc",
-                            "Config": "abc",
-                            "Secret": "abc"
-                        }
-                    ],
-                    "SecretDataName": "abc"
-                }
-            ],
-            "LogConfs": [
-                "abc"
-            ],
-            "PostStart": "abc",
-            "PreStop": "abc",
-            "Liveness": {
-                "Type": "abc",
-                "Protocol": "abc",
-                "Path": "abc",
-                "Exec": "abc",
-                "Port": 0,
-                "InitialDelaySeconds": 0,
-                "TimeoutSeconds": 0,
-                "PeriodSeconds": 0
-            },
-            "Readiness": {
-                "Type": "abc",
-                "Protocol": "abc",
-                "Path": "abc",
-                "Exec": "abc",
-                "Port": 0,
-                "InitialDelaySeconds": 0,
-                "TimeoutSeconds": 0,
-                "PeriodSeconds": 0
-            },
-            "HorizontalAutoscaler": [
-                {
-                    "MinReplicas": 0,
-                    "MaxReplicas": 0,
-                    "Metrics": "abc",
-                    "Threshold": 0,
-                    "Enabled": true,
-                    "DoubleThreshold": 0
-                }
-            ],
-            "CronHorizontalAutoscaler": [
-                {
-                    "Name": "abc",
-                    "Period": "abc",
-                    "Schedules": [
-                        {
-                            "StartAt": "abc",
-                            "TargetReplicas": 0
-                        }
-                    ],
-                    "Enabled": true,
-                    "Priority": 0
-                }
-            ],
-            "Zones": [
-                "abc"
-            ],
-            "LastDeployDate": "abc",
-            "LastDeploySuccessDate": "abc",
-            "NodeInfos": [
-                {
-                    "Name": "abc",
-                    "Zone": "abc",
-                    "SubnetId": "abc",
-                    "AvailableIpCount": "abc",
-                    "Cidr": "abc"
-                }
-            ],
-            "ImageType": 0,
-            "EnableTracing": 1,
-            "EnableTracingReport": 1,
-            "RepoType": 1,
-            "BatchDeployStatus": "abc",
-            "ApmInstanceId": "abc",
-            "WorkloadInfo": {
-                "ClusterId": "abc",
-                "ApplicationName": "abc",
-                "VersionName": "abc",
-                "ReadyReplicas": 0,
-                "Replicas": 0,
-                "UpdatedReplicas": 0,
-                "UpdatedReadyReplicas": 0,
-                "UpdateRevision": "abc",
-                "CurrentRevision": "abc"
-            },
-            "SpeedUp": true,
-            "StartupProbe": {
-                "Type": "abc",
-                "Protocol": "abc",
-                "Path": "abc",
-                "Exec": "abc",
-                "Port": 0,
-                "InitialDelaySeconds": 0,
-                "TimeoutSeconds": 0,
-                "PeriodSeconds": 0
-            },
-            "OsFlavour": "abc",
-            "RepoServer": "abc",
-            "UnderDeploying": true,
-            "EnablePrometheusConf": {
-                "Port": 0,
-                "Path": "abc"
-            },
-            "StoppedManually": true,
-            "TcrInstanceId": "abc",
-            "EnableMetrics": 0,
-            "AppId": "abc",
-            "SubAccountUin": "abc",
-            "Uin": "abc",
-            "Region": "abc",
-            "GroupId": "abc",
+            "Liveness": null,
+            "Readiness": null,
+            "StartupProbe": null,
+            "EsEnable": null,
+            "EnableTracing": 0,
             "EnableRegistry": 0,
+            "EnableTracingReport": 0,
+            "EnableMetrics": 0,
+            "EnablePrometheusConf": null,
+            "ApmInstanceId": "",
+            "LogEnable": null,
+            "RepoType": 3,
+            "CreateDate": "2024-09-25 11:36:11",
+            "ModifyDate": "2024-12-20 17:00:16",
+            "MinAliveInstances": "",
+            "ImageTag": "20241202165113",
+            "SecurityGroupIds": [
+                "sg-1zwhplpi"
+            ],
+            "EsStrategy": null,
             "AutoscalerList": [
                 {
+                    "AutoscalerId": "scaler-3j2o6ypg",
+                    "AutoscalerName": "elastic-test",
                     "MinReplicas": 0,
-                    "MaxReplicas": 0,
+                    "MaxReplicas": 4,
+                    "CreateDate": "2024-12-05 11:10:19",
+                    "ModifyDate": "2024-12-20 17:00:23",
+                    "EnableDate": "2024-12-20 17:00:23",
+                    "Description": "",
+                    "Enabled": true,
                     "HorizontalAutoscaler": [
                         {
                             "MinReplicas": 0,
-                            "MaxReplicas": 0,
-                            "Metrics": "abc",
+                            "MaxReplicas": 4,
+                            "Metrics": "CPU",
                             "Threshold": 0,
-                            "Enabled": true,
-                            "DoubleThreshold": 0
+                            "DoubleThreshold": 60,
+                            "Enabled": true
+                        }
+                    ],
+                    "CronHorizontalAutoscaler": []
+                },
+                {
+                    "AutoscalerId": "scaler-b5q33njo",
+                    "AutoscalerName": "pk-test-clb",
+                    "MinReplicas": 0,
+                    "MaxReplicas": 4,
+                    "CreateDate": "2024-10-25 16:36:10",
+                    "ModifyDate": "2024-11-29 10:35:52",
+                    "EnableDate": "2024-11-29 10:35:52",
+                    "Description": "",
+                    "Enabled": false,
+                    "HorizontalAutoscaler": [
+                        {
+                            "MinReplicas": 0,
+                            "MaxReplicas": 4,
+                            "Metrics": "CPU",
+                            "Threshold": 0,
+                            "DoubleThreshold": 50,
+                            "Enabled": true
                         }
                     ],
                     "CronHorizontalAutoscaler": [
                         {
-                            "Name": "abc",
-                            "Period": "abc",
+                            "Name": "pk-test",
+                            "Period": "* * *",
                             "Schedules": [
                                 {
-                                    "StartAt": "abc",
-                                    "TargetReplicas": 0
+                                    "StartAt": "02:00",
+                                    "TargetReplicas": 1
+                                }
+                            ],
+                            "Enabled": false,
+                            "Priority": 0
+                        }
+                    ]
+                },
+                {
+                    "AutoscalerId": "scaler-ojr3nlj9",
+                    "AutoscalerName": "pk-test-1",
+                    "MinReplicas": 1,
+                    "MaxReplicas": 3,
+                    "CreateDate": "2024-12-19 23:38:45",
+                    "ModifyDate": "2024-12-19 23:38:45",
+                    "EnableDate": null,
+                    "Description": "",
+                    "Enabled": false,
+                    "HorizontalAutoscaler": [
+                        {
+                            "MinReplicas": 1,
+                            "MaxReplicas": 3,
+                            "Metrics": "CPU",
+                            "Threshold": 0,
+                            "DoubleThreshold": 50,
+                            "Enabled": true
+                        }
+                    ],
+                    "CronHorizontalAutoscaler": [
+                        {
+                            "Name": "policy-test",
+                            "Period": "* * *",
+                            "Schedules": [
+                                {
+                                    "StartAt": "00:00",
+                                    "TargetReplicas": 1
                                 }
                             ],
                             "Enabled": true,
                             "Priority": 0
                         }
-                    ],
-                    "AutoscalerId": "abc",
-                    "AutoscalerName": "abc",
-                    "Description": "abc",
-                    "CreateDate": "abc",
-                    "ModifyDate": "abc",
-                    "EnableDate": "abc",
-                    "Enabled": true
+                    ]
                 }
             ],
-            "Modifier": "abc",
-            "Creator": "abc",
-            "DeployStrategyConf": {
-                "TotalBatchCount": 0,
-                "BetaBatchNum": 0,
-                "DeployStrategyType": 0,
-                "BatchInterval": 0,
-                "MinAvailable": 0,
-                "Force": true
+            "ApplicationName": "app0925",
+            "ApplicationDescription": "preStop-test",
+            "EnvironmentName": "tt",
+            "EnvironmentId": "en-dpxydze5",
+            "RepoServer": "tem-sh-custom-registry-prd-01.tencentcloudcr.com",
+            "PublicDomain": "",
+            "EnablePublicAccess": null,
+            "Modifier": "100019051593",
+            "Creator": "100019051593",
+            "CurrentInstances": 1,
+            "ExpectedInstances": 3,
+            "Status": "abnormal",
+            "UnderDeploying": true,
+            "BatchDeployStatus": "",
+            "CodingLanguage": "JAVA",
+            "ImageType": 1,
+            "ImageCommand": "",
+            "ImageArgs": null,
+            "UseRegistryDefaultConfig": false,
+            "DeployStrategyConf": null,
+            "Zones": [
+                "ap-shanghai-2"
+            ],
+            "LastDeployDate": "2024-12-20 17:00:17",
+            "LastDeploySuccessDate": "2024-12-20 17:00:17",
+            "NodeInfos": [
+                {
+                    "Name": "eklet-subnet-kctzw7nj-711231",
+                    "Zone": "ap-shanghai-2",
+                    "SubnetId": "subnet-kctzw7nj",
+                    "AvailableIpCount": "243",
+                    "Cidr": "10.0.10.0-24"
+                },
+                {
+                    "Name": "eklet-subnet-8indzsuv-457482",
+                    "Zone": "ap-shanghai-2",
+                    "SubnetId": "subnet-8indzsuv",
+                    "AvailableIpCount": "226",
+                    "Cidr": "10.0.30.0-24"
+                },
+                {
+                    "Name": "eklet-subnet-qau65gm1-638453",
+                    "Zone": "ap-shanghai-2",
+                    "SubnetId": "subnet-qau65gm1",
+                    "AvailableIpCount": "246",
+                    "Cidr": "10.0.20.0-24"
+                }
+            ],
+            "WorkloadInfo": {
+                "ApplicationName": "app0925",
+                "ClusterId": "cls-kotuimb9",
+                "VersionName": "20241202165113",
+                "ReadyReplicas": 1,
+                "Replicas": 3,
+                "UpdatedReplicas": 2,
+                "UpdatedReadyReplicas": 0,
+                "UpdateRevision": "app0925-574b65c5f7",
+                "CurrentRevision": "app0925-77969b5b49"
             },
             "PodList": {
                 "Offset": 0,
-                "Limit": 0,
-                "TotalCount": 0,
-                "RequestId": "abc",
+                "Limit": 3,
+                "TotalCount": 3,
                 "PodList": [
                     {
-                        "Webshell": "abc",
-                        "PodId": "abc",
-                        "Status": "abc",
-                        "CreateTime": "abc",
-                        "PodIp": "abc",
-                        "Zone": "abc",
-                        "DeployVersion": "abc",
+                        "Zone": "ap-shanghai-2",
+                        "NodeInfo": {
+                            "Name": "eklet-subnet-kctzw7nj-711231",
+                            "Zone": "ap-shanghai-2",
+                            "SubnetId": "subnet-kctzw7nj",
+                            "AvailableIpCount": "243",
+                            "Cidr": "10.0.10.0-24"
+                        },
+                        "DeployVersion": "",
+                        "RestartCount": 0,
+                        "Ready": false,
+                        "StartTime": "2024-12-20T09:01:01Z",
+                        "ContainerState": "waiting",
+                        "Unhealthy": null,
+                        "UnhealthyWarningMsg": "",
+                        "VersionId": "revision-jorxnl6j",
+                        "ApplicationName": "app0925",
+                        "Status": "CrashLoopBackOff",
+                        "CreateTime": "2024-12-20T09:00:23Z",
+                        "PodIp": "10.0.10.220",
+                        "Webshell": "https://tkecache.cloud.tencent.com/xxxx",
+                        "PodId": "app0925-4sbct"
+                    },
+                    {
+                        "Zone": "ap-shanghai-2",
+                        "NodeInfo": {
+                            "Name": "eklet-subnet-qau65gm1-638453",
+                            "Zone": "ap-shanghai-2",
+                            "SubnetId": "subnet-qau65gm1",
+                            "AvailableIpCount": "246",
+                            "Cidr": "10.0.20.0-24"
+                        },
+                        "DeployVersion": "",
+                        "RestartCount": 0,
+                        "Ready": false,
+                        "StartTime": "2024-12-20T09:01:11Z",
+                        "ContainerState": "waiting",
+                        "Unhealthy": null,
+                        "UnhealthyWarningMsg": "",
+                        "VersionId": "revision-jorxnl6j",
+                        "ApplicationName": "app0925",
+                        "Status": "CrashLoopBackOff",
+                        "CreateTime": "2024-12-20T09:00:23Z",
+                        "PodIp": "10.0.20.37",
+                        "Webshell": "https://tkecache.cloud.tencent.com/xxxx",
+                        "PodId": "app0925-s4vpj"
+                    },
+                    {
+                        "Zone": "ap-shanghai-2",
+                        "NodeInfo": {
+                            "Name": "eklet-subnet-8indzsuv-457482",
+                            "Zone": "ap-shanghai-2",
+                            "SubnetId": "subnet-8indzsuv",
+                            "AvailableIpCount": "226",
+                            "Cidr": "10.0.30.0-24"
+                        },
+                        "DeployVersion": "",
                         "RestartCount": 0,
                         "Ready": true,
-                        "ContainerState": "abc",
-                        "NodeInfo": {
-                            "Name": "abc",
-                            "Zone": "abc",
-                            "SubnetId": "abc",
-                            "AvailableIpCount": "abc",
-                            "Cidr": "abc"
-                        },
-                        "StartTime": "abc",
-                        "Unhealthy": true,
-                        "UnhealthyWarningMsg": "abc",
-                        "VersionId": "abc",
-                        "ApplicationName": "abc"
+                        "StartTime": "2024-12-19T03:12:44Z",
+                        "ContainerState": "running",
+                        "Unhealthy": null,
+                        "UnhealthyWarningMsg": "",
+                        "VersionId": "revision-57moqvm5",
+                        "ApplicationName": "app0925",
+                        "Status": "Running",
+                        "CreateTime": "2024-12-19T03:11:32Z",
+                        "PodIp": "10.0.30.158",
+                        "Webshell": "https://tkecache.cloud.tencent.com/qcloud/xxxx",
+                        "PodId": "app0925-jt5bn"
                     }
-                ]
+                ],
+                "RequestId": "csdse233-xxx-xxx-xxx"
             },
-            "ConfEdited": true,
-            "Tags": [
-                {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
-                }
-            ],
-            "PreStopEncoded": "abc",
-            "PostStartEncoded": "abc"
-        },
-        "RequestId": "abc"
+            "ConfEdited": null,
+            "SpeedUp": true,
+            "OsFlavour": "ALPINE",
+            "StoppedManually": false,
+            "TcrInstanceId": "tcr-d8g5il2x",
+            "Tags": [],
+            "PkgName": "tem/pkg/1305738457/app-5vaz8x85/1733129495394/K8sEventDemo-1.0.jar",
+            "HorizontalAutoscaler": [],
+            "CronHorizontalAutoscaler": []
+        }
     }
 }
 ```

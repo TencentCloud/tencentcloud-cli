@@ -6,19 +6,22 @@ Input:
 
 ```
 tccli tsf CreateGatewayApi --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1 \
-    --ApiList.0.NamespaceId ns-do1n280j \
-    --ApiList.0.MicroserviceId ms-sf26d1gf1 \
-    --ApiList.0.Path /user/find \
-    --ApiList.0.Method POST \
-    --ApiList.0.PathMapping /user/find
+    --GroupId grp-djvzrdih \
+    --ApiList.0.NamespaceId namespace-external \
+    --ApiList.0.MicroserviceId ms-external \
+    --ApiList.0.Path /echo_user \
+    --ApiList.0.Method GET \
+    --ApiList.0.PathMapping /echo_user \
+    --ApiList.0.Host http://www.qq.com \
+    --ApiList.0.Description This is desc \
+    --ProgramIdList program-6a79x94v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "e521be92-af1e-4d1c-bcd9-31bfe1ff0859",
         "Result": true
     }
 }

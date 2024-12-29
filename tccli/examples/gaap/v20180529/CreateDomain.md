@@ -7,7 +7,7 @@ Input:
 ```
 tccli gaap CreateDomain --cli-unfold-argument  \
     --Domain a.a.com \
-    --CertificateId abc \
+    --CertificateId cert-lal2lslf \
     --ListenerId 0
 ```
 

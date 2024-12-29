@@ -1172,7 +1172,7 @@
         {
           "disabled": false,
           "document": "对比任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "compare",
           "member": "string",
           "name": "TaskName",
           "output_required": true,
@@ -1485,7 +1485,7 @@
         {
           "disabled": false,
           "document": "同步任务名称",
-          "example": "test",
+          "example": "sync-werwfs23",
           "member": "string",
           "name": "JobName",
           "required": false,
@@ -4909,7 +4909,7 @@
         {
           "disabled": false,
           "document": "同步任务名",
-          "example": "test",
+          "example": "sync-n3gh7md9",
           "member": "string",
           "name": "JobName",
           "required": false,
@@ -6776,7 +6776,7 @@
           "example": "3",
           "member": "uint64",
           "name": "StepAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6786,7 +6786,7 @@
           "example": "3",
           "member": "uint64",
           "name": "StepNow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6796,7 +6796,7 @@
           "example": "0",
           "member": "int64",
           "name": "MasterSlaveDistance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6806,7 +6806,7 @@
           "example": "0",
           "member": "int64",
           "name": "SecondsBehindMaster",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6816,7 +6816,7 @@
           "example": "[]",
           "member": "StepDetailInfo",
           "name": "StepInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -9998,7 +9998,7 @@
         {
           "disabled": false,
           "document": "支持的所有操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"view\",\"configure\",\"check\",\"start\",\"stop\",\"resume\",\"pause\",\"continue\",\"limitRate\",\"resize\",\"isolate\",\"offline\",\"recover\",\"postPay2prePay\",\"configureOptObj\",\"checkOptObj\",\"startOptObj\",\"createCmpTask\"]",
+          "example": "[\"pause\",\"stop\",\"limitRate\",\"view\",\"resize\",\"isolate\",\"postPay2prePay\",\"configureOptObj\"]",
           "member": "string",
           "name": "AllActions",
           "output_required": true,
@@ -10271,6 +10271,16 @@
           "example": "2023-12-08 16:24:32",
           "member": "string",
           "name": "OfflineTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "动态修改对象，修改任务的状态等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "OptObjStatus",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true

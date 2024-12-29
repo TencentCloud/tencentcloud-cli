@@ -15,19 +15,19 @@ Output:
         "WatermarkList": [
             {
                 "WatermarkId": 0,
-                "PictureUrl": "abc",
+                "PictureUrl": "http://wechatapppro.file.myqcloud.com/app1vg363qr9722/image/2024-12-05/app1vg363qr9722_watermark.png",
                 "XPosition": 0,
                 "YPosition": 0,
-                "WatermarkName": "abc",
+                "WatermarkName": "wechatapppro",
                 "Status": 0,
-                "CreateTime": "abc",
+                "CreateTime": "2024-12-05",
                 "Width": 0,
                 "Height": 0,
                 "BackgroundWidth": 0,
                 "BackgroundHeight": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "98ceb7f4-61bd-473c-9381-59a0ed0c25b7"
     }
 }
 ```

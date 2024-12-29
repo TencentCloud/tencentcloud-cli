@@ -86,6 +86,14 @@
         "title": "创建访问日志导出"
       }
     ],
+    "CreateAreaBanRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchAreaBanRule\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Areas\": [\n        {\n            \"Country\": \"中国\",\n            \"Region\": \"广东\",\n            \"City\": \"深圳\"\n        }\n    ],\n    \"JobType\": \"CronJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 1711618518,\n                \"EndDateTime\": 1711918518\n            }\n        ],\n        \"Cron\": [\n            {\n                \"Days\": [],\n                \"WDays\": [\n                    2\n                ],\n                \"StartTime\": \"12:11\",\n                \"EndTime\": \"21:00\"\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    },\n    \"Lang\": \"cn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "添加地域封禁规则"
+      }
+    ],
     "CreateDeals": [
       {
         "document": "",
@@ -298,6 +306,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=DescribeAreaBanAreas\r\n&Domain=www.test.com\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": \"0\",\n            \"Source\": \"custom\",\n            \"Areas\": [\n                \"山东\"\n            ],\n            \"JobType\": \"TimedJob\",\n            \"JobDateTime\": {\n                \"Timed\": [\n                    {\n                        \"StartDateTime\": 0,\n                        \"EndDateTime\": 0\n                    }\n                ],\n                \"Cron\": null,\n                \"TimeTZone\": \"UTC+8\"\n            },\n            \"CronType\": \"week\"\n        },\n        \"RequestId\": \"7b9c4e2b-8282-4a6a-90cf-f64f2caef67a\"\n    }\n}",
         "title": "未设置封禁区域的场景"
+      }
+    ],
+    "DescribeAreaBanRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSupportAreas\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": 1,\n            \"Source\": \"custom\",\n            \"Areas\": [\n                {\n                    \"Country\": \"中国\",\n                    \"Region\": \"广东\",\n                    \"City\": \"深圳\"\n                }\n            ],\n            \"JobType\": \"Timed\",\n            \"JobDateTime\": {\n                \"Timed\": [\n                    {\n                        \"StartDateTime\": 1711618518,\n                        \"EndDateTime\": 1711919518\n                    }\n                ],\n                \"Cron\": [],\n                \"TimeTZone\": \"UTC+8\"\n            },\n            \"Lang\": \"cn\"\n        },\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "获取地域封禁规则"
       }
     ],
     "DescribeAreaBanSupportAreas": [
@@ -856,6 +872,14 @@
         "title": "ModifyAreaBanAreas"
       }
     ],
+    "ModifyAreaBanRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAreaBanRule\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Areas\": [\n        {\n            \"Country\": \"中国\",\n            \"Region\": \"广东\",\n            \"City\": \"深圳\"\n        }\n    ],\n    \"JobType\": \"CronJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 1711618518,\n                \"EndDateTime\": 1711918518\n            }\n        ],\n        \"Cron\": [\n            {\n                \"Days\": [],\n                \"WDays\": [\n                    2\n                ],\n                \"StartTime\": \"12:11\",\n                \"EndTime\": \"21:00\"\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
+        "title": "编辑地域封禁规则"
+      }
+    ],
     "ModifyAreaBanStatus": [
       {
         "document": "",
@@ -1057,7 +1081,7 @@
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=ModifyProtectionStatus\r\n&Domain=www.test.com\r\n&Status=0\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d680b87a-8c4a-4840-af18-3acb5c9f0e54\"\n    }\n}",
-        "title": "waf斯巴达-waf开关"
+        "title": "关闭WAF开关"
       }
     ],
     "ModifySpartaProtection": [

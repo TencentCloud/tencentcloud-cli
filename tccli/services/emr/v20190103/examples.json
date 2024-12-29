@@ -8,12 +8,28 @@
         "title": "添加扩缩容规则成功示例"
       }
     ],
+    "AddNodeResourceConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodeResourceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ResourceType\": \"abc\",\n    \"IsDefault\": \"abc\",\n    \"ResourceConfig\": {\n        \"Spec\": \"abc\",\n        \"StorageType\": 0,\n        \"DiskType\": \"abc\",\n        \"RootSize\": 0,\n        \"MemSize\": 0,\n        \"Cpu\": 0,\n        \"DiskSize\": 0,\n        \"MultiDisks\": [\n            {\n                \"DiskType\": \"abc\",\n                \"Volume\": 0,\n                \"Count\": 0\n            }\n        ],\n        \"Tags\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"abc\"\n            }\n        ],\n        \"InstanceType\": \"abc\",\n        \"LocalDiskNum\": 1,\n        \"DiskNum\": 1\n    },\n    \"PayMode\": 0,\n    \"ZoneId\": 0,\n    \"MultipleResourceConfig\": [\n        {\n            \"Spec\": \"abc\",\n            \"StorageType\": 0,\n            \"DiskType\": \"abc\",\n            \"RootSize\": 0,\n            \"MemSize\": 0,\n            \"Cpu\": 0,\n            \"DiskSize\": 0,\n            \"MultiDisks\": [\n                {\n                    \"DiskType\": \"abc\",\n                    \"Volume\": 0,\n                    \"Count\": 0\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"InstanceType\": \"abc\",\n            \"LocalDiskNum\": 1,\n            \"DiskNum\": 1\n        }\n    ],\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
+        "title": "增加当前集群的节点规格配置"
+      }
+    ],
     "AddUsersForUserManager": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUsersForUserManager\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-dadda\",\n    \"UserManagerUserList\": [\n        {\n            \"UserName\": \"test1\",\n            \"UserGroup\": \"test1\",\n            \"PassWord\": \"test1\",\n            \"ReMark\": \"test1\"\n        },\n        {\n            \"UserName\": \"test2\",\n            \"UserGroup\": \"test2\",\n            \"PassWord\": \"test2\",\n            \"ReMark\": \"test2\"\n        },\n        {\n            \"UserName\": \"test3\",\n            \"UserGroup\": \"test3\",\n            \"PassWord\": \"test3\",\n            \"ReMark\": \"test3\"\n        },\n        {\n            \"UserName\": \"test4\",\n            \"UserGroup\": \"test4\",\n            \"PassWord\": \"test4\",\n            \"ReMark\": \"test4\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedUserList\": [],\n        \"RequestId\": \"782d3570-9f82-4bff-974a-17cf684fdfe9\",\n        \"SuccessUserList\": [\n            \"test1\",\n            \"test2\",\n            \"test3\",\n            \"test4\"\n        ]\n    }\n}",
         "title": "test"
+      }
+    ],
+    "AttachDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxxx\",\n    \"DiskIds\": [\n        \"disk-xxx1\",\n        \"disk-xxx2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\"\n    }\n}",
+        "title": "云盘挂载"
       }
     ],
     "CreateCloudInstance": [
@@ -54,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAutoScaleStrategy\n<公共请求参数>\n\n{\n    \"GroupId\": 6,\n    \"InstanceId\": \"emr-5urm\",\n    \"StrategyId\": 413,\n    \"StrategyType\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"586a9cb9-adcb-4f74-9e6f-01482ac4cffe\"\n    }\n}",
         "title": "删除弹性扩缩容规则示例"
+      }
+    ],
+    "DeleteNodeResourceConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNodeResourceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ResourceType\": \"abc\",\n    \"ResourceConfigId\": 1,\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c2ff02e-5f38-494a-8d2d-68a7dec6efcd\"\n    }\n}",
+        "title": "输入输出例子"
       }
     ],
     "DeleteUserManagerUserList": [
@@ -224,6 +248,22 @@
         "title": "DescribeKyuubiQueryInfo"
       }
     ],
+    "DescribeNodeDataDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeDataDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxxxxxx\",\n    \"CvmInstanceIds\": [\n        \"ins-xxxxxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CBSList\": [\n            {\n                \"DeleteWithInstance\": true,\n                \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n                \"DiskId\": \"disk-xxxxxxxx\",\n                \"DiskName\": \"未命名_1\",\n                \"DiskSize\": 100,\n                \"DiskState\": \"ATTACHED\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskUsage\": \"DATA_DISK\",\n                \"DeadlineTime\": \"\"\n            },\n            {\n                \"DeleteWithInstance\": true,\n                \"DiskChargeType\": \"POSTPAID_BY_HOUR\",\n                \"DiskId\": \"disk-xxxxxxxx\",\n                \"DiskName\": \"未命名_0\",\n                \"DiskSize\": 50,\n                \"DiskState\": \"ATTACHED\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskUsage\": \"SYSTEM_DISK\",\n                \"DeadlineTime\": \"\"\n            }\n        ],\n        \"RequestId\": \"9dd6b795-aed5-4a09-b493-f460c1f1a0c5\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询节点数据盘信息"
+      }
+    ],
+    "DescribeNodeResourceConfigFast": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeResourceConfigFast\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-laoxdz4n\",\n    \"ResourceType\": \"ALL\",\n    \"PayMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ResourceData\": [\n                    {\n                        \"CreateTime\": \"2024-03-25 17:52:23\",\n                        \"IsDefault\": \"DEFAULT\",\n                        \"MaxResourceNum\": 0,\n                        \"Resource\": {\n                            \"Cpu\": 4,\n                            \"DiskNum\": 1,\n                            \"DiskSize\": 200,\n                            \"DiskType\": \"CLOUD_SSD\",\n                            \"InstanceType\": \"SA2.LARGE8\",\n                            \"LocalDiskNum\": 0,\n                            \"MemSize\": 8192,\n                            \"MultiDisks\": [],\n                            \"RootSize\": 70,\n                            \"Spec\": \"CVM.SA2\",\n                            \"StorageType\": 4,\n                            \"Tags\": null\n                        },\n                        \"ResourceConfigId\": 20332,\n                        \"UpdateTime\": \"2024-03-25 17:52:23\"\n                    }\n                ],\n                \"ResourceType\": \"CORE\"\n            },\n            {\n                \"ResourceData\": [\n                    {\n                        \"CreateTime\": \"2024-04-08 15:13:04\",\n                        \"IsDefault\": \"DEFAULT\",\n                        \"MaxResourceNum\": 0,\n                        \"Resource\": {\n                            \"Cpu\": 8,\n                            \"DiskNum\": 1,\n                            \"DiskSize\": 200,\n                            \"DiskType\": \"CLOUD_HSSD\",\n                            \"InstanceType\": \"S6.2XLARGE32\",\n                            \"LocalDiskNum\": 0,\n                            \"MemSize\": 32768,\n                            \"MultiDisks\": [],\n                            \"RootSize\": 70,\n                            \"Spec\": \"CVM.S6\",\n                            \"StorageType\": 6,\n                            \"Tags\": null\n                        },\n                        \"ResourceConfigId\": 20560,\n                        \"UpdateTime\": \"2024-04-08 15:13:04\"\n                    }\n                ],\n                \"ResourceType\": \"TASK\"\n            },\n            {\n                \"ResourceData\": [\n                    {\n                        \"CreateTime\": \"2024-04-08 22:04:42\",\n                        \"IsDefault\": \"DEFAULT\",\n                        \"MaxResourceNum\": 0,\n                        \"Resource\": {\n                            \"Cpu\": 4,\n                            \"DiskNum\": 1,\n                            \"DiskSize\": 200,\n                            \"DiskType\": \"CLOUD_HSSD\",\n                            \"InstanceType\": \"SA2.LARGE8\",\n                            \"LocalDiskNum\": 0,\n                            \"MemSize\": 8192,\n                            \"MultiDisks\": [],\n                            \"RootSize\": 70,\n                            \"Spec\": \"CVM.SA2\",\n                            \"StorageType\": 6,\n                            \"Tags\": null\n                        },\n                        \"ResourceConfigId\": 20563,\n                        \"UpdateTime\": \"2024-04-08 22:04:42\"\n                    }\n                ],\n                \"ResourceType\": \"ROUTER\"\n            }\n        ],\n        \"RequestId\": \"638ef562-a954-4963-ae70-b54c2dd2bf94\"\n    }\n}",
+        "title": "DescribeNodeResourceConfigFast示例"
+      }
+    ],
     "DescribeResourceSchedule": [
       {
         "document": "",
@@ -384,12 +424,28 @@
         "title": "修改YARN资源调度的全局配置"
       }
     ],
+    "ModifyInstanceBasic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceBasic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ClusterName\": \"abc\",\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ModifyInstanceBasic"
+      }
+    ],
     "ModifyPodNum": [
       {
         "document": "调整容器集群Pod数量",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPodNum\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-ikoyp9nw\",\n    \"ServiceGroup\": 44,\n    \"ServiceType\": 93,\n    \"PodNum\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"emr-ikoyp9nw\",\n        \"FlowId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "调整容器集群Pod数量"
+      }
+    ],
+    "ModifyResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResource\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-3ap64zl6\",\n    \"PayMode\": \"0\",\n    \"NewCpu\": \"8\",\n    \"NewMem\": \"32\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ef0a7e45-2f47-4379-bbc8-9594f51cb95f\"\n    }\n}",
+        "title": "变配实例"
       }
     ],
     "ModifyResourcePools": [
@@ -464,6 +520,14 @@
         "title": "yarn资源调度-重置"
       }
     ],
+    "ResizeDataDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDataDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-xxxx\",\n    \"CvmInstanceIds\": [\n        \"ins-xx\"\n    ],\n    \"DiskIds\": [\n        \"disk-xxx1\",\n        \"disk-xxx2\"\n    ],\n    \"DiskSize\": 500\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"95eb9120-0883-407c-aa5a-43b4e2c250d1\"\n    }\n}",
+        "title": "云盘扩容"
+      }
+    ],
     "RunJobFlow": [
       {
         "document": "",
@@ -486,6 +550,14 @@
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOutInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-5n3l5c83\",\n    \"TimeUnit\": \"s\",\n    \"CoreCount\": \"1\",\n    \"PayMode\": \"0\",\n    \"TimeSpan\": \"3600\"\n}",
         "output": "{\n    \"Response\": {\n        \"BillId\": \"\",\n        \"ClientToken\": \"\",\n        \"DealNames\": [\n            \"20200309357833\",\n            \"20200309357834\",\n            \"20200309357835\",\n            \"20200309357836\"\n        ],\n        \"FlowId\": 0,\n        \"InstanceId\": \"emr-5n3l5c83\",\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
         "title": "集群扩容"
+      }
+    ],
+    "SetNodeResourceConfigDefault": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodeResourceConfigDefault\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ResourceType\": \"abc\",\n    \"ResourceConfigId\": 1,\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c2ff02e-5f38-494a-8d2d-68a7dec6efcd\"\n    }\n}",
+        "title": "输出输入参数"
       }
     ],
     "StartStopServiceOrMonitor": [

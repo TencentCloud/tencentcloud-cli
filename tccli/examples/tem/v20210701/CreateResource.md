@@ -10,8 +10,7 @@ tccli tem CreateResource --cli-unfold-argument  \
     --ResourceType CFS \
     --ResourceId resource-xxxxxx \
     --SourceChannel 0 \
-    --ResourceFrom test \
-    --ResourceConfig abc
+    --ResourceFrom existing
 ```
 
 Output: 

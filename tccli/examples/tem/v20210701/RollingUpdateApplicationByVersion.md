@@ -10,7 +10,7 @@ tccli tem RollingUpdateApplicationByVersion --cli-unfold-argument  \
     --EnvironmentId en-xxxxxx \
     --DeployVersion v1 \
     --PackageName test.jar \
-    --From test \
+    --From IntelliJ \
     --DeployStrategyType 0 \
     --TotalBatchCount 0 \
     --BatchInterval 0 \

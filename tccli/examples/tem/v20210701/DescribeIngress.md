@@ -18,23 +18,23 @@ Output:
     "Response": {
         "Result": {
             "EnvironmentId": "en-xxxxxx",
-            "AddressIPVersion": "abc",
-            "IngressName": "abc-xxx",
+            "AddressIPVersion": "IPV4",
+            "IngressName": "ingress-name-xxx",
             "Rules": [
                 {
-                    "Host": "abc",
+                    "Host": "11.xx.xx.xx",
                     "Http": {
                         "Paths": [
                             {
-                                "Path": "abc",
+                                "Path": "/path",
                                 "Backend": {
-                                    "ServiceName": "abc",
-                                    "ServicePort": 0
+                                    "ServiceName": "svc-name-xxx",
+                                    "ServicePort": 8080
                                 }
                             }
                         ]
                     },
-                    "Protocol": "abc"
+                    "Protocol": "TCP"
                 }
             ],
             "ClbId": "lb-xxx",
@@ -42,20 +42,20 @@ Output:
             "Tls": [
                 {
                     "Hosts": [
-                        "abc"
+                        "11.xx.xx.xx"
                     ],
-                    "SecretName": "abc",
-                    "CertificateId": "abc"
+                    "SecretName": "secret-name-xxx",
+                    "CertificateId": "certId-xxx"
                 }
             ],
-            "ClusterId": "abc",
-            "Vip": "abc",
-            "CreateTime": "abc",
+            "ClusterId": "cls-xxxxxx",
+            "Vip": "11.xx.xx.xx",
+            "CreateTime": "2024-12-04 20:46:29",
             "Mixed": true,
-            "RewriteType": "abc",
-            "Domain": "abc"
+            "RewriteType": "AUTO",
+            "Domain": ""
         },
-        "RequestId": "abc-xxx-xxx"
+        "RequestId": "abc-xxx-xxx-xxx"
     }
 }
 ```

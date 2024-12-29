@@ -45,8 +45,8 @@ Output:
         "RequestId": "e2a51350-8c9f-11eb-bc0f-c9f5ab88d057",
         "Advices": "",
         "Comments": "",
-        "Schema": "test",
-        "Tables": "[{\"TableName\": \"t1\", \"TableSchema\": \"test\", \"TableDDL\": \"CREATE TABLE `test` (\n  `id` varchar(36) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC\"}]",
+        "Schema": "demo_db",
+        "Tables": "[{\"TableName\": \"t1\", \"TableSchema\": \"demo_db\", \"TableDDL\": \"CREATE TABLE `test` (\n  `id` varchar(36) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC\"}]",
         "SqlText": "select * from t1 where id in ( ? )",
         "SqlPlan": "",
         "Cost": ""

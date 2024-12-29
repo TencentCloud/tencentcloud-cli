@@ -10,7 +10,7 @@ tccli live ModifyCasterInputInfo --cli-unfold-argument  \
     --InputInfo.InputIndex 1 \
     --InputInfo.InputType 0 \
     --InputInfo.InputUrl rtmp://caster.push.example.com/live/example \
-    --CasterId 10
+    --CasterId 63501
 ```
 
 Output: 

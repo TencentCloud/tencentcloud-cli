@@ -14,7 +14,7 @@ tccli live ModifyLiveCallbackTemplate --cli-unfold-argument  \
     --TemplateId 1000 \
     --PornCensorshipNotifyUrl http://www.yourdomain.com/api/notify?action=porn \
     --CallbackKey adasdas23432423 \
-    --Description test
+    --Description 回调模板
 ```
 
 Output: 

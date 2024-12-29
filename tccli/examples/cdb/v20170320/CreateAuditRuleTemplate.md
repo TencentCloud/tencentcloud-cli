@@ -11,7 +11,7 @@ tccli cdb CreateAuditRuleTemplate --cli-unfold-argument  \
     --RuleFilters.0.Value 100.122.76.176 10.0.0.9 \
     --RuleFilters.1.Type user \
     --RuleFilters.1.Compare EQS \
-    --RuleFilters.1.Value wy test \
+    --RuleFilters.1.Value wy \
     --RuleFilters.2.Type sqlType \
     --RuleFilters.2.Compare EQS \
     --RuleFilters.2.Value Update Delete \

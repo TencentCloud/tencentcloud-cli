@@ -19143,6 +19143,56 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价税合计(大写)前符号",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCnMark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "价税合计(小写)前字样",
+          "example": "无",
+          "member": "string",
+          "name": "TotalMark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计金额前字样",
+          "example": "无",
+          "member": "string",
+          "name": "PretaxAmountMark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计税额前字样",
+          "example": "无",
+          "member": "string",
+          "name": "TaxMark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有公司印章（0：没有，1：有）",
+          "example": "1",
+          "member": "int64",
+          "name": "CompanySealMark",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

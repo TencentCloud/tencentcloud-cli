@@ -466,3 +466,56 @@ Output:
 }
 ```
 
+**Example 10: 获取合同组动态签署人补充链接, 并且预设平台子客企业OpenId**
+
+获取动态签署人补充链接，创建合同组时未指定具体签署人，可获取链接后推送给指定的人进行补充
+注： 
+`1.参数GenerateType需传值为RECIPIENT` 
+`2.需指定对应的合同组FlowGroupUrlInfo签署方角色编号（即RecipientId）` 
+`3.通过参数OrganizationOpenId 指定要以那个平台子企业身份进行补充` 
+
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --FlowGroupId yDCVAUUckpwa592pUxoLjOlRVS9Zgusf \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.FlowId yDCVAUUckpwa59rcUxoLjOlEctyesTzj \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.0.RecipientId yDCVAUUckpwa59riUxoLjOluu9cf6B3s \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.FlowId yDCVAUUckpwa592dUxoLjOl8StWKvg9K \
+    --FlowGroupUrlInfo.FlowGroupApproverInfos.1.RecipientId yDCVAUUckpwa59r6UxoLjOlCC6ZHk7rL \
+    --GenerateType RECIPIENT \
+    --OrganizationOpenId dian_zi_qian \
+    --Agent.ProxyOrganizationOpenId 1000***8062 \
+    --Agent.ProxyOperator.OpenId yDR3L****eTdCt5TVx \
+    --Agent.AppId 125***319
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ErrorMessages": [],
+        "RequestId": "s1735197391369377331",
+        "SignUrlInfos": [
+            {
+                "ApproverType": "",
+                "CustomUserId": "",
+                "Deadline": 0,
+                "FlowGroupId": "",
+                "FlowId": "yDCVAUUckpwa592pUxoLjOlRVS9Zgusf",
+                "IdCardNumber": "",
+                "Mobile": "",
+                "Name": "",
+                "OpenId": "",
+                "OrganizationName": "",
+                "SignId": "",
+                "SignOrder": 0,
+                "SignQrcodeUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d80c4246fb57d8a524d6bfe32b7434ba9f1xxxxxx1dc3aff08c747a658df2039a153bf6256b31d292522a4231",
+                "SignUrl": "https://essurl.cn/pazAUBJ4vi"
+            }
+        ]
+    }
+}
+```
+

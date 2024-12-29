@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli tse ModifyGovernanceNamespaces --cli-unfold-argument  \
-    --InstanceId abc \
-    --GovernanceNamespaces.0.Name abc \
-    --GovernanceNamespaces.0.Comment abc \
-    --GovernanceNamespaces.0.UserIds abc \
-    --GovernanceNamespaces.0.GroupIds abc \
-    --GovernanceNamespaces.0.RemoveUserIds abc \
-    --GovernanceNamespaces.0.RemoveGroupIds abc
+    --InstanceId ins-id \
+    --GovernanceNamespaces.0.Name name \
+    --GovernanceNamespaces.0.Comment coment \
+    --GovernanceNamespaces.0.UserIds 101 \
+    --GovernanceNamespaces.0.GroupIds groupa \
+    --GovernanceNamespaces.0.RemoveUserIds 101 \
+    --GovernanceNamespaces.0.RemoveGroupIds groupa
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

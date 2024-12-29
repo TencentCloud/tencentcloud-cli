@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli tsf ReleaseConfig --cli-unfold-argument  \
-    --ConfigId dcfg-zvw6kxa8 \
-    --GroupId group-nalqbgvq
+    --ConfigId dcfg-vzk36owv \
+    --GroupId group-9yn684ev \
+    --ReleaseDesc This is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3",
+        "RequestId": "10320d7c-65ed-4ddd-bf21-6f33b23fed73",
         "Result": true
     }
 }

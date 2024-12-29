@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli tse ModifyConfigFiles --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId ins-id \
     --ConfigFile.Id 1 \
-    --ConfigFile.Name abc \
-    --ConfigFile.Namespace abc \
-    --ConfigFile.Group abc \
-    --ConfigFile.Content abc \
-    --ConfigFile.Format abc \
-    --ConfigFile.Comment abc \
-    --ConfigFile.Status abc \
-    --ConfigFile.Tags.0.Key abc \
-    --ConfigFile.Tags.0.Value abc \
-    --ConfigFile.CreateTime abc \
-    --ConfigFile.CreateBy abc \
-    --ConfigFile.ModifyTime abc \
-    --ConfigFile.ModifyBy abc \
-    --ConfigFile.ReleaseTime abc \
-    --ConfigFile.ReleaseBy abc
+    --ConfigFile.Name name \
+    --ConfigFile.Namespace namespace \
+    --ConfigFile.Group group \
+    --ConfigFile.Content content \
+    --ConfigFile.Format yaml \
+    --ConfigFile.Comment comment \
+    --ConfigFile.Status status \
+    --ConfigFile.Tags.0.Key key \
+    --ConfigFile.Tags.0.Value value \
+    --ConfigFile.CreateTime 2024-10-08 10:00:00 \
+    --ConfigFile.CreateBy user \
+    --ConfigFile.ModifyTime 2024-10-08 10:00:00 \
+    --ConfigFile.ModifyBy user \
+    --ConfigFile.ReleaseTime 2024-10-08 10:00:00 \
+    --ConfigFile.ReleaseBy user
 ```
 
 Output: 
@@ -30,7 +30,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

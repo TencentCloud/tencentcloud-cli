@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tse DescribeConfigFileReleaseHistories --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId ins-id \
     --Namespace Polaris \
     --Group group-test-jayhjxu \
     --Name config-file-test \
@@ -106,10 +106,10 @@ Input:
 
 ```
 tccli tse DescribeConfigFileReleaseHistories --cli-unfold-argument  \
-    --InstanceId abc \
-    --Namespace abc \
-    --Group abc \
-    --Name abc \
+    --InstanceId ins-id \
+    --Namespace namespace \
+    --Group group \
+    --Name name \
     --EndId 3 \
     --Limit 1 \
     --Offset 1

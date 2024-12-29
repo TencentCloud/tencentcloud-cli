@@ -8338,42 +8338,47 @@
         {
           "disabled": false,
           "document": "同步规则名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "目标命名空间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DestNamespace",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "是否覆盖",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "Override",
           "required": true,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
           "document": "同步过滤条件",
-          "example": "",
+          "example": "无",
           "member": "ReplicationFilter",
           "name": "Filters",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步删除事件",
+          "example": "无",
+          "member": "bool",
+          "name": "Deletion",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -19,7 +19,7 @@
     "DestroySession": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySession\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySession\n<公共请求参数>\n\n{\n    \"UserId\": \"639d069e-a13a-437a-a10b-64a33ecb8e78\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
         "title": "DestroySession示例"
       }
@@ -35,8 +35,8 @@
     "StartPublishStreamWithURL": [
       {
         "document": "开始云端推流到指定URL示例",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStreamWithURL\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"PublishStreamURL\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStreamWithURL\n<公共请求参数>\n\n{\n    \"UserId\": \"user_id\",\n    \"PublishStreamURL\": \"rtmp://1.1.1.1:1935/live/my_live\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"25b6f399-bd7c-4e5e-99a3-9a6f4b11e1b7\"\n    }\n}",
         "title": "开始云端推流到指定URL示例"
       }
     ],

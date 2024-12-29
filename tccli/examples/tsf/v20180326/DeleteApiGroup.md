@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf DeleteApiGroup --cli-unfold-argument  \
-    --GroupId grp-5yk7oor1
+    --GroupId grp-glt0lr13
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e05507e42d5970cd2e25ed5267a",
+        "RequestId": "444e5ead-5dd2-4df5-bfc6-fce580cb0a31",
         "Result": true
     }
 }

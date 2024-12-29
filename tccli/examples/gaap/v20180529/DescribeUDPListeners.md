@@ -17,12 +17,12 @@ Output:
         "TotalCount": 1,
         "ListenerSet": [
             {
-                "RecvContext": "123",
+                "RecvContext": "recv_contenxt",
                 "RealServerType": "IP",
                 "CheckPort": 4000,
                 "ListenerId": "listener-pbsgn7ej",
                 "ContextType": "TEXT",
-                "ListenerName": "test",
+                "ListenerName": "listener-name",
                 "Port": 2000,
                 "BindStatus": 1,
                 "FailoverSwitch": 0,
@@ -43,7 +43,7 @@ Output:
                 ],
                 "SessionPersist": 1,
                 "ConnectTimeout": 2,
-                "SendContext": "123",
+                "SendContext": "send_context",
                 "HealthCheck": 1,
                 "HealthyThreshold": 1,
                 "DelayLoop": 1,

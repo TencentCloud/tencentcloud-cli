@@ -35,8 +35,8 @@
     "BindApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=BindApiGroup\n&GroupGatewayList.0.GatewayDeployGroupId=group-sdy268\n&GroupGatewayList.0.GroupId=grp-s2gf2a8\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindApiGroup\n<公共请求参数>\n\n{\n    \"GroupGatewayList\": [\n        {\n            \"GatewayDeployGroupId\": \"group-yo99lney\",\n            \"GroupId\": \"grp-djvzrdih\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5714c887-aa81-4347-864c-2ea5cb078d63\",\n        \"Result\": true\n    }\n}",
         "title": "网关与API分组批量绑定"
       }
     ],
@@ -67,24 +67,24 @@
     "CreateAllGatewayApiAsync": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateAllGatewayApiAsync\n&GroupId=grp-5yk7oor1\n&MicroserviceId=ms-2vz549vp\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAllGatewayApiAsync\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-notmqbpe\",\n    \"MicroserviceId\": \"ms-y5w8n5e9\",\n    \"NamespaceId\": \"namespace-v3gw3lna\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2471e0f2-59f2-4bc0-bc2b-4cbe457247b9\",\n        \"Result\": true\n    }\n}",
         "title": "一键导入微服务的网关分组API"
       }
     ],
     "CreateApiGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"zuul_test_group\",\n    \"GroupContext\": \"%2Fuser\",\n    \"AuthType\": \"none\",\n    \"Description\": \"test\",\n    \"NamespaceNameKey\": \"TSF-NamespaceName\",\n    \"ServiceNameKey\": \"TSF-ServiceName\",\n    \"NamespaceNameKeyPosition\": \"path\",\n    \"ServiceNameKeyPosition\": \"path\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": \"grp-57at58po\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"grp_user\",\n    \"GroupContext\": \"/grp_user\",\n    \"AuthType\": \"none\",\n    \"Description\": \"This is desc\",\n    \"GroupType\": \"ms\",\n    \"GatewayInstanceId\": \"gw-ins-szesmg28\",\n    \"NamespaceNameKey\": \"TSF-NamespaceName\",\n    \"ServiceNameKey\": \"TSF-ServiceName\",\n    \"NamespaceNameKeyPosition\": \"path\",\n    \"ServiceNameKeyPosition\": \"path\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"156db4f2-9d4e-48bc-87eb-539a46919107\",\n        \"Result\": \"grp-rzn41l1w\"\n    }\n}",
         "title": "创建API分组"
       }
     ],
     "CreateApiRateLimitRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateApiRateLimitRule\n&ApiId=api-uk1098lc1\n&MaxQps=100\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApiRateLimitRule\n<公共请求参数>\n\n{\n    \"ApiId\": \"api-8c7538te\",\n    \"UsableStatus\": \"enabled\",\n    \"MaxQps\": 10000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af8bda56-e2f3-440f-a05c-25d63bdc397e\",\n        \"Result\": true\n    }\n}",
         "title": "创建API限流规则"
       }
     ],
@@ -115,24 +115,24 @@
     "CreateConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateConfig\n&ApplicationId=application-gyq2xry5\n&ConfigName=test_openapi_config\n&ConfigVersion=v1.0\n&ConfigValue=api.invok.limit: 5000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8007ea57-6d26-43db-aa75-ad72cb3669ca\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfig\n<公共请求参数>\n\n{\n    \"ConfigName\": \"config_app\",\n    \"ConfigVersion\": \"v1\",\n    \"ConfigVersionDesc\": \"This is desc\",\n    \"ConfigValue\": \"config: enabled\",\n    \"ApplicationId\": \"application-5yr26r9a\",\n    \"ConfigType\": \"application\",\n    \"EncodeWithBase64\": true,\n    \"ProgramIdList\": [\n        \"program-6a79x94v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa979523-5509-4073-89b8-65c2bf86ff9a\",\n        \"Result\": true\n    }\n}",
         "title": "创建配置项"
       }
     ],
     "CreateConfigTemplate": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateConfigTemplate\n&ConfigTemplateName=配置1\n&ConfigTemplateDesc=11111111111\n&ConfigTemplateType=Ribbon\n&ConfigTemplateValue=#请求处理超时时间\nribbon.ReadTimeout: 5000\n#请求连接超时时间\nribbon.ConnectTimeout: 2000\n#同一实例最大重试次数，不包括首次调用\nribbon.MaxAutoRetries: 0\n#重试其他实例的最大重试次数，不包括首次所选的server\nribbon.MaxAutoRetriesNextServer: 1\n#是否对所有操作请求都进行重试\nribbon.OkToRetryOnAllOperations: false\n\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"841f10d8-24e7-471b-ad8a-b401d9dcbe70\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigTemplate\n<公共请求参数>\n\n{\n    \"ConfigTemplateName\": \"config_temp_app\",\n    \"ConfigTemplateDesc\": \"This is desc\",\n    \"ConfigTemplateType\": \"Ribbon\",\n    \"ConfigTemplateValue\": \"#请求处理超时时间\\\\nribbon.ReadTimeout: 5000\\\\n#请求连接超时时间\\\\nribbon.ConnectTimeout: 2000\\\\n#同一实例最大重试次数，不包括首次调用\\\\nribbon.MaxAutoRetries: 0\\\\n#重试其他实例的最大重试次数，不包括首次所选的server\\\\nribbon.MaxAutoRetriesNextServer: 1\\\\n#是否对所有操作请求都进行重试\\\\nribbon.OkToRetryOnAllOperations: false\\\\n\",\n    \"ProgramIdList\": [\n        \"program-6a79x94v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"829c771a-2e0f-4858-8d5a-3f63ddf2f739\",\n        \"Result\": true\n    }\n}",
         "title": "配置模板创建"
       }
     ],
     "CreateConfigTemplateWithDetailResp": [
       {
         "document": "创建配置模板",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigTemplateWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigTemplateName\": \"abc\",\n    \"ConfigTemplateDesc\": \"abc\",\n    \"ConfigTemplateType\": \"abc\",\n    \"ConfigTemplateValue\": \"abc\",\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigTemplateId\": \"abc\",\n            \"ConfigTemplateName\": \"abc\",\n            \"ConfigTemplateDesc\": \"abc\",\n            \"ConfigTemplateType\": \"abc\",\n            \"ConfigTemplateValue\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\"\n        },\n        \"RequestId\": \"xxxxxxxxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigTemplateWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigTemplateName\": \"config_temp\",\n    \"ConfigTemplateDesc\": \"This is desc\",\n    \"ConfigTemplateType\": \"Ribbon\",\n    \"ConfigTemplateValue\": \"#请求处理超时时间\\\\\\\\nribbon.ReadTimeout: 5000\\\\\\\\n#请求连接超时时间\\\\\\\\nribbon.ConnectTimeout: 2000\\\\\\\\n#同一实例最大重试次数，不包括首次调用\\\\\\\\nribbon.MaxAutoRetries: 0\\\\\\\\n#重试其他实例的最大重试次数，不包括首次所选的server\\\\\\\\nribbon.MaxAutoRetriesNextServer: 1\\\\\\\\n#是否对所有操作请求都进行重试\\\\\\\\nribbon.OkToRetryOnAllOperations: false\\\\\\\\n\",\n    \"ProgramIdList\": [\n        \"program-6a79x94v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d940d10-9545-4481-bbc2-eb0d6016f069\",\n        \"Result\": {\n            \"ConfigTemplateDesc\": \"This is desc\",\n            \"ConfigTemplateId\": \"dcfg_temp-ymw5o65v\",\n            \"ConfigTemplateName\": \"config_temp\",\n            \"ConfigTemplateType\": \"Ribbon\",\n            \"ConfigTemplateValue\": \"#请求处理超时时间\\\\\\\\nribbon.ReadTimeout: 5000\\\\\\\\n#请求连接超时时间\\\\\\\\nribbon.ConnectTimeout: 2000\\\\\\\\n#同一实例最大重试次数，不包括首次调用\\\\\\\\nribbon.MaxAutoRetries: 0\\\\\\\\n#重试其他实例的最大重试次数，不包括首次所选的server\\\\\\\\nribbon.MaxAutoRetriesNextServer: 1\\\\\\\\n#是否对所有操作请求都进行重试\\\\\\\\nribbon.OkToRetryOnAllOperations: false\\\\\\\\n\",\n            \"CreateTime\": null,\n            \"UpdateTime\": null\n        }\n    }\n}",
         "title": "创建配置模板"
       }
     ],
@@ -155,8 +155,8 @@
     "CreateFileConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateFileConfig\n&ApplicationId=application-dapbkdgy\n&ConfigName=war-config\n&ConfigVersion=1\n&ConfigFileName=update\n&ConfigFileCode=utf-8\n&ConfigPostCmd=/usr/bin/bash\n&ConfigFileValue=workdir\n&ConfigFilePath=/root\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3063d6c8-9801-4ed0-b306-be14b89f6133\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileConfig\n<公共请求参数>\n\n{\n    \"ConfigName\": \"config_app\",\n    \"ConfigVersion\": \"v1\",\n    \"ConfigVersionDesc\": \"This is desc\",\n    \"ConfigFileName\": \"conf.txt\",\n    \"ConfigFileValue\": \"config=enabled\",\n    \"ConfigFileCode\": \"utf-8\",\n    \"ApplicationId\": \"application-5yr26r9a\",\n    \"ConfigFilePath\": \"/root\",\n    \"ConfigPostCmd\": \"sh start.sh\",\n    \"EncodeWithBase64\": true,\n    \"ProgramIdList\": [\n        \"program-6a79x94v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"880b83c3-1018-4922-ab11-1822d5d5981d\",\n        \"Result\": true\n    }\n}",
         "title": "创建文件配置项"
       }
     ],
@@ -171,8 +171,8 @@
     "CreateGatewayApi": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateGatewayApi\n&GroupId=grp-5yk7oor1\n&ApiList.0.NamespaceId=ns-do1n280j\n&ApiList.0.MicroserviceId=ms-sf26d1gf1\n&ApiList.0.Path=/user/find\n&ApiList.0.Method=POST\n&ApiList.0.PathMapping=/user/find\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGatewayApi\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-djvzrdih\",\n    \"ApiList\": [\n        {\n            \"NamespaceId\": \"namespace-external\",\n            \"MicroserviceId\": \"ms-external\",\n            \"Path\": \"/echo_user\",\n            \"Method\": \"GET\",\n            \"PathMapping\": \"/echo_user\",\n            \"Host\": \"http://www.qq.com\",\n            \"Description\": \"This is desc\"\n        }\n    ],\n    \"ProgramIdList\": [\n        \"program-6a79x94v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e521be92-af1e-4d1c-bcd9-31bfe1ff0859\",\n        \"Result\": true\n    }\n}",
         "title": "批量导入API至api分组"
       }
     ],
@@ -203,8 +203,8 @@
     "CreateMicroservice": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreateMicroservice\r\n&NamespaceId=namespace-xxxxxxx\r\n&MicroserviceName=consumer-demo1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bb5b35d-cdad-45a0-96ce-bc48abe98cc7\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMicroservice\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-v3gw3lna\",\n    \"MicroserviceName\": \"provider-app\",\n    \"MicroserviceDesc\": \"This is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0c42921-ff15-4718-a296-20403124f81b\",\n        \"Result\": true\n    }\n}",
         "title": "创建微服务示例"
       }
     ],
@@ -235,8 +235,8 @@
     "CreatePathRewritesWithDetailResp": [
       {
         "document": "创建路径重写规则",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePathRewritesWithDetailResp\n<公共请求参数>\n\n{\n    \"PathRewrites\": [\n        {\n            \"GatewayGroupId\": \"abc\",\n            \"Regex\": \"abc\",\n            \"Replacement\": \"abc\",\n            \"Blocked\": \"abc\",\n            \"Order\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePathRewritesWithDetailResp\n<公共请求参数>\n\n{\n    \"PathRewrites\": [\n        {\n            \"GatewayGroupId\": \"group-ldap5yok\",\n            \"Regex\": \"/consumer\",\n            \"Replacement\": \"/provider\",\n            \"Blocked\": \"N\",\n            \"Order\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"29e9b18a-2886-4582-bc14-fdb56aa49c8c\",\n        \"Result\": [\n            \"rewrite-py5r7b6v\"\n        ]\n    }\n}",
         "title": "批量创建路径重写"
       }
     ],
@@ -251,8 +251,8 @@
     "CreatePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=CreatePublicConfig\n&ConfigName=testconfig\n&ConfigVersion=1.3\n&ConfigValue=tsf.inventory.password.encrypt2:%20ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo=)\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d600e1f-87c3-4aa6-afa5-a4f8330fa181\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePublicConfig\n<公共请求参数>\n\n{\n    \"ConfigName\": \"config_pub_app\",\n    \"ConfigVersion\": \"v1\",\n    \"ConfigVersionDesc\": \"This is desc\",\n    \"ConfigValue\": \"config: enabled\",\n    \"ConfigType\": \"public\",\n    \"EncodeWithBase64\": true,\n    \"ProgramIdList\": [\n        \"program-6a79x94v\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1563762-2470-42d0-a35f-6a03a05d2457\",\n        \"Result\": true\n    }\n}",
         "title": "创建公共配置项"
       }
     ],
@@ -315,8 +315,8 @@
     "DeleteApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApiGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-glt0lr13\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"444e5ead-5dd2-4df5-bfc6-fce580cb0a31\",\n        \"Result\": true\n    }\n}",
         "title": "删除Api分组"
       }
     ],
@@ -347,8 +347,8 @@
     "DeleteConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteConfig\n&ConfigId=dcfg-gvkgdjyo\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa19a76d-340f-4ed3-a8d7-b4c12a62ee3e\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-a7rl7w4v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b1ec0d59-5901-4265-9a4c-9c0489a2cbcd\",\n        \"Result\": true\n    }\n}",
         "title": "删除配置项"
       }
     ],
@@ -371,16 +371,16 @@
     "DeleteFileConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteFileConfig\r\n&ConfigId=dcfg-f-6yol6nyl\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36c611a9-86d4-4e15-9400-e779682c408e\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFileConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-f-aeonjd6y\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db1b2acf-5cd5-4249-9c20-c08a79948019\",\n        \"Result\": true\n    }\n}",
         "title": "删除文件配置项"
       }
     ],
     "DeleteGatewayApi": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteGatewayApi\r\n&GroupId=grp-5yk7oor1\r\n&ApiIdList.0=api-d5970cd2\r\n&ApiIdList.1=api-d5970cd3\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGatewayApi\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-notmqbpe\",\n    \"ApiList\": [\n        \"api-8c7538te\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d54416e7-d75b-4fdd-860b-612f465db1f4\",\n        \"Result\": true\n    }\n}",
         "title": "批量删除API"
       }
     ],
@@ -403,8 +403,8 @@
     "DeleteLane": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteLane\r\n&LaneId=lane-6ymrl42a\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLane\n<公共请求参数>\n\n{\n    \"LaneId\": \"lane-y9o6w958\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"40bb8670-043a-478c-b85f-157b1f552d56\",\n        \"Result\": true\n    }\n}",
         "title": "删除泳道"
       }
     ],
@@ -419,8 +419,8 @@
     "DeleteMicroservice": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteMicroservice\r\n&MicroserviceId=ms-xxxxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"97f5554f-8d66-4eac-802d-2f36dc2a7124\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMicroservice\n<公共请求参数>\n\n{\n    \"MicroserviceId\": \"ms-vzg9kzj3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea8639e6-a455-49f7-84f2-ae6d0a9b05b1\",\n        \"Result\": true\n    }\n}",
         "title": "删除微服务示例"
       }
     ],
@@ -435,8 +435,8 @@
     "DeletePathRewrites": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeletePathRewrites\n&PathRewriteIds.0=rewrite-l6ymbvgd\n&PathRewriteIds.1=rewrite-s7j2kkh39\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePathRewrites\n<公共请求参数>\n\n{\n    \"PathRewriteIds\": [\n        \"rewrite-qv3rrlnv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ded2dfb4-4eea-4eea-970c-ace085804bf3\",\n        \"Result\": true\n    }\n}",
         "title": "删除路径重写"
       }
     ],
@@ -451,8 +451,8 @@
     "DeletePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeletePublicConfig\n&ConfigId=dcfg-p-zvwgl6y8\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"839449d1-9ea3-45a8-94b9-4f9beecb8a45\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePublicConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-p-vzk36rov\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"32ea862f-ecbc-477a-9edd-0c8597f881f1\",\n        \"Result\": true\n    }\n}",
         "title": "删除公共配置项"
       }
     ],
@@ -491,8 +491,8 @@
     "DeleteUnitRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DeleteUnitRule\n&Id=rule-ins-afsfas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUnitRule\n<公共请求参数>\n\n{\n    \"Id\": \"unit-rl-cgd3l6jo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27dbfb99-0406-4279-8a3a-2f3523236d6c\",\n        \"Result\": true\n    }\n}",
         "title": "删除单元化规则"
       }
     ],
@@ -515,8 +515,8 @@
     "DescribeApiDetail": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeApiDetail\r\n&MicroserviceId=ms-2vzprpyp\r\n&Path=/facade/supplier/test\r\n&Method=POST\r\n&ApplicationId=application-gvkw2ejv\r\n&PkgVersion=jenkins-prod-supplier-1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8427f00-c974-47b1-9827-978cdb043b9d\",\n        \"Result\": {\n            \"Request\": [\n                {\n                    \"Name\": \"supplierId\",\n                    \"Type\": \"string\",\n                    \"Description\": \"supplierId\",\n                    \"Required\": true,\n                    \"In\": \"query\"\n                }\n            ],\n            \"Response\": [\n                {\n                    \"Name\": \"Res«Supplier»\",\n                    \"Type\": \"#/Definitions/Res«Supplier»\",\n                    \"Description\": \"OK\"\n                }\n            ],\n            \"Definitions\": [\n                {\n                    \"Name\": \"Supplier\",\n                    \"Properties\": [\n                        {\n                            \"Name\": \"abbrName\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"coordinatesSystem\",\n                            \"Type\": \"integer(int32)\"\n                        },\n                        {\n                            \"Name\": \"createTime\",\n                            \"Type\": \"string(date-time)\"\n                        },\n                        {\n                            \"Name\": \"id\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"invoiceLineNum\",\n                            \"Type\": \"integer(int32)\"\n                        },\n                        {\n                            \"Name\": \"invoiceMaxFee\",\n                            \"Type\": \"integer(int64)\"\n                        },\n                        {\n                            \"Name\": \"invoiceMinFee\",\n                            \"Type\": \"integer(int64)\"\n                        },\n                        {\n                            \"Name\": \"invoiceType\",\n                            \"Type\": \"integer(int32)\"\n                        },\n                        {\n                            \"Name\": \"isActive\",\n                            \"Type\": \"integer(int32)\"\n                        },\n                        {\n                            \"Name\": \"isTripEnable\",\n                            \"Type\": \"integer(int32)\"\n                        },\n                        {\n                            \"Name\": \"logo\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"name\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"priceRuleUrl\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"servicePhone\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"signKey\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"updateTime\",\n                            \"Type\": \"string(date-time)\"\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"Res«Supplier»\",\n                    \"Properties\": [\n                        {\n                            \"Name\": \"code\",\n                            \"Type\": \"integer(int32)\"\n                        },\n                        {\n                            \"Name\": \"data\",\n                            \"Type\": \"#/Definitions/Supplier\"\n                        },\n                        {\n                            \"Name\": \"errmsg\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Name\": \"success\",\n                            \"Type\": \"boolean\"\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApiDetail\n<公共请求参数>\n\n{\n    \"MicroserviceId\": \"ms-y5w8n5e9\",\n    \"Path\": \"/user-feign\",\n    \"Method\": \"GET\",\n    \"PkgVersion\": \"20210625192924\",\n    \"ApplicationId\": \"application-yn3zdj9v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93c8e28a-196e-46a3-b903-b74ddcf7ce26\",\n        \"Result\": {\n            \"CanRun\": true,\n            \"Definitions\": [\n                {\n                    \"Name\": \"\",\n                    \"Properties\": [\n                        {\n                            \"Description\": \"\",\n                            \"Name\": \"\",\n                            \"Type\": \"\"\n                        }\n                    ]\n                }\n            ],\n            \"Description\": \"feignMeshUser\",\n            \"Request\": [\n                {\n                    \"DefaultValue\": null,\n                    \"Description\": \"tagName\",\n                    \"In\": \"query\",\n                    \"Name\": \"tagName\",\n                    \"Required\": false,\n                    \"Type\": \"string\"\n                },\n                {\n                    \"DefaultValue\": null,\n                    \"Description\": \"tagValue\",\n                    \"In\": \"query\",\n                    \"Name\": \"tagValue\",\n                    \"Required\": false,\n                    \"Type\": \"string\"\n                }\n            ],\n            \"RequestContentType\": null,\n            \"Response\": [\n                {\n                    \"Description\": \"OK\",\n                    \"Name\": \"_RESPONSE\",\n                    \"Type\": \"string\"\n                }\n            ],\n            \"Status\": 1\n        }\n    }\n}",
         "title": "查询API详情"
       }
     ],
@@ -627,32 +627,32 @@
     "DescribeConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeConfig\r\n&ConfigId=dcfg-qabr26yl\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2e68ea83-3799-4fb0-ba9b-ab8be2488d98\",\n        \"Result\": {\n            \"ConfigId\": \"dcfg-qabr26yl\",\n            \"ConfigName\": \"test_pay_center\",\n            \"ConfigVersion\": \"0.0.9\",\n            \"ConfigVersionDesc\": \"默认100元\",\n            \"ConfigValue\": \"facade:\\r\\n  white-list:\\r\\n       - 10.3.1.34\\r\\n       - 10.3.1.32\\r\\n       - 212.64.13.188\\r\\n       - 172.16.0.192\\r\\norder:\\r\\n  amount:\\r\\n    min: 1\\r\\n    wxScoreMin: 1\\r\\n    wxScoreMax: 20000 \\r\\n    enterpriseAmount: 10000 \\r\\n    refundAmountMax: 1000000             \",\n            \"CreationTime\": \"2019-05-28 20:23:35\",\n            \"LastUpdateTime\": null,\n            \"ConfigVersionCount\": null,\n            \"ApplicationId\": \"application-6ym9pbag\",\n            \"ApplicationName\": \"test_pay_center\",\n            \"DeleteFlag\": false,\n            \"ConfigType\": null\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-vzk36owv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60bd18bd-50bb-4e4c-af76-8f1c938b103a\",\n        \"Result\": {\n            \"ApplicationId\": \"application-5yr26r9a\",\n            \"ApplicationName\": \"amp-consumer\",\n            \"ConfigId\": \"dcfg-vzk36owv\",\n            \"ConfigName\": \"config_app\",\n            \"ConfigType\": \"application\",\n            \"ConfigValue\": \"config: enabled\",\n            \"ConfigVersion\": \"v1\",\n            \"ConfigVersionCount\": 1,\n            \"ConfigVersionDesc\": \"This is desc\",\n            \"CreationTime\": \"2024-12-24 18:04:02\",\n            \"DeleteFlag\": true,\n            \"LastUpdateTime\": \"2024-12-24 18:04:02\"\n        }\n    }\n}",
         "title": "查询配置"
       }
     ],
     "DescribeConfigReleaseLogs": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeConfigReleaseLogs\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd8be98a-c557-43ef-bece-069f014bb2dd\",\n        \"Result\": {\n            \"TotalCount\": 3,\n            \"Content\": [\n                {\n                    \"ConfigReleaseLogId\": \"dcfgrl-6ymq4b5v\",\n                    \"ConfigId\": \"dcfg-6a79x94v\",\n                    \"ConfigName\": \"[配置项已被删除]\",\n                    \"ConfigVersion\": \"[配置项已被删除]\",\n                    \"GroupId\": \"group-mae5orra\",\n                    \"GroupName\": \"[部署组已被删除]\",\n                    \"NamespaceId\": null,\n                    \"NamespaceName\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ReleaseTime\": \"2019-05-28 09:41:40\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseStatus\": \"S\",\n                    \"LastConfigId\": null,\n                    \"LastConfigName\": null,\n                    \"LastConfigVersion\": null,\n                    \"RollbackFlag\": false\n                },\n                {\n                    \"ConfigReleaseLogId\": \"dcfgrl-ba228ppa\",\n                    \"ConfigId\": \"dcfg-6a79x94v\",\n                    \"ConfigName\": \"[配置项已被删除]\",\n                    \"ConfigVersion\": \"[配置项已被删除]\",\n                    \"GroupId\": \"group-mae5orra\",\n                    \"GroupName\": \"[部署组已被删除]\",\n                    \"NamespaceId\": null,\n                    \"NamespaceName\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ReleaseTime\": \"2019-05-28 09:36:52\",\n                    \"ReleaseDesc\": \"删除配置项\",\n                    \"ReleaseStatus\": \"DS\",\n                    \"LastConfigId\": \"dcfg-6a79x94v\",\n                    \"LastConfigName\": \"[配置项已被删除]\",\n                    \"LastConfigVersion\": \"[配置项已被删除]\",\n                    \"RollbackFlag\": false\n                },\n                {\n                    \"ConfigReleaseLogId\": \"dcfgrl-evjjbjlv\",\n                    \"ConfigId\": \"dcfg-6a79x94v\",\n                    \"ConfigName\": \"[配置项已被删除]\",\n                    \"ConfigVersion\": \"[配置项已被删除]\",\n                    \"GroupId\": \"group-mae5orra\",\n                    \"GroupName\": \"[部署组已被删除]\",\n                    \"NamespaceId\": null,\n                    \"NamespaceName\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ReleaseTime\": \"2019-05-28 09:30:55\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseStatus\": \"S\",\n                    \"LastConfigId\": null,\n                    \"LastConfigName\": null,\n                    \"LastConfigVersion\": null,\n                    \"RollbackFlag\": false\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigReleaseLogs\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-aln2284v\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"NamespaceId\": \"namespace-vj3z3zgy\",\n    \"ClusterId\": \"cluster-yne99jdy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"66410802-5243-4b39-8823-21843a2bf669\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ClusterId\": \"cluster-yne99jdy\",\n                    \"ClusterName\": \"cluster-app\",\n                    \"ConfigId\": \"dcfg-yo82mmra\",\n                    \"ConfigName\": \"app-config\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-yq75nn3a\",\n                    \"ConfigVersion\": \"v3\",\n                    \"GroupId\": \"group-aln2284v\",\n                    \"GroupName\": \"group-provider-1\",\n                    \"LastConfigId\": \"dcfg-yo82mmra\",\n                    \"LastConfigName\": \"config_app\",\n                    \"LastConfigVersion\": \"v1\",\n                    \"NamespaceId\": \"namespace-vw8oox6v\",\n                    \"NamespaceName\": \"cluster-jolyonzheng_default\",\n                    \"ReleaseDesc\": \"This is desc\",\n                    \"ReleaseStatus\": \"S\",\n                    \"ReleaseTime\": \"2024-12-24 15:57:15\",\n                    \"ReleasedConfigCenter\": \"SHARE\",\n                    \"RollbackFlag\": false\n                }\n            ],\n            \"TotalCount\": 6\n        }\n    }\n}",
         "title": "查询配置发布历史"
       }
     ],
     "DescribeConfigReleases": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeConfigReleases\r\n&ConfigId=dcfg-zvw6kxa8\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cee7c95-08aa-45fa-9a1c-7016b7b1fcbf\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": []\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigReleases\n<公共请求参数>\n\n{\n    \"ConfigName\": \"app-config\",\n    \"GroupId\": \"group-aln2284v\",\n    \"NamespaceId\": \"namespace-vw8oox6v\",\n    \"ClusterId\": \"cluster-yne99jdy\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ConfigId\": \"dcfg-yo82mmra\",\n    \"ApplicationId\": \"application-a7rwwz4v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16fa1e0b-d3e8-4b1f-b15f-e1d01966acb7\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ApplicationId\": \"application-a7rwwz4v\",\n                    \"ClusterId\": \"cluster-yne99jdy\",\n                    \"ClusterName\": \"cluster-app\",\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-yo82mmra\",\n                    \"ConfigName\": \"app-config\",\n                    \"ConfigReleaseId\": \"dcfgr-yxd366ov\",\n                    \"ConfigVersion\": \"v3\",\n                    \"GroupId\": \"group-aln2284v\",\n                    \"GroupName\": \"group-provider\",\n                    \"NamespaceId\": \"namespace-vw8oox6v\",\n                    \"NamespaceName\": \"cluster-app_default\",\n                    \"ReleaseDesc\": \"This is desc\",\n                    \"ReleaseTime\": \"2024-12-24 15:57:15\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询配置发布信息"
       }
     ],
     "DescribeConfigSummary": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeConfigSummary\n&Offset=0\n&Limit=20\n&SearchWord=driver\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b151339-278f-47ed-b5fe-a86273a203de\",\n        \"Result\": {\n            \"TotalCount\": 3,\n            \"Content\": [\n                {\n                    \"ConfigId\": null,\n                    \"ConfigName\": \"dev-driverapi-config\",\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionDesc\": null,\n                    \"ConfigValue\": null,\n                    \"CreationTime\": null,\n                    \"LastUpdateTime\": \"2019-04-16 12:38:45\",\n                    \"ConfigVersionCount\": 2,\n                    \"ApplicationId\": \"application-maegorqv\",\n                    \"ApplicationName\": \"gactravel_dev_driverapi\",\n                    \"DeleteFlag\": null,\n                    \"ConfigType\": null\n                },\n                {\n                    \"ConfigId\": null,\n                    \"ConfigName\": \"ruqi_travel_driverapi\",\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionDesc\": null,\n                    \"ConfigValue\": null,\n                    \"CreationTime\": null,\n                    \"LastUpdateTime\": \"2019-04-16 12:29:55\",\n                    \"ConfigVersionCount\": 3,\n                    \"ApplicationId\": \"application-ov6mxrka\",\n                    \"ApplicationName\": \"ruqi_travel_driverapi\",\n                    \"DeleteFlag\": null,\n                    \"ConfigType\": null\n                },\n                {\n                    \"ConfigId\": null,\n                    \"ConfigName\": \"test-driverapi-config\",\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionDesc\": null,\n                    \"ConfigValue\": null,\n                    \"CreationTime\": null,\n                    \"LastUpdateTime\": \"2019-04-23 11:16:26\",\n                    \"ConfigVersionCount\": 2,\n                    \"ApplicationId\": \"application-jy9w6lka\",\n                    \"ApplicationName\": \"ruqitest_travel_driverapi\",\n                    \"DeleteFlag\": null,\n                    \"ConfigType\": null\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigSummary\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"application-5yr26r9a\",\n    \"SearchWord\": \"config_app\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OrderBy\": \"creation_time\",\n    \"OrderType\": 1,\n    \"ConfigTagList\": [\n        \"config_app-application-5yr26r9a\"\n    ],\n    \"DisableProgramAuthCheck\": true,\n    \"ConfigIdList\": [\n        \"dcfg-vzk36owv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e8d31d3-e16a-4070-9248-cce94db7fae5\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ApplicationId\": \"application-5yr26r9a\",\n                    \"ApplicationName\": \"amp-consumer\",\n                    \"ConfigId\": \"dcfg-vzk36owv\",\n                    \"ConfigName\": \"config_app\",\n                    \"ConfigType\": null,\n                    \"ConfigValue\": null,\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionCount\": 1,\n                    \"ConfigVersionDesc\": null,\n                    \"CreationTime\": null,\n                    \"DeleteFlag\": null,\n                    \"LastUpdateTime\": \"2024-12-24 18:04:02\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询配置汇总列表"
       }
     ],
@@ -723,16 +723,16 @@
     "DescribeDeliveryConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDeliveryConfig\r\n&ConfigId=dddd\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e64dc152-b874-4b91-9301-e9b290f1ffbb\",\n        \"Result\": true\n    }\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDeliveryConfig\n&ConfigId=config-kl29sh7n\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00b0009f-80ad-41fd-8bb8-f430d12f3911\",\n        \"Result\": {\n            \"CollectPath\": [\n                \"\"\n            ],\n            \"ConfigId\": \"send-data-to-kafka-nalj8bgy\",\n            \"ConfigName\": \"rtest222\",\n            \"CustomRule\": null,\n            \"EnableAuth\": false,\n            \"EnableGlobalLineRule\": false,\n            \"KafkaAddress\": null,\n            \"KafkaInfos\": [\n                {\n                    \"CustomRule\": \"\",\n                    \"LineRule\": \"\",\n                    \"Path\": [\n                        \"/test/1.log\"\n                    ],\n                    \"Topic\": \"test\"\n                }\n            ],\n            \"KafkaVIp\": \"127.0.1:9200\",\n            \"KafkaVPort\": null,\n            \"LineRule\": \"default\",\n            \"Password\": null,\n            \"Topic\": \"\",\n            \"Username\": null\n        }\n    }\n}",
         "title": "获取单个投递项配置"
       }
     ],
     "DescribeDeliveryConfigByGroupId": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDeliveryConfigByGroupId\r\n&GroupId=dddd\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigId\": \"abc\",\n            \"ConfigName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDeliveryConfigByGroupId\n&GroupId=group-ab958z6y\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigId\": \"apm-busi-log-cfg-ab958z6y\",\n            \"ConfigName\": \"log-demo\"\n        },\n        \"RequestId\": \"96561cf1-738a-47d6-943b-dec7ebbccabe\"\n    }\n}",
         "title": "用部署组id获取绑定信息"
       }
     ],
@@ -748,7 +748,7 @@
       {
         "document": "获取应用application-zxxxxxxx下程序包id为pkg-xxxxxxx的下载信息",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDownloadInfo\r\n&ApplicationId=application-zxxxxxxx\r\n&PkgId=pkg-xxxxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2e9885d9-xxxx-xxxx-xxxx-59621dd82a5b\",\n        \"Result\": {\n            \"Bucket\": \"tsf-gz-123456789\",\n            \"Region\": \"ap-guangzhou\",\n            \"Path\": \"/1111111111/application-xxxxxxxx/201905291xxxxx/travel-passenger-xxx-1.0-SNAPSHOT.jar\",\n            \"Credentials\": {\n                \"SessionToken\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpAppId\": \"123456789\",\n                \"TmpSecretId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpSecretKey\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"ExpiredTime\": 1559120000,\n                \"Domain\": \"cos.ap-guangzhou.myqcloud.com\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2e9885d9-xxxx-xxxx-xxxx-59621dd82a5b\",\n        \"Result\": {\n            \"Bucket\": \"tsf-gz-123456789\",\n            \"Region\": \"ap-guangzhou\",\n            \"Path\": \"/1111111111/application-xxxxxxxx/201905291xxxxx/travel-passenger-xxx-1.0-SNAPSHOT.jar\",\n            \"Credentials\": {\n                \"SessionToken\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpAppId\": \"apm-6a79x94v\",\n                \"TmpSecretId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"TmpSecretKey\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n                \"ExpiredTime\": 1559120000,\n                \"Domain\": \"cos.ap-guangzhou.myqcloud.com\"\n            }\n        }\n    }\n}",
         "title": "获取下载程序包信息"
       }
     ],
@@ -756,15 +756,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnabledUnitRule\n<公共请求参数>\n\n{\n    \"GatewayInstanceId\": \"gw-ins-szesmg28\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"480c7535-a008-4851-8a36-2d921893ea1e\",\n        \"Result\": {\n            \"CreatedTime\": \"2023-01-17 11:41:36\",\n            \"Description\": \"sssase\",\n            \"GatewayInstanceId\": \"gw-ins-szesmg28\",\n            \"Id\": \"unit-rl-2kdqa2my\",\n            \"Name\": \"test\",\n            \"Status\": \"enabled\",\n            \"UnitRuleItemList\": [\n                {\n                    \"CreatedTime\": \"2023-02-10 16:36:12\",\n                    \"Description\": \"gsshhshs\",\n                    \"DestNamespaceId\": \"namespace-vk5blxnv\",\n                    \"DestNamespaceName\": \"heihuli-global_default\",\n                    \"Id\": \"unit-item-04futugp\",\n                    \"ItemIndex\": 1,\n                    \"Name\": \"Rule1\",\n                    \"Priority\": 0,\n                    \"Relationship\": \"AND\",\n                    \"UnitRuleId\": \"unit-rl-2kdqa2my\",\n                    \"UnitRuleTagList\": [\n                        {\n                            \"Id\": \"unit-tag-s2v06uy5\",\n                            \"TagField\": \"test\",\n                            \"TagOperator\": \"IN\",\n                            \"TagType\": \"U\",\n                            \"TagValue\": \"test222\",\n                            \"UnitRuleItemId\": \"unit-item-04futugp\"\n                        }\n                    ],\n                    \"UpdatedTime\": \"2023-02-10 16:36:12\"\n                }\n            ],\n            \"UpdatedTime\": \"2023-02-23 17:42:23\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b378cebf-7ee2-4105-9ea0-58413051ea8e\",\n        \"Result\": {\n            \"CreatedTime\": \"2024-12-25 11:46:00\",\n            \"Description\": \"this is desc\",\n            \"GatewayInstanceId\": \"gw-ins-szesmg28\",\n            \"Id\": \"unit-rl-u0643wrg\",\n            \"Name\": \"rule_app\",\n            \"Status\": \"enabled\",\n            \"UnitRuleItemList\": [\n                {\n                    \"CreatedTime\": \"2024-12-25 11:46:00\",\n                    \"Description\": \"this is desc\",\n                    \"DestNamespaceId\": \"namespace-aem6w6nv\",\n                    \"DestNamespaceName\": \"heihuli-c_default\",\n                    \"Id\": \"unit-item-vnj5nf3m\",\n                    \"ItemIndex\": 1,\n                    \"Name\": \"rule_user\",\n                    \"Priority\": 0,\n                    \"Relationship\": \"AND\",\n                    \"UnitRuleId\": \"unit-rl-u0643wrg\",\n                    \"UnitRuleTagList\": [\n                        {\n                            \"Id\": \"unit-tag-8p9bpwh4\",\n                            \"TagField\": \"user\",\n                            \"TagOperator\": \"IN\",\n                            \"TagType\": \"U\",\n                            \"TagValue\": \"1\",\n                            \"UnitRuleItemId\": \"unit-item-vnj5nf3m\"\n                        }\n                    ],\n                    \"UpdatedTime\": \"2024-12-25 11:46:00\"\n                }\n            ],\n            \"UpdatedTime\": \"2024-12-25 11:50:01\"\n        }\n    }\n}",
         "title": "查询生效的单元化规则"
       }
     ],
     "DescribeFileConfigReleases": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeFileConfigReleases\r\n&ConfigId=dcfg-f-mae7g3v3\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e6cc542-bc3a-4030-a9c8-8742e070e5d0\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": []\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileConfigReleases\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-f-v3qqrkdy\",\n    \"ConfigName\": \"conf_app\",\n    \"GroupId\": \"group-vj3n6lzy\",\n    \"NamespaceId\": \"namespace-ygo3djma\",\n    \"ClusterId\": \"cls-f6bk82xc\",\n    \"ApplicationId\": \"application-vw8ljmwv\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620eba9-1673-4b3c-b375-591910b0fbc0\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ClusterId\": \"cls-f6bk82xc\",\n                    \"ClusterName\": \"cluster-container-jolyonzheng\",\n                    \"ConfigId\": \"dcfg-f-v3qqrkdy\",\n                    \"ConfigName\": \"conf_app\",\n                    \"ConfigReleaseId\": \"dcfgr-f-vkjjw7ny\",\n                    \"ConfigVersion\": \"2\",\n                    \"GroupId\": \"group-vj3n6lzy\",\n                    \"GroupName\": \"group-provider\",\n                    \"NamespaceId\": \"namespace-ygo3djma\",\n                    \"NamespaceName\": \"cluster-container-jolyonzheng_default\",\n                    \"ReleaseDesc\": \"This is desc\",\n                    \"ReleaseTime\": \"2024-11-28 20:49:57\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询文件配置项发布信息"
       }
     ],
@@ -859,8 +859,8 @@
     "DescribeGroupRelease": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeGroupRelease\n&GroupId=group-xxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c033faca-041a-4357-a96d-xxxxxxxx\",\n        \"Result\": {\n            \"PackageName\": \"consumer-demo-1.25.0-Greenwich-SNAPSHOT.jar\",\n            \"PackageVersion\": \"1.25.0\",\n            \"PackageId\": \"pkg-xxxxxx\",\n            \"PublicConfigReleaseList\": [\n                {\n                    \"ConfigReleaseId\": \"dcfgr-xxxxxx\",\n                    \"ConfigId\": \"dcfg-p-xxxxxx\",\n                    \"ConfigName\": \"n1\",\n                    \"ConfigVersion\": \"v1\",\n                    \"ReleaseTime\": \"2021-08-10 10:xx:xx\",\n                    \"GroupId\": \"group-6a79x94v\",\n                    \"GroupName\": \"group-mock\",\n                    \"NamespaceId\": \"namespace-xxxxxxxx\",\n                    \"NamespaceName\": \"default\",\n                    \"ClusterId\": \"cls-6a79x94v\",\n                    \"ClusterName\": \"cls-mock\",\n                    \"ReleaseDesc\": \"this is a desc\",\n                    \"ApplicationId\": \"application-6a79x94v\"\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupRelease\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-v6q747py\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81d75b7e-8bec-47fd-bc65-c99bb24f569e\",\n        \"Result\": {\n            \"ConfigReleaseList\": [\n                {\n                    \"ApplicationId\": \"application-vzoebl8a\",\n                    \"ClusterId\": \"cls-i3v5y09e\",\n                    \"ClusterName\": \"cls-app\",\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-a7rl7w4v\",\n                    \"ConfigName\": \"conf-app\",\n                    \"ConfigReleaseId\": \"dcfgr-ymw5965v\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": \"group-v6q747py\",\n                    \"GroupName\": \"cloud-provider\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:36:03\"\n                }\n            ],\n            \"FileConfigReleaseList\": [\n                {\n                    \"ClusterId\": \"cls-i3v5y09e\",\n                    \"ClusterName\": \"cls-app\",\n                    \"ConfigId\": \"dcfg-f-aeonjd6y\",\n                    \"ConfigName\": \"config_app\",\n                    \"ConfigReleaseId\": \"dcfgr-f-y84omela\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": \"group-v6q747py\",\n                    \"GroupName\": \"cloud-provider\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:37:50\"\n                }\n            ],\n            \"PackageId\": \"pkg-9198307d\",\n            \"PackageName\": \"msgw-zuul1-1.29.20-Hoxton-Higher-RELEASE.jar\",\n            \"PackageVersion\": \"20241223010307\",\n            \"PublicConfigReleaseList\": [\n                {\n                    \"ApplicationId\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-p-vzk36rov\",\n                    \"ConfigName\": \"config_pub_app\",\n                    \"ConfigReleaseId\": \"dcfgr-yne579dy\",\n                    \"ConfigVersion\": \"v1\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-12-24 18:36:54\"\n                }\n            ],\n            \"RepoName\": \"tsf_100011910000/app-provider\",\n            \"TagName\": \"20241212161801\"\n        }\n    }\n}",
         "title": "查询部署组发布的相关信息"
       }
     ],
@@ -987,16 +987,16 @@
     "DescribeMicroservices": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeMicroservices\n&Offset=0\n&Limit=1\n&NamespaceId=namespace-xxxxxxx\n&SearchWord=ms-xxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3eab4695-2d7e-4f78-a8d2-ea93bab87dfd\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"MicroserviceId\": \"ms-xxxxxxx\",\n                    \"NamespaceId\": \"namespace-xxxxxxx\",\n                    \"MicroserviceName\": \"consumer-demo\",\n                    \"MicroserviceDesc\": null,\n                    \"CreateTime\": 1553673084000,\n                    \"UpdateTime\": 1553673084000,\n                    \"RunInstanceCount\": 1\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMicroservices\n<公共请求参数>\n\n{\n    \"SearchWord\": \"consumer\",\n    \"NamespaceId\": \"namespace-v6b2exey\",\n    \"OrderBy\": \"create_time\",\n    \"OrderType\": 1,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Status\": [\n        \"single_online\"\n    ],\n    \"MicroserviceIdList\": [\n        \"ms-yqwbbpxl\"\n    ],\n    \"MicroserviceNameList\": [\n        \"consumer-demo\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31c18b1c-4e2e-4cb1-8b82-de820d178f12\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"CreateTime\": null,\n                    \"CriticalInstanceCount\": 0,\n                    \"MicroserviceDesc\": \"\",\n                    \"MicroserviceId\": \"ms-yqwbbpxl\",\n                    \"MicroserviceName\": \"consumer-demo\",\n                    \"NamespaceId\": \"namespace-v6b2exey\",\n                    \"RunInstanceCount\": 1,\n                    \"UpdateTime\": null\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "获取微服务列表"
       }
     ],
     "DescribeMsApiList": [
       {
         "document": "查询微服务API列表",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeMsApiList\r\n&Offset=0\r\n&Limit=20\r\n&MicroserviceId=ms-opy5kjy4\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"056cc966-4963-4506-ac4c-c4e7209a41e3\",\n        \"Result\": {\n            \"TotalCount\": 4,\n            \"Content\": [\n                {\n                    \"Path\": \"/echo-async-rest/{str}\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                },\n                {\n                    \"Path\": \"/echo-rest/{str}\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                },\n                {\n                    \"Path\": \"/user-feign\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                },\n                {\n                    \"Path\": \"/echo-feign/{str}\",\n                    \"Method\": \"GET\",\n                    \"Description\": \"(无)\"\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMsApiList\n<公共请求参数>\n\n{\n    \"MicroserviceId\": \"ms-y5w8n5e9\",\n    \"SearchWord\": \"echo-feign-url\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17a35767-819f-4683-bc3f-5430e6d4513f\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"Description\": \"\",\n                    \"Method\": \"GET\",\n                    \"Path\": \"/echo-feign-url/{str}\",\n                    \"Status\": 1\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询服务API列表"
       }
     ],
@@ -1035,8 +1035,8 @@
     "DescribePluginInstances": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePluginInstances\n&ScopeValue=grp-83wrlmav\n&Bound=true\n&Offset=0\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa153f44-22b6-4ea3-86ef-6e257d440f26\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"Id\": \"pgn-33pk2soi\",\n                    \"Name\": \"Tag认证插件\",\n                    \"Type\": \"Tag\",\n                    \"Description\": \"this is description\",\n                    \"CreatedTime\": \"2019-11-02 15:43:09\",\n                    \"UpdatedTime\": \"2019-11-02 17:30:51\",\n                    \"Status\": \"drafted\"\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginInstances\n<公共请求参数>\n\n{\n    \"ScopeValue\": \"grp-v446jrhc\",\n    \"Bound\": true,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Type\": \"QQMiniProgramLogin\",\n    \"SearchWord\": \"pgnName\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6b81196-b506-4758-a2ea-80ee688cf3b3\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"CreatedTime\": \"2023-11-28 16:11:28\",\n                    \"Description\": \"This is desc\",\n                    \"Id\": \"pgn-if8otbfp\",\n                    \"Name\": \"pgnName\",\n                    \"Status\": \"released\",\n                    \"Type\": \"QQMiniProgramLogin\",\n                    \"UpdatedTime\": \"2023-11-28 16:11:27\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询分组已绑定的插件列表"
       }
     ],
@@ -1059,32 +1059,32 @@
     "DescribePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePublicConfig\r\n&ConfigId=dcfg-p-5yrl4z2y\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0fd83b45-ec19-45ad-9874-dbda7c4e84e6\",\n        \"Result\": {\n            \"ConfigId\": \"dcfg-p-5yrl4z2y\",\n            \"ConfigName\": \"test-config\",\n            \"ConfigVersion\": \"1.3\",\n            \"ConfigVersionDesc\": \"\",\n            \"ConfigValue\": \"tsf.inventory.password.encrypt2: ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo=)\\r\\ntsf.inventory.password.encrypt1: ENC(3M7wGw2XtFc5Y+rxOgNBLrm2spUtgodjIxa+7F3XcAo=)\\r\\n\",\n            \"CreationTime\": \"2019-05-29 11:23:28\",\n            \"LastUpdateTime\": null,\n            \"ConfigVersionCount\": null,\n            \"ApplicationId\": null,\n            \"ApplicationName\": null,\n            \"DeleteFlag\": true,\n            \"ConfigType\": null\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-p-vkj5dnky\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a143a46-4f13-4c9e-b536-9225ab88a55e\",\n        \"Result\": {\n            \"ApplicationId\": null,\n            \"ApplicationName\": null,\n            \"ConfigId\": \"dcfg-p-vkj5dnky\",\n            \"ConfigName\": \"app-config\",\n            \"ConfigType\": null,\n            \"ConfigValue\": \"config: enabled\",\n            \"ConfigVersion\": \"v1\",\n            \"ConfigVersionCount\": null,\n            \"ConfigVersionDesc\": \"This is desc\",\n            \"CreationTime\": \"2024-12-20 19:16:10\",\n            \"DeleteFlag\": true,\n            \"LastUpdateTime\": null\n        }\n    }\n}",
         "title": "查询公共配置（单条）"
       }
     ],
     "DescribePublicConfigReleaseLogs": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePublicConfigReleaseLogs\r\n&Offset=0\r\n&Limit=20\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5748271c-3579-4f40-95b9-5f7b87f27388\",\n        \"Result\": {\n            \"TotalCount\": 0,\n            \"Content\": []\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicConfigReleaseLogs\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"namespace-vj3z3zgy\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"168aec4c-c3fe-4abd-911b-ca9634e137dd\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ConfigId\": \"dcfg-p-vzk36rov\",\n                    \"ConfigName\": \"[配置项已被删除]\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-yrm5jx9v\",\n                    \"ConfigVersion\": \"[配置项已被删除]\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"LastConfigId\": \"dcfg-p-vzk36rov\",\n                    \"LastConfigName\": \"[配置项已被删除]\",\n                    \"LastConfigVersion\": \"[配置项已被删除]\",\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": \"删除配置项\",\n                    \"ReleaseStatus\": \"DS\",\n                    \"ReleaseTime\": \"2024-12-24 20:30:37\",\n                    \"RollbackFlag\": false\n                },\n                {\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ConfigId\": \"dcfg-p-vzk36rov\",\n                    \"ConfigName\": \"[配置项已被删除]\",\n                    \"ConfigReleaseLogId\": \"dcfgrl-vw83po6v\",\n                    \"ConfigVersion\": \"[配置项已被删除]\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"LastConfigId\": null,\n                    \"LastConfigName\": null,\n                    \"LastConfigVersion\": null,\n                    \"NamespaceId\": \"namespace-vj3z3zgy\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseStatus\": \"S\",\n                    \"ReleaseTime\": \"2024-12-24 18:36:54\",\n                    \"RollbackFlag\": false\n                }\n            ],\n            \"TotalCount\": 2\n        }\n    }\n}",
         "title": "查询公共配置发布历史"
       }
     ],
     "DescribePublicConfigReleases": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePublicConfigReleases\r\n&Offset=0\r\n&Limit=20\r\n&ConfigName=ebs-demo\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69d073be-25d1-4ba8-b1eb-92cdc21ad4ea\",\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"Content\": [\n                {\n                    \"ConfigReleaseId\": \"dcfgr-gyqpwbpa\",\n                    \"ConfigId\": \"dcfg-p-gvkwzpjv\",\n                    \"ConfigName\": \"ebs-demo\",\n                    \"ConfigVersion\": \"3.0\",\n                    \"ReleaseTime\": \"2019-05-16 14:24:32\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"NamespaceId\": \"namespace-6yooxgdy\",\n                    \"NamespaceName\": \"ebs-demo\",\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ReleaseDesc\": null\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicConfigReleases\n<公共请求参数>\n\n{\n    \"ConfigName\": \"configName\",\n    \"NamespaceId\": \"namespace-yxoqm4ky\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ConfigId\": \"dcfg-p-v6kxdlpy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2435f045-963a-43da-a29b-581eb28069c0\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ApplicationId\": null,\n                    \"ClusterId\": null,\n                    \"ClusterName\": null,\n                    \"ConfigCenters\": [\n                        {\n                            \"ConfigCenterInstanceId\": null,\n                            \"ConfigCenterInstanceName\": null,\n                            \"ConfigType\": \"SHARE\",\n                            \"CurrentVersion\": null,\n                            \"RegionId\": null,\n                            \"TargetVersion\": null\n                        }\n                    ],\n                    \"ConfigId\": \"dcfg-p-v6kxdlpy\",\n                    \"ConfigName\": \"configName\",\n                    \"ConfigReleaseId\": \"dcfgr-y446nlby\",\n                    \"ConfigVersion\": \"1\",\n                    \"GroupId\": null,\n                    \"GroupName\": null,\n                    \"NamespaceId\": \"namespace-yxoqm4ky\",\n                    \"NamespaceName\": \"ns_default\",\n                    \"ReleaseDesc\": null,\n                    \"ReleaseTime\": \"2024-09-11 17:27:59\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询公共配置发布信息"
       }
     ],
     "DescribePublicConfigSummary": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribePublicConfigSummary\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc75758b-a2e3-4ded-a97a-c541817b4efe\",\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"Content\": [\n                {\n                    \"ConfigId\": null,\n                    \"ConfigName\": \"global\",\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionDesc\": null,\n                    \"ConfigValue\": null,\n                    \"CreationTime\": null,\n                    \"LastUpdateTime\": \"2019-05-24 20:39:12\",\n                    \"ConfigVersionCount\": 6,\n                    \"ApplicationId\": null,\n                    \"ApplicationName\": null,\n                    \"DeleteFlag\": null,\n                    \"ConfigType\": null\n                },\n                {\n                    \"ConfigId\": null,\n                    \"ConfigName\": \"tsf\",\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionDesc\": null,\n                    \"ConfigValue\": null,\n                    \"CreationTime\": null,\n                    \"LastUpdateTime\": \"2019-05-21 14:50:13\",\n                    \"ConfigVersionCount\": 4,\n                    \"ApplicationId\": null,\n                    \"ApplicationName\": null,\n                    \"DeleteFlag\": null,\n                    \"ConfigType\": null\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicConfigSummary\n<公共请求参数>\n\n{\n    \"SearchWord\": \"app\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OrderBy\": \"creation_time\",\n    \"OrderType\": 1,\n    \"ConfigTagList\": [\n        \"app-config\"\n    ],\n    \"DisableProgramAuthCheck\": true,\n    \"ConfigIdList\": [\n        \"dcfg-p-vkj5dnky\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d6da2add-172a-4a4d-8f30-8abca66e314f\",\n        \"Result\": {\n            \"Content\": [\n                {\n                    \"ApplicationId\": null,\n                    \"ApplicationName\": null,\n                    \"ConfigId\": \"dcfg-p-vkj5dnky\",\n                    \"ConfigName\": \"app-config\",\n                    \"ConfigType\": null,\n                    \"ConfigValue\": null,\n                    \"ConfigVersion\": null,\n                    \"ConfigVersionCount\": 1,\n                    \"ConfigVersionDesc\": null,\n                    \"CreationTime\": null,\n                    \"DeleteFlag\": null,\n                    \"LastUpdateTime\": \"2024-12-20 19:16:10\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
         "title": "查询公共配置汇总列表"
       }
     ],
@@ -1099,8 +1099,8 @@
     "DescribeReleasedConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeReleasedConfig\r\n&GroupId=group-qv382dy7\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f65737d-7707-43b7-b024-b8aff844ab8f\",\n        \"Result\": \"spring:\\n  servlet:\\n    multipart:\\n      max-file-size: 100MB\\n      max-request-size: 100MB\\n  jackson:\\n    serialization:\\n      write-dates-as-timestamps: true\\n  data:\\n    mongodb:\\n      uri: mongodb://commentuser:9xa#Lkp6sT@10.10.11.13:27017/comment\\n  dubbo:\\n    registry:\\n      protocol: dubbo\\n      address: tsfconsul://169.254.0.77:8000\\n  datasource:\\n    url: jdbc:mysql:replication://10.10.2.148:3306,10.10.2.148:3306,10.10.2.148:3306/rrmj2?roundRobinLoadBalance=true\\n    username: rrtvappuser\\n  \"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleasedConfig\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-jy9re3gy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ec73c01-a942-4c6c-9630-b25e53745a43\",\n        \"Result\": \"config: enabled\\n\"\n    }\n}",
         "title": "查询group发布的配置"
       }
     ],
@@ -1275,16 +1275,16 @@
     "DisableUnitRoute": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DisableUnitRoute\n&Id=gw-ins-l6ymbvgd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableUnitRoute\n<公共请求参数>\n\n{\n    \"Id\": \"gw-ins-szesmg28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e650435-e3b2-472d-af7a-5d5452db8bf3\",\n        \"Result\": true\n    }\n}",
         "title": "禁用单元化路由"
       }
     ],
     "DisableUnitRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DisableUnitRule\n&Id=gw-ins-afsfas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableUnitRule\n<公共请求参数>\n\n{\n    \"Id\": \"unit-rl-u0643wrg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a814838-8198-4943-9d97-04bc7ede98a9\",\n        \"Result\": true\n    }\n}",
         "title": "禁用单元化规则"
       }
     ],
@@ -1307,16 +1307,16 @@
     "DraftApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DraftApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DraftApiGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-d45mlt3o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5024ce23-0ac6-4ca3-9061-e1c4666c9c0d\",\n        \"Result\": true\n    }\n}",
         "title": "下线Api分组"
       }
     ],
     "EnableLaneRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=EnableLaneRule\r\n&RuleId=lane-r-fdjsklafjdsa\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableLaneRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"lane-r-yqg4kmbd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"265f638d-1998-494b-a794-1abe86d5eecc\",\n        \"Result\": true\n    }\n}",
         "title": "启用泳道规则"
       }
     ],
@@ -1339,16 +1339,16 @@
     "EnableUnitRoute": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=EnableUnitRoute\n&Id=gw-ins-l6ymbvgd\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableUnitRoute\n<公共请求参数>\n\n{\n    \"Id\": \"gw-ins-szesmg28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e81e7880-ad81-4e97-b3e2-01901f913e35\",\n        \"Result\": true\n    }\n}",
         "title": "启用单元化路由"
       }
     ],
     "EnableUnitRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=EnableUnitRule\n&Id=gw-ins-afsfas\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableUnitRule\n<公共请求参数>\n\n{\n    \"Id\": \"unit-rl-u0643wrg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc5fd463-2889-4c5c-b662-98a70a149b95\",\n        \"Result\": true\n    }\n}",
         "title": "创建单元化规则"
       }
     ],
@@ -1419,8 +1419,8 @@
     "ModifyLane": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyLane\r\n&LaneId=1\r\n&LaneName=1\r\n&Remark=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLane\n<公共请求参数>\n\n{\n    \"LaneId\": \"lane-ap62k7ol\",\n    \"LaneName\": \"rule_app\",\n    \"Remark\": \"This is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ad3847e-b102-4b45-8f90-bb64112cc27f\",\n        \"Result\": true\n    }\n}",
         "title": "更新泳道信息"
       }
     ],
@@ -1435,8 +1435,8 @@
     "ModifyMicroservice": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyMicroservice\r\n&MicroserviceId=ms-xxxxxxx\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4304b189-8663-453d-8863-1f238f6c4fb0\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMicroservice\n<公共请求参数>\n\n{\n    \"MicroserviceId\": \"ms-yd8dr5bx\",\n    \"MicroserviceDesc\": \"This is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"414386f9-834d-42ce-af55-532202e82031\",\n        \"Result\": true\n    }\n}",
         "title": "修改微服务详情"
       }
     ],
@@ -1451,8 +1451,8 @@
     "ModifyPathRewrite": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ModifyPathRewrite\n&PathRewriteId=rewrite-l6ymbvgd\n&Order=100\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPathRewrite\n<公共请求参数>\n\n{\n    \"PathRewriteId\": \"rewrite-ba22pbpa\",\n    \"Regex\": \"/consumer\",\n    \"Replacement\": \"/provider\",\n    \"Blocked\": \"N\",\n    \"Order\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6b194892-2c0a-41d3-93e1-e4b293b0fde8\",\n        \"Result\": true\n    }\n}",
         "title": "修改路径重写顺序"
       }
     ],
@@ -1531,24 +1531,24 @@
     "ReleaseApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseApiGroup\n&GroupId=grp-5yk7oor1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseApiGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-d45mlt3o\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6608391-3bb1-4c83-9ecb-9c935bea46c5\",\n        \"Result\": true\n    }\n}",
         "title": "发布Api分组"
       }
     ],
     "ReleaseConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ReleaseConfig\n&ConfigId=dcfg-zvw6kxa8\n&GroupId=group-nalqbgvq\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-vzk36owv\",\n    \"GroupId\": \"group-9yn684ev\",\n    \"ReleaseDesc\": \"This is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"10320d7c-65ed-4ddd-bf21-6f33b23fed73\",\n        \"Result\": true\n    }\n}",
         "title": "发布配置"
       }
     ],
     "ReleaseConfigWithDetailResp": [
       {
         "document": "将一个应用配置项发布到指定的应用部署组",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: actionName\n<公共请求参数>\n\n{\n    \"ConfigId\": \"configId-xxxxxxx\",\n    \"GroupId\": \"gourp-xxxxxx\",\n    \"ReleaseDesc\": \"demo config realse\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigReleaseId\": \"dcfgr-xxxxxx\",\n            \"ConfigId\": \"null\",\n            \"ConfigName\": \"null\",\n            \"ConfigVersion\": \"null\",\n            \"ReleaseTime\": \"null\",\n            \"GroupId\": \"null\",\n            \"GroupName\": \"null\",\n            \"NamespaceId\": \"null\",\n            \"NamespaceName\": \"null\",\n            \"ClusterId\": \"null\",\n            \"ClusterName\": \"null\",\n            \"ReleaseDesc\": \"null\",\n            \"ApplicationId\": \"null\"\n        },\n        \"RequestId\": \"36ccafba-c8ab-4d15-a4f1-4cfd2070d1d3\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseConfigWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-yo82mmra\",\n    \"GroupId\": \"group-aln2284v\",\n    \"ReleaseDesc\": \"This is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1892e2c1-9223-4979-bf25-1935c7eeed12\",\n        \"Result\": {\n            \"ApplicationId\": null,\n            \"ClusterId\": null,\n            \"ClusterName\": null,\n            \"ConfigCenters\": null,\n            \"ConfigId\": null,\n            \"ConfigName\": null,\n            \"ConfigReleaseId\": \"dcfgr-yxd366ov\",\n            \"ConfigVersion\": null,\n            \"GroupId\": null,\n            \"GroupName\": null,\n            \"NamespaceId\": null,\n            \"NamespaceName\": null,\n            \"ReleaseDesc\": null,\n            \"ReleaseTime\": null\n        }\n    }\n}",
         "title": "发布配置"
       }
     ],
@@ -1563,8 +1563,8 @@
     "ReleasePublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ReleasePublicConfig\n&ConfigId=dcfg-p-4y46okga\n&NamespaceId=namespace-ov6l235v\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a20177f-0949-4e38-8c71-d77159586c04\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleasePublicConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"dcfg-p-vkj5dnky\",\n    \"NamespaceId\": \"namespace-vw46q85y\",\n    \"ReleaseDesc\": \"This is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d60fcd87-e9d0-475c-89f5-1e76a035d404\",\n        \"Result\": true\n    }\n}",
         "title": "发布公共配置"
       }
     ],
@@ -1579,24 +1579,24 @@
     "RevocationConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=RevocationConfig\r\n&ConfigReleaseId=dcfgr-jy9no5ka\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64e5494d-ae5d-4114-abe7-c34d8719415e\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevocationConfig\n<公共请求参数>\n\n{\n    \"ConfigReleaseId\": \"dcfgr-y84o2xla\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f860eb0c-7a37-48e4-ba23-f246f5e93e41\",\n        \"Result\": true\n    }\n}",
         "title": "撤回已发布的配置"
       }
     ],
     "RevocationPublicConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=RevocationPublicConfig\r\n&ConfigReleaseId=dcfgr-oydloz5a\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14650572-a12a-4cb0-b2f9-2ff8ee0abae2\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevocationPublicConfig\n<公共请求参数>\n\n{\n    \"ConfigReleaseId\": \"dcfgr-a7rldd9v\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9385599f-d33a-4d36-a1c6-8ab6ac79d8df\",\n        \"Result\": true\n    }\n}",
         "title": "撤回已发布的公共配置"
       }
     ],
     "RevokeFileConfig": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=RevokeFileConfig\r\n&ConfigReleaseId=dcfgr-f-dapp63ao\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3641f31a-a1ac-4733-8430-efe9f4c9f1d7\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RevokeFileConfig\n<公共请求参数>\n\n{\n    \"ConfigReleaseId\": \"dcfgr-f-aeon99ry\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5788a08-6f8c-4c64-8c7c-89abf3f35c86\",\n        \"Result\": true\n    }\n}",
         "title": "撤回已发布的文件配置"
       }
     ],
@@ -1699,40 +1699,40 @@
     "UnbindApiGroup": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UnbindApiGroup\n&GroupGatewayList.0.GatewayDeployGroupId=group-qabo8xyl\n&GroupGatewayList.0.GroupId=grp-i54lzdrq\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindApiGroup\n<公共请求参数>\n\n{\n    \"GroupGatewayList\": [\n        {\n            \"GatewayDeployGroupId\": \"group-yo99lney\",\n            \"GroupId\": \"grp-notmqbpe\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e602a33a-7ddd-44ad-b55b-790afb4eac25\",\n        \"Result\": true\n    }\n}",
         "title": "API分组批量与网关解绑"
       }
     ],
     "UpdateApiGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"new-name\",\n    \"GroupId\": \"grp-grp-5yk7oor1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e05507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"grp-notmqbpe\",\n    \"GroupName\": \"grp_app\",\n    \"Description\": \"This is desc\",\n    \"AuthType\": \"none\",\n    \"GroupContext\": \"/grp_app\",\n    \"NamespaceNameKey\": \"TSF-NamespaceName\",\n    \"ServiceNameKey\": \"TSF-ServiceName\",\n    \"NamespaceNameKeyPosition\": \"path\",\n    \"ServiceNameKeyPosition\": \"path\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bcb4936-f3e5-4fdc-acd8-71fd041429e8\",\n        \"Result\": true\n    }\n}",
         "title": "更新Api分组"
       }
     ],
     "UpdateApiRateLimitRule": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiRateLimitRule\n&RuleId=rule-d5970cd2\n&UsableStatus=enabled\n&MaxQps=1000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": false\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiRateLimitRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"rule-8qlpdumd\",\n    \"UsableStatus\": \"enabled\",\n    \"MaxQps\": 2000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ebba8f15-b795-4bdc-b881-049e33ef3fcb\",\n        \"Result\": true\n    }\n}",
         "title": "更新API限流规则"
       }
     ],
     "UpdateApiRateLimitRules": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiRateLimitRules\n&ApiIds.0=api-d5970cd\n&ApiIds.1=api-d5971cd\n&UsableStatus=enabled\n&MaxQps=1000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiRateLimitRules\n<公共请求参数>\n\n{\n    \"ApiIds\": [\n        \"api-b1sd366q\"\n    ],\n    \"UsableStatus\": \"enabled\",\n    \"MaxQps\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"94bddd45-fd4c-4192-aea2-5eeb5b74d5b6\",\n        \"Result\": true\n    }\n}",
         "title": "批量更新API限流规则"
       }
     ],
     "UpdateApiTimeouts": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateApiTimeouts\n&ApiIds.0=api-d5970cd\n&ApiIds.1=api-d5971cd\n&UsableStatus=enabled\n&Timeout=10000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateApiTimeouts\n<公共请求参数>\n\n{\n    \"ApiIds\": [\n        \"api-tnvxy4ta\"\n    ],\n    \"UsableStatus\": \"enabled\",\n    \"Timeout\": 2000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30356074-f0ce-46a3-86fd-30da5fcf336e\",\n        \"Result\": true\n    }\n}",
         "title": "批量更新API超时"
       }
     ],
@@ -1747,8 +1747,8 @@
     "UpdateGatewayApi": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateGatewayApi\n&ApiId=api-5yk7oor1\n&Path=/user/find\n&Method=POST\n&PathMapping=/user/find\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d996e5507e42d5970cd2e25ed5267a\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGatewayApi\n<公共请求参数>\n\n{\n    \"ApiId\": \"api-zwua4plw\",\n    \"Path\": \"/echo-user\",\n    \"Method\": \"GET\",\n    \"PathMapping\": \"/echo-user\",\n    \"Host\": \"http://www.qq.com\",\n    \"Description\": \"this is desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c17753d4-a08b-4d4a-b8f5-a4160ff02c6d\",\n        \"Result\": true\n    }\n}",
         "title": "更改API"
       }
     ],

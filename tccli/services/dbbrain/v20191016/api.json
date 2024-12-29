@@ -362,9 +362,10 @@
         {
           "disabled": false,
           "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "129543473",
           "member": "int64",
           "name": "AsyncRequestId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -842,6 +843,7 @@
           "example": "健康巡检",
           "member": "string",
           "name": "DiagItem",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -851,6 +853,7 @@
           "example": "数据库快照",
           "member": "string",
           "name": "DiagType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -860,15 +863,17 @@
           "example": "5",
           "member": "int64",
           "name": "EventId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件详情。",
-          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"慢会话详情\"}},[{\"Layout\":\"vertical\",\"DataType\":\"table\",\"Data\":{\"Names\":[\"Schema\",{\"Type\":\"sql\",\"Name\":\"SqlText\"}],\"Data\":[{\"Schema\":\"demo\",\"SqlText\":\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\"}]}}]]",
+          "example": "[{\"DataType\":\"title\"}]",
           "member": "string",
           "name": "Explanation",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -878,15 +883,17 @@
           "example": "数据库健康检查，发现1个问题",
           "member": "string",
           "name": "Outline",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断出的问题。",
-          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"事务快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"Innodb状态快照\"}}]",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}}]",
           "member": "string",
           "name": "Problem",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -896,6 +903,7 @@
           "example": "4",
           "member": "int64",
           "name": "Severity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -905,15 +913,17 @@
           "example": "2019-11-06 12:05:40",
           "member": "datetime",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "建议。",
-          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"SQL优化\"}},[{\"DataType\":\"sqlAdvice\",\"Data\":{\"Advices\":[{\"TableName\":\"t1\",\"TableSchema\":\"demo\",\"Keys\":[{\"SqlText\":\"alter table `demo`.`t1` add index index_0(`c_time`);\"}]}],\"Comments\":[],\"Schema\":\"demo\",\"SqlPlan\":{\"Before\":[{\"Format\":\"Table\",\"Data\":{\"Names\":[\"id\",\"select_type\",\"table\",\"partitions\",\"type\",\"possible_keys\",\"key\",\"key_len\",\"ref\",\"rows\",\"filtered\",\"Extra\"],\"Data\":[[1,\"SIMPLE\",\"t2\",null,\"ALL\",null,null,null,null,161663,100,null],[1,\"SIMPLE\",\"t1\",null,\"ALL\",null,null,null,null,655801,3.33,null]]}}],\"After\":[{\"Format\":\"Table\",\"Data\":{\"Names\":[\"id\",\"select_type\",\"table\",\"partitions\",\"type\",\"possible_keys\",\"key\",\"key_len\",\"ref\",\"rows\",\"filtered\",\"Extra\"],\"Data\":[[1,\"SIMPLE\",\"t2\",null,\"ALL\",null,null,null,null,161663,100,null],[1,\"SIMPLE\",\"t1\",null,\"ALL\",\"index_0\",null,null,null,655801,33.33,null]]}}]},\"SqlText\":\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\",\"Tables\":[{\"TableName\":\"t1\",\"TableSchema\":\"demo\",\"TableDDL\":\"CREATE TABLE `t1` (\\n  `id` int NOT NULL AUTO_INCREMENT,\\n  `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\\n  `name` varchar(32) DEFAULT NULL,\\n  `age` int NOT NULL DEFAULT '0',\\n  PRIMARY KEY (`id`)\\n) ENGINE=InnoDB AUTO_INCREMENT=786393 DEFAULT CHARSET=utf8mb3\"},{\"TableName\":\"t2\",\"TableSchema\":\"demo\",\"TableDDL\":\"CREATE TABLE `t2` (\\n  `id` int NOT NULL AUTO_INCREMENT,\\n  `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\\n  `name` varchar(32) DEFAULT NULL,\\n  `age` int NOT NULL DEFAULT '0',\\n  PRIMARY KEY (`id`)\\n) ENGINE=InnoDB AUTO_INCREMENT=1507180 DEFAULT CHARSET=utf8mb3\"}],\"Cost\":{\"Before\":1.060202269597E10,\"After\":1.060202269597E10,\"Ratio\":0}}}]]",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"SQL优化\"}}]",
           "member": "string",
           "name": "Suggestions",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -923,6 +933,7 @@
           "example": "innodb_rows_read_per_qps",
           "member": "string",
           "name": "Metric",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -932,6 +943,7 @@
           "example": "2019-11-06 12:05:50",
           "member": "datetime",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -9,51 +9,51 @@ tccli tem ModifyApplicationService --cli-unfold-argument  \
     --ApplicationId app-xxxxxx \
     --SourceChannel 0 \
     --EnvironmentId en-xxxxxx \
-    --Service.Name abc \
-    --Service.Ports 0 \
-    --Service.Yaml abc \
-    --Service.ApplicationName abc \
-    --Service.VersionName abc \
-    --Service.ClusterIp abc \
-    --Service.ExternalIp abc \
-    --Service.Type abc \
-    --Service.SubnetId abc \
-    --Service.LoadBalanceId abc \
-    --Service.PortMappings.0.Port 0 \
-    --Service.PortMappings.0.TargetPort 0 \
-    --Service.PortMappings.0.Protocol abc \
-    --Service.PortMappings.0.ServiceName abc \
-    --Service.ServicePortMappingList.0.Type abc \
-    --Service.ServicePortMappingList.0.ServiceName abc \
-    --Service.ServicePortMappingList.0.ClusterIp abc \
-    --Service.ServicePortMappingList.0.ExternalIp abc \
-    --Service.ServicePortMappingList.0.SubnetId abc \
-    --Service.ServicePortMappingList.0.VpcId abc \
-    --Service.ServicePortMappingList.0.LoadBalanceId abc \
-    --Service.ServicePortMappingList.0.Yaml abc \
-    --Service.ServicePortMappingList.0.Ports 0 \
-    --Service.ServicePortMappingList.0.PortMappingItemList.0.Port 0 \
-    --Service.ServicePortMappingList.0.PortMappingItemList.0.TargetPort 0 \
-    --Service.ServicePortMappingList.0.PortMappingItemList.0.Protocol abc \
-    --Service.ServicePortMappingList.0.ExternalDomain abc \
+    --Service.Name svc-name-xxx \
+    --Service.Ports 8080 \
+    --Service.Yaml apiVersion: xxx \
+    --Service.ApplicationName app-name-xxx \
+    --Service.VersionName ver-name-xxx \
+    --Service.ClusterIp 11.xx.xx.xx \
+    --Service.ExternalIp 10.xx.xx.xx \
+    --Service.Type CLUSTER \
+    --Service.SubnetId subnet-xxx \
+    --Service.LoadBalanceId lb-xxxxxx \
+    --Service.PortMappings.0.Port 8080 \
+    --Service.PortMappings.0.TargetPort 8080 \
+    --Service.PortMappings.0.Protocol TCP \
+    --Service.PortMappings.0.ServiceName svc-name-xxx \
+    --Service.ServicePortMappingList.0.Type CLUSTER \
+    --Service.ServicePortMappingList.0.ServiceName svc-name-xxx \
+    --Service.ServicePortMappingList.0.ClusterIp 11.xx.xx.xx \
+    --Service.ServicePortMappingList.0.ExternalIp 10.xx.xx.xx \
+    --Service.ServicePortMappingList.0.SubnetId subnet-xxxxxx \
+    --Service.ServicePortMappingList.0.VpcId vpc-xxxxxx \
+    --Service.ServicePortMappingList.0.LoadBalanceId lb-xxxxxx \
+    --Service.ServicePortMappingList.0.Yaml apiVersion: xxx \
+    --Service.ServicePortMappingList.0.Ports 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.Port 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.TargetPort 8080 \
+    --Service.ServicePortMappingList.0.PortMappingItemList.0.Protocol TCP \
+    --Service.ServicePortMappingList.0.ExternalDomain ext.com.xxx \
     --Service.FlushAll True \
     --Service.EnableRegistryNextDeploy 0 \
-    --Service.ApplicationId abc \
+    --Service.ApplicationId app-xxxxxx \
     --Service.AllIpDone True \
-    --Service.ExternalDomain abc \
-    --Data.Type abc \
-    --Data.ServiceName abc \
-    --Data.ClusterIp abc \
-    --Data.ExternalIp abc \
-    --Data.SubnetId abc \
-    --Data.VpcId abc \
-    --Data.LoadBalanceId abc \
-    --Data.Yaml abc \
-    --Data.Ports 0 \
-    --Data.PortMappingItemList.0.Port 0 \
-    --Data.PortMappingItemList.0.TargetPort 0 \
-    --Data.PortMappingItemList.0.Protocol abc \
-    --Data.ExternalDomain abc
+    --Service.ExternalDomain ext.com.xxx \
+    --Data.Type CLUSTER \
+    --Data.ServiceName svc-name-xxx \
+    --Data.ClusterIp 11.xx.xx.xx \
+    --Data.ExternalIp 10.xx.xx.xx \
+    --Data.SubnetId subnet-xxxxxx \
+    --Data.VpcId vpc-xxxxxx \
+    --Data.LoadBalanceId lb-xxxxxx \
+    --Data.Yaml apiVersion: xxx \
+    --Data.Ports 8080 \
+    --Data.PortMappingItemList.0.Port 8080 \
+    --Data.PortMappingItemList.0.TargetPort 8080 \
+    --Data.PortMappingItemList.0.Protocol TCP \
+    --Data.ExternalDomain ext.com.xxx
 ```
 
 Output: 
@@ -61,7 +61,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xxx"
+        "RequestId": "asdc122-xxx-xxx-xxx"
     }
 }
 ```

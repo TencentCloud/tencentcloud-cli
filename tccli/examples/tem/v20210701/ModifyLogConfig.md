@@ -7,7 +7,7 @@ Input:
 ```
 tccli tem ModifyLogConfig --cli-unfold-argument  \
     --EnvironmentId en-xxxxxx \
-    --Name abc \
+    --Name name-xxx \
     --Data.LogsetId 7a126551-62d1-4e12-b426-84bd5b2fdbca \
     --Data.TopicId 6c69fdb7-5e4c-4e52-8437-32c2c729b85a \
     --Data.InputType container_stdout \

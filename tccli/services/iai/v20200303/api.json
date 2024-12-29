@@ -98,6 +98,13 @@
       "output": "DetectFaceAttributesResponse",
       "status": "online"
     },
+    "DetectFaceSimilarity": {
+      "document": "对两张图片中的人脸进行相似度比对，返回人脸相似度分数。\n\n若您需要判断 “此人是否是某人”，即验证某张图片中的人是否是已知身份的某人，如常见的人脸登录场景，建议使用[人脸验证](https://www.tencentcloud.com/document/product/1059/36972)或[人员验证](https://www.tencentcloud.com/document/product/1059/36971)接口。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
+      "input": "DetectFaceSimilarityRequest",
+      "name": "人脸相似度检测",
+      "output": "DetectFaceSimilarityResponse",
+      "status": "online"
+    },
     "DetectLiveFace": {
       "document": "用于对用户上传的静态图片进行人脸活体检测。与动态活体检测的区别是：静态活体检测中，用户不需要通过唇语或摇头眨眼等动作来识别。\n\n静态活体检测适用于手机自拍的场景，或对防攻击要求不高的场景。如果对活体检测有更高安全性要求，请使用[人脸核身·云智慧眼](https://cloud.tencent.com/product/faceid)产品。\n\n>     \n- 图片的宽高比请接近3：4，不符合宽高比的图片返回的分值不具备参考意义。本接口适用于类手机自拍场景，非类手机自拍照返回的分值不具备参考意义。\n\n>\n- 使用过程中建议正对摄像头，不要距离太远，使面部可以完整地显示在识别的框内，识别过程中不要移动设备或遮挡面部。不要选择光线过强或过弱的环境进行面部识别，识别时不要添加任何滤镜。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。",
       "input": "DetectLiveFaceRequest",
@@ -1716,6 +1723,79 @@
           "name": "FaceModelVersion",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectFaceSimilarityRequest": {
+      "document": "DetectFaceSimilarity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "A 图片 base64 数据。\n- base64 编码后大小不可超过5M。\n- jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n- 若图片中包含多张人脸，只选取其中置信度最高的人脸。\n- 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageA",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "B 图片 base64 数据。\n- base64 编码后大小不可超过5M。\n- jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n- 若图片中包含多张人脸，只选取其中置信度最高的人脸。\n- 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "A 图片的 Url。\n- 对应图片 base64 编码后大小不可超过5M。\n- jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n- A 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n- 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n- 非腾讯云存储的Url速度和稳定性可能受一定影响。\n- 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n- 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
+          "member": "string",
+          "name": "UrlA",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "B 图片的 Url 。\n- 对应图片 base64 编码后大小不可超过5M。\n- jpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n- B 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n- 图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n- 非腾讯云存储的Url速度和稳定性可能受一定影响。\n- 若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n- 支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
+          "member": "string",
+          "name": "UrlB",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片质量控制。 \n- 取值范围：\n0: 不进行控制； \n1: 较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多，在某一维度上存在轻微问题； \n默认 0。 \n\n- 若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "example": "0",
+          "member": "uint64",
+          "name": "QualityControl",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectFaceSimilarityResponse": {
+      "document": "DetectFaceSimilarity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "取值范围 [0.00, 100.00]。\n推荐相似度大于等于70时可判断为同一人，可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
+          "example": "0.999",
+          "member": "float",
+          "name": "Score",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {

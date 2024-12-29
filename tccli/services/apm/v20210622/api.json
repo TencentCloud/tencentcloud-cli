@@ -1,16 +1,16 @@
 {
   "actions": {
     "CreateApmInstance": {
-      "document": "业务购买APM实例，调用该接口创建",
+      "document": "业务购买 APM 业务系统，调用该接口创建",
       "input": "CreateApmInstanceRequest",
-      "name": "创建APM实例",
+      "name": "创建APM业务系统",
       "output": "CreateApmInstanceResponse",
       "status": "online"
     },
     "DescribeApmAgent": {
-      "document": "获取APM Agent信息",
+      "document": "获取 APM Agent信息",
       "input": "DescribeApmAgentRequest",
-      "name": "获取APM Agent信息",
+      "name": "获取 APM Agent信息",
       "output": "DescribeApmAgentResponse",
       "status": "online"
     },
@@ -50,9 +50,9 @@
       "status": "online"
     },
     "DescribeServiceOverview": {
-      "document": "服务概览数据拉取",
+      "document": "应用概览数据拉取",
       "input": "DescribeServiceOverviewRequest",
-      "name": "获取服务概览数据",
+      "name": "获取应用概览数据",
       "output": "DescribeServiceOverviewResponse",
       "status": "online"
     },
@@ -64,9 +64,9 @@
       "status": "online"
     },
     "ModifyApmInstance": {
-      "document": "修改APM实例接口",
+      "document": "修改APM业务系统接口",
       "input": "ModifyApmInstanceRequest",
-      "name": "修改APM实例",
+      "name": "修改APM业务系统",
       "output": "ModifyApmInstanceResponse",
       "status": "online"
     },
@@ -78,9 +78,9 @@
       "status": "online"
     },
     "TerminateApmInstance": {
-      "document": "apm销毁实例",
+      "document": "销毁 APM 业务系统",
       "input": "TerminateApmInstanceRequest",
-      "name": "销毁实例",
+      "name": "销毁业务系统",
       "output": "TerminateApmInstanceResponse",
       "status": "online"
     }
@@ -135,7 +135,7 @@
         {
           "disabled": false,
           "document": "Value值定义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "cloudmonitor",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -709,7 +709,7 @@
         {
           "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxxxx",
+          "example": "cls-acv12b",
           "member": "string",
           "name": "LogTopicID",
           "output_required": true,
@@ -739,7 +739,7 @@
         {
           "disabled": false,
           "document": "CLS日志集 | ES集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "cls-v1241nb",
           "member": "string",
           "name": "LogSet",
           "output_required": true,
@@ -829,7 +829,7 @@
         {
           "disabled": false,
           "document": "dashboard ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxxxx",
+          "example": "dashboard-vcav134",
           "member": "string",
           "name": "DashboardTopicID",
           "output_required": false,
@@ -916,7 +916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "业务系统名",
           "example": "云监控-测试",
           "member": "string",
           "name": "Name",
@@ -925,7 +925,7 @@
         },
         {
           "disabled": false,
-          "document": "实例描述信息",
+          "document": "业务系统描述信息",
           "example": "实例描述",
           "member": "string",
           "name": "Description",
@@ -944,7 +944,7 @@
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "[]",
+          "example": "[{ \t\t\"Key\": \"appid\", \t\t\"Value\": \"123123422\" \t}]",
           "member": "ApmTag",
           "name": "Tags",
           "required": false,
@@ -952,7 +952,7 @@
         },
         {
           "disabled": false,
-          "document": "实例上报额度值，默认赋值为0表示不限制上报额度",
+          "document": "业务系统上报额度值，默认赋值为0表示不限制上报额度",
           "example": "100000000",
           "member": "uint64",
           "name": "SpanDailyCounters",
@@ -961,7 +961,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的计费模式",
+          "document": "业务系统的计费模式",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -985,8 +985,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Lcmm7a3kl",
+          "document": "业务系统ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -1007,8 +1007,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "jYm6_leMg",
+          "document": "业务系统ID",
+          "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1178,7 +1178,7 @@
         {
           "disabled": false,
           "document": "应用配置项",
-          "example": "{\"InstanceKey\":\"apm-059oXBfTL\",\"ServiceName\":\"profile-service\",\"IgnoreOperationName\":\"\",\"IgnoreException\":\"\",\"ErrorCodeFilter\":\"\",\"EventEnable\":false,\"UrlConvergenceSwitch\":1,\"UrlConvergenceThreshold\":500,\"UrlConvergence\":\"RPCServer/market.MarketService2/(.*?)\",\"UrlExclude\":\"\",\"IsRelatedLog\":0,\"LogSource\":\"CLS\",\"LogSet\":\"\",\"LogTopicID\":\"\",\"SnapshotEnable\":true,\"SnapshotTimeout\":2000,\"AgentEnable\":true,\"InstrumentList\":[{\"Name\":\"dubbo\",\"Enable\":true},{\"Name\":\"googlehttpclient\",\"Enable\":true},{\"Name\":\"grpc\",\"Enable\":true},{\"Name\":\"httpclient3\",\"Enable\":true},{\"Name\":\"httpclient4\",\"Enable\":true},{\"Name\":\"hystrix\",\"Enable\":true},{\"Name\":\"lettuce\",\"Enable\":true},{\"Name\":\"mongodb\",\"Enable\":true},{\"Name\":\"mybatis\",\"Enable\":true},{\"Name\":\"mysql\",\"Enable\":true},{\"Name\":\"okhttp\",\"Enable\":true},{\"Name\":\"redis\",\"Enable\":true},{\"Name\":\"rxjava\",\"Enable\":true},{\"Name\":\"spring-webmvc\",\"Enable\":true},{\"Name\":\"tomcat\",\"Enable\":true}],\"TraceSquash\":true}",
+          "example": "无",
           "member": "ApmApplicationConfigView",
           "name": "ApmApplicationConfigView",
           "output_required": false,
@@ -1200,7 +1200,7 @@
         {
           "disabled": false,
           "document": "需要查询的指标名称，不可自定义输入，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
-          "example": "\"service_request_count\"、“service_duration”",
+          "example": "[\"request_count\"、“duration”]",
           "member": "string",
           "name": "Metrics",
           "required": true,
@@ -1227,7 +1227,7 @@
         {
           "disabled": false,
           "document": "要过滤的维度信息，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
-          "example": "{ \"Key\": \"service.name\", \"Value\": \"java-order-service\" }  { \"Key",
+          "example": "无",
           "member": "GeneralFilter",
           "name": "Filters",
           "required": true,
@@ -1236,7 +1236,7 @@
         {
           "disabled": false,
           "document": "聚合维度，不同视图有对应的指标维度，[详情请见。](https://cloud.tencent.com/document/product/248/101681)",
-          "example": "\"service.name\"、\"span.kind\"",
+          "example": "[\"service.name\"、\"span.kind\"]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -1272,7 +1272,7 @@
         {
           "disabled": false,
           "document": "对查询指标进行排序：\nKey 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)\nValue 填写排序方式：     \n- asc:对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
-          "example": "\"OrderBy\": { \t\"Key\": \"sql_duration_avg\",         \"Value\": \"desc\"",
+          "example": "{ \t\"Key\": \"duration\",         \"Value\": \"desc\"",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -1296,7 +1296,7 @@
         {
           "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{     \"Response\": {         \"Records\": [             {                 \"Tags\": [],                 \"MetricName\": \"sql_duration_avg\",                 \"MetricNameCN\": \"平均响应时间\",                 \"TimeSerial\": [                     1734407820,                     1734407880,                     1734407940,                     1734408000,                     1734408060,                     1734408120,                     1734408180,                     1734408240,                     1734408300,                     1734408360,                     1734408420,                     1734408480,                     1734408540,                     1734408600,                     1734408660,                     1734408720,                     1734408780,                     1734408840,                     1734408900,                     1734408960,                     1734409020,                     1734409080,                     1734409140,                     1734409200,                     1734409260,                     1734409320,                     1734409380,                     1734409440,                     1734409500,                     1734409560,                     1734409620,                     1734409680,                     1734409740,                     1734409800,                     1734409860,                     1734409920,                     1734409980,                     1734410040,                     1734410100,                     1734410160,                     1734410220,                     1734410280,                     1734410340,                     1734410400,                     1734410460,                     1734410520,                     1734410580,                     1734410640,                     1734410700,                     1734410760,                     1734410820,                     1734410880,                     1734410940,                     1734411000,                     1734411060,                     1734411120,                     1734411180,                     1734411240,                     1734411300,                     1734411360                 ],                 \"DataSerial\": [                     135728.648236258,                     0.4060175286658243,                     0.3906675029805307,                     118792.06594650316,                     0.4067952115687377,                     0.41769455288609775,                     0.41074237375891975,                     0.40921561817335866,                     0.41119494805273527,                     135649.09198159442,                     0.4107937310707512,                     0.41151921192748936,                     0.4117117637368341,                     0.4152493163439583,                     0.5001134962935645,                     0.41283469768714603,                     0.3979470199363206,                     0.4083188880940849,                     0.40551133267100636,                     0.40927287475939206,                     0.41014323602968256,                     0.4012277709628799,                     0.40407118324057745,                     0.40985120011494,                     0.4071479930279269,                     0.3866005448018421,                     0.40619437076582554,                     0.40142698225557255,                     0.40432155746295745,                     0.4120485754463827,                     0.40451016228819175,                     135425.90797938255,                     135542.49266812875,                     0.40168924095565,                     0.4070559973437187,                     0.3987184602563491,                     0.4076715755099571,                     0.4026033027713935,                     118990.898319586,                     0.405708522267682,                     0.404107562330523,                     0.40059895515109356,                     0.4049696567832813,                     0.40152292066215045,                     0.3943229870897469,                     0.39939697181964084,                     0.42871168611138843,                     0.39514465476451965,                     0.39055195114837243,                     0.39710768149694586,                     0.40585406731762813,                     0.41346395100750705,                     0.4089005831960684,                     0.4018122312399444,                     0.3928633017418557,                     0.41502474452429317,                     0.4065864888888889,                     0.4112395803749857,                     0.4158375517725035,                     null                 ]             }         ],         \"RequestId\": \"test-test-test\"     } }",
+          "example": "无",
           "member": "Line",
           "name": "Records",
           "output_required": true,
@@ -1336,7 +1336,7 @@
         {
           "disabled": false,
           "document": "排序",
-          "example": "{}",
+          "example": "{             \"Key\": \"startTime\",             \"Value\": \"desc\"         }",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -1353,8 +1353,8 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
-          "example": "52Dpv13GR",
+          "document": "业务系统ID",
+          "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1363,7 +1363,7 @@
         {
           "disabled": false,
           "document": "通用过滤参数",
-          "example": "{}",
+          "example": "{             \"Key\": \"service.name\",             \"Type\": \"=\",             \"Value\": \"java-order-service\"         }",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1399,17 +1399,17 @@
           "example": "200",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Span分页列表",
-          "example": "{}",
+          "example": "无",
           "member": "Span",
           "name": "Spans",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1463,8 +1463,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "52Dpv13GR",
+          "document": "业务系统ID",
+          "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1560,7 +1560,7 @@
         {
           "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Fields\":[{\"LastPeriodValue\":[{\"Key\":\"abc\",\"Value\":0}],\"CompareVal\":\"abc\",\"Unit\":\"s\",\"Value\":691.42,\"Key\":\"ab\",\"CompareVals\":[{\"Value\":\"v1\",\"Key\":\"k1\"},{\"Key\":\"k2\",\"Value\":\"v2\"}]}],\"Tags\":[{\"Value\":\"v1\",\"Key\":\"k1\"}]}]",
+          "example": "无",
           "member": "ApmMetricRecord",
           "name": "Records",
           "output_required": true,
@@ -1610,7 +1610,7 @@
         {
           "disabled": false,
           "document": "聚合维度",
-          "example": "无",
+          "example": "service.name",
           "member": "string",
           "name": "GroupBy",
           "required": true,
@@ -1627,8 +1627,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "52Dpv13GR",
+          "document": "业务系统ID",
+          "example": "apm-52Dpv13GR",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1682,7 +1682,7 @@
           "example": "无",
           "member": "ApmMetricRecord",
           "name": "Records",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1709,8 +1709,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "52Dpv13GR",
+          "document": "业务系统ID",
+          "example": "apm-52Dpv13GR",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -1719,7 +1719,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "1111",
+          "example": "1734415200",
           "member": "int64",
           "name": "EndTime",
           "required": false,
@@ -1737,7 +1737,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "1111",
+          "example": "1734400800",
           "member": "int64",
           "name": "StartTime",
           "required": false,
@@ -1940,8 +1940,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "6Dxp7Nd0B",
+          "document": "业务系统ID",
+          "example": "apm-6Dxp7Nd0B",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1949,7 +1949,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名",
+          "document": "业务系统名",
           "example": "云监控-测试",
           "member": "string",
           "name": "Name",
@@ -1967,8 +1967,8 @@
         },
         {
           "disabled": false,
-          "document": "实例详情",
-          "example": "无",
+          "document": "业务系统详情",
+          "example": "云监控-测试用的业务系统",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1994,7 +1994,7 @@
         },
         {
           "disabled": false,
-          "document": "实例上报额度",
+          "document": "业务系统上报额度",
           "example": "10000000",
           "member": "uint64",
           "name": "SpanDailyCounters",
@@ -2058,7 +2058,7 @@
         {
           "disabled": false,
           "document": "CLS日志主题ID | ES 索引名",
-          "example": "xxxxx",
+          "example": "cls-1c1cac",
           "member": "string",
           "name": "LogTopicID",
           "required": false,
@@ -2067,7 +2067,7 @@
         {
           "disabled": false,
           "document": "CLS日志集 | ES集群ID",
-          "example": "xxxxx",
+          "example": "cls-av2q1f1",
           "member": "string",
           "name": "LogSet",
           "required": false,
@@ -2085,7 +2085,7 @@
         {
           "disabled": false,
           "document": "用户自定义展示标签列表",
-          "example": "无",
+          "example": "[\"oneTag\"]",
           "member": "string",
           "name": "CustomShowTags",
           "required": false,
@@ -2130,7 +2130,7 @@
         {
           "disabled": false,
           "document": "dashboard ID",
-          "example": "xxxxx",
+          "example": "dashboard-agv1br13b",
           "member": "string",
           "name": "DashboardTopicID",
           "required": false,
@@ -2184,7 +2184,7 @@
         {
           "disabled": false,
           "document": "需要修改的字段key value分别指定字段名、字段值\n[具体字段请见](https://cloud.tencent.com/document/product/248/111241)",
-          "example": "\"Tags\":[{\"Key\":\"UrlConvergence\",\"Value\":\"RPCServer/market.MarketServiceleetcode9(.*?)\"},{\"Key\":\"UrlConvergenceThreshold\",\"Value\":\"600\"},{\"Key\":\"UrlConvergenceSwitch\",\"Value\":\"1\"},{\"Key\":\"AgentEnable\",\"Value\":\"true\"}]\t",
+          "example": "无",
           "member": "ApmTag",
           "name": "Tags",
           "required": true,
@@ -2193,7 +2193,7 @@
         {
           "disabled": false,
           "document": "需要修改配置的应用列表名称\t",
-          "example": "\"ServiceNames\":[\"stock-service\",\"profile-service28\",\"profile-service08\"],\t",
+          "example": "[\"stock-service\",\"profile-service28\",\"profile-service08\"]",
           "member": "string",
           "name": "ServiceNames",
           "required": false,
@@ -2260,28 +2260,25 @@
           "member": "string",
           "name": "MetricName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "同比，已弃用，不建议使用",
-          "example": "YearOnYear",
+          "example": "CompareByYesterday",
           "member": "string",
           "name": "Compare",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "同比，支持多种同比方式",
-          "example": "无",
+          "example": "CompareByYesterday",
           "member": "string",
           "name": "Compares",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2553,8 +2550,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "6Dxp7Nd0B",
+          "document": "业务系统ID",
+          "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
           "required": true,

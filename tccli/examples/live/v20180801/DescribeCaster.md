@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli live DescribeCaster --cli-unfold-argument  \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "CasterInfo": {
-            "CasterId": 1234,
+            "CasterId": 63501,
             "CasterName": "example",
             "StartLiveTime": 0,
             "Description": "",

@@ -6,15 +6,18 @@ Input:
 
 ```
 tccli tsf ModifyPathRewrite --cli-unfold-argument  \
-    --PathRewriteId rewrite-l6ymbvgd \
-    --Order 100
+    --PathRewriteId rewrite-ba22pbpa \
+    --Regex /consumer \
+    --Replacement /provider \
+    --Blocked N \
+    --Order 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "6b194892-2c0a-41d3-93e1-e4b293b0fde8",
         "Result": true
     }
 }

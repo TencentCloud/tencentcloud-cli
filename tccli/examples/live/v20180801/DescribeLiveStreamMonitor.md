@@ -37,7 +37,7 @@ Output:
             "UpdateTime": 1640591812,
             "NotifyPolicy": {
                 "NotifyPolicyType": 1,
-                "CallbackUrl": "xx"
+                "CallbackUrl": "http://my.callback.com/recv/interface"
             },
             "AudibleInputIndexList": [
                 1
@@ -48,7 +48,15 @@ Output:
             "CheckStreamBroken": 1,
             "CheckStreamLowFrameRate": 1,
             "AsrLanguage": 1,
-            "OcrLanguage": 1
+            "OcrLanguage": 1,
+            "AiFormatDiagnose": 1,
+            "AiQualityControl": 1,
+            "AllowMonitorReport": 1,
+            "AiOcrInputIndexList": [
+                1
+            ],
+            "StartTime": 1735190919,
+            "StopTime": 1735190919
         },
         "RequestId": ""
     }

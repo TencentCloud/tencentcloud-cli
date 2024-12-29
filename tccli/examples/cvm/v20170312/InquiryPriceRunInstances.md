@@ -213,7 +213,7 @@ Output:
                 "UnitPriceDiscount": 0.52,
                 "DiscountPriceFiveYear": 0.0,
                 "OriginalPriceOneYear": 0.0,
-                "ChargeUnit": "xx",
+                "ChargeUnit": "HOUR",
                 "DiscountPriceThreeYear": 0.0,
                 "DiscountPriceOneYear": 0.0
             }

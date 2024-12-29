@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli live CreateLivePadTemplate --cli-unfold-argument  \
-    --Url xx \
+    --Url http://domain.com/app/name \
     --WaitDuration 1 \
-    --Description xx \
+    --Description pad \
     --MaxDuration 1 \
-    --TemplateName xx
+    --TemplateName name
 ```
 
 Output: 

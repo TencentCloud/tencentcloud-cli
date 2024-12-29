@@ -1,12 +1,12 @@
-**Example 1: 销毁apm实例**
+**Example 1: 销毁 APM 业务系统**
 
-销毁apm实例
+销毁 APM 业务系统
 
 Input: 
 
 ```
 tccli apm TerminateApmInstance --cli-unfold-argument  \
-    --InstanceId 6Dxp7Nd0B
+    --InstanceId apm-CVfliqa8U
 ```
 
 Output: 

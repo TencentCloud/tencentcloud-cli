@@ -390,7 +390,7 @@
       {
         "document": "创建对端网关",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomerGateway\n<公共请求参数>\n\n{\n    \"IpAddress\": \"58.211.1.12\",\n    \"CustomerGatewayName\": \"test-cgw\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CustomerGateway\": {\n            \"CustomerGatewayId\": \"cgw-mgp33pll\",\n            \"IpAddress\": \"58.211.1.12\",\n            \"CustomerGatewayName\": \"test-cgw\",\n            \"CreatedTime\": \"2018-04-18 10:00:00\"\n        },\n        \"RequestId\": \"5bd98433-263a-47b6-9a1c-84aa613a8ff6\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomerGateway\": {\n            \"CustomerGatewayId\": \"cgw-mgp33pll\",\n            \"CustomerGatewayName\": \"cgw-name\",\n            \"IpAddress\": \"58.21.1.12\",\n            \"CreatedTime\": \"2023-05-29 11:28:45\",\n            \"BgpAsn\": 141\n        },\n        \"RequestId\": \"5bd98433-263a-47b6-9a1c-84aa613a8ff6\"\n    }\n}",
         "title": "创建对端网关"
       }
     ],
@@ -2396,7 +2396,7 @@
       {
         "document": "下载SSL-VPN-CLIENT配置",
         "input": "https://vpc.tencentcloudapi.com/?Action=DownloadVpnGatewaySslClientCert\n&SslVpnClientId=vpnc--84tby4k2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SslClientConfigsSet\": \"abc\",\n        \"SslClientConfig\": [\n            {\n                \"SslVpnClientConfiguration\": \"abc\",\n                \"SslVpnRootCert\": \"abc\",\n                \"SslVpnKey\": \"abc\",\n                \"SslVpnCert\": \"abc\",\n                \"SslVpnClientId\": \"abc\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SslClientConfigsSet\": \"{\\\"SslVpnClientConfiguration\\\": \\\"-config-\\\"......}\",\n        \"SslClientConfig\": [\n            {\n                \"SslVpnClientConfiguration\": \"config...\",\n                \"SslVpnRootCert\": \"CERTIFICATE...\",\n                \"SslVpnKey\": \"PRIVATE KEY...\",\n                \"SslVpnCert\": \"CERTIFICATE...\",\n                \"SslVpnClientId\": \"vpnc-axa315c\"\n            }\n        ],\n        \"Authenticated\": 1,\n        \"RequestId\": \"8e08f027-048b-41e8-ac99-77e954ca15c5\"\n    }\n}",
         "title": "下载SSL-VPN-CLIENT配置"
       }
     ],
@@ -2508,6 +2508,26 @@
         "title": "创建专线网关询价输入"
       }
     ],
+    "InquiryPriceAllocateAddresses": [
+      {
+        "document": "小时流量计费模式弹性公网IP询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressType\": \"EIP\",\n    \"InternetMaxBandwidthOut\": \"1\",\n    \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"ChargeUnit\": \"HOUR\",\n                \"UnitPrice\": 0.8,\n                \"DiscountPrice\": 0.8\n            }\n        },\n        \"RequestId\": \"90d508a8-9ee8-4220-9c8e-9faeedce3ab4\"\n    }\n}",
+        "title": "小时流量计费模式弹性公网IP询价"
+      },
+      {
+        "document": "小时带宽计费模式弹性公网IP询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressType\": \"EIP\",\n    \"InternetMaxBandwidthOut\": \"1\",\n    \"InternetChargeType\": \"BANDWIDTH_POSTPAID_BY_HOUR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"UnitPrice\": 0.063,\n                \"DiscountPrice\": 0.063,\n                \"ChargeUnit\": \"HOUR\"\n            }\n        },\n        \"RequestId\": \"ebc826be-ec1a-4522-b08f-8da3fe5adedc\"\n    }\n}",
+        "title": "小时带宽计费模式弹性公网IP询价"
+      },
+      {
+        "document": "包月带宽计费模式弹性公网IP询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceAllocateAddresses\n<公共请求参数>\n\n{\n    \"AddressChargePrepaid\": {\n        \"Period\": 1\n    },\n    \"AddressType\": \"EIP\",\n    \"InternetChargeType\": \"BANDWIDTH_PREPAID_BY_MONTH\",\n    \"InternetMaxBandwidthOut\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"OriginalPrice\": 20,\n                \"DiscountPrice\": 20\n            }\n        },\n        \"RequestId\": \"136605f0-ca35-4d22-9b77-e053168fa25f\"\n    }\n}",
+        "title": "包月带宽计费模式弹性公网IP询价"
+      }
+    ],
     "InquiryPriceCreateVpnGateway": [
       {
         "document": "包年包月询价时输入",
@@ -2522,11 +2542,39 @@
         "title": "按量计费询价输入"
       }
     ],
-    "InquiryPriceRenewVpnGateway": [
+    "InquiryPriceModifyAddressesBandwidth": [
+      {
+        "document": "小时流量EIP修改带宽询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"InternetMaxBandwidthOut\": \"2\",\n    \"AddressIds\": [\n        \"eip-hxlqja90\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"UnitPrice\": 0.8,\n                \"DiscountPrice\": 0.8,\n                \"ChargeUnit\": \"HOUR\"\n            }\n        },\n        \"RequestId\": \"7daad6af-50de-4df5-8238-0d76c7be62e1\"\n    }\n}",
+        "title": "小时流量EIP修改带宽询价"
+      },
+      {
+        "document": "小时带宽EIP修改带宽询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-3hwtklhj\"\n    ],\n    \"InternetMaxBandwidthOut\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"UnitPrice\": 0.315,\n                \"DiscountPrice\": 0.315,\n                \"ChargeUnit\": \"HOUR\"\n            }\n        },\n        \"RequestId\": \"db071565-27cb-482a-a3fe-1c7bba77e4a9\"\n    }\n}",
+        "title": "小时带宽EIP修改带宽询价"
+      },
+      {
+        "document": "包月带宽EIP调整带宽询价。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceModifyAddressesBandwidth\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-iu4ml5pp\"\n    ],\n    \"InternetMaxBandwidthOut\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"OriginalPrice\": 95,\n                \"DiscountPrice\": 95\n            }\n        },\n        \"RequestId\": \"ddf8edf2-0457-4ba7-b2ab-e66e98823cc6\"\n    }\n}",
+        "title": "包月带宽EIP调整带宽询价"
+      }
+    ],
+    "InquiryPriceRenewAddresses": [
       {
         "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=InquiryPriceRenewVpnGateway\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InstanceChargePrepaid.Period=2\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 760.0,\n                \"DiscountPrice\": 760.0\n            }\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewAddresses\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-iu4ml5pp\"\n    ],\n    \"AddressChargePrepaid\": {\n        \"Period\": 12\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"AddressPrice\": {\n                \"OriginalPrice\": 240,\n                \"DiscountPrice\": 240\n            }\n        },\n        \"RequestId\": \"84658acc-bdb9-4a3e-a37a-84a2e0c14e44\"\n    }\n}",
+        "title": "包月带宽计费模式EIP续费询价"
+      }
+    ],
+    "InquiryPriceRenewVpnGateway": [
+      {
+        "document": "包年包月网关续费网关询价输入",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceRenewVpnGateway\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-abcxa123z\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 380.0,\n                \"DiscountPrice\": 177.4,\n                \"UnitPrice\": 0.0,\n                \"ChargeUnit\": \"\"\n            },\n            \"BandwidthPrice\": {\n                \"OriginalPrice\": 0.0,\n                \"DiscountPrice\": 0.0,\n                \"UnitPrice\": 0.0,\n                \"ChargeUnit\": \"\"\n            }\n        },\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "包年包月网关续费网关询价输入"
       }
     ],
@@ -3101,7 +3149,7 @@
     "ModifyVpnConnectionAttribute": [
       {
         "document": "修改VPN通道",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpnConnectionAttribute\n<公共请求参数>\n\n{\n    \"VpnConnectionName\": \"test-abc\",\n    \"VpnConnectionId\": \"vpnx-abc123x\",\n    \"PreShareKey\": \"123\",\n    \"EnableHealthCheck\": \"false\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpnConnectionAttribute\n<公共请求参数>\n\n{\n    \"VpnConnectionName\": \"test-abc\",\n    \"VpnConnectionId\": \"vpnx-abc123x\",\n    \"PreShareKey\": \"qwer12ty\",\n    \"EnableHealthCheck\": \"false\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6c8a8c4-ba39-49ca-9b21-66247b7e3ad3\"\n    }\n}",
         "title": "修改VPN通道"
       }
@@ -3240,8 +3288,8 @@
     ],
     "RenewVpnGateway": [
       {
-        "document": "",
-        "input": "https://vpc.tencentcloudapi.com/?Action=RenewVpnGateway\r\n&Version=2017-03-12\r\n&VpnGatewayId=vpngw-lazly92z\r\n&InstanceChargePrepaid.Period=2\r\n&<公共请求参数>",
+        "document": "续费VPN网关",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewVpnGateway\n<公共请求参数>\n\n{\n    \"VpnGatewayId\": \"vpngw-lazly92z\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_AUTO_RENEW\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "续费VPN网关"
       }

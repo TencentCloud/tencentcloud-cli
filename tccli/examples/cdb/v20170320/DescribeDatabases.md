@@ -17,7 +17,7 @@ Output:
         "DatabaseList": [
             {
                 "CharacterSet": "UTF8",
-                "DatabaseName": "test"
+                "DatabaseName": "db1"
             }
         ],
         "TotalCount": 7,
@@ -25,7 +25,6 @@ Output:
             "information_schema",
             "mysql",
             "performance_schema",
-            "test",
             "trsf1",
             "trsf2",
             "trsf3"

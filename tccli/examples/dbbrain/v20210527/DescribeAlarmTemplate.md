@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeAlarmTemplate --cli-unfold-argument  \
-    --TemplateNameRegexp test \
+    --TemplateNameRegexp demoTemplate \
     --Limit 50 \
     --Offset 0
 ```

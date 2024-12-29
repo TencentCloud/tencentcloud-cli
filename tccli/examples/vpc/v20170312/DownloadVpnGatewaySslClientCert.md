@@ -13,18 +13,18 @@ Output:
 ```
 {
     "Response": {
-        "SslClientConfigsSet": "abc",
+        "SslClientConfigsSet": "{\"SslVpnClientConfiguration\": \"-config-\"......}",
         "SslClientConfig": [
             {
-                "SslVpnClientConfiguration": "abc",
-                "SslVpnRootCert": "abc",
-                "SslVpnKey": "abc",
-                "SslVpnCert": "abc",
-                "SslVpnClientId": "abc"
+                "SslVpnClientConfiguration": "config...",
+                "SslVpnRootCert": "CERTIFICATE...",
+                "SslVpnKey": "PRIVATE KEY...",
+                "SslVpnCert": "CERTIFICATE...",
+                "SslVpnClientId": "vpnc-axa315c"
             }
         ],
         "Authenticated": 1,
-        "RequestId": "abc"
+        "RequestId": "8e08f027-048b-41e8-ac99-77e954ca15c5"
     }
 }
 ```

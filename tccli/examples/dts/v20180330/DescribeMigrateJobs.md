@@ -28,7 +28,7 @@ Output:
                     "MigrateObject": 2,
                     "ConsistencyType": 5,
                     "IsOverrideRoot": 0,
-                    "ExternParams": "[]",
+                    "ExternParams": "",
                     "ConsistencyParams": {
                         "SelectRowsPerTable": 0,
                         "TablesSelectAll": 0,
@@ -50,7 +50,10 @@ Output:
                     "UniqVpnGwId": "",
                     "InstanceId": "",
                     "Region": "ap-guangzhou",
-                    "VpcId": ""
+                    "VpcId": "",
+                    "CcnId": "",
+                    "EngineVersion": "",
+                    "Supplier": ""
                 },
                 "DstAccessType": "cdb",
                 "DstDatabaseType": "mysql",
@@ -59,7 +62,9 @@ Output:
                     "Ip": "",
                     "Port": 0,
                     "Region": "ap-shanghai",
-                    "ReadOnly": 0
+                    "ReadOnly": 0,
+                    "User": "",
+                    "Password": ""
                 },
                 "Tags": [
                     {
@@ -77,11 +82,12 @@ Output:
                     "StepInfo": []
                 },
                 "Status": 1,
-                "DatabaseInfo": "[]",
+                "DatabaseInfo": "",
                 "CreateTime": "2018-05-24 15:06:03",
                 "StartTime": "0000-00-00 00:00:00",
                 "EndTime": "0000-00-00 00:00:00",
-                "ErrorInfo": []
+                "ErrorInfo": [],
+                "SrcInfoMulti": []
             }
         ],
         "RequestId": "c032aab5-b56a-428d-9cf7-e5f324ee408b"

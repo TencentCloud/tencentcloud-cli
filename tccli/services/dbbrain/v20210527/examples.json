@@ -35,7 +35,7 @@
     "CreateDBDiagReportTask": [
       {
         "document": "",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateDBDiagReportTask\n&InstanceId=test\n&StartTime=2019-01-01T00:00:00+08:00\n&EndTime=2019-01-02T00:00:00+08:00\n&SendMailFlag=1\n&ContactPerson.0=1\n&ContactGroup.0=1\n&<公共请求参数>",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=CreateDBDiagReportTask\n&InstanceId=cdb-test1234\n&StartTime=2019-01-01T00:00:00+08:00\n&EndTime=2019-01-02T00:00:00+08:00\n&SendMailFlag=1\n&ContactPerson.0=1\n&ContactGroup.0=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": 129632,\n        \"RequestId\": \"77db16d7-bbe8-48a7-868b-ed776a96f1ab\"\n    }\n}",
         "title": "创建健康报告, 发送邮件(可选)"
       }
@@ -68,7 +68,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxySessionKillTask\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-8jawylhf\",\n    \"Product\": \"redis\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": 123456,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": 14672492,\n        \"RequestId\": \"17351ed0-c126-11ef-9567-2ff75b8b0530\"\n    }\n}",
         "title": "根据实例 id 创建终止所有代理节点会话连接的异步任务"
       }
     ],
@@ -147,7 +147,7 @@
     "DescribeAlarmTemplate": [
       {
         "document": "查询通知模板示例",
-        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmTemplate\n<公共请求参数>\n\n{\n    \"TemplateNameRegexp\": \"test\",\n    \"Limit\": 50,\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmTemplate\n<公共请求参数>\n\n{\n    \"TemplateNameRegexp\": \"demoTemplate\",\n    \"Limit\": 50,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"ProfileList\": [],\n        \"RequestId\": \"5c2ad5eb-784b-4ff4-8860-17f75f4e5c1f\",\n        \"TotalCount\": 0\n    }\n}",
         "title": "查询通知模板示例"
       }
@@ -187,8 +187,8 @@
     "DescribeDBDiagEvent": [
       {
         "document": "",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagEvent\n&InstanceId=test\n&EventId=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Suggestions\": \"[]\",\n        \"DiagType\": \"数据库快照\",\n        \"EndTime\": \"2019-11-06 12:05:50\",\n        \"RequestId\": \"78cf7bb1-0608-11ea-a9ef-2736f0f7f829\",\n        \"Explanation\": \"[]\",\n        \"StartTime\": \"2019-11-06 12:05:40\",\n        \"Severity\": 4,\n        \"EventId\": 5,\n        \"Outline\": \"数据库健康检查，发现1个问题\",\n        \"Problem\": \"[{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"会话快照\\\"}},{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"事务快照\\\"}},{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"Innodb状态快照\\\"}}]\",\n        \"Metric\": \"\",\n        \"DiagItem\": \"健康巡检\"\n    }\n}",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDBDiagEvent\n&InstanceId=cdb-test1234\n&EventId=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Suggestions\": \"[{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"SQL优化\\\"}},[{\\\"DataType\\\":\\\"sqlAdvice\\\",\\\"Data\\\":{\\\"Advices\\\":[{\\\"TableName\\\":\\\"t1\\\",\\\"TableSchema\\\":\\\"demo\\\",\\\"Keys\\\":[{\\\"SqlText\\\":\\\"alter table `demo`.`t1` add index index_0(`c_time`);\\\"}]}],\\\"Comments\\\":[],\\\"Schema\\\":\\\"demo\\\",\\\"SqlPlan\\\":{},\\\"SqlText\\\":\\\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\\\",\\\"Tables\\\":[{\\\"TableName\\\":\\\"t1\\\",\\\"TableSchema\\\":\\\"demo\\\",\\\"TableDDL\\\":\\\"CREATE TABLE `t1` (\\\\n `id` int NOT NULL AUTO_INCREMENT,\\\\n `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\\\\n `name` varchar(32) DEFAULT NULL,\\\\n `age` int NOT NULL DEFAULT '0',\\\\n PRIMARY KEY (`id`)\\\\n) ENGINE=InnoDB AUTO_INCREMENT=786393 DEFAULT CHARSET=utf8mb3\\\"}],\\\"Cost\\\":{\\\"Before\\\":1.060202269597E10,\\\"After\\\":1.060202269597E10,\\\"Ratio\\\":0}}}]]\",\n        \"DiagType\": \"数据库快照\",\n        \"EndTime\": \"2019-11-06 12:05:50\",\n        \"RequestId\": \"78cf7bb1-0608-11ea-a9ef-2736f0f7f829\",\n        \"Explanation\": \"[{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"慢会话详情\\\"}},[{\\\"Layout\\\":\\\"vertical\\\",\\\"DataType\\\":\\\"table\\\",\\\"Data\\\":{\\\"Names\\\":[\\\"Schema\\\",{\\\"Type\\\":\\\"sql\\\",\\\"Name\\\":\\\"SqlText\\\"}],\\\"Data\\\":[{\\\"Schema\\\":\\\"demo\\\",\\\"SqlText\\\":\\\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\\\"}]}}]]\",\n        \"StartTime\": \"2019-11-06 12:05:40\",\n        \"Severity\": 4,\n        \"EventId\": 5,\n        \"Outline\": \"数据库健康检查，发现1个问题\",\n        \"Problem\": \"[{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"会话快照\\\"}},{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"事务快照\\\"}},{\\\"DataType\\\":\\\"title\\\",\\\"Data\\\":{\\\"Name\\\":\\\"Innodb状态快照\\\"}}]\",\n        \"Metric\": \"\",\n        \"DiagItem\": \"健康巡检\"\n    }\n}",
         "title": "获取诊断事件详情"
       }
     ],
@@ -355,8 +355,8 @@
     "DescribeSlowLogTopSqls": [
       {
         "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
-        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSlowLogTopSqls\n&InstanceId=test\n&SortBy=QueryTime\n&OrderBy=ASC\n&Limit=10\n&Offset=0\n&StartTime=2019-01-01 00:00:00\n&EndTime=2019-01-01 01:00:00\n&SchemaList.0.Schema=dbName\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed279d8b-a9d9-48d6-9429-e0fde000994a\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"QueryTimeMin\": 0.0,\n                \"LockTimeMin\": 0.0,\n                \"QueryTimeMax\": 14.086705,\n                \"QueryTimeRatio\": 0.0,\n                \"RowsSentRatio\": 0.0,\n                \"RowsSentMax\": 0,\n                \"RowsExaminedMin\": 0,\n                \"RowsSentMin\": 0,\n                \"SqlText\": \"select * from user where name='sz'\",\n                \"Schema\": \"test\",\n                \"LockTimeMax\": 0.0,\n                \"LockTimeRatio\": 0.0,\n                \"ExecTimes\": 2,\n                \"LockTimeAvg\": 0.0,\n                \"RowsExamined\": 0,\n                \"RowsSentAvg\": 0.0,\n                \"QueryTime\": 28.17341,\n                \"RowsExaminedAvg\": 0.0,\n                \"RowsExaminedMax\": 0,\n                \"RowsSent\": 0,\n                \"RowsExaminedRatio\": 0.0,\n                \"QueryTimeAvg\": 0.0,\n                \"SqlTemplate\": \"select * from user where name=?\",\n                \"LockTime\": 0.0,\n                \"Md5\": \"2323847233\"\n            }\n        ]\n    }\n}",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeSlowLogTopSqls\n&InstanceId=cdb-test1234\n&SortBy=QueryTime\n&OrderBy=ASC\n&Limit=10\n&Offset=0\n&StartTime=2019-01-01 00:00:00\n&EndTime=2019-01-01 01:00:00\n&SchemaList.0.Schema=dbName\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed279d8b-a9d9-48d6-9429-e0fde000994a\",\n        \"TotalCount\": 1,\n        \"Rows\": [\n            {\n                \"QueryTimeMin\": 0.0,\n                \"LockTimeMin\": 0.0,\n                \"QueryTimeMax\": 14.086705,\n                \"QueryTimeRatio\": 0.0,\n                \"RowsSentRatio\": 0.0,\n                \"RowsSentMax\": 0,\n                \"RowsExaminedMin\": 0,\n                \"RowsSentMin\": 0,\n                \"SqlText\": \"select * from user where name='sz'\",\n                \"Schema\": \"dbName\",\n                \"LockTimeMax\": 0.0,\n                \"LockTimeRatio\": 0.0,\n                \"ExecTimes\": 2,\n                \"LockTimeAvg\": 0.0,\n                \"RowsExamined\": 0,\n                \"RowsSentAvg\": 0.0,\n                \"QueryTime\": 28.17341,\n                \"RowsExaminedAvg\": 0.0,\n                \"RowsExaminedMax\": 0,\n                \"RowsSent\": 0,\n                \"RowsExaminedRatio\": 0.0,\n                \"QueryTimeAvg\": 0.0,\n                \"SqlTemplate\": \"select * from user where name=?\",\n                \"LockTime\": 0.0,\n                \"Md5\": \"2323847233\"\n            }\n        ]\n    }\n}",
         "title": "获取慢SQL模板列表 "
       }
     ],
@@ -434,7 +434,7 @@
       {
         "document": "",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeUserSqlAdvice\n&InstanceId=cdb-c1nl9rpv\n&SqlText=select * from t1 where id = ?\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2a51350-8c9f-11eb-bc0f-c9f5ab88d057\",\n        \"Advices\": \"\",\n        \"Comments\": \"\",\n        \"Schema\": \"test\",\n        \"Tables\": \"[{\\\"TableName\\\": \\\"t1\\\", \\\"TableSchema\\\": \\\"test\\\", \\\"TableDDL\\\": \\\"CREATE TABLE `test` (\\n  `id` varchar(36) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC\\\"}]\",\n        \"SqlText\": \"select * from t1 where id in ( ? )\",\n        \"SqlPlan\": \"\",\n        \"Cost\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2a51350-8c9f-11eb-bc0f-c9f5ab88d057\",\n        \"Advices\": \"\",\n        \"Comments\": \"\",\n        \"Schema\": \"demo_db\",\n        \"Tables\": \"[{\\\"TableName\\\": \\\"t1\\\", \\\"TableSchema\\\": \\\"demo_db\\\", \\\"TableDDL\\\": \\\"CREATE TABLE `test` (\\n  `id` varchar(36) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC\\\"}]\",\n        \"SqlText\": \"select * from t1 where id in ( ? )\",\n        \"SqlPlan\": \"\",\n        \"Cost\": \"\"\n    }\n}",
         "title": "获取无需优化SQL的优化建议"
       }
     ],

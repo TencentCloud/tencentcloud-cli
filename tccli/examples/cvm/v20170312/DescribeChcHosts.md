@@ -15,42 +15,75 @@ Output:
     "Response": {
         "ChcHostSet": [
             {
-                "ChcId": "chc-1a2b3c4d",
-                "InstanceName": "托管服务器",
-                "SerialNumber": "sn34asdfabd",
-                "InstanceState": "RUNNING",
-                "DeviceType": "CHC_HS1",
-                "Placement": {
-                    "Zone": "ap-guangzhou-2"
-                },
-                "BmcVirtualPrivateCloud": {
-                    "SubnetId": "subnet-a2676p0e",
-                    "VpcId": "vpc-g7wzcv7n"
-                },
-                "BmcIp": "10.12.10.34",
+                "BmcIp": "10.0.0.17",
+                "BmcMAC": "52:54:00:71:B5:A1",
                 "BmcSecurityGroupIds": [
-                    "sg-1a2b3c4d"
+                    "sg-8l03md6z"
+                ],
+                "BmcVirtualPrivateCloud": {
+                    "SubnetId": "subnet-hmpeps7u",
+                    "VpcId": "vpc-b9y7wgix",
+                    "AsVpcGateway": false,
+                    "Ipv6AddressCount": 0,
+                    "PrivateIpAddresses": [
+                        "10.10.2.4"
+                    ]
+                },
+                "CPU": 64,
+                "ChcId": "chc-1a2b3c4d",
+                "ChcInstanceFamily": "CHCS5",
+                "ChcInstanceFamilyName": "高性能计算型CHCS5",
+                "ChcInstanceType": "CHCS5.128C384M",
+                "CreatedTime": "2024-07-19 16:41:20",
+                "CvmInstanceId": "",
+                "DeployExtraConfig": {
+                    "BootFile": "pxelinux.0",
+                    "BootType": "x86_uefi",
+                    "MiniOsType": "public",
+                    "NextServerAddress": "169.254.68.10"
+                },
+                "DeployIp": "172.16.0.17",
+                "DeployMAC": "52:54:00:41:8D:7B",
+                "DeploySecurityGroupIds": [
+                    "sg-8l03md6z"
                 ],
                 "DeployVirtualPrivateCloud": {
-                    "SubnetId": "subnet-a26734fs",
-                    "VpcId": "vpc-g7wz234f"
+                    "SubnetId": "subnet-pad8nabc",
+                    "VpcId": "vpc-gbgzjb6r",
+                    "AsVpcGateway": false,
+                    "Ipv6AddressCount": 0,
+                    "PrivateIpAddresses": [
+                        "10.10.2.4"
+                    ]
                 },
-                "DeployIp": "10.12.20.34",
-                "DeploySecurityGroupIds": [
-                    "sg-1a2b34af"
+                "DeviceType": "CHCS5",
+                "Disk": "480GB*2/3.84TB*12",
+                "Gpu": "",
+                "HardwareDescription": "64核 256GB 480GB*2/3.84TB*12",
+                "InstanceName": "vlan502",
+                "InstanceState": "PREPARED",
+                "IsPredefinedType": true,
+                "Memory": 256,
+                "NetworkCard": "",
+                "Placement": {
+                    "Zone": "ap-guangzhou-2",
+                    "ProjectId": 0
+                },
+                "ResaleAccountId": "",
+                "ResaleAppId": "",
+                "SaleStatus": "NOT_FOR_SALE",
+                "SerialNumber": "7DF112345678",
+                "Tags": [
+                    {
+                        "Key": "test",
+                        "Value": "test22"
+                    }
                 ],
-                "CvmInstanceId": "ins-1a2bafst",
-                "CreatedTime": "2020-03-10T02:43:51Z",
-                "HardwareDescription": "50C 128G 12*4T",
-                "Memory": 128,
-                "DeployMAC": "52:54:00:68:CC:00",
-                "BmcMAC": "52:54:00:68:CC:01",
-                "Disk": "12*4T",
-                "CPU": 50
+                "TenantType": "HOSTING"
             }
         ],
-        "TotalCount": 2,
-        "RequestId": "62DDFFC6-FDB5-44F7-20A6-59152E3D129A"
+        "RequestId": "d2ab63c0-576f-44c4-b6c1-f519fb58654b",
+        "TotalCount": 1
     }
 }
 ```

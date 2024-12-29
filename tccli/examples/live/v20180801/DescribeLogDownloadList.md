@@ -17,7 +17,7 @@ Output:
     "Response": {
         "LogInfoList": [
             {
-                "LogName": "test",
+                "LogName": "mylivelog",
                 "LogUrl": "http://test.log.com",
                 "LogTime": "2019-03-13 00:00:00",
                 "FileSize": 1000

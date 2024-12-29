@@ -1,6 +1,6 @@
-**Example 1: 请求参数实例**
+**Example 1: 请求参数示例**
 
-场景一
+场景1
 
 Input: 
 
@@ -33,34 +33,34 @@ Output:
             {
                 "Fields": [
                     {
-                        "CompareVal": "abc",
+                        "CompareVal": "",
                         "CompareVals": [
                             {
-                                "Key": "abc",
-                                "Value": "abc"
+                                "Key": "CompareByYesterday",
+                                "Value": "1%"
                             }
                         ],
                         "Value": 0,
-                        "Unit": "abc",
-                        "Key": "abc",
+                        "Unit": "",
+                        "Key": "service_duration_avg",
                         "LastPeriodValue": [
                             {
-                                "Key": "abc",
-                                "Value": 0
+                                "Key": "CompareByYesterday",
+                                "Value": 71308388
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "service.name",
+                        "Value": "java-order-demo"
                     }
                 ]
             }
         ],
         "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "test-test-test"
     }
 }
 ```
@@ -97,35 +97,35 @@ Output:
                     {
                         "LastPeriodValue": [
                             {
-                                "Key": "abc",
-                                "Value": 0
+                                "Key": "CompareByYesterday",
+                                "Value": 71308388
                             }
                         ],
-                        "CompareVal": "abc",
+                        "CompareVal": "CompareByYesterday",
                         "Unit": "s",
                         "Value": 691.42,
-                        "Key": "ab",
+                        "Key": "duration_avg",
                         "CompareVals": [
                             {
-                                "Value": "v1",
-                                "Key": "k1"
+                                "Value": "CompareByYesterday",
+                                "Key": "2%"
                             },
                             {
-                                "Key": "k2",
-                                "Value": "v2"
+                                "Key": "CompareByLastWeek",
+                                "Value": "-1%"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Value": "v1",
-                        "Key": "k1"
+                        "Value": "service.name",
+                        "Key": "java-order-demo"
                     }
                 ]
             }
         ],
-        "RequestId": "re",
+        "RequestId": "test-test-test",
         "TotalCount": 0
     }
 }

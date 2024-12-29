@@ -7,7 +7,7 @@ Input:
 ```
 tccli live DeleteCasterOutputInfo --cli-unfold-argument  \
     --OutputIndex 1 \
-    --CasterId 1234
+    --CasterId 63501
 ```
 
 Output: 

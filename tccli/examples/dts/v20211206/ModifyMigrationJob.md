@@ -6,102 +6,86 @@ Input:
 
 ```
 tccli dts ModifyMigrationJob --cli-unfold-argument  \
-    --JobId abc \
-    --JobName abc \
-    --RunMode abc \
-    --ExpectRunTime abc \
-    --MigrateOption.MigrateType abc \
-    --MigrateOption.Consistency.Mode abc \
-    --MigrateOption.DatabaseTable.ObjectMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.DbName abc \
-    --MigrateOption.DatabaseTable.Databases.0.NewDbName abc \
-    --MigrateOption.DatabaseTable.Databases.0.SchemaName abc \
-    --MigrateOption.DatabaseTable.Databases.0.NewSchemaName abc \
-    --MigrateOption.DatabaseTable.Databases.0.DBMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.SchemaMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.TableMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.Tables.0.TableName abc \
-    --MigrateOption.DatabaseTable.Databases.0.Tables.0.NewTableName abc \
-    --MigrateOption.DatabaseTable.Databases.0.Tables.0.TmpTables abc \
-    --MigrateOption.DatabaseTable.Databases.0.Tables.0.TableEditMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.ViewMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.Views.0.ViewName abc \
-    --MigrateOption.DatabaseTable.Databases.0.Views.0.NewViewName abc \
-    --MigrateOption.DatabaseTable.Databases.0.RoleMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.Roles.0.RoleName abc \
-    --MigrateOption.DatabaseTable.Databases.0.Roles.0.NewRoleName abc \
-    --MigrateOption.DatabaseTable.Databases.0.FunctionMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.TriggerMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.EventMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.ProcedureMode abc \
-    --MigrateOption.DatabaseTable.Databases.0.Functions abc \
-    --MigrateOption.DatabaseTable.Databases.0.Procedures abc \
-    --MigrateOption.DatabaseTable.Databases.0.Events abc \
-    --MigrateOption.DatabaseTable.Databases.0.Triggers abc \
-    --MigrateOption.DatabaseTable.AdvancedObjects abc \
+    --JobId dts-efyc7e7l \
+    --JobName dts-efyc7e7l \
+    --RunMode immediate \
+    --ExpectRunTime 2024-12-20 19:01:07 \
+    --MigrateOption.MigrateType fullAndIncrement \
+    --MigrateOption.Consistency.Mode full \
+    --MigrateOption.DatabaseTable.ObjectMode partial \
+    --MigrateOption.DatabaseTable.Databases.0.DbName db_1 \
+    --MigrateOption.DatabaseTable.Databases.0.NewDbName  \
+    --MigrateOption.DatabaseTable.Databases.0.SchemaName  \
+    --MigrateOption.DatabaseTable.Databases.0.NewSchemaName  \
+    --MigrateOption.DatabaseTable.Databases.0.DBMode partial \
+    --MigrateOption.DatabaseTable.Databases.0.SchemaMode  \
+    --MigrateOption.DatabaseTable.Databases.0.TableMode partial \
+    --MigrateOption.DatabaseTable.Databases.0.Tables.0.TableName tb_1 \
+    --MigrateOption.DatabaseTable.Databases.0.Tables.0.NewTableName  \
+    --MigrateOption.DatabaseTable.Databases.0.Tables.0.TableEditMode  \
+    --MigrateOption.DatabaseTable.Databases.0.ViewMode partial \
+    --MigrateOption.DatabaseTable.Databases.0.Views.0.ViewName view_tb_1 \
+    --MigrateOption.DatabaseTable.Databases.0.Views.0.NewViewName  \
+    --MigrateOption.DatabaseTable.Databases.0.RoleMode  \
+    --MigrateOption.DatabaseTable.Databases.0.FunctionMode  \
+    --MigrateOption.DatabaseTable.Databases.0.TriggerMode  \
+    --MigrateOption.DatabaseTable.Databases.0.EventMode  \
+    --MigrateOption.DatabaseTable.Databases.0.ProcedureMode  \
     --MigrateOption.IsMigrateAccount True \
     --MigrateOption.IsOverrideRoot True \
     --MigrateOption.IsDstReadOnly True \
-    --MigrateOption.ExtraAttr.0.Key abc \
-    --MigrateOption.ExtraAttr.0.Value abc \
-    --SrcInfo.Supplier abc \
-    --SrcInfo.Region abc \
-    --SrcInfo.AccessType abc \
-    --SrcInfo.DatabaseType abc \
-    --SrcInfo.NodeType abc \
-    --SrcInfo.Info.0.Role abc \
-    --SrcInfo.Info.0.DbKernel abc \
-    --SrcInfo.Info.0.Host abc \
-    --SrcInfo.Info.0.Port 1 \
-    --SrcInfo.Info.0.User abc \
-    --SrcInfo.Info.0.Password abc \
-    --SrcInfo.Info.0.CvmInstanceId abc \
-    --SrcInfo.Info.0.UniqVpnGwId abc \
-    --SrcInfo.Info.0.UniqDcgId abc \
-    --SrcInfo.Info.0.InstanceId abc \
-    --SrcInfo.Info.0.CcnGwId abc \
-    --SrcInfo.Info.0.VpcId abc \
-    --SrcInfo.Info.0.SubnetId abc \
-    --SrcInfo.Info.0.EngineVersion abc \
-    --SrcInfo.Info.0.Account abc \
-    --SrcInfo.Info.0.AccountRole abc \
-    --SrcInfo.Info.0.AccountMode abc \
-    --SrcInfo.Info.0.TmpSecretId abc \
-    --SrcInfo.Info.0.TmpSecretKey abc \
-    --SrcInfo.Info.0.TmpToken abc \
-    --SrcInfo.ExtraAttr.0.Key abc \
-    --SrcInfo.ExtraAttr.0.Value abc \
-    --SrcInfo.DatabaseNetEnv abc \
-    --DstInfo.Supplier abc \
-    --DstInfo.Region abc \
-    --DstInfo.AccessType abc \
-    --DstInfo.DatabaseType abc \
-    --DstInfo.NodeType abc \
-    --DstInfo.Info.0.Role abc \
-    --DstInfo.Info.0.DbKernel abc \
-    --DstInfo.Info.0.Host abc \
-    --DstInfo.Info.0.Port 1 \
-    --DstInfo.Info.0.User abc \
-    --DstInfo.Info.0.Password abc \
-    --DstInfo.Info.0.CvmInstanceId abc \
-    --DstInfo.Info.0.UniqVpnGwId abc \
-    --DstInfo.Info.0.UniqDcgId abc \
-    --DstInfo.Info.0.InstanceId abc \
-    --DstInfo.Info.0.CcnGwId abc \
-    --DstInfo.Info.0.VpcId abc \
-    --DstInfo.Info.0.SubnetId abc \
-    --DstInfo.Info.0.EngineVersion abc \
-    --DstInfo.Info.0.Account abc \
-    --DstInfo.Info.0.AccountRole abc \
-    --DstInfo.Info.0.AccountMode abc \
-    --DstInfo.Info.0.TmpSecretId abc \
-    --DstInfo.Info.0.TmpSecretKey abc \
-    --DstInfo.Info.0.TmpToken abc \
-    --DstInfo.ExtraAttr.0.Key abc \
-    --DstInfo.ExtraAttr.0.Value abc \
-    --DstInfo.DatabaseNetEnv abc \
-    --Tags.0.TagKey abc \
-    --Tags.0.TagValue abc \
+    --SrcInfo.Supplier  \
+    --SrcInfo.Region ap-qingyuan \
+    --SrcInfo.AccessType cdb \
+    --SrcInfo.DatabaseType mysql \
+    --SrcInfo.NodeType  \
+    --SrcInfo.Info.0.Role  \
+    --SrcInfo.Info.0.DbKernel  \
+    --SrcInfo.Info.0.Host  \
+    --SrcInfo.Info.0.Port 0 \
+    --SrcInfo.Info.0.User tencent \
+    --SrcInfo.Info.0.Password tencent*** \
+    --SrcInfo.Info.0.CvmInstanceId  \
+    --SrcInfo.Info.0.UniqVpnGwId  \
+    --SrcInfo.Info.0.UniqDcgId  \
+    --SrcInfo.Info.0.InstanceId cdb-4gp2nzqy \
+    --SrcInfo.Info.0.CcnGwId  \
+    --SrcInfo.Info.0.VpcId  \
+    --SrcInfo.Info.0.SubnetId  \
+    --SrcInfo.Info.0.EngineVersion 8.0 \
+    --SrcInfo.Info.0.Account  \
+    --SrcInfo.Info.0.AccountRole  \
+    --SrcInfo.Info.0.AccountMode  \
+    --SrcInfo.Info.0.TmpSecretId  \
+    --SrcInfo.Info.0.TmpSecretKey  \
+    --SrcInfo.Info.0.TmpToken  \
+    --SrcInfo.DatabaseNetEnv  \
+    --DstInfo.Supplier  \
+    --DstInfo.Region ap-qingyuan \
+    --DstInfo.AccessType cdb \
+    --DstInfo.DatabaseType mysql \
+    --DstInfo.NodeType  \
+    --DstInfo.Info.0.Role  \
+    --DstInfo.Info.0.DbKernel  \
+    --DstInfo.Info.0.Host  \
+    --DstInfo.Info.0.Port 0 \
+    --DstInfo.Info.0.User tencent \
+    --DstInfo.Info.0.Password tencent*** \
+    --DstInfo.Info.0.CvmInstanceId  \
+    --DstInfo.Info.0.UniqVpnGwId  \
+    --DstInfo.Info.0.UniqDcgId  \
+    --DstInfo.Info.0.InstanceId cdb-4gp2nzqy \
+    --DstInfo.Info.0.CcnGwId  \
+    --DstInfo.Info.0.VpcId  \
+    --DstInfo.Info.0.SubnetId  \
+    --DstInfo.Info.0.EngineVersion 8.0 \
+    --DstInfo.Info.0.Account  \
+    --DstInfo.Info.0.AccountRole  \
+    --DstInfo.Info.0.AccountMode  \
+    --DstInfo.Info.0.TmpSecretId  \
+    --DstInfo.Info.0.TmpSecretKey  \
+    --DstInfo.Info.0.TmpToken  \
+    --DstInfo.DatabaseNetEnv  \
     --AutoRetryTimeRangeMinutes 0
 ```
 
@@ -109,7 +93,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "a3365b29-2042-4565-9206-8df9e2af1a17"
     }
 }
 ```

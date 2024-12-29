@@ -36,7 +36,29 @@ Output:
                         "InputApp": "",
                         "InputUrl": ""
                     }
-                ]
+                ],
+                "CheckStreamBroken": 1,
+                "AsrLanguage": 1,
+                "UpdateTime": 1640694582,
+                "OcrLanguage": 1,
+                "NotifyPolicy": {
+                    "CallbackUrl": "www.baidu.com",
+                    "NotifyPolicyType": 0
+                },
+                "CreateTime": 1640694582,
+                "AiAsrInputIndexList": [
+                    1
+                ],
+                "AiFormatDiagnose": 1,
+                "AiOcrInputIndexList": [
+                    1
+                ],
+                "CheckStreamLowFrameRate": 1,
+                "AudibleInputIndexList": [
+                    1
+                ],
+                "AllowMonitorReport": 1,
+                "AiQualityControl": 1
             }
         ],
         "TotalNum": 7,

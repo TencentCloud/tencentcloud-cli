@@ -1400,13 +1400,6 @@
       "output": "DescribeImportMachineInfoResponse",
       "status": "online"
     },
-    "DescribeIndexList": {
-      "document": "接口已废弃\n\n获取索引列表",
-      "input": "DescribeIndexListRequest",
-      "name": "获取索引列表",
-      "output": "DescribeIndexListResponse",
-      "status": "deprecated"
-    },
     "DescribeJavaMemShellInfo": {
       "document": "查询java内存马事件详细信息",
       "input": "DescribeJavaMemShellInfoRequest",
@@ -25909,33 +25902,6 @@
           "name": "InvalidMachineList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIndexListRequest": {
-      "document": "DescribeIndexList请求参数结构体",
-      "members": [],
-      "type": "object"
-    },
-    "DescribeIndexListResponse": {
-      "document": "DescribeIndexList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "ES 索引信息",
-          "example": "xxx",
-          "member": "string",
-          "name": "Data",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli tsf ReleasePublicConfig --cli-unfold-argument  \
-    --ConfigId dcfg-p-4y46okga \
-    --NamespaceId namespace-ov6l235v
+    --ConfigId dcfg-p-vkj5dnky \
+    --NamespaceId namespace-vw46q85y \
+    --ReleaseDesc This is desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5a20177f-0949-4e38-8c71-d77159586c04",
+        "RequestId": "d60fcd87-e9d0-475c-89f5-1e76a035d404",
         "Result": true
     }
 }

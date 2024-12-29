@@ -7,11 +7,11 @@ Input:
 ```
 tccli cynosdb DescribeAccountPrivileges --cli-unfold-argument  \
     --ClusterId cynosdbmysql-xxxxxx \
-    --AccountName test \
+    --AccountName andy \
     --Host 1.1.1.1 \
-    --Db testDb \
+    --Db Db1 \
     --Type table \
-    --TableName testTable
+    --TableName Table1
 ```
 
 Output: 

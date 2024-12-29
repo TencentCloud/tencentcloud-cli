@@ -70,6 +70,13 @@
       "output": "CreateAccessExportResponse",
       "status": "online"
     },
+    "CreateAreaBanRule": {
+      "document": "添加（编辑）地域封禁中的地域信息",
+      "input": "CreateAreaBanRuleRequest",
+      "name": "添加地域封禁规则",
+      "output": "CreateAreaBanRuleResponse",
+      "status": "online"
+    },
     "CreateDeals": {
       "document": "计费资源购买、续费下单接口",
       "input": "CreateDealsRequest",
@@ -250,6 +257,13 @@
       "input": "DescribeAreaBanAreasRequest",
       "name": "获取地域封禁配置",
       "output": "DescribeAreaBanAreasResponse",
+      "status": "online"
+    },
+    "DescribeAreaBanRule": {
+      "document": "获取地域封禁规则配置",
+      "input": "DescribeAreaBanRuleRequest",
+      "name": "获取地域封禁规则",
+      "output": "DescribeAreaBanRuleResponse",
       "status": "online"
     },
     "DescribeAreaBanSupportAreas": {
@@ -728,6 +742,13 @@
       "output": "ModifyAreaBanAreasResponse",
       "status": "online"
     },
+    "ModifyAreaBanRule": {
+      "document": "添加（编辑）地域封禁中的地域信息",
+      "input": "ModifyAreaBanRuleRequest",
+      "name": "编辑地域封禁规则",
+      "output": "ModifyAreaBanRuleResponse",
+      "status": "online"
+    },
     "ModifyAreaBanStatus": {
       "document": "修改防护域名的地域封禁状态",
       "input": "ModifyAreaBanStatusRequest",
@@ -890,9 +911,9 @@
       "status": "online"
     },
     "ModifyProtectionStatus": {
-      "document": "获取基础安全防护（WAF开关）状态",
+      "document": "开启、关闭WAF开关",
       "input": "ModifyProtectionStatusRequest",
-      "name": "获取基础安全防护（WAF开关）状态",
+      "name": "开启、关闭WAF开关",
       "output": "ModifyProtectionStatusResponse",
       "status": "online"
     },
@@ -3010,6 +3031,121 @@
       ],
       "usage": "in"
     },
+    "Area": {
+      "document": "地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "国家，除了标准的国家外还支持国内、国外这两个特殊的标识",
+          "example": "中国",
+          "member": "string",
+          "name": "Country",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "省份",
+          "example": "广州",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "城市",
+          "example": "深圳",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AreaBanRule": {
+      "document": "地域封禁规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态 0：未开启地域封禁、1：开启地域封禁",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据来源 custom：自定义(默认)、batch：批量防护",
+          "example": "custom",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置的地域列表",
+          "example": "[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]",
+          "member": "Area",
+          "name": "Areas",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果是周期任务类型，那么表示周期的类型，支持 Week：按周、Month：按月",
+          "example": "Week",
+          "member": "string",
+          "name": "CronType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域信息的语言，支持cn、en，默认为中文cn",
+          "example": "cn",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AttackLogInfo": {
       "document": "攻击日志详情",
       "members": [
@@ -4739,6 +4875,69 @@
       ],
       "type": "object"
     },
+    "CreateAreaBanRuleRequest": {
+      "document": "CreateAreaBanRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要新增的封禁地域",
+          "example": "[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]",
+          "member": "Area",
+          "name": "Areas",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "地域信息的语言，支持cn、en，默认为中文cn",
+          "example": "cn",
+          "member": "string",
+          "name": "Lang",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAreaBanRuleResponse": {
+      "document": "CreateAreaBanRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDealsGoods": {
       "document": "计费下单接口出入参Goods",
       "members": [
@@ -6293,7 +6492,7 @@
         },
         {
           "disabled": false,
-          "document": "目前支持根据ts排序",
+          "document": "目前支持根据create_time、modify_time、id排序",
           "example": "\"ts\"",
           "member": "string",
           "name": "By",
@@ -6945,6 +7144,43 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAreaBanRuleRequest": {
+      "document": "DescribeAreaBanRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "www.testwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAreaBanRuleResponse": {
+      "document": "DescribeAreaBanRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则内容",
+          "example": "{     \"Status\": 1,     \"Source\": \"custom\",     \"Areas\": [         {             \"Country\": \"中国\",             \"Region\": \"广东\",             \"City\": \"深圳\"         }     ],     \"JobType\": \"Timed\",     \"JobDateTime\": {         \"Timed\": [             {                 \"StartDateTime\": 1711618518,                 \"EndDateTime\": 1711919518             }         ],         \"Cron\": [          ],         \"TimeTZone\": \"UTC+8\"     },     \"Lang\": \"cn\" }",
+          "member": "AreaBanRule",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAreaBanSupportAreasRequest": {
       "document": "DescribeAreaBanSupportAreas请求参数结构体",
@@ -15970,6 +16206,69 @@
       ],
       "type": "object"
     },
+    "ModifyAreaBanRuleRequest": {
+      "document": "ModifyAreaBanRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要修改的域名",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要新增的封禁地域",
+          "example": "[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]",
+          "member": "Area",
+          "name": "Areas",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则执行的方式，TimedJob为定时执行，CronJob为周期执行",
+          "example": "TimedJob",
+          "member": "string",
+          "name": "JobType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时任务配置",
+          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "地域信息的语言，支持cn、en，默认为中文cn",
+          "example": "cn",
+          "member": "string",
+          "name": "Lang",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAreaBanRuleResponse": {
+      "document": "ModifyAreaBanRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAreaBanStatusRequest": {
       "document": "ModifyAreaBanStatus请求参数结构体",
       "members": [
@@ -17595,7 +17894,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "1：开启WAF开关，0：关闭WAF开关",
           "example": "0",
           "member": "uint64",
           "name": "Status",

@@ -6,26 +6,18 @@ Input:
 
 ```
 tccli tsf CreateConfigTemplate --cli-unfold-argument  \
-    --ConfigTemplateName 配置1 \
-    --ConfigTemplateDesc 11111111111 \
+    --ConfigTemplateName config_temp_app \
+    --ConfigTemplateDesc This is desc \
     --ConfigTemplateType Ribbon \
-    --ConfigTemplateValue '#请求处理超时时间
-ribbon.ReadTimeout: 5000
-#请求连接超时时间
-ribbon.ConnectTimeout: 2000
-#同一实例最大重试次数，不包括首次调用
-ribbon.MaxAutoRetries: 0
-#重试其他实例的最大重试次数，不包括首次所选的server
-ribbon.MaxAutoRetriesNextServer: 1
-#是否对所有操作请求都进行重试
-ribbon.OkToRetryOnAllOperations: false'
+    --ConfigTemplateValue #请求处理超时时间\nribbon.ReadTimeout: 5000\n#请求连接超时时间\nribbon.ConnectTimeout: 2000\n#同一实例最大重试次数，不包括首次调用\nribbon.MaxAutoRetries: 0\n#重试其他实例的最大重试次数，不包括首次所选的server\nribbon.MaxAutoRetriesNextServer: 1\n#是否对所有操作请求都进行重试\nribbon.OkToRetryOnAllOperations: false\n \
+    --ProgramIdList program-6a79x94v
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "841f10d8-24e7-471b-ad8a-b401d9dcbe70",
+        "RequestId": "829c771a-2e0f-4858-8d5a-3f63ddf2f739",
         "Result": true
     }
 }

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli live ModifyLivePadTemplate --cli-unfold-argument  \
-    --Description xx \
-    --TemplateName xx \
-    --Url xx \
+    --Description padtemplate \
+    --TemplateName mytemplate \
+    --Url http://mypad.file.com/pad/file.mp4 \
     --WaitDuration 1 \
     --TemplateId 1 \
     --MaxDuration 1

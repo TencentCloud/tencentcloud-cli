@@ -4510,7 +4510,7 @@
         {
           "disabled": false,
           "document": "是否创建成功",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -4520,7 +4520,7 @@
         {
           "disabled": false,
           "document": "创建的配置文件Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "file-id",
           "member": "string",
           "name": "ConfigFileId",
           "output_required": false,
@@ -6103,7 +6103,7 @@
         {
           "disabled": false,
           "document": "删除服务结果。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -7600,7 +7600,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "无",
+          "example": "namespace",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -7609,7 +7609,7 @@
         {
           "disabled": false,
           "document": "组",
-          "example": "无",
+          "example": "group",
           "member": "string",
           "name": "Group",
           "required": false,
@@ -7618,7 +7618,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "无",
+          "example": "a.yaml",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7627,7 +7627,7 @@
         {
           "disabled": false,
           "document": "发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续",
-          "example": "无",
+          "example": "end-id",
           "member": "uint64",
           "name": "EndId",
           "required": false,
@@ -8029,7 +8029,7 @@
         {
           "disabled": false,
           "document": "配置文件Id",
-          "example": "无",
+          "example": "file-id",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -8212,7 +8212,7 @@
         {
           "disabled": false,
           "document": "配置文件ID",
-          "example": "无",
+          "example": "file-id",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -8568,6 +8568,15 @@
         },
         {
           "disabled": false,
+          "document": "是否开启同步到全局注册中心\t",
+          "example": "false",
+          "member": "string",
+          "name": "SyncToGlobalRegistry",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "1",
           "member": "uint64",
@@ -8895,6 +8904,15 @@
           "name": "OnlyExistHealthyInstance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启同步到全局注册中心\t",
+          "example": "false",
+          "member": "string",
+          "name": "SyncToGlobalRegistry",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11354,6 +11372,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该命名空间下的服务对哪些命名空间可见\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[Namespace-1,Namespace-2]",
+          "member": "string",
+          "name": "ServiceExportTo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11412,6 +11440,15 @@
           "example": "[1,2,3]",
           "member": "string",
           "name": "RemoveGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "该命名空间下的服务对哪些命名空间下可见，\n1、为空或者不填写，表示仅当前命名空间可见\n2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）\n3、列表内容为部份命名空间名称，则只对这些命名空间下可见",
+          "example": "[Namespace-1, Namespace-2]",
+          "member": "string",
+          "name": "ServiceExportTo",
           "required": false,
           "type": "list"
         }

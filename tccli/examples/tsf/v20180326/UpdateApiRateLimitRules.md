@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tsf UpdateApiRateLimitRules --cli-unfold-argument  \
-    --ApiIds api-d5970cd api-d5971cd \
+    --ApiIds api-b1sd366q \
     --UsableStatus enabled \
     --MaxQps 1000
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "94bddd45-fd4c-4192-aea2-5eeb5b74d5b6",
         "Result": true
     }
 }

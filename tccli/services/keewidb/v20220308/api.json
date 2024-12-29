@@ -328,7 +328,7 @@
           "example": "\"2022-03-24 11:52:20\"",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -338,27 +338,27 @@
           "example": "\"999b6b89c60-f01a-11eb-9d37-7d65897b5c22\"",
           "member": "string",
           "name": "BackupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份类型。<ul><li>1：手动备份，指根据业务运维排障需求，立即执行备份任务的操作。</li> <li>0：自动备份，指根据自动备份策略定时自动发起的备份任务。</li></ul>",
+          "document": "备份类型。<ul><li>1：手动备份，指根据业务运维排障需求，立即执行备份任务的操作。</li> <li>0：自动备份，指根据自动备份策略定时自动发起的备份任务。</li><li>2：生成RDB，指根据业务需求，发起的生成文件为rdb类型的备份任务。</li></ul>",
           "example": "\"1\"",
           "member": "string",
           "name": "BackupType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备份的备注信息.",
-          "example": "\"\"",
+          "example": "备份测试",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -368,7 +368,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -378,7 +378,7 @@
           "example": "0",
           "member": "int64",
           "name": "Locked",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -585,7 +585,7 @@
         {
           "disabled": false,
           "document": "本次备份的备注信息。",
-          "example": "xxx",
+          "example": "备份test",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -612,7 +612,7 @@
           "example": "6954227",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2502,80 +2502,80 @@
         {
           "disabled": false,
           "document": "策略，ACCEPT或者DROP。",
-          "example": "无",
+          "example": "ACCEPT",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地址组id代表的地址集合。",
-          "example": "无",
+          "example": "set",
           "member": "string",
           "name": "AddressModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16。",
-          "example": "无",
+          "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述。",
-          "example": "无",
+          "example": "XX上云安全组默认入站规则",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络协议，支持udp、tcp等。",
-          "example": "无",
+          "example": "ALL",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "端口。",
-          "example": "无",
+          "example": "ALL",
           "member": "string",
           "name": "PortRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务组id代表的协议和端口集合。",
-          "example": "无",
+          "example": "keewidb",
           "member": "string",
           "name": "ServiceModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组id代表的地址集合。",
-          "example": "无",
+          "example": "set",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2694,7 +2694,7 @@
         {
           "disabled": false,
           "document": "用户的Appid。",
-          "example": "12345",
+          "example": "121100000",
           "member": "int64",
           "name": "Appid",
           "output_required": true,
@@ -2834,7 +2834,7 @@
         {
           "disabled": false,
           "document": "存储引擎。",
-          "example": "无",
+          "example": "TendisV2_Storage",
           "member": "string",
           "name": "Engine",
           "output_required": true,
@@ -2914,7 +2914,7 @@
         {
           "disabled": false,
           "document": "反亲和性标签",
-          "example": "无",
+          "example": "anti-affinity: \"true\"",
           "member": "string",
           "name": "Tags",
           "output_required": true,
@@ -3064,7 +3064,7 @@
         {
           "disabled": false,
           "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
           "member": "string",
           "name": "Vip6",
           "output_required": true,
@@ -3074,7 +3074,7 @@
         {
           "disabled": false,
           "document": "内部参数，用户可忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "内部参数，用户可忽略。",
           "member": "string",
           "name": "RemainBandwidthDuration",
           "output_required": true,
@@ -3200,100 +3200,100 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "无",
+          "example": "cluster-node-timeout",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数类型：integer",
-          "example": "无",
+          "example": "integer",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
-          "example": "无",
+          "example": "false",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数默认值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前运行参数值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数说明",
-          "example": "无",
+          "example": "集群模式下当节点在指定时间内(毫秒)不可达则被认为处于失败状态",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数最小值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "Min",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数最大值",
-          "example": "无",
+          "example": "120000",
           "member": "string",
           "name": "Max",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ms",
           "member": "string",
           "name": "Unit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3306,80 +3306,80 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "无",
+          "example": "cluster-node-timeout",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数类型：multi",
-          "example": "无",
+          "example": "integer",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数默认值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前运行参数值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数说明",
-          "example": "无",
+          "example": "Cluster node timeout is the amount of milliseconds a node must be unreachable for it to be considered in failure state",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数说明",
-          "example": "无",
+          "example": "[\"12000\",\"15000\"]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3418,22 +3418,20 @@
         {
           "disabled": false,
           "document": "设置参数的名字",
-          "example": "无",
+          "example": "cluster-node-timeout",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "设置参数的值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3444,50 +3442,50 @@
         {
           "disabled": false,
           "document": "参数名称",
-          "example": "无",
+          "example": "cluster-node-timeout",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改前值",
-          "example": "无",
+          "example": "15000",
           "member": "string",
           "name": "PreValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后值",
-          "example": "无",
+          "example": "16000",
           "member": "string",
           "name": "NewValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "无",
+          "example": "2024-12-02 10:52:47",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3500,50 +3498,50 @@
         {
           "disabled": false,
           "document": "慢查询耗时",
-          "example": "无",
+          "example": "524",
           "member": "int64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端地址",
-          "example": "无",
+          "example": "218.89.**.**",
           "member": "string",
           "name": "Client",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命令",
-          "example": "无",
+          "example": "zremrangebyscore",
           "member": "string",
           "name": "Command",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "详细命令行信息",
-          "example": "无",
+          "example": "zremrangebyscore myzset 2 3",
           "member": "string",
           "name": "CommandLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行时间",
-          "example": "无",
+          "example": "2024-12-24 18:43:11",
           "member": "string",
           "name": "ExecuteTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3582,80 +3580,80 @@
         {
           "disabled": false,
           "document": "参数名",
-          "example": "无",
+          "example": "slowlog-max-len",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数类型：text",
-          "example": "无",
+          "example": "text",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
-          "example": "无",
+          "example": "true",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数默认值",
-          "example": "无",
+          "example": "128",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前运行参数值",
-          "example": "无",
+          "example": "128",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数说明",
-          "example": "无",
+          "example": "Cluster node timeout is the amount of milliseconds a node must be unreachable for it to be considered in failure state",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数可取值",
-          "example": "无",
+          "example": "0-1024",
           "member": "string",
           "name": "TextValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4231,80 +4229,80 @@
         {
           "disabled": false,
           "document": "策略，ACCEPT或者DROP。",
-          "example": "无",
+          "example": "DROP",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地址组id代表的地址集合。",
-          "example": "无",
+          "example": "set",
           "member": "string",
           "name": "AddressModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源Ip或Ip段，例如192.168.0.0/16。",
-          "example": "无",
+          "example": "9.9.0.0/16",
           "member": "string",
           "name": "CidrIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述。",
-          "example": "无",
+          "example": "**上云安全组默认入站规则",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网络协议，支持udp、tcp等。",
-          "example": "无",
+          "example": "ALL",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "端口。",
-          "example": "无",
+          "example": "6379",
           "member": "string",
           "name": "PortRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务组id代表的协议和端口集合。",
-          "example": "无",
+          "example": "keewidb",
           "member": "string",
           "name": "ServiceModule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组id代表的地址集合。",
-          "example": "无",
+          "example": "set",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4413,10 +4411,10 @@
         {
           "disabled": false,
           "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "c70aa82ff684f36f8fe8b7c61cb77e568**********",
           "member": "string",
           "name": "NodeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4576,40 +4574,40 @@
         {
           "disabled": false,
           "document": "节点 ID。",
-          "example": "无",
+          "example": "125101",
           "member": "int64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点组的名称，主节点为空。",
-          "example": "无",
+          "example": "ng-1",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点的可用区ID，比如ap-guangzhou-1。",
-          "example": "无",
+          "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点组角色。<ul><li>master：为主节点。</li><li>replica：为副本节点。</li></ul>",
-          "example": "无",
+          "example": "master",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4619,7 +4617,7 @@
           "example": "无",
           "member": "KeeWiDBNode",
           "name": "KeeWiDBNodes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4713,50 +4711,50 @@
         {
           "disabled": false,
           "document": "创建时间，时间格式：yyyy-mm-dd hh:mm:ss。",
-          "example": "无",
+          "example": "2019-09-05 14:52:30",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "项目ID。",
-          "example": "无",
+          "example": "11100",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组ID。",
-          "example": "无",
+          "example": "sg-ep0g9***",
           "member": "string",
           "name": "SecurityGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组名称。",
-          "example": "无",
+          "example": "安全组名称-放开外网",
           "member": "string",
           "name": "SecurityGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全组备注。",
-          "example": "无",
+          "example": "禁止使用-有安全风险",
           "member": "string",
           "name": "SecurityGroupRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4766,7 +4764,7 @@
           "example": "无",
           "member": "Outbound",
           "name": "Outbound",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4776,7 +4774,7 @@
           "example": "无",
           "member": "Inbound",
           "name": "Inbound",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4819,7 +4817,7 @@
           "example": "16481",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4829,17 +4827,17 @@
           "example": "2022-03-12 15:06:23",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "FLOW_BACKUPINSTANCE",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4849,7 +4847,7 @@
           "example": "实例1",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4859,7 +4857,7 @@
           "example": "kee-4hyqewjs",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4869,7 +4867,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4879,7 +4877,7 @@
           "example": "0",
           "member": "float",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4889,7 +4887,7 @@
           "example": "2022-03-12 15:08:23",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4899,7 +4897,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4909,7 +4907,7 @@
           "example": "10112432xxx",
           "member": "string",
           "name": "OperatorUin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4922,50 +4920,50 @@
         {
           "disabled": false,
           "document": "执行时间",
-          "example": "无",
+          "example": "2024-12-25 13:43:08",
           "member": "string",
           "name": "ExecuteTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "慢查询耗时（毫秒）",
-          "example": "无",
+          "example": "197",
           "member": "int64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命令",
-          "example": "无",
+          "example": "ZADD",
           "member": "string",
           "name": "Command",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "详细命令行信息",
-          "example": "无",
+          "example": "ZADD students 95 \"Alice\"",
           "member": "string",
           "name": "CommandLine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "节点ID",
-          "example": "无",
+          "example": "6fd96ca18603e1fd05c48ec6f99a69cc89******",
           "member": "string",
           "name": "Node",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4978,20 +4976,20 @@
         {
           "disabled": false,
           "document": "订单号ID，调用云API时使用此ID\t",
-          "example": "无",
+          "example": "192314****",
           "member": "string",
           "name": "DealId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "长订单ID，反馈订单问题给官方客服使用此ID\t",
-          "example": "无",
+          "example": "2024112**",
           "member": "string",
           "name": "DealName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5001,7 +4999,7 @@
           "example": "100002",
           "member": "int64",
           "name": "ZoneId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5011,47 +5009,47 @@
           "example": "1",
           "member": "int64",
           "name": "GoodsNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建用户uin",
-          "example": "无",
+          "example": "10001464****",
           "member": "string",
           "name": "Creater",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单创建时间",
-          "example": "无",
+          "example": "2024-11-25 18:12:34",
           "member": "string",
           "name": "CreatTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单超时时间",
-          "example": "无",
+          "example": "2024-12-10 18:12:34",
           "member": "string",
           "name": "OverdueTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单完成时间",
-          "example": "无",
+          "example": "2024-11-25 18:30:34",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5061,37 +5059,37 @@
           "example": "4",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单状态描述",
-          "example": "无",
+          "example": "发货中",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单实际总价，单位：分",
-          "example": "无",
+          "example": "1039",
           "member": "float",
           "name": "Price",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "100035***,100036***",
           "member": "string",
           "name": "InstanceIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

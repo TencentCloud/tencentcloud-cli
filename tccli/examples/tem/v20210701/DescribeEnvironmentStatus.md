@@ -17,7 +17,7 @@ Output:
         "Result": [
             {
                 "EnvironmentId": "en-xxxxxx",
-                "EnvironmentName": "abc",
+                "EnvironmentName": "en-name-xxx",
                 "ClusterId": "cls-xxxxxx",
                 "ClusterStatus": "running",
                 "EnvironmentStartingStatus": {
@@ -32,7 +32,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1se3sd-xxx-xxx-xxx"
     }
 }
 ```

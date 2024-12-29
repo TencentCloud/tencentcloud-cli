@@ -1434,7 +1434,7 @@
           "example": "129542924",
           "member": "int64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1732,10 +1732,10 @@
         {
           "disabled": false,
           "document": "创建 kill 会话任务返回的异步任务 id",
-          "example": "123456",
+          "example": "14672492",
           "member": "int64",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2704,7 +2704,7 @@
           "example": "健康巡检",
           "member": "string",
           "name": "DiagItem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2714,7 +2714,7 @@
           "example": "数据库快照",
           "member": "string",
           "name": "DiagType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2724,17 +2724,17 @@
           "example": "5",
           "member": "int64",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断事件详情，若无附加解释信息则输出为空。",
-          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"慢会话详情\"}},[{\"Layout\":\"vertical\",\"DataType\":\"table\",\"Data\":{\"Names\":[\"Schema\",{\"Type\":\"sql\",\"Name\":\"SqlText\"}],\"Data\":[{\"Schema\":\"demo\",\"SqlText\":\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\"}]}}]]",
+          "example": "[{\"DataType\":\"title\"}]",
           "member": "string",
           "name": "Explanation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2744,17 +2744,17 @@
           "example": "数据库健康检查，发现1个问题",
           "member": "string",
           "name": "Outline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断出的问题。",
-          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"事务快照\"}},{\"DataType\":\"title\",\"Data\":{\"Name\":\"Innodb状态快照\"}}]",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"会话快照\"}}]",
           "member": "string",
           "name": "Problem",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2764,7 +2764,7 @@
           "example": "4",
           "member": "int64",
           "name": "Severity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2774,17 +2774,17 @@
           "example": "2019-11-06 12:05:40",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断建议，若无建议则输出为空。",
-          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"SQL优化\"}},[{\"DataType\":\"sqlAdvice\",\"Data\":{\"Advices\":[{\"TableName\":\"t1\",\"TableSchema\":\"demo\",\"Keys\":[{\"SqlText\":\"alter table `demo`.`t1` add index index_0(`c_time`);\"}]}],\"Comments\":[],\"Schema\":\"demo\",\"SqlPlan\":{\"Before\":[{\"Format\":\"Table\",\"Data\":{\"Names\":[\"id\",\"select_type\",\"table\",\"partitions\",\"type\",\"possible_keys\",\"key\",\"key_len\",\"ref\",\"rows\",\"filtered\",\"Extra\"],\"Data\":[[1,\"SIMPLE\",\"t2\",null,\"ALL\",null,null,null,null,161663,100,null],[1,\"SIMPLE\",\"t1\",null,\"ALL\",null,null,null,null,655801,3.33,null]]}}],\"After\":[{\"Format\":\"Table\",\"Data\":{\"Names\":[\"id\",\"select_type\",\"table\",\"partitions\",\"type\",\"possible_keys\",\"key\",\"key_len\",\"ref\",\"rows\",\"filtered\",\"Extra\"],\"Data\":[[1,\"SIMPLE\",\"t2\",null,\"ALL\",null,null,null,null,161663,100,null],[1,\"SIMPLE\",\"t1\",null,\"ALL\",\"index_0\",null,null,null,655801,33.33,null]]}}]},\"SqlText\":\"select t1.*, t2.* from t1, t2 where t1.c_time = t2.c_time and t1.name > t2.name order by t2.name limit 10\",\"Tables\":[{\"TableName\":\"t1\",\"TableSchema\":\"demo\",\"TableDDL\":\"CREATE TABLE `t1` (\\n  `id` int NOT NULL AUTO_INCREMENT,\\n  `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,\\n  `name` varchar(32) DEFAULT NULL,\\n  `age` int NOT NULL DEFAULT '0',\\n  PRIMARY KEY (`id`)\\n) ENGINE=InnoDB AUTO_INCREMENT=786393 DEFAULT CHARSET=utf8mb3\"},{\"TableName\":\"t2\",\"TableSchema\":\"demo\",\"TableDDL\":\"CREATE TABLE `t2` (\\n  `id` int NOT NULL AUTO_INCREMENT,\\n  `c_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\\n  `name` varchar(32) DEFAULT NULL,\\n  `age` int NOT NULL DEFAULT '0',\\n  PRIMARY KEY (`id`)\\n) ENGINE=InnoDB AUTO_INCREMENT=1507180 DEFAULT CHARSET=utf8mb3\"}],\"Cost\":{\"Before\":1.060202269597E10,\"After\":1.060202269597E10,\"Ratio\":0}}}]]",
+          "example": "[{\"DataType\":\"title\",\"Data\":{\"Name\":\"SQL优化\"}}]",
           "member": "string",
           "name": "Suggestions",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2794,7 +2794,7 @@
           "example": "innodb_rows_read_per_qps",
           "member": "string",
           "name": "Metric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2804,7 +2804,7 @@
           "example": "2019-11-06 12:05:50",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4570,7 +4570,7 @@
         {
           "disabled": false,
           "document": "实例 ID 。",
-          "example": "test",
+          "example": "cdb-test1234",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8573,7 +8573,7 @@
           "example": "0.00008",
           "member": "float",
           "name": "LockTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8583,7 +8583,7 @@
           "example": "0.000096",
           "member": "float",
           "name": "LockTimeMax",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8593,17 +8593,17 @@
           "example": "0.000041",
           "member": "float",
           "name": "LockTimeMin",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总扫描行数",
-          "example": "584832",
+          "example": "584833",
           "member": "int64",
           "name": "RowsExamined",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8613,7 +8613,7 @@
           "example": "101782",
           "member": "int64",
           "name": "RowsExaminedMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8623,7 +8623,7 @@
           "example": "584832",
           "member": "int64",
           "name": "RowsExaminedMin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8633,7 +8633,7 @@
           "example": "0.513363",
           "member": "float",
           "name": "QueryTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8643,7 +8643,7 @@
           "example": "0.765213",
           "member": "float",
           "name": "QueryTimeMax",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8653,7 +8653,7 @@
           "example": "0.629921",
           "member": "float",
           "name": "QueryTimeMin",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8663,7 +8663,7 @@
           "example": "292416",
           "member": "int64",
           "name": "RowsSent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8673,7 +8673,7 @@
           "example": "292416",
           "member": "int64",
           "name": "RowsSentMax",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8683,7 +8683,7 @@
           "example": "292416",
           "member": "int64",
           "name": "RowsSentMin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8693,7 +8693,7 @@
           "example": "37",
           "member": "int64",
           "name": "ExecTimes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8703,7 +8703,7 @@
           "example": "select * from t;",
           "member": "string",
           "name": "SqlTemplate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8713,7 +8713,7 @@
           "example": "SELECT * FROM t;",
           "member": "string",
           "name": "SqlText",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8723,7 +8723,7 @@
           "example": "test_center",
           "member": "string",
           "name": "Schema",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8733,7 +8733,7 @@
           "example": "2.44",
           "member": "float",
           "name": "QueryTimeRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8743,7 +8743,7 @@
           "example": "1.92",
           "member": "float",
           "name": "LockTimeRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8753,7 +8753,7 @@
           "example": "2.3",
           "member": "float",
           "name": "RowsExaminedRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8763,7 +8763,7 @@
           "example": "18.67",
           "member": "float",
           "name": "RowsSentRatio",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8773,7 +8773,7 @@
           "example": "0.513363",
           "member": "float",
           "name": "QueryTimeAvg",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8783,7 +8783,7 @@
           "example": "26518.0",
           "member": "float",
           "name": "RowsSentAvg",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8793,7 +8793,7 @@
           "example": "0.000096",
           "member": "float",
           "name": "LockTimeAvg",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8803,7 +8803,7 @@
           "example": "584832.0",
           "member": "float",
           "name": "RowsExaminedAvg",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -8813,7 +8813,7 @@
           "example": "AD7651E51E8C6FBA",
           "member": "string",
           "name": "Md5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

@@ -7,30 +7,24 @@ Input:
 ```
 tccli tem ModifyApplicationAutoscaler --cli-unfold-argument  \
     --ApplicationId app-xxxxxx \
-    --SourceChannel 0 \
     --EnvironmentId en-xxxxxx \
     --AutoscalerId scaler-xxxxxx \
     --Autoscaler.MinReplicas 0 \
-    --Autoscaler.MaxReplicas 0 \
+    --Autoscaler.MaxReplicas 4 \
+    --Autoscaler.AutoscalerName pk-test-clb \
+    --Autoscaler.Description  \
+    --Autoscaler.Enabled False \
     --Autoscaler.HorizontalAutoscaler.0.MinReplicas 0 \
-    --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 0 \
-    --Autoscaler.HorizontalAutoscaler.0.Metrics abc \
-    --Autoscaler.HorizontalAutoscaler.0.Threshold 0 \
+    --Autoscaler.HorizontalAutoscaler.0.MaxReplicas 4 \
+    --Autoscaler.HorizontalAutoscaler.0.Metrics CPU \
+    --Autoscaler.HorizontalAutoscaler.0.DoubleThreshold 50 \
     --Autoscaler.HorizontalAutoscaler.0.Enabled True \
-    --Autoscaler.HorizontalAutoscaler.0.DoubleThreshold 0 \
-    --Autoscaler.CronHorizontalAutoscaler.0.Name abc \
-    --Autoscaler.CronHorizontalAutoscaler.0.Period abc \
-    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.StartAt abc \
-    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.TargetReplicas 0 \
-    --Autoscaler.CronHorizontalAutoscaler.0.Enabled True \
-    --Autoscaler.CronHorizontalAutoscaler.0.Priority 0 \
-    --Autoscaler.AutoscalerId abc \
-    --Autoscaler.AutoscalerName abc \
-    --Autoscaler.Description abc \
-    --Autoscaler.CreateDate abc \
-    --Autoscaler.ModifyDate abc \
-    --Autoscaler.EnableDate abc \
-    --Autoscaler.Enabled True
+    --Autoscaler.CronHorizontalAutoscaler.0.Name pk-test \
+    --Autoscaler.CronHorizontalAutoscaler.0.Period * * * \
+    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.StartAt 02:00 \
+    --Autoscaler.CronHorizontalAutoscaler.0.Schedules.0.TargetReplicas 1 \
+    --Autoscaler.CronHorizontalAutoscaler.0.Enabled False \
+    --Autoscaler.CronHorizontalAutoscaler.0.Priority 0
 ```
 
 Output: 
@@ -38,7 +32,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "abbd6b63-xxx-xxx-xxx"
     }
 }
 ```

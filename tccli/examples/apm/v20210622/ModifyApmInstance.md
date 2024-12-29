@@ -1,15 +1,15 @@
 **Example 1: 成功事例**
 
-修改APM Instance参数
+修改 APM 业务系统参数
 
 Input: 
 
 ```
 tccli apm ModifyApmInstance --cli-unfold-argument  \
-    --InstanceId abc \
-    --Description abc \
+    --InstanceId apm-CVfliqa8U \
+    --Description 测试业务系统 \
     --TraceDuration 0 \
-    --Name abc \
+    --Name 测试业务系统 \
     --OpenBilling True \
     --SpanDailyCounters 1 \
     --ErrRateThreshold 5 \
@@ -27,7 +27,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "test-test-test"
     }
 }
 ```

@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf EnableUnitRule --cli-unfold-argument  \
-    --Id gw-ins-afsfas
+    --Id unit-rl-u0643wrg
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
+        "RequestId": "dc5fd463-2889-4c5c-b662-98a70a149b95",
         "Result": true
     }
 }

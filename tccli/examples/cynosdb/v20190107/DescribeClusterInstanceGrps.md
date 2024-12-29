@@ -6,273 +6,223 @@ Input:
 
 ```
 tccli cynosdb DescribeClusterInstanceGrps --cli-unfold-argument  \
-    --ClusterId cynosdbmysql-oib3wx0i
+    --ClusterId cynosdbmysql-grhvkwd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 0,
-        "InstanceGrpInfoList": [
-            {
-                "AppId": 0,
-                "ClusterId": "abc",
-                "CreatedTime": "2020-09-22 00:00:00",
-                "DeletedTime": "2020-09-22 00:00:00",
-                "InstanceGrpId": "abc",
-                "Status": "abc",
-                "Type": "abc",
-                "UpdatedTime": "2020-09-22 00:00:00",
-                "Vip": "abc",
-                "Vport": 0,
-                "WanDomain": "abc",
-                "WanIP": "abc",
-                "WanPort": 0,
-                "WanStatus": "abc",
-                "InstanceSet": [
-                    {
-                        "Uin": "abc",
-                        "AppId": 0,
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "ProjectId": 0,
-                        "Region": "abc",
-                        "Zone": "abc",
-                        "Status": "abc",
-                        "StatusDesc": "abc",
-                        "DbMode": "abc",
-                        "DbType": "abc",
-                        "DbVersion": "abc",
-                        "Cpu": 0,
-                        "Memory": 0,
-                        "Storage": 0,
-                        "InstanceType": "abc",
-                        "InstanceRole": "abc",
-                        "UpdateTime": "2020-09-22 00:00:00",
-                        "CreateTime": "2020-09-22 00:00:00",
-                        "VpcId": "abc",
-                        "SubnetId": "abc",
-                        "Vip": "abc",
-                        "Vport": 0,
-                        "PayMode": 0,
-                        "PeriodEndTime": "2020-09-22 00:00:00",
-                        "DestroyDeadlineText": "abc",
-                        "IsolateTime": "2020-09-22 00:00:00",
-                        "NetType": 0,
-                        "WanDomain": "abc",
-                        "WanIP": "abc",
-                        "WanPort": 0,
-                        "WanStatus": "abc",
-                        "DestroyTime": "abc",
-                        "CynosVersion": "abc",
-                        "ProcessingTask": "abc",
-                        "RenewFlag": 0,
-                        "MinCpu": 0,
-                        "MaxCpu": 0,
-                        "ServerlessStatus": "abc",
-                        "StorageId": "abc",
-                        "StoragePayMode": 0,
-                        "PhysicalZone": "abc",
-                        "BusinessType": "abc",
-                        "Tasks": [
-                            {
-                                "TaskId": 0,
-                                "TaskType": "abc",
-                                "TaskStatus": "abc",
-                                "ObjectId": "abc",
-                                "ObjectType": "abc"
-                            }
-                        ],
-                        "IsFreeze": "abc",
-                        "ResourceTags": [
-                            {
-                                "TagKey": "abc",
-                                "TagValue": "abc"
-                            }
-                        ],
-                        "MasterZone": "abc",
-                        "SlaveZones": [
-                            "abc"
-                        ],
-                        "InstanceNetInfo": [
-                            {
-                                "InstanceGroupType": "abc",
-                                "InstanceGroupId": "abc",
-                                "VpcId": "abc",
-                                "SubnetId": "abc",
-                                "NetType": 0,
-                                "Vip": "abc",
-                                "Vport": 0,
-                                "WanDomain": "abc",
-                                "WanIP": "abc",
-                                "WanPort": 0,
-                                "WanStatus": "abc"
-                            }
-                        ],
-                        "ResourcePackages": [
-                            {
-                                "PackageId": "abc",
-                                "PackageType": "abc"
-                            }
-                        ],
-                        "InstanceIndexMode": "abc"
-                    }
-                ],
-                "UniqVpcId": "abc",
-                "UniqSubnetId": "abc",
-                "OldAddrInfo": {
-                    "Vip": "abc",
-                    "Vport": 0,
-                    "ReturnTime": "abc"
-                },
-                "ProcessingTasks": [
-                    "abc"
-                ],
-                "Tasks": [
-                    {
-                        "TaskId": 0,
-                        "TaskType": "abc",
-                        "TaskStatus": "abc",
-                        "ObjectId": "abc",
-                        "ObjectType": "abc"
-                    }
-                ],
-                "NetServiceId": 0
-            }
-        ],
         "InstanceGroupInfoList": [
             {
-                "AppId": 0,
-                "ClusterId": "abc",
-                "CreatedTime": "abc",
-                "DeletedTime": "abc",
-                "InstanceGroupId": "abc",
-                "Status": "abc",
-                "Type": "abc",
-                "UpdatedTime": "abc",
-                "Vip": "abc",
-                "Vport": 0,
-                "WanDomain": "abc",
-                "WanIP": "abc",
-                "WanPort": 0,
-                "WanStatus": "abc",
+                "AppId": 1312008346,
+                "ClusterId": "cynosdbmysql-grhvkwd",
+                "CreatedTime": "2024-12-03 14:03:58",
+                "DeletedTime": "0001-01-01 00:00:00",
+                "InstanceGroupId": "cynosdbmysql-grp-r7hmdx4",
                 "InstanceSet": [
                     {
-                        "Uin": "abc",
-                        "AppId": 0,
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
-                        "InstanceId": "abc",
-                        "InstanceName": "abc",
-                        "ProjectId": 0,
-                        "Region": "abc",
-                        "Zone": "abc",
-                        "Status": "abc",
-                        "StatusDesc": "abc",
-                        "DbMode": "abc",
-                        "DbType": "abc",
-                        "DbVersion": "abc",
-                        "Cpu": 0,
-                        "Memory": 0,
-                        "Storage": 0,
-                        "InstanceType": "abc",
-                        "InstanceRole": "abc",
-                        "UpdateTime": "2020-09-22 00:00:00",
-                        "CreateTime": "2020-09-22 00:00:00",
-                        "VpcId": "abc",
-                        "SubnetId": "abc",
-                        "Vip": "abc",
-                        "Vport": 0,
-                        "PayMode": 0,
-                        "PeriodEndTime": "2020-09-22 00:00:00",
-                        "DestroyDeadlineText": "abc",
-                        "IsolateTime": "2020-09-22 00:00:00",
-                        "NetType": 0,
-                        "WanDomain": "abc",
-                        "WanIP": "abc",
-                        "WanPort": 0,
-                        "WanStatus": "abc",
-                        "DestroyTime": "abc",
-                        "CynosVersion": "abc",
-                        "ProcessingTask": "abc",
-                        "RenewFlag": 0,
-                        "MinCpu": 0,
-                        "MaxCpu": 0,
-                        "ServerlessStatus": "abc",
-                        "StorageId": "abc",
-                        "StoragePayMode": 0,
-                        "PhysicalZone": "abc",
-                        "BusinessType": "abc",
-                        "Tasks": [
-                            {
-                                "TaskId": 0,
-                                "TaskType": "abc",
-                                "TaskStatus": "abc",
-                                "ObjectId": "abc",
-                                "ObjectType": "abc"
-                            }
-                        ],
-                        "IsFreeze": "abc",
-                        "ResourceTags": [
-                            {
-                                "TagKey": "abc",
-                                "TagValue": "abc"
-                            }
-                        ],
-                        "MasterZone": "abc",
-                        "SlaveZones": [
-                            "abc"
-                        ],
+                        "AppId": 1312008346,
+                        "BusinessType": "",
+                        "ClusterId": "cynosdbmysql-grhvkwd",
+                        "ClusterName": "cynosdbmysql-grhvkwd",
+                        "Cpu": 2,
+                        "CreateTime": "2024-12-03 14:03:58",
+                        "CynosVersion": "2.1.13.001",
+                        "DbMode": "NORMAL",
+                        "DbType": "MYSQL",
+                        "DbVersion": "5.7",
+                        "DestroyDeadlineText": "",
+                        "DestroyTime": "",
+                        "DeviceType": "exclusive",
+                        "InstanceAbility": {
+                            "IsSupportForceRestart": "no",
+                            "NonsupportForceRestartReason": "NoForcedRestartAllowed"
+                        },
+                        "InstanceId": "cynosdbmysql-ins-crl6j3l",
+                        "InstanceIndexMode": "onlyRowIndex",
+                        "InstanceName": "cynosdbmysql-ins-crl6j3l",
                         "InstanceNetInfo": [
                             {
-                                "InstanceGroupType": "abc",
-                                "InstanceGroupId": "abc",
-                                "VpcId": "abc",
-                                "SubnetId": "abc",
-                                "NetType": 0,
-                                "Vip": "abc",
-                                "Vport": 0,
-                                "WanDomain": "abc",
-                                "WanIP": "abc",
+                                "InstanceGroupId": "cynosdbmysql-grp-r7hmdx4",
+                                "InstanceGroupType": "ha",
+                                "NetType": 1,
+                                "SubnetId": "subnet-oiz56c8",
+                                "Vip": "172.0.0.2",
+                                "VpcId": "vpc-gy34uq2",
+                                "Vport": 3306,
+                                "WanDomain": "",
+                                "WanIP": "",
                                 "WanPort": 0,
-                                "WanStatus": "abc"
+                                "WanStatus": "init"
                             }
                         ],
-                        "ResourcePackages": [
-                            {
-                                "PackageId": "abc",
-                                "PackageType": "abc"
-                            }
-                        ],
-                        "InstanceIndexMode": "abc"
+                        "InstanceRole": "master",
+                        "InstanceStorageType": "",
+                        "InstanceType": "rw",
+                        "IsFreeze": "no",
+                        "IsolateTime": "0001-01-01 00:00:00",
+                        "MasterZone": "ap-chongqing-1",
+                        "MaxCpu": 0,
+                        "Memory": 4,
+                        "MinCpu": 0,
+                        "NetType": 1,
+                        "PayMode": 1,
+                        "PeriodEndTime": "2025-01-03 14:04:40",
+                        "PhysicalZone": "ap-chongqing-1",
+                        "ProcessingTask": "",
+                        "ProjectId": 0,
+                        "Region": "ap-chongqing",
+                        "RenewFlag": 1,
+                        "ResourcePackages": null,
+                        "ResourceTags": null,
+                        "ServerlessStatus": "",
+                        "SlaveZones": [],
+                        "Status": "running",
+                        "StatusDesc": "运行中",
+                        "Storage": 10,
+                        "StorageId": "cynosdbmysql-grhvkwd",
+                        "StoragePayMode": 1,
+                        "SubnetId": "subnet-oiz56c8",
+                        "Tasks": [],
+                        "Uin": "100021117054",
+                        "UpdateTime": "2024-12-03 14:04:40",
+                        "Vip": "172.0.0.12",
+                        "VpcId": "vpc-gy34uq2",
+                        "Vport": 3306,
+                        "WanDomain": "",
+                        "WanIP": "",
+                        "WanPort": 0,
+                        "WanStatus": "init",
+                        "Zone": "ap-chongqing-1"
                     }
                 ],
-                "UniqVpcId": "abc",
-                "UniqSubnetId": "abc",
+                "NetServiceId": 53990,
                 "OldAddrInfo": {
-                    "Vip": "abc",
-                    "Vport": 0,
-                    "ReturnTime": "abc"
+                    "ReturnTime": "",
+                    "Vip": "",
+                    "Vport": 0
                 },
-                "ProcessingTasks": [
-                    "abc"
-                ],
-                "Tasks": [
+                "ProcessingTasks": [],
+                "Status": "running",
+                "Tasks": [],
+                "Type": "ha",
+                "UniqSubnetId": "subnet-oiz56c8",
+                "UniqVpcId": "vpc-gy34uq2",
+                "UpdatedTime": "2024-12-03 14:04:40",
+                "Vip": "172.0.0.12",
+                "Vport": 3306,
+                "WanDomain": "",
+                "WanIP": "",
+                "WanPort": 0,
+                "WanStatus": "init"
+            },
+            {
+                "AppId": 1310008346,
+                "ClusterId": "cynosdbmysql-grhvkwd",
+                "CreatedTime": "2024-12-03 14:03:58",
+                "DeletedTime": "0001-01-01 00:00:00",
+                "InstanceGroupId": "cynosdbmysql-grp-08o6vjh",
+                "InstanceSet": [
                     {
-                        "TaskId": 0,
-                        "TaskType": "abc",
-                        "TaskStatus": "abc",
-                        "ObjectId": "abc",
-                        "ObjectType": "abc"
+                        "AppId": 1310008346,
+                        "BusinessType": "",
+                        "ClusterId": "cynosdbmysql-grhvkwd",
+                        "ClusterName": "cynosdbmysql-grhvkwd",
+                        "Cpu": 2,
+                        "CreateTime": "2024-12-03 14:03:58",
+                        "CynosVersion": "2.1.13.001",
+                        "DbMode": "NORMAL",
+                        "DbType": "MYSQL",
+                        "DbVersion": "5.7",
+                        "DestroyDeadlineText": "",
+                        "DestroyTime": "",
+                        "DeviceType": "exclusive",
+                        "InstanceAbility": {
+                            "IsSupportForceRestart": "no",
+                            "NonsupportForceRestartReason": "NoForcedRestartAllowed"
+                        },
+                        "InstanceId": "cynosdbmysql-ins-6t9ynb7",
+                        "InstanceIndexMode": "onlyRowIndex",
+                        "InstanceName": "cynosdbmysql-ins-6t9ynb7",
+                        "InstanceNetInfo": [
+                            {
+                                "InstanceGroupId": "cynosdbmysql-grp-08o6vj0",
+                                "InstanceGroupType": "singleRo",
+                                "NetType": 1,
+                                "SubnetId": "subnet-oiz56c8",
+                                "Vip": "172.0.0.7",
+                                "VpcId": "vpc-gy34uq2",
+                                "Vport": 3306,
+                                "WanDomain": "",
+                                "WanIP": "",
+                                "WanPort": 0,
+                                "WanStatus": "init"
+                            }
+                        ],
+                        "InstanceRole": "ro",
+                        "InstanceStorageType": "",
+                        "InstanceType": "ro",
+                        "IsFreeze": "no",
+                        "IsolateTime": "0001-01-01 00:00:00",
+                        "MasterZone": "ap-chongqing-1",
+                        "MaxCpu": 0,
+                        "Memory": 4,
+                        "MinCpu": 0,
+                        "NetType": 1,
+                        "PayMode": 1,
+                        "PeriodEndTime": "2025-01-03 14:04:40",
+                        "PhysicalZone": "ap-chongqing-1",
+                        "ProcessingTask": "",
+                        "ProjectId": 0,
+                        "Region": "ap-chongqing",
+                        "RenewFlag": 1,
+                        "ResourcePackages": null,
+                        "ResourceTags": null,
+                        "ServerlessStatus": "",
+                        "SlaveZones": [],
+                        "Status": "running",
+                        "StatusDesc": "运行中",
+                        "Storage": 10,
+                        "StorageId": "cynosdbmysql-grhvkwd",
+                        "StoragePayMode": 1,
+                        "SubnetId": "subnet-oiz56c8",
+                        "Tasks": [],
+                        "Uin": "100021117054",
+                        "UpdateTime": "2024-12-09 15:18:23",
+                        "Vip": "172.0.0.7",
+                        "VpcId": "vpc-gy34uq2",
+                        "Vport": 3306,
+                        "WanDomain": "",
+                        "WanIP": "",
+                        "WanPort": 0,
+                        "WanStatus": "init",
+                        "Zone": "ap-chongqing-1"
                     }
                 ],
-                "NetServiceId": 0
+                "NetServiceId": 53991,
+                "OldAddrInfo": {
+                    "ReturnTime": "",
+                    "Vip": "",
+                    "Vport": 0
+                },
+                "ProcessingTasks": [],
+                "Status": "running",
+                "Tasks": [],
+                "Type": "singleRo",
+                "UniqSubnetId": "subnet-oiz56c8",
+                "UniqVpcId": "vpc-gy34uq2",
+                "UpdatedTime": "2024-12-03 14:04:40",
+                "Vip": "172.0.0.7",
+                "Vport": 3306,
+                "WanDomain": "",
+                "WanIP": "",
+                "WanPort": 0,
+                "WanStatus": "init"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "c32019ab-0d57-4b3d-80ea-5f52c12b523f",
+        "TotalCount": 2
     }
 }
 ```

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ssl DescribeHostTeoInstanceList --cli-unfold-argument  \
-    --CertificateId abc \
+    --CertificateId YT****j \
     --IsCache 1 \
-    --Filters.0.FilterKey abc \
-    --Filters.0.FilterValue abc \
-    --ResourceType abc \
-    --OldCertificateId abc
+    --Filters.0.FilterKey domainMatch \
+    --Filters.0.FilterValue 1 \
+    --ResourceType teo \
+    --OldCertificateId k****j
 ```
 
 Output: 
@@ -20,14 +20,14 @@ Output:
     "Response": {
         "InstanceList": [
             {
-                "Host": "abc",
-                "CertId": "abc",
-                "ZoneId": "abc",
-                "Status": "abc"
+                "Host": "www.zrh.com",
+                "CertId": "jk****L",
+                "ZoneId": "zone-*****",
+                "Status": "online"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 1,
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

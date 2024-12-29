@@ -577,7 +577,7 @@
         {
           "disabled": false,
           "document": "Mesh名称",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "DisplayName",
           "required": true,
@@ -640,7 +640,7 @@
           "example": "mesh-xxxxxxxx",
           "member": "string",
           "name": "MeshId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -825,7 +825,7 @@
         {
           "disabled": false,
           "document": "mesh名字",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "MeshId",
           "required": true,
@@ -840,7 +840,7 @@
         {
           "disabled": false,
           "document": "访问日志输出路径。默认 /dev/stdout",
-          "example": "xxx",
+          "example": "/dev/stdout",
           "member": "string",
           "name": "File",
           "output_required": true,
@@ -900,7 +900,7 @@
         {
           "disabled": false,
           "document": "GRPC第三方服务器地址",
-          "example": "无",
+          "example": "x.x.x.x",
           "member": "string",
           "name": "Address",
           "output_required": true,
@@ -2196,7 +2196,7 @@
         {
           "disabled": false,
           "document": "GRPC第三方服务器地址",
-          "example": "xxx",
+          "example": "x.x.x.x",
           "member": "string",
           "name": "Address",
           "required": false,

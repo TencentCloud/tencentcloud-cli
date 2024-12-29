@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tsf RevocationConfig --cli-unfold-argument  \
-    --ConfigReleaseId dcfgr-jy9no5ka
+    --ConfigReleaseId dcfgr-y84o2xla
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "64e5494d-ae5d-4114-abe7-c34d8719415e",
+        "RequestId": "f860eb0c-7a37-48e4-ba23-f246f5e93e41",
         "Result": true
     }
 }

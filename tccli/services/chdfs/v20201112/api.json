@@ -1090,7 +1090,7 @@
           "example": "无",
           "member": "FileSystem",
           "name": "FileSystems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1850,7 +1850,7 @@
           "example": "f14mrrxxxxxx-C1Yv",
           "member": "string",
           "name": "MountPointId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1860,7 +1860,7 @@
           "example": "mp-test",
           "member": "string",
           "name": "MountPointName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1870,7 +1870,7 @@
           "example": "f14mrrxxxxxx",
           "member": "string",
           "name": "FileSystemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1880,7 +1880,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1890,17 +1890,17 @@
           "example": "2024-12-25T19:15:28+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定的权限组ID列表",
-          "example": "无",
+          "example": "[\"ag-pushxxxx\"]",
           "member": "string",
           "name": "AccessGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2051,7 +2051,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "无",
+          "example": "key-test",
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -2062,7 +2062,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "val-test",
           "member": "string",
           "name": "Value",
           "output_required": true,

@@ -13,60 +13,88 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "bc76b15f-734f-4bb5-9b0d-b3a1ecd5444d",
         "Templates": [
             {
-                "TemplateId": 1000,
-                "TemplateName": "testName",
-                "IsDelayLive": 1,
-                "Description": "test",
-                "FlvParam": {
+                "AacParam": {
+                    "ClassId": 0,
+                    "CosBucketName": "",
+                    "CosBucketPath": "",
+                    "CosBucketRegion": "",
                     "Enable": 0,
+                    "Procedure": "",
                     "RecordInterval": 1800,
-                    "StorageTime": 6000,
-                    "VodSubAppId": 123456
+                    "StorageMode": "normal",
+                    "StorageTime": 0,
+                    "VodFileName": "",
+                    "VodSubAppId": 251006352
+                },
+                "CosStore": 0,
+                "Description": "",
+                "FlvParam": {
+                    "ClassId": null,
+                    "CosBucketName": "",
+                    "CosBucketPath": "",
+                    "CosBucketRegion": "",
+                    "Enable": 1,
+                    "Procedure": "",
+                    "RecordInterval": 1800,
+                    "StorageMode": "normal",
+                    "StorageTime": 4572,
+                    "VodFileName": "",
+                    "VodSubAppId": 251006352
+                },
+                "FlvSpecialParam": {
+                    "UploadInRecording": true
+                },
+                "HlsParam": {
+                    "ClassId": 0,
+                    "CosBucketName": "",
+                    "CosBucketPath": "",
+                    "CosBucketRegion": "",
+                    "Enable": 0,
+                    "Procedure": "",
+                    "RecordInterval": 1800,
+                    "StorageMode": "normal",
+                    "StorageTime": 0,
+                    "VodFileName": "",
+                    "VodSubAppId": 251006352
+                },
+                "HlsSpecialParam": {
+                    "FlowContinueDuration": 0
+                },
+                "IsDelayLive": 0,
+                "Mp3Param": {
+                    "ClassId": null,
+                    "CosBucketName": "",
+                    "CosBucketPath": "",
+                    "CosBucketRegion": "",
+                    "Enable": 0,
+                    "Procedure": "",
+                    "RecordInterval": 1800,
+                    "StorageMode": "normal",
+                    "StorageTime": 0,
+                    "VodFileName": "",
+                    "VodSubAppId": 251006352
                 },
                 "Mp4Param": {
                     "ClassId": 0,
-                    "StorageMode": "xx",
-                    "StorageTime": 0,
-                    "VodSubAppId": 0,
-                    "VodFileName": "xx",
+                    "CosBucketName": "",
+                    "CosBucketPath": "",
+                    "CosBucketRegion": "",
                     "Enable": 0,
-                    "RecordInterval": 0,
-                    "Procedure": "xx"
-                },
-                "AacParam": {
-                    "ClassId": 0,
-                    "StorageMode": "xx",
-                    "StorageTime": 0,
-                    "VodSubAppId": 0,
-                    "VodFileName": "xx",
-                    "Enable": 0,
-                    "RecordInterval": 0,
-                    "Procedure": "xx"
-                },
-                "Mp3Param": {
-                    "ClassId": 0,
-                    "StorageMode": "xx",
-                    "StorageTime": 0,
-                    "VodSubAppId": 0,
-                    "VodFileName": "xx",
-                    "Enable": 0,
-                    "RecordInterval": 0,
-                    "Procedure": "xx"
-                },
-                "HlsParam": {
-                    "Enable": 1,
+                    "Procedure": "",
                     "RecordInterval": 1800,
-                    "StorageTime": 600,
-                    "VodSubAppId": 123456
+                    "StorageMode": "normal",
+                    "StorageTime": 0,
+                    "VodFileName": "",
+                    "VodSubAppId": 251006352
                 },
-                "HlsSpecialParam": {
-                    "FlowContinueDuration": 60
-                }
+                "RemoveWatermark": true,
+                "TemplateId": 1370613,
+                "TemplateName": "victor0001"
             }
-        ],
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        ]
     }
 }
 ```

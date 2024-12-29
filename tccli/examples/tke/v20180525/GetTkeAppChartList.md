@@ -1,18 +1,27 @@
-**Example 1: 获取TKE支持的AppChart列表**
+**Example 1: 获取EKS支持的网络 AppChart列表**
 
-获取TKE支持的AppChart列表
+获取EKS支持的网络 AppChart列表
 
 Input: 
 
 ```
-tccli tke GetTkeAppChartList --cli-unfold-argument ```
+tccli tke GetTkeAppChartList --cli-unfold-argument  \
+    --Kind network \
+    --ClusterType eks
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "bbe22a77-0366-442d-97ef-b7bc59fa0520",
-        "AppCharts": []
+        "AppCharts": [
+            {
+                "Label": "{\"amd64\":\"true\",\"eks\":\"true\",\"kind\":\"network\",\"network\":\"true\",\"tke\":\"true\"}",
+                "LatestVersion": "1.5.1",
+                "Name": "ingressnginx"
+            }
+        ],
+        "RequestId": "566fdd07-fa79-4dc1-8d22-78907dedd607"
     }
 }
 ```

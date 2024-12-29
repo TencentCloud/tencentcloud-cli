@@ -7,7 +7,7 @@ Input:
 ```
 tccli live DescribeCasterPlayUrl --cli-unfold-argument  \
     --PlayUrlType 1 \
-    --CasterId 10 \
+    --CasterId 63501 \
     --PlayUrlIndex 1
 ```
 

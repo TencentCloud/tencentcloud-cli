@@ -4,7 +4,7 @@
       {
         "document": "锁定实例后，创建会话，以连接实例",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"GameRegion\": \"字符串型\",\n    \"GameId\": \"字符串型\",\n    \"UserId\": \"字符串型\",\n    \"ClientSession\": \"字符串型\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"1\",\n        \"ServerSession\": \"abc\",\n        \"Role\": \"Player\",\n        \"RequestId\": \"req123\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleNumber\": \"1\",\n        \"ServerSession\": \"e30=\",\n        \"Role\": \"Player\",\n        \"RequestId\": \"req123\"\n    }\n}",
         "title": "CreateSession示例"
       }
     ],
@@ -27,7 +27,7 @@
     "StartPublishStream": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"123123\",\n    \"PublishUrl\": \"rtmp://live.stream.com/publish\"\n}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"639d069e-a13a-437a-a10b-64a33ecb8e79\",\n    \"PublishUrl\": \"rtmp://live.stream.com/publish\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "开始云端推流"
       }
@@ -51,7 +51,7 @@
     "StopPublishStream": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"123123\"\n}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishStream\n<公共请求参数>\n\n{\n    \"UserId\": \"639d069e-a13a-437a-a10b-64a33ecb8e79\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
         "title": "停止云端推流"
       }

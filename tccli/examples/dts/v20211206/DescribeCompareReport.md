@@ -15,85 +15,68 @@ Output:
 {
     "Response": {
         "Abstract": {
-            "Options": {
-                "Method": "abc",
-                "SampleRate": 0,
-                "ThreadCount": 0
-            },
+            "CheckedTables": 1,
+            "Conclusion": "same",
+            "DifferentRows": 0,
+            "DifferentTables": 0,
+            "DstSampleRows": 0,
+            "FinishedAt": "2024-12-20 19:07:20",
+            "NearlyTableCount": 1,
             "Objects": {
-                "ObjectMode": "abc",
+                "AdvancedObjects": [],
                 "ObjectItems": [
                     {
-                        "DbName": "abc",
-                        "SchemaName": "abc",
-                        "DbMode": "abc",
-                        "TableMode": "abc",
+                        "DbMode": "partial",
+                        "DbName": "db_1",
+                        "SchemaName": "",
+                        "TableMode": "partial",
                         "Tables": [
                             {
-                                "TableName": "abc",
-                                "ColumnMode": "abc",
-                                "Columns": [
-                                    {
-                                        "ColumnName": "abc"
-                                    }
-                                ]
+                                "ColumnMode": "all",
+                                "Columns": [],
+                                "TableName": "tb_1"
                             }
                         ],
-                        "ViewMode": "abc",
-                        "Views": [
-                            {
-                                "ViewName": "abc"
-                            }
-                        ]
+                        "ViewMode": "partial",
+                        "Views": null
                     }
                 ],
-                "AdvancedObjects": [
-                    "abc"
-                ]
+                "ObjectMode": "partial"
             },
-            "Conclusion": "abc",
-            "Status": "abc",
-            "TotalTables": 1,
-            "CheckedTables": 1,
-            "DifferentTables": 1,
-            "SkippedTables": 1,
-            "NearlyTableCount": 1,
-            "DifferentRows": 1,
-            "SrcSampleRows": 1,
-            "DstSampleRows": 1,
-            "StartedAt": "abc",
-            "FinishedAt": "abc"
+            "Options": {
+                "Method": "dataCheck",
+                "SampleRate": 100,
+                "ThreadCount": 1
+            },
+            "SkippedTables": 0,
+            "SrcSampleRows": 0,
+            "StartedAt": "2024-12-20 19:04:03",
+            "Status": "success",
+            "TotalTables": 1
         },
         "Detail": {
             "Difference": {
-                "TotalCount": 1,
-                "Items": [
-                    {
-                        "Db": "abc",
-                        "Table": "abc",
-                        "Chunk": 0,
-                        "SrcItem": "abc",
-                        "DstItem": "abc",
-                        "IndexName": "abc",
-                        "LowerBoundary": "abc",
-                        "UpperBoundary": "abc",
-                        "CostTime": 0,
-                        "FinishedAt": "abc"
-                    }
-                ]
+                "Items": [],
+                "TotalCount": 0
+            },
+            "DifferenceAdvancedObjects": {
+                "Items": null,
+                "TotalCount": 0
+            },
+            "DifferenceData": {
+                "Items": null,
+                "TotalCount": 0
+            },
+            "DifferenceRow": {
+                "Items": null,
+                "TotalCount": 0
             },
             "Skipped": {
-                "TotalCount": 1,
-                "Items": [
-                    {
-                        "Db": "abc",
-                        "Table": "abc",
-                        "Reason": "abc"
-                    }
-                ]
+                "Items": [],
+                "TotalCount": 0
             }
         },
-        "RequestId": "abc"
+        "RequestId": "a3365b29-2042-4565-9206-8df9e2af1a17"
     }
 }
 ```

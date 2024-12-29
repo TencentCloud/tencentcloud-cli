@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tse DeleteGovernanceServices --cli-unfold-argument  \
-    --InstanceId abc \
-    --GovernanceServices.0.Name abc \
-    --GovernanceServices.0.Namespace abc
+    --InstanceId ins-id \
+    --GovernanceServices.0.Name name \
+    --GovernanceServices.0.Namespace namespace
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "abc"
+        "RequestId": "req-id"
     }
 }
 ```

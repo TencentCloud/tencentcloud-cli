@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
-    --OrderBy.Value xx \
-    --OrderBy.Key xx \
+    --OrderBy.Value startTime \
+    --OrderBy.Key desc \
     --Filters.0.Key traceID \
     --Filters.0.Type in \
     --Filters.0.Value 663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac \
@@ -22,51 +22,51 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
+        "RequestId": "test-test-test",
         "Spans": [
             {
-                "TraceID": "xx",
+                "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac",
                 "Logs": [
                     {
                         "Timestamp": 0,
                         "Fields": [
                             {
-                                "Type": "xx",
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Type": "service.name",
+                                "Value": "=",
+                                "Key": "java-order-service"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Type": "service.name",
+                        "Value": "=",
+                        "Key": "java-order-service"
                     }
                 ],
                 "Process": {
-                    "ServiceName": "xx",
+                    "ServiceName": "java-order-service",
                     "Tags": [
                         {
-                            "Type": "xx",
-                            "Value": "xx",
-                            "Key": "xx"
+                            "Type": "service.name",
+                            "Value": "=",
+                            "Key": "java-order-service"
                         }
                     ]
                 },
                 "Timestamp": 0,
-                "OperationName": "xx",
+                "OperationName": "/test",
                 "References": [
                     {
-                        "RefType": "xx",
-                        "SpanID": "xx",
-                        "TraceID": "xx"
+                        "RefType": "1",
+                        "SpanID": "4q6549c49aaa",
+                        "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac"
                     }
                 ],
                 "StartTime": 0,
                 "Duration": 0,
-                "SpanID": "xx",
+                "SpanID": "1q23w1q32165",
                 "StartTimeMillis": 0
             }
         ]
@@ -82,8 +82,8 @@ Input:
 
 ```
 tccli apm DescribeGeneralSpanList --cli-unfold-argument  \
-    --OrderBy.Value xx \
-    --OrderBy.Key xx \
+    --OrderBy.Value startTime \
+    --OrderBy.Key desce \
     --Filters.0.Key pulsar:sub_name \
     --Filters.0.Type = \
     --Filters.0.Value participants \
@@ -99,51 +99,51 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
+        "RequestId": "test-test-test",
         "Spans": [
             {
-                "TraceID": "xx",
+                "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac",
                 "Logs": [
                     {
                         "Timestamp": 0,
                         "Fields": [
                             {
-                                "Type": "xx",
-                                "Value": "xx",
-                                "Key": "xx"
+                                "Type": "test",
+                                "Value": "=",
+                                "Key": "test1"
                             }
                         ]
                     }
                 ],
                 "Tags": [
                     {
-                        "Type": "xx",
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Type": "=",
+                        "Value": "java-order-service",
+                        "Key": "service.name"
                     }
                 ],
                 "Process": {
-                    "ServiceName": "xx",
+                    "ServiceName": "java-order-service",
                     "Tags": [
                         {
-                            "Type": "xx",
-                            "Value": "xx",
-                            "Key": "xx"
+                            "Type": "test",
+                            "Value": "=",
+                            "Key": "test2"
                         }
                     ]
                 },
                 "Timestamp": 0,
-                "OperationName": "xx",
+                "OperationName": "/test",
                 "References": [
                     {
-                        "RefType": "xx",
-                        "SpanID": "xx",
-                        "TraceID": "xx"
+                        "RefType": "1",
+                        "SpanID": "qertuytw",
+                        "TraceID": "663727c6d5d4436dd1fcaa509d0f4dc0,6c2c8ebff420a8e5b2276ec799446f98,68d3062a4c559ba212a36f61c97ba8ac"
                     }
                 ],
                 "StartTime": 0,
                 "Duration": 0,
-                "SpanID": "xx",
+                "SpanID": "xasfvava",
                 "StartTimeMillis": 0
             }
         ]

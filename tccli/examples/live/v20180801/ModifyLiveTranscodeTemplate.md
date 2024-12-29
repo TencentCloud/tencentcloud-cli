@@ -9,7 +9,7 @@ tccli live ModifyLiveTranscodeTemplate --cli-unfold-argument  \
     --Profile main \
     --AudioBitrate 600 \
     --Rotate 0 \
-    --Description test \
+    --Description transcode \
     --VideoBitrate 1500 \
     --Vcodec h265 \
     --Height 240 \

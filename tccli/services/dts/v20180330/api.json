@@ -424,7 +424,7 @@
         {
           "disabled": false,
           "document": "需要迁移的源数据库表信息，用json格式的字符串描述。当MigrateOption.MigrateObject配置为2（指定库表迁移）时必填。\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]",
-          "example": "无",
+          "example": "[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]",
           "member": "string",
           "name": "DatabaseInfo",
           "required": false,
@@ -469,7 +469,7 @@
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -737,7 +737,7 @@
         {
           "disabled": false,
           "document": "数据迁移任务名称",
-          "example": "无",
+          "example": "dts-job1",
           "member": "string",
           "name": "JobName",
           "required": false,
@@ -800,7 +800,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -810,7 +810,7 @@
           "example": "无",
           "member": "MigrateJobInfo",
           "name": "JobList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1506,17 +1506,17 @@
           "example": "dts-75sekyal",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据迁移任务名称",
-          "example": "test",
+          "example": "dts-75sekyal",
           "member": "string",
           "name": "JobName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1526,7 +1526,7 @@
           "example": "{\"ConsistencyParams\":{\"SelectRowsPerTable\":0,\"TablesSelectAll\":0",
           "member": "MigrateOption",
           "name": "MigrateOption",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1536,7 +1536,7 @@
           "example": "mysql",
           "member": "string",
           "name": "SrcDatabaseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1546,7 +1546,7 @@
           "example": "cdb",
           "member": "string",
           "name": "SrcAccessType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1556,7 +1556,7 @@
           "example": "{\"AccessKey\":\"\",\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"EngineVersion\":\"\"",
           "member": "SrcInfo",
           "name": "SrcInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1566,7 +1566,7 @@
           "example": "mysql",
           "member": "string",
           "name": "DstDatabaseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1576,7 +1576,7 @@
           "example": "cdb",
           "member": "string",
           "name": "DstAccessType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1586,17 +1586,17 @@
           "example": "{\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"InstanceId\":\"crs-eciqrvyo\",\"Ip\":",
           "member": "DstInfo",
           "name": "DstInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "需要迁移的源数据库表信息，如果需要迁移的是整个实例，该字段为[]",
-          "example": "\"\"",
+          "example": "[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]",
           "member": "string",
           "name": "DatabaseInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1606,7 +1606,7 @@
           "example": "2022-04-14 16:35:23",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1616,7 +1616,7 @@
           "example": "2022-04-14 16:48:33",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1626,17 +1626,17 @@
           "example": "2022-04-14 16:48:33",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）",
+          "document": "任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）,23-未知状态（Unknown）",
           "example": "6",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1646,27 +1646,27 @@
           "example": "{\"CurrentStepProgress\":\"0\",\"MasterSlaveDistance\":-1,\"Progress\":\"",
           "member": "MigrateDetailInfo",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务错误信息提示，当任务发生错误时，不为null或者空值",
-          "example": " []",
+          "example": "无",
           "member": "ErrorInfo",
           "name": "ErrorInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "TagItem",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1676,7 +1676,7 @@
           "example": "[{\"AccessKey\":\"\",\"CcnId\":\"\",\"CvmInstanceId\":\"\",\"EngineVersion\":\"",
           "member": "SrcInfo",
           "name": "SrcInfoMulti",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1848,7 +1848,7 @@
         {
           "disabled": false,
           "document": "数据迁移任务名称",
-          "example": "test",
+          "example": "dts-75sekyal",
           "member": "string",
           "name": "JobName",
           "required": false,
@@ -1902,7 +1902,7 @@
         {
           "disabled": false,
           "document": "当选择'指定库表'迁移的时候, 需要设置待迁移的源数据库表信息,用符合json数组格式的字符串描述, 如下所例。\n\n对于database-table两级结构的数据库：\n[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]\n对于database-schema-table三级结构：\n[{\"Database\":\"db1\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db1\",\"Schema\":\"s2\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\",\"Schema\":\"s1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db3\"},{\"Database\":\"db4\",\"Schema\":\"s1\"}]\n\n如果是'整个实例'的迁移模式,不需设置该字段",
-          "example": "无",
+          "example": "[{\"Database\":\"db1\",\"Table\":[\"table1\",\"table2\"]},{\"Database\":\"db2\"}]",
           "member": "string",
           "name": "DatabaseInfo",
           "required": false,

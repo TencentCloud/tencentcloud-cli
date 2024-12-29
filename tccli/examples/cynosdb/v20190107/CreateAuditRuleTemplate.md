@@ -11,12 +11,12 @@ tccli cynosdb CreateAuditRuleTemplate --cli-unfold-argument  \
     --RuleFilters.0.Value 100.122.76.176 10.0.0.9 \
     --RuleFilters.1.Type user \
     --RuleFilters.1.Compare EQS \
-    --RuleFilters.1.Value wy test \
+    --RuleFilters.1.Value wy andy \
     --RuleFilters.2.Type sqlType \
     --RuleFilters.2.Compare EQS \
     --RuleFilters.2.Value Update Delete \
-    --RuleTemplateName test \
-    --Description 用于测试的规则模板
+    --RuleTemplateName andy \
+    --Description andy模板
 ```
 
 Output: 

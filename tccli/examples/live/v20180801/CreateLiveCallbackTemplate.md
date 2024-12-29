@@ -13,7 +13,7 @@ tccli live CreateLiveCallbackTemplate --cli-unfold-argument  \
     --SnapshotNotifyUrl http://www.yourdomain.com/api/notify?action=snapshot \
     --PornCensorshipNotifyUrl http://www.yourdomain.com/api/notify?action=porn \
     --CallbackKey adasda131312 \
-    --Description test
+    --Description 回调模板
 ```
 
 Output: 

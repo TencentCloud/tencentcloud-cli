@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ssl DescribeCertificateBindResourceTaskDetail --cli-unfold-argument  \
-    --TaskId abc \
-    --Limit abc \
-    --Offset abc
+    --TaskId 758439 \
+    --Limit 0 \
+    --Offset 10
 ```
 
 Output: 
@@ -17,45 +17,45 @@ Output:
     "Response": {
         "CLB": [
             {
-                "Region": "abc",
+                "Region": "ap-guangzhou",
                 "InstanceList": [
                     {
-                        "LoadBalancerId": "abc",
-                        "LoadBalancerName": "abc",
+                        "LoadBalancerId": "lb-*****",
+                        "LoadBalancerName": "test",
                         "Listeners": [
                             {
-                                "ListenerId": "abc",
-                                "ListenerName": "abc",
+                                "ListenerId": "lbl-*****",
+                                "ListenerName": "test",
                                 "SniSwitch": 1,
-                                "Protocol": "abc",
+                                "Protocol": "https",
                                 "Certificate": {
-                                    "CertId": "abc",
+                                    "CertId": "T***jdj",
                                     "DnsNames": [
-                                        "abc"
+                                        "www.test.com"
                                     ],
-                                    "CertCaId": "abc",
-                                    "SSLMode": "abc"
+                                    "CertCaId": "T***jdj",
+                                    "SSLMode": "mutual"
                                 },
                                 "Rules": [
                                     {
-                                        "LocationId": "abc",
-                                        "Domain": "abc",
+                                        "LocationId": "/test",
+                                        "Domain": "www.test.com",
                                         "IsMatch": true,
                                         "Certificate": {
-                                            "CertId": "abc",
+                                            "CertId": "hr***jdj",
                                             "DnsNames": [
-                                                "abc"
+                                                "www.test.com"
                                             ],
-                                            "CertCaId": "abc",
-                                            "SSLMode": "abc"
+                                            "CertCaId": "hr***jdj",
+                                            "SSLMode": "mutual"
                                         },
                                         "NoMatchDomains": [
-                                            "abc"
+                                            "www.test2.com"
                                         ]
                                     }
                                 ],
                                 "NoMatchDomains": [
-                                    "abc"
+                                    "www.test2.com"
                                 ]
                             }
                         ]
@@ -70,10 +70,10 @@ Output:
                 "TotalCount": 1,
                 "InstanceList": [
                     {
-                        "Domain": "abc",
-                        "CertId": "abc",
-                        "Status": "abc",
-                        "HttpsBillingSwitch": "abc"
+                        "Domain": "www.test.com",
+                        "CertId": "T***jdj",
+                        "Status": "online",
+                        "HttpsBillingSwitch": "on"
                     }
                 ],
                 "Error": ""
@@ -81,11 +81,11 @@ Output:
         ],
         "WAF": [
             {
-                "Region": "abc",
+                "Region": "ap-guangzhou",
                 "InstanceList": [
                     {
-                        "Domain": "abc",
-                        "CertId": "abc",
+                        "Domain": "www.test.com",
+                        "CertId": "T***jdj",
                         "Keepalive": 1
                     }
                 ],
@@ -98,11 +98,11 @@ Output:
                 "TotalCount": 1,
                 "InstanceList": [
                     {
-                        "Domain": "abc",
-                        "InstanceId": "abc",
-                        "Protocol": "abc",
-                        "CertId": "abc",
-                        "VirtualPort": "abc"
+                        "Domain": "www.test.com",
+                        "InstanceId": "ddos-*****",
+                        "Protocol": "https",
+                        "CertId": "T***jdj",
+                        "VirtualPort": "443"
                     }
                 ],
                 "Error": ""
@@ -113,8 +113,8 @@ Output:
                 "TotalCount": 1,
                 "InstanceList": [
                     {
-                        "Domain": "abc",
-                        "CertId": "abc",
+                        "Domain": "www.test.com",
+                        "CertId": "T***jdj",
                         "Status": 0
                     }
                 ],
@@ -125,8 +125,8 @@ Output:
             {
                 "InstanceList": [
                     {
-                        "Domain": "abc",
-                        "CertId": "abc"
+                        "Domain": "www.test.com",
+                        "CertId": "T***jdj"
                     }
                 ],
                 "TotalCount": 1,
@@ -135,38 +135,38 @@ Output:
         ],
         "TKE": [
             {
-                "Region": "abc",
+                "Region": "ap-guangzhou",
                 "InstanceList": [
                     {
-                        "ClusterId": "abc",
-                        "ClusterName": "abc",
+                        "ClusterId": "test",
+                        "ClusterName": "test",
                         "NamespaceList": [
                             {
-                                "Name": "abc",
+                                "Name": "test",
                                 "SecretList": [
                                     {
-                                        "Name": "abc",
-                                        "CertId": "abc",
+                                        "Name": "test",
+                                        "CertId": "T***jdj",
                                         "IngressList": [
                                             {
-                                                "IngressName": "abc",
+                                                "IngressName": "test",
                                                 "TlsDomains": [
-                                                    "abc"
+                                                    "www.test.com"
                                                 ],
                                                 "Domains": [
-                                                    "abc"
+                                                    "www.test.com"
                                                 ]
                                             }
                                         ],
                                         "NoMatchDomains": [
-                                            "abc"
+                                            "www.test2.com"
                                         ]
                                     }
                                 ]
                             }
                         ],
-                        "ClusterType": "abc",
-                        "ClusterVersion": "abc"
+                        "ClusterType": "tke",
+                        "ClusterVersion": "1.16"
                     }
                 ],
                 "TotalCount": 1,
@@ -175,14 +175,14 @@ Output:
         ],
         "APIGATEWAY": [
             {
-                "Region": "abc",
+                "Region": "ap-guangzhou",
                 "InstanceList": [
                     {
-                        "ServiceId": "abc",
-                        "ServiceName": "abc",
-                        "Domain": "abc",
-                        "CertId": "abc",
-                        "Protocol": "abc"
+                        "ServiceId": "service-*****",
+                        "ServiceName": "test",
+                        "Domain": "www.test.com",
+                        "CertId": "T***jdj",
+                        "Protocol": "https"
                     }
                 ],
                 "TotalCount": 1,
@@ -191,25 +191,25 @@ Output:
         ],
         "TCB": [
             {
-                "Region": "abc",
+                "Region": "ap-guangzhou",
                 "Error": "",
                 "Environments": [
                     {
                         "Environment": {
-                            "ID": "abc",
-                            "Source": "abc",
-                            "Name": "abc",
-                            "Status": "abc"
+                            "ID": "TCB-*****",
+                            "Source": "cdn",
+                            "Name": "test-*****",
+                            "Status": "online"
                         },
                         "AccessService": {
                             "InstanceList": [
                                 {
-                                    "Domain": "abc",
+                                    "Domain": "www.test.com",
                                     "Status": 0,
                                     "UnionStatus": 0,
                                     "IsPreempted": true,
                                     "ICPStatus": 0,
-                                    "OldCertificateId": "abc"
+                                    "OldCertificateId": "jd***jdj"
                                 }
                             ],
                             "TotalCount": 0
@@ -217,10 +217,10 @@ Output:
                         "HostService": {
                             "InstanceList": [
                                 {
-                                    "Domain": "abc",
-                                    "Status": "abc",
-                                    "DNSStatus": "abc",
-                                    "OldCertificateId": "abc"
+                                    "Domain": "www.test.com",
+                                    "Status": "online",
+                                    "DNSStatus": "online",
+                                    "OldCertificateId": "jd***jdj"
                                 }
                             ],
                             "TotalCount": 0
@@ -233,10 +233,10 @@ Output:
             {
                 "InstanceList": [
                     {
-                        "Host": "abc",
-                        "CertId": "abc",
-                        "ZoneId": "abc",
-                        "Status": "abc"
+                        "Host": "www.test.com",
+                        "CertId": "T***jdj",
+                        "ZoneId": "zone-*****",
+                        "Status": "online"
                     }
                 ],
                 "TotalCount": 1,
@@ -244,8 +244,8 @@ Output:
             }
         ],
         "Status": 1,
-        "CacheTime": "abc",
-        "RequestId": "abc"
+        "CacheTime": "2023-10-12 12:00:00",
+        "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"
     }
 }
 ```

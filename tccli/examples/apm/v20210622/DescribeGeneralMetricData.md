@@ -1,6 +1,6 @@
 **Example 1: 查询1分钟聚合粒度的 service_metric 指标数据示例**
 
-该示例查询实例为 apm-059oXBfTL，按照 service.name（服务名）、span.kind（客户端/服务端视角）为维度过滤，以 service.name（服务名）、span.kind（客户端/服务端视角）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的 request_count（请求数量）、error_request_count（错误请求数量）、duration_avg（平均响应时间）、slow_request_count（慢请求数量）、duration_p50（耗时 p50）的指标数据。
+该示例查询业务系统为 apm-059oXBfTL，按照 service.name（应用名）、span.kind（客户端/服务端视角）为维度过滤，以 service.name（应用名）、span.kind（客户端/服务端视角）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的 request_count（请求数量）、error_request_count（错误请求数量）、duration_avg（平均响应时间）、slow_request_count（慢请求数量）、duration_p50（耗时 p50）的指标数据。
 
 Input: 
 
@@ -722,7 +722,7 @@ Output:
 
 **Example 2: 查询起始到终止时间内统计 service_metric 指标数据示例**
 
-该示例查询实例为 apm-059oXBfTL，按照 service.name（服务名）、span.kind（客户端/服务端视角）为维度过滤，以 service.name（服务名）、span.kind（客户端/服务端视角）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的 request_count（请求数量）、error_request_count（错误请求数量）、duration_avg（平均响应时间）、slow_request_count（慢请求数量）、duration_p50（耗时 p50）的指标数据。
+该示例查询业务系统为 apm-059oXBfTL，按照 service.name（应用名）、span.kind（客户端/服务端视角）为维度过滤，以 service.name（应用名）、span.kind（客户端/服务端视角）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的 request_count（请求数量）、error_request_count（错误请求数量）、duration_avg（平均响应时间）、slow_request_count（慢请求数量）、duration_p50（耗时 p50）的指标数据。
 
 Input: 
 
@@ -843,7 +843,7 @@ Output:
 
 **Example 3: 查询1分钟聚合粒度的 sql_metric 指标数据示例**
 
-该示例查询实例为 apm-059oXBfTL，按照 service.name（服务名）为维度过滤，以 service.name（服务名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的 error_request_count（错误请求数量）、duration_avg（平均响应时间）的指标数据。
+该示例查询业务系统为 apm-059oXBfTL，按照 service.name（应用名）为维度过滤，以 service.name（应用名）进行聚合，查找开始时间-终止时间内以一分钟为聚合粒度的 error_request_count（错误请求数量）、duration_avg（平均响应时间）的指标数据。
 
 Input: 
 
@@ -1141,7 +1141,7 @@ Output:
 
 **Example 4: 查询起始到终止时间内统计 sql_metric 的 duration_avg（耗时时间）指标数据示例**
 
-该示例查询实例为apm-059oXBfTL，按照 db.instance（数据库名称）为维度过滤，以 service.name（服务名）、db.statement（执行语句）为维度进行聚合，查找开始时间-终止时间内 top5 的 duration_avg（耗时（ms））的指标数据。
+该示例查询业务系统为apm-059oXBfTL，按照 db.instance（数据库名称）为维度过滤，以 service.name（应用名）、db.statement（执行语句）为维度进行聚合，查找开始时间-终止时间内 top5 的 duration_avg（耗时（ms））的指标数据。
 
 Input: 
 

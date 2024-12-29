@@ -6,29 +6,29 @@ Input:
 
 ```
 tccli tcb CreateAndDeployCloudBaseProject --cli-unfold-argument  \
-    --EnvId xx \
-    --Name xx \
-    --Parameters.0.Value xx \
-    --Parameters.0.Key xx \
-    --Tags None \
-    --RcJson xx \
-    --FreeQuota xx \
-    --NetworkConfig xx \
-    --RepoUrl xx \
-    --Source.CodingPackageVersion xx \
-    --Source.WorkDir xx \
-    --Source.Name xx \
-    --Source.Url xx \
+    --EnvId env-absdsasda \
+    --Name name \
+    --Parameters.0.Value value \
+    --Parameters.0.Key key \
+    --Tags tag1 \
+    --RcJson {"key":"value"} \
+    --FreeQuota quota \
+    --NetworkConfig {"key":"value"} \
+    --RepoUrl http://repourl \
+    --Source.CodingPackageVersion version \
+    --Source.WorkDir dir \
+    --Source.Name name \
+    --Source.Url http://url \
     --Source.ProjectId 0 \
-    --Source.RawCode xx \
-    --Source.Branch xx \
-    --Source.ProjectName xx \
-    --Source.Type xx \
-    --Source.CodingPackageName xx \
-    --AddonConfig xx \
+    --Source.RawCode rawCode \
+    --Source.Branch branch \
+    --Source.ProjectName projectName \
+    --Source.Type type \
+    --Source.CodingPackageName packageName \
+    --AddonConfig {"key":"value"} \
     --AutoDeployOnCodeChange True \
-    --EnvAlias xx \
-    --Type xx
+    --EnvAlias env \
+    --Type pre
 ```
 
 Output: 

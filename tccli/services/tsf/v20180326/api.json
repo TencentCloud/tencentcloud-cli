@@ -3222,7 +3222,7 @@
         {
           "disabled": false,
           "document": "配置项id",
-          "example": "dddd",
+          "example": "send-data-to-kafka-6a79x94v",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -3249,7 +3249,7 @@
         {
           "disabled": false,
           "document": "命名空间id",
-          "example": "namespace-xxxx",
+          "example": "namespace-6a79x94v",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -3258,7 +3258,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "cls-xxxx",
+          "example": "cls-6a79x94v",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -3267,7 +3267,7 @@
         {
           "disabled": false,
           "document": "模糊搜索关键词",
-          "example": "xxx",
+          "example": "config-template",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -3285,7 +3285,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3343,7 +3343,7 @@
         {
           "disabled": false,
           "document": "分组绑定网关列表",
-          "example": "",
+          "example": "[{\"GatewayDeployGroupId\":\"group-yo99lney\",\"GroupId\":\"grp-djvzrdih\"}]",
           "member": "GatewayGroupIds",
           "name": "GroupGatewayList",
           "required": true,
@@ -3358,7 +3358,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -6771,7 +6771,7 @@
         {
           "disabled": false,
           "document": "API分组ID",
-          "example": "无",
+          "example": "grp-notmqbpe",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -6780,7 +6780,7 @@
         {
           "disabled": false,
           "document": "微服务ID",
-          "example": "无",
+          "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -6789,7 +6789,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "无",
+          "example": "namespace-v3gw3lna",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -6804,7 +6804,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -6826,7 +6826,7 @@
         {
           "disabled": false,
           "document": "分组名称, 不能包含中文",
-          "example": "zuul_test_group",
+          "example": "grp_user",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -6835,7 +6835,7 @@
         {
           "disabled": false,
           "document": "分组上下文",
-          "example": "%2Fuser",
+          "example": "/grp_user",
           "member": "string",
           "name": "GroupContext",
           "required": true,
@@ -6871,7 +6871,7 @@
         {
           "disabled": false,
           "document": "网关实体ID",
-          "example": "gw-ins-anrptnkf",
+          "example": "gw-ins-szesmg28",
           "member": "string",
           "name": "GatewayInstanceId",
           "required": false,
@@ -6922,7 +6922,7 @@
         {
           "disabled": false,
           "document": "API分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "grp-57at58po",
+          "example": "grp-rzn41l1w",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -6944,7 +6944,7 @@
         {
           "disabled": false,
           "document": "Api Id",
-          "example": "",
+          "example": "api-8c7538te",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -6953,7 +6953,7 @@
         {
           "disabled": false,
           "document": "qps值",
-          "example": "",
+          "example": "10000",
           "member": "uint64",
           "name": "MaxQps",
           "required": true,
@@ -6962,7 +6962,7 @@
         {
           "disabled": false,
           "document": "开启/禁用，enabled/disabled, 不传默认开启",
-          "example": "",
+          "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
           "required": false,
@@ -6977,7 +6977,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -7405,7 +7405,7 @@
         {
           "disabled": false,
           "document": "配置项名称",
-          "example": "test_openapi_config",
+          "example": "config_app",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -7414,7 +7414,7 @@
         {
           "disabled": false,
           "document": "配置项版本",
-          "example": "v1.0",
+          "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
           "required": true,
@@ -7423,7 +7423,7 @@
         {
           "disabled": false,
           "document": "配置项值",
-          "example": "api.invok.limit: 5000",
+          "example": "config: enabled",
           "member": "string",
           "name": "ConfigValue",
           "required": true,
@@ -7432,7 +7432,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "application-gyq2xry5",
+          "example": "application-5yr26r9a",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -7441,7 +7441,7 @@
         {
           "disabled": false,
           "document": "配置项版本描述",
-          "example": "无",
+          "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
           "required": false,
@@ -7450,7 +7450,7 @@
         {
           "disabled": false,
           "document": "配置项值类型",
-          "example": "无",
+          "example": "application",
           "member": "string",
           "name": "ConfigType",
           "required": false,
@@ -7459,7 +7459,7 @@
         {
           "disabled": false,
           "document": "Base64编码的配置项",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
           "required": false,
@@ -7468,7 +7468,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
@@ -7483,7 +7483,7 @@
         {
           "disabled": false,
           "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -7505,7 +7505,7 @@
         {
           "disabled": false,
           "document": "配置模板名称",
-          "example": "配置1",
+          "example": "config_temp_app",
           "member": "string",
           "name": "ConfigTemplateName",
           "required": true,
@@ -7523,7 +7523,7 @@
         {
           "disabled": false,
           "document": "配置模板数据",
-          "example": "#请求处理超时时间ribbon.ReadTimeout: 5000#请求连接超时时间ribbon.ConnectTimeout: 2000#同一实例最大重试次数，不包括首次调用ribbon.MaxAutoRetries: 0#重试其他实例的最大重试次数，不包括首次所选的serverribbon.MaxAutoRetriesNextServer: 1#是否对所有操作请求都进行重试ribbon.OkToRetryOnAllOperations: false",
+          "example": "#请求处理超时时间\\nribbon.ReadTimeout: 5000\\n#请求连接超时时间\\nribbon.ConnectTimeout: 2000\\n#同一实例最大重试次数，不包括首次调用\\nribbon.MaxAutoRetries: 0\\n#重试其他实例的最大重试次数，不包括首次所选的server\\nribbon.MaxAutoRetriesNextServer: 1\\n#是否对所有操作请求都进行重试\\nribbon.OkToRetryOnAllOperations: false\\n",
           "member": "string",
           "name": "ConfigTemplateValue",
           "required": true,
@@ -7532,7 +7532,7 @@
         {
           "disabled": false,
           "document": "配置模板描述",
-          "example": "11111111111",
+          "example": "This is desc",
           "member": "string",
           "name": "ConfigTemplateDesc",
           "required": false,
@@ -7541,7 +7541,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
@@ -7556,7 +7556,7 @@
         {
           "disabled": false,
           "document": "true：创建成功；false：创建失败",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -7578,7 +7578,7 @@
         {
           "disabled": false,
           "document": "配置模板名称",
-          "example": "配置1",
+          "example": "config_app",
           "member": "string",
           "name": "ConfigTemplateName",
           "required": true,
@@ -7629,7 +7629,7 @@
         {
           "disabled": false,
           "document": "创建成功，返回 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ConfigTemplateDesc\":null,\"ConfigTemplateId\":\"dcfg_temp-aln5d3wv\",\"ConfigTemplateName\":\"test\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"#请求处理超时时间\",\"CreateTime\":null,\"UpdateTime\":null}",
+          "example": "{\"ConfigTemplateId\":\"dcfg_temp-ym1v\",\"ConfigTemplateName\":\"ct\",\"ConfigTemplateType\":\"Ribbon\",\"ConfigTemplateValue\":\"time: 2000\"}",
           "member": "ConfigTemplate",
           "name": "Result",
           "output_required": true,
@@ -7994,7 +7994,7 @@
         {
           "disabled": false,
           "document": "配置项名称",
-          "example": "consumer-config",
+          "example": "config_app",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -8003,7 +8003,7 @@
         {
           "disabled": false,
           "document": "配置项版本",
-          "example": "1",
+          "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
           "required": true,
@@ -8012,7 +8012,7 @@
         {
           "disabled": false,
           "document": "配置项文件名",
-          "example": "update",
+          "example": "conf.txt",
           "member": "string",
           "name": "ConfigFileName",
           "required": true,
@@ -8021,7 +8021,7 @@
         {
           "disabled": false,
           "document": "配置项文件内容（原始内容编码需要 utf-8 格式，如果 ConfigFileCode 为 gbk，后台会进行转换）",
-          "example": "workdir",
+          "example": "config=enabled",
           "member": "string",
           "name": "ConfigFileValue",
           "required": true,
@@ -8030,7 +8030,7 @@
         {
           "disabled": false,
           "document": "配置项关联应用ID",
-          "example": "application-dapbkdgy",
+          "example": "application-5yr26r9a",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -8048,7 +8048,7 @@
         {
           "disabled": false,
           "document": "配置项版本描述",
-          "example": "first",
+          "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
           "required": false,
@@ -8066,7 +8066,7 @@
         {
           "disabled": false,
           "document": "后置命令",
-          "example": "/usr/bin/bash",
+          "example": "sh start.sh",
           "member": "string",
           "name": "ConfigPostCmd",
           "required": false,
@@ -8084,7 +8084,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
@@ -8099,7 +8099,7 @@
         {
           "disabled": false,
           "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -8247,7 +8247,7 @@
         {
           "disabled": false,
           "document": "API 分组ID",
-          "example": "grp-5yk7oor1",
+          "example": "grp-djvzrdih",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -8256,7 +8256,7 @@
         {
           "disabled": false,
           "document": "Api信息",
-          "example": "无",
+          "example": "[{\"NamespaceId\":\"namespace-external\",\"MicroserviceId\":\"ms-external\",\"Path\":\"/echo_user\",\"Method\":\"GET\",\"PathMapping\":\"/echo_user\",\"Host\":\"http://www.qq.com\",\"Description\":\"This is desc\",\"RpcExt\":\"{\\\"shortServiceName\\\":\\\"personservice\\\",\\\"interfaceName\\\":\\\"com.tencent.tsf.atom.example.alibaba.dubbo.PersonService\\\",\\\"methodName\\\":\\\"complexCondition\\\",\\\"parameterTypes\\\":\\\"byte,short,int,long,float,double,boolean,char,java.lang.Integer,java.util.List<java.lang.Integer>,java.util.List<java.lang.Object>,java.util.List,java.util.Collection<java.lang.Integer>,java.lang.Integer[],java.lang.Object\\\",\\\"group\\\":null,\\\"version\\\":\\\"1.0\\\",\\\"loadbalance\\\":null,\\\"retries\\\":null,\\\"timeout\\\":null,\\\"protocol\\\":\\\"dubbo\\\",\\\"url\\\":null}\",\"RpcType\":\"http\",\"Md5\":\"1fd35524030bebc48e0f51a3a7fe6737\"}]",
           "member": "ApiInfo",
           "name": "ApiList",
           "required": true,
@@ -8265,7 +8265,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
@@ -8280,7 +8280,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -8548,7 +8548,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "",
+          "example": "namespace-v3gw3lna",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -8557,7 +8557,7 @@
         {
           "disabled": false,
           "document": "微服务名称",
-          "example": "",
+          "example": "provider-app",
           "member": "string",
           "name": "MicroserviceName",
           "required": true,
@@ -8566,7 +8566,7 @@
         {
           "disabled": false,
           "document": "微服务描述信息",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
           "required": false,
@@ -8581,7 +8581,7 @@
         {
           "disabled": false,
           "document": "新增微服务是否成功。\ntrue：操作成功。\nfalse：操作失败。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -8803,7 +8803,7 @@
         {
           "disabled": false,
           "document": "路径重写列表",
-          "example": "无",
+          "example": "[{\"GatewayGroupId\":\"group-ldap5yok\",\"Regex\":\"/consumer\",\"Replacement\":\"/provider\",\"Blocked\":\"N\",\"Order\":1}]",
           "member": "PathRewriteCreateObject",
           "name": "PathRewrites",
           "required": true,
@@ -8818,7 +8818,7 @@
         {
           "disabled": false,
           "document": "返回路径重写规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"rewrite-py5r7b6v\"]",
           "member": "string",
           "name": "Result",
           "type": "list",
@@ -8894,7 +8894,7 @@
         {
           "disabled": false,
           "document": "配置项名称",
-          "example": "testconfig",
+          "example": "config_pub_app",
           "member": "string",
           "name": "ConfigName",
           "required": true,
@@ -8903,7 +8903,7 @@
         {
           "disabled": false,
           "document": "配置项版本",
-          "example": "1.3",
+          "example": "v1",
           "member": "string",
           "name": "ConfigVersion",
           "required": true,
@@ -8912,7 +8912,7 @@
         {
           "disabled": false,
           "document": "配置项值，总是接收yaml格式的内容",
-          "example": "无",
+          "example": "config: enabled",
           "member": "string",
           "name": "ConfigValue",
           "required": true,
@@ -8921,7 +8921,7 @@
         {
           "disabled": false,
           "document": "配置项版本描述",
-          "example": "无",
+          "example": "This is desc",
           "member": "string",
           "name": "ConfigVersionDesc",
           "required": false,
@@ -8930,7 +8930,7 @@
         {
           "disabled": false,
           "document": "配置项类型",
-          "example": "无",
+          "example": "public",
           "member": "string",
           "name": "ConfigType",
           "required": false,
@@ -8939,7 +8939,7 @@
         {
           "disabled": false,
           "document": "Base64编码的配置项",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EncodeWithBase64",
           "required": false,
@@ -8948,7 +8948,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
           "required": false,
@@ -8963,7 +8963,7 @@
         {
           "disabled": false,
           "document": "true：创建成功；false：创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "required": true,
@@ -9700,7 +9700,7 @@
         {
           "disabled": false,
           "document": "API 分组ID",
-          "example": "",
+          "example": "grp-glt0lr13",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -9715,7 +9715,7 @@
         {
           "disabled": false,
           "document": "成功失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -9864,7 +9864,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "",
+          "example": "dcfg-a7rl7w4v",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -9879,7 +9879,7 @@
         {
           "disabled": false,
           "document": "true：删除成功；false：删除失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -9974,7 +9974,7 @@
         {
           "disabled": false,
           "document": "文件配置项ID",
-          "example": "",
+          "example": "dcfg-f-aeonjd6y",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -9989,7 +9989,7 @@
         {
           "disabled": false,
           "document": "删除结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -10010,7 +10010,7 @@
         {
           "disabled": false,
           "document": "分组ID",
-          "example": "",
+          "example": "grp-notmqbpe",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -10019,7 +10019,7 @@
         {
           "disabled": false,
           "document": "Api ID 数组",
-          "example": "",
+          "example": "[\"api-8c7538te\"]",
           "member": "string",
           "name": "ApiList",
           "required": true,
@@ -10034,7 +10034,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -10162,7 +10162,7 @@
         {
           "disabled": false,
           "document": "泳道Idl",
-          "example": "无",
+          "example": "lane-y9o6w958",
           "member": "string",
           "name": "LaneId",
           "required": true,
@@ -10177,7 +10177,7 @@
         {
           "disabled": false,
           "document": "删除成功: true / 删除失败: false",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -10236,7 +10236,7 @@
         {
           "disabled": false,
           "document": "微服务ID",
-          "example": "",
+          "example": "ms-vzg9kzj3",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -10251,7 +10251,7 @@
         {
           "disabled": false,
           "document": "删除微服务是否成功。\ntrue：操作成功。\nfalse：操作失败。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -10318,7 +10318,7 @@
         {
           "disabled": false,
           "document": "路径重写规则IDs",
-          "example": "",
+          "example": "[\"rewrite-qv3rrlnv\"]",
           "member": "string",
           "name": "PathRewriteIds",
           "required": true,
@@ -10333,7 +10333,7 @@
         {
           "disabled": false,
           "document": "true/false",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -10408,7 +10408,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "",
+          "example": "dcfg-p-vzk36rov",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -10423,7 +10423,7 @@
         {
           "disabled": false,
           "document": "true：删除成功；false：删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -10599,7 +10599,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "",
+          "example": "unit-rl-cgd3l6jo",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -10614,7 +10614,7 @@
         {
           "disabled": false,
           "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -11471,7 +11471,7 @@
         {
           "disabled": false,
           "document": "微服务id",
-          "example": "",
+          "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -11480,7 +11480,7 @@
         {
           "disabled": false,
           "document": "请求路径",
-          "example": "",
+          "example": "/user-feign",
           "member": "string",
           "name": "Path",
           "required": true,
@@ -11489,7 +11489,7 @@
         {
           "disabled": false,
           "document": "请求方法",
-          "example": "",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -11498,7 +11498,7 @@
         {
           "disabled": false,
           "document": "包版本",
-          "example": "",
+          "example": "20210625192924",
           "member": "string",
           "name": "PkgVersion",
           "required": true,
@@ -11507,7 +11507,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "application-yn3zdj9v",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -11522,7 +11522,7 @@
         {
           "disabled": false,
           "document": "API 详情",
-          "example": "",
+          "example": "{\"CanRun\":true,\"Definitions\":[{\"Name\":\"\",\"Properties\":[{\"Description\":\"\",\"Name\":\"\",\"Type\":\"\"}]}],\"Description\":\"feignMeshUser\",\"MsgwApiType\":\"Normal\",\"Request\":[{\"DefaultValue\":null,\"Description\":\"tagName\",\"In\":\"query\",\"Name\":\"tagName\",\"Required\":false,\"Type\":\"string\"},{\"DefaultValue\":null,\"Description\":\"tagValue\",\"In\":\"query\",\"Name\":\"tagValue\",\"Required\":false,\"Type\":\"string\"}],\"RequestContentType\":null,\"Response\":[{\"Description\":\"OK\",\"Name\":\"_RESPONSE\",\"Type\":\"string\"}],\"Status\":1}",
           "member": "ApiDetailResponse",
           "name": "Result",
           "type": "object",
@@ -12355,7 +12355,7 @@
         {
           "disabled": false,
           "document": "部署组ID，不传入时查询全量",
-          "example": "",
+          "example": "group-aln2284v",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -12364,7 +12364,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -12373,7 +12373,7 @@
         {
           "disabled": false,
           "document": "每页条数，默认为20",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -12382,7 +12382,7 @@
         {
           "disabled": false,
           "document": "命名空间ID，不传入时查询全量",
-          "example": "",
+          "example": "namespace-vj3z3zgy",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -12391,7 +12391,7 @@
         {
           "disabled": false,
           "document": "集群ID，不传入时查询全量",
-          "example": "",
+          "example": "cluster-yne99jdy",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -12400,7 +12400,7 @@
         {
           "disabled": false,
           "document": "应用ID，不传入时查询全量",
-          "example": "",
+          "example": "application-l6ymbvgd",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -12415,7 +12415,7 @@
         {
           "disabled": false,
           "document": "分页的配置项发布历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"Content\":[{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-yq75nn3a\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":null,\"LastConfigName\":null,\"LastConfigVersion\":null,\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-24 15:57:15\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":false},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-ydrjmmma\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-yo82mmra\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v3\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"删除配置项\",\"ReleaseStatus\":\"DS\",\"ReleaseTime\":\"2024-12-24 15:57:10\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":true},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-ap95jj5v\",\"ConfigVersion\":\"v3\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-abo7mowy\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v2\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-24 15:56:35\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":true},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-abo7mowy\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-v628r2py\",\"ConfigVersion\":\"v2\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-vzk3lk8v\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v1\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseStatus\":\"RS\",\"ReleaseTime\":\"2024-12-23 17:24:24\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":false},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-vzk3lk8v\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-a2qj3qoa\",\"ConfigVersion\":\"v1\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":\"dcfg-abo7mowy\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v2\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-23 17:23:46\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":true},{\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigId\":\"dcfg-abo7mowy\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseLogId\":\"dcfgrl-y44wg4qy\",\"ConfigVersion\":\"v2\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"LastConfigId\":null,\"LastConfigName\":null,\"LastConfigVersion\":null,\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-23 17:23:37\",\"ReleasedConfigCenter\":\"SHARE\",\"RollbackFlag\":false}],\"TotalCount\":6}",
           "member": "TsfPageConfigReleaseLog",
           "name": "Result",
           "type": "object",
@@ -12436,7 +12436,7 @@
         {
           "disabled": false,
           "document": "配置项名称，不传入时查询全量",
-          "example": "无",
+          "example": "configName",
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -12445,7 +12445,7 @@
         {
           "disabled": false,
           "document": "部署组ID，不传入时查询全量",
-          "example": "无",
+          "example": "group-aln2284v",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -12454,7 +12454,7 @@
         {
           "disabled": false,
           "document": "命名空间ID，不传入时查询全量",
-          "example": "无",
+          "example": "namespace-vw8oox6v",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -12463,7 +12463,7 @@
         {
           "disabled": false,
           "document": "集群ID，不传入时查询全量",
-          "example": "无",
+          "example": "cluster-yne99jdy",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -12472,7 +12472,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -12481,7 +12481,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -12490,7 +12490,7 @@
         {
           "disabled": false,
           "document": "配置ID，不传入时查询全量",
-          "example": "无",
+          "example": "dcfg-yo82mmra",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -12499,7 +12499,7 @@
         {
           "disabled": false,
           "document": "应用ID，不传入时查询全量",
-          "example": "无",
+          "example": "application-a7rwwz4v",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -12514,7 +12514,7 @@
         {
           "disabled": false,
           "document": "分页的配置发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Content\":[{\"ApplicationId\":\"application-a7rwwz4v\",\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-yo82mmra\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigReleaseId\":\"dcfgr-yxd366ov\",\"ConfigVersion\":\"v3\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider-1\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseTime\":\"2024-12-24 15:57:15\"}],\"TotalCount\":1}",
           "member": "TsfPageConfigRelease",
           "name": "Result",
           "output_required": true,
@@ -12536,7 +12536,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "",
+          "example": "dcfg-vzk36owv",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -12551,7 +12551,7 @@
         {
           "disabled": false,
           "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"amp-consumer\",\"ConfigId\":\"dcfg-vzk36owv\",\"ConfigName\":\"config_app\",\"ConfigType\":null,\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionCount\":null,\"ConfigVersionDesc\":\"This is desc\",\"CreationTime\":\"2024-12-24 18:04:02\",\"DeleteFlag\":true,\"LastUpdateTime\":null}",
           "member": "Config",
           "name": "Result",
           "type": "object",
@@ -12572,7 +12572,7 @@
         {
           "disabled": false,
           "document": "应用ID，不传入时查询全量",
-          "example": "application-xxx",
+          "example": "application-5yr26r9a",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -12581,7 +12581,7 @@
         {
           "disabled": false,
           "document": "查询关键字，模糊查询：应用名称，配置项名称，不传入时查询全量",
-          "example": "driver",
+          "example": "config_app",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -12599,7 +12599,7 @@
         {
           "disabled": false,
           "document": "每页条数，默认为20",
-          "example": "20",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -12608,7 +12608,7 @@
         {
           "disabled": false,
           "document": "按时间排序：creation_time；按名称排序：config_name",
-          "example": "config_name",
+          "example": "creation_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -12626,7 +12626,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"config_app-application-5yr26r9a\"]",
           "member": "string",
           "name": "ConfigTagList",
           "required": false,
@@ -12635,7 +12635,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
           "required": false,
@@ -12644,7 +12644,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"dcfg-vzk36owv\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -12659,7 +12659,7 @@
         {
           "disabled": false,
           "document": "配置项分页对象",
-          "example": "无",
+          "example": "{\"Content\":[{\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"amp-consumer\",\"ConfigId\":\"dcfg-vzk36owv\",\"ConfigName\":\"config_app\",\"ConfigType\":null,\"ConfigValue\":null,\"ConfigVersion\":null,\"ConfigVersionCount\":1,\"ConfigVersionDesc\":null,\"CreationTime\":null,\"DeleteFlag\":null,\"LastUpdateTime\":\"2024-12-24 18:04:02\"}],\"TotalCount\":1}",
           "member": "TsfPageConfig",
           "name": "Result",
           "required": true,
@@ -13175,7 +13175,7 @@
         {
           "disabled": false,
           "document": "部署组id",
-          "example": "group-xxxxxxx",
+          "example": "group-ab958z6y",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -13212,7 +13212,7 @@
         {
           "disabled": false,
           "document": "投递配置id",
-          "example": "",
+          "example": "config-2k8sh4s",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -13227,9 +13227,10 @@
         {
           "disabled": false,
           "document": "投递kafka配置",
-          "example": "",
+          "example": "无",
           "member": "KafkaDeliveryConfig",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13321,7 +13322,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -13330,7 +13331,7 @@
         {
           "disabled": false,
           "document": "程序包ID",
-          "example": "",
+          "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -13339,7 +13340,7 @@
         {
           "disabled": false,
           "document": "程序包仓库ID",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
           "required": false,
@@ -13348,7 +13349,7 @@
         {
           "disabled": false,
           "document": "程序包仓库类型",
-          "example": "",
+          "example": "tcr",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -13363,9 +13364,10 @@
         {
           "disabled": false,
           "document": "COS鉴权信息",
-          "example": "",
+          "example": "无",
           "member": "CosDownloadInfo",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13399,7 +13401,7 @@
         {
           "disabled": false,
           "document": "单元化规则对象\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"CreatedTime\":\"2023-01-17 11:41:36\",\"Description\":\"sssase\",\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Id\":\"unit-rl-2kdqa2my\",\"Name\":\"test\",\"Status\":\"enabled\",\"UnitRuleItemList\":[{\"CreatedTime\":\"2023-02-10 16:36:12\",\"Description\":\"gsshhshs\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"heihuli-global_default\",\"Id\":\"unit-item-04futugp\",\"ItemIndex\":1,\"Name\":\"Rule1\",\"Priority\":0,\"Relationship\":\"AND\",\"UnitRuleId\":\"unit-rl-2kdqa2my\",\"UnitRuleTagList\":[{\"CreatedTime\":\"2023-02-10 16:36:12\",\"Id\":\"unit-tag-s2v06uy5\",\"ItemIndex\":1,\"TagField\":\"test\",\"TagOperator\":\"IN\",\"TagType\":\"U\",\"TagValue\":\"test222\",\"UnitRuleItemId\":\"unit-item-04futugp\",\"UpdatedTime\":\"2023-02-10 16:36:12\"},{\"CreatedTime\":\"2023-02-10 16:36:12\",\"Id\":\"unit-tag-jjzz18sp\",\"ItemIndex\":2,\"TagField\":\"xhhshshs\",\"TagOperator\":\"NOT_EQUAL\",\"TagType\":\"U\",\"TagValue\":\"shehhehhdd\",\"UnitRuleItemId\":\"unit-item-04futugp\",\"UpdatedTime\":\"2023-02-10 16:36:12\"}],\"UpdatedTime\":\"2023-02-10 16:36:12\"}],\"UpdatedTime\":\"2023-02-23 17:42:23\"}",
+          "example": "{\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Name\":\"rule_app\",\"UnitRuleItemList\":[{\"Name\":\"rule_user\",\"UnitRuleTagList\":[]}]}",
           "member": "UnitRule",
           "name": "Result",
           "type": "object",
@@ -13420,7 +13422,7 @@
         {
           "disabled": false,
           "document": "配置项ID",
-          "example": "无",
+          "example": "dcfg-f-v3qqrkdy",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -13429,7 +13431,7 @@
         {
           "disabled": false,
           "document": "配置项名称",
-          "example": "无",
+          "example": "conf_app",
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -13438,7 +13440,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "无",
+          "example": "group-vj3n6lzy",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -13447,7 +13449,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "无",
+          "example": "namespace-ygo3djma",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -13456,7 +13458,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cls-f6bk82xc",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -13465,7 +13467,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "application-vw8ljmwv",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -13474,7 +13476,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -13483,7 +13485,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -13498,7 +13500,7 @@
         {
           "disabled": false,
           "document": "配置项发布信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Content\":[{\"ApplicationId\":\"application-vw8ljmwv\",\"ClusterId\":\"cls-f6bk82xc\",\"ClusterName\":\"cluster-container-jolyonzheng\",\"ConfigId\":\"dcfg-f-v3qqrkdy\",\"ConfigName\":\"conf_app\",\"ConfigReleaseId\":\"dcfgr-f-vkjjw7ny\",\"ConfigVersion\":\"2\",\"GroupId\":\"group-vj3n6lzy\",\"GroupName\":\"group-provider\",\"NamespaceId\":\"namespace-ygo3djma\",\"NamespaceName\":\"cluster-container-jolyonzheng_default\",\"ReleaseDesc\":\"This is desc\",\"ReleaseTime\":\"2024-11-28 20:49:57\"}],\"TotalCount\":1}",
           "member": "TsfPageFileConfigRelease",
           "name": "Result",
           "output_required": true,
@@ -14095,7 +14097,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "group-6a79x94v",
+          "example": "group-v6q747py",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -14110,7 +14112,7 @@
         {
           "disabled": false,
           "document": "部署组发布的相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ConfigReleaseList\":[{\"ApplicationId\":\"application-vzoebl8a\",\"ClusterId\":\"cls-i3v5y09e\",\"ClusterName\":\"cls-app\",\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-a7rl7w4v\",\"ConfigName\":\"conf-app\",\"ConfigReleaseId\":\"dcfgr-ymw5965v\",\"ConfigVersion\":\"v1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":\"group-v6q747py\",\"GroupName\":\"cloud-provider\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"ns_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:36:03\"}],\"FileConfigReleaseList\":[{\"ApplicationId\":\"application-vzoebl8a\",\"ClusterId\":\"cls-i3v5y09e\",\"ClusterName\":\"cls-app\",\"ConfigId\":\"dcfg-f-aeonjd6y\",\"ConfigName\":\"config_app\",\"ConfigReleaseId\":\"dcfgr-f-y84omela\",\"ConfigVersion\":\"v1\",\"GroupId\":\"group-v6q747py\",\"GroupName\":\"cloud-provider\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"ns_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:37:50\"}],\"PackageId\":null,\"PackageName\":null,\"PackageVersion\":null,\"PublicConfigReleaseList\":[{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"config_pub_app\",\"ConfigReleaseId\":\"dcfgr-yne579dy\",\"ConfigVersion\":\"v1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"ns_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:36:54\"}],\"RepoName\":\"tsf_100011910000/app-provider\",\"TagName\":\"20241212161801\"}",
           "member": "GroupRelease",
           "name": "Result",
           "output_required": true,
@@ -15478,7 +15480,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "namespace-xxxxxxx",
+          "example": "namespace-v6b2exey",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -15487,7 +15489,7 @@
         {
           "disabled": false,
           "document": "搜索字段",
-          "example": "ms-xxxxxxx",
+          "example": "serviceName",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -15496,7 +15498,7 @@
         {
           "disabled": false,
           "document": "排序字段",
-          "example": "无",
+          "example": "create_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -15505,7 +15507,7 @@
         {
           "disabled": false,
           "document": "排序类型",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "OrderType",
           "required": false,
@@ -15523,7 +15525,7 @@
         {
           "disabled": false,
           "document": "分页个数",
-          "example": "1",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -15532,7 +15534,7 @@
         {
           "disabled": false,
           "document": "状态过滤，online、offline、single_online",
-          "example": "[\"online\"]",
+          "example": "[\"single_online\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -15541,7 +15543,7 @@
         {
           "disabled": false,
           "document": "IdList",
-          "example": "[\"ms-xxx\"]",
+          "example": "[\"ms-yqwbbpxl\"]",
           "member": "string",
           "name": "MicroserviceIdList",
           "required": false,
@@ -15550,7 +15552,7 @@
         {
           "disabled": false,
           "document": "搜索的服务名列表",
-          "example": "[\"provider\"]",
+          "example": "[\"consumer-demo\"]",
           "member": "string",
           "name": "MicroserviceNameList",
           "required": false,
@@ -15574,7 +15576,7 @@
         {
           "disabled": false,
           "document": "微服务分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Content\":[{\"CreateTime\":null,\"CriticalInstanceCount\":0,\"MicroserviceDesc\":\"\",\"MicroserviceId\":\"ms-yqwbbpxl\",\"MicroserviceName\":\"consumer-demo\",\"NamespaceId\":\"namespace-v6b2exey\",\"RunInstanceCount\":1,\"UpdateTime\":null}],\"TotalCount\":1}",
           "member": "TsfPageMicroservice",
           "name": "Result",
           "output_required": true,
@@ -15596,7 +15598,7 @@
         {
           "disabled": false,
           "document": "微服务ID",
-          "example": "",
+          "example": "ms-y5w8n5e9",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -15605,7 +15607,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "",
+          "example": "echo-feign-url",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -15614,7 +15616,7 @@
         {
           "disabled": false,
           "document": "每页的数量",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -15623,7 +15625,7 @@
         {
           "disabled": false,
           "document": "翻页偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -15638,7 +15640,7 @@
         {
           "disabled": false,
           "document": "相应结果",
-          "example": "",
+          "example": "{\"Content\":[{\"Description\":\"\",\"Method\":\"GET\",\"MsgwApiType\":null,\"Path\":\"/echo-feign-url/{str}\",\"RpcType\":\"http\",\"Status\":1}],\"TotalCount\":1}",
           "member": "TsfApiListResponse",
           "name": "Result",
           "type": "object",
@@ -15940,7 +15942,7 @@
         {
           "disabled": false,
           "document": "分组或者API的ID",
-          "example": "grp-83wrlmav",
+          "example": "grp-v446jrhc",
           "member": "string",
           "name": "ScopeValue",
           "required": true,
@@ -15958,7 +15960,7 @@
         {
           "disabled": false,
           "document": "每页展示的条数",
-          "example": "20",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -15976,7 +15978,7 @@
         {
           "disabled": false,
           "document": "插件类型",
-          "example": "无",
+          "example": "QQMiniProgramLogin",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -15985,7 +15987,7 @@
         {
           "disabled": false,
           "document": "搜索关键字",
-          "example": "无",
+          "example": "pgnName",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -16000,7 +16002,7 @@
         {
           "disabled": false,
           "document": "插件信息列表",
-          "example": "无",
+          "example": "{\"Content\":[{\"CreatedTime\":\"2023-11-28 16:11:28\",\"Description\":\"This is desc\",\"Id\":\"pgn-if8otbfp\",\"Name\":\"pgn-qq\",\"Status\":\"released\",\"Type\":\"QQMiniProgramLogin\",\"UpdatedTime\":\"2023-11-28 16:11:27\"}],\"TotalCount\":1}",
           "member": "TsfPageGatewayPlugin",
           "name": "Result",
           "output_required": true,
@@ -16159,7 +16161,7 @@
         {
           "disabled": false,
           "document": "命名空间ID，不传入时查询全量",
-          "example": "",
+          "example": "namespace-vj3z3zgy",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -16168,7 +16170,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -16177,7 +16179,7 @@
         {
           "disabled": false,
           "document": "每页条数，默认为20",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -16192,7 +16194,7 @@
         {
           "disabled": false,
           "document": "分页后的公共配置项发布历史列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"Content\":[{\"ClusterId\":null,\"ClusterName\":null,\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"[配置项已被删除]\",\"ConfigReleaseLogId\":\"dcfgrl-yrm5jx9v\",\"ConfigVersion\":\"[配置项已被删除]\",\"GroupId\":null,\"GroupName\":null,\"LastConfigId\":\"dcfg-p-vzk36rov\",\"LastConfigName\":\"[配置项已被删除]\",\"LastConfigVersion\":\"[配置项已被删除]\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":\"删除配置项\",\"ReleaseStatus\":\"DS\",\"ReleaseTime\":\"2024-12-24 20:30:37\",\"RollbackFlag\":false},{\"ClusterId\":null,\"ClusterName\":null,\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"[配置项已被删除]\",\"ConfigReleaseLogId\":\"dcfgrl-vw83po6v\",\"ConfigVersion\":\"[配置项已被删除]\",\"GroupId\":null,\"GroupName\":null,\"LastConfigId\":null,\"LastConfigName\":null,\"LastConfigVersion\":null,\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":null,\"ReleaseStatus\":\"S\",\"ReleaseTime\":\"2024-12-24 18:36:54\",\"RollbackFlag\":false}],\"TotalCount\":2}",
           "member": "TsfPageConfigReleaseLog",
           "name": "Result",
           "type": "object",
@@ -16213,7 +16215,7 @@
         {
           "disabled": false,
           "document": "配置项名称，不传入时查询全量",
-          "example": "",
+          "example": "configName",
           "member": "string",
           "name": "ConfigName",
           "required": false,
@@ -16222,7 +16224,7 @@
         {
           "disabled": false,
           "document": "命名空间ID，不传入时查询全量",
-          "example": "",
+          "example": "namespace-yxoqm4ky",
           "member": "string",
           "name": "NamespaceId",
           "required": false,
@@ -16231,7 +16233,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -16240,7 +16242,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -16249,7 +16251,7 @@
         {
           "disabled": false,
           "document": "配置项ID，不传入时查询全量",
-          "example": "",
+          "example": "dcfg-p-v6kxdlpy",
           "member": "string",
           "name": "ConfigId",
           "required": false,
@@ -16264,7 +16266,7 @@
         {
           "disabled": false,
           "document": "公共配置发布信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"Content\":[{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-p-v6kxdlpy\",\"ConfigName\":\"skye-name\",\"ConfigReleaseId\":\"dcfgr-y446nlby\",\"ConfigVersion\":\"1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":\"namespace-yxoqm4ky\",\"NamespaceName\":\"skye-test_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-09-11 17:27:59\"}],\"TotalCount\":1}",
           "member": "TsfPageConfigRelease",
           "name": "Result",
           "type": "object",
@@ -16285,7 +16287,7 @@
         {
           "disabled": false,
           "document": "需要查询的配置项ID",
-          "example": "",
+          "example": "dcfg-p-vkj5dnky",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -16300,7 +16302,7 @@
         {
           "disabled": false,
           "document": "全局配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"ApplicationId\":null,\"ApplicationName\":null,\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":null,\"ConfigValue\":\"config: enabled\",\"ConfigVersion\":\"v1\",\"ConfigVersionCount\":null,\"ConfigVersionDesc\":\"This is desc\",\"CreationTime\":\"2024-12-20 19:16:10\",\"DeleteFlag\":true,\"LastUpdateTime\":null}",
           "member": "Config",
           "name": "Result",
           "type": "object",
@@ -16321,7 +16323,7 @@
         {
           "disabled": false,
           "document": "查询关键字，模糊查询：配置项名称，不传入时查询全量",
-          "example": "null",
+          "example": "configName",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -16348,7 +16350,7 @@
         {
           "disabled": false,
           "document": "按时间排序：creation_time；按名称排序：config_name",
-          "example": "config_name",
+          "example": "creation_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -16366,7 +16368,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"app-config\"]",
           "member": "string",
           "name": "ConfigTagList",
           "required": false,
@@ -16375,7 +16377,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DisableProgramAuthCheck",
           "required": false,
@@ -16384,7 +16386,7 @@
         {
           "disabled": false,
           "document": "无",
-          "example": "无",
+          "example": "[\"dcfg-p-vkj5dnky\"]",
           "member": "string",
           "name": "ConfigIdList",
           "required": false,
@@ -16399,7 +16401,7 @@
         {
           "disabled": false,
           "document": "分页的全局配置统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Content\":[{\"ApplicationId\":null,\"ApplicationName\":null,\"ConfigId\":\"dcfg-p-vkj5dnky\",\"ConfigName\":\"app-config\",\"ConfigType\":null,\"ConfigValue\":null,\"ConfigVersion\":null,\"ConfigVersionCount\":1,\"ConfigVersionDesc\":null,\"CreationTime\":null,\"DeleteFlag\":null,\"LastUpdateTime\":\"2024-12-20 19:16:10\"}],\"TotalCount\":1}",
           "member": "TsfPageConfig",
           "name": "Result",
           "required": true,
@@ -16503,7 +16505,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "",
+          "example": "group-jy9re3gy",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -16518,7 +16520,7 @@
         {
           "disabled": false,
           "document": "已发布的配置内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "config: enabled",
           "member": "string",
           "name": "Result",
           "type": "string",
@@ -18068,7 +18070,7 @@
         {
           "disabled": false,
           "document": "网关实体ID",
-          "example": "",
+          "example": "gw-ins-szesmg28",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -18083,7 +18085,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -18104,7 +18106,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "",
+          "example": "unit-rl-u0643wrg",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -18119,7 +18121,7 @@
         {
           "disabled": false,
           "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -18186,7 +18188,7 @@
         {
           "disabled": false,
           "document": "配置项id",
-          "example": "",
+          "example": "apm-busi-log-cfg-6a79x94v",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -18195,7 +18197,7 @@
         {
           "disabled": false,
           "document": "部署组id",
-          "example": "",
+          "example": "[\"group-6a79x94v\"]",
           "member": "string",
           "name": "GroupIds",
           "required": false,
@@ -18210,9 +18212,10 @@
         {
           "disabled": false,
           "document": "解除绑定是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -18231,7 +18234,7 @@
         {
           "disabled": false,
           "document": "Api 分组ID",
-          "example": "",
+          "example": "grp-d45mlt3o",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -18246,7 +18249,7 @@
         {
           "disabled": false,
           "document": "true: 成功, false: 失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -18317,7 +18320,7 @@
         {
           "disabled": false,
           "document": "泳道规则ID",
-          "example": "无",
+          "example": "lane-r-yqg4kmbd",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -18332,7 +18335,7 @@
         {
           "disabled": false,
           "document": "操作状态。成功：true，失败：false\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -18428,7 +18431,7 @@
         {
           "disabled": false,
           "document": "网关实体ID",
-          "example": "",
+          "example": "gw-ins-szesmg28",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -18443,7 +18446,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -18464,7 +18467,7 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "",
+          "example": "unit-rl-u0643wrg",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -18479,7 +18482,7 @@
         {
           "disabled": false,
           "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -20054,80 +20057,80 @@
         {
           "disabled": false,
           "document": "程序包ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "pkg-9198307d",
           "member": "string",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "程序包名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "msgw-zuul1-1.29.20-Hoxton-Higher-RELEASE.jar",
           "member": "string",
           "name": "PackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "程序包版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20241223010307",
           "member": "string",
           "name": "PackageVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "镜像名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tsf_100011910000/app-provider",
           "member": "string",
           "name": "RepoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20241212161801",
           "member": "string",
           "name": "TagName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已发布的全局配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-p-vzk36rov\",\"ConfigName\":\"config_pub_app\",\"ConfigReleaseId\":\"dcfgr-yne579dy\",\"ConfigVersion\":\"v1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:36:54\"}]",
           "member": "ConfigRelease",
           "name": "PublicConfigReleaseList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已发布的应用配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"ApplicationId\":\"application-vzoebl8a\",\"ClusterId\":\"cls-i3v5y09e\",\"ClusterName\":\"jelly-test\",\"ConfigCenters\":[{\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"ConfigType\":\"SHARE\",\"CurrentVersion\":null,\"RegionId\":null,\"TargetVersion\":null}],\"ConfigId\":\"dcfg-a7rl7w4v\",\"ConfigName\":\"conf1\",\"ConfigReleaseId\":\"dcfgr-ymw5965v\",\"ConfigVersion\":\"v1\",\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\",\"GroupId\":\"group-v6q747py\",\"GroupName\":\"cloud-provider\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:36:03\"}]",
           "member": "ConfigRelease",
           "name": "ConfigReleaseList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "已发布的文件配置列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"ApplicationId\":\"application-vzoebl8a\",\"ClusterId\":\"cls-i3v5y09e\",\"ClusterName\":\"jelly-test\",\"ConfigId\":\"dcfg-f-aeonjd6y\",\"ConfigName\":\"config_app\",\"ConfigReleaseId\":\"dcfgr-f-y84omela\",\"ConfigVersion\":\"v1\",\"GroupId\":\"group-v6q747py\",\"GroupName\":\"cloud-provider\",\"NamespaceId\":\"namespace-vj3z3zgy\",\"NamespaceName\":\"jelly-test_default\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-12-24 18:37:50\"}]",
           "member": "FileConfigRelease",
           "name": "FileConfigReleaseList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -20938,7 +20941,7 @@
         {
           "disabled": false,
           "document": "机器实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-0xdahvt2",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -20949,7 +20952,7 @@
         {
           "disabled": false,
           "document": "机器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cvm_app",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -20960,7 +20963,7 @@
         {
           "disabled": false,
           "document": "机器内网地址IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.0.0.12",
           "member": "string",
           "name": "LanIp",
           "output_required": true,
@@ -20971,7 +20974,7 @@
         {
           "disabled": false,
           "document": "机器外网地址IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "WanIp",
           "output_required": true,
@@ -20982,7 +20985,7 @@
         {
           "disabled": false,
           "document": "机器描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "This is desc",
           "member": "string",
           "name": "InstanceDesc",
           "output_required": true,
@@ -20993,7 +20996,7 @@
         {
           "disabled": false,
           "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cls-i3v5y09e",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -21004,7 +21007,7 @@
         {
           "disabled": false,
           "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cls_app",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
@@ -21015,7 +21018,7 @@
         {
           "disabled": false,
           "document": "VM的状态 虚机：虚机的状态 容器：Pod所在虚机的状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "InstanceStatus",
           "output_required": true,
@@ -21026,7 +21029,7 @@
         {
           "disabled": false,
           "document": "VM的可使用状态 虚机：虚机是否能够作为资源使用 容器：虚机是否能够作为资源部署POD\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "InstanceAvailableStatus",
           "output_required": true,
@@ -21037,7 +21040,7 @@
         {
           "disabled": false,
           "document": "服务下的服务实例的状态 虚机：应用是否可用 + Agent状态 容器：Pod状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "ServiceInstanceStatus",
           "output_required": true,
@@ -21048,7 +21051,7 @@
         {
           "disabled": false,
           "document": "标识此instance是否已添加在tsf中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CountInTsf",
           "output_required": true,
@@ -21059,7 +21062,7 @@
         {
           "disabled": false,
           "document": "机器所属部署组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group-xoydmy26",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -21070,7 +21073,7 @@
         {
           "disabled": false,
           "document": "机器所属应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "application-l6ymbvgd",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
@@ -21081,7 +21084,7 @@
         {
           "disabled": false,
           "document": "机器所属应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "app_provider",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
@@ -21092,7 +21095,7 @@
         {
           "disabled": false,
           "document": "机器实例在CVM的创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-16 11:28:01",
           "member": "string",
           "name": "InstanceCreatedTime",
           "output_required": true,
@@ -21103,7 +21106,7 @@
         {
           "disabled": false,
           "document": "机器实例在CVM的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-16 11:28:01",
           "member": "string",
           "name": "InstanceExpiredTime",
           "output_required": true,
@@ -21114,7 +21117,7 @@
         {
           "disabled": false,
           "document": "机器实例在CVM的计费模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "output_required": true,
@@ -21125,7 +21128,7 @@
         {
           "disabled": false,
           "document": "机器实例总CPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.9",
           "member": "float",
           "name": "InstanceTotalCpu",
           "output_required": true,
@@ -21136,7 +21139,7 @@
         {
           "disabled": false,
           "document": "机器实例总内存信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.4473",
           "member": "float",
           "name": "InstanceTotalMem",
           "output_required": true,
@@ -21147,7 +21150,7 @@
         {
           "disabled": false,
           "document": "机器实例使用的CPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.16",
           "member": "float",
           "name": "InstanceUsedCpu",
           "output_required": true,
@@ -21158,7 +21161,7 @@
         {
           "disabled": false,
           "document": "机器实例使用的内存信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.45",
           "member": "float",
           "name": "InstanceUsedMem",
           "output_required": true,
@@ -21169,7 +21172,7 @@
         {
           "disabled": false,
           "document": "机器实例Limit CPU信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1.5",
           "member": "float",
           "name": "InstanceLimitCpu",
           "output_required": true,
@@ -21180,7 +21183,7 @@
         {
           "disabled": false,
           "document": "机器实例Limit 内存信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2.5",
           "member": "float",
           "name": "InstanceLimitMem",
           "output_required": true,
@@ -21191,7 +21194,7 @@
         {
           "disabled": false,
           "document": "包版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "InstancePkgVersion",
           "output_required": true,
@@ -21202,7 +21205,7 @@
         {
           "disabled": false,
           "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "C",
           "member": "string",
           "name": "ClusterType",
           "output_required": true,
@@ -21213,7 +21216,7 @@
         {
           "disabled": false,
           "document": "机器实例业务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
           "output_required": true,
@@ -21224,7 +21227,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-16 11:28:01",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -21235,7 +21238,7 @@
         {
           "disabled": false,
           "document": "实例执行状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "OperationState",
           "output_required": true,
@@ -21246,7 +21249,7 @@
         {
           "disabled": false,
           "document": "NamespaceId Ns ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespace-96a79v5b",
           "member": "string",
           "name": "NamespaceId",
           "output_required": true,
@@ -21257,7 +21260,7 @@
         {
           "disabled": false,
           "document": "InstanceZoneId 可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zone-57at58po",
           "member": "string",
           "name": "InstanceZoneId",
           "output_required": true,
@@ -21268,7 +21271,7 @@
         {
           "disabled": false,
           "document": "InstanceImportMode 导入模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "M",
           "member": "string",
           "name": "InstanceImportMode",
           "output_required": true,
@@ -21279,7 +21282,7 @@
         {
           "disabled": false,
           "document": "ApplicationType应用类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "C",
           "member": "string",
           "name": "ApplicationType",
           "output_required": true,
@@ -21290,7 +21293,7 @@
         {
           "disabled": false,
           "document": "ApplicationResourceType 资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DEF",
           "member": "string",
           "name": "ApplicationResourceType",
           "output_required": true,
@@ -21301,7 +21304,7 @@
         {
           "disabled": false,
           "document": "sidecar状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "up",
           "member": "string",
           "name": "ServiceSidecarStatus",
           "output_required": true,
@@ -21312,7 +21315,7 @@
         {
           "disabled": false,
           "document": "部署组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group_app",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -21323,7 +21326,7 @@
         {
           "disabled": false,
           "document": "NS名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ns_app",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
@@ -21334,7 +21337,7 @@
         {
           "disabled": false,
           "document": "健康检查原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "This is desc",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -21345,7 +21348,7 @@
         {
           "disabled": false,
           "document": "agent版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "AgentVersion",
           "output_required": true,
@@ -21356,7 +21359,7 @@
         {
           "disabled": false,
           "document": "容器母机实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ins-fl5gwz2e",
           "member": "string",
           "name": "NodeInstanceId",
           "output_required": true,
@@ -22266,100 +22269,100 @@
         {
           "disabled": false,
           "document": "泳道规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lane-r-by8n9xyk",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "泳道规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "rule_app",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "优先级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "泳道规则标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"Id\":\"unit-tag-vmhijoic\",\"UnitRuleItemId\":\"unit-item-ghpuh9rn\",\"TagType\":\"U\",\"TagField\":\"user\",\"TagOperator\":\"IN\",\"TagValue\":\"1\",\"ItemIndex\":1,\"CreatedTime\":\"2024-12-23 11:14:17\",\"UpdatedTime\":\"2024-12-23 11:14:17\"}]",
           "member": "LaneRuleTag",
           "name": "RuleTagList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "泳道规则标签关系\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "RELEATION_AND",
           "member": "string",
           "name": "RuleTagRelationship",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "泳道ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lane-zvw7xxy8",
           "member": "string",
           "name": "LaneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1732784732000",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1732784732000",
           "member": "int64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -22455,20 +22458,20 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "泳道规则列表",
-          "example": "",
+          "example": "[{\"RuleId\":\"lane-r-v6ewp385\",\"RuleName\":\"rule_app\",\"Priority\":1,\"Remark\":\"This is desc\",\"RuleTagList\":null,\"RuleTagRelationship\":\"RELEATION_AND\",\"LaneId\":\"lane-ynmlnwm4\",\"Enable\":true,\"CreateTime\":1725509095000,\"UpdateTime\":1727167548000}]",
           "member": "LaneRule",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -22753,9 +22756,10 @@
         {
           "disabled": false,
           "document": "微服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ms-vzge6mz8",
           "member": "string",
           "name": "MicroserviceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -22763,9 +22767,10 @@
         {
           "disabled": false,
           "document": "微服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "consumer-demo",
           "member": "string",
           "name": "MicroserviceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -22773,9 +22778,10 @@
         {
           "disabled": false,
           "document": "微服务描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -22783,9 +22789,10 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1732784732000",
           "member": "int64",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -22793,9 +22800,10 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1732784732000",
           "member": "int64",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -22803,9 +22811,10 @@
         {
           "disabled": false,
           "document": "命名空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "namespace-96a79v5b",
           "member": "string",
           "name": "NamespaceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -22813,9 +22822,10 @@
         {
           "disabled": false,
           "document": "微服务的运行实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RunInstanceCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -22823,9 +22833,10 @@
         {
           "disabled": false,
           "document": "微服务的离线实例数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "CriticalInstanceCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -23222,7 +23233,7 @@
         {
           "disabled": false,
           "document": "泳道ID",
-          "example": "无",
+          "example": "lane-ap62k7ol",
           "member": "string",
           "name": "LaneId",
           "required": true,
@@ -23231,7 +23242,7 @@
         {
           "disabled": false,
           "document": "泳道名称",
-          "example": "无",
+          "example": "rule_app",
           "member": "string",
           "name": "LaneName",
           "required": true,
@@ -23240,7 +23251,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "无",
+          "example": "This is desc",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -23255,7 +23266,7 @@
         {
           "disabled": false,
           "document": "更新成功: true / 更新失败: false",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
@@ -23368,7 +23379,7 @@
         {
           "disabled": false,
           "document": "微服务 ID",
-          "example": "",
+          "example": "ms-yd8dr5bx",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -23377,7 +23388,7 @@
         {
           "disabled": false,
           "document": "微服务备注信息",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "MicroserviceDesc",
           "required": true,
@@ -23392,7 +23403,7 @@
         {
           "disabled": false,
           "document": "修改微服务详情是否成功。\ntrue：操作成功。\nfalse：操作失败。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -23477,7 +23488,7 @@
         {
           "disabled": false,
           "document": "路径重写规则ID",
-          "example": "",
+          "example": "rewrite-ba22pbpa",
           "member": "string",
           "name": "PathRewriteId",
           "required": true,
@@ -23486,7 +23497,7 @@
         {
           "disabled": false,
           "document": "正则表达式",
-          "example": "",
+          "example": "/consumer",
           "member": "string",
           "name": "Regex",
           "required": false,
@@ -23495,7 +23506,7 @@
         {
           "disabled": false,
           "document": "替换的内容",
-          "example": "",
+          "example": "/provider",
           "member": "string",
           "name": "Replacement",
           "required": false,
@@ -23504,7 +23515,7 @@
         {
           "disabled": false,
           "document": "是否屏蔽映射后路径，Y: 是 N: 否",
-          "example": "",
+          "example": "N",
           "member": "string",
           "name": "Blocked",
           "required": false,
@@ -23513,7 +23524,7 @@
         {
           "disabled": false,
           "document": "规则顺序，越小优先级越高",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Order",
           "required": false,
@@ -23528,7 +23539,7 @@
         {
           "disabled": false,
           "document": "true/false",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -23803,7 +23814,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -23812,7 +23823,7 @@
         {
           "disabled": false,
           "document": "调用DescribeUploadInfo接口时返回的软件包ID",
-          "example": "",
+          "example": "pkg-6a79x94v",
           "member": "string",
           "name": "PkgId",
           "required": true,
@@ -23821,7 +23832,7 @@
         {
           "disabled": false,
           "document": "COS返回上传结果（默认为0：成功，其他值表示失败）",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Result",
           "required": true,
@@ -23830,7 +23841,7 @@
         {
           "disabled": false,
           "document": "程序包MD5",
-          "example": "",
+          "example": "bsij82y9sdnowxohwosjxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Md5",
           "required": true,
@@ -23839,7 +23850,7 @@
         {
           "disabled": false,
           "document": "程序包大小（单位字节）",
-          "example": "",
+          "example": "2048",
           "member": "uint64",
           "name": "Size",
           "required": false,
@@ -23848,7 +23859,7 @@
         {
           "disabled": false,
           "document": "程序包仓库类型",
-          "example": "",
+          "example": "personal",
           "member": "string",
           "name": "RepositoryType",
           "required": false,
@@ -23857,7 +23868,7 @@
         {
           "disabled": false,
           "document": "程序包仓库id",
-          "example": "",
+          "example": "application-6a79x94v",
           "member": "string",
           "name": "RepositoryId",
           "required": false,
@@ -23884,60 +23895,60 @@
         {
           "disabled": false,
           "document": "近24小时调用数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "13412691",
           "member": "string",
           "name": "InvocationCountOfDay",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "总调用数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "13412691",
           "member": "string",
           "name": "InvocationCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "近24小时调用错误数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "292635",
           "member": "string",
           "name": "ErrorCountOfDay",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "总调用错误数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "292635",
           "member": "string",
           "name": "ErrorCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "近24小时调用成功率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0.97",
           "member": "string",
           "name": "SuccessRatioOfDay",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "总调用成功率\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0.97",
           "member": "string",
           "name": "SuccessRatio",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -24679,60 +24690,60 @@
         {
           "disabled": false,
           "document": "路径重写规则ID",
-          "example": "",
+          "example": "rewrite-96a79v5b",
           "member": "string",
           "name": "PathRewriteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网关部署组ID",
-          "example": "",
+          "example": "group-nalbg4vq",
           "member": "string",
           "name": "GatewayGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "正则表达式",
-          "example": "",
+          "example": "/echo/(.*)",
           "member": "string",
           "name": "Regex",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "替换的内容",
-          "example": "",
+          "example": "/gw/provider-demo/echo/$1",
           "member": "string",
           "name": "Replacement",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否屏蔽映射后路径，Y: 是 N: 否",
-          "example": "",
+          "example": "N",
           "member": "string",
           "name": "Blocked",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则顺序，越小优先级越高",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Order",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -24796,20 +24807,20 @@
         {
           "disabled": false,
           "document": "总记录数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "路径重写规则列表",
-          "example": "",
+          "example": "[{\"PathRewriteId\":\"rewrite-qab42qxv\",\"GatewayGroupId\":\"group-yd3b588a\",\"Regex\":\"/provider_user\",\"Replacement\":\"/consumer_user\",\"Blocked\":\"N\",\"Order\":1}]",
           "member": "PathRewrite",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -25205,30 +25216,30 @@
         {
           "disabled": false,
           "document": "属性名称",
-          "example": "",
+          "example": "tagName",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "属性类型",
-          "example": "",
+          "example": "string",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "属性描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "tagName",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -25302,40 +25313,40 @@
         {
           "disabled": false,
           "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "295.6",
           "member": "string",
           "name": "MaxValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "9.77",
           "member": "string",
           "name": "MinValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "五分位值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "12.51",
           "member": "string",
           "name": "FifthPositionValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "九分位值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "15.18",
           "member": "string",
           "name": "NinthPositionValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -25577,7 +25588,7 @@
         {
           "disabled": false,
           "document": "Api 分组ID",
-          "example": "",
+          "example": "grp-d45mlt3o",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -25592,7 +25603,7 @@
         {
           "disabled": false,
           "document": "成功/失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -25613,7 +25624,7 @@
         {
           "disabled": false,
           "document": "配置ID",
-          "example": "",
+          "example": "dcfg-vzk36owv",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -25622,7 +25633,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "",
+          "example": "group-9yn684ev",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -25631,7 +25642,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
           "required": false,
@@ -25646,7 +25657,7 @@
         {
           "disabled": false,
           "document": "true：发布成功；false：发布失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -25667,7 +25678,7 @@
         {
           "disabled": false,
           "document": "配置ID",
-          "example": "无",
+          "example": "dcfg-yo82mmra",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -25676,7 +25687,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "无",
+          "example": "group-aln2284v",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -25685,7 +25696,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "w",
+          "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
           "required": false,
@@ -25700,7 +25711,7 @@
         {
           "disabled": false,
           "document": "配置项发布 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ApplicationId\":null,\"ClusterId\":null,\"ClusterName\":null,\"ConfigCenters\":null,\"ConfigId\":null,\"ConfigName\":null,\"ConfigReleaseId\":\"dcfgr-yxd366ov\",\"ConfigVersion\":null,\"DualStatus\":null,\"GroupId\":null,\"GroupName\":null,\"NamespaceId\":null,\"NamespaceName\":null,\"ReleaseDesc\":null,\"ReleaseTime\":null}",
           "member": "ConfigRelease",
           "name": "Result",
           "type": "object",
@@ -25776,7 +25787,7 @@
         {
           "disabled": false,
           "document": "配置ID",
-          "example": "",
+          "example": "dcfg-p-vkj5dnky",
           "member": "string",
           "name": "ConfigId",
           "required": true,
@@ -25785,7 +25796,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "",
+          "example": "namespace-vw46q85y",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -25794,7 +25805,7 @@
         {
           "disabled": false,
           "document": "发布描述",
-          "example": "",
+          "example": "This is desc",
           "member": "string",
           "name": "ReleaseDesc",
           "required": false,
@@ -25809,7 +25820,7 @@
         {
           "disabled": false,
           "document": "true：发布成功；false：发布失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26201,7 +26212,7 @@
         {
           "disabled": false,
           "document": "配置项发布ID",
-          "example": "",
+          "example": "dcfgr-y84o2xla",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -26216,7 +26227,7 @@
         {
           "disabled": false,
           "document": "true：回滚成功；false：回滚失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26237,7 +26248,7 @@
         {
           "disabled": false,
           "document": "配置项发布ID",
-          "example": "",
+          "example": "dcfgr-a7rldd9v",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -26252,7 +26263,7 @@
         {
           "disabled": false,
           "document": "true：撤销成功；false：撤销失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26273,7 +26284,7 @@
         {
           "disabled": false,
           "document": "配置项发布ID",
-          "example": "",
+          "example": "dcfgr-f-aeon99ry",
           "member": "string",
           "name": "ConfigReleaseId",
           "required": true,
@@ -26288,7 +26299,7 @@
         {
           "disabled": false,
           "document": "撤回结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -26869,9 +26880,10 @@
         {
           "disabled": false,
           "document": "服务名",
-          "example": "",
+          "example": "java-demo",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -26879,9 +26891,10 @@
         {
           "disabled": false,
           "document": "端口信息列表",
-          "example": "",
+          "example": "无",
           "member": "Ports",
           "name": "Ports",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -26889,9 +26902,10 @@
         {
           "disabled": false,
           "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheck",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -28901,20 +28915,20 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "API 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"Path\":\"/echo-feign/{str}\",\"Method\":\"GET\",\"Description\":\"This is desc\",\"Status\":1,\"MsgwApiType\":null,\"RpcType\":\"http\"}]",
           "member": "MsApiArray",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29036,20 +29050,20 @@
         {
           "disabled": false,
           "document": "总记录数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "API分组信息",
-          "example": "",
+          "example": "[{\"GroupId\":\"grp-nb08ur29\",\"GatewayInstanceId\":\"gw-ins-b09khqjq\",\"GatewayInstanceType\":null,\"GroupName\":\"grp_app\",\"GroupContext\":\"/grp_app\",\"Status\":\"released\",\"AuthType\":\"none\",\"AclMode\":\"none\",\"Description\":\"\",\"CreatedTime\":\"2024-12-23 01:29:13\",\"UpdatedTime\":\"2024-12-23 01:30:03\",\"GroupType\":\"ms\",\"NamespaceNameKey\":null,\"ServiceNameKey\":null,\"NamespaceNameKeyPosition\":\"path\",\"ServiceNameKeyPosition\":\"path\",\"BindedGatewayDeployGroups\":[{\"DeployGroupId\":\"group-yd3b588a\",\"DeployGroupName\":\"zuul-1\",\"ApplicationId\":\"application-ydopqnxa\",\"ApplicationName\":\"app-gw\",\"ApplicationType\":\"V\",\"GroupStatus\":null,\"ClusterType\":\"V\"}],\"ApiCount\":15,\"ClusterId\":null,\"ClusterName\":null,\"ClusterType\":null,\"GatewayInstanceIdList\":null}]",
           "member": "ApiGroupInfo",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -29222,20 +29236,20 @@
         {
           "disabled": false,
           "document": "TsfPageConfig",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置项列表",
-          "example": "",
+          "example": "[{\"ConfigId\":\"dcfg-vzk3lk8v\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigVersion\":null,\"ConfigVersionDesc\":null,\"ConfigValue\":null,\"CreationTime\":null,\"LastUpdateTime\":\"2024-12-23 17:24:24\",\"ConfigVersionCount\":2,\"ApplicationId\":\"application-a7rwwz4v\",\"ApplicationName\":\"app-jolyonzheng\",\"DeleteFlag\":null,\"ConfigType\":null}]",
           "member": "Config",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -29248,20 +29262,20 @@
         {
           "disabled": false,
           "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置项发布信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"ConfigReleaseId\":\"dcfgr-y5qe2qpy\",\"ConfigId\":\"dcfg-abo7mowy\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigVersion\":\"v2\",\"ReleaseTime\":\"2024-12-23 17:24:24\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ReleaseDesc\":\"This is desc\",\"ApplicationId\":\"application-a7rwwz4v\",\"ConfigCenters\":[{\"ConfigType\":\"SHARE\",\"ConfigCenterInstanceId\":null,\"ConfigCenterInstanceName\":null,\"RegionId\":null,\"CurrentVersion\":null,\"TargetVersion\":null}],\"DualStatus\":\"DUAL_STATUS_WRITE_REGISTRATION_OFF\"}]",
           "member": "ConfigRelease",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29274,20 +29288,20 @@
         {
           "disabled": false,
           "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "配置项发布日志数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"ConfigReleaseLogId\":\"dcfgrl-v628r2py\",\"ConfigId\":\"dcfg-abo7mowy\",\"ConfigName\":\"jolyonzheng-config\",\"ConfigVersion\":\"v2\",\"GroupId\":\"group-aln2284v\",\"GroupName\":\"group-provider\",\"NamespaceId\":\"namespace-vw8oox6v\",\"NamespaceName\":\"cluster-jolyonzheng_default\",\"ClusterId\":\"cluster-yne99jdy\",\"ClusterName\":\"cluster-jolyonzheng\",\"ReleaseTime\":\"2024-12-23 17:24:24\",\"ReleaseDesc\":\"This is desc\",\"ReleaseStatus\":\"RS\",\"LastConfigId\":\"dcfg-vzk3lk8v\",\"LastConfigName\":\"jolyonzheng-config\",\"LastConfigVersion\":\"v1\",\"RollbackFlag\":false,\"ReleasedConfigCenter\":\"SHARE\"}]",
           "member": "ConfigReleaseLog",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29352,20 +29366,20 @@
         {
           "disabled": false,
           "document": "总数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "文件配置数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"ConfigId\":\"dcfg-f-yq75blda\",\"ConfigName\":\"app_config\",\"ConfigVersion\":null,\"ConfigVersionDesc\":null,\"ConfigFileName\":\"config.txt\",\"ConfigFileCode\":\"UTF-8\",\"ConfigFileValue\":null,\"ConfigFilePath\":\"/root/app\",\"ConfigPostCmd\":\"\",\"CreationTime\":null,\"LastUpdateTime\":\"2024-12-20 17:49:05\",\"ConfigVersionCount\":1,\"ApplicationId\":\"application-yx8m24ga\",\"ApplicationName\":\"app_provider\",\"DeleteFlag\":null,\"ConfigFileValueLength\":0}]",
           "member": "FileConfig",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29378,20 +29392,20 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"ConfigReleaseId\":\"dcfgr-f-vkjjw7ny\",\"ConfigId\":\"dcfg-f-v3qqrkdy\",\"ConfigName\":\"config_app\",\"ConfigVersion\":\"2\",\"ReleaseDesc\":null,\"ReleaseTime\":\"2024-11-28 20:49:57\",\"GroupId\":\"group-vj3n6lzy\",\"GroupName\":\"group-provider\",\"NamespaceId\":\"namespace-ygo3djma\",\"NamespaceName\":\"cluster-container_default\",\"ClusterId\":\"cls-f6bk82xc\",\"ClusterName\":\"cluster-container\",\"ApplicationId\":\"application-vw8ljmwv\"}]",
           "member": "FileConfigRelease",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29404,20 +29418,20 @@
         {
           "disabled": false,
           "document": "记录总数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "记录实体列表",
-          "example": "",
+          "example": "[{\"DeployGroupId\":\"group-yd3b588a\",\"DeployGroupName\":\"zuul\",\"ApplicationId\":\"application-ydopqnxa\",\"ApplicationName\":\"app-gw\",\"ApplicationType\":\"V\",\"GroupStatus\":\"Running\",\"ClusterType\":\"V\"}]",
           "member": "GatewayDeployGroup",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -29430,20 +29444,20 @@
         {
           "disabled": false,
           "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "记录实体列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"Id\":\"pgn-iuyb0s7c\",\"Name\":\"asd\",\"Type\":\"OAuth\",\"Description\":\"This is desc\",\"CreatedTime\":\"2024-08-06 16:01:41\",\"UpdatedTime\":\"2024-08-06 16:01:41\",\"Status\":\"released\"}]",
           "member": "GatewayPlugin",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29482,20 +29496,20 @@
         {
           "disabled": false,
           "document": "微服务总数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "微服务列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"MicroserviceId\":\"ms-vzge6mz8\",\"NamespaceId\":\"namespace-v6b2exey\",\"MicroserviceName\":\"consumer-demo\",\"MicroserviceDesc\":\"This is desc\",\"CreateTime\":null,\"UpdateTime\":null,\"RunInstanceCount\":1,\"CriticalInstanceCount\":0}]",
           "member": "Microservice",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29508,20 +29522,20 @@
         {
           "disabled": false,
           "document": "微服务实例总数目\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "微服务实例列表内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"InstanceId\":\"ins-52kc9krs\",\"InstanceName\":\"未命名\",\"Port\":\"18083\",\"LanIp\":\"10.0.0.3\",\"LanIpv6\":null,\"WanIp\":\"119.29.224.177\",\"ApplicationId\":\"application-5yr26r9a\",\"ApplicationName\":\"app-consumer\",\"GroupId\":\"group-ydk2ewxv\",\"GroupName\":\"app-group\",\"NamespaceId\":null,\"NamespaceName\":null,\"ClusterId\":\"cluster-a2dqmgwv\",\"ClusterName\":\"cls_app\",\"ClusterType\":\"V\",\"InstanceStatus\":null,\"InstanceAvailableStatus\":null,\"ServiceInstanceStatus\":\"Running\",\"HealthCheckUrl\":null,\"ApplicationPackageVersion\":\"20200416204358\",\"ApplicationType\":\"V\",\"HiddenStatus\":\"unhidden\",\"LastHeartbeatTime\":1735026251,\"RegistrationTime\":1730702851,\"RegistrationId\":\"ins-52kc9krs\",\"ServiceStatus\":\"passing\",\"AppMicroServiceType\":\"N\",\"MetaJson\":\"H4sIAAAAAAAAAGXPQWuDMBTA8e+ScwMxrVZ3E5tKoI0hZoPuIpkLTmw1aLW6se8+V0Mvfdf/j8d7P0Cm+yzk/ECjUNKEZXQHXoAy5lzm6lo2NXSnFnttoMDqbiNBFijpkczU2a7RFmHfdSyIRfLKlzVF2/QGTp8V1rdxsJ2yVLIwIgsp6w66uMqDqu0sYOGRpPwhanXRnVG5hoP3gfWopycnT/z/lB3Z28RFEmdvRKTzoXPACCO0cTyMNmvXt0aQeKnKwKJXdfH91fS2vSfs/huaxwO/f4osuQQmAQAA\"}]",
           "member": "MsInstance",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -29679,25 +29693,25 @@
       "usage": "out"
     },
     "TsfPageUnitRule": {
-      "document": "单元化规则翻页对象\n",
+      "document": "单元化规则翻页对象",
       "members": [
         {
           "disabled": false,
           "document": "记录总数",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "记录实体列表",
-          "example": "",
+          "example": "[{\"Id\":\"unit-rl-cgd3l6jo\",\"GatewayInstanceId\":\"gw-ins-szesmg28\",\"Status\":\"disabled\",\"Name\":\"user_unit\",\"Description\":\"This is desc\",\"UnitRuleItemList\":[{\"Id\":\"unit-item-sm6u53ou\",\"UnitRuleId\":\"unit-rl-cgd3l6jo\",\"Relationship\":\"AND\",\"DestNamespaceId\":\"namespace-vk5blxnv\",\"DestNamespaceName\":\"global_default\",\"Name\":\"unit_provider\",\"Priority\":1,\"Description\":\"This is desc\",\"ItemIndex\":1,\"UnitRuleTagList\":[],\"CreatedTime\":\"2024-12-23 17:31:27\",\"UpdatedTime\":\"2024-12-23 17:31:27\"}],\"CreatedTime\":\"2024-12-23 11:14:17\",\"UpdatedTime\":\"2024-12-23 17:31:27\"}]",
           "member": "UnitRule",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -29762,7 +29776,7 @@
         {
           "disabled": false,
           "document": "分组网关id列表",
-          "example": "",
+          "example": "[{\"GatewayDeployGroupId\":\"group-yo99lney\",\"GroupId\":\"grp-notmqbpe\"}]",
           "member": "GatewayGroupIds",
           "name": "GroupGatewayList",
           "required": true,
@@ -29777,7 +29791,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -30174,7 +30188,7 @@
         {
           "disabled": false,
           "document": "Api 分组ID",
-          "example": "grp-grp-5yk7oor1",
+          "example": "grp-notmqbpe",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -30183,7 +30197,7 @@
         {
           "disabled": false,
           "document": "Api 分组名称",
-          "example": "new-name",
+          "example": "grp_app",
           "member": "string",
           "name": "GroupName",
           "required": false,
@@ -30192,7 +30206,7 @@
         {
           "disabled": false,
           "document": "Api 分组描述",
-          "example": "test",
+          "example": "This is desc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -30210,7 +30224,7 @@
         {
           "disabled": false,
           "document": "分组上下文",
-          "example": "/user",
+          "example": "/grp_app",
           "member": "string",
           "name": "GroupContext",
           "required": false,
@@ -30283,7 +30297,7 @@
         {
           "disabled": false,
           "document": "限流规则ID",
-          "example": "",
+          "example": "rule-8qlpdumd",
           "member": "string",
           "name": "RuleId",
           "required": true,
@@ -30292,7 +30306,7 @@
         {
           "disabled": false,
           "document": "开启/禁用，enabled/disabled",
-          "example": "",
+          "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
           "required": true,
@@ -30301,7 +30315,7 @@
         {
           "disabled": false,
           "document": "qps值，开启限流规则时，必填",
-          "example": "",
+          "example": "2000",
           "member": "int64",
           "name": "MaxQps",
           "required": false,
@@ -30316,7 +30330,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -30337,7 +30351,7 @@
         {
           "disabled": false,
           "document": "API ID 列表",
-          "example": "",
+          "example": "[\"api-b1sd366q\"]",
           "member": "string",
           "name": "ApiIds",
           "required": true,
@@ -30346,7 +30360,7 @@
         {
           "disabled": false,
           "document": "开启/禁用，enabled/disabled",
-          "example": "",
+          "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
           "required": true,
@@ -30355,7 +30369,7 @@
         {
           "disabled": false,
           "document": "QPS值。开启限流规则时，必填",
-          "example": "",
+          "example": "1000",
           "member": "int64",
           "name": "MaxQps",
           "required": false,
@@ -30370,7 +30384,7 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",
@@ -30391,7 +30405,7 @@
         {
           "disabled": false,
           "document": "API ID 列表",
-          "example": "无",
+          "example": "[\"api-tnvxy4ta\"]",
           "member": "string",
           "name": "ApiIds",
           "required": true,
@@ -30400,7 +30414,7 @@
         {
           "disabled": false,
           "document": "开启/禁用，enabled/disabled",
-          "example": "无",
+          "example": "enabled",
           "member": "string",
           "name": "UsableStatus",
           "required": true,
@@ -30409,7 +30423,7 @@
         {
           "disabled": false,
           "document": "超时时间，单位毫秒，开启API超时时，必填",
-          "example": "无",
+          "example": "2000",
           "member": "int64",
           "name": "Timeout",
           "required": false,
@@ -30424,10 +30438,10 @@
         {
           "disabled": false,
           "document": "是否成功",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -30519,7 +30533,7 @@
         {
           "disabled": false,
           "document": "API ID",
-          "example": "",
+          "example": "api-zwua4plw",
           "member": "string",
           "name": "ApiId",
           "required": true,
@@ -30528,7 +30542,7 @@
         {
           "disabled": false,
           "document": "API 路径",
-          "example": "",
+          "example": "/echo-user",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -30537,7 +30551,7 @@
         {
           "disabled": false,
           "document": "Api 请求方法",
-          "example": "",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -30546,7 +30560,7 @@
         {
           "disabled": false,
           "document": "请求映射",
-          "example": "",
+          "example": "/echo-user",
           "member": "string",
           "name": "PathMapping",
           "required": false,
@@ -30555,7 +30569,7 @@
         {
           "disabled": false,
           "document": "api所在服务host",
-          "example": "",
+          "example": "http://www.qq.com",
           "member": "string",
           "name": "Host",
           "required": false,
@@ -30564,7 +30578,7 @@
         {
           "disabled": false,
           "document": "api描述信息",
-          "example": "",
+          "example": "this is desc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -30579,7 +30593,7 @@
         {
           "disabled": false,
           "document": "返回结果，成功失败",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
           "type": "bool",

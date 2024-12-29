@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Delete": true,
-        "RequestId": "xx"
+        "RequestId": "a123"
     }
 }
 ```
