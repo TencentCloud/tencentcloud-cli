@@ -19,7 +19,7 @@ Output:
         "Configs": [
             {
                 "ConfigId": "02f11930-xxxx-4dca-8c9b-b6a147223945",
-                "Name": "test",
+                "Name": "config_name1",
                 "LogFormat": "",
                 "Path": "/test/**/test",
                 "LogType": "minimalist_log",

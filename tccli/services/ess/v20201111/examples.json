@@ -870,6 +870,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationAuthUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwfsUUckpsqt647UE6uSrk1ZWhYH56z\"\n    },\n    \"Endpoint\": \"SHORT_URL\",\n    \"AuthorizationTypes\": [\n        1,\n        2,\n        3\n    ],\n    \"UniformSocialCreditCode\": \"9144030071526726XG\",\n    \"OrganizationName\": \"典子谦示例企业\",\n    \"UniformSocialCreditCodeSame\": true,\n    \"OrganizationNameSame\": true,\n    \"Initialization\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AuthUrl\": \"https://essurl.cn/24VopUGBZyF\",\n        \"ExpiredTime\": 1733388643,\n        \"RequestId\": \"a34b6e8e-4a3e-444d-8853-b34f90096254\"\n    }\n}",
         "title": "创建企业认证链接"
+      },
+      {
+        "document": "场景：创建企业认证链接， 通过超管授权书上传， 这个场景一般是法人不方便操作的时候使用\n授权书的文件生成 可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 然后转成 base64 格式。\n但是必须得保证超管和创建企业认证是同一个人。\n\n1. AuthorizationTypes 必须且只能传递 1- 授权书认证。\n2. PowerOfAttorneys base64 格式的文件流 数组。 单个大小不能超过 8M。\n\n",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationAuthUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwfsUUckpsqt647UE6uSrk1ZWhYH56z\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"Endpoint\": \"PC\",\n    \"AuthorizationTypes\": [\n        1\n    ],\n    \"AdminName\": \"典子谦\",\n    \"AdminMobile\": \"13200000000\",\n    \"BusinessLicense\": \"base64格式的营业执照文件流\",\n    \"PowerOfAttorneys\": [\n        \"base64格式的授权书文件流\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthUrl\": \"https://test.qian.tencent.cn/console/register-callback?token=yDCYOUUckp7aat8yUxJf7vsvwREPT0Th\",\n        \"ExpiredTime\": 1743070967,\n        \"RequestId\": \"s1735294966632123121\"\n    }\n}",
+        "title": "创建企业认证链接-通过授权书上传"
       }
     ],
     "CreateOrganizationBatchSignUrl": [

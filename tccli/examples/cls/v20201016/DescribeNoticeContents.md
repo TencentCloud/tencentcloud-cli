@@ -7,7 +7,7 @@ Input:
 ```
 tccli cls DescribeNoticeContents --cli-unfold-argument  \
     --Filters.0.Key name \
-    --Filters.0.Values test \
+    --Filters.0.Values notice-name \
     --Offset 0 \
     --Limit 10
 ```
@@ -19,7 +19,7 @@ Output:
         "NoticeContents": [
             {
                 "NoticeContentId": "noticetemplate-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1",
-                "Name": "test",
+                "Name": "notice-name",
                 "Type": 0,
                 "NoticeContents": [
                     {

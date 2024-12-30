@@ -22,7 +22,7 @@ Output:
                 "VpcId": "vpc-1tqv6my1",
                 "SslVpnServerId": "vpns-fofx7shn",
                 "VpnGatewayId": "vpngw-0zowp2z9",
-                "SslVpnServerName": "test",
+                "SslVpnServerName": "server-1",
                 "LocalAddress": [
                     "10.17.0.0/24"
                 ],
@@ -37,7 +37,7 @@ Output:
                 "CreateTime": "2023-01-11 11:37:41",
                 "State": 6,
                 "SsoEnabled": 0,
-                "SpName": "",
+                "SpName": "spname",
                 "EiamApplicationId": "",
                 "AccessPolicyEnabled": 0,
                 "AccessPolicy": []

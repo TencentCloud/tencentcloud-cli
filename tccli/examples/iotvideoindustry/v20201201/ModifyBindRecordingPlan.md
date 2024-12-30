@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotvideoindustry ModifyBindRecordingPlan --cli-unfold-argument  \
-    --Channels.0.ChannelId xx \
-    --Channels.0.DeviceId xxx \
+    --Channels.0.ChannelId 99870353841320000007_99870353841320000007 \
+    --Channels.0.DeviceId 99870353841320000007_99870353841320000007 \
     --Type 1 \
-    --PlanId plan-xx
+    --PlanId plan-zn3ro30w
 ```
 
 Output: 

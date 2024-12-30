@@ -14,8 +14,8 @@ Output:
 {
     "Response": {
         "RequestId": "fjo8aejo-fjei-32eu-2je9-fhue83nd81",
-        "CreationToken": "test",
-        "FsName": "test",
+        "CreationToken": "defaultcfs",
+        "FsName": "defaultcfs",
         "FileSystemId": "cfs-12345"
     }
 }

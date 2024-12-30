@@ -1,30 +1,46 @@
 **Example 1: 修改投递Ckafka任务**
 
-修改投递Ckafka任务
+修改Ckafka配置
 
 Input: 
 
 ```
 tccli cls ModifyConsumer --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx \
-    --Effective True \
-    --Ckafka.Vip 10.123.123.123 \
-    --Ckafka.Vport 8888 \
-    --Ckafka.InstanceId xxxxx \
-    --Ckafka.InstanceName myname \
-    --Ckafka.TopicId xxxxx \
-    --Ckafka.TopicName xxxxx \
-    --Content.EnableTag True \
-    --Content.MetaFields __SOURCE__ \
-    --NeedContent True \
-    --Compression 0
+    --TopicId fadcc986-xxxx-xxxx-b766-9ce9c193da32 \
+    --Ckafka.InstanceId ckafka-xxxx \
+    --Ckafka.TopicName xxxx_acl_test \
+    --Ckafka.Vip 10.0.0.1 \
+    --Ckafka.Vport 8080 \
+    --Ckafka.InstanceName xxx_ckafka_test \
+    --Ckafka.TopicId topic-maoxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx"
+        "RequestId": "1e5f008f-xxxx-xxxx-9636-ce13c618dfba"
+    }
+}
+```
+
+**Example 2: 关闭投递Ckafka任务**
+
+
+
+Input: 
+
+```
+tccli cls ModifyConsumer --cli-unfold-argument  \
+    --TopicId fadcc986-xxxx-xxxx-b766-9ce9c193da32 \
+    --Effective False
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "25d826d2-xxxx-xxxx-a4b6-f5490e86ae81"
     }
 }
 ```

@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Id": 12344,
-        "OwnerUin": "123",
+        "OwnerUin": "6489626",
         "Domain": "zz.zz.cn",
         "Organization": "yunzhi",
         "Department": "Light",

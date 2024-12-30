@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dnspod DescribeDomain --cli-unfold-argument  \
-    --Domain dnspod.com
+    --Domain dnspod.cn
 ```
 
 Output: 
@@ -14,48 +14,44 @@ Output:
 {
     "Response": {
         "DomainInfo": {
-            "DomainId": 1,
-            "Status": "abc",
-            "Grade": "abc",
-            "GroupId": 1,
-            "IsMark": "abc",
-            "TTL": 1,
-            "CnameSpeedup": "abc",
-            "Remark": "abc",
-            "Punycode": "abc",
-            "DnsStatus": "abc",
+            "ActualNsList": [],
+            "CnameSpeedup": "disable",
+            "CreatedOn": "2023-03-21 17:27:40",
+            "DnsStatus": "dnserror",
             "DnspodNsList": [
-                "abc"
+                "temporary.dnspod.net",
+                "barman.dnspod.net"
             ],
-            "Domain": "abc",
-            "GradeLevel": 1,
-            "UserId": 1,
-            "IsVip": "abc",
-            "Owner": "abc",
-            "GradeTitle": "abc",
-            "CreatedOn": "2020-09-22 00:00:00",
-            "UpdatedOn": "2020-09-22 00:00:00",
-            "Uin": "abc",
-            "ActualNsList": [
-                "abc"
-            ],
-            "RecordCount": 1,
-            "OwnerNick": "abc",
-            "IsGracePeriod": "abc",
-            "VipBuffered": "abc",
-            "VipStartAt": "abc",
-            "VipEndAt": "abc",
-            "VipAutoRenew": "abc",
-            "VipResourceId": "abc",
-            "IsSubDomain": true,
-            "TagList": [
-                {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
-                }
-            ]
+            "Domain": "dnspod.cn",
+            "DomainId": 12620688,
+            "Grade": "DP_FREE",
+            "GradeLevel": 2,
+            "GradeTitle": "免费版",
+            "GroupId": 1,
+            "IsGracePeriod": "no",
+            "IsMark": "no",
+            "IsSubDomain": false,
+            "IsVip": "no",
+            "Owner": "qcloud_uin_100000******@qcloud.com",
+            "OwnerNick": "昵称",
+            "Punycode": "dnspod.cn",
+            "RecordCount": 182761,
+            "Remark": "",
+            "SearchEnginePush": "no",
+            "SlaveDNS": "no",
+            "Status": "enable",
+            "TTL": 600,
+            "TagList": [],
+            "Uin": "100000******",
+            "UpdatedOn": "2024-12-30 10:16:57",
+            "UserId": 5301126,
+            "VipAutoRenew": null,
+            "VipBuffered": "no",
+            "VipEndAt": null,
+            "VipResourceId": null,
+            "VipStartAt": null
         },
-        "RequestId": "abc"
+        "RequestId": "c1ea5ee3-aa4b-446e-a42d-859b9461487b"
     }
 }
 ```

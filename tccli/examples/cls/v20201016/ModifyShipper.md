@@ -6,25 +6,29 @@ Input:
 
 ```
 tccli cls ModifyShipper --cli-unfold-argument  \
-    --ShipperId xxxx-xx-xx-xx-xxxxxxxx \
-    --Bucket test-1250000001 \
-    --Prefix test \
-    --ShipperName myname \
+    --ShipperId 2ac8a8aa-xxxx-xxxx-84cd-8cd2beeeae17 \
+    --Bucket bucket-test-12541111 \
+    --Prefix bow-test-12541111 \
+    --ShipperName bow-test-shipper-12541111 \
     --Interval 300 \
-    --MaxSize 256 \
-    --Partition %Y%m%d \
+    --MaxSize 5 \
+    --FilenameMode 1 \
+    --FilterRules.0.Key http \
+    --FilterRules.0.Regex ^(\d+\.\d+)\..* \
+    --FilterRules.0.Value 172.16 \
+    --Partition /%Y/%m/%d/%H/ \
     --Compress.Format none \
-    --FilterRules.0.Key  \
-    --FilterRules.0.Regex  \
-    --FilterRules.0.Value  \
-    --FilenameMode 0
+    --Content.Format json \
+    --Content.Json.EnableTag True \
+    --Content.Json.MetaFields __SOURCE__ __FILENAME__ __TIMESTAMP__ __HOSTNAME__ \
+    --Content.Json.JsonType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "6ef60bec-xxxx-xxxx-bb20-270359fb54a7"
     }
 }
 ```

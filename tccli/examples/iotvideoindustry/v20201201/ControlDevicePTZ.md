@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideoindustry ControlDevicePTZ --cli-unfold-argument  \
-    --DeviceId xxx \
+    --DeviceId 34020000001180000036_34020000001320000092 \
     --Command left
 ```
 

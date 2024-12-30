@@ -21,11 +21,11 @@ Output:
                 "InstanceList": [
                     {
                         "LoadBalancerId": "lb-*****",
-                        "LoadBalancerName": "test",
+                        "LoadBalancerName": "lb-zrh",
                         "Listeners": [
                             {
                                 "ListenerId": "lbl-*****",
-                                "ListenerName": "test",
+                                "ListenerName": "lb-zrh",
                                 "SniSwitch": 1,
                                 "Protocol": "https",
                                 "Certificate": {
@@ -138,18 +138,18 @@ Output:
                 "Region": "ap-guangzhou",
                 "InstanceList": [
                     {
-                        "ClusterId": "test",
-                        "ClusterName": "test",
+                        "ClusterId": "cls-***",
+                        "ClusterName": "zrh",
                         "NamespaceList": [
                             {
-                                "Name": "test",
+                                "Name": "zrh",
                                 "SecretList": [
                                     {
-                                        "Name": "test",
+                                        "Name": "secret-***",
                                         "CertId": "T***jdj",
                                         "IngressList": [
                                             {
-                                                "IngressName": "test",
+                                                "IngressName": "ins-****",
                                                 "TlsDomains": [
                                                     "www.test.com"
                                                 ],
@@ -179,7 +179,7 @@ Output:
                 "InstanceList": [
                     {
                         "ServiceId": "service-*****",
-                        "ServiceName": "test",
+                        "ServiceName": "svc-zrh",
                         "Domain": "www.test.com",
                         "CertId": "T***jdj",
                         "Protocol": "https"

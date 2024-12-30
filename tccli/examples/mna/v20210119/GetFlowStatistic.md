@@ -8,7 +8,7 @@ Input:
 tccli mna GetFlowStatistic --cli-unfold-argument  \
     --EndTime 1659514692 \
     --Type 1 \
-    --DeviceId abc \
+    --DeviceId mna-dev1 \
     --TimeGranularity 1 \
     --BeginTime 1659513692
 ```
@@ -50,7 +50,7 @@ tccli mna GetFlowStatistic --cli-unfold-argument  \
     --EndTime 1659514692 \
     --Type 1 \
     --DeviceId  \
-    --DeviceList abc bcd \
+    --DeviceList mna-dev1 mna-dev2 \
     --TimeGranularity 1 \
     --BeginTime 1659513692
 ```

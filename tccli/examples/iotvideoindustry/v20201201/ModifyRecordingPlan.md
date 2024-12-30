@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli iotvideoindustry ModifyRecordingPlan --cli-unfold-argument  \
-    --PlanId plan-xxxxx \
-    --Name xxxxxx \
-    --TimeTemplateId tgrp-xxxxx
+    --PlanId plan-all \
+    --Name all \
+    --TimeTemplateId tgrp-all
 ```
 
 Output: 

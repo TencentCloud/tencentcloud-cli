@@ -3461,7 +3461,7 @@
         {
           "disabled": false,
           "document": "日志收集配置列表",
-          "example": "{\"Records\":[{\"Name\":\"demo-test\",\"ApplicationName\":\"app0925\",\"ApplicationId\":\"app-5vaz8xxx\",\"InputType\":\"container_stdout\",\"TopicId\":\"dbebda3e-0a9a-4888-9d5c-642bf2ffa183\",\"LogsetId\":\"4d43fac5-fc0a-42bf-92a9-ef5b5b245e6a\",\"LogType\":\"json_log\",\"BeginningRegex\":\"\",\"ExtractRule\":{\"Backtracking\":\"\",\"BeginningRegex\":\"\",\"Delimiter\":\"\",\"FilterKeys\":[],\"FilterRegex\":[],\"Keys\":[],\"LogRegex\":\"\",\"TimeFormat\":\"\",\"TimeKey\":\"\",\"UnMatchUpload\":\"true\",\"UnMatchedKey\":\"LogParseFailure\"},\"LogPath\":\"\",\"FilePattern\":\"\",\"CreateDate\":\"2024-10-18T11:37:44.000+08:00\",\"ModifyDate\":\"2024-10-18T11:37:45.000+08:00\"},{\"Name\":\"pk-test-cam-14\",\"ApplicationName\":\"app0925\",\"ApplicationId\":\"app-5vaz8xxx\",\"InputType\":\"container_stdout\",\"TopicId\":\"dbebda3e-0a9a-4888-9d5c-642bf2ffa183\",\"LogsetId\":\"4d43fac5-fc0a-42bf-92a9-ef5b5b245e6a\",\"LogType\":\"json_log\",\"BeginningRegex\":\"\",\"ExtractRule\":{\"Backtracking\":\"\",\"BeginningRegex\":\"\",\"Delimiter\":\"\",\"FilterKeys\":[],\"FilterRegex\":[],\"Keys\":[],\"LogRegex\":\"\",\"TimeFormat\":\"\",\"TimeKey\":\"\",\"UnMatchUpload\":\"false\",\"UnMatchedKey\":\"\"},\"LogPath\":\"\",\"FilePattern\":\"\",\"CreateDate\":\"2024-10-30T16:46:41.000+08:00\",\"ModifyDate\":\"2024-10-30T16:46:42.000+08:00\"}],\"ContinueToken\":\"\"}",
+          "example": "无",
           "member": "LogConfigListPage",
           "name": "Result",
           "output_required": true,

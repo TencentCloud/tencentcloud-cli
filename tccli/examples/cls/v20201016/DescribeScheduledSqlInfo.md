@@ -5,41 +5,48 @@
 Input: 
 
 ```
-tccli cls DescribeScheduledSqlInfo --cli-unfold-argument ```
+tccli cls DescribeScheduledSqlInfo --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb5xxxx",
+        "RequestId": "e1700c27-xxxx-xxxx-806f-eece0a0e756e",
         "ScheduledSqlTaskInfos": [
             {
-                "Status": 1,
-                "EnableFlag": 2,
-                "UpdateTime": "2023-07-28 11:36:00",
-                "Name": "test",
+                "CreateTime": "2024-12-25 15:07:41",
                 "DstResource": {
-                    "TopicId": "6ef60bec-0242-43af-bb20-270359fb5xxx",
-                    "Region": "ap-guangzhou",
-                    "BizType": 1,
-                    "MetricName": "pv"
+                    "BizType": 0,
+                    "CustomMetricLabels": [],
+                    "CustomTime": "",
+                    "MetricLabels": [],
+                    "MetricName": "",
+                    "Region": "ap-chengdu",
+                    "TopicId": "d30a5165-xxxx-xxxx-9e94-fb733d2c1c0e"
                 },
-                "ProcessTimeWindow": "@m-15m,@m",
-                "ProcessPeriod": 5,
-                "ProcessStartTime": "2023-07-28 11:36:00",
-                "SrcTopicRegion": "ap-guangzhou",
-                "SrcTopicName": "test-topic",
-                "ScheduledSqlContent": "* | select count(*) as pv",
-                "SrcTopicId": "6ef60bec-0242-43af-bb20-270359fb5xxxx",
+                "EnableFlag": 1,
+                "HasServicesLog": 2,
+                "Name": "scheduler_sql_delete_task",
                 "ProcessDelay": 60,
-                "TaskId": "6ef60bec-0242-43af-bb20-270359fb5xxxx",
+                "ProcessEndTime": "",
+                "ProcessPeriod": 1,
+                "ProcessStartTime": "2024-12-25 15:07:00",
+                "ProcessTimeWindow": "@m-1m,@m",
                 "ProcessType": 1,
-                "CreateTime": "2023-07-28 11:36:00",
-                "ProcessEndTime": "2023-07-28 11:36:00",
-                "SyntaxRule": 0
+                "ScheduledSqlContent": "* | select count(*) as c limit 10000",
+                "SrcTopicId": "fe4e7d35-xxxx-xxxx-82e1-2762471b0928",
+                "SrcTopicName": "",
+                "SrcTopicRegion": "ap-chengdu",
+                "Status": 1,
+                "SyntaxRule": 1,
+                "TaskId": "44bb210d-xxxx-xxxx-8f7d-7fc5170553d4",
+                "UpdateTime": "2024-12-25 15:07:41"
             }
-        ]
+        ],
+        "TotalCount": 15
     }
 }
 ```

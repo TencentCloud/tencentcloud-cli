@@ -16,12 +16,19 @@ Output:
     "Response": {
         "Devices": [
             {
-                "DeviceId": "xxxxxx",
+                "DeviceId": "99870353841320000007_99870353841320000007",
+                "DeviceType": 2,
                 "Status": 3,
-                "CreateTime": 1607073128,
-                "ExtraInformation": "{\"DeviceModel\":\"xxx\",\"Manufacturer\":\"xxx\"}",
+                "CreateTime": "1735791896",
+                "ExtraInformation": "{\"DeviceModel\":\"9987035384132000000\",\"Manufacturer\":\"text\"}",
                 "NickName": "myDevice01",
-                "GroupPath": ""
+                "GroupPath": "/group-aaa/group-bbb",
+                "DeviceCode": "99870353841320000007",
+                "IsRecord": 0,
+                "Recordable": 0,
+                "Protocol": "GB/T 28181",
+                "GroupId": "gro - zn3ro30w",
+                "GroupName": "zn3ro30w"
             }
         ],
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8",

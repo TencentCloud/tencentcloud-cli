@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli mna UpdateDevice --cli-unfold-argument  \
-    --DeviceId abc \
-    --DeviceName abc \
-    --Remark abc \
+    --DeviceId mna-yesydf \
+    --DeviceName name1 \
+    --Remark remarks \
     --UpdateNetInfo.0.Type 0 \
     --UpdateNetInfo.0.DataEnable True \
     --UpdateNetInfo.0.UploadLimit 1 \
     --UpdateNetInfo.0.DownloadLimit 1 \
-    --UpdateNetInfo.0.NetInfoName abc
+    --UpdateNetInfo.0.NetInfoName netname
 ```
 
 Output: 

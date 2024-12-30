@@ -3,16 +3,16 @@
     "ActivateHardware": [
       {
         "document": "批量激活设备",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateHardware\n<公共请求参数>\n\n{\n    \"Hardware\": [\n        {\n            \"Vendor\": \"abc\",\n            \"SN\": \"abc\",\n            \"DeviceName\": \"abc\",\n            \"Description\": \"abc\",\n            \"DataKey\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"HardwareInfo\": [\n            {\n                \"Vendor\": \"abc\",\n                \"SN\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"Description\": \"abc\",\n                \"DataKey\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateHardware\n<公共请求参数>\n\n{\n    \"Hardware\": [\n        {\n            \"Vendor\": \"vendor\",\n            \"SN\": \"AN\",\n            \"DeviceName\": \"name\",\n            \"Description\": \"test\",\n            \"DataKey\": \"keys\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HardwareInfo\": [\n            {\n                \"Vendor\": \"vendor\",\n                \"SN\": \"AN\",\n                \"DeviceName\": \"name\",\n                \"Description\": \"test\",\n                \"DataKey\": \"keys\",\n                \"LicensePayMode\": 1,\n                \"AccessScope\": 1\n            }\n        ],\n        \"RequestId\": \"edd378f7-2511-4692-a029-5ca3d22c1884\"\n    }\n}",
         "title": "批量激活设备"
       }
     ],
     "AddDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"xxx\",\n    \"Remark\": \"xxx\",\n    \"DataKey\": \"xxx\",\n    \"Encrypted\": \"false\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"DeviceId\": \"mna-test1\",\n        \"DataKey\": \"xxx\",\n        \"Signature\": \"xxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddDevice\n<公共请求参数>\n\n{\n    \"DeviceName\": \"mna-test1\",\n    \"Remark\": \"mna-test1\",\n    \"DataKey\": \"mna-test1\",\n    \"Encrypted\": \"false\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"527cc5c7-0413-33e9-2adc-632e0f6a9dff\",\n        \"DeviceId\": \"mna-test1\",\n        \"DataKey\": \"test\",\n        \"Signature\": \"test\"\n    }\n}",
         "title": "新建设备"
       }
     ],
@@ -35,8 +35,8 @@
     "AddL3Conn": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddL3Conn\n<公共请求参数>\n\n{\n    \"Cidr1\": \"173.12.0.0/16\",\n    \"Cidr2\": \"173.13.0.0/16\",\n    \"DeviceId1\": \"abc\",\n    \"DeviceId2\": \"cde\",\n    \"Description\": \"this is a test rule\"\n}",
-        "output": "{\n    \"Response\": {\n        \"L3ConnId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddL3Conn\n<公共请求参数>\n\n{\n    \"Cidr1\": \"173.12.0.0/16\",\n    \"Cidr2\": \"173.13.0.0/16\",\n    \"DeviceId1\": \"mna-der44545r\",\n    \"DeviceId2\": \"cde\",\n    \"Description\": \"this is a test rule\"\n}",
+        "output": "{\n    \"Response\": {\n        \"L3ConnId\": \"l3conn-h9boibynmp\",\n        \"RequestId\": \"f0367096-b039-491c-b7eb-76669a2b22cf\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEncryptedKey\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\",\n        \"EncryptedKey\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"edd378f7-2511-4692-a029-5ca3d22c1884\",\n        \"EncryptedKey\": \"BgkqhkiG9w0BAQ\"\n    }\n}",
         "title": "设置预置密钥"
       }
     ],
@@ -67,16 +67,16 @@
     "DeleteGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"group-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd89e515-20b4-445b-a88d-7355e76f8d22\"\n    }\n}",
         "title": "示例1"
       }
     ],
     "DeleteL3Conn": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnIdList\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnIdList\": [\n        \"lcn-test1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bd89e515-20b4-445b-a88d-7355e76f8d22\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -114,10 +114,10 @@
     ],
     "GetDevices": [
       {
-        "document": "获取设备基本信息列表",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevices\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\",\n    \"Keyword\": \"mna-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DeviceInfos\": [\n            {\n                \"DeviceId\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"LastTime\": \"abc\",\n                \"Remark\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "获取设备基本信息列表"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevices\n<公共请求参数>\n\n{\n    \"PageSize\": 1,\n    \"PageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceInfos\": [\n            {\n                \"AccessScope\": 0,\n                \"CreateTime\": \"1663310188000\",\n                \"DeviceId\": \"mna-w795bzezug\",\n                \"DeviceName\": \"dev2233\",\n                \"FlowTrunc\": 0,\n                \"GroupId\": \"\",\n                \"GroupName\": \"\",\n                \"LastTime\": \"1719454676000\",\n                \"LicensePayMode\": 0,\n                \"Payer\": 0,\n                \"Remark\": \"\",\n                \"Sn\": \"\",\n                \"Vendor\": \"\"\n            }\n        ],\n        \"Length\": 899,\n        \"RequestId\": \"8fbce821-acbb-49db-ad70-345b5d353324\",\n        \"TotalPage\": 899\n    }\n}",
+        "title": "示例"
       }
     ],
     "GetFlowAlarmInfo": [
@@ -131,21 +131,21 @@
     "GetFlowPackages": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n    \"DeviceId\": \"mna-test1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"PackageList\": [\n            {\n                \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n                \"AppId\": 1,\n                \"PackageType\": \"DEVICE_1_FLOW_20G\",\n                \"Status\": 1,\n                \"ActiveTime\": 1697181612,\n                \"ExpireTime\": 1699860012,\n                \"DeviceList\": [\n                    \"mna-test1\",\n                    \"mna-test2\"\n                ],\n                \"CapacitySize\": 20000,\n                \"CapacityRemain\": 10000,\n                \"RenewFlag\": true,\n                \"ModifyStatus\": 0,\n                \"TruncFlag\": false\n            }\n        ],\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
-        "title": "示例1"
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"ActiveTime\": 1734613941,\n                \"AppId\": 251198806,\n                \"CapacityRemain\": 50000,\n                \"CapacityRemainPrecise\": 50000,\n                \"CapacitySize\": 50000,\n                \"CreateTime\": 1734613920,\n                \"DeviceList\": [\n                    \"mna-6t5t54hcry\",\n                    \"mna-s72mu68gh3\"\n                ],\n                \"ExpireTime\": 1737292340,\n                \"ModifyStatus\": 0,\n                \"PackageType\": \"DEVICE_2_FLOW_50G\",\n                \"RenewFlag\": true,\n                \"ResourceId\": \"live-jjc000eABvgr_qt\",\n                \"Status\": 1,\n                \"TruncFlag\": false\n            }\n        ],\n        \"RequestId\": \"e6972818-74b2-4228-a5ec-70c11e37fe6c\",\n        \"Total\": 506\n    }\n}",
+        "title": "示例"
       }
     ],
     "GetFlowStatistic": [
       {
         "document": "获取指定id设备流量使用信息",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"Type\": 1,\n    \"DeviceId\": \"abc\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"Type\": 1,\n    \"DeviceId\": \"mna-dev1\",\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
         "output": "{\n    \"Response\": {\n        \"MaxValue\": 51548,\n        \"AvgValue\": 15441,\n        \"TotalValue\": 656546,\n        \"NetDetails\": [\n            {\n                \"Time\": \"1659513692\",\n                \"Current\": 3546545\n            },\n            {\n                \"Time\": \"1659513692\",\n                \"Current\": 4454864\n            },\n            {\n                \"Time\": \"1659513692\",\n                \"Current\": 4848941\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取指定id设备流量使用信息"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"Type\": 1,\n    \"DeviceId\": \"\",\n    \"DeviceList\": [\n        \"abc\",\n        \"bcd\"\n    ],\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatistic\n<公共请求参数>\n\n{\n    \"EndTime\": 1659514692,\n    \"Type\": 1,\n    \"DeviceId\": \"\",\n    \"DeviceList\": [\n        \"mna-dev1\",\n        \"mna-dev2\"\n    ],\n    \"TimeGranularity\": 1,\n    \"BeginTime\": 1659513692\n}",
         "output": "{\n    \"Response\": {\n        \"MaxValue\": 51548,\n        \"AvgValue\": 15441,\n        \"TotalValue\": 656546,\n        \"NetDetails\": [\n            {\n                \"Time\": \"1659513692\",\n                \"Current\": 3546545\n            },\n            {\n                \"Time\": \"1659513692\",\n                \"Current\": 4454864\n            },\n            {\n                \"Time\": \"1659513692\",\n                \"Current\": 4848941\n            }\n        ],\n        \"RequestId\": \"\"\n    }\n}",
         "title": "获取多个设备的流量使用信息之和"
       }
@@ -162,15 +162,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowStatisticByRegion\n<公共请求参数>\n\n{\n    \"BeginTime\": 0,\n    \"EndTime\": 0,\n    \"Type\": 0,\n    \"TimeGranularity\": 0,\n    \"AccessRegion\": \"MC\",\n    \"GatewayType\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"NetDetails\": [\n            {\n                \"Current\": 0,\n                \"Time\": \"abc\"\n            }\n        ],\n        \"MaxValue\": 0,\n        \"AvgValue\": 0,\n        \"TotalValue\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NetDetails\": [\n            {\n                \"Current\": 0,\n                \"Time\": \"1735259400\"\n            }\n        ],\n        \"MaxValue\": 0,\n        \"AvgValue\": 0,\n        \"TotalValue\": 0,\n        \"RequestId\": \"bd89e515-20b4-445b-a88d-7355e76f8d22\"\n    }\n}",
         "title": "正常场景"
       }
     ],
     "GetGroupDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupDetail\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\",\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupId\": \"abc\",\n            \"GroupName\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\",\n            \"Description\": \"abc\",\n            \"DeviceNum\": 0\n        },\n        \"DeviceInfos\": [\n            {\n                \"DeviceId\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"LastTime\": \"abc\",\n                \"Remark\": \"abc\",\n                \"AccessScope\": 0,\n                \"LicensePayMode\": 0,\n                \"Payer\": 0,\n                \"GroupId\": \"abc\",\n                \"GroupName\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupDetail\n<公共请求参数>\n\n{\n    \"GroupId\": \"cliGrp-xf8rboasb\",\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfo\": {\n            \"GroupId\": \"cliGrp-xf8rboasb\",\n            \"GroupName\": \"test\",\n            \"CreateTime\": \"1711076263000\",\n            \"UpdateTime\": \"1711076263000\",\n            \"Description\": \"test\",\n            \"DeviceNum\": 0\n        },\n        \"DeviceInfos\": [\n            {\n                \"DeviceId\": \"mna-detr244\",\n                \"DeviceName\": \"name\",\n                \"CreateTime\": \"1711076263000\",\n                \"LastTime\": \"1711076263000\",\n                \"Remark\": \"mark\",\n                \"AccessScope\": 0,\n                \"LicensePayMode\": 0,\n                \"Payer\": 0,\n                \"GroupId\": \"cliGrp-xf8rboasb\",\n                \"GroupName\": \"test\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"fd429f79-9914-46e7-94c3-c0695ee1c8b9\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -184,23 +184,17 @@
     ],
     "GetHardwareList": [
       {
-        "document": "硬件信息列表",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetHardwareList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"Keyword\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"HardwareInfos\": [\n            {\n                \"DeviceId\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"ActiveTime\": \"abc\",\n                \"LastOnlineTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"VendorDescription\": \"abc\",\n                \"LicenseChargingMode\": 0,\n                \"CreateTime\": \"abc\",\n                \"SN\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "硬件信息列表"
-      },
-      {
-        "document": "租户查看厂商设备",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetHardwareList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 11\n}",
-        "output": "{\n    \"Response\": {\n        \"HardwareInfos\": [\n            {\n                \"ActiveTime\": \"1685514528\",\n                \"CreateTime\": \"1685510058\",\n                \"Description\": \"\",\n                \"DeviceId\": \"mna-fsap0nz6lp\",\n                \"DeviceName\": \"DeviceName\",\n                \"LicenseChargingMode\": 1,\n                \"SN\": \"cpe-sn-08\",\n                \"VendorDescription\": \"\",\n                \"LastOnlineTime\": \"1685518319\"\n            },\n            {\n                \"ActiveTime\": \"1685518319\",\n                \"CreateTime\": \"1685518183\",\n                \"Description\": \"\",\n                \"DeviceId\": \"mna-yhf5rxj0ud\",\n                \"DeviceName\": \"DeviceName1\",\n                \"LicenseChargingMode\": 1,\n                \"SN\": \"cpe-sn-13\",\n                \"VendorDescription\": \"\",\n                \"LastOnlineTime\": \"1685518319\"\n            }\n        ],\n        \"Length\": 2,\n        \"RequestId\": \"cad17990-449a-4961-830f-0cde5b8bd74a\",\n        \"TotalPage\": 1\n    }\n}",
-        "title": "租户查看厂商设备"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetHardwareList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"HardwareInfos\": [\n            {\n                \"ActiveTime\": \"1686554927\",\n                \"CreateTime\": \"1685673786\",\n                \"Description\": \"测试00-00\",\n                \"DeviceId\": \"mna-2x2tllhb18\",\n                \"DeviceName\": \"test-vendor-hardware-00-00\",\n                \"FlowTrunc\": 0,\n                \"GroupId\": \"\",\n                \"GroupName\": \"\",\n                \"LicenseChargingMode\": 2,\n                \"LicensePayMode\": 0,\n                \"Payer\": 1,\n                \"SN\": \"test-vendor-hardware-00\",\n                \"VendorDescription\": \"测试00\"\n            }\n        ],\n        \"Length\": 107,\n        \"RequestId\": \"50f72657-2085-49fe-839f-71f3088c7f0a\",\n        \"TotalPage\": 107\n    }\n}",
+        "title": "示例"
       }
     ],
     "GetL3ConnList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetL3ConnList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1,\n    \"DeviceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"L3ConnList\": [\n            {\n                \"L3ConnId\": \"abc\",\n                \"DeviceId1\": \"abc\",\n                \"Cidr1\": \"xxx\",\n                \"DeviceId2\": \"cde\",\n                \"Cidr2\": \"xxx\",\n                \"Enable\": true,\n                \"Description\": \"abc\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetL3ConnList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1,\n    \"DeviceId\": \"mna-2x2tllhb18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"L3ConnList\": [\n            {\n                \"L3ConnId\": \"l3conn-h9boibynmp\",\n                \"DeviceId1\": \"mna-2x2tllhb18\",\n                \"Cidr1\": \"192.168.1.0/26\",\n                \"DeviceId2\": \"mna-2x2tllhb13\",\n                \"Cidr2\": \"192.168.1.0/26\",\n                \"Enable\": true,\n                \"Description\": \"test\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"e5b299c7-aaf4-4a5e-9d01-feb63273e347\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -216,7 +210,7 @@
       {
         "document": "获取流量监控信息",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetNetMonitor\n<公共请求参数>\n\n{\n    \"Metrics\": \"TxRate\",\n    \"EndTime\": 1662624800,\n    \"DeviceId\": \"mna-xxx\",\n    \"BeginTime\": 1662622200\n}",
-        "output": "{\n    \"Response\": {\n        \"MonitorData\": [\n            {\n                \"Time\": \"1673601780\",\n                \"BusinessMetrics\": 492350276.319998,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 27582845.919998\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 395158790.239997\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673601840\",\n                \"BusinessMetrics\": 412655416,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 27228367.066665\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 397505721.866666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673601900\",\n                \"BusinessMetrics\": 411823866.666665,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 28047154.266665\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 396059005.333333\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673601960\",\n                \"BusinessMetrics\": 412108687.733331,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 29244132.933331\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 395156858.266664\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602020\",\n                \"BusinessMetrics\": 412778279.866666,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 26898350.666666\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 398191465.733331\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602080\",\n                \"BusinessMetrics\": 412630582.533333,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 28580784.266665\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 396357362.933332\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602140\",\n                \"BusinessMetrics\": 412431913.466665,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 27329174.8\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 397404181.866666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602200\",\n                \"BusinessMetrics\": 410982346.266665,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 29038580.399999\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 394201611.866666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602260\",\n                \"BusinessMetrics\": 409923330.933332,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 28212205.599999\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 393937825.066666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602320\",\n                \"BusinessMetrics\": 353662726.399999,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 25376171.542857\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 338834939.199999\n                    }\n                ]\n            }\n        ],\n        \"AccessRegion\": \"MC\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MonitorData\": [\n            {\n                \"Time\": \"1673601780\",\n                \"BusinessMetrics\": 492350276.319998,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 27582845.919998\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 395158790.239997\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673601840\",\n                \"BusinessMetrics\": 412655416,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 27228367.066665\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 397505721.866666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673601900\",\n                \"BusinessMetrics\": 411823866.666665,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 28047154.266665\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 396059005.333333\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673601960\",\n                \"BusinessMetrics\": 412108687.733331,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 29244132.933331\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 395156858.266664\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602020\",\n                \"BusinessMetrics\": 412778279.866666,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 26898350.666666\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 398191465.733331\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602080\",\n                \"BusinessMetrics\": 412630582.533333,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 28580784.266665\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 396357362.933332\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602140\",\n                \"BusinessMetrics\": 412431913.466665,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 27329174.8\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 397404181.866666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602200\",\n                \"BusinessMetrics\": 410982346.266665,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 29038580.399999\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 394201611.866666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602260\",\n                \"BusinessMetrics\": 409923330.933332,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 28212205.599999\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 393937825.066666\n                    }\n                ]\n            },\n            {\n                \"Time\": \"1673602320\",\n                \"BusinessMetrics\": 353662726.399999,\n                \"SlotNetInfo\": [\n                    {\n                        \"NetInfoName\": \"eth0\",\n                        \"PublicIP\": \"9.223.110.232\",\n                        \"Current\": 25376171.542857\n                    },\n                    {\n                        \"NetInfoName\": \"eth1\",\n                        \"PublicIP\": \"9.223.96.218\",\n                        \"Current\": 338834939.199999\n                    }\n                ]\n            }\n        ],\n        \"AccessRegion\": \"MC\",\n        \"RequestId\": \"odgadasd-dasdasd-dadsada\"\n    }\n}",
         "title": "获取流量监控信息"
       }
     ],
@@ -224,7 +218,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPublicKey\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"PublicKey\": \"xxxxxx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PublicKey\": \"-----BEGIN RSA Public Key-----\\nMIIB\\n-----END RSA Public Key-----\",\n        \"RequestId\": \"edd378f7-2511-4692-a029-5ca3d22c1884\"\n    }\n}",
         "title": "获取公钥"
       }
     ],
@@ -285,7 +279,7 @@
     "OrderPerLicense": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OrderPerLicense\n<公共请求参数>\n\n{\n    \"DeviceId\": \"abc\",\n    \"Type\": 0,\n    \"AutoVoucher\": true,\n    \"VoucherIds\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OrderPerLicense\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-devid\",\n    \"Type\": 0,\n    \"AutoVoucher\": true,\n    \"VoucherIds\": [\n        \"v-1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\",\n        \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\"\n    }\n}",
         "title": "示例1"
       }
@@ -301,7 +295,7 @@
     "UpdateDevice": [
       {
         "document": "更新设备",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"abc\",\n    \"DeviceName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"UpdateNetInfo\": [\n        {\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"UploadLimit\": 1,\n            \"DownloadLimit\": 1,\n            \"NetInfoName\": \"abc\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"mna-yesydf\",\n    \"DeviceName\": \"name1\",\n    \"Remark\": \"remarks\",\n    \"UpdateNetInfo\": [\n        {\n            \"Type\": 0,\n            \"DataEnable\": true,\n            \"UploadLimit\": 1,\n            \"DownloadLimit\": 1,\n            \"NetInfoName\": \"netname\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a400ac72-8f93-4340-a862-f74b56942703\"\n    }\n}",
         "title": "更新设备"
       }
@@ -309,40 +303,46 @@
     "UpdateGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"xxx\",\n    \"Description\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"cliGrp-xf8rboasbh\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bcc2c1d2-be38-4249-a50b-d9c487a36354\"\n    }\n}",
         "title": "示例1"
       }
     ],
     "UpdateHardware": [
       {
         "document": "更新硬件信息",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateHardware\n<公共请求参数>\n\n{\n    \"HardwareId\": \"abc\",\n    \"SN\": \"abc\",\n    \"Description\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateHardware\n<公共请求参数>\n\n{\n    \"HardwareId\": \"cpe-6zmf86knqu\",\n    \"SN\": \"adsqda\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ff707e0-c87a-6cff-5c65-93f21e212a81\"\n    }\n}",
         "title": "更新硬件信息"
+      },
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateHardware\n<公共请求参数>\n\n{\n    \"HardwareId\": \"cpe-53g4emz6zc\",\n    \"SN\": \"dd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"004fa540-6023-46a1-8f92-bcf24d74e24f\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "UpdateL3Cidr": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"xxx\",\n    \"DeviceId1\": \"abc\",\n    \"Cidr1\": \"xxx\",\n    \"DeviceId2\": \"cde\",\n    \"Cidr2\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"l3conn-c0rkbqhig\",\n    \"DeviceId1\": \"mna-f8v7e6o432\",\n    \"Cidr1\": \"192.168.0.16/28\",\n    \"DeviceId2\": \"mna-f8v7e6o43g\",\n    \"Cidr2\": \"192.168.0.16/28\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab57398-d79f-4195-b0d4-3aef1e43b9c7\"\n    }\n}",
         "title": "示例1"
       }
     ],
     "UpdateL3Conn": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"abc\",\n    \"Description\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"l3conn-c0rkbqhig8\",\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab57398-d79f-4195-b0d4-3aef1e43b9c7\"\n    }\n}",
         "title": "示例1"
       }
     ],
     "UpdateL3Switch": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"abc\",\n    \"Enable\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTenant\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"id\",\n    \"Enable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7fa2c35a-ecca-454b-9521-65e17601143e\"\n    }\n}",
         "title": "示例1"
       }
     ]

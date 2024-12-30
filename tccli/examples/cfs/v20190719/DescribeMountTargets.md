@@ -22,13 +22,13 @@ Output:
                 "CidrBlock": "10.0.0.0/24",
                 "CcnID": "ccn-123456",
                 "NetworkInterface": "vpc",
-                "SubnetName": "test",
-                "FileSystemId": "cfs-12345",
-                "VpcName": "12345",
+                "SubnetName": "test_subnet",
+                "FileSystemId": "cfs-1gag2345",
+                "VpcName": "defaultvpc",
                 "LifeCycleState": "available",
                 "SubnetId": "subnet-12345",
                 "IpAddress": "10.0.0.10",
-                "FSID": "12345"
+                "FSID": "bb1234"
             }
         ]
     }

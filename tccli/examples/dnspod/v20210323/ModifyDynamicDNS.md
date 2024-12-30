@@ -6,22 +6,20 @@ Input:
 
 ```
 tccli dnspod ModifyDynamicDNS --cli-unfold-argument  \
-    --Domain dnspod.site \
-    --DomainId 62 \
-    --SubDomain test \
-    --RecordId 162 \
-    --RecordLine 默认 \
-    --RecordLineId 0 \
-    --Value 129.23.32.32 \
-    --Ttl 600
+    --Domain dnspod.cn \
+    --SubDomain www \
+    --RecordId 16411867 \
+    --RecordLine 联通 \
+    --RecordLineId 10=1 \
+    --Value 119.29.29.29
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ab4f1426-ea15-42ea-8183-dc1b44151166",
-        "RecordId": 162
+        "RecordId": 16411867,
+        "RequestId": "76f402df-7482-4e9d-a48b-fc1d111f0fe9"
     }
 }
 ```

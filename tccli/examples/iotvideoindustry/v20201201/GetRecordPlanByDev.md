@@ -14,11 +14,12 @@ Output:
 {
     "Response": {
         "Plan": {
-            "PlanId": "plan-xxxxx",
-            "Name": "xxx",
-            "TimeTemplateId": "tgrp-xxxx",
-            "TimeTemplateName": "xxxx",
+            "PlanId": "plan-allday",
+            "Name": "myallday",
+            "TimeTemplateId": "tgrp-fmwq1f1a",
+            "TimeTemplateName": "allday",
             "EventId": 0,
+            "RecordStorageTime": 1,
             "Devices": [
                 {
                     "DeviceId": "dev001"

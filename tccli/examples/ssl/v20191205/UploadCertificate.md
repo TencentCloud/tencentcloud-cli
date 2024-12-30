@@ -10,7 +10,7 @@ tccli ssl UploadCertificate --cli-unfold-argument  \
 xxxxxxxxxxxxxxxxxxx
 -----END CERTIFICATE----- \
     --Alias 上传CA证书 \
-    --ProjectId 12345 \
+    --ProjectId 1634827 \
     --AllowDownload True \
     --Repeatable False \
     --CertificateType CA \
@@ -46,7 +46,7 @@ xxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxx
 -----END RSA PRIVATE KEY----- \
     --Alias 上传证书 \
-    --ProjectId 12345 \
+    --ProjectId 1647838 \
     --AllowDownload True \
     --Repeatable False \
     --CertificateType SVR \

@@ -23,7 +23,7 @@ Output:
                 "CcnId": "ccn-8j0phqix",
                 "CcnRouteTableId": "ccnrtb-mnvhfmv9",
                 "RouteTableName": "_default_rtb",
-                "RouteTableDescription": "",
+                "RouteTableDescription": "table-1",
                 "IsDefaultTable": true,
                 "CreateTime": "2021-05-11 15:47:53"
             },
@@ -31,7 +31,7 @@ Output:
                 "CcnId": "ccn-8j0phqix",
                 "CcnRouteTableId": "ccnrtb-3230jx4x",
                 "RouteTableName": "rubytest",
-                "RouteTableDescription": "test",
+                "RouteTableDescription": "table-2",
                 "IsDefaultTable": false,
                 "CreateTime": "2021-05-11 16:33:14"
             }

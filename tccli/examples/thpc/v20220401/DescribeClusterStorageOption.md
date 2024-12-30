@@ -25,7 +25,7 @@ Output:
             "GooseFSOptions": [
                 {
                     "LocalPath": "/data/",
-                    "RemotePath": "/",
+                    "RemotePath": "/xxx/cfs/",
                     "Masters": [
                         "172.30.4.63:9202",
                         "172.30.0.128:9202"

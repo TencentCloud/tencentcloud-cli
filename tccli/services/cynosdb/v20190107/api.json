@@ -7422,7 +7422,7 @@
         {
           "disabled": false,
           "document": "用户appId",
-          "example": "无",
+          "example": "251232125",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -7432,7 +7432,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "cynosdbmysql-dkq0t36x",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -7442,7 +7442,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-12-02 10:59:44",
           "member": "string",
           "name": "CreatedTime",
           "output_required": true,
@@ -7452,7 +7452,7 @@
         {
           "disabled": false,
           "document": "删除时间",
-          "example": "无",
+          "example": "2024-12-22 10:59:44",
           "member": "string",
           "name": "DeletedTime",
           "output_required": true,
@@ -7462,7 +7462,7 @@
         {
           "disabled": false,
           "document": "实例组ID",
-          "example": "无",
+          "example": "cynosdbmysql-grp-nz02bc3j",
           "member": "string",
           "name": "InstanceGroupId",
           "output_required": true,
@@ -7472,7 +7472,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -7482,7 +7482,7 @@
         {
           "disabled": false,
           "document": "实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占",
-          "example": "无",
+          "example": "ha",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -7492,7 +7492,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2024-12-20 19:24:22",
           "member": "string",
           "name": "UpdatedTime",
           "output_required": true,
@@ -7502,7 +7502,7 @@
         {
           "disabled": false,
           "document": "内网IP",
-          "example": "无",
+          "example": "172.16.0.194",
           "member": "string",
           "name": "Vip",
           "output_required": true,
@@ -7512,7 +7512,7 @@
         {
           "disabled": false,
           "document": "内网端口",
-          "example": "无",
+          "example": "3306",
           "member": "int64",
           "name": "Vport",
           "output_required": true,
@@ -7522,7 +7522,7 @@
         {
           "disabled": false,
           "document": "外网域名",
-          "example": "无",
+          "example": "qy-cynosdbmysql-grp-nz02bc3j.sql.tencentcdb.com",
           "member": "string",
           "name": "WanDomain",
           "output_required": true,
@@ -7532,7 +7532,7 @@
         {
           "disabled": false,
           "document": "外网ip",
-          "example": "无",
+          "example": "81.71.200.7",
           "member": "string",
           "name": "WanIP",
           "output_required": true,
@@ -7542,7 +7542,7 @@
         {
           "disabled": false,
           "document": "外网端口",
-          "example": "无",
+          "example": "8723",
           "member": "int64",
           "name": "WanPort",
           "output_required": true,
@@ -7552,7 +7552,7 @@
         {
           "disabled": false,
           "document": "外网状态",
-          "example": "无",
+          "example": "running",
           "member": "string",
           "name": "WanStatus",
           "output_required": true,
@@ -7572,7 +7572,7 @@
         {
           "disabled": false,
           "document": "VPC的ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-95mugkpt",
           "member": "string",
           "name": "UniqVpcId",
           "output_required": true,
@@ -7582,7 +7582,7 @@
         {
           "disabled": false,
           "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "subnet-6zu506da",
           "member": "string",
           "name": "UniqSubnetId",
           "output_required": true,
@@ -7602,7 +7602,7 @@
         {
           "disabled": false,
           "document": "正在进行的任务",
-          "example": "无",
+          "example": "[\"taskSwitchVpc\"]",
           "member": "string",
           "name": "ProcessingTasks",
           "output_required": true,
@@ -7622,7 +7622,7 @@
         {
           "disabled": false,
           "document": "biz_net_service表id",
-          "example": "无",
+          "example": "172346",
           "member": "int64",
           "name": "NetServiceId",
           "output_required": true,

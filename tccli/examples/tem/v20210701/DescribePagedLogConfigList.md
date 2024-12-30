@@ -46,7 +46,7 @@ Output:
                     "LogType": "",
                     "LogsetId": "7a126551-62d1-4e12-b426-84bd5b2fdxxx",
                     "ModifyDate": "2024-10-31T15:25:08.000+08:00",
-                    "Name": "test",
+                    "Name": "log-cfg-name",
                     "TopicId": "6c69fdb7-5e4c-4e52-8437-32c2c729b85a"
                 }
             ]

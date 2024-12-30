@@ -294,14 +294,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "并发包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "并发包ID",
           "example": "cac-j6x242r6",
           "member": "string",
           "name": "ConcurrentId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -311,201 +311,201 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目id",
           "example": "\"cap-op8pfan8\"",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目名称",
           "example": "\"project_name\"",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目描述",
           "example": "\"project test\"",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清",
           "example": "L1",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云应用ID",
           "example": "\"app-a1b2c3d4\"",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预启动\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预启动",
           "example": "false",
           "member": "bool",
           "name": "IsPreload",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已配置并发数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已配置并发数",
           "example": "0",
           "member": "int64",
           "name": "Amount",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用中的并发数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用中的并发数",
           "example": "0",
           "member": "int64",
           "name": "Using",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用状态，NoConcurrent-未配置并发包，Online-已上线，其他状态为云应用的状态：applicationCreating-创建中，applicationCreateFail-创建失败，applicationDeleting-删除中，applicationNoConfigured-启动参数未配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用状态，NoConcurrent-未配置并发包，Online-已上线，其他状态为云应用的状态：applicationCreating-创建中，applicationCreateFail-创建失败，applicationDeleting-删除中，applicationNoConfigured-启动参数未配置",
           "example": "\"NoConcurrent\"",
           "member": "string",
           "name": "ApplicationStatus",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用启动参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用启动参数",
           "example": "\"param -b\"",
           "member": "string",
           "name": "ApplicationParams",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "\"2024-06-20T08:55:38.255Z\"",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "\"app_name\"",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分辨率，格式为“宽x高”，例如1920x1080\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分辨率，格式为“宽x高”，例如1920x1080",
           "example": "“1920x1080”",
           "member": "string",
           "name": "Resolution",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目类型。\nSHARED：共享，所有应用共享\nEXCLUSIVE（默认值）：独享，一个应用独享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目类型。\nSHARED：共享，所有应用共享\nEXCLUSIVE（默认值）：独享，一个应用独享",
           "example": "SHARED",
           "member": "string",
           "name": "ProjectType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用途。\nEXPERIENCE：体验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用途。\nEXPERIENCE：体验",
           "example": "EXPERIENCE",
           "member": "string",
           "name": "Purpose",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用分发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔、 eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用分发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔、 eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）",
           "example": "ap-chinese-mainland",
           "member": "string",
           "name": "ApplicationRegions",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "并发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔 、eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "并发区域（ 标准区： ap-chinese-mainland ： 中国大陆、 na-north-america : 北美、 eu-frankfurt ：法兰克福、 ap-mumbai ： 孟买、 ap-tokyo ： 东京、 ap-seoul ： 首尔、 ap-singapore ： 新加坡、 ap-bangkok ： 曼谷、 ap-hongkong ： 中国香港、 融合区: me-middle-east-fusion ：中东 、na-north-america-fusion ：北美 、sa-south-america-fusion ：南美 、ap-tokyo-fusion ： 东京 、ap-seoul-fusion ： 首尔 、eu-frankfurt-fusion ：法兰克福 、ap-singapore-fusion ： 新加坡 、ap-hongkong-fusion ： 中国香港 ）",
           "example": "ap-chinese-mainland",
           "member": "string",
           "name": "ConcurrentRegions",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目类别。\nDESKTOP: 桌面端，默认值\nMOBILE：移动端",
           "example": "MOBILE",
           "member": "string",
           "name": "ProjectCategory",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -701,7 +701,7 @@
         {
           "disabled": false,
           "document": "应用启动参数",
-          "example": "无",
+          "example": "-p params",
           "member": "string",
           "name": "ApplicationParams",
           "required": false,
@@ -1742,13 +1742,13 @@
         },
         {
           "disabled": false,
-          "document": "并发包列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "并发包列表",
           "example": "无",
           "member": "ApplicationConcurrentPackage",
           "name": "ConcurrentPackages",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2086,7 +2086,7 @@
         {
           "disabled": false,
           "document": "应用启动参数",
-          "example": "无",
+          "example": "-p params",
           "member": "string",
           "name": "ApplicationParams",
           "required": false,
@@ -2095,7 +2095,7 @@
         {
           "disabled": false,
           "document": "云应用项目描述",
-          "example": "无",
+          "example": "测试项目",
           "member": "string",
           "name": "Description",
           "required": false,

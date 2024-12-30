@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideoindustry DeleteTimeTemplate --cli-unfold-argument  \
-    --TemplateId xxx
+    --TemplateId tgrp-jfs89ah1
 ```
 
 Output: 

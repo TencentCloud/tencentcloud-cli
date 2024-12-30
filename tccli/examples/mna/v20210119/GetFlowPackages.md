@@ -1,4 +1,4 @@
-**Example 1: 示例1**
+**Example 1: 示例**
 
 
 
@@ -6,37 +6,37 @@ Input:
 
 ```
 tccli mna GetFlowPackages --cli-unfold-argument  \
-    --ResourceId 56d11777-50f7-4c60-9c89-e7076c8529a9-0 \
-    --DeviceId mna-test1 \
     --PageNumber 1 \
-    --PageSize 10
+    --PageSize 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "PackageList": [
             {
-                "ResourceId": "56d11777-50f7-4c60-9c89-e7076c8529a9-0",
-                "AppId": 1,
-                "PackageType": "DEVICE_1_FLOW_20G",
-                "Status": 1,
-                "ActiveTime": 1697181612,
-                "ExpireTime": 1699860012,
+                "ActiveTime": 1734613941,
+                "AppId": 251198806,
+                "CapacityRemain": 50000,
+                "CapacityRemainPrecise": 50000,
+                "CapacitySize": 50000,
+                "CreateTime": 1734613920,
                 "DeviceList": [
-                    "mna-test1",
-                    "mna-test2"
+                    "mna-6t5t54hcry",
+                    "mna-s72mu68gh3"
                 ],
-                "CapacitySize": 20000,
-                "CapacityRemain": 10000,
-                "RenewFlag": true,
+                "ExpireTime": 1737292340,
                 "ModifyStatus": 0,
+                "PackageType": "DEVICE_2_FLOW_50G",
+                "RenewFlag": true,
+                "ResourceId": "live-jjc000eABvgr_qt",
+                "Status": 1,
                 "TruncFlag": false
             }
         ],
-        "RequestId": "1206563f-f13f-4647-aaa8-37fa86954cc4-1"
+        "RequestId": "e6972818-74b2-4228-a5ec-70c11e37fe6c",
+        "Total": 506
     }
 }
 ```

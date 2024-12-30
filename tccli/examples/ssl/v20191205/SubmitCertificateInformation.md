@@ -17,13 +17,13 @@ tccli ssl SubmitCertificateInformation --cli-unfold-argument  \
     --OrganizationRegion 广东省 \
     --PhoneAreaCode 0755 \
     --PhoneNumber 86013388 \
-    --AdminFirstName test \
-    --AdminLastName test \
+    --AdminFirstName luke \
+    --AdminLastName sky \
     --AdminPhoneNum 12345678901 \
     --AdminEmail test@tencent.com \
     --AdminPosition developer \
-    --ContactFirstName test \
-    --ContactLastName test \
+    --ContactFirstName luke \
+    --ContactLastName sky \
     --ContactEmail test@tencent.com \
     --ContactNumber 12345678901 \
     --ContactPosition developer

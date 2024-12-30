@@ -3,16 +3,16 @@
     "CreateAccounts": [
       {
         "document": "",
-        "input": "https://lighthousedb.tencentcloudapi.com/?Action=CreateAccounts\n&ClusterId=lhdbmysql-00000000\n&Accounts.0.AccountName=test\n&Accounts.0.AccountPassword=password\n&Accounts.0.Description=desc\n&Accounts.0.Host=%\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176669\"\n    }\n}",
+        "input": "https://lighthousedb.tencentcloudapi.com/?Action=CreateAccounts\n&ClusterId=lhdbmysql-00000000\n&Accounts.0.AccountName=andyUser\n&Accounts.0.AccountPassword=Pass@3306\n&Accounts.0.Description=desc\n&Accounts.0.Host=%\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"724e2b99-0ede-4fad-a608-ab7557fa0ede\"\n    }\n}",
         "title": "创建新账号"
       }
     ],
     "CreateClusters": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"123\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lighthousedb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{\n    \"AdminPassword\": \"isd@cloud123\",\n    \"AutoRenewFlag\": 0,\n    \"ClusterName\": \"lhdb_lhdb_20241230060506\",\n    \"Cpu\": 1,\n    \"DbType\": \"MYSQL\",\n    \"DbVersion\": \"5.7\",\n    \"Memory\": 1,\n    \"Port\": 3306,\n    \"StorageLimit\": 40,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"m\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"20241230458077490098301\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建集群"
       }
     ],

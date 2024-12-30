@@ -430,6 +430,14 @@
         "title": "查询通用资源配额信息"
       }
     ],
+    "DescribeInstanceDimensions": [
+      {
+        "document": "获取一批实例的维度数据。",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDimensions\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"NextToken\": \"M==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12cf1a6b-e64a-4a84-b525-f342e6ec4878\",\n        \"InstanceDimensionsSet\": [\n            {\n                \"AppId\": \"1300257518\",\n                \"Uin\": \"700000951429\",\n                \"SubAccountUin\": \"700000951429\",\n                \"InstanceId\": \"lhins-9usmvemx\",\n                \"OriginInstanceId\": \"ins-a35yeyrk\",\n                \"InstanceName\": \"Debian-ptYl\",\n                \"InstanceType\": \"S1.MEDIUM2\",\n                \"OsName\": \"Debian 10.2 64bit\",\n                \"Platform\": \"DEBIAN\",\n                \"PlatformType\": \"LINUX_UNIX\",\n                \"InstanceChargeType\": \"PREPAID\",\n                \"SystemDiskType\": \"CLOUD_SSD\",\n                \"SystemDiskSize\": \"60\",\n                \"PrivateIpAddress\": \"10.0.16.10\",\n                \"PublicIpAddress\": \"1.1.1.1\",\n                \"PrivateIpv6Address\": \"\",\n                \"PublicIpv6Address\": \"\",\n                \"InternetMaxBandwidthOut\": \"3\",\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceState\": \"RUNNING\",\n                \"Uuid\": \"588d02ff-7bcf-4f34-9531-72f3e6c74654\"\n            }\n        ],\n        \"NextToken\": \"NDc0\",\n        \"TotalCount\": 7\n    }\n}",
+        "title": "获取一批实例的维度数据"
+      }
+    ],
     "DescribeInstanceLoginKeyPairAttribute": [
       {
         "document": "",

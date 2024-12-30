@@ -21,7 +21,7 @@ Output:
                 "CapacityHardLimit": 10,
                 "FileHardLimit": 10000,
                 "Status": "available",
-                "DirectoryPath": "abc",
+                "DirectoryPath": "/cfs/abc",
                 "CapacityUsed": 1,
                 "FileUsed": 1
             }

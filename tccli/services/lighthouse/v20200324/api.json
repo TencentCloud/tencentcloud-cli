@@ -371,6 +371,13 @@
       "output": "DescribeGeneralResourceQuotasResponse",
       "status": "online"
     },
+    "DescribeInstanceDimensions": {
+      "document": "本接口（DescribeInstanceDimensions）用于查询一个或多个实例的维度信息，供云监控侧采集一个地域所有实例维度信息使用。",
+      "input": "DescribeInstanceDimensionsRequest",
+      "name": "查询实例维度数据",
+      "output": "DescribeInstanceDimensionsResponse",
+      "status": "online"
+    },
     "DescribeInstanceLoginKeyPairAttribute": {
       "document": "后端代码已与23年2月4号下线\n近90天无调用记录\n经评估，下线无风险，操作下线\n\n本接口用于查询实例默认登录密钥属性。",
       "input": "DescribeInstanceLoginKeyPairAttributeRequest",
@@ -5000,6 +5007,72 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceDimensionsRequest": {
+      "document": "DescribeInstanceDimensions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询凭证，取值为上⼀次API调⽤返回的NextToken参数值。首次查询不填。",
+          "example": "MA==",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，最⼩值为10，最⼤值为100。默认值100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceDimensionsResponse": {
+      "document": "DescribeInstanceDimensions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度信息列表。",
+          "example": "无",
+          "member": "InstanceDimensions",
+          "name": "InstanceDimensionsSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的实例数量。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询凭证，作为查询后续页的查询凭证。如果无后续页，返回空字符串。",
+          "example": "MA==",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceLoginKeyPairAttributeRequest": {
       "document": "DescribeInstanceLoginKeyPairAttribute请求参数结构体",
       "members": [
@@ -8288,6 +8361,222 @@
           "name": "DeniedActions",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDimensions": {
+      "document": "实例维度数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例归属用户的app_id",
+          "example": "1300257518",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建实例时的用户uin",
+          "example": "700000951429",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建实例时的子用户uin",
+          "example": "700000951429",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "lhins-bpozsp4j",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "底层CVM实例ID",
+          "example": "ins-a35yeyrk",
+          "member": "string",
+          "name": "OriginInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例别名",
+          "example": "Debian-ptYl",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例机型",
+          "example": "S1.MEDIUM2",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统名称",
+          "example": "Debian 10.2 64bit",
+          "member": "string",
+          "name": "OsName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统发行版类型",
+          "example": "DEBIAN",
+          "member": "string",
+          "name": "Platform",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统类型",
+          "example": "LINUX_UNIX",
+          "member": "string",
+          "name": "PlatformType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例付费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "InstanceChargeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例系统盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "SystemDiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例系统盘大小",
+          "example": "60",
+          "member": "int64",
+          "name": "SystemDiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IP地址",
+          "example": "10.0.16.10",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP地址",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网IPv6地址",
+          "example": "fc00:200:300:901:0:9c42:1411:fc7",
+          "member": "string",
+          "name": "PrivateIpv6Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IPv6地址",
+          "example": "2402:4e00:c000:100:c0b4:df6e:e276:10",
+          "member": "string",
+          "name": "PublicIpv6Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例套餐带宽",
+          "example": "3",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例UUID",
+          "example": "588d02ff-7bcf-4f34-9531-72f3e6c74654",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

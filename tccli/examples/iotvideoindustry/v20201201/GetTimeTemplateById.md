@@ -15,8 +15,8 @@ Output:
     "Response": {
         "RequestId": "d3d6f466-f2c2-44df-b78b-383ba717a3d8",
         "Template": {
-            "TemplateId": "tgrp-xxxxxxx",
-            "Name": "xxx",
+            "TemplateId": "tgrp-fyw1k9l5",
+            "Name": "fyw1k9l5",
             "IsAllWeek": 0,
             "Type": 1,
             "TimeTemplateSpecs": [

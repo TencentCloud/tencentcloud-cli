@@ -22,14 +22,16 @@ Output:
                         "TTL": 600,
                         "MX": 23,
                         "RecordId": 178,
-                        "SubDomain": "test",
+                        "SubDomain": "www",
                         "RecordType": "MX",
                         "Value": "test.aaaaaaa.com.",
                         "Enabled": 1,
                         "Status": "ok",
                         "ErrMsg": null,
                         "Id": 0,
-                        "Operation": "edit"
+                        "Operation": "edit",
+                        "Weight": 10,
+                        "Remark": "备注"
                     }
                 ],
                 "DomainId": 49,

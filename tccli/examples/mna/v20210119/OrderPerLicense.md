@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mna OrderPerLicense --cli-unfold-argument  \
-    --DeviceId abc \
+    --DeviceId mna-devid \
     --Type 0 \
     --AutoVoucher True \
-    --VoucherIds abc
+    --VoucherIds v-1
 ```
 
 Output: 

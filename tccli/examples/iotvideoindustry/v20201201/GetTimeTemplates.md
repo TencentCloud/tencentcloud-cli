@@ -73,21 +73,21 @@ Output:
             },
             {
                 "TemplateId": "tgrp-qfr07ro5",
-                "Name": "xx",
+                "Name": "qfr07ro5",
                 "IsAllWeek": 1,
                 "Type": 1,
                 "TimeTemplateSpecs": []
             },
             {
                 "TemplateId": "tgrp-712kfd0s",
-                "Name": "xx",
+                "Name": "712kfd0s",
                 "IsAllWeek": 1,
                 "Type": 1,
                 "TimeTemplateSpecs": []
             },
             {
                 "TemplateId": "tgrp-a6gvpkzu",
-                "Name": "xx",
+                "Name": "a6gvpkzu",
                 "IsAllWeek": 1,
                 "Type": 1,
                 "TimeTemplateSpecs": []

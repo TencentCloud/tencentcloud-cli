@@ -68,7 +68,7 @@ Output:
                     "ExcludeLabels": null,
                     "ExcludeNamespace": "",
                     "IncludeLabels": null,
-                    "Namespace": "*",
+                    "Namespace": "name_1",
                     "WorkLoads": null
                 },
                 "CreateTime": "2023-12-04 14:32:35",

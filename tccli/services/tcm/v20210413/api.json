@@ -803,7 +803,7 @@
         {
           "disabled": false,
           "document": "Mesh名称",
-          "example": "test",
+          "example": "service-mgr",
           "member": "string",
           "name": "DisplayName",
           "required": true,
@@ -1154,7 +1154,7 @@
         {
           "disabled": false,
           "document": "mesh名字",
-          "example": "test",
+          "example": "mesh-xxxxxxxx",
           "member": "string",
           "name": "MeshId",
           "required": true,

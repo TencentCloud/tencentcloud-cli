@@ -8,7 +8,7 @@ Input:
 tccli vpc ModifyCcnRouteTables --cli-unfold-argument  \
     --RouteTableInfo.0.RouteTableId ccnrtb-mnvhfmv9 \
     --RouteTableInfo.0.Name rubytest \
-    --RouteTableInfo.0.Description test
+    --RouteTableInfo.0.Description ccnroutetable
 ```
 
 Output: 

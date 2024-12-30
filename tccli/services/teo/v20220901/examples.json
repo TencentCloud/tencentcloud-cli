@@ -131,7 +131,7 @@
         "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，创建一个记录名为 www.example.com，记录类型为 A，解析线路为北京（CN.BJ），记录内容为1.2.3.4，缓存时间为60秒的 DNS 记录。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDnsRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Name\": \"www.example.com\",\n    \"Type\": \"A\",\n    \"Location\": \"CN.BJ\",\n    \"Content\": \"1.2.3.4\",\n    \"TTL\": 60\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"RecordId\": \"record-225rcy8bw85g\"\n    }\n}",
-        "title": "创建配置解析线路的 DNS 记录"
+        "title": "创建分配解析线路的 DNS 记录"
       }
     ],
     "CreateFunction": [
@@ -424,8 +424,8 @@
     ],
     "DeleteDnsRecords": [
       {
-        "document": "在 ZoneId 为 zone-25ryyvog1qih 的站点下，删除记录 ID 为 record-25ryzh92h8qh 和 record-3suf7slrsobg 的 DNS 记录。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDnsRecords\n<公共请求参数>\n\n{\n    \"RecordIds\": [\n        \"record-25ryzh92h8qh\",\n        \"record-3suf7slrsobg\"\n    ],\n    \"ZoneId\": \"zone-25ryyvog1qih\"\n}",
+        "document": "在 ZoneId 为 zone-25ryyvog1qih 的站点下，删除记录 ID 为 record-25ryzh92h8qh 和 record-3suf7slrsobi 的 DNS 记录。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDnsRecords\n<公共请求参数>\n\n{\n    \"RecordIds\": [\n        \"record-25ryzh92h8qh\",\n        \"record-3suf7slrsobi\"\n    ],\n    \"ZoneId\": \"zone-25ryyvog1qih\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "删除 DNS 记录"
       }

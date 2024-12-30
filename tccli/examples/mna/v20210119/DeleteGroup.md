@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli mna DeleteGroup --cli-unfold-argument  \
-    --GroupId xxx
+    --GroupId group-1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx"
+        "RequestId": "bd89e515-20b4-445b-a88d-7355e76f8d22"
     }
 }
 ```

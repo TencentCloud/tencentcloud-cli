@@ -42,7 +42,8 @@ Output:
                     {
                         "NodeId": "ins-cv6ygpkq"
                     }
-                ]
+                ],
+                "AutoScalingType": "THPC_AS"
             }
         ],
         "TotalCount": 1,

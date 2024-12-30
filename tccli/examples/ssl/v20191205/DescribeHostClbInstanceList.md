@@ -24,7 +24,7 @@ Output:
         "InstanceList": [
             {
                 "LoadBalancerId": "lb-******",
-                "LoadBalancerName": "test",
+                "LoadBalancerName": "lb-zrh",
                 "Listeners": [
                     {
                         "ListenerId": "lbl-*****",
