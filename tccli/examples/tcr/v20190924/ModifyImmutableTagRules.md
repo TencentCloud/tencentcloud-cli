@@ -6,20 +6,22 @@ Input:
 
 ```
 tccli tcr ModifyImmutableTagRules --cli-unfold-argument  \
-    --NamespaceName kofj \
-    --RegistryId tcr-mfoeec7x \
+    --RegistryId tcr-dg284imq \
+    --NamespaceName private \
+    --RuleId 2 \
+    --Rule.RepositoryPattern immutable/** \
+    --Rule.TagPattern release* \
+    --Rule.RuleId 2 \
+    --Rule.NsName private \
     --Rule.RepositoryDecoration repoMatches \
-    --Rule.RepositoryPattern ** \
-    --Rule.TagPattern ** \
-    --Rule.TagDecoration matches \
-    --RuleId 19
+    --Rule.TagDecoration matches
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "e60d9467-ceb5-4da3-9956-4a9f2d63d37e"
+        "RequestId": "1b40fa6c-9f54-41c2-93f6-623748232016"
     }
 }
 ```

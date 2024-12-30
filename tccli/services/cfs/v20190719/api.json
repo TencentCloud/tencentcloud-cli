@@ -771,7 +771,7 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "test",
+          "example": "cfs-policy",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -3600,20 +3600,20 @@
         {
           "disabled": false,
           "document": "权限组ID",
-          "example": "",
+          "example": "pgroup-abcdef",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权限组名称",
-          "example": "",
+          "example": "defaultname",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3626,50 +3626,50 @@
         {
           "disabled": false,
           "document": "权限组ID",
-          "example": "",
+          "example": "pgroup-abceb2lfg",
           "member": "string",
           "name": "PGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "权限组名称",
-          "example": "",
+          "example": "default_pgroup",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述信息",
-          "example": "",
+          "example": "default_pgroup",
           "member": "string",
           "name": "DescInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2022-11-12 00:00:01",
           "member": "string",
           "name": "CDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "关联文件系统个数",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "BindCfsNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -4414,7 +4414,7 @@
         {
           "disabled": false,
           "document": "用户自定义文件系统名称",
-          "example": "test",
+          "example": "default_cfs_name",
           "member": "string",
           "name": "CreationToken",
           "output_required": true,
@@ -4434,7 +4434,7 @@
         {
           "disabled": false,
           "document": "用户自定义文件系统名称",
-          "example": "test",
+          "example": "default_cfs_name",
           "member": "string",
           "name": "FsName",
           "output_required": true,
@@ -4591,7 +4591,7 @@
         {
           "disabled": false,
           "document": "权限组名称",
-          "example": "test",
+          "example": "default_pgroup_name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -4601,7 +4601,7 @@
         {
           "disabled": false,
           "document": "描述信息",
-          "example": "test",
+          "example": "default_pgroup_name",
           "member": "string",
           "name": "DescInfo",
           "output_required": true,
@@ -4788,7 +4788,7 @@
         {
           "disabled": false,
           "document": "文件系统快照ID",
-          "example": "snapcfs-xx",
+          "example": "snapcfs-faga29",
           "member": "string",
           "name": "SnapshotId",
           "output_required": true,

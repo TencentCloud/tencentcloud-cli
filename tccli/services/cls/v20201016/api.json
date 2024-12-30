@@ -182,6 +182,13 @@
       "output": "CreateTopicResponse",
       "status": "online"
     },
+    "CreateWebCallback": {
+      "document": "该接口用于创建告警渠道回调配置。",
+      "input": "CreateWebCallbackRequest",
+      "name": "创建告警渠道回调配置",
+      "output": "CreateWebCallbackResponse",
+      "status": "online"
+    },
     "DeleteAlarm": {
       "document": "本接口用于删除告警策略。",
       "input": "DeleteAlarmRequest",
@@ -327,6 +334,13 @@
       "input": "DeleteTopicRequest",
       "name": "删除日志主题",
       "output": "DeleteTopicResponse",
+      "status": "online"
+    },
+    "DeleteWebCallback": {
+      "document": "该接口用于删除告警渠道回调配置。",
+      "input": "DeleteWebCallbackRequest",
+      "name": "删除告警渠道回调配置",
+      "output": "DeleteWebCallbackResponse",
       "status": "online"
     },
     "DescribeAlarmNotices": {
@@ -539,6 +553,13 @@
       "output": "DescribeTopicsResponse",
       "status": "online"
     },
+    "DescribeWebCallbacks": {
+      "document": "获取告警渠道回调配置列表。",
+      "input": "DescribeWebCallbacksRequest",
+      "name": "获取告警渠道回调配置列表",
+      "output": "DescribeWebCallbacksResponse",
+      "status": "online"
+    },
     "GetAlarmLog": {
       "document": "本接口用于获取告警策略执行详情",
       "input": "GetAlarmLogRequest",
@@ -691,6 +712,13 @@
       "input": "ModifyTopicRequest",
       "name": "修改日志主题",
       "output": "ModifyTopicResponse",
+      "status": "online"
+    },
+    "ModifyWebCallback": {
+      "document": "该接口用于修改告警渠道回调配置。",
+      "input": "ModifyWebCallbackRequest",
+      "name": "修改告警渠道回调配置",
+      "output": "ModifyWebCallbackResponse",
       "status": "online"
     },
     "OpenKafkaConsumer": {
@@ -1793,14 +1821,14 @@
         },
         {
           "disabled": false,
-          "document": "多维分析配置。\n\n当Analysis的Type字段为query（自定义）时，支持\n{\n\"Key\": \"SyntaxRule\",  // 语法规则\n\"Value\": \"1\"  //0：Lucene语法 ，1： CQL语法\n}\n\n当Analysis的Type字段为field（top5）时,  支持\n {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法（Lucene）\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}       \n\n当Analysis的Type字段为original（原始日志）时,  支持\n{\n    \"Key\": \"Fields\",\n    \"Value\": \"__SOURCE__,__HOSTNAME__,__TIMESTAMP__,__PKG_LOGID__,__TAG__.pod_ip\"\n}, {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //  //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"Format\", //显示形式。1：每条日志一行，2：每条日志每个字段一行\n    \"Value\": \"2\"\n},\n{\n    \"Key\": \"Limit\", //最大日志条数\n    \"Value\": \"5\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多维分析配置。\n\n当Analysis的Type字段为query（自定义）时，支持\n{\n\"Key\": \"SyntaxRule\",  // 语法规则\n\"Value\": \"1\"  //0：Lucene语法 ，1： CQL语法\n}\n\n当Analysis的Type字段为field（top5）时,  支持\n {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法（Lucene）\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}       \n\n当Analysis的Type字段为original（原始日志）时,  支持\n{\n    \"Key\": \"Fields\",\n    \"Value\": \"__SOURCE__,__HOSTNAME__,__TIMESTAMP__,__PKG_LOGID__,__TAG__.pod_ip\"\n}, {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //  //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"Format\", //显示形式。1：每条日志一行，2：每条日志每个字段一行\n    \"Value\": \"2\"\n},\n{\n    \"Key\": \"Limit\", //最大日志条数\n    \"Value\": \"5\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}",
           "example": "无",
           "member": "AlarmAnalysisConfig",
           "name": "ConfigInfo",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3390,7 +3418,7 @@
         {
           "disabled": false,
           "document": "通知渠道组名称。",
-          "example": "test",
+          "example": "研发通知渠道组",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3508,7 +3536,7 @@
         {
           "disabled": false,
           "document": "告警策略名称",
-          "example": "test",
+          "example": "p1-业务告警",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3607,7 +3635,7 @@
         {
           "disabled": false,
           "document": "用户自定义告警内容",
-          "example": "{{range .AnalysisResult.sync}}\\n\\n集群{{.ClusterID}}中节点{{.InvolvedObjectObjName}}在5分钟内发生了{{.errorCount}}次ipamd同步Node失败\\n\\n{{end}}",
+          "example": "{{range .AnalysisResult.sync}}\\n\\n集群{{.ClusterID}}中节点失败\\n\\n{{end}}",
           "member": "string",
           "name": "MessageTemplate",
           "required": false,
@@ -3789,7 +3817,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-r8hr2upy",
+          "example": "ins-r8hrxxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3870,7 +3898,7 @@
         {
           "disabled": false,
           "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置",
-          "example": "无",
+          "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
           "required": false,
@@ -4035,8 +4063,8 @@
         },
         {
           "disabled": false,
-          "document": "日志格式化方式，用于容器采集场景。\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
-          "example": "无",
+          "document": "日志格式化方式，用于容器采集场景。 - 已废弃\n- stdout-docker-json：用于docker容器采集场景\n- stdout-containerd：用于containerd容器采集场景",
+          "example": "stdout-containerd",
           "member": "string",
           "name": "LogFormat",
           "required": false,
@@ -4063,7 +4091,7 @@
         {
           "disabled": false,
           "document": "组合解析采集规则，用于复杂场景下的日志采集。\n- 取值参考：[使用组合解析提取模式采集日志\n](https://cloud.tencent.com/document/product/614/61310)",
-          "example": "无",
+          "example": "{\"processors\":[{\"type\":\"\",\"detail\":{\"ExtractRegex\":\"\\\\w+\",\"ExtractKeys\":[\"\"],\"BeginRegex\":\"[a-z].*\"},\"processors\":[]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "required": false,
@@ -4283,7 +4311,7 @@
         {
           "disabled": false,
           "document": "投递任务绑定的日志主题 ID",
-          "example": "\"xxx-xxx-xxx-xxx\"",
+          "example": "3c38e5b1-xxxx-xxxx-8963-3af704e22e73",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4482,7 +4510,7 @@
         {
           "disabled": false,
           "document": "仪表盘id。",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "dashboard-0d954d68-xxxx-xxxx-95a6-f9eff0db370f",
           "member": "string",
           "name": "DashboardId",
           "required": true,
@@ -4491,7 +4519,7 @@
         {
           "disabled": false,
           "document": "订阅时间cron表达式，格式为：{秒数} {分钟} {小时} {日期} {月份} {星期}；（有效数据为：{分钟} {小时} {日期} {月份} {星期}）。<br><li/>{秒数} 取值范围： 0 ~ 59 <br><li/>{分钟} 取值范围： 0 ~ 59  <br><li/>{小时} 取值范围： 0 ~ 23  <br><li/>{日期} 取值范围： 1 ~ 31 AND (dayOfMonth最后一天： L) <br><li/>{月份} 取值范围： 1 ~ 12 <br><li/>{星期} 取值范围： 0 ~ 6 【0:星期日， 6星期六】",
-          "example": "\"0 0 10 L * ?\"",
+          "example": "\"0 40 20 * * ?\"",
           "member": "string",
           "name": "Cron",
           "required": true,
@@ -4817,7 +4845,7 @@
         {
           "disabled": false,
           "document": "日志主题ID",
-          "example": "3edc8551-111b-473b-9fc4-ed66e20dfa8a",
+          "example": "3edc8551-xxxx-xxxx-9fc4-ed66e20dfa8a",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -4889,7 +4917,7 @@
         {
           "disabled": false,
           "document": "Kafka导入配置名称",
-          "example": "test",
+          "example": "mysql-subscribe",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4970,7 +4998,7 @@
         {
           "disabled": false,
           "document": "用户Kafka消费组名称",
-          "example": "cls-xxxxx",
+          "example": "cls-dfxxx",
           "member": "string",
           "name": "ConsumerGroupName",
           "required": false,
@@ -5234,7 +5262,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "test",
+          "example": "scheduler_sql_delete_task",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5370,7 +5398,7 @@
         {
           "disabled": false,
           "document": "创建的投递规则所属的日志主题ID",
-          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "example": "fadcc986-xxxx-xxxx-b766-9ce9c193da32",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -5460,7 +5488,7 @@
         {
           "disabled": false,
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "FilenameMode",
           "required": false,
@@ -5641,6 +5669,79 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebCallbackRequest": {
+      "document": "CreateWebCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容名称。",
+          "example": "这是名称",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "渠道类型。\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调。",
+          "example": "\"Http\"",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Webhook地址。",
+          "example": "无",
+          "member": "string",
+          "name": "Webhook",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求方式。 支持POST、PUT。\n\n当Type为Http时，必填。",
+          "example": "\"POST\"",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秘钥。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWebCallbackResponse": {
+      "document": "CreateWebCallback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调配置ID。",
+          "example": "webcallback-xxxx-xx-xx-xx-xxxxxxxx",
+          "member": "string",
+          "name": "WebCallbackId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6844,6 +6945,33 @@
       ],
       "type": "object"
     },
+    "DeleteWebCallbackRequest": {
+      "document": "DeleteWebCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置ID。",
+          "example": "webcallback-d7286784-46d9-4be3-b7ba-2c464e6a5ad1",
+          "member": "string",
+          "name": "WebCallbackId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWebCallbackResponse": {
+      "document": "DeleteWebCallback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeliverConfig": {
       "document": "投递配置入参",
       "members": [
@@ -7174,7 +7302,7 @@
         {
           "disabled": false,
           "document": "分页的偏移量，默认值为0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -7183,7 +7311,7 @@
         {
           "disabled": false,
           "document": "分页单页限制数目，默认值为100，最大值100。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7377,6 +7505,7 @@
           "example": "无",
           "member": "ConfigInfo",
           "name": "Configs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7386,6 +7515,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7544,6 +7674,7 @@
           "example": "无",
           "member": "CosRechargeInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7699,7 +7830,7 @@
         {
           "disabled": false,
           "document": "分页单页限制数目，默认值为20，最大值100。",
-          "example": "10",
+          "example": "1",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -7742,7 +7873,7 @@
         {
           "disabled": false,
           "document": "任务总次数",
-          "example": "无",
+          "example": "30",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -7983,7 +8114,7 @@
         {
           "disabled": false,
           "document": "日志主题 ID",
-          "example": "6bf3355c-3c88-4566-89c8-76c3ca37bae9",
+          "example": "6bf3355c-xxxx-xxxx-89c8-76c3ca37bae9",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -7992,7 +8123,7 @@
         {
           "disabled": false,
           "document": "导入配置ID",
-          "example": "无",
+          "example": "f574db7d-45ff-xxxx-xxxx-35f7fe71a4d0",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -8026,7 +8157,7 @@
         {
           "disabled": false,
           "document": "Kafka导入信息总条数",
-          "example": "无",
+          "example": "30",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -8686,7 +8817,7 @@
         {
           "disabled": false,
           "document": "任务名称。",
-          "example": "task",
+          "example": "scheduler_sql_delete_task",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8695,7 +8826,7 @@
         {
           "disabled": false,
           "document": "任务id。",
-          "example": "6ef60bec-0242-43af-bb20-270359fb54xx",
+          "example": "6ef60bec-xxxx-xxxx-bb20-270359fb54xx",
           "member": "string",
           "name": "TaskId",
           "required": false,
@@ -8729,7 +8860,7 @@
         {
           "disabled": false,
           "document": "任务总次数",
-          "example": "无",
+          "example": "15",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -8833,7 +8964,7 @@
         {
           "disabled": false,
           "document": "控制Filters相关字段是否为精确匹配。  0: 默认值，shipperName模糊匹配 1: shipperName 精确匹配",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "PreciseSearch",
           "required": false,
@@ -8915,8 +9046,8 @@
         },
         {
           "disabled": false,
-          "document": "主题类型\n<ul><li>0:日志主题，默认值</li>\n<li>1:指标主题</li></ul>",
-          "example": "无",
+          "document": "主题类型\n- 0:日志主题，默认值\n- 1:指标主题",
+          "example": "0",
           "member": "uint64",
           "name": "BizType",
           "required": false,
@@ -8941,7 +9072,72 @@
         {
           "disabled": false,
           "document": "总数目",
+          "example": "15",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebCallbacksRequest": {
+      "document": "DescribeWebCallbacks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<li> name\n按照【告警渠道回调配置名称】进行过滤。\n类型：String\n必选：否\n<li> webCallbackId\n按照【告警渠道回调配置ID】进行过滤。\n类型：String\n必选：否\n<li> type\n按照【告警渠道回调配置渠道类型】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
           "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebCallbacksResponse": {
+      "document": "DescribeWebCallbacks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebCallbackInfo",
+          "name": "WebCallbacks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的通知内容配置总数。",
+          "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -9673,7 +9869,7 @@
         {
           "disabled": false,
           "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
-          "example": "context",
+          "example": "Y29udGxxxxC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -9706,7 +9902,7 @@
         {
           "disabled": false,
           "document": "加载后续详情的Context",
-          "example": "xx",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
           "member": "string",
           "name": "Context",
           "output_required": true,
@@ -12794,7 +12990,7 @@
         {
           "disabled": false,
           "document": "投递规则ID",
-          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "example": "3f9562a7-xxxx-xxxx-b32a-d51a927226a7",
           "member": "string",
           "name": "ShipperId",
           "required": true,
@@ -13048,6 +13244,78 @@
     },
     "ModifyTopicResponse": {
       "document": "ModifyTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebCallbackRequest": {
+      "document": "ModifyWebCallback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置ID。",
+          "example": "webcallback-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
+          "member": "string",
+          "name": "WebCallbackId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "渠道类型\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;",
+          "example": "\"Http\"",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回调地址。",
+          "example": "\"http://www.xxx.com\"",
+          "member": "string",
+          "name": "Webhook",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求方式。\n\n支持POST、PUT。\n\n注意：当Type为Http时，必填。",
+          "example": "\"POST\"",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "秘钥信息。",
+          "example": "\"key id\"",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebCallbackResponse": {
+      "document": "ModifyWebCallback返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14577,7 +14845,7 @@
         {
           "disabled": false,
           "document": "仪表盘id。",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "dashboard-0d954d68-xxxx-xxxx-95a6-f9eff0db370f",
           "member": "string",
           "name": "DashboardId",
           "required": true,
@@ -14595,7 +14863,7 @@
         {
           "disabled": false,
           "document": "仪表盘订阅Id。",
-          "example": "0",
+          "example": "10001",
           "member": "uint64",
           "name": "Id",
           "required": false,
@@ -15614,7 +15882,7 @@
         {
           "disabled": false,
           "document": "主题id",
-          "example": "f6c4fa6f-367a-4f14-8289-1ff6f77ed975",
+          "example": "f6c4fa6f-xxxx-xxxx-8289-1ff6f77ed975",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -15662,6 +15930,7 @@
           "example": "long",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -15672,6 +15941,7 @@
           "example": ".*",
           "member": "string",
           "name": "Tokenizer",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15682,6 +15952,7 @@
           "example": "true",
           "member": "bool",
           "name": "SqlFlag",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -15692,6 +15963,7 @@
           "example": "false",
           "member": "bool",
           "name": "ContainZH",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -15825,6 +16097,112 @@
         }
       ],
       "usage": "both"
+    },
+    "WebCallbackInfo": {
+      "document": "告警渠道回调配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"webcallback-aaa-bbb-ccc-ddd\"",
+          "member": "string",
+          "name": "WebCallbackId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警渠道回调配置名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"name\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "渠道类型\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“Http”",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回调地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“http://www.xxx.com”",
+          "member": "string",
+          "name": "Webhook",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“POST”",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "秘钥信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“keyid”",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "Uin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000101",
+          "member": "uint64",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1693468888",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。秒级时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1693468888",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -21,20 +21,22 @@ Output:
                 "TagSet": [
                     {
                         "Value": "env",
-                        "Key": "test"
+                        "Key": "ccn-1"
                     }
                 ],
                 "RoutePriorityFlag": true,
                 "CcnId": "ccn-8j0phqix",
-                "CcnDescription": "test",
+                "CcnDescription": "ccn-1",
                 "State": "AVAILABLE",
                 "InstanceChargeType": "POSTPAID",
-                "CcnName": "test",
+                "CcnName": "ccn-1",
                 "QosLevel": "AU",
                 "BandwidthLimitType": "INTER_REGION_LIMIT",
                 "CreateTime": "2020-09-22 00:00:00",
-                "RouteTableFlag": null,
-                "RouteTableCount": null
+                "RouteTableFlag": false,
+                "RouteTableCount": 1,
+                "RouteBroadcastPolicyFlag": false,
+                "IsSecurityLock": false
             }
         ]
     }
@@ -49,7 +51,7 @@ Input:
 
 ```
 tccli vpc DescribeCcns --cli-unfold-argument  \
-    --Filters.0.Values test \
+    --Filters.0.Values ccn-1 \
     --Filters.0.Name ccn-name
 ```
 
@@ -65,20 +67,22 @@ Output:
                 "TagSet": [
                     {
                         "Value": "env",
-                        "Key": "test"
+                        "Key": "ccn-1"
                     }
                 ],
                 "RoutePriorityFlag": true,
                 "CcnId": "ccn-8j0phqix",
-                "CcnDescription": "test",
+                "CcnDescription": "ccn-1",
                 "State": "AVAILABLE",
                 "InstanceChargeType": "POSTPAID",
-                "CcnName": "test",
+                "CcnName": "ccn-1",
                 "QosLevel": "AU",
                 "BandwidthLimitType": "INTER_REGION_LIMIT",
                 "CreateTime": "2020-09-22 00:00:00",
-                "RouteTableFlag": null,
-                "RouteTableCount": null
+                "RouteTableFlag": false,
+                "RouteTableCount": 1,
+                "RouteBroadcastPolicyFlag": false,
+                "IsSecurityLock": false
             }
         ]
     }
@@ -87,14 +91,14 @@ Output:
 
 **Example 3: 查询绑定了标签的CCN列表**
 
-查询绑定了标签键值对（env:test）的ccn。
+查询绑定了标签键值对（env:ccn-1）的ccn。
 
 Input: 
 
 ```
 tccli vpc DescribeCcns --cli-unfold-argument  \
-    --Filters.0.Values test \
-    --Filters.0.Name tag:env
+    --Filters.0.Values ccn-1 \
+    --Filters.0.Name tag:ccn-1
 ```
 
 Output: 
@@ -109,20 +113,22 @@ Output:
                 "TagSet": [
                     {
                         "Value": "env",
-                        "Key": "test"
+                        "Key": "ccn-1"
                     }
                 ],
                 "RoutePriorityFlag": true,
                 "CcnId": "ccn-8j0phqix",
-                "CcnDescription": "test",
+                "CcnDescription": "ccn-1",
                 "State": "AVAILABLE",
                 "InstanceChargeType": "POSTPAID",
-                "CcnName": "test",
+                "CcnName": "ccn-1",
                 "QosLevel": "AU",
                 "BandwidthLimitType": "INTER_REGION_LIMIT",
                 "CreateTime": "2020-09-22 00:00:00",
-                "RouteTableFlag": null,
-                "RouteTableCount": null
+                "RouteTableFlag": false,
+                "RouteTableCount": 1,
+                "RouteBroadcastPolicyFlag": false,
+                "IsSecurityLock": false
             }
         ]
     }

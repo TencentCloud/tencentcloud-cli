@@ -751,8 +751,8 @@
     "ManageReplication": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ManageReplication\n&SourceRegistryId=tcr-xxx\n&DestinationRegistryId=tcr-yyy\n&DestinationRegionId=9\n&Rule.Override=true\n&Rule.DestNamespace=test\n&Rule.Name=test\n&Rule.Filters.0.Type=tag\n&Rule.Filters.0.Value=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageReplication\n<公共请求参数>\n\n{\n    \"SourceRegistryId\": \"tcr-dg284imq\",\n    \"DestinationRegistryId\": \"tcr-7o4xeay9\",\n    \"Rule\": {\n        \"Name\": \"rule2\",\n        \"DestNamespace\": \"ns2\",\n        \"Override\": false,\n        \"Filters\": [\n            {\n                \"Type\": \"name\",\n                \"Value\": \"ns2/**\"\n            }\n        ]\n    },\n    \"Description\": \"gz-sync2bj\",\n    \"DestinationRegionId\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3114c283-39df-4966-a181-9e906a3bed2f\"\n    }\n}",
         "title": "创建实例同步"
       },
       {
@@ -773,8 +773,8 @@
     "ModifyImmutableTagRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImmutableTagRules\n<公共请求参数>\n\n{\n    \"NamespaceName\": \"kofj\",\n    \"RegistryId\": \"tcr-mfoeec7x\",\n    \"Rule\": {\n        \"RepositoryDecoration\": \"repoMatches\",\n        \"RepositoryPattern\": \"**\",\n        \"TagPattern\": \"**\",\n        \"TagDecoration\": \"matches\"\n    },\n    \"RuleId\": 19\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e60d9467-ceb5-4da3-9956-4a9f2d63d37e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImmutableTagRules\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"private\",\n    \"RuleId\": 2,\n    \"Rule\": {\n        \"RepositoryPattern\": \"immutable/**\",\n        \"TagPattern\": \"release*\",\n        \"RuleId\": 2,\n        \"NsName\": \"private\",\n        \"RepositoryDecoration\": \"repoMatches\",\n        \"TagDecoration\": \"matches\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b40fa6c-9f54-41c2-93f6-623748232016\"\n    }\n}",
         "title": "更新规则"
       }
     ],

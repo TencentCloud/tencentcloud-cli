@@ -262,6 +262,14 @@
         "title": "解绑RabbitMQ路由关系"
       }
     ],
+    "DeleteRabbitMQPermission": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVhost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-jero744g\",\n    \"User\": \"test_user\",\n    \"VirtualHost\": \"/\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7bd149f-06e1-40ad-82cb-9f0500b5194c\"\n    }\n}",
+        "title": "删除RabbitMQ权限"
+      }
+    ],
     "DeleteRabbitMQUser": [
       {
         "document": "-",
@@ -572,6 +580,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQNodeList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-test\",\n    \"Offset\": 0,\n    \"Limit\": 3,\n    \"NodeName\": \"rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local\",\n    \"Filters\": [\n        {\n            \"Name\": \"nodeStatus\",\n            \"Values\": [\n                \"running\"\n            ]\n        }\n    ],\n    \"SortElement\": \"cpuUsage\",\n    \"SortOrder\": \"descend\"\n}",
         "output": "{\n    \"Response\": {\n        \"NodeList\": [\n            {\n                \"CPUUsage\": \"0.000%\",\n                \"DiskUsage\": \"3.000%\",\n                \"Memory\": 171,\n                \"NodeName\": \"rabbit@rabbitmq-broker-1.rabbitmq-broker-internal.amqp-test.svc.cluster.local\",\n                \"NodeStatus\": \"running\",\n                \"ProcessNumber\": 459\n            }\n        ],\n        \"RequestId\": \"a95bfcfd-8388-4f86-8511-ca3be8ed000c\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "RabbitMQ专享版查询节点列表"
+      }
+    ],
+    "DescribeRabbitMQPermission": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQPermission\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-jero744g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RabbitMQPermissionList\": [\n            {\n                \"InstanceId\": \"amqp-jero744g\",\n                \"User\": \"admin\",\n                \"VirtualHost\": \"tdmq_data\",\n                \"ConfigRegexp\": \".*\",\n                \"WriteRegexp\": \".*\",\n                \"ReadRegexp\": \".*\",\n                \"CreateTime\": \"2022-12-16 11:19:56\",\n                \"ModifyTime\": \"2022-12-16 11:29:56\"\n            }\n        ],\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
+        "title": "查询RabbitMQ权限列表"
       }
     ],
     "DescribeRabbitMQQueueDetail": [
@@ -974,6 +990,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkSecurityPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"pulsar-47emajuiaoam\",\n    \"PolicyList\": [\n        {\n            \"Route\": \"1.1.1.1/24\",\n            \"Policy\": true,\n            \"Remark\": \"allow\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ModifyResult\": \"SUCCESS\",\n        \"InstanceId\": \"pulsar-47emajuiaoam\",\n        \"RequestId\": \"5d6c7091-e82c-4a9c-a18f-34d5fc46006e\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "ModifyRabbitMQPermission": [
+      {
+        "document": "-",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQPermission\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"admin\",\n    \"VirtualHost\": \"tdmq_data\",\n    \"ConfigRegexp\": \".*\",\n    \"WriteRegexp\": \".*\",\n    \"ReadRegexp\": \".*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
+        "title": "修改RabbitMQ权限"
       }
     ],
     "ModifyRabbitMQUser": [

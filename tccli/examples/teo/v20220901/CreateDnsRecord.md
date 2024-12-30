@@ -49,7 +49,7 @@ Output:
 }
 ```
 
-**Example 3: 创建配置解析线路的 DNS 记录**
+**Example 3: 创建分配解析线路的 DNS 记录**
 
 在 ZoneId 为 zone-225qgrnvbi9w 的站点下，创建一个记录名为 www.example.com，记录类型为 A，解析线路为北京（CN.BJ），记录内容为1.2.3.4，缓存时间为60秒的 DNS 记录。
 

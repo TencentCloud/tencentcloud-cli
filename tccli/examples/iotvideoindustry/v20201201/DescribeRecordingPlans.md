@@ -27,7 +27,7 @@ Output:
             },
             {
                 "PlanId": "plan-c8obq4v0",
-                "Name": "xx",
+                "Name": "c8obq4v0",
                 "TimeTemplateId": "tgrp-fmwq1f1a",
                 "TimeTemplateName": "工作日模板",
                 "Channels": [],

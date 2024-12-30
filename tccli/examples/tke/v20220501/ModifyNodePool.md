@@ -6,26 +6,19 @@ Input:
 
 ```
 tccli tke ModifyNodePool --cli-unfold-argument  \
-    --DeletionProtection True \
-    --Name abc \
-    --Tags.0.ResourceType abc \
-    --Tags.0.Tags.0.Value abc \
-    --Tags.0.Tags.0.Key abc \
-    --Labels.0.Name abc \
-    --Labels.0.Value abc \
-    --ClusterId abc \
-    --Taints.0.Value abc \
-    --Taints.0.Key abc \
-    --Taints.0.Effect abc \
-    --NodePoolId abc \
-    --Unschedulable True
+    --ClusterId cls-6sukkvyx \
+    --Native.EnableAutoscaling True \
+    --Native.Scaling.CreatePolicy ZonePriority \
+    --Native.Scaling.MaxReplicas 1 \
+    --Native.Scaling.MinReplicas 0 \
+    --NodePoolId np-00igpu9y
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "9bd42c72-dd16-46bc-9d1e-b4020c59fab8"
     }
 }
 ```

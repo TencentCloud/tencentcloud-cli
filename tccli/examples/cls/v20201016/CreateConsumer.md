@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cls CreateConsumer --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx \
-    --Ckafka.Vip 10.123.123.123 \
-    --Ckafka.Vport 8888 \
-    --Ckafka.InstanceId xxxxx \
-    --Ckafka.InstanceName myname \
-    --Ckafka.TopicId xxxxx \
-    --Ckafka.TopicName xxxxx \
+    --TopicId 3c38e5b1-xxxx-xxxx-8963-3af704e22e73 \
+    --Ckafka.Vip 10.0.0.0 \
+    --Ckafka.Vport 8080 \
+    --Ckafka.InstanceId ckafka-xxxx \
+    --Ckafka.InstanceName ckafka_test \
+    --Ckafka.TopicId topic-xxxx \
+    --Ckafka.TopicName topic_test \
     --Content.EnableTag True \
     --Content.MetaFields __SOURCE__ \
     --NeedContent True \
@@ -23,7 +23,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx"
+        "RequestId": "6ef60xxx-xxxx-xxxx-bxxx-270359fb5xxx"
     }
 }
 ```

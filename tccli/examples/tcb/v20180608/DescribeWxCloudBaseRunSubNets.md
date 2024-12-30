@@ -6,18 +6,15 @@ Input:
 
 ```
 tccli tcb DescribeWxCloudBaseRunSubNets --cli-unfold-argument  \
-    --VpcId xx
+    --VpcId vpc-sdfs
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "SubNetIds": [
-            "aa",
-            "bb"
-        ],
-        "RequestId": "xx"
+        "SubNetIds": [],
+        "RequestId": "sdfsdf"
     }
 }
 ```

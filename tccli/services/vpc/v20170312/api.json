@@ -2732,7 +2732,7 @@
         {
           "disabled": false,
           "document": "接受关联实例列表。",
-          "example": "无",
+          "example": "[{'InstanceType': 'VPC', 'InstanceId': 'vpc-rkxd3pgh', 'InstanceRegion': 'ap-guangzhou'}]",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -2789,17 +2789,17 @@
           "example": "178.16.0.0/16",
           "member": "string",
           "name": "TargetCidr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "无",
+          "example": "vpnap-3a21cjeu",
           "member": "string",
           "name": "VpnGatewayIdSslAccessPolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2809,39 +2809,39 @@
           "example": "0",
           "member": "uint64",
           "name": "ForAllClient",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户组ID",
-          "example": "无",
+          "example": "['18b49e01-eaa8-4d85-9528-0f72fd7025e2']",
           "member": "string",
           "name": "UserGroupIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2023-12-10 12:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Remark\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Remark",
+          "example": "remark-info",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4720,7 +4720,7 @@
         {
           "disabled": false,
           "document": "关联网络实例列表",
-          "example": "无",
+          "example": "[{'InstanceType': 'VPC', 'InstanceId': 'vpc-rkxd3pgh', 'InstanceRegion': 'ap-guangzhou'}]",
           "member": "CcnInstance",
           "name": "Instances",
           "required": true,
@@ -4729,7 +4729,7 @@
         {
           "disabled": false,
           "document": "CCN所属UIN（根账号），默认当前账号所属UIN",
-          "example": "无",
+          "example": "700000138273",
           "member": "string",
           "name": "CcnUin",
           "required": false,
@@ -5149,53 +5149,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "BGP通道CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "BGP通道CIDR",
+          "example": "169.254.128.0/30",
           "member": "string",
           "name": "TunnelCidr",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本端BGP IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "本端BGP IP",
+          "example": "169.254.128.1",
           "member": "string",
           "name": "LocalBgpIp",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对端BGP IP\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "对端BGP IP",
+          "example": "169.254.128.2",
           "member": "string",
           "name": "RemoteBgpIp",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "本端BGP ASN号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "本端BGP ASN号",
+          "example": "31451",
           "member": "string",
           "name": "LocalBgpAsn",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对端BGP ASN号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "对端BGP ASN号",
+          "example": "31451",
           "member": "string",
           "name": "RemoteBgpAsn",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5472,7 +5472,7 @@
         {
           "disabled": false,
           "document": "关联实例名称。",
-          "example": "test",
+          "example": "ccn_instance_1",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -5572,7 +5572,7 @@
         {
           "disabled": false,
           "document": "路由表名称",
-          "example": "test",
+          "example": "route_1",
           "member": "string",
           "name": "RouteTableName",
           "output_required": true,
@@ -5713,83 +5713,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽所属的云联网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽所属的云联网ID。",
           "example": "ccn-ef5nufih",
           "member": "string",
           "name": "CcnId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的创建时间。",
           "example": "2018-12-18 20:11:37",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例的过期时间",
           "example": "2019-01-18 20:11:37",
           "member": "string",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带宽实例的唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽实例的唯一ID。",
           "example": "fcr-6fda09za",
           "member": "string",
           "name": "RegionFlowControlId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带宽是否自动续费的标记。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽是否自动续费的标记。",
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。",
+          "example": "{'Region': 'ap-shanghai', 'IsBm': False, 'BandwidthLimit': 10000, 'DstRegion': 'ap-beijing', 'DstIsBm': False}",
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimit",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云市场实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "云市场实例ID。",
+          "example": "market-3cef2rhkl",
           "member": "string",
           "name": "MarketId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源绑定的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "资源绑定的标签列表",
+          "example": "[{'Key': 'key', 'Value': 'value'}]",
           "member": "Tag",
           "name": "TagSet",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "`true表示`Qos默认带宽；`false`表示非Qos默认带宽；",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultQosBandwidthFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务等级信息。",
+          "example": "AU",
+          "member": "string",
+          "name": "QosLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5915,32 +5935,43 @@
         },
         {
           "disabled": false,
-          "document": "实例关联的路由表ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例关联的路由表ID。",
           "example": "ccnrtb-1234edfr",
           "member": "string",
           "name": "RouteTableId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例付费方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例付费方式",
           "example": "PayByCcnOwner",
           "member": "string",
           "name": "OrderType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
     },
     "CcnInstanceInfo": {
       "document": "云联网实例对象，该对象特用于运营端使用，不建议给租户的接口中提供该复杂类型。",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "云联网唯一ID。",
+          "example": "ccn-3cef2rhkl",
+          "member": "string",
+          "name": "CcnId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "CcnInstanceWithoutRegion": {
@@ -5975,9 +6006,10 @@
         {
           "disabled": false,
           "document": "地域，例如：ap-guangzhou",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5985,9 +6017,10 @@
         {
           "disabled": false,
           "document": "出带宽上限，单位：Mbps",
-          "example": "无",
+          "example": "1000",
           "member": "uint64",
           "name": "BandwidthLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5995,29 +6028,32 @@
         {
           "disabled": false,
           "document": "是否黑石地域，默认`false`。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "IsBm",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目的地域，例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目的地域，例如：ap-shanghai",
+          "example": "ap-beijing",
           "member": "string",
           "name": "DstRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "目的地域是否为黑石地域，默认`false`。",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "DstIsBm",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -6030,33 +6066,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "源地域，例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "源地域，例如：ap-shanghai",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "SourceRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目的地域， 例如：ap-shanghai\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "目的地域， 例如：ap-shanghai",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "DestinationRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出带宽上限，单位：Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "出带宽上限，单位：Mbps。",
+          "example": "1000",
           "member": "uint64",
           "name": "BandwidthLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6067,7 +6103,7 @@
         {
           "disabled": false,
           "document": "路由策略ID",
-          "example": "无",
+          "example": "ccnr-hs2yc3ha",
           "member": "string",
           "name": "RouteId",
           "output_required": true,
@@ -6077,7 +6113,7 @@
         {
           "disabled": false,
           "document": "目的端",
-          "example": "无",
+          "example": "10.1.19.0/24",
           "member": "string",
           "name": "DestinationCidrBlock",
           "output_required": true,
@@ -6087,7 +6123,7 @@
         {
           "disabled": false,
           "document": "下一跳类型（关联实例类型），所有类型：VPC、DIRECTCONNECT",
-          "example": "无",
+          "example": "VPC",
           "member": "string",
           "name": "InstanceType",
           "output_required": true,
@@ -6097,7 +6133,7 @@
         {
           "disabled": false,
           "document": "下一跳（关联实例）",
-          "example": "无",
+          "example": "vpc-fc21z82c",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -6107,7 +6143,7 @@
         {
           "disabled": false,
           "document": "下一跳名称（关联实例名称）",
-          "example": "无",
+          "example": "测试name",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -6117,7 +6153,7 @@
         {
           "disabled": false,
           "document": "下一跳所属地域（关联实例所属地域）",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
           "output_required": true,
@@ -6127,7 +6163,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2022-11-19 15:20:25",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,
@@ -6137,7 +6173,7 @@
         {
           "disabled": false,
           "document": "路由是否启用",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
@@ -6147,7 +6183,7 @@
         {
           "disabled": false,
           "document": "关联实例所属UIN（根账号）",
-          "example": "无",
+          "example": "151241551",
           "member": "string",
           "name": "InstanceUin",
           "output_required": true,
@@ -6157,7 +6193,7 @@
         {
           "disabled": false,
           "document": "路由的扩展状态",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "ExtraState",
           "output_required": true,
@@ -6167,7 +6203,7 @@
         {
           "disabled": false,
           "document": "是否动态路由",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "IsBgp",
           "output_required": true,
@@ -6177,7 +6213,7 @@
         {
           "disabled": false,
           "document": "路由优先级",
-          "example": "无",
+          "example": "50",
           "member": "uint64",
           "name": "RoutePriority",
           "output_required": true,
@@ -6187,7 +6223,7 @@
         {
           "disabled": false,
           "document": "下一跳扩展名称（关联实例的扩展名称）",
-          "example": "无",
+          "example": "test-name",
           "member": "string",
           "name": "InstanceExtraName",
           "output_required": true,
@@ -6196,23 +6232,23 @@
         },
         {
           "disabled": false,
-          "document": "实例类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例类型",
+          "example": "VPC",
           "member": "string",
           "name": "AliasType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "实例id",
+          "example": "alias-instance-id",
           "member": "string",
           "name": "AliasInstanceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6325,7 +6361,7 @@
         {
           "disabled": false,
           "document": "路由条件",
-          "example": "无",
+          "example": "{'Name': 'instance-id', 'Values': ['DIRECTCONNECT'], 'MatchPattern': 1}",
           "member": "CcnRouteBroadcastPolicyRouteCondition",
           "name": "RouteConditions",
           "output_required": true,
@@ -6336,7 +6372,7 @@
         {
           "disabled": false,
           "document": "传播条件",
-          "example": "无",
+          "example": "{'Name': 'instance-id', 'Values': ['DIRECTCONNECT'], 'MatchPattern': 1}",
           "member": "CcnRouteBroadcastPolicyRouteCondition",
           "name": "BroadcastConditions",
           "output_required": true,
@@ -6358,7 +6394,7 @@
         {
           "disabled": false,
           "document": "策略描述",
-          "example": "无",
+          "example": "接收指定关联实例路由",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -6368,47 +6404,47 @@
         },
         {
           "disabled": false,
-          "document": "as-path操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "as-path操作",
+          "example": "63551/63552",
           "member": "string",
           "name": "OperateAsPath",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "as-path操作模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "as-path操作模式",
+          "example": "prepend",
           "member": "string",
           "name": "AsPathOperateMode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "community操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "community操作",
+          "example": "[\"65001:65001\"]",
           "member": "string",
           "name": "OperateCommunitySet",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "community操作模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "community操作模式",
+          "example": "add",
           "member": "string",
           "name": "CommunityOperateMode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6515,33 +6551,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "策略列表。",
+          "example": "[{'RouteConditions': [{'Name': 'instance-id', 'Values': ['vpc-1acu2375'], 'MatchPattern': 1}], 'Action': 'accept', 'Description': '接收指定关联实例路由'}]",
           "member": "CcnRouteTableInputPolicy",
           "name": "Policys",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本号。",
           "example": "10",
           "member": "uint64",
           "name": "PolicyVersion",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2022-05-24 19:28:31",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10474,7 +10510,7 @@
         {
           "disabled": false,
           "document": "SPD策略组，例如：{\"10.0.0.5/24\":[\"172.123.10.5/16\"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。",
-          "example": "无",
+          "example": "[{'LocalCidrBlock': '10.40.1.12/24', 'RemoteCidrBlock': ['172.123.10.5/16', '10.7.10.0/16']}]",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabases",
           "required": false,
@@ -10483,7 +10519,7 @@
         {
           "disabled": false,
           "document": "IKE配置（Internet Key Exchange，因特网密钥交换），IKE具有一套自我保护机制，用户配置网络安全协议",
-          "example": "无",
+          "example": "{'LocalIdentity': 'ADDRESS', 'LocalAddress': 'dddd'}",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "required": false,
@@ -10492,7 +10528,7 @@
         {
           "disabled": false,
           "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
-          "example": "无",
+          "example": "{'IPSECSaLifetimeSeconds': 7200}",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "required": false,
@@ -10501,7 +10537,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "无",
+          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10510,7 +10546,7 @@
         {
           "disabled": false,
           "document": "是否支持隧道内健康检查，默认为False。",
-          "example": "无",
+          "example": "True",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -10519,7 +10555,7 @@
         {
           "disabled": false,
           "document": "健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。",
-          "example": "无",
+          "example": "169.254.128.1",
           "member": "string",
           "name": "HealthCheckLocalIp",
           "required": false,
@@ -10528,7 +10564,7 @@
         {
           "disabled": false,
           "document": "健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。",
-          "example": "无",
+          "example": "169.254.128.2",
           "member": "string",
           "name": "HealthCheckRemoteIp",
           "required": false,
@@ -10582,7 +10618,7 @@
         {
           "disabled": false,
           "document": "创建通道路由信息。",
-          "example": "无",
+          "example": "{     'DestinationCidrBlock': '10.0.0.0/32',     'Priority': 1 }",
           "member": "CreateVpnConnRoute",
           "name": "Route",
           "required": false,
@@ -10591,7 +10627,7 @@
         {
           "disabled": false,
           "document": "BGP配置。",
-          "example": "无",
+          "example": "{'TunnelCidr': '169.254.128.0/30', 'LocalBgpIp': '169.254.128.1', 'RemoteBgpIp': '169.254.128.2'}",
           "member": "BgpConfig",
           "name": "BgpConfig",
           "required": false,
@@ -10600,7 +10636,7 @@
         {
           "disabled": false,
           "document": "健康检查NQA配置。",
-          "example": "无",
+          "example": "{'ProbeType': '123', 'ProbeInterval': 60, 'ProbeThreshold': 3, 'ProbeTimeout': 30}",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
           "required": false,
@@ -11039,7 +11075,7 @@
         {
           "disabled": false,
           "document": "服务商，可选值：`UNICOM`。",
-          "example": "无",
+          "example": "UNICOM",
           "member": "string",
           "name": "ServiceProvider",
           "output_required": true,
@@ -11049,7 +11085,7 @@
         {
           "disabled": false,
           "document": "合规化审批单`ID`。",
-          "example": "无",
+          "example": "13144",
           "member": "uint64",
           "name": "ComplianceId",
           "output_required": true,
@@ -11059,7 +11095,7 @@
         {
           "disabled": false,
           "document": "公司全称。",
-          "example": "无",
+          "example": "腾讯云产品测试公司",
           "member": "string",
           "name": "Company",
           "output_required": true,
@@ -11069,7 +11105,7 @@
         {
           "disabled": false,
           "document": "统一社会信用代码。",
-          "example": "无",
+          "example": "451xxxxxxxxx365K",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "output_required": true,
@@ -11079,7 +11115,7 @@
         {
           "disabled": false,
           "document": "法定代表人。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "LegalPerson",
           "output_required": true,
@@ -11089,7 +11125,7 @@
         {
           "disabled": false,
           "document": "发证机关。",
-          "example": "无",
+          "example": "B机关",
           "member": "string",
           "name": "IssuingAuthority",
           "output_required": true,
@@ -11099,7 +11135,7 @@
         {
           "disabled": false,
           "document": "营业执照。",
-          "example": "无",
+          "example": "https://xxxx.com/xxxx",
           "member": "string",
           "name": "BusinessLicense",
           "output_required": true,
@@ -11109,7 +11145,7 @@
         {
           "disabled": false,
           "document": "营业执照住所。",
-          "example": "无",
+          "example": "中国xxx省xxx市xxx",
           "member": "string",
           "name": "BusinessAddress",
           "output_required": true,
@@ -11119,7 +11155,7 @@
         {
           "disabled": false,
           "document": "邮编。",
-          "example": "无",
+          "example": "0123013",
           "member": "uint64",
           "name": "PostCode",
           "output_required": true,
@@ -11129,7 +11165,7 @@
         {
           "disabled": false,
           "document": "经办人。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Manager",
           "output_required": true,
@@ -11139,7 +11175,7 @@
         {
           "disabled": false,
           "document": "经办人身份证号。",
-          "example": "无",
+          "example": "33077xxxxxxxxxxxx1",
           "member": "string",
           "name": "ManagerId",
           "output_required": true,
@@ -11149,7 +11185,7 @@
         {
           "disabled": false,
           "document": "经办人身份证。",
-          "example": "无",
+          "example": "https://xxxx.com/xxxx",
           "member": "string",
           "name": "ManagerIdCard",
           "output_required": true,
@@ -11159,7 +11195,7 @@
         {
           "disabled": false,
           "document": "经办人身份证地址。",
-          "example": "无",
+          "example": "中国xxx省xxx市xxx",
           "member": "string",
           "name": "ManagerAddress",
           "output_required": true,
@@ -11169,7 +11205,7 @@
         {
           "disabled": false,
           "document": "经办人联系电话。",
-          "example": "无",
+          "example": "176xxxxxxx80",
           "member": "string",
           "name": "ManagerTelephone",
           "output_required": true,
@@ -11179,7 +11215,7 @@
         {
           "disabled": false,
           "document": "电子邮箱。",
-          "example": "无",
+          "example": "xxx@xxx.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -11189,7 +11225,7 @@
         {
           "disabled": false,
           "document": "服务受理单。",
-          "example": "无",
+          "example": "https://xxxx.com/xxxx",
           "member": "string",
           "name": "ServiceHandlingForm",
           "output_required": true,
@@ -11199,7 +11235,7 @@
         {
           "disabled": false,
           "document": "授权函。",
-          "example": "无",
+          "example": "https://xxxx.com/xxxx",
           "member": "string",
           "name": "AuthorizationLetter",
           "output_required": true,
@@ -11209,7 +11245,7 @@
         {
           "disabled": false,
           "document": "信息安全承诺书。",
-          "example": "无",
+          "example": "https://xxxx.com/xxxx",
           "member": "string",
           "name": "SafetyCommitment",
           "output_required": true,
@@ -11219,7 +11255,7 @@
         {
           "disabled": false,
           "document": "服务开始时间。",
-          "example": "无",
+          "example": "2020-10-01",
           "member": "date",
           "name": "ServiceStartDate",
           "output_required": true,
@@ -11229,7 +11265,7 @@
         {
           "disabled": false,
           "document": "服务截止时间。",
-          "example": "无",
+          "example": "2023-09-30",
           "member": "date",
           "name": "ServiceEndDate",
           "output_required": true,
@@ -11239,7 +11275,7 @@
         {
           "disabled": false,
           "document": "状态。待审批：`PENDING`，已通过：`APPROVED`，已拒绝：`DENY`。",
-          "example": "无",
+          "example": "APPROVED",
           "member": "string",
           "name": "State",
           "output_required": true,
@@ -11249,7 +11285,7 @@
         {
           "disabled": false,
           "document": "审批单创建时间。",
-          "example": "无",
+          "example": "2020-10-01 15:00:00",
           "member": "datetime",
           "name": "CreatedTime",
           "output_required": true,
@@ -11258,23 +11294,23 @@
         },
         {
           "disabled": false,
-          "document": "法定代表人身份证号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "法定代表人身份证号。",
+          "example": "330xxxxxxxxxxxxxx1",
           "member": "string",
           "name": "LegalPersonId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法定代表人身份证。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "法定代表人身份证。",
+          "example": "https://xxxx.com/xxxx",
           "member": "string",
           "name": "LegalPersonIdCard",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11386,30 +11422,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "平台。",
-          "example": "",
+          "document": "平台。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "comware",
           "member": "string",
           "name": "Platform",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "软件版本。",
-          "example": "",
+          "document": "软件版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "V1.0",
           "member": "string",
           "name": "SoftwareVersion",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "供应商名称。",
-          "example": "",
+          "document": "供应商名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "h3c",
           "member": "string",
           "name": "VendorName",
+          "output_required": true,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -14036,7 +14078,7 @@
         {
           "disabled": false,
           "document": "路由表接收策略。",
-          "example": "无",
+          "example": "[{'Policys': [], 'PolicyVersion': 29, 'CreateTime': '2023-05-16 16:13:39'}, {'Policys': [{'RouteConditions': [{'Name': 'instance-type', 'Values': ['DIRECTCONNECT', 'VPNGW'], 'MatchPattern': 1}], 'Action': 'accept', 'Description': 'input-policys'}], 'PolicyVersion': 28, 'CreateTime': '2023-05-16 16:13:32'}]",
           "member": "CcnRouteTableInputPolicys",
           "name": "PolicySet",
           "output_required": true,
@@ -14046,7 +14088,7 @@
         {
           "disabled": false,
           "document": "符合条件的对象数。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -14068,7 +14110,7 @@
         {
           "disabled": false,
           "document": "过滤条件：\n<li>ccn-id - String -（过滤条件）CCN实例ID。</li>\n<li>route-table-id - String -（过滤条件）路由表ID。</li>\n<li>route-table-name - String -（过滤条件）路由表名称。</li>\n<li>route-table-description- String -（过滤条件）路由表备注。</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"route-id\",\"Values\":[\"ccnr-bvipc87w\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14101,10 +14143,10 @@
         {
           "disabled": false,
           "document": "路由表信息列表。",
-          "example": "无",
+          "example": "[{'CcnId': 'ccn-8j0phqix', 'CcnRouteTableId': 'ccnrtb-mnvhfmv9', 'RouteTableName': '_default_rtb', 'RouteTableDescription': 'table-1', 'IsDefaultTable': True, 'CreateTime': '2021-05-11 15:47:53'}, {'CcnId': 'ccn-8j0phqix', 'CcnRouteTableId': 'ccnrtb-3230jx4x', 'RouteTableName': 'rubytest', 'RouteTableDescription': 'table-2', 'IsDefaultTable': True, 'CreateTime': '2021-05-11 16:33:14'}]",
           "member": "CcnRouteTable",
           "name": "CcnRouteTableSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14114,7 +14156,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14142,7 +14184,7 @@
         {
           "disabled": false,
           "document": "CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。",
-          "example": "-",
+          "example": "['ccnr-bvipc87w']",
           "member": "string",
           "name": "RouteIds",
           "required": false,
@@ -14151,7 +14193,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定RouteIds和Filters。\n<li>route-id - String -（过滤条件）路由策略ID。</li>\n<li>cidr-block - String -（过滤条件）目的端。</li>\n<li>instance-type - String -（过滤条件）下一跳类型。</li>\n<li>instance-region - String -（过滤条件）下一跳所属地域。</li>\n<li>instance-id - String -（过滤条件）下一跳实例ID。</li>\n<li>route-table-id - String -（过滤条件）路由表ID列表，形如ccntr-1234edfr，可以根据路由表ID 过滤。</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"route-id\",\"Values\":[\"ccnr-bvipc87w\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14160,7 +14202,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "-",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -14169,7 +14211,7 @@
         {
           "disabled": false,
           "document": "返回数量",
-          "example": "-",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -14225,7 +14267,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定CcnIds和Filters。\n<li>ccn-id - String - （过滤条件）CCN唯一ID，形如：`ccn-f49l6u0z`。</li>\n<li>ccn-name - String - （过滤条件）CCN名称。</li>\n<li>ccn-description - String - （过滤条件）CCN描述。</li>\n<li>state - String - （过滤条件）实例状态， 'ISOLATED': 隔离中（欠费停服），'AVAILABLE'：运行中。</li>\n<li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>\n<li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例：查询绑定了标签的CCN列表。</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"uniqVbcId\",\"Values\":[\"ccn-bvipc87w\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -14279,6 +14321,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14288,6 +14331,7 @@
           "example": "无",
           "member": "CCN",
           "name": "CcnSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14760,13 +14804,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网跨境带宽监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网跨境带宽监控数据",
           "example": "[{'InBandwidth': [1, 1], 'InPkg': [1, 2], 'OutBandwidth': [1, 3], 'OutPkg': [1, 4]}]",
           "member": "CrossBorderFlowMonitorData",
           "name": "CrossBorderFlowMonitorData",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18911,7 +18955,7 @@
         {
           "disabled": false,
           "document": "过滤条件，目前`value`值个数只支持一个，允许可支持的字段有：\n<li>`ccn-ids` 云联网ID数组，值形如：`[\"ccn-12345678\"]`</li> \n<li>`user-account-id` 用户账号ID，值形如：`[\"12345678\"]`</li><li>`is-security-lock` 是否锁定，值形如：`[\"true\"]`</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"ccn-ids\",\"Values\":[\"ccn-xxxxxxxx\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -18943,12 +18987,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网（CCN）对象。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网（CCN）对象。",
           "example": "无",
           "member": "CcnInstanceInfo",
           "name": "CcnSet",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -18956,6 +19001,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19923,7 +19969,7 @@
         {
           "disabled": false,
           "document": "过滤条件。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定VpnConnectionIds和Filters。\n<li>vpc-id - String - VPC实例ID，形如：`vpc-0a36uwkr`。</li>\n<li>vpn-gateway-id - String - VPN网关实例ID，形如：`vpngw-p4lmqawn`。</li>\n<li>customer-gateway-id - String - 对端网关实例ID，形如：`cgw-l4rblw63`。</li>\n<li>vpn-connection-name - String - 通道名称，形如：`test-vpn`。</li>\n<li>vpn-connection-id - String - 通道实例ID，形如：`vpnx-5p7vkch8\"`。</li>",
-          "example": "null",
+          "example": "[{\"Name\":\"vpc-id\",\"Values\":[\"vpc-xxxxxxxx\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -19959,6 +20005,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19968,6 +20015,7 @@
           "example": "[       {         \"CreatedTime\": \"2022-05-12 12:50:06\",         \"CustomerGatewayId\": \"cgw-972gvd00\",         \"DpdAction\": \"clear\",         \"DpdEnable\": 1,         \"DpdTimeout\": \"30\",         \"EnableHealthCheck\": false,         \"EncryptProto\": \"IKE\",         \"HealthCheckLocalIp\": \"\",         \"HealthCheckRemoteIp\": \"\",         \"HealthCheckStatus\": \"\",         \"IKEOptionsSpecification\": {           \"DhGroupName\": \"GROUP1\",           \"ExchangeMode\": \"MAIN\",           \"IKESaLifetimeSeconds\": 86400,           \"IKEVersion\": \"IKEV1\",           \"LocalAddress\": \"33.113.108.46\",           \"LocalFqdnName\": \"\",           \"LocalIdentity\": \"ADDRESS\",           \"PropoAuthenAlgorithm\": \"MD5\",           \"PropoEncryAlgorithm\": \"3DES-CBC\",           \"RemoteAddress\": \"1.2.3.4\",           \"RemoteFqdnName\": \"\",           \"RemoteIdentity\": \"ADDRESS\"         },         \"IPSECOptionsSpecification\": {           \"EncryptAlgorithm\": \"AES-CBC-128\",           \"IPSECSaLifetimeSeconds\": 3600,           \"IPSECSaLifetimeTraffic\": 1843200,           \"IntegrityAlgorith\": \"MD5\",           \"PfsDhGroup\": \"NULL\"         },         \"NegotiationType\": \"flowTrigger\",         \"NetStatus\": \"UNAVAILABLE\",         \"PreShareKey\": \"123\",         \"RouteType\": \"StaticRoute\",         \"SecurityPolicyDatabaseSet\": [           {             \"LocalCidrBlock\": \"0.0.0.0/0\",             \"RemoteCidrBlock\": [               \"0.0.0.0/0\"             ]           }         ],         \"State\": \"AVAILABLE\",         \"TagSet\": [],         \"VpcId\": \"vpc-ejaaeaja\",         \"VpnConnectionId\": \"vpnx-1rwdb4qz\",         \"VpnConnectionName\": \"test-conn\",         \"VpnGatewayId\": \"vpngw-f61esawc\",         \"VpnProto\": \"IPSEC\"       }     ]",
           "member": "VpnConnection",
           "name": "VpnConnectionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20058,7 +20106,7 @@
         {
           "disabled": false,
           "document": "过滤条件,  条件包括(DestinationCidr, InstanceId,InstanceType)。",
-          "example": "无",
+          "example": "[{\"Name\":\"InstanceType\",\"Values\":[\"vpc\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -20100,13 +20148,13 @@
         },
         {
           "disabled": false,
-          "document": "路由条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由条数。",
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -20233,7 +20281,7 @@
         {
           "disabled": false,
           "document": "过滤条件，参数不支持同时指定SslVpnServerIds和Filters。\n<li>vpc-id - String - （过滤条件）VPC实例ID，形如：vpc-f49l6u0z。</li>\n<li>vpn-gateway-id - String - （过滤条件）VPN实例ID，形如：vpngw-5aluhh9t。</li>\n<li>vpn-gateway-name - String - （过滤条件）VPN实例名称。</li>\n<li>ssl-vpn-server-name - String - （过滤条件）SSL-VPN-SERVER实例名称。</li>\n<li>ssl-vpn-server-id - String - （过滤条件）SSL-VPN-SERVER实例ID，形如：vpns-xxx。</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"vpc-id\",\"Values\":[\"vpc-xxxxxxxx\"]}]",
           "member": "FilterObject",
           "name": "Filters",
           "required": false,
@@ -20242,7 +20290,7 @@
         {
           "disabled": false,
           "document": "vpn门户使用。 默认Flase",
-          "example": "无",
+          "example": "False",
           "member": "bool",
           "name": "IsVpnPortal",
           "required": false,
@@ -22762,7 +22810,7 @@
         {
           "disabled": false,
           "document": "CCN实例ID。形如：ccn-f49l6u0z。",
-          "example": "无",
+          "example": "ccn-xxxxxxxx",
           "member": "string",
           "name": "CcnId",
           "required": true,
@@ -22771,7 +22819,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>sregion - String - （过滤条件）源地域，形如：ap-guangzhou。</li>\n<li>dregion - String - （过滤条件）目的地域，形如：ap-shanghai-bm</li>",
-          "example": "无",
+          "example": "[{\"Name\":\"sregion\",\"Values\":[\"ap-guangzhou\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -22780,7 +22828,7 @@
         {
           "disabled": false,
           "document": "排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。",
-          "example": "无",
+          "example": "ExpireTime",
           "member": "string",
           "name": "SortedBy",
           "required": false,
@@ -22789,7 +22837,7 @@
         {
           "disabled": false,
           "document": "偏移量。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -22798,7 +22846,7 @@
         {
           "disabled": false,
           "document": "返回数量。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -22807,7 +22855,7 @@
         {
           "disabled": false,
           "document": "排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -22821,21 +22869,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "云联网（CCN）各地域出带宽详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云联网（CCN）各地域出带宽详情。",
           "example": "无",
           "member": "CcnBandwidthInfo",
           "name": "CcnBandwidthSet",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合条件的对象数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的对象数。",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25587,7 +25637,7 @@
         {
           "disabled": false,
           "document": "CCN描述信息，最大长度不能超过100个字节，限制：CcnName和CcnDescription必须至少选择一个参数输入，否则报错。",
-          "example": "test",
+          "example": "desc",
           "member": "string",
           "name": "CcnDescription",
           "required": false,
@@ -25668,7 +25718,7 @@
         {
           "disabled": false,
           "document": "需要修改的路由表列表。",
-          "example": "无",
+          "example": "{     'RouteTableId': 'ccnr-xxxxxxxx',     'Name': 'name',     'Description': 'desc' }",
           "member": "ModifyRouteTableInfo",
           "name": "RouteTableInfo",
           "required": true,
@@ -28103,7 +28153,7 @@
         {
           "disabled": false,
           "document": "路由修改参数。",
-          "example": "无",
+          "example": "{     'RouteId': 'vpnr-xxxxxxxx',     'Status': 'ENABLE' }",
           "member": "VpnGatewayRouteModify",
           "name": "Routes",
           "required": true,
@@ -28117,13 +28167,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPN路由信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPN路由信息",
           "example": "无",
           "member": "VpnGatewayRoute",
           "name": "Routes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -28155,7 +28205,7 @@
         {
           "disabled": false,
           "document": "异步任务ID。",
-          "example": "12",
+          "example": "5213",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
@@ -32422,7 +32472,7 @@
           "example": "ccn-245ecr35",
           "member": "string",
           "name": "CcnId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32432,7 +32482,7 @@
           "example": "ccnrtb-1234edfr",
           "member": "string",
           "name": "RouteTableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32442,7 +32492,7 @@
           "example": "34tgrdgs",
           "member": "string",
           "name": "RouteTableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32452,7 +32502,7 @@
           "example": "VPC",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32462,7 +32512,7 @@
           "example": "tesetsa",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32472,19 +32522,19 @@
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "SourceCidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由表描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "路由表描述。",
+          "example": "policy-desc",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -32492,7 +32542,7 @@
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32502,7 +32552,7 @@
           "example": "100000072292",
           "member": "string",
           "name": "InstanceUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -34020,7 +34070,7 @@
         {
           "disabled": false,
           "document": "EIAM应用ID",
-          "example": "xxxxx",
+          "example": "applicationId",
           "member": "string",
           "name": "EiamApplicationId",
           "output_required": true,
@@ -34040,7 +34090,7 @@
         {
           "disabled": false,
           "document": "策略信息",
-          "example": "无",
+          "example": "{'TargetCidr': '10.0.8.0/24','UserGroupIds': ['user-123'],'ForAllClient': 0,'Remark': 'test-01'}",
           "member": "AccessPolicy",
           "name": "AccessPolicy",
           "output_required": true,
@@ -34050,7 +34100,7 @@
         {
           "disabled": false,
           "document": "CAM服务提供商Name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sp-name-01",
           "member": "string",
           "name": "SpName",
           "output_required": false,
@@ -35589,7 +35639,7 @@
         {
           "disabled": false,
           "document": "通道名称。",
-          "example": "xxxxx",
+          "example": "vpn-con-01",
           "member": "string",
           "name": "VpnConnectionName",
           "output_required": true,
@@ -35629,7 +35679,7 @@
         {
           "disabled": false,
           "document": "预共享密钥。",
-          "example": "xxxxx",
+          "example": "123456",
           "member": "string",
           "name": "PreShareKey",
           "output_required": true,
@@ -35699,7 +35749,7 @@
         {
           "disabled": false,
           "document": "SPD。",
-          "example": "无",
+          "example": "[{\"localCidrBlock\": \"0.0.0.0/0\", \"remoteCidrBlock\": [\"0.0.0.0/0\"]}]",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabaseSet",
           "output_required": true,
@@ -35709,7 +35759,7 @@
         {
           "disabled": false,
           "document": "IKE选项。",
-          "example": "无",
+          "example": "{\"DhGroupName\": \"GROUP1\", \"ExchangeMode\": \"MAIN\", \"IKESaLifetimeSeconds\": \"86400\", \"IKEVersion\": \"IKEV1\", \"LocalAddress\": \"1.14.54.109\", \"LocalIdentity\": \"ADDRESS\", \"PropoAuthenAlgorithm\": \"MD5\", \"PropoEncryAlgorithm\": \"3DES-CBC\", \"RemoteAddress\": \"1.14.52.214\", \"RemoteIdentity\": \"ADDRESS\"}",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
           "output_required": true,
@@ -35719,7 +35769,7 @@
         {
           "disabled": false,
           "document": "IPSEC选择。",
-          "example": "无",
+          "example": "{\"EncryptAlgorithm\": \"AES-CBC-128\", \"IPSECSaLifetimeSeconds\": \"3600\", \"IPSECSaLifetimeTraffic\": \"1843200\", \"IntegrityAlgorith\": \"MD5\", \"PfsDhGroup\": \"DH-GROUP1\"}",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
           "output_required": true,
@@ -35768,38 +35818,38 @@
         },
         {
           "disabled": false,
-          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
           "example": "0",
           "member": "int64",
           "name": "DpdEnable",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DPD超时时间。即探测确认对端不存在需要的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DPD超时时间。即探测确认对端不存在需要的时间。",
           "example": "30",
           "member": "string",
           "name": "DpdTimeout",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
           "example": "clear",
           "member": "string",
           "name": "DpdAction",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签键值对数组",
-          "example": "无",
+          "example": "[{'Key': 'tag-key', 'Value': 'tag-value'}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -35808,33 +35858,33 @@
         },
         {
           "disabled": false,
-          "document": "协商类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协商类型",
           "example": "flowTrigger",
           "member": "string",
           "name": "NegotiationType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Bgp配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Bgp配置信息",
+          "example": "{\"LocalBgpIp\": \"169.254.128.2\", \"RemoteBgpIp\": \"169.254.128.1\",                                                         \"TunnelCidr\": \"169.254.128.0/30\"}",
           "member": "BgpConfigAndAsn",
           "name": "BgpConfig",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Nqa配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Nqa配置信息",
+          "example": "{\"ProbeInterval\": \"5000\", \"ProbeThreshold\": \"3\", \"ProbeTimeout\": \"150\", \"ProbeType\": \"NQA\"}",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -36061,30 +36111,30 @@
         {
           "disabled": false,
           "document": "带宽配额",
-          "example": "",
+          "example": "5",
           "member": "uint64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额中文名称",
-          "example": "",
+          "example": "微小型",
           "member": "string",
           "name": "Cname",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额英文名称",
-          "example": "",
+          "example": "mini",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

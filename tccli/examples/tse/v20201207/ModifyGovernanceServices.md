@@ -6,25 +6,25 @@ Input:
 
 ```
 tccli tse ModifyGovernanceServices --cli-unfold-argument  \
-    --InstanceId abc \
-    --GovernanceServices.0.Name abc \
-    --GovernanceServices.0.Namespace abc \
-    --GovernanceServices.0.Comment abc \
-    --GovernanceServices.0.Metadatas.0.Key abc \
-    --GovernanceServices.0.Metadatas.0.Value abc \
-    --GovernanceServices.0.Department abc \
-    --GovernanceServices.0.Business abc \
-    --GovernanceServices.0.UserIds abc \
-    --GovernanceServices.0.GroupIds abc \
-    --GovernanceServices.0.RemoveUserIds abc \
-    --GovernanceServices.0.RemoveGroupIds abc
+    --InstanceId ins-id \
+    --GovernanceServices.0.Name serviceName \
+    --GovernanceServices.0.Namespace serviceNamespace \
+    --GovernanceServices.0.Comment serviceCommtent \
+    --GovernanceServices.0.Metadatas.0.Key keyName \
+    --GovernanceServices.0.Metadatas.0.Value ValueName \
+    --GovernanceServices.0.Department DepartmentName \
+    --GovernanceServices.0.Business BusinessName \
+    --GovernanceServices.0.UserIds user-id \
+    --GovernanceServices.0.GroupIds group-id \
+    --GovernanceServices.0.RemoveUserIds user-id \
+    --GovernanceServices.0.RemoveGroupIds group-id
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "request-id"
     }
 }
 ```

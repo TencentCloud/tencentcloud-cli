@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli dnspod PayOrderWithBalance --cli-unfold-argument  \
-    --BigDealIdList 20220614328001008099351
+    --BigDealIdList 20220614328001008099351 \
+    --VoucherIdList OZRCGNAVWQ1QYBU2ZOLLQL
 ```
 
 Output: 

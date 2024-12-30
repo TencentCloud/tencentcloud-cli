@@ -146,8 +146,8 @@
     ],
     "DescribeStreamIngest": [
       {
-        "document": "查询SdkAppId为1234567890下的TaskId为1234的任务状态",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
+        "document": "查询SdkAppId为1600011111下的TaskId为HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri任务状态",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600011111,\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "查询任务"
       }
@@ -267,8 +267,8 @@
     "DescribeWebRecord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"record_class_1\"\n    }\n}",
         "title": "查询页面录制状态"
       }
     ],
@@ -402,7 +402,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWebRecord\n<公共请求参数>\n\n{\n    \"RecordUrl\": \"https://web-record-xxxxx.cos.ap-xxx.myqcloud.com/xxxx/xxx.mp4\",\n    \"StorageParams\": {\n        \"CloudStorage\": {\n            \"Vendor\": 0,\n            \"Bucket\": \"webrecord-1234589\",\n            \"Region\": \"ap-chengdu\",\n            \"AccessKey\": \"AKxxxxxx\",\n            \"SecretKey\": \"Idxxxxxx\",\n            \"FileNamePrefix\": [\n                \"record\",\n                \"video\"\n            ]\n        }\n    },\n    \"MaxDurationLimit\": 3600,\n    \"WebRecordVideoParams\": {\n        \"Width\": 1280,\n        \"Height\": 720,\n        \"Format\": \"mp4\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\",\n        \"RequestId\": \"2a76ee73-6579-42f0-8d57-1f6c9b9d7208\"\n    }\n}",
         "title": "启动一个页面录制任务"
       }
     ],
@@ -448,8 +448,8 @@
     ],
     "StopStreamIngest": [
       {
-        "document": "将SdkAppId为1234567890下的任务1234停止",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
+        "document": "将SdkAppId为1600011111下的任务HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri停止",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600011111,\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "停止输入在线媒体流"
       }
@@ -457,8 +457,8 @@
     "StopWebRecord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"xxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a76ee73-6579-42f0-8d57-1f6c9b9d7208\"\n    }\n}",
         "title": "停止页面录制任务"
       }
     ],
@@ -486,8 +486,8 @@
     ],
     "UpdateStreamIngest": [
       {
-        "document": "更新SdkAppId为1234567890下的TaskId为1234的StreamUrl",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\",\n    \"StreamUrl\": \"https://a.b/test.mp4\"\n}",
+        "document": "更新SdkAppId为1600011111下的TaskId为HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri的StreamUrl",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1600011111,\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\",\n    \"StreamUrl\": \"https://a.b/test.mp4\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
         "title": "更新任务"
       }

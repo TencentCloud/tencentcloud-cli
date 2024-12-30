@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotvideoindustry ControlChannelPTZ --cli-unfold-argument  \
-    --DeviceId xxx \
-    --ChannelId xxx \
+    --DeviceId 99870353841320000007_99870353841320000007 \
+    --ChannelId 99870353841320000007_99870353841320000007 \
     --Command left
 ```
 

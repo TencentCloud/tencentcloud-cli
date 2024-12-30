@@ -7581,6 +7581,33 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否从连接查询topic列表",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryFromConnectResource",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "连接的ID",
+          "example": "resource-xxx",
+          "member": "string",
+          "name": "ConnectResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic资源表达式",
+          "example": ".*",
+          "member": "string",
+          "name": "TopicRegularExpression",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

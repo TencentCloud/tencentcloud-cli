@@ -3648,7 +3648,7 @@
           "example": "无",
           "member": "CustomSampleMatrix",
           "name": "MetricSampleMatrixSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

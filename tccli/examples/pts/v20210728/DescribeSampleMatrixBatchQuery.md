@@ -44,7 +44,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

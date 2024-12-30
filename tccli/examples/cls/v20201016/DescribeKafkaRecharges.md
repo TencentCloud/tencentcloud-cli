@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cls DescribeKafkaRecharges --cli-unfold-argument  \
-    --TopicId abc \
+    --TopicId c8e26faa-xxxx-xxxx-xxxx-5d941d3a57d1 \
     --Status 1
 ```
 
@@ -16,50 +16,50 @@ Output:
     "Response": {
         "Infos": [
             {
-                "Id": "86076b49-1234-4321-ab09-a5d7e7972825",
-                "TopicId": "957f4aed-1234-4321-b98b-c3c806f9e71b",
-                "Name": "task-test",
-                "KafkaType": 1,
-                "KafkaInstance": "",
-                "ServerAddr": "kafkaconsumer-ap-chongqing.aaa.com:1234",
+                "ConsumerGroupName": "test1",
+                "CreateTime": "2024-01-24 15:00:06",
+                "Id": "f574db7d-xxxx-xxxx-8a04-35f7fe71a4d0",
                 "IsEncryptionAddr": true,
-                "Protocol": {
-                    "Protocol": "sasl_plaintext",
-                    "Mechanism": "PLAIN",
-                    "UserName": "1234567-8146-461f-a951-348c4748f63d",
-                    "Password": "AKIDxxxxx#abcdefjxxxx"
-                },
-                "UserKafkaTopics": "1256238147-f3061593-cd5b-4321-1234-3ba507d43301",
-                "ConsumerGroupName": "",
-                "Status": 1,
-                "Offset": -2,
-                "CreateTime": "2023-04-03 19:46:52",
-                "UpdateTime": "2023-04-04 11:41:54",
+                "KafkaInstance": "",
+                "KafkaType": 1,
                 "LogRechargeRule": {
-                    "RechargeType": "json_log",
-                    "LogRegex": "",
-                    "UnMatchLogSwitch": true,
-                    "UnMatchLogKey": "LogParseFailure",
-                    "UnMatchLogTimeSrc": 0,
-                    "EncodingFormat": 0,
-                    "DefaultTimeSwitch": true,
                     "DefaultTimeSrc": 0,
-                    "TimeKey": "",
-                    "TimeRegex": "",
-                    "TimeFormat": "",
-                    "TimeZone": "UTC-11:00",
+                    "DefaultTimeSwitch": true,
+                    "EncodingFormat": 0,
+                    "Keys": [],
+                    "LogRegex": "",
                     "Metadata": [
                         "kafka_topic",
                         "kafka_partition",
                         "kafka_offset",
                         "kafka_timestamp"
                     ],
-                    "Keys": []
-                }
+                    "RechargeType": "json_log",
+                    "TimeFormat": "",
+                    "TimeKey": "",
+                    "TimeRegex": "",
+                    "TimeZone": "UTC+08:00",
+                    "UnMatchLogKey": "LogParseFailure",
+                    "UnMatchLogSwitch": true,
+                    "UnMatchLogTimeSrc": 0
+                },
+                "Name": "kafkaRechargeTest1",
+                "Offset": -2,
+                "Protocol": {
+                    "Mechanism": "PLAIN",
+                    "Password": "Axxxxxx#lFSOxxxxxx",
+                    "Protocol": "sasl_plaintext",
+                    "UserName": "05593101-xxxx-xxxx-8a71-44f8340e1327"
+                },
+                "ServerAddr": "kafka-xxxx.com:8050",
+                "Status": 1,
+                "TopicId": "c8e26faa-xxxx-xxxx-ad8c-5d941d3a57d1",
+                "UpdateTime": "2024-07-30 15:07:36",
+                "UserKafkaTopics": "1254077820-9fc67c9d-xxxx-xxxx-b836-c6520b7393cc"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "7101f52f-a442-475b-90a3-4855133fefbf"
+        "RequestId": "de82c8c5-xxxx-xxxx-8f44-ec6bd80d7b6d",
+        "TotalCount": 1
     }
 }
 ```

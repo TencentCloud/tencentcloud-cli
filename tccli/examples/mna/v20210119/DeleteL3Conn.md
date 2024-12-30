@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli mna DeleteL3Conn --cli-unfold-argument  \
-    --L3ConnIdList abc
+    --L3ConnIdList lcn-test1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "bd89e515-20b4-445b-a88d-7355e76f8d22"
     }
 }
 ```

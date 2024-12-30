@@ -6,66 +6,66 @@ Input:
 
 ```
 tccli tcb DescribeCbrServerVersion --cli-unfold-argument  \
-    --EnvId abc \
-    --ServerName abc \
-    --VersionName abc
+    --EnvId env-sdfsf \
+    --ServerName server-sdfsf \
+    --VersionName version-sdfsfd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "VersionName": "abc",
-        "Remark": "abc",
-        "DockerfilePath": "abc",
-        "BuildDir": "abc",
+        "VersionName": "version",
+        "Remark": "",
+        "DockerfilePath": "",
+        "BuildDir": "",
         "Cpu": 0,
         "Mem": 0,
         "MinNum": 0,
         "MaxNum": 0,
-        "EnvParams": "abc",
-        "CreatedTime": "abc",
-        "UpdatedTime": "abc",
-        "VersionIP": "abc",
+        "EnvParams": "",
+        "CreatedTime": "",
+        "UpdatedTime": "",
+        "VersionIP": "",
         "VersionPort": 0,
-        "Status": "abc",
-        "UploadType": "abc",
-        "ServerName": "abc",
+        "Status": "",
+        "UploadType": "",
+        "ServerName": "",
         "IsPublic": true,
-        "VpcId": "abc",
+        "VpcId": "",
         "SubnetIds": [
-            "abc"
+            ""
         ],
-        "CustomLogs": "abc",
+        "CustomLogs": "",
         "ContainerPort": 0,
         "InitialDelaySeconds": 0,
-        "ImageUrl": "abc",
+        "ImageUrl": "",
         "HasDockerfile": 0,
-        "BaseImage": "abc",
-        "EntryPoint": "abc",
+        "BaseImage": "",
+        "EntryPoint": "",
         "PolicyDetail": [
             {
-                "PolicyType": "abc",
+                "PolicyType": "",
                 "PolicyThreshold": 0
             }
         ],
         "TkeClusterInfo": {
-            "ClusterId": "abc",
-            "VpcId": "abc",
-            "VersionClbSubnetId": "abc"
+            "ClusterId": "",
+            "VpcId": "",
+            "VersionClbSubnetId": ""
         },
-        "TkeWorkloadType": "abc",
+        "TkeWorkloadType": "",
         "PackageInfo": {
-            "PackageName": "abc",
-            "PackageVersion": "abc"
+            "PackageName": "",
+            "PackageVersion": ""
         },
         "RepoInfo": {
-            "Repo": "abc",
-            "RepoType": "abc",
-            "RepoLanguage": "abc",
-            "Branch": "abc"
+            "Repo": "",
+            "RepoType": "",
+            "RepoLanguage": "",
+            "Branch": ""
         },
-        "RequestId": "abc"
+        "RequestId": "sfdfdfsdf"
     }
 }
 ```

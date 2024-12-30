@@ -7,8 +7,8 @@ Input:
 ```
 tccli ocr RecognizeMedicalInvoiceOCR --cli-unfold-argument  \
     --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/invoice/RecognizeMedicalInvoiceOCR/RecognizeMedicalInvoiceOCR1.jpg \
-    --ReturnVertex False \
-    --ReturnCoord False
+    --ReturnVertex True \
+    --ReturnCoord True
 ```
 
 Output: 
@@ -23,6 +23,10 @@ Output:
                         "Content": "***机构",
                         "Vertex": {
                             "LeftTop": {
+                                "X": 0,
+                                "Y": 0
+                            },
+                            "LeftBottom": {
                                 "X": 0,
                                 "Y": 0
                             },

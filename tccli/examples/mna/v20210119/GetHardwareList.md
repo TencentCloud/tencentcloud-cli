@@ -1,50 +1,13 @@
-**Example 1: 硬件信息列表**
+**Example 1: 示例**
 
-硬件信息列表
 
-Input: 
-
-```
-tccli mna GetHardwareList --cli-unfold-argument  \
-    --PageNumber 0 \
-    --PageSize 0 \
-    --Keyword abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "HardwareInfos": [
-            {
-                "DeviceId": "abc",
-                "DeviceName": "abc",
-                "ActiveTime": "abc",
-                "LastOnlineTime": "abc",
-                "Description": "abc",
-                "VendorDescription": "abc",
-                "LicenseChargingMode": 0,
-                "CreateTime": "abc",
-                "SN": "abc"
-            }
-        ],
-        "Length": 0,
-        "TotalPage": 0,
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 租户查看厂商设备**
-
-租户查看厂商设备
 
 Input: 
 
 ```
 tccli mna GetHardwareList --cli-unfold-argument  \
     --PageNumber 1 \
-    --PageSize 11
+    --PageSize 1
 ```
 
 Output: 
@@ -53,31 +16,24 @@ Output:
     "Response": {
         "HardwareInfos": [
             {
-                "ActiveTime": "1685514528",
-                "CreateTime": "1685510058",
-                "Description": "",
-                "DeviceId": "mna-fsap0nz6lp",
-                "DeviceName": "DeviceName",
-                "LicenseChargingMode": 1,
-                "SN": "cpe-sn-08",
-                "VendorDescription": "",
-                "LastOnlineTime": "1685518319"
-            },
-            {
-                "ActiveTime": "1685518319",
-                "CreateTime": "1685518183",
-                "Description": "",
-                "DeviceId": "mna-yhf5rxj0ud",
-                "DeviceName": "DeviceName1",
-                "LicenseChargingMode": 1,
-                "SN": "cpe-sn-13",
-                "VendorDescription": "",
-                "LastOnlineTime": "1685518319"
+                "ActiveTime": "1686554927",
+                "CreateTime": "1685673786",
+                "Description": "测试00-00",
+                "DeviceId": "mna-2x2tllhb18",
+                "DeviceName": "test-vendor-hardware-00-00",
+                "FlowTrunc": 0,
+                "GroupId": "",
+                "GroupName": "",
+                "LicenseChargingMode": 2,
+                "LicensePayMode": 0,
+                "Payer": 1,
+                "SN": "test-vendor-hardware-00",
+                "VendorDescription": "测试00"
             }
         ],
-        "Length": 2,
-        "RequestId": "cad17990-449a-4961-830f-0cde5b8bd74a",
-        "TotalPage": 1
+        "Length": 107,
+        "RequestId": "50f72657-2085-49fe-839f-71f3088c7f0a",
+        "TotalPage": 107
     }
 }
 ```

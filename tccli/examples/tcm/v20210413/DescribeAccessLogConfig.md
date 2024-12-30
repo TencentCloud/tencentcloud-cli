@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcm DescribeAccessLogConfig --cli-unfold-argument  \
-    --MeshId "mesh-test"
+    --MeshId "mesh-xxxxxxxx"
 ```
 
 Output: 

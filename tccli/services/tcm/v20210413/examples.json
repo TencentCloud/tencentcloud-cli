@@ -3,7 +3,7 @@
     "CreateMesh": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMesh\n<公共请求参数>\n\n{\n    \"DisplayName\": \"test\",\n    \"MeshVersion\": \"1.8.1\",\n    \"Type\": \"HOSTED\",\n    \"Config\": {\n        \"Istio\": {\n            \"OutboundTrafficPolicy\": \"ALLOW_ANY\",\n            \"Tracing\": {\n                \"Sampling\": 1\n            }\n        }\n    },\n    \"ClusterList\": [\n        {\n            \"ClusterId\": \"{{clusterId}}\",\n            \"Region\": \"sh\",\n            \"Role\": \"MASTER\",\n            \"VpcId\": \"{{vpcId}}\",\n            \"SubnetId\": \"{{subnetId}}\",\n            \"Config\": {\n                \"AutoInjectionNamespaceList\": [\n                    \"default\"\n                ]\n            }\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMesh\n<公共请求参数>\n\n{\n    \"DisplayName\": \"service-mgr\",\n    \"MeshVersion\": \"1.8.1\",\n    \"Type\": \"HOSTED\",\n    \"Config\": {\n        \"Istio\": {\n            \"OutboundTrafficPolicy\": \"ALLOW_ANY\",\n            \"Tracing\": {\n                \"Sampling\": 1\n            }\n        }\n    },\n    \"ClusterList\": [\n        {\n            \"ClusterId\": \"{{clusterId}}\",\n            \"Region\": \"sh\",\n            \"Role\": \"MASTER\",\n            \"VpcId\": \"{{vpcId}}\",\n            \"SubnetId\": \"{{subnetId}}\",\n            \"Config\": {\n                \"AutoInjectionNamespaceList\": [\n                    \"default\"\n                ]\n            }\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"MeshId\": \"mesh-xxxxxxxx\"\n    }\n}",
         "title": "CreateMesh"
       }
@@ -19,7 +19,7 @@
     "DescribeAccessLogConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessLogConfig\n<公共请求参数>\n\n{\n    \"MeshId\": \"\\\"mesh-test\\\"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessLogConfig\n<公共请求参数>\n\n{\n    \"MeshId\": \"\\\"mesh-xxxxxxxx\\\"\"\n}",
         "output": "{\n    \"Response\": {\n        \"File\": \"/dev/stdout\",\n        \"Format\": \"{xxx: xxx}\",\n        \"Encoding\": \"JSON\",\n        \"SelectedRange\": {\n            \"Items\": [\n                {\n                    \"Namespace\": \"test\",\n                    \"ClusterName\": \"cls-xxxxxxxx\",\n                    \"ItemName\": \"test\",\n                    \"Gateways\": [\n                        \"test\"\n                    ]\n                }\n            ],\n            \"All\": true\n        },\n        \"Template\": \"test\",\n        \"CLS\": {\n            \"Enable\": true,\n            \"LogSet\": \"test\",\n            \"Topic\": \"test\",\n            \"NeedDelete\": true,\n            \"Region\": \"sh\"\n        },\n        \"Address\": \"x.x.x.x\",\n        \"EnableServer\": true,\n        \"EnableStdout\": true,\n        \"Enable\": true,\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "获取Mesh访问日志配置"
       }

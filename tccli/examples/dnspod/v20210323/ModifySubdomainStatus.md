@@ -29,7 +29,7 @@ Input:
 ```
 tccli dnspod ModifySubdomainStatus --cli-unfold-argument  \
     --Domain dnspod.site \
-    --SubDomain test \
+    --SubDomain www \
     --RecordType A,TXT,CNAME \
     --Status disable
 ```

@@ -21713,6 +21713,15 @@
           "name": "RISTSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出类型：Internet/TencentCSS/StreamLive",
+          "example": "TencentCSS",
+          "member": "string",
+          "name": "OutputType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

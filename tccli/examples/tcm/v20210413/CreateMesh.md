@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcm CreateMesh --cli-unfold-argument  \
-    --DisplayName test \
+    --DisplayName service-mgr \
     --MeshVersion 1.8.1 \
     --Type HOSTED \
     --Config.Istio.OutboundTrafficPolicy ALLOW_ANY \

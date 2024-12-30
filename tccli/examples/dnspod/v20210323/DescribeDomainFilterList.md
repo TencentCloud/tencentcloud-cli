@@ -16,54 +16,50 @@ Output:
 {
     "Response": {
         "DomainCountInfo": {
-            "DomainTotal": 1,
-            "AllTotal": 1,
-            "MineTotal": 1,
-            "ShareTotal": 1,
-            "VipTotal": 1,
+            "AllTotal": 27,
+            "DomainTotal": 27,
+            "ErrorTotal": 19,
+            "GroupTotal": 0,
+            "LockTotal": 0,
+            "MineTotal": 20,
             "PauseTotal": 1,
-            "ErrorTotal": 1,
-            "LockTotal": 1,
-            "SpamTotal": 1,
-            "VipExpire": 1,
-            "ShareOutTotal": 1,
-            "GroupTotal": 1
+            "ShareOutTotal": 4,
+            "ShareTotal": 7,
+            "SpamTotal": 3,
+            "VipExpire": 0,
+            "VipTotal": 6
         },
         "DomainList": [
             {
-                "DomainId": 1,
-                "Name": "abc",
-                "Status": "abc",
-                "TTL": 1,
-                "CNAMESpeedup": "abc",
-                "DNSStatus": "abc",
-                "Grade": "abc",
-                "GroupId": 1,
-                "SearchEnginePush": "abc",
-                "Remark": "abc",
-                "Punycode": "abc",
+                "CNAMESpeedup": "DISABLE",
+                "CreatedOn": "2023-03-21 17:27:40",
+                "DNSStatus": "DNSERROR",
+                "DomainId": 12620688,
                 "EffectiveDNS": [
-                    "abc"
+                    "temporary.dnspod.net",
+                    "barman.dnspod.net"
                 ],
-                "GradeLevel": 1,
-                "GradeTitle": "abc",
-                "IsVip": "abc",
-                "VipStartAt": "2020-09-22 00:00:00",
-                "VipEndAt": "2020-09-22 00:00:00",
-                "VipAutoRenew": "abc",
-                "RecordCount": 1,
-                "CreatedOn": "2020-09-22 00:00:00",
-                "UpdatedOn": "2020-09-22 00:00:00",
-                "Owner": "abc",
-                "TagList": [
-                    {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
-                    }
-                ]
+                "Grade": "DP_FREE",
+                "GradeLevel": 2,
+                "GradeTitle": "免费版",
+                "GroupId": 1,
+                "IsVip": "NO",
+                "Name": "dnspod.net",
+                "Owner": "qcloud_uin_100000******@qcloud.com",
+                "Punycode": "dnspod.net",
+                "RecordCount": 182761,
+                "Remark": "",
+                "SearchEnginePush": "NO",
+                "Status": "ENABLE",
+                "TTL": 600,
+                "TagList": [],
+                "UpdatedOn": "2024-12-30 10:16:57",
+                "VipAutoRenew": "NO",
+                "VipEndAt": "0000-00-00 00:00:00",
+                "VipStartAt": "0000-00-00 00:00:00"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "789904fb-8dfc-445c-8467-3536ad88b237"
     }
 }
 ```

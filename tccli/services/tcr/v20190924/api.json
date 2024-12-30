@@ -6703,7 +6703,7 @@
         {
           "disabled": false,
           "document": "复制源实例ID",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "SourceRegistryId",
           "required": true,
@@ -6712,7 +6712,7 @@
         {
           "disabled": false,
           "document": "复制目标实例ID",
-          "example": "tcr-test456",
+          "example": "tcr-7o4xeay9",
           "member": "string",
           "name": "DestinationRegistryId",
           "required": true,
@@ -6721,7 +6721,7 @@
         {
           "disabled": false,
           "document": "同步规则",
-          "example": "无",
+          "example": "{\"Name\":\"rule2\",\"DestNamespace\":\"ns2\",\"Override\":false,\"Filters\":[{\"Type\":\"name\",\"Value\":\"ns2/**\"}]}",
           "member": "ReplicationRule",
           "name": "Rule",
           "required": true,
@@ -6730,7 +6730,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "test",
+          "example": "gz-sync2bj",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -6739,7 +6739,7 @@
         {
           "disabled": false,
           "document": "目标实例的地域ID，如广州是1",
-          "example": "33",
+          "example": "8",
           "member": "uint64",
           "name": "DestinationRegionId",
           "required": false,
@@ -6892,7 +6892,7 @@
         {
           "disabled": false,
           "document": "实例 Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -6901,7 +6901,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "library",
+          "example": "private",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -6910,7 +6910,7 @@
         {
           "disabled": false,
           "document": "规则 Id",
-          "example": "123",
+          "example": "2",
           "member": "int64",
           "name": "RuleId",
           "required": true,

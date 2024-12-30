@@ -31,7 +31,7 @@ Output:
                     "Path": [
                         "/test/1.log"
                     ],
-                    "Topic": "test"
+                    "Topic": "send_kafka_topic"
                 }
             ],
             "KafkaVIp": "127.0.1:9200",

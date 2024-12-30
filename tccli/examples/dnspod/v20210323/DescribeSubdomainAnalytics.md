@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli dnspod DescribeSubdomainAnalytics --cli-unfold-argument  \
-    --Domain example.com \
-    --StartDate 2022-06-14 \
-    --EndDate 2022-06-14 \
-    --Subdomain test
+    --Domain dnspod.cn \
+    --StartDate 2024-12-30 \
+    --EndDate 2024-12-30 \
+    --Subdomain www
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
         "AliasData": [],
         "Data": [
             {
-                "DateKey": "20221201",
+                "DateKey": "20241230",
                 "HourKey": null,
                 "Num": 0
             }
@@ -27,12 +27,12 @@ Output:
         "Info": {
             "DnsFormat": "DATE",
             "DnsTotal": 0,
-            "Domain": "zhaodapian.com",
-            "EndDate": "2022-12-01",
-            "StartDate": "2022-12-01",
-            "Subdomain": "test"
+            "Domain": "dnspod.cn",
+            "EndDate": "2024-12-30",
+            "StartDate": "2024-12-30",
+            "Subdomain": "www"
         },
-        "RequestId": "b4aca3e1-c134-4a31-bc07-408d78551449"
+        "RequestId": "9ce684ec-a986-4f48-8495-e68b1f337e61"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mna UpdateL3Switch --cli-unfold-argument  \
-    --L3ConnId abc \
+    --L3ConnId id \
     --Enable True
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "7fa2c35a-ecca-454b-9521-65e17601143e"
     }
 }
 ```

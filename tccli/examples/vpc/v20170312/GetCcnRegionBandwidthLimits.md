@@ -17,21 +17,25 @@ Output:
             {
                 "CcnRegionBandwidthLimit": {
                     "Region": "ap-guangzhou",
+                    "DstRegion": "ap-beijing",
                     "IsBm": false,
+                    "DstIsBm": false,
                     "BandwidthLimit": 10
                 },
                 "CcnId": "ccn-1pdchck1",
+                "DefaultQosBandwidthFlag": false,
                 "TagSet": [
                     {
-                        "Key": "test",
-                        "Value": "123"
+                        "Key": "ccn-1",
+                        "Value": "ccn-1"
                     }
                 ],
                 "RegionFlowControlId": "fcr-krx0mfoi",
                 "CreatedTime": "2020-05-20 16:29:44",
                 "ExpiredTime": "2020-05-20 16:29:44",
-                "MarketId": "abc",
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
+                "MarketId": "market-xxxxxxxx",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "QosLevel": "AU"
             }
         ],
         "TotalCount": 1,
@@ -65,17 +69,19 @@ Output:
                     "DstIsBm": false
                 },
                 "CcnId": "ccn-2gxeenq2",
+                "DefaultQosBandwidthFlag": false,
                 "TagSet": [
                     {
-                        "Key": "test",
-                        "Value": "123"
+                        "Key": "ccn-1",
+                        "Value": "ccn-1"
                     }
                 ],
                 "RegionFlowControlId": "fcr-crrnp6w4",
                 "CreatedTime": "2020-06-10 14:48:13",
                 "ExpiredTime": "2020-07-10 15:47:05",
-                "MarketId": "abc",
-                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW"
+                "MarketId": "market-xxxxxxxx",
+                "RenewFlag": "NOTIFY_AND_MANUAL_RENEW",
+                "QosLevel": "AU"
             },
             {
                 "CcnRegionBandwidthLimit": {
@@ -86,17 +92,19 @@ Output:
                     "DstIsBm": false
                 },
                 "CcnId": "ccn-2gxeenq2",
+                "DefaultQosBandwidthFlag": false,
                 "TagSet": [
                     {
-                        "Key": "test",
-                        "Value": "123"
+                        "Key": "ccn-2",
+                        "Value": "ccn-2"
                     }
                 ],
                 "RegionFlowControlId": "fcr-lnfsgh4y",
                 "CreatedTime": "2020-06-10 15:55:29",
                 "ExpiredTime": "2020-07-10 15:55:29",
-                "MarketId": "abc",
-                "RenewFlag": "NOTIFY_AND_AUTO_RENEW"
+                "MarketId": "market-xxxxxxxx",
+                "RenewFlag": "NOTIFY_AND_AUTO_RENEW",
+                "QosLevel": "AU"
             }
         ],
         "TotalCount": 2,

@@ -435,7 +435,7 @@
       "status": "online"
     },
     "DescribeDnsRecords": {
-      "document": "您可以用过本接口查看站点下的 DNS 记录信息，包括 DNS 记录名、记录类型以及记录内容等信息。您可以查看站点下全部 DNS 记录的信息，也可以指定过滤条件查询对应的 DNS 记录信息。",
+      "document": "您可以用过本接口查看站点下的 DNS 记录信息，包括 DNS 记录名、记录类型以及记录内容等信息，支持指定过滤条件查询对应的 DNS 记录信息。",
       "input": "DescribeDnsRecordsRequest",
       "name": "查询 DNS 记录列表",
       "output": "DescribeDnsRecordsResponse",
@@ -1424,7 +1424,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> SslTlsSecureConf；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)；</li>\n<li> 修改源站(Origin)。</li>\n<li> 七层回源超时(HTTPUpstreamTimeout)。</li>\n<li> Http应答（HttpResponse）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "常规功能操作，选择该类型的功能项有：\n<li> 访问URL 重写（AccessUrlRedirect）；</li>\n<li> 回源 URL 重写 （UpstreamUrlRedirect）；</li>\n<li> QUIC（QUIC）；</li>\n<li> WebSocket （WebSocket）；</li>\n<li> 视频拖拽（VideoSeek）；</li>\n<li> Token 鉴权（Authentication）；</li>\n<li> 自定义CacheKey（CacheKey）；</li>\n<li> 节点缓存 TTL （Cache）；</li>\n<li> 浏览器缓存 TTL（MaxAge）；</li>\n<li> 离线缓存（OfflineCache）；</li>\n<li> 智能加速（SmartRouting）；</li>\n<li> 分片回源（RangeOriginPull）；</li>\n<li> HTTP/2 回源（UpstreamHttp2）；</li>\n<li> Host Header 重写（HostHeader）；</li>\n<li> 强制 HTTPS（ForceRedirect）；</li>\n<li> 回源 HTTPS（OriginPullProtocol）；</li>\n<li> 单连接下载限速（ResponseSpeedLimit）；</li>\n<li> 缓存预刷新（CachePrefresh）；</li>\n<li> 智能压缩（Compression）；</li>\n<li> Hsts；</li>\n<li> ClientIpHeader；</li>\n<li> SslTlsSecureConf；</li>\n<li> OcspStapling；</li>\n<li> HTTP/2 访问（Http2）；</li>\n<li> 回源跟随重定向(UpstreamFollowRedirect)；</li>\n<li> 修改源站(Origin)。</li>\n<li> 七层回源超时(HTTPUpstreamTimeout)。</li>\n<li> Http应答（HttpResponse）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NormalAction",
           "name": "NormalAction",

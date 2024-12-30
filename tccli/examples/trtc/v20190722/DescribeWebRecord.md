@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli trtc DescribeWebRecord --cli-unfold-argument  \
-    --TaskId xxx
+    --TaskId HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri
 ```
 
 Output: 
@@ -14,7 +14,7 @@ Output:
 {
     "Response": {
         "Status": 1,
-        "RequestId": "abc"
+        "RequestId": "record_class_1"
     }
 }
 ```

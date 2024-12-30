@@ -554,7 +554,7 @@
       "status": "online"
     },
     "GetRecordPlanByDev": {
-      "document": "本接口(GetRecordPlanByDev)用于根据设备ID查询其绑定的录制计划.\n",
+      "document": "本接口(GetRecordPlanByDev)用于根据设备ID查询其绑定的录制计划.",
       "input": "GetRecordPlanByDevRequest",
       "name": "获取设备绑定的录制计划",
       "output": "GetRecordPlanByDevResponse",
@@ -666,7 +666,7 @@
       "status": "online"
     },
     "ModifyRecordingPlan": {
-      "document": "本接口(ModifyRecordingPlan)用于更新录制计划。\n",
+      "document": "本接口(ModifyRecordingPlan)用于更新录制计划。",
       "input": "ModifyRecordingPlanRequest",
       "name": "更新录制计划",
       "output": "ModifyRecordingPlanResponse",
@@ -1421,7 +1421,7 @@
         {
           "disabled": false,
           "document": "分组描述",
-          "example": "xxx",
+          "example": "test1",
           "member": "string",
           "name": "GroupDescribe",
           "required": false,
@@ -1439,7 +1439,7 @@
           "example": "status",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1449,7 +1449,7 @@
           "example": "group-1234abcd",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1510,30 +1510,30 @@
         {
           "disabled": false,
           "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "99999999991320000001",
           "member": "string",
           "name": "DeviceCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "99999999991320000001_99999999991320000001",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "设备虚拟组信息，仅在创建NVR时返回该值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "group9999",
           "member": "string",
           "name": "VirtualGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1826,7 +1826,7 @@
           "example": "plan-xxxx",
           "member": "string",
           "name": "PlanId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1845,7 +1845,7 @@
         {
           "disabled": false,
           "document": "计划名称",
-          "example": "myPlan",
+          "example": "allday",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1854,7 +1854,7 @@
         {
           "disabled": false,
           "document": "时间模板ID",
-          "example": "template-xxxxx",
+          "example": "template-all",
           "member": "string",
           "name": "TimeTemplateId",
           "required": true,
@@ -1887,10 +1887,10 @@
         {
           "disabled": false,
           "document": "录制计划ID",
-          "example": "plan-xxxx",
+          "example": "1u9z7ugo",
           "member": "string",
           "name": "PlanId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2375,7 +2375,7 @@
         {
           "disabled": false,
           "document": "时间模板ID",
-          "example": "xxx",
+          "example": "tgrp-jfs89ah1",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -2393,7 +2393,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2548,7 +2548,7 @@
         {
           "disabled": false,
           "document": "DeviceId列表，需要精确查找设备时为必填",
-          "example": "无",
+          "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "DeviceIds",
           "required": false,
@@ -2575,7 +2575,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2585,7 +2585,7 @@
           "example": "无",
           "member": "AllDeviceInfo",
           "name": "Devices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3233,7 +3233,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识列表",
-          "example": "xxx",
+          "example": "99999999991320000001_99999999991320000001",
           "member": "string",
           "name": "DeviceIds",
           "required": false,
@@ -3251,7 +3251,7 @@
           "example": "无",
           "member": "DevGroupInfo",
           "name": "DevGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3426,7 +3426,7 @@
           "example": "password",
           "member": "string",
           "name": "PassWord",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3564,7 +3564,7 @@
           "example": "无",
           "member": "DescribeDeviceStreamsData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3887,7 +3887,7 @@
         {
           "disabled": false,
           "document": "直播录制计划ID, null: 直播录制计划为空",
-          "example": "无",
+          "example": "lrplan-w3oovckd",
           "member": "string",
           "name": "RecordPlanId",
           "required": false,
@@ -3896,7 +3896,7 @@
         {
           "disabled": false,
           "document": "频道名称 (支持模糊搜索)",
-          "example": "无",
+          "example": "w3oovckd",
           "member": "string",
           "name": "LiveChannelName",
           "required": false,
@@ -3914,7 +3914,7 @@
           "example": "20",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3924,7 +3924,7 @@
           "example": "无",
           "member": "LiveChannelInfo",
           "name": "LiveChannels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4246,7 +4246,7 @@
         {
           "disabled": false,
           "document": "直播频道ID",
-          "example": "无",
+          "example": "cea6f74f29164253b43411fd888f4dc3",
           "member": "string",
           "name": "LiveChannelId",
           "required": true,
@@ -4255,7 +4255,7 @@
         {
           "disabled": false,
           "document": "开始录制开始时间",
-          "example": "无",
+          "example": "1631007668",
           "member": "int64",
           "name": "StartRecordTime",
           "required": false,
@@ -4264,7 +4264,7 @@
         {
           "disabled": false,
           "document": "开始录制结束时间",
-          "example": "无",
+          "example": "1631007668",
           "member": "int64",
           "name": "EndRecordTime",
           "required": false,
@@ -4273,7 +4273,7 @@
         {
           "disabled": false,
           "document": "过期开始时间",
-          "example": "无",
+          "example": "2020",
           "member": "int64",
           "name": "StartExpireTime",
           "required": false,
@@ -4291,7 +4291,7 @@
         {
           "disabled": false,
           "document": "文件大小范围 Byte",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "StartFileSize",
           "required": false,
@@ -4300,7 +4300,7 @@
         {
           "disabled": false,
           "document": "文件大小范围 Byte",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "EndFileSize",
           "required": false,
@@ -4309,7 +4309,7 @@
         {
           "disabled": false,
           "document": "录制状态，5: 录制回写完",
-          "example": "无",
+          "example": "5",
           "member": "int64",
           "name": "IsRecording",
           "required": false,
@@ -4324,20 +4324,20 @@
         {
           "disabled": false,
           "document": "总的条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "录制任务详情数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "IntID、LiveChannelId等",
           "member": "LiveRecordItem",
           "name": "RecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4682,10 +4682,10 @@
         {
           "disabled": false,
           "document": "含有录像文件的日期列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-12-18",
           "member": "string",
           "name": "Dates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4737,10 +4737,10 @@
         {
           "disabled": false,
           "document": "录制日期数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2021-09-07",
           "member": "string",
           "name": "Dates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4897,7 +4897,7 @@
         {
           "disabled": false,
           "document": "录制计划ID",
-          "example": "plan-xxx",
+          "example": "plan-fyw1k9l5",
           "member": "string",
           "name": "PlanId",
           "required": true,
@@ -4915,7 +4915,7 @@
           "example": "无",
           "member": "RecordPlanDetail",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4942,7 +4942,7 @@
           "example": "无",
           "member": "RecordPlanDetail",
           "name": "Plans",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4952,7 +4952,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5687,7 +5687,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5697,7 +5697,7 @@
           "example": "无",
           "member": "RecordTaskItem",
           "name": "VideoList",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5707,7 +5707,7 @@
           "example": "无",
           "member": "RecordTaskItem",
           "name": "RecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5834,7 +5834,7 @@
           "example": "100",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5844,7 +5844,7 @@
           "example": "无",
           "member": "WarningsData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6182,10 +6182,10 @@
         {
           "disabled": false,
           "document": "含有录像文件的日期列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-12-18",
           "member": "string",
           "name": "Dates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6219,10 +6219,10 @@
         {
           "disabled": false,
           "document": "录制计划详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "plan",
+          "example": "plan-allday",
           "member": "RecordPlanItem",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6241,7 +6241,7 @@
         {
           "disabled": false,
           "document": "录制计划ID",
-          "example": "plan-xxx",
+          "example": "plan-fyw1k9l5",
           "member": "string",
           "name": "PlanId",
           "required": true,
@@ -6259,7 +6259,7 @@
           "example": "无",
           "member": "RecordPlanItem",
           "name": "Plan",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6315,7 +6315,7 @@
         {
           "disabled": false,
           "document": "时间模板ID",
-          "example": "tgrp-xxx",
+          "example": "tgrp-fyw1k9l5",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -6333,7 +6333,7 @@
           "example": "无",
           "member": "TimeTemplateItem",
           "name": "Template",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6360,7 +6360,7 @@
           "example": "无",
           "member": "TimeTemplateItem",
           "name": "Templates",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6370,7 +6370,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6461,7 +6461,7 @@
           "example": "null",
           "member": "RecordTaskItem",
           "name": "VideoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6471,7 +6471,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7242,7 +7242,7 @@
         {
           "disabled": false,
           "document": "录制计划ID",
-          "example": "plan-xxxxx",
+          "example": "plan-zn3ro30w",
           "member": "string",
           "name": "PlanId",
           "required": true,
@@ -7368,7 +7368,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识",
-          "example": "xxx",
+          "example": "99424891421320000101_ 99424891421320000101",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -7377,7 +7377,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "xxx",
+          "example": "开发测试设备001",
           "member": "string",
           "name": "NickName",
           "required": true,
@@ -7395,7 +7395,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7621,7 +7621,7 @@
         {
           "disabled": false,
           "document": "录制计划ID",
-          "example": "plan-xxxxx",
+          "example": "plan-all",
           "member": "string",
           "name": "PlanId",
           "required": true,
@@ -7630,7 +7630,7 @@
         {
           "disabled": false,
           "document": "计划名称",
-          "example": "xxxxxx",
+          "example": "all",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7639,7 +7639,7 @@
         {
           "disabled": false,
           "document": "时间模板ID",
-          "example": "tgrp-xxxxx",
+          "example": "tgrp-all",
           "member": "string",
           "name": "TimeTemplateId",
           "required": false,
@@ -7657,7 +7657,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8563,7 +8563,7 @@
         {
           "disabled": false,
           "document": "设备密码",
-          "example": "xxx",
+          "example": "password",
           "member": "string",
           "name": "PassWord",
           "required": true,
@@ -8572,7 +8572,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识",
-          "example": "xxx",
+          "example": "99870353841320000007_99870353841320000007",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -8590,7 +8590,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8609,7 +8609,7 @@
         {
           "disabled": false,
           "document": "录制计划ID",
-          "example": "plan-xxxxx",
+          "example": "plan-allday",
           "member": "string",
           "name": "PlanId",
           "required": true,
@@ -8618,7 +8618,7 @@
         {
           "disabled": false,
           "document": "计划名称",
-          "example": "xxxxxx",
+          "example": "allday",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8627,7 +8627,7 @@
         {
           "disabled": false,
           "document": "时间模板ID",
-          "example": "tgrp-xxxxx",
+          "example": "tgrp-allday",
           "member": "string",
           "name": "TimeTemplateId",
           "required": false,
@@ -8672,7 +8672,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8691,7 +8691,7 @@
         {
           "disabled": false,
           "document": "时间模板ID",
-          "example": "xxxx",
+          "example": "tgrp-fmwq1f1a",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -8700,7 +8700,7 @@
         {
           "disabled": false,
           "document": "时间模板名称",
-          "example": "xx",
+          "example": "fmwq1f1a",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8718,7 +8718,7 @@
         {
           "disabled": false,
           "document": "录制时间片段",
-          "example": "无",
+          "example": "allday",
           "member": "TimeTemplateSpec",
           "name": "TimeTemplateSpecs",
           "required": false,
@@ -8736,7 +8736,7 @@
           "example": "OK",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -224,6 +224,13 @@
       "output": "DeleteRabbitMQBindingResponse",
       "status": "online"
     },
+    "DeleteRabbitMQPermission": {
+      "document": "删除RabbitMQ的权限",
+      "input": "DeleteRabbitMQPermissionRequest",
+      "name": "删除RabbitMQ的权限",
+      "output": "DeleteRabbitMQPermissionResponse",
+      "status": "online"
+    },
     "DeleteRabbitMQUser": {
       "document": "删除RabbitMQ的用户",
       "input": "DeleteRabbitMQUserRequest",
@@ -495,6 +502,13 @@
       "input": "DescribeRabbitMQNodeListRequest",
       "name": "RabbitMQ专享版查询节点列表",
       "output": "DescribeRabbitMQNodeListResponse",
+      "status": "online"
+    },
+    "DescribeRabbitMQPermission": {
+      "document": "查询RabbitMQ权限列表",
+      "input": "DescribeRabbitMQPermissionRequest",
+      "name": "查询RabbitMQ权限列表",
+      "output": "DescribeRabbitMQPermissionResponse",
       "status": "online"
     },
     "DescribeRabbitMQQueueDetail": {
@@ -831,6 +845,13 @@
       "input": "ModifyPublicNetworkSecurityPolicyRequest",
       "name": "修改公网安全策略",
       "output": "ModifyPublicNetworkSecurityPolicyResponse",
+      "status": "online"
+    },
+    "ModifyRabbitMQPermission": {
+      "document": "修改RabbitMQ的权限",
+      "input": "ModifyRabbitMQPermissionRequest",
+      "name": "修改RabbitMQ的权限",
+      "output": "ModifyRabbitMQPermissionResponse",
       "status": "online"
     },
     "ModifyRabbitMQUser": {
@@ -5176,6 +5197,51 @@
       ],
       "type": "object"
     },
+    "DeleteRabbitMQPermissionRequest": {
+      "document": "DeleteRabbitMQPermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-jero744g",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，登录时使用",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vhost名",
+          "example": "tdmq_data",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRabbitMQPermissionResponse": {
+      "document": "DeleteRabbitMQPermission返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRabbitMQUserRequest": {
       "document": "DeleteRabbitMQUser请求参数结构体",
       "members": [
@@ -7942,6 +8008,89 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQPermissionRequest": {
+      "document": "DescribeRabbitMQPermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例id",
+          "example": "amqp-jero744g",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，用于查询过滤，不传则查询全部",
+          "example": "admin",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vhost名，用于查询过滤，不传则查询全部",
+          "example": "tdmq_data",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQPermissionResponse": {
+      "document": "DescribeRabbitMQPermission返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回权限数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限详情列表",
+          "example": "无",
+          "member": "RabbitMQPermission",
+          "name": "RabbitMQPermissionList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13203,6 +13352,78 @@
       ],
       "type": "object"
     },
+    "ModifyRabbitMQPermissionRequest": {
+      "document": "ModifyRabbitMQPermission请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-jero744g",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，权限关联的用户",
+          "example": "admin",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vhost名称",
+          "example": "tdmq_data",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式",
+          "example": ".*",
+          "member": "string",
+          "name": "ConfigRegexp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式",
+          "example": ".*",
+          "member": "string",
+          "name": "WriteRegexp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式",
+          "example": ".*",
+          "member": "string",
+          "name": "ReadRegexp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRabbitMQPermissionResponse": {
+      "document": "ModifyRabbitMQPermission返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRabbitMQUserRequest": {
       "document": "ModifyRabbitMQUser请求参数结构体",
       "members": [
@@ -15889,6 +16110,92 @@
           "name": "MessagesDelayed",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQPermission": {
+      "document": "RabbitMQ权限详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名，权限关联的用户",
+          "example": "test_user",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vhost名",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ".*",
+          "member": "string",
+          "name": "ConfigRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ".*",
+          "member": "string",
+          "name": "WriteRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ".*",
+          "member": "string",
+          "name": "ReadRegexp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-29 14:06:38.067",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-29 14:06:38.067",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

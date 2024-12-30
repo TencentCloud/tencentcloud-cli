@@ -6,29 +6,22 @@ Input:
 
 ```
 tccli cls SearchDashboardSubscribe --cli-unfold-argument  \
-    --DashboardId xxx-xxxxxx-xxxxxx-xxxx \
-    --Name 仪表盘-CLS-日报 \
-    --SubscribeData.DashboardTime now-5m now \
-    --SubscribeData.TemplateVariables.0.Key name \
-    --SubscribeData.TemplateVariables.0.Values abc \
+    --Name 订阅任务-oss大盘-2023-02-28_10:19 \
+    --DashboardId dashboard-0d954d68-xxxx-xxxx-95a6-f9eff0db370f \
+    --SubscribeData.DashboardTime now-d now \
     --SubscribeData.NoticeModes.0.ReceiverType Uin \
-    --SubscribeData.NoticeModes.0.Values 168053 \
-    --SubscribeData.NoticeModes.0.ReceiverChannels Sms \
-    --SubscribeData.NoticeModes.1.ReceiverType Group \
-    --SubscribeData.NoticeModes.1.Values 10721522 9553840 \
-    --SubscribeData.NoticeModes.1.ReceiverChannels Sms \
-    --SubscribeData.NoticeModes.2.ReceiverType Email \
-    --SubscribeData.NoticeModes.2.Values 3333@qq.com xxx@163.com \
-    --SubscribeData.Timezone Asia/Shanghai \
+    --SubscribeData.NoticeModes.0.ReceiverChannels Email \
+    --SubscribeData.NoticeModes.0.Values 11223344123 \
+    --SubscribeData.JumpDomain https://xxx.tent.com \
     --SubscribeData.SubscribeLanguage zh \
-    --SubscribeData.JumpDomain https://console.cloud.tencent.com
+    --SubscribeData.Timezone Asia/Shanghai
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "6ef60bec-xxxx-xxxx-bb20-270359fb54a7"
     }
 }
 ```

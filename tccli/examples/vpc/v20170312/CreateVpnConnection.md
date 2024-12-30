@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc CreateVpnConnection --cli-unfold-argument  \
     --VpnConnectionName TEST_CONN \
-    --PreShareKey 654321 \
+    --PreShareKey 6325ac \
     --VpcId vpc-gapcv96p \
     --Tags.0.Value shanghai \
     --Tags.0.Key city \
@@ -35,21 +35,21 @@ Output:
     "Response": {
         "VpnConnection": {
             "VpcId": "vpc-gapcv96p",
-            "VpnConnectionId": "",
+            "VpnConnectionId": "vpnx-axc13cega",
             "VpnConnectionName": "TEST_CONN",
             "VpnGatewayId": "vpngw-1w9tue3d",
             "CustomerGatewayId": "cgw-qa9sxpy7",
             "State": "PENDING",
-            "PreShareKey": "123456",
-            "NegotiationType": "",
+            "PreShareKey": "6325ac",
+            "NegotiationType": "active",
             "DpdEnable": -1,
-            "DpdTimeout": "",
-            "DpdAction": "",
+            "DpdTimeout": "30",
+            "DpdAction": "clear",
             "VpnProto": "IPSEC",
             "EncryptProto": "IKE",
             "RouteType": "STATIC",
             "CreatedTime": "0000-00-00 00:00:00",
-            "NetStatus": "",
+            "NetStatus": "AVAILABLE",
             "SecurityPolicyDatabaseSet": [],
             "IKEOptionsSpecification": {
                 "PropoEncryAlgorithm": "3DES-CBC",
@@ -59,8 +59,8 @@ Output:
                 "RemoteIdentity": "ADDRESS",
                 "LocalAddress": "58.211.2.5",
                 "RemoteAddress": "1.2.3.4",
-                "LocalFqdnName": "",
-                "RemoteFqdnName": "",
+                "LocalFqdnName": "local-name",
+                "RemoteFqdnName": "remote-name",
                 "DhGroupName": "GROUP1",
                 "IKESaLifetimeSeconds": 86400,
                 "IKEVersion": "IKEV1"
@@ -73,9 +73,9 @@ Output:
                 "PfsDhGroup": "NULL"
             },
             "EnableHealthCheck": false,
-            "HealthCheckLocalIp": "",
-            "HealthCheckRemoteIp": "",
-            "HealthCheckStatus": "",
+            "HealthCheckLocalIp": "169.254.168.2",
+            "HealthCheckRemoteIp": "169.254.168.1",
+            "HealthCheckStatus": "AVAILABLE",
             "TagSet": []
         },
         "RequestId": "4b71dd4d-a3ee-4ac1-b99a-99d65f6443fd"

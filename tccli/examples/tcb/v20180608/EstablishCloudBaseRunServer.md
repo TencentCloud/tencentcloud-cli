@@ -6,26 +6,26 @@ Input:
 
 ```
 tccli tcb EstablishCloudBaseRunServer --cli-unfold-argument  \
-    --Remark xx \
-    --EnvId xx \
+    --Remark  \
+    --EnvId  \
     --IsPublic True \
-    --EsInfo.Index xx \
-    --EsInfo.Account xx \
-    --EsInfo.Ip xx \
+    --EsInfo.Index  \
+    --EsInfo.Account  \
+    --EsInfo.Ip  \
     --EsInfo.Id 0 \
-    --EsInfo.SecretName xx \
-    --EsInfo.Password xx \
+    --EsInfo.SecretName  \
+    --EsInfo.Password  \
     --EsInfo.Port 0 \
-    --ServiceName xx \
-    --ImageRepo xx
+    --ServiceName  \
+    --ImageRepo 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "xx",
-        "RequestId": "xx"
+        "Result": "succ",
+        "RequestId": "sdfsdff"
     }
 }
 ```

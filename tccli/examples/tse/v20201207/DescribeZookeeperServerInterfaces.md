@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tse DescribeZookeeperServerInterfaces --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId ins-id \
     --Limit 1 \
     --Offset 1
 ```

@@ -3,9 +3,9 @@
     "CreateHealthCheckPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"HealthCheckPolicy\": {\n        \"Name\": \"NP1\",\n        \"Rules\": []\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"HealthCheckPolicyName\": \"NP1\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建托管节点池健康检测策略"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-4h43fuxj\",\n    \"HealthCheckPolicy\": {\n        \"Name\": \"NP1\",\n        \"Rules\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckPolicyName\": \"NP1\",\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
+        "title": "创建原生节点池健康检测策略"
       }
     ],
     "CreateNodePool": [
@@ -19,16 +19,16 @@
     "DeleteHealthCheckPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"HealthCheckPolicyName\": \"NP1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-4h43fuxj\",\n    \"HealthCheckPolicyName\": \"NP1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "创建托管节点池健康检测策略"
       }
     ],
     "DeleteNodePool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"NodePoolId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-4h43fuxj\",\n    \"NodePoolId\": \"np-4h43fuxj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "删除 TKE 节点池"
       }
     ],
@@ -43,22 +43,16 @@
     "DescribeHealthCheckPolicies": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicies\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"A\"\n            ],\n            \"Name\": \"HealthCheckPolicyName\"\n        }\n    ],\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"HealthCheckPolicies\": [\n            {\n                \"Name\": \"NP1\",\n                \"Rules\": [\n                    {\n                        \"Name\": \"A\",\n                        \"Enabled\": true,\n                        \"AutoRepairEnabled\": false\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicies\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"A\"\n            ],\n            \"Name\": \"HealthCheckPolicyName\"\n        }\n    ],\n    \"ClusterId\": \"cls-4h43fuxj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HealthCheckPolicies\": [\n            {\n                \"Name\": \"NP1\",\n                \"Rules\": [\n                    {\n                        \"Name\": \"A\",\n                        \"Enabled\": true,\n                        \"AutoRepairEnabled\": false\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "创建托管节点池健康检测规则"
       }
     ],
     "DescribeHealthCheckPolicyBindings": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicyBindings\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"Limit\": \"1\",\n    \"Offset\": \"2\"\n}",
-        "output": "{\n    \"RequestId\": \"xx\",\n    \"Response\": {\n        \"HealthCheckPolicyBindings\": [\n            {\n                \"CreatedAt\": \"xx\",\n                \"NodePools\": [\n                    \"node-pool1\",\n                    \"node-pool2\"\n                ],\n                \"Name\": \"NP1\"\n            }\n        ],\n        \"RequestId\": \"372ba519-daa2-4abc-9da7-0857970c998c\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "1"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicyBindings\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"ClusterId\": \"xx\",\n    \"Filter\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"HealthCheckPolicyBindings\": [\n            {\n                \"NodePools\": [\n                    \"xx\"\n                ],\n                \"Name\": \"xx\",\n                \"CreatedAt\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthCheckPolicyBindings\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-4h43fuxj\",\n    \"Limit\": \"1\",\n    \"Offset\": \"2\"\n}",
+        "output": "{\n    \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\",\n    \"Response\": {\n        \"HealthCheckPolicyBindings\": [\n            {\n                \"CreatedAt\": \"2023-08-17 20:46:39\",\n                \"NodePools\": [\n                    \"node-pool1\",\n                    \"node-pool2\"\n                ],\n                \"Name\": \"NP1\"\n            }\n        ],\n        \"RequestId\": \"372ba519-daa2-4abc-9da7-0857970c998c\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询健康检测策略绑定关系"
       }
     ],
@@ -81,16 +75,16 @@
     "ModifyHealthCheckPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"HealthCheckPolicy\": {\n        \"Name\": \"NP1\",\n        \"Rules\": []\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHealthCheckPolicy\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-4h43fuxj\",\n    \"HealthCheckPolicy\": {\n        \"Name\": \"NP1\",\n        \"Rules\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "修改托管节点池健康检测规则"
       }
     ],
     "ModifyNodePool": [
       {
         "document": "用户更新节点池",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePool\n<公共请求参数>\n\n{\n    \"DeletionProtection\": true,\n    \"Name\": \"abc\",\n    \"Tags\": [\n        {\n            \"ResourceType\": \"abc\",\n            \"Tags\": [\n                {\n                    \"Value\": \"abc\",\n                    \"Key\": \"abc\"\n                }\n            ]\n        }\n    ],\n    \"Labels\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ],\n    \"ClusterId\": \"abc\",\n    \"Taints\": [\n        {\n            \"Value\": \"abc\",\n            \"Key\": \"abc\",\n            \"Effect\": \"abc\"\n        }\n    ],\n    \"NodePoolId\": \"abc\",\n    \"Unschedulable\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-6sukkvyx\",\n    \"Native\": {\n        \"EnableAutoscaling\": true,\n        \"Scaling\": {\n            \"CreatePolicy\": \"ZonePriority\",\n            \"MaxReplicas\": 1,\n            \"MinReplicas\": 0\n        }\n    },\n    \"NodePoolId\": \"np-00igpu9y\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd42c72-dd16-46bc-9d1e-b4020c59fab8\"\n    }\n}",
         "title": "更新 TKE 节点池"
       }
     ],

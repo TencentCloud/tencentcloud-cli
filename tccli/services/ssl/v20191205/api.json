@@ -761,7 +761,7 @@
         {
           "disabled": false,
           "document": "资源类型：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）",
-          "example": "无",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -1050,7 +1050,7 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "无",
+          "example": "heys**hh",
           "member": "string",
           "name": "CertId",
           "output_required": true,
@@ -1061,7 +1061,7 @@
         {
           "disabled": false,
           "document": "异步任务ID",
-          "example": "无",
+          "example": "17653",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -3341,7 +3341,7 @@
         {
           "disabled": false,
           "document": "部署的TCB地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
@@ -3446,47 +3446,47 @@
           "example": "nz9ICcbp",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源标识:clb,cdn,live,waf,antiddos",
-          "example": "无",
+          "example": "clb",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不建议使用。字段返回和Resources相同。本字段后续只返回null\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"resources\"]",
           "member": "string",
           "name": "ResourceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "关联资源ID或关联域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "Resources",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3739,7 +3739,7 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "无",
+          "example": "heysh**he",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -4904,7 +4904,7 @@
         {
           "disabled": false,
           "document": "DeleteCertificates接口返回的任务ID， 最大支持100个",
-          "example": "无",
+          "example": "[\"19999\",\"18888\"]",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -7118,60 +7118,60 @@
         {
           "disabled": false,
           "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "_895b7ee8eb1662e895c90a649c01bc2e.nin****ang.online",
           "member": "string",
           "name": "DvAuthKey",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "f0923331a7c7598def3fe522dbaab630.7bbc2a79620205e7edf2e3f8028f08dc.cmcdt3ax6qhp87.trust-provider.com",
           "member": "string",
           "name": "DvAuthValue",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "n******uang.online",
           "member": "string",
           "name": "DvAuthDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/path",
           "member": "string",
           "name": "DvAuthPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证子域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "_895b7ee8eb1662e895c90a649c01bc2e",
           "member": "string",
           "name": "DvAuthKeySubDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DvAuths",
           "name": "DvAuths",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -8247,60 +8247,60 @@
         {
           "disabled": false,
           "document": "项目名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "zrh-project",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "项目创建用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "637273",
           "member": "uint64",
           "name": "ProjectCreatorUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "项目创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2018-09-10 20:00:00",
           "member": "string",
           "name": "ProjectCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "项目信息简述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "hello world",
           "member": "string",
           "name": "ProjectResume",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "167738433",
           "member": "uint64",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "176373",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8483,40 +8483,40 @@
         {
           "disabled": false,
           "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/path",
           "member": "string",
           "name": "DomainValidateAuthPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证 KEY。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "_revoke_****",
           "member": "string",
           "name": "DomainValidateAuthKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "202412241622161uf2e****",
           "member": "string",
           "name": "DomainValidateAuthValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "DV 认证域名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "de.akuri.online",
           "member": "string",
           "name": "DomainValidateAuthDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9362,7 +9362,7 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
@@ -9650,9 +9650,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9660,9 +9661,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "value",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

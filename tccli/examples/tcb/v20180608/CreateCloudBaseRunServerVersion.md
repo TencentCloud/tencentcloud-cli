@@ -6,103 +6,99 @@ Input:
 
 ```
 tccli tcb CreateCloudBaseRunServerVersion --cli-unfold-argument  \
-    --EnvId abc \
-    --UploadType abc \
-    --RepositoryType abc \
+    --EnvId env-sdfdf \
+    --UploadType package \
+    --RepositoryType  \
     --FlowRatio 0 \
-    --DockerfilePath abc \
-    --BuildDir abc \
+    --DockerfilePath  \
+    --BuildDir  \
     --Cpu 0 \
     --Mem 0 \
     --MinNum 0 \
     --MaxNum 0 \
-    --PolicyType abc \
-    --PolicyThreshold 0 \
-    --EnvParams abc \
+    --PolicyType cpu \
+    --PolicyThreshold 60 \
+    --EnvParams  \
     --ContainerPort 0 \
-    --ServerName abc \
-    --Repository abc \
-    --Branch abc \
-    --VersionRemark abc \
-    --PackageName abc \
-    --PackageVersion abc \
-    --ImageInfo.RepositoryName abc \
+    --ServerName server-1 \
+    --Repository  \
+    --Branch  \
+    --VersionRemark remark \
+    --PackageName test.zip \
+    --PackageVersion 1231 \
+    --ImageInfo.RepositoryName  \
     --ImageInfo.IsPublic True \
-    --ImageInfo.TagName abc \
-    --ImageInfo.ServerAddr abc \
-    --ImageInfo.ImageUrl abc \
-    --CodeDetail.Name.Name abc \
-    --CodeDetail.Name.FullName abc \
-    --CodeDetail.Url abc \
-    --ImageSecretInfo.RegistryServer abc \
-    --ImageSecretInfo.UserName abc \
-    --ImageSecretInfo.Password abc \
-    --ImageSecretInfo.Email abc \
-    --ImagePullSecret abc \
-    --CustomLogs abc \
+    --ImageInfo.TagName  \
+    --ImageInfo.ServerAddr  \
+    --ImageInfo.ImageUrl  \
+    --CodeDetail.Name.Name  \
+    --CodeDetail.Name.FullName  \
+    --CodeDetail.Url  \
+    --ImageSecretInfo.RegistryServer  \
+    --ImageSecretInfo.UserName  \
+    --ImageSecretInfo.Password  \
+    --ImageSecretInfo.Email  \
+    --ImagePullSecret  \
+    --CustomLogs  \
     --InitialDelaySeconds 0 \
-    --MountVolumeInfo.0.Name abc \
-    --MountVolumeInfo.0.MountPath abc \
+    --MountVolumeInfo.0.Name  \
+    --MountVolumeInfo.0.MountPath  \
     --MountVolumeInfo.0.ReadOnly True \
-    --MountVolumeInfo.0.NfsVolumes.0.Server abc \
-    --MountVolumeInfo.0.NfsVolumes.0.Path abc \
+    --MountVolumeInfo.0.NfsVolumes.0.Server  \
+    --MountVolumeInfo.0.NfsVolumes.0.Path  \
     --MountVolumeInfo.0.NfsVolumes.0.ReadOnly True \
-    --MountVolumeInfo.0.NfsVolumes.0.SecretName abc \
+    --MountVolumeInfo.0.NfsVolumes.0.SecretName  \
     --MountVolumeInfo.0.NfsVolumes.0.EnableEmptyDirVolume True \
     --AccessType 0 \
     --EsInfo.Id 0 \
-    --EsInfo.SecretName abc \
-    --EsInfo.Ip abc \
+    --EsInfo.SecretName server \
+    --EsInfo.Ip  \
     --EsInfo.Port 0 \
-    --EsInfo.Index abc \
-    --EsInfo.Account abc \
-    --EsInfo.Password abc \
+    --EsInfo.Index  \
+    --EsInfo.Account  \
+    --EsInfo.Password  \
     --EnableUnion True \
-    --OperatorRemark abc \
-    --ServerPath abc \
-    --ImageReuseKey abc \
-    --SidecarSpecs.0.ContainerImage abc \
+    --OperatorRemark remark \
+    --ServerPath  \
+    --ImageReuseKey  \
+    --SidecarSpecs.0.ContainerImage  \
     --SidecarSpecs.0.ContainerPort 0 \
-    --SidecarSpecs.0.ContainerName abc \
-    --SidecarSpecs.0.EnvVar abc \
+    --SidecarSpecs.0.ContainerName  \
+    --SidecarSpecs.0.EnvVar  \
     --SidecarSpecs.0.InitialDelaySeconds 0 \
     --SidecarSpecs.0.Cpu 0 \
     --SidecarSpecs.0.Mem 0 \
-    --SidecarSpecs.0.Security.Capabilities.Add abc \
-    --SidecarSpecs.0.Security.Capabilities.Drop abc \
-    --SidecarSpecs.0.VolumeMountInfos.0.Name abc \
-    --SidecarSpecs.0.VolumeMountInfos.0.MountPath abc \
+    --SidecarSpecs.0.VolumeMountInfos.0.Name  \
+    --SidecarSpecs.0.VolumeMountInfos.0.MountPath  \
     --SidecarSpecs.0.VolumeMountInfos.0.ReadOnly True \
-    --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.Server abc \
-    --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.Path abc \
+    --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.Server  \
+    --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.Path  \
     --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.ReadOnly True \
-    --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.SecretName abc \
+    --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.SecretName server \
     --SidecarSpecs.0.VolumeMountInfos.0.NfsVolumes.0.EnableEmptyDirVolume True \
-    --Security.Capabilities.Add abc \
-    --Security.Capabilities.Drop abc \
-    --ServiceVolumes.0.Name abc \
-    --ServiceVolumes.0.NFS.Server abc \
-    --ServiceVolumes.0.NFS.Path abc \
+    --ServiceVolumes.0.Name  \
+    --ServiceVolumes.0.NFS.Server  \
+    --ServiceVolumes.0.NFS.Path  \
     --ServiceVolumes.0.NFS.ReadOnly True \
-    --ServiceVolumes.0.NFS.SecretName abc \
+    --ServiceVolumes.0.NFS.SecretName  \
     --ServiceVolumes.0.NFS.EnableEmptyDirVolume True \
-    --ServiceVolumes.0.SecretName abc \
+    --ServiceVolumes.0.SecretName server \
     --ServiceVolumes.0.EnableEmptyDirVolume True \
     --ServiceVolumes.0.EmptyDir.EnableEmptyDirVolume True \
-    --ServiceVolumes.0.EmptyDir.Medium abc \
-    --ServiceVolumes.0.EmptyDir.SizeLimit abc \
+    --ServiceVolumes.0.EmptyDir.Medium  \
+    --ServiceVolumes.0.EmptyDir.SizeLimit  \
     --IsCreateJnsGw 0 \
-    --ServiceVolumeMounts.0.Name abc \
-    --ServiceVolumeMounts.0.MountPath abc \
+    --ServiceVolumeMounts.0.Name  \
+    --ServiceVolumeMounts.0.MountPath  \
     --ServiceVolumeMounts.0.ReadOnly True \
-    --ServiceVolumeMounts.0.SubPath abc \
-    --ServiceVolumeMounts.0.MountPropagation abc \
+    --ServiceVolumeMounts.0.SubPath  \
+    --ServiceVolumeMounts.0.MountPropagation  \
     --HasDockerfile 0 \
-    --BaseImage abc \
-    --EntryPoint abc \
-    --RepoLanguage abc \
-    --UploadFilename abc \
-    --PolicyDetail.0.PolicyType abc \
+    --BaseImage  \
+    --EntryPoint  \
+    --RepoLanguage  \
+    --UploadFilename  \
+    --PolicyDetail.0.PolicyType cpu \
     --PolicyDetail.0.PolicyThreshold 0
 ```
 
@@ -110,10 +106,10 @@ Output:
 ```
 {
     "Response": {
-        "Result": "abc",
-        "VersionName": "abc",
-        "RunId": "abc",
-        "RequestId": "abc"
+        "Result": "",
+        "VersionName": "version-001",
+        "RunId": "",
+        "RequestId": "sdfsdfdf"
     }
 }
 ```

@@ -579,6 +579,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true",
+          "example": "true",
+          "member": "bool",
+          "name": "FilterOneWord",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2204,7 +2215,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId，和任务的房间所对应的SDKAppId相同",
-          "example": "1234",
+          "example": "1600011111",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2213,7 +2224,7 @@
         {
           "disabled": false,
           "document": "任务的唯一Id，在启动任务成功后会返回。",
-          "example": "1234",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -3202,7 +3213,7 @@
         {
           "disabled": false,
           "document": "发起页面录制时传递的SdkAppId",
-          "example": "无",
+          "example": "1600011111",
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
@@ -3236,7 +3247,7 @@
         {
           "disabled": false,
           "document": "在使用RecordId查询时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -3246,7 +3257,7 @@
         {
           "disabled": false,
           "document": "在使用TaskId查询时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "record_class_1",
           "member": "string",
           "name": "RecordId",
           "output_required": false,
@@ -6564,7 +6575,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
-          "example": "1234",
+          "example": "1600011111",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -6573,7 +6584,7 @@
         {
           "disabled": false,
           "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。",
-          "example": "1234",
+          "example": "82875",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -6618,7 +6629,7 @@
         {
           "disabled": false,
           "document": "TRTC房间权限加密串，只有在TRTC控制台启用了高级权限控制的时候需要携带，在TRTC控制台如果开启高级权限控制后，TRTC 的后台服务系统会校验一个叫做 [PrivateMapKey] 的“权限票据”，权限票据中包含了一个加密后的 RoomId 和一个加密后的“权限位列表”。由于 PrivateMapKey 中包含 RoomId，所以只提供了 UserSig 没有提供 PrivateMapKey 时，并不能进入指定的房间。",
-          "example": "无",
+          "example": "eJwsj1FPwjAUhf**************************w8ABP--78ZKOg__",
           "member": "string",
           "name": "PrivateMapKey",
           "required": false,
@@ -6654,7 +6665,7 @@
         {
           "disabled": false,
           "document": "指定视频从某个秒时间戳播放",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "SeekSecond",
           "required": false,
@@ -6663,7 +6674,7 @@
         {
           "disabled": false,
           "document": "开启自动旁路推流，请确认控制台已经开启该功能。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "AutoPush",
           "required": false,
@@ -6672,7 +6683,7 @@
         {
           "disabled": false,
           "document": "循环播放次数, 取值范围[-1, 1000],  默认1次。\n - 0 无效值\n - -1 循环播放, 需要主动调用停止接口或设置MaxDuration\n",
-          "example": "无",
+          "example": "5",
           "member": "int64",
           "name": "RepeatNum",
           "required": false,
@@ -6681,7 +6692,7 @@
         {
           "disabled": false,
           "document": "循环播放最大时长,仅支持RepeatNum设置-1时生效，取值范围[1, 10080]，单位分钟。",
-          "example": "无",
+          "example": "60",
           "member": "int64",
           "name": "MaxDuration",
           "required": false,
@@ -6705,7 +6716,7 @@
         {
           "disabled": false,
           "document": "输入在线媒体流的任务 ID。任务 ID 是对一次输入在线媒体流生命周期过程的唯一标识，结束任务时会失去意义。任务 ID 需要业务保存下来，作为下次针对这个任务操作的参数。",
-          "example": "无",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
@@ -6763,7 +6774,7 @@
         {
           "disabled": false,
           "document": "【必填】TRTC的SdkAppId",
-          "example": "无",
+          "example": "1600011111",
           "member": "int64",
           "name": "SdkAppId",
           "required": false,
@@ -7017,7 +7028,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId，和任务的房间所对应的SDKAppId相同。",
-          "example": "1234",
+          "example": "1600011111",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7026,7 +7037,7 @@
         {
           "disabled": false,
           "document": "任务的唯一Id，在启动任务成功后会返回。",
-          "example": "1234",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -7053,7 +7064,7 @@
         {
           "disabled": false,
           "document": "需要停止的任务Id",
-          "example": "xxx",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -7439,7 +7450,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人订阅的用户列表",
+          "document": "机器人订阅的用户列表\n仅 TranscriptionMode 为 1或者 TranscriptionMode 为无限上麦模式支持传入多个用户列表",
           "example": "无",
           "member": "string",
           "name": "TargetUserIdList",
@@ -7681,7 +7692,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId，和任务的房间所对应的SDKAppId相同",
-          "example": "1234",
+          "example": "1600011111",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7690,7 +7701,7 @@
         {
           "disabled": false,
           "document": "任务的唯一Id，在启动任务成功后会返回。",
-          "example": "1234",
+          "example": "HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri",
           "member": "string",
           "name": "TaskId",
           "required": true,

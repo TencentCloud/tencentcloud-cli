@@ -34,7 +34,7 @@ Output:
                         "CreateTime": "2023-12-12 12:00:00",
                         "UpdateTime": "2023-12-12 12:00:00",
                         "InstanceId": "eo-******",
-                        "InstanceName": "test",
+                        "InstanceName": "zrh-ins",
                         "ListenerId": "",
                         "ListenerName": "",
                         "Protocol": "",
@@ -42,7 +42,7 @@ Output:
                         "Bucket": "",
                         "Port": 0,
                         "Namespace": "",
-                        "SecretName": "test",
+                        "SecretName": "scret-****",
                         "EnvId": "",
                         "TCBType": ""
                     }

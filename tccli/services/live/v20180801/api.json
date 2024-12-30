@@ -15677,7 +15677,7 @@
         {
           "disabled": false,
           "document": "DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。",
-          "example": "无",
+          "example": "5000.liveplay.com",
           "member": "string",
           "name": "MismatchedDomainNames",
           "output_required": true,

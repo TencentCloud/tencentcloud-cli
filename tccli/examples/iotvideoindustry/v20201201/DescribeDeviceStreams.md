@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotvideoindustry DescribeDeviceStreams --cli-unfold-argument  \
-    --DeviceId xxx \
+    --DeviceId 99933020581320000064_99933020581320000064 \
     --ExpireTime 1610199034
 ```
 

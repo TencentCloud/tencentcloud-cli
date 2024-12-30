@@ -112,6 +112,13 @@
       "output": "DeleteTopicResponse",
       "status": "online"
     },
+    "DescribeConsumerClient": {
+      "document": "查询消费者客户端详情",
+      "input": "DescribeConsumerClientRequest",
+      "name": "查询消费者客户端详情",
+      "output": "DescribeConsumerClientResponse",
+      "status": "online"
+    },
     "DescribeConsumerGroup": {
       "document": "查询消费组详情",
       "input": "DescribeConsumerGroupRequest",
@@ -494,6 +501,62 @@
         }
       ],
       "usage": "both"
+    },
+    "ConsumerClient": {
+      "document": "消费者客户端",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址",
+          "example": "无",
+          "member": "string",
+          "name": "ClientAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端SDK语言",
+          "example": "无",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端SDK版本",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端消费堆积\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ConsumerLag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateConsumerGroupRequest": {
       "document": "CreateConsumerGroup请求参数结构体",
@@ -1513,6 +1576,96 @@
     "DeleteTopicResponse": {
       "document": "DeleteTopic返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerClientRequest": {
+      "document": "DescribeConsumerClient请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerClientResponse": {
+      "document": "DescribeConsumerClient返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerClient",
+          "name": "Client",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题消费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopicConsumeStats",
+          "name": "TopicList",
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6887,6 +7040,72 @@
         }
       ],
       "usage": "in"
+    },
+    "TopicConsumeStats": {
+      "document": "主题消费进度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型",
+          "example": "无",
+          "member": "string",
+          "name": "TopicType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单节点主题队列数量",
+          "example": "无",
+          "member": "int64",
+          "name": "QueueNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费堆积",
+          "example": "无",
+          "member": "int64",
+          "name": "ConsumerLag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅规则",
+          "example": "无",
+          "member": "string",
+          "name": "SubString",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后消费进度更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TopicItem": {
       "document": "列表上的主题信息",

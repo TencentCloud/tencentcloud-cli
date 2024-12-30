@@ -15,7 +15,9 @@ Output:
 {
     "Response": {
         "CcnSet": [
-            {}
+            {
+                "CcnId": "ccn-gyt67ffz"
+            }
         ],
         "TotalCount": 1,
         "RequestId": "ff8a76ff-8900-4169-b126-ff59fdb39b6c"
@@ -40,9 +42,15 @@ Output:
 {
     "Response": {
         "CcnSet": [
-            {},
-            {},
-            {}
+            {
+                "CcnId": "ccn-kwgk02zl"
+            },
+            {
+                "CcnId": "ccn-gyt67ffz"
+            },
+            {
+                "CcnId": "ccn-e7wopzfz"
+            }
         ],
         "TotalCount": 3,
         "RequestId": "6c72d2a1-b60c-464e-b782-ca6efe7c1dd6"
@@ -67,10 +75,18 @@ Output:
 {
     "Response": {
         "CcnSet": [
-            {},
-            {},
-            {},
-            {}
+            {
+                "CcnId": "ccn-d0s0mkw1"
+            },
+            {
+                "CcnId": "ccn-kwgk02zl"
+            },
+            {
+                "CcnId": "ccn-gyt67ffz"
+            },
+            {
+                "CcnId": "ccn-e7wopzfz"
+            }
         ],
         "TotalCount": 5,
         "RequestId": "495efea0-0073-451c-a577-77a23626432c"

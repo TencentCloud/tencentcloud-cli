@@ -21,13 +21,13 @@ Output:
         "NetDetails": [
             {
                 "Current": 0,
-                "Time": "abc"
+                "Time": "1735259400"
             }
         ],
         "MaxValue": 0,
         "AvgValue": 0,
         "TotalValue": 0,
-        "RequestId": "abc"
+        "RequestId": "bd89e515-20b4-445b-a88d-7355e76f8d22"
     }
 }
 ```

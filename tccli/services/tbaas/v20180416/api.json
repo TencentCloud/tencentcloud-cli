@@ -3035,7 +3035,7 @@
         {
           "disabled": false,
           "document": "服务类型，iss或者dam",
-          "example": "",
+          "example": "iss",
           "member": "string",
           "name": "Service",
           "required": true,
@@ -3044,7 +3044,7 @@
         {
           "disabled": false,
           "document": "服务接口，要调用的方法函数名",
-          "example": "",
+          "example": "Iss_Append",
           "member": "string",
           "name": "Method",
           "required": true,
@@ -3053,7 +3053,7 @@
         {
           "disabled": false,
           "document": "用户自定义json字符串",
-          "example": "",
+          "example": "{\"test\":\"test\"}",
           "member": "string",
           "name": "Param",
           "required": true,
@@ -3068,27 +3068,30 @@
         {
           "disabled": false,
           "document": "返回码",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RetCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回消息",
-          "example": "",
+          "example": "ok",
           "member": "string",
           "name": "RetMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "返回数据",
-          "example": "",
+          "example": "{\"version\":\"2.0\",\"sign_type\":\"ECDSA\"}",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

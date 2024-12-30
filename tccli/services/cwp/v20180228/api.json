@@ -57063,8 +57063,8 @@
         },
         {
           "disabled": false,
-          "document": "检索分析语句，最大长度为12KB",
-          "example": "status: \"异常登录\" AND public_ip_addresses: (1* OR 2* OR 3* OR 4* OR 5* OR 6* OR 7* OR 8* OR 9*) AND NOT hostip: (10.128.200.* OR 10.129.24.212) AND NOT src_ip: (10.128.128.7 OR 192.144.182.173) AND NOT username: ****",
+          "document": "检索分析语句，最大长度为12KB，查询语法可参考文档https://cloud.tencent.com/document/product/296/50508",
+          "example": "status: \"待处理\" AND public_ip_addresses: (1* OR 2*)",
           "member": "string",
           "name": "QueryString",
           "required": true,
@@ -57146,7 +57146,7 @@
         {
           "disabled": false,
           "document": "匹配检索条件的原始日志",
-          "example": "{\n    \"Content\": \"{\\\"create_time\\\":\\\"2022-07-01 10:00:27 +0800 CST\\\",\\\"hostip\\\":\\\"10.0.0.6\\\",\\\"level\\\":\\\"中危\\\",\\\"modify_time\\\":\\\"2022-07-01 10:17:05 +0800 CST\\\",\\\"remark\\\":\\\"\\\",\\\"uuid\\\":\\\"13bb1e16-9a7a-434d-9686-4328f72c97d7\\\",\\\"is_emergency\\\":\\\"False\\\",\\\"reference\\\":\\\"https://www.phpmyadmin.net/security/PMASA-2016-20/\\\",\\\"path\\\":\\\"/var/www/html/phpmyadmin\\\",\\\"fix\\\":\\\"1、建议升级到官方最新版本，官网地址：https://www.phpmyadmin.net\\\",\\\"cve_id\\\":\\\"CVE-2016-5704\\\",\\\"cls_event_type\\\":\\\"Web-CMS_vul\\\",\\\"appid\\\":\\\"1256299843\\\",\\\"name\\\":\\\"phpMyAdmin 4.6.x 表结构页面存在XSS漏洞\\\",\\\"id\\\":\\\"771\\\",\\\"vul_category\\\":\\\"Web-CMS漏洞\\\",\\\"descript\\\":\\\"漏洞文件路径: /var/www/html/phpmyadmin/templates/table/structure/display_table_stats.phtml\\\",\\\"event_status\\\":\\\"modify\\\",\\\"status\\\":\\\"待处理\\\"}\",\n    \"FileName\": \"filename\",\n    \"Source\": \"30.46.128.22\",\n    \"TimeStamp\": 1656641946000\n}",
+          "example": "{\"Content\": \"{\\\"hostip\\\":\\\"10.0.0.6\\\",\\\"event_status\\\":\\\"modify\\\",\\\"status\\\":\\\"待处理\\\"}\", \"TimeStamp\": 1656641946000}",
           "member": "LogInfo",
           "name": "Data",
           "output_required": true,

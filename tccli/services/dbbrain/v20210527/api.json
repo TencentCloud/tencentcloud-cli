@@ -646,7 +646,7 @@
         {
           "disabled": false,
           "document": "接收用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ReceiveGroup\":[{\"GroupName\":\"demoUserGrp\",\"GroupId\":\"196400\"}],\"EndReceiveTime\":\"23:59:59\",\"ReceiveName\":\"通知操作1\",\"SendChannel\":[8,4,32],\"StartReceiveTime\":\"00:00:00\",\"ReceiveUin\":[{\"UinName\":\"demoUser\",\"Uin\":\"100018983000\"}]}]",
+          "example": "无",
           "member": "ReceiveInfo",
           "name": "ReceiveInfo",
           "output_required": false,

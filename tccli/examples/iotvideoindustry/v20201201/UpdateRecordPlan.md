@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli iotvideoindustry UpdateRecordPlan --cli-unfold-argument  \
-    --PlanId plan-xxxxx \
-    --Name xxxxxx \
-    --TimeTemplateId tgrp-xxxxx \
+    --PlanId plan-allday \
+    --Name allday \
+    --TimeTemplateId tgrp-allday \
     --EventId 1 \
     --IsModifyDevices 1 \
-    --Devices.0.DeviceId xxxx
+    --Devices.0.DeviceId 99870353841320000007_99870353841320000007
 ```
 
 Output: 

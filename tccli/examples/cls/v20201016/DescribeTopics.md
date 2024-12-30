@@ -6,41 +6,44 @@ Input:
 
 ```
 tccli cls DescribeTopics --cli-unfold-argument  \
-    --Offset 10 \
-    --Limit 30
+    --Offset 0 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "9402a324-xxxx-xxxx-xxxx-2bc613cd187e",
         "Topics": [
             {
-                "LogsetId": "46c34030-f7fd-xxxx-91ee-053215c2bf9c",
-                "TopicId": "305f8be8-25a9-xxxx-8f05-361dafab39fe",
-                "TopicName": "test",
-                "PartitionCount": 1,
-                "Index": true,
                 "AssumerName": "",
-                "SubAssumerName": "",
-                "CreateTime": "2022-12-30 16:02:52",
-                "Status": true,
-                "Tags": [],
                 "AutoSplit": true,
-                "MaxSplitPartitions": 50,
-                "StorageType": "hot",
-                "Period": 27,
-                "Describes": "",
-                "HotPeriod": 0,
                 "BizType": 0,
-                "IsWebTracking": false,
+                "CreateTime": "2024-12-26 19:28:55",
+                "Describes": "",
+                "EffectiveDate": "",
                 "Extends": {
                     "AnonymousAccess": null
-                }
+                },
+                "HotPeriod": 0,
+                "Index": true,
+                "IsWebTracking": false,
+                "LogsetId": "fd0605ca-xxxx-xxxx-xxxx-592e5233c2db",
+                "MaxSplitPartitions": 50,
+                "MigrationStatus": 0,
+                "PartitionCount": 1,
+                "Period": 1,
+                "Status": true,
+                "StorageType": "hot",
+                "SubAssumerName": "",
+                "Tags": [],
+                "TopicAsyncTaskID": "",
+                "TopicId": "8a41c585-xxxx-xxxx-xxxx-c358a595f662",
+                "TopicName": "topic-name-test"
             }
         ],
-        "RequestId": "cdb48d76-9be0-xxxx-8654-56290de7442e",
-        "TotalCount": 1
+        "TotalCount": 1544
     }
 }
 ```

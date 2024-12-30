@@ -509,7 +509,7 @@
         },
         {
           "disabled": false,
-          "document": "license付费方式： \n0，月度授权 \n1，永久授权 \n若不传则默认为月度授权",
+          "document": "license付费方式： \n0，月度授权 \n1，永久授权 \n若不传则默认为月度授权，永久授权设备需要调用OrderPerLicense接口支付授权费，否则设备无法使用",
           "example": "0",
           "member": "int64",
           "name": "LicensePayMode",
@@ -562,7 +562,7 @@
         {
           "disabled": false,
           "document": "设备ID",
-          "example": "xxx",
+          "example": "mna-w795bzezug",
           "member": "string",
           "name": "DeviceId",
           "output_required": true,
@@ -572,10 +572,10 @@
         {
           "disabled": false,
           "document": "签名字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxxxx\"",
+          "example": "\"test\"",
           "member": "string",
           "name": "Signature",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -695,7 +695,7 @@
         {
           "disabled": false,
           "document": "CIDR1对应的设备ID",
-          "example": "abc",
+          "example": "mna-de234ff",
           "member": "string",
           "name": "DeviceId1",
           "required": true,
@@ -817,10 +817,10 @@
         {
           "disabled": false,
           "document": "预置密钥",
-          "example": "\"xxxxx\"",
+          "example": "\"BgkqhkiG9w0BAQ\"",
           "member": "string",
           "name": "EncryptedKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1865,7 +1865,7 @@
         {
           "disabled": false,
           "document": "设备ID列表",
-          "example": "无",
+          "example": "[     \"mna-test1\",         \"mna-test2\",         \"mna-test3\"     ]",
           "member": "string",
           "name": "DeviceIdList",
           "required": true,
@@ -1983,6 +1983,7 @@
           "example": "无",
           "member": "DeviceBaseInfo",
           "name": "DeviceInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1992,6 +1993,7 @@
           "example": "20",
           "member": "int64",
           "name": "Length",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2001,6 +2003,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalPage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2037,7 +2040,7 @@
           "example": "http://ip:port/callurl",
           "member": "string",
           "name": "NotifyUrl",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2047,7 +2050,7 @@
           "example": "xd23y5cb89bx23432",
           "member": "string",
           "name": "CallbackKey",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2699,7 +2702,7 @@
         {
           "disabled": false,
           "document": "关键字",
-          "example": "xxx",
+          "example": "test",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -2774,7 +2777,7 @@
         {
           "disabled": false,
           "document": "搜索分组的DeviceId，为空时匹配所有分组",
-          "example": "abc",
+          "example": "devid",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -2976,7 +2979,7 @@
           "example": "无",
           "member": "MonitorData",
           "name": "MonitorData",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3010,10 +3013,10 @@
         {
           "disabled": false,
           "document": "非对称公钥",
-          "example": "\"xxxxx\"",
+          "example": "\"-----BEGIN RSA Public Key-----\\nMIIBIjANBgkqhkiG9w0Bd7Fqz8X\\no+TronsIDAQAB\\n-----END RSA Public Key-----\"",
           "member": "string",
           "name": "PublicKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3656,7 +3659,7 @@
         {
           "disabled": false,
           "document": "流量包的唯一资源ID",
-          "example": "无",
+          "example": "56d11777-50f7-4c60-9c89-e7076c8529a9-0",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -4099,7 +4102,7 @@
         {
           "disabled": false,
           "document": "设备备注",
-          "example": "\"xxx\"",
+          "example": "\"remark\"",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -4153,7 +4156,7 @@
         {
           "disabled": false,
           "document": "分组备注",
-          "example": "\"xxx\"",
+          "example": "\"描述\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4180,7 +4183,7 @@
         {
           "disabled": false,
           "document": "硬件ID",
-          "example": "xxx",
+          "example": "cpe-6zmf86knqu",
           "member": "string",
           "name": "HardwareId",
           "required": true,
@@ -4189,7 +4192,7 @@
         {
           "disabled": false,
           "document": "硬件序列号",
-          "example": "xxx",
+          "example": "adsqda",
           "member": "string",
           "name": "SN",
           "required": false,
@@ -4198,7 +4201,7 @@
         {
           "disabled": false,
           "document": "设备备注",
-          "example": "xxx",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4225,7 +4228,7 @@
         {
           "disabled": false,
           "document": "互通规则ID",
-          "example": "\"l3conn-xxx\"",
+          "example": "\"l3conn-c0rkbqhig\"",
           "member": "string",
           "name": "L3ConnId",
           "required": true,
@@ -4234,7 +4237,7 @@
         {
           "disabled": false,
           "document": "互通规则CIDR",
-          "example": "\"xxx\"",
+          "example": "\"192.168.0.0/28\"",
           "member": "string",
           "name": "Cidr1",
           "required": true,
@@ -4243,7 +4246,7 @@
         {
           "disabled": false,
           "document": "互通设备ID",
-          "example": "abc",
+          "example": "mna-f8v7e6o43g",
           "member": "string",
           "name": "DeviceId1",
           "required": false,
@@ -4252,7 +4255,7 @@
         {
           "disabled": false,
           "document": "互通设备ID",
-          "example": "cde",
+          "example": "mna-f8v7e6o432",
           "member": "string",
           "name": "DeviceId2",
           "required": false,
@@ -4261,7 +4264,7 @@
         {
           "disabled": false,
           "document": "互通规则CIDR",
-          "example": "\"xxx\"",
+          "example": "\"192.168.0.16/28\"",
           "member": "string",
           "name": "Cidr2",
           "required": false,
@@ -4288,7 +4291,7 @@
         {
           "disabled": false,
           "document": "互通规则ID",
-          "example": "xxx",
+          "example": "l3conn-c0rkbqhig8",
           "member": "string",
           "name": "L3ConnId",
           "required": true,
@@ -4297,7 +4300,7 @@
         {
           "disabled": false,
           "document": "互通规则备注",
-          "example": "\"xxx\"",
+          "example": "\"test\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4324,7 +4327,7 @@
         {
           "disabled": false,
           "document": "互通规则ID",
-          "example": "\"xxx\"",
+          "example": "\"id-1\"",
           "member": "string",
           "name": "L3ConnId",
           "required": true,

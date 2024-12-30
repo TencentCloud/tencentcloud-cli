@@ -32,7 +32,7 @@ tccli tem DeployApplication --cli-unfold-argument  \
     --Service.ServicePortMappingList.0.ExternalIp 10.xx.xx.xx \
     --Service.ServicePortMappingList.0.ExternalDomain ext.domain.com \
     --Service.ServicePortMappingList.0.SubnetId subnet-xxx \
-    --Service.ServicePortMappingList.0.VpcId vpc-xxx \
+    --Service.ServicePortMappingList.0.VpcId vpc-oxyzq5xx \
     --Service.ServicePortMappingList.0.LoadBalanceId 10.xx.xx.xx \
     --Service.ServicePortMappingList.0.Yaml apiVersion: xxxxx \
     --Service.ServicePortMappingList.0.Ports 8080 \

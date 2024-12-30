@@ -606,8 +606,7 @@
           "member": "string",
           "name": "RecordType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -616,8 +615,7 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -626,8 +624,7 @@
           "member": "string",
           "name": "SubDomain",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -636,8 +633,7 @@
           "member": "string",
           "name": "RecordLine",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -646,8 +642,7 @@
           "member": "string",
           "name": "RecordLineId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -656,8 +651,7 @@
           "member": "uint64",
           "name": "Weight",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -666,8 +660,7 @@
           "member": "uint64",
           "name": "MX",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -676,8 +669,7 @@
           "member": "uint64",
           "name": "TTL",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -686,18 +678,16 @@
           "member": "uint64",
           "name": "Enabled",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "记录备注(暂未支持)。",
-          "example": "test",
+          "example": "记录的备注信息",
           "member": "string",
           "name": "Remark",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -953,6 +943,7 @@
           "example": "EG34GE",
           "member": "string",
           "name": "SnapshotId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -962,6 +953,7 @@
           "example": "321",
           "member": "uint64",
           "name": "CostMinutes",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -971,6 +963,7 @@
           "example": "xxyy.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -980,6 +973,7 @@
           "example": "234",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -989,6 +983,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Timeout",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -998,6 +993,7 @@
           "example": "13",
           "member": "uint64",
           "name": "Failed",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1007,6 +1003,7 @@
           "example": "无",
           "member": "SnapshotRecord",
           "name": "FailedRecordList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1103,18 +1100,20 @@
         {
           "disabled": false,
           "document": "大订单号，一个大订单号下可以有多个子订单，说明是同一次下单",
-          "example": "xxxx",
+          "example": "20170101122341",
           "member": "string",
           "name": "BigDealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子订单列表",
-          "example": "[{\"DealId\":\"xxx\",\"DealName\":\"xxx\"\"}]",
+          "example": "无",
           "member": "Deals",
           "name": "DealList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1387,6 +1386,7 @@
           "example": "无",
           "member": "CreateDomainBatchDetail",
           "name": "DetailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1396,6 +1396,7 @@
           "example": "10",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1468,7 +1469,7 @@
         {
           "disabled": false,
           "document": "域名分组",
-          "example": "无",
+          "example": "常用域名",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1483,9 +1484,10 @@
         {
           "disabled": false,
           "document": "域名分组ID",
-          "example": "无",
+          "example": "43957",
           "member": "int64",
           "name": "GroupId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2113,7 +2115,7 @@
         {
           "disabled": false,
           "document": "记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
-          "example": "123",
+          "example": "54543",
           "member": "uint64",
           "name": "GroupId",
           "required": false,
@@ -2204,6 +2206,7 @@
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2213,6 +2216,7 @@
           "example": "dnspodcheck",
           "member": "string",
           "name": "Subdomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2222,15 +2226,17 @@
           "example": "TXT",
           "member": "string",
           "name": "RecordType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "需要添加 TXT 记录的记录值。",
-          "example": "无",
+          "example": "3D015C717021A7A639D53673DB781317",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2330,7 +2336,7 @@
         {
           "disabled": false,
           "document": "记录分组 Id。可以通过接口 DescribeRecordGroupList 接口 GroupId 字段获取。",
-          "example": "123",
+          "example": "3430",
           "member": "uint64",
           "name": "GroupId",
           "required": false,
@@ -2724,7 +2730,7 @@
           "example": "12124",
           "member": "uint64",
           "name": "DomainId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2734,7 +2740,7 @@
           "example": "domain.com",
           "member": "string",
           "name": "Domain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2744,7 +2750,7 @@
           "example": "error",
           "member": "string",
           "name": "Error",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2754,7 +2760,7 @@
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2764,17 +2770,17 @@
           "example": "remove",
           "member": "string",
           "name": "Operation",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "解析记录列表，json 序列化之后的字符串形式",
-          "example": "无",
+          "example": "[{\"id\":0,\"domain_id\":\"972\",\"sub_domain\":\"photo\",\"area\":\"\\u9ed8\\u8ba4\",\"record_type\":\"A\",\"ttl\":\"600\",\"value\":\"4.4.4.4\",",
           "member": "string",
           "name": "RecordList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3118,6 +3124,7 @@
           "example": "无",
           "member": "DescribeBatchTaskDetail",
           "name": "DetailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3127,6 +3134,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3136,6 +3144,7 @@
           "example": "2",
           "member": "uint64",
           "name": "SuccessCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3145,6 +3154,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3154,6 +3164,7 @@
           "example": "record_modify",
           "member": "string",
           "name": "JobType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3163,6 +3174,7 @@
           "example": "2021-04-02 15:57:14",
           "member": "string",
           "name": "CreatedAt",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3262,7 +3274,7 @@
         {
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
-          "example": "1111",
+          "example": "1143114",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -3280,6 +3292,7 @@
           "example": "无",
           "member": "DomainAnalyticsDetail",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3289,6 +3302,7 @@
           "example": "无",
           "member": "DomainAnalyticsInfo",
           "name": "Info",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3298,6 +3312,7 @@
           "example": "无",
           "member": "DomainAliasAnalyticsItem",
           "name": "AliasData",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3343,15 +3358,17 @@
           "example": "无",
           "member": "CustomLineInfo",
           "name": "LineList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可添加的自定义线路条数",
-          "example": "无",
+          "example": "4395",
           "member": "uint64",
           "name": "AvailableCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4112,15 +4129,17 @@
           "example": "无",
           "member": "PackageDetailItem",
           "name": "Info",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "套餐代码列表",
-          "example": "无",
+          "example": "[\"D_Free\",\"DP_Free\",\"DP_Plus\",\"D_Plus\",\"D_Extra\",\"DP_Extra\",\"D_Expert\",\"D_Ultra\",\"DP_Expert\",\"DP_Ultra\",\"DP_Local\"]",
           "member": "string",
           "name": "LevelMap",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4510,7 +4529,7 @@
         {
           "disabled": false,
           "document": "要查询线路列表的域名 ID。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口 DescribeDomainList 查到所有的 Domain 以及 DomainId。",
-          "example": "123",
+          "example": "97213027",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -4794,6 +4813,7 @@
           "example": "无",
           "member": "RecordInfo",
           "name": "RecordInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4962,9 +4982,10 @@
         {
           "disabled": false,
           "document": "记录类型列表",
-          "example": "无",
+          "example": "[\"A\",\"CNAME\",\"MX\",\"TXT\",\"AAAA\",\"NS\",\"CAA\",\"SRV\",\"HTTPS\",\"SVCB\",\"SPF\",\"显性URL\",\"隐性URL\"]",
           "member": "string",
           "name": "TypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5118,6 +5139,7 @@
           "example": "xxyy.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5127,6 +5149,7 @@
           "example": "341",
           "member": "uint64",
           "name": "LeftMinutes",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5136,6 +5159,7 @@
           "example": "11",
           "member": "uint64",
           "name": "Progress",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5145,6 +5169,7 @@
           "example": "DFG335E",
           "member": "string",
           "name": "SnapshotId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5154,15 +5179,17 @@
           "example": "waiting",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照回滚任务 ID",
-          "example": "123",
+          "example": "689167",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5172,6 +5199,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Success",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5181,6 +5209,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Failed",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5190,6 +5219,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5199,6 +5229,7 @@
           "example": "无",
           "member": "SnapshotRecord",
           "name": "FailedRecordList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5208,6 +5239,7 @@
           "example": "http://cos.xx.com/xxx.csv",
           "member": "string",
           "name": "CosUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5253,6 +5285,7 @@
           "example": "xxyy.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5262,6 +5295,7 @@
           "example": "DFG335E",
           "member": "string",
           "name": "SnapshotId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5271,15 +5305,17 @@
           "example": "waiting",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照回滚任务 ID",
-          "example": "123",
+          "example": "689168",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5289,6 +5325,7 @@
           "example": "2",
           "member": "uint64",
           "name": "RecordCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5298,6 +5335,7 @@
           "example": "2022-09-21 14:37:32",
           "member": "string",
           "name": "CreatedOn",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5316,7 +5354,7 @@
         {
           "disabled": false,
           "document": "要查询解析量的域名",
-          "example": "example.com",
+          "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5325,7 +5363,7 @@
         {
           "disabled": false,
           "document": "查询的开始时间，格式：YYYY-MM-DD",
-          "example": "2022-06-08",
+          "example": "2024-12-30",
           "member": "string",
           "name": "StartDate",
           "required": true,
@@ -5334,7 +5372,7 @@
         {
           "disabled": false,
           "document": "查询的结束时间，格式：YYYY-MM-DD",
-          "example": "2022-06-14",
+          "example": "2024-12-30",
           "member": "string",
           "name": "EndDate",
           "required": true,
@@ -5361,7 +5399,7 @@
         {
           "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
-          "example": "1111",
+          "example": "12620688",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -5831,7 +5869,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "123456",
+          "example": "65456",
           "member": "uint64",
           "name": "DomainId",
           "output_required": true,
@@ -6670,7 +6708,7 @@
           "example": "15=0",
           "member": "string",
           "name": "LineId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6680,7 +6718,7 @@
           "example": "华北",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6690,17 +6728,17 @@
           "example": "system",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "线路分组包含的线路列表",
-          "example": "无",
+          "example": "[\"电信\",\"安徽电信\",\"北京电信\"]",
           "member": "string",
           "name": "LineList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -6844,7 +6882,7 @@
           "example": "电信",
           "member": "string",
           "name": "LineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6854,7 +6892,7 @@
           "example": "10=0",
           "member": "string",
           "name": "LineId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6864,7 +6902,7 @@
           "example": "true",
           "member": "bool",
           "name": "Useful",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6874,7 +6912,7 @@
           "example": "DP_Free",
           "member": "string",
           "name": "Grade",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6884,17 +6922,17 @@
           "example": "无",
           "member": "LineItem",
           "name": "SubGroup",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "自定义线路分组内包含的线路。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"电信\",\"安徽电信\",\"北京电信\"]",
           "member": "string",
           "name": "Lines",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -7294,7 +7332,7 @@
         {
           "disabled": false,
           "document": "记录ID。 可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
-          "example": "162",
+          "example": "16411867",
           "member": "uint64",
           "name": "RecordId",
           "required": true,
@@ -7303,7 +7341,7 @@
         {
           "disabled": false,
           "document": "记录线路，通过 API 记录线路获得，中文，比如：默认。",
-          "example": "默认",
+          "example": "联通",
           "member": "string",
           "name": "RecordLine",
           "required": true,
@@ -7311,17 +7349,8 @@
         },
         {
           "disabled": false,
-          "document": "记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。",
-          "example": "200.200.200.200",
-          "member": "string",
-          "name": "Value",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
-          "example": "1923",
+          "example": "12620688",
           "member": "uint64",
           "name": "DomainId",
           "required": false,
@@ -7347,6 +7376,15 @@
         },
         {
           "disabled": false,
+          "document": "IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::",
+          "example": "119.29.29.29",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "TTL值，如果不传，默认为域名的TTL值。",
           "example": "600",
           "member": "uint64",
@@ -7363,9 +7401,10 @@
         {
           "disabled": false,
           "document": "记录ID",
-          "example": "162",
+          "example": "16411867",
           "member": "uint64",
           "name": "RecordId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7569,7 +7608,7 @@
         {
           "disabled": false,
           "document": "记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId",
-          "example": "[31,32]",
+          "example": "[15736895]",
           "member": "uint64",
           "name": "RecordIdList",
           "required": true,
@@ -7578,7 +7617,7 @@
         {
           "disabled": false,
           "document": "要修改的字段，可选值为 [“sub_domain”、”record_type”、”area”、”value”、”mx”、”ttl”、”status”] 中的某一个。",
-          "example": "sub_domain",
+          "example": "record_type",
           "member": "string",
           "name": "Change",
           "required": true,
@@ -7587,7 +7626,7 @@
         {
           "disabled": false,
           "document": "修改为，具体依赖 change 字段，必填参数。",
-          "example": "www",
+          "example": "MX",
           "member": "string",
           "name": "ChangeTo",
           "required": true,
@@ -7596,7 +7635,7 @@
         {
           "disabled": false,
           "document": "要修改到的记录值，仅当 change 字段为 “record_type” 时为必填参数。",
-          "example": "test",
+          "example": "mail.dnspod.cn",
           "member": "string",
           "name": "Value",
           "required": false,
@@ -7605,7 +7644,7 @@
         {
           "disabled": false,
           "document": "MX记录优先级，仅当修改为 MX 记录时为必填参数。",
-          "example": "test",
+          "example": "5",
           "member": "string",
           "name": "MX",
           "required": false,
@@ -7620,9 +7659,10 @@
         {
           "disabled": false,
           "document": "批量任务ID",
-          "example": "101",
+          "example": "1808535",
           "member": "uint64",
           "name": "JobId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7632,6 +7672,7 @@
           "example": "无",
           "member": "ModifyRecordBatchDetail",
           "name": "DetailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8507,6 +8548,7 @@
           "example": " [   \"236674026\"     ]",
           "member": "string",
           "name": "DealIdList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8516,6 +8558,7 @@
           "example": "[   \"2020111161300016142108\"     ]",
           "member": "string",
           "name": "BigDealIdList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8525,6 +8568,7 @@
           "example": "[  \"2020111161300016142141\"     ]",
           "member": "string",
           "name": "DealNameList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9163,9 +9207,10 @@
         {
           "disabled": false,
           "document": "回滚任务 ID，用来查询回滚状态",
-          "example": "123",
+          "example": "689169",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9342,9 +9387,10 @@
         {
           "disabled": false,
           "document": "子域名",
-          "example": "test",
+          "example": "www",
           "member": "string",
           "name": "SubDomain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9355,6 +9401,7 @@
           "example": "A",
           "member": "string",
           "name": "RecordType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9365,6 +9412,7 @@
           "example": "默认",
           "member": "string",
           "name": "RecordLine",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9375,6 +9423,7 @@
           "example": "0.0.0.0",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9385,6 +9434,7 @@
           "example": "600",
           "member": "string",
           "name": "TTL",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9395,6 +9445,7 @@
           "example": "15689601",
           "member": "string",
           "name": "RecordId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9405,6 +9456,7 @@
           "example": "0",
           "member": "string",
           "name": "MX",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9415,6 +9467,7 @@
           "example": "20",
           "member": "string",
           "name": "Weight",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9425,6 +9478,7 @@
           "example": "线路不存在",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9797,121 +9851,121 @@
       "members": [
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Changsha",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CN",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "电子邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testuser@dnspod.cn",
           "member": "string",
           "name": "Email",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "传真\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0434-439752",
           "member": "string",
           "name": "Fax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "传真分机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "324",
           "member": "string",
           "name": "FaxExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "REDACTED FOR PRIVACY",
           "member": "string",
           "name": "Handle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Jerry",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "组织机构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试的组织",
           "member": "string",
           "name": "Organization",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "189XXXX435",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "邮编\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4253006",
           "member": "string",
           "name": "PostalCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "省份/州\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Hu Nan",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "街道地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Zhong Jian Zhi Hui Gu",
           "member": "string",
           "name": "Street",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9974,7 +10028,7 @@
         {
           "disabled": false,
           "document": "域名配置的NS\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ns3.dnsv5.com\",\"ns4.dnsv5.com\"]",
           "member": "string",
           "name": "NameServers",
           "output_required": true,
@@ -9984,7 +10038,7 @@
         {
           "disabled": false,
           "document": "Whois原始信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Domain Name: testclb.asia\\nRegistry Domain ID: 496a7f7f724a4353b2b2fa5ffe5f9c7f-DONUTS\\nRegistrar WHOIS Serv",
           "member": "string",
           "name": "Raw",
           "output_required": true,
@@ -9994,7 +10048,7 @@
         {
           "disabled": false,
           "document": "域名注册商\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"DNSPod, Inc.\"]",
           "member": "string",
           "name": "Registrar",
           "output_required": true,
@@ -10004,7 +10058,7 @@
         {
           "disabled": false,
           "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"ok https://icann.org/epp#ok\"]",
           "member": "string",
           "name": "Status",
           "output_required": true,

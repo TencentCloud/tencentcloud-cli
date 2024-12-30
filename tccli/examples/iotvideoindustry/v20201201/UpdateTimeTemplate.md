@@ -8,10 +8,10 @@ Input:
 tccli iotvideoindustry UpdateTimeTemplate --cli-unfold-argument  \
     --IsAllWeek 0 \
     --TimeTemplateSpecs.0.DayofWeek 0 \
-    --TimeTemplateSpecs.0.EndTime xx \
-    --TimeTemplateSpecs.0.BeginTime xx \
-    --Name xx \
-    --TemplateId xxxx
+    --TimeTemplateSpecs.0.EndTime 1624550400 \
+    --TimeTemplateSpecs.0.BeginTime 1624588948 \
+    --Name fmwq1f1a \
+    --TemplateId allday
 ```
 
 Output: 

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli mna ActivateHardware --cli-unfold-argument  \
-    --Hardware.0.Vendor abc \
-    --Hardware.0.SN abc \
-    --Hardware.0.DeviceName abc \
-    --Hardware.0.Description abc \
-    --Hardware.0.DataKey abc
+    --Hardware.0.Vendor vendor \
+    --Hardware.0.SN AN \
+    --Hardware.0.DeviceName name \
+    --Hardware.0.Description test \
+    --Hardware.0.DataKey keys
 ```
 
 Output: 
@@ -19,14 +19,16 @@ Output:
     "Response": {
         "HardwareInfo": [
             {
-                "Vendor": "abc",
-                "SN": "abc",
-                "DeviceName": "abc",
-                "Description": "abc",
-                "DataKey": "abc"
+                "Vendor": "vendor",
+                "SN": "AN",
+                "DeviceName": "name",
+                "Description": "test",
+                "DataKey": "keys",
+                "LicensePayMode": 1,
+                "AccessScope": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "edd378f7-2511-4692-a029-5ca3d22c1884"
     }
 }
 ```

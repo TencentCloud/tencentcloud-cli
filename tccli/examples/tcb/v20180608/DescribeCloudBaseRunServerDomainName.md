@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli tcb DescribeCloudBaseRunServerDomainName --cli-unfold-argument  \
-    --ServerName xxxxxxx \
-    --UserEnvId xxxxx \
-    --UserUin xxxxxx \
-    --ExternalId xxxxxx
+    --ServerName server \
+    --UserEnvId env-sdff \
+    --UserUin 1242344 \
+    --ExternalId sdff
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DomainName": "xxxxxx",
-        "InternalDomain": "xxxxxx",
-        "PublicDomain": "xxxxxx"
+        "RequestId": "sdfsfsdf",
+        "DomainName": "",
+        "InternalDomain": "",
+        "PublicDomain": ""
     }
 }
 ```

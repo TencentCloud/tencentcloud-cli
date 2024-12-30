@@ -6,46 +6,48 @@ Input:
 
 ```
 tccli dnspod ModifyRecordBatch --cli-unfold-argument  \
-    --RecordIdList 101 102 \
+    --RecordIdList 15736895 \
     --Change record_type \
     --ChangeTo MX \
-    --Value test.aaaaaaa.com \
-    --MX 23
+    --Value mail.dnspod.cn \
+    --MX 5
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "ab4f1426-ea15-42ea-8183-dc1b44151166",
         "DetailList": [
             {
+                "Domain": "dnspod.cn",
+                "DomainGrade": "DP_FREE",
+                "DomainId": 12620688,
+                "ErrMsg": null,
+                "Id": 0,
+                "Operation": null,
                 "RecordList": [
                     {
-                        "RecordLine": "默认",
-                        "TTL": 600,
-                        "MX": 21,
-                        "RecordId": 178,
-                        "SubDomain": "test",
-                        "RecordType": "MX",
-                        "Value": "test.aaaaaaa.com.",
                         "Enabled": 1,
-                        "Status": "waiting",
                         "ErrMsg": null,
                         "Id": 0,
-                        "Operation": "edit"
+                        "MX": 5,
+                        "Operation": "edit",
+                        "RecordId": 15736895,
+                        "RecordLine": "默认",
+                        "RecordType": "A",
+                        "Status": "waiting",
+                        "SubDomain": "www",
+                        "TTL": 600,
+                        "Value": "119.29.29.29",
+                        "Weight": 10,
+                        "Remark": "备注"
                     }
                 ],
-                "DomainId": 49,
-                "Domain": "dnsapi1.cn",
-                "ErrMsg": null,
-                "Status": "waiting",
-                "Operation": null,
-                "DomainGrade": "DP_FREE",
-                "Id": 0
+                "Status": "waiting"
             }
         ],
-        "JobId": 67
+        "JobId": 1808535,
+        "RequestId": "9d597fb9-713d-4885-b09c-09282bc0a24b"
     }
 }
 ```

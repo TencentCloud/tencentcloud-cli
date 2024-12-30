@@ -524,40 +524,40 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "g_cvm_1w778cgf",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "角色名",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "RoleName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "目录列表",
-          "example": "无",
+          "example": "[\"/data/goosefs\",\"/data/goosefs_data\"]",
           "member": "string",
           "name": "DirectoryList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -869,7 +869,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "g_cvm_h8kz3o02",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -906,7 +906,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "g_cvm_x419f8qc",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -915,7 +915,7 @@
         {
           "disabled": false,
           "document": "角色名",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "RoleName",
           "required": true,
@@ -952,7 +952,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "无",
+          "example": "g_cvm_x419f8qc",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -961,7 +961,7 @@
         {
           "disabled": false,
           "document": "角色名",
-          "example": "无",
+          "example": "GooseFS_QCSLinkedRoleInManageCloudService",
           "member": "string",
           "name": "RoleName",
           "required": false,
@@ -1744,20 +1744,20 @@
         {
           "disabled": false,
           "document": "角色名",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "RoleName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用于goosefs client/sdk等\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "MTY4ODQ2NTA1NF84MzM2X2E3ZWFmMDVmLWI0MzMtNGE2Yi1iOWU2LTZiZDY5OTYwXXXXXX==",
           "member": "string",
           "name": "Token",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

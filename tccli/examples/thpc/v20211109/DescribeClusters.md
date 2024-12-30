@@ -1,6 +1,6 @@
 **Example 1: 查询集群列表**
 
-
+查询集群列表。
 
 Input: 
 
@@ -34,6 +34,12 @@ Output:
                 "ManagerNodeSet": [
                     {
                         "NodeId": "ins-cv6ygpkq"
+                    }
+                ],
+                "LoginNodeCount": 1,
+                "LoginNodeSet": [
+                    {
+                        "NodeId": "ins-cv6ygpkx"
                     }
                 ]
             }

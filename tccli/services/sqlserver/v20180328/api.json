@@ -9792,7 +9792,7 @@
         },
         {
           "disabled": false,
-          "document": "购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本",
+          "document": "购买实例的类型 HA-本地盘高可用(包括双机高可用，alwaysOn集群)，RO-本地盘只读副本，SI-云盘版单节点,BI-商业智能服务，cvmHA-云盘版高可用，cvmRO-云盘版只读副本，MultiHA-多节点，cvmMultiHA-云盘多节点",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -11190,6 +11190,15 @@
           "name": "MultiZones",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。",
+          "example": "[\"ap-guangzhou-6\"]",
+          "member": "DrZoneInfo",
+          "name": "DrZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11203,7 +11212,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsAffect",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11213,7 +11222,7 @@
           "example": "1",
           "member": "int64",
           "name": "Passed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11223,7 +11232,7 @@
           "example": "down",
           "member": "string",
           "name": "ModifyMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11233,7 +11242,7 @@
           "example": "无",
           "member": "CheckItem",
           "name": "CheckItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11777,6 +11786,30 @@
         }
       ],
       "usage": "out"
+    },
+    "DrZoneInfo": {
+      "document": "备机可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备机资源ID",
+          "example": "mssqldr-io91h2",
+          "member": "string",
+          "name": "DrInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备机可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "EventConfig": {
       "document": "设置实例扩展事件阈值",

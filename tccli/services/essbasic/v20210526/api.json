@@ -6861,6 +6861,51 @@
           "name": "AutoActive",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。",
+          "example": "无",
+          "member": "string",
+          "name": "BusinessLicense",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。\t",
+          "example": "深圳市南山区高新区科技中一路腾讯大厦",
+          "member": "string",
+          "name": "ProxyAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。\t",
+          "example": "典子谦",
+          "member": "string",
+          "name": "ProxyLegalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。\n p.s. 如果上传授权书 ，需遵循以下条件 \n1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 \n2. 认证方式AuthorizationTypes必须只能是上传授权书方式\t",
+          "example": "无",
+          "member": "string",
+          "name": "PowerOfAttorneys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "企业认证时个性化能力信息",
+          "example": "无",
+          "member": "OrganizationAuthorizationOptions",
+          "name": "OrganizationAuthorizationOptions",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11250,6 +11295,39 @@
         }
       ],
       "usage": "out"
+    },
+    "OrganizationAuthorizationOptions": {
+      "document": "企业认证可选项，其中包括 社会信用代码是否一致，企业名称是否一致，法人是否一致等信息。\n代表生成链接的时候指定的这些信息不能被用户修改。\n\np.s. 注意这些选项一旦传递，相关的信息也不会被上传的营业执照里面包含的信息所覆盖。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "UniformSocialCreditCodeSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在企业名称不为空时有效",
+          "example": "false",
+          "member": "bool",
+          "name": "OrganizationNameSame",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>p.s. 仅在法人姓名不为空时有效",
+          "example": "false",
+          "member": "bool",
+          "name": "LegalNameSame",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "OrganizationCommonInfo": {
       "document": "企业认证信息参数， 需要保证这些参数跟营业执照中的信息一致。",

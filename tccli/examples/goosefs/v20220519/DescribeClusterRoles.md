@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli goosefs DescribeClusterRoles --cli-unfold-argument  \
-    --ClusterId abc \
-    --RoleName abc
+    --ClusterId g_cvm_x419f8qc \
+    --RoleName GooseFS_QCSLinkedRoleInManageCloudService
 ```
 
 Output: 
@@ -16,15 +16,15 @@ Output:
     "Response": {
         "ClusterRoles": [
             {
-                "ClusterId": "abc",
-                "RoleName": "abc",
-                "Description": "abc",
+                "ClusterId": "g_cvm_x419f8qc",
+                "RoleName": "GooseFS_QCSLinkedRoleInManageCloudService",
+                "Description": "列举集群角色列表",
                 "DirectoryList": [
-                    "abc"
+                    "root"
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "a10aeff3-cc7c-4535-8af5-db3b9bc108cb"
     }
 }
 ```

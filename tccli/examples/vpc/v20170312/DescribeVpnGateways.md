@@ -30,7 +30,7 @@ Output:
                 "CreatedTime": "2020-09-22 00:00:00",
                 "ExpiredTime": "2020-09-22 00:00:00",
                 "IsAddressBlocked": false,
-                "NewPurchasePlan": "",
+                "NewPurchasePlan": "PREPAID_TO_POSTPAID",
                 "RestrictState": "NORMAL",
                 "Zone": "ap-beijing-1",
                 "VpnGatewayQuotaSet": [
@@ -80,9 +80,9 @@ Output:
                         "Name": "cdsuperLarge5"
                     }
                 ],
-                "Version": "abc",
-                "NetworkInstanceId": "abc",
-                "CdcId": "abc",
+                "Version": "IKEV1",
+                "NetworkInstanceId": "vpngw-xxxx",
+                "CdcId": "cluster-xxxxxxxx",
                 "MaxConnection": 5
             }
         ],

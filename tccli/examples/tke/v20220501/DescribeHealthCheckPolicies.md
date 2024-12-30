@@ -8,7 +8,7 @@ Input:
 tccli tke DescribeHealthCheckPolicies --cli-unfold-argument  \
     --Filters.0.Values A \
     --Filters.0.Name HealthCheckPolicyName \
-    --ClusterId xx
+    --ClusterId cls-4h43fuxj
 ```
 
 Output: 
@@ -28,7 +28,7 @@ Output:
             }
         ],
         "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "9bd42c72-dd16-46bc-9d1e-b4020c59fab8"
     }
 }
 ```

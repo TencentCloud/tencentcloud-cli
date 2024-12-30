@@ -6,53 +6,53 @@ Input:
 
 ```
 tccli tcb RollUpdateCloudBaseRunServerVersion --cli-unfold-argument  \
-    --EnvId abc \
-    --VersionName abc \
-    --UploadType abc \
-    --RepositoryType abc \
+    --EnvId  \
+    --VersionName  \
+    --UploadType  \
+    --RepositoryType  \
     --FlowRatio 0 \
-    --DockerfilePath abc \
-    --BuildDir abc \
-    --Cpu abc \
-    --Mem abc \
-    --MinNum abc \
-    --MaxNum abc \
-    --PolicyType abc \
-    --PolicyThreshold abc \
-    --EnvParams abc \
+    --DockerfilePath  \
+    --BuildDir  \
+    --Cpu  \
+    --Mem  \
+    --MinNum  \
+    --MaxNum  \
+    --PolicyType  \
+    --PolicyThreshold  \
+    --EnvParams  \
     --ContainerPort 0 \
-    --ServerName abc \
-    --Repository abc \
-    --Branch abc \
-    --VersionRemark abc \
-    --PackageName abc \
-    --PackageVersion abc \
-    --ImageInfo.RepositoryName abc \
+    --ServerName  \
+    --Repository  \
+    --Branch  \
+    --VersionRemark  \
+    --PackageName  \
+    --PackageVersion  \
+    --ImageInfo.RepositoryName  \
     --ImageInfo.IsPublic True \
-    --ImageInfo.TagName abc \
-    --ImageInfo.ServerAddr abc \
-    --ImageInfo.ImageUrl abc \
-    --CodeDetail.Name.Name abc \
-    --CodeDetail.Name.FullName abc \
-    --CodeDetail.Url abc \
+    --ImageInfo.TagName  \
+    --ImageInfo.ServerAddr  \
+    --ImageInfo.ImageUrl  \
+    --CodeDetail.Name.Name  \
+    --CodeDetail.Name.FullName  \
+    --CodeDetail.Url  \
     --IsRebuild True \
     --InitialDelaySeconds 0 \
-    --MountVolumeInfo.0.Name abc \
-    --MountVolumeInfo.0.MountPath abc \
+    --MountVolumeInfo.0.Name  \
+    --MountVolumeInfo.0.MountPath  \
     --MountVolumeInfo.0.ReadOnly True \
-    --MountVolumeInfo.0.NfsVolumes.0.Server abc \
-    --MountVolumeInfo.0.NfsVolumes.0.Path abc \
+    --MountVolumeInfo.0.NfsVolumes.0.Server  \
+    --MountVolumeInfo.0.NfsVolumes.0.Path  \
     --MountVolumeInfo.0.NfsVolumes.0.ReadOnly True \
-    --MountVolumeInfo.0.NfsVolumes.0.SecretName abc \
+    --MountVolumeInfo.0.NfsVolumes.0.SecretName  \
     --MountVolumeInfo.0.NfsVolumes.0.EnableEmptyDirVolume True \
     --Rollback True \
-    --SnapshotName abc \
-    --CustomLogs abc \
+    --SnapshotName  \
+    --CustomLogs  \
     --EnableUnion True \
-    --OperatorRemark abc \
-    --ServerPath abc \
+    --OperatorRemark  \
+    --ServerPath  \
     --IsUpdateCls True \
-    --PolicyDetail.0.PolicyType abc \
+    --PolicyDetail.0.PolicyType  \
     --PolicyDetail.0.PolicyThreshold 0
 ```
 
@@ -60,10 +60,10 @@ Output:
 ```
 {
     "Response": {
-        "Result": "abc",
-        "VersionName": "abc",
-        "RunId": "abc",
-        "RequestId": "abc"
+        "Result": "succ",
+        "VersionName": "version",
+        "RunId": "",
+        "RequestId": "sdfasfaf"
     }
 }
 ```

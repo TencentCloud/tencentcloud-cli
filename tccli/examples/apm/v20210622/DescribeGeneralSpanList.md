@@ -1,6 +1,6 @@
 **Example 1: 通用查询调用链列表**
 
-根据traceId列表批量查询span，Filters查询参数中将Type设置为in，将traceId列表通过,隔开。
+根据 Trace ID 列表批量查询 Span，Filters 查询参数中将 Type 设置为 in ，将 Trace ID 列表通过,隔开
 
 Input: 
 
@@ -76,7 +76,7 @@ Output:
 
 **Example 2: 通用查询调用链列表2**
 
-指定tag过滤条件拿到span列表。
+指定 Tag 过滤条件拿到 Span 列表
 
 Input: 
 
@@ -108,7 +108,7 @@ Output:
                         "Timestamp": 0,
                         "Fields": [
                             {
-                                "Type": "test",
+                                "Type": "job",
                                 "Value": "=",
                                 "Key": "test1"
                             }
@@ -126,14 +126,14 @@ Output:
                     "ServiceName": "java-order-service",
                     "Tags": [
                         {
-                            "Type": "test",
+                            "Type": "job",
                             "Value": "=",
                             "Key": "test2"
                         }
                     ]
                 },
                 "Timestamp": 0,
-                "OperationName": "/test",
+                "OperationName": "/testOperation",
                 "References": [
                     {
                         "RefType": "1",

@@ -2510,7 +2510,7 @@
         {
           "disabled": false,
           "document": "配置文件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "configId",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -2521,7 +2521,7 @@
         {
           "disabled": false,
           "document": "配置文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "application",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2532,7 +2532,7 @@
         {
           "disabled": false,
           "document": "配置文件命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -2543,7 +2543,7 @@
         {
           "disabled": false,
           "document": "配置文件组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "groupName",
           "member": "string",
           "name": "Group",
           "output_required": true,
@@ -2554,7 +2554,7 @@
         {
           "disabled": false,
           "document": "配置文件内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "configContent",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -2565,7 +2565,7 @@
         {
           "disabled": false,
           "document": "配置文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "text",
           "member": "string",
           "name": "Format",
           "output_required": true,
@@ -2576,7 +2576,7 @@
         {
           "disabled": false,
           "document": "配置文件注释\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -2587,7 +2587,7 @@
         {
           "disabled": false,
           "document": "配置文件状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "status",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -2598,7 +2598,7 @@
         {
           "disabled": false,
           "document": "配置文件标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"taga\",\"tagb\"]",
           "member": "ConfigFileTag",
           "name": "Tags",
           "output_required": true,
@@ -2609,7 +2609,7 @@
         {
           "disabled": false,
           "document": "配置文件创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -2620,7 +2620,7 @@
         {
           "disabled": false,
           "document": "配置文件创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
@@ -2631,7 +2631,7 @@
         {
           "disabled": false,
           "document": "配置文件修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -2642,7 +2642,7 @@
         {
           "disabled": false,
           "document": "配置文件修改者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
@@ -2653,7 +2653,7 @@
         {
           "disabled": false,
           "document": "配置文件发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ReleaseTime",
           "output_required": true,
@@ -2664,7 +2664,7 @@
         {
           "disabled": false,
           "document": "配置文件发布者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "ReleaseBy",
           "output_required": true,
@@ -2703,7 +2703,7 @@
         {
           "disabled": false,
           "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -2714,7 +2714,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -2736,7 +2736,7 @@
         {
           "disabled": false,
           "document": "创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
@@ -2758,7 +2758,7 @@
         {
           "disabled": false,
           "document": "修改者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "userb",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
@@ -2769,7 +2769,7 @@
         {
           "disabled": false,
           "document": "文件数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "FileCount",
           "output_required": true,
@@ -2780,7 +2780,7 @@
         {
           "disabled": false,
           "document": "关联用户，link_users\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"usera\",\"userb\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": true,
@@ -2791,7 +2791,7 @@
         {
           "disabled": false,
           "document": "组id，link_groups\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"group-1\"]",
           "member": "string",
           "name": "GroupIds",
           "output_required": true,
@@ -2802,7 +2802,7 @@
         {
           "disabled": false,
           "document": "remove_link_users\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"usera\"]",
           "member": "string",
           "name": "RemoveUserIds",
           "output_required": true,
@@ -2813,7 +2813,7 @@
         {
           "disabled": false,
           "document": "remove_link_groups\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"group-1\"]",
           "member": "string",
           "name": "RemoveGroupIds",
           "output_required": true,
@@ -2824,7 +2824,7 @@
         {
           "disabled": false,
           "document": "是否可编辑\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Editable",
           "output_required": true,
@@ -2835,7 +2835,7 @@
         {
           "disabled": false,
           "document": "归属者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "Owner",
           "output_required": true,
@@ -2846,7 +2846,7 @@
         {
           "disabled": false,
           "document": "部门\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DepartmentName",
           "member": "string",
           "name": "Department",
           "output_required": false,
@@ -2857,7 +2857,7 @@
         {
           "disabled": false,
           "document": "业务\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "BusinessName",
           "member": "string",
           "name": "Business",
           "output_required": false,
@@ -2868,7 +2868,7 @@
         {
           "disabled": false,
           "document": "配置文件组标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"taga\"]",
           "member": "ConfigFileGroupTag",
           "name": "ConfigFileGroupTags",
           "output_required": false,
@@ -2885,9 +2885,10 @@
         {
           "disabled": false,
           "document": "key-value 键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2895,9 +2896,10 @@
         {
           "disabled": false,
           "document": "key-value 值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Tom",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2911,7 +2913,7 @@
         {
           "disabled": false,
           "document": "发布名称",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "ReleaseName",
           "required": false,
@@ -2920,7 +2922,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -2929,7 +2931,7 @@
         {
           "disabled": false,
           "document": "发布组",
-          "example": "无",
+          "example": "privoder-demo",
           "member": "string",
           "name": "Group",
           "required": false,
@@ -2938,7 +2940,7 @@
         {
           "disabled": false,
           "document": "文件名",
-          "example": "无",
+          "example": "application.yml",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -2947,7 +2949,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "无",
+          "example": "hello",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -2956,7 +2958,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "comment",
           "member": "string",
           "name": "Comment",
           "required": false,
@@ -2965,7 +2967,7 @@
         {
           "disabled": false,
           "document": "格式",
-          "example": "无",
+          "example": "yaml",
           "member": "string",
           "name": "Format",
           "required": false,
@@ -2974,7 +2976,7 @@
         {
           "disabled": false,
           "document": "创建者",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "required": false,
@@ -2983,7 +2985,7 @@
         {
           "disabled": false,
           "document": "修改者",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "required": false,
@@ -3007,7 +3009,7 @@
         {
           "disabled": false,
           "document": "配置文件发布id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -3018,7 +3020,7 @@
         {
           "disabled": false,
           "document": "配置文件发布名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "application",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -3029,7 +3031,7 @@
         {
           "disabled": false,
           "document": "配置文件发布命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -3040,7 +3042,7 @@
         {
           "disabled": false,
           "document": "配置文件发布组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "provider-demo",
           "member": "string",
           "name": "Group",
           "output_required": true,
@@ -3051,7 +3053,7 @@
         {
           "disabled": false,
           "document": "配置文件发布文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "application.yml",
           "member": "string",
           "name": "FileName",
           "output_required": true,
@@ -3062,7 +3064,7 @@
         {
           "disabled": false,
           "document": "配置文件发布内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hello",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -3073,7 +3075,7 @@
         {
           "disabled": false,
           "document": "配置文件发布注释\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -3084,7 +3086,7 @@
         {
           "disabled": false,
           "document": "配置文件发布Md5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "md5hash",
           "member": "string",
           "name": "Md5",
           "output_required": true,
@@ -3095,7 +3097,7 @@
         {
           "disabled": false,
           "document": "配置文件发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Version",
           "output_required": true,
@@ -3106,7 +3108,7 @@
         {
           "disabled": false,
           "document": "配置文件发布创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3117,7 +3119,7 @@
         {
           "disabled": false,
           "document": "配置文件发布创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
@@ -3128,7 +3130,7 @@
         {
           "disabled": false,
           "document": "配置文件发布修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -3139,7 +3141,7 @@
         {
           "disabled": false,
           "document": "配置文件发布修改者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
@@ -3150,7 +3152,7 @@
         {
           "disabled": false,
           "document": "发布描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "config-desc",
           "member": "string",
           "name": "ReleaseDescription",
           "output_required": false,
@@ -3161,7 +3163,7 @@
         {
           "disabled": false,
           "document": "是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Active",
           "output_required": false,
@@ -3172,7 +3174,7 @@
         {
           "disabled": false,
           "document": "格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yaml",
           "member": "string",
           "name": "Format",
           "output_required": false,
@@ -3183,7 +3185,7 @@
         {
           "disabled": false,
           "document": "配置文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "ConfigFileId",
           "output_required": false,
@@ -3200,7 +3202,7 @@
         {
           "disabled": false,
           "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
@@ -3211,7 +3213,7 @@
         {
           "disabled": false,
           "document": "配置分组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "provider-demo",
           "member": "string",
           "name": "Group",
           "output_required": false,
@@ -3222,7 +3224,7 @@
         {
           "disabled": false,
           "document": "文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "application,yml",
           "member": "string",
           "name": "FileName",
           "output_required": false,
@@ -3233,7 +3235,7 @@
         {
           "disabled": false,
           "document": "发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1.0",
           "member": "string",
           "name": "ReleaseVersion",
           "output_required": false,
@@ -3261,7 +3263,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史记录id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -3271,7 +3273,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "configName",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -3281,7 +3283,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -3291,7 +3293,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "provider-demo",
           "member": "string",
           "name": "Group",
           "output_required": true,
@@ -3301,7 +3303,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "application,yml",
           "member": "string",
           "name": "FileName",
           "output_required": true,
@@ -3311,7 +3313,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hello",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -3321,7 +3323,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yaml",
           "member": "string",
           "name": "Format",
           "output_required": true,
@@ -3331,7 +3333,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史注释\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -3341,7 +3343,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史Md5\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "md5hash",
           "member": "string",
           "name": "Md5",
           "output_required": true,
@@ -3351,7 +3353,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "config",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -3361,7 +3363,7 @@
         {
           "disabled": false,
           "document": "配置文件发布历史状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "status",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -3381,7 +3383,7 @@
         {
           "disabled": false,
           "document": "配置文件发布创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -3391,7 +3393,7 @@
         {
           "disabled": false,
           "document": "配置文件发布创建者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
@@ -3401,7 +3403,7 @@
         {
           "disabled": false,
           "document": "配置文件发布修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -3411,7 +3413,7 @@
         {
           "disabled": false,
           "document": "配置文件发布修改者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
@@ -3421,7 +3423,7 @@
         {
           "disabled": false,
           "document": "发布描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "desc",
           "member": "string",
           "name": "ReleaseDescription",
           "output_required": false,
@@ -3431,7 +3433,7 @@
         {
           "disabled": false,
           "document": "原因，用于失败时原因展示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "publish error",
           "member": "string",
           "name": "ReleaseReason",
           "output_required": false,
@@ -3447,9 +3449,10 @@
         {
           "disabled": false,
           "document": "key-value 键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3457,9 +3460,10 @@
         {
           "disabled": false,
           "document": "key-value 值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tom",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10866,7 +10870,7 @@
         {
           "disabled": false,
           "document": "版本信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1.0",
           "member": "string",
           "name": "InstanceVersion",
           "output_required": false,
@@ -10876,7 +10880,7 @@
         {
           "disabled": false,
           "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "health",
           "member": "string",
           "name": "HealthStatus",
           "output_required": false,
@@ -10886,7 +10890,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "comment",
           "member": "string",
           "name": "Comment",
           "output_required": false,
@@ -11336,7 +11340,7 @@
         {
           "disabled": false,
           "document": "可以操作此命名空间的用户ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"usera\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": false,
@@ -11346,7 +11350,7 @@
         {
           "disabled": false,
           "document": "可以操作此命名空间的用户组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"group-1\"]",
           "member": "string",
           "name": "GroupIds",
           "output_required": false,
@@ -11356,7 +11360,7 @@
         {
           "disabled": false,
           "document": "移除可以操作此命名空间的用户ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"usera\"]",
           "member": "string",
           "name": "RemoveUserIds",
           "output_required": false,
@@ -11366,7 +11370,7 @@
         {
           "disabled": false,
           "document": "移除可以操作此命名空间的用户组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"group-1\"]",
           "member": "string",
           "name": "RemoveGroupIds",
           "output_required": false,
@@ -11381,6 +11385,16 @@
           "name": "ServiceExportTo",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启同步到全局注册中心\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncToGlobalRegistry",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -11461,7 +11475,7 @@
         {
           "disabled": false,
           "document": "服务名称。",
-          "example": "无",
+          "example": "provider-demo",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -11471,7 +11485,7 @@
         {
           "disabled": false,
           "document": "命名空间名称。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
@@ -11491,7 +11505,7 @@
         {
           "disabled": false,
           "document": "描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
@@ -11501,7 +11515,7 @@
         {
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -11511,7 +11525,7 @@
         {
           "disabled": false,
           "document": "修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -11521,7 +11535,7 @@
         {
           "disabled": false,
           "document": "服务所属部门。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "departmentName",
           "member": "string",
           "name": "Department",
           "output_required": true,
@@ -11531,7 +11545,7 @@
         {
           "disabled": false,
           "document": "服务所属业务。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "businessName",
           "member": "string",
           "name": "Business",
           "output_required": true,
@@ -11581,7 +11595,7 @@
         {
           "disabled": false,
           "document": "可以编辑该资源的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"usera\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": true,
@@ -11591,7 +11605,7 @@
         {
           "disabled": false,
           "document": "可以编辑该资源的用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"group-1\"]",
           "member": "string",
           "name": "GroupIds",
           "output_required": true,
@@ -11601,7 +11615,7 @@
         {
           "disabled": false,
           "document": "移除可以编辑该资源的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"usera\"]",
           "member": "string",
           "name": "RemoveUserIds",
           "output_required": false,
@@ -11611,7 +11625,7 @@
         {
           "disabled": false,
           "document": "移除可以编辑该资源的用户组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"group-1\"]",
           "member": "string",
           "name": "RemoveGroupIds",
           "output_required": false,
@@ -11631,12 +11645,22 @@
         {
           "disabled": false,
           "document": "该服务信息摘要签名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "hash",
           "member": "string",
           "name": "Revision",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启同步到全局注册中心",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncToGlobalRegistry",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11774,7 +11798,7 @@
         {
           "disabled": false,
           "document": "契约版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "Version",
           "output_required": false,
@@ -11784,7 +11808,7 @@
         {
           "disabled": false,
           "document": "契约名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "config",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -11794,7 +11818,7 @@
         {
           "disabled": false,
           "document": "唯一名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "config-v1",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -13455,9 +13479,10 @@
         {
           "disabled": false,
           "document": "元数据键名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13465,9 +13490,10 @@
         {
           "disabled": false,
           "document": "元数据键值。不填则默认为空字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tom",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -14468,7 +14494,7 @@
         {
           "disabled": false,
           "document": "服务信息。",
-          "example": "无",
+          "example": "provider-demo",
           "member": "GovernanceServiceInput",
           "name": "GovernanceServices",
           "required": true,
@@ -15494,7 +15520,7 @@
         {
           "disabled": false,
           "document": "配置发布的版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "v1",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -15505,7 +15531,7 @@
         {
           "disabled": false,
           "document": "是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Active",
           "output_required": false,
@@ -15516,7 +15542,7 @@
         {
           "disabled": false,
           "document": "配置发布的ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "config-id",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -15527,7 +15553,7 @@
         {
           "disabled": false,
           "document": "配置发布的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
@@ -15538,7 +15564,7 @@
         {
           "disabled": false,
           "document": "配置发布的分组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "groupName",
           "member": "string",
           "name": "Group",
           "output_required": false,
@@ -15549,7 +15575,7 @@
         {
           "disabled": false,
           "document": "配置发布的文件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "FileName",
           "output_required": false,
@@ -16391,9 +16417,10 @@
         {
           "disabled": false,
           "document": "微服务引擎VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxx",
+          "example": "vpc-id",
           "member": "string",
           "name": "VpcID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16401,9 +16428,10 @@
         {
           "disabled": false,
           "document": "微服务引擎子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxx",
+          "example": "subnet-id",
           "member": "string",
           "name": "SubnetID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

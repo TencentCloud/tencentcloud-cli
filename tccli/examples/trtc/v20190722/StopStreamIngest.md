@@ -1,13 +1,13 @@
 **Example 1: 停止输入在线媒体流**
 
-将SdkAppId为1234567890下的任务1234停止
+将SdkAppId为1600011111下的任务HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri停止
 
 Input: 
 
 ```
 tccli trtc StopStreamIngest --cli-unfold-argument  \
-    --SdkAppId 1234567890 \
-    --TaskId 1234
+    --SdkAppId 1600011111 \
+    --TaskId HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri
 ```
 
 Output: 

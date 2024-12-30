@@ -5,36 +5,42 @@
 Input: 
 
 ```
-tccli cls DescribeDataTransformInfo --cli-unfold-argument ```
+tccli cls DescribeDataTransformInfo --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "DataTransformTaskInfos": [
             {
-                "Status": 0,
-                "EnableFlag": 0,
-                "UpdateTime": "2021-08-08 12:12:12",
-                "LastEnableTime": "xxxx",
-                "Name": "我的加工任务",
-                "LogsetId": "xxxx",
-                "SrcTopicName": "我的日志主题",
-                "SrcTopicId": "61b9XXXX-971a-48c7-984d-ca147cf242c1",
+                "CreateTime": "2024-11-29 03:46:57",
+                "DataTransformType": 0,
                 "DstResources": [
                     {
-                        "TopicId": "3d9bXXXX-05a4-4435-ac65-f43e684329b3",
-                        "Alias": "别名"
+                        "Alias": "apilog",
+                        "TopicId": "7f670b29-xxxx-xxxx-a62a-dd026fe66a9f"
                     }
                 ],
-                "TaskId": "e4fcXXXX-5e8a-4fe0-b52c-76eeca53e9af",
-                "EtlContent": "ields_set()",
-                "Type": 0,
-                "CreateTime": "2021-08-0712: 12: 12"
+                "EnableFlag": 1,
+                "EtlContent": "log_keep(op_or(op_str_eq(v(\"logtype\"), \"apilog\"), op_str_eq(v(\"logtype\"), \"ailog\"), op_str_eq(v(\"logtype\"), \"stlog\"), op_str_eq(v(\"logtype\"), \"ranklog\")))\next_json(\"request\")\next_json(\"messages\")\next_json(\"response\")\next_json(\"completion\")",
+                "FailureLogKey": "ETLParseFailure",
+                "KeepFailureLog": 1,
+                "LastEnableTime": "2024-11-29 14:43:18",
+                "LogsetId": "6718ed86-xxxx-xxxx-95e1-24012ee15caf",
+                "Name": "提取 ClsAi Text2CQL API 访问日志",
+                "SrcTopicId": "0bb6b5e6-xxxx-469a-xxxx-ebbe250d083c",
+                "SrcTopicName": "[Test] Text2CQL - 全量日志",
+                "Status": 2,
+                "TaskId": "5d368d4c-xxxx-xxxx-87a6-39802c1e0afe",
+                "Type": 1,
+                "UpdateTime": "2024-11-29 14:45:01"
             }
         ],
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "bf128f9e-xxxx-xxxx-a591-185220479620",
+        "TotalCount": 30
     }
 }
 ```

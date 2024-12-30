@@ -7,11 +7,11 @@ Input:
 ```
 tccli cls CreateDashboardSubscribe --cli-unfold-argument  \
     --Name 每月最后一天早晨10点 \
-    --DashboardId xxx-xxxxxx-xxxxxxx-xxxxxxxx \
-    --Cron 0 0 10 L * ? \
+    --DashboardId dashboard-0d954d68-xxxx-xxxx-95a6-f9eff0db370f \
+    --Cron 0 40 20 * * ? \
     --SubscribeData.DashboardTime 2022-05-01T00:00:00.000 2022-05-31T23:59:59.999 \
     --SubscribeData.TemplateVariables.0.Key name \
-    --SubscribeData.TemplateVariables.0.Values abc \
+    --SubscribeData.TemplateVariables.0.Values zhangsan \
     --SubscribeData.NoticeModes.0.ReceiverType Uin \
     --SubscribeData.NoticeModes.0.Values 168053 \
     --SubscribeData.NoticeModes.0.ReceiverChannels Sms \
@@ -26,7 +26,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "6ef60bec-xxxx-xxxx-bb20-270359fb54a7"
     }
 }
 ```

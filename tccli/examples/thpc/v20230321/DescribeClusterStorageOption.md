@@ -19,13 +19,23 @@ Output:
                     "LocalPath": "/opt/",
                     "RemotePath": "172.30.3.90:/j25ey5tz/hpc-kjddsnfa/opt/",
                     "Protocol": "NFS 3.0",
-                    "StorageType": "SD"
+                    "StorageType": "SD",
+                    "MountOption": "vers=3,nolock,proto=tcp,noresvport"
                 }
             ],
             "GooseFSOptions": [
                 {
                     "LocalPath": "/data/",
-                    "RemotePath": "/",
+                    "RemotePath": "/xxx/cfs/",
+                    "Masters": [
+                        "172.30.4.63:9202",
+                        "172.30.0.128:9202"
+                    ]
+                }
+            ],
+            "GooseFSxOptions": [
+                {
+                    "LocalPath": "/data/",
                     "Masters": [
                         "172.30.4.63:9202",
                         "172.30.0.128:9202"
