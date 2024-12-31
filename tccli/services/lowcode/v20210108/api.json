@@ -533,13 +533,13 @@
         },
         {
           "disabled": false,
-          "document": "当前为环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前为环境 id",
           "example": "lowcode-we34fvsdf",
           "member": "string",
           "name": "PkgId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -553,13 +553,13 @@
         },
         {
           "disabled": false,
-          "document": "创建者用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建者用户 ID",
           "example": "0gs83",
           "member": "string",
           "name": "CreatorId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -583,13 +583,13 @@
         },
         {
           "disabled": false,
-          "document": "环境 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境 id",
           "example": "lowcode-wa2332",
           "member": "string",
           "name": "EnvId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -613,13 +613,13 @@
         },
         {
           "disabled": false,
-          "document": "发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发布时间",
           "example": "2024-11-10 12:00:00",
           "member": "string",
           "name": "PublishedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -643,23 +643,23 @@
         },
         {
           "disabled": false,
-          "document": "云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云函数状态 1 Active 2 Creating 3 Updating 4 Deleting  9 Deleted 11 CreatFailed  12 UpdateFailed 13 DeleteFailed 21 UpdateTimeOut",
           "example": "1",
           "member": "uint64",
           "name": "ScfStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义方法",
           "example": "action1",
           "member": "string",
           "name": "Methods",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -673,13 +673,13 @@
         },
         {
           "disabled": false,
-          "document": "是否旧数据源 1 新 0 旧\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否旧数据源 1 新 0 旧",
           "example": "1",
           "member": "int64",
           "name": "IsNewDataSource",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -743,13 +743,13 @@
         },
         {
           "disabled": false,
-          "document": "数据源子类型   \"database\" 标准模型 \"custom-database\" 自定义模型 \"system\" 系统模型 \"connector\" 连接器 \"custom-connector\" 自定义连接器 \"hidden\" 隐藏数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源子类型   \"database\" 标准模型 \"custom-database\" 自定义模型 \"system\" 系统模型 \"connector\" 连接器 \"custom-connector\" 自定义连接器 \"hidden\" 隐藏数据源",
           "example": "datasource_type",
           "member": "string",
           "name": "SubType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -773,23 +773,23 @@
         },
         {
           "disabled": false,
-          "document": "1发布0未发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1发布0未发布",
           "example": "1",
           "member": "int64",
           "name": "PublishStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新版本",
           "example": "1",
           "member": "int64",
           "name": "UpdateVersion",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -885,53 +885,53 @@
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "MyApp",
           "member": "string",
           "name": "Title",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否编辑状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否编辑状态使用",
           "example": "1",
           "member": "int64",
           "name": "EditStatusUse",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否预览状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否预览状态使用",
           "example": "1",
           "member": "int64",
           "name": "PreviewStatusUse",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否正式状态使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否正式状态使用",
           "example": "1",
           "member": "int64",
           "name": "OnlineStatusUse",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据源ID",
           "example": "data-xxx",
           "member": "string",
           "name": "DataSourceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2878,33 +2878,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "关联关系字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联关系字段",
           "example": "name",
           "member": "string",
           "name": "Field",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联关系格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联关系格式",
           "example": "format_name",
           "member": "string",
           "name": "Format",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联数据源名称",
           "example": "sys_department",
           "member": "string",
           "name": "RelateDataSourceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

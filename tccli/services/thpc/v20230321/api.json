@@ -1329,7 +1329,7 @@
         {
           "disabled": false,
           "document": "工作空间显示名称",
-          "example": "test",
+          "example": "workspace",
           "member": "string",
           "name": "SpaceName",
           "required": false,
@@ -2521,7 +2521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。</li>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2531,7 +2531,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
-          "example": "无",
+          "example": "{\"Period\":1,\"RenewFlag\":\"NOTIFY_AND_AUTO_RENEW\"}\t",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -2539,7 +2539,7 @@
         },
         {
           "disabled": false,
-          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>",
           "example": "S2.SMALL2",
           "member": "string",
           "name": "InstanceType",
@@ -2549,7 +2549,7 @@
         {
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "无",
+          "example": "{\"DiskSize\":50,\"DiskType\":\"CLOUD_PREMIUM\",\"DiskBackupQuota\":1}\t",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -2558,7 +2558,7 @@
         {
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
-          "example": "无",
+          "example": "[{\"DiskSize\":50,\"DiskType\":\"CLOUD_PREMIUM\",\"DiskBackupQuota\":1}]\t",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -2567,7 +2567,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "无",
+          "example": "{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":5}\t",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -2575,7 +2575,7 @@
         },
         {
           "disabled": false,
-          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。",
+          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n最多支持60个字符。</li>",
           "example": "未命名",
           "member": "string",
           "name": "InstanceName",
@@ -2585,7 +2585,7 @@
         {
           "disabled": false,
           "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -2639,7 +2639,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br>默认值：POSTPAID_BY_HOUR。",
+          "document": "节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。</li>\t",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -2649,7 +2649,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月节点的购买时长、是否设置自动续费等属性。若指定节点的付费模式为预付费则该参数必传。",
-          "example": "无",
+          "example": "{\"Period\":1,\"RenewFlag\":\"NOTIFY_AND_AUTO_RENEW\"}\t",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -2657,7 +2657,7 @@
         },
         {
           "disabled": false,
-          "document": "节点机型。不同实例机型指定了不同的资源规格。\n<br><li>对于付费模式为PREPAID或POSTPAID\\_BY\\_HOUR的实例创建，具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。",
+          "document": "节点机型。不同实例机型指定了不同的资源规格。 <br><li>具体取值可通过调用接口[DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/api/213/15749)来获得最新的规格表或参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</li>\t",
           "example": "S2.SMALL2",
           "member": "string",
           "name": "InstanceType",
@@ -2667,7 +2667,7 @@
         {
           "disabled": false,
           "document": "节点系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "无",
+          "example": "{\"DiskSize\":50,\"DiskType\":\"CLOUD_PREMIUM\",\"DiskBackupQuota\":1}\t",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -2676,7 +2676,7 @@
         {
           "disabled": false,
           "document": "节点数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
-          "example": "无",
+          "example": "[{\"DiskSize\":50,\"DiskType\":\"CLOUD_PREMIUM\",\"DiskBackupQuota\":1}]\t",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -2685,7 +2685,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "无",
+          "example": "{\"PublicIpAssigned\":true,\"InternetMaxBandwidthOut\":5}\t",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -2693,7 +2693,7 @@
         },
         {
           "disabled": false,
-          "document": "节点显示名称。<br><li>\n不指定节点显示名称则默认显示‘未命名’。\n</li><li>购买多个节点，如果指定模式串`{R:x}`，表示生成数字[`[x, x+n-1]`，其中`n`表示购买节点的数量，例如`server_{R:3}`，购买1个时，节点显示名称为`server_3`；购买2个时，节点显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。\n购买多个节点，如果不指定模式串，则在节点显示名称添加后缀`1、2...n`，其中`n`表示购买节点的数量，例如`server_`，购买2个时，节点显示名称分别为`server_1`，`server_2`。</li><li>\n最多支持60个字符（包含模式串）。",
+          "document": "节点显示名称。<br><li> 不指定节点显示名称则默认显示‘未命名’。 </li><li>购买多个节点，如果指定模式串`{R:x}`，表示生成数字[`[x, x+n-1]`，其中`n`表示购买节点的数量，例如`server_{R:3}`，购买1个时，节点显示名称为`server_3`；购买2个时，节点显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。 购买多个节点，如果不指定模式串，则在节点显示名称添加后缀`1、2...n`，其中`n`表示购买节点的数量，例如`server_`，购买2个时，节点显示名称分别为`server_1`，`server_2`。</li><li> 最多支持60个字符（包含模式串）。</li>",
           "example": "未命名",
           "member": "string",
           "name": "InstanceName",
@@ -2703,7 +2703,7 @@
         {
           "disabled": false,
           "document": "实例所属项目ID。该参数可以通过调用 [DescribeProject](https://cloud.tencent.com/document/api/651/78725) 的返回值中的 projectId 字段来获取。不填为默认项目。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -2712,7 +2712,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、腾讯云可观测平台等服务。若不指定该参数，则默认开启腾讯云可观测平台、云安全服务、自动化助手服务。",
-          "example": "无",
+          "example": "{\"SecurityService\":{\"Enabled\":true},\"MonitorService\":{\"Enabled\":true},\"AutomationService\":{\"Enabled\":true}}\t",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -3271,8 +3271,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：TRUE。",
-          "example": "无",
+          "document": "是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务</li><br><li>FALSE：表示不开启云自动化助手服务</li><br><br>默认取值：TRUE。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
@@ -3288,8 +3288,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务<br><li>FALSE：表示不开启腾讯云可观测平台服务<br><br>默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务</li><br><li>FALSE：表示不开启腾讯云可观测平台服务</li><br><br>默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
@@ -3305,8 +3305,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云安全](/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务<br><li>FALSE：表示不开启云安全服务<br><br>默认取值：TRUE。",
-          "example": "无",
+          "document": "是否开启[云安全](/document/product/296)服务。取值范围：<br><li>TRUE：表示开启云安全服务</li><br><li>FALSE：表示不开启云安全服务</li><br><br>默认取值：TRUE。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
@@ -3386,7 +3386,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 12, 24, 36。默认取值为1。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "output_required": true,
@@ -3397,7 +3397,7 @@
         {
           "disabled": false,
           "document": "自动续费标识。取值范围：\n\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\n\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\n\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "output_required": true,
@@ -3414,7 +3414,7 @@
         {
           "disabled": false,
           "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />\n<li>\n  LOCAL_BASIC：本地硬盘<br />\n  <li>\n    LOCAL_SSD：本地SSD硬盘<br />\n    <li>\n      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />\n      <li>\n        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />\n        <li>\n          CLOUD_BASIC：普通云硬盘<br />\n          <li>\n            CLOUD_PREMIUM：高性能云硬盘<br />\n            <li>\n              CLOUD_SSD：SSD云硬盘<br />\n              <li>\n                CLOUD_HSSD：增强型SSD云硬盘<br />\n                <li>\n                  CLOUD_TSSD：极速型SSD云硬盘<br />\n                  <li>\n                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。\n                  </li>\n                </li>\n              </li>\n            </li>\n          </li>\n        </li>\n      </li>\n    </li>\n  </li>\n</li>",
-          "example": "无",
+          "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
           "output_required": true,
@@ -3425,7 +3425,7 @@
         {
           "disabled": false,
           "document": "数据盘\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "disk-ciezoimt",
           "member": "string",
           "name": "DiskId",
           "output_required": true,
@@ -3436,7 +3436,7 @@
         {
           "disabled": false,
           "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[存储概述](https://cloud.tencent.com/document/product/213/4952)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DiskSize",
           "output_required": true,
@@ -3447,7 +3447,7 @@
         {
           "disabled": false,
           "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  FALSE：子机销毁时，保留数据盘<br />\n  默认取值：TRUE<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
           "output_required": false,
@@ -3458,7 +3458,7 @@
         {
           "disabled": false,
           "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "snap-6yczrj8x\t",
           "member": "string",
           "name": "SnapshotId",
           "output_required": false,
@@ -3469,7 +3469,7 @@
         {
           "disabled": false,
           "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Encrypt",
           "output_required": false,
@@ -3480,7 +3480,7 @@
         {
           "disabled": false,
           "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `CreateWorkspaces` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "kms-abcd1234\t",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": false,
@@ -3491,7 +3491,7 @@
         {
           "disabled": false,
           "document": "云硬盘性能，单位：MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
           "output_required": false,
@@ -3502,7 +3502,7 @@
         {
           "disabled": false,
           "document": "突发性能\n\n注：内测中。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
           "output_required": false,
@@ -3529,7 +3529,7 @@
         {
           "disabled": false,
           "document": "工作空间类型",
-          "example": "无",
+          "example": "96AS",
           "member": "string",
           "name": "SpaceFamily",
           "output_required": true,
@@ -3539,7 +3539,7 @@
         {
           "disabled": false,
           "document": "工作空间规格",
-          "example": "无",
+          "example": "96AS.4XLARGE160",
           "member": "string",
           "name": "SpaceType",
           "output_required": true,
@@ -3549,7 +3549,7 @@
         {
           "disabled": false,
           "document": "工作空间名称",
-          "example": "无",
+          "example": "workspace",
           "member": "string",
           "name": "SpaceName",
           "output_required": true,
@@ -3559,7 +3559,7 @@
         {
           "disabled": false,
           "document": "工作空间状态。取值范围：<br><li>PENDING：表示创建中<br></li><li>LAUNCH_FAILED：表示创建失败<br></li><li>ONLINE：表示运行中<br></li><li>ARREARS：表示隔离中<br></li><li>TERMINATING：表示销毁中。<br></li>",
-          "example": "无",
+          "example": "ONLINE",
           "member": "string",
           "name": "SpaceState",
           "output_required": true,
@@ -3579,7 +3579,7 @@
         {
           "disabled": false,
           "document": "工作空间对应资源ID",
-          "example": "无",
+          "example": "ins-3zjugd6z",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -3589,7 +3589,7 @@
         {
           "disabled": false,
           "document": "自动续费标识",
-          "example": "无",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "output_required": true,
@@ -3599,7 +3599,7 @@
         {
           "disabled": false,
           "document": "工作空间关联的工作列表",
-          "example": "无",
+          "example": "[{\"Key\": \"env\", \"Value\": \"product\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -3609,7 +3609,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -3619,7 +3619,7 @@
         {
           "disabled": false,
           "document": "到期时间",
-          "example": "无",
+          "example": "2025-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "output_required": true,
@@ -3629,7 +3629,7 @@
         {
           "disabled": false,
           "document": "工作空间所在位置",
-          "example": "无",
+          "example": "{\"Zone\": \"ap-guangzhou-2\"}",
           "member": "Placement",
           "name": "Placement",
           "output_required": true,
@@ -3639,7 +3639,7 @@
         {
           "disabled": false,
           "document": "工作空间的最新操作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CreateWorkspaces",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
@@ -3649,7 +3649,7 @@
         {
           "disabled": false,
           "document": "工作空间的最新操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
@@ -3665,7 +3665,7 @@
         {
           "disabled": false,
           "document": "网络计费类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "BANDWIDTH_PREPAID\t",
           "member": "string",
           "name": "InternetChargeType",
           "output_required": true,
@@ -3676,7 +3676,7 @@
         {
           "disabled": false,
           "document": "公网出带宽上限，默认为0\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
           "output_required": true,
@@ -3698,7 +3698,7 @@
         {
           "disabled": false,
           "document": "带宽包ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "bwp-h1ro\t",
           "member": "string",
           "name": "BandwidthPackageId",
           "output_required": false,
@@ -3743,7 +3743,7 @@
         {
           "disabled": false,
           "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<ul><li>LOCAL_BASIC：本地硬盘</li><li>LOCAL_SSD：本地SSD硬盘</li><li>CLOUD_BASIC：普通云硬盘</li><li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li>CLOUD_BSSD：通用性SSD云硬盘</li><li>CLOUD_HSSD：增强型SSD云硬盘</li><li>CLOUD_TSSD：极速型SSD云硬盘</li></ul>默认取值：当前有库存的硬盘类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
           "output_required": true,
@@ -3754,7 +3754,7 @@
         {
           "disabled": false,
           "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DiskSize",
           "output_required": true,
@@ -4022,7 +4022,7 @@
         {
           "disabled": false,
           "document": "私有网络ID，形如`vpc-xxx`。有效的VpcId可通过登录[控制台](https://console.cloud.tencent.com/vpc/vpc?rid=1)查询；也可以调用接口 [DescribeVpcEx](/document/api/215/1372) ，从接口返回中的`unVpcId`字段获取。若在创建子机时VpcId与SubnetId同时传入`DEFAULT`，则强制使用默认vpc网络。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "vpc-xxx",
+          "example": "vpc-jfkanfen",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -4033,7 +4033,7 @@
         {
           "disabled": false,
           "document": "私有网络子网ID，形如`subnet-xxx`。有效的私有网络子网ID可通过登录[控制台](https://console.cloud.tencent.com/vpc/subnet?rid=1)查询；也可以调用接口  [DescribeSubnets](/document/api/215/15784) ，从接口返回中的`unSubnetId`字段获取。若在创建子机时SubnetId与VpcId同时传入`DEFAULT`，则强制使用默认vpc网络。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "subnet-xxx",
+          "example": "subnet-jfnakenf",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,

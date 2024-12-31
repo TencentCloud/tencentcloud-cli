@@ -19,18 +19,18 @@ Output:
     "Response": {
         "Analysis": false,
         "Context": "content",
-        "Count": 17,
+        "Count": 2,
         "Data": [
             {
                 "Content": "{\"create_time\":\"2022-07-01 10:00:27 +0800 CST\",\"hostip\":\"10.0.0.6\",\"level\":\"中危\",\"modify_time\":\"2022-07-01 10:17:05 +0800 CST\",\"remark\":\"\",\"uuid\":\"13bb1e16-9a7a-434d-9686-4328f72c97d7\",\"is_emergency\":\"False\",\"reference\":\"https://www.phpmyadmin.net/security/PMASA-2016-20/\",\"path\":\"/var/www/html/phpmyadmin\",\"fix\":\"1、建议升级到官方最新版本，官网地址：https://www.phpmyadmin.net\",\"cve_id\":\"CVE-2016-5704\",\"cls_event_type\":\"Web-CMS_vul\",\"appid\":\"1256299843\",\"name\":\"phpMyAdmin 4.6.x 表结构页面存在XSS漏洞\",\"id\":\"771\",\"vul_category\":\"Web-CMS漏洞\",\"descript\":\"漏洞文件路径: /var/www/html/phpmyadmin/templates/table/structure/display_table_stats.phtml\",\"event_status\":\"modify\",\"status\":\"待处理\"}",
                 "FileName": "file***",
-                "Source": "30.46.128.22",
+                "Source": "",
                 "TimeStamp": 1656641946000
             },
             {
                 "Content": "{\"create_time\":\"2022-07-01 10:00:27 +0800 CST\",\"hostip\":\"10.0.0.6\",\"level\":\"高危\",\"modify_time\":\"2022-07-01 10:17:05 +0800 CST\",\"remark\":\"\",\"uuid\":\"13bb1e16-9a7a-434d-9686-4328f72c97d7\",\"is_emergency\":\"False\",\"reference\":\"https://httpd.apache.org/security/vulnerabilities_24.html\",\"path\":\"\",\"fix\":\"升级至2.4.6-90及以上版本或 2.4.39及以上版本\",\"cve_id\":\"CVE-2019-0217\",\"cls_event_type\":\"application_vul\",\"appid\":\"1256299843\",\"name\":\"Apache HTTP Server mod_auth_digest 条件竞争漏洞\",\"id\":\"767\",\"vul_category\":\"应用漏洞\",\"descript\":\"Apache HTTP Server 启用了 mod_auth_digest 模块，且Apache HTTP Server 版本为：2.4.37-47.module_el8.6.0+1111+ce6f4ceb.1。\",\"event_status\":\"modify\",\"status\":\"待处理\"}",
                 "FileName": "file***",
-                "Source": "30.46.128.22",
+                "Source": "",
                 "TimeStamp": 1656641946000
             }
         ],

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ecm AttachNetworkInterface --cli-unfold-argument  \
-    --NetworkInterfaceId eni-12121212 \
-    --InstanceId ins-ins-11221122 \
+    --NetworkInterfaceId eni-m6dyj72l \
+    --InstanceId ein-r8hr2upy \
     --EcmRegion ap-hangzhou-ecm
 ```
 

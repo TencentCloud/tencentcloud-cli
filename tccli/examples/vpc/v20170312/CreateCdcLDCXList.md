@@ -8,8 +8,8 @@ Input:
 tccli vpc CreateCdcLDCXList --cli-unfold-argument  \
     --CdcLDCXSet.0.CdcId cluster-d8htgb6k \
     --CdcLDCXSet.0.NetPlaneId np-b6ebdd49 \
-    --CdcLDCXSet.0.Name ivan_namt \
-    --CdcLDCXSet.0.Description ivan_description \
+    --CdcLDCXSet.0.Name demo \
+    --CdcLDCXSet.0.Description demo \
     --CdcLDCXSet.0.ConnType VRRP \
     --CdcLDCXSet.0.RouteType BGP \
     --CdcLDCXSet.0.VlanId 3001 \
@@ -20,7 +20,7 @@ tccli vpc CreateCdcLDCXList --cli-unfold-argument  \
     --CdcLDCXSet.0.ConnIpInfoSet.1.PeerIp 1.1.1.10 \
     --CdcLDCXSet.0.ConnIpInfoSet.1.IntMask 25 \
     --CdcLDCXSet.0.BgpInfo.BgpAsn 100 \
-    --CdcLDCXSet.0.BgpInfo.BgpKey 123456 \
+    --CdcLDCXSet.0.BgpInfo.BgpKey bgpkey \
     --CdcLDCXSet.0.IdcCidrSet 10.0.0.0/24 172.16.0.0/24 \
     --CdcLDCXSet.0.VRRP.Id 200 \
     --CdcLDCXSet.0.VRRP.Vip 1.1.1.3 \
@@ -37,7 +37,7 @@ Output:
             {
                 "BgpInfo": {
                     "BgpAsn": 100,
-                    "BgpKey": "123456"
+                    "BgpKey": "bgpkey"
                 },
                 "CdcId": "cluster-d8htgb6k",
                 "ConnIpInfoSet": [
@@ -54,7 +54,7 @@ Output:
                 ],
                 "ConnType": "VRRP",
                 "CreateTime": "2024-01-19T14:08:20.727174",
-                "Description": "ivan_description",
+                "Description": "demo",
                 "IdcCidrSet": [
                     ""
                 ],
@@ -64,7 +64,7 @@ Output:
                     "DetectMode": "BFD",
                     "DetectMultiplier": 20
                 },
-                "Name": "ivan_namt",
+                "Name": "demo",
                 "NetPlaneId": "np-b6ebdd49",
                 "RouteType": "BGP",
                 "UpdateTime": "2024-01-19T14:08:20.727187",

@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc CreateVpcEndPointService --cli-unfold-argument  \
     --AutoAcceptFlag True \
-    --EndPointServiceName 测试 \
+    --EndPointServiceName demo \
     --VpcId vpc-hj3he929 \
     --IsPassService True \
     --ServiceInstanceId lb-nswq8wkq \
@@ -23,7 +23,7 @@ Output:
             "VpcId": "vpc-hj3he929",
             "AutoAcceptFlag": "false",
             "ServiceInstanceId": "lb-nswq8wkq",
-            "ServiceName": "test_002",
+            "ServiceName": "demo",
             "EndPointServiceId": "vpcsvc-kngiybxl",
             "ServiceVip": "10.101.1.11",
             "CreateTime": "0000-00-00 00:00:00",

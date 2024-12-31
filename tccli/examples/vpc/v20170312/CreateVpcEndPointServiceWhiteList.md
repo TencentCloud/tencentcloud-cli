@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc CreateVpcEndPointServiceWhiteList --cli-unfold-argument  \
     --UserUin 100016184089 \
-    --Description 描述 \
+    --Description demo \
     --EndPointServiceId vpcsvc-kngiybxl
 ```
 

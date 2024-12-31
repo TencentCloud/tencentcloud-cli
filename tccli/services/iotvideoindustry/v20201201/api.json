@@ -794,9 +794,10 @@
         {
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "99299744331320000002_99299744331320000002",
           "member": "string",
           "name": "DeviceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -804,9 +805,10 @@
         {
           "disabled": false,
           "document": "设备类型；2：IPC\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "2",
           "member": "int64",
           "name": "DeviceType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -814,9 +816,10 @@
         {
           "disabled": false,
           "document": "设备状态；0：设备不在线；1：设备在线；2：设备隔离中；3：设备未注册\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -824,9 +827,10 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1702969011",
           "member": "int64",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -834,9 +838,10 @@
         {
           "disabled": false,
           "document": "设备扩展属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "IP Camera",
           "member": "string",
           "name": "ExtraInformation",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -844,9 +849,10 @@
         {
           "disabled": false,
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "dahua001",
           "member": "string",
           "name": "NickName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -854,9 +860,10 @@
         {
           "disabled": false,
           "document": "设备绑定分组路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/gro-usk7xtpc",
           "member": "string",
           "name": "GroupPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -864,9 +871,10 @@
         {
           "disabled": false,
           "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "99299744331320000002",
           "member": "string",
           "name": "DeviceCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -874,9 +882,10 @@
         {
           "disabled": false,
           "document": "是否存在录像,，0:不存在；1：存在\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "int64",
           "name": "IsRecord",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -887,6 +896,7 @@
           "example": "true",
           "member": "int64",
           "name": "Recordable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -897,6 +907,7 @@
           "example": "GB/T 28181",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -907,6 +918,7 @@
           "example": "gro-zn3ro30w",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -917,6 +929,7 @@
           "example": "一个组的名字",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -966,10 +979,10 @@
         {
           "disabled": false,
           "document": "通道名称",
-          "example": "xx",
+          "example": "Camera 01",
           "member": "string",
           "name": "ChannelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -979,7 +992,7 @@
           "example": "34020000001180000036_34020000001320000092",
           "member": "string",
           "name": "ChannelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -989,7 +1002,7 @@
           "example": "1",
           "member": "int64",
           "name": "ChannelType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -999,17 +1012,17 @@
           "example": "34020000001320000092",
           "member": "string",
           "name": "ChannelCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "通道扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "IP Camera",
           "member": "string",
           "name": "ExtraInformation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1019,7 +1032,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1029,7 +1042,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsRecord",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1039,7 +1052,7 @@
           "example": "34020000001180000036_34020000001180000036",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1049,7 +1062,7 @@
           "example": "34020000001180000036",
           "member": "string",
           "name": "BusinessGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3408,7 +3421,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识",
-          "example": "devename",
+          "example": "99299744331320000002_99299744331320000002",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -3482,40 +3495,40 @@
         {
           "disabled": false,
           "document": "rtsp地址",
-          "example": "https://test.com",
+          "example": "rtsp://somedomain.com/live/9",
           "member": "string",
           "name": "RtspAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "rtmp地址",
-          "example": "rtmp://test.com",
+          "example": "rtmp://somedomain.com/live/9",
           "member": "string",
           "name": "RtmpAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "hls地址",
-          "example": "https://test.com",
+          "example": "http://somedomain.com/live/9/hls.m3u8",
           "member": "string",
           "name": "HlsAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "flv地址",
-          "example": "https://test.com",
+          "example": "http://somedomain.com/live/0.live.flv",
           "member": "string",
           "name": "FlvAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4264,7 +4277,7 @@
         {
           "disabled": false,
           "document": "开始录制结束时间",
-          "example": "1631007668",
+          "example": "1631007968",
           "member": "int64",
           "name": "EndRecordTime",
           "required": false,
@@ -4273,7 +4286,7 @@
         {
           "disabled": false,
           "document": "过期开始时间",
-          "example": "2020",
+          "example": "1631117668",
           "member": "int64",
           "name": "StartExpireTime",
           "required": false,
@@ -4282,7 +4295,7 @@
         {
           "disabled": false,
           "document": "过期结束时间",
-          "example": "无",
+          "example": "1631227668",
           "member": "int64",
           "name": "EndExpireTime",
           "required": false,
@@ -5927,9 +5940,10 @@
         {
           "disabled": false,
           "document": "设备唯一标识",
-          "example": "xxx",
+          "example": "19299744331320000002_19299744331320000002",
           "member": "string",
           "name": "DeviceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5937,9 +5951,10 @@
         {
           "disabled": false,
           "document": "分组ID",
-          "example": "xxx",
+          "example": "gro-30to7hxt",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5947,9 +5962,10 @@
         {
           "disabled": false,
           "document": "分组路径",
-          "example": "xxx",
+          "example": "/gro-30to7hxt",
           "member": "string",
           "name": "GroupPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5957,9 +5973,10 @@
         {
           "disabled": false,
           "document": "父分组ID",
-          "example": "xxx",
+          "example": "group_root",
           "member": "string",
           "name": "ParentId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5967,9 +5984,10 @@
         {
           "disabled": false,
           "document": "设备错误，仅在用户没权限或者设备已删除时返回具体结果",
-          "example": "xxx",
+          "example": "该设备分组不存在",
           "member": "string",
           "name": "Error",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6038,7 +6056,7 @@
           "example": "1624204800",
           "member": "int64",
           "name": "EventTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6048,7 +6066,7 @@
           "example": "1",
           "member": "int64",
           "name": "EventType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6058,7 +6076,7 @@
           "example": "succ",
           "member": "string",
           "name": "EventDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6068,7 +6086,7 @@
           "example": "2",
           "member": "int64",
           "name": "DeviceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6078,7 +6096,7 @@
           "example": "10.0.16.80:9455",
           "member": "string",
           "name": "DeviceAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6088,7 +6106,7 @@
           "example": "99933020581320000255",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6098,17 +6116,17 @@
           "example": "99933020581320000255",
           "member": "string",
           "name": "ChannelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件日志",
-          "example": "无",
+          "example": "设备在11:30注册成功",
           "member": "string",
           "name": "EventLog",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6118,7 +6136,7 @@
           "example": "设备备注名称1",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6490,9 +6508,10 @@
         {
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "99299744331329000002_99299744331329000002",
           "member": "string",
           "name": "DeviceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6500,9 +6519,10 @@
         {
           "disabled": false,
           "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "myipc",
           "member": "string",
           "name": "NickName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6513,6 +6533,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6520,9 +6541,10 @@
         {
           "disabled": false,
           "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "IP Camera",
           "member": "string",
           "name": "ExtraInformation",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6533,6 +6555,7 @@
           "example": "1",
           "member": "int64",
           "name": "DeviceType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6540,9 +6563,10 @@
         {
           "disabled": false,
           "document": "rtsp地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "rtsp://somedomain.com/live/9",
           "member": "string",
           "name": "RTSPUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6550,9 +6574,10 @@
         {
           "disabled": false,
           "document": "设备编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "99299744331329000002",
           "member": "string",
           "name": "DeviceCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6563,6 +6588,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsRecord",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6573,6 +6599,7 @@
           "example": "1",
           "member": "int64",
           "name": "Recordable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6583,6 +6610,7 @@
           "example": "GB/T 28181",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6593,6 +6621,7 @@
           "example": "1",
           "member": "int64",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6603,6 +6632,7 @@
           "example": "1",
           "member": "int64",
           "name": "ChannelNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6613,6 +6643,7 @@
           "example": "1",
           "member": "int64",
           "name": "VideoChannelNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6626,9 +6657,10 @@
         {
           "disabled": false,
           "document": "分组ID",
-          "example": "xxx",
+          "example": "gro-usk8xtpc",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6636,9 +6668,10 @@
         {
           "disabled": false,
           "document": "分组名称",
-          "example": "xxx",
+          "example": "myipc",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6646,9 +6679,10 @@
         {
           "disabled": false,
           "document": "分组类型",
-          "example": "xxx",
+          "example": "2",
           "member": "string",
           "name": "GroupType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6656,9 +6690,10 @@
         {
           "disabled": false,
           "document": "分组路径",
-          "example": "xxx",
+          "example": "/gro-usk8xtpc",
           "member": "string",
           "name": "GroupPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6666,9 +6701,10 @@
         {
           "disabled": false,
           "document": "父分组ID",
-          "example": "xxx",
+          "example": "group_root",
           "member": "string",
           "name": "ParentId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6676,9 +6712,10 @@
         {
           "disabled": false,
           "document": "分组描述",
-          "example": "xxx",
+          "example": "this is myipc",
           "member": "string",
           "name": "GroupDescribe",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6686,9 +6723,10 @@
         {
           "disabled": false,
           "document": "扩展信息",
-          "example": "xxx",
+          "example": "IP Camera",
           "member": "string",
           "name": "ExtraInformation",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6696,9 +6734,10 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "xxx",
+          "example": "1702969011",
           "member": "int64",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6706,9 +6745,10 @@
         {
           "disabled": false,
           "document": "分组状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "int64",
           "name": "GroupStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6716,9 +6756,10 @@
         {
           "disabled": false,
           "document": "设备不存在时产生的错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "设备不存在",
           "member": "string",
           "name": "Error",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6732,9 +6773,10 @@
         {
           "disabled": false,
           "document": "分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "myipc",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6742,9 +6784,10 @@
         {
           "disabled": false,
           "document": "父分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "usk7xtpc",
           "member": "string",
           "name": "ParentId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6752,9 +6795,10 @@
         {
           "disabled": false,
           "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "gro-usk7xtpc",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6762,9 +6806,10 @@
         {
           "disabled": false,
           "document": "分组路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "/gro-usk7xtpc",
           "member": "string",
           "name": "GroupPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6772,9 +6817,10 @@
         {
           "disabled": false,
           "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "This is my first device",
           "member": "string",
           "name": "GroupDescribe",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6782,9 +6828,10 @@
         {
           "disabled": false,
           "document": "分组绑定设备数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "int64",
           "name": "DeviceNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6792,9 +6839,10 @@
         {
           "disabled": false,
           "document": "子分组数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "2",
           "member": "int64",
           "name": "SubGroupNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6802,9 +6850,10 @@
         {
           "disabled": false,
           "document": "分组附加信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "IP Camera",
           "member": "string",
           "name": "ExtraInformation",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6812,9 +6861,10 @@
         {
           "disabled": false,
           "document": "分组类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "string",
           "name": "GroupType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6822,9 +6872,10 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1702969011",
           "member": "int64",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6832,9 +6883,10 @@
         {
           "disabled": false,
           "document": "分组状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "1",
           "member": "int64",
           "name": "GroupStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -8289,40 +8341,40 @@
         {
           "disabled": false,
           "document": "SIP服务器地址",
-          "example": "",
+          "example": "10.10.10.111",
           "member": "string",
           "name": "Host",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "SIP服务器端口",
-          "example": "",
+          "example": "30001",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "SIP服务器编码",
-          "example": "",
+          "example": "44020009999000000009",
           "member": "string",
           "name": "Serial",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "SIP服务器域",
-          "example": "",
+          "example": "4402000000",
           "member": "string",
           "name": "Realm",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8335,20 +8387,20 @@
         {
           "disabled": false,
           "document": "日期。格式【YYYY-MM-DD】\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2022-12-32",
           "member": "string",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "统计数额\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "98",
           "member": "float",
           "name": "Sum",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -8356,55 +8408,55 @@
       "usage": "out"
     },
     "StreamAddress": {
-      "document": "拉流地址，只有在推流情况下才有\n",
+      "document": "拉流地址，只有在推流情况下才有",
       "members": [
         {
           "disabled": false,
           "document": "流ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "100091979791_99335023091329000012_99335023091329000012_live",
           "member": "string",
           "name": "StreamId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "rtsp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rtsp://127.0.0.1/live/test",
+          "example": "rtsp://somedomain.com/live/0",
           "member": "string",
           "name": "RtspAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "rtmp流地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rtmp://127.0.0.1/live/test",
+          "example": "rtmp://somedomain.com/live/0",
           "member": "string",
           "name": "RtmpAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "hls流地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://127.0.0.1/live/test.m3u8",
+          "example": "http://somedomain.com/live/0.live.flv",
           "member": "string",
           "name": "HlsAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "flv流地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://127.0.0.1/live/test.flv",
+          "example": "http://somedomain.com/live/0.live.flv",
           "member": "string",
           "name": "FlvAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8758,7 +8810,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8768,7 +8820,7 @@
           "example": "99576636581320000310_99782261871320000002",
           "member": "string",
           "name": "DeviceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8778,7 +8830,7 @@
           "example": "video_dev",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8788,7 +8840,7 @@
           "example": "99576636581320000310_99782261871320000002",
           "member": "string",
           "name": "WarnChannel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8798,7 +8850,7 @@
           "example": "1",
           "member": "int64",
           "name": "WarnLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8808,7 +8860,7 @@
           "example": "四级警情",
           "member": "string",
           "name": "WarnLevelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8818,7 +8870,7 @@
           "example": "2",
           "member": "int64",
           "name": "WarnMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8828,7 +8880,7 @@
           "example": "视频报警",
           "member": "string",
           "name": "WarnModeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8838,7 +8890,7 @@
           "example": "1 ",
           "member": "int64",
           "name": "WarnType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8848,27 +8900,27 @@
           "example": "1",
           "member": "int64",
           "name": "Del",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1672471808",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1672482837",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

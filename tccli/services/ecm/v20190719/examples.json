@@ -83,7 +83,7 @@
     "AttachNetworkInterface": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=AttachNetworkInterface\n&NetworkInterfaceId=eni-12121212\n&InstanceId=ins-ins-11221122\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
+        "input": "https://ecm.tencentcloudapi.com/?Action=AttachNetworkInterface\n&NetworkInterfaceId=eni-m6dyj72l\n&InstanceId=ein-r8hr2upy\n&EcmRegion=ap-hangzhou-ecm\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "弹性网卡绑定云主机"
       }

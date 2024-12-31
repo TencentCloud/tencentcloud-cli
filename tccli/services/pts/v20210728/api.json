@@ -1120,7 +1120,7 @@
         {
           "disabled": false,
           "document": "场景名称",
-          "example": "xx",
+          "example": "scenario name",
           "member": "string",
           "name": "ScenarioName",
           "required": true,
@@ -1391,7 +1391,7 @@
         {
           "disabled": false,
           "document": "项目名",
-          "example": "test",
+          "example": "project name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1599,7 +1599,7 @@
         {
           "disabled": false,
           "document": "创建人名",
-          "example": "无",
+          "example": "owner-name",
           "member": "string",
           "name": "Owner",
           "required": false,
@@ -2557,7 +2557,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "\"123\"",
+          "example": "job-1a2b3c4d",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2566,7 +2566,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "\"123\"",
+          "example": "scenario-1a2b3c4d",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -2575,7 +2575,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "project-xx",
+          "example": "project-1a2b3c4d",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2593,7 +2593,7 @@
           "example": "无",
           "member": "CheckSummary",
           "name": "CheckSummarySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2648,7 +2648,7 @@
         {
           "disabled": false,
           "document": "定时任务名字，模糊查询",
-          "example": "test",
+          "example": "cron-name",
           "member": "string",
           "name": "CronJobName",
           "required": false,
@@ -2693,7 +2693,7 @@
           "example": "10",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2703,7 +2703,7 @@
           "example": "无",
           "member": "CronJob",
           "name": "CronJobSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2803,7 +2803,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "\"123\"",
+          "example": "job-1a2b3c4d",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -2812,7 +2812,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "\"123\"",
+          "example": "scenario-1a2b3c4d",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -2821,7 +2821,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "\"project-xx\"",
+          "example": "project-1a2b3c4d",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -2848,6 +2848,7 @@
           "example": "无",
           "member": "ErrorSummary",
           "name": "ErrorSummarySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3104,7 +3105,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "\"123\"",
+          "example": "job-1a2b3c4d",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -3113,7 +3114,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "\"123\"",
+          "example": "scenario-1a2b3c4d",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -3140,7 +3141,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "project-xx",
+          "example": "project-1a2b3c4d",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3155,7 +3156,7 @@
         {
           "disabled": false,
           "document": "标签值数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"http://url1\", \"http://url2\"]",
           "member": "string",
           "name": "LabelValueSet",
           "output_required": true,
@@ -3930,8 +3931,8 @@
         },
         {
           "disabled": false,
-          "document": "分组",
-          "example": "无",
+          "document": "分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名",
+          "example": "[\"service\", \"result\", \"status\"]]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -3968,7 +3969,7 @@
         {
           "disabled": false,
           "document": "job id",
-          "example": "\"123\"",
+          "example": "job-1a2b3c4d",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -3977,7 +3978,7 @@
         {
           "disabled": false,
           "document": "场景Id",
-          "example": "\"123\"",
+          "example": "scenario-1a2b3c4d",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -4086,7 +4087,7 @@
         {
           "disabled": false,
           "document": "场景名",
-          "example": "test",
+          "example": "scenario name",
           "member": "string",
           "name": "ScenarioName",
           "required": false,
@@ -4158,7 +4159,7 @@
         {
           "disabled": false,
           "document": "创建人员",
-          "example": "无",
+          "example": "owner",
           "member": "string",
           "name": "Owner",
           "required": false,
@@ -4176,6 +4177,7 @@
           "example": "无",
           "member": "ScenarioWithJobs",
           "name": "ScenarioWithJobsSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4185,6 +4187,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4212,7 +4215,7 @@
         {
           "disabled": false,
           "document": "场景名",
-          "example": "test",
+          "example": "scenario-name",
           "member": "string",
           "name": "ScenarioName",
           "required": false,
@@ -4293,7 +4296,7 @@
           "example": "无",
           "member": "Scenario",
           "name": "ScenarioSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4303,7 +4306,7 @@
           "example": "3",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7841,7 +7844,7 @@
         {
           "disabled": false,
           "document": "场景名称",
-          "example": "xx",
+          "example": "scenario name",
           "member": "string",
           "name": "ScenarioName",
           "required": true,
@@ -8075,7 +8078,7 @@
         {
           "disabled": false,
           "document": "项目名",
-          "example": "test",
+          "example": "project name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -8129,7 +8132,7 @@
         {
           "disabled": false,
           "document": "场景ID",
-          "example": "scenario-xx",
+          "example": "scenario-1a2b3c4d",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -8210,7 +8213,7 @@
         {
           "disabled": false,
           "document": "SLA规则ID",
-          "example": "sla-xx",
+          "example": "sla-1a2b3c4d",
           "member": "string",
           "name": "SLAId",
           "required": false,
@@ -8219,7 +8222,7 @@
         {
           "disabled": false,
           "document": "cron job ID",
-          "example": "cron-xx",
+          "example": "cron-1a2b3c4d",
           "member": "string",
           "name": "CronId",
           "required": false,
@@ -8237,7 +8240,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "project-xx",
+          "example": "project-1a2b3c4d",
           "member": "string",
           "name": "ProjectId",
           "required": false,
@@ -8318,7 +8321,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "无",
+          "example": "env-1a2b3c4d",
           "member": "string",
           "name": "EnvId",
           "required": false,

@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Plan": {
             "PlanId": "plan-fyw1k9l5",
-            "Name": "test",
+            "Name": "fyw1k9l5",
             "TimeTemplateId": "tgrp-jfs89ahg",
             "TimeTemplateName": "全天候模板",
             "Channels": [

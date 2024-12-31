@@ -1233,12 +1233,11 @@
         {
           "disabled": false,
           "document": "电信鉴权的Token",
-          "example": "无",
+          "example": "auth-token",
           "member": "string",
           "name": "CTCCToken",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1247,8 +1246,7 @@
           "member": "string",
           "name": "Province",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

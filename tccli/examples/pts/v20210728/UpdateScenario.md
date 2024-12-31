@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli pts UpdateScenario --cli-unfold-argument  \
-    --ScenarioId scenario-abc \
+    --ScenarioId scenario-1a2b3c4d \
     --Name pts-js(2023-05-12 16:12:30) \
     --Description  \
     --Type pts-js \
@@ -33,7 +33,7 @@ tccli pts UpdateScenario --cli-unfold-argument  \
     --TestScripts.0.LoadWeight 100 \
     --TestScripts.0.UpdatedAt 2023-05-12T16:12:31+08:00 \
     --TestScripts.0.EncodedHttpArchive  \
-    --Owner abc
+    --Owner owner
 ```
 
 Output: 

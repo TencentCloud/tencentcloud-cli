@@ -361,7 +361,7 @@
     "DescribeDevicePassWord": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePassWord\n<公共请求参数>\n\n{\n    \"DeviceId\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost:iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevicePassWord\n<公共请求参数>\n\n{\n    \"DeviceId\": \"99299744331320000002_99299744331320000002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d3d6f466-f2c2-44df-b78b-383ba717a3d8\",\n        \"PassWord\": \"PassWord\"\n    }\n}",
         "title": "修改设备密码"
       }
@@ -458,7 +458,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveVideoList\n<公共请求参数>\n\n{\n    \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"RecordList\": [\n            {\n                \"IntID\": 3352901,\n                \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n                \"ExpectDeleteTime\": 1633599082,\n                \"RecordTimeLen\": 600,\n                \"FileSize\": 268908746,\n                \"VideoUrl\": \"https://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/8e62c9e03701925923890211076/f0.mp4 \",\n                \"RecordPlanId\": \"plan-7fqulsjc\",\n                \"StartTime\": 1631007068,\n                \"EndTime\": 1631007668\n            }\n        ],\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RecordList\": [\n            {\n                \"IntID\": 3352901,\n                \"LiveChannelId\": \"cea6f74f29164253b43411fd888f4dc3\",\n                \"ExpectDeleteTime\": 1633599082,\n                \"RecordTimeLen\": 600,\n                \"FileSize\": 268908746,\n                \"VideoUrl\": \"https://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/8e62c9e03701925923890211076/f0.mp4 \",\n                \"RecordPlanId\": \"plan-7fqulsjc\",\n                \"StartTime\": 1631007068,\n                \"EndTime\": 1631009668\n            }\n        ],\n        \"RequestId\": \"fd344df8-6121-4e75-b417-383a67268354111\",\n        \"Total\": 1\n    }\n}",
         "title": "直播录像回放列表"
       }
     ],
@@ -528,7 +528,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideoindustry.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordingPlanById\n<公共请求参数>\n\n{\n    \"PlanId\": \"plan-fyw1k9l5\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Plan\": {\n            \"PlanId\": \"plan-fyw1k9l5\",\n            \"Name\": \"test\",\n            \"TimeTemplateId\": \"tgrp-jfs89ahg\",\n            \"TimeTemplateName\": \"全天候模板\",\n            \"Channels\": [\n                {\n                    \"DeviceId\": \"99576636581320000330_99576636581320000330\",\n                    \"ChannelId\": \"99576636581320000330_99576636581320000330\"\n                }\n            ],\n            \"RecordStorageTime\": 5\n        },\n        \"RequestId\": \"86059248-9d5d-4f7d-8fec-1b7ac3b44867\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Plan\": {\n            \"PlanId\": \"plan-fyw1k9l5\",\n            \"Name\": \"fyw1k9l5\",\n            \"TimeTemplateId\": \"tgrp-jfs89ahg\",\n            \"TimeTemplateName\": \"全天候模板\",\n            \"Channels\": [\n                {\n                    \"DeviceId\": \"99576636581320000330_99576636581320000330\",\n                    \"ChannelId\": \"99576636581320000330_99576636581320000330\"\n                }\n            ],\n            \"RecordStorageTime\": 5\n        },\n        \"RequestId\": \"86059248-9d5d-4f7d-8fec-1b7ac3b44867\"\n    }\n}",
         "title": "根据ID查询录制计划详情"
       }
     ],

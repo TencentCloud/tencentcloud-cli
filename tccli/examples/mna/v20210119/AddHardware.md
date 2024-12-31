@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli mna AddHardware --cli-unfold-argument  \
-    --Hardware.0.SN abc \
+    --Hardware.0.SN AN \
     --Hardware.0.LicenseChargingMode 1 \
-    --Hardware.0.Description abc
+    --Hardware.0.Description 描述
 ```
 
 Output: 
@@ -17,13 +17,13 @@ Output:
     "Response": {
         "Hardware": [
             {
-                "SN": "abc",
+                "SN": "AN",
                 "LicenseChargingMode": 1,
-                "Description": "abc",
-                "HardwareId": "abc"
+                "Description": "描述",
+                "HardwareId": "cpe-9oii2ew1z4"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "a1434e98-16e8-41de-9b9b-27805a9cffbf"
     }
 }
 ```

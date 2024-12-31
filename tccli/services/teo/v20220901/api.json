@@ -2139,6 +2139,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TOA 配置信息，当 ForwardClientIp 为 TOA 取值时有效，其他取值下，作为入参传空，如不为空此参数会被忽略，作为出参返回为空。\n注意：在当 ForwardClientIp 为 TOA 取值时，ApplicationProxyRule 在 CreateApplicationProxy 作为入参使用时，该参数选填，不填写时 TOAOption 里，Type 为 Default，Kind.IPv4 为 200，Kind.IPv6 为 253。在 ModifyApplicationProxyRule 作为入参使用时，该参数选填，不填写表示不修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TOAFormat",
+          "name": "TOAFormat",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13104,6 +13115,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TOA 配置信息，当 ClientIPPassThroughMode 为 TOA 取值时有效，其他取值下，作为入参请传空，如不为空此参数会被忽略，作为出参返回为空。\n注意：在当 ClientIPPassThroughMode 为 TOA 取值时，L4ProxyRule 在 CreateL4ProxyRules 作为入参使用时，该参数选填，不填写时 TOAOption 里，Type 为 Default，Kind.IPv4 为 200，Kind.IPv6 为 253。在 ModifyL4ProxyRules 作为入参使用时，该参数选填，不填写表示不修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TOAFormat",
+          "name": "TOAFormat",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18600,6 +18622,45 @@
           "name": "WebSwitch",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TOAFormat": {
+      "document": "传递客户端 IP 方式为 TOA 情况下的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TOA 格式类型，详情请参考 [TOA 格式类型介绍](https://cloud.tencent.com/document/product/1552/104227)，取值有：\n<li>Default；</li>\n<li>TypeA；</li>\n<li>TypeB；</li>\n<li>TypeC。</li>\n",
+          "example": "Default",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TOA IPv4 的 Option Kind 值，取值有：\n<li>28；</li>\n<li>200；</li>\n<li>253；</li>\n<li>254。</li>",
+          "example": "200",
+          "member": "int64",
+          "name": "KindIPv4",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TOA IPv6 的 Option Kind 值，取值有：\n<li>28；</li>\n<li>200；</li>\n<li>253；</li>\n<li>254。</li>",
+          "example": "253",
+          "member": "int64",
+          "name": "KindIPv6",
+          "output_required": true,
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

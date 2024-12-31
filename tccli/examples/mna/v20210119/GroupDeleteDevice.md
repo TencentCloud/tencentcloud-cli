@@ -7,7 +7,7 @@ Input:
 ```
 tccli mna GroupDeleteDevice --cli-unfold-argument  \
     --DeviceList mna-test1 mna-test2 \
-    --GroupId xxx
+    --GroupId group-id1
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "DeviceNum": 5,
-        "RequestId": "abc"
+        "RequestId": "a1434e98-16e8-41de-9b9b-27805a9cffbf"
     }
 }
 ```

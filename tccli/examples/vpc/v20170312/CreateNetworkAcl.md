@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vpc CreateNetworkAcl --cli-unfold-argument  \
-    --VpcId vpc-12345678 \
-    --NetworkAclName test
+    --VpcId vpc-4tw1bxlq \
+    --NetworkAclName demo
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "NetworkAcl": {
-            "NetworkAclId": "acl-12345678",
-            "VpcId": "vpc-12345678",
-            "NetworkAclName": "test",
+            "NetworkAclId": "acl-6zwa44xm",
+            "VpcId": "vpc-4tw1bxlq",
+            "NetworkAclName": "demo",
             "CreatedTime": "2020-01-01 10:00:00",
             "SubnetSet": [],
             "IngressEntries": [],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli pts UpdateProject --cli-unfold-argument  \
-    --ProjectId project-xx \
+    --ProjectId project-1a2b3c4d \
     --Name test
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

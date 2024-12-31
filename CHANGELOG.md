@@ -1,3 +1,138 @@
+# Release 3.0.1127.1
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 98 次发布
+
+发布时间：2025-01-01 01:13:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KafkaParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#KafkaParam)
+
+	* 新增成员：TopicRegularExpression
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 76 次发布
+
+发布时间：2025-01-01 01:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UserManagerFilter](http://document.tencentcloudapi.woa.com/document/product/589/33981#UserManagerFilter)
+
+	* 新增成员：UserType
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 24 次发布
+
+发布时间：2025-01-01 01:25:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DeviceNetInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#DeviceNetInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>DownRate, UpRate
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 48 次发布
+
+发布时间：2025-01-01 01:30:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [InquiryPriceCreateDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/19962)
+
+	* 新增入参：DrZones
+
+
+修改数据结构：
+
+* [ReadOnlyGroup](http://document.tencentcloudapi.woa.com/document/product/238/19976#ReadOnlyGroup)
+
+	* 新增成员：ReadOnlyGroupType, ReadOnlyGroupForcedUpgrade
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 133 次发布
+
+发布时间：2025-01-01 01:33:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRabbitMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/77249)
+
+	* 新增出参：OrderId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 46 次发布
+
+发布时间：2025-01-01 01:34:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [TOAFormat](http://document.tencentcloudapi.woa.com/document/product/1738/81211#TOAFormat)
+
+修改数据结构：
+
+* [ApplicationProxyRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ApplicationProxyRule)
+
+	* 新增成员：TOAFormat
+
+* [L4ProxyRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#L4ProxyRule)
+
+	* 新增成员：TOAFormat
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.1126.1
 
 ## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
