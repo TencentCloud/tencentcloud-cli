@@ -8,8 +8,8 @@ Input:
 tccli clb ModifyTargetGroupInstancesPort --cli-unfold-argument  \
     --TargetGroupId lbtg-815iz538 \
     --TargetGroupInstances.0.BindIP 172.16.0.34 \
-    --TargetGroupInstances.0.Port 123 \
-    --TargetGroupInstances.0.NewPort 2233
+    --TargetGroupInstances.0.Port 8000 \
+    --TargetGroupInstances.0.NewPort 8080
 ```
 
 Output: 

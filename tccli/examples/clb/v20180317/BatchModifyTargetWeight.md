@@ -44,7 +44,7 @@ tccli clb BatchModifyTargetWeight --cli-unfold-argument  \
     --ModifyList.1.ListenerId lbl-661zpn3b \
     --ModifyList.1.LocationId loc-78p1r0vb \
     --ModifyList.1.Targets.0.EniIp 10.202.0.96 \
-    --ModifyList.1.Targets.0.Port 123 \
+    --ModifyList.1.Targets.0.Port 80 \
     --ModifyList.1.Targets.0.Weight 30
 ```
 

@@ -1,6 +1,6 @@
 **Example 1: 创建容器实例**
 
-
+创建容器实例
 
 Input: 
 
@@ -9,23 +9,23 @@ tccli tke CreateEKSContainerInstances --cli-unfold-argument  \
     --AutoCreateEipAttribute.InternetMaxBandwidthOut 1 \
     --AutoCreateEipAttribute.DeletePolicy Immediate \
     --AutoCreateEipAttribute.InternetServiceProvider BGP \
-    --CamRoleName xx \
+    --CamRoleName TkeRole \
     --VpcId vpc-12345678 \
-    --DnsConfig.Nameservers xx \
-    --DnsConfig.Searches xx \
-    --DnsConfig.Options.0.Name xx \
-    --DnsConfig.Options.0.Value xx \
+    --DnsConfig.Nameservers server \
+    --DnsConfig.Searches  \
+    --DnsConfig.Options.0.Name  \
+    --DnsConfig.Options.0.Value  \
     --Replicas 1 \
-    --ImageRegistryCredentials.0.Username xx \
-    --ImageRegistryCredentials.0.Password xx \
-    --ImageRegistryCredentials.0.Name xx \
-    --ImageRegistryCredentials.0.Server xx \
-    --EksCiVolume.CbsVolumes.0.CbsDiskId xx \
-    --EksCiVolume.CbsVolumes.0.Name xx \
-    --EksCiVolume.NfsVolumes.0.Path xx \
+    --ImageRegistryCredentials.0.Username devops \
+    --ImageRegistryCredentials.0.Password  \
+    --ImageRegistryCredentials.0.Name ta-habor-registry-0 \
+    --ImageRegistryCredentials.0.Server docker-ta.thinkingdata.cn \
+    --EksCiVolume.CbsVolumes.0.CbsDiskId disk-45b3agyu \
+    --EksCiVolume.CbsVolumes.0.Name disk-45b3agyu \
+    --EksCiVolume.NfsVolumes.0.Path /5g326fcf/localfolder \
     --EksCiVolume.NfsVolumes.0.ReadOnly True \
-    --EksCiVolume.NfsVolumes.0.Name xx \
-    --EksCiVolume.NfsVolumes.0.Server xx \
+    --EksCiVolume.NfsVolumes.0.Name vol \
+    --EksCiVolume.NfsVolumes.0.Server 9.19.101.170 \
     --GpuCount 1 \
     --ExistedEipIds eip-12345678 \
     --AutoCreateEip True \
@@ -36,22 +36,22 @@ tccli tke CreateEKSContainerInstances --cli-unfold-argument  \
     --CpuType amd,intel \
     --SecurityGroupIds sg-12345678 \
     --Containers.0.Commands sleep \
-    --Containers.0.Name xx \
+    --Containers.0.Name nginx \
     --Containers.0.GpuLimit 1 \
-    --Containers.0.WorkingDir xx \
-    --Containers.0.Image xx \
+    --Containers.0.WorkingDir /var \
+    --Containers.0.Image nginx:latest \
     --Containers.0.Args 10000 \
-    --Containers.0.VolumeMounts.0.MountPropagation xx \
+    --Containers.0.VolumeMounts.0.MountPropagation  \
     --Containers.0.VolumeMounts.0.ReadOnly True \
-    --Containers.0.VolumeMounts.0.MountPath xx \
-    --Containers.0.VolumeMounts.0.SubPath xx \
-    --Containers.0.VolumeMounts.0.Name xx \
+    --Containers.0.VolumeMounts.0.MountPath /images/mnt \
+    --Containers.0.VolumeMounts.0.SubPath /images/mnt \
+    --Containers.0.VolumeMounts.0.Name disk-45b3agyi \
     --Containers.0.RestartCount 1 \
-    --Containers.0.EnvironmentVars.0.Name xx \
-    --Containers.0.EnvironmentVars.0.Value xx \
+    --Containers.0.EnvironmentVars.0.Name EKS_LOGS_OUTPUT_TYPE \
+    --Containers.0.EnvironmentVars.0.Value cls \
     --Containers.0.Memory 0.0 \
     --Containers.0.Cpu 0.0 \
-    --EksCiName xx
+    --EksCiName for-imc-je2ytppo
 ```
 
 Output: 

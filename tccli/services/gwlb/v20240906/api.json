@@ -954,13 +954,13 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡所属私有网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡所属私有网络。",
           "example": "vpc-mj65xxxx",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -994,33 +994,33 @@
         },
         {
           "disabled": false,
-          "document": "关联的目标组唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的目标组唯一ID。",
           "example": "lbtg-xxx",
           "member": "string",
           "name": "TargetGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启删除保护功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启删除保护功能。",
           "example": "true",
           "member": "bool",
           "name": "DeleteProtect",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的标签信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例的标签信息。",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1034,33 +1034,33 @@
         },
         {
           "disabled": false,
-          "document": "网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关负载均衡实例的计费类型，POSTPAID_BY_HOUR：按量计费",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0：表示未被隔离，1：表示被隔离。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0：表示未被隔离，1：表示被隔离。",
           "example": "0",
           "member": "uint64",
           "name": "Isolation",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "负载均衡实例被隔离的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡实例被隔离的时间",
           "example": "2022-02-12 12:15:08",
           "member": "string",
           "name": "IsolatedTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -7,7 +7,7 @@ Input:
 ```
 tccli mna UpdateL3Conn --cli-unfold-argument  \
     --L3ConnId l3conn-c0rkbqhig8 \
-    --Description test
+    --Description 描述
 ```
 
 Output: 

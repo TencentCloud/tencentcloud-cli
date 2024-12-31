@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli pts DescribeCheckSummary --cli-unfold-argument  \
-    --ProjectId xx \
-    --ScenarioId xx \
-    --JobId xx
+    --ProjectId project-1a2b3c4d \
+    --ScenarioId scenario-1a2b3c4d \
+    --JobId job-1a2b3c4d
 ```
 
 Output: 
@@ -31,7 +31,7 @@ Output:
                 "ErrorRate": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

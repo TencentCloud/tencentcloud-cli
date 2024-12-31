@@ -29,7 +29,7 @@
       "status": "online"
     },
     "BatchModifyTargetWeight": {
-      "document": "BatchModifyTargetWeight 接口用于批量修改负载均衡监听器绑定的后端机器的转发权重。批量修改的资源数量上限为500。本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。\n",
+      "document": "BatchModifyTargetWeight 接口用于批量修改负载均衡监听器绑定的后端机器的转发权重。批量修改的资源数量上限为500。本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。",
       "input": "BatchModifyTargetWeightRequest",
       "name": "批量修改监听器绑定的后端机器的转发权重",
       "output": "BatchModifyTargetWeightResponse",
@@ -3987,7 +3987,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例 ID。",
-          "example": "",
+          "example": "lb-6efswuxa",
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
@@ -3996,7 +3996,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4005,7 +4005,7 @@
         {
           "disabled": false,
           "document": "返回IP的最大个数，默认为 100000。",
-          "example": "",
+          "example": "100000",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4020,27 +4020,30 @@
         {
           "disabled": false,
           "document": "返回的IP的数量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "BlockedIPCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "获取用户真实IP的字段",
-          "example": "",
+          "example": "cdn_src_ip",
           "member": "string",
           "name": "ClientIPField",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加入了12360黑名单的IP列表",
-          "example": "",
+          "example": "无",
           "member": "BlockedIP",
           "name": "BlockedIPList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4059,7 +4062,7 @@
         {
           "disabled": false,
           "document": "ModifyBlockIPList 接口返回的异步任务的ID。",
-          "example": "",
+          "example": "localjob021015164373814322873",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4074,9 +4077,10 @@
         {
           "disabled": false,
           "document": "1 running，2 fail，6 succ",
-          "example": "",
+          "example": "6",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4426,7 +4430,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4436,7 +4440,7 @@
           "example": "无",
           "member": "CrossTargets",
           "name": "CrossTargetSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8463,7 +8467,7 @@
         {
           "disabled": false,
           "document": "负载均衡实例ID",
-          "example": "",
+          "example": "[\"lb-4ic3ls9w\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": true,
@@ -8472,7 +8476,7 @@
         {
           "disabled": false,
           "document": "操作类型，可取：\n<li> add_customized_field（首次设置header，开启黑名单功能）</li>\n<li> set_customized_field（修改header）</li>\n<li> del_customized_field（删除header）</li>\n<li> add_blocked（添加黑名单）</li>\n<li> del_blocked（删除黑名单）</li>\n<li> flush_blocked（清空黑名单）</li>",
-          "example": "",
+          "example": "add_customized_field",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -8481,7 +8485,7 @@
         {
           "disabled": false,
           "document": "客户端真实IP存放的header字段名",
-          "example": "",
+          "example": "X-Real-IP",
           "member": "string",
           "name": "ClientIPField",
           "required": true,
@@ -8490,7 +8494,7 @@
         {
           "disabled": false,
           "document": "封禁IP列表，单次操作数组最大长度支持200000",
-          "example": "",
+          "example": "[\"208.247.90.70\"]",
           "member": "string",
           "name": "BlockIPList",
           "required": false,
@@ -8499,7 +8503,7 @@
         {
           "disabled": false,
           "document": "过期时间，单位秒，默认值3600",
-          "example": "",
+          "example": "2025-12-06 15:26:22",
           "member": "uint64",
           "name": "ExpireTime",
           "required": false,
@@ -8508,7 +8512,7 @@
         {
           "disabled": false,
           "document": "添加IP的策略，可取：fifo（如果黑名单容量已满，新加入黑名单的IP采用先进先出策略）",
-          "example": "",
+          "example": "fifo",
           "member": "string",
           "name": "AddStrategy",
           "required": false,
@@ -8523,9 +8527,10 @@
         {
           "disabled": false,
           "document": "异步任务的ID",
-          "example": "",
+          "example": "localjob021015164373814322873",
           "member": "string",
           "name": "JodId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

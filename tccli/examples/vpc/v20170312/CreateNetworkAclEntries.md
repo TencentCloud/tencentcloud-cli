@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli vpc CreateNetworkAclEntries --cli-unfold-argument  \
-    --NetworkAclId acl-12345678 \
+    --NetworkAclId acl-k23blx7p \
     --NetworkAclEntrySet.Ingress.0.Protocol TCP \
     --NetworkAclEntrySet.Ingress.0.Port 80 \
     --NetworkAclEntrySet.Ingress.0.CidrBlock 192.168.0.0/24 \
     --NetworkAclEntrySet.Ingress.0.Action Accept \
-    --NetworkAclEntrySet.Ingress.0.Description TEST \
+    --NetworkAclEntrySet.Ingress.0.Description demo \
     --NetworkAclEntrySet.Egress.0.Protocol TCP \
     --NetworkAclEntrySet.Egress.0.Port 80 \
     --NetworkAclEntrySet.Egress.0.CidrBlock 192.168.0.0/24 \

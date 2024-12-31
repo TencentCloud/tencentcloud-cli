@@ -18,8 +18,8 @@ Output:
     "Response": {
         "RequestId": "527cc5c7-0413-33e9-2adc-632e0f6a9dff",
         "DeviceId": "mna-test1",
-        "DataKey": "test",
-        "Signature": "test"
+        "DataKey": "dasdfrfwer32e4r",
+        "Signature": "dasdfrfwer32e4r"
     }
 }
 ```

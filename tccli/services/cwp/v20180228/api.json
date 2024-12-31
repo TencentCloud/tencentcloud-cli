@@ -57063,7 +57063,7 @@
         },
         {
           "disabled": false,
-          "document": "检索分析语句，最大长度为12KB，查询语法可参考文档https://cloud.tencent.com/document/product/296/50508",
+          "document": "检索分析语句，最大长度为12KB，查询语法可参考文档 https://cloud.tencent.com/document/product/296/50508",
           "example": "status: \"待处理\" AND public_ip_addresses: (1* OR 2*)",
           "member": "string",
           "name": "QueryString",

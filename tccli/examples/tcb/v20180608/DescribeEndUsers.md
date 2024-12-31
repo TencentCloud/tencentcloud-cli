@@ -17,23 +17,23 @@ Output:
         "Total": 1,
         "Users": [
             {
-                "UserName": "xx",
-                "QQOpenId": "xx",
-                "UpdateTime": "xx",
-                "UUId": "xx",
-                "AvatarUrl": "xx",
-                "Gender": "xx",
+                "UserName": "admin",
+                "QQOpenId": "openid123",
+                "UpdateTime": "2025-01-01",
+                "UUId": "abc123",
+                "AvatarUrl": "https://www.baidu.com",
+                "Gender": "male",
                 "IsDisabled": false,
                 "IsAnonymous": true,
-                "CreateTime": "xx",
+                "CreateTime": "2025-01-01",
                 "HasPassword": true,
-                "Phone": "xx",
-                "WXOpenId": "xx",
-                "NickName": "xx",
-                "Email": "xx"
+                "Phone": "13092030921",
+                "WXOpenId": "openwx123",
+                "NickName": "steven",
+                "Email": "steven@tencent.com"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc12345667"
     }
 }
 ```

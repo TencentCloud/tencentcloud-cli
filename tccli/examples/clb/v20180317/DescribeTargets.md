@@ -24,7 +24,7 @@ Output:
                     {
                         "LocationId": "loc-12345678",
                         "Domain": "123.com",
-                        "Url": "/",
+                        "Url": "/query",
                         "Targets": [
                             {
                                 "Type": "CVM",
@@ -35,7 +35,7 @@ Output:
                                 "PrivateIpAddresses": [
                                     "172.16.0.100"
                                 ],
-                                "InstanceName": "123",
+                                "InstanceName": "cvm-biz-test",
                                 "RegisteredTime": "2023-01-01",
                                 "EniId": "eni-12345678"
                             }
@@ -76,7 +76,7 @@ Output:
                     {
                         "LocationId": "loc-o9732aw0",
                         "Domain": "www.123.com",
-                        "Url": "/",
+                        "Url": "/query",
                         "Targets": [
                             {
                                 "Type": "cvm",
@@ -95,13 +95,15 @@ Output:
                         "FunctionTargets": []
                     }
                 ],
-                "Targets": null
+                "Targets": null,
+                "EndPort": 0
             },
             {
                 "ListenerId": "lbl-4ue2rpl2",
                 "Protocol": "TCP",
                 "Port": 888,
                 "Rules": null,
+                "EndPort": 0,
                 "Targets": [
                     {
                         "Type": "cvm",

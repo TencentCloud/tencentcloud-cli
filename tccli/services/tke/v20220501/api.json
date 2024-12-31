@@ -1577,7 +1577,7 @@
           "example": "ins-dw531dq",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1587,7 +1587,7 @@
           "example": "WORKER",
           "member": "string",
           "name": "InstanceRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1597,7 +1597,7 @@
           "example": "CVM is STOPPED",
           "member": "string",
           "name": "FailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1607,7 +1607,7 @@
           "example": "running",
           "member": "string",
           "name": "InstanceState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1617,7 +1617,7 @@
           "example": "false",
           "member": "bool",
           "name": "Unschedulable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1627,7 +1627,7 @@
           "example": "2021-02-22T07:14:11Z",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1637,7 +1637,7 @@
           "example": "null",
           "member": "string",
           "name": "LanIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1647,7 +1647,7 @@
           "example": "np-enjhles1",
           "member": "string",
           "name": "NodePoolId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1657,7 +1657,7 @@
           "example": "无",
           "member": "NativeNodeInfo",
           "name": "Native",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1667,7 +1667,7 @@
           "example": "无",
           "member": "RegularNodeInfo",
           "name": "Regular",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1677,7 +1677,7 @@
           "example": "无",
           "member": "SuperNodeInfo",
           "name": "Super",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1687,7 +1687,7 @@
           "example": "无",
           "member": "ExternalNodeInfo",
           "name": "External",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1697,7 +1697,7 @@
           "example": "Native",
           "member": "string",
           "name": "NodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2970,7 +2970,7 @@
           "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2980,7 +2980,7 @@
           "example": "asg-eweq21",
           "member": "string",
           "name": "AutoscalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

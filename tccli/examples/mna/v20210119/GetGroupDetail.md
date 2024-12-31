@@ -17,10 +17,10 @@ Output:
     "Response": {
         "GroupInfo": {
             "GroupId": "cliGrp-xf8rboasb",
-            "GroupName": "test",
+            "GroupName": "groupname",
             "CreateTime": "1711076263000",
             "UpdateTime": "1711076263000",
-            "Description": "test",
+            "Description": "描述",
             "DeviceNum": 0
         },
         "DeviceInfos": [
@@ -34,7 +34,7 @@ Output:
                 "LicensePayMode": 0,
                 "Payer": 0,
                 "GroupId": "cliGrp-xf8rboasb",
-                "GroupName": "test"
+                "GroupName": "name2"
             }
         ],
         "Length": 0,

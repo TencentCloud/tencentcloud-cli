@@ -15,14 +15,15 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "abc-123-xyz",
         "ErrorSummarySet": [
             {
-                "Status": "200",
-                "Result": "200 OK",
-                "Count": 1000,
-                "Rate": 1.2,
-                "Message": "成功"
+                "Status": "404",
+                "Result": "404 Not Found",
+                "Proto": "HTTP/1.1",
+                "Count": 17,
+                "Rate": 47.22222222222222,
+                "Message": "该状态码表明，服务器找不到客户端请求的资源"
             }
         ]
     }

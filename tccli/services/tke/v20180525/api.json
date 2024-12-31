@@ -5933,7 +5933,7 @@
           "example": "tci-xxx",
           "member": "string",
           "name": "EksCiIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

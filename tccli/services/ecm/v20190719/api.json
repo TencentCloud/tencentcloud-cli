@@ -1965,7 +1965,7 @@
         {
           "disabled": false,
           "document": "弹性网卡实例ID，例如：eni-m6dyj72l。",
-          "example": "",
+          "example": "eni-m6dyj72l",
           "member": "string",
           "name": "NetworkInterfaceId",
           "required": true,
@@ -1974,7 +1974,7 @@
         {
           "disabled": false,
           "document": "实例ID。形如：ein-r8hr2upy。",
-          "example": "",
+          "example": "ein-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1983,7 +1983,7 @@
         {
           "disabled": false,
           "document": "ECM 地域，形如ap-xian-ecm。",
-          "example": "",
+          "example": "ap-hangzhou-ecm",
           "member": "string",
           "name": "EcmRegion",
           "required": true,
@@ -11331,40 +11331,40 @@
         {
           "disabled": false,
           "document": "云主机实例ID。",
-          "example": "",
+          "example": "ein-r8hr2upy",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网卡在云主机实例内的序号。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "DeviceIndex",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云主机所有者账户信息。",
-          "example": "",
+          "example": "2407912486",
           "member": "string",
           "name": "InstanceAccountId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "绑定时间。",
-          "example": "",
+          "example": "2021-01-26 17:52:36",
           "member": "string",
           "name": "AttachTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

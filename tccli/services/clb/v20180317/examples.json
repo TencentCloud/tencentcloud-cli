@@ -27,8 +27,8 @@
     "BatchModifyTargetTag": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyTargetTag\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-xxxxxxxx\",\n    \"ModifyList\": [\n        {\n            \"ListenerId\": \"lbl-yyyyyyyy\",\n            \"Targets\": [\n                {\n                    \"Port\": 1000,\n                    \"EniIp\": \"1.1.1.1\",\n                    \"Tag\": \"xxxx\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyTargetTag\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-xxxxxxxx\",\n    \"ModifyList\": [\n        {\n            \"ListenerId\": \"lbl-yyyyyyyy\",\n            \"Targets\": [\n                {\n                    \"Port\": 1000,\n                    \"EniIp\": \"1.1.1.1\",\n                    \"Tag\": \"tag-target\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cc30f1d-c237-422a-87ff-8f08c31a46e6\"\n    }\n}",
         "title": "设置标签"
       }
     ],
@@ -41,7 +41,7 @@
       },
       {
         "document": "同时对一个负载均衡下的四层和七层监听器修改所绑定的服务器权重",
-        "input": "https://clb.tencentcloudapi.com/?Action=BatchModifyTargetWeight\n&LoadBalancerId=lb-1kkno9qf\n&ModifyList.0.ListenerId=lbl-mhtffs09\n&ModifyList.0.Targets.0.InstanceId=ins-kjp6cb2f\n&ModifyList.0.Targets.0.Port=79\n&ModifyList.0.Targets.0.Weight=50\n&ModifyList.1.ListenerId=lbl-661zpn3b\n&ModifyList.1.LocationId=loc-78p1r0vb\n&ModifyList.1.Targets.0.EniIp=10.202.0.96\n&ModifyList.1.Targets.0.Port=123\n&ModifyList.1.Targets.0.Weight=30\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=BatchModifyTargetWeight\n&LoadBalancerId=lb-1kkno9qf\n&ModifyList.0.ListenerId=lbl-mhtffs09\n&ModifyList.0.Targets.0.InstanceId=ins-kjp6cb2f\n&ModifyList.0.Targets.0.Port=79\n&ModifyList.0.Targets.0.Weight=50\n&ModifyList.1.ListenerId=lbl-661zpn3b\n&ModifyList.1.LocationId=loc-78p1r0vb\n&ModifyList.1.Targets.0.EniIp=10.202.0.96\n&ModifyList.1.Targets.0.Port=80\n&ModifyList.1.Targets.0.Weight=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"38bab2ce-616d-412c-a4b0-36110d5b17a3\"\n    }\n}",
         "title": "批量修改四层和七层监听器绑定的服务器权重"
       }
@@ -227,7 +227,7 @@
     "DeregisterTargetGroupInstances": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DeregisterTargetGroupInstances\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=1234\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=DeregisterTargetGroupInstances\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=80\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b4987ca-58d0-4bad-9ded-344fa4011bda\"\n    }\n}",
         "title": "从目标组中解绑服务器"
       }
@@ -252,14 +252,14 @@
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeBlockIPList\r\n&LoadBalancerId=lb-6efswuxa\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BlockedIPCount\": 1,\n        \"BlockedIPList\": [\n            {\n                \"IP\": \"192.1.2.3\",\n                \"CreateTime\": \"2019-01-10 10:55:40\",\n                \"ExpireTime\": \"2019-01-10 11:12:19\"\n            }\n        ],\n        \"ClientIPField\": \"test\",\n        \"RequestId\": \"83329908-a282-4f9f-82ab-033a3025baff\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BlockedIPCount\": 1,\n        \"BlockedIPList\": [\n            {\n                \"IP\": \"192.1.2.3\",\n                \"CreateTime\": \"2019-01-10 10:55:40\",\n                \"ExpireTime\": \"2019-01-10 11:12:19\"\n            }\n        ],\n        \"ClientIPField\": \"cdn_src_ip\",\n        \"RequestId\": \"83329908-a282-4f9f-82ab-033a3025baff\"\n    }\n}",
         "title": "查询一个负载均衡所封禁的IP列表（黑名单）"
       }
     ],
     "DescribeBlockIPTask": [
       {
-        "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=DescribeBlockIPTask\r\n&TaskId=localjob010916173469001234567890\r\n&<公共请求参数>",
+        "document": "查询封禁IP（黑名单）异步任务的执行状态",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockIPTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"localjob010916173469001234567890\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 6,\n        \"RequestId\": \"83329908-a282-4f9f-8ab-033a3025baff\"\n    }\n}",
         "title": "查询封禁IP（黑名单）异步任务的执行状态"
       }
@@ -284,7 +284,7 @@
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeClassicalLBListeners\n&LoadBalancerId=lb-a3u5l5zc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-3jur3gei\",\n                \"ListenerPort\": 111,\n                \"InstancePort\": 1111,\n                \"ListenerName\": \"test\",\n                \"Protocol\": \"tcp\",\n                \"SessionExpire\": 0,\n                \"HealthSwitch\": 1,\n                \"TimeOut\": 2,\n                \"IntervalTime\": 5,\n                \"HealthNum\": 3,\n                \"UnhealthNum\": 3,\n                \"HttpHash\": \"\",\n                \"HttpCode\": 31,\n                \"HttpCheckPath\": \"\",\n                \"SSLMode\": \"\",\n                \"CertId\": \"\",\n                \"CertCaId\": \"\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"5da375f4-214d-42bb-8d50-e74bf556b38f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-3jur3gei\",\n                \"ListenerPort\": 80,\n                \"InstancePort\": 8080,\n                \"ListenerName\": \"HTTP-LISTENER\",\n                \"Protocol\": \"tcp\",\n                \"SessionExpire\": 0,\n                \"HealthSwitch\": 1,\n                \"TimeOut\": 2,\n                \"IntervalTime\": 5,\n                \"HealthNum\": 3,\n                \"UnhealthNum\": 3,\n                \"HttpHash\": \"\",\n                \"HttpCode\": 31,\n                \"HttpCheckPath\": \"\",\n                \"SSLMode\": \"\",\n                \"CertId\": \"\",\n                \"CertCaId\": \"\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"5da375f4-214d-42bb-8d50-e74bf556b38f\"\n    }\n}",
         "title": "获取一个传统型负载均衡的监听器信息"
       }
     ],
@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeCrossTargets\n&Offset=0\n&Limit=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CrossTargetSet\": [\n            {\n                \"LocalVpcId\": \"vpc-test1234\",\n                \"VpcId\": \"vpc-test4321\",\n                \"IP\": \"10.22.106.8\",\n                \"VpcName\": \"测试\",\n                \"EniId\": \"eni-test1234\",\n                \"InstanceId\": \"ins-test1234\",\n                \"InstanceName\": \"test\",\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7717db32-9080-4391-acd7-18f8bbd0664d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CrossTargetSet\": [\n            {\n                \"LocalVpcId\": \"vpc-test1234\",\n                \"VpcId\": \"vpc-test4321\",\n                \"IP\": \"10.22.106.8\",\n                \"VpcName\": \"VPC-BIZ-TEST\",\n                \"EniId\": \"eni-test1234\",\n                \"InstanceId\": \"ins-test1234\",\n                \"InstanceName\": \"inf-node-test.com\",\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"7717db32-9080-4391-acd7-18f8bbd0664d\"\n    }\n}",
         "title": "查询跨域2.0版本云联网后端子机和网卡信息"
       }
     ],
@@ -324,7 +324,7 @@
       {
         "document": "拉取配置绑定的server或location",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeCustomizedConfigAssociateList\n&UconfigId=pz-fi018waq\n&Offset=0\n&Limit=3\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"BindList\": [\n            {\n                \"LoadBalancerId\": \"lb-az5a9oyo\",\n                \"ListenerId\": \"lbl-nppnktey\",\n                \"Domain\": \"www.aaa.com\",\n                \"LocationId\": \"loc-nppnktey\",\n                \"ListenerName\": \"test\",\n                \"Protocol\": \"http\",\n                \"Vport\": 80,\n                \"Url\": \"\",\n                \"UconfigId\": \"pz-n651fsue\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BindList\": [\n            {\n                \"LoadBalancerId\": \"lb-az5a9oyo\",\n                \"ListenerId\": \"lbl-nppnktey\",\n                \"Domain\": \"www.aaa.com\",\n                \"LocationId\": \"loc-nppnktey\",\n                \"ListenerName\": \"http-listener\",\n                \"Protocol\": \"http\",\n                \"Vport\": 80,\n                \"Url\": \"\",\n                \"UconfigId\": \"pz-n651fsue\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
         "title": "拉取配置绑定的server或location"
       }
     ],
@@ -510,13 +510,13 @@
       {
         "document": "当负载均衡的7层监听器规则太多，而只想查询某个规则下的服务列表时，可通过Filters过滤location-id。",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargets\n&LoadBalancerId=lb-12345678\n&Filters.0.Name=location-id\n&Filters.0.Values.0=loc-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-12345678\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-12345678\",\n                        \"Domain\": \"123.com\",\n                        \"Url\": \"/\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"CVM\",\n                                \"InstanceId\": \"ins-12345678\",\n                                \"Port\": 80,\n                                \"Weight\": 10,\n                                \"PublicIpAddresses\": null,\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.100\"\n                                ],\n                                \"InstanceName\": \"123\",\n                                \"RegisteredTime\": \"2023-01-01\",\n                                \"EniId\": \"eni-12345678\"\n                            }\n                        ],\n                        \"FunctionTargets\": null\n                    }\n                ],\n                \"Targets\": null,\n                \"EndPort\": 0\n            }\n        ],\n        \"RequestId\": \"038afb75-7303-48da-abdc-e25f0cbfda0f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-12345678\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-12345678\",\n                        \"Domain\": \"123.com\",\n                        \"Url\": \"/query\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"CVM\",\n                                \"InstanceId\": \"ins-12345678\",\n                                \"Port\": 80,\n                                \"Weight\": 10,\n                                \"PublicIpAddresses\": null,\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.100\"\n                                ],\n                                \"InstanceName\": \"cvm-biz-test\",\n                                \"RegisteredTime\": \"2023-01-01\",\n                                \"EniId\": \"eni-12345678\"\n                            }\n                        ],\n                        \"FunctionTargets\": null\n                    }\n                ],\n                \"Targets\": null,\n                \"EndPort\": 0\n            }\n        ],\n        \"RequestId\": \"038afb75-7303-48da-abdc-e25f0cbfda0f\"\n    }\n}",
         "title": "通过Location过滤查询后端服务列表"
       },
       {
         "document": "查询负载均衡实例上绑定的所有后端服务",
         "input": "https://clb.tencentcloudapi.com/?Action=DescribeTargets\n&LoadBalancerId=lb-10iq9lou\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-4fo6k8na\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-o9732aw0\",\n                        \"Domain\": \"www.123.com\",\n                        \"Url\": \"/\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"cvm\",\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.12\"\n                                ],\n                                \"EniId\": \"\",\n                                \"PublicIpAddresses\": null,\n                                \"InstanceName\": \"abcd1234\",\n                                \"Port\": 555,\n                                \"Weight\": 10,\n                                \"InstanceId\": \"ins-19425y2y\",\n                                \"RegisteredTime\": \"2019-07-12 16:22:02\"\n                            }\n                        ],\n                        \"FunctionTargets\": []\n                    }\n                ],\n                \"Targets\": null\n            },\n            {\n                \"ListenerId\": \"lbl-4ue2rpl2\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 888,\n                \"Rules\": null,\n                \"Targets\": [\n                    {\n                        \"Type\": \"cvm\",\n                        \"PrivateIpAddresses\": [\n                            \"172.16.0.12\"\n                        ],\n                        \"EniId\": \"\",\n                        \"PublicIpAddresses\": null,\n                        \"InstanceName\": \"abcd1234\",\n                        \"Port\": 666,\n                        \"Weight\": 40,\n                        \"InstanceId\": \"ins-19425y2y\",\n                        \"RegisteredTime\": \"2019-07-12 16:22:54\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a5cbe92d-c7f2-41d4-8343-3cb42c3fd1dd\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Listeners\": [\n            {\n                \"ListenerId\": \"lbl-4fo6k8na\",\n                \"Protocol\": \"HTTP\",\n                \"Port\": 80,\n                \"Rules\": [\n                    {\n                        \"LocationId\": \"loc-o9732aw0\",\n                        \"Domain\": \"www.123.com\",\n                        \"Url\": \"/query\",\n                        \"Targets\": [\n                            {\n                                \"Type\": \"cvm\",\n                                \"PrivateIpAddresses\": [\n                                    \"172.16.0.12\"\n                                ],\n                                \"EniId\": \"\",\n                                \"PublicIpAddresses\": null,\n                                \"InstanceName\": \"abcd1234\",\n                                \"Port\": 555,\n                                \"Weight\": 10,\n                                \"InstanceId\": \"ins-19425y2y\",\n                                \"RegisteredTime\": \"2019-07-12 16:22:02\"\n                            }\n                        ],\n                        \"FunctionTargets\": []\n                    }\n                ],\n                \"Targets\": null,\n                \"EndPort\": 0\n            },\n            {\n                \"ListenerId\": \"lbl-4ue2rpl2\",\n                \"Protocol\": \"TCP\",\n                \"Port\": 888,\n                \"Rules\": null,\n                \"EndPort\": 0,\n                \"Targets\": [\n                    {\n                        \"Type\": \"cvm\",\n                        \"PrivateIpAddresses\": [\n                            \"172.16.0.12\"\n                        ],\n                        \"EniId\": \"\",\n                        \"PublicIpAddresses\": null,\n                        \"InstanceName\": \"abcd1234\",\n                        \"Port\": 666,\n                        \"Weight\": 40,\n                        \"InstanceId\": \"ins-19425y2y\",\n                        \"RegisteredTime\": \"2019-07-12 16:22:54\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"a5cbe92d-c7f2-41d4-8343-3cb42c3fd1dd\"\n    }\n}",
         "title": "查询负载均衡实例上绑定的所有后端服务"
       }
     ],
@@ -705,7 +705,7 @@
     "ModifyTargetGroupInstancesPort": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetGroupInstancesPort\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=123\n&TargetGroupInstances.0.NewPort=2233\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetGroupInstancesPort\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=8000\n&TargetGroupInstances.0.NewPort=8080\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"15566c73-3881-4762-939f-bae9ecf25808\"\n    }\n}",
         "title": "批量修改服务器的端口"
       }
@@ -713,7 +713,7 @@
     "ModifyTargetGroupInstancesWeight": [
       {
         "document": "",
-        "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetGroupInstancesWeight\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=1234\n&TargetGroupInstances.0.Weight=55\n&<公共请求参数>",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyTargetGroupInstancesWeight\n&TargetGroupId=lbtg-815iz538\n&TargetGroupInstances.0.BindIP=172.16.0.34\n&TargetGroupInstances.0.Port=8080\n&TargetGroupInstances.0.Weight=55\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed90470e-eade-423f-aae6-264d814d0d65\"\n    }\n}",
         "title": "批量修改目标组服务器权重"
       }

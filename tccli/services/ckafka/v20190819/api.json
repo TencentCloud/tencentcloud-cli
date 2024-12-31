@@ -12751,6 +12751,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "正则匹配Topic列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mytest",
+          "member": "string",
+          "name": "TopicRegularExpression",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

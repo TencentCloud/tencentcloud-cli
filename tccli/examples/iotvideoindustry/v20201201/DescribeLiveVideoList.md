@@ -25,7 +25,7 @@ Output:
                 "VideoUrl": "https://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/8e62c9e03701925923890211076/f0.mp4 ",
                 "RecordPlanId": "plan-7fqulsjc",
                 "StartTime": 1631007068,
-                "EndTime": 1631007668
+                "EndTime": 1631009668
             }
         ],
         "RequestId": "fd344df8-6121-4e75-b417-383a67268354111",

@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli vpc AddTemplateMember --cli-unfold-argument  \
-    --TemplateId ipm-test1234 \
+    --TemplateId ipm-88t6207k \
     --TemplateMember.0.Member 10.0.0.1 \
-    --TemplateMember.0.Description test \
+    --TemplateMember.0.Description demo \
     --TemplateMember.1.Member 172.20.0.1/24
 ```
 
@@ -29,10 +29,10 @@ Input:
 
 ```
 tccli vpc AddTemplateMember --cli-unfold-argument  \
-    --TemplateId ipmg-test1234 \
-    --TemplateMember.0.Member ipm-test1234 \
-    --TemplateMember.0.Description test \
-    --TemplateMember.1.Member ipm-demo1234
+    --TemplateId ipmg-dih8xdbq \
+    --TemplateMember.0.Member ipm-88t6207k \
+    --TemplateMember.0.Description demo \
+    --TemplateMember.1.Member ipm-mdunqeb6
 ```
 
 Output: 
@@ -52,9 +52,9 @@ Input:
 
 ```
 tccli vpc AddTemplateMember --cli-unfold-argument  \
-    --TemplateId ppm-test1234 \
+    --TemplateId ppm-6zwa44xm \
     --TemplateMember.0.Member TCP:80 \
-    --TemplateMember.0.Description test \
+    --TemplateMember.0.Description demo \
     --TemplateMember.1.Member TCP:443
 ```
 
@@ -75,10 +75,10 @@ Input:
 
 ```
 tccli vpc AddTemplateMember --cli-unfold-argument  \
-    --TemplateId ppmg-test1234 \
-    --TemplateMember.0.Member ppm-test1234 \
-    --TemplateMember.0.Description test \
-    --TemplateMember.1.Member ppm-demo1234
+    --TemplateId ppmg-ms7c7gcr \
+    --TemplateMember.0.Member ppm-6zwa44xm \
+    --TemplateMember.0.Description demo \
+    --TemplateMember.1.Member ppm-4tw1bxlq
 ```
 
 Output: 
