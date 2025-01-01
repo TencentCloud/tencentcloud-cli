@@ -1,3 +1,35 @@
+# Release 3.0.1128.1
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 14 次发布
+
+发布时间：2025-01-02 01:22:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85629)
+* [DeleteAttributeLabels](http://document.tencentcloudapi.woa.com/document/product/1764/85628)
+* [DeleteQAs](http://document.tencentcloudapi.woa.com/document/product/1764/85627)
+* [ListAttributeLabels](http://document.tencentcloudapi.woa.com/document/product/1764/85626)
+* [ModifyAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85625)
+* [ModifyQA](http://document.tencentcloudapi.woa.com/document/product/1764/85624)
+* [RetrieveKnowledge](http://document.tencentcloudapi.woa.com/document/product/1764/85623)
+
+新增数据结构：
+
+* [AttributeItem](http://document.tencentcloudapi.woa.com/document/product/1764/84021#AttributeItem)
+* [AttributeLabelItem](http://document.tencentcloudapi.woa.com/document/product/1764/84021#AttributeLabelItem)
+* [RetrievalRecord](http://document.tencentcloudapi.woa.com/document/product/1764/84021#RetrievalRecord)
+* [RetrievalRecordMetadata](http://document.tencentcloudapi.woa.com/document/product/1764/84021#RetrievalRecordMetadata)
+* [RetrievalSetting](http://document.tencentcloudapi.woa.com/document/product/1764/84021#RetrievalSetting)
+
+
+
 # Release 3.0.1127.1
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19

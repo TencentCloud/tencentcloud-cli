@@ -7,6 +7,13 @@
       "output": "ChatCompletionsResponse",
       "status": "online"
     },
+    "CreateAttributeLabel": {
+      "document": "用于为问答对创建属性标签，以便对内容进行分类和管理。 使用场景：当需要为问答对添加分类标签和属性标记时使用，比如为问答对添加“售后”标签。",
+      "input": "CreateAttributeLabelRequest",
+      "name": "创建属性标签",
+      "output": "CreateAttributeLabelResponse",
+      "status": "online"
+    },
     "CreateKnowledgeBase": {
       "document": "用于在系统中创建一个新的知识库。知识库是一个用于存储和管理知识条目的集合，可以包括文档、问答对、属性标签等。创建知识库后，可以向其中添加各种知识条目，以便在后续的知识检索中使用。 使用场景：当需要在系统中建立一个新的知识库以存储和管理特定领域或项目的知识条目时使用。例如，一个用户可能需要创建一个知识库，以存储用户指南、常见问题解答和技术文档。",
       "input": "CreateKnowledgeBaseRequest",
@@ -28,6 +35,13 @@
       "output": "CreateSplitDocumentFlowResponse",
       "status": "online"
     },
+    "DeleteAttributeLabels": {
+      "document": "用于删除不再需要的属性标签。 使用场景：当某个标签不再使用时，可以将其删除以保持标签系统的整洁。",
+      "input": "DeleteAttributeLabelsRequest",
+      "name": "批量删除属性标签",
+      "output": "DeleteAttributeLabelsResponse",
+      "status": "online"
+    },
     "DeleteDocs": {
       "document": "用于删除已有的文档。 使用场景：当某个文档不再需要时，可以将其删除以保持文档库的整洁。",
       "input": "DeleteDocsRequest",
@@ -40,6 +54,13 @@
       "input": "DeleteKnowledgeBaseRequest",
       "name": "删除知识库",
       "output": "DeleteKnowledgeBaseResponse",
+      "status": "online"
+    },
+    "DeleteQAs": {
+      "document": "用于删除已有的问答对。 使用场景：当某个问答对不再适用或需要移除时使用。",
+      "input": "DeleteQAsRequest",
+      "name": "删除问答对",
+      "output": "DeleteQAsResponse",
       "status": "online"
     },
     "DescribeDoc": {
@@ -70,6 +91,13 @@
       "output": "ImportQAsResponse",
       "status": "online"
     },
+    "ListAttributeLabels": {
+      "document": "用于获取所有属性标签的列表。 使用场景：用于查看当前系统中所有已有的属性标签，方便进行管理和维护。",
+      "input": "ListAttributeLabelsRequest",
+      "name": "获取属性标签列表",
+      "output": "ListAttributeLabelsResponse",
+      "status": "online"
+    },
     "ListDocs": {
       "document": "用于获取所有文档的列表。 使用场景：用于查看当前系统中所有已有的文档，方便进行管理和维护。",
       "input": "ListDocsRequest",
@@ -84,6 +112,20 @@
       "output": "ListQAsResponse",
       "status": "online"
     },
+    "ModifyAttributeLabel": {
+      "document": "用于修改已有的属性标签。 使用场景：当需要更改属性标签的名称或描述时使用，比如将“售后”标签改为“售前”。",
+      "input": "ModifyAttributeLabelRequest",
+      "name": "修改属性标签",
+      "output": "ModifyAttributeLabelResponse",
+      "status": "online"
+    },
+    "ModifyQA": {
+      "document": "用于修改已有的问答对。 使用场景：当需要更新问答对的内容或答案时使用。",
+      "input": "ModifyQARequest",
+      "name": "修改问答对",
+      "output": "ModifyQAResponse",
+      "status": "online"
+    },
     "ReconstructDocumentDemo": {
       "document": "纯内部接口，不对外，用于官网Demo调用，封装解析引擎能力",
       "input": "ReconstructDocumentDemoRequest",
@@ -96,6 +138,13 @@
       "input": "ReconstructDocumentSSERequest",
       "name": "文档解析SSE",
       "output": "ReconstructDocumentSSEResponse",
+      "status": "online"
+    },
+    "RetrieveKnowledge": {
+      "document": "用于检索知识库中的文档和问答对内容。 使用场景：适用于查询长期存储在知识库中的文档和问答对，比如产品手册、用户指南等内容的检索。",
+      "input": "RetrieveKnowledgeRequest",
+      "name": "检索知识库内容",
+      "output": "RetrieveKnowledgeResponse",
       "status": "online"
     },
     "SearchKnowledge": {
@@ -127,6 +176,84 @@
     "serviceShortName": "lkeap"
   },
   "objects": {
+    "AttributeItem": {
+      "document": "属性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AttributeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AttributeKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AttributeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttributeLabelItem",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AttributeLabelItem": {
+      "document": "属性标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LabelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签名称，最大80个英文字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AttributeLabelReferItem": {
       "document": "属性标签引用",
       "members": [
@@ -274,6 +401,33 @@
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAttributeLabelRequest": {
+      "document": "CreateAttributeLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性标签信息",
+          "example": "无",
+          "member": "AttributeLabelItem",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAttributeLabelResponse": {
+      "document": "CreateAttributeLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"
@@ -468,6 +622,23 @@
       ],
       "type": "object"
     },
+    "DeleteAttributeLabelsRequest": {
+      "document": "DeleteAttributeLabels请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteAttributeLabelsResponse": {
+      "document": "DeleteAttributeLabels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDocsRequest": {
       "document": "DeleteDocs请求参数结构体",
       "members": [],
@@ -502,6 +673,23 @@
     },
     "DeleteKnowledgeBaseResponse": {
       "document": "DeleteKnowledgeBase返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteQAsRequest": {
+      "document": "DeleteQAs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DeleteQAsResponse": {
+      "document": "DeleteQAs返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -799,6 +987,33 @@
       ],
       "usage": "in"
     },
+    "ListAttributeLabelsRequest": {
+      "document": "ListAttributeLabels请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListAttributeLabelsResponse": {
+      "document": "ListAttributeLabels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性标签列表",
+          "example": "无",
+          "member": "AttributeItem",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListDocsRequest": {
       "document": "ListDocs请求参数结构体",
       "members": [],
@@ -880,6 +1095,60 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyAttributeLabelRequest": {
+      "document": "ModifyAttributeLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性标签",
+          "example": "无",
+          "member": "AttributeLabelItem",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAttributeLabelResponse": {
+      "document": "ModifyAttributeLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyQARequest": {
+      "document": "ModifyQA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "属性标签",
+          "example": "无",
+          "member": "AttributeLabelReferItem",
+          "name": "AttributeLabels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyQAResponse": {
+      "document": "ModifyQA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QAObject": {
       "document": "问答对",
@@ -1235,6 +1504,185 @@
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RetrievalRecord": {
+      "document": "检索的结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索结果的元数据",
+          "example": "{\"Type\":\"DOC\",\"ResultSource\":\"SEMANTIC\",\"ChunkPageNumbers\":[1,2]}",
+          "member": "RetrievalRecordMetadata",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索到的标题",
+          "example": "example.pdf",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索到的内容",
+          "example": "国庆放7天假",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RetrievalRecordMetadata": {
+      "document": "检索结果的元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果的类型。\n- `DOC`：文档\n- `QA`：问答对",
+          "example": "DOC",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索结果的来源。\n- `SEMANTIC`：从语义检索中得到的结果\n- `FULL_TEXT`：从全文检索中得到的结果",
+          "example": "SEMANTIC",
+          "member": "string",
+          "name": "ResultSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片在文档中的页码，仅部分文档支持",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ChunkPageNumbers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RetrievalSetting": {
+      "document": "检索参数设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索的类型，不填该参数则检索全部。\n- `DOC`：文档\n- `QA`：QA\n\n仅RetrieveKnowledge接口支持该参数",
+          "example": "DOC",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回个数",
+          "example": "5",
+          "member": "int64",
+          "name": "TopK",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分数过滤",
+          "example": "0.7",
+          "member": "float",
+          "name": "ScoreThreshold",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "RetrieveKnowledgeRequest": {
+      "document": "RetrieveKnowledge请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID。",
+          "example": "1840331836752986944",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于检索的文本。",
+          "example": "国庆放几天假",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索方法，默认使用`HYBRID`混合检索。\n- `SEMANTIC`：语义检索\n- `FULL_TEXT`：全文检索\n- `HYBRID`：混合检索",
+          "example": "SEMANTIC",
+          "member": "string",
+          "name": "RetrievalMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索设置。",
+          "example": "{\"TopK\":3,\"ScoreThreshold\":0.7}",
+          "member": "RetrievalSetting",
+          "name": "RetrievalSetting",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RetrieveKnowledgeResponse": {
+      "document": "RetrieveKnowledge返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索结果",
+          "example": "[{\"Metadata\":{\"Type\":\"DOC\",\"ResultSource\":\"SEMANTIC\",\"ChunkPageNumbers\":[1,2]},\"Score\":0,\"Title\":\"example.pdf\",\"Content\":\"国庆放7天假\"}]",
+          "member": "RetrievalRecord",
+          "name": "Records",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检索结果数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
           "type": "string"

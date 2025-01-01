@@ -162,7 +162,7 @@
 | lighthousedb | [轻量数据库服务LighthouseDB](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-12-31 01:31:29 |
 | live | [云直播CSS](http://document.tencentcloudapi.woa.com/document/product/267) | 2024-12-31 01:31:45 |
 | lke | [大模型知识引擎](http://document.tencentcloudapi.woa.com/document/product/1759) | 2024-06-21 01:19:32 |
-| lkeap | [知识引擎原子能力](http://document.tencentcloudapi.woa.com/document/product/) | 2024-12-23 01:24:59 |
+| lkeap | [知识引擎原子能力](http://document.tencentcloudapi.woa.com/document/product/) | 2025-01-02 01:22:40 |
 | lowcode | [云开发低码](http://document.tencentcloudapi.woa.com/document/product/1301) | 2025-01-01 01:25:03 |
 | lp | [登录保护](http://document.tencentcloudapi.woa.com/document/product/1190) | 2022-03-08 08:03:08 |
 | mall | [商场客留大数据](http://document.tencentcloudapi.woa.com/document/product/1707) | 2024-03-20 01:20:35 |
