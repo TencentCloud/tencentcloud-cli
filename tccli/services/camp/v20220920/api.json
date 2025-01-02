@@ -500,6 +500,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -510,6 +511,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -520,6 +522,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -530,9 +533,32 @@
           "example": "无",
           "member": "int64",
           "name": "VersionCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -641,7 +667,7 @@
           "example": "10%",
           "member": "string",
           "name": "MaxFailed",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1379,6 +1405,28 @@
         },
         {
           "disabled": false,
+          "document": "指定父集群 MultiClusterService 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MultiClusterServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定父集群 TkeServiceConfig 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TkeServiceConfigName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "clb 开启直连 Pod 特性，仅 vpc-cni 网络支持。默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -1408,6 +1456,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Service 集群内流量策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Local",
+          "member": "string",
+          "name": "InternalTrafficPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -1540,6 +1599,61 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLB 配置是否被变更\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Changed",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启 CLB 复用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "QcloudShareExistedLB",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跳过 CLB 健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadinessGateSkip",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "annotations\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Annotations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -2477,8 +2591,8 @@
           "example": "2",
           "member": "uint64",
           "name": "ReleaseOrder",
-          "output_required": true,
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2793,6 +2907,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂在成为volumeMount时，是否只读，默认读写，只有设置只读时才设置true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2877,6 +3002,15 @@
           "example": "无",
           "member": "User",
           "name": "CMDBAdmins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYans",
           "required": false,
           "type": "list"
         }
@@ -3136,6 +3270,15 @@
           "name": "SourceURL",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYans",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3269,6 +3412,33 @@
           "example": "无",
           "member": "string",
           "name": "JSON",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "annotations",
+          "example": "无",
+          "member": "Label",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "labels",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于增加应用的描述，方便识别\t",
+          "example": "这是个广州的应用实例\t",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }
@@ -3497,6 +3667,15 @@
           "name": "ZhiYan",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYans",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3832,6 +4011,23 @@
       ],
       "usage": "both"
     },
+    "DOPVolumeSource": {
+      "document": "用于DOP类型的PVC挂载",
+      "members": [
+        {
+          "disabled": false,
+          "document": "只针对数平用户开放\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "alluxio-xxx",
+          "member": "string",
+          "name": "StorageClassName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteApplicationRequest": {
       "document": "DeleteApplication请求参数结构体",
       "members": [
@@ -4049,7 +4245,17 @@
     },
     "DeletePodRequest": {
       "document": "DeletePod请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除pod 等待时间，取值0-30",
+          "example": "10",
+          "member": "int64",
+          "name": "GracePeriodSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DeletePodResponse": {
@@ -5062,6 +5268,15 @@
           "name": "SortOptions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回pod 紧凑结构，传true 将不再返回Labels 和Raw",
+          "example": "true",
+          "member": "bool",
+          "name": "Compact",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -6883,6 +7098,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "annotations",
+          "example": "无",
+          "member": "Label",
+          "name": "Annotations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hpa 自定义名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7549,6 +7786,15 @@
           "name": "CMDBAdmins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYans",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7729,6 +7975,15 @@
           "name": "ZhiYan",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYans",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7864,6 +8119,24 @@
           "name": "JSON",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "annotations",
+          "example": "无",
+          "member": "Label",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "labels",
+          "example": "无",
+          "member": "Label",
+          "name": "Labels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7999,6 +8272,15 @@
           "name": "Migration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYans",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8466,6 +8748,17 @@
         },
         {
           "disabled": false,
+          "document": "部署规避可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AvoidZones",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "最小可用区数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
@@ -8583,6 +8876,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按容量部署支持容忍度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MaxRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],
@@ -8890,6 +9194,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TKE集群ID",
+          "example": "cls-xxxxxx",
+          "member": "string",
+          "name": "TKEClusterID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod的Label信息",
+          "example": "\"{\\\"k8s-app\\\": \\\"inst711-a2\\\", \\\"app.camp.io/id\\\": \\\"tad-8wxgbqn8\\\", \\\"app.tad.io/name\\\": \\\"app-zhh-inst711-a2\\\", \\\"tkex-projectName\\\": \\\"prj-c4t6575j\\\", \\\"pod-template-hash\\\": \\\"67fc4f74fd\\\", \\\"tkex-workload-kind\\\": \\\"deployment\\\", \\\"tkex-workload-name\\\": \\\"inst711-a2\\\", \\\"cloud.tencent.com/pool\\\": \\\"qcloud_ziyan\\\", \\\"component.app.tad.io/name\\\": \\\"inst711-a2\\\", \\\"component.app.tad.io/type\\\": \\\"deployment\\\", \\\"app.camp.io/application-id\\\": \\\"app-vt66hf92\\\", \\\"cloud.tencent.com/asset-code\\\": \\\"TEKS241011014630\\\", \\\"cloud.tencent.com/instance-type\\\": \\\"S5.SMALL4\\\", \\\"app.tad.io/component-controller-revision\\\": \\\"app-zhh-inst711-a2-879768867\\\", \\\"app.tad.io/component-podTemplate-revision\\\": \\\"app-zhh-inst711-a2-849b89cd98\\\"}\"",
+          "member": "string",
+          "name": "Labels",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9336,7 +9660,7 @@
           "example": "无",
           "member": "ClusterLabelSelector",
           "name": "ClusterLabelSelectors",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -10185,6 +10509,16 @@
         },
         {
           "disabled": false,
+          "document": "升级中的副本数",
+          "example": "1",
+          "member": "int64",
+          "name": "UpdatingReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "已升级副本数",
           "example": "1",
           "member": "int64",
@@ -10258,7 +10592,7 @@
           "example": "false",
           "member": "bool",
           "name": "InPlaceUpdateFlag",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -10313,7 +10647,7 @@
           "example": "true",
           "member": "bool",
           "name": "Pause",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -10328,6 +10662,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级跳过的Pod跳过优雅终止\t",
+          "example": "true",
+          "member": "bool",
+          "name": "CloseGraceTermination",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10503,6 +10848,17 @@
           "example": "无",
           "member": "EmptyDirVolumeSource",
           "name": "EmptyDir",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数平dop数据卷\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DOPVolumeSource",
+          "name": "DOP",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -10709,6 +11065,7 @@
           "example": "all",
           "member": "string",
           "name": "Stream",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10719,6 +11076,7 @@
           "example": "无",
           "member": "string",
           "name": "Volume",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10729,6 +11087,7 @@
           "example": "无",
           "member": "string",
           "name": "Paths",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

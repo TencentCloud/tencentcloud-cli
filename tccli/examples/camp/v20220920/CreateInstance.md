@@ -9,7 +9,7 @@ tccli camp CreateInstance --cli-unfold-argument  \
     --ProjectID abc \
     --ApplicationID abc \
     --EnvironmentName abc \
-    --Name abc \
+    --Name testinstance \
     --Components.0.Name abc \
     --Components.0.Type abc \
     --Components.0.Properties.K8sObjects abc \
@@ -116,8 +116,8 @@ tccli camp CreateInstance --cli-unfold-argument  \
     --Policies.0.Properties.Placement.Components abc \
     --Policies.0.Properties.Placement.Strategy abc \
     --Creator.Tencent.Name abc \
-    --Source abc \
-    --SourceURL abc \
+    --Source camp \
+    --SourceURL http://127.0.0.1 \
     --ReadOnly True
 ```
 
@@ -126,7 +126,7 @@ Output:
 {
     "Response": {
         "InstanceID": "abc",
-        "RequestId": "abc"
+        "RequestId": "23641907-9449-4a5b-85d8-e1930762d126"
     }
 }
 ```

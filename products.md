@@ -39,7 +39,7 @@
 | btoe | [区块链可信取证](http://document.tencentcloudapi.woa.com/document/product/1259) | 2024-11-07 01:15:29 |
 | ca | [腾讯云CA](http://document.tencentcloudapi.woa.com/document/product/1691) | 2024-11-05 01:15:11 |
 | cam | [访问管理](http://document.tencentcloudapi.woa.com/document/product/598) | 2024-11-08 01:15:36 |
-| camp | [应用管理平台](http://document.tencentcloudapi.woa.com/document/product/) | 2024-09-30 01:16:37 |
+| camp | [应用管理平台](http://document.tencentcloudapi.woa.com/document/product/) | 2025-01-02 17:48:02 |
 | captcha | [验证码](http://document.tencentcloudapi.woa.com/document/product/1110) | 2024-10-23 01:17:09 |
 | car | [应用云渲染](http://document.tencentcloudapi.woa.com/document/product/1547) | 2024-12-31 01:10:44 |
 | cat | [云拨测](http://document.tencentcloudapi.woa.com/document/product/280) | 2024-11-15 01:16:47 |

@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli camp ModifyInstance --cli-unfold-argument  \
-    --Platform abc \
-    --ProjectID abc \
-    --EnvironmentName abc \
-    --ApplicationID abc \
-    --InstanceID abc \
+    --Platform camp \
+    --ProjectID prj-xxxxxx \
+    --EnvironmentName development \
+    --ApplicationID app-xxxxxx \
+    --InstanceID tad-xxxxxx \
     --Policies.0.Name abc \
     --Policies.0.Type abc \
     --Policies.0.Properties.Placement.Type abc \
@@ -26,7 +26,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "26ccfdd8-6d24-4236-9321-58d0467da44f"
     }
 }
 ```
@@ -54,6 +54,29 @@ Output:
 {
     "Response": {
         "RequestId": "26ccfdd8-6d24-4236-9321-58d0467da44f"
+    }
+}
+```
+
+**Example 3: shukedai - ModifyInstance测试**
+
+
+
+Input: 
+
+```
+tccli camp ModifyInstance --cli-unfold-argument  \
+    --ProjectID prjt5tlz \
+    --EnvironmentName ns-prjt5tlz-1448286-production \
+    --ApplicationID app-plgzmrjf \
+    --InstanceID tad-zknzcpmm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "d04810b5-6228-4e02-a7bd-328119555ffc"
     }
 }
 ```

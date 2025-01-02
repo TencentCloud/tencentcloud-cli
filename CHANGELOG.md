@@ -1,3 +1,137 @@
+# Release 3.0.1129.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 43 次发布
+
+发布时间：2025-01-02 17:48:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1609/78007)
+
+	* 新增入参：ZhiYans
+
+* [CreateEnvironment](http://document.tencentcloudapi.woa.com/document/product/1609/78004)
+
+	* 新增入参：ZhiYans
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1609/78003)
+
+	* 新增入参：Annotations, Labels, Description
+
+* [CreateProject](http://document.tencentcloudapi.woa.com/document/product/1609/78001)
+
+	* 新增入参：ZhiYans
+
+* [DeletePod](http://document.tencentcloudapi.woa.com/document/product/1609/77994)
+
+	* 新增入参：GracePeriodSeconds
+
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
+
+	* 新增入参：Compact
+
+* [ModifyApplication](http://document.tencentcloudapi.woa.com/document/product/1609/77954)
+
+	* 新增入参：ZhiYans
+
+* [ModifyEnvironment](http://document.tencentcloudapi.woa.com/document/product/1609/77951)
+
+	* 新增入参：ZhiYans
+
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1609/77950)
+
+	* 新增入参：Annotations, Labels
+
+* [ModifyProject](http://document.tencentcloudapi.woa.com/document/product/1609/77948)
+
+	* 新增入参：ZhiYans
+
+
+新增数据结构：
+
+* [DOPVolumeSource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DOPVolumeSource)
+
+修改数据结构：
+
+* [AggregatedConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#AggregatedConfig)
+
+	* 新增成员：Description, ConfigVersion
+
+* [CLBTraitConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CLBTraitConfig)
+
+	* 新增成员：MultiClusterServiceName, TkeServiceConfigName, InternalTrafficPolicy, Changed, QcloudShareExistedLB, ReadinessGateSkip, Description, Annotations
+
+* [ClusterLabelSelector](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ClusterLabelSelector)
+
+	* <font color="#dd0000">**修改成员**：</font>ReleaseOrder
+
+* [ContainerMount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ContainerMount)
+
+	* 新增成员：ReadOnly
+
+* [HPASource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPASource)
+
+	* 新增成员：Annotations, SpecifyName
+
+* [PlacementPolicy](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementPolicy)
+
+	* 新增成员：AvoidZones, MaxRatio
+
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Pod)
+
+	* 新增成员：TKEClusterID, Labels
+
+* [UpdateStatusDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStatusDetail)
+
+	* 新增成员：UpdatingReplicas
+
+* [UpdateStrategyTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#UpdateStrategyTrait)
+
+	* 新增成员：CloseGraceTermination
+
+* [VolumeRaw](http://document.tencentcloudapi.woa.com/document/product/1609/78009#VolumeRaw)
+
+	* 新增成员：DOP
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 14 次发布
+
+发布时间：2025-01-02 01:22:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85629)
+* [DeleteAttributeLabels](http://document.tencentcloudapi.woa.com/document/product/1764/85628)
+* [DeleteQAs](http://document.tencentcloudapi.woa.com/document/product/1764/85627)
+* [ListAttributeLabels](http://document.tencentcloudapi.woa.com/document/product/1764/85626)
+* [ModifyAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85625)
+* [ModifyQA](http://document.tencentcloudapi.woa.com/document/product/1764/85624)
+* [RetrieveKnowledge](http://document.tencentcloudapi.woa.com/document/product/1764/85623)
+
+新增数据结构：
+
+* [AttributeItem](http://document.tencentcloudapi.woa.com/document/product/1764/84021#AttributeItem)
+* [AttributeLabelItem](http://document.tencentcloudapi.woa.com/document/product/1764/84021#AttributeLabelItem)
+* [RetrievalRecord](http://document.tencentcloudapi.woa.com/document/product/1764/84021#RetrievalRecord)
+* [RetrievalRecordMetadata](http://document.tencentcloudapi.woa.com/document/product/1764/84021#RetrievalRecordMetadata)
+* [RetrievalSetting](http://document.tencentcloudapi.woa.com/document/product/1764/84021#RetrievalSetting)
+
+
+
 # Release 3.0.1128.1
 
 ## 知识引擎原子能力(lkeap) 版本：2024-05-22
