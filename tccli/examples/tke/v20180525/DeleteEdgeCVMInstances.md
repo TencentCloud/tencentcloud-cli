@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DeleteEdgeCVMInstances --cli-unfold-argument  \
-    --ClusterID cls-1234abcd \
+    --ClusterID cls-2wds9k9p \
     --CvmIdSet cvm-gdf53454
 ```
 

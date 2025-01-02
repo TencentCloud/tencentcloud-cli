@@ -7,7 +7,7 @@ Input:
 ```
 tccli aca UploadDrugs --cli-unfold-argument  \
     --Header.HospitalId 1 \
-    --Header.Token abc \
+    --Header.Token tai.MTAwMDY%3D.30100b80-42af-11eb-b203-19b451462f39 \
     --Data.Drugs.0.DrugOrgId 医院药品id \
     --Data.Drugs.0.DrugName 医院药品通用名 \
     --Data.Drugs.0.DrugCommodityName 医院药品商品名 \

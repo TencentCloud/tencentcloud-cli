@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeEdgeClusterInstances --cli-unfold-argument  \
-    --ClusterID cls-xxxxx \
+    --ClusterID cls-e55paxnt \
     --Limit 5 \
     --Offset 0
 ```

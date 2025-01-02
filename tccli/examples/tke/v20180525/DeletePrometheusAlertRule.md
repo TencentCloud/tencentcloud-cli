@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DeletePrometheusAlertRule --cli-unfold-argument  \
-    --InstanceId prom-xxx \
+    --InstanceId prom-e55paxnt \
     --AlertIds a1
 ```
 

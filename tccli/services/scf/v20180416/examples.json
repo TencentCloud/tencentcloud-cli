@@ -19,13 +19,13 @@
     "CreateCustomDomain": [
       {
         "document": "创建一个自定义域名，关闭了waf防护，路由配置开启重写策略，该策略是通配符匹配替换。",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"BxxJ3DK7\"\n    },\n    \"EndpointsConfig\": [\n        {\n            \"PathMatch\": \"/aa/*\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"test1\",\n            \"Qualifier\": \"$LATEST\",\n            \"PathRewrite\": [\n                {\n                    \"Path\": \"/aa/bb/*\",\n                    \"Type\": \"WildcardRules\",\n                    \"Rewrite\": \"/$\"\n                }\n            ]\n        }\n    ],\n    \"WafConfig\": {\n        \"WafOpen\": \"CLOSE\",\n        \"WafInstanceId\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"BxxJ3DK7\"\n    },\n    \"EndpointsConfig\": [\n        {\n            \"PathMatch\": \"/aa/*\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"test1\",\n            \"Qualifier\": \"$LATEST\",\n            \"PathRewrite\": [\n                {\n                    \"Path\": \"/aa/bb/*\",\n                    \"Type\": \"WildcardRules\",\n                    \"Rewrite\": \"/$\"\n                }\n            ]\n        }\n    ],\n    \"WafConfig\": {\n        \"WafOpen\": \"CLOSE\",\n        \"WafInstanceId\": \"waf_2kzh3vlq0umkkha9\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例1"
       },
       {
         "document": "创建一个自定义域名，开启了waf 防护，路由配置开启重写策略，该策略是精确路径匹配替换。",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"BxxJ3DK7\"\n    },\n    \"EndpointsConfig\": [\n        {\n            \"PathMatch\": \"/aa/\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"test1\",\n            \"Qualifier\": \"1\",\n            \"PathRewrite\": [\n                {\n                    \"Path\": \"/aa/\",\n                    \"Type\": \"WildcardRules\",\n                    \"Rewrite\": \"/\"\n                }\n            ]\n        }\n    ],\n    \"WafConfig\": {\n        \"WafOpen\": \"OPEN\",\n        \"WafInstanceId\": \"waf-xxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"BxxJ3DK7\"\n    },\n    \"EndpointsConfig\": [\n        {\n            \"PathMatch\": \"/aa/\",\n            \"Namespace\": \"default\",\n            \"FunctionName\": \"test1\",\n            \"Qualifier\": \"1\",\n            \"PathRewrite\": [\n                {\n                    \"Path\": \"/aa/\",\n                    \"Type\": \"WildcardRules\",\n                    \"Rewrite\": \"/$\"\n                }\n            ]\n        }\n    ],\n    \"WafConfig\": {\n        \"WafOpen\": \"OPEN\",\n        \"WafInstanceId\": \"waf_2kzh3vlq0umkkha9\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例2"
       }
@@ -41,7 +41,7 @@
     "CreateNamespace": [
       {
         "document": "创建命名空间。",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"Namespace\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNamespace\n<公共请求参数>\n\n{\n    \"Namespace\": \"ns1\",\n    \"Description\": \"a ns\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "创建命名空间。"
       }
@@ -78,10 +78,18 @@
         "title": "删除函数"
       }
     ],
+    "DeleteFunctionVersion": [
+      {
+        "document": "删除函数 test 的版本 2 ",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunctionVersion\n<公共请求参数>\n\n{\n    \"FunctionName\": \"test\",\n    \"Namespace\": \"default\",\n    \"Qualifier\": \"2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "删除函数指定版本"
+      }
+    ],
     "DeleteLayerVersion": [
       {
         "document": "删除层版本",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"LayerVersion\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"layer-1\",\n    \"LayerVersion\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1ffbba5-5489-45bc-89c5-453e50d5386e\"\n    }\n}",
         "title": "删除层版本"
       }
@@ -89,7 +97,7 @@
     "DeleteNamespace": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteNamespace\n&Namespace=test\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteNamespace\n&Namespace=namespace1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除命名空间"
       }
@@ -97,7 +105,7 @@
     "DeleteProvisionedConcurrencyConfig": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteProvisionedConcurrencyConfig\n&FunctionName=functionName1\n&Namespace=namespace1\n&Qualifier=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除预置并发"
       }
@@ -105,7 +113,7 @@
     "DeleteReservedConcurrencyConfig": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=DeleteReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=DeleteReservedConcurrencyConfig\n&FunctionName=functionName1\n&Namespace=default\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除函数最大独占配额"
       }
@@ -122,7 +130,7 @@
       {
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=GetAccount\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AccountLimit\": {\n            \"Namespace\": [\n                {\n                    \"TimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Total\": 11,\n                        \"Cm\": 0,\n                        \"Timer\": 3,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Clb\": 0,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"TestModelLimit\": 0\n                },\n                {\n                    \"TestModelLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Cm\": 0,\n                        \"Clb\": 0,\n                        \"Timer\": 2,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Total\": 10,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"TimeoutLimit\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0\n                },\n                {\n                    \"TestModelLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Cm\": 0,\n                        \"Clb\": 0,\n                        \"Timer\": 2,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Total\": 10,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"TimeoutLimit\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0\n                },\n                {\n                    \"TestModelLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Cm\": 0,\n                        \"Clb\": 0,\n                        \"Timer\": 2,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Total\": 10,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"TimeoutLimit\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0\n                },\n                {\n                    \"TestModelLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Cm\": 0,\n                        \"Clb\": 0,\n                        \"Timer\": 2,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Total\": 10,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"TimeoutLimit\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0\n                },\n                {\n                    \"TestModelLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Cm\": 0,\n                        \"Clb\": 0,\n                        \"Timer\": 2,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Total\": 10,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"TimeoutLimit\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0\n                },\n                {\n                    \"TestModelLimit\": 0,\n                    \"FunctionsCount\": 0,\n                    \"Namespace\": \"xx\",\n                    \"ConcurrentExecutions\": 20,\n                    \"MinMsgTTL\": 0,\n                    \"Trigger\": {\n                        \"Vod\": 0,\n                        \"Cos\": 2,\n                        \"Cm\": 0,\n                        \"Clb\": 0,\n                        \"Timer\": 2,\n                        \"Ckafka\": 2,\n                        \"Mps\": 0,\n                        \"Apigw\": 2,\n                        \"Total\": 10,\n                        \"Cmq\": 2,\n                        \"Cls\": 0\n                    },\n                    \"RetryNumLimit\": 0,\n                    \"TimeoutLimit\": 0,\n                    \"InitTimeoutLimit\": 0,\n                    \"MaxMsgTTL\": 0\n                }\n            ],\n            \"NamespacesCount\": 50\n        },\n        \"RequestId\": \"xx\",\n        \"AccountUsage\": {\n            \"TotalConcurrencyMem\": 0,\n            \"Namespace\": [\n                {\n                    \"Functions\": [\n                        \"testfun01\",\n                        \"testfun02\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 2\n                },\n                {\n                    \"Functions\": [\n                        \"xx\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 0\n                },\n                {\n                    \"Functions\": [\n                        \"xx\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 0\n                },\n                {\n                    \"Functions\": [\n                        \"louis06\",\n                        \"louis05\",\n                        \"louisw-f38e691\",\n                        \"louisw-f38e69\",\n                        \"louis04\",\n                        \"louis02\",\n                        \"louis01\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 7\n                },\n                {\n                    \"Functions\": [\n                        \"xx\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 0\n                },\n                {\n                    \"Functions\": [\n                        \"alano1\",\n                        \"alanoluo_desc\",\n                        \"ttstss\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 3\n                },\n                {\n                    \"Functions\": [\n                        \"xx\"\n                    ],\n                    \"Namespace\": \"xx\",\n                    \"FunctionsCount\": 0\n                }\n            ],\n            \"TotalAllocatedConcurrencyMem\": 0,\n            \"NamespacesCount\": 7,\n            \"UserConcurrencyMemLimit\": 0\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountUsage\": {\n            \"NamespacesCount\": 1,\n            \"Namespace\": [\n                {\n                    \"Namespace\": \"default\",\n                    \"Functions\": [\n                        \"express_demo-test\"\n                    ],\n                    \"TotalConcurrencyMem\": 0,\n                    \"TotalAllocatedConcurrencyMem\": 0,\n                    \"TotalAllocatedProvisionedMem\": 0,\n                    \"FunctionsCount\": 1\n                }\n            ],\n            \"TotalConcurrencyMem\": 128000,\n            \"TotalAllocatedConcurrencyMem\": 0,\n            \"UserConcurrencyMemLimit\": 128000\n        },\n        \"AccountLimit\": {\n            \"NamespacesCount\": 5,\n            \"Namespace\": [\n                {\n                    \"Namespace\": \"default\",\n                    \"FunctionsCount\": 50,\n                    \"TimeoutLimit\": 900,\n                    \"InitTimeoutLimit\": 300,\n                    \"TestModelLimit\": 20,\n                    \"RetryNumLimit\": 2,\n                    \"MinMsgTTL\": 60,\n                    \"MaxMsgTTL\": 21600,\n                    \"ConcurrentExecutions\": 100,\n                    \"Trigger\": {\n                        \"Apigw\": 10,\n                        \"Ckafka\": 10,\n                        \"Clb\": 10,\n                        \"Cls\": 10,\n                        \"Cm\": 10,\n                        \"Cmq\": 10,\n                        \"Cos\": 10,\n                        \"Eb\": 10,\n                        \"Mps\": 10,\n                        \"Timer\": 10,\n                        \"Total\": 110,\n                        \"Vod\": 10\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"cvvdsds-af20-42a9-9314-84ad66b06ee4\"\n    }\n}",
         "title": "获取账户信息"
       }
     ],
@@ -130,7 +138,7 @@
       {
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=GetAlias\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&Name=<AliasName>\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ModTime\": \"2020-09-22 00:00:00\",\n        \"Description\": \"xx\",\n        \"AddTime\": \"2020-09-22 00:00:00\",\n        \"FunctionVersion\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"RoutingConfig\": {\n            \"AdditionalVersionWeights\": [\n                {\n                    \"Version\": \"xx\",\n                    \"Weight\": 0.3\n                },\n                {\n                    \"Version\": \"xx\",\n                    \"Weight\": 0.2\n                }\n            ],\n            \"AddtionVersionMatchs\": [\n                {\n                    \"Version\": \"xx\",\n                    \"Expression\": \"xx\",\n                    \"Method\": \"xx\",\n                    \"Key\": \"xx\"\n                }\n            ]\n        },\n        \"Name\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Name\": \"ddd\",\n        \"Description\": \"\",\n        \"FunctionVersion\": \"1\",\n        \"RoutingConfig\": {\n            \"AdditionalVersionWeights\": [\n                {\n                    \"Version\": \"$LATEST\",\n                    \"Weight\": 0.8\n                }\n            ],\n            \"AddtionVersionMatchs\": []\n        },\n        \"AddTime\": \"2024-12-19 14:53:51\",\n        \"ModTime\": \"2024-12-19 14:53:51\"\n    }\n}",
         "title": "查询别名详细信息"
       }
     ],
@@ -138,15 +146,15 @@
       {
         "document": "查询函数异步事件状态",
         "input": "https://scf.tencentcloudapi.com/?Action=GetAsyncEventStatus\n&InvokeRequestId=b379787f-8487-4bac-bd8c-17a20a9ce40e\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"abc\",\n            \"StatusCode\": 0,\n            \"InvokeRequestId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Status\": \"RUNNING\",\n            \"StatusCode\": 0,\n            \"InvokeRequestId\": \"5f825fd3-a59d-4879-aa28-3ac967c12888\"\n        },\n        \"RequestId\": \"5f825fd3-a59d-4879-aa28-3ac967c128885f82\"\n    }\n}",
         "title": "查询函数异步事件状态"
       }
     ],
     "GetCustomDomain": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.xxx.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CertConfig\": {\n            \"CertificateId\": \"BfHJsadd7\"\n        },\n        \"Domain\": \"www.xxx.com\",\n        \"EndpointsConfig\": [\n            {\n                \"FunctionName\": \"test1\",\n                \"Namespace\": \"default\",\n                \"PathMatch\": \"/cc/\",\n                \"PathRewrite\": [\n                    {\n                        \"Path\": \"/cc/\",\n                        \"Rewrite\": \"/\",\n                        \"Type\": \"ExactRules\"\n                    }\n                ],\n                \"Qualifier\": \"$LATEST\"\n            }\n        ],\n        \"Protocol\": \"HTTP&HTTPS\",\n        \"RequestId\": \"6941ssdd162b-925f-4c3a-b90f-3558c0aebf97\",\n        \"WafConfig\": {\n            \"WafInstanceId\": \"\",\n            \"WafOpen\": \"CLOSE\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.demo.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CertConfig\": {\n            \"CertificateId\": \"BfHJsadd7\"\n        },\n        \"Domain\": \"www.demo.com\",\n        \"EndpointsConfig\": [\n            {\n                \"FunctionName\": \"test1\",\n                \"Namespace\": \"default\",\n                \"PathMatch\": \"/cc/\",\n                \"PathRewrite\": [\n                    {\n                        \"Path\": \"/cc/\",\n                        \"Rewrite\": \"/$1\",\n                        \"Type\": \"ExactRules\"\n                    }\n                ],\n                \"Qualifier\": \"$LATEST\"\n            }\n        ],\n        \"Protocol\": \"HTTP&HTTPS\",\n        \"RequestId\": \"6941ssdd162b-925f-4c3a-b90f-3558c0aebf97\",\n        \"WafConfig\": {\n            \"WafInstanceId\": \"\",\n            \"WafOpen\": \"CLOSE\"\n        }\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -154,7 +162,7 @@
       {
         "document": "用户用此函数获取对应的函数信息，可指定版本与命名空间。",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunction\n<公共请求参数>\n\n{\n    \"FunctionName\": \"<FunctionName>\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ModTime\": \"2020-09-22 00:00:00\",\n        \"CodeInfo\": \"abc\",\n        \"Description\": \"abc\",\n        \"Triggers\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"Type\": \"abc\",\n                \"TriggerDesc\": \"abc\",\n                \"TriggerName\": \"abc\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Enable\": 0,\n                \"CustomArgument\": \"abc\",\n                \"AvailableStatus\": \"abc\",\n                \"ResourceId\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"TriggerAttribute\": \"abc\",\n                \"Qualifier\": \"abc\",\n                \"Description\": \"abc\"\n            }\n        ],\n        \"Handler\": \"abc\",\n        \"CodeSize\": 0,\n        \"Timeout\": 0,\n        \"FunctionVersion\": \"abc\",\n        \"MemorySize\": 0,\n        \"Runtime\": \"abc\",\n        \"FunctionName\": \"abc\",\n        \"VpcConfig\": {\n            \"VpcId\": \"abc\",\n            \"SubnetId\": \"abc\"\n        },\n        \"UseGpu\": \"abc\",\n        \"Environment\": {\n            \"Variables\": [\n                {\n                    \"Key\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ]\n        },\n        \"CodeResult\": \"abc\",\n        \"CodeError\": \"abc\",\n        \"ErrNo\": 0,\n        \"Namespace\": \"abc\",\n        \"Role\": \"abc\",\n        \"InstallDependency\": \"abc\",\n        \"Status\": \"abc\",\n        \"StatusDesc\": \"abc\",\n        \"ClsLogsetId\": \"abc\",\n        \"ClsTopicId\": \"abc\",\n        \"FunctionId\": \"abc\",\n        \"Tags\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"EipConfig\": {\n            \"EipFixed\": \"abc\",\n            \"Eips\": [\n                \"abc\"\n            ]\n        },\n        \"AccessInfo\": {\n            \"Host\": \"abc\",\n            \"Vip\": \"abc\"\n        },\n        \"Type\": \"abc\",\n        \"L5Enable\": \"abc\",\n        \"Layers\": [\n            {\n                \"CompatibleRuntimes\": [\n                    \"abc\"\n                ],\n                \"AddTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"LicenseInfo\": \"abc\",\n                \"LayerVersion\": 0,\n                \"LayerName\": \"abc\",\n                \"Status\": \"abc\",\n                \"Stamp\": \"abc\"\n            }\n        ],\n        \"DeadLetterConfig\": {\n            \"Type\": \"abc\",\n            \"Name\": \"abc\",\n            \"FilterType\": \"abc\"\n        },\n        \"AddTime\": \"2020-09-22 00:00:00\",\n        \"PublicNetConfig\": {\n            \"PublicNetStatus\": \"abc\",\n            \"EipConfig\": {\n                \"EipStatus\": \"abc\",\n                \"EipAddress\": [\n                    \"abc\"\n                ]\n            }\n        },\n        \"OnsEnable\": \"abc\",\n        \"CfsConfig\": {\n            \"CfsInsList\": [\n                {\n                    \"UserId\": \"abc\",\n                    \"UserGroupId\": \"abc\",\n                    \"CfsId\": \"abc\",\n                    \"MountInsId\": \"abc\",\n                    \"LocalMountDir\": \"abc\",\n                    \"RemoteMountDir\": \"abc\",\n                    \"IpAddress\": \"abc\",\n                    \"MountVpcId\": \"abc\",\n                    \"MountSubnetId\": \"abc\"\n                }\n            ]\n        },\n        \"AvailableStatus\": \"abc\",\n        \"Qualifier\": \"abc\",\n        \"InitTimeout\": 0,\n        \"StatusReasons\": [\n            {\n                \"ErrorCode\": \"abc\",\n                \"ErrorMessage\": \"abc\"\n            }\n        ],\n        \"AsyncRunEnable\": \"abc\",\n        \"TraceEnable\": \"abc\",\n        \"ImageConfig\": {\n            \"RegistryId\": \"abc\",\n            \"ImageType\": \"abc\",\n            \"ImageUri\": \"abc\",\n            \"EntryPoint\": \"abc\",\n            \"Command\": \"abc\",\n            \"Args\": \"abc\",\n            \"ContainerImageAccelerate\": true,\n            \"ImagePort\": 0\n        },\n        \"ProtocolType\": \"abc\",\n        \"ProtocolParams\": {\n            \"WSParams\": {\n                \"IdleTimeOut\": 1\n            }\n        },\n        \"DnsCache\": \"abc\",\n        \"IntranetConfig\": {\n            \"IpFixed\": \"abc\",\n            \"IpAddress\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Qualifier\": \"$LATEST\",\n        \"Description\": \"Created by Serverless\",\n        \"Timeout\": 3,\n        \"InitTimeout\": 90,\n        \"MemorySize\": 128,\n        \"Runtime\": \"CustomImage\",\n        \"VpcConfig\": {\n            \"VpcId\": \"\",\n            \"SubnetId\": \"\"\n        },\n        \"Environment\": {\n            \"Variables\": []\n        },\n        \"Handler\": \"\",\n        \"UseGpu\": \"FALSE\",\n        \"Role\": \"\",\n        \"CodeSize\": 0,\n        \"FunctionVersion\": \"$LATEST\",\n        \"FunctionName\": \"function-index1\",\n        \"FunctionId\": \"xccxvxcv\",\n        \"Namespace\": \"default\",\n        \"InstallDependency\": \"FALSE\",\n        \"Status\": \"Active\",\n        \"AvailableStatus\": \"Available\",\n        \"StatusDesc\": \"\",\n        \"L5Enable\": \"FALSE\",\n        \"DnsCache\": \"FALSE\",\n        \"EipConfig\": {\n            \"EipFixed\": \"FALSE\",\n            \"Eips\": []\n        },\n        \"ModTime\": \"2024-12-17 17:52:48\",\n        \"AddTime\": \"2024-12-17 17:47:08\",\n        \"Layers\": [],\n        \"DeadLetterConfig\": {\n            \"Type\": \"\",\n            \"Name\": \"\",\n            \"FilterType\": \"\"\n        },\n        \"OnsEnable\": \"FALSE\",\n        \"PublicNetConfig\": {\n            \"PublicNetStatus\": \"ENABLE\",\n            \"EipConfig\": {\n                \"EipStatus\": \"DISABLE\",\n                \"EipAddress\": []\n            }\n        },\n        \"ImageConfig\": {\n            \"RegistryId\": \"\",\n            \"ImageType\": \"personal\",\n            \"ImageUri\": \"ccr.ccs.tencentyun.com/xxx/xxx:xx@sha256:xxxxxxxxxx\",\n            \"ContainerImageAccelerate\": false,\n            \"Command\": \"node\",\n            \"Args\": \" index.js \",\n            \"ImagePort\": 9000,\n            \"EntryPoint\": null\n        },\n        \"ProtocolType\": \"\",\n        \"Triggers\": [],\n        \"ClsLogsetId\": \"b91e2c12-cccccccccccc\",\n        \"ClsTopicId\": \"a3b039f5-bbbbbbbbbb\",\n        \"CodeInfo\": \"\",\n        \"CodeResult\": \"success\",\n        \"CodeError\": \"\",\n        \"ErrNo\": 0,\n        \"Tags\": [],\n        \"AccessInfo\": {\n            \"Host\": \"\",\n            \"Vip\": \"\"\n        },\n        \"Type\": \"Event\",\n        \"CfsConfig\": {\n            \"CfsInsList\": []\n        },\n        \"StatusReasons\": [],\n        \"AsyncRunEnable\": \"FALSE\",\n        \"TraceEnable\": \"FALSE\",\n        \"ProtocolParams\": null,\n        \"IntranetConfig\": {\n            \"IpFixed\": \"DISABLE\"\n        },\n        \"RequestId\": \"08b4c93b-b515-4cf4-a7a3-72b5db4e21dc\"\n    }\n}",
         "title": "获取函数详细信息"
       }
     ],
@@ -185,7 +193,7 @@
     "GetLayerVersion": [
       {
         "document": "获取层版本详情",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"LayerVersion\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"layer-name1\",\n    \"LayerVersion\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"Active\",\n        \"LayerVersion\": 1,\n        \"CodeSha256\": \"c7c8bda601817ce4faab4c4fb3e73b9a32040e0e9f31f7a649d84d4bdde9e4a5\",\n        \"Description\": \"desc\",\n        \"LicenseInfo\": \"\",\n        \"AddTime\": \"2019-11-26 16:15:33\",\n        \"Location\": \"https://lambdalayerin-1253665819.cos.ap-mumbai.myqcloud.com/1253970226/layer3/1/1253970226_layer3_1.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx%26q-sign-time%3D1582083327%3B1582093387%26q-key-time%3D1582083327%3B1582093387%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D255d3e5aaa6c7224396b39f857e134a0dfb27c89&response-content-type=application/octet-stream\",\n        \"CompatibleRuntimes\": [\n            \"Nodejs8.9\",\n            \"Nodejs6.10\"\n        ],\n        \"LayerName\": \"layer3\",\n        \"RequestId\": \"6c7578ed-b816-4e50-930a-54e855452b8b\"\n    }\n}",
         "title": "获取层版本详情"
       }
@@ -193,8 +201,8 @@
     "GetProvisionedConcurrencyConfig": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=GetProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"UnallocatedConcurrencyNum\": 1,\n        \"Allocated\": [\n            {\n                \"Status\": \"xx\",\n                \"Qualifier\": \"xx\",\n                \"AvailableProvisionedConcurrencyNum\": 1,\n                \"StatusReason\": \"xx\",\n                \"AllocatedProvisionedConcurrencyNum\": 1,\n                \"TriggerActions\": [\n                    {\n                        \"TriggerProvisionedConcurrencyNum\": 1,\n                        \"TriggerCronConfig\": \"xx\",\n                        \"TriggerName\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetProvisionedConcurrencyConfig\n&FunctionName=functionName1\n&Namespace=default\n&Qualifier=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"UnallocatedConcurrencyNum\": 2343,\n        \"Allocated\": [\n            {\n                \"Qualifier\": \"1\",\n                \"AvailableProvisionedConcurrencyNum\": 1,\n                \"AllocatedProvisionedConcurrencyNum\": 1,\n                \"Status\": \"Done\",\n                \"StatusReason\": \"\",\n                \"TriggerActions\": []\n            },\n            {\n                \"Qualifier\": \"2\",\n                \"AvailableProvisionedConcurrencyNum\": 1,\n                \"AllocatedProvisionedConcurrencyNum\": 1,\n                \"Status\": \"Done\",\n                \"StatusReason\": \"\",\n                \"TriggerActions\": [\n                    {\n                        \"TriggerName\": \"timer-1\",\n                        \"ProvisionedType\": \"Default\",\n                        \"TriggerProvisionedConcurrencyNum\": 1,\n                        \"TriggerCronConfig\": \"30 42 15 20 12 * 2024\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"dsdsfsdf-b246-4fe5-812a-f77f1275471a\"\n    }\n}",
         "title": "获取函数预置并发详情"
       }
     ],
@@ -202,14 +210,14 @@
       {
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=GetRequestStatus\n&FunctionName=<FunctionName>\n&FunctionRequestId=<FunctionRequestId>\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"FunctionName\": \"abc\",\n                \"RetMsg\": \"abc\",\n                \"RequestId\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"RetCode\": 0,\n                \"Duration\": 0,\n                \"MemUsage\": 0,\n                \"RetryNum\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"FunctionName\": \"function-demo\",\n                \"RetMsg\": \"Hello\",\n                \"RequestId\": \"96d91886-f49b-4962-825e-1b4b8a2585f7\",\n                \"StartTime\": \"2024-12-25 19:50:07\",\n                \"RetCode\": 0,\n                \"Duration\": 0,\n                \"MemUsage\": 0,\n                \"RetryNum\": 0\n            }\n        ],\n        \"RequestId\": \"a63607c3-581f-4be9-8c4b-631c75909f07\"\n    }\n}",
         "title": "获取函数运行状态"
       }
     ],
     "GetReservedConcurrencyConfig": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=GetReservedConcurrencyConfig\n&FunctionName=test\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=GetReservedConcurrencyConfig\n&FunctionName=functionName1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"ReservedMem\": 128\n    }\n}",
         "title": "获取函数最大独占配额详情"
       }
@@ -217,7 +225,7 @@
     "Invoke": [
       {
         "document": "运行函数",
-        "input": "https://scf.tencentcloudapi.com/?Action=Invoke\n&FunctionName=xxxx\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=Invoke\n&FunctionName=function-demo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"MemUsage\": 3207168,\n            \"Log\": \"\",\n            \"RetMsg\": \"hello from scf\",\n            \"BillDuration\": 100,\n            \"FunctionRequestId\": \"6add56fa-58f1-11e8-89a9-5254005d5fdb\",\n            \"Duration\": 0.826,\n            \"ErrMsg\": \"\",\n            \"InvokeResult\": 0\n        },\n        \"RequestId\": \"c2af8a64-c922-4d55-aee0-bd86a5c2cd12\"\n    }\n}",
         "title": "运行函数"
       }
@@ -225,7 +233,7 @@
     "InvokeFunction": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=InvokeFunction\n&FunctionName=xxxx\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=InvokeFunction\n&FunctionName=function-demo\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"MemUsage\": 3207168,\n            \"Log\": \"\",\n            \"RetMsg\": \"hello from scf\",\n            \"BillDuration\": 100,\n            \"FunctionRequestId\": \"6add56fa-58f1-11e8-89a9-5254005d5fdb\",\n            \"Duration\": 0.826,\n            \"ErrMsg\": \"\",\n            \"InvokeResult\": 0\n        },\n        \"RequestId\": \"c2af8a64-c922-4d55-aee0-bd86a5c2cd12\"\n    }\n}",
         "title": "运行函数"
       }
@@ -233,8 +241,8 @@
     "ListAliases": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListAliases\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Aliases\": [\n            {\n                \"FunctionVersion\": \"abc\",\n                \"Name\": \"abc\",\n                \"RoutingConfig\": {\n                    \"AdditionalVersionWeights\": [\n                        {\n                            \"Version\": \"abc\",\n                            \"Weight\": 0\n                        }\n                    ],\n                    \"AddtionVersionMatchs\": [\n                        {\n                            \"Version\": \"abc\",\n                            \"Key\": \"abc\",\n                            \"Method\": \"abc\",\n                            \"Expression\": \"abc\"\n                        }\n                    ]\n                },\n                \"Description\": \"abc\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"ModTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListAliases\n&Namespace=default\n&FunctionName=functionName1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Aliases\": [\n            {\n                \"ModTime\": \"2023-07-12 10:53:52\",\n                \"AddTime\": \"2023-07-12 10:53:52\",\n                \"Name\": \"$DEFAULT\",\n                \"Description\": \"\",\n                \"FunctionVersion\": \"$LATEST\",\n                \"RoutingConfig\": {\n                    \"AdditionalVersionWeights\": [],\n                    \"AddtionVersionMatchs\": []\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"dfdfdfd-e3ca-4756-bc18-09a22ec9048f\"\n    }\n}",
         "title": "查询函数下的全部别名"
       }
     ],
@@ -250,7 +258,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCustomDomains\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"CertConfig\": {\n                    \"CertificateId\": \"ccccaas\"\n                },\n                \"Domain\": \"www.xxx.com\",\n                \"EndpointsConfig\": [\n                    {\n                        \"FunctionName\": \"test1\",\n                        \"Namespace\": \"default\",\n                        \"PathMatch\": \"/cc/\",\n                        \"PathRewrite\": [\n                            {\n                                \"Path\": \"/cc/\",\n                                \"Rewrite\": \"/\",\n                                \"Type\": \"ExactRules\"\n                            }\n                        ],\n                        \"Qualifier\": \"$LATEST\"\n                    }\n                ],\n                \"Protocol\": \"HTTP&HTTPS\",\n                \"WafConfig\": {\n                    \"WafInstanceId\": \"\",\n                    \"WafOpen\": \"CLOSE\"\n                }\n            }\n        ],\n        \"RequestId\": \"6941ssdd162b-925f-4c3a-b90f-3558c0aebf97\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"CertConfig\": {\n                    \"CertificateId\": \"ccccaas\"\n                },\n                \"Domain\": \"www.demo.com\",\n                \"EndpointsConfig\": [\n                    {\n                        \"FunctionName\": \"test1\",\n                        \"Namespace\": \"default\",\n                        \"PathMatch\": \"/cc/\",\n                        \"PathRewrite\": [\n                            {\n                                \"Path\": \"/cc/\",\n                                \"Rewrite\": \"/$1\",\n                                \"Type\": \"ExactRules\"\n                            }\n                        ],\n                        \"Qualifier\": \"$LATEST\"\n                    }\n                ],\n                \"Protocol\": \"HTTP&HTTPS\",\n                \"WafConfig\": {\n                    \"WafInstanceId\": \"\",\n                    \"WafOpen\": \"CLOSE\"\n                }\n            }\n        ],\n        \"RequestId\": \"6941ssdd162b-925f-4c3a-b90f-3558c0aebf97\",\n        \"Total\": 1\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -258,61 +266,61 @@
       {
         "document": "",
         "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Functions\": [\n            {\n                \"ModTime\": \"xx\",\n                \"Status\": \"xx\",\n                \"StatusDesc\": \"xx\",\n                \"FunctionName\": \"xx\",\n                \"TotalProvisionedConcurrencyMem\": 1,\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"AddTime\": \"xx\",\n                \"Namespace\": \"xx\",\n                \"StatusReasons\": [\n                    {\n                        \"ErrorCode\": \"xx\",\n                        \"ErrorMessage\": \"xx\"\n                    }\n                ],\n                \"Runtime\": \"xx\",\n                \"Type\": \"xx\",\n                \"FunctionId\": \"xx\",\n                \"ReservedConcurrencyMem\": 1,\n                \"Description\": \"xx\",\n                \"TraceEnable\": \"FALSE\",\n                \"AsyncRunEnable\": \"FALSE\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Functions\": [\n            {\n                \"Namespace\": \"defaut\",\n                \"FunctionName\": \"functionName1\",\n                \"FunctionId\": \"sdfdsgfd g\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"Runtime\": \"Nodejs8.9\",\n                \"Type\": \"Event\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"TraceEnable\": \"FALSE\",\n                \"ReservedConcurrencyMem\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": [],\n                \"AddTime\": \"2024-08-27 15:27:43\",\n                \"ModTime\": \"2024-08-27 15:27:43\"\n            }\n        ],\n        \"RequestId\": \"sdfsdfdg-7d05-4d3e-91f8-e62e6695c8c8\"\n    }\n}",
         "title": "获取函数列表"
       },
       {
         "document": "查询status标签的值是dev，且owner标签的值是me的函数",
         "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\n&Filters.0.Name=tag-status\n&Filters.0.Values.0=dev\n&Filters.1.Name=tag-owner\n&Filters.1.Values.0=me\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Functions\": [\n            {\n                \"ModTime\": \"xx\",\n                \"Status\": \"xx\",\n                \"StatusDesc\": \"xx\",\n                \"FunctionName\": \"xx\",\n                \"TotalProvisionedConcurrencyMem\": 1,\n                \"Tags\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"AddTime\": \"xx\",\n                \"Namespace\": \"xx\",\n                \"StatusReasons\": [\n                    {\n                        \"ErrorCode\": \"xx\",\n                        \"ErrorMessage\": \"xx\"\n                    }\n                ],\n                \"Runtime\": \"xx\",\n                \"Type\": \"xx\",\n                \"FunctionId\": \"xx\",\n                \"ReservedConcurrencyMem\": 1,\n                \"Description\": \"xx\",\n                \"TraceEnable\": \"FALSE\",\n                \"AsyncRunEnable\": \"FALSE\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Functions\": [\n            {\n                \"Status\": \"Active\",\n                \"FunctionName\": \"test\",\n                \"TotalProvisionedConcurrencyMem\": 1,\n                \"Namespace\": \"default\",\n                \"Runtime\": \"Python3.6\",\n                \"Type\": \"HTTP\",\n                \"ReservedConcurrencyMem\": 1,\n                \"Description\": \"just for test\",\n                \"TraceEnable\": \"FALSE\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"FunctionId\": \"lam-xxxxxxxx\",\n                \"StatusReasons\": [],\n                \"StatusDesc\": \"\",\n                \"AddTime\": \"2000-01-01 00:00:00\",\n                \"ModTime\": \"2000-01-01 00:00:00\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"dev\",\n                        \"Key\": \"status\"\n                    },\n                    {\n                        \"Value\": \"me\",\n                        \"Key\": \"owner\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"77ccef58-0ebb-4523-ab88-a37063443524\"\n    }\n}",
         "title": "根据标签查询函数"
       }
     ],
     "ListLayerVersions": [
       {
         "document": "获取层版本列表",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayerVersions\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"CompatibleRuntime\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"LayerVersions\": [\n            {\n                \"Status\": \"Active\",\n                \"LayerVersion\": 1,\n                \"Description\": \"desc\",\n                \"LicenseInfo\": \"\",\n                \"AddTime\": \"2019-11-26 16:15:33\",\n                \"CompatibleRuntimes\": [\n                    \"Nodejs8.9\",\n                    \"Nodejs6.10\"\n                ],\n                \"LayerName\": \"layer3\"\n            }\n        ],\n        \"RequestId\": \"4e9bc0ab-0b7c-45f1-8eec-e4f1f4f73e2b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayerVersions\n<公共请求参数>\n\n{\n    \"LayerName\": \"layer-name1\",\n    \"CompatibleRuntime\": [\n        \"Nodejs16.13\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LayerVersions\": [\n            {\n                \"LayerName\": \"layer-name1\",\n                \"LayerVersion\": 1,\n                \"CompatibleRuntimes\": [\n                    \"Nodejs16.13\"\n                ],\n                \"Description\": \"vxcx\",\n                \"LicenseInfo\": \"\",\n                \"AddTime\": \"2022-05-16 19:40:42\",\n                \"Status\": \"Active\",\n                \"Stamp\": \"default\"\n            }\n        ],\n        \"RequestId\": \"ssssds-9783-424a-8f0b-48cfee89333b\"\n    }\n}",
         "title": "获取层版本列表"
       }
     ],
     "ListLayers": [
       {
         "document": "拉取层列表",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayers\n<公共请求参数>\n\n{\n    \"CompatibleRuntime\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchKey\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Layers\": [\n            {\n                \"CompatibleRuntimes\": [\n                    \"abc\"\n                ],\n                \"AddTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"LicenseInfo\": \"abc\",\n                \"LayerVersion\": 0,\n                \"LayerName\": \"abc\",\n                \"Status\": \"abc\",\n                \"Stamp\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLayers\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Layers\": [\n            {\n                \"LayerName\": \"test-layer\",\n                \"LayerVersion\": 1,\n                \"CompatibleRuntimes\": [\n                    \"Nodejs10.15\"\n                ],\n                \"Description\": \"Layer created by serverless component\",\n                \"LicenseInfo\": \"\",\n                \"AddTime\": \"2022-10-26 10:08:11\",\n                \"Status\": \"Active\",\n                \"Stamp\": \"default\",\n                \"Tags\": []\n            }\n        ],\n        \"RequestId\": \"dsfdf-cac3-451d-acfa-667d831521b4\"\n    }\n}",
         "title": "拉取层列表"
       }
     ],
     "ListNamespaces": [
       {
         "document": "列出命名空间列表",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\n&SearchKey.0.Key=Namespace\n&SearchKey.0.Value=dev\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Namespaces\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Description\": \"abc\",\n                \"Name\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListNamespaces\n&SearchKey.0.Key=Namespace\n&SearchKey.0.Value=ns1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"Namespaces\": [\n            {\n                \"Name\": \"ns1\",\n                \"Description\": \"\",\n                \"AddTime\": \"2024-12-17 15:28:55\",\n                \"ModTime\": \"2024-12-17 15:28:55\",\n                \"Type\": \"default\"\n            },\n            {\n                \"Name\": \"default\",\n                \"Description\": \"\",\n                \"AddTime\": \"2024-10-17 09:29:45\",\n                \"ModTime\": \"2024-10-17 09:29:45\",\n                \"Type\": \"default\"\n            }\n        ],\n        \"RequestId\": \"sdfsdfs-3de5-459c-984a-cb43ec2625d2\"\n    }\n}",
         "title": "列出命名空间列表"
       }
     ],
     "ListTriggers": [
       {
         "document": "获取函数触发器列表",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers\n&FunctionName=aaa\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Triggers\": [\n            {\n                \"Enable\": 1,\n                \"Qualifier\": \"abc\",\n                \"TriggerName\": \"abc\",\n                \"Type\": \"abc\",\n                \"TriggerDesc\": \"abc\",\n                \"AvailableStatus\": \"abc\",\n                \"CustomArgument\": \"abc\",\n                \"Description\": \"abc\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"ResourceId\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"TriggerAttribute\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListTriggers\n&FunctionName=function-demo\n&Limit=2\n&Order=ASC\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Triggers\": [\n            {\n                \"Enable\": 1,\n                \"Qualifier\": \"$DEFAULT\",\n                \"TriggerName\": \"hulrzrbh9f\",\n                \"Type\": \"http\",\n                \"TriggerDesc\": \"{\\\"AuthType\\\":\\\"NONE\\\",\\\"NetConfig\\\":{\\\"EnableIntranet\\\":true,\\\"IntranetUrl\\\":\\\"https://1258888888-hulrzrbh9f.in.ap-chongqing.tencentscf.com\\\",\\\"IntranetHTTPUrl\\\":\\\"http://1258888888-hulrzrbh9f.in.ap-chongqing.tencentscf.com\\\",\\\"ExtranetUrl\\\":\\\"\\\",\\\"ExtranetHTTPUrl\\\":\\\"\\\",\\\"WssIntranetUrl\\\":\\\"\\\",\\\"WsIntranetUrl\\\":\\\"\\\",\\\"WssExtranetUrl\\\":\\\"\\\",\\\"WsExtranetUrl\\\":\\\"\\\",\\\"EnableExtranet\\\":false}}\",\n                \"AvailableStatus\": \"Available\",\n                \"CustomArgument\": \"custom\",\n                \"Description\": \"Some Description\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"ResourceId\": \"qcs::scf:cq:uin/888888:function/function-demo/hulrzrbh9f\",\n                \"BindStatus\": \"on\",\n                \"TriggerAttribute\": \"single\"\n            }\n        ],\n        \"RequestId\": \"52dd00b1-7197-4a11-97f5-2a67f9f49273\"\n    }\n}",
         "title": "获取函数触发器列表"
       }
     ],
     "ListVersionByFunction": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=ListVersionByFunction\n&FunctionName=xxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FunctionVersion\": [\n            \"$LATEST\",\n            \"3\",\n            \"2\",\n            \"1\"\n        ],\n        \"RequestId\": \"xx\",\n        \"Versions\": [\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            },\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            },\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            },\n            {\n                \"ModTime\": \"2020-09-22 00:00:00\",\n                \"AddTime\": \"2020-09-22 00:00:00\",\n                \"Version\": \"xx\",\n                \"Description\": \"xx\",\n                \"Status\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "https://scf.tencentcloudapi.com/?Action=ListVersionByFunction\n&FunctionName=functionName1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            {\n                \"Version\": \"$LATEST\",\n                \"Description\": \"\",\n                \"AddTime\": \"2024-12-18 10:11:51\",\n                \"ModTime\": \"2024-12-18 17:04:41\",\n                \"Status\": \"Active\"\n            }\n        ],\n        \"FunctionVersion\": [\n            \"$LATEST\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"sdssd-a36d-42d3-9c24-c276409592a7\"\n    }\n}",
         "title": "查询函数版本"
       }
     ],
     "PublishLayerVersion": [
       {
         "document": "发布层版本",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"abc\",\n    \"CompatibleRuntimes\": [\n        \"abc\"\n    ],\n    \"Content\": {\n        \"CosBucketName\": \"abc\",\n        \"CosObjectName\": \"abc\",\n        \"ZipFile\": \"abc\",\n        \"CosBucketRegion\": \"abc\",\n        \"DemoId\": \"abc\",\n        \"TempCosObjectName\": \"abc\",\n        \"GitUrl\": \"abc\",\n        \"GitUserName\": \"abc\",\n        \"GitPassword\": \"abc\",\n        \"GitPasswordSecret\": \"abc\",\n        \"GitBranch\": \"abc\",\n        \"GitDirectory\": \"abc\",\n        \"GitCommitId\": \"abc\",\n        \"GitUserNameSecret\": \"abc\",\n        \"ImageConfig\": {\n            \"RegistryId\": \"abc\",\n            \"ImageType\": \"abc\",\n            \"ImageUri\": \"abc\",\n            \"EntryPoint\": \"abc\",\n            \"Command\": \"abc\",\n            \"Args\": \"abc\",\n            \"ContainerImageAccelerate\": true\n        }\n    },\n    \"Description\": \"abc\",\n    \"LicenseInfo\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LayerVersion\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PublishLayerVersion\n<公共请求参数>\n\n{\n    \"LayerName\": \"layer-name1\",\n    \"CompatibleRuntimes\": [\n        \"Nodejs16.13\"\n    ],\n    \"Content\": {\n        \"CosBucketName\": \"layer-name1-2343243543\",\n        \"CosObjectName\": \"layer-name1/node_modules.zip\",\n        \"CosBucketRegion\": \"ap-singapore\"\n    },\n    \"Description\": \"a layer\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LayerVersion\": 8,\n        \"RequestId\": \"197192d3-0b64-410a-8cd9-25cb7c1db0ee\"\n    }\n}",
         "title": "发布层版本"
       }
     ],
@@ -327,7 +335,7 @@
     "PutProvisionedConcurrencyConfig": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=PutProvisionedConcurrencyConfig\n&FunctionName=test\n&Qualifier=1\n&VersionProvisionedConcurrencyNum=10\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=PutProvisionedConcurrencyConfig\n&FunctionName=functionName1\n&Qualifier=1\n&VersionProvisionedConcurrencyNum=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置预置并发"
       }
@@ -335,7 +343,7 @@
     "PutReservedConcurrencyConfig": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=PutReservedConcurrencyConfig\n&FunctionName=test\n&ReservedConcurrencyMem=12800\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=PutReservedConcurrencyConfig\n&FunctionName=functionName1\n&ReservedConcurrencyMem=12800\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "设置最大独占配额"
       }
@@ -359,7 +367,7 @@
     "UpdateAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\n&Name=abcAlias\n&Namespace=default\n&FunctionName=abc\n&FunctionVersion=1\n&RoutingConfig.AdditionalVersionWeights.0.Version=2\n&RoutingConfig.AdditionalVersionWeights.0.Weight=0.5\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\n&Name=abcAlias\n&Namespace=default\n&FunctionName=functionName1\n&FunctionVersion=1\n&RoutingConfig.AdditionalVersionWeights.0.Version=2\n&RoutingConfig.AdditionalVersionWeights.0.Weight=0.5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新别名的配置"
       }
@@ -367,7 +375,7 @@
     "UpdateCustomDomain": [
       {
         "document": "更新自定义域名的证书Id,并关闭waf",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"cvvxxJ3DK7\"\n    },\n    \"WafConfig\": {\n        \"WafOpen\": \"CLOSE\",\n        \"WafInstanceId\": \"\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCustomDomain\n<公共请求参数>\n\n{\n    \"Domain\": \"www.ccc.com\",\n    \"Protocol\": \"HTTP&HTTPS\",\n    \"CertConfig\": {\n        \"CertificateId\": \"cvvxxJ3DK7\"\n    },\n    \"WafConfig\": {\n        \"WafOpen\": \"CLOSE\",\n        \"WafInstanceId\": \"waf_2kzh3vlq0um\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "示例1"
       }
@@ -375,7 +383,7 @@
     "UpdateFunctionCode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionCode\n<公共请求参数>\n\n{\n    \"CosObjectName\": \"<CosObjectName>\",\n    \"Handler\": \"index.main\",\n    \"CosBucketName\": \"<CosBucketName>\",\n    \"FunctionName\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionCode\n<公共请求参数>\n\n{\n    \"CosObjectName\": \"<CosObjectName>\",\n    \"Handler\": \"index.main\",\n    \"CosBucketName\": \"<CosBucketName>\",\n    \"FunctionName\": \"functionName1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新函数代码"
       }
@@ -383,7 +391,7 @@
     "UpdateFunctionConfiguration": [
       {
         "document": "更新函数配置",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionConfiguration\n<公共请求参数>\n\n{\n    \"FunctionName\": \"<FunctionName>\",\n    \"Description\": \"<Description>\"\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionConfiguration\n<公共请求参数>\n\n{\n    \"FunctionName\": \"functionName1\",\n    \"Namespace\": \"default\",\n    \"Timeout\": 100,\n    \"VpcConfig\": {\n        \"SubnetId\": \"subnet-xxxx\",\n        \"VpcId\": \"vpc-xxxxx\"\n    },\n    \"MemorySize\": 512\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新函数配置"
       }
@@ -407,7 +415,7 @@
     "UpdateTrigger": [
       {
         "document": "接口调用示例",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTrigger\n<公共请求参数>\n\n{\n    \"Enable\": \"CLOSE\",\n    \"FunctionName\": \"helloworld-xxxxxxxx\",\n    \"TriggerName\": \"\\t\\nSCF-timer-xxxxxxxx\",\n    \"Type\": \"timer\",\n    \"Qualifier\": \"$DEFAULT\",\n    \"Namespace\": \"default\",\n    \"TriggerDesc\": \"0 0 0 */2 * * *\",\n    \"Description\": \"测试\",\n    \"CustomArgument\": \"中文测试\"\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTrigger\n<公共请求参数>\n\n{\n    \"Enable\": \"CLOSE\",\n    \"FunctionName\": \"helloworld-xxxxxxxx\",\n    \"TriggerName\": \"\\t\\nSCF-timer-xxxxxxxx\",\n    \"Type\": \"timer\",\n    \"Qualifier\": \"$DEFAULT\",\n    \"Namespace\": \"default\",\n    \"TriggerDesc\": \"0 0 0 */2 * * *\",\n    \"Description\": \"some description\",\n    \"CustomArgument\": \"中文测试\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"375d4028-xxxx-xxxxf-xxxx-2331cb974fc3\"\n    }\n}",
         "title": "接口调用示例"
       }

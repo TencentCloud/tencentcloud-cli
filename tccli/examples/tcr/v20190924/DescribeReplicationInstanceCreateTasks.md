@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DescribeReplicationInstanceCreateTasks --cli-unfold-argument  \
-    --ReplicationRegistryId tcr-ak9876-5 \
+    --ReplicationRegistryId tcr-dg284imq-5-os5gcu \
     --ReplicationRegionId 5
 ```
 
@@ -14,34 +14,26 @@ Output:
 ```
 {
     "Response": {
+        "RequestId": "72c8900b-f23e-42b3-9281-828a42d590a4",
+        "Status": "SUCCESS",
         "TaskDetail": [
             {
-                "TaskName": "SyncMasterDBTask",
-                "TaskUUID": "tcr-task-3765025c-b063-4d38-be45-52e47b2c5795",
-                "TaskStatus": "SUCCESS",
+                "CreatedTime": "2025-01-02T15:10:06+08:00",
+                "FinishedTime": "2025-01-02T15:10:12+08:00",
                 "TaskMessage": "",
-                "CreatedTime": "xx",
-                "FinishedTime": "xx"
+                "TaskName": "SyncDBTask",
+                "TaskStatus": "SUCCESS",
+                "TaskUUID": "tcr-task-tcr-dg284imq-5-os5gcu-a152a2ca-2aee-4356-8bd9-09eea73c5c0a"
             },
             {
-                "TaskName": "SyncMasterBucketTask",
-                "TaskUUID": "tcr-task-d008eec3-c6a0-41b1-b171-409e06fff024",
-                "TaskStatus": "SUCCESS",
+                "CreatedTime": "2025-01-02T15:10:06+08:00",
+                "FinishedTime": "2025-01-02T15:10:12+08:00",
                 "TaskMessage": "",
-                "CreatedTime": "xx",
-                "FinishedTime": "xx"
-            },
-            {
                 "TaskName": "CreateTcrCrdTask",
-                "TaskUUID": "tcr-task-335e5a7b-b3e4-49ff-b4c3-9f81a6afac0d",
                 "TaskStatus": "SUCCESS",
-                "TaskMessage": "",
-                "CreatedTime": "xx",
-                "FinishedTime": "xx"
+                "TaskUUID": "tcr-task-tcr-dg284imq-5-os5gcu-d2c2b630-9417-44ea-b056-992de3289f90"
             }
-        ],
-        "Status": "SUCCESS",
-        "RequestId": "5c497866-b88c-48c8-895d-0aba37109640"
+        ]
     }
 }
 ```

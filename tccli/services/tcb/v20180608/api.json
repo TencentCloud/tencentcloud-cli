@@ -4137,7 +4137,7 @@
         {
           "disabled": false,
           "document": "子网列表",
-          "example": "无",
+          "example": "[\"subnet-sfdfd\"]",
           "member": "string",
           "name": "SubNetIds",
           "required": false,
@@ -5244,7 +5244,7 @@
         {
           "disabled": false,
           "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"subenet-sdfsdf\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
@@ -5803,7 +5803,7 @@
         {
           "disabled": false,
           "document": "外部任务Id 最长64字节",
-          "example": "无",
+          "example": "1423443",
           "member": "string",
           "name": "ExternalId",
           "required": true,
@@ -6351,7 +6351,7 @@
         {
           "disabled": false,
           "document": "版本名字（精确匹配）",
-          "example": "无",
+          "example": "version",
           "member": "string",
           "name": "VersionName",
           "required": false,
@@ -6386,7 +6386,7 @@
         {
           "disabled": false,
           "document": "服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "server-01",
           "member": "string",
           "name": "ServerName",
           "output_required": true,
@@ -6406,7 +6406,7 @@
         {
           "disabled": false,
           "document": "镜像仓库\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "image",
           "member": "string",
           "name": "ImageRepo",
           "output_required": true,
@@ -6416,7 +6416,7 @@
         {
           "disabled": false,
           "document": "流量配置的类型（FLOW,URL_PARAMS)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "FLOW",
           "member": "string",
           "name": "TrafficType",
           "output_required": true,
@@ -6741,7 +6741,7 @@
         {
           "disabled": false,
           "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"subnet-sdfsdf\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
@@ -7156,7 +7156,7 @@
         {
           "disabled": false,
           "document": "子网实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"subnet-csdffl\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
@@ -9181,7 +9181,7 @@
         {
           "disabled": false,
           "document": "子网Id列表",
-          "example": "无",
+          "example": "[\"subnet-xdsfd\"]",
           "member": "string",
           "name": "SubNetIds",
           "output_required": true,
@@ -10182,7 +10182,7 @@
         {
           "disabled": false,
           "document": "OA PUBLIC MINIAPP VPC",
-          "example": "无",
+          "example": "[\"OA\"]",
           "member": "string",
           "name": "OpenAccessTypes",
           "required": false,
@@ -13126,7 +13126,7 @@
         {
           "disabled": false,
           "document": "服务名称列表",
-          "example": "无",
+          "example": "[\"server-sdfsdf\"]",
           "member": "string",
           "name": "ServerNameList",
           "required": true,
@@ -13151,7 +13151,7 @@
         {
           "disabled": false,
           "document": "解冻失败列表\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"server-sdfsdf\"]",
           "member": "string",
           "name": "FailServerList",
           "output_required": true,

@@ -23,8 +23,8 @@ Output:
         "SyncSubresource": true,
         "Tags": [
             {
-                "Key": "abc",
-                "Value": "abc"
+                "Key": "product",
+                "Value": "tke"
             }
         ],
         "RequestId": "33483fde-efec-4d3c-8ff6-340d9dbc2d01"

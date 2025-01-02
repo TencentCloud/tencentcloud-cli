@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke UpdateClusterKubeconfig --cli-unfold-argument  \
     --ClusterId cls-65r1c5nu \
-    --SubAccounts 123456 123457 123458
+    --SubAccounts 1385968384757 1385968384757 1385968384757
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
 {
     "Response": {
         "UpdatedSubAccounts": [
-            "123456",
-            "123457",
-            "1234568"
+            "1385968384757",
+            "1385968384757",
+            "1385968384757"
         ],
         "RequestId": "33483fde-efec-4d3c-8ff6-340d9dbc2d01"
     }

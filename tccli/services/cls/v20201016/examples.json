@@ -235,7 +235,7 @@
     "CreateWebCallback": [
       {
         "document": "创建告警渠道回调配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebCallback\n<公共请求参数>\n\n{\n    \"Name\": \"name\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POST\",\n    \"Key\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebCallback\n<公共请求参数>\n\n{\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"WeCom\",\n    \"Webhook\": \"http://www.xxx.com/send\",\n    \"Method\": \"POST\",\n    \"Key\": \"AADSHFYFNJKGYENGKVYDNGKFH<\"\n}",
         "output": "{\n    \"Response\": {\n        \"WebCallbackId\": \"webcallback-aaa-bbb-ccc-ddd\",\n        \"RequestId\": \"abc-abc-abc-abc\"\n    }\n}",
         "title": "创建告警渠道回调配置"
       }
@@ -665,8 +665,8 @@
     "DescribeWebCallbacks": [
       {
         "document": "获取告警渠道回调配置列表",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebCallbacks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"test\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"WebCallbacks\": [\n            {\n                \"WebCallbackId\": \"webcallback-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n                \"Type\": \"Http\",\n                \"Webhook\": \"http://www.xxx.com\",\n                \"Method\": \"POST\",\n                \"Key\": \"\",\n                \"CreateTime\": 1693468888,\n                \"UpdateTime\": 1693468888\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebCallbacks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"name\",\n            \"Values\": [\n                \"监控告警专用\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"WebCallbacks\": [\n            {\n                \"WebCallbackId\": \"webcallback-285a1bef-xxxx-xxxx-b6b3-6fd9326d6876\",\n                \"Name\": \"监控告警专用\",\n                \"Type\": \"WeCom\",\n                \"Webhook\": \"http://www.xxx.com\",\n                \"Method\": \"POST\",\n                \"Uin\": 100001000000,\n                \"SubUin\": 100021900000,\n                \"CreateTime\": 1705998110,\n                \"UpdateTime\": 1705998110\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "获取告警渠道回调配置列表"
       }
     ],
@@ -867,8 +867,8 @@
     "ModifyWebCallback": [
       {
         "document": "修改告警渠道回调配置",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\",\n    \"Name\": \"name\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POS\",\n    \"Key\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebCallback\n<公共请求参数>\n\n{\n    \"WebCallbackId\": \"webcallback-d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\",\n    \"Name\": \"监控告警专用\",\n    \"Type\": \"Http\",\n    \"Webhook\": \"http://www.xxx.com\",\n    \"Method\": \"POST\",\n    \"Key\": \"HHFNIKFKLAUPOISNFIUYIOIA\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1\"\n    }\n}",
         "title": "修改告警渠道回调配置"
       }
     ],

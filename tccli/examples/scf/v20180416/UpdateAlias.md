@@ -8,7 +8,7 @@ Input:
 tccli scf UpdateAlias --cli-unfold-argument  \
     --Name abcAlias \
     --Namespace default \
-    --FunctionName abc \
+    --FunctionName functionName1 \
     --FunctionVersion 1 \
     --RoutingConfig.AdditionalVersionWeights.0.Version 2 \
     --RoutingConfig.AdditionalVersionWeights.0.Weight 0.5

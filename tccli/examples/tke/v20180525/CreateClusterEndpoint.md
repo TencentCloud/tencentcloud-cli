@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tke CreateClusterEndpoint --cli-unfold-argument  \
-    --SubnetId subnet-xxxxxx \
-    --ClusterId cls-xxxxxxxx \
+    --SubnetId subnet-e55paxnt \
+    --ClusterId cls-e55paxnt \
     --IsExtranet True \
-    --SecurityGroup sg-xxxxx \
+    --SecurityGroup sg-e55paxnt \
     --ExtensiveParameters {"InternetAccessible":{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":200}}
 ```
 

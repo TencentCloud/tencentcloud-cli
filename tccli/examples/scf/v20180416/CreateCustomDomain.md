@@ -17,7 +17,7 @@ tccli scf CreateCustomDomain --cli-unfold-argument  \
     --EndpointsConfig.0.PathRewrite.0.Type WildcardRules \
     --EndpointsConfig.0.PathRewrite.0.Rewrite /$ \
     --WafConfig.WafOpen CLOSE \
-    --WafConfig.WafInstanceId 
+    --WafConfig.WafInstanceId waf_2kzh3vlq0umkkha9
 ```
 
 Output: 
@@ -46,9 +46,9 @@ tccli scf CreateCustomDomain --cli-unfold-argument  \
     --EndpointsConfig.0.Qualifier 1 \
     --EndpointsConfig.0.PathRewrite.0.Path /aa/ \
     --EndpointsConfig.0.PathRewrite.0.Type WildcardRules \
-    --EndpointsConfig.0.PathRewrite.0.Rewrite / \
+    --EndpointsConfig.0.PathRewrite.0.Rewrite /$ \
     --WafConfig.WafOpen OPEN \
-    --WafConfig.WafInstanceId waf-xxxxx
+    --WafConfig.WafInstanceId waf_2kzh3vlq0umkkha9
 ```
 
 Output: 

@@ -17,35 +17,25 @@ Output:
         "TotalCount": 1,
         "Functions": [
             {
-                "ModTime": "xx",
-                "Status": "xx",
-                "StatusDesc": "xx",
-                "FunctionName": "xx",
-                "TotalProvisionedConcurrencyMem": 1,
-                "Tags": [
-                    {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "AddTime": "xx",
-                "Namespace": "xx",
-                "StatusReasons": [
-                    {
-                        "ErrorCode": "xx",
-                        "ErrorMessage": "xx"
-                    }
-                ],
-                "Runtime": "xx",
-                "Type": "xx",
-                "FunctionId": "xx",
-                "ReservedConcurrencyMem": 1,
-                "Description": "xx",
+                "Namespace": "defaut",
+                "FunctionName": "functionName1",
+                "FunctionId": "sdfdsgfd g",
+                "Description": "",
+                "Tags": [],
+                "Runtime": "Nodejs8.9",
+                "Type": "Event",
+                "AsyncRunEnable": "FALSE",
                 "TraceEnable": "FALSE",
-                "AsyncRunEnable": "FALSE"
+                "ReservedConcurrencyMem": null,
+                "TotalProvisionedConcurrencyMem": 0,
+                "Status": "Active",
+                "StatusDesc": "",
+                "StatusReasons": [],
+                "AddTime": "2024-08-27 15:27:43",
+                "ModTime": "2024-08-27 15:27:43"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "sdfsdfdg-7d05-4d3e-91f8-e62e6695c8c8"
     }
 }
 ```
@@ -71,35 +61,34 @@ Output:
         "TotalCount": 1,
         "Functions": [
             {
-                "ModTime": "xx",
-                "Status": "xx",
-                "StatusDesc": "xx",
-                "FunctionName": "xx",
+                "Status": "Active",
+                "FunctionName": "test",
                 "TotalProvisionedConcurrencyMem": 1,
+                "Namespace": "default",
+                "Runtime": "Python3.6",
+                "Type": "HTTP",
+                "ReservedConcurrencyMem": 1,
+                "Description": "just for test",
+                "TraceEnable": "FALSE",
+                "AsyncRunEnable": "FALSE",
+                "FunctionId": "lam-xxxxxxxx",
+                "StatusReasons": [],
+                "StatusDesc": "",
+                "AddTime": "2000-01-01 00:00:00",
+                "ModTime": "2000-01-01 00:00:00",
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
-                    }
-                ],
-                "AddTime": "xx",
-                "Namespace": "xx",
-                "StatusReasons": [
+                        "Value": "dev",
+                        "Key": "status"
+                    },
                     {
-                        "ErrorCode": "xx",
-                        "ErrorMessage": "xx"
+                        "Value": "me",
+                        "Key": "owner"
                     }
-                ],
-                "Runtime": "xx",
-                "Type": "xx",
-                "FunctionId": "xx",
-                "ReservedConcurrencyMem": 1,
-                "Description": "xx",
-                "TraceEnable": "FALSE",
-                "AsyncRunEnable": "FALSE"
+                ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "77ccef58-0ebb-4523-ab88-a37063443524"
     }
 }
 ```

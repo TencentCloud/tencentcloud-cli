@@ -14,48 +14,48 @@ Output:
         "TotalCount": 1,
         "Clusters": [
             {
-                "ClusterId": "abc",
-                "ClusterName": "abc",
-                "VpcId": "abc",
-                "PodCIDR": "abc",
-                "ServiceCIDR": "abc",
-                "K8SVersion": "abc",
-                "Status": "abc",
-                "ClusterDesc": "abc",
-                "CreatedTime": "abc",
-                "EdgeClusterVersion": "abc",
+                "ClusterId": "test",
+                "ClusterName": "test",
+                "VpcId": "test",
+                "PodCIDR": "test",
+                "ServiceCIDR": "test",
+                "K8SVersion": "test",
+                "Status": "test",
+                "ClusterDesc": "test",
+                "CreatedTime": "test",
+                "EdgeClusterVersion": "test",
                 "MaxNodePodNum": 0,
                 "ClusterAdvancedSettings": {
                     "ExtraArgs": {
                         "KubeAPIServer": [
-                            "abc"
+                            "test"
                         ],
                         "KubeControllerManager": [
-                            "abc"
+                            "test"
                         ],
                         "KubeScheduler": [
-                            "abc"
+                            "test"
                         ]
                     },
-                    "Runtime": "abc",
-                    "ProxyMode": "abc"
+                    "Runtime": "test",
+                    "ProxyMode": "test"
                 },
-                "Level": "abc",
+                "Level": "test",
                 "AutoUpgradeClusterLevel": true,
-                "ChargeType": "abc",
-                "EdgeVersion": "abc",
+                "ChargeType": "test",
+                "EdgeVersion": "test",
                 "TagSpecification": {
-                    "ResourceType": "abc",
+                    "ResourceType": "test",
                     "Tags": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "test",
+                            "Value": "test"
                         }
                     ]
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "d174dcb6-659b-4ab6-9533-e470a7d91e43"
     }
 }
 ```

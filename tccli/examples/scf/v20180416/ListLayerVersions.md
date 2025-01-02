@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli scf ListLayerVersions --cli-unfold-argument  \
-    --LayerName abc \
-    --CompatibleRuntime abc
+    --LayerName layer-name1 \
+    --CompatibleRuntime Nodejs16.13
 ```
 
 Output: 
@@ -16,19 +16,19 @@ Output:
     "Response": {
         "LayerVersions": [
             {
-                "Status": "Active",
+                "LayerName": "layer-name1",
                 "LayerVersion": 1,
-                "Description": "desc",
-                "LicenseInfo": "",
-                "AddTime": "2019-11-26 16:15:33",
                 "CompatibleRuntimes": [
-                    "Nodejs8.9",
-                    "Nodejs6.10"
+                    "Nodejs16.13"
                 ],
-                "LayerName": "layer3"
+                "Description": "vxcx",
+                "LicenseInfo": "",
+                "AddTime": "2022-05-16 19:40:42",
+                "Status": "Active",
+                "Stamp": "default"
             }
         ],
-        "RequestId": "4e9bc0ab-0b7c-45f1-8eec-e4f1f4f73e2b"
+        "RequestId": "ssssds-9783-424a-8f0b-48cfee89333b"
     }
 }
 ```

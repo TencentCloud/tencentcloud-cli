@@ -6,39 +6,20 @@ Input:
 
 ```
 tccli scf PublishLayerVersion --cli-unfold-argument  \
-    --LayerName abc \
-    --CompatibleRuntimes abc \
-    --Content.CosBucketName abc \
-    --Content.CosObjectName abc \
-    --Content.ZipFile abc \
-    --Content.CosBucketRegion abc \
-    --Content.DemoId abc \
-    --Content.TempCosObjectName abc \
-    --Content.GitUrl abc \
-    --Content.GitUserName abc \
-    --Content.GitPassword abc \
-    --Content.GitPasswordSecret abc \
-    --Content.GitBranch abc \
-    --Content.GitDirectory abc \
-    --Content.GitCommitId abc \
-    --Content.GitUserNameSecret abc \
-    --Content.ImageConfig.RegistryId abc \
-    --Content.ImageConfig.ImageType abc \
-    --Content.ImageConfig.ImageUri abc \
-    --Content.ImageConfig.EntryPoint abc \
-    --Content.ImageConfig.Command abc \
-    --Content.ImageConfig.Args abc \
-    --Content.ImageConfig.ContainerImageAccelerate True \
-    --Description abc \
-    --LicenseInfo abc
+    --LayerName layer-name1 \
+    --CompatibleRuntimes Nodejs16.13 \
+    --Content.CosBucketName layer-name1-2343243543 \
+    --Content.CosObjectName layer-name1/node_modules.zip \
+    --Content.CosBucketRegion ap-singapore \
+    --Description a layer
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "LayerVersion": 0,
-        "RequestId": "abc"
+        "LayerVersion": 8,
+        "RequestId": "197192d3-0b64-410a-8cd9-25cb7c1db0ee"
     }
 }
 ```

@@ -1256,7 +1256,7 @@
         {
           "disabled": false,
           "document": "CHC物理服务器的磁盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10T",
           "member": "string",
           "name": "Disk",
           "output_required": true,
@@ -3527,7 +3527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像ID列表 。镜像ID如：`img-gvbnzy6f`。array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/15688)。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。<br><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。",
+          "document": "镜像ID列表 。镜像ID如：`img-gvbnzy6f`。array型参数的格式可以参考[API简介](https://cloud.tencent.com/document/api/213/15688)。镜像ID可以通过如下方式获取：<br><li>通过[DescribeImages](https://cloud.tencent.com/document/api/213/15715)接口返回的`ImageId`获取。</li><li>通过[镜像控制台](https://console.cloud.tencent.com/cvm/image)获取。</li>",
           "example": "[\"img-gvbnzy6f\"]",
           "member": "string",
           "name": "ImageIds",
@@ -3564,7 +3564,7 @@
         {
           "disabled": false,
           "document": "实例类型，如 `S1.SMALL1`",
-          "example": "\"S1.SMALL1\"",
+          "example": "S1.SMALL1",
           "member": "string",
           "name": "InstanceType",
           "required": false,
@@ -3582,7 +3582,7 @@
           "example": "无",
           "member": "Image",
           "name": "ImageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3592,7 +3592,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7968,7 +7968,7 @@
         {
           "disabled": false,
           "document": "密钥对名称。",
-          "example": "test",
+          "example": "mySkey",
           "member": "string",
           "name": "KeyName",
           "output_required": true,
@@ -8018,7 +8018,7 @@
         {
           "disabled": false,
           "document": "密钥关联的实例`ID`列表。",
-          "example": "无",
+          "example": "[\"ins-xxxxx\"]",
           "member": "string",
           "name": "AssociatedInstanceIds",
           "output_required": false,
@@ -8753,7 +8753,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群新备注。",
-          "example": "test",
+          "example": "myRemark",
           "member": "string",
           "name": "Remark",
           "required": false,

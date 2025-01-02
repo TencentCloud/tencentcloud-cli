@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeEdgeLogSwitches --cli-unfold-argument  \
-    --ClusterIds cls-xxx1 cls-xxx2
+    --ClusterIds cls-e55paxnt cls-e55paxnt
 ```
 
 Output: 

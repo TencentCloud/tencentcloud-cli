@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeClusterVirtualNodePools --cli-unfold-argument  \
-    --ClusterId cls-abcd1234
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 
@@ -16,9 +16,9 @@ Output:
         "RequestId": "1ac0d3ae-063e-4789-93fe-3c73e93191b9",
         "NodePoolSet": [
             {
-                "NodePoolId": "np-abcd1234",
+                "NodePoolId": "np-e55paxnt",
                 "SubnetIds": [
-                    "subnet-abcd1234"
+                    "subnet-e55paxnt"
                 ],
                 "Name": "virtual-nodepool",
                 "LifeState": "normal",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf GetReservedConcurrencyConfig --cli-unfold-argument  \
-    --FunctionName test
+    --FunctionName functionName1
 ```
 
 Output: 

@@ -16,7 +16,7 @@ Output:
                 "CertConfig": {
                     "CertificateId": "ccccaas"
                 },
-                "Domain": "www.xxx.com",
+                "Domain": "www.demo.com",
                 "EndpointsConfig": [
                     {
                         "FunctionName": "test1",
@@ -25,7 +25,7 @@ Output:
                         "PathRewrite": [
                             {
                                 "Path": "/cc/",
-                                "Rewrite": "/",
+                                "Rewrite": "/$1",
                                 "Type": "ExactRules"
                             }
                         ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeTKEEdgeClusterCredential --cli-unfold-argument  \
-    --ClusterId cls-1234abcd
+    --ClusterId cls-2wds9k9p
 ```
 
 Output: 
@@ -42,7 +42,7 @@ Output:
         },
         "InternalLB": {
             "SubnetId": [
-                "vpc-12345"
+                "vpc-2wds9k9p"
             ],
             "Enabled": true
         },

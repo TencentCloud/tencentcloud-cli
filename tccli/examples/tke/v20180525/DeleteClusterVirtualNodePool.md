@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DeleteClusterVirtualNodePool --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
-    --NodePoolIds np-abcd1234
+    --ClusterId cls-e55paxnt \
+    --NodePoolIds np-e55paxnt
 ```
 
 Output: 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeECMInstances --cli-unfold-argument  \
-    --ClusterID cls-xxxxx
+    --ClusterID cls-e55paxnt
 ```
 
 Output: 

@@ -6,51 +6,27 @@ Input:
 
 ```
 tccli scf ListVersionByFunction --cli-unfold-argument  \
-    --FunctionName xxxxx
+    --FunctionName functionName1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "FunctionVersion": [
-            "$LATEST",
-            "3",
-            "2",
-            "1"
-        ],
-        "RequestId": "xx",
         "Versions": [
             {
-                "ModTime": "2020-09-22 00:00:00",
-                "AddTime": "2020-09-22 00:00:00",
-                "Version": "xx",
-                "Description": "xx",
-                "Status": "xx"
-            },
-            {
-                "ModTime": "2020-09-22 00:00:00",
-                "AddTime": "2020-09-22 00:00:00",
-                "Version": "xx",
-                "Description": "xx",
-                "Status": "xx"
-            },
-            {
-                "ModTime": "2020-09-22 00:00:00",
-                "AddTime": "2020-09-22 00:00:00",
-                "Version": "xx",
-                "Description": "xx",
-                "Status": "xx"
-            },
-            {
-                "ModTime": "2020-09-22 00:00:00",
-                "AddTime": "2020-09-22 00:00:00",
-                "Version": "xx",
-                "Description": "xx",
-                "Status": "xx"
+                "Version": "$LATEST",
+                "Description": "",
+                "AddTime": "2024-12-18 10:11:51",
+                "ModTime": "2024-12-18 17:04:41",
+                "Status": "Active"
             }
-        ]
+        ],
+        "FunctionVersion": [
+            "$LATEST"
+        ],
+        "TotalCount": 1,
+        "RequestId": "sdssd-a36d-42d3-9c24-c276409592a7"
     }
 }
 ```

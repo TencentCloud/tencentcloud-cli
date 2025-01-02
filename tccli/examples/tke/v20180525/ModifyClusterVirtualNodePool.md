@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke ModifyClusterVirtualNodePool --cli-unfold-argument  \
-    --ClusterId cls-abcd1234 \
-    --NodePoolId np-abcd1234 \
+    --ClusterId cls-e55paxnt \
+    --NodePoolId np-e55paxnt \
     --Name virtual-node-prod
 ```
 

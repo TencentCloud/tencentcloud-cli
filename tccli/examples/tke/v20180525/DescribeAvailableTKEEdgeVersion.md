@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeAvailableTKEEdgeVersion --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 

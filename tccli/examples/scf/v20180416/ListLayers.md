@@ -6,38 +6,31 @@ Input:
 
 ```
 tccli scf ListLayers --cli-unfold-argument  \
-    --CompatibleRuntime abc \
     --Offset 0 \
-    --Limit 0 \
-    --SearchKey abc
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Layers": [
             {
+                "LayerName": "test-layer",
+                "LayerVersion": 1,
                 "CompatibleRuntimes": [
-                    "abc"
+                    "Nodejs10.15"
                 ],
-                "AddTime": "abc",
-                "Description": "abc",
-                "LicenseInfo": "abc",
-                "LayerVersion": 0,
-                "LayerName": "abc",
-                "Status": "abc",
-                "Stamp": "abc",
-                "Tags": [
-                    {
-                        "Key": "abc",
-                        "Value": "abc"
-                    }
-                ]
+                "Description": "Layer created by serverless component",
+                "LicenseInfo": "",
+                "AddTime": "2022-10-26 10:08:11",
+                "Status": "Active",
+                "Stamp": "default",
+                "Tags": []
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "dsfdf-cac3-451d-acfa-667d831521b4"
     }
 }
 ```

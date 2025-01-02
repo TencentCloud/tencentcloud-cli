@@ -2218,6 +2218,15 @@
         },
         {
           "disabled": false,
+          "document": "购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "标签信息",
           "example": "无",
           "member": "TagItem",

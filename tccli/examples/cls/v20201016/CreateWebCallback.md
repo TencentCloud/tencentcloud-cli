@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cls CreateWebCallback --cli-unfold-argument  \
-    --Name name \
-    --Type Http \
-    --Webhook http://www.xxx.com \
+    --Name 监控告警专用 \
+    --Type WeCom \
+    --Webhook http://www.xxx.com/send \
     --Method POST \
-    --Key 
+    --Key AADSHFYFNJKGYENGKVYDNGKFH<
 ```
 
 Output: 

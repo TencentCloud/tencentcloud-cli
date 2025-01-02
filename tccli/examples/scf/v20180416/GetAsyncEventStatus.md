@@ -14,11 +14,11 @@ Output:
 {
     "Response": {
         "Result": {
-            "Status": "abc",
+            "Status": "RUNNING",
             "StatusCode": 0,
-            "InvokeRequestId": "abc"
+            "InvokeRequestId": "5f825fd3-a59d-4879-aa28-3ac967c12888"
         },
-        "RequestId": "abc"
+        "RequestId": "5f825fd3-a59d-4879-aa28-3ac967c128885f82"
     }
 }
 ```

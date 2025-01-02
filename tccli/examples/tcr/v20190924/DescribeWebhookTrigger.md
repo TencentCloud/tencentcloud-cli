@@ -6,40 +6,42 @@ Input:
 
 ```
 tccli tcr DescribeWebhookTrigger --cli-unfold-argument  \
-    --Limit 1 \
-    --Namespace someNs \
-    --RegistryId tcr-7s2d14fn
+    --RegistryId tcr-dg284imq \
+    --Limit 10 \
+    --Offset 1 \
+    --Namespace ns1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "d7549286-ffb6-486c-98b6-30a4001da260",
-        "TotalCount": 130,
+        "RequestId": "ca34c717-aba2-4307-a897-193343d10f39",
+        "TotalCount": 1,
         "Triggers": [
             {
-                "Id": 152,
-                "Name": "someTrigger",
-                "Description": "触发器描述",
+                "Condition": "golang",
+                "Description": "",
+                "Enabled": true,
+                "EventTypes": [
+                    "pushImage"
+                ],
+                "Id": 2,
+                "Name": "tirgger",
+                "NamespaceId": 1,
                 "Targets": [
                     {
-                        "Address": "http://httpbin.org/post",
+                        "Address": "http://www.baidu.com",
                         "Headers": [
                             {
-                                "Key": "X-Header1",
+                                "Key": "",
                                 "Values": [
-                                    "abc"
+                                    "undefined"
                                 ]
                             }
                         ]
                     }
-                ],
-                "EventTypes": [
-                    "pullImage"
-                ],
-                "Enabled": true,
-                "Condition": ".*"
+                ]
             }
         ]
     }

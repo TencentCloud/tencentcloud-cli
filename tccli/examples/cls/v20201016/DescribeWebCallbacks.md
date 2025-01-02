@@ -7,7 +7,7 @@ Input:
 ```
 tccli cls DescribeWebCallbacks --cli-unfold-argument  \
     --Filters.0.Key name \
-    --Filters.0.Values test \
+    --Filters.0.Values 监控告警专用 \
     --Offset 0 \
     --Limit 10
 ```
@@ -18,17 +18,19 @@ Output:
     "Response": {
         "WebCallbacks": [
             {
-                "WebCallbackId": "webcallback-d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1",
-                "Type": "Http",
+                "WebCallbackId": "webcallback-285a1bef-xxxx-xxxx-b6b3-6fd9326d6876",
+                "Name": "监控告警专用",
+                "Type": "WeCom",
                 "Webhook": "http://www.xxx.com",
                 "Method": "POST",
-                "Key": "",
-                "CreateTime": 1693468888,
-                "UpdateTime": 1693468888
+                "Uin": 100001000000,
+                "SubUin": 100021900000,
+                "CreateTime": 1705998110,
+                "UpdateTime": 1705998110
             }
         ],
         "TotalCount": 1,
-        "RequestId": "d20a21f7-f6ac-4a7b-ba1b-1aa49be5fed1"
+        "RequestId": "d20a21f7-xxxx-xxxx-ba1b-1aa49be5fed1"
     }
 }
 ```

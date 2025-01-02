@@ -7,7 +7,7 @@ Input:
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
     --RunInstancePara {"Placement":{"Zone":"ap-guangzhou-4"},"InstanceType":"S3.SMALL1"} \
-    --ClusterId cls-xxxxxxxx
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "InstanceIdSet": [
-            "ins-xxxxxxxx"
+            "ins-e55paxnt"
         ],
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
@@ -33,37 +33,37 @@ Input:
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
-    --ClusterId abc \
-    --InstanceAdvancedSettings.MountTarget abc \
-    --InstanceAdvancedSettings.DockerGraphPath abc \
-    --InstanceAdvancedSettings.UserScript abc \
+    --ClusterId cls-e55paxnt \
+    --InstanceAdvancedSettings.MountTarget test \
+    --InstanceAdvancedSettings.DockerGraphPath test \
+    --InstanceAdvancedSettings.UserScript test \
     --InstanceAdvancedSettings.Unschedulable 0 \
-    --InstanceAdvancedSettings.Labels.0.Name abc \
-    --InstanceAdvancedSettings.Labels.0.Value abc \
-    --InstanceAdvancedSettings.DataDisks.0.DiskType abc \
-    --InstanceAdvancedSettings.DataDisks.0.FileSystem abc \
+    --InstanceAdvancedSettings.Labels.0.Name test \
+    --InstanceAdvancedSettings.Labels.0.Value test \
+    --InstanceAdvancedSettings.DataDisks.0.DiskType test \
+    --InstanceAdvancedSettings.DataDisks.0.FileSystem test \
     --InstanceAdvancedSettings.DataDisks.0.DiskSize 0 \
     --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.0.MountTarget abc \
-    --InstanceAdvancedSettings.DataDisks.0.DiskPartition abc \
-    --InstanceAdvancedSettings.ExtraArgs.Kubelet abc \
+    --InstanceAdvancedSettings.DataDisks.0.MountTarget test \
+    --InstanceAdvancedSettings.DataDisks.0.DiskPartition test \
+    --InstanceAdvancedSettings.ExtraArgs.Kubelet test \
     --InstanceAdvancedSettings.DesiredPodNumber 0 \
     --InstanceAdvancedSettings.GPUArgs.MIGEnable True \
-    --InstanceAdvancedSettings.GPUArgs.Driver.Version abc \
-    --InstanceAdvancedSettings.GPUArgs.Driver.Name abc \
-    --InstanceAdvancedSettings.GPUArgs.CUDA.Version abc \
-    --InstanceAdvancedSettings.GPUArgs.CUDA.Name abc \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version abc \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name abc \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName abc \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName abc \
-    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address abc \
-    --InstanceAdvancedSettings.PreStartUserScript abc \
-    --InstanceAdvancedSettings.Taints.0.Key abc \
-    --InstanceAdvancedSettings.Taints.0.Value abc \
-    --InstanceAdvancedSettings.Taints.0.Effect abc \
-    --RunInstancePara abc \
-    --SkipValidateOptions abc
+    --InstanceAdvancedSettings.GPUArgs.Driver.Version test \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Name test \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Version test \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Name test \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version test \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name test \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName test \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName test \
+    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address test \
+    --InstanceAdvancedSettings.PreStartUserScript test \
+    --InstanceAdvancedSettings.Taints.0.Key test \
+    --InstanceAdvancedSettings.Taints.0.Value test \
+    --InstanceAdvancedSettings.Taints.0.Effect test \
+    --RunInstancePara test \
+    --SkipValidateOptions test
 ```
 
 Output: 
@@ -71,7 +71,7 @@ Output:
 {
     "Response": {
         "InstanceIdSet": [
-            "ins-xxxxxxxx"
+            "ins-e55paxnt"
         ],
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }

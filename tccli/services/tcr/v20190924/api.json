@@ -784,40 +784,40 @@
         {
           "disabled": false,
           "document": "Vpc的Id",
-          "example": "",
+          "example": "vpc-5sdsx9k9",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子网Id",
-          "example": "",
+          "example": "subnet-5snl8kyg",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网接入状态",
-          "example": "",
+          "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "内网接入Ip",
-          "example": "",
+          "example": "10.0.25.33",
           "member": "string",
           "name": "AccessIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -830,60 +830,60 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "",
+          "example": "3321337994",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库名",
-          "example": "",
+          "example": "repo",
           "member": "string",
           "name": "RepoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "类型",
-          "example": "",
+          "example": "global_keep_last_days",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "策略值",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Valid",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Valid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2020-05-21 16:46:42 +0800 CST",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -896,20 +896,20 @@
         {
           "disabled": false,
           "document": "总数目",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "自动删除策略列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{},{}]",
           "member": "AutoDelStrategyInfo",
           "name": "StrategyInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3462,20 +3462,20 @@
         {
           "disabled": false,
           "document": "返回总数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "触发日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{},{}]",
           "member": "TriggerLogResp",
           "name": "LogInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -3551,20 +3551,20 @@
         {
           "disabled": false,
           "document": "返回条目总数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "触发器列表",
-          "example": "",
+          "example": "[{},{}]",
           "member": "TriggerResp",
           "name": "TriggerInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -4491,7 +4491,7 @@
         {
           "disabled": false,
           "document": "实例ID列表(为空时，\n表示获取账号下所有实例)",
-          "example": "tcr-xxx",
+          "example": "[\"tcr-dg284imq\"]",
           "member": "string",
           "name": "Registryids",
           "required": false,
@@ -4574,7 +4574,7 @@
         {
           "disabled": false,
           "document": "vpc列表",
-          "example": "无",
+          "example": "[{\"InstanceId\":\"tcr-dg284imq\",\"VpcId\":\"vpc-5sdsx9k9\",\"EniLBIp\":\"10.0.25.33\",\"UsePublicDomain\":true,\"RegionName\":\"ap-guangzhou\"}]",
           "member": "VpcAndDomainInfo",
           "name": "VpcSet",
           "required": true,
@@ -4589,7 +4589,7 @@
         {
           "disabled": false,
           "document": "vpc私有域名解析状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Region\":\"ap-guangzhou\",\"Status\":\"DISABLED\",\"VpcId\":\"vpc-5sdsx9k9\"}]",
           "member": "VpcPrivateDomainStatus",
           "name": "VpcSet",
           "required": true,
@@ -4658,7 +4658,7 @@
         {
           "disabled": false,
           "document": "命名空间，支持模糊查询",
-          "example": "无",
+          "example": "nicokang",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -4667,7 +4667,7 @@
         {
           "disabled": false,
           "document": "单页数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -4676,7 +4676,7 @@
         {
           "disabled": false,
           "document": "偏移量",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -4851,7 +4851,7 @@
         {
           "disabled": false,
           "document": "同步实例Id，见实例返回列表中的同步实例ID",
-          "example": "tcr-ak9876-5",
+          "example": "tcr-dg284imq-5-os5gcu",
           "member": "string",
           "name": "ReplicationRegistryId",
           "required": true,
@@ -5074,7 +5074,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-12345678",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5083,7 +5083,7 @@
         {
           "disabled": false,
           "document": "指定命名空间，不填写默认为查询所有命名空间下镜像仓库",
-          "example": "library",
+          "example": "multi-arch",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
@@ -5092,7 +5092,7 @@
         {
           "disabled": false,
           "document": "指定镜像仓库，不填写默认查询指定命名空间下所有镜像仓库",
-          "example": "nginx",
+          "example": "busybox",
           "member": "string",
           "name": "RepositoryName",
           "required": false,
@@ -5101,7 +5101,7 @@
         {
           "disabled": false,
           "document": "页数，用于分页",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5166,7 +5166,7 @@
         {
           "disabled": false,
           "document": "搜索镜像名",
-          "example": "无",
+          "example": "golang-test",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -5175,7 +5175,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5184,7 +5184,7 @@
         {
           "disabled": false,
           "document": "返回最大数量，默认 20，最大100",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5193,7 +5193,7 @@
         {
           "disabled": false,
           "document": "筛选条件：1表示public，0表示private",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Public",
           "required": false,
@@ -5202,7 +5202,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "无",
+          "example": "nicokang",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5331,7 +5331,7 @@
         {
           "disabled": false,
           "document": "实例的Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5368,7 +5368,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-xxx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5377,7 +5377,7 @@
         {
           "disabled": false,
           "document": "列出所有服务级账号",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "All",
           "required": false,
@@ -5386,7 +5386,7 @@
         {
           "disabled": false,
           "document": "是否填充权限信息",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "EmbedPermission",
           "required": false,
@@ -5394,8 +5394,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
-          "example": "无",
+          "document": "过滤条件，key 目前只支持ServiceAccountName",
+          "example": "[{\"Name\":\"ServiceAccountName\",\"Values\":[\"tcr$account_test\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5404,7 +5404,7 @@
         {
           "disabled": false,
           "document": "偏移量,默认0",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5413,7 +5413,7 @@
         {
           "disabled": false,
           "document": "最大输出条数，默认20，最大为100（超出最大值，调整到最大值）",
-          "example": "20",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5617,7 +5617,7 @@
         {
           "disabled": false,
           "document": "主实例iD",
-          "example": "tcr-test123",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5626,7 +5626,7 @@
         {
           "disabled": false,
           "document": "命名空间的名称",
-          "example": "mytest",
+          "example": "ns2",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
@@ -5635,7 +5635,7 @@
         {
           "disabled": false,
           "document": "分页PageSize",
-          "example": "20",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5659,7 +5659,7 @@
         {
           "disabled": false,
           "document": "版本保留策略列表",
-          "example": "无",
+          "example": "[{},{}]",
           "member": "RetentionPolicy",
           "name": "RetentionPolicyList",
           "output_required": true,
@@ -5669,7 +5669,7 @@
         {
           "disabled": false,
           "document": "版本保留策略总数",
-          "example": "1",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -5801,7 +5801,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-7s2d14fn",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5810,7 +5810,7 @@
         {
           "disabled": false,
           "document": "分页单页数量",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5819,7 +5819,7 @@
         {
           "disabled": false,
           "document": "分页偏移量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5828,7 +5828,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "someNs",
+          "example": "ns1",
           "member": "string",
           "name": "Namespace",
           "required": false,
@@ -5875,7 +5875,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "tcr-xxx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5884,7 +5884,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "mytest",
+          "example": "chart",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -5893,7 +5893,7 @@
         {
           "disabled": false,
           "document": "Helm chart名称",
-          "example": "test",
+          "example": "mychart",
           "member": "string",
           "name": "ChartName",
           "required": true,
@@ -5902,7 +5902,7 @@
         {
           "disabled": false,
           "document": "Helm chart版本",
-          "example": "1.0",
+          "example": "0.1.0",
           "member": "string",
           "name": "ChartVersion",
           "required": true,
@@ -5917,7 +5917,7 @@
         {
           "disabled": false,
           "document": "临时token",
-          "example": "yyy",
+          "example": "4oGxX3QwXFYLIyyxxxxx",
           "member": "string",
           "name": "TmpToken",
           "output_required": true,
@@ -5927,7 +5927,7 @@
         {
           "disabled": false,
           "document": "临时的secretId",
-          "example": "ddd",
+          "example": "AKID3MccneCbtuvb4fJkrD9WhtldFVLLiN68dDuZsIz6UYZqgh6GSwYkkXlDM28lTEMn",
           "member": "string",
           "name": "TmpSecretId",
           "output_required": true,
@@ -5937,7 +5937,7 @@
         {
           "disabled": false,
           "document": "临时的secretKey",
-          "example": "eeee",
+          "example": "D+CIKDZ8tCG/WCDQ3ZW0P8jI2FTnAE4kDdfVJsXpx5k=",
           "member": "string",
           "name": "TmpSecretKey",
           "output_required": true,
@@ -5947,7 +5947,7 @@
         {
           "disabled": false,
           "document": "存储桶信息",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq-1251707795",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -5967,7 +5967,7 @@
         {
           "disabled": false,
           "document": "chart信息",
-          "example": "tcr-test/test-1.0.tgz",
+          "example": "chart/mychart-0.1.0.tgz",
           "member": "string",
           "name": "Path",
           "output_required": true,
@@ -5977,7 +5977,7 @@
         {
           "disabled": false,
           "document": "开始时间时间戳",
-          "example": "12345",
+          "example": "1735527692",
           "member": "int64",
           "name": "StartTime",
           "output_required": true,
@@ -5987,7 +5987,7 @@
         {
           "disabled": false,
           "document": "token过期时间时间戳",
-          "example": "123456",
+          "example": "1735531292",
           "member": "int64",
           "name": "ExpiredTime",
           "output_required": true,
@@ -6009,10 +6009,10 @@
         {
           "disabled": false,
           "document": "镜像Digest值",
-          "example": "",
+          "example": "sha256:b3e07cf570a86f5bd5c770e86ccbc2d1c2e79081b1b966332ba873a6d1c3481c",
           "member": "string",
           "name": "Digest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6161,20 +6161,20 @@
         {
           "disabled": false,
           "document": "收藏仓库的总数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{},{}]",
           "member": "Favors",
           "name": "RepoInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -6187,100 +6187,100 @@
         {
           "disabled": false,
           "document": "仓库名字",
-          "example": "",
+          "example": "v3test2/mao",
           "member": "string",
           "name": "RepoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库类型",
-          "example": "",
+          "example": "QCLOUD HUB",
           "member": "string",
           "name": "RepoType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Pull总共的次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "PullCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "仓库收藏次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "FavorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "仓库是否公开\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Public",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "是否为官方所有\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsQcloudOfficial",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "仓库Tag的数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "TagCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Logo\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "empty",
           "member": "string",
           "name": "Logo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "地域",
-          "example": "",
+          "example": "gz",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "地域的Id",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6293,7 +6293,7 @@
         {
           "disabled": false,
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
-          "example": "",
+          "example": "Tags",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6303,7 +6303,7 @@
         {
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
-          "example": "",
+          "example": "[\"nico:nico-resource\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -6319,10 +6319,10 @@
         {
           "disabled": false,
           "document": "作业 ID",
-          "example": "123",
+          "example": "6",
           "member": "int64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6332,7 +6332,7 @@
           "example": "finished",
           "member": "string",
           "name": "JobStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6342,7 +6342,7 @@
           "example": "2021-05-14T08:20:01Z",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6352,7 +6352,7 @@
           "example": "2021-05-14T08:20:02.387203Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6362,7 +6362,7 @@
           "example": "无",
           "member": "Schedule",
           "name": "Schedule",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -6375,9 +6375,10 @@
         {
           "disabled": false,
           "document": "Header Key",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6385,9 +6386,10 @@
         {
           "disabled": false,
           "document": "Header Values",
-          "example": "",
+          "example": "value",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6404,6 +6406,7 @@
           "example": "**",
           "member": "string",
           "name": "RepositoryPattern",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6414,6 +6417,7 @@
           "example": "**",
           "member": "string",
           "name": "TagPattern",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6424,6 +6428,7 @@
           "example": "repoMatches",
           "member": "string",
           "name": "RepositoryDecoration",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6434,6 +6439,7 @@
           "example": "matches",
           "member": "string",
           "name": "TagDecoration",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6444,6 +6450,7 @@
           "example": "false",
           "member": "bool",
           "name": "Disabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -6451,9 +6458,10 @@
         {
           "disabled": false,
           "document": "规则 Id",
-          "example": "123",
+          "example": "6",
           "member": "int64",
           "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6464,6 +6472,7 @@
           "example": "library",
           "member": "string",
           "name": "NsName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6503,7 +6512,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "",
+          "example": "3321337994",
           "member": "string",
           "name": "Username",
           "required": true,
@@ -6513,7 +6522,7 @@
         {
           "disabled": false,
           "document": "配额的类型",
-          "example": "",
+          "example": "namespace",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -6523,7 +6532,7 @@
         {
           "disabled": false,
           "document": "配置的值",
-          "example": "",
+          "example": "2000",
           "member": "int64",
           "name": "Value",
           "required": true,
@@ -6991,7 +7000,7 @@
         {
           "disabled": false,
           "document": "实例长期访问凭证 ID",
-          "example": "2ab3af0d-893d-423f-91b1-27713566f95f",
+          "example": "ct3ucep1qcle9n4kmv00",
           "member": "string",
           "name": "TokenId",
           "required": true,
@@ -7000,7 +7009,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "tcr-12345",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -7018,7 +7027,7 @@
         {
           "disabled": false,
           "document": "访问凭证描述",
-          "example": "test",
+          "example": "update desc",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -7207,7 +7216,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -7216,7 +7225,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "",
+          "example": "ns1",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -7225,7 +7234,7 @@
         {
           "disabled": false,
           "document": "镜像仓库名称",
-          "example": "",
+          "example": "golang",
           "member": "string",
           "name": "RepositoryName",
           "required": true,
@@ -7234,7 +7243,7 @@
         {
           "disabled": false,
           "document": "仓库简短描述",
-          "example": "",
+          "example": "golang",
           "member": "string",
           "name": "BriefDescription",
           "required": true,
@@ -7243,7 +7252,7 @@
         {
           "disabled": false,
           "document": "仓库详细描述",
-          "example": "",
+          "example": "golang",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -7270,7 +7279,7 @@
         {
           "disabled": false,
           "document": "实例的Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -7279,7 +7288,7 @@
         {
           "disabled": false,
           "document": "PolicyId",
-          "example": "1",
+          "example": "2",
           "member": "int64",
           "name": "PolicyIndex",
           "required": true,
@@ -7288,7 +7297,7 @@
         {
           "disabled": false,
           "document": "192.168.0.0/24 白名单Ip",
-          "example": "192.168.0.0/24",
+          "example": "3.3.3.3",
           "member": "string",
           "name": "CidrBlock",
           "required": true,
@@ -7297,7 +7306,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "test",
+          "example": "update access ip",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -7312,7 +7321,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -7659,20 +7668,20 @@
         {
           "disabled": false,
           "document": "命名空间数量",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "NamespaceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命名空间信息",
-          "example": "",
+          "example": "[{},{}]",
           "member": "NamespaceInfo",
           "name": "NamespaceInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7685,7 +7694,7 @@
         {
           "disabled": false,
           "document": "命名空间是否存在",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "IsExist",
           "required": true,
@@ -7695,7 +7704,7 @@
         {
           "disabled": false,
           "document": "是否为保留命名空间",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsPreserved",
           "required": true,
@@ -7711,22 +7720,20 @@
         {
           "disabled": false,
           "document": "待同步实例的uin",
-          "example": "156789",
+          "example": "3321337994",
           "member": "string",
           "name": "PeerRegistryUin",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "待同步实例的访问永久Token",
-          "example": "123",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lclVpbiI6IjMzMjEzMzc5OTQifQ.jG7JQl-8zytEj5vI7WN8aMArzsdt71-ZhRUSvzBqbpo",
           "member": "string",
           "name": "PeerRegistryToken",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7735,8 +7742,7 @@
           "member": "bool",
           "name": "EnablePeerReplication",
           "required": true,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -7775,7 +7781,7 @@
         {
           "disabled": false,
           "document": "gz",
-          "example": "",
+          "example": "sh",
           "member": "string",
           "name": "Alias",
           "required": true,
@@ -7785,7 +7791,7 @@
         {
           "disabled": false,
           "document": "1",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "RegionId",
           "required": true,
@@ -7795,7 +7801,7 @@
         {
           "disabled": false,
           "document": "ap-guangzhou",
-          "example": "",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -7805,7 +7811,7 @@
         {
           "disabled": false,
           "document": "alluser",
-          "example": "",
+          "example": "alluser",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -7815,7 +7821,7 @@
         {
           "disabled": false,
           "document": "remark",
-          "example": "",
+          "example": "alluser",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -7825,7 +7831,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2020-04-24T09:42:35+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
           "required": true,
@@ -7835,7 +7841,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "",
+          "example": "2021-10-29T15:27:08+08:00",
           "member": "datetime_iso",
           "name": "UpdatedAt",
           "required": true,
@@ -7845,7 +7851,7 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -7861,7 +7867,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "output_required": true,
@@ -7871,7 +7877,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "无",
+          "example": "nicokang-tcr-gz",
           "member": "string",
           "name": "RegistryName",
           "output_required": true,
@@ -7881,7 +7887,7 @@
         {
           "disabled": false,
           "document": "实例规格",
-          "example": "无",
+          "example": "premium",
           "member": "string",
           "name": "RegistryType",
           "output_required": true,
@@ -7891,7 +7897,7 @@
         {
           "disabled": false,
           "document": "实例状态。有以下状态：\nPending, 初始化中\nDeploying, 创建中\nRunning, 运行中\nUnhealthy, 状态异常\nFailedCreated, 创建失败\nFailedUpdated, 更新失败\nBucket-Error, 存储桶异常\nIsolate, 待回收\nDeleting, 删除中\nDeleteBucketFailed, 实例删除存储桶失败\nDeleteFailed, 实例删除失败",
-          "example": "无",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -7901,7 +7907,7 @@
         {
           "disabled": false,
           "document": "实例的公共访问地址",
-          "example": "无",
+          "example": "nicokang-tcr-gz.tencentcloudcr.com",
           "member": "string",
           "name": "PublicDomain",
           "output_required": true,
@@ -7911,7 +7917,7 @@
         {
           "disabled": false,
           "document": "实例创建时间",
-          "example": "无",
+          "example": "2024-07-19T15:33:22+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
           "output_required": true,
@@ -7921,7 +7927,7 @@
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "无",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
@@ -7931,7 +7937,7 @@
         {
           "disabled": false,
           "document": "地域Id",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "RegionId",
           "output_required": true,
@@ -7941,7 +7947,7 @@
         {
           "disabled": false,
           "document": "是否支持匿名",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "EnableAnonymous",
           "output_required": true,
@@ -7951,7 +7957,7 @@
         {
           "disabled": false,
           "document": "Token有效时间",
-          "example": "无",
+          "example": "87600",
           "member": "uint64",
           "name": "TokenValidTime",
           "output_required": true,
@@ -7961,7 +7967,7 @@
         {
           "disabled": false,
           "document": "实例内部访问地址",
-          "example": "无",
+          "example": "10.1.66.46",
           "member": "string",
           "name": "InternalEndpoint",
           "output_required": true,
@@ -7971,7 +7977,7 @@
         {
           "disabled": false,
           "document": "实例云标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ResourceType\":\"instance\",\"Tags\":[{\"Key\":\"tcr-test2\",\"Value\":\"ericyyyang2\"},{\"Key\":\"tcr-test\",\"Value\":\"nicokang\"}]}",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "output_required": true,
@@ -7981,7 +7987,7 @@
         {
           "disabled": false,
           "document": "实例过期时间（预付费）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2034-07-19T15:33:22+08:00",
           "member": "string",
           "name": "ExpiredAt",
           "output_required": true,
@@ -7991,7 +7997,7 @@
         {
           "disabled": false,
           "document": "实例付费类型，0表示后付费，1表示预付费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "PayMod",
           "output_required": true,
@@ -8001,7 +8007,7 @@
         {
           "disabled": false,
           "document": "预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RenewFlag",
           "output_required": true,
@@ -8011,7 +8017,7 @@
         {
           "disabled": false,
           "document": "是否开启实例删除保护，false表示不开启",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "DeletionProtection",
           "output_required": true,
@@ -8027,22 +8033,20 @@
         {
           "disabled": false,
           "document": "购买实例的时长，单位：月",
-          "example": "",
+          "example": "12",
           "member": "int64",
           "name": "Period",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "自动续费标识，0：手动续费，1：自动续费，2：不续费并且不通知",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -8053,30 +8057,30 @@
         {
           "disabled": false,
           "document": "实例创建过程类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例创建过程状态",
-          "example": "",
+          "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "转换到该过程的简明原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8089,7 +8093,7 @@
         {
           "disabled": false,
           "document": "实例的Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -8099,7 +8103,7 @@
         {
           "disabled": false,
           "document": "实例的状态",
-          "example": "",
+          "example": "Running",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -8109,7 +8113,7 @@
         {
           "disabled": false,
           "document": "附加状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"Reason\":\"\",\"Status\":\"Running\",\"Type\":\"\"}]",
           "member": "RegistryCondition",
           "name": "Conditions",
           "required": true,
@@ -8180,22 +8184,20 @@
         {
           "disabled": false,
           "document": "类型（name、tag和resource）",
-          "example": "",
+          "example": "tag",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "默认为空",
-          "example": "",
+          "example": "release**",
           "member": "string",
           "name": "Value",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8272,7 +8274,7 @@
         {
           "disabled": false,
           "document": "主实例ID",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -8282,7 +8284,7 @@
         {
           "disabled": false,
           "document": "复制实例ID",
-          "example": "",
+          "example": "tcr-dg284imq-5-os5gcu",
           "member": "string",
           "name": "ReplicationRegistryId",
           "required": true,
@@ -8292,7 +8294,7 @@
         {
           "disabled": false,
           "document": "复制实例的地域ID",
-          "example": "",
+          "example": "5",
           "member": "uint64",
           "name": "ReplicationRegionId",
           "required": true,
@@ -8302,7 +8304,7 @@
         {
           "disabled": false,
           "document": "复制实例的地域名称",
-          "example": "",
+          "example": "ap-hongkong",
           "member": "string",
           "name": "ReplicationRegionName",
           "required": true,
@@ -8312,7 +8314,7 @@
         {
           "disabled": false,
           "document": "复制实例的状态",
-          "example": "",
+          "example": "Deploying",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -8322,7 +8324,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2025-01-02T15:10:02+08:00",
           "member": "string",
           "name": "CreatedAt",
           "required": true,
@@ -8338,7 +8340,7 @@
         {
           "disabled": false,
           "document": "同步规则名称",
-          "example": "无",
+          "example": "rule1",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -8347,7 +8349,7 @@
         {
           "disabled": false,
           "document": "目标命名空间",
-          "example": "无",
+          "example": "ns",
           "member": "string",
           "name": "DestNamespace",
           "required": true,
@@ -8356,7 +8358,7 @@
         {
           "disabled": false,
           "document": "是否覆盖",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Override",
           "required": true,
@@ -8365,7 +8367,7 @@
         {
           "disabled": false,
           "document": "同步过滤条件",
-          "example": "无",
+          "example": "[{\"Type\":\"name\",\"Value\":\"ns/**\"}]",
           "member": "ReplicationFilter",
           "name": "Filters",
           "required": true,
@@ -8374,7 +8376,7 @@
         {
           "disabled": false,
           "document": "是否同步删除事件",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Deletion",
           "required": false,
@@ -8389,110 +8391,110 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang-test",
           "member": "string",
           "name": "RepoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库类型",
-          "example": "",
+          "example": "QCLOUD HUB",
           "member": "string",
           "name": "RepoType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Tag数量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TagCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为公开",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Public",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为用户收藏",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsUserFavor",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否为腾讯云官方仓库",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsQcloudOfficial",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被收藏的个数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "FavorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "拉取的数量",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "PullCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述",
-          "example": "",
+          "example": "description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库创建时间",
-          "example": "",
+          "example": "2024-11-09 16:11:32",
           "member": "string",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库更新时间",
-          "example": "",
+          "example": "2024-11-12 17:29:20",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8505,30 +8507,30 @@
         {
           "disabled": false,
           "document": "仓库总数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仓库信息列表",
-          "example": "",
+          "example": "[{},{}]",
           "member": "RepoInfo",
           "name": "RepoInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Server信息",
-          "example": "",
+          "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8541,10 +8543,10 @@
         {
           "disabled": false,
           "document": "仓库是否存在",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsExist",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -8557,7 +8559,7 @@
         {
           "disabled": false,
           "document": "镜像仓库名字",
-          "example": "",
+          "example": "nicokang/golang-test",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -8567,7 +8569,7 @@
         {
           "disabled": false,
           "document": "镜像仓库类型",
-          "example": "",
+          "example": "QCLOUD HUB",
           "member": "string",
           "name": "RepoType",
           "required": true,
@@ -8577,7 +8579,7 @@
         {
           "disabled": false,
           "document": "镜像仓库服务地址",
-          "example": "",
+          "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
           "required": true,
@@ -8587,7 +8589,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-11-09 16:11:32",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -8597,7 +8599,7 @@
         {
           "disabled": false,
           "document": "镜像仓库描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -8607,7 +8609,7 @@
         {
           "disabled": false,
           "document": "是否为公有镜像",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Public",
           "required": true,
@@ -8617,7 +8619,7 @@
         {
           "disabled": false,
           "document": "下载次数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "PullCount",
           "required": true,
@@ -8627,7 +8629,7 @@
         {
           "disabled": false,
           "document": "收藏次数",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "FavorCount",
           "required": true,
@@ -8637,7 +8639,7 @@
         {
           "disabled": false,
           "document": "是否为用户收藏",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsUserFavor",
           "required": true,
@@ -8647,7 +8649,7 @@
         {
           "disabled": false,
           "document": "是否为腾讯云官方镜像",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsQcloudOfficial",
           "required": true,
@@ -8663,7 +8665,7 @@
         {
           "disabled": false,
           "document": "配额信息",
-          "example": "",
+          "example": "[{},{}]",
           "member": "Limit",
           "name": "LimitInfo",
           "required": true,
@@ -8915,7 +8917,7 @@
         {
           "disabled": false,
           "document": "tag列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"4\"]",
           "member": "string",
           "name": "SameImages",
           "required": true,
@@ -8947,7 +8949,7 @@
         {
           "disabled": false,
           "document": "总个数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
           "required": true,
@@ -8957,7 +8959,7 @@
         {
           "disabled": false,
           "document": "仓库列表",
-          "example": "",
+          "example": "[{},{}]",
           "member": "RepoInfo",
           "name": "RepoInfo",
           "required": true,
@@ -8967,7 +8969,7 @@
         {
           "disabled": false,
           "document": "Server",
-          "example": "",
+          "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
           "required": true,
@@ -8977,7 +8979,7 @@
         {
           "disabled": false,
           "document": "PrivilegeFiltered",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "PrivilegeFiltered",
           "required": true,
@@ -9042,6 +9044,7 @@
           "example": "tcr$robot",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9049,9 +9052,10 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "service-account",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9062,6 +9066,7 @@
           "example": "false",
           "member": "bool",
           "name": "Disable",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -9072,6 +9077,7 @@
           "example": "1676897989",
           "member": "int64",
           "name": "ExpiresAt",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9082,6 +9088,7 @@
           "example": "2023-02-14T07:14:43+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9092,6 +9099,7 @@
           "example": "2023-02-14T07:14:43+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9099,9 +9107,10 @@
         {
           "disabled": false,
           "document": "策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {       \"Resource\": \"library\",       \"Actions\": [         \"tcr:PushRepository\",          \"tcr:PullRepository\"       ]     }   ]",
+          "example": "[{\"Resource\":\"library\",\"Actions\":[\"tcr:PushRepository\",\"tcr:PullRepository\"]}]",
           "member": "Permission",
           "name": "Permissions",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9115,7 +9124,7 @@
         {
           "disabled": false,
           "document": "云标签的key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tag-key",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -9126,7 +9135,7 @@
         {
           "disabled": false,
           "document": "云标签的值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "tag-value",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -9143,7 +9152,7 @@
         {
           "disabled": false,
           "document": "Tag名称",
-          "example": "",
+          "example": "4",
           "member": "string",
           "name": "TagName",
           "required": true,
@@ -9153,7 +9162,7 @@
         {
           "disabled": false,
           "document": "制品的 ID",
-          "example": "",
+          "example": "sha256:369a4a10ed88e84519de6d492049a9439d625b663c186edaf7f8b84a90170449",
           "member": "string",
           "name": "TagId",
           "required": true,
@@ -9163,7 +9172,7 @@
         {
           "disabled": false,
           "document": "docker image 可以看到的id",
-          "example": "",
+          "example": "sha256:0111d1811773a9e0f11fe99d068079bd9d3d7eb6f79694cf0574a1bad0922c7a",
           "member": "string",
           "name": "ImageId",
           "required": true,
@@ -9173,7 +9182,7 @@
         {
           "disabled": false,
           "document": "大小",
-          "example": "",
+          "example": "294 MB",
           "member": "string",
           "name": "Size",
           "required": true,
@@ -9183,7 +9192,7 @@
         {
           "disabled": false,
           "document": "制品的创建时间",
-          "example": "",
+          "example": "2025-01-02 15:14:45 +0800 CST",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -9193,7 +9202,7 @@
         {
           "disabled": false,
           "document": "制品创建至今时间长度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DurationDays",
           "required": true,
@@ -9203,7 +9212,7 @@
         {
           "disabled": false,
           "document": "标注的制品作者",
-          "example": "",
+          "example": "nico",
           "member": "string",
           "name": "Author",
           "required": true,
@@ -9213,7 +9222,7 @@
         {
           "disabled": false,
           "document": "标注的制品平台",
-          "example": "",
+          "example": "arm64",
           "member": "string",
           "name": "Architecture",
           "required": true,
@@ -9223,7 +9232,7 @@
         {
           "disabled": false,
           "document": "创建制品的 Docker 版本",
-          "example": "",
+          "example": "Docker version 26.0.0, build 2ae903e",
           "member": "string",
           "name": "DockerVersion",
           "required": true,
@@ -9233,7 +9242,7 @@
         {
           "disabled": false,
           "document": "标注的制品操作系统",
-          "example": "",
+          "example": "linux",
           "member": "string",
           "name": "OS",
           "required": true,
@@ -9243,7 +9252,7 @@
         {
           "disabled": false,
           "document": "制品大小",
-          "example": "",
+          "example": "294736583",
           "member": "int64",
           "name": "SizeByte",
           "required": true,
@@ -9253,7 +9262,7 @@
         {
           "disabled": false,
           "document": "序号",
-          "example": "",
+          "example": "21118257",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -9263,7 +9272,7 @@
         {
           "disabled": false,
           "document": "数据更新时间",
-          "example": "",
+          "example": "2025-01-02 15:14:56 +0800 CST",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -9273,7 +9282,7 @@
         {
           "disabled": false,
           "document": "制品更新时间",
-          "example": "",
+          "example": "2025-01-02 15:14:45 +0800 CST",
           "member": "string",
           "name": "PushTime",
           "required": true,
@@ -9283,7 +9292,7 @@
         {
           "disabled": false,
           "document": "制品类型",
-          "example": "",
+          "example": "Artifact::application/vnd.docker.distribution.manifest.v2+json",
           "member": "string",
           "name": "Kind",
           "required": true,
@@ -9299,7 +9308,7 @@
         {
           "disabled": false,
           "document": "Tag的总数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TagCount",
           "required": true,
@@ -9309,7 +9318,7 @@
         {
           "disabled": false,
           "document": "TagInfo列表",
-          "example": "",
+          "example": "[{},{}]",
           "member": "TagInfo",
           "name": "TagInfo",
           "required": true,
@@ -9319,7 +9328,7 @@
         {
           "disabled": false,
           "document": "Server",
-          "example": "",
+          "example": "ccr.ccs.tencentyun.com",
           "member": "string",
           "name": "Server",
           "required": true,
@@ -9329,7 +9338,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -9345,7 +9354,7 @@
         {
           "disabled": false,
           "document": "默认值为instance\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "namespace",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -9355,7 +9364,7 @@
         {
           "disabled": false,
           "document": "云标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[{\"Key\":\"nico\",\"Value\":\"nico-resource\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": true,
@@ -9371,7 +9380,7 @@
         {
           "disabled": false,
           "document": "任务",
-          "example": "",
+          "example": "SyncDBTask",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -9381,7 +9390,7 @@
         {
           "disabled": false,
           "document": "任务UUID",
-          "example": "",
+          "example": "tcr-task-tcr-dg284imq-5-os5gcu-a152a2ca-2aee-4356-8bd9-09eea73c5c0a",
           "member": "string",
           "name": "TaskUUID",
           "required": true,
@@ -9391,7 +9400,7 @@
         {
           "disabled": false,
           "document": "任务状态",
-          "example": "",
+          "example": "SUCCESS",
           "member": "string",
           "name": "TaskStatus",
           "required": true,
@@ -9401,7 +9410,7 @@
         {
           "disabled": false,
           "document": "任务的状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TaskMessage",
           "required": true,
@@ -9411,7 +9420,7 @@
         {
           "disabled": false,
           "document": "任务开始时间",
-          "example": "",
+          "example": "2025-01-02T15:10:06+08:00",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
@@ -9421,7 +9430,7 @@
         {
           "disabled": false,
           "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2025-01-02T15:10:12+08:00",
           "member": "string",
           "name": "FinishedTime",
           "required": true,
@@ -9503,7 +9512,7 @@
         {
           "disabled": false,
           "document": "令牌ID",
-          "example": "",
+          "example": "ct3ucep1qcle9n4kmv00",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -9513,7 +9522,7 @@
         {
           "disabled": false,
           "document": "令牌描述",
-          "example": "",
+          "example": "nico-test",
           "member": "string",
           "name": "Desc",
           "required": true,
@@ -9523,7 +9532,7 @@
         {
           "disabled": false,
           "document": "令牌所属实例ID",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -9533,7 +9542,7 @@
         {
           "disabled": false,
           "document": "令牌启用状态",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
           "required": true,
@@ -9543,7 +9552,7 @@
         {
           "disabled": false,
           "document": "令牌创建时间",
-          "example": "",
+          "example": "2024-11-28T11:40:44+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
           "required": true,
@@ -9553,7 +9562,7 @@
         {
           "disabled": false,
           "document": "令牌过期时间戳",
-          "example": "",
+          "example": "2048125243551",
           "member": "int64",
           "name": "ExpiredAt",
           "required": true,
@@ -9569,60 +9578,60 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "ns1",
+          "example": "multi-arch",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "2022-07-06 14:20:38",
+          "example": "2024-12-10T14:04:56Z",
           "member": "datetime_iso",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "访问级别",
-          "example": "true",
+          "example": "false",
           "member": "bool",
           "name": "Public",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命名空间的Id",
-          "example": "1",
+          "example": "13",
           "member": "int64",
           "name": "NamespaceId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例云标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ResourceType\":\"namespace\",\"Tags\":[{\"Key\":\"nico\",\"Value\":\"nico-resource\"}]}",
           "member": "TagSpecification",
           "name": "TagSpecification",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "命名空间元数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Key\":\"auto_scan\",\"Value\":\"false\"},{\"Key\":\"prevent_vul\",\"Value\":\"false\"},{\"Key\":\"public\",\"Value\":\"false\"}]",
           "member": "KeyValueString",
           "name": "Metadata",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9632,27 +9641,27 @@
           "example": "无",
           "member": "CVEWhitelistItem",
           "name": "CVEWhitelistItems",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "扫描级别，true为自动，false为手动",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AutoScan",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "安全阻断级别，true为开启，false为关闭",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "PreventVUL",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9662,7 +9671,7 @@
           "example": "low",
           "member": "string",
           "name": "Severity",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9751,20 +9760,20 @@
         {
           "disabled": false,
           "document": "触发方式",
-          "example": "",
+          "example": "regex",
           "member": "string",
           "name": "InvokeMethod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "触发表达式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "^release*",
           "member": "string",
           "name": "InvokeExpr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9777,7 +9786,7 @@
         {
           "disabled": false,
           "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1251707795",
           "member": "string",
           "name": "AppId",
           "required": true,
@@ -9787,7 +9796,7 @@
         {
           "disabled": false,
           "document": "TKE集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "cls-prnklzue",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9797,7 +9806,7 @@
         {
           "disabled": false,
           "document": "TKE集群命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "default",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -9807,7 +9816,7 @@
         {
           "disabled": false,
           "document": "TKE集群工作负载名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "Deployment:nginx-deployment",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -9817,7 +9826,7 @@
         {
           "disabled": false,
           "document": "TKE集群工作负载中容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "nginx",
           "member": "string",
           "name": "ContainerName",
           "required": true,
@@ -9827,7 +9836,7 @@
         {
           "disabled": false,
           "document": "TKE集群地域数字ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "ClusterRegion",
           "required": true,
@@ -9843,20 +9852,20 @@
         {
           "disabled": false,
           "document": "请求TKE返回值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ReturnCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "请求TKE返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ok",
           "member": "string",
           "name": "ReturnMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9869,90 +9878,90 @@
         {
           "disabled": false,
           "document": "仓库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "repo",
           "member": "string",
           "name": "RepoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Tag名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "TagName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "auto-update",
           "member": "string",
           "name": "TriggerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "IMAGE_PUSH",
           "member": "string",
           "name": "InvokeSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发动作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "SERVICE_UPDATE",
           "member": "string",
           "name": "InvokeAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2017-08-23 15:50:57",
           "member": "string",
           "name": "InvokeTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"invokeMethod\":\"all\",\"invokeExpr\":\"\"}",
           "member": "TriggerInvokeCondition",
           "name": "InvokeCondition",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"appId\":\"xxx\",\"clusterId\":\"cls-xxxx\",\"namespace\":\"default\",\"serviceName\":\"xxx\",\"containerName\":\"xxxx\",\"clusterRegion\":8}",
           "member": "TriggerInvokePara",
           "name": "InvokePara",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"returnCode\":0,\"returnMsg\":\"ok\"}",
           "member": "TriggerInvokeResult",
           "name": "InvokeResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -9965,70 +9974,70 @@
         {
           "disabled": false,
           "document": "触发器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "trigger_name",
           "member": "string",
           "name": "TriggerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发来源\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "IMAGE_PUSH",
           "member": "string",
           "name": "InvokeSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发动作\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "SERVICE_UPDATE",
           "member": "string",
           "name": "InvokeAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2017-12-12 16:19:21",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2017-12-12 16:19:21",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"invokeMethod\":\"all\",\"invokeExpr\":\"\"}",
           "member": "TriggerInvokeCondition",
           "name": "InvokeCondition",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "触发器参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{\"appId\":\"xxx\",\"clusterId\":\"cls-xxx\",\"namespace\":\"default\",\"serviceName\":\"xxx\",\"containerName\":\"xxx\",\"clusterRegion\":1}",
           "member": "TriggerInvokePara",
           "name": "InvokePara",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -10115,7 +10124,7 @@
         {
           "disabled": false,
           "document": "tcr实例id",
-          "example": "tcr-xxxxxxx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10125,7 +10134,7 @@
         {
           "disabled": false,
           "document": "私有网络id",
-          "example": "vpc-xxxxxxx",
+          "example": "vpc-5sdsx9k9",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -10135,7 +10144,7 @@
         {
           "disabled": false,
           "document": "tcr内网访问链路ip",
-          "example": "10.x.x.x",
+          "example": "10.0.25.33",
           "member": "string",
           "name": "EniLBIp",
           "required": true,
@@ -10155,7 +10164,7 @@
         {
           "disabled": false,
           "document": "解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域",
-          "example": "ap-beijing",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
           "required": false,
@@ -10171,7 +10180,7 @@
         {
           "disabled": false,
           "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -10181,7 +10190,7 @@
         {
           "disabled": false,
           "document": "unique vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "vpc-5sdsx9k9",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -10191,7 +10200,7 @@
         {
           "disabled": false,
           "document": "ENABLE代表已经开启，DISABLE代表未开启，ERROR代表查询出错\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "DISABLED",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -10207,7 +10216,7 @@
         {
           "disabled": false,
           "document": "目标地址",
-          "example": "",
+          "example": "http://www.baidu.com",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -10217,7 +10226,7 @@
         {
           "disabled": false,
           "document": "自定义 Headers",
-          "example": "",
+          "example": "[{\"Key\":\"key1\",\"Values\":[\"v1\",\"v2\"]}]",
           "member": "Header",
           "name": "Headers",
           "required": false,
@@ -10233,9 +10242,10 @@
         {
           "disabled": false,
           "document": "触发器名称",
-          "example": "",
+          "example": "tirgger",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10243,9 +10253,10 @@
         {
           "disabled": false,
           "document": "触发器目标",
-          "example": "",
+          "example": "[{\"Address\":\"http://www.baidu.com\",\"Headers\":[{\"Key\":\"\",\"Values\":[\"undefined\"]}]}]",
           "member": "WebhookTarget",
           "name": "Targets",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10253,9 +10264,10 @@
         {
           "disabled": false,
           "document": "触发动作",
-          "example": "",
+          "example": "[\"pushImage\"]",
           "member": "string",
           "name": "EventTypes",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10263,9 +10275,10 @@
         {
           "disabled": false,
           "document": "触发规则",
-          "example": "",
+          "example": "golang",
           "member": "string",
           "name": "Condition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10273,9 +10286,10 @@
         {
           "disabled": false,
           "document": "启用触发器",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -10283,9 +10297,10 @@
         {
           "disabled": false,
           "document": "触发器Id",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10293,9 +10308,10 @@
         {
           "disabled": false,
           "document": "触发器描述",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10303,12 +10319,24 @@
         {
           "disabled": false,
           "document": "触发器所属命名空间 Id",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "NamespaceId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发器所属命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ns1",
+          "member": "string",
+          "name": "NamespaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -10319,7 +10347,7 @@
         {
           "disabled": false,
           "document": "日志 Id",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -10329,7 +10357,7 @@
         {
           "disabled": false,
           "document": "触发器 Id",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TriggerId",
           "required": true,
@@ -10339,7 +10367,7 @@
         {
           "disabled": false,
           "document": "事件类型",
-          "example": "",
+          "example": "pushImage",
           "member": "string",
           "name": "EventType",
           "required": true,
@@ -10349,7 +10377,7 @@
         {
           "disabled": false,
           "document": "通知类型",
-          "example": "",
+          "example": "http",
           "member": "string",
           "name": "NotifyType",
           "required": true,
@@ -10359,7 +10387,7 @@
         {
           "disabled": false,
           "document": "详情",
-          "example": "",
+          "example": "{\"type\":\"pushImage\",\"occur_at\":1731916183,\"event_data\":{\"resources\":[],\"repository\":{}},\"operator\":\"3321337994\"}",
           "member": "string",
           "name": "Detail",
           "required": true,
@@ -10369,7 +10397,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-11-18T07:49:43.78381Z",
           "member": "string",
           "name": "CreationTime",
           "required": true,
@@ -10379,7 +10407,7 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "",
+          "example": "2024-11-18T12:24:34.351737Z",
           "member": "string",
           "name": "UpdateTime",
           "required": true,
@@ -10389,7 +10417,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "",
+          "example": "error",
           "member": "string",
           "name": "Status",
           "required": true,

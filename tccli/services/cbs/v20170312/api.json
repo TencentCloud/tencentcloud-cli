@@ -1259,6 +1259,15 @@
           "name": "BurstPerformance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "指定云硬盘加密类型，取值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容。推荐优先使用第二代加密技术ENCRYPT_V2，第一代加密技术仅支持在部分老旧机型使用。该参数仅当创建加密云硬盘时有效。",
+          "example": "ENCRYPT_V2",
+          "member": "string",
+          "name": "EncryptType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

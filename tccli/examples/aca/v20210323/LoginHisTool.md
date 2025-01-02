@@ -12,7 +12,7 @@ tccli aca LoginHisTool --cli-unfold-argument  \
     --Header.Signature c5146247bc621087037e41952de50ccdcee0a69972cbd8a9cd3631ce79ed91ba \
     --Header.PlatformId 800035384 \
     --Data.DoctorId 001 \
-    --Data.DoctorName abc
+    --Data.DoctorName 张三
 ```
 
 Output: 

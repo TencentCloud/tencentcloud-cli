@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli scf GetProvisionedConcurrencyConfig --cli-unfold-argument  \
-    --FunctionName test \
+    --FunctionName functionName1 \
+    --Namespace default \
     --Qualifier 1
 ```
 
@@ -14,24 +15,33 @@ Output:
 ```
 {
     "Response": {
-        "UnallocatedConcurrencyNum": 1,
+        "UnallocatedConcurrencyNum": 2343,
         "Allocated": [
             {
-                "Status": "xx",
-                "Qualifier": "xx",
+                "Qualifier": "1",
                 "AvailableProvisionedConcurrencyNum": 1,
-                "StatusReason": "xx",
                 "AllocatedProvisionedConcurrencyNum": 1,
+                "Status": "Done",
+                "StatusReason": "",
+                "TriggerActions": []
+            },
+            {
+                "Qualifier": "2",
+                "AvailableProvisionedConcurrencyNum": 1,
+                "AllocatedProvisionedConcurrencyNum": 1,
+                "Status": "Done",
+                "StatusReason": "",
                 "TriggerActions": [
                     {
+                        "TriggerName": "timer-1",
+                        "ProvisionedType": "Default",
                         "TriggerProvisionedConcurrencyNum": 1,
-                        "TriggerCronConfig": "xx",
-                        "TriggerName": "xx"
+                        "TriggerCronConfig": "30 42 15 20 12 * 2024"
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "dsdsfsdf-b246-4fe5-812a-f77f1275471a"
     }
 }
 ```

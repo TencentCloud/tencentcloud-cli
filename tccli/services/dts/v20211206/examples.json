@@ -113,7 +113,7 @@
     "CreateSyncJob": [
       {
         "document": "创建一个同步任务",
-        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSyncJob\n<公共请求参数>\n\n{\n    \"Count\": 1,\n    \"Specification\": \"Standard\",\n    \"PayMode\": \"PrePay\",\n    \"DstDatabaseType\": \"mysql\",\n    \"DstRegion\": \"ap-guangzhou\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcRegion\": \"ap-guangzhou\",\n    \"ExistedJobId\": \"sync-xascasas\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSyncJob\n<公共请求参数>\n\n{\n    \"Count\": 1,\n    \"TimeSpan\": \"1\",\n    \"Specification\": \"Standard\",\n    \"PayMode\": \"PrePay\",\n    \"DstDatabaseType\": \"mysql\",\n    \"DstRegion\": \"ap-guangzhou\",\n    \"SrcDatabaseType\": \"mysql\",\n    \"SrcRegion\": \"ap-guangzhou\",\n    \"ExistedJobId\": \"sync-xascasas\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobIds\": [\n            \"sync-eivc87yk\"\n        ],\n        \"RequestId\": \"03a378be-372a-478b-beb7-19e4dd5027e2\"\n    }\n}",
         "title": "创建一个同步任务"
       }

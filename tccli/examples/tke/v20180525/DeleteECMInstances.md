@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke DeleteECMInstances --cli-unfold-argument  \
-    --ClusterID cls-xxxxx \
-    --EcmIdSet ecm-xxxxx
+    --ClusterID cls-2wds9k9p \
+    --EcmIdSet ecm-2wds9k9p
 ```
 
 Output: 

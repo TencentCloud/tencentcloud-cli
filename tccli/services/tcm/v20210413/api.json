@@ -120,7 +120,7 @@
         {
           "disabled": false,
           "document": "APM 实例，如果创建时传入的参数为空，则表示自动创建 APM 实例。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "apm-LmCpqBQaq",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -208,7 +208,7 @@
         {
           "disabled": false,
           "document": "GRPC第三方服务器地址",
-          "example": "无",
+          "example": "172.0.3.6:80",
           "member": "string",
           "name": "Address",
           "required": false,
@@ -244,7 +244,7 @@
         {
           "disabled": false,
           "document": "操作Id",
-          "example": "无",
+          "example": "mesh-351lvuec",
           "member": "string",
           "name": "OperationId",
           "required": true,
@@ -254,7 +254,7 @@
         {
           "disabled": false,
           "document": "操作类型，取值范围：\n- LINK_CLUSTERS: 关联集群\n- RELINK_CLUSTERS: 重新关联集群\n- UNLINK_CLUSTERS: 解关联集群\n- INSTALL_MESH: 安装网格",
-          "example": "无",
+          "example": "upgrade-mesh",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -357,7 +357,7 @@
         {
           "disabled": false,
           "document": "集群Id",
-          "example": "cls-xxxxxxxx",
+          "example": "cls-i3wbzkfl",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -367,7 +367,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "sh",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -377,7 +377,7 @@
         {
           "disabled": false,
           "document": "集群角色，取值范围：\n- MASTER：控制面所在的主集群\n- REMOTE：主集群管理的远端集群",
-          "example": "master",
+          "example": "REMOTE",
           "member": "string",
           "name": "Role",
           "required": true,
@@ -407,7 +407,7 @@
         {
           "disabled": false,
           "document": "名称，只读",
-          "example": "无",
+          "example": "cluster-test",
           "member": "string",
           "name": "DisplayName",
           "required": false,
@@ -417,7 +417,7 @@
         {
           "disabled": false,
           "document": "状态，只读",
-          "example": "deleted",
+          "example": "RUNNING",
           "member": "string",
           "name": "State",
           "required": false,
@@ -427,7 +427,7 @@
         {
           "disabled": false,
           "document": "关联时间，只读",
-          "example": "无",
+          "example": "2025-01-02T10:51:48.338+08:00",
           "member": "datetime_iso",
           "name": "LinkedTime",
           "required": false,
@@ -467,7 +467,7 @@
         {
           "disabled": false,
           "document": "集群关联的 Namespace 列表",
-          "example": "无",
+          "example": "{\"ns1\",\"ns2\"}",
           "member": "string",
           "name": "HostedNamespaces",
           "required": false,
@@ -533,7 +533,7 @@
         {
           "disabled": false,
           "document": "自动注入命名空间状态列表",
-          "example": "无",
+          "example": "{\"ns1\",\"ns2\"}",
           "member": "AutoInjectionNamespaceState",
           "name": "AutoInjectionNamespaceStateList",
           "required": false,
@@ -560,7 +560,7 @@
         {
           "disabled": false,
           "document": "关联错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "CheckError: cluster not found",
           "member": "string",
           "name": "LinkErrorDetail",
           "output_required": true,
@@ -708,7 +708,7 @@
         {
           "disabled": false,
           "document": "Prometheus 用户名（用于 basic 认证方式）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "root",
           "member": "string",
           "name": "Username",
           "output_required": false,
@@ -719,7 +719,7 @@
         {
           "disabled": false,
           "document": "Prometheus 密码（用于 basic 认证方式）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "output_required": false,
@@ -809,7 +809,7 @@
         {
           "disabled": false,
           "document": "指定的节点",
-          "example": "无",
+          "example": "{\"10.0.0.2\", \"10,0,0,5\"}",
           "member": "string",
           "name": "Nodes",
           "required": false,
@@ -1100,7 +1100,7 @@
         {
           "disabled": false,
           "document": "egress gateway的当前版本",
-          "example": "无",
+          "example": "1.14.5",
           "member": "string",
           "name": "CurrentVersion",
           "output_required": true,
@@ -1111,7 +1111,7 @@
         {
           "disabled": false,
           "document": "egress gateway的目标版本",
-          "example": "无",
+          "example": "1.16.5",
           "member": "string",
           "name": "DesiredVersion",
           "output_required": true,
@@ -1122,7 +1122,7 @@
         {
           "disabled": false,
           "document": "egress gateway的状态，取值：running，upgrading，rollbacking",
-          "example": "无",
+          "example": "upgrading",
           "member": "string",
           "name": "State",
           "output_required": true,
@@ -1195,18 +1195,16 @@
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段的过滤值。",
-          "example": "无",
+          "example": "{\"Mesh1\", \"Mesh2\"}",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1227,7 +1225,7 @@
         {
           "disabled": false,
           "document": "内网地址",
-          "example": "无",
+          "example": "http://172.16.180.133",
           "member": "string",
           "name": "InternalURL",
           "required": true,
@@ -1237,7 +1235,7 @@
         {
           "disabled": false,
           "document": "公网地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://grafana-4056m7nh.grafana.tencent-cloud.com",
           "member": "string",
           "name": "PublicURL",
           "required": true,
@@ -1257,7 +1255,7 @@
         {
           "disabled": false,
           "document": "公网失败详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "some error msg",
           "member": "string",
           "name": "PublicFailedMessage",
           "required": true,
@@ -1406,7 +1404,7 @@
         {
           "disabled": false,
           "document": "ingress gateway 当前的版本",
-          "example": "无",
+          "example": "1.14.5",
           "member": "string",
           "name": "CurrentVersion",
           "output_required": true,
@@ -1417,7 +1415,7 @@
         {
           "disabled": false,
           "document": "ingress gateway 目标的版本",
-          "example": "无",
+          "example": "1.16.5",
           "member": "string",
           "name": "DesiredVersion",
           "output_required": true,
@@ -1428,7 +1426,7 @@
         {
           "disabled": false,
           "document": "ingress gateway的状态，取值running, upgrading, rollbacking",
-          "example": "无",
+          "example": "upgrading",
           "member": "string",
           "name": "State",
           "output_required": true,
@@ -1745,7 +1743,7 @@
         {
           "disabled": false,
           "document": "设置跨可用区容灾时的主可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "200002",
           "member": "string",
           "name": "MasterZoneID",
           "required": false,
@@ -1755,7 +1753,7 @@
         {
           "disabled": false,
           "document": "设置跨可用区容灾时的备可用区ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "200001",
           "member": "string",
           "name": "SlaveZoneID",
           "required": false,
@@ -1821,7 +1819,7 @@
         {
           "disabled": false,
           "document": "Mesh实例Id",
-          "example": "mesh-xxxxxxxx",
+          "example": "mesh-351lvuec",
           "member": "string",
           "name": "MeshId",
           "required": true,
@@ -1831,7 +1829,7 @@
         {
           "disabled": false,
           "document": "Mesh名称",
-          "example": "无",
+          "example": "service-manager",
           "member": "string",
           "name": "DisplayName",
           "required": true,
@@ -1841,7 +1839,7 @@
         {
           "disabled": false,
           "document": "Mesh类型，取值范围：\n- STANDALONE：独立网格\n- HOSTED：托管网格",
-          "example": "hosted",
+          "example": "HOSTED",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -1851,7 +1849,7 @@
         {
           "disabled": false,
           "document": "地域",
-          "example": "sh",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "required": true,
@@ -1881,7 +1879,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2025-01-02T10:50:01.951+08:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "required": true,
@@ -1891,7 +1889,7 @@
         {
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-01-02T10:51:53.869+08:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "required": true,
@@ -2043,7 +2041,7 @@
         {
           "disabled": false,
           "document": "状态附带信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "some message",
           "member": "string",
           "name": "StateMessage",
           "required": true,
@@ -2396,7 +2394,7 @@
         {
           "disabled": false,
           "document": "关联已存在实例Id，不填则默认创建",
-          "example": "无",
+          "example": "prom-86rajg7s",
           "member": "string",
           "name": "InstanceId",
           "required": false,
@@ -2422,7 +2420,7 @@
         {
           "disabled": false,
           "document": "Prometheus Id",
-          "example": "无",
+          "example": "mesh-351lvuec-prom-86rajg7s",
           "member": "string",
           "name": "PrometheusId",
           "required": true,
@@ -2432,7 +2430,7 @@
         {
           "disabled": false,
           "document": "展示名称",
-          "example": "无",
+          "example": "prom-for-test",
           "member": "string",
           "name": "DisplayName",
           "required": true,
@@ -2442,7 +2440,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "无",
+          "example": "prom-86rajg7s",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2452,7 +2450,7 @@
         {
           "disabled": false,
           "document": "虚拟网络Id",
-          "example": "无",
+          "example": "vpc-75aajr3v",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -2462,7 +2460,7 @@
         {
           "disabled": false,
           "document": "状态",
-          "example": "无",
+          "example": "running",
           "member": "string",
           "name": "State",
           "required": true,
@@ -2812,7 +2810,7 @@
         {
           "disabled": false,
           "document": "Zipkin调用地址",
-          "example": "无",
+          "example": "http://10.0.0.2",
           "member": "string",
           "name": "Address",
           "required": true,
@@ -2921,7 +2919,7 @@
         {
           "disabled": false,
           "document": "部署到指定节点",
-          "example": "无",
+          "example": "{\"10.0.0.2\", \"10.0.0.5\"}",
           "member": "string",
           "name": "SelectedNodeList",
           "required": false,

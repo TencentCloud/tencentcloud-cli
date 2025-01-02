@@ -8,7 +8,7 @@ Input:
 tccli tke CreateTKEEdgeCluster --cli-unfold-argument  \
     --ClusterName for_test \
     --PodCIDR 172.16.0.0/20 \
-    --VpcId vpc-xxx \
+    --VpcId vpc-e55paxnt \
     --ServiceCIDR 192.168.0.0/18 \
     --K8SVersion 1.12.4
 ```
@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "ClusterId": "cls-xxx",
+        "ClusterId": "cls-e55paxnt",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

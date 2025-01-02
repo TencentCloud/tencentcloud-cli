@@ -535,16 +535,16 @@
     "DescribeInstances": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstances\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Registries\": [\n            {\n                \"RegistryId\": \"tcr-xxx\",\n                \"RegistryName\": \"test\",\n                \"RegistryType\": \"basic\",\n                \"Status\": \"running\",\n                \"PublicDomain\": \"tcr-test.tencentcloudcr.com\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"RegionName\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"EnableAnonymous\": true,\n                \"TokenValidTime\": 1,\n                \"InternalEndpoint\": \"nil\",\n                \"TagSpecification\": {\n                    \"ResourceType\": \"abc\",\n                    \"Tags\": [\n                        {\n                            \"Key\": \"abc\",\n                            \"Value\": \"abc\"\n                        }\n                    ]\n                },\n                \"ExpiredAt\": \"abc\",\n                \"PayMod\": 0,\n                \"RenewFlag\": 0,\n                \"DeletionProtection\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Registryids\": [\n        \"tcr-dg284imq\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Registries\": [\n            {\n                \"CreatedAt\": \"2024-07-19T15:33:22+08:00\",\n                \"DeletionProtection\": true,\n                \"EnableAnonymous\": true,\n                \"ExpiredAt\": \"\",\n                \"InternalEndpoint\": \"10.1.66.46\",\n                \"PayMod\": 0,\n                \"PublicDomain\": \"nicokang-tcr-gz.tencentcloudcr.com\",\n                \"RegionId\": 1,\n                \"RegionName\": \"ap-guangzhou\",\n                \"RegistryId\": \"tcr-dg284imq\",\n                \"RegistryName\": \"nicokang-tcr-gz\",\n                \"RegistryType\": \"premium\",\n                \"RenewFlag\": 0,\n                \"Status\": \"Running\",\n                \"TagSpecification\": {\n                    \"ResourceType\": \"instance\",\n                    \"Tags\": [\n                        {\n                            \"Key\": \"tcr-test2\",\n                            \"Value\": \"ericyyyang2\"\n                        },\n                        {\n                            \"Key\": \"tcr-test\",\n                            \"Value\": \"nicokang\"\n                        }\n                    ]\n                },\n                \"TokenValidTime\": 87600\n            }\n        ],\n        \"RequestId\": \"06d6c73a-d845-4e20-a578-721a0cf7e268\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查看实例列表"
       }
     ],
     "DescribeInternalEndpointDnsStatus": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInternalEndpointDnsStatus\n&VpcSet.0.InstanceId=tcr-xxx\n&VpcSet.0.VpcId=vpc-xxx\n&VpcSet.0.EniLBIp=1.1.1.1\n&VpcSet.0.UsePublicDomain=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"VpcSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"VpcId\": \"vpc-xxx\",\n                \"Status\": \"ENABLED\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInternalEndpointDnsStatus\n<公共请求参数>\n\n{\n    \"VpcSet\": [\n        {\n            \"InstanceId\": \"tcr-dg284imq\",\n            \"VpcId\": \"vpc-9iazgkcl\",\n            \"EniLBIp\": \"192.168.23.69\",\n            \"UsePublicDomain\": true,\n            \"RegionName\": \"ap-guangzhou\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"56dac6c5-10a3-44c9-86cd-9e9be56bf4dd\",\n        \"VpcSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": \"ENABLED\",\n                \"VpcId\": \"vpc-9iazgkcl\"\n            }\n        ]\n    }\n}",
         "title": "查询私有域名解析状态"
       }
     ],
@@ -559,8 +559,8 @@
     "DescribeNamespacePersonal": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespacePersonal\n<公共请求参数>\n\n{\n    \"Namespace\": \"mockns\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"NamespaceCount\": 1,\n            \"NamespaceInfo\": [\n                {\n                    \"Namespace\": \"test\",\n                    \"CreationTime\": \"2018-07-25 15:07:12\",\n                    \"RepoCount\": 2\n                }\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespacePersonal\n<公共请求参数>\n\n{\n    \"Namespace\": \"nicokang\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"NamespaceCount\": 1,\n            \"NamespaceInfo\": [\n                {\n                    \"CreationTime\": \"2024-06-22 10:37:26\",\n                    \"Namespace\": \"nicokang\",\n                    \"RepoCount\": 10\n                }\n            ]\n        },\n        \"RequestId\": \"94a1d32a-4f73-4214-8864-6bafdda6b5f6\"\n    }\n}",
         "title": "查询个人版命名空间信息"
       }
     ],
@@ -583,8 +583,8 @@
     "DescribeReplicationInstanceCreateTasks": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeReplicationInstanceCreateTasks\n&ReplicationRegistryId=tcr-ak9876-5\n&ReplicationRegionId=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskDetail\": [\n            {\n                \"TaskName\": \"SyncMasterDBTask\",\n                \"TaskUUID\": \"tcr-task-3765025c-b063-4d38-be45-52e47b2c5795\",\n                \"TaskStatus\": \"SUCCESS\",\n                \"TaskMessage\": \"\",\n                \"CreatedTime\": \"xx\",\n                \"FinishedTime\": \"xx\"\n            },\n            {\n                \"TaskName\": \"SyncMasterBucketTask\",\n                \"TaskUUID\": \"tcr-task-d008eec3-c6a0-41b1-b171-409e06fff024\",\n                \"TaskStatus\": \"SUCCESS\",\n                \"TaskMessage\": \"\",\n                \"CreatedTime\": \"xx\",\n                \"FinishedTime\": \"xx\"\n            },\n            {\n                \"TaskName\": \"CreateTcrCrdTask\",\n                \"TaskUUID\": \"tcr-task-335e5a7b-b3e4-49ff-b4c3-9f81a6afac0d\",\n                \"TaskStatus\": \"SUCCESS\",\n                \"TaskMessage\": \"\",\n                \"CreatedTime\": \"xx\",\n                \"FinishedTime\": \"xx\"\n            }\n        ],\n        \"Status\": \"SUCCESS\",\n        \"RequestId\": \"5c497866-b88c-48c8-895d-0aba37109640\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplicationInstanceCreateTasks\n<公共请求参数>\n\n{\n    \"ReplicationRegistryId\": \"tcr-dg284imq-5-os5gcu\",\n    \"ReplicationRegionId\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"72c8900b-f23e-42b3-9281-828a42d590a4\",\n        \"Status\": \"SUCCESS\",\n        \"TaskDetail\": [\n            {\n                \"CreatedTime\": \"2025-01-02T15:10:06+08:00\",\n                \"FinishedTime\": \"2025-01-02T15:10:12+08:00\",\n                \"TaskMessage\": \"\",\n                \"TaskName\": \"SyncDBTask\",\n                \"TaskStatus\": \"SUCCESS\",\n                \"TaskUUID\": \"tcr-task-tcr-dg284imq-5-os5gcu-a152a2ca-2aee-4356-8bd9-09eea73c5c0a\"\n            },\n            {\n                \"CreatedTime\": \"2025-01-02T15:10:06+08:00\",\n                \"FinishedTime\": \"2025-01-02T15:10:12+08:00\",\n                \"TaskMessage\": \"\",\n                \"TaskName\": \"CreateTcrCrdTask\",\n                \"TaskStatus\": \"SUCCESS\",\n                \"TaskUUID\": \"tcr-task-tcr-dg284imq-5-os5gcu-d2c2b630-9417-44ea-b056-992de3289f90\"\n            }\n        ]\n    }\n}",
         "title": "查询创建从实例任务状态"
       }
     ],
@@ -607,16 +607,16 @@
     "DescribeRepositories": [
       {
         "document": "查询指定实例内全部镜像仓库",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeRepositories\r\n&RegistryId=tcr-f7g1ir99\r\n&Limit=20\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"772e3357-0b31-4b79-8afb-5b9835a3ada9\",\n        \"RepositoryList\": [\n            {\n                \"Name\": \"mytest/tianzichen\",\n                \"Namespace\": \"mytest\",\n                \"CreationTime\": \"2020-02-27 01:07:14.503709 +0800 CST\",\n                \"UpdateTime\": \"2020-02-27 01:07:14.503709 +0800 CST\",\n                \"Public\": false,\n                \"Description\": \"mytest\",\n                \"BriefDescription\": \"test\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRepositories\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"multi-arch\",\n    \"RepositoryName\": \"busybox\",\n    \"Offset\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RepositoryList\": [\n            {\n                \"BriefDescription\": \"busybox\",\n                \"CreationTime\": \"2024-12-10 14:30:36.806284 +0000 UTC\",\n                \"Description\": \"\",\n                \"Name\": \"multi-arch/busybox\",\n                \"Namespace\": \"multi-arch\",\n                \"Public\": false,\n                \"UpdateTime\": \"2024-12-10 14:30:36.806284 +0000 UTC\"\n            }\n        ],\n        \"RequestId\": \"1cce5817-43d2-4f50-9fd5-e807d3ea0768\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询镜像仓库信息"
       }
     ],
     "DescribeRepositoryFilterPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeRepositoryFilterPersonal\r\n&RepoName=dockerhub/test\r\n&Public=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PrivilegeFiltered\": false,\n            \"RepoInfo\": [\n                {\n                    \"RepoName\": \"v3test2/mao\",\n                    \"RepoType\": \"QCLOUD HUB\",\n                    \"TagCount\": 3,\n                    \"Public\": 0,\n                    \"IsUserFavor\": false,\n                    \"IsQcloudOfficial\": false,\n                    \"FavorCount\": 0,\n                    \"PullCount\": 17,\n                    \"Description\": \"test\",\n                    \"CreationTime\": \"2019-12-20 17:15:51\",\n                    \"UpdateTime\": \"2019-12-26 17:03:11\"\n                }\n            ],\n            \"Server\": \"ccr.ccs.tencentyun.com\",\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"28f2f221-8a92-4b68-8fab-aaf92d4291d5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRepositoryFilterPersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"golang-test\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Public\": 0,\n    \"Namespace\": \"nicokang\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"PrivilegeFiltered\": false,\n            \"RepoInfo\": [\n                {\n                    \"CreationTime\": \"2024-11-09 16:11:32\",\n                    \"Description\": \"\",\n                    \"FavorCount\": 0,\n                    \"IsQcloudOfficial\": false,\n                    \"IsUserFavor\": false,\n                    \"Public\": 0,\n                    \"PullCount\": 0,\n                    \"RepoName\": \"nicokang/golang-test\",\n                    \"RepoType\": \"QCLOUD HUB\",\n                    \"TagCount\": 1,\n                    \"UpdateTime\": \"2024-11-12 17:29:20\"\n                }\n            ],\n            \"Server\": \"ccr.ccs.tencentyun.com\",\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"86ad9298-a532-4102-ba2a-b87b55e589fa\"\n    }\n}",
         "title": "获取满足输入搜索条件的个人版镜像仓库"
       }
     ],
@@ -639,16 +639,16 @@
     "DescribeSecurityPolicies": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeSecurityPolicies\n&RegistryId=tcr-test123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecurityPolicySet\": [\n            {\n                \"PolicyIndex\": 0,\n                \"CidrBlock\": \"127.0.0.1/24\",\n                \"Description\": \"test\",\n                \"PolicyVersion\": \"1\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityPolicies\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23ff77a4-f5fc-4e2b-b0fa-c85c70676e6a\",\n        \"SecurityPolicySet\": [\n            {\n                \"CidrBlock\": \"47.94.91.32/32\",\n                \"Description\": \"\",\n                \"PolicyIndex\": 0,\n                \"PolicyVersion\": \"2\"\n            },\n            {\n                \"CidrBlock\": \"0.0.0.0/0\",\n                \"Description\": \"\",\n                \"PolicyIndex\": 1,\n                \"PolicyVersion\": \"2\"\n            }\n        ]\n    }\n}",
         "title": "查看实例安全策略"
       }
     ],
     "DescribeServiceAccounts": [
       {
         "document": "查询服务级账号",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAccounts\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"All\": true,\n    \"EmbedPermission\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ServiceAccounts\": [\n            {\n                \"Name\": \"abc\",\n                \"Description\": \"abc\",\n                \"Disable\": true,\n                \"ExpiresAt\": 0,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Permissions\": [\n                    {\n                        \"Resource\": \"abc\",\n                        \"Actions\": [\n                            \"abc\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAccounts\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"All\": true,\n    \"EmbedPermission\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"ServiceAccountName\",\n            \"Values\": [\n                \"tcr$account_test\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a0a32d8-3857-45d4-9f8a-e1d39efd8ac6\",\n        \"ServiceAccounts\": [\n            {\n                \"CreateTime\": \"2024-12-30T14:44:31+08:00\",\n                \"Description\": \"\",\n                \"Disable\": false,\n                \"ExpiresAt\": 1738133070653,\n                \"Name\": \"tcr$account_test\",\n                \"Permissions\": [\n                    {\n                        \"Actions\": [\n                            \"tcr:PullRepository\",\n                            \"tcr:DescribeHelmCharts\"\n                        ],\n                        \"Resource\": \"ns1\"\n                    },\n                    {\n                        \"Actions\": [\n                            \"tcr:PullRepository\",\n                            \"tcr:PushRepository\",\n                            \"tcr:CreateRepository\",\n                            \"tcr:CreateHelmChart\",\n                            \"tcr:DescribeHelmCharts\"\n                        ],\n                        \"Resource\": \"ns2\"\n                    }\n                ],\n                \"UpdateTime\": \"2024-12-30T14:44:31+08:00\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询服务级账号"
       }
     ],
@@ -671,8 +671,8 @@
     "DescribeTagRetentionRules": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeTagRetentionRules\n&RegistryId=tcr-12345\n&NamespaceName=test\n&Limit=20\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7abb9f2-9440-43ea-a12f-ae58875acf3d\",\n        \"RetentionPolicyList\": [\n            {\n                \"NextExecutionTime\": \"2024-06-24\",\n                \"RetentionId\": 1,\n                \"NamespaceName\": \"aaaa\",\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 10\n                    }\n                ],\n                \"CronSetting\": \"weekly\",\n                \"Disabled\": false\n            }\n        ],\n        \"TotalCount\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagRetentionRules\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"ns2\",\n    \"Limit\": 10,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e5adfc9-766a-49c9-bd18-c8c0ca8c9050\",\n        \"RetentionPolicyList\": [\n            {\n                \"CronSetting\": \"daily\",\n                \"Disabled\": true,\n                \"NamespaceName\": \"ns2\",\n                \"NextExecutionTime\": \"2025-01-03T06:00:00+08:00\",\n                \"RetentionId\": 18,\n                \"RetentionRuleList\": [\n                    {\n                        \"Key\": \"latestPushedK\",\n                        \"Value\": 10\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询镜像版本保留规则"
       }
     ],
@@ -687,8 +687,8 @@
     "DescribeWebhookTrigger": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebhookTrigger\n<公共请求参数>\n\n{\n    \"Limit\": \"1\",\n    \"Namespace\": \"someNs\",\n    \"RegistryId\": \"tcr-7s2d14fn\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7549286-ffb6-486c-98b6-30a4001da260\",\n        \"TotalCount\": 130,\n        \"Triggers\": [\n            {\n                \"Id\": 152,\n                \"Name\": \"someTrigger\",\n                \"Description\": \"触发器描述\",\n                \"Targets\": [\n                    {\n                        \"Address\": \"http://httpbin.org/post\",\n                        \"Headers\": [\n                            {\n                                \"Key\": \"X-Header1\",\n                                \"Values\": [\n                                    \"abc\"\n                                ]\n                            }\n                        ]\n                    }\n                ],\n                \"EventTypes\": [\n                    \"pullImage\"\n                ],\n                \"Enabled\": true,\n                \"Condition\": \".*\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebhookTrigger\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Limit\": 10,\n    \"Offset\": 1,\n    \"Namespace\": \"ns1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca34c717-aba2-4307-a897-193343d10f39\",\n        \"TotalCount\": 1,\n        \"Triggers\": [\n            {\n                \"Condition\": \"golang\",\n                \"Description\": \"\",\n                \"Enabled\": true,\n                \"EventTypes\": [\n                    \"pushImage\"\n                ],\n                \"Id\": 2,\n                \"Name\": \"tirgger\",\n                \"NamespaceId\": 1,\n                \"Targets\": [\n                    {\n                        \"Address\": \"http://www.baidu.com\",\n                        \"Headers\": [\n                            {\n                                \"Key\": \"\",\n                                \"Values\": [\n                                    \"undefined\"\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询触发器"
       }
     ],
@@ -703,8 +703,8 @@
     "DownloadHelmChart": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DownloadHelmChart\n&RegistryId=tcr-xxx\n&NamespaceName=tcr-test\n&ChartName=test\n&ChartVersion=1.0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TmpSecretKey\": \"abc\",\n        \"TmpToken\": \"abc\",\n        \"Region\": \"ap-guangzhou\",\n        \"Bucket\": \"tcr-d3av5-536254\",\n        \"TmpSecretId\": \"abc\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"StartTime\": 0,\n        \"Path\": \"/docker/registry\",\n        \"ExpiredTime\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadHelmChart\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"chart\",\n    \"ChartName\": \"mychart\",\n    \"ChartVersion\": \"0.1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"tcr-dg284imq-1251707795\",\n        \"ExpiredTime\": 1735531292,\n        \"Path\": \"chart/mychart-0.1.0.tgz\",\n        \"Region\": \"ap-guangzhou\",\n        \"RequestId\": \"544d03c2-0eaf-422f-80f7-355d59ecec56\",\n        \"StartTime\": 1735527692,\n        \"TmpSecretId\": \"AKID3MccneCbtuvb4fJkrD9WhtldFVLLiN68dDuZsIz6UYZqgh6GSwYkkXlDM28lTEMn\",\n        \"TmpSecretKey\": \"D+CIKDZ8tCG/WCDQ3ZW0P8jI2FTnAE4kDdfVJsXpx5k=\",\n        \"TmpToken\": \"4oGxX3QwXFYLIyy01rbtYNzunag6Wp7ae7ac2c301dc22e35def4936b5f2adddbdlnEOlHBxFjaquqXiufCJ-rGUkrlGEzUpaXpEZEXpSN-Z9sVKhHzv4tTFRrCtBF36lC4II4ELiTyYemKJ5fyHGTSSe4hWnqOQaCKRTjRhd9LHr5e2SAhc3BiieW_Fmjr2IVWFAItWCZy4-uE-K5m56zrXM50Ye5Zp3d2fwqAKI5ZZYqsrV292gZj59wHX3KNOg_RHdrbLBSH3Qd5wsxEGDSAAWlfcNcsk5jbnJYhRQF29gyOgPSKoWCM17ZvsYsjdnN1E2Oi8Tkc8iud-K55C0rr1R4n5lCxD9AiJXfYFRDXXsRJHPuqzdWO5tmor8oBiWv_N-tcq_EdlPHcB_wYvxxOM1ezm73SX4QzE_mH7eQ\"\n    }\n}",
         "title": "下载Helm Chart"
       }
     ],
@@ -789,20 +789,20 @@
     "ModifyInstanceToken": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Desc=aaa\n&ModifyFlag=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceToken\n<公共请求参数>\n\n{\n    \"TokenId\": \"ct3ucep1qcle9n4kmv00\",\n    \"Enable\": false,\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Desc\": \"update desc\",\n    \"ModifyFlag\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cff207ed-446a-4e62-8098-12b0c91a929b\"\n    }\n}",
         "title": "更新描述"
       },
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Enable=true\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceToken\n<公共请求参数>\n\n{\n    \"TokenId\": \"ct3ucep1qcle9n4kmv00\",\n    \"Enable\": true,\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"ModifyFlag\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b6e898ab-b817-43c6-9a51-31d3baaa2f68\"\n    }\n}",
         "title": "启用实例长期访问凭证"
       },
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyInstanceToken\n&RegistryId=tcr-12345\n&TokenId=2ab3af0d-893d-423f-91b1-27713566f95f\n&Enable=false\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceToken\n<公共请求参数>\n\n{\n    \"TokenId\": \"ct3ucep1qcle9n4kmv00\",\n    \"Enable\": false,\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"ModifyFlag\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14d569e1-e3cf-4399-a096-b6bd7b373240\"\n    }\n}",
         "title": "禁用实例长期访问凭证"
       }
     ],
@@ -817,8 +817,8 @@
     "ModifyRepository": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyRepository\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=mytest\r\n&RepositoryName=test\r\n&Description=mytest\r\n&BriefDescription=BriefDescription\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRepository\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"ns1\",\n    \"RepositoryName\": \"golang\",\n    \"BriefDescription\": \"golang\",\n    \"Description\": \"golang\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"488d0f66-ef02-4efc-a5e5-be8c9b39203e\"\n    }\n}",
         "title": "更新镜像仓库信息"
       }
     ],
@@ -841,8 +841,8 @@
     "ModifySecurityPolicy": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifySecurityPolicy\n&RegistryId=tcr-test123\n&CidrBlock=192.168.0.0/24\n&Description=test\n&PolicyIndex=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-test123\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityPolicy\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"PolicyIndex\": 2,\n    \"CidrBlock\": \"3.3.3.3\",\n    \"Description\": \"update access ip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-dg284imq\",\n        \"RequestId\": \"057c8440-07a9-4e00-a7cd-8be2372dfb90\"\n    }\n}",
         "title": "更新实例外网白名单"
       }
     ],

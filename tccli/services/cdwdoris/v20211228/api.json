@@ -3513,6 +3513,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "[FE,BE]",
+          "member": "string",
+          "name": "NodeRoles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4393,7 +4403,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "zookeeper节点规格描述",
+          "document": "fe节点规格描述",
           "example": "-",
           "member": "ResourceSpec",
           "name": "MasterSpec",
@@ -4403,7 +4413,7 @@
         },
         {
           "disabled": false,
-          "document": "数据节点规格描述",
+          "document": "be节点规格描述",
           "example": "-",
           "member": "ResourceSpec",
           "name": "CoreSpec",
@@ -4420,6 +4430,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cn节点列表",
+          "example": "`",
+          "member": "ResourceSpec",
+          "name": "CNSpec",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

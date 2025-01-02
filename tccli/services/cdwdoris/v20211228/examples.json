@@ -188,7 +188,7 @@
       {
         "document": "获取集群节点信息列表",
         "input": "https://cdwdoris.tencentcloudapi.com/?Action=DescribeInstanceNodes\n&InstanceId=cdwch-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceNodesList\": [\n            {\n                \"Ip\": \"abc\",\n                \"Spec\": \"abc\",\n                \"Core\": 0,\n                \"Memory\": 0,\n                \"DiskType\": \"abc\",\n                \"DiskSize\": 0,\n                \"Role\": \"abc\",\n                \"Status\": \"abc\",\n                \"Rip\": \"abc\",\n                \"FeRole\": \"abc\",\n                \"UUID\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstanceNodesList\": [\n            {\n                \"Ip\": \"9.0.16.4\",\n                \"Spec\": \"S_4_16_H\",\n                \"Core\": 0,\n                \"Memory\": 0,\n                \"DiskType\": \"CLOUD_SSD\",\n                \"DiskSize\": 0,\n                \"Role\": \"core\",\n                \"Status\": \"Running\",\n                \"Rip\": \"9.0.16.8\",\n                \"FeRole\": \"core\",\n                \"UUID\": \"a890x\"\n            }\n        ],\n        \"RequestId\": \"abc-xa2\"\n    }\n}",
         "title": "获取集群节点信息列表"
       }
     ],

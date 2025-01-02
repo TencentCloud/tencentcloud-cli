@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm ModifyHpcClusterAttribute --cli-unfold-argument  \
     --HpcClusterId hpc-gzahhoy5 \
-    --Name test
+    --Name myCluster
 ```
 
 Output: 

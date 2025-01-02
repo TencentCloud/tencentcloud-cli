@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeSupportedRuntime --cli-unfold-argument  \
-    --K8sVersion xxxx
+    --K8sVersion 1.20.4
 ```
 
 Output: 
@@ -16,6 +16,7 @@ Output:
         "OptionalRuntimes": [
             {
                 "RuntimeType": "docker",
+                "DefaultVersion": "1.12.4",
                 "RuntimeVersions": [
                     "1.12.4"
                 ]

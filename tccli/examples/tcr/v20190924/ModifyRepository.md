@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tcr ModifyRepository --cli-unfold-argument  \
-    --RegistryId tcr-okmj78 \
-    --NamespaceName mytest \
-    --RepositoryName test \
-    --Description mytest \
-    --BriefDescription BriefDescription
+    --RegistryId tcr-dg284imq \
+    --NamespaceName ns1 \
+    --RepositoryName golang \
+    --BriefDescription golang \
+    --Description golang
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2ac430cd-f7de-482e-b98e-f78a48e785e8"
+        "RequestId": "488d0f66-ef02-4efc-a5e5-be8c9b39203e"
     }
 }
 ```

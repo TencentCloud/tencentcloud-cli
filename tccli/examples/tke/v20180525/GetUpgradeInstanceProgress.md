@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke GetUpgradeInstanceProgress --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Total": 0,
         "Done": 0,
-        "LifeState": "abc",
+        "LifeState": "running",
         "Instances": [
             {
                 "InstanceID": "ins-wggphft5",

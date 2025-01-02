@@ -6,8 +6,11 @@ Input:
 
 ```
 tccli tcr DescribeRepositoryFilterPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test \
-    --Public 1
+    --RepoName golang-test \
+    --Offset 0 \
+    --Limit 10 \
+    --Public 0 \
+    --Namespace nicokang
 ```
 
 Output: 
@@ -18,23 +21,23 @@ Output:
             "PrivilegeFiltered": false,
             "RepoInfo": [
                 {
-                    "RepoName": "v3test2/mao",
-                    "RepoType": "QCLOUD HUB",
-                    "TagCount": 3,
-                    "Public": 0,
-                    "IsUserFavor": false,
-                    "IsQcloudOfficial": false,
+                    "CreationTime": "2024-11-09 16:11:32",
+                    "Description": "",
                     "FavorCount": 0,
-                    "PullCount": 17,
-                    "Description": "test",
-                    "CreationTime": "2019-12-20 17:15:51",
-                    "UpdateTime": "2019-12-26 17:03:11"
+                    "IsQcloudOfficial": false,
+                    "IsUserFavor": false,
+                    "Public": 0,
+                    "PullCount": 0,
+                    "RepoName": "nicokang/golang-test",
+                    "RepoType": "QCLOUD HUB",
+                    "TagCount": 1,
+                    "UpdateTime": "2024-11-12 17:29:20"
                 }
             ],
             "Server": "ccr.ccs.tencentyun.com",
             "TotalCount": 1
         },
-        "RequestId": "28f2f221-8a92-4b68-8fab-aaf92d4291d5"
+        "RequestId": "86ad9298-a532-4102-ba2a-b87b55e589fa"
     }
 }
 ```

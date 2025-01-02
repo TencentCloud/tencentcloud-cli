@@ -5,42 +5,48 @@
 Input: 
 
 ```
-tccli tcr DescribeInstances --cli-unfold-argument ```
+tccli tcr DescribeInstances --cli-unfold-argument  \
+    --Registryids tcr-dg284imq
+```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Registries": [
             {
-                "RegistryId": "tcr-xxx",
-                "RegistryName": "test",
-                "RegistryType": "basic",
-                "Status": "running",
-                "PublicDomain": "tcr-test.tencentcloudcr.com",
-                "CreatedAt": "2020-09-22T00:00:00+00:00",
-                "RegionName": "ap-guangzhou",
-                "RegionId": 1,
+                "CreatedAt": "2024-07-19T15:33:22+08:00",
+                "DeletionProtection": true,
                 "EnableAnonymous": true,
-                "TokenValidTime": 1,
-                "InternalEndpoint": "nil",
+                "ExpiredAt": "",
+                "InternalEndpoint": "10.1.66.46",
+                "PayMod": 0,
+                "PublicDomain": "nicokang-tcr-gz.tencentcloudcr.com",
+                "RegionId": 1,
+                "RegionName": "ap-guangzhou",
+                "RegistryId": "tcr-dg284imq",
+                "RegistryName": "nicokang-tcr-gz",
+                "RegistryType": "premium",
+                "RenewFlag": 0,
+                "Status": "Running",
                 "TagSpecification": {
-                    "ResourceType": "abc",
+                    "ResourceType": "instance",
                     "Tags": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "tcr-test2",
+                            "Value": "ericyyyang2"
+                        },
+                        {
+                            "Key": "tcr-test",
+                            "Value": "nicokang"
                         }
                     ]
                 },
-                "ExpiredAt": "abc",
-                "PayMod": 0,
-                "RenewFlag": 0,
-                "DeletionProtection": true
+                "TokenValidTime": 87600
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "06d6c73a-d845-4e20-a578-721a0cf7e268",
+        "TotalCount": 1
     }
 }
 ```

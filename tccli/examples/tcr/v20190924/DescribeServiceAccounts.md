@@ -6,39 +6,50 @@ Input:
 
 ```
 tccli tcr DescribeServiceAccounts --cli-unfold-argument  \
-    --RegistryId abc \
+    --RegistryId tcr-dg284imq \
     --All True \
     --EmbedPermission True \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --Filters.0.Name ServiceAccountName \
+    --Filters.0.Values tcr$account_test \
     --Offset 0 \
-    --Limit 0
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "6a0a32d8-3857-45d4-9f8a-e1d39efd8ac6",
         "ServiceAccounts": [
             {
-                "Name": "abc",
-                "Description": "abc",
-                "Disable": true,
-                "ExpiresAt": 0,
-                "CreateTime": "2020-09-22T00:00:00+00:00",
-                "UpdateTime": "2020-09-22T00:00:00+00:00",
+                "CreateTime": "2024-12-30T14:44:31+08:00",
+                "Description": "",
+                "Disable": false,
+                "ExpiresAt": 1738133070653,
+                "Name": "tcr$account_test",
                 "Permissions": [
                     {
-                        "Resource": "abc",
                         "Actions": [
-                            "abc"
-                        ]
+                            "tcr:PullRepository",
+                            "tcr:DescribeHelmCharts"
+                        ],
+                        "Resource": "ns1"
+                    },
+                    {
+                        "Actions": [
+                            "tcr:PullRepository",
+                            "tcr:PushRepository",
+                            "tcr:CreateRepository",
+                            "tcr:CreateHelmChart",
+                            "tcr:DescribeHelmCharts"
+                        ],
+                        "Resource": "ns2"
                     }
-                ]
+                ],
+                "UpdateTime": "2024-12-30T14:44:31+08:00"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```

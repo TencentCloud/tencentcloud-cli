@@ -13,155 +13,88 @@ Output:
 ```
 {
     "Response": {
-        "ModTime": "2020-09-22 00:00:00",
-        "CodeInfo": "abc",
-        "Description": "abc",
-        "Triggers": [
-            {
-                "ModTime": "2020-09-22 00:00:00",
-                "Type": "abc",
-                "TriggerDesc": "abc",
-                "TriggerName": "abc",
-                "AddTime": "2020-09-22 00:00:00",
-                "Enable": 0,
-                "CustomArgument": "abc",
-                "AvailableStatus": "abc",
-                "ResourceId": "abc",
-                "BindStatus": "abc",
-                "TriggerAttribute": "abc",
-                "Qualifier": "abc",
-                "Description": "abc"
-            }
-        ],
-        "Handler": "abc",
-        "CodeSize": 0,
-        "Timeout": 0,
-        "FunctionVersion": "abc",
-        "MemorySize": 0,
-        "Runtime": "abc",
-        "FunctionName": "abc",
+        "Qualifier": "$LATEST",
+        "Description": "Created by Serverless",
+        "Timeout": 3,
+        "InitTimeout": 90,
+        "MemorySize": 128,
+        "Runtime": "CustomImage",
         "VpcConfig": {
-            "VpcId": "abc",
-            "SubnetId": "abc"
+            "VpcId": "",
+            "SubnetId": ""
         },
-        "UseGpu": "abc",
         "Environment": {
-            "Variables": [
-                {
-                    "Key": "abc",
-                    "Value": "abc"
-                }
-            ]
+            "Variables": []
         },
-        "CodeResult": "abc",
-        "CodeError": "abc",
-        "ErrNo": 0,
-        "Namespace": "abc",
-        "Role": "abc",
-        "InstallDependency": "abc",
-        "Status": "abc",
-        "StatusDesc": "abc",
-        "ClsLogsetId": "abc",
-        "ClsTopicId": "abc",
-        "FunctionId": "abc",
-        "Tags": [
-            {
-                "Key": "abc",
-                "Value": "abc"
-            }
-        ],
+        "Handler": "",
+        "UseGpu": "FALSE",
+        "Role": "",
+        "CodeSize": 0,
+        "FunctionVersion": "$LATEST",
+        "FunctionName": "function-index1",
+        "FunctionId": "xccxvxcv",
+        "Namespace": "default",
+        "InstallDependency": "FALSE",
+        "Status": "Active",
+        "AvailableStatus": "Available",
+        "StatusDesc": "",
+        "L5Enable": "FALSE",
+        "DnsCache": "FALSE",
         "EipConfig": {
-            "EipFixed": "abc",
-            "Eips": [
-                "abc"
-            ]
+            "EipFixed": "FALSE",
+            "Eips": []
         },
-        "AccessInfo": {
-            "Host": "abc",
-            "Vip": "abc"
-        },
-        "Type": "abc",
-        "L5Enable": "abc",
-        "Layers": [
-            {
-                "CompatibleRuntimes": [
-                    "abc"
-                ],
-                "AddTime": "abc",
-                "Description": "abc",
-                "LicenseInfo": "abc",
-                "LayerVersion": 0,
-                "LayerName": "abc",
-                "Status": "abc",
-                "Stamp": "abc"
-            }
-        ],
+        "ModTime": "2024-12-17 17:52:48",
+        "AddTime": "2024-12-17 17:47:08",
+        "Layers": [],
         "DeadLetterConfig": {
-            "Type": "abc",
-            "Name": "abc",
-            "FilterType": "abc"
+            "Type": "",
+            "Name": "",
+            "FilterType": ""
         },
-        "AddTime": "2020-09-22 00:00:00",
+        "OnsEnable": "FALSE",
         "PublicNetConfig": {
-            "PublicNetStatus": "abc",
+            "PublicNetStatus": "ENABLE",
             "EipConfig": {
-                "EipStatus": "abc",
-                "EipAddress": [
-                    "abc"
-                ]
+                "EipStatus": "DISABLE",
+                "EipAddress": []
             }
         },
-        "OnsEnable": "abc",
-        "CfsConfig": {
-            "CfsInsList": [
-                {
-                    "UserId": "abc",
-                    "UserGroupId": "abc",
-                    "CfsId": "abc",
-                    "MountInsId": "abc",
-                    "LocalMountDir": "abc",
-                    "RemoteMountDir": "abc",
-                    "IpAddress": "abc",
-                    "MountVpcId": "abc",
-                    "MountSubnetId": "abc"
-                }
-            ]
-        },
-        "AvailableStatus": "abc",
-        "Qualifier": "abc",
-        "InitTimeout": 0,
-        "StatusReasons": [
-            {
-                "ErrorCode": "abc",
-                "ErrorMessage": "abc"
-            }
-        ],
-        "AsyncRunEnable": "abc",
-        "TraceEnable": "abc",
         "ImageConfig": {
-            "RegistryId": "abc",
-            "ImageType": "abc",
-            "ImageUri": "abc",
-            "EntryPoint": "abc",
-            "Command": "abc",
-            "Args": "abc",
-            "ContainerImageAccelerate": true,
-            "ImagePort": 0
+            "RegistryId": "",
+            "ImageType": "personal",
+            "ImageUri": "ccr.ccs.tencentyun.com/xxx/xxx:xx@sha256:xxxxxxxxxx",
+            "ContainerImageAccelerate": false,
+            "Command": "node",
+            "Args": " index.js ",
+            "ImagePort": 9000,
+            "EntryPoint": null
         },
-        "ProtocolType": "abc",
-        "ProtocolParams": {
-            "WSParams": {
-                "IdleTimeOut": 1
-            }
+        "ProtocolType": "",
+        "Triggers": [],
+        "ClsLogsetId": "b91e2c12-cccccccccccc",
+        "ClsTopicId": "a3b039f5-bbbbbbbbbb",
+        "CodeInfo": "",
+        "CodeResult": "success",
+        "CodeError": "",
+        "ErrNo": 0,
+        "Tags": [],
+        "AccessInfo": {
+            "Host": "",
+            "Vip": ""
         },
-        "DnsCache": "abc",
+        "Type": "Event",
+        "CfsConfig": {
+            "CfsInsList": []
+        },
+        "StatusReasons": [],
+        "AsyncRunEnable": "FALSE",
+        "TraceEnable": "FALSE",
+        "ProtocolParams": null,
         "IntranetConfig": {
-            "IpFixed": "abc",
-            "IpAddress": [
-                "abc"
-            ]
+            "IpFixed": "DISABLE"
         },
-        "RequestId": "abc"
+        "RequestId": "08b4c93b-b515-4cf4-a7a3-72b5db4e21dc"
     }
 }
 ```

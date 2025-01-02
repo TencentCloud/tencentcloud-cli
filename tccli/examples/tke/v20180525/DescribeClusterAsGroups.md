@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeClusterAsGroups --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-2wds9k9p
 ```
 
 Output: 
@@ -16,16 +16,16 @@ Output:
         "TotalCount": 1,
         "ClusterAsGroupSet": [
             {
-                "AutoScalingGroupId": "xx",
-                "Status": "xx",
+                "AutoScalingGroupId": "asg-2wds9k9p",
+                "Status": "running",
                 "IsUnschedulable": true,
                 "Labels": [
                     {
-                        "Name": "xx",
-                        "Value": "xx"
+                        "Name": "cluster",
+                        "Value": "tke"
                     }
                 ],
-                "CreatedTime": "xx"
+                "CreatedTime": "2024-05-25 11:00:00"
             }
         ],
         "RequestId": "82f2fe9c-c5fa-4077-9236-f1341180a696"

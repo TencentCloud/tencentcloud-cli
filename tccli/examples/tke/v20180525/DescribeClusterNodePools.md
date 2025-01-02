@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeClusterNodePools --cli-unfold-argument  \
-    --ClusterId cls-xxxxxx
+    --ClusterId cls-e55paxnt
 ```
 
 Output: 
@@ -15,9 +15,9 @@ Output:
     "Response": {
         "NodePoolSet": [
             {
-                "AutoscalingGroupId": "asg-xxx",
+                "AutoscalingGroupId": "asg-e55paxnt",
                 "AutoscalingGroupStatus": "disabled",
-                "ClusterInstanceId": "cls-xxxx",
+                "ClusterInstanceId": "cls-e55paxnt",
                 "DataDisks": null,
                 "DeletionProtection": true,
                 "DesiredNodesNum": 2,
@@ -49,11 +49,11 @@ Output:
                 "ImageId": "",
                 "Labels": [],
                 "Annotations": [],
-                "LaunchConfigurationId": "asc-xxx",
+                "LaunchConfigurationId": "asc-e55paxnt",
                 "LifeState": "normal",
                 "MaxNodesNum": 3,
                 "MinNodesNum": 0,
-                "Name": "xxx",
+                "Name": "未命名",
                 "NodeCountSummary": {
                     "AutoscalingAdded": {
                         "Initializing": 0,
@@ -68,8 +68,8 @@ Output:
                         "Total": 1
                     }
                 },
-                "NodePoolId": "np-xxx",
-                "NodePoolOs": "tlinux_xxx",
+                "NodePoolId": "np-e55paxnt",
+                "NodePoolOs": "tlinux2.4x86_64",
                 "OsCustomizeType": "GENERAL",
                 "PreStartUserScript": "#!/bin/sh\ntouch /tmp/before",
                 "RuntimeConfig": {

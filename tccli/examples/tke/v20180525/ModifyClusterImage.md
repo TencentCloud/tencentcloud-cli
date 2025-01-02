@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tke ModifyClusterImage --cli-unfold-argument  \
-    --ClusterId cls-xxxxxxxx \
-    --ImageId img-xxxxxxxx
+    --ClusterId cls-e55paxnt \
+    --ImageId img-e55paxnt
 ```
 
 Output: 

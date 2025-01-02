@@ -8,7 +8,7 @@ Input:
 tccli tke CreateClusterRouteTable --cli-unfold-argument  \
     --RouteTableName MANAGED_CLUSTER \
     --RouteTableCidrBlock 10.4.0.0/16 \
-    --VpcId vpc-xxx
+    --VpcId vpc-e55paxnt
 ```
 
 Output: 

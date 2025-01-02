@@ -12,7 +12,7 @@ tccli aca SmartPredict --cli-unfold-argument  \
     --Data.RequestCase.PatientBaseinfo.Name 陈 \
     --Data.RequestCase.PatientBaseinfo.Sex female \
     --Data.RequestCase.PatientBaseinfo.Age 22y \
-    --Data.RequestCase.PatientBaseinfo.PatientId 123 \
+    --Data.RequestCase.PatientBaseinfo.PatientId pid001 \
     --Data.RequestCase.PatientBaseinfo.BirthDay 2000-01-01 00:00:00 \
     --Data.RequestCase.PatientBaseinfo.Height 165 \
     --Data.RequestCase.PatientBaseinfo.Weight 55 \
@@ -30,9 +30,9 @@ tccli aca SmartPredict --cli-unfold-argument  \
     --Data.RequestCase.Department 测试科室 \
     --Data.RequestCase.CaseId a123 \
     --Data.RequestCase.CaseTime 2022-08-11 16:57:28 \
-    --Data.RequestCase.DoctorInfo.DoctorId 123 \
+    --Data.RequestCase.DoctorInfo.DoctorId 001 \
     --Data.RequestCase.DoctorInfo.DoctorName 张三 \
-    --Data.RequestCase.VisitId 1234 \
+    --Data.RequestCase.VisitId vid001 \
     --Data.RequestCase.Prescriptions.0.DrugId 01008 \
     --Data.RequestCase.Prescriptions.0.DrugName 阿莫西林分散片 \
     --Data.RequestCase.Prescriptions.0.DosagePerTime 100 \

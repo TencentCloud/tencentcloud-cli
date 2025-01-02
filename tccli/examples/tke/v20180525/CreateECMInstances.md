@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke CreateECMInstances --cli-unfold-argument  \
-    --ClusterID cls-xxxxx \
+    --ClusterID cls-e55paxnt \
     --ZoneInstanceCountISPSet.0.Zone ap-zhengzhou-1 \
     --ZoneInstanceCountISPSet.0.InstanceCount 2 \
     --ZoneInstanceCountISPSet.0.ISP CMCC \

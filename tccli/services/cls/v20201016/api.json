@@ -841,7 +841,7 @@
         {
           "disabled": false,
           "document": "过滤字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http_code",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -852,7 +852,7 @@
         {
           "disabled": false,
           "document": "过滤规则，0:等于，1:字段存在，2:字段不存在\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Rule",
           "output_required": false,
@@ -863,7 +863,7 @@
         {
           "disabled": false,
           "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "400|500",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -1600,17 +1600,17 @@
           "example": "shicao_test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "通知渠道组ID",
-          "example": "无",
+          "example": "notice-b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "AlarmNoticeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1839,7 +1839,7 @@
         {
           "disabled": false,
           "document": "操作列表，支持trackLog(JS/HTTP上传日志  )和realtimeProducer(kafka协议上传日志)",
-          "example": "无",
+          "example": "realtimeProducer",
           "member": "string",
           "name": "Operations",
           "output_required": false,
@@ -1903,7 +1903,7 @@
         {
           "disabled": false,
           "document": "回调时的Body。\n可将各类告警变量放在请求内容中，详见[帮助文档](https://cloud.tencent.com/document/product/614/74718)。\n如下示例：\n\n```\n{\n\"TopicId\": \"{{ .QueryLog[0][0].topicId }}\",\n\"key\": \"{{.Alarm}}\",\n\"time\": \"{{ .QueryLog[0][0].time }}\",\n\"log\": \"{{ .QueryLog[0][0].content.__CONTENT__ }}\",\n\"namespace\": \"{{ .QueryLog[0][0].content.__TAG__.namespace }}\"\n}\n```",
-          "example": "无",
+          "example": "{\"User\":\"{{.User}}\",\"AlarmID\":\"{{.AlarmID}}\",\"AlarmName\":\"{{.AlarmName}}\",\"Condition\":\"{{.Condition}}\"}",
           "member": "string",
           "name": "Body",
           "output_required": true,
@@ -1914,7 +1914,7 @@
         {
           "disabled": false,
           "document": "回调时的HTTP请求头部字段。\n例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。\n```\n\"Content-Type: application/json\"\n```\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"Content-Type: application/json\"]",
           "member": "string",
           "name": "Headers",
           "output_required": true,
@@ -2208,7 +2208,7 @@
         {
           "disabled": false,
           "document": "日志配置拓展信息， 一般用于存储额外的日志投递配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"ServiceName\":[\"HDFS\",\"KNOX\",\"YARN\",\"ZOOKEEPER\"],\"Policy\":0}",
           "member": "string",
           "name": "Extend",
           "output_required": false,
@@ -2360,7 +2360,7 @@
         {
           "disabled": false,
           "document": "采集规则扩展配置ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "ConfigExtraId",
           "output_required": true,
@@ -2380,7 +2380,7 @@
         {
           "disabled": false,
           "document": "日志主题ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "fadcc986-xxxx-xxxx-b766-9ce9c193da32",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -2430,7 +2430,7 @@
         {
           "disabled": false,
           "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "LogFormat",
           "output_required": true,
@@ -2490,7 +2490,7 @@
         {
           "disabled": false,
           "document": "用户自定义解析字符串\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"processors\":[{\"type\":\"processor_multiline_fullregex\",\"detail\":{\"BeginRegex\":\"[a-zA-Z]\"},\"processors\":[]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "output_required": true,
@@ -2500,7 +2500,7 @@
         {
           "disabled": false,
           "document": "机器组ID",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -2520,7 +2520,7 @@
         {
           "disabled": false,
           "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "LogsetId",
           "output_required": true,
@@ -2530,7 +2530,7 @@
         {
           "disabled": false,
           "document": "日志集name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "bow_test",
           "member": "string",
           "name": "LogsetName",
           "output_required": true,
@@ -2540,7 +2540,7 @@
         {
           "disabled": false,
           "document": "日志主题name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx-xxx-xxx-xxx",
+          "example": "bow_test",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -2586,7 +2586,7 @@
         {
           "disabled": false,
           "document": "采集规则配置名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "config_1",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2596,7 +2596,7 @@
         {
           "disabled": false,
           "document": "日志格式化方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "default",
           "member": "string",
           "name": "LogFormat",
           "output_required": true,
@@ -2656,7 +2656,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-02-16 17:01:50",
           "member": "datetime",
           "name": "UpdateTime",
           "output_required": true,
@@ -2666,7 +2666,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2020-02-16 17:01:50",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
@@ -2676,7 +2676,7 @@
         {
           "disabled": false,
           "document": "用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"{\\\"processors\\\":[{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"Delimiter\\\":\\\",\\\",\\\"ExtractKeys\\\":[\\\"time\\\",\\\"msg1\\\",\\\"msg2\\\"]},\\\"processors\\\":[{\\\"type\\\":\\\"processor_timeformat\\\",\\\"detail\\\":{\\\"KeepSource\\\":true,\\\"TimeFormat\\\":\\\"%s\\\",\\\"SourceKey\\\":\\\"time\\\"}},{\\\"type\\\":\\\"processor_split_delimiter\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"|\\\",\\\"SourceKey\\\":\\\"msg1\\\",\\\"ExtractKeys\\\":[\\\"submsg1\\\",\\\"submsg2\\\",\\\"submsg3\\\"]},\\\"processors\\\":[]},{\\\"type\\\":\\\"processor_split_key_value\\\",\\\"detail\\\":{\\\"KeepSource\\\":false,\\\"Delimiter\\\":\\\"：\\\",\\\"SourceKey\\\":\\\"msg2\\\"}}]}]}\"",
+          "example": "{\"processors\":[{\"type\":\"processor_multiline_fullregex\",\"detail\":{\"BeginRegex\":\"[a-zA-Z]\"},\"processors\":[]}]}",
           "member": "string",
           "name": "UserDefineRule",
           "output_required": true,
@@ -3067,7 +3067,7 @@
         {
           "disabled": false,
           "document": "container为空表所有的，不为空采集指定的容器\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "container_xzdfg",
           "member": "string",
           "name": "Container",
           "output_required": true,
@@ -3153,6 +3153,7 @@
           "example": "daemonset",
           "member": "string",
           "name": "Kind",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3163,6 +3164,7 @@
           "example": "tke-log-agent",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3170,9 +3172,10 @@
         {
           "disabled": false,
           "document": "容器名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "container_adsf",
           "member": "string",
           "name": "Container",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3183,6 +3186,7 @@
           "example": "kube-system",
           "member": "string",
           "name": "Namespace",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5688,7 +5692,7 @@
         {
           "disabled": false,
           "document": "通知内容名称。",
-          "example": "这是名称",
+          "example": "监控告警专用",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -5697,7 +5701,7 @@
         {
           "disabled": false,
           "document": "渠道类型。\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调。",
-          "example": "\"Http\"",
+          "example": "WeCom",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -5706,7 +5710,7 @@
         {
           "disabled": false,
           "document": "Webhook地址。",
-          "example": "无",
+          "example": "http://xxxx.com/send",
           "member": "string",
           "name": "Webhook",
           "required": true,
@@ -5715,7 +5719,7 @@
         {
           "disabled": false,
           "document": "请求方式。 支持POST、PUT。\n\n当Type为Http时，必填。",
-          "example": "\"POST\"",
+          "example": "POST",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -5724,7 +5728,7 @@
         {
           "disabled": false,
           "document": "秘钥。",
-          "example": "无",
+          "example": "AASFFGGYYBHGTDJ",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -5764,6 +5768,7 @@
           "example": "true",
           "member": "bool",
           "name": "PrintKey",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -5771,9 +5776,10 @@
         {
           "disabled": false,
           "document": "每列key的名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"__SOURCE__\",\"__FILENAME__\",\"__HOSTNAME__\"]",
           "member": "string",
           "name": "Keys",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -5781,9 +5787,10 @@
         {
           "disabled": false,
           "document": "各字段间的分隔符",
-          "example": "无",
+          "example": "|",
           "member": "string",
           "name": "Delimiter",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5791,9 +5798,10 @@
         {
           "disabled": false,
           "document": "若字段内容中包含分隔符，则使用该转义符包裹改字段，只能填写单引号、双引号、空字符串",
-          "example": "无",
+          "example": "'",
           "member": "string",
           "name": "EscapeChar",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5801,9 +5809,10 @@
         {
           "disabled": false,
           "document": "对于上面指定的不存在字段使用该内容填充",
-          "example": "无",
+          "example": "not_exist",
           "member": "string",
           "name": "NonExistingField",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5817,50 +5826,50 @@
         {
           "disabled": false,
           "document": "仪表盘id",
-          "example": "xxxxx--xxx",
+          "example": "dashboard-c6125e52-xxxx-xxxx-a90f-d445a6e90327",
           "member": "string",
           "name": "DashboardId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仪表盘名字",
-          "example": "testname",
+          "example": "topic流量趋势图",
           "member": "string",
           "name": "DashboardName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "仪表盘数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "testdata",
+          "example": "{\"panels\":[],\"time\":[\"now-h\",\"now\"]}",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建仪表盘的时间",
-          "example": "无",
+          "example": "2021-12-22 16:11:27",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "AssumerUin非空则表示创建该日志主题的服务方Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "110111212",
           "member": "uint64",
           "name": "AssumerUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5870,17 +5879,17 @@
           "example": "CLB_QcsRole",
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "AssumerName非空则表示创建该日志主题的服务方名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "CLS_business",
           "member": "string",
           "name": "AssumerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5890,7 +5899,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5900,7 +5909,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "DashboardRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5910,7 +5919,7 @@
           "example": "2021-12-22 16:11:27",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5920,7 +5929,7 @@
           "example": "无",
           "member": "DashboardTopicInfo",
           "name": "DashboardTopicInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -6094,9 +6103,10 @@
         {
           "disabled": false,
           "document": "主题id",
-          "example": "xxxx",
+          "example": "b388dc72-xxxx-xxxx-9dbb-7d05fdff0376",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6107,6 +6117,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6146,7 +6157,7 @@
         {
           "disabled": false,
           "document": "数据加工任务名称",
-          "example": "test_name",
+          "example": "data_transform_name",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -6156,7 +6167,7 @@
         {
           "disabled": false,
           "document": "数据加工任务id",
-          "example": "96562452-58da-458c-9d2b-0b94e379c917",
+          "example": "96562452-xxxx-xxxx-9d2b-0b94e379c917",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -6186,7 +6197,7 @@
         {
           "disabled": false,
           "document": "源日志主题",
-          "example": "c6404313-dc28-402c-970d-9654afd08b1f",
+          "example": "c6404313-xxxx-xxxx-970d-9654afd08b1f",
           "member": "string",
           "name": "SrcTopicId",
           "output_required": true,
@@ -9093,7 +9104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【告警渠道回调配置名称】进行过滤。\n类型：String\n必选：否\n<li> webCallbackId\n按照【告警渠道回调配置ID】进行过滤。\n类型：String\n必选：否\n<li> type\n按照【告警渠道回调配置渠道类型】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "- name\n按照【告警渠道回调配置名称】进行过滤。\n类型：String\n必选：否\n\n- webCallbackId\n按照【告警渠道回调配置ID】进行过滤。\n类型：String\n必选：否\n\n- type\n按照【告警渠道回调配置渠道类型】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9280,8 +9291,8 @@
         },
         {
           "disabled": false,
-          "document": "事件ID过滤列表",
-          "example": "无",
+          "document": "事件ID过滤列表\n\t\n选填，为空表示不做过滤\n支持正向过滤单个值（例：20）或范围（例：0-20），也支持反向过滤单个值(例：-20)\n多个过滤项之间可由逗号隔开，例：1-200,-100表示采集1-200范围内除了100以外的事件日志",
+          "example": "1-200,-100",
           "member": "string",
           "name": "EventIDs",
           "output_required": true,
@@ -9298,9 +9309,10 @@
         {
           "disabled": false,
           "document": "类型，选填File或Path",
-          "example": "",
+          "example": "File",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9308,9 +9320,10 @@
         {
           "disabled": false,
           "document": "Type对应的具体内容",
-          "example": "",
+          "example": "/loglistener_auto_test/black_list/after_black_test.log",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9434,7 +9447,7 @@
         {
           "disabled": false,
           "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
-          "example": "\"\"",
+          "example": "/cos_path/file/1",
           "member": "string",
           "name": "CosPath",
           "output_required": true,
@@ -9480,7 +9493,7 @@
         {
           "disabled": false,
           "document": "时间字段的key名字，TikeKey和TimeFormat必须成对出现\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "time",
           "member": "string",
           "name": "TimeKey",
           "output_required": true,
@@ -9535,7 +9548,7 @@
         {
           "disabled": false,
           "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有LogType为delimiter_log时有效，json_log的日志使用json本身的key。限制100个。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"name\",\"address\"]",
           "member": "string",
           "name": "Keys",
           "output_required": true,
@@ -9655,8 +9668,8 @@
         },
         {
           "disabled": false,
-          "document": "采集配置路径正则表达式。\n注意：\n- MetadataType为3时必填。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "采集配置路径正则表达式。\n\n```\n请用\"()\"标识路径中目标字段对应的正则表达式，解析时将\"()\"视为捕获组，并以__TAG__.{i}:{目标字段}的形式与日志一起上报，其中i为捕获组的序号。\n若不希望以序号为键名，可以通过命名捕获组\"(?<{键名}>{正则})\"自定义键名，并以__TAG__.{键名}:{目标字段}的形式与日志一起上报。最多支持5个捕获组\n```\n\n注意：\n- MetadataType为3时必填。\n- COS导入不支持此字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/(?<app>.*?)/(?<user>.*?)/access.log",
           "member": "string",
           "name": "PathRegex",
           "output_required": true,
@@ -9732,22 +9745,20 @@
         {
           "disabled": false,
           "document": "需要过滤的字段。",
-          "example": "",
+          "example": "taskId",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "需要过滤的值。",
-          "example": "",
+          "example": "[\"fadcc986-xxxx-xxxx-b766-9ce9c193da32\"]",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -10020,20 +10031,20 @@
         {
           "disabled": false,
           "document": "高亮的日志Key",
-          "example": "",
+          "example": "Message",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高亮的语法",
-          "example": "",
+          "example": "[ \"<cls_highlight>finish</cls_highlight> request\"]",
           "member": "string",
           "name": "Values",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -10114,6 +10125,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableTag",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -10121,9 +10133,10 @@
         {
           "disabled": false,
           "document": "元数据信息列表, 可选值为 __SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[__SOURCE__、__FILENAME__、__TIMESTAMP__、__HOSTNAME__]",
           "member": "string",
           "name": "MetaFields",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -10134,6 +10147,7 @@
           "example": "1",
           "member": "int64",
           "name": "JsonType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10258,7 +10272,7 @@
         {
           "disabled": false,
           "document": "Kafka数据订阅配置的ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "86076b49-1234-4321-ab09-a5d7e7972825",
+          "example": "86076b49-xxxx-xxxx-ab09-a5d7e7972825",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -10268,7 +10282,7 @@
         {
           "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "957f4aed-1234-4321-b98b-c3c806f9e71b",
+          "example": "957f4aed-xxxx-xxxx-b98b-c3c806f9e71b",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
@@ -10298,7 +10312,7 @@
         {
           "disabled": false,
           "document": "腾讯云CKafka实例ID，KafkaType为0时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ckafka-xxxx",
           "member": "string",
           "name": "KafkaInstance",
           "output_required": true,
@@ -10368,7 +10382,7 @@
         {
           "disabled": false,
           "document": "导入数据位置，-2:最早（默认），-1：最晚\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "-2",
           "member": "int64",
           "name": "Offset",
           "output_required": true,
@@ -10414,9 +10428,10 @@
         {
           "disabled": false,
           "document": "需要过滤日志的key",
-          "example": "",
+          "example": "response_code",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10424,9 +10439,10 @@
         {
           "disabled": false,
           "document": "key对应的过滤规则regex",
-          "example": "",
+          "example": "400|500",
           "member": "string",
           "name": "Regex",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10440,9 +10456,10 @@
         {
           "disabled": false,
           "document": "需要配置键值或者元字段索引的字段名称，仅支持字母、数字、下划线和-./@，且不能以下划线开头\n\n注意：\n1，元字段（tag）的Key无需额外添加`__TAG__.`前缀，与上传日志时对应的字段Key一致即可，腾讯云控制台展示时将自动添加`__TAG__.`前缀\n2，键值索引（KeyValue）及元字段索引（Tag）中的Key总数不能超过300\n3，Key的层级不能超过10层，例如a.b.c.d.e.f.g.h.j.k\n4，不允许同时包含json父子级字段，例如a及a.b",
-          "example": "无",
+          "example": "address",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10453,6 +10470,7 @@
           "example": "无",
           "member": "ValueInfo",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -10592,7 +10610,7 @@
         {
           "disabled": false,
           "document": "日志主题名称",
-          "example": "test",
+          "example": "业务A日志主题",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -10688,20 +10706,20 @@
         {
           "disabled": false,
           "document": "日志Key",
-          "example": "",
+          "example": "http_code",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志Value",
-          "example": "",
+          "example": "200",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10763,7 +10781,7 @@
         {
           "disabled": false,
           "document": "整条日志匹配规则，只有RechargeType为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "(\\\\w+).*",
           "member": "string",
           "name": "LogRegex",
           "output_required": true,
@@ -10796,7 +10814,7 @@
         {
           "disabled": false,
           "document": "解析失败日志时间来源，0: 系统当前时间，1: Kafka消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "UnMatchLogTimeSrc",
           "output_required": true,
@@ -10818,7 +10836,7 @@
         {
           "disabled": false,
           "document": "时间字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "__TIMESTAMP__",
           "member": "string",
           "name": "TimeKey",
           "output_required": true,
@@ -10829,7 +10847,7 @@
         {
           "disabled": false,
           "document": "时间提取正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "(\\d{4})-(\\d{2})-(\\d{2}) (\\d{2}):(\\d{2}):(\\d{2})",
           "member": "string",
           "name": "TimeRegex",
           "output_required": true,
@@ -10840,7 +10858,7 @@
         {
           "disabled": false,
           "document": "时间字段格式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "%Y-%m-%d %H:%M:%S",
           "member": "string",
           "name": "TimeFormat",
           "output_required": true,
@@ -10851,7 +10869,7 @@
         {
           "disabled": false,
           "document": "时间字段时区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "UTC+08:00",
           "member": "string",
           "name": "TimeZone",
           "output_required": true,
@@ -10862,7 +10880,7 @@
         {
           "disabled": false,
           "document": "元数据信息，Kafka导入支持kafka_topic,kafka_partition,kafka_offset,kafka_timestamp\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"kafka_topic\",\"kafka_partition\",\"kafka_offset\",\"kafka_timestamp\"]",
           "member": "string",
           "name": "Metadata",
           "output_required": true,
@@ -10873,7 +10891,7 @@
         {
           "disabled": false,
           "document": "日志Key列表，RechargeType为full_regex_log时必填\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"name\",\"address\"]",
           "member": "string",
           "name": "Keys",
           "output_required": true,
@@ -10900,7 +10918,7 @@
         {
           "disabled": false,
           "document": "日志集名称",
-          "example": "test",
+          "example": "业务A日志集",
           "member": "string",
           "name": "LogsetName",
           "output_required": true,
@@ -10976,7 +10994,7 @@
         {
           "disabled": false,
           "document": "机器组名称",
-          "example": "test",
+          "example": "业务A机器组",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -11092,7 +11110,7 @@
         {
           "disabled": false,
           "document": "机器组类型。支持 ip 和 label。\n- ip：表示该机器组Values中存的是采集机器的ip地址\n- label：表示该机器组Values中存储的是机器的标签",
-          "example": "无",
+          "example": "ip",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -11103,7 +11121,7 @@
         {
           "disabled": false,
           "document": "机器描述列表。",
-          "example": "无",
+          "example": "[10.1.1.1,10.2.2.2]",
           "member": "string",
           "name": "Values",
           "output_required": true,
@@ -11262,9 +11280,10 @@
         {
           "disabled": false,
           "document": "元数据key",
-          "example": "test",
+          "example": "buss_key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11272,9 +11291,10 @@
         {
           "disabled": false,
           "document": "元数据value",
-          "example": "test",
+          "example": "buss_value",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11288,7 +11308,7 @@
         {
           "disabled": false,
           "document": "指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ErrorMessage",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -11299,7 +11319,7 @@
         {
           "disabled": false,
           "document": "指标内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Unauthorized",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -13260,7 +13280,7 @@
         {
           "disabled": false,
           "document": "告警渠道回调配置ID。",
-          "example": "webcallback-5b2ea996-4dae-47cc-bbad-5b12888b4c89",
+          "example": "webcallback-5b2ea996-xxxx-xxxx-bbad-5b12888b4c89",
           "member": "string",
           "name": "WebCallbackId",
           "required": true,
@@ -13269,7 +13289,7 @@
         {
           "disabled": false,
           "document": "告警渠道回调配置名称。",
-          "example": "test",
+          "example": "监控告警专用",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -13278,7 +13298,7 @@
         {
           "disabled": false,
           "document": "渠道类型\n\nWeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;",
-          "example": "\"Http\"",
+          "example": "Http",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -13287,7 +13307,7 @@
         {
           "disabled": false,
           "document": "回调地址。",
-          "example": "\"http://www.xxx.com\"",
+          "example": "http://www.xxx.com",
           "member": "string",
           "name": "Webhook",
           "required": false,
@@ -13296,7 +13316,7 @@
         {
           "disabled": false,
           "document": "请求方式。\n\n支持POST、PUT。\n\n注意：当Type为Http时，必填。",
-          "example": "\"POST\"",
+          "example": "POST",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -13305,7 +13325,7 @@
         {
           "disabled": false,
           "document": "秘钥信息。",
-          "example": "\"key id\"",
+          "example": "HASFUBRINFYAWERNTFGPI",
           "member": "string",
           "name": "Key",
           "required": false,
@@ -13332,7 +13352,7 @@
         {
           "disabled": false,
           "document": "执行周期， 可选值：`Period`、`Fixed`、`Cron`。\n\n- Period：固定频率\n- Fixed：固定时间\n- Cron：Cron表达式",
-          "example": "无",
+          "example": "Period",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -13343,7 +13363,7 @@
         {
           "disabled": false,
           "document": "执行的周期，或者定制执行的时间节点。单位为分钟，取值范围为1~1440。\n当type为`Period`,`Fixed`时，time字段生效。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Time",
           "output_required": true,
@@ -13354,7 +13374,7 @@
         {
           "disabled": false,
           "document": "执行的周期cron表达式。示例：`\"*/1 * * * *\"` 从左到右每个field的含义 Minutes field, Hours field,Day of month field,Month field,Day of week field， 不支持秒级别。\n当type为`Cron`时，CronExpression字段生效。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "*/1 * * * *",
           "member": "string",
           "name": "CronExpression",
           "output_required": false,
@@ -13371,7 +13391,7 @@
         {
           "disabled": false,
           "document": "触发条件。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "$1.count > 10",
+          "example": "[$1.__QUERYCOUNT__]> 0",
           "member": "string",
           "name": "Condition",
           "output_required": false,
@@ -13381,7 +13401,7 @@
         },
         {
           "disabled": false,
-          "document": "告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n<li> 不填则默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n\n- 不填则默认为0。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "AlarmLevel",
@@ -13503,7 +13523,7 @@
         {
           "disabled": false,
           "document": "通知内容模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "noticetempalte-qwer-asdf-zxcv",
+          "example": "noticetemplate-0dffefa3-xxxx-xxxx-a1f6-84854de6e908",
           "member": "string",
           "name": "NoticeContentId",
           "output_required": true,
@@ -13513,7 +13533,7 @@
         {
           "disabled": false,
           "document": "通知内容模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "这个是名称",
+          "example": "监控告警专用",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -13543,7 +13563,7 @@
         {
           "disabled": false,
           "document": "通知内容模板标记。\n\n0： 用户自定义\n1： 系统内置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Flag",
           "output_required": true,
@@ -13553,7 +13573,7 @@
         {
           "disabled": false,
           "document": "创建者主账号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000010111112",
           "member": "uint64",
           "name": "Uin",
           "output_required": true,
@@ -13563,7 +13583,7 @@
         {
           "disabled": false,
           "document": "创建/修改者子账号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1000219612312",
           "member": "uint64",
           "name": "SubUin",
           "output_required": false,
@@ -13573,7 +13593,7 @@
         {
           "disabled": false,
           "document": "创建时间 秒级时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1705923855",
           "member": "int64",
           "name": "CreateTime",
           "output_required": true,
@@ -13583,7 +13603,7 @@
         {
           "disabled": false,
           "document": "更新时间 秒级时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1706149043",
           "member": "int64",
           "name": "UpdateTime",
           "output_required": true,
@@ -13839,6 +13859,7 @@
           "example": "content",
           "member": "string",
           "name": "KeyName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13849,6 +13870,7 @@
           "example": "string",
           "member": "string",
           "name": "KeyType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13856,9 +13878,10 @@
         {
           "disabled": false,
           "document": "解析失败赋值信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "NotExist",
           "member": "string",
           "name": "KeyNonExistingField",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13872,60 +13895,60 @@
         {
           "disabled": false,
           "document": "分区ID",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "PartitionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分区的状态（readwrite或者是readonly）",
-          "example": "",
+          "example": "readwrite",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分区哈希键起始key",
-          "example": "",
+          "example": "00000000000000000000000000000000",
           "member": "string",
           "name": "InclusiveBeginKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分区哈希键结束key",
-          "example": "",
+          "example": "ffffffffffffffffffffffffffffffff",
           "member": "string",
           "name": "ExclusiveEndKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分区创建时间",
-          "example": "",
+          "example": "2024-10-04 07:43:08",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "只读分区数据停止写入时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2024-10-06 16:08:59",
           "member": "string",
           "name": "LastWriteTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14375,6 +14398,7 @@
           "example": "false",
           "member": "bool",
           "name": "CaseSensitive",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -14385,6 +14409,7 @@
           "example": "空",
           "member": "KeyValueInfo",
           "name": "KeyValues",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -14398,9 +14423,10 @@
         {
           "disabled": false,
           "document": "是否大小写敏感",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "CaseSensitive",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -14411,6 +14437,7 @@
           "example": "无",
           "member": "KeyValueInfo",
           "name": "KeyValues",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -15243,7 +15270,7 @@
         {
           "disabled": false,
           "document": "投递的bucket地址",
-          "example": "无",
+          "example": "alexxxx-1254011120",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -15253,7 +15280,7 @@
         {
           "disabled": false,
           "document": "投递的前缀目录",
-          "example": "无",
+          "example": "user-zip",
           "member": "string",
           "name": "Prefix",
           "output_required": true,
@@ -15313,7 +15340,7 @@
         {
           "disabled": false,
           "document": "投递日志的分区规则，支持strftime的时间格式表示",
-          "example": "无",
+          "example": "/%Y/%m/%d/%H/",
           "member": "string",
           "name": "Partition",
           "output_required": true,
@@ -15343,7 +15370,7 @@
         {
           "disabled": false,
           "document": "投递日志的创建时间",
-          "example": "无",
+          "example": "2023-08-22 22:02:52",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -15353,7 +15380,7 @@
         {
           "disabled": false,
           "document": "投递文件命名配置，0：随机数命名，1：投递时间命名，默认0（随机数命名）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "FilenameMode",
           "output_required": true,
@@ -15413,7 +15440,7 @@
         {
           "disabled": false,
           "document": "cos桶类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "MAZ_STANDARD",
           "member": "string",
           "name": "StorageType",
           "output_required": false,
@@ -15589,9 +15616,10 @@
         {
           "disabled": false,
           "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -15599,9 +15627,10 @@
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "业务A",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -15676,7 +15705,7 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "test",
+          "example": "业务A",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
@@ -15706,7 +15735,7 @@
         {
           "disabled": false,
           "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "CLS_bus",
           "member": "string",
           "name": "AssumerName",
           "output_required": true,
@@ -15716,7 +15745,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -15846,7 +15875,7 @@
         {
           "disabled": false,
           "document": "异步迁移任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "b5d24fc0-xxxx-xxxx-8c5d-ceed655c204b",
           "member": "string",
           "name": "TopicAsyncTaskID",
           "output_required": false,
@@ -15856,7 +15885,7 @@
         {
           "disabled": false,
           "document": "异步迁移状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "MigrationStatus",
           "output_required": false,
@@ -15866,7 +15895,7 @@
         {
           "disabled": false,
           "document": "异步迁移完成后，预计生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-11-13 14:48:23",
           "member": "string",
           "name": "EffectiveDate",
           "output_required": false,
@@ -15988,7 +16017,7 @@
         {
           "disabled": false,
           "document": "回调地址，最大支持1024个字节。\n也可使用WebCallbackId引用集成配置中的URL，此时该字段请填写为空字符串。",
-          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4c3cf1e0-a6e7-47f4-b264-5d2kjnbhjgx",
+          "example": "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=937xxxe47-xxxx-xxxx-a063-216xxxx9226f",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -16032,7 +16061,7 @@
         {
           "disabled": false,
           "document": "提醒类型。\n\n0：不提醒；1：指定人；2：所有人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "RemindType",
           "output_required": false,
@@ -16043,7 +16072,7 @@
         {
           "disabled": false,
           "document": "电话列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"15111111111\"]",
           "member": "string",
           "name": "Mobiles",
           "output_required": false,
@@ -16054,7 +16083,7 @@
         {
           "disabled": false,
           "document": "用户ID列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"11234\"]",
           "member": "string",
           "name": "UserIds",
           "output_required": false,
@@ -16065,7 +16094,7 @@
         {
           "disabled": false,
           "document": "该参数已废弃，请使用NoticeContentId。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"Content-Type: application/json\"]",
           "member": "string",
           "name": "Headers",
           "output_required": true,
@@ -16076,7 +16105,7 @@
         {
           "disabled": false,
           "document": "该参数已废弃，请使用NoticeContentId。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{{.Level}}]{{.Alarm}}",
           "member": "string",
           "name": "Body",
           "output_required": true,

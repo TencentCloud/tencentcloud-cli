@@ -13,7 +13,7 @@ Output:
     "Response": {
         "RouteTableSet": [
             {
-                "VpcId": "vpc-xxx",
+                "VpcId": "vpc-e55paxnt",
                 "RouteTableCidrBlock": "10.4.0.0/16",
                 "RouteTableName": "MANAGED_CLUSTER"
             }

@@ -109,7 +109,7 @@
         {
           "disabled": false,
           "document": "机构ID",
-          "example": "1",
+          "example": "001",
           "member": "string",
           "name": "HospitalId",
           "output_required": false,
@@ -119,8 +119,8 @@
         },
         {
           "disabled": false,
-          "document": "合作方ID",
-          "example": "1",
+          "document": "token",
+          "example": "tai.MTAwMDY%3D.30100b80-42af-11eb-b203-19b451462f39",
           "member": "string",
           "name": "Token",
           "output_required": false,
@@ -203,58 +203,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "科室ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "科室ID",
+          "example": "001",
           "member": "string",
           "name": "Id",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "科室名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "科室名称",
           "example": "综合门诊",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "科室类型 0:门诊  1:住院  2:门诊+住院\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "科室类型 0:门诊  1:住院  2:门诊+住院",
           "example": "2",
           "member": "int64",
           "name": "Scope",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效",
           "example": "True",
           "member": "bool",
           "name": "OutpatientOn",
           "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效",
           "example": "True",
           "member": "bool",
           "name": "InHospitalOn",
           "output_required": false,
           "required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -276,7 +276,7 @@
         {
           "disabled": false,
           "document": "诊断风险",
-          "example": "无",
+          "example": "诊断存在风险，病史中未提取到诊断的症状/体征",
           "member": "string",
           "name": "RiskInfo",
           "output_required": false,
@@ -565,7 +565,7 @@
         {
           "disabled": false,
           "document": "药品ID",
-          "example": "123",
+          "example": "001",
           "member": "string",
           "name": "DrugId",
           "output_required": false,
@@ -585,7 +585,7 @@
         {
           "disabled": false,
           "document": "说明书地址",
-          "example": "http://ip:port/toolbox/AssistantDetail.html?detailid=04e2bd6dff6422772447fd8c7cd7b5723dd4f7d4&type=drug&token=tai.MV8wXzEwMDA2.NQ==.54724330-1878-11ed-b1d0-b72c69c6d6f1",
+          "example": "http://ip:port/toolbox/AssistantDetail.html?detailid=xx&type=drug&token=xx",
           "member": "string",
           "name": "DocUrl",
           "output_required": false,
@@ -601,7 +601,7 @@
         {
           "disabled": false,
           "document": "医生ID",
-          "example": "无",
+          "example": "001",
           "member": "string",
           "name": "DoctorId",
           "output_required": true,
@@ -612,7 +612,7 @@
         {
           "disabled": false,
           "document": "医生姓名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "DoctorName",
           "output_required": true,
@@ -623,7 +623,7 @@
         {
           "disabled": false,
           "document": "医生电话",
-          "example": "无",
+          "example": "15000000000",
           "member": "string",
           "name": "DoctorPhone",
           "output_required": false,
@@ -640,7 +640,7 @@
         {
           "disabled": false,
           "document": "医院药品id",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "DrugOrgId",
           "output_required": false,
@@ -651,7 +651,7 @@
         {
           "disabled": false,
           "document": "医院药品通用名",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "DrugName",
           "output_required": false,
@@ -662,7 +662,7 @@
         {
           "disabled": false,
           "document": "医院药品商品名",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "DrugCommodityName",
           "output_required": false,
@@ -673,7 +673,7 @@
         {
           "disabled": false,
           "document": "医院药品规格",
-          "example": "无",
+          "example": "0.1g*36片/盒",
           "member": "string",
           "name": "Specifications",
           "output_required": false,
@@ -684,7 +684,7 @@
         {
           "disabled": false,
           "document": "医院药品批准文号",
-          "example": "无",
+          "example": "国药准字H13022772",
           "member": "string",
           "name": "ApprovalNumber",
           "output_required": false,
@@ -695,7 +695,7 @@
         {
           "disabled": false,
           "document": "生产厂商",
-          "example": "无",
+          "example": "石药集团欧意药业有限公司",
           "member": "string",
           "name": "Manufacturer",
           "output_required": false,
@@ -706,7 +706,7 @@
         {
           "disabled": false,
           "document": "剂型",
-          "example": "无",
+          "example": "片剂",
           "member": "string",
           "name": "DosageForm",
           "output_required": false,
@@ -728,7 +728,7 @@
         {
           "disabled": false,
           "document": "剂型编码",
-          "example": "无",
+          "example": "001",
           "member": "string",
           "name": "DosageFormCode",
           "output_required": false,
@@ -739,7 +739,7 @@
         {
           "disabled": false,
           "document": "抗菌药DDD值",
-          "example": "无",
+          "example": "5",
           "member": "string",
           "name": "DefinedDailyDose",
           "output_required": false,
@@ -761,7 +761,7 @@
         {
           "disabled": false,
           "document": "国家医保编码",
-          "example": "无",
+          "example": "yb001",
           "member": "string",
           "name": "YbCode",
           "output_required": false,
@@ -772,7 +772,7 @@
         {
           "disabled": false,
           "document": "药品本位码",
-          "example": "无",
+          "example": "86903937000184",
           "member": "string",
           "name": "DrugBasicCode",
           "output_required": false,
@@ -811,7 +811,7 @@
         {
           "disabled": false,
           "document": "药品名称",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "DrugName",
           "output_required": false,
@@ -822,7 +822,7 @@
         {
           "disabled": false,
           "document": "文档地址",
-          "example": "无",
+          "example": "http://ip:port/toolbox/AssistantDetail.html?detailid=xx&type=drug&token=xx",
           "member": "string",
           "name": "DocUrl",
           "output_required": false,
@@ -1165,7 +1165,7 @@
         {
           "disabled": false,
           "document": "缺失体格检查项目",
-          "example": "无",
+          "example": "[\"体温\",\"体重\"]",
           "member": "string",
           "name": "MissPhysicalExamination",
           "output_required": false,
@@ -1221,7 +1221,7 @@
         {
           "disabled": false,
           "document": "适应症",
-          "example": "无",
+          "example": "[\"中耳炎\",\"膀胱炎\"]",
           "member": "string",
           "name": "Indications",
           "output_required": false,
@@ -1257,7 +1257,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -1289,7 +1289,7 @@
         {
           "disabled": false,
           "document": "标题",
-          "example": "无",
+          "example": "糖尿病健康处方",
           "member": "string",
           "name": "Title",
           "output_required": true,
@@ -1300,7 +1300,7 @@
         {
           "disabled": false,
           "document": "健康处方链接",
-          "example": "无",
+          "example": "http://ip:port/toolbox/AssistantDetail.html?detailid=xx&type=thPrescription&token=xx",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -1311,7 +1311,7 @@
         {
           "disabled": false,
           "document": "关键信息",
-          "example": "无",
+          "example": "2 型糖尿病是由于胰岛素分泌和/或作用缺陷引起的以血糖升高为特征的代谢病",
           "member": "string",
           "name": "KeyInformation",
           "output_required": true,
@@ -1364,7 +1364,7 @@
         {
           "disabled": false,
           "document": "药品ID",
-          "example": "123",
+          "example": "001",
           "member": "string",
           "name": "DrugId",
           "required": false,
@@ -1373,7 +1373,7 @@
         {
           "disabled": false,
           "document": "商品名",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "TradeName",
           "required": false,
@@ -1408,7 +1408,7 @@
         {
           "disabled": false,
           "document": "医生名称",
-          "example": "test",
+          "example": "张三",
           "member": "string",
           "name": "DoctorName",
           "output_required": false,
@@ -1430,7 +1430,7 @@
         {
           "disabled": false,
           "document": "医生科室 当前登录科室",
-          "example": "无",
+          "example": "消化内科",
           "member": "string",
           "name": "DoctorDepartment",
           "output_required": false,
@@ -1441,7 +1441,7 @@
         {
           "disabled": false,
           "document": "科室ID",
-          "example": "无",
+          "example": "001",
           "member": "string",
           "name": "DepartmentId",
           "output_required": false,
@@ -1458,7 +1458,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "无",
+          "example": "tai.MTAwMDY%3D.30100b80-42af-11eb-b203-19b451462f3",
           "member": "string",
           "name": "Token",
           "output_required": false,
@@ -1640,7 +1640,7 @@
         {
           "disabled": false,
           "document": "时间戳毫秒数",
-          "example": "无",
+          "example": "1577808000000",
           "member": "int64",
           "name": "Timestamp",
           "required": true,
@@ -1649,7 +1649,7 @@
         {
           "disabled": false,
           "document": "签名值",
-          "example": "无",
+          "example": "48de97febe0404d2e763754836a460ca62929b01dcdcfd34cc5512528768eb38",
           "member": "string",
           "name": "Signature",
           "required": true,
@@ -1658,7 +1658,7 @@
         {
           "disabled": false,
           "document": "医院ID 单院版传这个",
-          "example": "无",
+          "example": "001",
           "member": "string",
           "name": "HospitalId",
           "required": false,
@@ -1667,7 +1667,7 @@
         {
           "disabled": false,
           "document": "平台ID 平台版传这个",
-          "example": "无",
+          "example": "800000000",
           "member": "string",
           "name": "PlatformId",
           "required": false,
@@ -1716,7 +1716,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -1748,7 +1748,7 @@
         {
           "disabled": false,
           "document": "服务器时间戳毫秒",
-          "example": "无",
+          "example": "1577808000000",
           "member": "int64",
           "name": "Timestamp",
           "output_required": false,
@@ -1813,7 +1813,7 @@
         {
           "disabled": false,
           "document": "患者ID",
-          "example": "无",
+          "example": "pid001",
           "member": "string",
           "name": "PatientId",
           "output_required": false,
@@ -1824,7 +1824,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "姓名",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1846,7 +1846,7 @@
         {
           "disabled": false,
           "document": "出生地",
-          "example": "无",
+          "example": "广州省深圳市",
           "member": "string",
           "name": "BirthPlace",
           "output_required": false,
@@ -1857,7 +1857,7 @@
         {
           "disabled": false,
           "document": "居住地",
-          "example": "无",
+          "example": "广州省深圳市",
           "member": "string",
           "name": "LivePlace",
           "output_required": false,
@@ -1885,7 +1885,7 @@
         {
           "disabled": false,
           "document": "家族病史 如家族病史不能分开，可传入此字段",
-          "example": "无",
+          "example": "父亲患糖尿病，与患者无类似疾病",
           "member": "string",
           "name": "FamilyDiseaseHistory",
           "output_required": false,
@@ -1896,7 +1896,7 @@
         {
           "disabled": false,
           "document": "关系",
-          "example": "无",
+          "example": "父子",
           "member": "string",
           "name": "Relation",
           "output_required": false,
@@ -1907,7 +1907,7 @@
         {
           "disabled": false,
           "document": "当前情况",
-          "example": "无",
+          "example": "正常",
           "member": "string",
           "name": "CurrentSituation",
           "output_required": false,
@@ -1924,7 +1924,7 @@
         {
           "disabled": false,
           "document": "病史",
-          "example": "无",
+          "example": "反复阵发性头晕20余年",
           "member": "string",
           "name": "DiseaseHistory",
           "output_required": false,
@@ -1935,7 +1935,7 @@
         {
           "disabled": false,
           "document": "治疗史",
-          "example": "无",
+          "example": "每日服用氯吡格雷75mg",
           "member": "string",
           "name": "TreatmentHistory",
           "output_required": false,
@@ -1974,7 +1974,7 @@
         {
           "disabled": false,
           "document": "体重，单位KG",
-          "example": "无",
+          "example": "65",
           "member": "string",
           "name": "Weight",
           "output_required": false,
@@ -1985,7 +1985,7 @@
         {
           "disabled": false,
           "document": "体温，单位：℃ ",
-          "example": "无",
+          "example": "37.5",
           "member": "string",
           "name": "BodyTemperature",
           "output_required": false,
@@ -1996,7 +1996,7 @@
         {
           "disabled": false,
           "document": "舒张压， 单位：mmHg",
-          "example": "无",
+          "example": "70",
           "member": "string",
           "name": "DiastolicPressure",
           "output_required": false,
@@ -2007,7 +2007,7 @@
         {
           "disabled": false,
           "document": "收缩压， 单位：mmHg",
-          "example": "无",
+          "example": "110",
           "member": "string",
           "name": "SystolicPressure",
           "output_required": false,
@@ -2209,7 +2209,7 @@
         {
           "disabled": false,
           "document": "完整性问题",
-          "example": "无",
+          "example": "病历中存在完整性问题",
           "member": "string",
           "name": "Completeness",
           "output_required": false,
@@ -2220,7 +2220,7 @@
         {
           "disabled": false,
           "document": "及时性问题",
-          "example": "无",
+          "example": "病历中存在及时性问题",
           "member": "string",
           "name": "Timeliness",
           "output_required": false,
@@ -2231,7 +2231,7 @@
         {
           "disabled": false,
           "document": "逻辑性问题",
-          "example": "病历中怀孕术语书写不规范，建议规范书写为：妊娠；病历中急性ST段抬高型前壁心肌梗塞术语书写不规范，建议规范书写为：",
+          "example": "病历中怀孕术语书写不规范，建议规范书写为：妊娠；",
           "member": "string",
           "name": "Logical",
           "output_required": false,
@@ -2331,7 +2331,7 @@
         {
           "disabled": false,
           "document": "就诊ID\n门诊处方传门诊号，住院医嘱传住院号；备注：门诊场景：用户挂一次号，看一个医生，这时候会有一个代表变成就诊的编号，下一次挂号就诊，这个编号会变。<br/>住院场景：用户本次办理入院，会有一个住院编号，仅代表本次住院，如果下次再住院，这个编号会变。",
-          "example": "1234",
+          "example": "vid001",
           "member": "string",
           "name": "VisitId",
           "output_required": false,
@@ -2375,7 +2375,7 @@
         {
           "disabled": false,
           "document": "患者其他信息，包含过敏史等",
-          "example": "无",
+          "example": "花粉过敏",
           "member": "string",
           "name": "PatientOther",
           "output_required": false,
@@ -2447,7 +2447,7 @@
         {
           "disabled": false,
           "document": "药品ID",
-          "example": "无",
+          "example": "d001",
           "member": "string",
           "name": "DrugId",
           "output_required": true,
@@ -2458,7 +2458,7 @@
         {
           "disabled": false,
           "document": "药品名称",
-          "example": "无",
+          "example": "硝苯地平缓释片(Ⅰ)",
           "member": "string",
           "name": "DrugName",
           "output_required": true,
@@ -2480,7 +2480,7 @@
         {
           "disabled": false,
           "document": "风险提示",
-          "example": "无",
+          "example": "使用硝苯地平缓释片(Ⅰ)需定期检查",
           "member": "string",
           "name": "RiskTips",
           "output_required": true,
@@ -2491,7 +2491,7 @@
         {
           "disabled": false,
           "document": "FDA分级",
-          "example": "无",
+          "example": "A",
           "member": "string",
           "name": "FdaLevel",
           "output_required": false,
@@ -2502,7 +2502,7 @@
         {
           "disabled": false,
           "document": "关联药品名称",
-          "example": "无",
+          "example": "马来酸依那普利片",
           "member": "string",
           "name": "RelatedDrugName",
           "output_required": false,
@@ -2513,7 +2513,7 @@
         {
           "disabled": false,
           "document": "关联处方ID",
-          "example": "无",
+          "example": "p001",
           "member": "string",
           "name": "RelatedPrescriptionId",
           "output_required": false,
@@ -2574,7 +2574,7 @@
         {
           "disabled": false,
           "document": "药品ID",
-          "example": "123",
+          "example": "d001",
           "member": "string",
           "name": "DrugId",
           "output_required": false,
@@ -2637,7 +2637,7 @@
         {
           "disabled": false,
           "document": "药品ID",
-          "example": "123",
+          "example": "d001",
           "member": "string",
           "name": "DrugId",
           "output_required": false,
@@ -2687,7 +2687,7 @@
         {
           "disabled": false,
           "document": "商品名",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "TradeName",
           "output_required": false,
@@ -2707,7 +2707,7 @@
         {
           "disabled": false,
           "document": "英文商品名",
-          "example": "无",
+          "example": "Norfloxacin Tablets",
           "member": "string",
           "name": "EnglishTradeName",
           "output_required": false,
@@ -2727,7 +2727,7 @@
         {
           "disabled": false,
           "document": "其他名称",
-          "example": "无",
+          "example": "诺氟沙星片",
           "member": "string",
           "name": "OtherNames",
           "output_required": false,
@@ -2737,7 +2737,7 @@
         {
           "disabled": false,
           "document": "化学名称",
-          "example": "无",
+          "example": "1-乙基-6-氢-1,4-二氢-4-氧代-7-(1-哌嗪基)-3-喹啉羧酸",
           "member": "string",
           "name": "ChemicalName",
           "output_required": false,
@@ -2747,7 +2747,7 @@
         {
           "disabled": false,
           "document": "英文化学名称",
-          "example": "无",
+          "example": "NORFLOXACIN",
           "member": "string",
           "name": "EnglishChemicalName",
           "output_required": false,
@@ -2767,7 +2767,7 @@
         {
           "disabled": false,
           "document": "药品属性标签 多个标签时 | 分隔，如抗菌药|抗生素|贵重药品",
-          "example": "无",
+          "example": "抗生素",
           "member": "string",
           "name": "Property",
           "output_required": false,
@@ -2777,7 +2777,7 @@
         {
           "disabled": false,
           "document": "药品成分",
-          "example": "无",
+          "example": "喹啉羧酸",
           "member": "string",
           "name": "Ingredients",
           "output_required": false,
@@ -2797,7 +2797,7 @@
         {
           "disabled": false,
           "document": "适应症",
-          "example": "适用于敏感细菌所引起的急、慢性肾盂肾炎、膀胱炎、前列腺炎、细菌性痢疾、胆囊炎、伤寒、产前产后感染、盆腔炎、中耳炎、鼻窦炎、急性扁桃腺炎及皮肤软组织感染等，也可作为腹腔手术的预防用药。",
+          "example": "适用于敏感细菌所引起的急、慢性肾盂肾炎...",
           "member": "string",
           "name": "Indications",
           "output_required": false,
@@ -2827,7 +2827,7 @@
         {
           "disabled": false,
           "document": "推荐用法",
-          "example": "无",
+          "example": "口服",
           "member": "RecommendedUsage",
           "name": "RecommendedUsage",
           "output_required": false,
@@ -2837,7 +2837,7 @@
         {
           "disabled": false,
           "document": "不良反应",
-          "example": "可偶有头晕、头痛及消化道反应等症状，个别病人可有血清谷丙氨基转移酶及尿素氮升高，偶有过敏皮疹，停药后症状消失。",
+          "example": "可偶有头晕、头痛及消化道反应等症状，个别病人可有血清谷丙氨基转移酶及尿素氮升高...",
           "member": "string",
           "name": "AdverseReaction",
           "output_required": false,
@@ -2877,7 +2877,7 @@
         {
           "disabled": false,
           "document": "孕妇及哺乳期妇女用药",
-          "example": "曾用猴进行繁殖研究，剂量高达人用量的10倍，发现本品可致流产。该剂量在猴的血浆峰浓度(Cmax)约为人的2倍。本品在动物中并未证实有致畸作用。然而，在孕妇并未进行合适的、有良好对照的研究，因此本品不宜用于孕妇。本品是否经乳汁分泌尚缺乏资料。当乳妇应用200mg本品时，乳汁中不能检出该药。然而，由于研究剂量较小，且本类药物的其他品种经乳汁分泌，加之对新生儿及婴幼儿潜在的严重不良反应，乳妇应避免应用本品或于应用时停止哺乳。",
+          "example": "曾用猴进行繁殖研究，剂量高达人用量的10倍，发现本品可致流产...",
           "member": "string",
           "name": "PregnantAndLactatingWomen",
           "output_required": false,
@@ -2907,7 +2907,7 @@
         {
           "disabled": false,
           "document": "药物相互作用",
-          "example": "1．尿碱化剂可减低本品在尿中的溶解度，导致结晶尿和肾毒性。2．本品与茶碱类合用时可能由于与细胞色素P450结合部位的竞争性抑制，导致茶碱类的肝清除明显减少，血消除半衰期(t1/2β)延长，血药浓度升高，出现茶碱中毒症状，如恶心、呕吐、震颤、不安、激动、抽搐、心悸等，故合用时应测定茶碱类血药浓度和调整剂量。3．环孢素与本品合用，可使前者的血药浓度升高，必须监测环孢素血药浓度，并调整剂量。4．本品与抗凝药华法林同用时可增强后者的抗凝作用，合用时应严密监测患者的凝血酶原时间。5．丙磺舒可减少本品自肾小管分泌约50%，合用时可因本品血浓度增高而产生毒性。6．本品与呋喃妥因具拮抗作用，不推荐联合应用。7．多种维生素，或其他含铁、锌离子的制剂及含铝或镁的制酸药可减少本品的吸收，建议避免合用，不能避免时在本品服药前2小时，或服药后6小时服用。8．去羟肌苷(didanosine，DDI)可减少本品的口服吸收，因其制剂中含铝及镁，可与氟喹诺酮类螯合，故不宜合用。9．本品干扰咖啡因的代谢，从而导致咖啡因清除减少，血消除半衰期(t1/2β)延长，并可能产生中枢神经系统毒性。",
+          "example": "1．尿碱化剂可减低本品在尿中的溶解度，导致结晶尿和肾毒性。",
           "member": "string",
           "name": "Interactions",
           "output_required": false,
@@ -2917,7 +2917,7 @@
         {
           "disabled": false,
           "document": "临床研究",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "ClinicalResearch",
           "output_required": false,
@@ -2927,7 +2927,7 @@
         {
           "disabled": false,
           "document": "药理毒理",
-          "example": "无",
+          "example": "本品为氟喹诺酮类抗菌药，具有广谱抗菌作用...",
           "member": "string",
           "name": "PharmacologyToxicology",
           "output_required": false,
@@ -2937,7 +2937,7 @@
         {
           "disabled": false,
           "document": "药代动力学",
-          "example": "健康成人空腹一次口服本品0.4克，1～2小时血药峰浓度(Cmax)为1.32mg/ml，8小时后尚有0.33μg/ml，吸收半衰期为0.41小时，分布相半衰期(t1/2α)为0.41小时，消除相半衰期(t1/2β)为2.54小时。12小时内尿中平均排出量占给药量的27.88%，其中22.56%在6小时内排出。 大鼠口服本品后，迅速分布各组织间，肾、肝、淋巴结、脾、颚下腺、血浆等的药物浓度均较高，上颚扁桃体及兔的皮肤也有分布。",
+          "example": "健康成人空腹一次口服本品0.4克，1～2小时血药峰浓度(Cmax)为1.32mg/ml，8小时后尚有0.33μg/ml...",
           "member": "string",
           "name": "Pharmacokinetics",
           "output_required": false,
@@ -2947,7 +2947,7 @@
         {
           "disabled": false,
           "document": "警告",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "Warning",
           "output_required": false,
@@ -3037,7 +3037,7 @@
         {
           "disabled": false,
           "document": "说明书制定和修订时间",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "DocRevisionTime",
           "output_required": false,
@@ -3047,7 +3047,7 @@
         {
           "disabled": false,
           "document": "参考文献",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "References",
           "output_required": false,
@@ -3057,7 +3057,7 @@
         {
           "disabled": false,
           "document": "剂型",
-          "example": "无",
+          "example": "片剂",
           "member": "string",
           "name": "DrugDosageForm",
           "output_required": false,
@@ -3067,7 +3067,7 @@
         {
           "disabled": false,
           "document": "给药途径",
-          "example": "无",
+          "example": "po",
           "member": "string",
           "name": "DrugRoute",
           "output_required": false,
@@ -3077,7 +3077,7 @@
         {
           "disabled": false,
           "document": "药品本位码",
-          "example": "无",
+          "example": "86903937000184",
           "member": "string",
           "name": "DrugBasicCode",
           "output_required": false,
@@ -3087,7 +3087,7 @@
         {
           "disabled": false,
           "document": "OCT标签",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "OctTag",
           "output_required": false,
@@ -3113,7 +3113,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -3278,7 +3278,7 @@
         {
           "disabled": false,
           "document": "ICD代码",
-          "example": "xxx",
+          "example": "404",
           "member": "string",
           "name": "IcdCode",
           "output_required": false,
@@ -3311,7 +3311,7 @@
         {
           "disabled": false,
           "document": "检查",
-          "example": "心电图，肝功能，肾功能，电解质，尿常规，血脂，血糖，心脏彩超，肾脏彩超，颈动脉彩超，胸部X线，眼底动脉造影",
+          "example": "心电图，肝功能",
           "member": "string",
           "name": "Inspection",
           "output_required": false,
@@ -3322,7 +3322,7 @@
         {
           "disabled": false,
           "document": "疾病指南信息",
-          "example": "http://127.0.0.1:8080/toolbox/AssistantDetail.html?detailid=1497901&type=disease&token=tai.MV8wXzgwMDAwMDUyOA%3D%3D.NQ%3D%3D.bb6f0c70-ff5a-11ed-8d21-2fc84f9d28c2",
+          "example": "http://ip:port/toolbox/AssistantDetail.html?detailid=1497901&type=disease&token=xx",
           "member": "string",
           "name": "DiseaseGuideInfo",
           "output_required": false,
@@ -3425,7 +3425,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -3524,7 +3524,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -3656,7 +3656,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -3699,7 +3699,7 @@
         {
           "disabled": false,
           "document": "提示",
-          "example": "无",
+          "example": "暂无",
           "member": "string",
           "name": "Tips",
           "output_required": false,

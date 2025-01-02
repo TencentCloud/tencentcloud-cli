@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf GetCustomDomain --cli-unfold-argument  \
-    --Domain www.xxx.com
+    --Domain www.demo.com
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
         "CertConfig": {
             "CertificateId": "BfHJsadd7"
         },
-        "Domain": "www.xxx.com",
+        "Domain": "www.demo.com",
         "EndpointsConfig": [
             {
                 "FunctionName": "test1",
@@ -25,7 +25,7 @@ Output:
                 "PathRewrite": [
                     {
                         "Path": "/cc/",
-                        "Rewrite": "/",
+                        "Rewrite": "/$1",
                         "Type": "ExactRules"
                     }
                 ],

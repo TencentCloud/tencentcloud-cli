@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli asr VoicePrintDelete --cli-unfold-argument  \
-    --VoicePrintId abc
+    --VoicePrintId 34a0a2b-922f******90302f155a6d
 ```
 
 Output: 
@@ -14,10 +14,10 @@ Output:
 {
     "Response": {
         "Data": {
-            "VoicePrintId": "abc",
-            "SpeakerNick": "abc"
+            "VoicePrintId": "34a0a2b-922f******90302f155a6d",
+            "SpeakerNick": "小明"
         },
-        "RequestId": "abc"
+        "RequestId": "676a22c********3625b0"
     }
 }
 ```

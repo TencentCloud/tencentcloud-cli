@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf Invoke --cli-unfold-argument  \
-    --FunctionName xxxx
+    --FunctionName function-demo
 ```
 
 Output: 

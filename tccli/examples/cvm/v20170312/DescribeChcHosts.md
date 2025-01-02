@@ -75,8 +75,8 @@ Output:
                 "SerialNumber": "7DF112345678",
                 "Tags": [
                     {
-                        "Key": "test",
-                        "Value": "test22"
+                        "Key": "myKey",
+                        "Value": "myValue"
                     }
                 ],
                 "TenantType": "HOSTING"

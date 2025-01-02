@@ -13,37 +13,46 @@ Output:
 ```
 {
     "Response": {
-        "ClusterVersion": "abc",
+        "ClusterVersion": "test",
         "AvailableExtraArgs": {
             "KubeAPIServer": [
                 {
-                    "Name": "abc",
-                    "Type": "abc",
-                    "Usage": "abc",
-                    "Default": "abc",
-                    "Constraint": "abc"
+                    "Name": "test",
+                    "Type": "test",
+                    "Usage": "test",
+                    "Default": "test",
+                    "Constraint": "test"
                 }
             ],
             "KubeControllerManager": [
                 {
-                    "Name": "abc",
-                    "Type": "abc",
-                    "Usage": "abc",
-                    "Default": "abc",
-                    "Constraint": "abc"
+                    "Name": "test",
+                    "Type": "test",
+                    "Usage": "test",
+                    "Default": "test",
+                    "Constraint": "test"
                 }
             ],
             "KubeScheduler": [
                 {
-                    "Name": "abc",
-                    "Type": "abc",
-                    "Usage": "abc",
-                    "Default": "abc",
-                    "Constraint": "abc"
+                    "Name": "test",
+                    "Type": "test",
+                    "Usage": "test",
+                    "Default": "test",
+                    "Constraint": "test"
+                }
+            ],
+            "Kubelet": [
+                {
+                    "Name": "test",
+                    "Type": "test",
+                    "Usage": "test",
+                    "Default": "test",
+                    "Constraint": "test"
                 }
             ]
         },
-        "RequestId": "abc"
+        "RequestId": "d174dcb6-659b-4ab6-9533-e470a7d91e43"
     }
 }
 ```

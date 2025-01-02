@@ -1,54 +1,4 @@
-**Example 1: 更新eniipamd组件参数**
-
-用户可以通过RawValues参数更新eniipamd组件支持的自定义配置参数，比如清空已配置的安全组，可以将 {"vpcCni":{"securityGroups":{"securityGroups":[]}}} 进行base64编码后放入到 RawValues 参数中。eniipamd组件支持的自定义配置参数说明如下：
-```
-{
-  "clusterId": "string, 集群ID, 例如：cls-12345678",
-  "vpcCni": {
-    "vpcId": "string, VPC的ID, 例如：vpc-12345678",
-    "enableVpcCni": "bool, 是否启用VPC CNI, 例如：true",
-    "routeEni": {
-      "ipMinWarmTarget": "int, 新增节点共享网卡辅助IP的最小预绑定值, 例如：5",
-      "ipMaxWarmTarget": "int, 新增节点共享网卡辅助IP的最大预绑定值, 例如：5"
-    },
-    "ipam": {
-      "subnetIds": "array, 用于IP地址分配的Pod子网ID列表, 例如：[\"subnet-12345678\"]"
-    }, 
-  	"securityGroups": {
-      "enableSecurityGroups": "bool, 是否启用安全组, 例如：true",
-      "securityGroups": [
-        "string, 安全组ID, 例如：sg-12345678"
-      ]
-    }
-  },
-  "agent": {
-    "kubeClient": {
-      "masterAddr": "string, kubeClient主节点地址, 例如: 169.254.128.54:60002"
-    }
-  }
-}
-```
-
-Input: 
-
-```
-tccli tke UpdateAddon --cli-unfold-argument  \
-    --ClusterId cls-12345678 \
-    --AddonName eniipamd \
-    --RawValues eyJ2cGNDbmkiOnsic2VjdXJpdHlHcm91cHMiOnsic2VjdXJpdHlHcm91cHMiOltdfX19 \
-    --UpdateStrategy merge
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "f55aaa93-c681-47c9-860a-59ae16ade268"
-    }
-}
-```
-
-**Example 2: 更新cbs组件参数**
+**Example 1: 更新cbs组件参数**
 
 用户可以通过RawValues参数更新cbs组件支持的自定义配置参数，比如修改容忍调度设置，可以将 {"tolerations":[{"effect":"NoExecute","key":"gpu-not-ready","operator":"Equal","tolerationSeconds":300,"value":"true"},{"key":"ip-not-ready","operator":"Exists"}]}  进行base64编码后放入到 RawValues 参数中。cbs组件支持的自定义配置参数说明如下：
 ```
@@ -73,7 +23,7 @@ Input:
 
 ```
 tccli tke UpdateAddon --cli-unfold-argument  \
-    --ClusterId cls-12345678 \
+    --ClusterId cls-qbc3zefo \
     --AddonName cbs \
     --RawValues eyJ0b2xlcmF0aW9ucyI6W3siZWZmZWN0IjoiTm9FeGVjdXRlIiwia2V5IjoiZ3B1LW5vdC1yZWFkeSIsIm9wZXJhdG9yIjoiRXF1YWwiLCJ0b2xlcmF0aW9uU2Vjb25kcyI6MzAwLCJ2YWx1ZSI6InRydWUifSx7ImtleSI6ImlwLW5vdC1yZWFkeSIsIm9wZXJhdG9yIjoiRXhpc3RzIn1dfQ== \
     --UpdateStrategy merge
@@ -84,6 +34,56 @@ Output:
 {
     "Response": {
         "RequestId": "f55aaa93-c681-47c9-860a-59ae16af648"
+    }
+}
+```
+
+**Example 2: 更新eniipamd组件参数**
+
+用户可以通过RawValues参数更新eniipamd组件支持的自定义配置参数，比如清空已配置的安全组，可以将 {"vpcCni":{"securityGroups":{"securityGroups":[]}}} 进行base64编码后放入到 RawValues 参数中。eniipamd组件支持的自定义配置参数说明如下：
+```
+{
+  "clusterId": "string, 集群ID, 例如：cls-qbc3zefo",
+  "vpcCni": {
+    "vpcId": "string, VPC的ID, 例如：vpc-qbc3zefo",
+    "enableVpcCni": "bool, 是否启用VPC CNI, 例如：true",
+    "routeEni": {
+      "ipMinWarmTarget": "int, 新增节点共享网卡辅助IP的最小预绑定值, 例如：5",
+      "ipMaxWarmTarget": "int, 新增节点共享网卡辅助IP的最大预绑定值, 例如：5"
+    },
+    "ipam": {
+      "subnetIds": "array, 用于IP地址分配的Pod子网ID列表, 例如：[\"subnet-qbc3zefo\"]"
+    }, 
+  	"securityGroups": {
+      "enableSecurityGroups": "bool, 是否启用安全组, 例如：true",
+      "securityGroups": [
+        "string, 安全组ID, 例如：sg-qbc3zefo"
+      ]
+    }
+  },
+  "agent": {
+    "kubeClient": {
+      "masterAddr": "string, kubeClient主节点地址, 例如: 169.254.128.54:60002"
+    }
+  }
+}
+```
+
+Input: 
+
+```
+tccli tke UpdateAddon --cli-unfold-argument  \
+    --ClusterId cls-qbc3zefo \
+    --AddonName eniipamd \
+    --RawValues eyJ2cGNDbmkiOnsic2VjdXJpdHlHcm91cHMiOnsic2VjdXJpdHlHcm91cHMiOltdfX19 \
+    --UpdateStrategy merge
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "f55aaa93-c681-47c9-860a-59ae16ade268"
     }
 }
 ```
@@ -101,7 +101,7 @@ Output:
             "kubeversion": "string，集群k8s版本，例如：1.30.0",
             "type": "string，集群类型，例如：tke 或 eks"
         },
-        "clusterID": "string，集群ID，例如：cls-12345678",
+        "clusterID": "string，集群ID，例如：cls-qbc3zefo",
         "hostNetwork": "bool，是否使用hostNetwork，例如：false",
         "localRegion": "string，集群所在地域，例如：ap-chengdu",
         "registry": "string，镜像仓库，例如：ccr.ccs.tencentyun.com",
@@ -127,7 +127,7 @@ Input:
 
 ```
 tccli tke UpdateAddon --cli-unfold-argument  \
-    --ClusterId cls-12345678 \
+    --ClusterId cls-qbc3zefo \
     --AddonName tke-log-agent \
     --RawValues eyJrYWZrYWxpc3RlbmVyIjp7ImVuYWJsZWQiOnRydWV9fQ== \
     --UpdateStrategy merge
