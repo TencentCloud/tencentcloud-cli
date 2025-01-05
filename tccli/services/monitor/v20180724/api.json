@@ -3505,6 +3505,24 @@
           "name": "EbSubject",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "附加告警内容",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalAlarmContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知模板绑定信息",
+          "example": "[{\"NoticeContentTmplID\":\"tmpl-xxx\",\"PolicyID\":\"policy-xxx\",\"NoticeID\":\"notice-xxx\"}]",
+          "member": "NoticeContentTmplBindInfo",
+          "name": "NoticeContentTmplBindInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15513,6 +15531,15 @@
           "name": "HierarchicalNotices",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板绑定信息",
+          "example": " [{\"NoticeContentTmplID\":\"tmpl-xxx\",\"PolicyID\":\"policy-xxx\",\"NoticeID\":\"notice-xxx\"}]",
+          "member": "NoticeContentTmplBindInfo",
+          "name": "NoticeContentTmplBindInfos",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16378,6 +16405,34 @@
         }
       ],
       "usage": "in"
+    },
+    "NoticeContentTmplBindInfo": {
+      "document": "通知内容模板绑定信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通知内容模板ID",
+          "example": "tmpl-xxx",
+          "member": "string",
+          "name": "ContentTmplID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通知模板ID",
+          "example": "notice-xxx",
+          "member": "string",
+          "name": "NoticeID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Operator": {
       "document": "维度支持的操作符信息",

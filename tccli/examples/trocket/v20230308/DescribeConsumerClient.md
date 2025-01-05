@@ -32,7 +32,7 @@ Output:
                 "ConsumerLag": 0,
                 "LastUpdateTime": 1683614607184,
                 "QueueNum": 16,
-                "SubString": "*",
+                "SubString": "test_tag",
                 "Topic": "topic",
                 "TopicType": "NORMAL"
             }

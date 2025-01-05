@@ -33,37 +33,35 @@ Input:
 
 ```
 tccli tke CreateClusterInstances --cli-unfold-argument  \
-    --ClusterId cls-e55paxnt \
-    --InstanceAdvancedSettings.MountTarget test \
-    --InstanceAdvancedSettings.DockerGraphPath test \
-    --InstanceAdvancedSettings.UserScript test \
-    --InstanceAdvancedSettings.Unschedulable 0 \
-    --InstanceAdvancedSettings.Labels.0.Name test \
-    --InstanceAdvancedSettings.Labels.0.Value test \
-    --InstanceAdvancedSettings.DataDisks.0.DiskType test \
-    --InstanceAdvancedSettings.DataDisks.0.FileSystem test \
-    --InstanceAdvancedSettings.DataDisks.0.DiskSize 0 \
+    --ClusterId cls-nfjdk3n0 \
+    --InstanceAdvancedSettings.DesiredPodNumber 120 \
+    --InstanceAdvancedSettings.Taints None \
     --InstanceAdvancedSettings.DataDisks.0.AutoFormatAndMount True \
-    --InstanceAdvancedSettings.DataDisks.0.MountTarget test \
-    --InstanceAdvancedSettings.DataDisks.0.DiskPartition test \
-    --InstanceAdvancedSettings.ExtraArgs.Kubelet test \
-    --InstanceAdvancedSettings.DesiredPodNumber 0 \
-    --InstanceAdvancedSettings.GPUArgs.MIGEnable True \
-    --InstanceAdvancedSettings.GPUArgs.Driver.Version test \
-    --InstanceAdvancedSettings.GPUArgs.Driver.Name test \
-    --InstanceAdvancedSettings.GPUArgs.CUDA.Version test \
-    --InstanceAdvancedSettings.GPUArgs.CUDA.Name test \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version test \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name test \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName test \
-    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName test \
-    --InstanceAdvancedSettings.GPUArgs.CustomDriver.Address test \
-    --InstanceAdvancedSettings.PreStartUserScript test \
-    --InstanceAdvancedSettings.Taints.0.Key test \
-    --InstanceAdvancedSettings.Taints.0.Value test \
-    --InstanceAdvancedSettings.Taints.0.Effect test \
-    --RunInstancePara test \
-    --SkipValidateOptions test
+    --InstanceAdvancedSettings.DataDisks.0.DiskSize 50 \
+    --InstanceAdvancedSettings.DataDisks.0.DiskType CLOUD_BSSD \
+    --InstanceAdvancedSettings.DataDisks.0.FileSystem ext4 \
+    --InstanceAdvancedSettings.DataDisks.0.MountTarget /run \
+    --InstanceAdvancedSettings.DataDisks.0.DiskPartition /dev/vda \
+    --InstanceAdvancedSettings.DataDisks.1.AutoFormatAndMount True \
+    --InstanceAdvancedSettings.DataDisks.1.DiskSize 50 \
+    --InstanceAdvancedSettings.DataDisks.1.DiskType CLOUD_BSSD \
+    --InstanceAdvancedSettings.DataDisks.1.FileSystem ext4 \
+    --InstanceAdvancedSettings.DataDisks.1.MountTarget /var/lib/data2 \
+    --InstanceAdvancedSettings.DataDisks.1.DiskPartition /dev/vda \
+    --InstanceAdvancedSettings.DockerGraphPath  \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Name  \
+    --InstanceAdvancedSettings.GPUArgs.CUDA.Version  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DevName  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.DocName  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Name  \
+    --InstanceAdvancedSettings.GPUArgs.CUDNN.Version  \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Name  \
+    --InstanceAdvancedSettings.GPUArgs.Driver.Version  \
+    --InstanceAdvancedSettings.GPUArgs.MIGEnable False \
+    --InstanceAdvancedSettings.PreStartUserScript  \
+    --InstanceAdvancedSettings.Unschedulable 0 \
+    --InstanceAdvancedSettings.UserScript  \
+    --RunInstancePara {"InstanceChargeType":"POSTPAID_BY_HOUR","Placement":{"Zone":"ap-beijing-1","ProjectId":0},"InstanceType":"S5.LARGE8","SystemDisk":{"DiskType":"CLOUD_BSSD","DiskSize":50},"DataDisks":[{"DiskType":"CLOUD_BSSD","DiskSize":50},{"DiskType":"CLOUD_BSSD","DiskSize":50}],"VirtualPrivateCloud":{"VpcId":"vpc-fcccepnm","SubnetId":"subnet-f6c7fr8d","AsVpcGateway":false,"Ipv6AddressCount":0},"InternetAccessible":{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":0,"PublicIpAssigned":false},"InstanceCount":1,"ImageId":"img-fqais24x","HostName":"tke","InstanceName":"tke","LoginSettings":{"KeyIds":["skey-f6c7fr8d"]},"SecurityGroupIds":["sg-f6c7fr8d"],"EnhancedService":{"SecurityService":{"Enabled":true},"MonitorService":{"Enabled":true}}}
 ```
 
 Output: 

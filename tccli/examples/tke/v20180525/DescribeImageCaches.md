@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6704dc99-e331-4055-8af9-123456789",
+        "RequestId": "6704dc99-e331-4055-8af9-1cghduvc",
         "TotalCount": 1,
         "ImageCaches": [
             {

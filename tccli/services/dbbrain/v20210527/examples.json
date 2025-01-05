@@ -320,6 +320,14 @@
         "title": "查询redis实例大key列表"
       }
     ],
+    "DescribeRedisTopHotKeys": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRedisTopHotKeys\n<公共请求参数>\n\n{\n    \"Product\": \"redis\",\n    \"InstanceId\": \"crs-179943dsc\",\n    \"StartTime\": \"2024-09-22T00:00:00+00:00\",\n    \"EndTime\": \"2024-09-22T01:00:00+00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75421bae-7fcb-4b32-83df-d66b060b4cbf\",\n        \"TopHotKeys\": [\n            {\n                \"Count\": 100,\n                \"Db\": \"0\",\n                \"InstanceNodeId\": \"fa765e5e2e432806328a691d591e47097ecd133d\",\n                \"Key\": \"string|key:000000096\",\n                \"Type\": \"string\"\n            }\n        ]\n    }\n}",
+        "title": "查询热Key分析"
+      }
+    ],
     "DescribeRedisTopKeyPrefixList": [
       {
         "document": "",

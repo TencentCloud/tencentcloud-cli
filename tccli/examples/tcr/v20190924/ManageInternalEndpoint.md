@@ -6,19 +6,18 @@ Input:
 
 ```
 tccli tcr ManageInternalEndpoint --cli-unfold-argument  \
-    --RegistryId tcr-xxx \
-    --RegionName ap-beijing \
+    --RegistryId tcr-dg284imq \
     --Operation Create \
-    --VpcId xxx \
-    --SubnetId xxx
+    --VpcId vpc-74ffq7ov \
+    --SubnetId subnet-kpmi5ji6
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RegistryId": "XXXX",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RegistryId": "tcr-dg284imq",
+        "RequestId": "e842f4a4-dc50-44dc-b299-ba9b78b49584"
     }
 }
 ```

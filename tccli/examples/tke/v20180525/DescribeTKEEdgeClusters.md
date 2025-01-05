@@ -14,42 +14,46 @@ Output:
         "TotalCount": 1,
         "Clusters": [
             {
-                "ClusterId": "test",
-                "ClusterName": "test",
-                "VpcId": "test",
-                "PodCIDR": "test",
-                "ServiceCIDR": "test",
-                "K8SVersion": "test",
-                "Status": "test",
-                "ClusterDesc": "test",
-                "CreatedTime": "test",
-                "EdgeClusterVersion": "test",
-                "MaxNodePodNum": 0,
+                "ClusterId": "cls-j0hy001q",
+                "ClusterName": "production-cluster",
+                "VpcId": "vpc-j0hy001q",
+                "PodCIDR": "10.244.0.0/16",
+                "ServiceCIDR": "10.96.0.0/12",
+                "K8SVersion": "1.24.4",
+                "Status": "Running",
+                "ClusterDesc": "Primary production Kubernetes cluster",
+                "CreatedTime": "2023-10-01T12:00:00Z",
+                "EdgeClusterVersion": "1.24.4",
+                "MaxNodePodNum": 110,
                 "ClusterAdvancedSettings": {
                     "ExtraArgs": {
                         "KubeAPIServer": [
-                            "test"
+                            "--enable-admission-plugins=NodeRestriction"
                         ],
                         "KubeControllerManager": [
-                            "test"
+                            "--node-cidr-mask-size=24"
                         ],
                         "KubeScheduler": [
-                            "test"
+                            "--scheduler-name=default-scheduler"
                         ]
                     },
-                    "Runtime": "test",
-                    "ProxyMode": "test"
+                    "Runtime": "containerd",
+                    "ProxyMode": "ipvs"
                 },
-                "Level": "test",
+                "Level": "L5",
                 "AutoUpgradeClusterLevel": true,
-                "ChargeType": "test",
-                "EdgeVersion": "test",
+                "ChargeType": "PostPaid",
+                "EdgeVersion": "v1.24.3-edge",
                 "TagSpecification": {
-                    "ResourceType": "test",
+                    "ResourceType": "cluster",
                     "Tags": [
                         {
-                            "Key": "test",
-                            "Value": "test"
+                            "Key": "Environment",
+                            "Value": "Production"
+                        },
+                        {
+                            "Key": "Owner",
+                            "Value": "DevOps"
                         }
                     ]
                 }

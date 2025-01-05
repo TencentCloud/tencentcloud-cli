@@ -13,42 +13,42 @@ Output:
 ```
 {
     "Response": {
-        "ClusterVersion": "test",
+        "ClusterVersion": "1.12.4",
         "AvailableExtraArgs": {
             "KubeAPIServer": [
                 {
-                    "Name": "test",
-                    "Type": "test",
-                    "Usage": "test",
-                    "Default": "test",
-                    "Constraint": "test"
+                    "Name": "enable-admission-plugins",
+                    "Type": "string",
+                    "Usage": "Comma-delimited list of admission plugins to enable",
+                    "Default": "NodeRestriction",
+                    "Constraint": "Must be a valid admission plugin name"
                 }
             ],
             "KubeControllerManager": [
                 {
-                    "Name": "test",
-                    "Type": "test",
-                    "Usage": "test",
-                    "Default": "test",
-                    "Constraint": "test"
+                    "Name": "node-cidr-mask-size",
+                    "Type": "int",
+                    "Usage": "Mask size for node CIDR in IPv4 or IPv6 networks",
+                    "Default": "24",
+                    "Constraint": "Must be a valid CIDR mask size"
                 }
             ],
             "KubeScheduler": [
                 {
-                    "Name": "test",
-                    "Type": "test",
-                    "Usage": "test",
-                    "Default": "test",
-                    "Constraint": "test"
+                    "Name": "scheduler-name",
+                    "Type": "string",
+                    "Usage": "Name of the scheduler to use",
+                    "Default": "default-scheduler",
+                    "Constraint": "Must be a valid scheduler name"
                 }
             ],
             "Kubelet": [
                 {
-                    "Name": "test",
-                    "Type": "test",
-                    "Usage": "test",
-                    "Default": "test",
-                    "Constraint": "test"
+                    "Name": "max-pods",
+                    "Type": "int",
+                    "Usage": "Maximum number of pods per node",
+                    "Default": "110",
+                    "Constraint": "Must be a positive integer"
                 }
             ]
         },

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf DeleteFunctionVersion --cli-unfold-argument  \
-    --FunctionName test \
+    --FunctionName functionName1 \
     --Namespace default \
     --Qualifier 2
 ```

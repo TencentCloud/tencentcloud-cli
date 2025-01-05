@@ -280,6 +280,13 @@
       "output": "DescribeRedisTopBigKeysResponse",
       "status": "online"
     },
+    "DescribeRedisTopHotKeys": {
+      "document": "热Key分析",
+      "input": "DescribeRedisTopHotKeysRequest",
+      "name": "获取redis top热key",
+      "output": "DescribeRedisTopHotKeysResponse",
+      "status": "online"
+    },
     "DescribeRedisTopKeyPrefixList": {
       "document": "查询redis实例top key前缀列表。",
       "input": "DescribeRedisTopKeyPrefixListRequest",
@@ -4257,6 +4264,88 @@
           "name": "Timestamp",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopHotKeysRequest": {
+      "document": "DescribeRedisTopHotKeys请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID 。",
+          "example": "crs-test1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，如“2024-09-22T00:00:00+00:00”。0天 < 当前服务器时间 - 开始时间 <= 10天。",
+          "example": "2024-09-22T00:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如“2024-09-22T01:00:00+00:00”，0天 < 结束时间 - 开始时间 <= 10天。",
+          "example": "2024-09-22T01:00:00+00:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，仅仅支持值 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Redis 节点数组。",
+          "example": "[\"fa765e5e2e432806328a3e91d591e47097ecd17r\"]",
+          "member": "string",
+          "name": "InstanceNodeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "top 数目，默认为20，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisTopHotKeysResponse": {
+      "document": "DescribeRedisTopHotKeys返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "热Key分析结果",
+          "example": "无",
+          "member": "TopHotKeys",
+          "name": "TopHotKeys",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9321,6 +9410,62 @@
           "name": "Timestamp",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TopHotKeys": {
+      "document": "热key分析返回信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问频次。",
+          "example": "100",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "热Key所属数据库。",
+          "example": "0",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Redis节点。",
+          "example": "fa765e5e2e432806328a3e91d591e47097ecd27d",
+          "member": "string",
+          "name": "InstanceNodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "热Key。",
+          "example": "string|key:00000009688",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据类型。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

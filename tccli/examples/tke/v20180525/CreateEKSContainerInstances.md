@@ -10,7 +10,7 @@ tccli tke CreateEKSContainerInstances --cli-unfold-argument  \
     --AutoCreateEipAttribute.DeletePolicy Immediate \
     --AutoCreateEipAttribute.InternetServiceProvider BGP \
     --CamRoleName TkeRole \
-    --VpcId vpc-12345678 \
+    --VpcId vpc-1cghduvc \
     --DnsConfig.Nameservers server \
     --DnsConfig.Searches  \
     --DnsConfig.Options.0.Name  \
@@ -27,14 +27,14 @@ tccli tke CreateEKSContainerInstances --cli-unfold-argument  \
     --EksCiVolume.NfsVolumes.0.Name vol \
     --EksCiVolume.NfsVolumes.0.Server 9.19.101.170 \
     --GpuCount 1 \
-    --ExistedEipIds eip-12345678 \
+    --ExistedEipIds eip-1cghduvc \
     --AutoCreateEip True \
     --RestartPolicy Always \
     --Cpu 1.0 \
     --Memory 2.0 \
-    --SubnetId subnet-12345678 \
+    --SubnetId subnet-1cghduvc \
     --CpuType amd,intel \
-    --SecurityGroupIds sg-12345678 \
+    --SecurityGroupIds sg-1cghduvc \
     --Containers.0.Commands sleep \
     --Containers.0.Name nginx \
     --Containers.0.GpuLimit 1 \

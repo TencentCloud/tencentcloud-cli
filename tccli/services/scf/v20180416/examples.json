@@ -81,7 +81,7 @@
     "DeleteFunctionVersion": [
       {
         "document": "删除函数 test 的版本 2 ",
-        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunctionVersion\n<公共请求参数>\n\n{\n    \"FunctionName\": \"test\",\n    \"Namespace\": \"default\",\n    \"Qualifier\": \"2\"\n}",
+        "input": "POST / HTTP/1.1\nHost: scf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunctionVersion\n<公共请求参数>\n\n{\n    \"FunctionName\": \"functionName1\",\n    \"Namespace\": \"default\",\n    \"Qualifier\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "删除函数指定版本"
       }
@@ -272,7 +272,7 @@
       {
         "document": "查询status标签的值是dev，且owner标签的值是me的函数",
         "input": "https://scf.tencentcloudapi.com/?Action=ListFunctions\n&Filters.0.Name=tag-status\n&Filters.0.Values.0=dev\n&Filters.1.Name=tag-owner\n&Filters.1.Values.0=me\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Functions\": [\n            {\n                \"Status\": \"Active\",\n                \"FunctionName\": \"test\",\n                \"TotalProvisionedConcurrencyMem\": 1,\n                \"Namespace\": \"default\",\n                \"Runtime\": \"Python3.6\",\n                \"Type\": \"HTTP\",\n                \"ReservedConcurrencyMem\": 1,\n                \"Description\": \"just for test\",\n                \"TraceEnable\": \"FALSE\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"FunctionId\": \"lam-xxxxxxxx\",\n                \"StatusReasons\": [],\n                \"StatusDesc\": \"\",\n                \"AddTime\": \"2000-01-01 00:00:00\",\n                \"ModTime\": \"2000-01-01 00:00:00\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"dev\",\n                        \"Key\": \"status\"\n                    },\n                    {\n                        \"Value\": \"me\",\n                        \"Key\": \"owner\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"77ccef58-0ebb-4523-ab88-a37063443524\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Functions\": [\n            {\n                \"Status\": \"Active\",\n                \"FunctionName\": \"functionName1\",\n                \"TotalProvisionedConcurrencyMem\": 1,\n                \"Namespace\": \"default\",\n                \"Runtime\": \"Python3.6\",\n                \"Type\": \"HTTP\",\n                \"ReservedConcurrencyMem\": 1,\n                \"Description\": \"just for test\",\n                \"TraceEnable\": \"FALSE\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"FunctionId\": \"lam-xxxxxxxx\",\n                \"StatusReasons\": [],\n                \"StatusDesc\": \"\",\n                \"AddTime\": \"2000-01-01 00:00:00\",\n                \"ModTime\": \"2000-01-01 00:00:00\",\n                \"Tags\": [\n                    {\n                        \"Value\": \"dev\",\n                        \"Key\": \"status\"\n                    },\n                    {\n                        \"Value\": \"me\",\n                        \"Key\": \"owner\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"77ccef58-0ebb-4523-ab88-a37063443524\"\n    }\n}",
         "title": "根据标签查询函数"
       }
     ],

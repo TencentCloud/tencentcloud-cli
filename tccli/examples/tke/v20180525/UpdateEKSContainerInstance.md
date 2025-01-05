@@ -8,7 +8,7 @@ Input:
 tccli tke UpdateEKSContainerInstance --cli-unfold-argument  \
     --Name helloworld \
     --RestartPolicy Always \
-    --EksCiId eksci-123456
+    --EksCiId eksci-1cghduvc
 ```
 
 Output: 

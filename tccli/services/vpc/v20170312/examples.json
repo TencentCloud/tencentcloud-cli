@@ -106,14 +106,6 @@
         "title": "申请按小时流量计费的常规BGP IPv6地址。"
       }
     ],
-    "AllocateIp6AddressesBandwidth": [
-      {
-        "document": "指定ipv6地址开通公网访问能力。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=AllocateIp6AddressesBandwidth\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&InternetMaxBandwidthOut=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-68dqs5ri\"\n        ],\n        \"TaskId\": \"194395704\",\n        \"RequestId\": \"283a29bf-982d-4d55-984a-0d464f61f9ae\"\n    }\n}",
-        "title": "指定ipv6地址开通公网访问能力"
-      }
-    ],
     "AssignIpv6Addresses": [
       {
         "document": "分配指定IPv6地址",
@@ -1602,20 +1594,6 @@
         "title": "根据IPv6AddressIds查询IPv6信息"
       }
     ],
-    "DescribeIp6Addresses": [
-      {
-        "document": "根据Filter查询IPV6信息。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Filters.0.Name=address-ip\r\n&Filters.0.Values.0=2402:4e00:1000:2d00:0:8f3f:6:9895\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-lrhy2lpe\",\n                \"AddressName\": \"demo\",\n                \"AddressStatus\": \"BIND\",\n                \"AddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"InstanceId\": \"ins-0cu6wix4\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"eni-85sohtb7\",\n                \"PrivateAddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"EIP6\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"BGP\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"role\",\n                        \"Value\": \"developer\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"CVM\",\n                \"Egress\": \"center_egress1\"\n            }\n        ],\n        \"RequestId\": \"64b212c4-d541-44c3-80ff-1131967a77c5\"\n    }\n}",
-        "title": "根据Filter查询IPV6信息"
-      },
-      {
-        "document": "根据Ip6AddressIds查询IPV6信息。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeIp6Addresses\r\n&Ip6AddressIds.0=eip-lrhy2lpe\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AddressSet\": [\n            {\n                \"AddressId\": \"eip-lrhy2lpe\",\n                \"AddressName\": \"demo\",\n                \"AddressStatus\": \"BIND\",\n                \"AddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"InstanceId\": \"ins-0cu6wix4\",\n                \"CreatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"NetworkInterfaceId\": \"eni-85sohtb7\",\n                \"PrivateAddressIp\": \"2402:4e00:1000:2d00:0:8f3f:6:9895\",\n                \"IsArrears\": true,\n                \"IsBlocked\": true,\n                \"IsEipDirectConnection\": true,\n                \"AddressType\": \"EIP6\",\n                \"CascadeRelease\": true,\n                \"EipAlgType\": {\n                    \"Ftp\": true,\n                    \"Sip\": true\n                },\n                \"InternetServiceProvider\": \"BGP\",\n                \"LocalBgp\": true,\n                \"Bandwidth\": 1,\n                \"InternetChargeType\": \"TRAFFIC_POSTPAID_BY_HOUR\",\n                \"TagSet\": [\n                    {\n                        \"Key\": \"role\",\n                        \"Value\": \"developer\"\n                    }\n                ],\n                \"DeadlineDate\": \"2020-09-22\",\n                \"InstanceType\": \"CVM\",\n                \"Egress\": \"center_egress1\"\n            }\n        ],\n        \"RequestId\": \"64b212c4-d541-44c3-80ff-1131967a77c5\"\n    }\n}",
-        "title": "根据Ip6AddressIds查询IPV6信息"
-      }
-    ],
     "DescribeIp6TranslatorQuota": [
       {
         "document": "查询IPV6转换实例配额",
@@ -2840,10 +2818,10 @@
     ],
     "ModifyIp6AddressesBandwidth": [
       {
-        "document": "修改IPV6地址带宽。",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyIp6AddressesBandwidth\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&InternetMaxBandwidthOut=50\n&<公共请求参数>",
+        "document": "指定传统弹性公网IPv6地址，修改带宽上限。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIp6AddressesBandwidth\n<公共请求参数>\n\n{\n    \"Ip6Addresses\": [\n        \"2402:4e00:1000:200:0:8d8a:60b7:87f8\"\n    ],\n    \"InternetMaxBandwidthOut\": 50\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579795\",\n        \"RequestId\": \"61b49567-8cbf-4523-8f25-7a2c9da23ddb\"\n    }\n}",
-        "title": "修改IPV6地址带宽"
+        "title": "修改传统弹性公网IPv6地址带宽"
       }
     ],
     "ModifyIp6Rule": [
@@ -3250,16 +3228,16 @@
     ],
     "ReleaseIp6AddressesBandwidth": [
       {
-        "document": "入参传递Ip6AddressIds",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ReleaseIp6AddressesBandwidth\r\n&Ip6AddressIds.0=eip-31g37kea\r\n&<公共请求参数>",
+        "document": "入参传递Ip6AddressIds。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseIp6AddressesBandwidth\n<公共请求参数>\n\n{\n    \"Ip6AddressIds\": [\n        \"eip-31g37kea\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579789\",\n        \"RequestId\": \"fe6aa94a-2a74-41d8-9570-337a575443fe\"\n    }\n}",
-        "title": "释放弹性公网IPv6地址带宽"
+        "title": "关闭传统弹性公网IPv6地址带宽"
       },
       {
-        "document": "入参传递Ip6Addresses",
-        "input": "https://vpc.tencentcloudapi.com/?Action=ReleaseIp6AddressesBandwidth\r\n&Ip6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\r\n&<公共请求参数>",
+        "document": "入参传递Ip6Addresses。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleaseIp6AddressesBandwidth\n<公共请求参数>\n\n{\n    \"Ip6Addresses\": [\n        \"2402:4e00:1000:200:0:8d8a:60b7:87f8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"12579786\",\n        \"RequestId\": \"3287c8ef-2bfb-4ae7-8874-f3628c0344b1\"\n    }\n}",
-        "title": "释放弹性公网IPv6地址带宽-2"
+        "title": "关闭传统弹性公网IPv6地址带宽-2"
       }
     ],
     "RemoveBandwidthPackageResources": [

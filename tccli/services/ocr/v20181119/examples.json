@@ -16,6 +16,14 @@
         "title": "算式识别示例代码"
       }
     ],
+    "BankCardOCR": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BankCardOCR\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/BankCardOCR/BankCardOCR1.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BankInfo\": \"招商银行(03080000)\",\n        \"BorderCutImage\": null,\n        \"CardName\": \"招商银行信用卡\",\n        \"CardNo\": \"6225768888888888\",\n        \"CardNoImage\": null,\n        \"CardType\": \"贷记卡\",\n        \"QualityValue\": null,\n        \"RequestId\": \"4a4438c5-09ff-4031-945c-17000ba4542d\",\n        \"ValidDate\": \"07/2023\",\n        \"WarningCode\": null\n    }\n}",
+        "title": "BankCardOCR调用"
+      }
+    ],
     "BankSlipOCR": [
       {
         "document": "银行回单识别",

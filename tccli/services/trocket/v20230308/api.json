@@ -294,6 +294,13 @@
       "output": "DescribeTopicListResponse",
       "status": "online"
     },
+    "DescribeTopicListByGroup": {
+      "document": "根据消费组获取主题列表，Filter参数使用说明如下：\n\nTopicName，主题名称过滤",
+      "input": "DescribeTopicListByGroupRequest",
+      "name": "查询消费组订阅的主题列表",
+      "output": "DescribeTopicListByGroupResponse",
+      "status": "online"
+    },
     "ImportSourceClusterConsumerGroups": {
       "document": "导入消费者组列表",
       "input": "ImportSourceClusterConsumerGroupsRequest",
@@ -508,50 +515,50 @@
         {
           "disabled": false,
           "document": "客户端ID",
-          "example": "test",
+          "example": "11.139.244.248@75043#6734858812769343",
           "member": "string",
           "name": "ClientId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端地址",
-          "example": "无",
+          "example": "11.139.244.248",
           "member": "string",
           "name": "ClientAddr",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端SDK语言",
-          "example": "无",
+          "example": "JAVA",
           "member": "string",
           "name": "Language",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端SDK版本",
-          "example": "无",
+          "example": "V4_9_3",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端消费堆积\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "ConsumerLag",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1600,7 +1607,7 @@
         {
           "disabled": false,
           "document": "客户端ID",
-          "example": "无",
+          "example": "11.139.244.247@75043#6734858812769343",
           "member": "string",
           "name": "ClientId",
           "required": true,
@@ -1654,6 +1661,7 @@
           "example": "无",
           "member": "ConsumerClient",
           "name": "Client",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1663,6 +1671,7 @@
           "example": "无",
           "member": "TopicConsumeStats",
           "name": "TopicList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3851,7 +3860,7 @@
         {
           "disabled": false,
           "document": "展示Topic名",
-          "example": "无",
+          "example": "test_topic",
           "member": "string",
           "name": "ShowTopicName",
           "output_required": true,
@@ -3964,6 +3973,89 @@
           "document": "角色信息列表",
           "example": "无",
           "member": "RoleItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicListByGroupRequest": {
+      "document": "DescribeTopicListByGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test_group",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicListByGroupResponse": {
+      "document": "DescribeTopicListByGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题列表",
+          "example": "无",
+          "member": "SubscriptionData",
           "name": "Data",
           "output_required": true,
           "type": "list",
@@ -5509,70 +5601,70 @@
         {
           "disabled": false,
           "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "AC120002063E0DC37B1104461E710001",
           "member": "string",
           "name": "MsgId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息tag\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_tag",
           "member": "string",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_key",
           "member": "string",
           "name": "Keys",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "客户端地址\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.103.40.30:53573",
           "member": "string",
           "name": "ProducerAddr",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息发送时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-01-01 00:00:01",
           "member": "string",
           "name": "ProduceTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "死信重发次数\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "DeadLetterResendTimes",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "死信重发成功次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DeadLetterResendSuccessTimes",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5585,20 +5677,20 @@
         {
           "disabled": false,
           "document": "步骤\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{     \"MsgId\": \"1EAE3915000721B8D17C2C5BB31638D1\",     \"Status\": 0, }",
           "member": "string",
           "name": "Stage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "轨迹详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "produce",
           "member": "string",
           "name": "Data",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5611,40 +5703,40 @@
         {
           "disabled": false,
           "document": "消费组名称",
-          "example": "test",
+          "example": "test_group",
           "member": "string",
           "name": "ConsumerGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费状态, CONSUMED: 已消费 CONSUMED_BUT_FILTERED: 已过滤 NOT_CONSUME: 未消费 ENTER_RETRY: 进入重试队列 ENTER_DLQ: 进入死信队列 UNKNOWN: 查询不到消费状态",
-          "example": "无",
+          "example": "CONSUMED",
           "member": "string",
           "name": "ConsumeStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "track类型",
-          "example": "无",
+          "example": "CONSUMED",
           "member": "string",
           "name": "TrackType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "No Exception",
           "member": "string",
           "name": "ExceptionDesc",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6476,7 +6568,7 @@
         {
           "disabled": false,
           "document": "重发消息结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ResendResult",
           "output_required": false,
@@ -7047,60 +7139,60 @@
         {
           "disabled": false,
           "document": "主题名称",
-          "example": "test",
+          "example": "test_topic",
           "member": "string",
           "name": "Topic",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主题类型",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "TopicType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "单节点主题队列数量",
-          "example": "无",
+          "example": "3",
           "member": "int64",
           "name": "QueueNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消费堆积",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "ConsumerLag",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订阅规则",
-          "example": "无",
+          "example": "test_tag",
           "member": "string",
           "name": "SubString",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最后消费进度更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1736050534095",
           "member": "int64",
           "name": "LastUpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

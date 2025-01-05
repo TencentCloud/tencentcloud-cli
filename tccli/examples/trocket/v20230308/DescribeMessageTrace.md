@@ -32,7 +32,7 @@ Output:
             }
         ],
         "RequestId": "0112153a-8cba-44f1-b7a5-5e412d493940",
-        "ShowTopicName": "topic"
+        "ShowTopicName": "test_topic"
     }
 }
 ```
@@ -72,7 +72,7 @@ Output:
             }
         ],
         "RequestId": "2e4374f9-0c98-4d77-af20-2bc414ccaefd",
-        "ShowTopicName": ""
+        "ShowTopicName": "test_topic"
     }
 }
 ```

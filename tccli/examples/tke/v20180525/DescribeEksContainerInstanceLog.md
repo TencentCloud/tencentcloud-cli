@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeEksContainerInstanceLog --cli-unfold-argument  \
-    --EksCiId eksci-123456 \
+    --EksCiId eksci-1cghduvc \
     --Tail 500 \
     --Previous False \
     --ContainerName simple-cputest

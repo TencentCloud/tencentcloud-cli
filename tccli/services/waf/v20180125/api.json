@@ -20218,7 +20218,7 @@
       "usage": "in"
     },
     "Strategy": {
-      "document": "自定义规则的匹配条件结构体",
+      "document": "规则的匹配条件结构体",
       "members": [
         {
           "disabled": false,

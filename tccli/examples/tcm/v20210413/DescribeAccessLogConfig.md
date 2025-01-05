@@ -19,21 +19,20 @@ Output:
         "SelectedRange": {
             "Items": [
                 {
-                    "Namespace": "test",
+                    "Namespace": "default",
                     "ClusterName": "cls-xxxxxxxx",
-                    "ItemName": "test",
                     "Gateways": [
-                        "test"
+                        "ingressgateway"
                     ]
                 }
             ],
             "All": true
         },
-        "Template": "test",
+        "Template": "istio",
         "CLS": {
             "Enable": true,
-            "LogSet": "test",
-            "Topic": "test",
+            "LogSet": "mesh-logset",
+            "Topic": "mesh-logset-topic",
             "NeedDelete": true,
             "Region": "sh"
         },

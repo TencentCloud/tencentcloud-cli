@@ -179,7 +179,7 @@
         {
           "disabled": false,
           "document": "正在加入中的节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Joining",
           "output_required": true,
@@ -189,7 +189,7 @@
         {
           "disabled": false,
           "document": "初始化中的节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Initializing",
           "output_required": true,
@@ -199,7 +199,7 @@
         {
           "disabled": false,
           "document": "正常的节点数量",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Normal",
           "output_required": true,
@@ -209,7 +209,7 @@
         {
           "disabled": false,
           "document": "节点总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
@@ -772,7 +772,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxxxxx",
+          "example": "cls-4h43fuxj",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -823,7 +823,7 @@
         {
           "disabled": false,
           "document": "集群中实例总数",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -843,7 +843,7 @@
         {
           "disabled": false,
           "document": "错误信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "eks not support",
           "member": "string",
           "name": "Errors",
           "output_required": true,
@@ -1256,7 +1256,7 @@
         {
           "disabled": false,
           "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
-          "example": "test",
+          "example": "cls-l6gtb5p0",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -1419,7 +1419,7 @@
         {
           "disabled": false,
           "document": "关联节点池数组",
-          "example": "无",
+          "example": "[\"np-l6gtb5p0\"]",
           "member": "string",
           "name": "NodePools",
           "output_required": true,
@@ -1799,7 +1799,7 @@
         {
           "disabled": false,
           "document": "kubelet自定义参数，参数格式为[\"k1=v1\", \"k1=v2\"]， 例如[\"root-dir=/var/lib/kubelet\",\"feature-gates=PodShareProcessNamespace=true,DynamicKubeletConfig=true\"]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"--max-pods=110\"]",
           "member": "string",
           "name": "Kubelet",
           "output_required": true,
@@ -1922,7 +1922,7 @@
         {
           "disabled": false,
           "document": "节点初始化前自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "aGVsbG8gd29ybGQK",
           "member": "string",
           "name": "PreInit",
           "output_required": true,
@@ -1933,7 +1933,7 @@
         {
           "disabled": false,
           "document": "节点初始化后自定义脚本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "aGVsbG8gd29ybGQK",
           "member": "string",
           "name": "PostInit",
           "output_required": true,
@@ -2584,7 +2584,7 @@
         {
           "disabled": false,
           "document": "密钥 ID 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"key-l6gtb5p0\"]",
           "member": "string",
           "name": "KeyIds",
           "output_required": true,
@@ -2664,7 +2664,7 @@
         {
           "disabled": false,
           "document": "机型列表",
-          "example": "无",
+          "example": "S2.4XLARGE48",
           "member": "string",
           "name": "InstanceTypes",
           "output_required": true,
@@ -3635,7 +3635,7 @@
         {
           "disabled": false,
           "document": "机型列表",
-          "example": "无",
+          "example": "S2.4XLARGE48",
           "member": "string",
           "name": "InstanceTypes",
           "required": false,
@@ -3662,7 +3662,7 @@
         {
           "disabled": false,
           "document": "ssh公钥id数组",
-          "example": "[\"sky-test\",\"sky-test2\"]",
+          "example": "[\"sky-l6gtb5p0\",\"sky-l6gtb5p1\"]",
           "member": "string",
           "name": "KeyIds",
           "required": false,

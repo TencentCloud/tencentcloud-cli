@@ -10,14 +10,14 @@ tccli tke CreateCluster --cli-unfold-argument  \
     --ClusterBasicSettings.ClusterOs centos8.0x86_64 \
     --ClusterBasicSettings.OsCustomizeType GENERAL \
     --ClusterBasicSettings.ClusterVersion 1.26.1 \
-    --ClusterBasicSettings.ClusterName test \
+    --ClusterBasicSettings.ClusterName tke \
     --ClusterBasicSettings.ClusterDescription 测试集群 \
     --ClusterBasicSettings.VpcId vpc-135qxjgs \
     --ClusterBasicSettings.ProjectId 0 \
     --ClusterBasicSettings.NeedWorkSecurityGroup False \
     --ClusterBasicSettings.TagSpecification.0.ResourceType cluster \
-    --ClusterBasicSettings.TagSpecification.0.Tags.0.Key aa \
-    --ClusterBasicSettings.TagSpecification.0.Tags.0.Value cc \
+    --ClusterBasicSettings.TagSpecification.0.Tags.0.Key product \
+    --ClusterBasicSettings.TagSpecification.0.Tags.0.Value tke \
     --ClusterBasicSettings.ClusterLevel L5 \
     --ClusterBasicSettings.AutoUpgradeClusterLevel.IsAutoUpgrade True \
     --ClusterCIDRSettings.ClusterCIDR 172.24.0.0/16 \

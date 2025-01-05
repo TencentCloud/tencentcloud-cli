@@ -62,7 +62,7 @@ Output:
         "Functions": [
             {
                 "Status": "Active",
-                "FunctionName": "test",
+                "FunctionName": "functionName1",
                 "TotalProvisionedConcurrencyMem": 1,
                 "Namespace": "default",
                 "Runtime": "Python3.6",

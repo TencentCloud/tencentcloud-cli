@@ -483,9 +483,10 @@
         {
           "disabled": false,
           "document": "自动注入SideCar的NameSpace",
-          "example": "无",
+          "example": "{\"ns1\",\"ns2\"}",
           "member": "string",
           "name": "AutoInjectionNamespaceList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -496,6 +497,7 @@
           "example": "无",
           "member": "IngressGateway",
           "name": "IngressGatewayList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -506,6 +508,7 @@
           "example": "无",
           "member": "EgressGateway",
           "name": "EgressGatewayList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -516,6 +519,7 @@
           "example": "无",
           "member": "IstiodConfig",
           "name": "Istiod",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -526,6 +530,7 @@
           "example": "无",
           "member": "DeployConfig",
           "name": "DeployConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -533,9 +538,10 @@
         {
           "disabled": false,
           "document": "自动注入命名空间状态列表",
-          "example": "{\"ns1\",\"ns2\"}",
+          "example": "无",
           "member": "AutoInjectionNamespaceState",
           "name": "AutoInjectionNamespaceStateList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -1035,7 +1041,7 @@
           "example": "无",
           "member": "Mesh",
           "name": "Mesh",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

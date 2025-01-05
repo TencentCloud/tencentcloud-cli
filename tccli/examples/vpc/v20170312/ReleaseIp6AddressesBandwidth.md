@@ -1,6 +1,6 @@
-**Example 1: 释放弹性公网IPv6地址带宽**
+**Example 1: 关闭传统弹性公网IPv6地址带宽**
 
-入参传递Ip6AddressIds
+入参传递Ip6AddressIds。
 
 Input: 
 
@@ -19,9 +19,9 @@ Output:
 }
 ```
 
-**Example 2: 释放弹性公网IPv6地址带宽-2**
+**Example 2: 关闭传统弹性公网IPv6地址带宽-2**
 
-入参传递Ip6Addresses
+入参传递Ip6Addresses。
 
 Input: 
 

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke CheckEdgeClusterCIDR --cli-unfold-argument  \
-    --VpcId vpc-xxx \
+    --VpcId vpc-e55paxnt \
     --PodCIDR 10.0.1.10/24 \
     --ServiceCIDR 192.168.0.0/16
 ```

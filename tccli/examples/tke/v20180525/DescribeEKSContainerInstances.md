@@ -22,11 +22,11 @@ Output:
                 "Memory": 2,
                 "Cpu": 1,
                 "SecurityGroupIds": [
-                    "sg-12345678"
+                    "sg-1cghduvc"
                 ],
                 "RestartPolicy": "Always",
-                "VpcId": "vpc-12345678",
-                "SubnetId": "subnet-12345678",
+                "VpcId": "vpc-1cghduvc",
+                "SubnetId": "subnet-1cghduvc",
                 "Status": "Running",
                 "CreationTime": "2021-06-24 03:32:02 +0000 UTC",
                 "SucceededTime": "2021-06-24 11:32:21 +0000 UTC",
@@ -53,7 +53,12 @@ Output:
                             "RestartCount": 0
                         },
                         "RestartCount": 0,
-                        "WorkingDir": ""
+                        "WorkingDir": "",
+                        "ReadinessProbe": null,
+                        "VolumeMounts": null,
+                        "GpuLimit": null,
+                        "LivenessProbe": null,
+                        "SecurityContext": null
                     }
                 ],
                 "InitContainers": null,
@@ -67,7 +72,9 @@ Output:
                 "CpuType": "amd,intel",
                 "GpuType": "",
                 "GpuCount": 0,
-                "CamRoleName": ""
+                "CamRoleName": "",
+                "AutoCreatedEipId": "eni-l6gtb5p0",
+                "PersistStatus": false
             }
         ]
     }

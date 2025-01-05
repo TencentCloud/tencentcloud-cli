@@ -57,7 +57,7 @@
       "status": "online"
     },
     "AllocateIp6AddressesBandwidth": {
-      "document": "本接口（AllocateIp6AddressesBandwidth）用于为传统弹性公网 IPv6 实例开通 IPv6 公网带宽。\n\n- 传统弹性公网 IPv6 实例默认仅具备 IPv6 内网通信能力，需为 IPv6 地址分配公网带宽后，才具备 IPv6 公网通信能力。\n- 支持为一个或多个传统弹性公网 IPv6 实例开通公网带宽。",
+      "document": "本接口（AllocateIp6AddressesBandwidth）用于为传统弹性公网 IPv6 地址开通 IPv6 公网带宽。\n\n- 传统弹性公网 IPv6 地址默认仅具备内网通信能力，需通过控制台或 API 接口为其分配公网带宽后，才能具备 IPv6 公网通信能力、并于传统弹性公网 IPv6 列表页可见。\n- 支持为一个或多个传统弹性公网 IPv6 实例开通公网带宽。",
       "input": "AllocateIp6AddressesBandwidthRequest",
       "name": "开通IPv6公网带宽",
       "output": "AllocateIp6AddressesBandwidthResponse",
@@ -3946,8 +3946,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要开通公网访问能力的IPV6地址",
-          "example": "2402:4e00:1011:9b02:0:98e8:f0fd:3a85",
+          "document": "需要开通公网访问能力的IPv6地址",
+          "example": "[\"2402:4e00:1011:9b02:0:98e8:f0fd:3a85\"]",
           "member": "string",
           "name": "Ip6Addresses",
           "required": true,
@@ -3964,7 +3964,7 @@
         },
         {
           "disabled": false,
-          "document": "网络计费模式。IPV6当前支持\"TRAFFIC_POSTPAID_BY_HOUR\"，\"BANDWIDTH_PACKAGE\"。默认网络计费模式是\"TRAFFIC_POSTPAID_BY_HOUR\"。",
+          "document": "网络计费模式。IPv6当前支持\"TRAFFIC_POSTPAID_BY_HOUR\"，\"BANDWIDTH_PACKAGE\"。默认网络计费模式是\"TRAFFIC_POSTPAID_BY_HOUR\"。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -3973,7 +3973,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包id，上移账号，申请带宽包计费模式的ipv6地址需要传入.",
+          "document": "带宽包id，上移账号，申请带宽包计费模式的IPv6地址需要传入.",
           "example": "bwp-12345678",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -3997,8 +3997,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性公网 IPV6 的唯一 ID 列表。",
-          "example": "eip-68dqs5ri",
+          "document": "传统弹性公网 IPv6 的唯一 ID 列表。",
+          "example": "[\"eip-68dqs5ri\"]",
           "member": "string",
           "name": "AddressSet",
           "output_required": true,
@@ -4349,7 +4349,7 @@
         },
         {
           "disabled": false,
-          "document": "要绑定的实例所在的地域",
+          "document": "要绑定的实例所在地域。默认无需填写，仅限GAAP特殊场景需指定实例所在地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "InstanceRegion",
@@ -15898,8 +15898,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识 IPV6 的唯一 ID 列表。IPV6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。",
-          "example": "eip-ciel20fd",
+          "document": "标识 IPv6 的唯一 ID 列表。IPv6 唯一 ID 形如：`eip-11112222`。参数不支持同时指定`Ip6AddressIds`和`Filters`。",
+          "example": "[\"eip-ciel20fd\"]",
           "member": "string",
           "name": "Ip6AddressIds",
           "required": false,
@@ -15907,7 +15907,7 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPV6 的 IP 地址过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。参数不支持同时指定`AddressIds`和`Filters`。详细的过滤条件如下：\n<li> address-ip - String - 是否必填：否 - （过滤条件）按照 IPv6 的 IP 地址过滤。</li>\n<li> network-interface-id - String - 是否必填：否 - （过滤条件）按照弹性网卡的唯一ID过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -15940,7 +15940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的 IPV6 数量。",
+          "document": "符合条件的 IPv6 数量。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -15950,7 +15950,7 @@
         },
         {
           "disabled": false,
-          "document": "IPV6 详细信息列表。",
+          "document": "IPv6 详细信息列表。",
           "example": "无",
           "member": "Address",
           "name": "AddressSet",
@@ -26265,8 +26265,8 @@
         },
         {
           "disabled": false,
-          "document": "IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个",
-          "example": "[\"2402:4e00:1000:200:0:8d8a:60b7:87f8\\r\\n\"]",
+          "document": "IPv6地址。Ip6Addresses和Ip6AddressId必须且只能传一个",
+          "example": "[\"2402:4e00:1000:200:0:8d8a:60b7:87f8\"]",
           "member": "string",
           "name": "Ip6Addresses",
           "required": false,
@@ -26274,7 +26274,7 @@
         },
         {
           "disabled": false,
-          "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个",
+          "document": "IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个",
           "example": "[\"eip-6kr6f42w\"]",
           "member": "string",
           "name": "Ip6AddressIds",
@@ -30700,8 +30700,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "IPV6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个",
-          "example": "2402:4e00:1205:8c00:0:9835:2940:98d3",
+          "document": "IPv6地址。Ip6Addresses和Ip6AddressIds必须且只能传一个",
+          "example": "[\"2402:4e00:1205:8c00:0:9835:2940:98d3\"]",
           "member": "string",
           "name": "Ip6Addresses",
           "required": false,
@@ -30709,8 +30709,8 @@
         },
         {
           "disabled": false,
-          "document": "IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。",
-          "example": "eip-12345678",
+          "document": "IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressIds必须且只能传一个。",
+          "example": "[\"eip-68dqs5ri\"]",
           "member": "string",
           "name": "Ip6AddressIds",
           "required": false,

@@ -1567,7 +1567,7 @@
         {
           "disabled": false,
           "document": "tcr实例id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1576,7 +1576,7 @@
         {
           "disabled": false,
           "document": "私有网络id",
-          "example": "vpc-xxx",
+          "example": "vpc-9iazgkcl",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1585,7 +1585,7 @@
         {
           "disabled": false,
           "document": "tcr内网访问链路ip",
-          "example": "10.1.1.3",
+          "example": "192.168.23.69",
           "member": "string",
           "name": "EniLBIp",
           "required": true,
@@ -1603,7 +1603,7 @@
         {
           "disabled": false,
           "document": "解析地域，需要保证和vpc处于同一地域，如果不填则默认为主实例地域",
-          "example": "ap-beijing",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionName",
           "required": false,
@@ -1639,7 +1639,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1648,7 +1648,7 @@
         {
           "disabled": false,
           "document": "安全组策略",
-          "example": "192.168.0.0/24",
+          "example": "[{},{}]",
           "member": "SecurityPolicy",
           "name": "SecurityGroupPolicySet",
           "required": true,
@@ -1663,7 +1663,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1974,7 +1974,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1992,7 +1992,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "test",
+          "example": "desc",
           "member": "string",
           "name": "Description",
           "required": true,
@@ -2007,7 +2007,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2029,7 +2029,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-xxx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2038,7 +2038,7 @@
         {
           "disabled": false,
           "document": "服务级账号名",
-          "example": "robot",
+          "example": "servie-account3",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2047,7 +2047,7 @@
         {
           "disabled": false,
           "document": "策略列表",
-          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
+          "example": "[{\"Resource\":\"ns1\",\"Actions\":[\"tcr:PushRepository\",\"tcr:PullRepository\"]}]",
           "member": "Permission",
           "name": "Permissions",
           "required": true,
@@ -2056,7 +2056,7 @@
         {
           "disabled": false,
           "document": "服务级账号描述",
-          "example": "for namespace library",
+          "example": "desc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2098,7 +2098,7 @@
         {
           "disabled": false,
           "document": "服务级账号名（会自动加上前缀tcr$）",
-          "example": "tcr$robot",
+          "example": "tcr$servie-account3",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2108,7 +2108,7 @@
         {
           "disabled": false,
           "document": "服务级账号密码，仅展示一次，请注意留存",
-          "example": "kiHUaTAmF6a94mNzhZWDans3dYahHQNE",
+          "example": "4NcJarnZibtlj8ViIPKQRNQ0j2IyVG03",
           "member": "string",
           "name": "Password",
           "output_required": true,
@@ -2118,7 +2118,7 @@
         {
           "disabled": false,
           "document": "服务级账号失效时间（时间戳）",
-          "example": "1676897989",
+          "example": "1736737219170",
           "member": "int64",
           "name": "ExpiresAt",
           "output_required": true,
@@ -2128,7 +2128,7 @@
         {
           "disabled": false,
           "document": "服务级账号创建时间",
-          "example": "2023-02-20T17:30:00+8:00",
+          "example": "2025-01-03T11:00:19+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -2393,7 +2393,7 @@
         {
           "disabled": false,
           "document": "用户密码，密码必须为8到16位",
-          "example": "123456789",
+          "example": "ux0HKy2CFn",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -2420,7 +2420,7 @@
         {
           "disabled": false,
           "document": "实例 Id",
-          "example": "tcr-7s2d14fn",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2429,7 +2429,7 @@
         {
           "disabled": false,
           "document": "触发器参数",
-          "example": "无",
+          "example": "{\"Id\":5,\"Name\":\"trigger5\",\"Description\":\"desc\",\"Targets\":[]}",
           "member": "WebhookTrigger",
           "name": "Trigger",
           "required": true,
@@ -2438,7 +2438,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "someNs",
+          "example": "ns",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -2453,7 +2453,7 @@
         {
           "disabled": false,
           "document": "新建的触发器",
-          "example": "无",
+          "example": "{\"Id\":5,\"Name\":\"trigger5\",\"Description\":\"desc\",\"Targets\":[]}",
           "member": "WebhookTrigger",
           "name": "Trigger",
           "type": "object",
@@ -3966,7 +3966,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "tcr-xx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -3975,7 +3975,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "ns",
+          "example": "hbd",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -3984,7 +3984,7 @@
         {
           "disabled": false,
           "document": "镜像仓库名称",
-          "example": "repo",
+          "example": "repo1",
           "member": "string",
           "name": "RepositoryName",
           "required": true,
@@ -3993,7 +3993,7 @@
         {
           "disabled": false,
           "document": "镜像版本",
-          "example": "v1",
+          "example": "1",
           "member": "string",
           "name": "ImageVersion",
           "required": true,
@@ -4008,7 +4008,7 @@
         {
           "disabled": false,
           "document": "镜像的Manifest信息",
-          "example": "\"\"",
+          "example": "{\"config\":{\"digest\":\"sha256:17382a17d5xxxx\",\"mediaType\":\"application/vnd.docker.container.image.v1+json\",\"size\":2333}}",
           "member": "string",
           "name": "Manifest",
           "output_required": true,
@@ -4018,7 +4018,7 @@
         {
           "disabled": false,
           "document": "镜像的配置信息",
-          "example": "\"\"",
+          "example": "\"{\\\"architecture\\\":\\\"amd64\\\",\\\"config",
           "member": "string",
           "name": "Config",
           "output_required": true,
@@ -4038,7 +4038,7 @@
         {
           "disabled": false,
           "document": "镜像大小，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1570",
+          "example": "39436994",
           "member": "int64",
           "name": "Size",
           "output_required": false,
@@ -6548,7 +6548,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -6572,7 +6572,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -6630,7 +6630,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-xxx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -6648,7 +6648,7 @@
         {
           "disabled": false,
           "document": "需要接入的用户vpcid",
-          "example": "xxx",
+          "example": "vpc-74ffq7ov",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -6657,7 +6657,7 @@
         {
           "disabled": false,
           "document": "需要接入的用户子网id",
-          "example": "xxx",
+          "example": "subnet-kpmi5ji6",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -6690,7 +6690,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "XXXX",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "output_required": true,

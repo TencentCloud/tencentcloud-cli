@@ -14,6 +14,13 @@
       "output": "ArithmeticOCRResponse",
       "status": "online"
     },
+    "BankCardOCR": {
+      "document": "本接口支持对中国大陆主流银行卡正反面关键字段的检测与识别，包括卡号、卡类型、卡名字、银行信息、有效期。支持竖排异形卡识别、多角度旋转图片识别。支持对复印件、翻拍件、边框遮挡的银行卡进行告警，可应用于各种银行卡信息有效性校验场景，如金融行业身份认证、第三方支付绑卡等场景。\n\n默认接口请求频率限制：10次/秒。",
+      "input": "BankCardOCRRequest",
+      "name": "银行卡识别",
+      "output": "BankCardOCRResponse",
+      "status": "online"
+    },
     "BankSlipOCR": {
       "document": "本接口支持银行回单全字段的识别，包括付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。\n\n默认接口请求频率限制：10次/秒。",
       "input": "BankSlipOCRRequest",
@@ -1370,6 +1377,186 @@
           "output_required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCardOCRRequest": {
+      "document": "BankCardOCR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。\n建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/BankCardOCR/BankCardOCR1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回预处理（精确剪裁对齐）后的银行卡图片数据，默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RetBorderCutImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回卡号的切图图片数据，默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "RetCardNoImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "复印件检测开关，如果输入的图片是银行卡复印件图片则返回告警，默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCopyCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "翻拍检测开关，如果输入的图片是银行卡翻拍图片则返回告警，默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableReshootCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "边框遮挡检测开关，如果输入的图片是银行卡边框被遮挡则返回告警，默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableBorderCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回图片质量分数（图片质量分数是评价一个图片的模糊程度的标准），默认false。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableQualityValue",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BankCardOCRResponse": {
+      "document": "BankCardOCR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卡号",
+          "example": "6225768888888888",
+          "member": "string",
+          "name": "CardNo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "银行信息",
+          "example": "招商银行(03080000)",
+          "member": "string",
+          "name": "BankInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期，格式如：07/2023",
+          "example": "07/2023",
+          "member": "string",
+          "name": "ValidDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "卡类型",
+          "example": "贷记卡",
+          "member": "string",
+          "name": "CardType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "卡名字",
+          "example": "招商银行信用卡",
+          "member": "string",
+          "name": "CardName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切片图片数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "BorderCutImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "卡号图片数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "CardNoImage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "WarningCode 告警码列表和释义：\n-9110:银行卡日期无效; \n-9111:银行卡边框不完整; \n-9112:银行卡图片反光;\n-9113:银行卡复印件;\n-9114:银行卡翻拍件\n（告警码可以同时存在多个）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[-9110]",
+          "member": "int64",
+          "name": "WarningCode",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片质量分数，请求EnableQualityValue时返回（取值范围：0-100，分数越低越模糊，建议阈值≥50）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "int64",
+          "name": "QualityValue",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

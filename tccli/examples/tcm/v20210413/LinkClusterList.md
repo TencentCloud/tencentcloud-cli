@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcm LinkClusterList --cli-unfold-argument  \
-    --MeshId xx \
+    --MeshId mesh-xxxxxxxx \
     --ClusterList.0.ClusterId {{clusterId}} \
     --ClusterList.0.DisplayName  \
     --ClusterList.0.Region sh \
