@@ -7738,7 +7738,7 @@
         {
           "disabled": false,
           "document": "TDE透明数据加密配置",
-          "example": "无",
+          "example": "{\"Encryption\":\"disable\", \"CertificateAttribution\":\"self\"}",
           "member": "TDEConfigAttribute",
           "name": "TDEConfig",
           "output_required": true,
@@ -7748,7 +7748,7 @@
         {
           "disabled": false,
           "document": "SSL加密",
-          "example": "无",
+          "example": "{\"IsKMS\":0, \"Encryption\":\"disable\",\"SSLValidity\":0}",
           "member": "SSLConfig",
           "name": "SSLConfig",
           "output_required": true,
@@ -7757,8 +7757,8 @@
         },
         {
           "disabled": false,
-          "document": "备机只读信息",
-          "example": "无",
+          "document": "双节点备机只读信息",
+          "example": "{\"DrInstanceId\":\"mssqldr-0918ha7\", \"Zone\":\"ap-guangzhou\",\"SlaveStatus\":\"disable\"}",
           "member": "DrReadableInfo",
           "name": "DrReadableInfo",
           "output_required": true,
@@ -7772,6 +7772,26 @@
           "member": "OldVip",
           "name": "OldVipList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中",
+          "example": "disable",
+          "member": "string",
+          "name": "XEventStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多节点备机只读信息",
+          "example": "[{\"DrInstanceId\":\"mssqldr-0918ha7\", \"Zone\":\"ap-guangzhou\",\"SlaveStatus\":\"disable\"}]",
+          "member": "DrReadableInfo",
+          "name": "MultiDrReadableInfo",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7924,7 +7944,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务",
+          "document": "实例类型 HA-高可用 RO-只读实例 SI-基础版 BI-商业智能服务,cvmHA-云盘双机高可用，cvmRO-云盘只读副本,MultiHA-多节点,cvmMultiHA-云盘多节点",
           "example": "HA",
           "member": "string",
           "name": "InstanceType",
@@ -13779,6 +13799,15 @@
           "name": "DRNetwork",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备机资源ID。当DRNetwork = 1时必填",
+          "example": "mssqldr-juiay7a",
+          "member": "string",
+          "name": "DrInstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18170,6 +18199,15 @@
           "name": "WaitSwitch",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。\n",
+          "example": "[\"ap-guangzhou-3\"]",
+          "member": "DrZoneInfo",
+          "name": "DrZones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

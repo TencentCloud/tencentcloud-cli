@@ -1,0 +1,215 @@
+{
+  "actions": {
+    "CreateAttributeLabel": [
+      {
+        "document": "添加属性标签",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"Labels\": [\n        {\n            \"LabelName\": \"现代\"\n        },\n        {\n            \"LabelName\": \"流行\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3973e13a-926f-40a5-91d7-d61a56083314\"\n    }\n}",
+        "title": "添加属性标签"
+      }
+    ],
+    "CreateKnowledgeBase": [
+      {
+        "document": "创建知识库",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeBase\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeBaseId\": \"9bc3f06a-48b1-42af-8e41-96a212760769\",\n        \"RequestId\": \"9748eace-2e8a-4918-91e7-453512f954a7\"\n    }\n}",
+        "title": "创建知识库"
+      }
+    ],
+    "CreateQA": [
+      {
+        "document": "创建问答对",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28c960e9-c3ba-4a6d-be28-0d5d0dcca5ca\"\n    }\n}",
+        "title": "创建问答对"
+      },
+      {
+        "document": "创建无标签问答对",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a37897c3-acf5-420a-bc32-9a1da9348c13\"\n    }\n}",
+        "title": "创建无标签问答对"
+      }
+    ],
+    "CreateReconstructDocumentFlow": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReconstructDocumentFlow\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"http://example.com/example.pdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d569fb4-4c9d-4141-bbd7-e1d8735bd1a9\",\n        \"TaskId\": \"123123123\"\n    }\n}",
+        "title": "接口请求成功示例"
+      }
+    ],
+    "CreateSplitDocumentFlow": [
+      {
+        "document": "对外部在线文档进行拆分",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSplitDocumentFlow\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://fileparser-1251316161.cos.ap-guangzhou.myqcloud.com/input_files/oaqbot/%E8%87%AA%E7%84%B6%E8%AF%AD%E8%A8%80%E5%A4%84%E7%90%86%E7%BB%BC%E8%BF%B0-2020.pdf?q-sign-algorithm=sha1&q-ak=AKIDgh93rnqd2Gna1Nx7jyYsLQeGKB0hDq-0StLupLCJE_Yok5D1jR8oh4EjmPqUVN6b&q-sign-time=1725274092;1725277692&q-key-time=1725274092;1725277692&q-header-list=host&q-url-param-list=&q-signature=209b00a3abaeb3860400b27ae0e76dd41b817ad8&x-cos-security-token=3IoVMfyN7IlIDdke4rvTv7lnxYNl4g6ae86062408d0a5974e1d434912c363f0bCouWlELQpa4WAdO5u7ME8A3Ej_5XNnJ-8wK6AaeOVuzF4J1eTg3mBEDncaOMbOdeCAnRMCFOVEayNXIr_FYJL_LA54-Dm9a6x7pHUM-M0fQdkhNqFIzWBdoNr7nQnQEdJsFB5A_AfoQVl4f-jXJzqwuWBz7zv3KEEc6rO6770zgOHRJRnJBccBVdvqJUAJhv\",\n    \"FileStartPageNumber\": 1,\n    \"FileEndPageNumber\": 2,\n    \"Config\": {\n        \"TableResultType\": \"1\",\n        \"ResultType\": \"1\",\n        \"EnableMllm\": true\n    },\n    \"FileName\": \"myfile.pdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e148c27-9c21-43cd-992c-799117bb4216\",\n        \"TaskId\": \"a04cb05d5f794a5089e5b2cf90109bc5\"\n    }\n}",
+        "title": "创建PDF拆分任务"
+      }
+    ],
+    "DeleteAttributeLabels": [
+      {
+        "document": "删除属性标签",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttributeLabel\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1966c811-59a6-4385-bd4f-4ce12bdaa21a\"\n    }\n}",
+        "title": "删除属性标签"
+      }
+    ],
+    "DeleteDocs": [
+      {
+        "document": "删除文档",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDoc\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3d05737-0b05-45cd-aa6a-fe16213cfe01\"\n    }\n}",
+        "title": "删除文档"
+      }
+    ],
+    "DeleteKnowledgeBase": [
+      {
+        "document": "删除知识库",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeBase\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"41019910164\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b193a412-3fa9-4c4e-8182-401cbfa1655b\"\n    }\n}",
+        "title": "删除知识库"
+      }
+    ],
+    "DeleteQAs": [
+      {
+        "document": "删除qa",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQA\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c081879-196a-4df0-87ac-07e73a00952e\"\n    }\n}",
+        "title": "删除问答对"
+      }
+    ],
+    "DescribeDoc": [
+      {
+        "document": "查询文档详情",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDoc\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf318516-67a7-41df-9460-e581b4ecedbd\"\n    }\n}",
+        "title": "查询文档详情"
+      }
+    ],
+    "GetEmbedding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"你好\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Usage\": {\n            \"TotalTokens\": 3\n        }\n    }\n}",
+        "title": "获取特征向量"
+      }
+    ],
+    "GetReconstructDocumentResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetReconstructDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"123123123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://document-restruction-1258344699.cos.ap-guangzhou.myqcloud.com/doc_parse/output_files/a9c6a9482c72412fa84445a44ss125531.zip?q-sign-algorithm=sha1&q-ak=AKIDlWFaadfHLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1715503711%3B1718804311&q-key-time=1718855711%3B1718804311&q-header-list=host&q-url-param-list=&q-signature=71b568b8632d7e45gertdc3d235ef68d41fdfe7f8\",\n        \"FailedPages\": [],\n        \"RequestId\": \"a37b0d0b-c3af-44bd-iuiu-632442644a80\",\n        \"Status\": \"Success\"\n    }\n}",
+        "title": "接口调用成功示例"
+      }
+    ],
+    "GetSplitDocumentResult": [
+      {
+        "document": "查询文档拆分结果",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSplitDocumentResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"236e51fd-827b-41cb-b303-56003a817ce5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentRecognizeResultUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.zip\",\n        \"RequestId\": \"ffe23ed8-2b64-4835-aedc-ca9a5b5a7384\",\n        \"Status\": \"Success\",\n        \"Usage\": {\n            \"PageNumber\": 10,\n            \"TotalTokens\": 2048\n        }\n    }\n}",
+        "title": "查询文档拆分结果"
+      }
+    ],
+    "ImportQAs": [
+      {
+        "document": "批量导入问答对",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportQAs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21305ff4-94c7-4113-9977-9b20427e0a2a\"\n    }\n}",
+        "title": "批量导入问答对"
+      }
+    ],
+    "ListAttributeLabels": [
+      {
+        "document": "获取标签列表",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAttributeLabel\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttributeId\": \"1830880287852529408\",\n                \"AttributeKey\": \"stylee\",\n                \"AttributeName\": \"风格\",\n                \"Labels\": [\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"流行\"\n                    },\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"现代\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c5821f64-064a-448c-9279-b40eff06f4ae\"\n    }\n}",
+        "title": "获取标签列表"
+      }
+    ],
+    "ListDocs": [
+      {
+        "document": "获取文档列表",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDocs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DocId\": \"1830985874053466048\",\n                \"FileName\": \"product_manuals.docx\",\n                \"Status\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"292da1b4-1125-4423-b7cd-5cf3b14eb98d\"\n    }\n}",
+        "title": "获取文档列表"
+      }
+    ],
+    "ListQAs": [
+      {
+        "document": "查询已经上传的问答对列表",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQAs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Answer\": \"我是腾讯大模型知识引擎\",\n                \"AttributeLabels\": [\n                    {\n                        \"AttributeId\": \"1830880287852529408\",\n                        \"LabelIds\": [\n                            \"1830880287865112320\"\n                        ]\n                    }\n                ],\n                \"QaId\": \"1830882708456671000\",\n                \"Question\": \"你是谁\"\n            }\n        ],\n        \"RequestId\": \"5f95d7c7-c881-49d1-98fc-34f138d8ca54\"\n    }\n}",
+        "title": "获取问答对列表"
+      }
+    ],
+    "ModifyAttributeLabel": [
+      {
+        "document": "修改属性标签",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttributeLabel\n<公共请求参数>\n\n{\n    \"Labels\": [\n        {\n            \"LabelId\": \"1830993312978765760\",\n            \"LabelName\": \"主流\"\n        },\n        {\n            \"LabelId\": \"1830993312978765761\",\n            \"LabelName\": \"现代\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04ba0a85-161a-408a-9c80-029601af9775\"\n    }\n}",
+        "title": "修改属性标签"
+      }
+    ],
+    "ModifyQA": [
+      {
+        "document": "修改问答对",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f4843c1-8f3b-4a0b-ad7e-91b47f2b93c7\"\n    }\n}",
+        "title": "修改问答对"
+      }
+    ],
+    "ReconstructDocumentSSE": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReconstructDocumentSSE\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://ocr.example.pdf\"\n}",
+        "output": "{\n  \"RequestId\": \"0c7bbfbc-641a-4321-bee2-56b1e1e046e9\",\n  \"TaskId\": \"0c7bbfbc-641a-4321-bee2-56b1e1e046e9\",\n  \"ResponseType\": \"PROGRESS\",\n  \"Progress\": \"0\",\n  \"ProgressMessage\": \"开始文档解析\",\n  \"DocumentRecognizeResultUrl\": \"\",\n  \"FailedPages\": []\n}",
+        "title": "ReconstructDocumentSSE处理中回包示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReconstructDocumentSSE\n<公共请求参数>\n\n{\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://ocr.example.pdf\"\n}",
+        "output": "{\n  \"RequestId\": \"0c7cabfbc-641a-4321-bee2-56b1e1adwq6e9\",\n  \"TaskId\": \"0c7bbfbc-641a-4321-bee2-5dds1e1e04fe9\",\n  \"ResponseType\": \"TASK_RSP\",\n  \"Progress\": \"100\",\n  \"ProgressMessage\": \"完成文档解析\",\n  \"DocumentRecognizeResultUrl\": \"https://document-restruction-sse-1258344699.cos.ap-guangzhou.myqcloud.com/output_files%2F0c7bbfbc-641a-4321-bee2-545de1e046e9_parse.zip?q-sign-algorithm=sha1&q-ak=AKddFap6HLNbidLwPqOrAKGzXrx40scL7l&q-sign-time=1720006266%3B1720006866&q-key-time=1720006266%3B1720006866&q-header-list=host&q-url-param-list=&q-signature=e0e79876549e68f2ae9dbf5df1e516f8f1\",\n  \"FailedPages\": []\n}",
+        "title": "ReconstructDocumentSSE处理完成回包示例"
+      }
+    ],
+    "RetrieveKnowledge": [
+      {
+        "document": "语义检索",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetrieveKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"49019910106\",\n    \"Query\": \"国庆节放几天假\",\n    \"RetrievalMethod\": \"SEMANTIC\",\n    \"RetrievalSetting\": {\n        \"TopK\": 3,\n        \"ScoreThreshold\": 0.7\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Metadata\": {\n                    \"Type\": \"DOC\",\n                    \"ResultSource\": \"SEMANTIC\",\n                    \"ChunkPageNumbers\": [\n                        1\n                    ]\n                },\n                \"Title\": \"example.pdf\",\n                \"Content\": \"国庆放七天假\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d422c101-96e6-4aeb-b51c-0ccb551a5a52\"\n    }\n}",
+        "title": "语义检索"
+      },
+      {
+        "document": "RetrievalSetting.Type参数为QA时，仅检索问答对。",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetrieveKnowledge\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"49019910106\",\n    \"Query\": \"国庆节放几天假\",\n    \"RetrievalMethod\": \"SEMANTIC\",\n    \"RetrievalSetting\": {\n        \"Type\": \"QA\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"Metadata\": {\n                    \"Type\": \"QA\",\n                    \"ResultSource\": \"SEMANTIC\"\n                },\n                \"Title\": \"\",\n                \"Content\": \"国庆放七天假\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d422c101-96e6-4aeb-b51c-0ccb551a5a52\"\n    }\n}",
+        "title": "语义检索（问答对）"
+      }
+    ],
+    "RunRerank": [
+      {
+        "document": "重排序",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunRerank\n<公共请求参数>\n\n{\n    \"Query\": \"知识引擎大模型\",\n    \"Docs\": [\n        \"混元大模型\",\n        \"腾讯知识引擎\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"766383fd-5219-4d13-aa1a-7ae00766640c\",\n        \"ScoreList\": [\n            -9.006162,\n            2.8577538\n        ],\n        \"Usage\": {\n            \"TotalTokens\": 27\n        }\n    }\n}",
+        "title": "重排序"
+      }
+    ],
+    "UploadDoc": [
+      {
+        "document": "上传无属性标签文档",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadDoc\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"FileName\": \"example.pdf\",\n    \"FileType\": \"PDF\",\n    \"FileUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.pdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocId\": \"1830996257459865536\",\n        \"RequestId\": \"804c3fe0-05b1-48f9-8003-ab118658fec7\"\n    }\n}",
+        "title": "上传无属性标签文档"
+      }
+    ],
+    "UploadDocRealtime": [
+      {
+        "document": "实时文档上传",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadDocRealtime\n<公共请求参数>\n\n{}",
+        "output": "{\n\t\"IsFinal\": true,\n\t\"DocId\": \"1828430526517084160\",\n\t\"Progress\": 80,\n\t\"PageNum\": 0,\n\t\"Status\": \"SUCCESS\"\n}",
+        "title": "实时文档上传"
+      }
+    ]
+  },
+  "version": "1.0"
+}

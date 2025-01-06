@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli tcb DescribePostpayPackageFreeQuotas --cli-unfold-argument ```
+tccli tcb DescribePostpayPackageFreeQuotas --cli-unfold-argument  \
+    --EnvId env-xxyyzzaq \
+    --FreeQuotaType free
+```
 
 Output: 
 ```

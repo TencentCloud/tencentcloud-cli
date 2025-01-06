@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tcr DeleteRepositoryTags --cli-unfold-argument  \
-    --RegistryId tcr-xxx \
-    --NamespaceName test \
-    --RepositoryName demo \
-    --Tags tag0
+    --RegistryId tcr-dg284imq \
+    --NamespaceName public \
+    --RepositoryName golang \
+    --Tags 1 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2ac430cd-f7de-482e-b98e-f78a48e785e8"
+        "RequestId": "6f337112-efb5-4b49-9430-bb980089f4ea"
     }
 }
 ```

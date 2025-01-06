@@ -2230,6 +2230,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通知模板绑定内容模板信息",
+          "example": "无",
+          "member": "NoticeContentTmplBindInfo",
+          "name": "NoticeTmplBindInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7088,6 +7098,15 @@
           "example": "无",
           "member": "string",
           "name": "ReceiverOnCallFormIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通知内容模板ID筛选",
+          "example": "[\"tmpl-1\",\"tmpl-2\"]",
+          "member": "string",
+          "name": "NoticeContentTmplIDs",
           "required": false,
           "type": "list"
         }

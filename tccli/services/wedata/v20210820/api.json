@@ -2481,6 +2481,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "近范围值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IndicatorTimeRangeValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "近范围单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "day",
+          "member": "string",
+          "name": "IndicatorTimeRangeUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SyncType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8693,7 +8726,7 @@
         },
         {
           "disabled": false,
-          "document": "目录分类",
+          "document": "目录分类，该值必传，枚举值如下：\nETL：数据集成\nEMR：EMR\nTBDS：TBDS\nDLC：DLC\nTDSQL：TDSQL\nTCHOUSE：TCHOUSE\nGENERAL：通用\nTI_ONE：TI-ONE机器学习\nACROSS_WORKFLOWS：跨工作流",
           "example": "DLC",
           "member": "string",
           "name": "TaskNodeType",

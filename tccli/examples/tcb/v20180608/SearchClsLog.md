@@ -7,10 +7,10 @@ Input:
 ```
 tccli tcb SearchClsLog --cli-unfold-argument  \
     --EnvId test-12323 \
-    --StartTime abc \
-    --EndTime def \
+    --StartTime '2024-12-01 00:00:00' \
+    --EndTime '2024-12-01 01:00:00' \
     --Limit 10 \
-    --QueryString x \
+    --QueryString my-function-name \
     --Sort desc
 ```
 

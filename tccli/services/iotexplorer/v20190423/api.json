@@ -910,6 +910,13 @@
       "output": "ModifyTopicRuleResponse",
       "status": "online"
     },
+    "PauseTWeCallDevice": {
+      "document": "暂停设备",
+      "input": "PauseTWeCallDeviceRequest",
+      "name": "暂停TWeCall激活设备",
+      "output": "PauseTWeCallDeviceResponse",
+      "status": "online"
+    },
     "PublishBroadcastMessage": {
       "document": "发布广播消息、发布RRPC消息属于早期服务，目前已停止维护，需要从官网下线。\n\n发布广播消息",
       "input": "PublishBroadcastMessageRequest",
@@ -973,6 +980,20 @@
       "output": "ResetCloudStorageEventResponse",
       "status": "online"
     },
+    "ResetTWeCallDevice": {
+      "document": "重置设备",
+      "input": "ResetTWeCallDeviceRequest",
+      "name": "重置TWeCall激活设备",
+      "output": "ResetTWeCallDeviceResponse",
+      "status": "online"
+    },
+    "ResumeWeCallDevice": {
+      "document": "恢复设备",
+      "input": "ResumeWeCallDeviceRequest",
+      "name": "恢复TWeCall激活设备",
+      "output": "ResumeWeCallDeviceResponse",
+      "status": "online"
+    },
     "SearchPositionSpace": {
       "document": "搜索位置空间",
       "input": "SearchPositionSpaceRequest",
@@ -999,6 +1020,13 @@
       "input": "TransferCloudStorageRequest",
       "name": "转移云存服务",
       "output": "TransferCloudStorageResponse",
+      "status": "online"
+    },
+    "TransferTWeCallDevice": {
+      "document": "转移设备",
+      "input": "TransferTWeCallDeviceRequest",
+      "name": "转移TWeCall激活",
+      "output": "TransferTWeCallDeviceResponse",
       "status": "online"
     },
     "UnbindDevices": {
@@ -1056,7 +1084,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TWecall类型：1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景",
+          "document": "TWecall类型：0-体验套餐；1-家庭安防场景； 2-穿戴类场景； 3-生活娱乐场景； 4-对讲及其它场景",
           "example": "1",
           "member": "int64",
           "name": "PkgType",
@@ -12186,6 +12214,33 @@
       ],
       "usage": "out"
     },
+    "PauseTWeCallDeviceRequest": {
+      "document": "PauseTWeCallDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备列表",
+          "example": "无",
+          "member": "TWeCallInfo",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PauseTWeCallDeviceResponse": {
+      "document": "PauseTWeCallDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "PositionFenceInfo": {
       "document": "围栏详细信息(包含创建时间及更新时间)",
       "members": [
@@ -13430,6 +13485,60 @@
       ],
       "type": "object"
     },
+    "ResetTWeCallDeviceRequest": {
+      "document": "ResetTWeCallDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备列表",
+          "example": "无",
+          "member": "TWeCallInfo",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetTWeCallDeviceResponse": {
+      "document": "ResetTWeCallDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeWeCallDeviceRequest": {
+      "document": "ResumeWeCallDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备列表",
+          "example": "无",
+          "member": "TWeCallInfo",
+          "name": "DeviceList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeWeCallDeviceResponse": {
+      "document": "ResumeWeCallDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SearchKeyword": {
       "document": "搜索关键词",
       "members": [
@@ -14187,6 +14296,42 @@
     },
     "TransferCloudStorageResponse": {
       "document": "TransferCloudStorage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferTWeCallDeviceRequest": {
+      "document": "TransferTWeCallDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "sn信息，product_deviceName",
+          "example": "dev1",
+          "member": "string",
+          "name": "TransferInDevice",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sn信息，product_deviceName",
+          "example": "dev2",
+          "member": "string",
+          "name": "TransferOutDevice",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TransferTWeCallDeviceResponse": {
+      "document": "TransferTWeCallDevice返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

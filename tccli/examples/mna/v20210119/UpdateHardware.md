@@ -8,7 +8,7 @@ Input:
 tccli mna UpdateHardware --cli-unfold-argument  \
     --HardwareId cpe-6zmf86knqu \
     --SN adsqda \
-    --Description 描述
+    --Description this is descript
 ```
 
 Output: 

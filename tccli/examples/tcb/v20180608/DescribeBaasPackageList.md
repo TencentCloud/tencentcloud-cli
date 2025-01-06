@@ -22,7 +22,7 @@ Output:
                 "BillTags": "{\"pid\":0, \"cids\":{\"create\":0, \"renew\":0, \"modify\":0}, \"productCode\":0, \"subProductCode\":0}",
                 "ResourceLimit": "{\"Capacity\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}, \"Flux\":{\"TimeUnit\":\"m\", \"Unit\":\"GB\", \"MaxSize\": 100}, \"CalculationTime\":{\"TimeUnit\":\"m\", \"Unit\":\"s\", \"MaxSize\": 100}, \"InvokeNum\":{\"TimeUnit\":\"m\", \"Unit\":\"次\", \"MaxSize\": 100}}",
                 "AdvanceLimit": "{\"CMSEnable\":false,\"ProvisionedConcurrencyMem\":512000, \"PictureProcessing\":false, \"SecurityAudit\":false, \"RealTimePush\":false, \"TemplateMessageBatchPush\":false, \"Payment\":false}",
-                "PackageDescription": "xxx",
+                "PackageDescription": "baas personal package",
                 "IsExternal": true
             }
         ],

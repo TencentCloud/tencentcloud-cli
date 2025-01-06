@@ -19,8 +19,8 @@
     "CommonServiceAPI": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=CommonServiceAPI\n&Service=ModifyEnv\n&JSONData={}\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JSONResp\": \"\",\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommonServiceAPI\n<公共请求参数>\n\n{\n    \"Service\": \"DescribeEnvs\",\n    \"JSONData\": \"{\\\"WxAppId\\\":\\\"wx989d74faaeb9fbdc\\\",\\\"EnvType\\\":\\\"test\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JSONResp\": \"{\\\"Response\\\":{\\\"EnvList\\\":[],\\\"RequestId\\\":\\\"b7811e09-ab86-48cc-8b1a-4c4122c3bf42\\\",\\\"Total\\\":0}}\",\n        \"RequestId\": \"9f5382d6-0f69-4780-9ebb-12f9d084ce0b\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -184,7 +184,7 @@
       {
         "document": "获取套餐",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaasPackageList\n<公共请求参数>\n\n{\n    \"Source\": \"miniapp\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"PackageName\": \"personal_calculation\",\n                \"PackageTitle\": \"个人版-计算型\",\n                \"GroupName\": \"calculation\",\n                \"GroupTitle\": \"套餐分组中文名\",\n                \"BillTags\": \"{\\\"pid\\\":0, \\\"cids\\\":{\\\"create\\\":0, \\\"renew\\\":0, \\\"modify\\\":0}, \\\"productCode\\\":0, \\\"subProductCode\\\":0}\",\n                \"ResourceLimit\": \"{\\\"Capacity\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"GB\\\", \\\"MaxSize\\\": 100}, \\\"Flux\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"GB\\\", \\\"MaxSize\\\": 100}, \\\"CalculationTime\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"s\\\", \\\"MaxSize\\\": 100}, \\\"InvokeNum\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"次\\\", \\\"MaxSize\\\": 100}}\",\n                \"AdvanceLimit\": \"{\\\"CMSEnable\\\":false,\\\"ProvisionedConcurrencyMem\\\":512000, \\\"PictureProcessing\\\":false, \\\"SecurityAudit\\\":false, \\\"RealTimePush\\\":false, \\\"TemplateMessageBatchPush\\\":false, \\\"Payment\\\":false}\",\n                \"PackageDescription\": \"xxx\",\n                \"IsExternal\": true\n            }\n        ],\n        \"RequestId\": \"2e992b19-7906-44a4-a8bb-5a71672b0ec9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PackageList\": [\n            {\n                \"PackageName\": \"personal_calculation\",\n                \"PackageTitle\": \"个人版-计算型\",\n                \"GroupName\": \"calculation\",\n                \"GroupTitle\": \"套餐分组中文名\",\n                \"BillTags\": \"{\\\"pid\\\":0, \\\"cids\\\":{\\\"create\\\":0, \\\"renew\\\":0, \\\"modify\\\":0}, \\\"productCode\\\":0, \\\"subProductCode\\\":0}\",\n                \"ResourceLimit\": \"{\\\"Capacity\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"GB\\\", \\\"MaxSize\\\": 100}, \\\"Flux\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"GB\\\", \\\"MaxSize\\\": 100}, \\\"CalculationTime\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"s\\\", \\\"MaxSize\\\": 100}, \\\"InvokeNum\\\":{\\\"TimeUnit\\\":\\\"m\\\", \\\"Unit\\\":\\\"次\\\", \\\"MaxSize\\\": 100}}\",\n                \"AdvanceLimit\": \"{\\\"CMSEnable\\\":false,\\\"ProvisionedConcurrencyMem\\\":512000, \\\"PictureProcessing\\\":false, \\\"SecurityAudit\\\":false, \\\"RealTimePush\\\":false, \\\"TemplateMessageBatchPush\\\":false, \\\"Payment\\\":false}\",\n                \"PackageDescription\": \"baas personal package\",\n                \"IsExternal\": true\n            }\n        ],\n        \"RequestId\": \"2e992b19-7906-44a4-a8bb-5a71672b0ec9\"\n    }\n}",
         "title": "获取套餐"
       }
     ],
@@ -349,8 +349,8 @@
     "DescribeDatabaseACL": [
       {
         "document": "查询数据库集合的ACL",
-        "input": "{\n  \"EnvId\": \"xx\",\n  \"CollectionName\": \"xx\",\n  \"WxAppId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AclTag\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseACL\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xxyyzzaa\",\n    \"CollectionName\": \"table-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AclTag\": \"READONLY\",\n        \"RequestId\": \"uuid-here\"\n    }\n}",
         "title": "查询数据库ACL"
       }
     ],
@@ -405,8 +405,8 @@
     "DescribeEnvLimit": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvLimit\n&Source=sss\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"CurrentFreeEnvNum\": 0,\n        \"ChangePayTotal\": 0,\n        \"CurrentChangePayMonthly\": 0,\n        \"MaxDeleteMonthly\": 0,\n        \"MaxEnvNum\": 0,\n        \"ChangePayMonthly\": 0,\n        \"CurrentChangePayTotal\": 0,\n        \"MaxDeleteTotal\": 0,\n        \"CurrentEnvNum\": 0,\n        \"CurrentDeleteMonthly\": 0,\n        \"CurrentDeleteTotal\": 0,\n        \"CurrentFreeTrialNum\": 0,\n        \"MaxFreeTrialNum\": 0,\n        \"MaxFreeEnvNum\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeEnvLimit\n&Source=miniapp\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CurrentFreeEnvNum\": 0,\n        \"ChangePayTotal\": 0,\n        \"CurrentChangePayMonthly\": 0,\n        \"MaxDeleteMonthly\": 0,\n        \"MaxEnvNum\": 0,\n        \"ChangePayMonthly\": 0,\n        \"CurrentChangePayTotal\": 0,\n        \"MaxDeleteTotal\": 0,\n        \"CurrentEnvNum\": 0,\n        \"CurrentDeleteMonthly\": 0,\n        \"CurrentDeleteTotal\": 0,\n        \"CurrentFreeTrialNum\": 0,\n        \"MaxFreeTrialNum\": 0,\n        \"MaxFreeEnvNum\": 0,\n        \"RequestId\": \"uuid-here\"\n    }\n}",
         "title": "查询环境个数上限接口"
       }
     ],
@@ -485,7 +485,7 @@
     "DescribePostpayPackageFreeQuotas": [
       {
         "document": "获取后付费免费额度 ",
-        "input": "{\n  \"EnvId\": \"xx\",\n  \"FreeQuotaType\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostpayPackageFreeQuotas\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xxyyzzaq\",\n    \"FreeQuotaType\": \"free\"\n}",
         "output": "{\n    \"Response\": {\n        \"PackageFreeQuotaInfos\": [\n            {\n                \"ResourceType\": \"COS\",\n                \"ResourceMetric\": \"ReadRequests\",\n                \"FreeQuota\": 150,\n                \"MetricUnit\": \"万次\",\n                \"DeductType\": \"sum-month\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"COS\",\n                \"ResourceMetric\": \"WriteRequests\",\n                \"FreeQuota\": 60,\n                \"MetricUnit\": \"万次\",\n                \"DeductType\": \"sum-month\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"COS\",\n                \"ResourceMetric\": \"Capacity\",\n                \"FreeQuota\": 5,\n                \"MetricUnit\": \"GB\",\n                \"DeductType\": \"totalize\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"COS\",\n                \"ResourceMetric\": \"Flux\",\n                \"FreeQuota\": 5,\n                \"MetricUnit\": \"GB\",\n                \"DeductType\": \"sum-month\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"CDN\",\n                \"ResourceMetric\": \"Flux\",\n                \"FreeQuota\": 5,\n                \"MetricUnit\": \"GB\",\n                \"DeductType\": \"sum-month\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"SCF\",\n                \"ResourceMetric\": \"MemoryUse\",\n                \"FreeQuota\": 40000,\n                \"MetricUnit\": \"GBs\",\n                \"DeductType\": \"sum-month\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"SCF\",\n                \"ResourceMetric\": \"Outflow\",\n                \"FreeQuota\": 1,\n                \"MetricUnit\": \"GB\",\n                \"DeductType\": \"sum-month\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"FLEXDB\",\n                \"ResourceMetric\": \"Capacity\",\n                \"FreeQuota\": 2,\n                \"MetricUnit\": \"GB\",\n                \"DeductType\": \"totalize\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"FLEXDB\",\n                \"ResourceMetric\": \"ReadRequests\",\n                \"FreeQuota\": 5,\n                \"MetricUnit\": \"万次\",\n                \"DeductType\": \"sum-day\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"FLEXDB\",\n                \"ResourceMetric\": \"WriteRequests\",\n                \"FreeQuota\": 3,\n                \"MetricUnit\": \"万次\",\n                \"DeductType\": \"sum-day\",\n                \"FreeQuotaType\": \"basic\"\n            },\n            {\n                \"ResourceType\": \"HOSTING\",\n                \"ResourceMetric\": \"Capacity\",\n                \"FreeQuota\": 5120,\n                \"MetricUnit\": \"GB\",\n                \"DeductType\": \"totalize\",\n                \"FreeQuotaType\": \"basic\"\n            }\n        ],\n        \"RequestId\": \"a1b9ccf2-86a7-490d-9769-a5fb6b856192\"\n    }\n}",
         "title": "获取后付费免费额度"
       }
@@ -701,7 +701,7 @@
     "SearchClsLog": [
       {
         "document": "搜索CLS日志",
-        "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=abc\n&EndTime=def\n&Limit=10\n&QueryString=x\n&Sort=desc\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=SearchClsLog\n&EnvId=test-12323\n&StartTime=2024-12-01 00:00:00\n&EndTime=2024-12-01 01:00:00\n&Limit=10\n&QueryString=my-function-name\n&Sort=desc\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e22b381-93a3-44c4-85b7-456679a7b8cd\",\n        \"LogResults\": {\n            \"Context\": \"\",\n            \"ListOver\": true,\n            \"Results\": []\n        }\n    }\n}",
         "title": "搜索CLS日志"
       }

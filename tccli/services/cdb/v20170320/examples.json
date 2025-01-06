@@ -866,6 +866,14 @@
         "title": "查询云数据库实例支持的权限信息"
       }
     ],
+    "DescribeTableColumns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableColumns\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-c1nl9rpv\",\n    \"Table\": \"COLUMNS\",\n    \"Database\": \"information_schema\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 20,\n        \"Items\": [\n            \"TABLE_CATALOG\",\n            \"TABLE_SCHEMA\",\n            \"TABLE_NAME\",\n            \"COLUMN_NAME\",\n            \"ORDINAL_POSITION\",\n            \"COLUMN_DEFAULT\",\n            \"IS_NULLABLE\",\n            \"DATA_TYPE\",\n            \"CHARACTER_MAXIMUM_LENGTH\",\n            \"CHARACTER_OCTET_LENGTH\",\n            \"NUMERIC_PRECISION\",\n            \"NUMERIC_SCALE\",\n            \"DATETIME_PRECISION\",\n            \"CHARACTER_SET_NAME\",\n            \"COLLATION_NAME\",\n            \"COLUMN_TYPE\",\n            \"COLUMN_KEY\",\n            \"EXTRA\",\n            \"PRIVILEGES\",\n            \"COLUMN_COMMENT\"\n        ]\n    }\n}",
+        "title": "查询云数据库实例的列"
+      }
+    ],
     "DescribeTables": [
       {
         "document": "",

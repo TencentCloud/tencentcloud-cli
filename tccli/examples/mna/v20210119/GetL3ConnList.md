@@ -23,7 +23,7 @@ Output:
                 "DeviceId2": "mna-2x2tllhb13",
                 "Cidr2": "192.168.1.0/26",
                 "Enable": true,
-                "Description": "test"
+                "Description": "this is descript"
             }
         ],
         "Length": 1,

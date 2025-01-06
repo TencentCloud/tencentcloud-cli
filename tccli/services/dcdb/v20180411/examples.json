@@ -314,7 +314,7 @@
       {
         "document": "",
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeDatabases\n&InstanceId=dcdbt-52s53yyh\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\",\n        \"InstanceId\": \"dcdbt-52s53yyh\",\n        \"Databases\": [\n            {\n                \"DbName\": \"information_schema\"\n            },\n            {\n                \"DbName\": \"mysql\"\n            },\n            {\n                \"DbName\": \"performance_schema\"\n            },\n            {\n                \"DbName\": \"test\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d0f51893-e15f-44ac-be6d-900450a6b8c2\",\n        \"InstanceId\": \"dcdbt-52s53yyh\",\n        \"Databases\": [\n            {\n                \"DbName\": \"information_schema\"\n            },\n            {\n                \"DbName\": \"mysql\"\n            },\n            {\n                \"DbName\": \"performance_schema\"\n            },\n            {\n                \"DbName\": \"product_db\"\n            }\n        ]\n    }\n}",
         "title": "查询云数据库实例上的数据库列表"
       }
     ],

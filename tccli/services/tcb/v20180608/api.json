@@ -402,7 +402,7 @@
     "DescribePostpayFreeQuotas": {
       "document": "查询后付费资源免费量",
       "input": "DescribePostpayFreeQuotasRequest",
-      "name": "查询后付费资源免费量",
+      "name": "查询后付费资源免费用量",
       "output": "DescribePostpayFreeQuotasResponse",
       "status": "online"
     },
@@ -830,7 +830,7 @@
       "usage": "out"
     },
     "BaasPackageInfo": {
-      "document": "新套餐套餐详情",
+      "document": "云开发新套餐详情",
       "members": [
         {
           "disabled": false,
@@ -838,7 +838,7 @@
           "example": "personal_calculation",
           "member": "string",
           "name": "PackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -848,7 +848,7 @@
           "example": "个人版-计算型",
           "member": "string",
           "name": "PackageTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -858,7 +858,7 @@
           "example": "calculation",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -868,17 +868,17 @@
           "example": "计算型",
           "member": "string",
           "name": "GroupTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "json格式化计费标签，例如：\n{\"pid\":2, \"cids\":{\"create\": 2, \"renew\": 2, \"modify\": 2}, \"productCode\":\"p_tcb_mp\", \"subProductCode\":\"sp_tcb_mp_cloudbase_dau\"}\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "{\"pid\":2, \"cids\":{\"create\": 2, \"renew\": 2, \"modify\": 2}, \"productCode\":\"p_tcb_mp\", \"subProductCode\":\"sp_tcb_mp_cloudbase_dau\"}",
           "member": "string",
           "name": "BillTags",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -888,7 +888,7 @@
           "example": "参考接口示例",
           "member": "string",
           "name": "ResourceLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -898,7 +898,7 @@
           "example": "参考接口示例",
           "member": "string",
           "name": "AdvanceLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -908,7 +908,7 @@
           "example": "适合商家小程序",
           "member": "string",
           "name": "PackageDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -918,7 +918,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsExternal",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -3060,7 +3060,7 @@
         {
           "disabled": false,
           "document": "需要转发的云API参数，要转成JSON格式",
-          "example": "{}",
+          "example": "{\"WxAppId\":\"wx989d74faaeb9fbdc\",\"EnvType\":\"baas\"}",
           "member": "string",
           "name": "JSONData",
           "required": false,
@@ -3087,7 +3087,7 @@
           "example": "d",
           "member": "string",
           "name": "JSONResp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3893,7 +3893,7 @@
         {
           "disabled": false,
           "document": "扩展ID",
-          "example": "无",
+          "example": "ext-aabbccddef",
           "member": "string",
           "name": "ExtensionId",
           "required": false,
@@ -3920,7 +3920,7 @@
         {
           "disabled": false,
           "document": "附加字段，用于透传额外的自定义信息",
-          "example": "无",
+          "example": "{\"abc\":\"def\"}",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -3938,6 +3938,7 @@
           "example": "20200603119423",
           "member": "string",
           "name": "TranId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3947,6 +3948,7 @@
           "example": "cdnheader-v2a",
           "member": "string",
           "name": "EnvId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4895,7 +4897,7 @@
         {
           "disabled": false,
           "document": "tcb产品套餐ID，不填拉取全量package信息。",
-          "example": "xxx",
+          "example": "baas_personal",
           "member": "string",
           "name": "PackageName",
           "required": false,
@@ -4904,7 +4906,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "xxx",
+          "example": "env-xxyyzzaabb",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -4976,7 +4978,7 @@
           "example": "无",
           "member": "BaasPackageInfo",
           "name": "PackageList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7524,9 +7526,10 @@
         {
           "disabled": false,
           "document": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>",
-          "example": "无",
+          "example": "READONLY",
           "member": "string",
           "name": "AclTag",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7912,7 +7915,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxEnvNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7922,7 +7925,7 @@
           "example": "1",
           "member": "int64",
           "name": "CurrentEnvNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7932,7 +7935,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxFreeEnvNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7942,7 +7945,7 @@
           "example": "1",
           "member": "int64",
           "name": "CurrentFreeEnvNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7952,7 +7955,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxDeleteTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7962,7 +7965,7 @@
           "example": "1",
           "member": "int64",
           "name": "CurrentDeleteTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7972,7 +7975,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxDeleteMonthly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7982,7 +7985,7 @@
           "example": "1",
           "member": "int64",
           "name": "CurrentDeleteMonthly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7992,7 +7995,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxFreeTrialNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8002,7 +8005,7 @@
           "example": "0",
           "member": "int64",
           "name": "CurrentFreeTrialNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8012,7 +8015,7 @@
           "example": "0",
           "member": "int64",
           "name": "ChangePayTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8022,7 +8025,7 @@
           "example": "0",
           "member": "int64",
           "name": "CurrentChangePayTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8032,7 +8035,7 @@
           "example": "0",
           "member": "int64",
           "name": "ChangePayMonthly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8042,7 +8045,7 @@
           "example": "0",
           "member": "int64",
           "name": "CurrentChangePayMonthly",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8643,7 +8646,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "无",
+          "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -8661,6 +8664,7 @@
           "example": "无",
           "member": "FreequotaInfo",
           "name": "FreequotaInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8679,7 +8683,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "无",
+          "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -8688,7 +8692,7 @@
         {
           "disabled": false,
           "document": "免费额度类型标识",
-          "example": "无",
+          "example": "free",
           "member": "string",
           "name": "FreeQuotaType",
           "required": false,
@@ -8706,6 +8710,7 @@
           "example": "无",
           "member": "PackageFreeQuotaInfo",
           "name": "PackageFreeQuotaInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12090,7 +12095,7 @@
         {
           "disabled": false,
           "document": "鉴权token",
-          "example": "\"123\"",
+          "example": "\"tokenxzjkdlfjlks\"",
           "member": "string",
           "name": "ChannelToken",
           "required": false,
@@ -12525,7 +12530,7 @@
         {
           "disabled": false,
           "document": "加载更多使用，透传上次返回的 context 值，获取后续的日志内容，通过游标最多可获取10000条，请尽可能缩小时间范围",
-          "example": "abc",
+          "example": "ctxxu4igkldjkjiut4jkgdjsk",
           "member": "string",
           "name": "Context",
           "required": false,
@@ -12561,6 +12566,7 @@
           "example": "无",
           "member": "LogResObject",
           "name": "LogResults",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

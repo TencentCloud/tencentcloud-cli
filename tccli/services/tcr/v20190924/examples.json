@@ -223,8 +223,8 @@
     "DeleteImage": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImage\r\n&RegistryId=tcr-okmj78\r\n&NamespaceName=mytest\r\n&RepositoryName=test\r\n&ImageVersion=1.0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImage\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"multi-arch\",\n    \"RepositoryName\": \"alpine\",\n    \"ImageVersion\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"feeb9395-1fd7-41b4-8d1d-e791ca1cad5d\"\n    }\n}",
         "title": "删除指定镜像"
       }
     ],
@@ -287,8 +287,8 @@
     "DeleteInternalEndpointDns": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInternalEndpointDns\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tcr-xxx\",\n    \"EniLBIp\": \"1.1.1.1\",\n    \"VpcId\": \"vpc-xxx\",\n    \"UsePublicDomain\": \"false\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInternalEndpointDns\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tcr-dg284imq\",\n    \"VpcId\": \"vpc-9iazgkcl\",\n    \"EniLBIp\": \"192.168.23.69\",\n    \"UsePublicDomain\": true,\n    \"RegionName\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f63b71b9-196b-4648-a086-8a29c2bffc86\"\n    }\n}",
         "title": "删除私有域名解析"
       }
     ],
@@ -327,8 +327,8 @@
     "DeleteRepository": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteRepository\n&RegistryId=tcr-okmj78\n&NamespaceName=test\n&RepositoryName=mytest\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepository\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"private\",\n    \"RepositoryName\": \"golang\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ca2eddea-14cc-4c3f-96e5-de50fd1fd4c0\"\n    }\n}",
         "title": "删除镜像仓库"
       }
     ],
@@ -343,8 +343,8 @@
     "DeleteRepositoryTags": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteRepositoryTags\n&RegistryId=tcr-xxx\n&NamespaceName=test\n&RepositoryName=demo\n&Tags.0=tag0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ac430cd-f7de-482e-b98e-f78a48e785e8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepositoryTags\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"NamespaceName\": \"public\",\n    \"RepositoryName\": \"golang\",\n    \"Tags\": [\n        \"1\",\n        \"2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f337112-efb5-4b49-9430-bb980089f4ea\"\n    }\n}",
         "title": "批量删除镜像仓库Tag"
       }
     ],
@@ -359,8 +359,8 @@
     "DeleteServiceAccount": [
       {
         "document": "删除服务级账号",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"Name\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Name\": \"tcr$servie-account3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0804e7fc-58f6-439b-9f76-9c10b22c49ed\"\n    }\n}",
         "title": "删除服务级账号"
       }
     ],
@@ -399,8 +399,8 @@
     "DescribeApplicationTriggerPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeApplicationTriggerPersonal\r\n&RepoName=test/test123\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"TriggerInfo\": [\n                {\n                    \"TriggerName\": \"test2\",\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"CreateTime\": \"2020-01-23 17:06:17\",\n                    \"UpdateTime\": \"2020-01-23 17:44:26\",\n                    \"InvokeCondition\": {\n                        \"InvokeMethod\": \"taglist\",\n                        \"InvokeExpr\": \"abc\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251006373\",\n                        \"ClusterId\": \"cls-aj3c8wz5\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:testdp\",\n                        \"ContainerName\": \"testcon\",\n                        \"ClusterRegion\": 16\n                    }\n                }\n            ]\n        },\n        \"RequestId\": \"7d27c2f4-0473-484c-b62e-fcb379758289\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationTriggerPersonal\n<公共请求参数>\n\n{\n    \"Limit\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 29,\n            \"TriggerInfo\": [\n                {\n                    \"CreateTime\": \"2021-11-18 11:51:13\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"cls-prnklzue\",\n                        \"ClusterRegion\": 1,\n                        \"ContainerName\": \"nginx\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:nginx-deployment\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"aaaa\",\n                    \"UpdateTime\": \"2021-11-18 11:51:13\"\n                },\n                {\n                    \"CreateTime\": \"2021-10-27 10:11:30\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"cls-94j6nzm8\",\n                        \"ClusterRegion\": 33,\n                        \"ContainerName\": \"nginx\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:nginx\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"sss\",\n                    \"UpdateTime\": \"2021-10-27 10:11:30\"\n                },\n                {\n                    \"CreateTime\": \"2020-12-22 10:45:36\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"123\",\n                        \"ClusterRegion\": 1,\n                        \"ContainerName\": \"web\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:kofj\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"kofj-test-20201222\",\n                    \"UpdateTime\": \"2020-12-22 10:45:36\"\n                }\n            ]\n        },\n        \"RequestId\": \"a904482e-68ec-47d9-9f1f-87908659bd81\"\n    }\n}",
         "title": "查询应用更新触发器"
       }
     ],
@@ -447,8 +447,8 @@
     "DescribeImageFilterPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImageFilterPersonal\n&RepoName=dockerhub/test\n&Tag=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"SameImages\": [\n                \"99\"\n            ]\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageFilterPersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"nicokang/golang\",\n    \"Tag\": \"4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"SameImages\": [\n                \"3\"\n            ]\n        },\n        \"RequestId\": \"9b054042-5447-4902-bd48-2c92f5be5b0f\"\n    }\n}",
         "title": "查询个人版与指定tag镜像内容相同的tag列表"
       }
     ],

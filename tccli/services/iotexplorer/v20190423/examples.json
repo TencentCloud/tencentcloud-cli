@@ -3,8 +3,8 @@
     "ActivateTWeCallLicense": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgType\": 1,\n    \"MiniProgramAppId\": \"abc\",\n    \"DeviceList\": [\n        {\n            \"ModelId\": \"1qaz\",\n            \"Sn\": \"p/d\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"FailureList\": [],\n        \"SuccessList\": [\n            {\n                \"ModelId\": \"modelId\",\n                \"Sn\": \"productId_deviceName\",\n                \"ExpireTime\": 356123\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgType\": 1,\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3edc-45tg\",\n        \"FailureList\": [],\n        \"SuccessList\": [\n            {\n                \"ModelId\": \"modelId\",\n                \"Sn\": \"productId_deviceName\",\n                \"ExpireTime\": 356123\n            }\n        ]\n    }\n}",
         "title": "成功激活示例"
       }
     ],
@@ -1142,6 +1142,14 @@
         "title": "修改规则"
       }
     ],
+    "PauseTWeCallDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseTWeCallDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "暂停设备"
+      }
+    ],
     "PublishBroadcastMessage": [
       {
         "document": "",
@@ -1232,6 +1240,22 @@
         "title": "重置云存事件"
       }
     ],
+    "ResetTWeCallDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetTWeCallDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "重置TWeCall激活设备"
+      }
+    ],
+    "ResumeWeCallDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeWeCallDevice\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234ewfag\"\n    }\n}",
+        "title": "恢复设备"
+      }
+    ],
     "SearchPositionSpace": [
       {
         "document": "",
@@ -1262,6 +1286,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferCloudStorage\n<公共请求参数>\n\n{\n    \"ToDeviceName\": \"event_36502632_2\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfdsf\"\n    }\n}",
         "title": "转移云存服务"
+      }
+    ],
+    "TransferTWeCallDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferWeCallDevice\n<公共请求参数>\n\n{\n    \"TransferInDevice\": \"productId_deviceName\",\n    \"TransferOutDevice\": \"productId_deviceName1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ed-5tgb-9gdw8\"\n    }\n}",
+        "title": "转移设备"
       }
     ],
     "UnbindDevices": [

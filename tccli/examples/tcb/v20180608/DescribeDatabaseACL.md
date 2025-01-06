@@ -5,14 +5,17 @@
 Input: 
 
 ```
-tccli tcb DescribeDatabaseACL --cli-unfold-argument ```
+tccli tcb DescribeDatabaseACL --cli-unfold-argument  \
+    --EnvId env-xxyyzzaa \
+    --CollectionName table-abc
+```
 
 Output: 
 ```
 {
     "Response": {
-        "AclTag": "xx",
-        "RequestId": "xx"
+        "AclTag": "READONLY",
+        "RequestId": "uuid-here"
     }
 }
 ```

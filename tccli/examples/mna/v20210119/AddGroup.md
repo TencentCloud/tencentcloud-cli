@@ -7,7 +7,7 @@ Input:
 ```
 tccli mna AddGroup --cli-unfold-argument  \
     --GroupName gname \
-    --Description 描述
+    --Description AddGroup info
 ```
 
 Output: 

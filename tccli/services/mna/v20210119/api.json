@@ -334,7 +334,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -3405,7 +3405,7 @@
         {
           "disabled": false,
           "document": "设备描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -3473,7 +3473,7 @@
         {
           "disabled": false,
           "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -3645,7 +3645,7 @@
         {
           "disabled": false,
           "document": "互通规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -4159,7 +4159,7 @@
         {
           "disabled": false,
           "document": "分组备注",
-          "example": "\"描述\"",
+          "example": "\"this is descript\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4303,7 +4303,7 @@
         {
           "disabled": false,
           "document": "互通规则备注",
-          "example": "\"描述\"",
+          "example": "\"this is discript\"",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4467,7 +4467,7 @@
         {
           "disabled": false,
           "document": "厂商备注",
-          "example": "test",
+          "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": true,

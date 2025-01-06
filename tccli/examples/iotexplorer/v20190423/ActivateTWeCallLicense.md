@@ -7,16 +7,14 @@ Input:
 ```
 tccli iotexplorer ActivateTWeCallLicense --cli-unfold-argument  \
     --PkgType 1 \
-    --MiniProgramAppId abc \
-    --DeviceList.0.ModelId 1qaz \
-    --DeviceList.0.Sn p/d
+    --DeviceList.0.Sn productId_deviceName
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "3edc-45tg",
         "FailureList": [],
         "SuccessList": [
             {
