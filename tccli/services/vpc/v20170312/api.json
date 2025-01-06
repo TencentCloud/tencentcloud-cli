@@ -14737,6 +14737,15 @@
           "name": "SubnetId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BGP 开关，开启时需指定BgpAsn。",
+          "example": "true",
+          "member": "bool",
+          "name": "BgpEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -42265,6 +42274,15 @@
           "name": "MaxConnection",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Bgp开关，开启时需指定BgpAsn。",
+          "example": "False",
+          "member": "bool",
+          "name": "BgpEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

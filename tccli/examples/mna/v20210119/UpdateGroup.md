@@ -7,7 +7,7 @@ Input:
 ```
 tccli mna UpdateGroup --cli-unfold-argument  \
     --GroupId cliGrp-xf8rboasbh \
-    --Description 描述
+    --Description this is descript
 ```
 
 Output: 

@@ -294,7 +294,7 @@
         {
           "disabled": false,
           "document": "资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{}]",
           "member": "ArchResourceDetail",
           "name": "ResourceList",
           "output_required": false,
@@ -304,12 +304,32 @@
         {
           "disabled": false,
           "document": "父节点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "abc-dd",
           "member": "string",
           "name": "ParentDiagramId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定方式",
+          "example": "instance",
+          "member": "string",
+          "name": "BindingType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-02 10:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

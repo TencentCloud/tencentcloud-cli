@@ -8,7 +8,7 @@ Input:
 tccli mna AddHardware --cli-unfold-argument  \
     --Hardware.0.SN AN \
     --Hardware.0.LicenseChargingMode 1 \
-    --Hardware.0.Description 描述
+    --Hardware.0.Description AddHardware info
 ```
 
 Output: 
@@ -19,7 +19,7 @@ Output:
             {
                 "SN": "AN",
                 "LicenseChargingMode": 1,
-                "Description": "描述",
+                "Description": "AddHardware描述",
                 "HardwareId": "cpe-9oii2ew1z4"
             }
         ],

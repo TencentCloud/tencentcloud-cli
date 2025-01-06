@@ -1,7 +1,7 @@
 {
   "actions": {
     "ApplyCardVerification": {
-      "document": "海外证件识别接口\n\n支持的国家卡证类型以及是否需要卡证背面的说明如下列表：\n<table>\n          <thead>\n          <tr>\n              <td  style=\"width:200px\">国家Nationality</td>\n              <td style=\"width:200px\">卡证CardType</td>\n              <td style=\"width:200px\">是否需要背面</td>\n          </tr>\n      </thead>\n      <tbody>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>香港</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>中国澳门</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>中国台湾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n    </tbody>\n    </table>",
+      "document": "海外证件识别接口\n\n支持的国家卡证类型以及是否需要卡证背面的说明如下列表：\n<table>\n          <thead>\n          <tr>\n              <td  style=\"width:200px\">国家Nationality</td>\n              <td style=\"width:200px\">卡证CardType</td>\n              <td style=\"width:200px\">是否需要背面</td>\n          </tr>\n      </thead>\n      <tbody>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>印度尼西亚</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>香港</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>身份证</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>泰国</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>马来西亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>新加坡</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>菲律宾</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>日本</td>\n              <td>驾照</td>\n              <td>否</td>\n          </tr>\n          <tr>\n              <td>中国澳门</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>中国台湾</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>孟加拉</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>尼日利亚</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>尼日利亚</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>巴基斯坦</td>\n              <td>身份证</td>\n              <td>是</td>\n          </tr>\n          <tr>\n              <td>巴基斯坦</td>\n              <td>驾照</td>\n              <td>是</td>\n          </tr>\n    </tbody>\n    </table>",
       "input": "ApplyCardVerificationRequest",
       "name": "发起证件识别",
       "output": "ApplyCardVerificationResponse",
@@ -525,7 +525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证件国家\nIDN：Indonesia;\nHKG: Hong Kong\nTHA: Thailand\nMYS: Malaysia\nSGP: Singapore\nJPN: Japan\nPHL: Philippines\nMAC: Macao\nCHN:ChinaPermit\nTWN:TaiWan\nAUTO:  支持200+国家的卡证，若有需求请联系商务",
+          "document": "证件国家\nIDN：Indonesia;\nHKG: Hong Kong\nTHA: Thailand\nMYS: Malaysia\nSGP: Singapore\nJPN: Japan\nPHL: Philippines\nMAC: Macao\nCHN:ChinaPermit\nTWN:TaiWan\nBGD:Bangladesh\nNGA:Nigeria\nPAK:Pakistan\n\nAUTO:  支持200+国家的卡证，若有需求请联系商务",
           "example": "IDN",
           "member": "string",
           "name": "Nationality",
@@ -943,6 +943,72 @@
       ],
       "usage": "out"
     },
+    "BangladeshIDCard": {
+      "document": "孟加拉身份证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "无",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生日",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发证城市",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedCountry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BankCard2EVerificationRequest": {
       "document": "BankCard2EVerification请求参数结构体",
       "members": [
@@ -1352,6 +1418,56 @@
           "example": "无",
           "member": "JapanIDCard",
           "name": "JapanIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "孟加拉身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BangladeshIDCard",
+          "name": "BangladeshIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "尼日利亚身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NigeriaIDCard",
+          "name": "NigeriaIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "尼日利亚驾照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NigeriaDrivingLicense",
+          "name": "NigeriaDrivingLicense",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "巴基斯坦身份证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PakistanIDCard",
+          "name": "PakistanIDCard",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "巴基斯坦驾照\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PakistanDrivingLicense",
+          "name": "PakistanDrivingLicense",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7842,6 +7958,178 @@
       ],
       "type": "object"
     },
+    "NigeriaDrivingLicense": {
+      "document": "尼日利亚驾照",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "无",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生日",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发证城市",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedCountry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到期日期",
+          "example": "无",
+          "member": "string",
+          "name": "ExpirationDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签发日期",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "性别",
+          "example": " 无",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NigeriaIDCard": {
+      "document": "尼日利亚身份证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "无",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生日",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发证城市",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedCountry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "性别",
+          "example": "无",
+          "member": "string",
+          "name": "Sex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NormalCardInfo": {
       "document": "证件识别结果（映射字段结果）",
       "members": [
@@ -8604,6 +8892,138 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PakistanDrivingLicense": {
+      "document": "巴基斯坦驾照",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "无",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生日",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发证城市",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedCountry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PakistanIDCard": {
+      "document": "巴基斯坦身份证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓",
+          "example": "无",
+          "member": "string",
+          "name": "LastName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名",
+          "example": "无",
+          "member": "string",
+          "name": "FirstName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证",
+          "example": "无",
+          "member": "string",
+          "name": "LicenseNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "年龄",
+          "example": "无",
+          "member": "string",
+          "name": "Age",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生日",
+          "example": "无",
+          "member": "string",
+          "name": "Birthday",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发证城市",
+          "example": "无",
+          "member": "string",
+          "name": "IssuedCountry",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

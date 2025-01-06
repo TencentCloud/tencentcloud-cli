@@ -26,7 +26,7 @@ Output:
                 "DbName": "performance_schema"
             },
             {
-                "DbName": "test"
+                "DbName": "product_db"
             }
         ]
     }

@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc ModifyIPv6AddressesAttributes --cli-unfold-argument  \
     --IPv6AddressIds eipv6-2ucdpy9t eipv6-3lxpc6sh \
-    --IPv6AddressName test
+    --IPv6AddressName demo
 ```
 
 Output: 

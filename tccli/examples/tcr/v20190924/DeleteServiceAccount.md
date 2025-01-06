@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcr DeleteServiceAccount --cli-unfold-argument  \
-    --RegistryId abc \
-    --Name abc
+    --RegistryId tcr-dg284imq \
+    --Name tcr$servie-account3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "0804e7fc-58f6-439b-9f76-9c10b22c49ed"
     }
 }
 ```

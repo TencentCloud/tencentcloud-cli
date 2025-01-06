@@ -1,96 +1,193 @@
 # 本版本更新包含以下内容：
 
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+## 云顾问(advisor) 版本：2020-07-21
 
-### 第 33 次发布
+### 第 20 次发布
 
-发布时间：2025-01-06 01:16:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeRedisTopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/85631)
-
-新增数据结构：
-
-* [TopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopHotKeys)
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
-
-### 第 15 次发布
-
-发布时间：2025-01-06 01:24:03
+发布时间：2025-01-07 01:08:04
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [CreateReconstructDocumentFlow](http://document.tencentcloudapi.woa.com/document/product/1764/85633)
-* [GetEmbedding](http://document.tencentcloudapi.woa.com/document/product/1764/85635)
-* [GetReconstructDocumentResult](http://document.tencentcloudapi.woa.com/document/product/1764/85632)
-* [RunRerank](http://document.tencentcloudapi.woa.com/document/product/1764/85634)
-
-修改接口：
-
-* [RetrieveKnowledge](http://document.tencentcloudapi.woa.com/document/product/1764/85623)
-
-	* 新增入参：AttributeLabels
-
-
-新增数据结构：
-
-* [CreateReconstructDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateReconstructDocumentFlowConfig)
-* [EmbeddingObject](http://document.tencentcloudapi.woa.com/document/product/1764/84021#EmbeddingObject)
-* [Usage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Usage)
-
-
-
-## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
-
-### 第 33 次发布
-
-发布时间：2025-01-06 01:34:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeTopicListByGroup](http://document.tencentcloudapi.woa.com/document/product/1739/85636)
 
 修改数据结构：
 
-* [ConsumerClient](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ConsumerClient)
+* [ArchNodeDetail](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchNodeDetail)
 
-	* <font color="#dd0000">**修改成员**：</font>ClientId, ClientAddr, Language, Version, ConsumerLag
+	* 新增成员：BindingType, UpdateTime
 
-* [MessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageItem)
 
-	* <font color="#dd0000">**修改成员**：</font>MsgId, Tags, Keys, ProducerAddr, ProduceTime, DeadLetterResendTimes, DeadLetterResendSuccessTimes
 
-* [MessageTraceItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTraceItem)
 
-	* <font color="#dd0000">**修改成员**：</font>Stage, Data
+## 应用管理平台(camp) 版本：2022-09-20
 
-* [MessageTrackItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTrackItem)
+### 第 44 次发布
 
-	* <font color="#dd0000">**修改成员**：</font>ConsumerGroup, ConsumeStatus, TrackType, ExceptionDesc
+发布时间：2025-01-07 01:10:32
 
-* [TopicConsumeStats](http://document.tencentcloudapi.woa.com/document/product/1739/81437#TopicConsumeStats)
+本次发布包含了以下内容：
 
-	* <font color="#dd0000">**修改成员**：</font>Topic, TopicType, QueueNum, ConsumerLag, SubString, LastUpdateTime
+改善已有的文档。
+
+修改数据结构：
+
+* [ZhiyanLogConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiyanLogConfig)
+
+	* 新增成员：ExcludeFiles, Fields
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 126 次发布
+
+发布时间：2025-01-07 01:11:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTableColumns](http://document.tencentcloudapi.woa.com/document/product/236/85637)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 78 次发布
+
+发布时间：2025-01-07 01:20:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BangladeshIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#BangladeshIDCard)
+* [NigeriaDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaDrivingLicense)
+* [NigeriaIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaIDCard)
+* [PakistanDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanDrivingLicense)
+* [PakistanIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanIDCard)
+
+修改数据结构：
+
+* [CardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardInfo)
+
+	* 新增成员：BangladeshIDCard, NigeriaIDCard, NigeriaDrivingLicense, PakistanIDCard, PakistanDrivingLicense
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 62 次发布
+
+发布时间：2025-01-07 01:22:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [PauseTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85641)
+* [ResetTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85640)
+* [ResumeWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85639)
+* [TransferTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85638)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 49 次发布
+
+发布时间：2025-01-07 01:30:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：XEventStatus, MultiDrReadableInfo
+
+* [ModifyDBInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/238/52347)
+
+	* 新增入参：DrInstanceId
+
+* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/238/19948)
+
+	* 新增入参：DrZones
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 31 次发布
+
+发布时间：2025-01-07 01:33:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSecLogVasInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79073)
+
+	* 新增出参：ResourceDetailList
+
+
+新增数据结构：
+
+* [VasInfoResourceDetail](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VasInfoResourceDetail)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 190 次发布
+
+发布时间：2025-01-07 01:37:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpnGateway](http://document.tencentcloudapi.woa.com/document/product/215/17521)
+
+	* 新增入参：BgpEnable
+
+* [ModifyVpnGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17507)
+
+	* 新增入参：BgpEnable
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 79 次发布
+
+发布时间：2025-01-07 01:39:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：IndicatorTimeRangeValue, IndicatorTimeRangeUnit, SyncType
 
 
 
@@ -547,6 +644,21 @@
 
 
 ## 云顾问(advisor) 版本：2020-07-21
+
+### 第 20 次发布
+
+发布时间：2025-01-07 01:08:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ArchNodeDetail](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchNodeDetail)
+
+	* 新增成员：BindingType, UpdateTime
+
 
 ### 第 19 次发布
 
@@ -10931,6 +11043,21 @@
 
 ## 应用管理平台(camp) 版本：2022-09-20
 
+### 第 44 次发布
+
+发布时间：2025-01-07 01:10:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ZhiyanLogConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiyanLogConfig)
+
+	* 新增成员：ExcludeFiles, Fields
+
+
 ### 第 43 次发布
 
 发布时间：2025-01-02 17:48:02
@@ -15131,6 +15258,18 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 126 次发布
+
+发布时间：2025-01-07 01:11:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeTableColumns](http://document.tencentcloudapi.woa.com/document/product/236/85637)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 125 次发布
 
@@ -43692,11 +43831,11 @@
 
 新增接口：
 
-* [[DescribeRedisTopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/85631)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRedisTopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/85631)
 
 新增数据结构：
 
-* [[TopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopHotKeys)](http://document.tencentcloudapi.woa.com/document/product/1130/57812#[TopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopHotKeys))
+* [TopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopHotKeys)
 
 ### 第 32 次发布
 
@@ -62102,6 +62241,29 @@
 
 ## 人脸核身(faceid) 版本：2018-03-01
 
+### 第 78 次发布
+
+发布时间：2025-01-07 01:20:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[BangladeshIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#BangladeshIDCard)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[BangladeshIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#BangladeshIDCard))
+* [[NigeriaDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaDrivingLicense)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[NigeriaDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaDrivingLicense))
+* [[NigeriaIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaIDCard)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[NigeriaIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaIDCard))
+* [[PakistanDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanDrivingLicense)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[PakistanDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanDrivingLicense))
+* [[PakistanIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanIDCard)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[PakistanIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanIDCard))
+
+修改数据结构：
+
+* [CardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardInfo)
+
+	* 新增成员：BangladeshIDCard, NigeriaIDCard, NigeriaDrivingLicense, PakistanIDCard, PakistanDrivingLicense
+
+
 ### 第 77 次发布
 
 发布时间：2024-12-19 01:22:28
@@ -68374,6 +68536,21 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 62 次发布
+
+发布时间：2025-01-07 01:22:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[PauseTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85641)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ResetTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85640)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ResumeWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85639)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[TransferTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85638)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 61 次发布
 
@@ -75947,10 +76124,10 @@
 
 新增接口：
 
-* [[CreateReconstructDocumentFlow](http://document.tencentcloudapi.woa.com/document/product/1764/85633)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetEmbedding](http://document.tencentcloudapi.woa.com/document/product/1764/85635)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[GetReconstructDocumentResult](http://document.tencentcloudapi.woa.com/document/product/1764/85632)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RunRerank](http://document.tencentcloudapi.woa.com/document/product/1764/85634)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateReconstructDocumentFlow](http://document.tencentcloudapi.woa.com/document/product/1764/85633)
+* [GetEmbedding](http://document.tencentcloudapi.woa.com/document/product/1764/85635)
+* [GetReconstructDocumentResult](http://document.tencentcloudapi.woa.com/document/product/1764/85632)
+* [RunRerank](http://document.tencentcloudapi.woa.com/document/product/1764/85634)
 
 修改接口：
 
@@ -75961,9 +76138,9 @@
 
 新增数据结构：
 
-* [[CreateReconstructDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateReconstructDocumentFlowConfig)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[CreateReconstructDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateReconstructDocumentFlowConfig))
-* [[EmbeddingObject](http://document.tencentcloudapi.woa.com/document/product/1764/84021#EmbeddingObject)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[EmbeddingObject](http://document.tencentcloudapi.woa.com/document/product/1764/84021#EmbeddingObject))
-* [[Usage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Usage)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[Usage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Usage))
+* [CreateReconstructDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateReconstructDocumentFlowConfig)
+* [EmbeddingObject](http://document.tencentcloudapi.woa.com/document/product/1764/84021#EmbeddingObject)
+* [Usage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Usage)
 
 ### 第 14 次发布
 
@@ -95699,6 +95876,29 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 49 次发布
+
+发布时间：2025-01-07 01:30:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：XEventStatus, MultiDrReadableInfo
+
+* [ModifyDBInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/238/52347)
+
+	* 新增入参：DrInstanceId
+
+* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/238/19948)
+
+	* 新增入参：DrZones
+
+
 ### 第 48 次发布
 
 发布时间：2025-01-01 01:30:32
@@ -103729,6 +103929,25 @@
 
 
 ## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 31 次发布
+
+发布时间：2025-01-07 01:33:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSecLogVasInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79073)
+
+	* 新增出参：ResourceDetailList
+
+
+新增数据结构：
+
+* [[VasInfoResourceDetail](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VasInfoResourceDetail)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[VasInfoResourceDetail](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VasInfoResourceDetail))
 
 ### 第 30 次发布
 
@@ -116576,7 +116795,7 @@
 
 新增接口：
 
-* [[DescribeTopicListByGroup](http://document.tencentcloudapi.woa.com/document/product/1739/85636)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTopicListByGroup](http://document.tencentcloudapi.woa.com/document/product/1739/85636)
 
 修改数据结构：
 
@@ -125811,6 +126030,25 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 190 次发布
+
+发布时间：2025-01-07 01:37:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpnGateway](http://document.tencentcloudapi.woa.com/document/product/215/17521)
+
+	* 新增入参：BgpEnable
+
+* [ModifyVpnGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17507)
+
+	* 新增入参：BgpEnable
+
+
 ### 第 189 次发布
 
 发布时间：2025-01-03 01:37:11
@@ -133259,6 +133497,21 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 79 次发布
+
+发布时间：2025-01-07 01:39:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：IndicatorTimeRangeValue, IndicatorTimeRangeUnit, SyncType
+
 
 ### 第 78 次发布
 

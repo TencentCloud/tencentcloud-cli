@@ -3,8 +3,8 @@
     "ApplyCardVerification": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyIDVerification\n<公共请求参数>\n\n{\n    \"ImageBase64Front\": \"abc\",\n    \"ImageBase64Back\": \"abc\",\n    \"ImageUrlFront\": \"abc\",\n    \"ImageUrlBack\": \"abc\",\n    \"Nationality\": \"abc\",\n    \"CardType\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CardVerificationToken\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyIDVerification\n<公共请求参数>\n\n{\n    \"ImageUrlFront\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\",\n    \"ImageUrlBack\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\",\n    \"Nationality\": \"HKG\",\n    \"CardType\": \"ID_CARD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CardVerificationToken\": \"b607d0ad-edca-4b54-a35d-b72ef254dc11\",\n        \"AsyncCardVerificationMaxPollingTimes\": 60,\n        \"AsyncCardVerificationPollingWaitTime\": 5,\n        \"RequestId\": \"a498a726-9596-467c-88dc-c68ba51ab4c8\"\n    }\n}",
         "title": "正常响应"
       }
     ],

@@ -19,7 +19,7 @@
     "AddGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"gname\",\n    \"Description\": \"描述\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"gname\",\n    \"Description\": \"AddGroup info\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1434e98-16e8-41de-9b9b-27805a9cffbf\",\n        \"GroupId\": \"1a2b3c4d5e\"\n    }\n}",
         "title": "示例1"
       }
@@ -27,8 +27,8 @@
     "AddHardware": [
       {
         "document": "批量新建硬件设备",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddHardware\n<公共请求参数>\n\n{\n    \"Hardware\": [\n        {\n            \"SN\": \"AN\",\n            \"LicenseChargingMode\": 1,\n            \"Description\": \"描述\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Hardware\": [\n            {\n                \"SN\": \"AN\",\n                \"LicenseChargingMode\": 1,\n                \"Description\": \"描述\",\n                \"HardwareId\": \"cpe-9oii2ew1z4\"\n            }\n        ],\n        \"RequestId\": \"a1434e98-16e8-41de-9b9b-27805a9cffbf\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddHardware\n<公共请求参数>\n\n{\n    \"Hardware\": [\n        {\n            \"SN\": \"AN\",\n            \"LicenseChargingMode\": 1,\n            \"Description\": \"AddHardware info\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Hardware\": [\n            {\n                \"SN\": \"AN\",\n                \"LicenseChargingMode\": 1,\n                \"Description\": \"AddHardware描述\",\n                \"HardwareId\": \"cpe-9oii2ew1z4\"\n            }\n        ],\n        \"RequestId\": \"a1434e98-16e8-41de-9b9b-27805a9cffbf\"\n    }\n}",
         "title": "新建硬件设备"
       }
     ],
@@ -178,7 +178,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetGroupList\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\",\n    \"Keyword\": \"Keyword\"\n}",
-        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"group-id1\",\n                \"GroupName\": \"gname\",\n                \"CreateTime\": \"1734401551\",\n                \"UpdateTime\": \"1734401551\",\n                \"Description\": \"描述\",\n                \"DeviceNum\": 5\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"a1434e98-16e8-41de-9b9b-27805a9cffbf\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"group-id1\",\n                \"GroupName\": \"gname\",\n                \"CreateTime\": \"1734401551\",\n                \"UpdateTime\": \"1734401551\",\n                \"Description\": \"GetGroupList描述\",\n                \"DeviceNum\": 5\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"a1434e98-16e8-41de-9b9b-27805a9cffbf\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetL3ConnList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageNumber\": 1,\n    \"DeviceId\": \"mna-2x2tllhb18\"\n}",
-        "output": "{\n    \"Response\": {\n        \"L3ConnList\": [\n            {\n                \"L3ConnId\": \"l3conn-h9boibynmp\",\n                \"DeviceId1\": \"mna-2x2tllhb18\",\n                \"Cidr1\": \"192.168.1.0/26\",\n                \"DeviceId2\": \"mna-2x2tllhb13\",\n                \"Cidr2\": \"192.168.1.0/26\",\n                \"Enable\": true,\n                \"Description\": \"test\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"e5b299c7-aaf4-4a5e-9d01-feb63273e347\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"L3ConnList\": [\n            {\n                \"L3ConnId\": \"l3conn-h9boibynmp\",\n                \"DeviceId1\": \"mna-2x2tllhb18\",\n                \"Cidr1\": \"192.168.1.0/26\",\n                \"DeviceId2\": \"mna-2x2tllhb13\",\n                \"Cidr2\": \"192.168.1.0/26\",\n                \"Enable\": true,\n                \"Description\": \"this is descript\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"e5b299c7-aaf4-4a5e-9d01-feb63273e347\"\n    }\n}",
         "title": "示例1"
       }
     ],
@@ -240,7 +240,7 @@
       {
         "document": "获取厂商设备列表",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVendorHardware\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Keyword\": \"keywords\",\n    \"Status\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"VendorHardware\": [\n            {\n                \"HardwareId\": \"cpe-2ycsnymh2u\",\n                \"SN\": \"cpe-sn-04\",\n                \"CreateTime\": \"1685449404\",\n                \"Status\": 0,\n                \"Payer\": 0,\n                \"ActiveTime\": \"1685449404\",\n                \"Description\": \"描述\",\n                \"DeviceId\": \"mna-dev1\",\n                \"LicenseChargingMode\": 0,\n                \"LicensePayMode\": -1,\n                \"LastOnlineTime\": \"1685449404\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"728a4c82-b31c-4b32-9cee-3ba1fdd1903c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VendorHardware\": [\n            {\n                \"HardwareId\": \"cpe-2ycsnymh2u\",\n                \"SN\": \"cpe-sn-04\",\n                \"CreateTime\": \"1685449404\",\n                \"Status\": 0,\n                \"Payer\": 0,\n                \"ActiveTime\": \"1685449404\",\n                \"Description\": \"this is descript\",\n                \"DeviceId\": \"mna-dev1\",\n                \"LicenseChargingMode\": 0,\n                \"LicensePayMode\": -1,\n                \"LastOnlineTime\": \"1685449404\"\n            }\n        ],\n        \"Length\": 1,\n        \"TotalPage\": 1,\n        \"RequestId\": \"728a4c82-b31c-4b32-9cee-3ba1fdd1903c\"\n    }\n}",
         "title": "获取厂商设备列表"
       }
     ],
@@ -303,7 +303,7 @@
     "UpdateGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"cliGrp-xf8rboasbh\",\n    \"Description\": \"描述\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"cliGrp-xf8rboasbh\",\n    \"Description\": \"this is descript\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bcc2c1d2-be38-4249-a50b-d9c487a36354\"\n    }\n}",
         "title": "示例1"
       }
@@ -311,7 +311,7 @@
     "UpdateHardware": [
       {
         "document": "更新硬件信息",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateHardware\n<公共请求参数>\n\n{\n    \"HardwareId\": \"cpe-6zmf86knqu\",\n    \"SN\": \"adsqda\",\n    \"Description\": \"描述\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateHardware\n<公共请求参数>\n\n{\n    \"HardwareId\": \"cpe-6zmf86knqu\",\n    \"SN\": \"adsqda\",\n    \"Description\": \"this is descript\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ff707e0-c87a-6cff-5c65-93f21e212a81\"\n    }\n}",
         "title": "更新硬件信息"
       },
@@ -333,7 +333,7 @@
     "UpdateL3Conn": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"l3conn-c0rkbqhig8\",\n    \"Description\": \"描述\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateL3Conn\n<公共请求参数>\n\n{\n    \"L3ConnId\": \"l3conn-c0rkbqhig8\",\n    \"Description\": \"this is descript\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab57398-d79f-4195-b0d4-3aef1e43b9c7\"\n    }\n}",
         "title": "示例1"
       }

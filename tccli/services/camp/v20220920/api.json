@@ -11091,6 +11091,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤采集路径",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeFiles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外字段",
+          "example": "无",
+          "member": "Label",
+          "name": "Fields",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

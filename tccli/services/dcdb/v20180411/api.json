@@ -1440,7 +1440,7 @@
         {
           "disabled": false,
           "document": "安全组id",
-          "example": "无",
+          "example": "sg-9tfjckm6",
           "member": "string",
           "name": "SecurityGroupId",
           "required": false,
@@ -6303,7 +6303,7 @@
           "example": "无",
           "member": "Database",
           "name": "Databases",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6313,7 +6313,7 @@
           "example": "dcdbt-52s53yyh",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

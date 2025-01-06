@@ -60,7 +60,7 @@ Output:
                 "Status": 0,
                 "Payer": 0,
                 "ActiveTime": "1685449404",
-                "Description": "描述",
+                "Description": "this is descript",
                 "DeviceId": "mna-dev1",
                 "LicenseChargingMode": 0,
                 "LicensePayMode": -1,

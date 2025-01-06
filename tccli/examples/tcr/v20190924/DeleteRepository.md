@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcr DeleteRepository --cli-unfold-argument  \
-    --RegistryId tcr-okmj78 \
-    --NamespaceName test \
-    --RepositoryName mytest
+    --RegistryId tcr-dg284imq \
+    --NamespaceName private \
+    --RepositoryName golang
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "2ac430cd-f7de-482e-b98e-f78a48e785e8"
+        "RequestId": "ca2eddea-14cc-4c3f-96e5-de50fd1fd4c0"
     }
 }
 ```

@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli tcr DescribeImageFilterPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test \
-    --Tag test
+    --RepoName nicokang/golang \
+    --Tag 4
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "Data": {
             "SameImages": [
-                "99"
+                "3"
             ]
-        }
+        },
+        "RequestId": "9b054042-5447-4902-bd48-2c92f5be5b0f"
     }
 }
 ```

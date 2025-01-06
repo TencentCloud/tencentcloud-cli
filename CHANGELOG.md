@@ -1,3 +1,197 @@
+# Release 3.0.1131.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 20 次发布
+
+发布时间：2025-01-07 01:08:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ArchNodeDetail](http://document.tencentcloudapi.woa.com/document/product/1660/78752#ArchNodeDetail)
+
+	* 新增成员：BindingType, UpdateTime
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 44 次发布
+
+发布时间：2025-01-07 01:10:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ZhiyanLogConfig](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZhiyanLogConfig)
+
+	* 新增成员：ExcludeFiles, Fields
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 126 次发布
+
+发布时间：2025-01-07 01:11:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTableColumns](http://document.tencentcloudapi.woa.com/document/product/236/85637)
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 78 次发布
+
+发布时间：2025-01-07 01:20:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BangladeshIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#BangladeshIDCard)
+* [NigeriaDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaDrivingLicense)
+* [NigeriaIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#NigeriaIDCard)
+* [PakistanDrivingLicense](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanDrivingLicense)
+* [PakistanIDCard](http://document.tencentcloudapi.woa.com/document/product/1007/41958#PakistanIDCard)
+
+修改数据结构：
+
+* [CardInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardInfo)
+
+	* 新增成员：BangladeshIDCard, NigeriaIDCard, NigeriaDrivingLicense, PakistanIDCard, PakistanDrivingLicense
+
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 62 次发布
+
+发布时间：2025-01-07 01:22:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [PauseTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85641)
+* [ResetTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85640)
+* [ResumeWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85639)
+* [TransferTWeCallDevice](http://document.tencentcloudapi.woa.com/document/product/1081/85638)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 49 次发布
+
+发布时间：2025-01-07 01:30:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/238/77477)
+
+	* 新增出参：XEventStatus, MultiDrReadableInfo
+
+* [ModifyDBInstanceNetwork](http://document.tencentcloudapi.woa.com/document/product/238/52347)
+
+	* 新增入参：DrInstanceId
+
+* [UpgradeDBInstance](http://document.tencentcloudapi.woa.com/document/product/238/19948)
+
+	* 新增入参：DrZones
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 31 次发布
+
+发布时间：2025-01-07 01:33:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSecLogVasInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79073)
+
+	* 新增出参：ResourceDetailList
+
+
+新增数据结构：
+
+* [VasInfoResourceDetail](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VasInfoResourceDetail)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 190 次发布
+
+发布时间：2025-01-07 01:37:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVpnGateway](http://document.tencentcloudapi.woa.com/document/product/215/17521)
+
+	* 新增入参：BgpEnable
+
+* [ModifyVpnGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17507)
+
+	* 新增入参：BgpEnable
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 79 次发布
+
+发布时间：2025-01-07 01:39:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmEventInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#AlarmEventInfo)
+
+	* 新增成员：IndicatorTimeRangeValue, IndicatorTimeRangeUnit, SyncType
+
+
+
+
 # Release 3.0.1130.1
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
