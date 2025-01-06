@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf ListTriggers --cli-unfold-argument  \
-    --FunctionName aaa \
+    --FunctionName function-demo \
     --Limit 2 \
     --Order ASC
 ```
@@ -19,21 +19,21 @@ Output:
         "Triggers": [
             {
                 "Enable": 1,
-                "Qualifier": "abc",
-                "TriggerName": "abc",
-                "Type": "abc",
-                "TriggerDesc": "abc",
-                "AvailableStatus": "abc",
-                "CustomArgument": "abc",
-                "Description": "abc",
+                "Qualifier": "$DEFAULT",
+                "TriggerName": "hulrzrbh9f",
+                "Type": "http",
+                "TriggerDesc": "{\"AuthType\":\"NONE\",\"NetConfig\":{\"EnableIntranet\":true,\"IntranetUrl\":\"https://1258888888-hulrzrbh9f.in.ap-chongqing.tencentscf.com\",\"IntranetHTTPUrl\":\"http://1258888888-hulrzrbh9f.in.ap-chongqing.tencentscf.com\",\"ExtranetUrl\":\"\",\"ExtranetHTTPUrl\":\"\",\"WssIntranetUrl\":\"\",\"WsIntranetUrl\":\"\",\"WssExtranetUrl\":\"\",\"WsExtranetUrl\":\"\",\"EnableExtranet\":false}}",
+                "AvailableStatus": "Available",
+                "CustomArgument": "custom",
+                "Description": "Some Description",
                 "AddTime": "2020-09-22 00:00:00",
                 "ModTime": "2020-09-22 00:00:00",
-                "ResourceId": "abc",
-                "BindStatus": "abc",
-                "TriggerAttribute": "abc"
+                "ResourceId": "qcs::scf:cq:uin/888888:function/function-demo/hulrzrbh9f",
+                "BindStatus": "on",
+                "TriggerAttribute": "single"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "52dd00b1-7197-4a11-97f5-2a67f9f49273"
     }
 }
 ```

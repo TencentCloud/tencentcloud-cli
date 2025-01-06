@@ -9208,7 +9208,7 @@
         {
           "disabled": false,
           "document": "pod的Label信息",
-          "example": "\"{\\\"k8s-app\\\": \\\"inst711-a2\\\", \\\"app.camp.io/id\\\": \\\"tad-8wxgbqn8\\\", \\\"app.tad.io/name\\\": \\\"app-zhh-inst711-a2\\\", \\\"tkex-projectName\\\": \\\"prj-c4t6575j\\\", \\\"pod-template-hash\\\": \\\"67fc4f74fd\\\", \\\"tkex-workload-kind\\\": \\\"deployment\\\", \\\"tkex-workload-name\\\": \\\"inst711-a2\\\", \\\"cloud.tencent.com/pool\\\": \\\"qcloud_ziyan\\\", \\\"component.app.tad.io/name\\\": \\\"inst711-a2\\\", \\\"component.app.tad.io/type\\\": \\\"deployment\\\", \\\"app.camp.io/application-id\\\": \\\"app-vt66hf92\\\", \\\"cloud.tencent.com/asset-code\\\": \\\"TEKS241011014630\\\", \\\"cloud.tencent.com/instance-type\\\": \\\"S5.SMALL4\\\", \\\"app.tad.io/component-controller-revision\\\": \\\"app-zhh-inst711-a2-879768867\\\", \\\"app.tad.io/component-podTemplate-revision\\\": \\\"app-zhh-inst711-a2-849b89cd98\\\"}\"",
+          "example": "无",
           "member": "string",
           "name": "Labels",
           "output_required": false,

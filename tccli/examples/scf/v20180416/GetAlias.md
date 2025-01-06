@@ -15,32 +15,21 @@ Output:
 ```
 {
     "Response": {
-        "ModTime": "2020-09-22 00:00:00",
-        "Description": "xx",
-        "AddTime": "2020-09-22 00:00:00",
-        "FunctionVersion": "xx",
-        "RequestId": "xx",
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
+        "Name": "ddd",
+        "Description": "",
+        "FunctionVersion": "1",
         "RoutingConfig": {
             "AdditionalVersionWeights": [
                 {
-                    "Version": "xx",
-                    "Weight": 0.3
-                },
-                {
-                    "Version": "xx",
-                    "Weight": 0.2
+                    "Version": "$LATEST",
+                    "Weight": 0.8
                 }
             ],
-            "AddtionVersionMatchs": [
-                {
-                    "Version": "xx",
-                    "Expression": "xx",
-                    "Method": "xx",
-                    "Key": "xx"
-                }
-            ]
+            "AddtionVersionMatchs": []
         },
-        "Name": "xx"
+        "AddTime": "2024-12-19 14:53:51",
+        "ModTime": "2024-12-19 14:53:51"
     }
 }
 ```

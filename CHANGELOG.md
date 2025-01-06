@@ -1,3 +1,100 @@
+# Release 3.0.1130.1
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 33 次发布
+
+发布时间：2025-01-06 01:16:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRedisTopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/85631)
+
+新增数据结构：
+
+* [TopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/57812#TopHotKeys)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 15 次发布
+
+发布时间：2025-01-06 01:24:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateReconstructDocumentFlow](http://document.tencentcloudapi.woa.com/document/product/1764/85633)
+* [GetEmbedding](http://document.tencentcloudapi.woa.com/document/product/1764/85635)
+* [GetReconstructDocumentResult](http://document.tencentcloudapi.woa.com/document/product/1764/85632)
+* [RunRerank](http://document.tencentcloudapi.woa.com/document/product/1764/85634)
+
+修改接口：
+
+* [RetrieveKnowledge](http://document.tencentcloudapi.woa.com/document/product/1764/85623)
+
+	* 新增入参：AttributeLabels
+
+
+新增数据结构：
+
+* [CreateReconstructDocumentFlowConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#CreateReconstructDocumentFlowConfig)
+* [EmbeddingObject](http://document.tencentcloudapi.woa.com/document/product/1764/84021#EmbeddingObject)
+* [Usage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Usage)
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 33 次发布
+
+发布时间：2025-01-06 01:34:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTopicListByGroup](http://document.tencentcloudapi.woa.com/document/product/1739/85636)
+
+修改数据结构：
+
+* [ConsumerClient](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ConsumerClient)
+
+	* <font color="#dd0000">**修改成员**：</font>ClientId, ClientAddr, Language, Version, ConsumerLag
+
+* [MessageItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageItem)
+
+	* <font color="#dd0000">**修改成员**：</font>MsgId, Tags, Keys, ProducerAddr, ProduceTime, DeadLetterResendTimes, DeadLetterResendSuccessTimes
+
+* [MessageTraceItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTraceItem)
+
+	* <font color="#dd0000">**修改成员**：</font>Stage, Data
+
+* [MessageTrackItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#MessageTrackItem)
+
+	* <font color="#dd0000">**修改成员**：</font>ConsumerGroup, ConsumeStatus, TrackType, ExceptionDesc
+
+* [TopicConsumeStats](http://document.tencentcloudapi.woa.com/document/product/1739/81437#TopicConsumeStats)
+
+	* <font color="#dd0000">**修改成员**：</font>Topic, TopicType, QueueNum, ConsumerLag, SubString, LastUpdateTime
+
+
+
+
 # Release 3.0.1129.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

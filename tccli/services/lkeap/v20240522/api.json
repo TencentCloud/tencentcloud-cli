@@ -28,6 +28,13 @@
       "output": "CreateQAResponse",
       "status": "online"
     },
+    "CreateReconstructDocumentFlow": {
+      "document": "本接口为异步接口的发起请求接口，用于发起文档解析任务。\n文档解析支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。\n\n体验期间单账号限制qps仅为1，若有正式接入需要请与产研团队沟通开放。",
+      "input": "CreateReconstructDocumentFlowRequest",
+      "name": "创建文档解析任务",
+      "output": "CreateReconstructDocumentFlowResponse",
+      "status": "online"
+    },
     "CreateSplitDocumentFlow": {
       "document": "创建文档拆分任务",
       "input": "CreateSplitDocumentFlowRequest",
@@ -75,6 +82,20 @@
       "input": "ExtractQARequest",
       "name": "提取问答对",
       "output": "ExtractQAResponse",
+      "status": "online"
+    },
+    "GetEmbedding": {
+      "document": "本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。\n本接口（GetEmbedding）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "input": "GetEmbeddingRequest",
+      "name": "获取特征向量",
+      "output": "GetEmbeddingResponse",
+      "status": "online"
+    },
+    "GetReconstructDocumentResult": {
+      "document": "本接口为异步接口的查询结果接口，用于获取文档解析处理结果。",
+      "input": "GetReconstructDocumentResultRequest",
+      "name": "查询文档解析任务结果",
+      "output": "GetReconstructDocumentResultResponse",
       "status": "online"
     },
     "GetSplitDocumentResult": {
@@ -136,7 +157,7 @@
     "ReconstructDocumentSSE": {
       "document": "准实时文档解析接口，使用HTTP SSE 协议通信。",
       "input": "ReconstructDocumentSSERequest",
-      "name": "文档解析SSE",
+      "name": "实时文档解析",
       "output": "ReconstructDocumentSSEResponse",
       "status": "online"
     },
@@ -145,6 +166,13 @@
       "input": "RetrieveKnowledgeRequest",
       "name": "检索知识库内容",
       "output": "RetrieveKnowledgeResponse",
+      "status": "online"
+    },
+    "RunRerank": {
+      "document": "基于知识引擎精调模型技术的rerank模型，支持对多路召回的结果进行重排序，根据query与切片内容的相关性，按分数由高到低对切片进行排序，并输出对应的打分结果。",
+      "input": "RunRerankRequest",
+      "name": "重排序",
+      "output": "RunRerankResponse",
       "status": "online"
     },
     "SearchKnowledge": {
@@ -489,6 +517,112 @@
       ],
       "type": "object"
     },
+    "CreateReconstructDocumentFlowConfig": {
+      "document": "创建智能文档解析任务的配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Markdown文件中表格返回的形式\n0，表格以MD形式返回\n1，表格以HTML形式返回\n默认为1",
+          "example": "1",
+          "member": "string",
+          "name": "TableResultType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "智能文档解析返回结果的格式\n0：只返回全文MD；\n1：只返回每一页的OCR原始Json；\n2：只返回每一页的MD，\n3：返回全文MD + 每一页的OCR原始Json；\n4：返回全文MD + 每一页的MD，\n默认值为3（返回全文MD + 每一页的OCR原始Json）\n\n",
+          "example": "3",
+          "member": "string",
+          "name": "ResultType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateReconstructDocumentFlowRequest": {
+      "document": "CreateReconstructDocumentFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`、`BMP`、`GIF`、`WEBP`、`HEIC`、`EPS`、`ICNS`、`IM`、`PCX`、`PPM`、`TIFF`、`XBM`、`HEIF`、`JP2`\n\n**支持的文件大小：**\n - `PDF`、`DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
+          "example": "PDF",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "FileBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档的起始页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FileStartPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文档的结束页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。",
+          "example": "100",
+          "member": "int64",
+          "name": "FileEndPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建文档解析任务配置信息。",
+          "example": "{\"TableResultType\":\"1\"}",
+          "member": "CreateReconstructDocumentFlowConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReconstructDocumentFlowResponse": {
+      "document": "CreateReconstructDocumentFlow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务唯一id。30天内可以通过GetReconstructDocumentResult接口查询TaskId对应的处理结果。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSplitDocumentFlowConfig": {
       "document": "创建智能文档拆分任务的配置信息",
       "members": [
@@ -824,6 +958,23 @@
       ],
       "usage": "out"
     },
+    "EmbeddingObject": {
+      "document": "向量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "向量",
+          "example": "无",
+          "member": "float",
+          "name": "Embedding",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExtractQARequest": {
       "document": "ExtractQA请求参数结构体",
       "members": [
@@ -879,6 +1030,119 @@
       ],
       "type": "object"
     },
+    "GetEmbeddingRequest": {
+      "document": "GetEmbedding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "lke-text-embedding-v1",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要 embedding 的文本, 单条文本最大长度500个字符, 总条数最大7条",
+          "example": "[\"hello\", \"world\"]",
+          "member": "string",
+          "name": "Inputs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEmbeddingResponse": {
+      "document": "GetEmbedding返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特征",
+          "example": "无",
+          "member": "EmbeddingObject",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗量，返回TotalToken",
+          "example": "{\"TotalTokens\":3}",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReconstructDocumentResultRequest": {
+      "document": "GetReconstructDocumentResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解析任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetReconstructDocumentResultResponse": {
+      "document": "GetReconstructDocumentResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。- `Success`：执行完成- `Processing`：执行中- `Pause`: 暂停- `Failed`：执行失败- `WaitExecute`：等待执行",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟",
+          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.zip",
+          "member": "string",
+          "name": "DocumentRecognizeResultUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档解析失败的页码",
+          "example": "无",
+          "member": "ReconstructDocumentFailedPage",
+          "name": "FailedPages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetSplitDocumentResultRequest": {
       "document": "GetSplitDocumentResult请求参数结构体",
       "members": [
@@ -899,7 +1163,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态。\n\n- `Success`：执行完成\n- `Processing`：执行中\n- `Failed`：执行失败\n- `WaitExecute`：等待执行",
+          "document": "任务状态。\n\n- `Success`：执行完成\n- `Processing`：执行中\n- `Pause`: 暂停\n- `Failed`：执行失败\n- `WaitExecute`：等待执行",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -1393,7 +1657,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 Url 地址。文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
           "example": "无",
           "member": "string",
           "name": "FileUrl",
@@ -1402,7 +1666,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 Base64 值。支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。支持的图片像素：单边介于20-10000px之间。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
+          "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
           "example": "无",
           "member": "string",
           "name": "FileBase64",
@@ -1411,7 +1675,7 @@
         },
         {
           "disabled": false,
-          "document": "用来指定文件识别的起始页码，识别的页码包含当前值，支持的文件类型：PDF、DOC、DOCX、PPT、PPTX。",
+          "document": "文档的起始页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -1420,7 +1684,7 @@
         },
         {
           "disabled": false,
-          "document": "用来指定文件识别的结束页码，识别的页码包含当前值，支持的文件类型：PDF、DOC、DOCX、PPT、PPTX。",
+          "document": "文档的结束页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。",
           "example": "100",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -1654,6 +1918,15 @@
           "name": "RetrievalSetting",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤。",
+          "example": "无",
+          "member": "LabelItem",
+          "name": "AttributeLabels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1679,6 +1952,71 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunRerankRequest": {
+      "document": "RunRerank请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询内容",
+          "example": "腾讯知识引擎大模型",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档列表，最多20个",
+          "example": "[\"腾讯知识引擎\",\"知识引擎大模型\"]",
+          "member": "string",
+          "name": "Docs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称, 默认: lke-reranker-base",
+          "example": "lke-reranker-base",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunRerankResponse": {
+      "document": "RunRerank返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "相关性, 数值越大越相关",
+          "example": "[-19.681953, -19.414124]",
+          "member": "float",
+          "name": "ScoreList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗量，仅返回TotalToken",
+          "example": "{\"TotalTokens\":3}",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2038,6 +2376,52 @@
         }
       ],
       "type": "object"
+    },
+    "Usage": {
+      "document": "消耗量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档页数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalPages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入token数",
+          "example": "10",
+          "member": "int64",
+          "name": "InputTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出token数",
+          "example": "10",
+          "member": "int64",
+          "name": "OutputTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总token数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

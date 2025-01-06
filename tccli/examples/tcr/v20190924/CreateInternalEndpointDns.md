@@ -6,17 +6,19 @@ Input:
 
 ```
 tccli tcr CreateInternalEndpointDns --cli-unfold-argument  \
-    --InstanceId tcr-xxx \
-    --EniLBIp 1.1.1.1 \
-    --VpcId vpc-xxx \
-    --UsePublicDomain false
+    --InstanceId tcr-dg284imq \
+    --VpcId vpc-9iazgkcl \
+    --EniLBIp 192.168.23.69 \
+    --UsePublicDomain True \
+    --RegionName ap-guangzhou \
+    --RegionId 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxx"
+        "RequestId": "b6cf242e-a41f-4d1e-8a9c-16c6a0b8b326"
     }
 }
 ```

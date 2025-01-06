@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli tcr ModifyInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
-    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f \
-    --Desc aaa \
+    --TokenId ct3ucep1qcle9n4kmv00 \
+    --Enable False \
+    --RegistryId tcr-dg284imq \
+    --Desc update desc \
     --ModifyFlag 1
 ```
 
@@ -16,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f"
+        "RequestId": "cff207ed-446a-4e62-8098-12b0c91a929b"
     }
 }
 ```
@@ -29,16 +30,17 @@ Input:
 
 ```
 tccli tcr ModifyInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
-    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f \
-    --Enable true
+    --TokenId ct3ucep1qcle9n4kmv00 \
+    --Enable True \
+    --RegistryId tcr-dg284imq \
+    --ModifyFlag 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f"
+        "RequestId": "b6e898ab-b817-43c6-9a51-31d3baaa2f68"
     }
 }
 ```
@@ -51,16 +53,17 @@ Input:
 
 ```
 tccli tcr ModifyInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
-    --TokenId 2ab3af0d-893d-423f-91b1-27713566f95f \
-    --Enable false
+    --TokenId ct3ucep1qcle9n4kmv00 \
+    --Enable False \
+    --RegistryId tcr-dg284imq \
+    --ModifyFlag 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6cd302c6-c4c9-425a-8d07-8c59b7f4cf3f"
+        "RequestId": "14d569e1-e3cf-4399-a096-b6bd7b373240"
     }
 }
 ```

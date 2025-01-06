@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli scf DeleteLayerVersion --cli-unfold-argument  \
-    --LayerName abc \
-    --LayerVersion 0
+    --LayerName layer-1 \
+    --LayerVersion 1
 ```
 
 Output: 

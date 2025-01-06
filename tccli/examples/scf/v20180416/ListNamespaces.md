@@ -7,53 +7,39 @@ Input:
 ```
 tccli scf ListNamespaces --cli-unfold-argument  \
     --SearchKey.0.Key Namespace \
-    --SearchKey.0.Value dev
+    --SearchKey.0.Value ns1
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 2,
         "Namespaces": [
             {
-                "ModTime": "2020-09-22 00:00:00",
-                "AddTime": "2020-09-22 00:00:00",
-                "Description": "abc",
-                "Name": "abc",
-                "Type": "abc",
-                "Status": "abc",
-                "StatusReason": "abc",
-                "ResourceEnv": {
-                    "TKE": {
-                        "ClusterID": "abc",
-                        "SubnetID": "abc",
-                        "Namespace": "abc",
-                        "DataPath": "abc",
-                        "NodeSelector": [
-                            {
-                                "Key": "abc",
-                                "Value": "abc"
-                            }
-                        ],
-                        "Tolerations": [
-                            {
-                                "Key": "abc",
-                                "Operator": "abc",
-                                "Effect": "abc",
-                                "Value": "abc",
-                                "TolerationSeconds": 1
-                            }
-                        ],
-                        "Port": 1
-                    }
-                },
-                "Stamp": [
-                    "abc"
-                ]
+                "Name": "ns1",
+                "Description": "",
+                "AddTime": "2024-12-17 15:28:55",
+                "ModTime": "2024-12-17 15:28:55",
+                "Type": "default",
+                "Stamp": "default",
+                "Status": "Active",
+                "StatusReason": null,
+                "ResourceEnv": null
+            },
+            {
+                "Name": "default",
+                "Description": "",
+                "AddTime": "2024-10-17 09:29:45",
+                "ModTime": "2024-10-17 09:29:45",
+                "Type": "default",
+                "Stamp": "default",
+                "Status": "Active",
+                "StatusReason": null,
+                "ResourceEnv": null
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "sdfsdfs-3de5-459c-984a-cb43ec2625d2"
     }
 }
 ```

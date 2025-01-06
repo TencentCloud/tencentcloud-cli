@@ -6,27 +6,29 @@ Input:
 
 ```
 tccli tcr DescribeRepositories --cli-unfold-argument  \
-    --RegistryId tcr-f7g1ir99 \
-    --Limit 20 \
-    --Offset 0
+    --RegistryId tcr-dg284imq \
+    --NamespaceName multi-arch \
+    --RepositoryName busybox \
+    --Offset 1 \
+    --Limit 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "772e3357-0b31-4b79-8afb-5b9835a3ada9",
         "RepositoryList": [
             {
-                "Name": "mytest/tianzichen",
-                "Namespace": "mytest",
-                "CreationTime": "2020-02-27 01:07:14.503709 +0800 CST",
-                "UpdateTime": "2020-02-27 01:07:14.503709 +0800 CST",
+                "BriefDescription": "busybox",
+                "CreationTime": "2024-12-10 14:30:36.806284 +0000 UTC",
+                "Description": "",
+                "Name": "multi-arch/busybox",
+                "Namespace": "multi-arch",
                 "Public": false,
-                "Description": "mytest",
-                "BriefDescription": "test"
+                "UpdateTime": "2024-12-10 14:30:36.806284 +0000 UTC"
             }
         ],
+        "RequestId": "1cce5817-43d2-4f50-9fd5-e807d3ea0768",
         "TotalCount": 1
     }
 }

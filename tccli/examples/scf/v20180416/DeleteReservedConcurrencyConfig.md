@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli scf DeleteReservedConcurrencyConfig --cli-unfold-argument  \
-    --FunctionName test
+    --FunctionName functionName1 \
+    --Namespace default
 ```
 
 Output: 

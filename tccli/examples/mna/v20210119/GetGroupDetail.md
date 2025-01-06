@@ -20,7 +20,7 @@ Output:
             "GroupName": "groupname",
             "CreateTime": "1711076263000",
             "UpdateTime": "1711076263000",
-            "Description": "描述",
+            "Description": "GetGroupDetail描述",
             "DeviceNum": 0
         },
         "DeviceInfos": [

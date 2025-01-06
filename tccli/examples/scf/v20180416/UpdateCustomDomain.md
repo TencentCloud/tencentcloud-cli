@@ -10,7 +10,7 @@ tccli scf UpdateCustomDomain --cli-unfold-argument  \
     --Protocol HTTP&HTTPS \
     --CertConfig.CertificateId cvvxxJ3DK7 \
     --WafConfig.WafOpen CLOSE \
-    --WafConfig.WafInstanceId 
+    --WafConfig.WafInstanceId waf_2kzh3vlq0um
 ```
 
 Output: 

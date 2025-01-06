@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf PutProvisionedConcurrencyConfig --cli-unfold-argument  \
-    --FunctionName test \
+    --FunctionName functionName1 \
     --Qualifier 1 \
     --VersionProvisionedConcurrencyNum 10
 ```

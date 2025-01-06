@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr CreateUserPersonal --cli-unfold-argument  \
-    --Password 123456789
+    --Password ux0HKy2CFn
 ```
 
 Output: 

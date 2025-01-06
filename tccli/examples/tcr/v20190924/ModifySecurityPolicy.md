@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli tcr ModifySecurityPolicy --cli-unfold-argument  \
-    --RegistryId tcr-test123 \
-    --CidrBlock 192.168.0.0/24 \
-    --Description test \
-    --PolicyIndex 1
+    --RegistryId tcr-dg284imq \
+    --PolicyIndex 2 \
+    --CidrBlock 3.3.3.3 \
+    --Description update access ip
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RegistryId": "tcr-test123",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RegistryId": "tcr-dg284imq",
+        "RequestId": "057c8440-07a9-4e00-a7cd-8be2372dfb90"
     }
 }
 ```

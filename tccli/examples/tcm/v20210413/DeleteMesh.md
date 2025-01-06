@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcm DeleteMesh --cli-unfold-argument  \
-    --MeshId xx \
+    --MeshId mesh-xxxxxxxx \
     --NeedDeleteCLS false \
     --NeedDeleteTMP false \
     --NeedDeleteAPM false \

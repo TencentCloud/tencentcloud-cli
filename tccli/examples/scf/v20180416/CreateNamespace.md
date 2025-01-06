@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli scf CreateNamespace --cli-unfold-argument  \
-    --Namespace test
+    --Namespace ns1 \
+    --Description a ns
 ```
 
 Output: 

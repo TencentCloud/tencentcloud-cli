@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf PutReservedConcurrencyConfig --cli-unfold-argument  \
-    --FunctionName test \
+    --FunctionName functionName1 \
     --ReservedConcurrencyMem 12800
 ```
 

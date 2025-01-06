@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcr DescribeTagRetentionRules --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
-    --NamespaceName test \
-    --Limit 20 \
+    --RegistryId tcr-dg284imq \
+    --NamespaceName ns2 \
+    --Limit 10 \
     --Offset 1
 ```
 
@@ -16,23 +16,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c7abb9f2-9440-43ea-a12f-ae58875acf3d",
+        "RequestId": "3e5adfc9-766a-49c9-bd18-c8c0ca8c9050",
         "RetentionPolicyList": [
             {
-                "NextExecutionTime": "2024-06-24",
-                "RetentionId": 1,
-                "NamespaceName": "aaaa",
+                "CronSetting": "daily",
+                "Disabled": true,
+                "NamespaceName": "ns2",
+                "NextExecutionTime": "2025-01-03T06:00:00+08:00",
+                "RetentionId": 18,
                 "RetentionRuleList": [
                     {
                         "Key": "latestPushedK",
                         "Value": 10
                     }
-                ],
-                "CronSetting": "weekly",
-                "Disabled": false
+                ]
             }
         ],
-        "TotalCount": 0
+        "TotalCount": 1
     }
 }
 ```

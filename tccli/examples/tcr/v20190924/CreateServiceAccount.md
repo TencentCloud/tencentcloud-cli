@@ -6,25 +6,22 @@ Input:
 
 ```
 tccli tcr CreateServiceAccount --cli-unfold-argument  \
-    --RegistryId abc \
-    --Name abc \
-    --Description abc \
-    --Duration 0 \
-    --ExpiresAt 0 \
-    --Disable True \
-    --Permissions.0.Resource abc \
-    --Permissions.0.Actions abc
+    --RegistryId tcr-dg284imq \
+    --Name servie-account3 \
+    --Duration 10 \
+    --Permissions.0.Resource ns1 \
+    --Permissions.0.Actions tcr:PushRepository tcr:PullRepository tcr:CreateRepository tcr:CreateHelmChart tcr:DescribeHelmCharts
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Name": "tcr$abc",
-        "Password": "abc",
-        "ExpiresAt": 0,
-        "CreateTime": "2020-09-22T00:00:00+00:00",
-        "RequestId": "abc"
+        "CreateTime": "2025-01-03T11:00:19+08:00",
+        "ExpiresAt": 1736737219170,
+        "Name": "tcr$servie-account3",
+        "Password": "4NcJarnZibtlj8ViIPKQRNQ0j2IyVG03",
+        "RequestId": "13561dff-12b7-4e35-bec0-49f40e13af30"
     }
 }
 ```

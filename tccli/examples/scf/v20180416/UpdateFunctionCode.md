@@ -9,7 +9,7 @@ tccli scf UpdateFunctionCode --cli-unfold-argument  \
     --CosObjectName <CosObjectName> \
     --Handler index.main \
     --CosBucketName <CosBucketName> \
-    --FunctionName test
+    --FunctionName functionName1
 ```
 
 Output: 

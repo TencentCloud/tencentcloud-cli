@@ -14,7 +14,7 @@ SCF-timer-xxxxxxxx \
     --Qualifier $DEFAULT \
     --Namespace default \
     --TriggerDesc 0 0 0 */2 * * * \
-    --Description 测试 \
+    --Description some description \
     --CustomArgument 中文测试
 ```
 

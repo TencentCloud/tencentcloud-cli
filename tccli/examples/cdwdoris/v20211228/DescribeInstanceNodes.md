@@ -16,20 +16,20 @@ Output:
         "TotalCount": 0,
         "InstanceNodesList": [
             {
-                "Ip": "abc",
-                "Spec": "abc",
+                "Ip": "9.0.16.4",
+                "Spec": "S_4_16_H",
                 "Core": 0,
                 "Memory": 0,
-                "DiskType": "abc",
+                "DiskType": "CLOUD_SSD",
                 "DiskSize": 0,
-                "Role": "abc",
-                "Status": "abc",
-                "Rip": "abc",
-                "FeRole": "abc",
-                "UUID": "abc"
+                "Role": "core",
+                "Status": "Running",
+                "Rip": "9.0.16.8",
+                "FeRole": "core",
+                "UUID": "a890x"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "abc-xa2"
     }
 }
 ```

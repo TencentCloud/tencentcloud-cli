@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr ManageExternalEndpoint --cli-unfold-argument  \
-    --RegistryId xxx \
+    --RegistryId tcr-dg284imq \
     --Operation Create
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "RegistryId": "XXXX",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RegistryId": "tcr-dg284imq",
+        "RequestId": "c639ac5c-fa62-4755-93be-e3057f4b5f0a"
     }
 }
 ```

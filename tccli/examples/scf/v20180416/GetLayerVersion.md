@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli scf GetLayerVersion --cli-unfold-argument  \
-    --LayerName abc \
-    --LayerVersion 0
+    --LayerName layer-name1 \
+    --LayerVersion 1
 ```
 
 Output: 

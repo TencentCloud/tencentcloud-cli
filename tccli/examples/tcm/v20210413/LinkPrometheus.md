@@ -10,7 +10,7 @@ tccli tcm LinkPrometheus --cli-unfold-argument  \
     --Prometheus.VpcId test-vpcid \
     --Prometheus.SubnetId test-subnetid \
     --Prometheus.Region sh \
-    --Prometheus.InstanceId ""
+    --Prometheus.InstanceId "prom-xxxxxxxx"
 ```
 
 Output: 

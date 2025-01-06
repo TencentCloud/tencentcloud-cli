@@ -241,16 +241,16 @@
     "VoicePrintCount": [
       {
         "document": "返回注册总数",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintDelete\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Total\": 1\n        },\n        \"RequestId\": \"676a22c********3625b0\"\n    }\n}",
         "title": "示例"
       }
     ],
     "VoicePrintDelete": [
       {
         "document": "删除保存的说话人信息",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintDelete\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"abc\",\n            \"SpeakerNick\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintDelete\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n            \"SpeakerNick\": \"小明\"\n        },\n        \"RequestId\": \"676a22c********3625b0\"\n    }\n}",
         "title": "说话人删除"
       }
     ],
@@ -273,8 +273,8 @@
     "VoicePrintUpdate": [
       {
         "document": "更新说话人的音频和昵称",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintUpdate\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 0,\n    \"SpeakerNick\": \"abc\",\n    \"VoicePrintId\": \"abc\",\n    \"Data\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"abc\",\n            \"SpeakerNick\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VoicePrintUpdate\n<公共请求参数>\n\n{\n    \"VoiceFormat\": 0,\n    \"SampleRate\": 0,\n    \"SpeakerNick\": \"小明\",\n    \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n    \"Data\": \"UklGRka1CQBXQVZFZm10IBAAAAABAAEAgD4E\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"VoicePrintId\": \"34a0a2b-922f******90302f155a6d\",\n            \"SpeakerNick\": \"小明\"\n        },\n        \"RequestId\": \"676a22c********3625b0\"\n    }\n}",
         "title": "说话人更新"
       }
     ],

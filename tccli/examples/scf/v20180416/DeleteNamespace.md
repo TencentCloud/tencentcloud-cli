@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli scf DeleteNamespace --cli-unfold-argument  \
-    --Namespace test
+    --Namespace namespace1
 ```
 
 Output: 

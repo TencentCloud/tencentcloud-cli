@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcr DescribeNamespacePersonal --cli-unfold-argument  \
-    --Namespace mockns \
-    --Limit 1 \
+    --Namespace nicokang \
+    --Limit 10 \
     --Offset 0
 ```
 
@@ -15,17 +15,17 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "Data": {
             "NamespaceCount": 1,
             "NamespaceInfo": [
                 {
-                    "Namespace": "test",
-                    "CreationTime": "2018-07-25 15:07:12",
-                    "RepoCount": 2
+                    "CreationTime": "2024-06-22 10:37:26",
+                    "Namespace": "nicokang",
+                    "RepoCount": 10
                 }
             ]
-        }
+        },
+        "RequestId": "94a1d32a-4f73-4214-8864-6bafdda6b5f6"
     }
 }
 ```
