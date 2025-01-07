@@ -18,7 +18,7 @@ Output:
             {
                 "CodeUri": "extension://ba883a90xxxxx.zip",
                 "UploadUrl": "https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/home%2Fz0anckEI.zip?sign=q-sign-algorithm%aa",
-                "CustomKey": "xxxx",
+                "CustomKey": "U5L61r7jcwdNvT7frmUG8g==",
                 "MaxSize": 15
             }
         ],

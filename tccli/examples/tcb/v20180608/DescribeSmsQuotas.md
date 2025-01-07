@@ -18,7 +18,8 @@ Output:
                 "FreeQuota": 1000,
                 "CycleStart": "2020-01-01 23:59:59",
                 "CycleEnd": "2020-02-01 23:59:59",
-                "TodayUsedQuota": 0
+                "TodayUsedQuota": 0,
+                "TotalUsedQuota": 114514
             }
         ],
         "RequestId": "a1b9ccf2-86a7-490d-9769-a5fb6b856192"

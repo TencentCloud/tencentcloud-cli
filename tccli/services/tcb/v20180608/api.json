@@ -637,10 +637,10 @@
         {
           "disabled": false,
           "document": "活动id",
-          "example": "123",
+          "example": "18462",
           "member": "int64",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -650,7 +650,7 @@
           "example": "\"2021-08-15 15:04:43\"",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -660,7 +660,7 @@
           "example": "\"2021-08-15 15:04:43\"",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -670,7 +670,7 @@
           "example": "\"2021-08-15 15:04:43\"",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -680,7 +680,7 @@
           "example": "\"2021-08-15 15:04:43\"",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -690,7 +690,7 @@
           "example": "\"运营活动\"",
           "member": "string",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -703,30 +703,30 @@
         {
           "disabled": false,
           "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "1000000454851",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "活动id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "114514",
           "member": "int64",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "自定义状态码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -736,7 +736,7 @@
           "example": "5",
           "member": "string",
           "name": "SubStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -746,7 +746,7 @@
           "example": "3",
           "member": "int64",
           "name": "SubStatusInt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -756,7 +756,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsDeleted",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -769,60 +769,60 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "",
+          "example": "114514",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "cloudbase.tencentcloud.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名类型。包含以下取值：\n<li>SYSTEM</li>\n<li>USER</li>",
-          "example": "",
+          "example": "USER",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态。包含以下取值：\n<li>ENABLE</li>\n<li>DISABLE</li>",
-          "example": "",
+          "example": "ENABLE",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "2024-01-01 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "",
+          "example": "2024-01-01 00:00:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1107,9 +1107,10 @@
         {
           "disabled": false,
           "document": "true表示已开通",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Initialized",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1206,9 +1207,10 @@
         {
           "disabled": false,
           "document": "es的id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "es-diocjklsjdk",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1216,9 +1218,10 @@
         {
           "disabled": false,
           "document": "secret名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "my-secret",
           "member": "string",
           "name": "SecretName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1226,9 +1229,10 @@
         {
           "disabled": false,
           "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "9.1.2.6",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1236,9 +1240,10 @@
         {
           "disabled": false,
           "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "9102",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1246,9 +1251,10 @@
         {
           "disabled": false,
           "document": "索引\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "my-es-index",
           "member": "string",
           "name": "Index",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1256,9 +1262,10 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "elastic",
           "member": "string",
           "name": "Account",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1266,9 +1273,10 @@
         {
           "disabled": false,
           "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "my-password",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3944,13 +3952,13 @@
         },
         {
           "disabled": false,
-          "document": "环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "环境ID",
           "example": "cdnheader-v2a",
           "member": "string",
           "name": "EnvId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4049,7 +4057,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "",
+          "example": "env-xxyyzza",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -4058,7 +4066,7 @@
         {
           "disabled": false,
           "document": "是否启用统一域名",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "EnableUnion",
           "required": false,
@@ -4072,12 +4080,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建静态资源结果(succ/fail)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "创建静态资源结果(succ/fail)",
+          "example": "succ",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4842,7 +4851,7 @@
           "example": "无",
           "member": "ActivityRecordItem",
           "name": "ActivityRecords",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7562,33 +7571,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件路径，该字段已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件路径，该字段已废弃",
           "example": "file/path",
           "member": "string",
           "name": "FilePath",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "加密key，用于计算下载加密文件的header。参考SSE-C https://cloud.tencent.com/document/product/436/7728#sse-c\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密key，用于计算下载加密文件的header。参考SSE-C https://cloud.tencent.com/document/product/436/7728#sse-c",
           "example": "xxx123",
           "member": "string",
           "name": "CustomKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载链接",
           "example": "https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7862,7 +7871,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "",
+          "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -7871,7 +7880,7 @@
         {
           "disabled": false,
           "document": "资源类型：可选值：CDN, COS, FLEXDB, HOSTING, SCF\n不传则返回全部资源指标",
-          "example": "",
+          "example": "CDN",
           "member": "string",
           "name": "ResourceTypes",
           "required": false,
@@ -7885,12 +7894,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "免费抵扣配额详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "免费抵扣配额详情",
+          "example": "无",
           "member": "PostpayEnvQuota",
           "name": "QuotaItems",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8105,13 +8115,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标抵扣详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标抵扣详情列表",
           "example": "无",
           "member": "PostPaidEnvDeductInfo",
           "name": "PostPaidEnvDeductInfoList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8209,7 +8219,7 @@
           "example": "无",
           "member": "ExtensionFileInfo",
           "name": "FilesData",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8228,7 +8238,7 @@
         {
           "disabled": false,
           "document": "已购买增值包的环境ID",
-          "example": "",
+          "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -8243,18 +8253,20 @@
         {
           "disabled": false,
           "document": "增值包计费信息列表",
-          "example": "",
+          "example": "无",
           "member": "EnvBillingInfoItem",
           "name": "EnvInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "增值包数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8660,13 +8672,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "免费量资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "免费量资源信息列表",
           "example": "无",
           "member": "FreequotaInfo",
           "name": "FreequotaInfoList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8706,13 +8718,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "免费量资源信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "免费量资源信息列表",
           "example": "无",
           "member": "PackageFreeQuotaInfo",
           "name": "PackageFreeQuotaInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8729,7 +8741,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "",
+          "example": "test-23",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -8737,8 +8749,8 @@
         },
         {
           "disabled": false,
-          "document": "<li> 指标名: </li>\n<li> StorageSizepkg: 当月存储空间容量, 单位MB </li>\n<li> StorageReadpkg: 当月存储读请求次数 </li>\n<li> StorageWritepkg: 当月存储写请求次数 </li>\n<li> StorageCdnOriginFluxpkg: 当月CDN回源流量, 单位字节 </li>\n<li> StorageCdnOriginFluxpkgDay: 当日CDN回源流量, 单位字节 </li>\n<li> StorageReadpkgDay: 当日存储读请求次数 </li>\n<li> StorageWritepkgDay: 当日写请求次数 </li>\n<li> CDNFluxpkg: 当月CDN流量, 单位为字节 </li>\n<li> CDNFluxpkgDay: 当日CDN流量, 单位为字节 </li>\n<li> FunctionInvocationpkg: 当月云函数调用次数 </li>\n<li> FunctionGBspkg: 当月云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkg: 当月云函数流量, 单位千字节(KB) </li>\n<li> FunctionInvocationpkgDay: 当日云函数调用次数 </li>\n<li> FunctionGBspkgDay: 当日云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkgDay: 当日云函数流量, 单位千字节(KB) </li>\n<li> DbSizepkg: 当月数据库容量大小, 单位MB </li>\n<li> DbReadpkg: 当日数据库读请求数 </li>\n<li> DbWritepkg: 当日数据库写请求数 </li>\n<li> StaticFsFluxPkgDay: 当日静态托管流量 </li>\n<li> StaticFsFluxPkg: 当月静态托管流量</li>\n<li> StaticFsSizePkg: 当月静态托管容量 </li>\n<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核*秒 </li>\n<li> TkeCpuUsedPkgDay: 当天容器托管CPU使用量，单位核*秒 </li>\n<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB*秒 </li>\n<li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>\n<li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>\n<li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>",
-          "example": "",
+          "document": "<li> 指标名: </li>\n<li> StorageSizepkg: 当月存储空间容量, 单位MB </li>\n<li> StorageReadpkg: 当月存储读请求次数 </li>\n<li> StorageWritepkg: 当月存储写请求次数 </li>\n<li> StorageCdnOriginFluxpkg: 当月CDN回源流量, 单位字节 </li>\n<li> StorageCdnOriginFluxpkgDay: 当日CDN回源流量, 单位字节 </li>\n<li> StorageReadpkgDay: 当日存储读请求次数 </li>\n<li> StorageWritepkgDay: 当日写请求次数 </li>\n<li> CDNFluxpkg: 当月CDN流量, 单位为字节 </li>\n<li> CDNFluxpkgDay: 当日CDN流量, 单位为字节 </li>\n<li> FunctionInvocationpkg: 当月云函数调用次数 </li>\n<li> FunctionGBspkg: 当月云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkg: 当月云函数流量, 单位千字节(KB) </li>\n<li> FunctionInvocationpkgDay: 当日云函数调用次数 </li>\n<li> FunctionGBspkgDay: 当日云函数资源使用量, 单位Mb*Ms </li>\n<li> FunctionFluxpkgDay: 当日云函数流量, 单位千字节(KB) </li>\n<li> DbSizepkg: 当月数据库容量大小, 单位MB </li>\n<li> DbReadpkg: 当日数据库读请求数 </li>\n<li> DbWritepkg: 当日数据库写请求数 </li>\n<li> StaticFsFluxPkgDay: 当日静态托管流量 </li>\n<li> StaticFsFluxPkg: 当月静态托管流量</li>\n<li> StaticFsSizePkg: 当月静态托管容量 </li>\n<li> TkeCpuUsedPkg: 当月容器托管CPU使用量，单位核*秒 </li>\n<li> TkeCpuUsedPkgDay: 当天容器托管CPU使用量，单位核*秒 </li>\n<li> TkeMemUsedPkg: 当月容器托管内存使用量，单位MB*秒 </li>\n<li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>\n<li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>\n<li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>\n<li> CynosdbCcupkg: 当月微信云托管MySQL CCU使用量，单位个  （需要除以1000）</li>\n<li> CynosdbStoragepkg: 当月微信云托管MySQL 存储使用量，单位MB  （需要除以1000）</li>\n<li> CynosdbCcupkgDay: 当天微信云托管MySQL 存储使用量，单位个 （需要除以1000） </li>\n<li> CynosdbStoragepkgDay: 当天微信云托管MySQL 存储使用量，单位MB （需要除以1000） </li>",
+          "example": "DbWritepkg",
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -8747,7 +8759,7 @@
         {
           "disabled": false,
           "document": "资源ID, 目前仅对云函数、容器托管相关的指标有意义。云函数(FunctionInvocationpkg, FunctionGBspkg, FunctionFluxpkg)、容器托管（服务名称）。如果想查询某个云函数的指标则在ResourceId中传入函数名; 如果只想查询整个namespace的指标, 则留空或不传。",
-          "example": "",
+          "example": "\"test-env\"",
           "member": "string",
           "name": "ResourceID",
           "required": false,
@@ -8762,29 +8774,32 @@
         {
           "disabled": false,
           "document": "指标名",
-          "example": "",
+          "example": "DbWritepkg",
           "member": "string",
           "name": "MetricName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标的值",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Value",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指标的附加值信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "指标的附加值信息",
+          "example": "100",
           "member": "string",
           "name": "SubValue",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8815,12 +8830,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "短信免费量信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "短信免费量信息列表",
+          "example": "无",
           "member": "SmsFreeQuota",
           "name": "SmsFreeQuotaList",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8869,13 +8885,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "1分钱抵扣详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1分钱抵扣详情",
           "example": "无",
           "member": "SpecialCostItem",
           "name": "SpecialCostItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9058,7 +9074,7 @@
           "example": "\"abc\"",
           "member": "string",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9068,7 +9084,7 @@
           "example": "\"1,2,3\"",
           "member": "string",
           "name": "Notes",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9078,7 +9094,7 @@
           "example": "10",
           "member": "int64",
           "name": "ActivityTimeLeft",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9088,19 +9104,19 @@
           "example": "10",
           "member": "int64",
           "name": "GroupTimeLeft",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "昵称列表,通过\",\"拼接， 1元钱裂变活动中与Notes中uin一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称列表,通过\",\"拼接， 1元钱裂变活动中与Notes中uin一一对应",
           "example": "\"a,b,c\"",
           "member": "string",
           "name": "NickNameList",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9365,7 +9381,7 @@
         {
           "disabled": false,
           "document": "环境Id",
-          "example": "",
+          "example": "yourenvid-2fb346",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -9374,7 +9390,7 @@
         {
           "disabled": false,
           "document": "针对预付费 删除隔离中的环境时要传true 正常环境直接跳过隔离期删除",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsForce",
           "required": false,
@@ -9383,7 +9399,7 @@
         {
           "disabled": false,
           "document": "是否绕过资源检查，资源包等额外资源，默认为false，如果为true，则不检查资源是否有数据，直接删除。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "BypassCheck",
           "required": false,
@@ -9465,7 +9481,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "",
+          "example": "env-xxyyaaza",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -9474,7 +9490,7 @@
         {
           "disabled": false,
           "document": "cdn域名",
-          "example": "",
+          "example": "cloudbase.tencentcloud.com",
           "member": "string",
           "name": "CdnDomain",
           "required": false,
@@ -9489,9 +9505,10 @@
         {
           "disabled": false,
           "document": "条件任务结果(succ/fail)",
-          "example": "",
+          "example": "succ",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9786,7 +9803,7 @@
         {
           "disabled": false,
           "document": "是否开启 `超过套餐额度部分转按量付费`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "EnableOverrun",
           "output_required": true,
@@ -10309,8 +10326,7 @@
           "member": "string",
           "name": "FileType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -10319,8 +10335,7 @@
           "member": "string",
           "name": "FileName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -10331,7 +10346,7 @@
         {
           "disabled": false,
           "document": "模板里使用的地址",
-          "example": "",
+          "example": "extension://abc.zip",
           "member": "string",
           "name": "CodeUri",
           "required": true,
@@ -10341,7 +10356,7 @@
         {
           "disabled": false,
           "document": "上传文件的临时地址，含签名",
-          "example": "",
+          "example": "http://qq.com",
           "member": "string",
           "name": "UploadUrl",
           "required": true,
@@ -10350,8 +10365,8 @@
         },
         {
           "disabled": false,
-          "document": "自定义密钥。如果为空，则表示不需要加密",
-          "example": "",
+          "document": "自定义密钥。如果为空，则表示不需要加密。\n参考cos预签名url上传https://cloud.tencent.com/document/product/436/36121\n上传的时候要按照 SSE-C 的方式设置header：https://cloud.tencent.com/document/product/436/7728",
+          "example": "dfadf",
           "member": "string",
           "name": "CustomKey",
           "required": true,
@@ -10361,7 +10376,7 @@
         {
           "disabled": false,
           "document": "文件大小限制，单位M，客户端上传前需要主动检查文件大小，超过限制的文件会被删除。",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "MaxSize",
           "required": true,
@@ -10377,60 +10392,60 @@
         {
           "disabled": false,
           "document": "资源类型\n<li>COS</li>\n<li>CDN</li>\n<li>FLEXDB</li>\n<li>SCF</li>",
-          "example": "",
+          "example": "COS",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源指标名称",
-          "example": "",
+          "example": "Flux",
           "member": "string",
           "name": "ResourceMetric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源指标免费量",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "FreeQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标单位",
-          "example": "",
+          "example": "GB",
           "member": "string",
           "name": "MetricUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "免费量抵扣周期\n<li>sum-month:以月为单位抵扣</li>\n<li>sum-day:以天为单位抵扣</li>\n<li>totalize:总容量抵扣</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "sum-month",
           "member": "string",
           "name": "DeductType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "免费量类型\n<li>basic:通用量抵扣</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "basic",
           "member": "string",
           "name": "FreeQuotaType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10523,20 +10538,20 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "",
+          "example": "ns-xxyyzzaa",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "所属地域。\n当前支持ap-shanghai",
-          "example": "",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10947,9 +10962,10 @@
         {
           "disabled": false,
           "document": "键",
-          "example": "",
+          "example": "my-key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10957,9 +10973,10 @@
         {
           "disabled": false,
           "document": "值",
-          "example": "",
+          "example": "my-value",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10973,60 +10990,60 @@
         {
           "disabled": false,
           "document": "日志属于的 topic ID",
-          "example": "",
+          "example": "aafef2ab-19bc-4868-bd10-bd4a6e4146d6",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志主题的名字",
-          "example": "",
+          "example": "topic_env-xxyyzzaa",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志时间",
-          "example": "",
+          "example": "1736237493",
           "member": "string",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志内容",
-          "example": "",
+          "example": "log-content",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "采集路径",
-          "example": "",
+          "example": "/data/log/my-log-file.log",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志来源设备",
-          "example": "",
+          "example": "my-platform",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11039,30 +11056,30 @@
         {
           "disabled": false,
           "document": "获取更多检索结果的游标",
-          "example": "",
+          "example": "ctxjd84kjgkd7834kgj3875483jkdjfkd",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "搜索结果是否已经全部返回",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "ListOver",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志内容信息",
-          "example": "",
+          "example": "无",
           "member": "LogObject",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -11075,40 +11092,40 @@
         {
           "disabled": false,
           "document": "log名",
-          "example": "xx",
+          "example": "logset-env-xxyyzzaa",
           "member": "string",
           "name": "LogsetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "log-id",
-          "example": "xx",
+          "example": "338230b0-6f63-4c7f-97c7-9a299d0b11f1",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "topic名",
-          "example": "xx",
+          "example": "topic-env-xxyyzzaadfs",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "topic-id",
-          "example": "xx",
+          "example": "80706322-b4ef-4617-b087-de81b7a5b6ca",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11118,7 +11135,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11128,7 +11145,7 @@
           "example": "7",
           "member": "int64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -11436,7 +11453,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "",
+          "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -11445,7 +11462,7 @@
         {
           "disabled": false,
           "document": "集合名称",
-          "example": "",
+          "example": "my-table",
           "member": "string",
           "name": "CollectionName",
           "required": true,
@@ -11454,7 +11471,7 @@
         {
           "disabled": false,
           "document": "权限标签。包含以下取值：\n<li> READONLY：所有用户可读，仅创建者和管理员可写</li>\n<li> PRIVATE：仅创建者及管理员可读写</li>\n<li> ADMINWRITE：所有用户可读，仅管理员可写</li>\n<li> ADMINONLY：仅管理员可读写</li>",
-          "example": "",
+          "example": "READONLY",
           "member": "string",
           "name": "AclTag",
           "required": true,
@@ -11701,100 +11718,100 @@
         {
           "disabled": false,
           "document": "订单号",
-          "example": "无",
+          "example": "202401011000004515",
           "member": "string",
           "name": "TranId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单要切换的套餐ID",
-          "example": "无",
+          "example": "baas_personal",
           "member": "string",
           "name": "PackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单类型\n<li>1 购买</li>\n<li>2 续费</li>\n<li>3 变配</li>",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "TranType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单状态。\n<li>1未支付</li>\n<li>2 支付中</li>\n<li>3 发货中</li>\n<li>4 发货成功</li>\n<li>5 发货失败</li>\n<li>6 已退款</li>\n<li>7 已取消</li>\n<li>100 已删除</li>",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "TranStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单更新时间",
-          "example": "无",
+          "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单创建时间",
-          "example": "无",
+          "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "付费模式.\n<li>prepayment 预付费</li>\n<li>postpaid 后付费</li>",
-          "example": "无",
+          "example": "prepayment ",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "订单绑定的扩展ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ext-xyzabdkjks",
           "member": "string",
           "name": "ExtensionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源初始化结果(仅当ExtensionId不为空时有效): successful(初始化成功), failed(初始化失败), doing(初始化进行中), init(准备初始化)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "successful",
           "member": "string",
           "name": "ResourceReady",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "安装标记。建议使用方统一转大小写之后再判断。\n<li>QuickStart：快速启动来源</li>\n<li>Activity：活动来源</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "QuickStart",
           "member": "string",
           "name": "Flag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11804,7 +11821,7 @@
           "example": "ReqBody",
           "member": "string",
           "name": "ReqBody",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11817,60 +11834,60 @@
         {
           "disabled": false,
           "document": "资源类型\n<li>COS</li>\n<li>CDN</li>\n<li>FLEXDB</li>\n<li>SCF</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "CDN",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "Flux",
           "member": "string",
           "name": "ResourceMetric",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源指标免费量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "FreeQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "指标单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "GB",
           "member": "string",
           "name": "MetricUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "免费量抵扣周期\n<li>sum-month:以月为单位抵扣</li>\n<li>sum-day:以天为单位抵扣</li>\n<li>totalize:总容量抵扣</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "sum-month",
           "member": "string",
           "name": "DeductType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "免费量类型\n<li>basic:通用量抵扣</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "basic",
           "member": "string",
           "name": "FreeQuotaType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11985,50 +12002,50 @@
         {
           "disabled": false,
           "document": "资源类型",
-          "example": "",
+          "example": "CDN",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "指标名",
-          "example": "",
+          "example": "Flux",
           "member": "string",
           "name": "MetricName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额值",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额生效时间\n为空表示没有时间限制",
-          "example": "",
+          "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配额失效时间\n为空表示没有时间限制",
-          "example": "",
+          "example": "2024-01-31 23:59:59",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12041,7 +12058,7 @@
         {
           "disabled": false,
           "document": "环境ID",
-          "example": "",
+          "example": "env-xxyyzzaa",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -12588,7 +12605,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FreeQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12598,27 +12615,27 @@
           "example": "0",
           "member": "uint64",
           "name": "TotalUsedQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "免费周期起点，0000-00-00 00:00:00 形式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "CycleStart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "免费周期终点，0000-00-00 00:00:00 形式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "2024-01-01 01:00:00",
           "member": "string",
           "name": "CycleEnd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12628,7 +12645,7 @@
           "example": "0",
           "member": "uint64",
           "name": "TodayUsedQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -12849,7 +12866,7 @@
         {
           "disabled": false,
           "document": "静态CDN域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cloudbase.cloudbaseapp.com",
           "member": "string",
           "name": "StaticDomain",
           "output_required": true,
@@ -12859,7 +12876,7 @@
         {
           "disabled": false,
           "document": "静态CDN默认文件夹，当前为根目录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"/\"",
           "member": "string",
           "name": "DefaultDirName",
           "output_required": true,
@@ -12869,7 +12886,7 @@
         {
           "disabled": false,
           "document": "资源状态(process/online/offline/init)\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "online",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -12879,7 +12896,7 @@
         {
           "disabled": false,
           "document": "cos所属区域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": true,
@@ -12889,7 +12906,7 @@
         {
           "disabled": false,
           "document": "bucket信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "my-bucket-name-appid",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
@@ -12905,40 +12922,40 @@
         {
           "disabled": false,
           "document": "资源所属地域。\n当前支持ap-shanghai",
-          "example": "",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "桶名，存储资源的唯一标识",
-          "example": "",
+          "example": "my-bucket-name-appid",
           "member": "string",
           "name": "Bucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "cdn 域名",
-          "example": "",
+          "example": "cloudbase.tencentcloud.com",
           "member": "string",
           "name": "CdnDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源所属用户的腾讯云appId",
-          "example": "",
+          "example": "1265124512",
           "member": "string",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

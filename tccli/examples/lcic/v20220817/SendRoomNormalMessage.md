@@ -10,9 +10,9 @@ tccli lcic SendRoomNormalMessage --cli-unfold-argument  \
     --RoomId 352320437 \
     --FromAccount 2WqeRoOMJKQqnnL1lILRFHpdFla \
     --MsgBody.0.MsgType TIMTextElem \
-    --MsgBody.0.TextMsgContent.Text abc \
+    --MsgBody.0.TextMsgContent.Text hello \
     --MsgBody.0.FaceMsgContent.Index 1 \
-    --MsgBody.0.FaceMsgContent.Data abc \
+    --MsgBody.0.FaceMsgContent.Data haha \
     --MsgBody.0.ImageMsgContent.UUID 494d1feab \
     --MsgBody.0.ImageMsgContent.ImageFormat 1 \
     --MsgBody.0.ImageMsgContent.ImageInfoList.0.Type 1 \
@@ -27,7 +27,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abee5f"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

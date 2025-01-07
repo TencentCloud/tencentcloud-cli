@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateDBInstanceHour": {
-      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。",
+      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例，可通过传入实例规格、实例类型、MongoDB版本、购买时长和数量等信息创建云数据库实例。",
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
       "output": "CreateDBInstanceHourResponse",
@@ -176,7 +176,7 @@
         {
           "disabled": false,
           "document": "实例内存大小，单位：GB",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -185,7 +185,7 @@
         {
           "disabled": false,
           "document": "实例硬盘大小，单位：GB",
-          "example": "",
+          "example": "250",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -194,7 +194,7 @@
         {
           "disabled": false,
           "document": "副本集个数，1为单副本集实例，大于1为分片集群实例，最大不超过10",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ReplicateSetNum",
           "required": true,
@@ -203,7 +203,7 @@
         {
           "disabled": false,
           "document": "每个副本集内从节点个数，目前只支持从节点数为2",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "SecondaryNum",
           "required": true,
@@ -212,7 +212,7 @@
         {
           "disabled": false,
           "document": "MongoDB引擎版本，值包括MONGO_3_WT 、MONGO_3_ROCKS和MONGO_36_WT",
-          "example": "",
+          "example": "MONGO_3_WT",
           "member": "string",
           "name": "EngineVersion",
           "required": true,
@@ -220,8 +220,8 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，GIO：高IO版；TGIO：高IO万兆",
-          "example": "",
+          "document": "实例类型，HIO10G：高IO万兆。",
+          "example": "HIO10G",
           "member": "string",
           "name": "Machine",
           "required": true,
@@ -230,7 +230,7 @@
         {
           "disabled": false,
           "document": "实例数量，默认值为1, 最小值1，最大值为10",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "GoodsNum",
           "required": true,
@@ -239,7 +239,7 @@
         {
           "disabled": false,
           "document": "可用区信息，格式如：ap-guangzhou-2",
-          "example": "",
+          "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -247,8 +247,8 @@
         },
         {
           "disabled": false,
-          "document": "实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例",
-          "example": "",
+          "document": "实例角色，默认传MASTER即可",
+          "example": "MASTER",
           "member": "string",
           "name": "InstanceRole",
           "required": true,
@@ -257,7 +257,7 @@
         {
           "disabled": false,
           "document": "实例类型，REPLSET-副本集，SHARD-分片集群",
-          "example": "",
+          "example": "REPLSET",
           "member": "string",
           "name": "InstanceType",
           "required": true,
@@ -266,7 +266,7 @@
         {
           "disabled": false,
           "document": "数据是否加密，当且仅当引擎版本为MONGO_3_ROCKS，可以选择加密",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Encrypt",
           "required": false,
@@ -275,7 +275,7 @@
         {
           "disabled": false,
           "document": "私有网络ID，如果不传则默认选择基础网络",
-          "example": "",
+          "example": "vpc-112****",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -284,7 +284,7 @@
         {
           "disabled": false,
           "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填",
-          "example": "",
+          "example": "subnet-12asd****",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -293,7 +293,7 @@
         {
           "disabled": false,
           "document": "项目ID，不填为默认项目",
-          "example": "",
+          "example": "1118179",
           "member": "int64",
           "name": "ProjectId",
           "required": false,
@@ -302,11 +302,29 @@
         {
           "disabled": false,
           "document": "安全组参数",
-          "example": "",
+          "example": "sg-123a****",
           "member": "string",
           "name": "SecurityGroup",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID，如果不传则默认选择基础网络",
+          "example": "vpc-112****",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填",
+          "example": "subnet-12asd****",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -317,18 +335,20 @@
         {
           "disabled": false,
           "document": "订单ID",
-          "example": "",
+          "example": "2019070916000000350241612094****",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建的实例ID列表",
-          "example": "",
+          "example": "[\"cmgo-m26****\"]",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -525,23 +545,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户端连接信息，包括客户端IP和对应IP的连接数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端连接信息，包括客户端IP和对应IP的连接数量",
           "example": "[{\"Count\":1,\"IP\":\"xx\"},{\"Count\":1,\"IP\":\"xx\"}]",
           "member": "ClientConnection",
           "name": "Clients",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "连接数总结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接数总结",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1118,53 +1138,53 @@
         },
         {
           "disabled": false,
-          "document": "只读实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "只读实例信息",
           "example": "无",
           "member": "MongoDBInstance",
           "name": "ReadonlyInstances",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "灾备实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "灾备实例信息",
           "example": "无",
           "member": "MongoDBInstance",
           "name": "StandbyInstances",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "临时实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时实例信息",
           "example": "无",
           "member": "MongoDBInstance",
           "name": "CloneInstances",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息",
           "example": "1",
           "member": "MongoDBInstance",
           "name": "RelatedInstance",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例标签信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例标签信息集合",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1219,7 +1239,7 @@
         {
           "disabled": false,
           "document": "实例对应的物理实例ID，回档并替换过的实例有不同的InstanceId和RealInstanceId，从barad获取监控数据等场景下需要用物理id获取",
-          "example": "无",
+          "example": "cmgo-12adfw****",
           "member": "string",
           "name": "RealInstanceId",
           "output_required": true,
@@ -1447,216 +1467,237 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格信息标识",
-          "example": "",
+          "document": "规格信息标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mongo.HIO10G.128g\t",
           "member": "string",
           "name": "SpecCode",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规格有效标志，取值：0-停止售卖，1-开放售卖",
-          "example": "",
+          "document": "规格有效标志，取值：0-停止售卖，1-开放售卖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "机器类型，取值：0-HIO，4-HIO10G",
-          "example": "",
+          "document": "机器类型，取值：0-HIO，4-HIO10G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
           "member": "string",
           "name": "MachineType",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cpu核心数",
-          "example": "",
+          "document": "cpu核心数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "Cpu",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "内存规格，单位为MB",
-          "example": "",
+          "document": "内存规格，单位为MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4096",
           "member": "uint64",
           "name": "Memory",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "默认磁盘规格，单位MB",
-          "example": "",
+          "document": "默认磁盘规格，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3072000",
           "member": "uint64",
           "name": "DefaultStorage",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最大磁盘规格，单位MB",
-          "example": "",
+          "document": "最大磁盘规格，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5120000\t",
           "member": "uint64",
           "name": "MaxStorage",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最小磁盘规格，单位MB",
-          "example": "",
+          "document": "最小磁盘规格，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1536000",
           "member": "uint64",
           "name": "MinStorage",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "可承载qps信息",
-          "example": "",
+          "document": "可承载qps信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "36000",
           "member": "uint64",
           "name": "Qps",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "连接数限制",
-          "example": "",
+          "document": "连接数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20000",
           "member": "uint64",
           "name": "Conns",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例mongodb版本信息",
-          "example": "",
+          "document": "实例mongodb版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MONGO_40_WT\t",
           "member": "string",
           "name": "MongoVersionCode",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例mongodb版本号",
-          "example": "",
+          "document": "实例mongodb版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
           "member": "uint64",
           "name": "MongoVersionValue",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例mongodb版本号（短）",
-          "example": "",
+          "document": "实例mongodb版本号（短）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4.0",
           "member": "string",
           "name": "Version",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "存储引擎",
-          "example": "",
+          "document": "存储引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WiredTiger",
           "member": "string",
           "name": "EngineName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "集群类型，取值：1-分片集群，0-副本集集群",
-          "example": "",
+          "document": "集群类型，取值：1-分片集群，0-副本集集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "ClusterType",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最小副本集从节点数",
-          "example": "",
+          "document": "最小副本集从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "uint64",
           "name": "MinNodeNum",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最大副本集从节点数",
-          "example": "",
+          "document": "最大副本集从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
           "member": "uint64",
           "name": "MaxNodeNum",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最小分片数",
-          "example": "",
+          "document": "最小分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
           "member": "uint64",
           "name": "MinReplicateSetNum",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最大分片数",
-          "example": "",
+          "document": "最大分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
           "member": "uint64",
           "name": "MaxReplicateSetNum",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最小分片从节点数",
-          "example": "",
+          "document": "最小分片从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "uint64",
           "name": "MinReplicateSetNodeNum",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最大分片从节点数",
-          "example": "",
+          "document": "最大分片从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
           "member": "uint64",
           "name": "MaxReplicateSetNodeNum",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SpecificationInfo": {
       "document": "实例规格信息",
@@ -1664,30 +1705,30 @@
         {
           "disabled": false,
           "document": "地域信息",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "可用区信息",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "售卖规格信息",
-          "example": "",
+          "example": "详见结构",
           "member": "SpecItem",
           "name": "SpecItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

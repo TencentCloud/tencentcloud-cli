@@ -6,25 +6,26 @@ Input:
 
 ```
 tccli tcr DescribeRepositoryPersonal --cli-unfold-argument  \
-    --RepoName test/kube_test
+    --RepoName richardgu/hyperkube
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397",
         "Data": {
-            "CreationTime": "2017-12-28 11:00:10",
+            "CreationTime": "2023-06-20 15:27:03",
             "Description": "",
             "FavorCount": 0,
             "IsQcloudOfficial": false,
             "IsUserFavor": false,
-            "Public": 0,
+            "Public": 1,
             "PullCount": 0,
-            "RepoName": "test/kube_test",
-            "RepoType": "QCLOUD HUB"
-        }
+            "RepoName": "richardgu/hyperkube",
+            "RepoType": "QCLOUD HUB",
+            "Server": "ccr.ccs.tencentyun.com"
+        },
+        "RequestId": "8ce48e45-dd95-48c9-ba00-801ab1054323"
     }
 }
 ```

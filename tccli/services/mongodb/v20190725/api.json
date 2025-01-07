@@ -456,7 +456,7 @@
           "example": "2021-01-02 15:04:05",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -466,7 +466,7 @@
           "example": "cmgo-74sjf5mt_2021-03-24 15:40",
           "member": "string",
           "name": "BackupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -476,7 +476,7 @@
           "example": "cmgo-74sjf5mt_0",
           "member": "string",
           "name": "ReplicaSetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -486,7 +486,7 @@
           "example": "102400",
           "member": "int64",
           "name": "BackupSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -496,7 +496,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -506,7 +506,7 @@
           "example": "20",
           "member": "int64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -516,7 +516,7 @@
           "example": "60",
           "member": "int64",
           "name": "TimeSpend",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -526,7 +526,7 @@
           "example": "http://a.b.c/d.tar?e",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -536,17 +536,37 @@
           "example": "1",
           "member": "int64",
           "name": "BackupMethod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发起备份时指定的备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发起备份时指定的备注信息",
           "example": "我的备份",
           "member": "string",
           "name": "BackupDesc",
-          "required": true,
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Bucket信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -614,43 +634,43 @@
         },
         {
           "disabled": false,
-          "document": "备份备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份备注",
           "example": "系统后台每日定时自动备份",
           "member": "string",
           "name": "BackupDesc",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份文件大小，单位KB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份文件大小，单位KB",
           "example": "326594030",
           "member": "uint64",
           "name": "BackupSize",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份开始时间",
           "example": "2021-12-13 02:02:51",
           "member": "string",
           "name": "StartTime",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份结束时间",
           "example": "2021-12-13 03:02:51",
           "member": "string",
           "name": "EndTime",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -694,13 +714,13 @@
         },
         {
           "disabled": false,
-          "document": "异地备份地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异地备份地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BackupRegion",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1739,14 +1759,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "单价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单价",
           "example": "0.17",
           "member": "float",
           "name": "UnitPrice",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2492,13 +2512,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "Mongos节点属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Mongos节点属性。",
           "example": "无",
           "member": "NodeProperty",
           "name": "Mongos",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2506,7 +2526,7 @@
           "example": "无",
           "member": "ReplicateSetInfo",
           "name": "ReplicateSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2548,83 +2568,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "枚举类参数详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "枚举类参数详情列表。",
           "example": "无",
           "member": "InstanceEnumParam",
           "name": "InstanceEnumParams",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "整形参数详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "整形参数详情列表。",
           "example": "无",
           "member": "InstanceIntegerParam",
           "name": "InstanceIntegerParams",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文本参数详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本参数详情列表。",
           "example": "无",
           "member": "InstanceTextParam",
           "name": "InstanceTextParams",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "多值参数详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多值参数详情列表。",
           "example": "无",
           "member": "InstanceMultiParam",
           "name": "InstanceMultiParams",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数总个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数总个数。",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板适配实例版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板适配实例版本。",
           "example": "MONGO_50_WT",
           "member": "string",
           "name": "MongoVersion",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板适配集群类型，副本集或分片。。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板适配集群类型，副本集或分片。。",
           "example": "SHARD",
           "member": "string",
           "name": "ClusterType",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板名称。",
           "example": "my_tpl_demo",
           "member": "string",
           "name": "TplName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2682,23 +2702,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数模板列表信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板列表信息。",
           "example": "无",
           "member": "ParamTpl",
           "name": "ParamTpls",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参数模板总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参数模板总数。",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2974,6 +2994,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3165,17 +3186,19 @@
           "example": "20",
           "member": "uint64",
           "name": "Count",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "慢日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "慢日志详情",
           "example": "[\"Mon Apr 20 13:55:21.623 I COMMAND  [conn16903] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362114, 1), signature: { hash: BinData(0, 259955995BDC7E0CA35C4276EB23341C03910A48), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362108, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 5335ms\",\"Mon Apr 20 14:01:00.309 I COMMAND  [conn1313] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362457, 1), signature: { hash: BinData(0, DC2B16681C70845D7B6C8C6C97400D4DFB394CA0), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362455, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 1264ms\",\"Mon Apr 20 14:20:15.283 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587363613, 1), signature: { hash: BinData(0, 72D24884320C8A9A26AF8C4DD1127874085DFAE5), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587363603, 1), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 426ms\",\"Mon Apr 20 10:25:45.487 I COMMAND  [conn48] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.112.91.43:7009\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"10.53.61.24:7004\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { wtimeout: 0, w: 1 }, replicaSetId: ObjectId('5e9d08160c269352426f9575') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 423ms\",\"Mon Apr 20 10:25:34.934 I COMMAND  [conn28] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 2, protocolVersion: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.112.91.43:7009\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d08160c269352426f9575') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 414ms\",\"Mon Apr 20 10:24:52.278 I COMMAND  [conn30] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 2, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"100.93.44.26:7012\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d07ebf3f99b58c95a33fb') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 406ms\",\"Mon Apr 20 10:25:02.675 I COMMAND  [conn50] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"100.93.44.26:7012\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"9.34.46.139:7003\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d07ebf3f99b58c95a33fb') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 373ms\",\"Mon Apr 20 18:35:15.103 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587378913, 1), signature: { hash: BinData(0, A3C176F81B64A7473F88F3F40B84C59EC9E1E1AE), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587378912, 1), t: 2 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 248ms\",\"Mon Apr 20 10:27:38.171 I COMMAND  [conn281] command admin.$cmd command: setFeatureCompatibilityVersion { setFeatureCompatibilityVersion: \\\"4.0\\\", $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 212ms\",\"Mon Apr 20 10:26:27.924 I COMMAND  [conn111] command local.system.replset command: replSetReconfig { replSetReconfig: { _id: \\\"cmgo-a3bm93hf_2\\\", version: 3, protocolVersion: 1, members: [ { _id: 1, host: \\\"10.112.90.165:7002\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 2, host: \\\"10.53.80.6:7012\\\", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, slaveDelay: 0, votes: 1 }, { _id: 3, host: \\\"100.93.44.26:7013\\\" } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, catchUpTimeoutMillis: -1, catchUpTakeoverDelayMillis: 30000, getLastErrorDefaults: { w: 1, wtimeout: 0 }, replicaSetId: ObjectId('5e9d0841f0f688fc992fd087') } }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 3, w: 2, W: 1 } }, Database: { acquireCount: { w: 1, W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_query 212ms\",\"Mon Apr 20 13:55:15.051 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587362114, 1), signature: { hash: BinData(0, 259955995BDC7E0CA35C4276EB23341C03910A48), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587362085, 6), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 192ms\",\"Mon Apr 20 10:27:39.400 I COMMAND  [conn213] command admin.$cmd command: setFeatureCompatibilityVersion { setFeatureCompatibilityVersion: \\\"4.0\\\", $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 183ms\",\"Mon Apr 20 10:26:09.357 I COMMAND  [conn36] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_2\\\", version: 1, members: [ { _id: 1, host: \\\"10.112.90.165:7002\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 59 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 134ms\",\"Mon Apr 20 13:00:16.363 I COMMAND  [conn16903] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587358814, 1), signature: { hash: BinData(0, 90BD7BB9B481B9825527D89A3579B52E6C0C3915), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587358809, 2), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 123ms\",\"Mon Apr 20 13:35:14.983 I COMMAND  [conn586] command admin.$cmd command: _flushRoutingTableCacheUpdates { forceRoutingTableRefresh: \\\"config.system.sessions\\\", maxTimeMS: 30000, $clusterTime: { clusterTime: Timestamp(1587360912, 1), signature: { hash: BinData(0, 06A84575A66B9316D1ECBFB9FB1C7B2F605AB3A8), keyId: 6817613949303783443 } }, $configServerState: { opTime: { ts: Timestamp(1587360909, 5), t: 1 } }, $db: \\\"admin\\\" } numYields:0 reslen:288 locks:{ Global: { acquireCount: { r: 4 } }, Database: { acquireCount: { r: 2 } }, Collection: { acquireCount: { r: 2 } } } protocol:op_msg 122ms\",\"Mon Apr 20 10:24:43.760 I COMMAND  [conn16] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_0\\\", version: 1, members: [ { _id: 1, host: \\\"10.53.80.6:7011\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 39 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 112ms\",\"Mon Apr 20 10:25:26.300 I COMMAND  [conn15] command local.system.replset command: replSetInitiate { replSetInitiate: { _id: \\\"cmgo-a3bm93hf_1\\\", version: 1, members: [ { _id: 1, host: \\\"100.93.44.85:7005\\\" } ] }, $readPreference: { mode: \\\"secondaryPreferred\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:60 locks:{ Global: { acquireCount: { r: 23, w: 7, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 24 } }, Database: { acquireCount: { r: 7, w: 4, W: 3 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 7 } }, Collection: { acquireCount: { r: 3, w: 2 } }, oplog: { acquireCount: { r: 2, w: 3 } } } protocol:op_query 110ms\",\"Mon Apr 20 10:27:39.400 I COMMAND  [conn213] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 107ms\",\"Mon Apr 20 10:27:38.065 I COMMAND  [conn281] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 1 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 1 } } } protocol:op_msg 107ms\",\"Mon Apr 20 10:27:38.170 I COMMAND  [conn281] command admin.$cmd command: update { update: \\\"system.version\\\", writeConcern: { w: \\\"majority\\\" }, $db: \\\"admin\\\" } numYields:0 reslen:370 locks:{ Global: { acquireCount: { r: 5, w: 4, R: 1 } }, Database: { acquireCount: { w: 2, W: 2 } }, Collection: { acquireCount: { w: 2 } }, Mutex: { acquireCount: { W: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_msg 105ms\"]",
           "member": "string",
           "name": "SlowLogs",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3244,7 +3267,7 @@
         {
           "disabled": false,
           "document": "表示是否开启了透明加密。 \n- close：未开启。\n- open：已开启。",
-          "example": "open或close",
+          "example": "open或close。",
           "member": "string",
           "name": "TransparentDataEncryptionStatus",
           "output_required": false,
@@ -4241,93 +4264,93 @@
         },
         {
           "disabled": false,
-          "document": "实例当前可用区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例当前可用区信息。",
           "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-3\",\"ap-guangzhou-4\"]",
           "member": "string",
           "name": "ZoneList",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mongos节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mongos节点个数。",
           "example": "3",
           "member": "uint64",
           "name": "MongosNodeNum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mongos节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mongos节点内存。",
           "example": "2",
           "member": "uint64",
           "name": "MongosMemory",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "mongos节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "mongos节点CPU核数。",
           "example": "1",
           "member": "uint64",
           "name": "MongosCpuNum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Config Server节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Config Server节点个数。",
           "example": "3",
           "member": "uint64",
           "name": "ConfigServerNodeNum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Config Server节点内存。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Config Server节点内存。",
           "example": "2",
           "member": "uint64",
           "name": "ConfigServerMemory",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Config Server节点磁盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Config Server节点磁盘大小。",
           "example": "20",
           "member": "uint64",
           "name": "ConfigServerVolume",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Config Server节点CPU核数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Config Server节点CPU核数。",
           "example": "1",
           "member": "uint64",
           "name": "ConfigServerCpuNum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "readonly节点个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "readonly节点个数。",
           "example": "3",
           "member": "uint64",
           "name": "ReadonlyNodeNum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4738,69 +4761,69 @@
       "members": [
         {
           "disabled": false,
-          "document": "主密钥 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主密钥 ID。",
           "example": "e648b6c-584a-11ef-a5d2-5254002****",
           "member": "string",
           "name": "KeyId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主密钥名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主密钥名称。",
           "example": "stg02-ai-bj-kms-******",
           "member": "string",
           "name": "KeyName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例与密钥绑定时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例与密钥绑定时间。",
           "example": "2021-01-02 15:04:05",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "密钥状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥状态。",
           "example": "Enabled",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "密钥用途。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥用途。",
           "example": "ENCRYPT_DECRYPT",
           "member": "string",
           "name": "KeyUsage",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "密钥来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥来源。",
           "example": "TENCENT_KMS",
           "member": "string",
           "name": "KeyOrigin",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5253,113 +5276,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点所在的可用区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点所在的可用区。",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点名称。",
           "example": "cmgo-ocdv2lr7_0-node-primary",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点访问地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点访问地址。",
           "example": "10.4.0.7:30000",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "角色。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点公网访问地址(IP或域名)。",
+          "example": "无",
+          "member": "string",
+          "name": "WanServiceAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色。",
           "example": "PRIMARY",
           "member": "string",
           "name": "Role",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为Hidden节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为Hidden节点",
           "example": "false",
           "member": "bool",
           "name": "Hidden",
-          "required": true,
+          "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点状态，包括：ORMAL/STARTUP/RECOVERING/STARTUP2/UNKNOWN/DOWN/ROLLBACK/REMOVED等。",
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主从延迟，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主从延迟，单位秒。",
           "example": "1",
           "member": "int64",
           "name": "SlaveDelay",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点优先级。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点优先级。",
           "example": "10",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点投票权。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点投票权。",
           "example": "1",
           "member": "int64",
           "name": "Votes",
-          "required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点标签。",
           "example": "[{\"TagKey\":\"role-cmgo\",\"TagValue\":\"primary-secondary-group\"}]",
           "member": "NodeTag",
           "name": "Tags",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "副本集Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "副本集Id。",
           "example": "cmgo-ocdv2lr7_0",
           "member": "string",
           "name": "ReplicateSetId",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5369,23 +5402,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点Tag key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点Tag key",
           "example": "testKey",
           "member": "string",
           "name": "TagKey",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点Tag Value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点Tag Value",
           "example": "testValue",
           "member": "string",
           "name": "TagValue",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5681,13 +5716,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点属性",
           "example": "无",
           "member": "NodeProperty",
           "name": "Nodes",
-          "required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6123,80 +6158,80 @@
         {
           "disabled": false,
           "document": "分片已使用容量",
-          "example": "",
+          "example": "100",
           "member": "float",
           "name": "UsedVolume",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片ID",
-          "example": "",
+          "example": "cmgo-pzb****_0",
           "member": "string",
           "name": "ReplicaSetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片名",
-          "example": "",
+          "example": "cmgo-pzb****_0",
           "member": "string",
           "name": "ReplicaSetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片内存规格，单位为MB",
-          "example": "",
+          "example": "8192",
           "member": "uint64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片磁盘规格，单位为MB",
-          "example": "",
+          "example": "51200",
           "member": "uint64",
           "name": "Volume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片Oplog大小，单位为MB",
-          "example": "",
+          "example": "1024",
           "member": "uint64",
           "name": "OplogSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片从节点数",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "SecondaryNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分片物理id",
-          "example": "",
+          "example": "cmgo-pzb****_0",
           "member": "string",
           "name": "RealReplicaSetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6209,40 +6244,40 @@
         {
           "disabled": false,
           "document": "慢日志模式",
-          "example": "",
+          "example": "2024-12-08T18:09:23.364+0800",
           "member": "string",
           "name": "Pattern",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最大执行时间",
-          "example": "",
+          "example": "578",
           "member": "uint64",
           "name": "MaxTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "平均执行时间",
-          "example": "",
+          "example": "546",
           "member": "uint64",
           "name": "AverageTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "该模式慢日志条数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6545,7 +6580,7 @@
         {
           "disabled": false,
           "document": "指定预隔离实例ID。格式如：cmgo-p8vnipr5。",
-          "example": "cmgo-7pjedvz7",
+          "example": "cmgo-7pje****",
           "member": "string",
           "name": "InstanceId",
           "required": true,

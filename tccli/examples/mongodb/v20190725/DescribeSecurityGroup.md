@@ -23,7 +23,7 @@ Output:
                         "CidrIp": "127.0.0.1",
                         "PortRange": "27017",
                         "IpProtocol": "tcp",
-                        "Id": "abc",
+                        "Id": "",
                         "AddressModule": "",
                         "ServiceModule": "",
                         "Desc": "localip"
@@ -35,13 +35,12 @@ Output:
                         "CidrIp": "127.0.0.1",
                         "PortRange": "27017",
                         "IpProtocol": "tcp",
-                        "Id": "abc",
                         "AddressModule": "",
                         "ServiceModule": "",
                         "Desc": "localip"
                     }
                 ],
-                "SecurityGroupId": "sg-cadead",
+                "SecurityGroupId": "sg-cade***",
                 "SecurityGroupName": "sg",
                 "SecurityGroupRemark": "sg-mark"
             }

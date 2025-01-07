@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli lcic ModifyGroup --cli-unfold-argument  \
-    --GroupId test \
-    --SdkAppId 12345678 \
-    --GroupName abc
+    --GroupId 2CvDgjRNjylAs \
+    --SdkAppId 13465287 \
+    --GroupName myGroup
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "213das"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

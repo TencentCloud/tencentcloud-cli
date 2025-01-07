@@ -11,8 +11,8 @@ Output:
 ```
 {
     "Response": {
-        "DeveloperId": "123",
-        "RequestId": "123"
+        "DeveloperId": "54243277893542",
+        "RequestId": "bb9c8d-4236-419b-8c39-572234jifsns7"
     }
 }
 ```

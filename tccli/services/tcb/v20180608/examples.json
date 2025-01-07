@@ -167,7 +167,7 @@
     "DescribeActivityRecord": [
       {
         "document": "查询活动记录信息",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=123\n&Channel=qc_console\n&Status=1\n&Statuses.0=1\n&IsDeletedList.0=1\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeActivityRecord\n&ActivityIdList.0=1\n&ChannelToken=ssss\n&Channel=qc_console\n&Status=1\n&Statuses.0=1\n&IsDeletedList.0=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"ActivityRecords\": []\n    }\n}",
         "title": "查询活动记录信息"
       }
@@ -358,7 +358,7 @@
       {
         "document": "获取文件下载信息",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeDownloadFile\n&CodeUri=extension://ba883a90xxxxx.zip\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa\",\n        \"CustomKey\": \"xxx\",\n        \"FilePath\": \"file\",\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/aaa\",\n        \"CustomKey\": \"U5L61r7jcwdNvT7frmUG8g==\",\n        \"FilePath\": \"file\",\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
         "title": "获取文件下载信息"
       }
     ],
@@ -430,7 +430,7 @@
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeExtensionUploadInfo\n&ExtensionFiles.0.FileType=FUNCTION\n&ExtensionFiles.0.FileName=myfilename\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"FilesData\": [\n            {\n                \"CodeUri\": \"extension://ba883a90xxxxx.zip\",\n                \"UploadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/home%2Fz0anckEI.zip?sign=q-sign-algorithm%aa\",\n                \"CustomKey\": \"xxxx\",\n                \"MaxSize\": 15\n            }\n        ],\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FilesData\": [\n            {\n                \"CodeUri\": \"extension://ba883a90xxxxx.zip\",\n                \"UploadUrl\": \"https://cloudaccess-code-123.cos.ap-shanghai.myqcloud.com/home%2Fz0anckEI.zip?sign=q-sign-algorithm%aa\",\n                \"CustomKey\": \"U5L61r7jcwdNvT7frmUG8g==\",\n                \"MaxSize\": 15\n            }\n        ],\n        \"RequestId\": \"d691f154-c2d5-4f48-833a-a408cdaadd9c\"\n    }\n}",
         "title": "获取上次文件的信息"
       }
     ],
@@ -438,7 +438,7 @@
       {
         "document": "",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeExtraPkgBillingInfo\r\n&EnvId=cdnheader-v2a\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"EnvInfoList\": [\n            {\n                \"EnvId\": \"cdnheader-v2\",\n                \"PackageId\": \"tcb_pkg_hosting_add_2\",\n                \"Status\": \"normal\",\n                \"PayMode\": \"prepayment\",\n                \"IsolatedTime\": \"0000-00-00 00:00:00\",\n                \"ExpireTime\": \"2020-05-16 23:59:59\",\n                \"CreateTime\": \"2020-04-16 18:50:10\",\n                \"UpdateTime\": \"2020-05-14 16:00:42\",\n                \"IsAutoRenew\": \"true\",\n                \"PaymentChannel\": \"qcloud\"\n            }\n        ],\n        \"RequestId\": \"e2450786-2fec-47de-9d8d-ee1bb7805d38\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvInfoList\": [\n            {\n                \"EnvId\": \"cdnheader-v2\",\n                \"PackageId\": \"tcb_pkg_hosting_add_2\",\n                \"Status\": \"normal\",\n                \"PayMode\": \"prepayment\",\n                \"IsolatedTime\": \"0000-00-00 00:00:00\",\n                \"ExpireTime\": \"2020-05-16 23:59:59\",\n                \"CreateTime\": \"2020-04-16 18:50:10\",\n                \"UpdateTime\": \"2020-05-14 16:00:42\",\n                \"IsAutoRenew\": \"true\",\n                \"PaymentChannel\": \"qcloud\",\n                \"FreeQuota\": \"basic\",\n                \"OrderInfo\": null,\n                \"ExtPackageType\": \"\",\n                \"IsAlwaysFree\": false,\n                \"EnableOverrun\": false\n            }\n        ],\n        \"RequestId\": \"e2450786-2fec-47de-9d8d-ee1bb7805d38\",\n        \"Total\": 1\n    }\n}",
         "title": "查询用户增值包详情"
       }
     ],
@@ -502,7 +502,7 @@
       {
         "document": "查询免费量",
         "input": "https://tcb.tencentcloudapi.com/?Action=DescribeSmsQuotas\n&EnvId=tnt-j715s5gda\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SmsFreeQuotaList\": [\n            {\n                \"FreeQuota\": 1000,\n                \"CycleStart\": \"2020-01-01 23:59:59\",\n                \"CycleEnd\": \"2020-02-01 23:59:59\",\n                \"TodayUsedQuota\": 0\n            }\n        ],\n        \"RequestId\": \"a1b9ccf2-86a7-490d-9769-a5fb6b856192\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SmsFreeQuotaList\": [\n            {\n                \"FreeQuota\": 1000,\n                \"CycleStart\": \"2020-01-01 23:59:59\",\n                \"CycleEnd\": \"2020-02-01 23:59:59\",\n                \"TodayUsedQuota\": 0,\n                \"TotalUsedQuota\": 114514\n            }\n        ],\n        \"RequestId\": \"a1b9ccf2-86a7-490d-9769-a5fb6b856192\"\n    }\n}",
         "title": "查询免费量"
       }
     ],
@@ -533,8 +533,8 @@
     "DescribeUserActivityInfo": [
       {
         "document": "查询用户活动信息",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeUserActivityInfo\n&ActivityId=1\n&ChannelToken=123\n&Channel=qc_console\n&GroupId=234\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Tag\": \"123\",\n        \"Notes\": \"1,2,3\",\n        \"ActivityTimeLeft\": 1,\n        \"GroupTimeLeft\": 1,\n        \"NickNameList\": \"a,b,c\"\n    }\n}",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeUserActivityInfo\n&ActivityId=1\n&ChannelToken=ssss\n&Channel=qc_console\n&GroupId=5d8f5ds45\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51a33e48-a808-4fe7-8c02-4e7be5245351\",\n        \"Tag\": \"as48sdf45d\",\n        \"Notes\": \"1,2,3\",\n        \"ActivityTimeLeft\": 1,\n        \"GroupTimeLeft\": 1,\n        \"NickNameList\": \"a,b,c\"\n    }\n}",
         "title": "查询用户活动信息"
       }
     ],
@@ -637,8 +637,8 @@
     "ModifyClsTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClsTopic\n<公共请求参数>\n\n{\n    \"EnvId\": \"xx\",\n    \"Period\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClsTopic\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xxyyzzaa\",\n    \"Period\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"uuid-here\"\n    }\n}",
         "title": "绑定自定义日志"
       }
     ],

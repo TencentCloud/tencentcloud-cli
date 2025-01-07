@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb DescribeTransparentDataEncryptionStatus --cli-unfold-argument  \
-    --InstanceId cmgo-igjysqkr
+    --InstanceId cmgo-igjy****
 ```
 
 Output: 
@@ -16,15 +16,15 @@ Output:
         "TransparentDataEncryptionStatus": "open",
         "KeyInfoList": [
             {
-                "KeyId": "abc",
-                "KeyName": "abc",
-                "CreateTime": "abc",
-                "Status": "abc",
-                "KeyUsage": "abc",
-                "KeyOrigin": "abc"
+                "KeyId": "65362a4b-5ec4-11ef-8467-**********",
+                "KeyName": "myKey",
+                "CreateTime": "2021-10-10 19:55:12",
+                "Status": "Enabled",
+                "KeyUsage": "TENCENT_KMS",
+                "KeyOrigin": "TENCENT_KMS"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "59b477da-6473-4ea8-85b3-7f4473744981"
     }
 }
 ```

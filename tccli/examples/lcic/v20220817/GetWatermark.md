@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lcic GetWatermark --cli-unfold-argument  \
-    --SdkAppId 1
+    --SdkAppId 13465287
 ```
 
 Output: 
@@ -14,25 +14,25 @@ Output:
 {
     "Response": {
         "TeacherLogo": {
-            "Url": "https://www.adkadl.com",
-            "Width": 0,
-            "Height": 0,
-            "LocationX": 0,
-            "LocationY": 0
+            "Url": "http://https://www.adkadl.com",
+            "Width": 128,
+            "Height": 72,
+            "LocationX": 10,
+            "LocationY": 10
         },
         "BoardLogo": {
-            "Url": "abc",
-            "Width": 0,
-            "Height": 0,
-            "LocationX": 0,
-            "LocationY": 0
+            "Url": "http://www.logo.com/logo01.jpg",
+            "Width": 128,
+            "Height": 72,
+            "LocationX": 100,
+            "LocationY": 100
         },
         "BackgroundPicture": {
-            "Url": "abc"
+            "Url": "http://www.background.com/pic01.jpg"
         },
         "Text": {
-            "Text": "abc",
-            "Color": "abc"
+            "Text": "welcome",
+            "Color": "black"
         },
         "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }

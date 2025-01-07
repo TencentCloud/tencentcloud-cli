@@ -904,6 +904,14 @@
         "title": "导出消息详情"
       }
     ],
+    "GetTopicList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:GetTopicList\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"devNs\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"ClusterId\": \"pulsar-uahenidn\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4854c6de-732f-4b8f-b23b-1081f3bf3bc3\",\n        \"TopicList\": [\n            {\n                \"TopicName\": \"1733317358581\",\n                \"PulsarTopicType\": 3\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询该租户"
+      }
+    ],
     "ImportRocketMQConsumerGroups": [
       {
         "document": "导入消费组列表",

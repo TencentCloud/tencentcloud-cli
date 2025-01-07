@@ -3,8 +3,8 @@
     "BatchDeleteImagePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=BatchDeleteImagePersonal\n&RepoName=dockerhub/test\n&Tags.0=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteImagePersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"nicokang/golang\",\n    \"Tags\": [\n        \"1\",\n        \"2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"05c86278-f995-444b-b2b6-4798e3e3b67d\"\n    }\n}",
         "title": "个人版镜像仓库批量删除Tag"
       }
     ],
@@ -43,8 +43,8 @@
     "CreateImageAccelerationService": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateImageAccelerationService\n&RegistryId=xxx\n&VpcId=xxx\n&SubnetId=xxx\n&StorageType=xxx\n&PGroupId=xxx\n&Zone=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"XXXX\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "https://tcr.tencentcloudapi.com/?Action=CreateImageAccelerationService\n&RegistryId=tcr-xxx\n&VpcId=vpc-xxx\n&SubnetId=subnet-xxx\n&StorageType=HD\n&PGroupId=groupID\n&Zone=ap-guangzhou\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegistryId\": \"tcr-xxx\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建镜像加速服务"
       }
     ],
@@ -75,14 +75,14 @@
     "CreateInstanceToken": [
       {
         "document": "获取实例的临时访问凭证，有效期仅 1 小时，可用于临时登录。",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInstanceToken\n&RegistryId=tcr-ak9876\n&TokenType=temp\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Username\": 12345678,\n        \"Token\": \"XXXX\",\n        \"ExpTime\": \"33987631\",\n        \"RequestId\": \"xx\",\n        \"TokenId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceToken\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"TokenType\": \"temp\",\n    \"Desc\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpTime\": 1735880997750,\n        \"RequestId\": \"bfa74e4d-3cc2-45a0-980c-08f7ec527737\",\n        \"Token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IlhETVk6VFVWTDo2SlRVOkxPSEE6M1VGVTozWFhJOlM3RkI6TlA3MjozTVYyOlRBQlQ6REdCQzpEQzNIIn0.eyJvd25lclVpbiI6IjMzMjEzMzc5OTQiLCJvcGVyYXRvclVpbiI6IjEwMDAzNjk1MDIzNCIsImV4cCI6MTczNTg4MDk5NywibmJmIjoxNzM1ODc3Mzk3LCJpYXQiOjE3MzU4NzczOTd9.vfgpeIog2z_cSTQnfWEh3jykmKNJ57b2hU-MciSuS3c9tiuju4Q-i_yPBjpDzHr-zymPsxmvFmyPV5Bxtv2UIvAfrk27ZnWUWf8xxF70D7BnY2PO6lSgUqGK0H2lw8HvYMq7JZjGk_q_eHcGQTLiY_-15HLNWjjL2Kvn5sybzaPx7-ZB4efa1WLOdB9rHQRwqmGuBaJaFTkpVZpJ0gRBF6hj7xq-ozjJVurXO1FFjC8DINJt0FvKt3U7VdhVAR2xTUHp54Dz4Q0Nynl5OoaBzYbVuobN5e_VerrYL-UAIu3PU3z7oZFNCCn3JeySbNThofubRW5M1DObxiPsjVSLdA\",\n        \"TokenId\": \"\",\n        \"Username\": \"100036950234\"\n    }\n}",
         "title": "获取临时实例访问凭证"
       },
       {
         "document": "获取实例的长期有效的访问凭证，可用于第三方应用授权。",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateInstanceToken\n&RegistryId=tcr-ak9876\n&TokenType=longterm\n&Desc=for-tke-cluster\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Username\": 12345678,\n        \"Token\": \"XXXX\",\n        \"ExpTime\": \"33987631\",\n        \"RequestId\": \"xx\",\n        \"TokenId\": \"1456976\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceToken\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"TokenType\": \"longterm\",\n    \"Desc\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpTime\": 2051237057817,\n        \"RequestId\": \"116b7c24-58af-452a-9d91-bdfc988a56ec\",\n        \"Token\": \"eyJhbGciOiJSUzI1NiIsImtpZCI6IlhETVk6VFVWTDo2SlRVOkxPSEE6M1VGVTozWFhJOlM3RkI6TlA3MjozTVYyOlRBQlQ6REdCQzpEQzNIIn0.eyJvd25lclVpbiI6IjMzMjEzMzc5OTQiLCJvcGVyYXRvclVpbiI6IjEwMDAzNjk1MDIzNCIsInRva2VuSWQiOiJjdHJtM2c4Nmg3Y3Axa2I3ZWwyZyIsImV4cCI6MjA1MTIzNzA1NywibmJmIjoxNzM1ODc3MDU3LCJpYXQiOjE3MzU4NzcwNTd9.PSZiX0ZAEvAo6lbhrUypAyII12hey2SE08pL4J5_7kBNJQdpSK-Ersw5YWuO1j90xXb6rWBuLPmCqUEA-Gg4Xla2yCWlT4eF2ls2HFKUlA8gxVoGmaFN3ww6yyImC4i1o9guPSUl2ggI3k_ohSkpaooDnKPpUzBDfqptgd-ZHrNAsqlNloQISggFzIhfZiR9c4rrnxp-a7_Q0phR24uY5X0C3lYQYYFDph-SlQ9BgFRGLBUw1IUcTVZ57uXLcFis9XsazFVyFvXtOUwGfHQ5DIb5B8mReJg7XKMgG1RfpsngSF-y0QR12OKIyNvHl8Ty-HXU-J0hDm1HWKDhM-mXcQ\",\n        \"TokenId\": \"ctrm3g86h7cp1kb7el2g\",\n        \"Username\": \"100036950234\"\n    }\n}",
         "title": "获取长期实例访问凭证"
       }
     ],
@@ -137,8 +137,8 @@
     "CreateRepositoryPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=CreateRepositoryPersonal\r\n&RepoName=dockerhub/test\r\n&Public=1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRepositoryPersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"nicokang/golang1\",\n    \"Public\": 1,\n    \"Description\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"190752c5-f87e-423f-93e4-eb426d82177d\"\n    }\n}",
         "title": "创建个人版镜像仓库"
       }
     ],
@@ -159,8 +159,8 @@
       },
       {
         "document": "使用Duration创建ServiceAccount",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-45uu7ras\",\n    \"Name\": \"test\",\n    \"Description\": \"for test\",\n    \"Duration\": 10,\n    \"Permissions\": [\n        {\n            \"Resource\": \"test\",\n            \"Actions\": [\n                \"tcr:PullRepository\",\n                \"tcr:PushRepository\",\n                \"tcr:CreateRepository\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2023-03-28T15:48:31+08:00\",\n        \"ExpiresAt\": 1680853711137,\n        \"Name\": \"tcr$test\",\n        \"Password\": \"oNKUtqrB5Eb68JufkVanSwuhmC4Ergn7\",\n        \"RequestId\": \"20b67612-28a0-4c51-8efb-0fe14bc23a64\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Name\": \"servie-account4\",\n    \"Duration\": 10,\n    \"Permissions\": [\n        {\n            \"Resource\": \"ns1\",\n            \"Actions\": [\n                \"tcr:PushRepository\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-01-07T11:48:31+08:00\",\n        \"ExpiresAt\": 1737085710747,\n        \"Name\": \"tcr$servie-account4\",\n        \"Password\": \"bVMZuTO6eYFvpZX9sVIxfyA3UHtIUrCa\",\n        \"RequestId\": \"f63f97d2-f5be-43b5-931e-13c026aba9c7\"\n    }\n}",
         "title": "使用Duration创建ServiceAccount"
       }
     ],
@@ -231,8 +231,8 @@
     "DeleteImageAccelerateService": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImageAccelerateService\n&RegistryId=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageAccelerateService\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d07dd8e8-c96c-466c-933e-d05e79e070e2\"\n    }\n}",
         "title": "删除镜像加速服务"
       }
     ],
@@ -247,8 +247,8 @@
     "DeleteImagePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteImagePersonal\n&RepoName=dockerhub/test\n&Tag=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImagePersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"nicokang/golang\",\n    \"Tag\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b062c34-4720-4273-8ff4-d598d9c81b0c\"\n    }\n}",
         "title": "个人版仓库删除tag"
       }
     ],
@@ -279,8 +279,8 @@
     "DeleteInstanceToken": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteInstanceToken\r\n&<公共请求参数>\r\n&RegistryId=tcr-12345\r\n&TokenId=b671eee3-a58d-4704-b4d2-a84b6361ff0c",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstanceToken\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"TokenId\": \"ct3ucep1qcle9n4kmv00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d813db09-5ea7-4b1f-807c-954a8b8ec7a7\"\n    }\n}",
         "title": "删除长期访问凭证"
       }
     ],
@@ -311,8 +311,8 @@
     "DeleteNamespacePersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteNamespacePersonal\r\n&Namespace=mynamespace\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNamespacePersonal\n<公共请求参数>\n\n{\n    \"Namespace\": \"nico-ns1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48e73d54-d4c2-4573-bfc5-3416bc5befba\"\n    }\n}",
         "title": "删除个人版命名空间"
       }
     ],
@@ -335,8 +335,8 @@
     "DeleteRepositoryPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteRepositoryPersonal\r\n&RepoName=dockerhub/test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRepositoryPersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"nicokang/golang1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"352b491b-9f5f-4983-9119-e7ea18adc7cc\"\n    }\n}",
         "title": "删除个人版镜像仓库"
       }
     ],
@@ -383,8 +383,8 @@
     "DeleteWebhookTrigger": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DeleteWebhookTrigger\r\n&<公共请求参数>\r\n&RegistryId=tcr-ak9876\r\n&Namespace=someNs\r\n&Id=11",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c978e73-b752-422c-880d-c074a45b4b58\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWebhookTrigger\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Namespace\": \"ns\",\n    \"Id\": 6\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"620fb647-fe86-4c25-866f-98bf867cd689\"\n    }\n}",
         "title": "删除触发器"
       }
     ],
@@ -400,7 +400,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationTriggerPersonal\n<公共请求参数>\n\n{\n    \"Limit\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 29,\n            \"TriggerInfo\": [\n                {\n                    \"CreateTime\": \"2021-11-18 11:51:13\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"cls-prnklzue\",\n                        \"ClusterRegion\": 1,\n                        \"ContainerName\": \"nginx\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:nginx-deployment\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"aaaa\",\n                    \"UpdateTime\": \"2021-11-18 11:51:13\"\n                },\n                {\n                    \"CreateTime\": \"2021-10-27 10:11:30\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"cls-94j6nzm8\",\n                        \"ClusterRegion\": 33,\n                        \"ContainerName\": \"nginx\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:nginx\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"sss\",\n                    \"UpdateTime\": \"2021-10-27 10:11:30\"\n                },\n                {\n                    \"CreateTime\": \"2020-12-22 10:45:36\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"123\",\n                        \"ClusterRegion\": 1,\n                        \"ContainerName\": \"web\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:kofj\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"kofj-test-20201222\",\n                    \"UpdateTime\": \"2020-12-22 10:45:36\"\n                }\n            ]\n        },\n        \"RequestId\": \"a904482e-68ec-47d9-9f1f-87908659bd81\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 29,\n            \"TriggerInfo\": [\n                {\n                    \"CreateTime\": \"2021-11-18 11:51:13\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"cls-prnklzue\",\n                        \"ClusterRegion\": 1,\n                        \"ContainerName\": \"nginx\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:nginx-deployment\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"aaaa\",\n                    \"UpdateTime\": \"2021-11-18 11:51:13\"\n                },\n                {\n                    \"CreateTime\": \"2021-10-27 10:11:30\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"cls-94j6nzm8\",\n                        \"ClusterRegion\": 33,\n                        \"ContainerName\": \"nginx\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:nginx\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"sss\",\n                    \"UpdateTime\": \"2021-10-27 10:11:30\"\n                },\n                {\n                    \"CreateTime\": \"2020-12-22 10:45:36\",\n                    \"InvokeAction\": \"SERVICE_UPDATE\",\n                    \"InvokeCondition\": {\n                        \"InvokeExpr\": \"\",\n                        \"InvokeMethod\": \"all\"\n                    },\n                    \"InvokePara\": {\n                        \"AppId\": \"1251707795\",\n                        \"ClusterId\": \"clust-xxx\",\n                        \"ClusterRegion\": 1,\n                        \"ContainerName\": \"web\",\n                        \"Namespace\": \"default\",\n                        \"ServiceName\": \"Deployment:kofj\"\n                    },\n                    \"InvokeSource\": \"IMAGE_PUSH\",\n                    \"TriggerName\": \"kofj-test-20201222\",\n                    \"UpdateTime\": \"2020-12-22 10:45:36\"\n                }\n            ]\n        },\n        \"RequestId\": \"a904482e-68ec-47d9-9f1f-87908659bd81\"\n    }\n}",
         "title": "查询应用更新触发器"
       }
     ],
@@ -439,8 +439,8 @@
     "DescribeImageAccelerateService": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeImageAccelerateService\n&RegistryId=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Status\": \"Completed\",\n        \"CFSVIP\": \"10.1.1.1\",\n        \"IsEnable\": \"true\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImageAccelerateService\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CFSVIP\": \"\",\n        \"IsEnable\": false,\n        \"RequestId\": \"dde9bf37-d34c-4c7a-bf0d-a11531ce6ebe\",\n        \"Status\": \"\"\n    }\n}",
         "title": "查询镜像加速服务状态"
       }
     ],
@@ -519,8 +519,8 @@
     "DescribeInstanceStatus": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeInstanceStatus\r\n&RegistryIds.0=tcr-ak9876\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RegistryStatusSet\": [\n            {\n                \"Status\": \"Runing\",\n                \"RegistryId\": \"tcr-ak9876\"\n            }\n        ],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceStatus\n<公共请求参数>\n\n{\n    \"RegistryIds\": [\n        \"tcr-dg284imq\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RegistryStatusSet\": [\n            {\n                \"Conditions\": [\n                    {\n                        \"Reason\": \"\",\n                        \"Status\": \"Running\",\n                        \"Type\": \"\"\n                    }\n                ],\n                \"RegistryId\": \"tcr-dg284imq\",\n                \"Status\": \"Running\"\n            }\n        ],\n        \"RequestId\": \"bc44a6c1-1e49-4b25-9804-f827e87ff686\"\n    }\n}",
         "title": "查询实例状态"
       }
     ],
@@ -623,16 +623,16 @@
     "DescribeRepositoryOwnerPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeRepositoryOwnerPersonal\r\n&RepoName=dockerhub/test\r\n&Limit=20\r\n&Offset=0\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RepoInfo\": [\n                {\n                    \"RepoName\": \"dockerhub/test\",\n                    \"RepoType\": \"QCLOUD HUB\",\n                    \"TagCount\": 49,\n                    \"Public\": 1,\n                    \"IsUserFavor\": false,\n                    \"IsQcloudOfficial\": false,\n                    \"FavorCount\": 0,\n                    \"PullCount\": 3727,\n                    \"Description\": \"\",\n                    \"CreationTime\": \"2019-04-26 18:21:48\",\n                    \"UpdateTime\": \"2020-02-20 16:43:47\"\n                }\n            ],\n            \"Server\": \"ccr.ccs.tencentyun.com\",\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"8e76ee07-c67d-478e-ba2d-b68c17c059f4\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRepositoryOwnerPersonal\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"RepoName\": \"richardgu/hyperkube\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RepoInfo\": [\n                {\n                    \"CreationTime\": \"2023-06-20 15:27:03\",\n                    \"Description\": \"\",\n                    \"FavorCount\": 0,\n                    \"IsQcloudOfficial\": false,\n                    \"IsUserFavor\": false,\n                    \"Public\": 1,\n                    \"PullCount\": 0,\n                    \"RepoName\": \"richardgu/hyperkube\",\n                    \"RepoType\": \"QCLOUD HUB\",\n                    \"TagCount\": 423,\n                    \"UpdateTime\": \"2024-12-30 11:47:17\"\n                }\n            ],\n            \"Server\": \"ccr.ccs.tencentyun.com\",\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"c88a0f09-134d-4422-89bc-a4c7a93b106b\"\n    }\n}",
         "title": "查询个人版所有仓库"
       }
     ],
     "DescribeRepositoryPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=DescribeRepositoryPersonal\r\n&RepoName=test/kube_test\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Data\": {\n            \"CreationTime\": \"2017-12-28 11:00:10\",\n            \"Description\": \"\",\n            \"FavorCount\": 0,\n            \"IsQcloudOfficial\": false,\n            \"IsUserFavor\": false,\n            \"Public\": 0,\n            \"PullCount\": 0,\n            \"RepoName\": \"test/kube_test\",\n            \"RepoType\": \"QCLOUD HUB\"\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRepositoryPersonal\n<公共请求参数>\n\n{\n    \"RepoName\": \"richardgu/hyperkube\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreationTime\": \"2023-06-20 15:27:03\",\n            \"Description\": \"\",\n            \"FavorCount\": 0,\n            \"IsQcloudOfficial\": false,\n            \"IsUserFavor\": false,\n            \"Public\": 1,\n            \"PullCount\": 0,\n            \"RepoName\": \"richardgu/hyperkube\",\n            \"RepoType\": \"QCLOUD HUB\",\n            \"Server\": \"ccr.ccs.tencentyun.com\"\n        },\n        \"RequestId\": \"8ce48e45-dd95-48c9-ba00-801ab1054323\"\n    }\n}",
         "title": "查询个人版仓库信息"
       }
     ],
@@ -735,8 +735,8 @@
     "ManageImageLifecycleGlobalPersonal": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ManageImageLifecycleGlobalPersonal\r\n&Type=keep_last_nums\r\n&Val=80\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ManageImageLifecycleGlobalPersonal\n<公共请求参数>\n\n{\n    \"Type\": \"global_keep_last_nums\",\n    \"Val\": 9998\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fdc10ec8-a1cf-4c2a-8eb4-f6d66abfdd53\"\n    }\n}",
         "title": "设置个人版全局镜像版本清理策略"
       }
     ],
@@ -757,7 +757,7 @@
       },
       {
         "document": "用于创建跨主账号的实例同步",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ManageReplication\n&SourceRegistryId=tcr-3498\n&DestinationRegistryId=tcr-98676\n&DestinationRegionId=9\n&Rule.Override=true\n&Rule.DestNamespace=test\n&Rule.Name=test\n&Rule.Filters.0.Type=tag\n&Rule.Filters.0.Value=test\n&PeerReplicationOption.EnablePeerReplication=true\n&PeerReplicationOption.PeerRegistryUin=113498\n&PeerReplicationOption.PeerRegistryToken=xxx\n&<公共请求参数>",
+        "input": "https://tcr.tencentcloudapi.com/?Action=ManageReplication\n&SourceRegistryId=tcr-3498\n&DestinationRegistryId=tcr-98676\n&DestinationRegionId=9\n&Rule.Override=true\n&Rule.DestNamespace=ns\n&Rule.Name=rule1\n&Rule.Filters.0.Type=tag\n&Rule.Filters.0.Value=filter1\n&PeerReplicationOption.EnablePeerReplication=true\n&PeerReplicationOption.PeerRegistryUin=113498\n&PeerReplicationOption.PeerRegistryToken=access-token\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建跨主账号实例同步"
       }
@@ -849,8 +849,8 @@
     "ModifyServiceAccount": [
       {
         "document": "更新服务级账号",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Description\": \"abc\",\n    \"Duration\": 0,\n    \"ExpiresAt\": 0,\n    \"Disable\": true,\n    \"Permissions\": [\n        {\n            \"Resource\": \"abc\",\n            \"Actions\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Name\": \"tcr$service-account2\",\n    \"Description\": \"desc 1\",\n    \"Duration\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44d9705a-dc93-41f8-b596-8552c4dd40d7\"\n    }\n}",
         "title": "更新服务级账号"
       }
     ],
@@ -887,8 +887,8 @@
     "ModifyWebhookTrigger": [
       {
         "document": "",
-        "input": "https://tcr.tencentcloudapi.com/?Action=ModifyWebhookTrigger\r\n&<公共请求参数>\r\n&RegistryId=tcr-7s2d14fn\r\n&Namespace=someNs\r\n&Trigger.Id=9\r\n&Trigger.Enabled=false\r\n&Trigger.Targets.0.Address=abc.local\r\n&Trigger.EventTypes.0=pullImage",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c33da0e-5a85-4fdc-841c-5ca47454a117\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWebhookTrigger\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-dg284imq\",\n    \"Trigger\": {\n        \"Name\": \"tirgger\",\n        \"Targets\": [\n            {\n                \"Address\": \"http://www.baidu.com\",\n                \"Headers\": [\n                    {\n                        \"Key\": \"k1\",\n                        \"Values\": [\n                            \"v1\"\n                        ]\n                    },\n                    {\n                        \"Key\": \"k2\",\n                        \"Values\": [\n                            \"v2\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"EventTypes\": [\n            \"pushImage\"\n        ],\n        \"Condition\": \"release*\",\n        \"Enabled\": true,\n        \"Id\": 2,\n        \"Description\": \"desc22\",\n        \"NamespaceId\": 1,\n        \"NamespaceName\": \"ns1\"\n    },\n    \"Namespace\": \"ns1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cadb3e9c-6f00-4d20-9688-23e0fa792624\"\n    }\n}",
         "title": "更新触发器"
       }
     ],

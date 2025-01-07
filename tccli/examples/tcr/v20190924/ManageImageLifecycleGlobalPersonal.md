@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcr ManageImageLifecycleGlobalPersonal --cli-unfold-argument  \
-    --Type keep_last_nums \
-    --Val 80
+    --Type global_keep_last_nums \
+    --Val 9998
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "fdc10ec8-a1cf-4c2a-8eb4-f6d66abfdd53"
     }
 }
 ```

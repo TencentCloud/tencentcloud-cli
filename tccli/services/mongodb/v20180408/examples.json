@@ -19,7 +19,7 @@
     "CreateDBInstanceHour": [
       {
         "document": "客户需要通过API创建按量计费的云数据库实例",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&ReplicateSetNum=1\r\n&SecondaryNum=2\r\n&EngineVersion=MONGO_3_WT\r\n&Machine=TGIO\r\n&GoodsNum=1\r\n&Zone=ap-guangzhou-3\r\n&InstanceRole=MASTER\r\n&InstanceType=REPLSET\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=CreateDBInstanceHour\n&Memory=4\n&Volume=250\n&ReplicateSetNum=1\n&SecondaryNum=2\n&EngineVersion=MONGO_3_WT\n&Machine=TGIO\n&GoodsNum=1\n&Zone=ap-guangzhou-3\n&InstanceRole=MASTER\n&InstanceType=REPLSET\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eaf9b19d-5ad4-4ca2-9fc4-a319aeb9181f\",\n        \"DealId\": \"20190709160000003502416120946732\",\n        \"InstanceIds\": [\n            \"cmgo-m26c6jsf\"\n        ]\n    }\n}",
         "title": "创建云数据库实例（按量计费）"
       }
@@ -28,7 +28,7 @@
       {
         "document": "",
         "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeClientConnections\n&InstanceId=cmgo-eqmoaxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Clients\": [\n            {\n                \"IP\": \"abc\",\n                \"Count\": 1\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Clients\": [\n            {\n                \"IP\": \"10.0.0.1\",\n                \"Count\": 1\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"59b477da-6473-4ea8-85b3-7f4473744981\"\n    }\n}",
         "title": "查询云数据库实例的客户端连接情况"
       }
     ],

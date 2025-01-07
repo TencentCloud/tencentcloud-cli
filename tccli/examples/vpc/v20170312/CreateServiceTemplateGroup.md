@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc CreateServiceTemplateGroup --cli-unfold-argument  \
-    --ServiceTemplateGroupName TestName \
+    --ServiceTemplateGroupName demo \
     --ServiceTemplateIds ppm-529nwwj8 ppm-4dw6agho
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "ServiceTemplateGroup": {
-            "ServiceTemplateGroupName": "TestName",
+            "ServiceTemplateGroupName": "demo",
             "ServiceTemplateGroupId": "ppmg-2klmrefu",
             "ServiceTemplateIdSet": [
                 "ppm-529nwwj8",
@@ -23,8 +23,8 @@ Output:
             ],
             "ServiceTemplateSet": [
                 {
-                    "ServiceTemplateId": "abc",
-                    "ServiceTemplateName": "abc",
+                    "ServiceTemplateId": "demo",
+                    "ServiceTemplateName": "demo",
                     "ServiceSet": [],
                     "ServiceExtraSet": [],
                     "CreatedTime": "2018-04-03 22:05:32"

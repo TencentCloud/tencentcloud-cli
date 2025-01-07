@@ -19,18 +19,23 @@ Output:
         "Messages": [
             {
                 "Timestamp": 0,
-                "FromAccount": "abc",
+                "FromAccount": "2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc",
                 "Seq": 0,
                 "MessageBody": [
                     {
                         "MessageType": 0,
-                        "TextMessage": "abc",
-                        "ImageMessage": "abc"
+                        "TextMessage": "hello",
+                        "ImageMessage": "https://www.image.com/haha.jpg",
+                        "CustomMessage": {
+                            "Data": "data",
+                            "Desc": "custom_message",
+                            "Ext": "CHAT"
+                        }
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

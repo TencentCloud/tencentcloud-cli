@@ -221,7 +221,7 @@
         {
           "disabled": false,
           "document": "实例模糊搜索字段。",
-          "example": "test",
+          "example": "研发实例",
           "member": "string",
           "name": "InstanceKeys",
           "required": false,
@@ -877,7 +877,7 @@
         {
           "disabled": false,
           "document": "Pod名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "worker-0",
           "member": "string",
           "name": "Name",
           "output_required": false,

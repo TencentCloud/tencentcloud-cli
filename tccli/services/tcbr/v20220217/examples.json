@@ -3,15 +3,9 @@
     "CreateCloudRunEnv": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"VpcId\": \"字符串\",\n    \"Alias\": \"字符串\",\n    \"SubNetIds\": [\n        \"字符串\"\n    ],\n    \"FreeQuota\": \"字符串\",\n    \"EnvId\": \"字符串\",\n    \"Source\": \"字符串\",\n    \"Flag\": \"字符串\",\n    \"PackageType\": \"字符串\",\n    \"ReqKey\": \"字符串\",\n    \"Channel\": \"字符串\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-sdfsdf\",\n    \"Alias\": \"sldfjkdlkj\",\n    \"SubNetIds\": [],\n    \"FreeQuota\": \"\",\n    \"EnvId\": \"env-sdfsdf\",\n    \"Source\": \"wechat\",\n    \"Flag\": \"\",\n    \"PackageType\": \"Trial\",\n    \"ReqKey\": \"seqId\",\n    \"Channel\": \"wechat\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-test\",\n        \"RequestId\": \"c8b68d5a-d045-4740-b731-da71512be06e\",\n        \"TranId\": \"\"\n    }\n}",
         "title": "success"
-      },
-      {
-        "document": "创建环境",
-        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudRunEnv\n<公共请求参数>\n\n{\n    \"Alias\": \"xx\",\n    \"FreeQuota\": \"xx\",\n    \"Flag\": \"xx\",\n    \"VpcId\": \"xx\",\n    \"SubNetIds\": [\n        \"xx\"\n    ],\n    \"ReqKey\": \"xx\",\n    \"PackageType\": \"xx\",\n    \"Source\": \"xx\",\n    \"Channel\": \"xx\",\n    \"EnvId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvId\": \"prod-3g69bdvme2ac11cb\",\n        \"TranId\": \"0ow89eea326\",\n        \"RequestId\": \"1db46cfe-3b3d-47e8-aff2-1cbf1b6c3018\"\n    }\n}",
-        "title": "CreateCloudRunEnv"
       }
     ],
     "CreateCloudRunServer": [
@@ -56,7 +50,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvBaseInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-0g8ki95z117f177d\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"EnvBaseInfo\": {\n            \"PackageType\": \"Trial\",\n            \"CreateTime\": \"2022-05-27 15:00:00\",\n            \"EnvId\": \"prod-0g8ki95z117f177d\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvBaseInfo\": {\n            \"EnvId\": \"abc\",\n            \"PackageType\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"Alias\": \"abc\",\n            \"Status\": \"abc\",\n            \"Region\": \"abc\",\n            \"EnvType\": \"abc\",\n            \"SubnetIds\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询环境基础信息"
       }
     ],

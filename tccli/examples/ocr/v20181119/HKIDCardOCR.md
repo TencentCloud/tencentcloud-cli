@@ -1,4 +1,4 @@
-**Example 1: 中国香港身份证识别示例代码**
+**Example 1: HKIDCardOCR调用**
 
 
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli ocr HKIDCardOCR --cli-unfold-argument  \
     --ReturnHeadImage false \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg
 ```
 
 Output: 

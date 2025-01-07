@@ -7,7 +7,7 @@ Input:
 ```
 tccli lcic GetRoomEvent --cli-unfold-argument  \
     --RoomId 1 \
-    --SdkAppId 1234 \
+    --SdkAppId 13465287 \
     --Page 1 \
     --Limit 10 \
     --Keyword 
@@ -21,14 +21,14 @@ Output:
         "Events": [
             {
                 "Timestamp": 1,
-                "EventType": "abc",
+                "EventType": "MemberJoin",
                 "EventData": {
                     "RoomId": 1,
-                    "UserId": "abc"
+                    "UserId": "2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc"
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

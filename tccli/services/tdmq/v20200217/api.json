@@ -770,6 +770,13 @@
       "output": "ExportRocketMQMessageDetailResponse",
       "status": "online"
     },
+    "GetTopicList": {
+      "document": "获取环境下主题列表",
+      "input": "GetTopicListRequest",
+      "name": "查询命名空间下的主题列表",
+      "output": "GetTopicListResponse",
+      "status": "online"
+    },
     "ImportRocketMQConsumerGroups": {
       "document": "输入迁移任务id和要导入的Group，导入后台",
       "input": "ImportRocketMQConsumerGroupsRequest",
@@ -12241,6 +12248,80 @@
       ],
       "usage": "in"
     },
+    "GetTopicListRequest": {
+      "document": "GetTopicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境（命名空间）名称。",
+          "example": "devNs",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pulsar 集群的ID",
+          "example": "cluster1",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始下标，不填默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTopicListResponse": {
+      "document": "GetTopicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题列表",
+          "example": "空",
+          "member": "Topic_Simplification",
+          "name": "TopicList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ImportRocketMQConsumerGroupsRequest": {
       "document": "ImportRocketMQConsumerGroups请求参数结构体",
       "members": [
@@ -20597,6 +20678,32 @@
           "example": "1727422630",
           "member": "int64",
           "name": "LastUpdateTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Topic_Simplification": {
+      "document": "主题实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "devTopic",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0: 非持久非分区\n1: 非持久分区\n2: 持久非分区\n3: 持久分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PulsarTopicType",
           "output_required": true,
           "type": "int",
           "value_allowed_null": true

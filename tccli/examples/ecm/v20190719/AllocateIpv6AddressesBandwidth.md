@@ -17,7 +17,7 @@ Output:
         "AddressSet": [
             "eip-3l4nwzvo"
         ],
-        "TaskId": 202869021,
+        "TaskId": "202869021",
         "RequestId": "aac03e7b-3c91-4970-b2bc-c20f0c6bdd38"
     }
 }

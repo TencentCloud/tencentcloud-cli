@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcr DescribeRepositoryOwnerPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test \
-    --Limit 20 \
-    --Offset 0
+    --Offset 0 \
+    --Limit 10 \
+    --RepoName richardgu/hyperkube
 ```
 
 Output: 
@@ -18,23 +18,23 @@ Output:
         "Data": {
             "RepoInfo": [
                 {
-                    "RepoName": "dockerhub/test",
-                    "RepoType": "QCLOUD HUB",
-                    "TagCount": 49,
-                    "Public": 1,
-                    "IsUserFavor": false,
-                    "IsQcloudOfficial": false,
-                    "FavorCount": 0,
-                    "PullCount": 3727,
+                    "CreationTime": "2023-06-20 15:27:03",
                     "Description": "",
-                    "CreationTime": "2019-04-26 18:21:48",
-                    "UpdateTime": "2020-02-20 16:43:47"
+                    "FavorCount": 0,
+                    "IsQcloudOfficial": false,
+                    "IsUserFavor": false,
+                    "Public": 1,
+                    "PullCount": 0,
+                    "RepoName": "richardgu/hyperkube",
+                    "RepoType": "QCLOUD HUB",
+                    "TagCount": 423,
+                    "UpdateTime": "2024-12-30 11:47:17"
                 }
             ],
             "Server": "ccr.ccs.tencentyun.com",
             "TotalCount": 1
         },
-        "RequestId": "8e76ee07-c67d-478e-ba2d-b68c17c059f4"
+        "RequestId": "c88a0f09-134d-4422-89bc-a4c7a93b106b"
     }
 }
 ```

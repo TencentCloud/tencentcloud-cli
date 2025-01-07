@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli lcic DescribeCurrentMemberList --cli-unfold-argument  \
-    --RoomId 123 \
+    --RoomId 301234567 \
     --Page 1 \
     --Limit 10
 ```
@@ -30,14 +30,14 @@ Output:
                 "LastQuitTimestamp": 1,
                 "Rewords": 1,
                 "IPAddress": "1.1.1.1",
-                "Location": "abc",
+                "Location": "beijing",
                 "Device": 0,
                 "PerMemberMicCount": 0,
                 "PerMemberMessageCount": 0,
                 "Role": 1,
-                "GroupId": "abc",
+                "GroupId": "2CvDgjRNjylAs",
                 "SubGroupId": [
-                    "abc"
+                    "BZB4iZc0F6ko"
                 ],
                 "Stage": 0,
                 "CurrentState": 1

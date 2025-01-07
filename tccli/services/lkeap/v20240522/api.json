@@ -133,6 +133,13 @@
       "output": "ModifyQAResponse",
       "status": "online"
     },
+    "QueryRewrite": {
+      "document": "多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。\n开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。",
+      "input": "QueryRewriteRequest",
+      "name": "多轮改写",
+      "output": "QueryRewriteResponse",
+      "status": "online"
+    },
     "ReconstructDocumentSSE": {
       "document": "准实时文档解析接口，使用HTTP SSE 协议通信。",
       "input": "ReconstructDocumentSSERequest",
@@ -1123,6 +1130,34 @@
       ],
       "type": "object"
     },
+    "Message": {
+      "document": "会话内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "user",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容",
+          "example": "content",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAttributeLabelRequest": {
       "document": "ModifyAttributeLabel请求参数结构体",
       "members": [
@@ -1248,6 +1283,62 @@
         }
       ],
       "usage": "both"
+    },
+    "QueryRewriteRequest": {
+      "document": "QueryRewrite请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要改写的多轮历史会话，每轮历史对话需要包含user（问）和assistant（答）成对输入，由于模型字符限制，最多提供4轮对话。针对最后一轮对话进行改写",
+          "example": "[{\"Role\":\"user\",\"Content\":\"你家在哪里\"},{\"Role\":\"assistant\",\"Content\":“我家在国内”}]",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "lke-query-rewrite-base",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryRewriteResponse": {
+      "document": "QueryRewrite返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "改写结果",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗量，返回输入token数，输出token数以及总token数",
+          "example": "{\"InputTokens\":45,\"OutputTokens\":6,\"TotalTokens\":51}",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReconstructDocumentFailedPage": {
       "document": "文档解析失败记录",

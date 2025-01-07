@@ -4363,7 +4363,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "cdb-c1nl9rpv",
+          "example": "crs-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4381,7 +4381,7 @@
         {
           "disabled": false,
           "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
-          "example": "mysql",
+          "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -4389,12 +4389,21 @@
         },
         {
           "disabled": false,
-          "document": "查询数目，默认为20，最大值为100。",
+          "document": "查询数目，默认为20，最大值为500。",
           "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片ID数组。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "ShardIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4408,7 +4417,7 @@
           "example": "无",
           "member": "RedisPreKeySpaceData",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4418,7 +4427,7 @@
           "example": "1618890295",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -7,8 +7,8 @@ Input:
 ```
 tccli lcic ModifyApp --cli-unfold-argument  \
     --SdkAppId 1 \
-    --Callback abc \
-    --CallbackKey abc
+    --Callback http://www.callback.com/mycallback \
+    --CallbackKey mycallback
 ```
 
 Output: 

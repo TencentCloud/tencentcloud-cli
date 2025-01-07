@@ -1,6 +1,6 @@
-**Example 1: 驾驶证正面识别示例    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 1: 驾驶证主页识别示例   **
 
-驾驶证识别
+驾驶证主页识别示例   
 
 Input: 
 
@@ -41,9 +41,9 @@ Output:
 }
 ```
 
-**Example 2: 驾驶证正面告警识别示例   [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 2: 驾驶证主页告警识别示例 **
 
-驾驶证识别
+驾驶证主页告警识别示例 
 
 Input: 
 
@@ -88,15 +88,15 @@ Output:
 }
 ```
 
-**Example 3: 驾驶证反面识别示例    [前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Version=2018-11-19&Action=DriverLicenseOCR)**
+**Example 3: 驾驶证副页识别示例   **
 
-驾驶证反面
+驾驶证副页识别示例   
 
 Input: 
 
 ```
 tccli ocr DriverLicenseOCR --cli-unfold-argument  \
-    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/vehicle/DriverLicenseOCR/DriverLicenseOCR2.jpg \
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --CardSide BACK
 ```
 
@@ -106,7 +106,7 @@ Output:
     "Response": {
         "Address": "",
         "ArchivesCode": "130123421234",
-        "CardCode": "130721234511112345",
+        "CardCode": "13072*****345",
         "Class": "",
         "CumulativeScore": "",
         "DateOfBirth": "",
@@ -124,8 +124,8 @@ Output:
         "CurrentTime": "",
         "GenerateTime": "",
         "State": "",
-        "BackPageName": "",
-        "BackPageCardCode": "",
+        "BackPageName": "李明",
+        "BackPageCardCode": "13072*****345",
         "DriverLicenseType": ""
     }
 }

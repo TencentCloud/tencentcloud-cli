@@ -3499,7 +3499,7 @@
         },
         {
           "disabled": false,
-          "document": "IP模板名称",
+          "document": "IP模板名称。",
           "example": "demo",
           "member": "string",
           "name": "AddressTemplateName",
@@ -3510,7 +3510,7 @@
         },
         {
           "disabled": false,
-          "document": "废弃字段",
+          "document": "废弃字段。",
           "example": "192.168.1.10",
           "member": "string",
           "name": "From",
@@ -7052,7 +7052,7 @@
         {
           "disabled": false,
           "document": "IP地址模板集合名称。",
-          "example": "TestName",
+          "example": "demo",
           "member": "string",
           "name": "AddressTemplateGroupName",
           "required": true,
@@ -7061,7 +7061,7 @@
         {
           "disabled": false,
           "document": "IP地址模板实例ID，例如：ipm-mdunqeb6。",
-          "example": "[\"ipm-88t6207k\\r\\n\",\"ipm-mdunqeb6\\r\\n\"]",
+          "example": "[\"ipm-88t6207k\",\"ipm-mdunqeb6\"]",
           "member": "string",
           "name": "AddressTemplateIds",
           "required": true,
@@ -7070,7 +7070,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -7085,7 +7085,7 @@
         {
           "disabled": false,
           "document": "IP地址模板集合对象。",
-          "example": "无",
+          "example": "{\"AddressTemplateGroupId\": \"ipmg-dih8xdbq\"}",
           "member": "AddressTemplateGroup",
           "name": "AddressTemplateGroup",
           "output_required": true,
@@ -9673,7 +9673,7 @@
         {
           "disabled": false,
           "document": "协议端口模板集合名称。",
-          "example": "TestName",
+          "example": "demo",
           "member": "string",
           "name": "ServiceTemplateGroupName",
           "required": true,
@@ -9691,7 +9691,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -9706,7 +9706,7 @@
         {
           "disabled": false,
           "document": "协议端口模板集合对象。",
-          "example": "{\"ServiceTemplateGroupName\":\"TestName\",\"ServiceTemplateGroupId\":\"ppmg-2klmrefu\",\"ServiceTemplateIdSet\":[\"ppm-529nwwj8\",\"ppm-4dw6agho\"],\"CreatedTime\":\"2018-04-03 22:05:32\"}",
+          "example": "{\"ServiceTemplateGroupId\":\"ppmg-2klmrefu\",\"ServiceTemplateIdSet\":[\"ppm-529nwwj8\",\"ppm-4dw6agho\"]}",
           "member": "ServiceTemplateGroup",
           "name": "ServiceTemplateGroup",
           "output_required": true,
@@ -9728,7 +9728,7 @@
         {
           "disabled": false,
           "document": "协议端口模板名称。",
-          "example": "TestName",
+          "example": "demo",
           "member": "string",
           "name": "ServiceTemplateName",
           "required": true,
@@ -9746,7 +9746,7 @@
         {
           "disabled": false,
           "document": "支持添加备注，单个端口、多个端口、连续端口及所有端口，协议支持：TCP、UDP、ICMP、GRE 协议。Services与ServicesExtra必填其一。",
-          "example": "无",
+          "example": "[{\"Service\": \"TCP:8080\"}]",
           "member": "ServicesInfo",
           "name": "ServicesExtra",
           "required": false,
@@ -9755,7 +9755,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -9770,7 +9770,7 @@
         {
           "disabled": false,
           "document": "协议端口模板对象。",
-          "example": "无",
+          "example": "{\"ServiceTemplateId\": \"ppm-dih8xdbq\"}",
           "member": "ServiceTemplate",
           "name": "ServiceTemplate",
           "output_required": true,
@@ -23131,17 +23131,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "HaVip实例唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "havip-7tqt5jn6",
-          "member": "string",
-          "name": "HaVipId",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "HaVip绑定的子机或网卡唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-3qx9elib",
           "member": "string",
@@ -23153,12 +23142,23 @@
         },
         {
           "disabled": false,
+          "document": "HaVip实例唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "havip-7tqt5jn6",
+          "member": "string",
+          "name": "HaVipId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "HaVip绑定的类型。取值:CVM, ENI。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -29518,6 +29518,17 @@
         },
         {
           "disabled": false,
+          "document": "弹性网卡状态：\n<li>`PENDING`：创建中</li>\n<li>`AVAILABLE`：可用的</li>\n<li>`ATTACHING`：绑定中</li>\n<li>`DETACHING`：解绑中</li>\n<li>`DELETING`：删除中</li>\n<li>`INUSE`：已绑定</li>",
+          "example": "AVAILABLE",
+          "member": "string",
+          "name": "NetworkInterfaceState",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "内网IP信息。",
           "example": "[{\"PrivateIpAddress\": \"192.168.0.10\"}]",
           "member": "PrivateIpAddressSpecification",
@@ -29563,7 +29574,7 @@
         {
           "disabled": false,
           "document": "`IPv6`地址列表。",
-          "example": "[]",
+          "example": "[{\"Description\": \"\", \"Primary\": false, \"Address\": \"3402:4e00:20:1202::1\", \"AddressId\": \"\", \"PublicIpAddress\": \"\", \"IsWanIpBlocked\": false, \"State\": \"AVAILABLE\", \"AddressType\": \"GUA\"}]",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "output_required": true,
@@ -29574,7 +29585,7 @@
         {
           "disabled": false,
           "document": "标签键值对。",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -33339,19 +33350,21 @@
           "example": "tcp:80",
           "member": "string",
           "name": "Service",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注。",
           "example": "desc",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

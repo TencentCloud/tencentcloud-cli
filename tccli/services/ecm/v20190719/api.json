@@ -1336,7 +1336,7 @@
         {
           "disabled": false,
           "document": "需要开通公网访问能力的IPV6地址。",
-          "example": "无",
+          "example": "[\"2402:4e00:1200:1809:0:8ef6:b82b:513b\"]",
           "member": "string",
           "name": "Ipv6Addresses",
           "required": true,
@@ -1369,20 +1369,20 @@
         {
           "disabled": false,
           "document": "弹性公网 IPV6 的唯一 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"eip-3l4nwzvo\"]",
           "member": "string",
           "name": "AddressSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "异步任务TaskId。",
-          "example": "无",
+          "example": "202869021",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8803,9 +8803,10 @@
         {
           "disabled": false,
           "document": "IPv6地址，形如：3402:4e00:20:100:0:8cd9:2a67:71f3",
-          "example": "",
+          "example": "3402:4e00:20:100:0:8cd9:2a67:71f3",
           "member": "string",
           "name": "Address",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8813,9 +8814,10 @@
         {
           "disabled": false,
           "document": "是否是主IP。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Primary",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -8823,9 +8825,10 @@
         {
           "disabled": false,
           "document": "EIP实例ID，形如：eip-hxlqja90。",
-          "example": "",
+          "example": "eip-hxlqja90",
           "member": "string",
           "name": "AddressId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8833,9 +8836,10 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "",
+          "example": "demo",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8843,9 +8847,10 @@
         {
           "disabled": false,
           "document": "公网IP是否被封堵。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "IsWanIpBlocked",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -8853,9 +8858,10 @@
         {
           "disabled": false,
           "document": "IPv6地址状态：\nPENDING：生产中\nMIGRATING：迁移中\nDELETING：删除中\nAVAILABLE：可用的",
-          "example": "",
+          "example": "AVAILABLE",
           "member": "string",
           "name": "State",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

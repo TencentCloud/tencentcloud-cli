@@ -10,9 +10,9 @@ tccli lcic BatchDescribeDocument --cli-unfold-argument  \
     --Page 0 \
     --Limit 0 \
     --Permission 1 \
-    --Owner abc \
-    --Keyword abc \
-    --DocumentId abc
+    --Owner 2kJJBH6G1dfBFUJqXLh0Mg3ELLk \
+    --Keyword hello \
+    --DocumentId cdockjkj
 ```
 
 Output: 
@@ -22,30 +22,30 @@ Output:
         "Total": 0,
         "Documents": [
             {
-                "DocumentId": "abc",
-                "DocumentUrl": "abc",
-                "DocumentName": "abc",
-                "Owner": "abc",
+                "DocumentId": "dej45ee21",
+                "DocumentUrl": "https://www.baidu.com/1.pdf",
+                "DocumentName": "docddabc",
+                "Owner": "2kJJBH6G1dfBFUJqXLh0Mg3ELLk",
                 "SdkAppId": 1,
                 "Permission": 1,
-                "TranscodeResult": "abc",
+                "TranscodeResult": "success",
                 "TranscodeType": 1,
                 "TranscodeProgress": 1,
                 "TranscodeState": 1,
-                "TranscodeInfo": "abc",
-                "DocumentType": "abc",
+                "TranscodeInfo": "llkjkjiijk",
+                "DocumentType": "pdf",
                 "DocumentSize": 1,
                 "UpdateTime": 1,
                 "Pages": 1,
                 "Width": 1,
                 "Height": 1,
-                "Cover": "abc",
-                "Preview": "abc",
+                "Cover": "https://www.baidu.com/1.jpg",
+                "Preview": "https://www.baidu.com/preview.jpg",
                 "Resolution": "1280*720",
                 "MinScaleResolution": "1280*720"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "2a117d109a0c533e5ecd37fc221ba7f7"
     }
 }
 ```

@@ -6,19 +6,28 @@ Input:
 
 ```
 tccli tcr ModifyWebhookTrigger --cli-unfold-argument  \
-    --RegistryId tcr-7s2d14fn \
-    --Namespace someNs \
-    --Trigger.Id 9 \
-    --Trigger.Enabled false \
-    --Trigger.Targets.0.Address abc.local \
-    --Trigger.EventTypes pullImage
+    --RegistryId tcr-dg284imq \
+    --Trigger.Name tirgger \
+    --Trigger.Targets.0.Address http://www.baidu.com \
+    --Trigger.Targets.0.Headers.0.Key k1 \
+    --Trigger.Targets.0.Headers.0.Values v1 \
+    --Trigger.Targets.0.Headers.1.Key k2 \
+    --Trigger.Targets.0.Headers.1.Values v2 \
+    --Trigger.EventTypes pushImage \
+    --Trigger.Condition release* \
+    --Trigger.Enabled True \
+    --Trigger.Id 2 \
+    --Trigger.Description desc22 \
+    --Trigger.NamespaceId 1 \
+    --Trigger.NamespaceName ns1 \
+    --Namespace ns1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c33da0e-5a85-4fdc-841c-5ca47454a117"
+        "RequestId": "cadb3e9c-6f00-4d20-9688-23e0fa792624"
     }
 }
 ```

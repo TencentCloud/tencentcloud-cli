@@ -24,7 +24,12 @@ Output:
                 "CreateTime": "2020-04-16 18:50:10",
                 "UpdateTime": "2020-05-14 16:00:42",
                 "IsAutoRenew": "true",
-                "PaymentChannel": "qcloud"
+                "PaymentChannel": "qcloud",
+                "FreeQuota": "basic",
+                "OrderInfo": null,
+                "ExtPackageType": "",
+                "IsAlwaysFree": false,
+                "EnableOverrun": false
             }
         ],
         "RequestId": "e2450786-2fec-47de-9d8d-ee1bb7805d38",

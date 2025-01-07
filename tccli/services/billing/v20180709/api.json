@@ -13456,6 +13456,60 @@
           "name": "VoucherSubType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券有效时间开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "StartTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券有效时间结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "StartTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券失效时间开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "EndTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券失效时间结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "EndTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发券时间开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "CreateTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发券时间结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "CreateTimeTo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13486,7 +13540,7 @@
         {
           "disabled": false,
           "document": "代金券相关信息",
-          "example": "{\"Status\":\"used\",\"PayScene\":\"all\",\"EndTime\":\"2024-04-22 23:59:59\",\"NominalValue\":2000000,\"VoucherId\":\"JTZFEPHBZMRDH33MM45JGU\",\"BeginTime\":\"2022-04-22 00:00:00\",\"ExcludedProducts\":[{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-One_Time\"},{\"PayMode\":\"*\",\"GoodsName\":\"Customer product training\"},{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-Package\"},{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-Package_Cycle\"},{\"PayMode\":\"*\",\"GoodsName\":\"Saving Plan\"},{\"PayMode\":\"*\",\"GoodsName\":\"marketplace image\"},{\"PayMode\":\"*\",\"GoodsName\":\"market\"}],\"OwnerUin\":\"909619400\",\"Balance\":0,\"PayMode\":\"*\",\"ApplicableProducts\":{\"PayMode\":\"*\",\"GoodsName\":\"Common for all products\"}}",
+          "example": "无",
           "member": "VoucherInfos",
           "name": "VoucherInfos",
           "output_required": true,

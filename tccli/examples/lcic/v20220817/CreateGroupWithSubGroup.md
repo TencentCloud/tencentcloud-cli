@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli lcic CreateGroupWithSubGroup --cli-unfold-argument  \
-    --GroupName test \
-    --SdkAppId 12345678 \
-    --TeacherId dfgdfg \
-    --SubGroupIds abc bcd
+    --GroupName Group_name \
+    --SdkAppId 3450918 \
+    --TeacherId Teacher_98979 \
+    --SubGroupIds asdasd asdasd
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "GroupId": "2CvDgjRNjylAsBZB4iZc0F6koXe",
-        "RequestId": "213das"
+        "RequestId": "bb9c8d-4236-419b-8c39-572234jifsns7"
     }
 }
 ```

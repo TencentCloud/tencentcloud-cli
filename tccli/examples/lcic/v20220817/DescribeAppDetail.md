@@ -14,29 +14,29 @@ Output:
 ```
 {
     "Response": {
-        "SdkAppId": "abc",
+        "SdkAppId": "13465287",
         "AppConfig": {
-            "ApplicationId": "abc",
-            "AppName": "abc",
+            "ApplicationId": "2CvDgjRNjylAs",
+            "AppName": "appName01",
             "State": 0,
             "AppVersion": 0,
-            "CreatedAt": "abc",
-            "Callback": "abc",
-            "CallbackKey": "abc"
+            "CreatedAt": "1704074400",
+            "Callback": "http://11.22.33.44:8080/callback",
+            "CallbackKey": "myCallBack"
         },
         "SceneConfig": [
             {
-                "Scene": "abc",
-                "LogoUrl": "abc",
-                "HomeUrl": "abc",
-                "JSUrl": "abc",
-                "CSSUrl": "abc"
+                "Scene": "scene01",
+                "LogoUrl": "http://11.22.33.44:8080/log",
+                "HomeUrl": "http://11.22.33.44:8080/home",
+                "JSUrl": "http://11.22.33.44:8080/js",
+                "CSSUrl": "http://11.22.33.44:8080/css"
             }
         ],
         "TransferConfig": {
             "State": 1
         },
-        "RequestId": "abc"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

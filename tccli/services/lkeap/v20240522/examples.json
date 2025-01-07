@@ -89,7 +89,7 @@
     "GetEmbedding": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"你好\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Model\": \"lke-text-embedding-v1\",\n    \"Inputs\": [\n        \"你好\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Usage\": {\n            \"TotalTokens\": 3\n        }\n    }\n}",
         "title": "获取特征向量"
       }
@@ -156,6 +156,14 @@
         "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f4843c1-8f3b-4a0b-ad7e-91b47f2b93c7\"\n    }\n}",
         "title": "修改问答对"
+      }
+    ],
+    "QueryRewrite": [
+      {
+        "document": "多轮改写",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRewrite\n<公共请求参数>\n\n{\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"你家在哪里\"\n        },\n        {\n            \"Role\": \"assistant\",\n            \"Content\": \"我家在国内\"\n        },\n        {\n            \"Role\": \"user\",\n            \"Content\": \"国内哪里\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": \"你家在国内哪里？\",\n        \"RequestId\": \"4de60215-13cd-4f90-afc4-9fe4ef63e245\",\n        \"Usage\": {\n            \"InputTokens\": 45,\n            \"OutputTokens\": 6,\n            \"TotalTokens\": 51\n        }\n    }\n}",
+        "title": "多轮改写"
       }
     ],
     "ReconstructDocumentSSE": [

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb ModifyClsTopic --cli-unfold-argument  \
-    --EnvId xx \
+    --EnvId env-xxyyzzaa \
     --Period 10
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "uuid-here"
     }
 }
 ```

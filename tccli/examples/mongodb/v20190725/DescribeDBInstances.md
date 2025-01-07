@@ -10,7 +10,7 @@ tccli mongodb DescribeDBInstances --cli-unfold-argument  \
     --OrderBy DESC \
     --InstanceIds cmgo-3vgr**** \
     --VpcId vpc-gfb3**** \
-    --Tags.0.TagKey test \
+    --Tags.0.TagKey testTag \
     --Tags.0.TagValue testValue \
     --ClusterType 0 \
     --PayMode 0 \

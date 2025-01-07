@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcr DeleteRepositoryPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test
+    --RepoName nicokang/golang1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "352b491b-9f5f-4983-9119-e7ea18adc7cc"
     }
 }
 ```

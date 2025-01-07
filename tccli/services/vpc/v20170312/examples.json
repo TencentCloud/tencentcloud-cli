@@ -325,8 +325,8 @@
     "CreateAddressTemplateGroup": [
       {
         "document": "创建IP地址模板集合",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAddressTemplateGroup\n&AddressTemplateGroupName=TestName\n&AddressTemplateIds.0=ipm-88t6207k\n&AddressTemplateIds.1=ipm-mdunqeb6\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AddressTemplateGroup\": {\n            \"AddressTemplateGroupName\": \"TestName\",\n            \"AddressTemplateGroupId\": \"ipmg-dih8xdbq\",\n            \"AddressTemplateIdSet\": [\n                \"ipm-88t6207k\",\n                \"ipm-mdunqeb6\"\n            ],\n            \"AddressTemplateSet\": [\n                {\n                    \"AddressTemplateId\": \"abc\",\n                    \"AddressTemplateName\": \"abc\",\n                    \"To\": \"10.1.1.2/22\",\n                    \"From\": \"10.1.1.3/22\"\n                }\n            ],\n            \"CreatedTime\": \"2018-04-03 21:51:02\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateAddressTemplateGroup\n&AddressTemplateGroupName=demo\n&AddressTemplateIds.0=ipm-88t6207k\n&AddressTemplateIds.1=ipm-mdunqeb6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AddressTemplateGroup\": {\n            \"AddressTemplateGroupName\": \"demo\",\n            \"AddressTemplateGroupId\": \"ipmg-dih8xdbq\",\n            \"AddressTemplateIdSet\": [\n                \"ipm-88t6207k\",\n                \"ipm-mdunqeb6\"\n            ],\n            \"AddressTemplateSet\": [\n                {\n                    \"AddressTemplateId\": \"demo\",\n                    \"AddressTemplateName\": \"demo\",\n                    \"To\": \"10.1.1.2/22\",\n                    \"From\": \"10.1.1.3/22\"\n                }\n            ],\n            \"CreatedTime\": \"2018-04-03 21:51:02\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "创建IP地址模板集合"
       }
     ],
@@ -659,16 +659,16 @@
     "CreateServiceTemplate": [
       {
         "document": "创建协议端口模板",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateServiceTemplate\n&ServiceTemplateName=TestName\n&Services.0=TCP:8080\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceTemplate\": {\n            \"ServiceTemplateName\": \"TestName\",\n            \"ServiceTemplateId\": \"ppm-xxxxxxxx\",\n            \"ServiceSet\": [\n                \"tcp: 8080\"\n            ],\n            \"CreatedTime\": \"2018-04-03 21:19:31\",\n            \"ServiceExtraSet\": [\n                {\n                    \"Description\": \"test\",\n                    \"Service\": \"tcp:8080\"\n                }\n            ]\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateServiceTemplate\n&ServiceTemplateName=demo\n&Services.0=TCP:8080\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ServiceTemplate\": {\n            \"ServiceTemplateName\": \"demo\",\n            \"ServiceTemplateId\": \"ppm-dih8xdbq\",\n            \"ServiceSet\": [\n                \"tcp: 8080\"\n            ],\n            \"CreatedTime\": \"2018-04-03 21:19:31\",\n            \"ServiceExtraSet\": [\n                {\n                    \"Description\": \"demo\",\n                    \"Service\": \"tcp:8080\"\n                }\n            ]\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "创建协议端口模板"
       }
     ],
     "CreateServiceTemplateGroup": [
       {
         "document": "创建协议端口模板集合",
-        "input": "https://vpc.tencentcloudapi.com/?Action=CreateServiceTemplateGroup\n&ServiceTemplateGroupName=TestName\n&ServiceTemplateIds.0=ppm-529nwwj8\n&ServiceTemplateIds.1=ppm-4dw6agho\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ServiceTemplateGroup\": {\n            \"ServiceTemplateGroupName\": \"TestName\",\n            \"ServiceTemplateGroupId\": \"ppmg-2klmrefu\",\n            \"ServiceTemplateIdSet\": [\n                \"ppm-529nwwj8\",\n                \"ppm-4dw6agho\"\n            ],\n            \"ServiceTemplateSet\": [\n                {\n                    \"ServiceTemplateId\": \"abc\",\n                    \"ServiceTemplateName\": \"abc\",\n                    \"ServiceSet\": [],\n                    \"ServiceExtraSet\": [],\n                    \"CreatedTime\": \"2018-04-03 22:05:32\"\n                }\n            ],\n            \"CreatedTime\": \"2018-04-03 22:05:32\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CreateServiceTemplateGroup\n&ServiceTemplateGroupName=demo\n&ServiceTemplateIds.0=ppm-529nwwj8\n&ServiceTemplateIds.1=ppm-4dw6agho\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ServiceTemplateGroup\": {\n            \"ServiceTemplateGroupName\": \"demo\",\n            \"ServiceTemplateGroupId\": \"ppmg-2klmrefu\",\n            \"ServiceTemplateIdSet\": [\n                \"ppm-529nwwj8\",\n                \"ppm-4dw6agho\"\n            ],\n            \"ServiceTemplateSet\": [\n                {\n                    \"ServiceTemplateId\": \"demo\",\n                    \"ServiceTemplateName\": \"demo\",\n                    \"ServiceSet\": [],\n                    \"ServiceExtraSet\": [],\n                    \"CreatedTime\": \"2018-04-03 22:05:32\"\n                }\n            ],\n            \"CreatedTime\": \"2018-04-03 22:05:32\"\n        },\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
         "title": "创建协议端口模板集合"
       }
     ],

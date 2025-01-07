@@ -492,7 +492,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "3520371",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -610,7 +610,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "3571863",
+          "example": "3571862",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
@@ -745,7 +745,7 @@
           "example": "url",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -767,7 +767,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "3520371",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -803,7 +803,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "12345678",
+          "example": "13465287",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -821,7 +821,7 @@
         {
           "disabled": false,
           "document": "群组绑定的成员列表，一次性最多200个",
-          "example": "['asdad','asdasd']",
+          "example": "['2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc','2aiT64yygupUJ5zrkRi2r3hh54x']",
           "member": "string",
           "name": "MemberIds",
           "required": false,
@@ -836,7 +836,7 @@
         {
           "disabled": false,
           "document": "新创建群组ID列表，与输入创建参数顺序一致",
-          "example": "['asdas','dfgdfgg']",
+          "example": "['2CvDgjRNjylAs','BZB4iZc0F6ko']",
           "member": "string",
           "name": "GroupIds",
           "output_required": true,
@@ -913,7 +913,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "3520371",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -995,7 +995,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
-          "example": "123456",
+          "example": "3520371",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1133,7 +1133,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
-          "example": "123",
+          "example": "3467232",
           "member": "uint64",
           "name": "SdkAppId",
           "output_required": true,
@@ -1169,7 +1169,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。\n",
-          "example": "123",
+          "example": "3467281",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1211,7 +1211,7 @@
         {
           "disabled": false,
           "document": "房间ID。",
-          "example": "1234657",
+          "example": "876789",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -1220,7 +1220,7 @@
         {
           "disabled": false,
           "document": "文档ID。",
-          "example": "abc",
+          "example": "ax1esdi2",
           "member": "string",
           "name": "DocumentId",
           "required": true,
@@ -1228,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定类型。后台可透传到客户端，默认为0。客户端可以根据这个字段实现业务逻辑。",
+          "document": "绑定类型。后台可透传到客户端，默认为0。除以下例值外支持自定义该字段，并在前端实现相应业务逻辑，示例参考：\n示例值：0，仅绑定课件到房间\n示例值：1，绑定课件到房间后，默认展示课件",
           "example": "0",
           "member": "uint64",
           "name": "BindType",
@@ -1312,7 +1312,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
-          "example": "123467",
+          "example": "36718212",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1330,7 +1330,7 @@
         {
           "disabled": false,
           "document": "文档名称。",
-          "example": "abc",
+          "example": "课程文档",
           "member": "string",
           "name": "DocumentName",
           "required": true,
@@ -1339,7 +1339,7 @@
         {
           "disabled": false,
           "document": "文档所有者的Id",
-          "example": "abc",
+          "example": "Tom",
           "member": "string",
           "name": "Owner",
           "required": true,
@@ -1408,7 +1408,7 @@
         {
           "disabled": false,
           "document": "文档ID。",
-          "example": "abc",
+          "example": "klopq",
           "member": "string",
           "name": "DocumentId",
           "output_required": true,
@@ -1430,7 +1430,7 @@
         {
           "disabled": false,
           "document": "待创建群组名称",
-          "example": "test",
+          "example": "Group_name",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1439,7 +1439,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "3450912",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1448,7 +1448,7 @@
         {
           "disabled": false,
           "document": "默认绑定主讲老师ID",
-          "example": "adfgdsfgdf",
+          "example": "Teacher_98979",
           "member": "string",
           "name": "TeacherId",
           "required": false,
@@ -1472,7 +1472,7 @@
         {
           "disabled": false,
           "document": "创建成功群组ID",
-          "example": "abc",
+          "example": "ctki8vbsdfdsd4kkk0",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -1494,7 +1494,7 @@
         {
           "disabled": false,
           "document": "待创建的新群组名",
-          "example": "abc",
+          "example": "Group_name",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -1503,7 +1503,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "12345678",
+          "example": "3450918",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1512,7 +1512,7 @@
         {
           "disabled": false,
           "document": "子群组ID列表，子群组ID不能重复，最多40个",
-          "example": "['a','b']",
+          "example": "['subgroup_1','subgroup_2']",
           "member": "string",
           "name": "SubGroupIds",
           "required": true,
@@ -1521,7 +1521,7 @@
         {
           "disabled": false,
           "document": "群组默认主讲老师ID",
-          "example": "abc",
+          "example": "Teacher_9897",
           "member": "string",
           "name": "TeacherId",
           "required": false,
@@ -1536,7 +1536,7 @@
         {
           "disabled": false,
           "document": "新创建群组ID",
-          "example": "abc",
+          "example": "ctki8vbadsfm4kkk0",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -2097,7 +2097,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "3520371",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2142,7 +2142,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "3520371",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2232,7 +2232,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "12345",
+          "example": "13465287",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2241,7 +2241,7 @@
         {
           "disabled": false,
           "document": "用户ID列表",
-          "example": "[sadbfisajgfsedfg,dfgergegergert]",
+          "example": "[2d3FgsZRRB2EbR5Cwe8Rd7R6Bc,2aiT64yygupUJ5zrkRi2r3hh54x]",
           "member": "string",
           "name": "Users",
           "required": true,
@@ -2268,7 +2268,7 @@
         {
           "disabled": false,
           "document": "待删除用户的ID",
-          "example": "abc",
+          "example": "Tomfsdss",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -2358,7 +2358,7 @@
         {
           "disabled": false,
           "document": "应用ID。低代码互动课堂的SdkAppId。\n",
-          "example": "1400000001",
+          "example": "140000011",
           "member": "string",
           "name": "ApplicationId",
           "required": true,
@@ -2367,7 +2367,7 @@
         {
           "disabled": false,
           "document": "开发商ID",
-          "example": "abc123",
+          "example": "43234543asda",
           "member": "string",
           "name": "DeveloperId",
           "required": true,
@@ -2434,7 +2434,7 @@
         {
           "disabled": false,
           "document": "房间Id。",
-          "example": "1234657",
+          "example": "2981712",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -2504,9 +2504,10 @@
         {
           "disabled": false,
           "document": "开发商ID",
-          "example": "123",
+          "example": "5439287647823",
           "member": "string",
           "name": "DeveloperId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2525,7 +2526,7 @@
         {
           "disabled": false,
           "document": "文档Id（唯一id）",
-          "example": "abc",
+          "example": "rbbepxt",
           "member": "string",
           "name": "DocumentId",
           "required": true,
@@ -2540,7 +2541,7 @@
         {
           "disabled": false,
           "document": "文档Id",
-          "example": "abc",
+          "example": "rbdfetg",
           "member": "string",
           "name": "DocumentId",
           "output_required": true,
@@ -2550,7 +2551,7 @@
         {
           "disabled": false,
           "document": "文档原址url",
-          "example": "abc",
+          "example": "http://ac53b-ba94-27a5bca82d6b.doc",
           "member": "string",
           "name": "DocumentUrl",
           "output_required": true,
@@ -2560,7 +2561,7 @@
         {
           "disabled": false,
           "document": "文档名称",
-          "example": "abc",
+          "example": "课堂文档",
           "member": "string",
           "name": "DocumentName",
           "output_required": true,
@@ -2570,7 +2571,7 @@
         {
           "disabled": false,
           "document": "文档所有者UserId",
-          "example": "abc",
+          "example": "2eRdSQEsdsdadYUJdyslWUWPV",
           "member": "string",
           "name": "Owner",
           "output_required": true,
@@ -2580,7 +2581,7 @@
         {
           "disabled": false,
           "document": "应用Id",
-          "example": "123",
+          "example": "34829230",
           "member": "uint64",
           "name": "SdkAppId",
           "output_required": true,
@@ -2600,7 +2601,7 @@
         {
           "disabled": false,
           "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码",
-          "example": "24233",
+          "example": "1",
           "member": "string",
           "name": "TranscodeResult",
           "output_required": true,
@@ -2640,7 +2641,7 @@
         {
           "disabled": false,
           "document": "转码失败后的错误信息",
-          "example": "abc",
+          "example": "err",
           "member": "string",
           "name": "TranscodeInfo",
           "output_required": true,
@@ -2650,7 +2651,7 @@
         {
           "disabled": false,
           "document": "文档类型",
-          "example": "abc",
+          "example": "doc",
           "member": "string",
           "name": "DocumentType",
           "output_required": true,
@@ -2732,7 +2733,7 @@
         {
           "disabled": false,
           "document": "房间ID。",
-          "example": "312345678",
+          "example": "3123456",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -2741,7 +2742,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId",
-          "example": "123467",
+          "example": "3789212",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2777,7 +2778,7 @@
         {
           "disabled": false,
           "document": "文档所有者的user_id，不填默认获取SdkAppId下所有课件",
-          "example": "abc",
+          "example": "Teacher",
           "member": "string",
           "name": "Owner",
           "required": false,
@@ -2792,7 +2793,7 @@
         {
           "disabled": false,
           "document": "文档信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "23423",
           "member": "DocumentInfo",
           "name": "Documents",
           "output_required": true,
@@ -2925,7 +2926,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "1234657",
+          "example": "3463813",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2952,7 +2953,7 @@
         {
           "disabled": false,
           "document": "主讲人ID筛选群组，与MemberId有且只有一个,都传时以此字段获取",
-          "example": "abc",
+          "example": "Tom",
           "member": "string",
           "name": "TeacherId",
           "required": false,
@@ -2961,7 +2962,7 @@
         {
           "disabled": false,
           "document": "成员ID刷选群组，与TeacherId有且只有一个",
-          "example": "abc",
+          "example": "jhgfhgsfdsYsdd ",
           "member": "string",
           "name": "MemberId",
           "required": false,
@@ -3008,7 +3009,7 @@
         {
           "disabled": false,
           "document": "群组ID",
-          "example": "dfgsdgsg",
+          "example": "dfgsdgs",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -3017,7 +3018,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "325372",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -3168,7 +3169,7 @@
         {
           "disabled": false,
           "document": "学校ID",
-          "example": "38792792",
+          "example": "3879279",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -3202,7 +3203,7 @@
         {
           "disabled": false,
           "document": "固定值内容（当MarqueeType=1或5，则展示固定值内容）",
-          "example": "无",
+          "example": "开课",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -3232,7 +3233,7 @@
         {
           "disabled": false,
           "document": "字体颜色（十六进制颜色值）",
-          "example": "无",
+          "example": "#FFFFF",
           "member": "string",
           "name": "FontColor",
           "output_required": false,
@@ -3252,7 +3253,7 @@
         {
           "disabled": false,
           "document": "背景颜色（十六进制颜色值）",
-          "example": "无",
+          "example": "#FFFFF",
           "member": "string",
           "name": "BackgroundColor",
           "output_required": false,
@@ -3262,7 +3263,7 @@
         {
           "disabled": false,
           "document": "背景透明度（数字，范围 0.0 到 1.0）",
-          "example": "无",
+          "example": "0.3",
           "member": "float",
           "name": "BackgroundOpacity",
           "output_required": false,
@@ -3272,7 +3273,7 @@
         {
           "disabled": false,
           "document": "显示方式：1为滚动，2为闪烁",
-          "example": "112",
+          "example": "2",
           "member": "uint64",
           "name": "DisplayMode",
           "output_required": false,
@@ -3377,7 +3378,7 @@
         {
           "disabled": false,
           "document": "学校ID",
-          "example": "123",
+          "example": "3456721",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -3411,7 +3412,7 @@
         {
           "disabled": false,
           "document": "课堂ID",
-          "example": "123",
+          "example": "893012",
           "member": "uint64",
           "name": "ClassId",
           "output_required": false,
@@ -3443,7 +3444,7 @@
         {
           "disabled": false,
           "document": "学校ID",
-          "example": "12345",
+          "example": "3490281",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -3477,7 +3478,7 @@
         {
           "disabled": false,
           "document": "课堂ID",
-          "example": "123",
+          "example": "372820",
           "member": "uint64",
           "name": "ClassId",
           "output_required": false,
@@ -4261,7 +4262,7 @@
         {
           "disabled": false,
           "document": "用户id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询。",
-          "example": "abc",
+          "example": "2kJJBH6G1dfBFUJqXLh0Mg3ELLk",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -4270,7 +4271,7 @@
         {
           "disabled": false,
           "document": "用户在客户系统的Id。支持通过 user_id 或 OriginId 查询用户信息，优先使用 user_id 进行查询（UserId不为空时，OriginId不生效）。",
-          "example": "abc",
+          "example": "46528c8696ca",
           "member": "string",
           "name": "OriginId",
           "required": false,
@@ -4305,7 +4306,7 @@
         {
           "disabled": false,
           "document": "用户昵称。",
-          "example": "abc",
+          "example": "zhangsan",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -4315,7 +4316,7 @@
         {
           "disabled": false,
           "document": "用户头像Url。",
-          "example": "abc",
+          "example": "https://domain.com/cat.jpg",
           "member": "string",
           "name": "Avatar",
           "output_required": true,
@@ -4347,7 +4348,7 @@
         {
           "disabled": false,
           "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "fdsfdsd",
           "member": "string",
           "name": "DocumentId",
           "output_required": true,
@@ -4357,7 +4358,7 @@
         {
           "disabled": false,
           "document": "文档原址url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "https://sdffdsjhgfcgh-2347283829d265a6414f8.pdf",
           "member": "string",
           "name": "DocumentUrl",
           "output_required": true,
@@ -4367,7 +4368,7 @@
         {
           "disabled": false,
           "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "课堂文档",
           "member": "string",
           "name": "DocumentName",
           "output_required": true,
@@ -4377,7 +4378,7 @@
         {
           "disabled": false,
           "document": "文档所有者UserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "teacher_123",
           "member": "string",
           "name": "Owner",
           "output_required": true,
@@ -4387,7 +4388,7 @@
         {
           "disabled": false,
           "document": "应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "3782108",
           "member": "uint64",
           "name": "SdkAppId",
           "output_required": true,
@@ -4527,7 +4528,7 @@
         {
           "disabled": false,
           "document": "课件预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "https://sdffdsjhgfcgh-2347283829d265a6414f8.pdf",
           "member": "string",
           "name": "Preview",
           "output_required": true,
@@ -4590,7 +4591,7 @@
         {
           "disabled": false,
           "document": "事件发生的房间号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "3461739",
           "member": "uint64",
           "name": "RoomId",
           "output_required": true,
@@ -4600,7 +4601,7 @@
         {
           "disabled": false,
           "document": "事件发生的用户。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "user_123",
           "member": "string",
           "name": "UserId",
           "output_required": false,
@@ -4656,7 +4657,7 @@
         {
           "disabled": false,
           "document": "事件发生的秒级unix时间戳。",
-          "example": "123456",
+          "example": "1735626310",
           "member": "uint64",
           "name": "Timestamp",
           "output_required": true,
@@ -4779,7 +4780,7 @@
         {
           "disabled": false,
           "document": "应用Id。",
-          "example": "12345",
+          "example": "13465287",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -4853,7 +4854,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
-          "example": "90180",
+          "example": "3986281",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -5076,22 +5077,20 @@
         {
           "disabled": false,
           "document": "待创建群组名",
-          "example": "test",
+          "example": "群组名称",
           "member": "string",
           "name": "GroupName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "群组主讲人ID",
-          "example": "abc",
+          "example": "Teacher_9657",
           "member": "string",
           "name": "TeacherId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5112,7 +5111,7 @@
         {
           "disabled": false,
           "document": "群组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "群租名称",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -5122,7 +5121,7 @@
         {
           "disabled": false,
           "document": "群组主讲人ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "Tecbjkkklljlsd",
           "member": "string",
           "name": "TeacherId",
           "output_required": true,
@@ -5242,7 +5241,7 @@
         {
           "disabled": false,
           "document": "房间Id。",
-          "example": "301234567",
+          "example": "30123456",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -5251,7 +5250,7 @@
         {
           "disabled": false,
           "document": "低代码平台的SdkAppId。",
-          "example": "123456",
+          "example": "3692919",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5361,7 +5360,7 @@
         {
           "disabled": false,
           "document": "注册获取的用户id。",
-          "example": "abc",
+          "example": "2i5WfUzRRC2Eb2uNLNv96gzxCv",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -5386,7 +5385,7 @@
         {
           "disabled": false,
           "document": "注册成功后返回登录态token，有效期7天。token过期后可以通过调用“登录”或“源账号登录”进行更新。",
-          "example": "abc",
+          "example": "e574aae1lp024225a2f89032h7199f5f0",
           "member": "string",
           "name": "Token",
           "output_required": true,
@@ -5408,7 +5407,7 @@
         {
           "disabled": false,
           "document": "用户ID。",
-          "example": "abc",
+          "example": "user_9081",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -5418,7 +5417,7 @@
         {
           "disabled": false,
           "document": "用户名称。",
-          "example": "abc",
+          "example": "Tom",
           "member": "string",
           "name": "UserName",
           "output_required": true,
@@ -5578,7 +5577,7 @@
         {
           "disabled": false,
           "document": "上课班号",
-          "example": "abc",
+          "example": "jhgffgyu234",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
@@ -5716,7 +5715,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
-          "example": "123467",
+          "example": "3865311",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5788,7 +5787,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "13465287",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -6085,7 +6084,7 @@
         {
           "disabled": false,
           "document": "待修改用户ID",
-          "example": "abc",
+          "example": "2kJJBH6G1dfBFUJqXLh0Mg3ELLk",
           "member": "string",
           "name": "UserId",
           "required": true,
@@ -6094,7 +6093,7 @@
         {
           "disabled": false,
           "document": "待修改的用户名",
-          "example": "abc",
+          "example": "zhanwsan",
           "member": "string",
           "name": "Nickname",
           "required": false,
@@ -6103,7 +6102,7 @@
         {
           "disabled": false,
           "document": "待修改头像url",
-          "example": "abc",
+          "example": "https://www.baidu.com/avatar.png",
           "member": "string",
           "name": "Avatar",
           "required": false,
@@ -6263,7 +6262,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
-          "example": "123467",
+          "example": "3475672",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -6280,7 +6279,7 @@
         },
         {
           "disabled": false,
-          "document": "用户在客户系统的Id，需要在同一应用下唯一。",
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId\n。",
           "example": "id12345",
           "member": "string",
           "name": "OriginId",
@@ -6290,7 +6289,7 @@
         {
           "disabled": false,
           "document": "用户头像。",
-          "example": "abc",
+          "example": "Avatar",
           "member": "string",
           "name": "Avatar",
           "required": false,
@@ -6308,7 +6307,7 @@
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6318,7 +6317,7 @@
           "example": "abae3faef12345",
           "member": "string",
           "name": "Token",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6906,7 +6905,7 @@
         {
           "disabled": false,
           "document": "低代码互动课堂的SdkAppId。",
-          "example": "12222",
+          "example": "3534223",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7338,7 +7337,7 @@
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "2gh42vb232jj24h2",
           "member": "string",
           "name": "UserId",
           "output_required": false,
@@ -7404,7 +7403,7 @@
         {
           "disabled": false,
           "document": "流大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "6798",
           "member": "uint64",
           "name": "RecordSize",
           "output_required": false,
@@ -7618,7 +7617,7 @@
         {
           "disabled": false,
           "document": "房间ID。",
-          "example": "1234657",
+          "example": "3478192",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -7627,7 +7626,7 @@
         {
           "disabled": false,
           "document": "文档ID。",
-          "example": "abc",
+          "example": "sjdsoowihe",
           "member": "string",
           "name": "DocumentId",
           "required": true,
@@ -7654,7 +7653,7 @@
         {
           "disabled": false,
           "document": "低代码平台的SdkAppId。",
-          "example": "123456",
+          "example": "3986898",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -7663,7 +7662,7 @@
         {
           "disabled": false,
           "document": "房间Id。",
-          "example": "301234567",
+          "example": "30123456",
           "member": "uint64",
           "name": "RoomId",
           "required": true,

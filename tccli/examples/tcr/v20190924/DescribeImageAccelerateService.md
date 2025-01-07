@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli tcr DescribeImageAccelerateService --cli-unfold-argument  \
-    --RegistryId xxx
+    --RegistryId tcr-dg284imq
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "Completed",
-        "CFSVIP": "10.1.1.1",
-        "IsEnable": "true",
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "CFSVIP": "",
+        "IsEnable": false,
+        "RequestId": "dde9bf37-d34c-4c7a-bf0d-a11531ce6ebe",
+        "Status": ""
     }
 }
 ```

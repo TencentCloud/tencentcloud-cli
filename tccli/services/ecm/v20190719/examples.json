@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=AllocateIpv6AddressesBandwidth\n&EcmRegion=ap-xian-ecm\n&Ipv6Addresses.0=2402:4e00:1000:200:0:8d8a:60b7:87f8\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-3l4nwzvo\"\n        ],\n        \"TaskId\": 202869021,\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AddressSet\": [\n            \"eip-3l4nwzvo\"\n        ],\n        \"TaskId\": \"202869021\",\n        \"RequestId\": \"aac03e7b-3c91-4970-b2bc-c20f0c6bdd38\"\n    }\n}",
         "title": "指定ipv6地址开通公网访问能力"
       }
     ],

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mongodb TerminateDBInstances --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId cmgo-7pje****
 ```
 
 Output: 

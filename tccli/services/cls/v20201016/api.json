@@ -2735,7 +2735,7 @@
         {
           "disabled": false,
           "document": "允许访问的资源列表，目前仅支持一个Resource",
-          "example": "当Type为1时:['qcs::cls::uin/100001127589:dashboard/dashboard-1223fa03--44f9-f118-69a8-21aa33ea5aa1']; 当Type为2时:['qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6']",
+          "example": "当Type为1时:['qcs::cls::uin/1000:dashboard/dashboard-xx']; 当Type为2时:['qcs::cls:ap-guangzhou:uin/10000:topic/cxxx']",
           "member": "string",
           "name": "Resources",
           "output_required": true,
@@ -2756,7 +2756,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分享链接加密访问验证码。支持0-9和a-z(不区分大小写)在内的6个字符，可为空，代表免验证码访问\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "lEC0V0",
           "member": "string",
           "name": "VerifyCode",
@@ -2862,7 +2862,7 @@
         {
           "disabled": false,
           "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "* | select *",
           "member": "string",
           "name": "Value",
           "output_required": false,

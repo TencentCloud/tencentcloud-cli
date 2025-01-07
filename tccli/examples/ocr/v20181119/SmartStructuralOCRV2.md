@@ -10,7 +10,7 @@ tccli ocr SmartStructuralOCRV2 --cli-unfold-argument  \
     --ImageBase64 /9j/4AAQSkZJRg.....s97n//2Q== \
     --IsPdf True \
     --PdfPageNumber 1 \
-    --ItemNames 姓名 \
+    --ItemNames 号码 \
     --ReturnFullText False \
     --ConfigId General
 ```
@@ -37,6 +37,10 @@ Output:
                                             "X": 0,
                                             "Y": 0
                                         },
+                                        "LeftBottom": {
+                                            "X": 0,
+                                            "Y": 0
+                                        },
                                         "RightTop": {
                                             "X": 0,
                                             "Y": 0
@@ -56,10 +60,27 @@ Output:
         "WordList": [
             {
                 "DetectedText": "ORD0****9",
-                "Coord": {}
+                "Coord": {
+                    "LeftTop": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "LeftBottom": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "RightTop": {
+                        "X": 0,
+                        "Y": 0
+                    },
+                    "RightBottom": {
+                        "X": 0,
+                        "Y": 0
+                    }
+                }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "137****9"
     }
 }
 ```

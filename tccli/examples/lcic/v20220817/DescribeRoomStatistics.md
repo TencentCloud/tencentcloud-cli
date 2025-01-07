@@ -37,9 +37,9 @@ Output:
                 "PerMemberMicCount": 0,
                 "PerMemberMessageCount": 0,
                 "Role": 1,
-                "GroupId": "abc",
+                "GroupId": "2CvDgjRNjylAs",
                 "SubGroupId": [
-                    "abc"
+                    "BZB4iZc0F6ko"
                 ],
                 "Stage": 0,
                 "CurrentState": 1

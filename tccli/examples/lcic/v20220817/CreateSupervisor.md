@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli lcic CreateSupervisor --cli-unfold-argument  \
-    --SdkAppId 123 \
-    --Users test
+    --SdkAppId 13465287 \
+    --Users 2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "213das"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

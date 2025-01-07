@@ -1,4 +1,4 @@
-**Example 1: 护照识别（港澳台地区及境外护照）示例代码[前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=MLIDPassportOCR)**
+**Example 1: 护照识别（港澳台地区及境外护照）示例代码**
 
 护照识别（港澳台地区及境外护照）
 
@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "AdvancedInfo": "{\"GivenName\":{\"Confidence\":\"1.0000\"},\"IssuingCountry\":{\"Confidence\":\"1.0000\"},\"Name\":{\"Confidence\":\"1.0000\"},\"Surname\":{\"Confidence\":\"1.0000\"},\"Type\":{\"Confidence\":\"1.0000\"},\"CodeSet\":{\"Confidence\":\"1.0000\"},\"CodeCrc\":{\"Confidence\":\"0.9995\"},\"Nationality\":{\"Confidence\":\"0.9995\"},\"ID\":{\"Confidence\":\"0.9995\"},\"Sex\":{\"Confidence\":\"0.9995\"},\"DateOfBirth\":{\"Confidence\":\"0.9995\"},\"DateOfExpiration\":{\"Confidence\":\"0.9995\"},\"PassportRecognizeInfos\":{\"IssuingCountry\":{\"Confidence\":\"1.0000\"},\"Type\":{\"Confidence\":\"0.9995\"},\"PassportID\":{\"Confidence\":\"0.9961\"},\"Surname\":{\"Confidence\":\"1.0000\"},\"GivenName\":{\"Confidence\":\"1.0000\"},\"Nationality\":{\"Confidence\":\"1.0000\"},\"DateOfBirth\":{\"Confidence\":\"1.0000\"},\"Sex\":{\"Confidence\":\"1.0000\"},\"DateOfIssuance\":{\"Confidence\":\"0.9997\"},\"DateOfExpiration\":{\"Confidence\":\"1.0000\"}}}",
+        "AdvancedInfo": "",
         "CodeCrc": "4567123452USA9004117F2107268713843748<708026",
         "CodeSet": "P<USACARTER<<ESTHER<<<<<<<<<<<<<<<<<<<<<<<<<",
         "DateOfBirth": "19900411",

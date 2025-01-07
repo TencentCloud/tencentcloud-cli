@@ -3013,17 +3013,17 @@
           "example": "11",
           "member": "uint64",
           "name": "ProviderType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "身份提供商URL",
-          "example": "11",
+          "example": "http://test-idp.com",
           "member": "string",
           "name": "IdentityUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3033,7 +3033,7 @@
           "example": "无",
           "member": "string",
           "name": "IdentityKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3043,17 +3043,17 @@
           "example": "无",
           "member": "string",
           "name": "ClientId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态：0:未设置，11:已开启，2:已禁用",
-          "example": "1",
+          "example": "11",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3063,7 +3063,7 @@
           "example": "无",
           "member": "string",
           "name": "AuthorizationEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3073,7 +3073,7 @@
           "example": "无",
           "member": "string",
           "name": "Scope",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3083,7 +3083,7 @@
           "example": "无",
           "member": "string",
           "name": "ResponseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3093,7 +3093,7 @@
           "example": "无",
           "member": "string",
           "name": "ResponseMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3103,7 +3103,7 @@
           "example": "无",
           "member": "string",
           "name": "MappingFiled",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3113,7 +3113,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3146,7 +3146,7 @@
         },
         {
           "disabled": false,
-          "document": "状态：0:未设置，1:已开启，2:已禁用",
+          "document": "状态：0:未设置，11:已开启，2:已禁用",
           "example": "11",
           "member": "uint64",
           "name": "Status",
