@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcr DeleteNamespacePersonal --cli-unfold-argument  \
-    --Namespace mynamespace
+    --Namespace nico-ns1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "48e73d54-d4c2-4573-bfc5-3416bc5befba"
     }
 }
 ```

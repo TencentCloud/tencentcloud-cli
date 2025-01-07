@@ -936,7 +936,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -945,7 +945,7 @@
         {
           "disabled": false,
           "document": "Tag列表",
-          "example": "",
+          "example": "[\"1\",\"2\"]",
           "member": "string",
           "name": "Tags",
           "required": true,
@@ -1303,7 +1303,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1312,7 +1312,7 @@
         {
           "disabled": false,
           "document": "创建CFS的归属的VPCID",
-          "example": "",
+          "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1321,7 +1321,7 @@
         {
           "disabled": false,
           "document": "创建CFS的归属的子网ID",
-          "example": "",
+          "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -1330,7 +1330,7 @@
         {
           "disabled": false,
           "document": "创建CFS的存储类型，其中 SD 为标准型存储， HP为性能存储。",
-          "example": "",
+          "example": "SD",
           "member": "string",
           "name": "StorageType",
           "required": true,
@@ -1339,7 +1339,7 @@
         {
           "disabled": false,
           "document": "权限组 ID",
-          "example": "",
+          "example": "groupID",
           "member": "string",
           "name": "PGroupId",
           "required": true,
@@ -1348,7 +1348,7 @@
         {
           "disabled": false,
           "document": "可用区名称，例如ap-beijing-1，请参考 概览 文档中的地域与可用区列表",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
           "required": true,
@@ -1357,7 +1357,7 @@
         {
           "disabled": false,
           "document": "云标签描述",
-          "example": "",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1372,9 +1372,10 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1582,7 +1583,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-ak9876",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -1591,7 +1592,7 @@
         {
           "disabled": false,
           "document": "访问凭证类型，longterm 为长期访问凭证，temp 为临时访问凭证，默认是临时访问凭证，有效期1小时",
-          "example": "temp",
+          "example": "longterm",
           "member": "string",
           "name": "TokenType",
           "required": false,
@@ -1600,7 +1601,7 @@
         {
           "disabled": false,
           "document": "长期访问凭证描述信息",
-          "example": "test",
+          "example": "desc",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -1615,40 +1616,40 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345678",
+          "example": "100036950234",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "访问凭证",
-          "example": "XXXX",
+          "example": "eyJhbGciOiJIUzI1NiJ9.eyJvd25lclVpbiI6IjMzMjEzMzc5OTQifQ.v11fLhlg4p4Fdd0j5clQtARuT2ZPE7ErNX0VLvQ4IPo",
           "member": "string",
           "name": "Token",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "访问凭证过期时间戳，是一个时间戳数字，无单位",
-          "example": "33987631",
+          "example": "2051237057817",
           "member": "int64",
           "name": "ExpTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "长期凭证的TokenId，短期凭证没有TokenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "ctrm3g86h7cp1kb7el2g",
           "member": "string",
           "name": "TokenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1966,7 +1967,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang1",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -1975,7 +1976,7 @@
         {
           "disabled": false,
           "document": "是否公共,1:公共,0:私有",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Public",
           "required": false,
@@ -1984,7 +1985,7 @@
         {
           "disabled": false,
           "document": "仓库描述",
-          "example": "",
+          "example": "desc",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2656,7 +2657,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2700,7 +2701,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -2709,7 +2710,7 @@
         {
           "disabled": false,
           "document": "Tag名",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Tag",
           "required": true,
@@ -2790,7 +2791,7 @@
         {
           "disabled": false,
           "document": "实例 Id",
-          "example": "tcr-test134",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2799,7 +2800,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "library",
+          "example": "ns",
           "member": "string",
           "name": "NamespaceName",
           "required": true,
@@ -2808,7 +2809,7 @@
         {
           "disabled": false,
           "document": "规则 Id",
-          "example": "123",
+          "example": "1",
           "member": "int64",
           "name": "RuleId",
           "required": true,
@@ -2925,7 +2926,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -2934,7 +2935,7 @@
         {
           "disabled": false,
           "document": "访问凭证 ID",
-          "example": "",
+          "example": "ct3ucep1qcle9n4kmv00",
           "member": "string",
           "name": "TokenId",
           "required": true,
@@ -3070,7 +3071,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "",
+          "example": "nico-ns1",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -3178,7 +3179,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang1",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -3475,7 +3476,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -3484,7 +3485,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "",
+          "example": "ns",
           "member": "string",
           "name": "Namespace",
           "required": true,
@@ -3493,7 +3494,7 @@
         {
           "disabled": false,
           "document": "触发器 Id",
-          "example": "",
+          "example": "6",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -3686,7 +3687,7 @@
         {
           "disabled": false,
           "document": "触发器列表返回值",
-          "example": "",
+          "example": "无",
           "member": "DescribeApplicationTriggerPersonalResp",
           "name": "Data",
           "output_required": true,
@@ -3819,7 +3820,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "无",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -3828,7 +3829,7 @@
         {
           "disabled": false,
           "document": "分页Limit",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -3837,7 +3838,7 @@
         {
           "disabled": false,
           "document": "Offset用于分页",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -3911,7 +3912,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -3926,27 +3927,30 @@
         {
           "disabled": false,
           "document": "镜像加速状态",
-          "example": "",
+          "example": "status",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "CFS的VIP",
-          "example": "",
+          "example": "vip",
           "member": "string",
           "name": "CFSVIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否开通",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsEnable",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4038,7 +4042,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "无",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -4521,7 +4525,7 @@
         {
           "disabled": false,
           "document": "实例ID的数组",
-          "example": "",
+          "example": "[\"tcr-dg284imq\"]",
           "member": "string",
           "name": "RegistryIds",
           "required": true,
@@ -4536,7 +4540,7 @@
         {
           "disabled": false,
           "document": "实例的状态列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "RegistryStatus",
           "name": "RegistryStatusSet",
           "type": "list",
@@ -4557,7 +4561,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -4566,7 +4570,7 @@
         {
           "disabled": false,
           "document": "分页单页数量",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -4575,7 +4579,7 @@
         {
           "disabled": false,
           "document": "分页偏移量",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -4590,7 +4594,7 @@
         {
           "disabled": false,
           "document": "长期访问凭证总数",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
@@ -4599,7 +4603,7 @@
         {
           "disabled": false,
           "document": "长期访问凭证列表",
-          "example": "",
+          "example": "[{},{}]",
           "member": "TcrInstanceToken",
           "name": "Tokens",
           "type": "list",
@@ -5405,7 +5409,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5414,7 +5418,7 @@
         {
           "disabled": false,
           "document": "返回最大数量，默认 20, 最大值 100",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5423,7 +5427,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "无",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -5460,7 +5464,7 @@
         {
           "disabled": false,
           "document": "仓库名字",
-          "example": "无",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -6875,7 +6879,7 @@
         {
           "disabled": false,
           "document": "global_keep_last_days:全局保留最近几天的数据;global_keep_last_nums:全局保留最近多少个",
-          "example": "",
+          "example": "global_keep_last_nums",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -6884,7 +6888,7 @@
         {
           "disabled": false,
           "document": "策略值",
-          "example": "",
+          "example": "9998",
           "member": "int64",
           "name": "Val",
           "required": true,
@@ -7092,7 +7096,7 @@
         {
           "disabled": false,
           "document": "触发方式对应的表达式",
-          "example": "\"\"",
+          "example": "release*",
           "member": "string",
           "name": "InvokeExpr",
           "required": false,
@@ -7688,7 +7692,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "tcr-xxx",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -7697,7 +7701,7 @@
         {
           "disabled": false,
           "document": "服务级账号名",
-          "example": "tcr$robot",
+          "example": "tcr$service-account2",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -7706,7 +7710,7 @@
         {
           "disabled": false,
           "document": "服务级账号描述",
-          "example": "无",
+          "example": "desc 1",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -7715,7 +7719,7 @@
         {
           "disabled": false,
           "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Duration",
           "required": false,
@@ -7841,7 +7845,7 @@
         {
           "disabled": false,
           "document": "更新后的密码",
-          "example": "test",
+          "example": "password",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -7868,7 +7872,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "",
+          "example": "tcr-dg284imq",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -7877,7 +7881,7 @@
         {
           "disabled": false,
           "document": "触发器参数",
-          "example": "",
+          "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
           "required": true,
@@ -7886,7 +7890,7 @@
         {
           "disabled": false,
           "document": "命名空间",
-          "example": "",
+          "example": "ns1",
           "member": "string",
           "name": "Namespace",
           "required": true,

@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli tcr CreateImageAccelerationService --cli-unfold-argument  \
-    --RegistryId xxx \
-    --VpcId xxx \
-    --SubnetId xxx \
-    --StorageType xxx \
-    --PGroupId xxx \
-    --Zone xxx
+    --RegistryId tcr-xxx \
+    --VpcId vpc-xxx \
+    --SubnetId subnet-xxx \
+    --StorageType HD \
+    --PGroupId groupID \
+    --Zone ap-guangzhou
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RegistryId": "XXXX",
+        "RegistryId": "tcr-xxx",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

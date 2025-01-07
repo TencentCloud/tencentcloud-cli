@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DeleteImagePersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test \
+    --RepoName nicokang/golang \
     --Tag 1
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "4b062c34-4720-4273-8ff4-d598d9c81b0c"
     }
 }
 ```

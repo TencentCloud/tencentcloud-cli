@@ -38,13 +38,13 @@ tccli tcr ManageReplication --cli-unfold-argument  \
     --DestinationRegistryId tcr-98676 \
     --DestinationRegionId 9 \
     --Rule.Override true \
-    --Rule.DestNamespace test \
-    --Rule.Name test \
+    --Rule.DestNamespace ns \
+    --Rule.Name rule1 \
     --Rule.Filters.0.Type tag \
-    --Rule.Filters.0.Value test \
+    --Rule.Filters.0.Value filter1 \
     --PeerReplicationOption.EnablePeerReplication true \
     --PeerReplicationOption.PeerRegistryUin 113498 \
-    --PeerReplicationOption.PeerRegistryToken xxx
+    --PeerReplicationOption.PeerRegistryToken access-token
 ```
 
 Output: 

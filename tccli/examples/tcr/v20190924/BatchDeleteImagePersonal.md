@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcr BatchDeleteImagePersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test \
-    --Tags 1
+    --RepoName nicokang/golang \
+    --Tags 1 2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "05c86278-f995-444b-b2b6-4798e3e3b67d"
     }
 }
 ```

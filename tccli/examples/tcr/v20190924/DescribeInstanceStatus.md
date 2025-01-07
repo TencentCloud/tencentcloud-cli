@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcr DescribeInstanceStatus --cli-unfold-argument  \
-    --RegistryIds tcr-ak9876
+    --RegistryIds tcr-dg284imq
 ```
 
 Output: 
@@ -15,11 +15,18 @@ Output:
     "Response": {
         "RegistryStatusSet": [
             {
-                "Status": "Runing",
-                "RegistryId": "tcr-ak9876"
+                "Conditions": [
+                    {
+                        "Reason": "",
+                        "Status": "Running",
+                        "Type": ""
+                    }
+                ],
+                "RegistryId": "tcr-dg284imq",
+                "Status": "Running"
             }
         ],
-        "RequestId": "a1be36f0-1aa4-4af2-a289-da021bcef89f"
+        "RequestId": "bc44a6c1-1e49-4b25-9804-f827e87ff686"
     }
 }
 ```

@@ -124,6 +124,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语言版本",
+          "example": "20.16.0",
+          "member": "string",
+          "name": "LanguageVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -189,7 +200,7 @@
         {
           "disabled": false,
           "document": "环境别名，要以a-z开头，不能包含 a-z,0-9,- 以外的字符",
-          "example": "env-alias",
+          "example": "alias",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -242,7 +253,7 @@
         },
         {
           "disabled": false,
-          "document": "来源：wechat | cloud",
+          "document": "来源：wechat | cloud | weda",
           "example": "wechat",
           "member": "string",
           "name": "Source",
@@ -251,7 +262,7 @@
         },
         {
           "disabled": false,
-          "document": "渠道：wechat | cloud",
+          "document": "渠道：wechat | cloud | weda",
           "example": "wechat",
           "member": "string",
           "name": "Channel",
@@ -260,8 +271,8 @@
         },
         {
           "disabled": false,
-          "document": "环境ID",
-          "example": "xxx-xxxx",
+          "document": "环境ID 云开发平台必填",
+          "example": "env-sdjflskjfd",
           "member": "string",
           "name": "EnvId",
           "required": false,
@@ -279,6 +290,7 @@
           "example": "prod-3g69bdvme2ac11cb",
           "member": "string",
           "name": "EnvId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -288,6 +300,7 @@
           "example": "0ow89eea326",
           "member": "string",
           "name": "TranId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -688,8 +701,18 @@
           "example": "无",
           "member": "EnvBaseInfo",
           "name": "EnvBaseInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否存在",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExist",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -1685,7 +1708,7 @@
           "example": "serverName",
           "member": "string",
           "name": "ServerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1695,7 +1718,7 @@
           "example": "http://xxx.xxx.xxx",
           "member": "string",
           "name": "DefaultDomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1705,7 +1728,7 @@
           "example": "http://xxx.xxx.xxx",
           "member": "string",
           "name": "CustomDomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1715,7 +1738,7 @@
           "example": "runnig",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1725,7 +1748,7 @@
           "example": "2022-03-09 14:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1735,7 +1758,7 @@
           "example": "[\"OA\",\"MINIAPP\",\"VPC\"]",
           "member": "string",
           "name": "AccessTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1745,8 +1768,18 @@
           "example": "[\"http://xxx.xxx.xxx\",\"http://xxx.xxx.xxx\"]",
           "member": "string",
           "name": "CustomDomainNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务类型: function 云函数2.0；container 容器服务",
+          "example": "function",
+          "member": "string",
+          "name": "ServerType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

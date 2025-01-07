@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli tcr DeleteImageAccelerateService --cli-unfold-argument  \
-    --RegistryId xxx
+    --RegistryId tcr-dg284imq
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "d07dd8e8-c96c-466c-933e-d05e79e070e2"
     }
 }
 ```

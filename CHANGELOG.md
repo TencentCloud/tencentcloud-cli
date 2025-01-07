@@ -1,3 +1,221 @@
+# Release 3.0.1132.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 78 次发布
+
+发布时间：2025-01-08 01:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeVoucherInfo](http://document.tencentcloudapi.woa.com/document/product/555/70813)
+
+	* 新增入参：StartTimeFrom, StartTimeTo, EndTimeFrom, EndTimeTo, CreateTimeFrom, CreateTimeTo
+
+* [DescribeVoucherList](http://document.tencentcloudapi.woa.com/document/product/555/76443)
+
+	* 新增入参：StartTimeFrom, StartTimeTo, EndTimeFrom, EndTimeTo, CreateTimeFrom, CreateTimeTo
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 45 次发布
+
+发布时间：2025-01-08 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeComponentStatus](http://document.tencentcloudapi.woa.com/document/product/1609/77984)
+
+	* 新增入参：ProjectID, EnvironmentName, ApplicationID, ComponentName, Platform
+
+	* 新增出参：ComponentStatus, PodStatus
+
+
+新增数据结构：
+
+* [ClusterWorkLoadStatus](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ClusterWorkLoadStatus)
+* [ComponentStatus](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ComponentStatus)
+* [PlacementTopologyReplica](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PlacementTopologyReplica)
+* [PodPhase](http://document.tencentcloudapi.woa.com/document/product/1609/78009#PodPhase)
+* [TopologyReplica](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TopologyReplica)
+* [WorkLoadStatus](http://document.tencentcloudapi.woa.com/document/product/1609/78009#WorkLoadStatus)
+* [ZoneWorkLoadStatus](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ZoneWorkLoadStatus)
+
+
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 73 次发布
+
+发布时间：2025-01-08 01:11:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
+
+	* 新增入参：TransferFunctionEnable, TransferItems, PromptVariables
+
+
+新增数据结构：
+
+* [AITransferItem](http://document.tencentcloudapi.woa.com/document/product/679/47715#AITransferItem)
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 34 次发布
+
+发布时间：2025-01-08 01:17:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRedisTopKeyPrefixList](http://document.tencentcloudapi.woa.com/document/product/1130/75945)
+
+	* 新增入参：ShardIds
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 16 次发布
+
+发布时间：2025-01-08 01:25:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryRewrite](http://document.tencentcloudapi.woa.com/document/product/1764/85642)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 35 次发布
+
+发布时间：2025-01-08 01:26:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BackupDownloadTask](http://document.tencentcloudapi.woa.com/document/product/240/38576#BackupDownloadTask)
+
+	* 新增成员：Region, Bucket
+
+* [NodeProperty](http://document.tencentcloudapi.woa.com/document/product/240/38576#NodeProperty)
+
+	* 新增成员：WanServiceAddress
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 云托管 CloudBase Run(tcbr) 版本：2022-02-17
+
+### 第 3 次发布
+
+发布时间：2025-01-08 01:31:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeEnvBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1711/80389)
+
+	* 新增出参：IsExist
+
+
+修改数据结构：
+
+* [BuildPacksInfo](http://document.tencentcloudapi.woa.com/document/product/1711/80400#BuildPacksInfo)
+
+	* 新增成员：LanguageVersion
+
+* [ServerBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1711/80400#ServerBaseInfo)
+
+	* 新增成员：ServerType
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 134 次发布
+
+发布时间：2025-01-08 01:34:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetTopicList](http://document.tencentcloudapi.woa.com/document/product/1179/85643)
+
+新增数据结构：
+
+* [Topic_Simplification](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Topic_Simplification)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 191 次发布
+
+发布时间：2025-01-08 01:38:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HaVipAssociation](http://document.tencentcloudapi.woa.com/document/product/215/15824#HaVipAssociation)
+
+	* <font color="#dd0000">**修改成员**：</font>HaVipId, InstanceType
+
+* [NetworkInterface](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkInterface)
+
+	* 新增成员：NetworkInterfaceState
+
+
+
+
 # Release 3.0.1131.1
 
 ## 云顾问(advisor) 版本：2020-07-21

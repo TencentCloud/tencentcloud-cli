@@ -34,23 +34,22 @@ Input:
 
 ```
 tccli tcr CreateServiceAccount --cli-unfold-argument  \
-    --RegistryId tcr-45uu7ras \
-    --Name test \
-    --Description for test \
+    --RegistryId tcr-dg284imq \
+    --Name servie-account4 \
     --Duration 10 \
-    --Permissions.0.Resource test \
-    --Permissions.0.Actions tcr:PullRepository tcr:PushRepository tcr:CreateRepository
+    --Permissions.0.Resource ns1 \
+    --Permissions.0.Actions tcr:PushRepository
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CreateTime": "2023-03-28T15:48:31+08:00",
-        "ExpiresAt": 1680853711137,
-        "Name": "tcr$test",
-        "Password": "oNKUtqrB5Eb68JufkVanSwuhmC4Ergn7",
-        "RequestId": "20b67612-28a0-4c51-8efb-0fe14bc23a64"
+        "CreateTime": "2025-01-07T11:48:31+08:00",
+        "ExpiresAt": 1737085710747,
+        "Name": "tcr$servie-account4",
+        "Password": "bVMZuTO6eYFvpZX9sVIxfyA3UHtIUrCa",
+        "RequestId": "f63f97d2-f5be-43b5-931e-13c026aba9c7"
     }
 }
 ```

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli tcr DeleteWebhookTrigger --cli-unfold-argument  \
-    --RegistryId tcr-ak9876 \
-    --Namespace someNs \
-    --Id 11
+    --RegistryId tcr-dg284imq \
+    --Namespace ns \
+    --Id 6
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "7c978e73-b752-422c-880d-c074a45b4b58"
+        "RequestId": "620fb647-fe86-4c25-866f-98bf867cd689"
     }
 }
 ```

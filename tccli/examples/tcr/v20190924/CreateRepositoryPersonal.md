@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli tcr CreateRepositoryPersonal --cli-unfold-argument  \
-    --RepoName dockerhub/test \
-    --Public 1
+    --RepoName nicokang/golang1 \
+    --Public 1 \
+    --Description desc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "190752c5-f87e-423f-93e4-eb426d82177d"
     }
 }
 ```

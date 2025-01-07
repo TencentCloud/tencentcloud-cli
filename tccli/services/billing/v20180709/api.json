@@ -17706,6 +17706,60 @@
           "name": "VoucherSubType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券有效时间开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "StartTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券有效时间结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "StartTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券失效时间开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "EndTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券失效时间结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "EndTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发券时间开始时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "CreateTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发券时间结束时间",
+          "example": "2021-01-01",
+          "member": "string",
+          "name": "CreateTimeTo",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17736,7 +17790,7 @@
         {
           "disabled": false,
           "document": "代金券相关信息",
-          "example": "{\"Status\":\"used\",\"PayScene\":\"all\",\"EndTime\":\"2024-04-22 23:59:59\",\"NominalValue\":2000000,\"VoucherId\":\"JTZFEPHBZMRDH33MM45JGU\",\"BeginTime\":\"2022-04-22 00:00:00\",\"ExcludedProducts\":[{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-One_Time\"},{\"PayMode\":\"*\",\"GoodsName\":\"Customer product training\"},{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-Package\"},{\"PayMode\":\"*\",\"GoodsName\":\"Cloud_Market-Package_Cycle\"},{\"PayMode\":\"*\",\"GoodsName\":\"Saving Plan\"},{\"PayMode\":\"*\",\"GoodsName\":\"marketplace image\"},{\"PayMode\":\"*\",\"GoodsName\":\"market\"}],\"OwnerUin\":\"909619400\",\"Balance\":0,\"PayMode\":\"*\",\"ApplicableProducts\":{\"PayMode\":\"*\",\"GoodsName\":\"Common for all products\"}}",
+          "example": "无",
           "member": "VoucherInfos",
           "name": "VoucherInfos",
           "output_required": true,
@@ -17812,7 +17866,7 @@
         {
           "disabled": false,
           "document": "商品码",
-          "example": "a",
+          "example": "p_cvm",
           "member": "string",
           "name": "ProductCode",
           "required": false,
@@ -17830,7 +17884,7 @@
         {
           "disabled": false,
           "document": "代金券名称",
-          "example": "aa",
+          "example": "测试代金券",
           "member": "string",
           "name": "VoucherName",
           "required": false,
@@ -17884,7 +17938,7 @@
         {
           "disabled": false,
           "document": "付费场景PayMode=postPay时：spotpay-竞价实例,\"settle account\"-普通后付费PayMode=prePay时：purchase-包年包月新购，renew-包年包月续费（自动续费），modify-包年包月配置变更(变配）PayMode=riPay时：oneOffFee-预留实例预付，hourlyFee-预留实例每小时扣费，*-支持全部付费场景",
-          "example": "*",
+          "example": "postPay",
           "member": "string",
           "name": "PayScene",
           "required": false,
@@ -17893,7 +17947,7 @@
         {
           "disabled": false,
           "document": "操作人，默认就是用户uin",
-          "example": "aa",
+          "example": "nicolerliu",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -17914,6 +17968,60 @@
           "example": "discount",
           "member": "string",
           "name": "VoucherSubType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券有效时间开始时间\t",
+          "example": "2021-01-01\t",
+          "member": "string",
+          "name": "StartTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券有效时间结束时间\t",
+          "example": "2021-01-01\t",
+          "member": "string",
+          "name": "StartTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券失效时间开始时间\t",
+          "example": "2021-01-01\t",
+          "member": "string",
+          "name": "EndTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "券失效时间结束时间\t",
+          "example": "2021-01-01\t",
+          "member": "string",
+          "name": "EndTimeTo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发券时间开始时间\t",
+          "example": "2021-01-01\t",
+          "member": "string",
+          "name": "CreateTimeFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发券时间结束时间\t",
+          "example": "2021-01-01\t",
+          "member": "string",
+          "name": "CreateTimeTo",
           "required": false,
           "type": "string"
         }

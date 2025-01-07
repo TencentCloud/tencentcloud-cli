@@ -6,21 +6,17 @@ Input:
 
 ```
 tccli tcr ModifyServiceAccount --cli-unfold-argument  \
-    --RegistryId abc \
-    --Name abc \
-    --Description abc \
-    --Duration 0 \
-    --ExpiresAt 0 \
-    --Disable True \
-    --Permissions.0.Resource abc \
-    --Permissions.0.Actions abc
+    --RegistryId tcr-dg284imq \
+    --Name tcr$service-account2 \
+    --Description desc 1 \
+    --Duration 10
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "44d9705a-dc93-41f8-b596-8552c4dd40d7"
     }
 }
 ```

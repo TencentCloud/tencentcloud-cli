@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tcr DeleteInstanceToken --cli-unfold-argument  \
-    --RegistryId tcr-12345 \
-    --TokenId b671eee3-a58d-4704-b4d2-a84b6361ff0c
+    --RegistryId tcr-dg284imq \
+    --TokenId ct3ucep1qcle9n4kmv00
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
+        "RequestId": "d813db09-5ea7-4b1f-807c-954a8b8ec7a7"
     }
 }
 ```

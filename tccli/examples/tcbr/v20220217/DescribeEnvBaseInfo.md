@@ -13,12 +13,18 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "",
         "EnvBaseInfo": {
-            "PackageType": "Trial",
-            "CreateTime": "2022-05-27 15:00:00",
-            "EnvId": "prod-0g8ki95z117f177d"
-        }
+            "EnvId": "abc",
+            "PackageType": "abc",
+            "VpcId": "abc",
+            "CreateTime": "abc",
+            "Alias": "abc",
+            "Status": "abc",
+            "Region": "abc",
+            "EnvType": "abc",
+            "SubnetIds": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

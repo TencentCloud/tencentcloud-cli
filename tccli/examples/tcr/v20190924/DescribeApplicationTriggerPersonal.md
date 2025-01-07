@@ -63,7 +63,7 @@ Output:
                     },
                     "InvokePara": {
                         "AppId": "1251707795",
-                        "ClusterId": "123",
+                        "ClusterId": "clust-xxx",
                         "ClusterRegion": 1,
                         "ContainerName": "web",
                         "Namespace": "default",
