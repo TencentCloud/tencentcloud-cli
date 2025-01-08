@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tcr CreateImageAccelerationService --cli-unfold-argument  \
-    --RegistryId tcr-xxx \
-    --VpcId vpc-xxx \
-    --SubnetId subnet-xxx \
+    --RegistryId tcr-safsdfs \
+    --VpcId vpc-sadfaf \
+    --SubnetId subnet-asfsdfsd \
     --StorageType HD \
     --PGroupId groupID \
     --Zone ap-guangzhou
@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "RegistryId": "tcr-xxx",
+        "RegistryId": "tcr-safsdfs",
         "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }

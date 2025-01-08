@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcb DescribeCloudBaseRunConfForGateWay --cli-unfold-argument  \
-    --EnvID xx \
-    --VpcID xx
+    --EnvID env-sdff \
+    --VpcID vpc-sdfsdf
 ```
 
 Output: 
@@ -16,24 +16,23 @@ Output:
     "Response": {
         "Data": [
             {
-                "EnvId": "xx",
-                "GrayKey": "xx",
+                "EnvId": "env-sdfd",
+                "GrayKey": "",
                 "Weight": 100,
-                "ServerName": "xx",
+                "ServerName": "server",
                 "AccessType": 2,
-                "LbAddr": "xx",
+                "LbAddr": "",
                 "IsZero": false,
-                "GrayType": "xx",
-                "VersionName": "xx",
-                "URLs": [
-                    "xx"
-                ],
+                "GrayType": "",
+                "VersionName": "verison",
+                "URLs": [],
                 "IsDefault": false,
-                "GrayValue": "xx"
+                "GrayValue": "",
+                "ConfigType": 0
             }
         ],
-        "RequestId": "xx",
-        "LastUpTime": "xx"
+        "RequestId": "sfafsaf",
+        "LastUpTime": ""
     }
 }
 ```

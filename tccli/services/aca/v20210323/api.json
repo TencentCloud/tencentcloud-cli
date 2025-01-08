@@ -1524,7 +1524,7 @@
         {
           "disabled": false,
           "document": "签名数据",
-          "example": "无",
+          "example": "a4429249ae897d145d8f298ba6ece789194ef47d0b33768566209520f37eff5a",
           "member": "string",
           "name": "Signature",
           "required": true,
@@ -1614,7 +1614,7 @@
         {
           "disabled": false,
           "document": "登录获取的token",
-          "example": "无",
+          "example": "tai.4d563878587a67774d44417a4e544d344e413d3d.bde7b67ce6954a3198842895f7b021cc",
           "member": "string",
           "name": "Token",
           "output_required": false,
@@ -2917,7 +2917,7 @@
         {
           "disabled": false,
           "document": "临床研究",
-          "example": "暂无",
+          "example": "药理作用：诺氟沙星通过抑制细菌DNA旋转酶...",
           "member": "string",
           "name": "ClinicalResearch",
           "output_required": false,
@@ -2947,7 +2947,7 @@
         {
           "disabled": false,
           "document": "警告",
-          "example": "暂无",
+          "example": "对本品及氟喹诺酮类药过敏患者禁用。",
           "member": "string",
           "name": "Warning",
           "output_required": false,
@@ -3037,7 +3037,7 @@
         {
           "disabled": false,
           "document": "说明书制定和修订时间",
-          "example": "暂无",
+          "example": "2021年6月8日",
           "member": "string",
           "name": "DocRevisionTime",
           "output_required": false,
@@ -3047,7 +3047,7 @@
         {
           "disabled": false,
           "document": "参考文献",
-          "example": "暂无",
+          "example": "Hooper, D.C., & Wolfson, J.S. (1985). Fluoroquinolone antimicrobial agents. New England Journal of Medicine, 312(15), 914-921.",
           "member": "string",
           "name": "References",
           "output_required": false,
@@ -3086,8 +3086,8 @@
         },
         {
           "disabled": false,
-          "document": "OCT标签",
-          "example": "暂无",
+          "document": "OTC标签",
+          "example": "甲类",
           "member": "string",
           "name": "OctTag",
           "output_required": false,
@@ -3699,7 +3699,7 @@
         {
           "disabled": false,
           "document": "提示",
-          "example": "暂无",
+          "example": "正常体温范围通常在36.1°C到37.2°C之间",
           "member": "string",
           "name": "Tips",
           "output_required": false,

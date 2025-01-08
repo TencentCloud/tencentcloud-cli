@@ -85,11 +85,11 @@
       "status": "online"
     },
     "CreateFirstLinkSession": {
-      "document": "本接口（CreateFirstLinkSession）用于创建接入段加速会话，创建有可能成功，也可能失败，需要通过返回码来进行判断。",
+      "document": "产品功能已下线，对应的api接口下线\n\n本接口（CreateFirstLinkSession）用于创建接入段加速会话，创建有可能成功，也可能失败，需要通过返回码来进行判断。",
       "input": "CreateFirstLinkSessionRequest",
       "name": "创建接入段加速会话",
       "output": "CreateFirstLinkSessionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateGlobalDomain": {
       "document": "用来创建统一域名",
@@ -197,11 +197,11 @@
       "status": "online"
     },
     "DeleteFirstLinkSession": {
-      "document": "本接口（DeleteFirstLinkSession）用于删除接入段加速会话，删除加速会话后会停止加速。",
+      "document": "产品功能已下线，下线对应的api接口\n\n本接口（DeleteFirstLinkSession）用于删除接入段加速会话，删除加速会话后会停止加速。",
       "input": "DeleteFirstLinkSessionRequest",
       "name": "删除接入段加速会话",
       "output": "DeleteFirstLinkSessionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteGlobalDomain": {
       "document": "删除统一域名",
@@ -337,11 +337,11 @@
       "status": "online"
     },
     "DescribeFirstLinkSession": {
-      "document": "本接口（DescribeFirstLinkSession）用于查询接入段加速会话状态，包括会话状态，生效时长，加速套餐等信息。",
+      "document": "产品功能已下线，下线对应的api接口\n\n本接口（DescribeFirstLinkSession）用于查询接入段加速会话状态，包括会话状态，生效时长，加速套餐等信息。",
       "input": "DescribeFirstLinkSessionRequest",
       "name": "查询接入段加速会话信息",
       "output": "DescribeFirstLinkSessionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeGlobalDomainDns": {
       "document": "查询域名解析列表",
@@ -923,7 +923,7 @@
         {
           "disabled": false,
           "document": "源站名称",
-          "example": "test",
+          "example": "real_server_name",
           "member": "string",
           "name": "RealServerName",
           "required": true,
@@ -950,7 +950,7 @@
           "example": "无",
           "member": "NewRealServer",
           "name": "RealServerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1966,7 +1966,7 @@
         {
           "disabled": false,
           "document": "需要删除的响应头",
-          "example": "[]",
+          "example": "[\"Host\"]",
           "member": "string",
           "name": "ClearHeaders",
           "required": false,
@@ -1993,7 +1993,7 @@
           "example": "errorPage-1fewf",
           "member": "string",
           "name": "ErrorPageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2239,7 +2239,7 @@
         {
           "disabled": false,
           "document": "别名",
-          "example": "test",
+          "example": "domain_name",
           "member": "string",
           "name": "Alias",
           "required": false,
@@ -2266,6 +2266,7 @@
           "example": "dm-pcp5xac5",
           "member": "string",
           "name": "DomainId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

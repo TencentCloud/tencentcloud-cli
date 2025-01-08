@@ -1189,7 +1189,7 @@
         },
         {
           "disabled": false,
-          "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， Php5.2， Php7.4，Go1，Java8 和 CustomRuntime，默认Python2.7",
+          "document": "函数运行环境，默认Python2.7\n目前支持的运行环境：\n- Python2.7\n- Python3.6\n- Python3.7\n- Python3.9\n- Python3.10\n- Nodejs6.10\n- Nodejs8.9\n- Nodejs10.15\n- Nodejs12.16\n- Nodejs14.18\n- Nodejs16.13\n- Nodejs18.15\n- Php5.6\n- Php7(7.2版本)\n- Php7.4\n- Php8.0\n- Go1\n- Java8\n- CustomRuntime",
           "example": "Python3.6",
           "member": "string",
           "name": "Runtime",
@@ -7392,7 +7392,7 @@
         },
         {
           "disabled": false,
-          "document": "函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime",
+          "document": "函数运行环境，创建时指定，目前不支持修改。",
           "example": "Python3.6",
           "member": "string",
           "name": "Runtime",

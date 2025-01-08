@@ -114,7 +114,7 @@
     ],
     "CreateConsoleSharing": [
       {
-        "document": "创建控制台检索页/仪表盘免登陆分享站点",
+        "document": "创建控制台检索页/仪表盘免登录分享站点",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleSharing\n<公共请求参数>\n\n{\n    \"SharingConfig\": {\n        \"Name\": \"my-sharing\",\n        \"Type\": 1,\n        \"VerifyCode\": \"lEC0V0\",\n        \"DurationMilliseconds\": 1800000,\n        \"NowTime\": 1706787306086,\n        \"IsLockTimeRange\": true,\n        \"IsLockQuery\": true,\n        \"Params\": [\n            {\n                \"Name\": \"query\"\n            }\n        ],\n        \"Resources\": [\n            \"qcs::cls:ap-guangzhou:uin/10000000001:topic/c1306921-2180-3e45-9azb-31d12217871e6\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"SharingUrl\": \"https://clsshare.tencent-cloud.com/s/13cez28h\",\n        \"SharingId\": \"13cez28h\",\n        \"RequestId\": \"714cf720-43e9-460b-bd9a-42a193ca3d94\"\n    }\n}",
         "title": "创建控制台匿名分享请求示例"
@@ -695,8 +695,8 @@
     "ModifyAlarm": [
       {
         "document": "修改告警策略",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarm\n<公共请求参数>\n\n{\n    \"AlarmNoticeIds\": [\n        \"notice-479dec34-4a59-11eb-b378-0242ac130002\"\n    ],\n    \"Name\": \"test\",\n    \"TriggerCount\": 1,\n    \"AlarmPeriod\": 0,\n    \"MonitorTime\": {\n        \"Type\": \"Period\",\n        \"Time\": 10\n    },\n    \"AlarmTargets\": [\n        {\n            \"TopicId\": \"6f574591-01b0-4475-bf0c-68255839a35d\",\n            \"Number\": 1,\n            \"Query\": \"* | select source\",\n            \"EndTimeOffset\": 0,\n            \"StartTimeOffset\": 0,\n            \"LogsetId\": \"ff574591-01b0-4475-bf0c-68255839a35d\"\n        }\n    ],\n    \"Condition\": \"$1.source='10.0.0.1'\",\n    \"AlarmId\": \"alarm-bea71170-4a59-11eb-b378-0242ac130002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarm\n<公共请求参数>\n\n{\n    \"AlarmId\": \"alarm-fb0c92e7-xxxx-xxxx-b141-74859f894481\",\n    \"Name\": \"bow-test-中文\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37fe3a72-xxxx-xxxx-951a-9468fa020261\"\n    }\n}",
         "title": "修改告警策略"
       }
     ],
@@ -851,7 +851,7 @@
       },
       {
         "document": "改为跨账号投递",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShipper\n<公共请求参数>\n\n{\n\n        \"ShipperId\": \"3f9562a7-xxxx-xxxx-b32a-d51a927226a7\",\n        \"Bucket\": \"examplebucket-1250000000\",\n        \"Prefix\": \"bowtest-1250000000\",\n        \"ShipperName\": \"bow-test-1250000000\",\n        \"Interval\": 300,\n        \"MaxSize\": 10,\n        \"FilenameMode\": 1,\n        \"FilterRules\": [\n            {\n                \"Key\": \"http\",\n                \"Regex\": \"^(\\\\d+\\\\.\\\\d+)\\\\..*\",\n                \"Value\": \"172.16\"\n            }\n        ],\n        \"Partition\": \"/%Y/%m/%d/%H/\",\n        \"Compress\": {\n            \"Format\": \"gzip\"\n        },\n        \"RoleArn\": \"qcs::cam::uin/123123123:roleName/uinA_writeCLS_to_COS\",\n        \"ExternalId\": \"123123123123123\",\n        \"Content\": {\n            \"Format\": \"json\",\n            \"Json\": {\n                \"EnableTag\": true,\n                \"MetaFields\": [\n                    \"__SOURCE__\",\n                    \"__FILENAME__\",\n                    \"__TIMESTAMP__\",\n                    \"__HOSTNAME__\"\n                ],\n                \"JsonType\": 0\n            }\n        }\n}",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyShipper\n<公共请求参数>\n\n{\n    \"ShipperId\": \"3f9562a7-xxxx-xxxx-b32a-d51a927226a7\",\n    \"Bucket\": \"examplebucket-1250000000\",\n    \"Prefix\": \"bowtest-1250000000\",\n    \"ShipperName\": \"bow-test-1250000000\",\n    \"Interval\": 300,\n    \"MaxSize\": 10,\n    \"FilenameMode\": 1,\n    \"FilterRules\": [\n        {\n            \"Key\": \"http\",\n            \"Regex\": \"^(\\\\d+\\\\.\\\\d+)\\\\..*\",\n            \"Value\": \"172.16\"\n        }\n    ],\n    \"Partition\": \"/%Y/%m/%d/%H/\",\n    \"Compress\": {\n        \"Format\": \"gzip\"\n    },\n    \"Content\": {\n        \"Format\": \"json\",\n        \"Json\": {\n            \"EnableTag\": true,\n            \"MetaFields\": [\n                \"__SOURCE__\",\n                \"__FILENAME__\",\n                \"__TIMESTAMP__\",\n                \"__HOSTNAME__\"\n            ],\n            \"JsonType\": 0\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"25d826d2-xxxx-xxxx-a4b6-f5490e86ae81\"\n    }\n}",
         "title": "修改投递任务"
       }

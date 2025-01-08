@@ -1176,7 +1176,7 @@
         {
           "disabled": false,
           "document": "触发方式对应的表达式",
-          "example": "无",
+          "example": "release*",
           "member": "string",
           "name": "InvokeExpr",
           "required": false,
@@ -1212,7 +1212,7 @@
         {
           "disabled": false,
           "document": "创建CFS的归属的VPCID",
-          "example": "vpc-xxx",
+          "example": "vpc-adsvxsd",
           "member": "string",
           "name": "VpcId",
           "required": true,
@@ -1221,7 +1221,7 @@
         {
           "disabled": false,
           "document": "创建CFS的归属的子网ID",
-          "example": "subnet-xxx",
+          "example": "subnet-sfdafes",
           "member": "string",
           "name": "SubnetId",
           "required": true,
@@ -2521,7 +2521,7 @@
         {
           "disabled": false,
           "document": "触发器名称",
-          "example": "",
+          "example": "trigger1",
           "member": "string",
           "name": "TriggerName",
           "required": true,
@@ -3412,7 +3412,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "ccs-dev/nginx",
           "member": "string",
           "name": "RepoName",
           "required": false,
@@ -3421,7 +3421,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -3430,7 +3430,7 @@
         {
           "disabled": false,
           "document": "返回最大数量，默认 20, 最大值 100",
-          "example": "",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -3439,7 +3439,7 @@
         {
           "disabled": false,
           "document": "升序或降序",
-          "example": "",
+          "example": "desc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -3448,7 +3448,7 @@
         {
           "disabled": false,
           "document": "按某列排序",
-          "example": "",
+          "example": "invoke_time",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -3489,9 +3489,10 @@
         {
           "disabled": false,
           "document": "触发日志返回值",
-          "example": "",
+          "example": "无",
           "member": "DescribeApplicationTriggerLogPersonalResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7184,7 +7185,7 @@
         {
           "disabled": false,
           "document": "仓库名称",
-          "example": "",
+          "example": "nicokang/golang",
           "member": "string",
           "name": "RepoName",
           "required": true,
@@ -7193,7 +7194,7 @@
         {
           "disabled": false,
           "document": "仓库描述",
-          "example": "",
+          "example": "desc1",
           "member": "string",
           "name": "Description",
           "required": true,

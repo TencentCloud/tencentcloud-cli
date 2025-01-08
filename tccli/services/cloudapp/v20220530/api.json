@@ -30,7 +30,7 @@
         },
         {
           "disabled": false,
-          "document": "软件授权模式。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>Permanent</td><td>永久授权。该授权不受有效期限制。</td></tr><tr><td>Subscription</td><td>订阅授权。授权如果过了有效期，则会进入过期状态。</td></tr></tbody></table>",
+          "document": "软件授权模式。<table><thead><tr><th>枚举值</th><th>说明</th></tr></thead><tbody><tr><td>Permanent</td><td>永久授权。该授权不受有效期限制。</td></tr><tr><td>Subscription</td><td>订阅授权。授权如果过了有效期，则会进入过期状态。</td></tr><tr><td>Accept</td><td>验收期授权。用于需要验收的软件处于验收期间的授权，授权如果过了验收有效期，则会进入过期状态。</td></tr></tbody></table>",
           "example": "Subscription",
           "member": "string",
           "name": "LicenseMode",
@@ -207,17 +207,6 @@
         },
         {
           "disabled": false,
-          "document": "售卖参数值",
-          "example": "100",
-          "member": "string",
-          "name": "ParamValue",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "售卖参数的展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "用户规模",
           "member": "string",
@@ -229,12 +218,34 @@
         },
         {
           "disabled": false,
+          "document": "售卖参数值，当ParamType=Quant时，该值有可能为Null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "售卖参数值的展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100人",
           "member": "string",
           "name": "ParamValueName",
-          "output_required": true,
-          "required": true,
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "售卖参数的类型，目前支持枚举类Enum/数量类Quant\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Enum",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -257,6 +268,26 @@
           "name": "License",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前请求服务端的时间戳，格式为RFC3339",
+          "example": "2025-01-08T11:38:46+08:00",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对License字段对应的json数据的签名",
+          "example": "WdF5he2Y7UxZiDAjuPlGTS91Cr9RQYqbdJqFW6k4l5WqMErlLWQ1bRwoqdORfWadizzlhTjSpxxxxxxx",
+          "member": "string",
+          "name": "Signature",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

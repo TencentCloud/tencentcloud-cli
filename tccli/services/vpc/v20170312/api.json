@@ -10352,13 +10352,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "对等连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对等连接ID",
           "example": "pcx-xxxxxx",
           "member": "string",
           "name": "PeeringConnectionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -29854,7 +29854,7 @@
         {
           "disabled": false,
           "document": "本端APPID。",
-          "example": "123456789",
+          "example": "120777408",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
@@ -29864,7 +29864,7 @@
         {
           "disabled": false,
           "document": "对端APPID。",
-          "example": "123456789",
+          "example": "120777408",
           "member": "int64",
           "name": "PeerAppId",
           "output_required": true,
@@ -29913,23 +29913,33 @@
         },
         {
           "disabled": false,
-          "document": "服务分级：PT、AU、AG。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务分级：PT、AU、AG。",
           "example": "AU",
           "member": "string",
           "name": "QosLevel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。",
           "example": "VPC_PEER",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对端VPC唯一ID。",
+          "example": "vpc-test5678",
+          "member": "string",
+          "name": "DestinationVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

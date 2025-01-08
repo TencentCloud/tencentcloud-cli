@@ -112,16 +112,82 @@
     ],
     "DeployCertificateInstance": [
       {
-        "document": "证书部署到clb云资源实例列表， 若部署的监听器开启了SNI，则InstanceIdList传参需要到域名， 若未开启SNI， InstanceIdList只需要到监听器",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"lb-pk278gkq|lbl-2yju432e\",\n        \"lb-mmgz14kg|lbl-5q6yn03o|clb1.ninghhuang.top\"\n    ],\n    \"ResourceType\": \"clb\"\n}",
+        "document": "证书部署到clb云资源实例列表， 若部署的监听器开启了SNI，则InstanceIdList传参需要到域名， 若未开启SNI， InstanceIdList只需要到监听器； \n公共参数Region必传， Region表示操作clb对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"lb-pk278gkq|lbl-2yju432e\",\n        \"lb-mmgz14kg|lbl-5q6yn03o|clb1.tencent.com\"\n    ],\n    \"ResourceType\": \"clb\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
         "title": "证书部署到clb云资源实例列表"
       },
       {
-        "document": "证书部署到cdn云资源域名列表",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"cdn1.ninghhuang.top\",\n        \"cdn2.ninghhuang.top\"\n    ],\n    \"ResourceType\": \"cdn\"\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"cdn1.tencent.com|off\",\n        \"cdn2.tencent.com|on\"\n    ],\n    \"ResourceType\": \"cdn\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
-        "title": "证书部署到cdn云资源实例列表"
+        "title": "证书部署到cdn云资源域名列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"edgeone1.tencent.com\",\n        \"edgeone2.tencent.com\"\n    ],\n    \"ResourceType\": \"teo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到edgeOne云资源域名列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"bgpip-000001ms|tencent.com|443\"\n    ],\n    \"ResourceType\": \"ddos\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到ddos云资源实例列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"waf1.tencent.com\",\n        \"waf2.tencent.com\"\n    ],\n    \"ResourceType\": \"waf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到waf域名列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"live1.tencent.com\",\n        \"live2.tencent.com\"\n    ],\n    \"ResourceType\": \"live\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到云直播域名列表"
+      },
+      {
+        "document": "公共参数Region必传， Region表示操作api网关对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"service-8sk7cqmd|apigw1.tencent.com\",\n        \"service-8sk7cqmd|apigw2.tencent.com\"\n    ],\n    \"ResourceType\": \"apigateway\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到apigateway云资源域名列表"
+      },
+      {
+        "document": "公共参数Region必传， Region表示操作tke对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"cls-42sa0ae0|default|test-tencent\"\n    ],\n    \"ResourceType\": \"tke\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到tke云资源实例列表"
+      },
+      {
+        "document": "公共参数Region必传， Region表示操作cos对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"ap-hongkong#ssl-server-1251810746#tencent.com\"\n    ],\n    \"ResourceType\": \"cos\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到cos云资源实例列表"
+      },
+      {
+        "document": "公共参数Region必传， Region表示操作lighthouse对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"ap-shanghai|lhins-nh7lql34|tencent.com\"\n    ],\n    \"ResourceType\": \"lighthouse\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到lighthouse云资源实例列表"
+      },
+      {
+        "document": "公共参数Region必传， Region表示操作tse对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"gateway-s1da9151|fa61bc05-cc54-4eea-c932-24de52577372\"\n    ],\n    \"ResourceType\": \"tse\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到tse云资源实例列表"
+      },
+      {
+        "document": "公共参数Region必传， Region表示操作tcb对应地域的资源",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"AccessService|ap-shanghai|ceshi-4s5h0ymg11c839c7|tencent.com\"\n    ],\n    \"ResourceType\": \"tcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到tcb云资源实例列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"vod1.tencent.com\",\n        \"vod2.tencent.com\"\n    ],\n    \"ResourceType\": \"vod\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
+        "title": "证书部署到云点播域名列表"
       }
     ],
     "DeployCertificateRecordRetry": [

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tcb DescribeWxCloudBaseRunEnvs --cli-unfold-argument  \
-    --WxAppId xx \
+    --WxAppId wxappid \
     --AllRegions False
 ```
 
@@ -18,78 +18,78 @@ Output:
             {
                 "Functions": [
                     {
-                        "Region": "xx",
-                        "Namespace": "xx"
+                        "Region": "ap-shanghai",
+                        "Namespace": "ns"
                     }
                 ],
                 "IsAutoDegrade": true,
-                "PackageName": "xx",
-                "EnvChannel": "xx",
-                "Source": "xx",
+                "PackageName": "package",
+                "EnvChannel": "",
+                "Source": "",
                 "Storages": [
                     {
-                        "CdnDomain": "xx",
-                        "Region": "xx",
-                        "Bucket": "xx",
-                        "AppId": "xx"
+                        "CdnDomain": "",
+                        "Region": "ap-shanghai",
+                        "Bucket": "",
+                        "AppId": ""
                     }
                 ],
-                "Status": "xx",
+                "Status": "",
                 "UpdateTime": "2020-09-22 00:00:00",
                 "Tags": [
                     {
-                        "Value": "xx",
-                        "Key": "xx"
+                        "Value": "",
+                        "Key": ""
                     }
                 ],
                 "CustomLogServices": [
                     {
-                        "ClsTopicId": "xx",
-                        "ClsRegion": "xx",
-                        "ClsLogsetId": "xx",
+                        "ClsTopicId": "",
+                        "ClsRegion": "",
+                        "ClsLogsetId": "",
                         "CreateTime": "2020-09-22 00:00:00"
                     }
                 ],
                 "StaticStorages": [
                     {
-                        "Status": "xx",
-                        "StaticDomain": "xx",
-                        "DefaultDirName": "xx",
-                        "Bucket": "xx",
-                        "Region": "xx"
+                        "Status": "",
+                        "StaticDomain": "",
+                        "DefaultDirName": "",
+                        "Bucket": "",
+                        "Region": "ap-shanghai"
                     }
                 ],
-                "PackageId": "xx",
-                "EnvId": "xx",
-                "Region": "xx",
-                "PayMode": "xx",
-                "Alias": "xx",
-                "PackageType": "xx",
+                "PackageId": "",
+                "EnvId": "",
+                "Region": "",
+                "PayMode": "",
+                "Alias": "",
+                "PackageType": "",
                 "IsDauPackage": true,
                 "Databases": [
                     {
-                        "InstanceId": "xx",
-                        "Status": "xx",
-                        "Region": "xx",
+                        "InstanceId": "",
+                        "Status": "",
+                        "Region": "",
                         "UpdateTime": "2020-09-22T00:00:00+00:00"
                     }
                 ],
                 "IsDefault": true,
                 "LogServices": [
                     {
-                        "TopicId": "xx",
-                        "Region": "xx",
+                        "TopicId": "",
+                        "Region": "",
                         "Period": 0,
-                        "TopicName": "xx",
-                        "LogsetName": "xx",
-                        "LogsetId": "xx"
+                        "TopicName": "",
+                        "LogsetName": "",
+                        "LogsetId": ""
                     }
                 ],
-                "EnvType": "xx",
+                "EnvType": "tcbr",
                 "CreateTime": "2020-09-22 00:00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "sdfsdf"
     }
 }
 ```

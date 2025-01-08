@@ -22,7 +22,7 @@ Output:
             {
                 "ClientIP": "192.0.0.1",
                 "CPUCost": 0,
-                "DefaultDB": "test",
+                "DefaultDB": "db_test",
                 "EndTime": 1721962352,
                 "ExecutionIP": "192.0.0.1",
                 "QueryID": "1ac25f6c-4afa-11ef-b7cc-525400c756d2",

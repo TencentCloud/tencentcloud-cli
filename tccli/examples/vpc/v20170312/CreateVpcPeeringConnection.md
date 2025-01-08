@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc CreateVpcPeeringConnection --cli-unfold-argument  \
-    --PeeringConnectionName 测试 \
+    --PeeringConnectionName 研发测试使用 \
     --DestinationUin 100002840663 \
     --ChargeType POSTPAID_BY_DAY_MAX \
     --SourceVpcId vpc-938r310k \
@@ -21,8 +21,8 @@ Output:
 ```
 {
     "Response": {
-        "PeeringConnectionId": "abc",
-        "RequestId": "abc"
+        "PeeringConnectionId": "pcx-qweq4567",
+        "RequestId": "3477a917-5c3f-4554-942f-7c9b1d049d1d"
     }
 }
 ```

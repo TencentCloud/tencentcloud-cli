@@ -18,7 +18,7 @@ Output:
     "Response": {
         "InstanceId": "emr-ikoyp9nw",
         "FlowId": 0,
-        "RequestId": "abc"
+        "RequestId": "fe127236-3646-4676-80ae-a491b596fedd"
     }
 }
 ```

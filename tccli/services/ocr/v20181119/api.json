@@ -7000,7 +7000,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "复印件告警，默认为false",
           "example": "false",
           "member": "bool",
           "name": "CopyWarn",
@@ -7009,7 +7009,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "边框和框内遮挡告警，默认为false",
           "example": "false",
           "member": "bool",
           "name": "BorderCheckWarn",
@@ -7018,7 +7018,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "翻拍告警，默认为false",
           "example": "false",
           "member": "bool",
           "name": "ReshootWarn",
@@ -7027,7 +7027,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "疑似存在PS痕迹告警，默认为false",
           "example": "false",
           "member": "bool",
           "name": "DetectPsWarn",
@@ -7036,7 +7036,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "临时身份证告警，默认为false",
           "example": "false",
           "member": "bool",
           "name": "TempIdWarn",
@@ -7045,7 +7045,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "身份证有效日期不合法告警，默认为false",
           "example": "false",
           "member": "bool",
           "name": "InvalidDateWarn",
@@ -7054,7 +7054,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为false",
+          "document": "是否开启反光检测，默认为false",
           "example": "false",
           "member": "bool",
           "name": "ReflectWarn",

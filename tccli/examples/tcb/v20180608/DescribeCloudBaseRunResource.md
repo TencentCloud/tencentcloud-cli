@@ -16,19 +16,19 @@ Output:
         "ClusterStatus": "succ",
         "VirtualClusterId": "cjd123",
         "RequestId": "5620b49e-a25a-4007-84ef-03c9035c584d",
-        "VpcId": "xx",
+        "VpcId": "vpc-sdfs",
         "SubnetIds": [
             {
-                "Target": "xx",
-                "Zone": "xx",
-                "Region": "xx",
-                "Cidr": "xx",
-                "Type": "xx",
-                "Id": "xx",
-                "Name": "xx"
+                "Target": "tar",
+                "Zone": "shanghai-z",
+                "Region": "ap-shanghai",
+                "Cidr": "",
+                "Type": "",
+                "Id": "subnet-sdf",
+                "Name": "djfk"
             }
         ],
-        "Region": "xx"
+        "Region": "ap-shanghai"
     }
 }
 ```

@@ -4724,6 +4724,15 @@
         },
         {
           "disabled": false,
+          "document": "订阅 ID 筛选，精确匹配",
+          "example": "[\"subs-9jyki7hniw\",\"subs-31adyjj41f\"]\"]",
+          "member": "string",
+          "name": "SubscribeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "订阅名称，前缀模糊匹配",
           "example": "binlog订阅",
           "member": "string",
@@ -4917,6 +4926,15 @@
         },
         {
           "disabled": false,
+          "document": "同步任务id列表，如sync-werwfs23",
+          "example": "[\"sync-n3gh7md9\"]",
+          "member": "string",
+          "name": "JobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "同步任务名",
           "example": "sync-n3gh7md9",
           "member": "string",
@@ -5004,6 +5022,24 @@
           "name": "TagFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源端数据库连接信息，可以输入实例ID或者IP等",
+          "example": "cdb-jk09iy6a",
+          "member": "string",
+          "name": "SrcInfoPattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标端数据库连接信息，可以输入实例ID或者IP等",
+          "example": "cdb-jk09iy6a",
+          "member": "string",
+          "name": "DstInfoPattern",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6099,7 +6135,7 @@
         },
         {
           "disabled": false,
-          "document": "为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "为业务添加的额外信息。参数名作key，参数值作value。 \ntdpg必填参数：PgDatabase-订阅的库名；\nmongo选填参数：InstanceType-实例类型：replicaset-副本集，cluster-分片集，主要用于控制台跳转到mongo实例页面，如不填不影响任务运行；\n全业务选填参数：EngineVersion-内核版本。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",

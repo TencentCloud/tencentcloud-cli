@@ -14,12 +14,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "Action": [
-            "xx"
-        ],
+        "RequestId": "sdfsdf",
+        "Action": [],
         "ServerName": [
-            "xx"
+            "server"
         ]
     }
 }

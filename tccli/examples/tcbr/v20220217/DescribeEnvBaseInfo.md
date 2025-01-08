@@ -14,17 +14,17 @@ Output:
 {
     "Response": {
         "EnvBaseInfo": {
-            "EnvId": "abc",
-            "PackageType": "abc",
-            "VpcId": "abc",
-            "CreateTime": "abc",
-            "Alias": "abc",
-            "Status": "abc",
-            "Region": "abc",
-            "EnvType": "abc",
-            "SubnetIds": "abc"
+            "EnvId": "en-sdf",
+            "PackageType": "package",
+            "VpcId": "vpc-sdff",
+            "CreateTime": "2023-12-12 10:00:00",
+            "Alias": "sdf",
+            "Status": "creating",
+            "Region": "ap-shanghai",
+            "EnvType": "tcbr",
+            "SubnetIds": ""
         },
-        "RequestId": "abc"
+        "RequestId": "sdfdsgdg"
     }
 }
 ```

@@ -3292,6 +3292,24 @@
           "name": "TargetGroupInstances",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "后端服务默认权重。\n<ul>\n    <li>取值范围[0, 100]</li>\n    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li>\n</ul>\n",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5412,6 +5430,7 @@
           "example": "无",
           "member": "RuleOutput",
           "name": "RewriteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5666,7 +5685,7 @@
           "example": "无",
           "member": "LoadBalancerHealth",
           "name": "LoadBalancers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9309,6 +9328,15 @@
           "example": "22",
           "member": "uint64",
           "name": "Port",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "后端服务默认权重。\n<ul>\n    <li>取值范围[0, 100]</li>\n    <li>设置该值后，添加后端服务到目标组时， 若后端服务不单独设置权重， 则使用这里的默认权重。 </li> \n</ul>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
           "required": false,
           "type": "int"
         }

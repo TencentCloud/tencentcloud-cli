@@ -87,6 +87,7 @@ tccli tcb CreateCloudBaseRunServerVersion --cli-unfold-argument  \
     --ServiceVolumes.0.EmptyDir.EnableEmptyDirVolume True \
     --ServiceVolumes.0.EmptyDir.Medium  \
     --ServiceVolumes.0.EmptyDir.SizeLimit  \
+    --ServiceVolumes.0.HostPath.Path  \
     --IsCreateJnsGw 0 \
     --ServiceVolumeMounts.0.Name  \
     --ServiceVolumeMounts.0.MountPath  \

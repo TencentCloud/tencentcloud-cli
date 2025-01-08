@@ -739,8 +739,8 @@
     "CreateVpcPeeringConnection": [
       {
         "document": "创建对等连接",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionName\": \"测试\",\n    \"DestinationUin\": \"100002840663\",\n    \"ChargeType\": \"POSTPAID_BY_DAY_MAX\",\n    \"SourceVpcId\": \"vpc-938r310k\",\n    \"Bandwidth\": 0,\n    \"DestinationVpcId\": \"vpc-938r310k\",\n    \"QosLevel\": \"AU\",\n    \"Type\": \"VPC_BM_PEER\",\n    \"DestinationRegion\": \"ap-guangzhou\"\n}",
-        "output": "{\n    \"Response\": {\n        \"PeeringConnectionId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionName\": \"研发测试使用\",\n    \"DestinationUin\": \"100002840663\",\n    \"ChargeType\": \"POSTPAID_BY_DAY_MAX\",\n    \"SourceVpcId\": \"vpc-938r310k\",\n    \"Bandwidth\": 0,\n    \"DestinationVpcId\": \"vpc-938r310k\",\n    \"QosLevel\": \"AU\",\n    \"Type\": \"VPC_BM_PEER\",\n    \"DestinationRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PeeringConnectionId\": \"pcx-qweq4567\",\n        \"RequestId\": \"3477a917-5c3f-4554-942f-7c9b1d049d1d\"\n    }\n}",
         "title": "创建对等连接"
       }
     ],
@@ -2144,7 +2144,7 @@
       {
         "document": "根据资源ID查询实例信息",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcPeeringConnections\n&PeeringConnectionIds.0=pcx-test1234\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"PeerConnectionSet\": [\n            {\n                \"SourceVpcId\": \"abc\",\n                \"PeerVpcId\": \"abc\",\n                \"PeeringConnectionId\": \"abc\",\n                \"PeeringConnectionName\": \"abc\",\n                \"State\": \"abc\",\n                \"IsNgw\": true,\n                \"Bandwidth\": 0,\n                \"SourceRegion\": \"abc\",\n                \"DestinationRegion\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"AppId\": 0,\n                \"PeerAppId\": 0,\n                \"ChargeType\": \"abc\",\n                \"SourceUin\": 0,\n                \"DestinationUin\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"QosLevel\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PeerConnectionSet\": [\n            {\n                \"AppId\": 1000001,\n                \"SourceUin\": 1000001234,\n                \"SourceRegion\": \"gz\",\n                \"SourceVpcId\": \"vpc-test1234\",\n                \"PeerAppId\": 1000001,\n                \"DestinationUin\": 1000001234,\n                \"DestinationRegion\": \"gz\",\n                \"PeerVpcId\": \"vpc-test4567\",\n                \"DestinationVpcId\": \"vpc-test4567\",\n                \"PeeringConnectionId\": \"pcx-test6789\",\n                \"PeeringConnectionName\": \"测试用\",\n                \"IsNgw\": false,\n                \"CreateTime\": \"2024-11-14 11:58:54\",\n                \"Bandwidth\": 0,\n                \"Type\": \"VPC0\",\n                \"State\": \"ACTIVE\",\n                \"TagSet\": [],\n                \"ChargeType\": \"POSTPAID_BY_DAY_MAX\",\n                \"QosLevel\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"65def86e-3408-4bce-b520-37c12559b082\"\n    }\n}",
         "title": "根据资源ID查询实例信息"
       }
     ],
@@ -3141,7 +3141,7 @@
     "ModifyVpcPeeringConnection": [
       {
         "document": "修改对等连接",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionId\": \"abc\",\n    \"PeeringConnectionName\": \"abc\",\n    \"Bandwidth\": 0,\n    \"ChargeType\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionId\": \"pcx-as1iqn14\",\n    \"PeeringConnectionName\": \"内部网络环境\",\n    \"Bandwidth\": 0,\n    \"ChargeType\": \"POSTPAID_BY_DAY_MAX\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
         "title": "修改对等连接"
       }

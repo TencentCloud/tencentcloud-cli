@@ -19,6 +19,7 @@ Output:
     "Response": {
         "License": {
             "LicenseId": "LICENSE_CLOUDAPP_A95275D8",
+            "LicenseType": "Standard",
             "LicenseMode": "Subscription",
             "LicenseStatus": "Active",
             "ProviderId": 1,
@@ -42,6 +43,8 @@ Output:
             "ExpirationDate": "2020-09-23T00:00:00+00:00",
             "LifeSpanUnit": "D"
         },
+        "Signature": "WdF5he2Y7UxZiDAjuPlGTS91Cr9RQYqbdJqFW6k4l5WqMErlLWQ1bRwoqdORfWadizzlhTjSpxxxxxxx",
+        "Timestamp": "2025-01-08T12:02:40+08:00",
         "RequestId": "845c8910-b0af-499e-87cd-f7dcc93a595a"
     }
 }

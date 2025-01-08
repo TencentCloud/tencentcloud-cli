@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcb FreezeCloudBaseRunServers --cli-unfold-argument  \
-    --EnvId env-abc \
-    --ServerNameList abc
+    --EnvId env-ser \
+    --ServerNameList server
 ```
 
 Output: 
@@ -15,10 +15,10 @@ Output:
 {
     "Response": {
         "FailServerList": [
-            "abc"
+            ""
         ],
-        "Result": "abc",
-        "RequestId": "aa"
+        "Result": "succ",
+        "RequestId": "sdfsfadf"
     }
 }
 ```

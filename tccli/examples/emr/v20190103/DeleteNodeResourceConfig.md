@@ -1,4 +1,4 @@
-**Example 1: 输入输出例子**
+**Example 1: 删除当前集群的节点规格配置**
 
 
 
@@ -6,11 +6,10 @@ Input:
 
 ```
 tccli emr DeleteNodeResourceConfig --cli-unfold-argument  \
-    --InstanceId abc \
-    --ResourceType abc \
+    --InstanceId emr-da13dada \
+    --ResourceType CORE \
     --ResourceConfigId 1 \
-    --ResourceBaseType abc \
-    --ComputeResourceId abc
+    --ResourceBaseType EMR
 ```
 
 Output: 

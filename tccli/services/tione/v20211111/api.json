@@ -6877,6 +6877,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1256704107",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7163,6 +7173,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1256704107",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10354,7 +10374,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rsg-xxxxx",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -10364,7 +10384,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "[]",
+          "example": "[                             {                                 \"Role\": \"WORKER\",                                 \"Cpu\": 1000,                                 \"Memory\": 1024,                                 \"GpuType\": \"\",                                 \"Gpu\": 0,                                 \"InstanceType\": \"\",                                 \"InstanceTypeAlias\": \"\",                                 \"InstanceNum\": 1,                                 \"RDMAConfig\": {                                     \"Enable\": false                                 },                                 \"ExtendedResourceList\": {},                                 \"ArchType\": \"\"                             }                         ]",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "output_required": true,
@@ -10504,7 +10524,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"test\":\"test\"]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,

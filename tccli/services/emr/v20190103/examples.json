@@ -11,7 +11,7 @@
     "AddNodeResourceConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodeResourceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ResourceType\": \"abc\",\n    \"IsDefault\": \"abc\",\n    \"ResourceConfig\": {\n        \"Spec\": \"abc\",\n        \"StorageType\": 0,\n        \"DiskType\": \"abc\",\n        \"RootSize\": 0,\n        \"MemSize\": 0,\n        \"Cpu\": 0,\n        \"DiskSize\": 0,\n        \"MultiDisks\": [\n            {\n                \"DiskType\": \"abc\",\n                \"Volume\": 0,\n                \"Count\": 0\n            }\n        ],\n        \"Tags\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"abc\"\n            }\n        ],\n        \"InstanceType\": \"abc\",\n        \"LocalDiskNum\": 1,\n        \"DiskNum\": 1\n    },\n    \"PayMode\": 0,\n    \"ZoneId\": 0,\n    \"MultipleResourceConfig\": [\n        {\n            \"Spec\": \"abc\",\n            \"StorageType\": 0,\n            \"DiskType\": \"abc\",\n            \"RootSize\": 0,\n            \"MemSize\": 0,\n            \"Cpu\": 0,\n            \"DiskSize\": 0,\n            \"MultiDisks\": [\n                {\n                    \"DiskType\": \"abc\",\n                    \"Volume\": 0,\n                    \"Count\": 0\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"InstanceType\": \"abc\",\n            \"LocalDiskNum\": 1,\n            \"DiskNum\": 1\n        }\n    ],\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNodeResourceConfig\n<公共请求参数>\n\n{\n    \"HardwareResourceType\": \"HOST\",\n    \"InstanceId\": \"emr-llp6c58v\",\n    \"PayMode\": 0,\n    \"ResourceConfig\": {\n        \"Cpu\": 4,\n        \"DiskSize\": 0,\n        \"DiskType\": \"CLOULD_SSD\",\n        \"InstanceType\": \"SA5.LARGE16\",\n        \"MemSize\": 16384,\n        \"MultiDisks\": [],\n        \"Spec\": \"SA5\",\n        \"StorageType\": 0\n    },\n    \"ResourceType\": \"TASK\",\n    \"ZoneId\": 100007\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0f11d21-6d0d-4f73-9177-8ae4ec456068\"\n    }\n}",
         "title": "增加当前集群的节点规格配置"
       }
@@ -75,9 +75,9 @@
     "DeleteNodeResourceConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNodeResourceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ResourceType\": \"abc\",\n    \"ResourceConfigId\": 1,\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNodeResourceConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-da13dada\",\n    \"ResourceType\": \"CORE\",\n    \"ResourceConfigId\": 1,\n    \"ResourceBaseType\": \"EMR\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c2ff02e-5f38-494a-8d2d-68a7dec6efcd\"\n    }\n}",
-        "title": "输入输出例子"
+        "title": "删除当前集群的节点规格配置"
       }
     ],
     "DeleteUserManagerUserList": [
@@ -316,7 +316,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStarrocksQueryInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-1qop4l3e\",\n    \"PageSize\": 10,\n    \"Page\": 1,\n    \"StartTime\": 1722327682,\n    \"EndTime\": 1722328091\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"StarRocksQueryInfoList\": [\n            {\n                \"ClientIP\": \"192.0.0.1\",\n                \"CPUCost\": 0,\n                \"DefaultDB\": \"test\",\n                \"EndTime\": 1721962352,\n                \"ExecutionIP\": \"192.0.0.1\",\n                \"QueryID\": \"1ac25f6c-4afa-11ef-b7cc-525400c756d2\",\n                \"QueryType\": \"OTHERS\",\n                \"MemCost\": 324,\n                \"PlanCpuCosts\": 435620,\n                \"PlanMemCosts\": 254354,\n                \"QueryTime\": 345535,\n                \"ResourceGroup\": \"SR\",\n                \"ReturnRows\": 2452,\n                \"ScanBytes\": 1235124,\n                \"ScanRows\": 123512,\n                \"BeginTime\": 1721962352,\n                \"ExecutionState\": \"FINISHED\",\n                \"ExecutionStatement\": \"show compute nodes\",\n                \"User\": \"test_aa\"\n            }\n        ],\n        \"RequestId\": \"1ac25f6c-4afa-11ef-b7cc-525400454wfaa1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"StarRocksQueryInfoList\": [\n            {\n                \"ClientIP\": \"192.0.0.1\",\n                \"CPUCost\": 0,\n                \"DefaultDB\": \"db_test\",\n                \"EndTime\": 1721962352,\n                \"ExecutionIP\": \"192.0.0.1\",\n                \"QueryID\": \"1ac25f6c-4afa-11ef-b7cc-525400c756d2\",\n                \"QueryType\": \"OTHERS\",\n                \"MemCost\": 324,\n                \"PlanCpuCosts\": 435620,\n                \"PlanMemCosts\": 254354,\n                \"QueryTime\": 345535,\n                \"ResourceGroup\": \"SR\",\n                \"ReturnRows\": 2452,\n                \"ScanBytes\": 1235124,\n                \"ScanRows\": 123512,\n                \"BeginTime\": 1721962352,\n                \"ExecutionState\": \"FINISHED\",\n                \"ExecutionStatement\": \"show compute nodes\",\n                \"User\": \"test_aa\"\n            }\n        ],\n        \"RequestId\": \"1ac25f6c-4afa-11ef-b7cc-525400454wfaa1\"\n    }\n}",
         "title": "DescribeStarRocksQueryInfo"
       }
     ],
@@ -427,8 +427,8 @@
     "ModifyInstanceBasic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceBasic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ClusterName\": \"abc\",\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceBasic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-sfaddfda\",\n    \"ClusterName\": \"emr-test\",\n    \"ResourceBaseType\": \"EMR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8d3e1eb-5730-4f6b-8d4d-bb4aabf99069 \"\n    }\n}",
         "title": "ModifyInstanceBasic"
       }
     ],
@@ -436,7 +436,7 @@
       {
         "document": "调整容器集群Pod数量",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPodNum\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-ikoyp9nw\",\n    \"ServiceGroup\": 44,\n    \"ServiceType\": 93,\n    \"PodNum\": 3\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"emr-ikoyp9nw\",\n        \"FlowId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"emr-ikoyp9nw\",\n        \"FlowId\": 0,\n        \"RequestId\": \"fe127236-3646-4676-80ae-a491b596fedd\"\n    }\n}",
         "title": "调整容器集群Pod数量"
       }
     ],
@@ -452,7 +452,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePools\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-2xef56\",\n    \"Key\": \"fair\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IsDraft\": true,\n        \"ErrorMsg\": null,\n        \"RequestId\": \"61fb757e-5a86-41ab-8421-b3abc7aff683\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsDraft\": true,\n        \"ErrorMsg\": \"errormsg_test\",\n        \"RequestId\": \"61fb757e-5a86-41ab-8421-b3abc7aff683\"\n    }\n}",
         "title": "test"
       }
     ],
@@ -460,7 +460,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourceScheduleConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-buy439fq\",\n    \"Key\": \"capacity\",\n    \"Value\": \"{\\\"queueMappings\\\":[{\\\"mapping-type\\\":\\\"u\\\",\\\"name\\\":\\\"1331\\\",\\\"full-queue-name\\\":\\\"132\\\",\\\"special-name\\\":true,\\\"special-queue\\\":true}],\\\"queue\\\":{\\\"name\\\":\\\"root\\\",\\\"capacity\\\":100,\\\"maximum-capacity\\\":100,\\\"minimum-user-limit-percent\\\":0,\\\"user-limit-factor\\\":0,\\\"maximum-allocation-mb\\\":0,\\\"maximum-allocation-vcores\\\":0,\\\"state\\\":null,\\\"maximum-applications\\\":0,\\\"maximum-am-resource-percent\\\":0,\\\"acl_submit_applications\\\":null,\\\"acl_administer_queue\\\":null,\\\"queues\\\":[{\\\"name\\\":\\\"121\\\",\\\"capacity\\\":12,\\\"maximum-capacity\\\":12,\\\"minimum-user-limit-percent\\\":12,\\\"user-limit-factor\\\":12,\\\"maximum-allocation-mb\\\":12,\\\"maximum-allocation-vcores\\\":12,\\\"state\\\":\\\"RUNNING\\\",\\\"maximum-applications\\\":10000,\\\"maximum-am-resource-percent\\\":25,\\\"acl_submit_applications\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"acl_administer_queue\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"queues\\\":null},{\\\"name\\\":\\\"12\\\",\\\"capacity\\\":12,\\\"maximum-capacity\\\":12,\\\"minimum-user-limit-percent\\\":12,\\\"user-limit-factor\\\":12,\\\"maximum-allocation-mb\\\":12,\\\"maximum-allocation-vcores\\\":12,\\\"state\\\":\\\"RUNNING\\\",\\\"maximum-applications\\\":10000,\\\"maximum-am-resource-percent\\\":25,\\\"acl_submit_applications\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"acl_administer_queue\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"queues\\\":null},{\\\"name\\\":\\\"default\\\",\\\"capacity\\\":76,\\\"maximum-capacity\\\":100,\\\"minimum-user-limit-percent\\\":12,\\\"user-limit-factor\\\":1,\\\"maximum-allocation-mb\\\":12,\\\"maximum-allocation-vcores\\\":12,\\\"state\\\":\\\"RUNNING\\\",\\\"maximum-applications\\\":12,\\\"maximum-am-resource-percent\\\":12,\\\"acl_submit_applications\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"acl_administer_queue\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"queues\\\":[{\\\"name\\\":\\\"d1\\\",\\\"capacity\\\":100,\\\"maximum-capacity\\\":100,\\\"minimum-user-limit-percent\\\":null,\\\"user-limit-factor\\\":null,\\\"maximum-allocation-mb\\\":null,\\\"maximum-allocation-vcores\\\":null,\\\"state\\\":\\\"RUNNING\\\",\\\"maximum-applications\\\":10000,\\\"maximum-am-resource-percent\\\":25,\\\"acl_submit_applications\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"acl_administer_queue\\\":{\\\"user\\\":\\\"*\\\",\\\"group\\\":\\\"*\\\"},\\\"queues\\\":null}]}]},\\\"queueMappingsOverride\\\":true}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IsDraft\": true,\n        \"ErrorMsg\": null,\n        \"Data\": null,\n        \"RequestId\": \"61fb757e-5a86-41ab-8421-b3abc7aff683\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"IsDraft\": true,\n        \"ErrorMsg\": \"ErrorMsg_test\",\n        \"Data\": \"json\",\n        \"RequestId\": \"61fb757e-5a86-41ab-8421-b3abc7aff683\"\n    }\n}",
         "title": "修改yarn资源调度的资源配置"
       }
     ],
@@ -555,7 +555,7 @@
     "SetNodeResourceConfigDefault": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodeResourceConfigDefault\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ResourceType\": \"abc\",\n    \"ResourceConfigId\": 1,\n    \"ResourceBaseType\": \"abc\",\n    \"ComputeResourceId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetNodeResourceConfigDefault\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-fdadad\",\n    \"ResourceType\": \"CORE\",\n    \"ResourceConfigId\": 1,\n    \"ResourceBaseType\": \"EMR\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c2ff02e-5f38-494a-8d2d-68a7dec6efcd\"\n    }\n}",
         "title": "输出输入参数"
       }

@@ -33,3 +33,38 @@ Output:
 }
 ```
 
+**Example 2: 修改投递任务**
+
+改为跨账号投递
+
+Input: 
+
+```
+tccli cls ModifyShipper --cli-unfold-argument  \
+    --ShipperId 3f9562a7-xxxx-xxxx-b32a-d51a927226a7 \
+    --Bucket examplebucket-1250000000 \
+    --Prefix bowtest-1250000000 \
+    --ShipperName bow-test-1250000000 \
+    --Interval 300 \
+    --MaxSize 10 \
+    --FilenameMode 1 \
+    --FilterRules.0.Key http \
+    --FilterRules.0.Regex ^(\d+\.\d+)\..* \
+    --FilterRules.0.Value 172.16 \
+    --Partition /%Y/%m/%d/%H/ \
+    --Compress.Format gzip \
+    --Content.Format json \
+    --Content.Json.EnableTag True \
+    --Content.Json.MetaFields __SOURCE__ __FILENAME__ __TIMESTAMP__ __HOSTNAME__ \
+    --Content.Json.JsonType 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "25d826d2-xxxx-xxxx-a4b6-f5490e86ae81"
+    }
+}
+```
+

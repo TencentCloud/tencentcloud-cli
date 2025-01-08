@@ -934,7 +934,7 @@
         {
           "disabled": false,
           "document": "告警策略名称。",
-          "example": "test",
+          "example": "p0-业务告警",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -964,7 +964,7 @@
         {
           "disabled": false,
           "document": "单触发条件。与MultiConditions参数互斥。",
-          "example": "无",
+          "example": "$1.cnt > 1",
           "member": "string",
           "name": "Condition",
           "output_required": true,
@@ -994,7 +994,7 @@
         {
           "disabled": false,
           "document": "关联的告警通知模板列表。",
-          "example": "无",
+          "example": "[\"notice-b388dc72-****-****-9dbb-7d05fdff0376\"]",
           "member": "string",
           "name": "AlarmNoticeIds",
           "output_required": true,
@@ -1014,7 +1014,7 @@
         {
           "disabled": false,
           "document": "告警策略ID。",
-          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "example": "alarm-b8a247be-d866-4e00-a875-897435f37d18",
           "member": "string",
           "name": "AlarmId",
           "output_required": true,
@@ -1024,7 +1024,7 @@
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2024-10-21 22:37:16",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -1034,7 +1034,7 @@
         {
           "disabled": false,
           "document": "最近更新时间。",
-          "example": "无",
+          "example": "2024-10-21 22-56-18",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -1104,11 +1104,21 @@
         {
           "disabled": false,
           "document": "告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "AlarmLevel",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警附加分类字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"abc\",\"Value\":\"123\"}]",
+          "member": "AlarmClassification",
+          "name": "Classifications",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {

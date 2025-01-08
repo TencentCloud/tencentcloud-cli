@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateParamTemplate": {
-      "document": "创建参数模板。",
+      "document": "该接口（CreateParamTemplate）用于创建参数模板。",
       "input": "CreateParamTemplateRequest",
       "name": "创建参数模板",
       "output": "CreateParamTemplateResponse",
@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DeleteParamTemplate": {
-      "document": "删除参数模板",
+      "document": "本接口（DeleteParamTemplate）用于删除参数模板。",
       "input": "DeleteParamTemplateRequest",
       "name": "删除参数模板",
       "output": "DeleteParamTemplateResponse",
@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeGlobalReplicationArea": {
-      "document": "查询全球复制支持地域信息",
+      "document": "本接口（DescribeGlobalReplicationArea）用于查询全球复制支持地域信息。",
       "input": "DescribeGlobalReplicationAreaRequest",
       "name": "查询全球复制支持地域信息",
       "output": "DescribeGlobalReplicationAreaResponse",
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "DescribeInstanceMonitorSIP": {
-      "document": "该接口已下线，请使用数据库智能管家 DBbrain 接口 [DescribeProxyProcessStatistics] (https://cloud.tencent.com/document/product/1130/84544) 获取实例访问来源。",
+      "document": "该接口已下线，请使用数据库智能管家 DBbrain 接口 [DescribeProxyProcessStatistics](https://cloud.tencent.com/document/product/1130/84544) 获取实例访问来源。",
       "input": "DescribeInstanceMonitorSIPRequest",
       "name": "查询实例访问来源信息",
       "output": "DescribeInstanceMonitorSIPResponse",
@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DescribeInstanceMonitorTopNCmd": {
-      "document": "查询实例访问命令",
+      "document": "本接口（DescribeInstanceMonitorTopNCmd）用于查询实例访问命令。",
       "input": "DescribeInstanceMonitorTopNCmdRequest",
       "name": "查询实例访问命令",
       "output": "DescribeInstanceMonitorTopNCmdResponse",
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "DescribeInstanceParamRecords": {
-      "document": "查询参数修改历史列表",
+      "document": "本接口（DescribeInstanceParamRecords）用于查询参数修改历史列表。",
       "input": "DescribeInstanceParamRecordsRequest",
       "name": "查询参数修改历史列表",
       "output": "DescribeInstanceParamRecordsResponse",
@@ -358,7 +358,7 @@
       "status": "online"
     },
     "DescribeParamTemplates": {
-      "document": "查询参数模板列表",
+      "document": "本接口（DescribeParamTemplates）用于查询参数模板列表。",
       "input": "DescribeParamTemplatesRequest",
       "name": "查询参数模板列表",
       "output": "DescribeParamTemplatesResponse",
@@ -694,7 +694,7 @@
       "status": "online"
     },
     "RestoreInstance": {
-      "document": "恢复 CRS 实例",
+      "document": "本接口（RestoreInstance）用于恢复实例。",
       "input": "RestoreInstanceRequest",
       "name": "恢复 CRS 实例",
       "output": "RestoreInstanceResponse",
@@ -2046,7 +2046,7 @@
         },
         {
           "disabled": false,
-          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.0内存版标准架构或集群架构时，其密码复杂度要求为：8-64个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且不包含其他字符。",
+          "document": "访问实例的密码。\n- 当输入参数**NoAuth**为**true**时，指设置实例为免密码访问，Password可不用配置，否则Password为必填参数。\n- 当实例类型**TypeId**为Redis 2.8 内存版标准架构、Redis 4.0、5.0、6.2、7.0内存版标准架构或集群架构时，其密码复杂度要求为：8-64个字符，至少包含小写字母、大写字母、数字和字符()`~!@#$%^&*-+=_|{}[]:;<>,.?/ 中的2种，不能以\"/\"开头。\n- 当实例类型**TypeId**为CKV 3.2 内存版标准架构或集群架构时，其密码复杂度为：8-30个字符，必须包含字母和数字，且不包含其他字符。",
           "example": "123456MyP@ssword",
           "member": "string",
           "name": "Password",
@@ -4120,7 +4120,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "实例 ID，请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
           "example": "crs-5a4py64p",
           "member": "string",
           "name": "InstanceId",
@@ -8831,7 +8831,7 @@
         },
         {
           "disabled": false,
-          "document": "实例新密码。密码复杂度要求如下：\n- 长度8 - 30位, 推荐使用12位以上的密码。\n- 不能以\"/\"开头。\n- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。",
+          "document": "实例新密码。密码复杂度要求如下：\n- 长度8 - 64位, 推荐使用12位以上的密码。\n- 不能以\"/\"开头。\n- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。",
           "example": "456987zy",
           "member": "string",
           "name": "Password",

@@ -2972,6 +2972,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度信息",
+          "example": "无",
+          "member": "TaskProgressInfo",
+          "name": "TaskProgressInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10570,6 +10580,15 @@
           "example": "desc",
           "member": "string",
           "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql语句",
+          "example": "SELECT",
+          "member": "string",
+          "name": "SqlText",
           "required": false,
           "type": "string"
         }
@@ -19939,6 +19958,15 @@
           "name": "OriginalROInstanceList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "10",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -21393,6 +21421,42 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskProgressInfo": {
+      "document": "任务进度查询",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前步骤",
+          "example": "FinishTask",
+          "member": "string",
+          "name": "CurrentStep",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前进度",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentStepProgress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预估时间",
+          "example": "0",
+          "member": "string",
+          "name": "CurrentStepRemainingTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -463,7 +463,7 @@
         {
           "disabled": false,
           "document": "备份文件名",
-          "example": "cmgo-74sjf5mt_2021-03-24 15:40",
+          "example": "cmgo-74sj****_2021-03-24 15:40",
           "member": "string",
           "name": "BackupName",
           "output_required": true,
@@ -473,7 +473,7 @@
         {
           "disabled": false,
           "document": "分片名称",
-          "example": "cmgo-74sjf5mt_0",
+          "example": "cmgo-74sj****_0",
           "member": "string",
           "name": "ReplicaSetId",
           "output_required": true,
@@ -523,7 +523,7 @@
         {
           "disabled": false,
           "document": "备份数据下载链接",
-          "example": "http://a.b.c/d.tar?e",
+          "example": "http://cmgo-****.b.c/d.tar?e",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -552,23 +552,23 @@
         },
         {
           "disabled": false,
-          "document": "地区信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "地区信息。",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Bucket信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Bucket信息。",
+          "example": "my_bucket",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1627,43 +1627,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作序号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作序号。",
           "example": "-130987****",
           "member": "int64",
           "name": "OpId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作所在的命名空间，形式如db.collection。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作所在的命名空间，形式如db.collection。",
           "example": "db.test",
           "member": "string",
           "name": "Ns",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作执行语句。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作执行语句。",
           "example": "执行语句",
           "member": "string",
           "name": "Query",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。",
           "example": "update",
           "member": "string",
           "name": "Op",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1687,43 +1687,43 @@
         },
         {
           "disabled": false,
-          "document": "操作详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作详细信息。",
           "example": "操作详情",
           "member": "string",
           "name": "Operation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "筛选条件，节点状态，可能的取值为：Primary、Secondary。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "筛选条件，节点状态，可能的取值为：Primary、Secondary。",
           "example": "Secondary",
           "member": "string",
           "name": "State",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作已执行时间（ms）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作已执行时间（ms）。",
           "example": "MicrosecsRunning",
           "member": "uint64",
           "name": "MicrosecsRunning",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前操作所在节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前操作所在节点信息。",
           "example": "从节点",
           "member": "string",
           "name": "ExecNode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5251,22 +5251,20 @@
         {
           "disabled": false,
           "document": "新IP地址。",
-          "example": "",
+          "example": "172.16.0.**",
           "member": "string",
           "name": "NewIPAddress",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "原IP地址。",
-          "example": "",
+          "example": "172.16.1.**",
           "member": "string",
           "name": "OldIpAddress",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5287,7 +5285,7 @@
         {
           "disabled": false,
           "document": "节点名称。",
-          "example": "cmgo-ocdv2lr7_0-node-primary",
+          "example": "cmgo-ocdv****_0-node-primary",
           "member": "string",
           "name": "NodeName",
           "output_required": false,
@@ -5306,8 +5304,8 @@
         },
         {
           "disabled": false,
-          "document": "节点公网访问地址(IP或域名)。",
-          "example": "无",
+          "document": "节点公网访问外网地址(IP或域名，示例为IP方式)。",
+          "example": "113.0.**.**:27017",
           "member": "string",
           "name": "WanServiceAddress",
           "output_required": false,
@@ -5387,7 +5385,7 @@
         {
           "disabled": false,
           "document": "副本集Id。",
-          "example": "cmgo-ocdv2lr7_0",
+          "example": "cmgo-ocdv****_0",
           "member": "string",
           "name": "ReplicateSetId",
           "output_required": false,
@@ -5468,32 +5466,29 @@
         {
           "disabled": false,
           "document": "操作所在的分片名",
-          "example": "",
+          "example": "cmgo-bbzl****_0",
           "member": "string",
           "name": "ReplicaSetName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "操作所在的节点名",
-          "example": "",
+          "example": "30.99.***.*:7005:244****",
           "member": "string",
           "name": "NodeName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "操作序号",
-          "example": "",
+          "example": "918759117",
           "member": "int64",
           "name": "OpId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

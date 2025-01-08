@@ -23,7 +23,13 @@ Output:
                 "IsolatedTime": "2011-5-16 12:15:01",
                 "ExpireTime": "2019-5-25 12:15:01",
                 "CreateTime": "2016-5-25 12:15:01",
-                "UpdateTime": "2019-4-25 12:15:01"
+                "UpdateTime": "2019-4-25 12:15:01",
+                "FreeQuota": "",
+                "PaymentChannel": "qcloud",
+                "ExtPackageType": "baas",
+                "OrderInfo": null,
+                "IsAlwaysFree": false,
+                "EnableOverrun": true
             }
         ],
         "RequestId": "ec5dde6a-6c21-4777-bf4a-99e1f910247e"

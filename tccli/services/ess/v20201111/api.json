@@ -10888,7 +10888,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "模板配置中的参与方ID,与控件绑定",
           "example": "无",
           "member": "string",
@@ -11006,6 +11006,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板配置中的参与方ID,与控件绑定",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13989,12 +13999,12 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "要更换的原合同参与人RecipientId编号。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>",
           "example": "无",
           "member": "string",
           "name": "RelievedApproverReceiptId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -14030,6 +14040,15 @@
           "example": "无",
           "member": "string",
           "name": "ApproverSignSealId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要更换的原合同参与人RecipientId编号。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>",
+          "example": "无",
+          "member": "string",
+          "name": "RelievedApproverRecipientId",
           "required": false,
           "type": "string"
         }

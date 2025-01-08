@@ -50,7 +50,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvBaseInfo\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-0g8ki95z117f177d\"\n}",
-        "output": "{\n    \"Response\": {\n        \"EnvBaseInfo\": {\n            \"EnvId\": \"abc\",\n            \"PackageType\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"Alias\": \"abc\",\n            \"Status\": \"abc\",\n            \"Region\": \"abc\",\n            \"EnvType\": \"abc\",\n            \"SubnetIds\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvBaseInfo\": {\n            \"EnvId\": \"en-sdf\",\n            \"PackageType\": \"package\",\n            \"VpcId\": \"vpc-sdff\",\n            \"CreateTime\": \"2023-12-12 10:00:00\",\n            \"Alias\": \"sdf\",\n            \"Status\": \"creating\",\n            \"Region\": \"ap-shanghai\",\n            \"EnvType\": \"tcbr\",\n            \"SubnetIds\": \"\"\n        },\n        \"RequestId\": \"sdfdsgdg\"\n    }\n}",
         "title": "查询环境基础信息"
       }
     ],

@@ -20,7 +20,7 @@
       {
         "document": "用户使用该接口可以创建语音消息转文本热句模型，以供识别调用",
         "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000,\n    \"TextUrl\": \"https://gme-xxx.cos.xxx.com/customization/1400000000/1400000000_customization\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1338576-0231-4a4b-b441-a780e6ffe894\",\n        \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f1338576-0231-4a4b-b441-a780e6ffe894\",\n        \"ModelId\": \"f440dfa77ae411eda5d3564a2eb5fd49\"\n    }\n}",
         "title": "创建语音消息转文本热句模型"
       }
     ],
@@ -35,7 +35,7 @@
     "DeleteCustomization": [
       {
         "document": "用户通过该接口可以删除语音消息转文本热句模型",
-        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000,\n    \"ModelId\": \"5100f4d60xxx11ed8d6a62xxxeb5fd43\"\n}",
+        "input": "POST / HTTP/1.1\nHost: gme.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomization\n<公共请求参数>\n\n{\n    \"BizId\": 1400000000,\n    \"ModelId\": \"f440dfa77ae411eda5d3564a2eb5fd49\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"RequestId\": \"5d686f47-d3c8-4e41-a65d-11ecf0d18e17\"\n    }\n}",
         "title": "删除热句模型"
       }

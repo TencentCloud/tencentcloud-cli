@@ -1423,7 +1423,7 @@
         },
         {
           "disabled": false,
-          "document": "后端服务的类型，可取：CVM、ENI（即将支持）",
+          "document": "后端服务的类型，可取：CVM、ENI",
           "example": "CVM",
           "member": "string",
           "name": "Type",

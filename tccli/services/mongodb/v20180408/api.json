@@ -807,7 +807,7 @@
         {
           "disabled": false,
           "document": "可用区",
-          "example": "",
+          "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
           "required": false,
@@ -822,9 +822,10 @@
         {
           "disabled": false,
           "document": "实例售卖规格信息列表",
-          "example": "",
+          "example": "详见数据结构。",
           "member": "SpecificationInfo",
           "name": "SpecInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1467,234 +1468,234 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格信息标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格信息标识",
           "example": "mongo.HIO10G.128g\t",
           "member": "string",
           "name": "SpecCode",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规格有效标志，取值：0-停止售卖，1-开放售卖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规格有效标志，取值：0-停止售卖，1-开放售卖",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "机器类型，取值：0-HIO，4-HIO10G\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器类型，取值：0-HIO，4-HIO10G",
           "example": "4",
           "member": "string",
           "name": "MachineType",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cpu核心数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cpu核心数",
           "example": "2",
           "member": "uint64",
           "name": "Cpu",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存规格，单位为MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内存规格，单位为MB",
           "example": "4096",
           "member": "uint64",
           "name": "Memory",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "默认磁盘规格，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认磁盘规格，单位MB",
           "example": "3072000",
           "member": "uint64",
           "name": "DefaultStorage",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大磁盘规格，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大磁盘规格，单位MB",
           "example": "5120000\t",
           "member": "uint64",
           "name": "MaxStorage",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最小磁盘规格，单位MB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小磁盘规格，单位MB",
           "example": "1536000",
           "member": "uint64",
           "name": "MinStorage",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "可承载qps信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可承载qps信息",
           "example": "36000",
           "member": "uint64",
           "name": "Qps",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "连接数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "连接数限制",
           "example": "20000",
           "member": "uint64",
           "name": "Conns",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例mongodb版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例mongodb版本信息",
           "example": "MONGO_40_WT\t",
           "member": "string",
           "name": "MongoVersionCode",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例mongodb版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例mongodb版本号",
           "example": "9",
           "member": "uint64",
           "name": "MongoVersionValue",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例mongodb版本号（短）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例mongodb版本号（短）",
           "example": "4.0",
           "member": "string",
           "name": "Version",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "存储引擎\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储引擎",
           "example": "WiredTiger",
           "member": "string",
           "name": "EngineName",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群类型，取值：1-分片集群，0-副本集集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群类型，取值：1-分片集群，0-副本集集群",
           "example": "1",
           "member": "uint64",
           "name": "ClusterType",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最小副本集从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小副本集从节点数",
           "example": "3",
           "member": "uint64",
           "name": "MinNodeNum",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大副本集从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大副本集从节点数",
           "example": "7",
           "member": "uint64",
           "name": "MaxNodeNum",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最小分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小分片数",
           "example": "2",
           "member": "uint64",
           "name": "MinReplicateSetNum",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大分片数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大分片数",
           "example": "20",
           "member": "uint64",
           "name": "MaxReplicateSetNum",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最小分片从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最小分片从节点数",
           "example": "3",
           "member": "uint64",
           "name": "MinReplicateSetNodeNum",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大分片从节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大分片从节点数",
           "example": "7",
           "member": "uint64",
           "name": "MaxReplicateSetNodeNum",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1803,8 +1804,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID，格式如：cmgo-p8vnipr5",
-          "example": "",
+          "document": "实例ID，格式如：cmgo-iga0****",
+          "example": "cmgo-iga0****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1813,7 +1814,7 @@
         {
           "disabled": false,
           "document": "升级后的内存大小，单位：GB",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "Memory",
           "required": true,
@@ -1822,7 +1823,7 @@
         {
           "disabled": false,
           "document": "升级后的硬盘大小，单位：GB",
-          "example": "",
+          "example": "250",
           "member": "uint64",
           "name": "Volume",
           "required": true,
@@ -1831,7 +1832,7 @@
         {
           "disabled": false,
           "document": "升级后oplog的大小，单位：GB，默认为磁盘空间的10%，允许设置的最小值为磁盘的10%，最大值为磁盘的90%",
-          "example": "",
+          "example": "25",
           "member": "uint64",
           "name": "OplogSize",
           "required": false,
@@ -1846,9 +1847,10 @@
         {
           "disabled": false,
           "document": "订单ID",
-          "example": "",
+          "example": "2017120116000000267022659982****",
           "member": "string",
           "name": "DealId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

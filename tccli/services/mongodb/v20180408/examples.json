@@ -51,8 +51,8 @@
     "DescribeSpecInfo": [
       {
         "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSpecInfo\r\n&Region=ap-guangzhou\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8c7ade4-2d22-4f5e-9e71-f546f15e6d67\",\n        \"SpecInfoList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ]\n    }\n}",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=DescribeSpecInfo&\nRegion=ap-guangzhou\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7e143607-fc69-4761-b0ba-529cb1786ef3\",\n        \"SpecInfoList\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"SpecItems\": [\n                    {\n                        \"ClusterType\": 1,\n                        \"Conns\": 0,\n                        \"Cpu\": 1,\n                        \"DefaultStorage\": 20480,\n                        \"EngineName\": \"WiredTiger\",\n                        \"MachineType\": \"CONFIG_SERVER\",\n                        \"MaxNodeNum\": 32,\n                        \"MaxReplicateSetNodeNum\": 0,\n                        \"MaxReplicateSetNum\": 0,\n                        \"MaxStorage\": 20480,\n                        \"Memory\": 2048,\n                        \"MinNodeNum\": 3,\n                        \"MinReplicateSetNodeNum\": 0,\n                        \"MinReplicateSetNum\": 0,\n                        \"MinStorage\": 20480,\n                        \"MongoVersionCode\": \"MONGO_42_WT\",\n                        \"MongoVersionValue\": 9,\n                        \"Qps\": 0,\n                        \"SpecCode\": \"cfgsrv.STD.1C2G\",\n                        \"Status\": 1,\n                        \"Version\": \"4.2\"\n                    }\n                ],\n                \"Zone\": \"ap-guangzhou-3\"\n            }\n        ]\n    }\n}",
         "title": "查询云数据库售卖"
       }
     ],
@@ -99,7 +99,7 @@
     "UpgradeDBInstanceHour": [
       {
         "document": "用户需要通过API升级包年包月的云数据库实例",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstanceHour\r\n&Memory=4\r\n&Volume=250\r\n&InstanceId=cmgo-f555zzz\r\n&OplogSize=25\r\n&<公共请求参数>",
+        "input": "https://mongodb.tencentcloudapi.com/?Action=UpgradeDBInstanceHour\n&Memory=4\n&Volume=250\n&InstanceId=cmgo-f555zzz\n&OplogSize=25\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"DealId\": \"20171201160000002670226599824833\"\n    }\n}",
         "title": "升级包年包月的云数据库实例"
       }
