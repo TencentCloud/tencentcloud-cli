@@ -202,7 +202,6 @@ Output:
         ],
         "TldList": [
             "2000.hu",
-            "aaa",
             "aaa.pro",
             "aarp",
             "ab.ca",
@@ -2583,7 +2582,6 @@ Output:
             "xo.vc",
             "xorg.pl",
             "xperia",
-            "xxx",
             "xyz",
             "xz.cn",
             "yachts",

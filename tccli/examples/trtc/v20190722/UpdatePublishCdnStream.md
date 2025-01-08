@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f",
-        "TaskId": "xxxx"
+        "TaskId": "-nHPekVU7h******sceOqAZ1YVQE."
     }
 }
 ```
@@ -70,7 +70,7 @@ Output:
 {
     "Response": {
         "RequestId": "71993312-6ab8-4768-9124-118e0a20c45f",
-        "TaskId": "xxxx"
+        "TaskId": "-nHPekVU7h******sceOqAZ1YVQE."
     }
 }
 ```

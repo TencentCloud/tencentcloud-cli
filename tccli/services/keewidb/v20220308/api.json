@@ -2583,85 +2583,85 @@
       "usage": "out"
     },
     "InstanceEnumParam": {
-      "document": "实例枚举类型参数描述",
+      "document": "实例枚举类型参数描述，keewidb暂无枚举值",
       "members": [
         {
           "disabled": false,
           "document": "参数名",
-          "example": "无",
+          "example": "lazyfree-lazy-eviction",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数类型：enum",
-          "example": "无",
+          "example": "enum",
           "member": "string",
           "name": "ValueType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "修改后是否需要重启：true，false",
-          "example": "无",
+          "example": "false",
           "member": "string",
           "name": "NeedRestart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数默认值",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前运行参数值",
-          "example": "无",
+          "example": "yes",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数说明",
-          "example": "无",
+          "example": "lazyfree switch on eviction",
           "member": "string",
           "name": "Tips",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数可取值",
-          "example": "无",
+          "example": "[\"yes\", \"no\"]",
           "member": "string",
           "name": "EnumValue",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "参数状态, 1: 修改中， 2：修改完成",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

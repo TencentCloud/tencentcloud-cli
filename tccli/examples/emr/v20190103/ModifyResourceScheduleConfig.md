@@ -16,8 +16,8 @@ Output:
 {
     "Response": {
         "IsDraft": true,
-        "ErrorMsg": null,
-        "Data": null,
+        "ErrorMsg": "ErrorMsg_test",
+        "Data": "json",
         "RequestId": "61fb757e-5a86-41ab-8421-b3abc7aff683"
     }
 }

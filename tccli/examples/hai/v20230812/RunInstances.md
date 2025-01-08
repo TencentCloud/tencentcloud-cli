@@ -10,7 +10,7 @@ tccli hai RunInstances --cli-unfold-argument  \
     --BundleType S \
     --SystemDisk.DiskType CLOUD_PREMIUM \
     --SystemDisk.DiskSize 250 \
-    --InstanceName test
+    --InstanceName hai
 ```
 
 Output: 

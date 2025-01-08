@@ -368,130 +368,130 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Dau统计项数目",
-          "example": "",
+          "example": "25",
           "member": "uint64",
           "name": "DauDataNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆地区Dau统计数据，单位人",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "DauDataMainland",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "海外地区Dau统计数据，单位人",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "DauDataOversea",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆和海外地区Dau统计数据汇总，单位人",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "DauDataSum",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实时语音时长统计项数目",
-          "example": "",
+          "example": "34",
           "member": "uint64",
           "name": "DurationDataNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆地区实时语音时长统计数据，单位分钟",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "DurationDataMainland",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "海外地区实时语音时长统计数据，单位分钟",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "DurationDataOversea",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆和海外地区实时语音时长统计数据汇总，单位分钟",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "DurationDataSum",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Pcu统计项数目",
-          "example": "",
+          "example": "38",
           "member": "uint64",
           "name": "PcuDataNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆地区Pcu统计数据，单位人",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "PcuDataMainland",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "海外地区Pcu统计数据，单位人",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "PcuDataOversea",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆和海外地区Pcu统计数据汇总，单位人",
-          "example": "",
+          "example": "无",
           "member": "StatisticsItem",
           "name": "PcuDataSum",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -880,7 +880,7 @@
         {
           "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
-          "example": "1234",
+          "example": "1400000000",
           "member": "int64",
           "name": "BizId",
           "required": true,
@@ -889,7 +889,7 @@
         {
           "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
-          "example": "abc",
+          "example": "https://gme-xxx.cos.xxx.com/customization/1400000000/1400000000_customization",
           "member": "string",
           "name": "TextUrl",
           "required": true,
@@ -913,9 +913,10 @@
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "abc",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -998,9 +999,10 @@
         {
           "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
-          "example": "123",
+          "example": "1400000000",
           "member": "int64",
           "name": "BizId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1008,9 +1010,10 @@
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "123",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1021,6 +1024,7 @@
           "example": "1",
           "member": "int64",
           "name": "ModelState",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1031,6 +1035,7 @@
           "example": "ModelName",
           "member": "string",
           "name": "ModelName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1041,6 +1046,7 @@
           "example": "https://file.myqcloud.com/keywords_template.txt",
           "member": "string",
           "name": "TextUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1048,9 +1054,10 @@
         {
           "disabled": false,
           "document": "更新时间，11位时间戳",
-          "example": "1667465928843",
+          "example": "1736238797",
           "member": "int64",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1064,7 +1071,7 @@
         {
           "disabled": false,
           "document": "删除的模型ID",
-          "example": "abc",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -1073,7 +1080,7 @@
         {
           "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
-          "example": "1234",
+          "example": "1400000000",
           "member": "int64",
           "name": "BizId",
           "required": true,
@@ -1091,6 +1098,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1109,20 +1117,20 @@
         {
           "disabled": false,
           "document": "错误码，0-剔除成功 其他-剔除失败",
-          "example": "",
+          "example": "1300000",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误描述",
-          "example": "",
+          "example": "room does not exist",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2107,22 +2115,20 @@
         {
           "disabled": false,
           "document": "要过滤的字段名, 比如\"AppName\"",
-          "example": "",
+          "example": "AppName",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "多个关键字",
-          "example": "",
+          "example": "app_game",
           "member": "string",
           "name": "Values",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2219,10 +2225,10 @@
         {
           "disabled": false,
           "document": "GME应用ID",
-          "example": "123456",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2232,7 +2238,7 @@
           "example": "open",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2267,7 +2273,7 @@
         {
           "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
-          "example": "123",
+          "example": "1400000000",
           "member": "int64",
           "name": "BizId",
           "required": true,
@@ -2276,7 +2282,7 @@
         {
           "disabled": false,
           "document": "文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos",
-          "example": "abc",
+          "example": "https://gme-xxx.cos.xxx.com/customization/1400000000/1400000000_customization",
           "member": "string",
           "name": "TextUrl",
           "required": true,
@@ -2285,7 +2291,7 @@
         {
           "disabled": false,
           "document": "修改的模型ID",
-          "example": "abc",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -2303,15 +2309,17 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "123",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2330,7 +2338,7 @@
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "abc",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
           "required": true,
@@ -2348,7 +2356,7 @@
         {
           "disabled": false,
           "document": "应用 ID，登录控制台创建应用得到的AppID",
-          "example": "1234",
+          "example": "1400000000",
           "member": "int64",
           "name": "BizId",
           "required": true,
@@ -2363,9 +2371,10 @@
         {
           "disabled": false,
           "document": "模型ID",
-          "example": "abc",
+          "example": "f440dfa77ae411eda5d3564a2eb5fd49",
           "member": "string",
           "name": "ModelId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2375,6 +2384,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2447,7 +2457,7 @@
         {
           "disabled": false,
           "document": "来自 [腾讯云控制台](https://console.cloud.tencent.com/gamegme) 的 GME 服务提供的 AppID，获取请参考 [语音服务开通指引](https://cloud.tencent.com/document/product/607/10782#.E9.87.8D.E7.82.B9.E5.8F.82.E6.95.B0)。",
-          "example": "0",
+          "example": "1400000000",
           "member": "int64",
           "name": "BizId",
           "required": true,
@@ -2456,7 +2466,7 @@
         {
           "disabled": false,
           "document": "实时语音房间号。",
-          "example": "11",
+          "example": "261974",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -2483,15 +2493,17 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "123",
+          "example": "资源不存在",
           "member": "string",
           "name": "ErrMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2526,60 +2538,60 @@
         {
           "disabled": false,
           "document": "大陆地区DAU",
-          "example": "",
+          "example": "764",
           "member": "uint64",
           "name": "MainLandDau",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆地区PCU",
-          "example": "",
+          "example": "471",
           "member": "uint64",
           "name": "MainLandPcu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "大陆地区总使用时长，单位为min",
-          "example": "",
+          "example": "98434",
           "member": "uint64",
           "name": "MainLandDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "海外地区DAU",
-          "example": "",
+          "example": "643",
           "member": "uint64",
           "name": "OverseaDau",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "海外地区PCU",
-          "example": "",
+          "example": "848",
           "member": "uint64",
           "name": "OverseaPcu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "海外地区总使用时长，单位为min",
-          "example": "",
+          "example": "2682",
           "member": "uint64",
           "name": "OverseaDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2726,7 +2738,7 @@
         {
           "disabled": false,
           "document": "违规场景，参照<a href=\"https://cloud.tencent.com/document/product/607/37622#Label_Value\">Label</a>定义",
-          "example": "无",
+          "example": "abuse",
           "member": "string",
           "name": "Label",
           "output_required": true,
@@ -2736,7 +2748,7 @@
         {
           "disabled": false,
           "document": "该场景下概率[0.00,100.00],分值越大违规概率越高",
-          "example": "无",
+          "example": "90.00",
           "member": "string",
           "name": "Rate",
           "output_required": true,
@@ -2746,7 +2758,7 @@
         {
           "disabled": false,
           "document": "违规关键字",
-          "example": "无",
+          "example": "违规字",
           "member": "string",
           "name": "KeyWord",
           "output_required": true,
@@ -2756,7 +2768,7 @@
         {
           "disabled": false,
           "document": "关键字在音频的开始时间，从0开始的偏移量，单位为毫秒，Label=moan时有效",
-          "example": "无",
+          "example": "1736238797",
           "member": "uint64",
           "name": "StartTime",
           "output_required": true,
@@ -2766,7 +2778,7 @@
         {
           "disabled": false,
           "document": "关键字在音频的结束时间，从0开始的偏移量,，单位为毫秒，Label=moan时有效",
-          "example": "无",
+          "example": "1736249000",
           "member": "uint64",
           "name": "EndTime",
           "output_required": true,
@@ -2970,20 +2982,20 @@
         {
           "disabled": false,
           "document": "数据ID",
-          "example": "",
+          "example": "1400000000_test_data_id",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "",
+          "example": "6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3131,20 +3143,20 @@
         {
           "disabled": false,
           "document": "日期，格式为年-月-日，如2018-07-13",
-          "example": "",
+          "example": "2020-09-22",
           "member": "date",
           "name": "StatDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "统计值",
-          "example": "",
+          "example": "1087",
           "member": "uint64",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3157,10 +3169,10 @@
         {
           "disabled": false,
           "document": "服务开关状态， 0-正常，1-关闭",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3277,42 +3289,38 @@
         {
           "disabled": false,
           "document": "数据的唯一ID",
-          "example": "",
+          "example": "1400000000_test_data_id",
           "member": "string",
           "name": "DataId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "数据文件的url，为 urlencode 编码，流式则为拉流地址",
-          "example": "",
+          "example": "http:\\/\\/xxxx\\/audio_store\\/xxxx.mp3",
           "member": "string",
           "name": "Url",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "gme实时语音房间ID，通过gme实时语音进行语音分析时输入",
-          "example": "",
+          "example": "261974",
           "member": "string",
           "name": "RoomId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "gme实时语音用户ID，通过gme实时语音进行语音分析时输入",
-          "example": "",
+          "example": "100261",
           "member": "string",
           "name": "OpenId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3511,9 +3519,10 @@
         {
           "disabled": false,
           "document": "离线语音服务开关，取值：open/close",
-          "example": "",
+          "example": "open",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3521,9 +3530,10 @@
         {
           "disabled": false,
           "document": "离线语音支持语种，取值： all-全部，cnen-中英文。默认为中英文",
-          "example": "",
+          "example": "all",
           "member": "string",
           "name": "Language",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3537,10 +3547,10 @@
         {
           "disabled": false,
           "document": "离线语音DAU",
-          "example": "",
+          "example": "1807",
           "member": "uint64",
           "name": "Dau",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

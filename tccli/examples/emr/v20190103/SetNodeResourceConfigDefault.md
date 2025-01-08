@@ -6,11 +6,10 @@ Input:
 
 ```
 tccli emr SetNodeResourceConfigDefault --cli-unfold-argument  \
-    --InstanceId abc \
-    --ResourceType abc \
+    --InstanceId emr-fdadad \
+    --ResourceType CORE \
     --ResourceConfigId 1 \
-    --ResourceBaseType abc \
-    --ComputeResourceId abc
+    --ResourceBaseType EMR
 ```
 
 Output: 

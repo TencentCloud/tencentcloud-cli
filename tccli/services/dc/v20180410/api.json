@@ -425,29 +425,40 @@
       "usage": "out"
     },
     "BgpPeer": {
-      "document": "bgp参数，包括Asn，AuthKey",
+      "document": "bgp参数，包括CloudAsn，Asn，AuthKey",
       "members": [
         {
           "disabled": false,
-          "document": "用户侧BGP ASN\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "腾讯侧BGP ASN",
+          "example": "45090",
+          "member": "string",
+          "name": "CloudAsn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户侧BGP ASN",
+          "example": "45666",
           "member": "int64",
           "name": "Asn",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户侧BGP密钥\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户侧BGP密钥",
+          "example": "tencent",
           "member": "string",
           "name": "AuthKey",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1755,7 +1766,7 @@
         {
           "disabled": false,
           "document": "物理专线的名称。",
-          "example": "test",
+          "example": "我的名称01",
           "member": "string",
           "name": "DirectConnectName",
           "output_required": true,
@@ -1815,7 +1826,7 @@
         {
           "disabled": false,
           "document": "本地数据中心的地理位置。",
-          "example": "test",
+          "example": "武汉市光谷大道001号机房",
           "member": "string",
           "name": "Location",
           "output_required": true,
@@ -1844,13 +1855,13 @@
         },
         {
           "disabled": false,
-          "document": "运营商或者服务商为物理专线提供的电路编码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1111",
+          "document": "运营商或者服务商为物理专线提供的电路编码。",
+          "example": "abcd1212",
           "member": "string",
           "name": "CircuitCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1864,113 +1875,113 @@
         },
         {
           "disabled": false,
-          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。",
           "example": "100",
           "member": "int64",
           "name": "Vlan",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线调试腾讯侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线调试腾讯侧互联IP。",
           "example": "192.168.1.2",
           "member": "string",
           "name": "TencentAddress",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线调试用户侧互联IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线调试用户侧互联IP。",
           "example": "192.168.1.1",
           "member": "string",
           "name": "CustomerAddress",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线申请者姓名。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "物理专线申请者姓名。默认从账户体系获取。",
+          "example": "张三",
           "member": "string",
           "name": "CustomerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线申请者联系邮箱。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
           "example": "274907341@qq.com",
           "member": "string",
           "name": "CustomerContactMail",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线申请者联系号码。默认从账户体系获取。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线申请者联系号码。默认从账户体系获取。",
           "example": "15802738654",
           "member": "string",
           "name": "CustomerContactNumber",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线的过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线的过期时间。",
           "example": "2040-01-06 10:39:41",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。",
           "example": "NON_RECURRING_CHARGE",
           "member": "string",
           "name": "ChargeType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "报障联系人。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "报障联系人。",
+          "example": "李四",
           "member": "string",
           "name": "FaultReportContactPerson",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "报障联系电话。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "报障联系电话。",
           "example": "15802738654",
           "member": "string",
           "name": "FaultReportContactNumber",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "标签键值对",
+          "example": "[{\"Key\": \"abab\", \"Value\": \"xxyy\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1984,103 +1995,103 @@
         },
         {
           "disabled": false,
-          "document": "IDC所在城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IDC所在城市",
           "example": "成都",
           "member": "string",
           "name": "IdcCity",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "计费状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费状态",
           "example": "NORMAL",
           "member": "string",
           "name": "ChargeState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线开通时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线开通时间",
           "example": "2020-12-08 16:57:43",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线是否已签署用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线是否已签署用户协议",
           "example": "true",
           "member": "bool",
           "name": "SignLaw",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线是否为LocalZone\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线是否为LocalZone",
           "example": "false",
           "member": "bool",
           "name": "LocalZone",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该物理专线下vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该物理专线下vlan 0的专用通道数量",
           "example": "0",
           "member": "uint64",
           "name": "VlanZeroDirectConnectTunnelCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该物理专线下非vlan 0的专用通道数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该物理专线下非vlan 0的专用通道数量",
           "example": "0",
           "member": "uint64",
           "name": "OtherVlanDirectConnectTunnelCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线最小带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线最小带宽",
           "example": "1000",
           "member": "uint64",
           "name": "MinBandwidth",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "建设模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "建设模式",
           "example": "1",
           "member": "uint64",
           "name": "Construct",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "物理专线的接入点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "物理专线的接入点名称",
           "example": "广州-A-开源路",
           "member": "string",
           "name": "AccessPointName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2190,8 +2201,8 @@
         },
         {
           "disabled": false,
-          "document": "用户侧BGP，Asn，AuthKey",
-          "example": "无",
+          "document": "用户侧BGP，包括： CloudAsn，Asn，AuthKey",
+          "example": "{\"CloudAsn\": 45090, \"Asn\": 16550, \"AuthKey\": \"tencent\"}",
           "member": "BgpPeer",
           "name": "BgpPeer",
           "output_required": true,
@@ -2201,7 +2212,7 @@
         {
           "disabled": false,
           "document": "用户侧网段地址",
-          "example": "无",
+          "example": "[{\"Cidr\": \"8.8.8.8/32\"}]",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
           "output_required": true,
@@ -2211,7 +2222,7 @@
         {
           "disabled": false,
           "document": "专用通道的Vlan",
-          "example": "123",
+          "example": "1001",
           "member": "int64",
           "name": "Vlan",
           "output_required": true,
@@ -2271,7 +2282,7 @@
         {
           "disabled": false,
           "document": "专用通道标签值",
-          "example": "无",
+          "example": "[{\"Key\": \"xxyy\", \"Value\": \"aabb\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -2280,123 +2291,123 @@
         },
         {
           "disabled": false,
-          "document": "关联的网络自定义探测ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "关联的网络自定义探测ID",
+          "example": "netd-aabb1212",
           "member": "string",
           "name": "NetDetectId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "BGP community开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "BGP community开关",
           "example": "False",
           "member": "bool",
           "name": "EnableBGPCommunity",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为Nat通道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为Nat通道",
           "example": "1",
           "member": "int64",
           "name": "NatType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC地域简码，如gz、cd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC地域简码，如gz、cd",
           "example": "gz",
           "member": "string",
           "name": "VpcRegion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启BFD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启BFD",
           "example": "1",
           "member": "int64",
           "name": "BfdEnable",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专用通道接入点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用通道接入点类型",
           "example": "QCPL",
           "member": "string",
           "name": "AccessPointType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专线网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专线网关名称",
           "example": "测试网关",
           "member": "string",
           "name": "DirectConnectGatewayName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VPC名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC名称",
           "example": "测试VPC",
           "member": "string",
           "name": "VpcName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TencentBackupAddress，腾讯侧备用互联 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TencentBackupAddress，腾讯侧备用互联 IP",
           "example": "169.254.64.3/29",
           "member": "string",
           "name": "TencentBackupAddress",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专用通道关联的物理专线是否签署了用户协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用通道关联的物理专线是否签署了用户协议",
           "example": "True",
           "member": "bool",
           "name": "SignLaw",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高速上云服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高速上云服务ID",
           "example": "cas-xxxxxxxx",
           "member": "string",
           "name": "CloudAttachId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否共享通道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否共享通道",
           "example": "1",
           "member": "uint64",
           "name": "ShareOrNot",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2507,7 +2518,7 @@
         {
           "disabled": false,
           "document": "用户侧BGP，Asn，AuthKey",
-          "example": "无",
+          "example": "{\"CloudAsn\": 45090, \"Asn\": 16550, \"AuthKey\": \"tencent\"}",
           "member": "BgpPeer",
           "name": "BgpPeer",
           "output_required": true,
@@ -2517,7 +2528,7 @@
         {
           "disabled": false,
           "document": "用户侧网段地址",
-          "example": "无",
+          "example": "[{\"Cidr\": \"8.8.8.8/32\"}]",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
           "output_required": true,
@@ -2527,7 +2538,7 @@
         {
           "disabled": false,
           "document": "互联网通道公网网段地址",
-          "example": "无",
+          "example": "[{\"Cidr\": \"9.9.9.9/32\"}]",
           "member": "RouteFilterPrefix",
           "name": "PublicAddresses",
           "output_required": true,
@@ -2707,7 +2718,7 @@
         {
           "disabled": false,
           "document": "BFD配置信息",
-          "example": "无",
+          "example": "{\"ProbeFailedTimes\": 3, \"Interval\": 3000}",
           "member": "BFDInfo",
           "name": "BfdInfo",
           "output_required": true,
@@ -2717,7 +2728,7 @@
         {
           "disabled": false,
           "document": "NQA配置信息",
-          "example": "无",
+          "example": "{\"ProbeFailedTimes\": 3, \"Interval\": 3000, \"DestinationIp\": \"8.8.8.8\"}",
           "member": "NQAInfo",
           "name": "NqaInfo",
           "output_required": true,
@@ -2727,7 +2738,7 @@
         {
           "disabled": false,
           "document": "BGP状态",
-          "example": "无",
+          "example": "{\"TencentAddressBgpState\": \"Established\", \"TencentBackupAddressBgpState\": \"Established\"}",
           "member": "BGPStatus",
           "name": "BgpStatus",
           "output_required": true,
@@ -2736,73 +2747,73 @@
         },
         {
           "disabled": false,
-          "document": "是否开启IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启IPv6",
           "example": "1",
           "member": "int64",
           "name": "IPv6Enable",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "腾讯侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯侧互联IPv6地址",
           "example": "2402:4e00:4011:1004::5/126",
           "member": "string",
           "name": "TencentIPv6Address",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "腾讯侧备用互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "腾讯侧备用互联IPv6地址",
           "example": "2402:4e00:4011:1004::5/126",
           "member": "string",
           "name": "TencentBackupIPv6Address",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "BGPv6状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "BGPv6状态",
+          "example": "{\"TencentAddressBgpState\": \"Established\", \"TencentBackupAddressBgpState\": \"Established\"}",
           "member": "BGPStatus",
           "name": "BgpIPv6Status",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户侧互联IPv6地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户侧互联IPv6地址",
           "example": "2402:4e00:4011:1004::5/126",
           "member": "string",
           "name": "CustomerIPv6Address",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专用通道是否支持巨帧。1 支持，0 不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用通道是否支持巨帧。1 支持，0 不支持",
           "example": "1",
           "member": "int64",
           "name": "JumboEnable",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专用通道是否支持高精度BFD。1支持，0不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用通道是否支持高精度BFD。1支持，0不支持",
           "example": "1",
           "member": "int64",
           "name": "HighPrecisionBFDEnable",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2868,6 +2879,26 @@
           "name": "NextHop",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-11 12:32:32",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否配置在通道上",
+          "example": "True",
+          "member": "bool",
+          "name": "ApplyOnTunnelEnable",
+          "required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -2956,123 +2987,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "互联网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "互联网地址ID",
+          "example": "ipv4-qmda2nqq",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "互联网网络地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "互联网网络地址",
+          "example": "220.110.1.0",
           "member": "string",
           "name": "Subnet",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络地址掩码长度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "网络地址掩码长度",
+          "example": "30",
           "member": "int64",
           "name": "MaskLen",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "0:BGP\n1:电信\n2:移动\n3:联通\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
-          "member": "int64",
-          "name": "AddrType",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "0:使用中\n1:已停用\n2:已退还",
-          "example": "",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "0:BGP\n1:电信\n2:移动\n3:联通",
+          "example": "0",
+          "member": "int64",
+          "name": "AddrType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0:使用中\n1:已停用\n2:已退还",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请时间",
+          "example": "2020-09-22 00:00:00",
           "member": "string",
           "name": "ApplyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "停用时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "停用时间",
+          "example": "2020-09-22 00:00:00",
           "member": "string",
           "name": "StopTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "退还时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "退还时间",
+          "example": "2020-09-22 00:00:00",
           "member": "string",
           "name": "ReleaseTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "地域信息",
+          "example": "gz",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "用户ID",
+          "example": "251010426",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0:IPv4 1:IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "0:IPv4 1:IPv6",
+          "example": "0",
           "member": "int64",
           "name": "AddrProto",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "释放状态的IP地址保留的天数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "释放状态的IP地址保留的天数",
+          "example": "2020-09-22 00:00:00",
           "member": "int64",
           "name": "ReserveTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3082,23 +3113,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "地域",
+          "example": "gz",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "互联网公网地址数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "互联网公网地址数量",
+          "example": "64",
           "member": "int64",
           "name": "SubnetNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3651,14 +3682,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户侧网段地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户侧网段地址",
+          "example": "8.8.8.8/32",
           "member": "string",
           "name": "Cidr",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3668,25 +3699,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "标签键",
+          "example": "xxyy",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "标签值",
+          "example": "abab",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

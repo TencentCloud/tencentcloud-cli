@@ -496,6 +496,14 @@
         "title": "查询日志备份列表"
       }
     ],
+    "DescribeMaintainTimeWindow": [
+      {
+        "document": "查询\tpostgres-rwwbeuyx实例的维护窗口",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMaintainTimeWindow\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-rwwbeuyx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DBInstanceId\": \"postgres-rwwbeuyx\",\n        \"MaintainDuration\": 1,\n        \"MaintainStartTime\": \"04:00\",\n        \"MaintainWeekDays\": [\n            \"monday\",\n            \"tuesday\",\n            \"wednesday\",\n            \"thursday\",\n            \"friday\",\n            \"saturday\",\n            \"sunday\"\n        ],\n        \"RequestId\": \"0f6113e2-f27c-4fe2-a63c-a298f4071e6c\"\n    }\n}",
+        "title": "查询实例的维护时间窗口"
+      }
+    ],
     "DescribeOrders": [
       {
         "document": "查询订单信息",
@@ -802,6 +810,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatabaseOwner\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-mnhbbw99\",\n    \"DatabaseName\": \"alice_database\",\n    \"DatabaseOwner\": \"alice\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a11906eb-75b4-43c4-8d3e-aa6b2991c8f5\"\n    }\n}",
         "title": "修改数据库所有者"
+      }
+    ],
+    "ModifyMaintainTimeWindow": [
+      {
+        "document": "修改postgres-c4wtbx1f实例的维护时间窗口为每周一、周二的23:00-00:00",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMaintainTimeWindow\n<公共请求参数>\n\n{\n    \"MaintainWeekDays\": [\n        \"tuesday\",\n        \"monday\"\n    ],\n    \"MaintainDuration\": \"1\",\n    \"DBInstanceId\": \"postgres-c4wtbx1f\",\n    \"MaintainStartTime\": \"23:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f6113e2-f27c-4fe2-a63c-a298f4071e6c\"\n    }\n}",
+        "title": "修改维护时间窗口"
       }
     ],
     "ModifyParameterTemplate": [

@@ -2194,7 +2194,7 @@
         },
         {
           "disabled": false,
-          "document": "大陆手机号直接填写，如果是其他国家、地区号码， 按照\"国家地区代码|手机号\"的格式输入。如: \"+852|xxxxxxxx\"",
+          "document": "按照\"国家地区代码|手机号\"的格式输入，如: \"+86|xxxxxxxx\"。手机号和邮箱参数至少传一项",
           "example": "133*****34",
           "member": "string",
           "name": "Phone",
@@ -2203,7 +2203,7 @@
         },
         {
           "disabled": false,
-          "document": "电子邮件",
+          "document": "电子邮件。手机号和邮箱参数至少传一项",
           "example": "1980**76@qq.com",
           "member": "string",
           "name": "Email",

@@ -6,17 +6,16 @@ Input:
 
 ```
 tccli emr ModifyInstanceBasic --cli-unfold-argument  \
-    --InstanceId abc \
-    --ClusterName abc \
-    --ResourceBaseType abc \
-    --ComputeResourceId abc
+    --InstanceId emr-sfaddfda \
+    --ClusterName emr-test \
+    --ResourceBaseType EMR
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "b8d3e1eb-5730-4f6b-8d4d-bb4aabf99069 "
     }
 }
 ```

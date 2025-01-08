@@ -7,7 +7,7 @@ Input:
 ```
 tccli gme DeleteCustomization --cli-unfold-argument  \
     --BizId 1400000000 \
-    --ModelId 5100f4d60xxx11ed8d6a62xxxeb5fd43
+    --ModelId f440dfa77ae411eda5d3564a2eb5fd49
 ```
 
 Output: 

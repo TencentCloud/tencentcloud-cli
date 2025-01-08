@@ -13,35 +13,31 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "PeerConnectionSet": [
             {
-                "SourceVpcId": "abc",
-                "PeerVpcId": "abc",
-                "PeeringConnectionId": "abc",
-                "PeeringConnectionName": "abc",
-                "State": "abc",
-                "IsNgw": true,
+                "AppId": 1000001,
+                "SourceUin": 1000001234,
+                "SourceRegion": "gz",
+                "SourceVpcId": "vpc-test1234",
+                "PeerAppId": 1000001,
+                "DestinationUin": 1000001234,
+                "DestinationRegion": "gz",
+                "PeerVpcId": "vpc-test4567",
+                "DestinationVpcId": "vpc-test4567",
+                "PeeringConnectionId": "pcx-test6789",
+                "PeeringConnectionName": "测试用",
+                "IsNgw": false,
+                "CreateTime": "2024-11-14 11:58:54",
                 "Bandwidth": 0,
-                "SourceRegion": "abc",
-                "DestinationRegion": "abc",
-                "CreateTime": "abc",
-                "AppId": 0,
-                "PeerAppId": 0,
-                "ChargeType": "abc",
-                "SourceUin": 0,
-                "DestinationUin": 0,
-                "TagSet": [
-                    {
-                        "Key": "abc",
-                        "Value": "abc"
-                    }
-                ],
-                "QosLevel": "abc",
-                "Type": "abc"
+                "Type": "VPC0",
+                "State": "ACTIVE",
+                "TagSet": [],
+                "ChargeType": "POSTPAID_BY_DAY_MAX",
+                "QosLevel": ""
             }
         ],
-        "RequestId": "abc"
+        "TotalCount": 1,
+        "RequestId": "65def86e-3408-4bce-b520-37c12559b082"
     }
 }
 ```

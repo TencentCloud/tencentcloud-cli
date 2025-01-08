@@ -226,7 +226,7 @@
         {
           "disabled": false,
           "document": "DRM方案类型，接口取值：WIDEVINE，FAIRPLAY。",
-          "example": "",
+          "example": "WIDEVINE",
           "member": "string",
           "name": "DrmType",
           "required": true,
@@ -235,7 +235,7 @@
         {
           "disabled": false,
           "document": "Base64编码的终端设备License Request数据。",
-          "example": "",
+          "example": "CAQ=",
           "member": "string",
           "name": "LicenseRequest",
           "required": true,
@@ -244,7 +244,7 @@
         {
           "disabled": false,
           "document": "内容类型，接口取值：VodVideo,LiveVideo。",
-          "example": "",
+          "example": "VodVideo",
           "member": "string",
           "name": "ContentType",
           "required": true,
@@ -253,7 +253,7 @@
         {
           "disabled": false,
           "document": "授权播放的Track列表。\n该值为空时，默认授权所有track播放。",
-          "example": "",
+          "example": "HD",
           "member": "string",
           "name": "Tracks",
           "required": false,
@@ -262,11 +262,20 @@
         {
           "disabled": false,
           "document": "播放策略参数。",
-          "example": "",
+          "example": "无",
           "member": "PlaybackPolicy",
           "name": "PlaybackPolicy",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "Widevine安全级别，接口取值[L1, L2, L3]。\n安全级别定义参考Widevine安全级别定义。",
+          "example": "L3",
+          "member": "string",
+          "name": "WidevineSecurityLevel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -277,18 +286,20 @@
         {
           "disabled": false,
           "document": "Base64 编码的许可证二进制数据。",
-          "example": "",
+          "example": "encrypt_license",
           "member": "string",
           "name": "License",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "加密内容的内容ID",
-          "example": "",
+          "example": "example",
           "member": "string",
           "name": "ContentId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

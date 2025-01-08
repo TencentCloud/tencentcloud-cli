@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli vpc ModifyVpcPeeringConnection --cli-unfold-argument  \
-    --PeeringConnectionId abc \
-    --PeeringConnectionName abc \
+    --PeeringConnectionId pcx-as1iqn14 \
+    --PeeringConnectionName 内部网络环境 \
     --Bandwidth 0 \
-    --ChargeType abc
+    --ChargeType POSTPAID_BY_DAY_MAX
 ```
 
 Output: 

@@ -3,7 +3,7 @@
     "AddRealServers": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRealServers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"RealServerName\": \"'test'\",\n    \"RealServerIP\": [\n        \"1.1.1.1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddRealServers\n<公共请求参数>\n\n{\n    \"ProjectId\": \"0\",\n    \"RealServerName\": \"'server_name'\",\n    \"RealServerIP\": [\n        \"1.1.1.1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RealServerSet\": [\n            {\n                \"RealServerId\": \"id-5dr8gu4\",\n                \"RealServerIP\": \"1.1.1.1\"\n            }\n        ],\n        \"RequestId\": \"5c680029-66b2-4be8-9630-7bd316ce70dd\"\n    }\n}",
         "title": "添加源站"
       },
@@ -103,7 +103,7 @@
     "CreateDomainErrorPageInfo": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainErrorPageInfo\n<公共请求参数>\n\n{\n    \"Body\": \"helloword\",\n    \"Domain\": \"a.com\",\n    \"ListenerId\": \"0\",\n    \"ErrorNos\": [\n        \"502\",\n        \"501\"\n    ],\n    \"NewErrorNo\": \"400\"\n}",
+        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainErrorPageInfo\n<公共请求参数>\n\n{\n    \"Body\": \"http-body\",\n    \"Domain\": \"domain.com\",\n    \"ListenerId\": \"0\",\n    \"ErrorNos\": [\n        \"502\",\n        \"501\"\n    ],\n    \"NewErrorNo\": 400\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7bfcad5-3f20-472f-9afc-13a66faebad8\",\n        \"ErrorPageId\": \"errorPage-1fewf\"\n    }\n}",
         "title": "CreateDomainErrorPageInfo"
       }
@@ -117,12 +117,6 @@
       }
     ],
     "CreateGlobalDomain": [
-      {
-        "document": "创建域名",
-        "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalDomain\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"DefaultValue\": \"1.1.1.1\",\n    \"Alias\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DomainId\": \"dm-pcp5xac5\",\n        \"RequestId\": \"0266e1f0-10a4-46ce-a118-29e360c90a1b\"\n    }\n}",
-        "title": "创建域名"
-      },
       {
         "document": "创建域名示例",
         "input": "POST / HTTP/1.1\nHost: gaap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGlobalDomain\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"DefaultValue\": \"127.0.0.1\",\n    \"Alias\": \"www.baidu.com\"\n}",
