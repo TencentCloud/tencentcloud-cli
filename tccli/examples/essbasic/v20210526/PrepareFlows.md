@@ -8,7 +8,7 @@ Input:
 tccli essbasic PrepareFlows --cli-unfold-argument  \
     --Agent.ProxyOrganizationOpenId test \
     --Agent.ProxyOperator.OpenId test \
-    --Agent.AppId x \
+    --Agent.AppId yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw \
     --JumpUrl http://www.test.com \
     --FlowInfos.0.FlowName 测试签署流程一 \
     --FlowInfos.0.TemplateId test \

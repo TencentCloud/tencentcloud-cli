@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli ess DeleteExtendedServiceAuthInfos --cli-unfold-argument  \
-    --Operator.UserId abc \
+    --Operator.UserId yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E \
     --ExtendServiceType OPEN_SERVER_SIGN \
-    --UserIds abc
+    --UserIds yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E
 ```
 
 Output: 
@@ -28,9 +28,9 @@ Input:
 
 ```
 tccli ess DeleteExtendedServiceAuthInfos --cli-unfold-argument  \
-    --Operator.UserId abc \
+    --Operator.UserId yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E \
     --ExtendServiceType BATCH_SIGN \
-    --UserIds abc
+    --UserIds yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E
 ```
 
 Output: 
@@ -50,9 +50,9 @@ Input:
 
 ```
 tccli ess DeleteExtendedServiceAuthInfos --cli-unfold-argument  \
-    --Operator.UserId abc \
+    --Operator.UserId yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E \
     --ExtendServiceType  \
-    --UserIds abc
+    --UserIds yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E
 ```
 
 Output: 

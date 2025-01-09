@@ -23,7 +23,7 @@ Output:
         "NatGatewaySet": [
             {
                 "NatGatewayId": "nat-cqbn23ju",
-                "NatGatewayName": "11111",
+                "NatGatewayName": "PublicNat",
                 "VpcId": "vpc-qi4ja3sx",
                 "CreatedTime": "2019-07-16 09:40:00",
                 "State": "AVAILABLE",
@@ -92,7 +92,7 @@ Output:
         "NatGatewaySet": [
             {
                 "NatGatewayId": "nat-o49t53q2",
-                "NatGatewayName": "xiaooliang_test",
+                "NatGatewayName": "PublicStandardNat",
                 "VpcId": "vpc-bohigpb7",
                 "State": "PENDING",
                 "NetworkState": "AVAILABLE",

@@ -413,20 +413,20 @@
         {
           "disabled": false,
           "document": "异常事件ID，具体值查看附录：异常体验ID映射表：https://cloud.tencent.com/document/product/647/44916",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "AbnormalEventId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "远端用户ID,\"\"：表示异常事件不是由远端用户产生\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "itachi3",
           "member": "string",
           "name": "PeerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -439,50 +439,50 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "",
+          "example": "itest3",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异常体验ID",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "ExperienceId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字符串房间号",
-          "example": "",
+          "example": "461",
           "member": "string",
           "name": "RoomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异常事件数组",
-          "example": "",
+          "example": "无",
           "member": "AbnormalEvent",
           "name": "AbnormalEventList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "异常事件的上报时间",
-          "example": "",
+          "example": "1592448600",
           "member": "uint64",
           "name": "EventTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3495,20 +3495,20 @@
         {
           "disabled": false,
           "document": "数据内容",
-          "example": "",
+          "example": "无",
           "member": "EventMessage",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发送端的userId",
-          "example": "",
+          "example": "hyder11",
           "member": "string",
           "name": "PeerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3521,50 +3521,50 @@
         {
           "disabled": false,
           "document": "视频流类型：\n0：与视频无关的事件；\n2：视频为大画面；\n3：视频为小画面；\n7：视频为旁路画面；",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件上报的时间戳，unix时间（1589891188801ms)",
-          "example": "",
+          "example": "1589975272790",
           "member": "uint64",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件Id：分为sdk的事件和webrtc的事件，详情见：附录/事件 ID 映射表：https://cloud.tencent.com/document/product/647/44916",
-          "example": "",
+          "example": "32793",
           "member": "uint64",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件的第一个参数，如视频分辨率宽",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "ParamOne",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "事件的第二个参数，如视频分辨率高",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "ParamTwo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5071,27 +5071,27 @@
           "example": "无",
           "member": "SdkAppIdTrtcMcuTranscodeTimeUsage",
           "name": "SdkAppIdTranscodeTimeUsages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "查询记录数量",
-          "example": "无",
+          "example": "108",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "所查询的应用ID，可能值为:1-应用的应用ID，2-total，显示为total则表示查询的是所有应用的用量合计值。",
-          "example": "无",
+          "example": "1400000001",
           "member": "string",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5150,60 +5150,60 @@
         {
           "disabled": false,
           "document": "图片长度",
-          "example": "15",
+          "example": "150",
           "member": "uint64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片宽度",
-          "example": "15",
+          "example": "115",
           "member": "uint64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "显示位置x轴方向",
-          "example": "36",
+          "example": "326",
           "member": "uint64",
           "name": "XPosition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "显示位置y轴方向",
-          "example": "36",
+          "example": "136",
           "member": "uint64",
           "name": "YPosition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "应用id",
-          "example": "1234567",
+          "example": "140000001",
           "member": "uint64",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "图片id",
-          "example": "123",
+          "example": "100861",
           "member": "uint64",
           "name": "PictureId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5348,40 +5348,40 @@
         {
           "disabled": false,
           "document": "数据内容",
-          "example": "",
+          "example": "无",
           "member": "TimeValue",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "",
+          "example": "1716",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "对端Id,为空时表示上行数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1806",
           "member": "string",
           "name": "PeerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "数据类型",
-          "example": "",
+          "example": "bigvCapFps",
           "member": "string",
           "name": "DataType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5523,50 +5523,50 @@
         {
           "disabled": false,
           "document": "本组数据对应的时间点，格式如:2020-09-07或2020-09-07 00:05:05。",
-          "example": "",
+          "example": "2024-10-24 10:24:24",
           "member": "string",
           "name": "TimeKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频时长-标清SD，单位：秒。",
-          "example": "",
+          "example": "108",
           "member": "uint64",
           "name": "Class1VideoTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频时长-高清HD，单位：秒。",
-          "example": "",
+          "example": "298",
           "member": "uint64",
           "name": "Class2VideoTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频时长-超清HD，单位：秒。",
-          "example": "",
+          "example": "300",
           "member": "uint64",
           "name": "Class3VideoTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "语音时长，单位：秒。",
-          "example": "",
+          "example": "209",
           "member": "uint64",
           "name": "AudioTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -5588,7 +5588,7 @@
         {
           "disabled": false,
           "document": "房间号。",
-          "example": "1234",
+          "example": "room_1001",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -5597,7 +5597,7 @@
         {
           "disabled": false,
           "document": "要移出的用户列表，最多10个。",
-          "example": "[1,2,3]",
+          "example": "[user_1,user_2,user_3]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -5633,7 +5633,7 @@
         {
           "disabled": false,
           "document": "房间号。",
-          "example": "1234",
+          "example": "1001",
           "member": "uint64",
           "name": "RoomId",
           "required": true,
@@ -5642,7 +5642,7 @@
         {
           "disabled": false,
           "document": "要移出的用户列表，最多10个。",
-          "example": "test1",
+          "example": "[user_1,user_2,user_3]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -5669,60 +5669,60 @@
         {
           "disabled": false,
           "document": "通话ID（唯一标识一次通话）",
-          "example": "",
+          "example": "140134204111_9988456_1736303475",
           "member": "string",
           "name": "CommId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间号",
-          "example": "",
+          "example": "9988456",
           "member": "string",
           "name": "RoomString",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间创建时间",
-          "example": "",
+          "example": "1736403910",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间销毁时间",
-          "example": "",
+          "example": "1736403910",
           "member": "uint64",
           "name": "DestroyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间是否已经结束",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "IsFinished",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间创建者Id",
-          "example": "",
+          "example": "9988456",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5802,40 +5802,40 @@
         {
           "disabled": false,
           "document": "每天开始的时间",
-          "example": "",
+          "example": "1736403910",
           "member": "uint64",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "房间人数，用户重复进入同一个房间为1次\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "108",
           "member": "uint64",
           "name": "UserNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "房间人次，用户每次进入房间为一次\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10086",
           "member": "uint64",
           "name": "UserCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "sdkappid下一天内的房间数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "65",
           "member": "uint64",
           "name": "RoomNumbers",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5848,20 +5848,20 @@
         {
           "disabled": false,
           "document": "SdkAppId的值。",
-          "example": "",
+          "example": "140000001",
           "member": "string",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "统计的时间点数据。",
-          "example": "",
+          "example": "无",
           "member": "RecordUsage",
           "name": "Usages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7364,20 +7364,20 @@
         {
           "disabled": false,
           "document": "时间，unix时间戳（1590065877s)",
-          "example": "",
+          "example": "1736403910",
           "member": "uint64",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前时间返回参数取值，如（bigvCapFps在1590065877取值为0，则Value：0 ）",
-          "example": "",
+          "example": "108.09",
           "member": "float",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -7468,7 +7468,7 @@
         {
           "disabled": false,
           "document": "时间点，格式为YYYY-MM-DD HH:mm:ss。多天查询时，HH:mm:ss为00:00:00。",
-          "example": "无",
+          "example": "2024-11-25 10:30:20",
           "member": "string",
           "name": "TimeKey",
           "output_required": true,
@@ -7478,7 +7478,7 @@
         {
           "disabled": false,
           "document": "时间点时间戳",
-          "example": "无",
+          "example": "1732501820",
           "member": "uint64",
           "name": "TimeStampKey",
           "output_required": false,
@@ -7488,7 +7488,7 @@
         {
           "disabled": false,
           "document": "用量数组。每个数值含义与UsageKey对应。单位:分钟。",
-          "example": "无",
+          "example": "[10081,10076,2087746]",
           "member": "float",
           "name": "UsageValue",
           "output_required": true,
@@ -7758,80 +7758,80 @@
         {
           "disabled": false,
           "document": "房间号",
-          "example": "",
+          "example": "635e1617",
           "member": "string",
           "name": "RoomStr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户Id",
-          "example": "",
+          "example": "17d1f7fb9ddb6076",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户进房时间",
-          "example": "",
+          "example": "1736253596",
           "member": "uint64",
           "name": "JoinTs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户退房时间，用户没有退房则返回当前时间",
-          "example": "",
+          "example": "1736253596",
           "member": "uint64",
           "name": "LeaveTs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "终端类型",
-          "example": "",
+          "example": "ios",
           "member": "string",
           "name": "DeviceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Sdk版本号",
-          "example": "",
+          "example": "1.0.1",
           "member": "string",
           "name": "SdkVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端IP地址",
-          "example": "",
+          "example": "10.0.9.8",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "判断用户是否已经离开房间",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Finished",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }

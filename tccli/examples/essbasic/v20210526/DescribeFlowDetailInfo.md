@@ -31,7 +31,7 @@ Output:
                 "CustomData": "",
                 "FlowApproverInfos": [
                     {
-                        "ReceiptId": "yDSLOUUckpoj6ocqUyzilW6RdWiojxfG",
+                        "RecipientId": "yDSLOUUckpoj6ocqUyzilW6RdWiojxfG",
                         "ProxyOrganizationOpenId": "org_dianziqian",
                         "ProxyOperatorOpenId": "n9527",
                         "ProxyOrganizationName": "典子谦示例企业",
@@ -45,7 +45,7 @@ Output:
                         "ApproverRoleName": "买方"
                     },
                     {
-                        "ReceiptId": "yDSLOUUckpoj6ocjUyzilW6E0SsA8ggh",
+                        "RecipientId": "yDSLOUUckpoj6ocjUyzilW6E0SsA8ggh",
                         "ProxyOrganizationOpenId": "",
                         "ProxyOperatorOpenId": "org_zhangsan",
                         "ProxyOrganizationName": "张三谦示例企业",
@@ -73,7 +73,7 @@ Output:
                 "CustomData": "",
                 "FlowApproverInfos": [
                     {
-                        "ReceiptId": "yDSLKUUckpoqohr5UcuKmnx5zDmZ7Tl4",
+                        "RecipientId": "yDSLKUUckpoqohr5UcuKmnx5zDmZ7Tl4",
                         "ProxyOrganizationOpenId": "org_dianziqian",
                         "ProxyOperatorOpenId": "n9527",
                         "ProxyOrganizationName": "典子谦示例企业",
@@ -87,7 +87,7 @@ Output:
                         "ApproverRoleName": "买方"
                     },
                     {
-                        "ReceiptId": "yDSLKUUckpoqohr0UcuKmnBmx1YdqgMW",
+                        "RecipientId": "yDSLKUUckpoqohr0UcuKmnBmx1YdqgMW",
                         "ProxyOrganizationOpenId": "",
                         "ProxyOperatorOpenId": "org_zhangsan",
                         "ProxyOrganizationName": "张三示例企业",

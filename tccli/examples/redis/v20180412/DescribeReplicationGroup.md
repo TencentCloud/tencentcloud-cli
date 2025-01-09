@@ -26,7 +26,7 @@ Output:
                     {
                         "Engine": "社区版Redis",
                         "Vip6": "",
-                        "IPv6": "abc",
+                        "IPv6": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
                         "UpdateTime": "2022-11-02 15:04:05",
                         "VpcID": 16770550,
                         "InstanceId": "crs-9c36****",

@@ -48,6 +48,14 @@
         "title": "成功"
       }
     ],
+    "QueryMemeJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryMemeJob\n<公共请求参数>\n\n{\n    \"JobId\": \"251197749-1736402968-49025b63-ce50-11ef-9ce4-5254006b9705-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"df0717c3-508e-4ba7-8537-e22500cf144c\",\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "QueryTextToImageProJob": [
       {
         "document": "成功调用",
@@ -86,6 +94,14 @@
         "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitDrawPortraitJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\",\n    \"StyleId\": \"zhengjian_female\",\n    \"ImageNum\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"abcdefg\",\n        \"RequestId\": \"94b5192b-b40b-4f0c-b4f8-edfa7092f8b9\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "SubmitMemeJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitMemeJob\n<公共请求参数>\n\n{\n    \"Pose\": \"aiyobudeliao\",\n    \"InputUrl\": \"https://xxx.com/image.jpg\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1736402968-49025b63-ce50-11ef-9ce4-5254006b9705-0\",\n        \"RequestId\": \"97781219-f994-4169-b0a6-032b9fab4742\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "SubmitTextToImageProJob": [

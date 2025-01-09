@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcb DeleteWxGatewayRoute --cli-unfold-argument  \
-    --GatewayRouteName xx \
-    --EnvId xx
+    --GatewayRouteName gateway-prod \
+    --EnvId envid-prod
 ```
 
 Output: 

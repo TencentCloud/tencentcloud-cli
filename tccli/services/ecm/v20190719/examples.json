@@ -207,8 +207,8 @@
     "CreateSecurityGroup": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=CreateSecurityGroup\r\n&GroupName=TestGroup\r\n&GroupDescription=test-group-desc\r\n&Tags.0.Key=city\r\n&Tags.0.Value=shanghai\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"esg-3g7ftkp3\",\n            \"SecurityGroupName\": \"TestGroup\",\n            \"SecurityGroupDesc\": \"test-group-desc\",\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
+        "input": "https://ecm.tencentcloudapi.com/?Action=CreateSecurityGroup\n&GroupName=demo\n&GroupDescription=demo\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"SecurityGroup\": {\n            \"SecurityGroupId\": \"esg-3g7ftkp3\",\n            \"SecurityGroupName\": \"demo\",\n            \"SecurityGroupDesc\": \"demo\",\n            \"CreatedTime\": \"2020-05-13 19:26:33\",\n            \"IsDefault\": false,\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        }\n    }\n}",
         "title": "创建安全组"
       }
     ],
@@ -311,8 +311,8 @@
     "DeleteSecurityGroup": [
       {
         "document": "",
-        "input": "https://ecm.tencentcloudapi.com/?Action=DeleteSecurityGroup\r\n&Version=2019-07-19\r\n&SecurityGroupId=esg-kxxx1gb1\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "input": "https://ecm.tencentcloudapi.com/?Action=DeleteSecurityGroup\n&SecurityGroupId=esg-kxxx1gb1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "删除安全组"
       }
     ],
@@ -606,7 +606,7 @@
       {
         "document": "",
         "input": "https://ecm.tencentcloudapi.com/?Action=DescribeRouteTables\n&Offset=0\n&Limit=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"TestRouteTable\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteItemId\": \"rti-12345678\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteDescription\": \"\"\n                    }\n                ],\n                \"Main\": false,\n                \"CreatedTime\": \"2020-11-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RouteTableSet\": [\n            {\n                \"VpcId\": \"vpc-2at5y1pn\",\n                \"RouteTableId\": \"rtb-l2h8d7c2\",\n                \"RouteTableName\": \"demo\",\n                \"AssociationSet\": [],\n                \"RouteSet\": [\n                    {\n                        \"RouteItemId\": \"rti-ms7c7gcr\",\n                        \"RouteId\": 0,\n                        \"RouteTableId\": \"rtb-l2h8d7c2\",\n                        \"DestinationCidrBlock\": \"169.254.64.0/23\",\n                        \"GatewayType\": \"NORMAL_CVM\",\n                        \"GatewayId\": \"172.16.0.25\",\n                        \"RouteType\": \"USER\",\n                        \"RouteDescription\": \"demo\",\n                        \"Enabled\": true\n                    }\n                ],\n                \"Main\": false,\n                \"CreatedTime\": \"2020-11-30 19:52:03\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"74883e1b-5901-46de-ae1e-d6e2cf591c5b\"\n    }\n}",
         "title": "查看路由表对象列表"
       }
     ],

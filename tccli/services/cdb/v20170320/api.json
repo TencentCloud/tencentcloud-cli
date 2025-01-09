@@ -21441,6 +21441,15 @@
           "name": "CheckFastUpgradeReboot",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源\n对应的选项为: \"high\"、\"normal\"、\"low\"，默认为空\n参数详解，：\n\"high\": 对应控制台中的高，数据库负载过高不建议使用\n\"normal\"：对应控制台中的标准\n\"low\"：对应控制台中的低\n",
+          "example": "\"low\"",
+          "member": "string",
+          "name": "DataCheckSensitive",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

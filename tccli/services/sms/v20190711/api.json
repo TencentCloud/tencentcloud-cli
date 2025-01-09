@@ -220,6 +220,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype=\"notice\" title=\"说明\"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>",
+          "example": "1000001",
+          "member": "uint64",
+          "name": "QualificationId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -694,6 +703,36 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。\n注：国际短信不涉及，默认为0。",
+          "example": "1000001",
+          "member": "uint64",
+          "name": "QualificationId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国内短信的资质名称。\n注：国际短信不涉及，默认为空。",
+          "example": "腾讯科技有限公司_1000001",
+          "member": "string",
+          "name": "QualificationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国内短信的资质状态。其中0表示待审核，1表示已通过，2表示已拒绝，3表示待补充后提交，4表示变更后待审核，5表示变更后被驳回。可参考 [实名资质审核状态说明](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E7.8A.B6.E6.80.81.E8.AF.B4.E6.98.8E) 。\n注：国际短信不涉及，默认为0。",
+          "example": "1",
+          "member": "int64",
+          "name": "QualificationStatusCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -965,6 +1004,15 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已审核通过的国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。<dx-alert infotype=\"notice\" title=\"说明\"><ul><li>国内短信需填写资质ID，国际短信无需填写。</li></ul></dx-alert>",
+          "example": "1000001",
+          "member": "uint64",
+          "name": "QualificationId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

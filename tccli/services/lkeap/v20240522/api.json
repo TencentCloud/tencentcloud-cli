@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateSplitDocumentFlow": {
-      "document": "创建文档拆分任务",
+      "document": "用于创建一个文档拆分任务，支持多种文件类型，具备mllm能力，能够解析并深入理解图表中的信息。",
       "input": "CreateSplitDocumentFlowRequest",
       "name": "创建文档拆分任务",
       "output": "CreateSplitDocumentFlowResponse",
@@ -523,7 +523,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型。支持的文件类型：PDF、DOC、DOCX、XLS、XLSX、PPT、PPTX、MD、TXT、PNG、JPG、JPEG、CSV",
+          "document": "文件类型。\n\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF`、`DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M\n - `TXT`、`MD` 最大10M\n - 其他 最大20M\n",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -532,8 +532,8 @@
         },
         {
           "disabled": false,
-          "document": "文件的 Url 地址。文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "无",
+          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
+          "example": "https://example.com/example.pdf",
           "member": "string",
           "name": "FileUrl",
           "required": true,
@@ -541,8 +541,8 @@
         },
         {
           "disabled": false,
-          "document": "文件名，可选，当文件名无法从传入的FileUrl获取时需要通过该字段来明确",
-          "example": "yourfile.pdf",
+          "document": "文件名，可选。\n**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。",
+          "example": "example.pdf",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -550,7 +550,7 @@
         },
         {
           "disabled": true,
-          "document": "文件的 Base64 值。支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。支持的图片像素：单边介于20-10000px之间。文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
+          "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
           "example": "无",
           "member": "string",
           "name": "FileBase64",
@@ -559,7 +559,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值",
+          "document": "文档的起始页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的起始页码，识别的页码包含当前值。",
           "example": "1",
           "member": "int64",
           "name": "FileStartPageNumber",
@@ -568,7 +568,7 @@
         },
         {
           "disabled": false,
-          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。",
+          "document": "文档的结束页码。\n当传入文件是PDF、PDF、PPT、PPTX、DOC类型时，用来指定识别的结束页码，识别的页码包含当前值。",
           "example": "100",
           "member": "int64",
           "name": "FileEndPageNumber",
@@ -577,8 +577,8 @@
         },
         {
           "disabled": false,
-          "document": "创建文档拆分任务配置信息创建文档解析任务配置信息\t\t",
-          "example": "{\"TableResultType\":\"1\"}\t",
+          "document": "文档拆分任务的配置信息。\n",
+          "example": "{\"EnableMllm\":true,\"MaxChunkSize\":4800}\t",
           "member": "CreateSplitDocumentFlowConfig",
           "name": "Config",
           "required": false,
@@ -592,8 +592,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一id。30天内可以通过GetSplitDocumentResult接口查询TaskId对应的处理结果。",
-          "example": "无",
+          "document": "拆分任务唯一ID。\n30天内可以通过`GetSplitDocumentResult`接口查询TaskId对应的拆分结果。",
+          "example": "236e51fd-827b-41cb-b303-56003a817ce5",
           "member": "string",
           "name": "TaskId",
           "output_required": true,

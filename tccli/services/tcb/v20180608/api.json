@@ -470,7 +470,7 @@
       "status": "online"
     },
     "DescribeWxGatewayRoutes": {
-      "document": "查看安全网关路由\n",
+      "document": "查看安全网关路由",
       "input": "DescribeWxGatewayRoutesRequest",
       "name": "查看安全网关路由",
       "output": "DescribeWxGatewayRoutesResponse",
@@ -4813,8 +4813,8 @@
         },
         {
           "disabled": false,
-          "document": "操作记录",
-          "example": "xxx",
+          "document": "操作者记录",
+          "example": "zhangsan",
           "member": "string",
           "name": "OperatorRemark",
           "required": false,
@@ -4832,6 +4832,7 @@
           "example": "success",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4850,7 +4851,7 @@
         {
           "disabled": false,
           "document": "环境id",
-          "example": "无",
+          "example": "envid-prod",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -4859,7 +4860,7 @@
         {
           "disabled": false,
           "document": "服务名称",
-          "example": "Gateway-test",
+          "example": "gateway-prod",
           "member": "string",
           "name": "GatewayRouteName",
           "required": true,
@@ -8473,7 +8474,7 @@
         {
           "disabled": false,
           "document": "环境id",
-          "example": "env-xxx",
+          "example": "envid-xxx",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -8482,7 +8483,7 @@
         {
           "disabled": false,
           "document": "网关id",
-          "example": "gate-xxx",
+          "example": "gatewayid-xxx",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -8527,7 +8528,7 @@
         {
           "disabled": false,
           "document": "网关路由名称",
-          "example": "xxxx",
+          "example": "route-xxx",
           "member": "string",
           "name": "GatewayRoute",
           "required": false,
@@ -9422,7 +9423,7 @@
         {
           "disabled": false,
           "document": "网关名称",
-          "example": "无",
+          "example": "gatewayid-xxx",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -9431,7 +9432,7 @@
         {
           "disabled": false,
           "document": "网关路由名称",
-          "example": "无",
+          "example": "route-xxx",
           "member": "string",
           "name": "GatewayRouteName",
           "required": false,
@@ -9454,23 +9455,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的服务个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的服务个数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回的服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的服务列表",
           "example": "无",
           "member": "WxGatewayRountItem",
           "name": "WxGatewayRouteSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9496,7 +9497,7 @@
         {
           "disabled": false,
           "document": "网关ID",
-          "example": "无",
+          "example": "gatewayid-xxx",
           "member": "string",
           "name": "GatewayId",
           "required": false,
@@ -9505,7 +9506,7 @@
         {
           "disabled": false,
           "document": "服务名称，精确匹配",
-          "example": "无",
+          "example": "gateway-test",
           "member": "string",
           "name": "GatewayName",
           "required": false,
@@ -9537,23 +9538,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的服务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回的服务列表",
           "example": "无",
           "member": "GatewayItem",
           "name": "Gateways",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关总数",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10484,7 +10485,7 @@
         {
           "disabled": false,
           "document": "服务描述",
-          "example": "无",
+          "example": "route test",
           "member": "string",
           "name": "GatewayRouteDesc",
           "required": false,
@@ -10702,23 +10703,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "限额对象 \"ConnectionsLimit\" 或 \"QPSLimit\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限额对象 \"ConnectionsLimit\" 或 \"QPSLimit\"",
           "example": "ConnectionsLimit",
           "member": "string",
           "name": "LimitObject",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "限额配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限额配置",
           "example": "{value:1000}",
           "member": "string",
           "name": "LimitConfig",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10755,7 +10758,7 @@
         {
           "disabled": false,
           "document": "用户uin",
-          "example": "无",
+          "example": "100007258682",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -10764,253 +10767,253 @@
         },
         {
           "disabled": false,
-          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户appid",
+          "example": "1257473911",
           "member": "uint64",
           "name": "AppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "WxAppId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "WxAppId",
+          "example": "wx0b8b25b4678d891f",
           "member": "string",
           "name": "WxAppId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "环境id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "环境id",
+          "example": "env-test-gn9yom",
           "member": "string",
           "name": "EnvId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Gateway唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Gateway唯一id",
+          "example": "gateway-6gqtlxk",
           "member": "string",
           "name": "GatewayId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Gateway名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Gateway名称",
+          "example": "gateway",
           "member": "string",
           "name": "GatewayName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Gateway类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Gateway类型",
+          "example": "gw-wx-donut",
           "member": "string",
           "name": "GatewayType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Gateway描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Gateway描述",
+          "example": "测试环境网关",
           "member": "string",
           "name": "GatewayDesc",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "套餐版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "套餐版本",
+          "example": "testV2",
           "member": "string",
           "name": "PackageVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "套餐唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "套餐唯一id",
+          "example": "2005",
           "member": "uint64",
           "name": "PackageId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "vpc唯一id",
+          "example": "vpc-ebdrku5i",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "子网id",
+          "example": "[\"subnet-2pfef0ad\",\"subnet-3ka73ubd\",\"subnet-ecbe5jef\",\"subnet-8mjaqlit\"]",
           "member": "string",
           "name": "SubnetIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "网关状态",
+          "example": "success",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "l5地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "l5地址",
+          "example": "192002625:745218",
           "member": "string",
           "name": "L5Addr",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "地域",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否可以续费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否可以续费",
+          "example": "true",
           "member": "bool",
           "name": "CanRenew",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "自动续费标志",
+          "example": "2",
           "member": "uint64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "隔离时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "隔离时间",
+          "example": "2024-11-23 09:08:05",
           "member": "string",
           "name": "IsolateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "到期时间",
+          "example": "2024-11-21 23:59:59",
           "member": "string",
           "name": "ExpireTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建时间",
+          "example": "2024-08-09 10:38:33",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "变更时间",
+          "example": "2024-11-23 09:08:05",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否可以降配\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否可以降配",
+          "example": "false",
           "member": "bool",
           "name": "CanDowngrade",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "允许未登录访问\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "允许未登录访问",
+          "example": "0",
           "member": "int64",
           "name": "AllowUncertified",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关版本限额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关版本限额",
           "example": "3",
           "member": "int64",
           "name": "VersionNumLimit",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Donut接入ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"a0c5aba71-wxe17e6efa4c656fcd\"",
+          "document": "Donut接入ID",
+          "example": "a0c5aba71-wxe17e6efa4c656fcd",
           "member": "string",
           "name": "LongAccessId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Donut接入域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"a0c599f16-wxe17e6efa4c656fcd.sh.wxcloudrun.com\"",
+          "document": "Donut接入域名",
+          "example": "a0c599f16-wxe17e6efa4c656fcd.sh.wxcloudrun.com",
           "member": "string",
           "name": "AccessDomain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13446,7 +13449,7 @@
         {
           "disabled": false,
           "document": "安全网关路由名称",
-          "example": "无",
+          "example": "route-name",
           "member": "string",
           "name": "GatewayRouteName",
           "output_required": true,
@@ -13456,7 +13459,7 @@
         {
           "disabled": false,
           "document": "安全网关路由协议",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "GatewayRouteProtocol",
           "output_required": true,
@@ -13466,7 +13469,7 @@
         {
           "disabled": false,
           "document": "安全网关路由地址",
-          "example": "无",
+          "example": "access.com",
           "member": "string",
           "name": "GatewayRouteAddr",
           "output_required": true,
@@ -13476,7 +13479,7 @@
         {
           "disabled": false,
           "document": "安全网关路由描述",
-          "example": "无",
+          "example": "测试",
           "member": "string",
           "name": "GatewayRouteDesc",
           "output_required": true,
@@ -13486,7 +13489,7 @@
         {
           "disabled": false,
           "document": "安全网关后端集群id，如果是外网服务，该id与GatewayRountName相同",
-          "example": "无",
+          "example": "cls-xxx",
           "member": "string",
           "name": "GatewayRouteClusterId",
           "output_required": true,
@@ -13496,7 +13499,7 @@
         {
           "disabled": false,
           "document": "安全网关创建时间",
-          "example": "无",
+          "example": "2025-01-09 09:36:44",
           "member": "string",
           "name": "GatewayRouteCreateTime",
           "output_required": true,
@@ -13505,113 +13508,113 @@
         },
         {
           "disabled": false,
-          "document": "安全网关路由限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全网关路由限制",
           "example": "无",
           "member": "FrequencyLimitConfig",
           "name": "FrequencyLimitConfig",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ip代表绑定后端ip。cbr代表云托管服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ip代表绑定后端ip。cbr代表云托管服务",
           "example": "cbr",
           "member": "string",
           "name": "GatewayRouteServerType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "服务名",
+          "example": "server-name",
           "member": "string",
           "name": "GatewayRouteServerName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ip",
           "example": "1.0.0.1",
           "member": "string",
           "name": "GatewayRewriteHost",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网关版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网关版本",
           "example": "gatewayversion",
           "member": "string",
           "name": "GatewayVersion",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求路径",
           "example": "path",
           "member": "string",
           "name": "GatewayRoutePath",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求模式",
           "example": "GET",
           "member": "string",
           "name": "GatewayRouteMethod",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "4层端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "4层端口",
           "example": "80",
           "member": "int64",
           "name": "GatewayRoutePort",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由环境ID",
           "example": "env-xxx",
           "member": "string",
           "name": "GatewayRouteEnvId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路径匹配类型，支持prefix(前缀匹配)，regex(正则匹配)， 默认prefix",
           "example": "regex",
           "member": "string",
           "name": "GatewayRoutePathMatchType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "安全网关自定义头部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全网关自定义头部",
           "example": "无",
           "member": "CustomHeader",
           "name": "CustomHeader",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

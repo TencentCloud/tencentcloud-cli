@@ -151,7 +151,7 @@
     "DeleteWxGatewayRoute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayRouteName\": \"xx\",\n    \"EnvId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayRouteName\": \"gateway-prod\",\n    \"EnvId\": \"envid-prod\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "删除微信网关"
       }
@@ -557,8 +557,8 @@
     "DescribeWxGatewayRoutes": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxGatewayRoutes\n<公共请求参数>\n\n{\n    \"GatewayId\": \"xx\",\n    \"EnvId\": \"xx\",\n    \"GatewayVersion\": \"xx\",\n    \"GatewayRouteName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"WxGatewayRouteSet\": [\n            {\n                \"GatewayRouteAddr\": \"xx\",\n                \"GatewayRouteDesc\": \"xx\",\n                \"GatewayRouteProtocol\": \"xx\",\n                \"GatewayRouteName\": \"xx\",\n                \"GatewayVersion\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxGatewayRoutes\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gatewayid-xxx\",\n    \"EnvId\": \"envid-xxx\",\n    \"GatewayVersion\": \"version-xxx\",\n    \"GatewayRouteName\": \"route-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6b740e66-04dc-4389-808a-b496e70e7549\",\n        \"TotalCount\": 3,\n        \"WxGatewayRouteSet\": [\n            {\n                \"CustomHeader\": {\n                    \"RequestToAddList\": []\n                },\n                \"FrequencyLimitConfig\": [],\n                \"GatewayRewriteHost\": \"43.135.114.125\",\n                \"GatewayRouteAddr\": \"access.xxie.site\",\n                \"GatewayRouteClusterId\": \"access\",\n                \"GatewayRouteCreateTime\": \"2024-11-19 10:37:49\",\n                \"GatewayRouteDesc\": \"\",\n                \"GatewayRouteEnvId\": \"\",\n                \"GatewayRouteMethod\": \"ALL\",\n                \"GatewayRouteName\": \"access\",\n                \"GatewayRoutePath\": \"/test\",\n                \"GatewayRoutePathMatchType\": \"prefix\",\n                \"GatewayRoutePort\": 0,\n                \"GatewayRouteProtocol\": \"http\",\n                \"GatewayRouteServerName\": \"\",\n                \"GatewayRouteServerType\": \"ip\",\n                \"GatewayVersion\": \"version-xxx\"\n            }\n        ]\n    }\n}",
         "title": "查看容器托管的所有服务"
       }
     ],
@@ -566,7 +566,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWxGateways\n<公共请求参数>\n\n{\n    \"EnvId\": \"lotestapi100004\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"AccessDomain\": \"\",\n                \"AllowUncertified\": 0,\n                \"AppId\": 0,\n                \"AutoRenewFlag\": 1,\n                \"CanDowngrade\": false,\n                \"CanRenew\": true,\n                \"CreateTime\": \"2023-11-23 10:27:31\",\n                \"EnvId\": \"xxx\",\n                \"ExpireTime\": \"2024-12-23 23:59:59\",\n                \"GatewayDesc\": \"\",\n                \"GatewayId\": \"xxx\",\n                \"GatewayName\": \"xxx\",\n                \"GatewayType\": \"wechat\",\n                \"IsolateTime\": \"0000-00-00 00:00:00\",\n                \"L5Addr\": \"\",\n                \"LongAccessId\": \"\",\n                \"PackageId\": 2005,\n                \"PackageVersion\": \"testV2\",\n                \"Region\": \"ap-shanghai\",\n                \"Status\": \"success\",\n                \"SubnetIds\": [\n                    \"subnet-xxxx\"\n                ],\n                \"Uin\": \"100008561789\",\n                \"UpdateTime\": \"2024-04-25 10:50:13\",\n                \"VersionNumLimit\": 3,\n                \"VpcId\": \"xxxx\",\n                \"WxAppId\": \"xxxx\"\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Gateways\": [\n            {\n                \"AccessDomain\": \"\",\n                \"AllowUncertified\": 0,\n                \"AppId\": 0,\n                \"AutoRenewFlag\": 1,\n                \"CanDowngrade\": false,\n                \"CanRenew\": true,\n                \"CreateTime\": \"2023-11-23 10:27:31\",\n                \"EnvId\": \"envid-xxx\",\n                \"ExpireTime\": \"2024-12-23 23:59:59\",\n                \"GatewayDesc\": \"\",\n                \"GatewayId\": \"envid-xxx\",\n                \"GatewayName\": \"gatewayname-xxx\",\n                \"GatewayType\": \"wechat\",\n                \"IsolateTime\": \"0000-00-00 00:00:00\",\n                \"L5Addr\": \"\",\n                \"LongAccessId\": \"\",\n                \"PackageId\": 2005,\n                \"PackageVersion\": \"testV2\",\n                \"Region\": \"ap-shanghai\",\n                \"Status\": \"success\",\n                \"SubnetIds\": [\n                    \"subnet-xxxx\"\n                ],\n                \"Uin\": \"100008561789\",\n                \"UpdateTime\": \"2024-04-25 10:50:13\",\n                \"VersionNumLimit\": 3,\n                \"VpcId\": \"vpcid-xxxx\",\n                \"WxAppId\": \"wxappid-xxxx\"\n            }\n        ],\n        \"RequestId\": \"\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查看安全网关"
       }
     ],
@@ -604,8 +604,8 @@
     ],
     "EstablishWxGatewayRoute": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EstablishWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayId\": \"xx\",\n    \"GatewayRouteDesc\": \"xx\",\n    \"GatewayRouteProtocol\": \"xx\",\n    \"GatewayRouteAddr\": \"xx\",\n    \"GatewayRouteName\": \"xx\"\n}",
+        "document": "创建微信网关",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EstablishWxGatewayRoute\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gatewayid-xxx\",\n    \"GatewayRouteDesc\": \"route test\",\n    \"GatewayRouteProtocol\": \"http\",\n    \"GatewayRouteAddr\": \"access.com\",\n    \"GatewayRouteName\": \"routename\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "创建微信网关"
       }

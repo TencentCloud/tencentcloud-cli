@@ -28,6 +28,13 @@
       "output": "DescribeInstancesResponse",
       "status": "online"
     },
+    "DescribeMuskPrompts": {
+      "document": "获取prompt任务列表",
+      "input": "DescribeMuskPromptsRequest",
+      "name": "获取Prompt任务列表",
+      "output": "DescribeMuskPromptsResponse",
+      "status": "online"
+    },
     "DescribeRegions": {
       "document": "查询地域列表",
       "input": "DescribeRegionsRequest",
@@ -446,6 +453,89 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMuskPromptsRequest": {
+      "document": "DescribeMuskPrompts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "workgroup id",
+          "example": "4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "WorkgroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "workflow id",
+          "example": "wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7",
+          "member": "string",
+          "name": "WorkflowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "offset ",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "limit",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数 支持过滤的键值： PromptId，Status",
+          "example": "[{\"Name\":\"PromptId\", Values:[\"dhfhds-dhdhd-xxdfdf-iejmrhf\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMuskPromptsResponse": {
+      "document": "DescribeMuskPrompts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "total count",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "prompt列表详情",
+          "example": "无",
+          "member": "MuskPromptInfo",
+          "name": "MuskPromptInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1101,6 +1191,111 @@
         }
       ],
       "usage": "out"
+    },
+    "MuskPromptInfo": {
+      "document": "musk prompt详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "workflow id",
+          "example": "wf-c23b5551-4008-4c9f-844a-4c4dd30f84f7",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "workgroup id",
+          "example": "wg-4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "WorkgroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "prompt id",
+          "example": "4a3f3be9-f35b-40bf-b6bb-2af812dd63cb",
+          "member": "string",
+          "name": "PromptId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成的内容",
+          "example": "[\"image\"]",
+          "member": "string",
+          "name": "OutputResource",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "prompt status \n0: 执行中\n1: 执行成功\n2: 执行失败",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-12-30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-12-30",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行耗时，单位毫秒",
+          "example": "0",
+          "member": "uint64",
+          "name": "Cost",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务执行失败错误信息",
+          "example": " ",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NetworkStatus": {
       "document": "HAI 实例的网络配置和消耗情况",

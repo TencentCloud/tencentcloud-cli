@@ -6844,23 +6844,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VPC实例ID",
           "example": "vpc-nswq8wkq",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云服务器实例唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器实例唯一ID",
           "example": "ins-kngiybxl",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9453,7 +9453,7 @@
         {
           "disabled": false,
           "document": "路由策略对象。",
-          "example": "无",
+          "example": "[{\"RouteTableId\":\"rtb-n0yejvje\",\"RouteSet\":[{\"RouteItemId\": \"rti-psm73tvu\",\"DestinationCidrBlock\": \"192.168.0.0/16\"}]}]",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -9847,7 +9847,7 @@
         {
           "disabled": false,
           "document": "子网名称，最大长度不能超过60个字节。",
-          "example": "TestSubnet",
+          "example": "demo",
           "member": "string",
           "name": "SubnetName",
           "required": true,
@@ -10266,7 +10266,7 @@
         {
           "disabled": false,
           "document": "对等连接名称。",
-          "example": "test",
+          "example": "pcx-1sqw346v",
           "member": "string",
           "name": "PeeringConnectionName",
           "required": true,
@@ -10311,7 +10311,7 @@
         {
           "disabled": false,
           "document": "互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。",
-          "example": "无",
+          "example": "VPC_PEER",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -20880,13 +20880,13 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "标签键值对。\t",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -24788,7 +24788,7 @@
         },
         {
           "disabled": false,
-          "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`",
+          "document": "`IPv6`子网段。形如：`3402:4e00:20:1001::/64`。作为AssignIpv6SubnetCidrBlock接口入参时，该参数必填。",
           "example": "3402:4e00:20:1202::/64",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -27866,7 +27866,7 @@
         {
           "disabled": false,
           "document": "对等连接ID。",
-          "example": " pcx-0npfx81k",
+          "example": "pcx-0npfx81k",
           "member": "string",
           "name": "PeeringConnectionId",
           "required": true,
@@ -27875,7 +27875,7 @@
         {
           "disabled": false,
           "document": "对等连接名称。",
-          "example": "test",
+          "example": "内部使用",
           "member": "string",
           "name": "PeeringConnectionName",
           "required": false,
@@ -28930,23 +28930,23 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2019-09-11 10:00:00",
           "member": "datetime",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签键值对。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "标签键值对。\t",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "TagSet",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -31193,7 +31193,7 @@
         {
           "disabled": false,
           "document": "路由策略对象。需要指定路由策略ID（RouteId）。",
-          "example": "[{\"DestinationCidrBlock\": \"10.1.0.0/16\", \"GatewayId\": \"10.0.0.10\", \"GatewayType\": \"NORMAL_CVM\", \"RouteDescription\": \"demo\", \"RouteItemId\": \"rti-o47594ph\"}]",
+          "example": "无",
           "member": "Route",
           "name": "Routes",
           "required": true,
@@ -31208,7 +31208,7 @@
         {
           "disabled": false,
           "document": "原路由策略信息。",
-          "example": "[{\"RouteTableId\": \"rtb-ods657t1\", \"RouteItemId\": \"rti-o47594ph\", \"DestinationCidrBlock\": \"10.1.0.0/17\", \"DestinationIpv6CidrBlock\": \"\", \"GatewayType\": \"NORMAL_CVM\", \"GatewayId\": \"10.0.0.10\", \"RouteDescription\": \"\"}]",
+          "example": "无",
           "member": "Route",
           "name": "OldRouteSet",
           "output_required": true,
@@ -31218,7 +31218,7 @@
         {
           "disabled": false,
           "document": "修改后的路由策略信息。",
-          "example": "[{\"RouteTableId\": \"rtb-ods657t1\", \"RouteItemId\": \"rti-o47594ph\", \"DestinationCidrBlock\": \"10.1.0.0/16\", \"DestinationIpv6CidrBlock\": \"\", \"GatewayType\": \"NORMAL_CVM\", \"GatewayId\": \"10.0.0.10\", \"RouteDescription\": \"\"}]",
+          "example": "无",
           "member": "Route",
           "name": "NewRouteSet",
           "output_required": true,

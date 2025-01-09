@@ -280,6 +280,20 @@
       "output": "DeleteTopicRuleResponse",
       "status": "online"
     },
+    "DescribeActivateDevice": {
+      "document": "获取设备激活详情",
+      "input": "DescribeActivateDeviceRequest",
+      "name": "获取设备激活详情",
+      "output": "DescribeActivateDeviceResponse",
+      "status": "online"
+    },
+    "DescribeActivateLicenseService": {
+      "document": "获取增值服务激活码详情",
+      "input": "DescribeActivateLicenseServiceRequest",
+      "name": "获取增值服务激活码详情",
+      "output": "DescribeActivateLicenseServiceResponse",
+      "status": "online"
+    },
     "DescribeBatchProduction": {
       "document": "获取量产详情信息。",
       "input": "DescribeBatchProductionRequest",
@@ -504,6 +518,13 @@
       "output": "DescribeFirmwareUpdateStatusResponse",
       "status": "online"
     },
+    "DescribeFreeCloudStorageNum": {
+      "document": "查询云存卡套餐信息",
+      "input": "DescribeFreeCloudStorageNumRequest",
+      "name": "查询云存卡套餐信息",
+      "output": "DescribeFreeCloudStorageNumResponse",
+      "status": "online"
+    },
     "DescribeGatewayBindDevices": {
       "document": "获取网关绑定的子设备列表",
       "input": "DescribeGatewayBindDevicesRequest",
@@ -607,6 +628,13 @@
       "input": "DescribeTopicRuleRequest",
       "name": "获取规则信息",
       "output": "DescribeTopicRuleResponse",
+      "status": "online"
+    },
+    "DescribeVideoLicense": {
+      "document": "用于查询视频激活码统计概览",
+      "input": "DescribeVideoLicenseRequest",
+      "name": "查询视频激活码统计概览",
+      "output": "DescribeVideoLicenseResponse",
       "status": "online"
     },
     "DirectBindDeviceInFamily": {
@@ -1079,6 +1107,62 @@
     "serviceShortName": "iotexplorer"
   },
   "objects": {
+    "ActivateDeviceInfo": {
+      "document": "设备激活详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "0",
+          "member": "int64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备激活信息",
+          "example": "无",
+          "member": "DeviceActivationDetail",
+          "name": "DeviceActivationDetails",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已注册设备类型信息",
+          "example": "无",
+          "member": "RegisteredDeviceTypeInfo",
+          "name": "RegisteredDeviceType",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已注册设备通信类型信息",
+          "example": "无",
+          "member": "RegisteredDeviceNetTypeInfo",
+          "name": "RegisteredDeviceNetType",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ActivateTWeCallLicenseRequest": {
       "document": "ActivateTWeCallLicense请求参数结构体",
       "members": [
@@ -2166,6 +2250,52 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudStoragePackageInfo": {
+      "document": "云存套餐包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐包id",
+          "example": "lye1w3d",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包名字",
+          "example": "低功耗3天会看周套餐",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用数量",
+          "example": "5",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CloudStorageTimeData": {
       "document": "云存时间轴接口返回数据",
@@ -4206,6 +4336,89 @@
     "DeleteTopicRuleResponse": {
       "document": "DeleteTopicRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivateDeviceRequest": {
+      "document": "DescribeActivateDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-46mU9M9oLd9",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivateDeviceResponse": {
+      "document": "DescribeActivateDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备激活详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ActivateDeviceInfo",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivateLicenseServiceRequest": {
+      "document": "DescribeActivateLicenseService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-46mU9M9oLd9",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "激活码类型",
+          "example": "TWeCall",
+          "member": "string",
+          "name": "LicenseType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActivateLicenseServiceResponse": {
+      "document": "DescribeActivateLicenseService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增值服务激活码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LicenseServiceNumInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6825,6 +7038,33 @@
       ],
       "type": "object"
     },
+    "DescribeFreeCloudStorageNumRequest": {
+      "document": "DescribeFreeCloudStorageNum请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFreeCloudStorageNumResponse": {
+      "document": "DescribeFreeCloudStorageNum返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐包信息",
+          "example": "无",
+          "member": "CloudStoragePackageInfo",
+          "name": "PackageInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeGatewayBindDevicesRequest": {
       "document": "DescribeGatewayBindDevices请求参数结构体",
       "members": [
@@ -7683,6 +7923,109 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeVideoLicenseRequest": {
+      "document": "DescribeVideoLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "IOT_INSTANCE_ID",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoLicenseResponse": {
+      "document": "DescribeVideoLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频激活码分类概览\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoLicenseEntity",
+          "name": "License",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeviceActivationDetail": {
+      "document": "设备激活详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可注册设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已注册设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备授权数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNormalLicense",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用设备授权数",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedNormalLicense",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "蓝牙授权数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalBluetoothLicense",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用蓝牙授权数",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedBluetoothLicense",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeviceActiveResult": {
       "document": "设备激活结果数据",
@@ -10707,6 +11050,52 @@
       ],
       "type": "object"
     },
+    "LicenseServiceNumInfo": {
+      "document": "增值服务数量统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务类型",
+          "example": "Video",
+          "member": "string",
+          "name": "LicenseType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用授权数",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TWeCall激活码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TWeCallLicenseInfo",
+          "name": "TWeCallLicense",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ListEventHistoryRequest": {
       "document": "ListEventHistory请求参数结构体",
       "members": [
@@ -13242,6 +13631,68 @@
       ],
       "type": "object"
     },
+    "RegisteredDeviceNetTypeInfo": {
+      "document": "已注册通信类型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "普通设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "NormalDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "蓝牙设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "BluetoothDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RegisteredDeviceTypeInfo": {
+      "document": "已注册设备类型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已注册设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "NormalDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已注册网关数",
+          "example": "1",
+          "member": "int64",
+          "name": "GatewayDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已注册子设备数",
+          "example": "1",
+          "member": "int64",
+          "name": "SubDeviceNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ReleaseStudioProductRequest": {
       "document": "ReleaseStudioProduct请求参数结构体",
       "members": [
@@ -13959,6 +14410,45 @@
           "example": "无",
           "member": "int64",
           "name": "ActiveNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TWeCallLicenseInfo": {
+      "document": "TWeCall信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "voip类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "TWeCallType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedNum",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -14704,6 +15194,52 @@
         }
       ],
       "type": "object"
+    },
+    "VideoLicenseEntity": {
+      "document": "视频设备激活码统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "激活码类型，取值范围如下：0_5_mbps、1_mbps、1_5_mbps、2_mbps",
+          "example": "0_5_mbps",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效激活码总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "待使用的激活码数量",
+          "example": "1",
+          "member": "int64",
+          "name": "UsedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "即将过期的激活码数量",
+          "example": "0",
+          "member": "int64",
+          "name": "ExpiresSoonCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WXDeviceInfo": {
       "document": "微信硬件设备信息",

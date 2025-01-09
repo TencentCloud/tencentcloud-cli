@@ -17,6 +17,7 @@ Output:
             {
                 "NatGatewayId": "intranat-0g3blj80",
                 "NatGatewayName": "test_nat",
+                "NatType": "DCG",
                 "VpcId": "vpc-noanwmed",
                 "Status": "AVAILABLE",
                 "CrossDomain": false,
@@ -59,7 +60,7 @@ Output:
                 "TagSet": [
                     {
                         "Key": "负责人",
-                        "Value": "abc"
+                        "Value": "TencentCloud"
                     }
                 ],
                 "DirectConnectGatewayIds": [],

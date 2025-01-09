@@ -1,16 +1,16 @@
 **Example 1: 创建微信网关**
 
-
+创建微信网关
 
 Input: 
 
 ```
 tccli tcb EstablishWxGatewayRoute --cli-unfold-argument  \
-    --GatewayId xx \
-    --GatewayRouteDesc xx \
-    --GatewayRouteProtocol xx \
-    --GatewayRouteAddr xx \
-    --GatewayRouteName xx
+    --GatewayId gatewayid-xxx \
+    --GatewayRouteDesc route test \
+    --GatewayRouteProtocol http \
+    --GatewayRouteAddr access.com \
+    --GatewayRouteName routename
 ```
 
 Output: 

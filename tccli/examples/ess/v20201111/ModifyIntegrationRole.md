@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ess ModifyIntegrationRole --cli-unfold-argument  \
-    --RoleId abc \
+    --RoleId yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84 \
     --Name 业务员角色 \
     --Description 这是角色描述信息 \
     --Operator.UserId y******************5 \
@@ -17,8 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "RoleId": "abc",
-        "RequestId": "abc"
+        "RoleId": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
+        "RequestId": "4558af3c-b35b-41f2-85e4-31854a39a512"
     }
 }
 ```
@@ -32,7 +32,7 @@ Input:
 
 ```
 tccli ess ModifyIntegrationRole --cli-unfold-argument  \
-    --RoleId abc \
+    --RoleId yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84 \
     --Name 业务员角色 \
     --Description 这是角色描述信息 \
     --Operator.UserId y******************5 \
@@ -1212,8 +1212,8 @@ Output:
 ```
 {
     "Response": {
-        "RoleId": "abc",
-        "RequestId": "abc"
+        "RoleId": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
+        "RequestId": "4558af3c-b35b-41f2-85e4-31854a39a512"
     }
 }
 ```
@@ -1226,7 +1226,7 @@ Input:
 
 ```
 tccli ess ModifyIntegrationRole --cli-unfold-argument  \
-    --RoleId abc \
+    --RoleId yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84 \
     --Name 业务员角色 \
     --Description 这是角色描述信息 \
     --Operator.UserId y******************5
@@ -1236,8 +1236,8 @@ Output:
 ```
 {
     "Response": {
-        "RoleId": "abc",
-        "RequestId": "abc"
+        "RoleId": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
+        "RequestId": "4558af3c-b35b-41f2-85e4-31854a39a512"
     }
 }
 ```

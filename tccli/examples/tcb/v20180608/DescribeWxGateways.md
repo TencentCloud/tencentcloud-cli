@@ -22,11 +22,11 @@ Output:
                 "CanDowngrade": false,
                 "CanRenew": true,
                 "CreateTime": "2023-11-23 10:27:31",
-                "EnvId": "xxx",
+                "EnvId": "envid-xxx",
                 "ExpireTime": "2024-12-23 23:59:59",
                 "GatewayDesc": "",
-                "GatewayId": "xxx",
-                "GatewayName": "xxx",
+                "GatewayId": "envid-xxx",
+                "GatewayName": "gatewayname-xxx",
                 "GatewayType": "wechat",
                 "IsolateTime": "0000-00-00 00:00:00",
                 "L5Addr": "",
@@ -41,8 +41,8 @@ Output:
                 "Uin": "100008561789",
                 "UpdateTime": "2024-04-25 10:50:13",
                 "VersionNumLimit": 3,
-                "VpcId": "xxxx",
-                "WxAppId": "xxxx"
+                "VpcId": "vpcid-xxxx",
+                "WxAppId": "wxappid-xxxx"
             }
         ],
         "RequestId": "",
