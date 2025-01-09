@@ -462,6 +462,13 @@
       "output": "DescribeForwardRuleResponse",
       "status": "online"
     },
+    "DescribeFreeCloudStorageNum": {
+      "document": "查询云存卡套餐信息",
+      "input": "DescribeFreeCloudStorageNumRequest",
+      "name": "查询云存卡套餐信息",
+      "output": "DescribeFreeCloudStorageNumResponse",
+      "status": "online"
+    },
     "DescribeMessageDataStats": {
       "document": "查询设备消息数量统计",
       "input": "DescribeMessageDataStatsRequest",
@@ -1777,6 +1784,52 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudStoragePackageInfo": {
+      "document": "云存套餐包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐包id",
+          "example": "lye1w3d",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包名字",
+          "example": "低功耗3天会看周套餐",
+          "member": "string",
+          "name": "PackageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐包数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Num",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用数量",
+          "example": "5",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CloudStorageTimeData": {
       "document": "云存时间轴接口返回数据",
@@ -6473,6 +6526,33 @@
           "name": "ErrMsg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFreeCloudStorageNumRequest": {
+      "document": "DescribeFreeCloudStorageNum请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFreeCloudStorageNumResponse": {
+      "document": "DescribeFreeCloudStorageNum返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐包信息",
+          "example": "无",
+          "member": "CloudStoragePackageInfo",
+          "name": "PackageInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

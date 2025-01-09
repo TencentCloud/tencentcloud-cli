@@ -10,7 +10,7 @@ tccli vpc ModifyNatGatewayDestinationIpPortTranslationNatRule --cli-unfold-argum
     --SourceNatRule.IpProtocol TCP \
     --SourceNatRule.PublicIpAddress 139.199.232.238 \
     --SourceNatRule.PublicPort 8989 \
-    --SourceNatRule.Description xx \
+    --SourceNatRule.Description default \
     --SourceNatRule.PrivateIpAddress 10.0.8.9 \
     --SourceNatRule.PrivatePort 9090 \
     --DestinationNatRule.IpProtocol UDP \

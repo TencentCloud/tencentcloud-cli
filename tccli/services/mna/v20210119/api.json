@@ -300,14 +300,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "厂商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "厂商名称",
           "example": "vendor1",
           "member": "string",
           "name": "Vendor",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -322,25 +322,25 @@
         },
         {
           "disabled": false,
-          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备名称",
           "example": "mna-w795bzezug",
           "member": "string",
           "name": "DeviceName",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "this is descript",
           "member": "string",
           "name": "Description",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -366,58 +366,58 @@
         },
         {
           "disabled": false,
-          "document": "当付费方为租户时，可选择租户license付费方式：\n0，月度授权\n1，永久授权\n若不传则默认为月度授权。\n当付费方为厂商时，此参数无效\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当付费方为租户时，可选择租户license付费方式：\n0，月度授权\n1，永久授权\n若不传则默认为月度授权。\n当付费方为厂商时，此参数无效\n",
           "example": "0",
           "member": "int64",
           "name": "LicensePayMode",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备分组ID",
           "example": "cliGrp-xf8rboasbh",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备分组名称，预留参数，需要分组时传入GroupId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备分组名称，预留参数，需要分组时传入GroupId",
           "example": "group-name",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速",
           "example": "0",
           "member": "int64",
           "name": "FlowTrunc",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "激活后的设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活后的设备ID",
           "example": "mna-w795bzezug",
           "member": "string",
           "name": "DeviceId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1246,23 +1246,23 @@
         },
         {
           "disabled": false,
-          "document": "license授权有效期 0：月度授权 1：永久授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license授权有效期 0：月度授权 1：永久授权",
           "example": "1",
           "member": "int64",
           "name": "LicensePayMode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "付费方 0：厂商付费 1：客户付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费方 0：厂商付费 1：客户付费",
           "example": "1",
           "member": "int64",
           "name": "Payer",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

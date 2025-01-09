@@ -9804,9 +9804,10 @@
         {
           "disabled": false,
           "document": "vpc的id",
-          "example": "vpc-xxx1",
+          "example": "vpc-kwuw05al",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9817,6 +9818,7 @@
           "example": "192.168.0.0/24",
           "member": "string",
           "name": "FwCidr",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

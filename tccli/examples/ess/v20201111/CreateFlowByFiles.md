@@ -555,7 +555,6 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.0.Components.10.ComponentType MULTI_LINE_TEXT \
     --Approvers.0.Components.10.ComponentWidth 398 \
     --Approvers.0.Components.10.FileIndex 0 \
-    --Approvers.0.Components.11.ComponentExtra {} \
     --Approvers.0.Components.11.ComponentHeight 16 \
     --Approvers.0.Components.11.ComponentPage 7 \
     --Approvers.0.Components.11.ComponentPosX 83.09375 \
@@ -1384,7 +1383,6 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.0.Components.10.ComponentType MULTI_LINE_TEXT \
     --Approvers.0.Components.10.ComponentWidth 398 \
     --Approvers.0.Components.10.FileIndex 0 \
-    --Approvers.0.Components.11.ComponentExtra {} \
     --Approvers.0.Components.11.ComponentHeight 16 \
     --Approvers.0.Components.11.ComponentPage 7 \
     --Approvers.0.Components.11.ComponentPosX 83.09375 \

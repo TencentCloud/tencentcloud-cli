@@ -398,6 +398,22 @@
         "title": "删除规则"
       }
     ],
+    "DescribeActivateDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeActivateDevice\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-BoSq3gRJ27\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"InstanceId\": \"ins-DGAFvpuVF7\",\n            \"InstanceType\": 0,\n            \"DeviceActivationDetails\": {\n                \"TotalDeviceNum\": 650,\n                \"UsedDeviceNum\": 18,\n                \"TotalNormalLicense\": 600,\n                \"UsedNormalLicense\": 19,\n                \"TotalBluetoothLicense\": 0,\n                \"UsedBluetoothLicense\": 0\n            },\n            \"RegisteredDeviceType\": {\n                \"NormalDeviceNum\": 0,\n                \"GatewayDeviceNum\": 0,\n                \"SubDeviceNum\": 0\n            },\n            \"RegisteredDeviceNetType\": {\n                \"NormalDeviceNum\": 0,\n                \"BluetoothDeviceNum\": 0\n            }\n        },\n        \"RequestId\": \"ef9ec631-7337-5059arty-tl3o5wefr5\"\n    }\n}",
+        "title": "实例详情"
+      }
+    ],
+    "DescribeActivateLicenseService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeActivateLicenseService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-BoSq3gRJ27\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"LicenseType\": \"TWeCall\",\n                \"TotalNum\": 4000,\n                \"UsedNum\": 0,\n                \"TWeCallLicense\": [\n                    {\n                        \"TWeCallType\": \"TWeCall_A\",\n                        \"TotalNum\": 1000,\n                        \"UsedNum\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"00a70e11-d755-40f8-8f55-e951d7d30036\"\n    }\n}",
+        "title": "实例详情"
+      }
+    ],
     "DescribeBatchProduction": [
       {
         "document": "",
@@ -654,6 +670,14 @@
         "title": "成功示例"
       }
     ],
+    "DescribeFreeCloudStorageNum": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PackageInfos\": [\n            {\n                \"Num\": 10,\n                \"PackageId\": \"lye1w3d\",\n                \"PackageName\": \"低功耗3天会看周套餐\",\n                \"UsedNum\": 5\n            },\n            {\n                \"Num\": 10,\n                \"PackageId\": \"lye1w3d\",\n                \"PackageName\": \"低功耗3天会看两周套餐\",\n                \"UsedNum\": 3\n            }\n        ],\n        \"RequestId\": \"c2cc1650-17bb-4996-a88a-8f8471c7d6d5\"\n    }\n}",
+        "title": "查询云存卡套餐信息"
+      }
+    ],
     "DescribeGatewayBindDevices": [
       {
         "document": "",
@@ -772,6 +796,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rule\": {\n            \"RuleName\": \"test_create\",\n            \"Sql\": \"SELECT * FROM '$thing/up/+/ProductId/#'\",\n            \"Description\": \"test\",\n            \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1088/sub.php\\\"}}]\",\n            \"RuleDisabled\": true\n        }\n    }\n}",
         "title": "获取规则信息"
+      }
+    ],
+    "DescribeVideoLicense": [
+      {
+        "document": "查询激活码统计信息",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoLicense\n<公共请求参数>\n\n{\n    \"InstanceId\": \"aa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"License\": [\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"0_5_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"1_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"1_5_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"2_mbps\",\n                \"UsedCount\": 0\n            }\n        ],\n        \"RequestId\": \"65ca8e0a-422a-4a7a-94bc-041ecd7abaf0\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DirectBindDeviceInFamily": [

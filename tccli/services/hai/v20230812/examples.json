@@ -32,6 +32,14 @@
         "title": "查看指定实例hai-jklfaded的信息"
       }
     ],
+    "DescribeMuskPrompts": [
+      {
+        "document": "获取prompt任务详情",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMuskPrompts\n<公共请求参数>\n\n{\n    \"WorkgroupId\": \"4a3f3be9-f35b-40bf-b6bb-2af812dd63cb\",\n    \"WorkflowId\": \"wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"MuskPromptInfos\": [\n            {\n                \"CreateTime\": \"2024-12-24 12:07:22\",\n                \"OutputResource\": [],\n                \"PromptId\": \"edc6e6ec-072c-41dd-8672-c956b739fd31\",\n                \"Status\": 2,\n                \"UpdateTime\": \"2024-12-24 12:09:22\",\n                \"WorkflowId\": \"wf-b9dbb48a-f4cd-40f3-9a68-2af4c78d31a7\",\n                \"WorkgroupId\": \"4a3f3be9-f35b-40bf-b6bb-2af812dd63cb\"\n            }\n        ],\n        \"RequestId\": \"a8a7930a-b642-4a3e-a3df-2d4a6bd389cc\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取prompt任务详情"
+      }
+    ],
     "DescribeRegions": [
       {
         "document": "查询地域列表",

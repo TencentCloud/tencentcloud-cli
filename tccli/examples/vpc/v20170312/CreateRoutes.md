@@ -10,7 +10,7 @@ tccli vpc CreateRoutes --cli-unfold-argument  \
     --Routes.0.DestinationCidrBlock 192.168.0.0/16 \
     --Routes.0.GatewayType NORMAL_CVM \
     --Routes.0.GatewayId 172.16.16.37 \
-    --Routes.0.RouteDescription TEST-CVM-ROUTE
+    --Routes.0.RouteDescription demo
 ```
 
 Output: 
@@ -26,7 +26,7 @@ Output:
                         "DestinationCidrBlock": "192.168.0.0/16",
                         "RouteTableId": "rtb-n0yejvje",
                         "RouteItemId": "rti-psm73tvu",
-                        "RouteDescription": "erty",
+                        "RouteDescription": "demo",
                         "Enabled": true,
                         "RouteId": 1,
                         "GatewayType": "NORMAL_CVM",
@@ -38,11 +38,11 @@ Output:
                 ],
                 "RouteTableId": "rtb-n0yejvje",
                 "VpcId": "vpc-4cugx77a",
-                "RouteTableName": "TEST",
+                "RouteTableName": "demo",
                 "TagSet": [
                     {
-                        "Value": "test",
-                        "Key": "ee"
+                        "Value": "env",
+                        "Key": "prod"
                     }
                 ],
                 "CreatedTime": "2020-09-22 00:00:00",

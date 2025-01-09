@@ -18,15 +18,19 @@ Output:
             {
                 "VpcId": "vpc-2at5y1pn",
                 "RouteTableId": "rtb-l2h8d7c2",
-                "RouteTableName": "TestRouteTable",
+                "RouteTableName": "demo",
                 "AssociationSet": [],
                 "RouteSet": [
                     {
-                        "RouteItemId": "rti-12345678",
+                        "RouteItemId": "rti-ms7c7gcr",
+                        "RouteId": 0,
+                        "RouteTableId": "rtb-l2h8d7c2",
                         "DestinationCidrBlock": "169.254.64.0/23",
                         "GatewayType": "NORMAL_CVM",
                         "GatewayId": "172.16.0.25",
-                        "RouteDescription": ""
+                        "RouteType": "USER",
+                        "RouteDescription": "demo",
+                        "Enabled": true
                     }
                 ],
                 "Main": false,

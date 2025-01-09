@@ -16697,7 +16697,7 @@
         {
           "disabled": false,
           "document": "账户状态：0-有效 1-已退款 2-已过期 3-已用完， 非必须",
-          "example": "[]",
+          "example": "[0]",
           "member": "uint64",
           "name": "Status",
           "required": true,
@@ -16733,7 +16733,7 @@
         {
           "disabled": false,
           "document": "资源包ID",
-          "example": "[]",
+          "example": "[\"86540234\"]",
           "member": "string",
           "name": "ResourceIds",
           "required": false,
@@ -16751,7 +16751,7 @@
         {
           "disabled": false,
           "document": "生效日期起始查询时间，格式：\"yyyy-MM-dd HH:mm:ss\"",
-          "example": "\"\"",
+          "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "PackageStartTimeRangeBegin",
           "required": false,
@@ -16760,7 +16760,7 @@
         {
           "disabled": false,
           "document": "生效日期截止查询时间， 生效日期的查询起始时间和截止时间必须同时存在",
-          "example": "\"\"",
+          "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "PackageStartTimeRangeEnd",
           "required": false,
@@ -16769,7 +16769,7 @@
         {
           "disabled": false,
           "document": "失效日期起始查询时间",
-          "example": "\"\"",
+          "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "PackageEndTimeRangeBegin",
           "required": false,
@@ -16778,7 +16778,7 @@
         {
           "disabled": false,
           "document": "失效日期截止查询时间, 失效日期的查询起始时间和截止时间必须同时存在",
-          "example": "\"\"",
+          "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "PackageEndTimeRangeEnd",
           "required": false,
@@ -16814,7 +16814,7 @@
         {
           "disabled": false,
           "document": "订单号",
-          "example": "\"\"",
+          "example": "\"20221226556001271963881\"",
           "member": "string",
           "name": "DealName",
           "required": false,
@@ -16823,7 +16823,7 @@
         {
           "disabled": false,
           "document": "商品码",
-          "example": "[]",
+          "example": "[\"TRADE_T_S_code_001_xfIvsFKugT\"]",
           "member": "string",
           "name": "PackageCodes",
           "required": false,
@@ -16837,6 +16837,24 @@
           "name": "IsDisplayHiddenPackage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "切片/周期起始查询时间",
+          "example": "\"2024-10-01 00:00:00\"",
+          "member": "string",
+          "name": "SlicePeriodStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切片/周期截止查询时间, 切片/周期日期的查询起始时间和截止时间必须同时存在",
+          "example": "\"2024-10-01 10:00:00\"",
+          "member": "string",
+          "name": "SlicePeriodEndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19997,6 +20015,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务自定义查询周期/切片详细信息",
+          "example": "[]",
+          "member": "SlicePeriodResourcePackage",
+          "name": "SlicePeriodResourcePackages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22084,6 +22112,102 @@
         }
       ],
       "type": "object"
+    },
+    "SlicePeriodResourcePackage": {
+      "document": "资源包周期/切片详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "周期/切片开始时间",
+          "example": "\"2024-09-10 00:00:00\"",
+          "member": "string",
+          "name": "SlicePeriodStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片结束时间",
+          "example": "\"2024-09-10 23:59:59\"",
+          "member": "string",
+          "name": "SlicePeriodEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片总量",
+          "example": "50000000000",
+          "member": "uint64",
+          "name": "SlicePeriodCapacitySize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片总量精确值",
+          "example": "\"50000000000\"",
+          "member": "string",
+          "name": "SlicePeriodCapacitySizePrecise",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片余量",
+          "example": "50000000000",
+          "member": "uint64",
+          "name": "SlicePeriodCapacityRemain",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片余量精确值",
+          "example": "\"50000000000\"",
+          "member": "string",
+          "name": "SlicePeriodCapacityRemainPrecise",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片容量类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"storage\"",
+          "member": "string",
+          "name": "SlicePeriodCapacityKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片容量名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"存储\"",
+          "member": "string",
+          "name": "SlicePeriodCapacityName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期/切片容量单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"byte\"",
+          "member": "string",
+          "name": "SlicePeriodCapacityUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SummaryDetail": {
       "document": "账单多维度汇总消费详情",

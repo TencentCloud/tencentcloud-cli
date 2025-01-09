@@ -11861,6 +11861,15 @@
           "name": "ServiceExportTo",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启同步到全局注册中心",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncToGlobalRegistry",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -12325,6 +12334,15 @@
           "name": "ExportTo",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启同步到全局注册中心",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncToGlobalRegistry",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

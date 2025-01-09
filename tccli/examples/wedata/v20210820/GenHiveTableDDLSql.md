@@ -24,7 +24,7 @@ tccli wedata GenHiveTableDDLSql --cli-unfold-argument  \
     --Properties.0.Key format-version \
     --Properties.0.Value 2 \
     --TableMode 0 \
-    --TableVersion abc \
+    --TableVersion v1 \
     --UpsertFlag True \
     --TableComment 表注释 \
     --AddDataFiles 0 \

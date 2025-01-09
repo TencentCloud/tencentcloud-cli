@@ -62,7 +62,7 @@ tccli ess ModifyIntegrationDepartment --cli-unfold-argument  \
     --Operator.UserId yDwgKUUcXXXXXXXXXXXXQZDRuD \
     --DeptName 运营部 \
     --DeptId yDwgIUUckp1gXXXXXXXXE8xOm12b9 \
-    --DeptOpenId 1234 \
+    --DeptOpenId open_dept111 \
     --OrderNo 1
 ```
 

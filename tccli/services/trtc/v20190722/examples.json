@@ -414,7 +414,7 @@
     ],
     "SetUserBlocked": [
       {
-        "document": "",
+        "document": "适用于主播/房主/管理员等通过后台禁言/解禁言某个用户的场景。",
         "input": "https://trtc.tencentcloudapi.com/?Action=SetUserBlocked\n&SdkAppId=1400188366\n&RoomId=10006\n&UserId=29376\n&IsMute=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e494f6-8010-4bb2-9a9d-ba5fd191353a\"\n    }\n}",
         "title": "设置音视频状态"
@@ -568,6 +568,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWebRecord\n<公共请求参数>\n\n{\n    \"TaskId\": \"HMLm5HWNuUAXSb0gTEOx0z1x+nLMZNjXrY3keyUSvu7uu8mF9O656uNtbUtvaWLkpMY134jTN2Ix4vuqgOJ68nQ8tho3ri\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a76ee73-6579-42f0-8d57-1f6c9b9d7208\"\n    }\n}",
         "title": "停止页面录制任务"
+      }
+    ],
+    "TextCheck": [
+      {
+        "document": "文本审核1",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextCheck\n<公共请求参数>\n\n{\n    \"Content\": \"违法词\",\n    \"SdkAppId\": \"140018366\",\n    \"Source\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckDetails\": [\n            {\n                \"Label\": \"polity\",\n                \"Label2\": 1\n            }\n        ],\n        \"Label\": \"polity\",\n        \"RequestId\": \"8022ae26-4a64-4112-bd89-675630be2184\",\n        \"Score\": 91,\n        \"Suggestion\": 2\n    }\n}",
+        "title": "文本审核1"
       }
     ],
     "UpdateAIConversation": [

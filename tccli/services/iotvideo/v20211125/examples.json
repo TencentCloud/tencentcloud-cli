@@ -528,6 +528,14 @@
         "title": "获取产品转发规则"
       }
     ],
+    "DescribeFreeCloudStorageNum": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudStorage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PackageInfos\": [\n            {\n                \"Num\": 10,\n                \"PackageId\": \"lye1w3d\",\n                \"PackageName\": \"低功耗3天会看周套餐\",\n                \"UsedNum\": 5\n            },\n            {\n                \"Num\": 10,\n                \"PackageId\": \"lye1w3d\",\n                \"PackageName\": \"低功耗3天会看两周套餐\",\n                \"UsedNum\": 3\n            }\n        ],\n        \"RequestId\": \"c2cc1650-17bb-4996-a88a-8f8471c7d6d5\"\n    }\n}",
+        "title": "查询云存卡套餐信息"
+      }
+    ],
     "DescribeMessageDataStats": [
       {
         "document": "",

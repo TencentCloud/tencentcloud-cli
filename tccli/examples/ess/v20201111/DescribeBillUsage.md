@@ -1,4 +1,4 @@
-**Example 1: 查询失败样例**
+**Example 1: 查询企业版合同套餐使用**
 
 
 
@@ -6,20 +6,25 @@ Input:
 
 ```
 tccli ess DescribeBillUsage --cli-unfold-argument  \
-    --StartTime 20230902 \
-    --EndTime 20230930 \
-    --QuotaType AAAAA
+    --StartTime 20240901 \
+    --EndTime 20240930 \
+    --QuotaType CloudEnterprise
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.InvalidQuotaType",
-            "Message": "非法的套餐类型"
-        },
-        "RequestId": "s169935778xxxxxxx"
+        "RequestId": "s1729129053894358080",
+        "SubOrgSummary": [],
+        "Summary": [
+            {
+                "Available": 9967,
+                "QuotaType": "CloudEnterprise",
+                "Total": 412505,
+                "Used": 32
+            }
+        ]
     }
 }
 ```

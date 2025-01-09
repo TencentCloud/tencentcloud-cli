@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli vpc CreateSubnet --cli-unfold-argument  \
-    --SubnetName TestSubnet \
+    --SubnetName subnet1 \
     --VpcId vpc-m3ul053f \
     --CidrBlock 10.8.0.0/24 \
     --Zone ap-guangzhou-1 \
