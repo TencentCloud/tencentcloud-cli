@@ -7,8 +7,8 @@ Input:
 ```
 tccli tcb DescribeCloudBaseRunVersionSnapshot --cli-unfold-argument  \
     --EnvId lotestapi100004 \
-    --ServerName test \
-    --VersionName test-001 \
+    --ServerName server \
+    --VersionName version-001 \
     --Offset 0 \
     --Limit 10
 ```

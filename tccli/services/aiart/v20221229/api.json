@@ -878,7 +878,7 @@
         {
           "disabled": false,
           "document": "生成图 URL，有效期1小时，请及时保存。",
-          "example": "https://xxx.cos.ap-guangzhou.myqcloud.com/story_illustration/xxx.jpg",
+          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg",
           "member": "string",
           "name": "ResultImage",
           "output_required": false,

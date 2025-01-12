@@ -26,6 +26,7 @@ Output:
                 "ExpireTime": "167840945",
                 "Duration": "86400",
                 "MonthlyRemainTime": 66000,
+                "LimitedTime": 60000,
                 "LicenseIds": [
                     "trro-2e24a74a-67ea-1732-076d-75bf772529a",
                     "trro-2e24a74a-67ea-1732-073d-75bf772579a"
@@ -39,6 +40,7 @@ Output:
                 "ExpireTime": "167840945",
                 "Duration": "86400",
                 "MonthlyRemainTime": 66000,
+                "LimitedTime": 60000,
                 "LicenseIds": [
                     "trro-2e24a74a-67ea-1732-076d-75bf772529a",
                     "trro-2e24a74a-67ea-1732-073d-75bf772579a"

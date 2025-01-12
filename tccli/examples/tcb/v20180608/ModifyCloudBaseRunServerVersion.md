@@ -11,7 +11,7 @@ tccli tcb ModifyCloudBaseRunServerVersion --cli-unfold-argument  \
     --VersionName dbde \
     --EnvParams dnide \
     --ContainerPort 8080 \
-    --Remark test \
+    --Remark remark \
     --CustomLogs stdout \
     --IsResetRemark true
 ```

@@ -333,7 +333,7 @@
     "DescribeCloudBaseRunVersionSnapshot": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunVersionSnapshot\n&EnvId=lotestapi100004\n&ServerName=test\n&VersionName=test-001\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=DescribeCloudBaseRunVersionSnapshot\n&EnvId=lotestapi100004\n&ServerName=server\n&VersionName=version-001\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"daaed203-3e79-4212-966f-55d7f98ac96e\",\n        \"Snapshots\": []\n    }\n}",
         "title": "查看服务版本历史"
       }
@@ -629,7 +629,7 @@
     "ModifyCloudBaseRunServerVersion": [
       {
         "document": "",
-        "input": "https://tcb.tencentcloudapi.com/?Action=ModifyCloudBaseRunServerVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=dbde\n&EnvParams=dnide\n&ContainerPort=8080\n&Remark=test\n&CustomLogs=stdout\n&IsResetRemark=true\n&<公共请求参数>",
+        "input": "https://tcb.tencentcloudapi.com/?Action=ModifyCloudBaseRunServerVersion\n&EnvId=lotestapi100004\n&ServerName=dockerservicename\n&VersionName=dbde\n&EnvParams=dnide\n&ContainerPort=8080\n&Remark=remark\n&CustomLogs=stdout\n&IsResetRemark=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"succ\",\n        \"RequestId\": \"5620b49e-a25a-4007-84ef-03c9035c584d\"\n    }\n}",
         "title": "示例"
       }

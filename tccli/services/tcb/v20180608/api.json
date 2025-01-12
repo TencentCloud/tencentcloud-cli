@@ -960,6 +960,7 @@
           "example": "[\"1.86.245.225\",\"192.168.1.0/22\"]",
           "member": "string",
           "name": "IpWhiteList",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -970,6 +971,7 @@
           "example": "[\"2402:4e00:31:801::323\",\"2001:db8::/127\"]",
           "member": "string",
           "name": "IpBlackList",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -980,6 +982,7 @@
           "example": "[\"China\"]",
           "member": "string",
           "name": "CountryWhiteList",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -990,12 +993,13 @@
           "example": "[\"China\"]",
           "member": "string",
           "name": "CountryBlackList",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "BindEnvGatewayRequest": {
       "document": "BindEnvGateway请求参数结构体",
@@ -1516,7 +1520,7 @@
         {
           "disabled": false,
           "document": "Uin",
-          "example": "无",
+          "example": "1230001012",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -1526,7 +1530,7 @@
         {
           "disabled": false,
           "document": "BuildFinishTime",
-          "example": "无",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "BuildFinishTime",
           "output_required": false,
@@ -1536,7 +1540,7 @@
         {
           "disabled": false,
           "document": "DeployFinishTime",
-          "example": "无",
+          "example": "2025-01-01 00:00:00",
           "member": "string",
           "name": "DeployFinishTime",
           "output_required": false,
@@ -1546,7 +1550,7 @@
         {
           "disabled": false,
           "document": "BuildId",
-          "example": "无",
+          "example": "3152634",
           "member": "string",
           "name": "BuildId",
           "output_required": false,
@@ -1556,7 +1560,7 @@
         {
           "disabled": false,
           "document": "SourceUrl",
-          "example": "无",
+          "example": "https://sourcerepo.git",
           "member": "string",
           "name": "SourceUrl",
           "output_required": false,
@@ -1566,7 +1570,7 @@
         {
           "disabled": false,
           "document": "FailReasonShort",
-          "example": "无",
+          "example": "shotFailReason",
           "member": "string",
           "name": "FailReasonShort",
           "output_required": false,
@@ -1576,7 +1580,7 @@
         {
           "disabled": false,
           "document": "FirstInitRepo",
-          "example": "无",
+          "example": "https://sourcerepo.git",
           "member": "string",
           "name": "FirstInitRepo",
           "output_required": false,
@@ -4440,6 +4444,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedReqBodyLog",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -4450,6 +4455,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedReqHeaderLog",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -4460,6 +4466,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedRspBodyLog",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -4470,6 +4477,7 @@
           "example": "true",
           "member": "bool",
           "name": "NeedRspHeaderLog",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -4480,6 +4488,7 @@
           "example": "setId",
           "member": "string",
           "name": "LogSetId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4490,12 +4499,13 @@
           "example": "topicId",
           "member": "string",
           "name": "LogTopicId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CustomRequestToAdd": {
       "document": "安全网关请求自定义头部",
@@ -10449,7 +10459,7 @@
         {
           "disabled": false,
           "document": "网关id",
-          "example": "无",
+          "example": "gatewayid-xxx",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -11027,6 +11037,7 @@
           "example": "versionName-xxx",
           "member": "string",
           "name": "VersionName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11037,6 +11048,7 @@
           "example": "50",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11047,6 +11059,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11057,6 +11070,7 @@
           "example": "2021-04-15 13:54:49",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11067,6 +11081,7 @@
           "example": "2021-04-15 13:54:49",
           "member": "string",
           "name": "UpdatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11074,9 +11089,10 @@
         {
           "disabled": false,
           "document": "构建ID",
-          "example": "xxx",
+          "example": "buildid-xxx",
           "member": "uint64",
           "name": "BuildId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11084,9 +11100,10 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "xxx",
+          "example": "备注信息",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11097,6 +11114,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Priority",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11107,6 +11125,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsDefault",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -11117,6 +11136,7 @@
           "example": "无",
           "member": "WxGatewayCustomConfig",
           "name": "CustomConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -13396,6 +13416,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsOpenXRealIp",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -13406,6 +13427,7 @@
           "example": "false",
           "member": "BanConfig",
           "name": "BanConfig",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -13416,6 +13438,7 @@
           "example": "PPV1",
           "member": "string",
           "name": "SourceIpType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13426,6 +13449,7 @@
           "example": "无",
           "member": "CustomLogConfig",
           "name": "LogConfig",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -13436,12 +13460,13 @@
           "example": "false",
           "member": "bool",
           "name": "IsAcceptHttpOne",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "WxGatewayRountItem": {
       "document": "安全网关路由",
@@ -13479,7 +13504,7 @@
         {
           "disabled": false,
           "document": "安全网关路由描述",
-          "example": "测试",
+          "example": "路由描述",
           "member": "string",
           "name": "GatewayRouteDesc",
           "output_required": true,

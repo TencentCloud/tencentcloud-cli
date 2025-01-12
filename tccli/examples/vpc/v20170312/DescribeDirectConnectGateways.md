@@ -27,7 +27,7 @@ Output:
                 "ModeType": "demo",
                 "NatGatewayId": "demo",
                 "DirectConnectGatewayId": "dcg-6eeis68f",
-                "DirectConnectGatewayName": "shiliangxie_test",
+                "DirectConnectGatewayName": "我的网关01",
                 "DirectConnectGatewayIp": "10.6.223.4",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -44,7 +44,7 @@ Output:
             },
             {
                 "DirectConnectGatewayId": "dcg-94cdyvfr",
-                "DirectConnectGatewayName": "test",
+                "DirectConnectGatewayName": "我的网关02",
                 "DirectConnectGatewayIp": "10.144.25.62",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -72,7 +72,7 @@ Output:
             },
             {
                 "DirectConnectGatewayId": "dcg-dimeg9zd",
-                "DirectConnectGatewayName": "test",
+                "DirectConnectGatewayName": "我的网关03",
                 "DirectConnectGatewayIp": "10.144.25.62",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -114,7 +114,7 @@ Input:
 ```
 tccli vpc DescribeDirectConnectGateways --cli-unfold-argument  \
     --Filters.0.Name direct-connect-gateway-name \
-    --Filters.0.Values test \
+    --Filters.0.Values 我的网关 \
     --Filters.1.Name gateway-type \
     --Filters.1.Values NORMAL \
     --Filters.2.Name vpc-id \
@@ -128,7 +128,7 @@ Output:
         "DirectConnectGatewaySet": [
             {
                 "DirectConnectGatewayId": "dcg-94cdyvfr",
-                "DirectConnectGatewayName": "test",
+                "DirectConnectGatewayName": "我的网关",
                 "DirectConnectGatewayIp": "10.144.25.62",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",
@@ -156,7 +156,7 @@ Output:
             },
             {
                 "DirectConnectGatewayId": "dcg-6eeis68f",
-                "DirectConnectGatewayName": "shiliangxie_test",
+                "DirectConnectGatewayName": "我的网关",
                 "DirectConnectGatewayIp": "10.6.223.4",
                 "GatewayType": "NORMAL",
                 "NetworkType": "CCN",

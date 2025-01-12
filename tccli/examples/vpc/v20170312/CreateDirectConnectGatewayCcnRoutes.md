@@ -7,8 +7,7 @@ Input:
 ```
 tccli vpc CreateDirectConnectGatewayCcnRoutes --cli-unfold-argument  \
     --DirectConnectGatewayId dcg-prpqlmg1 \
-    --Routes.0.DestinationCidrBlock 10.2.2.0/24 \
-    --Routes.1.DestinationCidrBlock 10.2.3.0/24
+    --Routes.0.DestinationCidrBlock 10.2.2.0/24
 ```
 
 Output: 

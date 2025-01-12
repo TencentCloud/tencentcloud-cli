@@ -3,8 +3,8 @@
     "ActivateHardware": [
       {
         "document": "批量激活设备",
-        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateHardware\n<公共请求参数>\n\n{\n    \"Hardware\": [\n        {\n            \"Vendor\": \"vendor\",\n            \"SN\": \"AN\",\n            \"DeviceName\": \"name\",\n            \"Description\": \"描述\",\n            \"DataKey\": \"keys\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"HardwareInfo\": [\n            {\n                \"Vendor\": \"vendor\",\n                \"SN\": \"AN\",\n                \"DeviceName\": \"name\",\n                \"Description\": \"描述\",\n                \"DataKey\": \"keys\",\n                \"LicensePayMode\": 1,\n                \"AccessScope\": 1\n            }\n        ],\n        \"RequestId\": \"edd378f7-2511-4692-a029-5ca3d22c1884\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateHardware\n<公共请求参数>\n\n{\n    \"Hardware\": [\n        {\n            \"Vendor\": \"vendor\",\n            \"SN\": \"AN\",\n            \"DeviceName\": \"name\",\n            \"Description\": \"activateHardware info\",\n            \"DataKey\": \"keys\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"HardwareInfo\": [\n            {\n                \"Vendor\": \"vendor\",\n                \"SN\": \"AN\",\n                \"DeviceName\": \"name\",\n                \"Description\": \"activateHardware info\",\n                \"DataKey\": \"keys\",\n                \"LicensePayMode\": 1,\n                \"AccessScope\": 1\n            }\n        ],\n        \"RequestId\": \"edd378f7-2511-4692-a029-5ca3d22c1884\"\n    }\n}",
         "title": "批量激活设备"
       }
     ],

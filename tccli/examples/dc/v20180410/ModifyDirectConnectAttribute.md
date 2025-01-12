@@ -7,7 +7,7 @@ Input:
 ```
 tccli dc ModifyDirectConnectAttribute --cli-unfold-argument  \
     --DirectConnectId dcx-abcdefgh \
-    --DirectConnectName abc \
+    --DirectConnectName 我的专线01 \
     --CircuitCode ABF_123 \
     --Vlan 100 \
     --TencentAddress 172.168.1.1/30 \

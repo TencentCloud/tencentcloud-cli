@@ -7845,7 +7845,7 @@
         {
           "disabled": false,
           "document": "专线网关ID，形如：dcg-prpqlmg1",
-          "example": "",
+          "example": "dcg-prpqlmg1",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -7854,7 +7854,7 @@
         {
           "disabled": false,
           "document": "需要连通的IDC网段列表",
-          "example": "",
+          "example": "无",
           "member": "DirectConnectGatewayCcnRoute",
           "name": "Routes",
           "required": true,
@@ -7881,7 +7881,7 @@
         {
           "disabled": false,
           "document": "专线网关名称",
-          "example": "test",
+          "example": "我的网关",
           "member": "string",
           "name": "DirectConnectGatewayName",
           "required": true,
@@ -11966,7 +11966,7 @@
         {
           "disabled": false,
           "document": "专线网关唯一`ID`，形如：`dcg-9o233uri`。",
-          "example": "",
+          "example": "dcg-9o233uri",
           "member": "string",
           "name": "DirectConnectGatewayId",
           "required": true,
@@ -23668,21 +23668,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "专线网关标准接入费用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "专线网关标准接入费用",
+          "example": "20.0",
           "member": "int64",
           "name": "TotalCost",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专线网关真实接入费用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "专线网关真实接入费用",
+          "example": "20.0",
           "member": "int64",
           "name": "RealTotalCost",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25915,7 +25917,7 @@
         {
           "disabled": false,
           "document": "云联网路由发布模式，可选值：`standard`（标准模式）、`exquisite`（精细模式）。只有云联网类型专线网关才支持修改`ModeType`。",
-          "example": "\"\"",
+          "example": "standard",
           "member": "string",
           "name": "ModeType",
           "required": false,

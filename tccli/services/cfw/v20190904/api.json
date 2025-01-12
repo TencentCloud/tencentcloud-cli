@@ -2060,7 +2060,7 @@
         {
           "disabled": false,
           "document": "检索的值，各检索值间为OR关系",
-          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "example": "[\"109.24.115.11\",\"83.24.11.24\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -10326,7 +10326,7 @@
         {
           "disabled": false,
           "document": "记录id",
-          "example": "5d723366818a39290******",
+          "example": "5d723366818a39290",
           "member": "string",
           "name": "UniqueId",
           "required": true,
