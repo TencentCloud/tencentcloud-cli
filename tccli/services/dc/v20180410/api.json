@@ -99,7 +99,7 @@
       "status": "online"
     },
     "DescribePublicDirectConnectTunnelRoutes": {
-      "document": "本接口（DescribePublicDirectConnectTunnelRoutes）用于查询互联网通道路由列表",
+      "document": "查询互联网通道路由列表。",
       "input": "DescribePublicDirectConnectTunnelRoutesRequest",
       "name": "查询互联网通道路由列表",
       "output": "DescribePublicDirectConnectTunnelRoutesResponse",
@@ -353,13 +353,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "互联网公网地址ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "互联网公网地址ID",
           "example": "ipv4-h2k2jna1",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1359,7 +1359,7 @@
         {
           "disabled": false,
           "document": "过滤条件:\n参数不支持同时指定DirectConnectTunnelIds和Filters。\ndirect-connect-tunnel-name, 专用通道名称。\ndirect-connect-tunnel-id, 专用通道实例ID，如：dcx-abcdefgh。\ndirect-connect-id, 物理专线实例ID，如：dc-abcdefgh。",
-          "example": "[]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1368,7 +1368,7 @@
         {
           "disabled": false,
           "document": "专用通道ID数组。",
-          "example": "[]",
+          "example": "[\"dcx-abab1212\"]",
           "member": "string",
           "name": "DirectConnectTunnelIds",
           "required": false,
@@ -1401,7 +1401,7 @@
         {
           "disabled": false,
           "document": "专用通道列表。",
-          "example": "[]",
+          "example": "无",
           "member": "DirectConnectTunnel",
           "name": "DirectConnectTunnelSet",
           "output_required": true,
@@ -1442,7 +1442,7 @@
         {
           "disabled": false,
           "document": "物理专线 ID数组。",
-          "example": "无",
+          "example": "[\"dc-abab1212\"]",
           "member": "string",
           "name": "DirectConnectIds",
           "required": false,
@@ -1494,13 +1494,13 @@
         },
         {
           "disabled": false,
-          "document": "用户名下物理专线是否都签署了用户协议。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名下物理专线是否都签署了用户协议。",
           "example": "true",
           "member": "bool",
           "name": "AllSignLaw",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1521,53 +1521,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "IPv6互联网公网允许的最小前缀长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IPv6互联网公网允许的最小前缀长度",
           "example": "64",
           "member": "int64",
           "name": "Ipv6PrefixLen",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "BGP类型IPv4互联网地址配额",
           "example": "64",
           "member": "int64",
           "name": "Ipv4BgpQuota",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "非BGP类型IPv4互联网地址配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "非BGP类型IPv4互联网地址配额",
           "example": "0",
           "member": "int64",
           "name": "Ipv4OtherQuota",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "BGP类型IPv4互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "BGP类型IPv4互联网地址已使用数量",
           "example": "8",
           "member": "int64",
           "name": "Ipv4BgpNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "非BGP类型互联网地址已使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "非BGP类型互联网地址已使用数量",
           "example": "0",
           "member": "int64",
           "name": "Ipv4OtherNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1661,13 +1661,13 @@
         },
         {
           "disabled": false,
-          "document": "互联网公网地址统计信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "互联网公网地址统计信息列表",
           "example": "{\"Region\": \"bj\", \"SubnetNum\": 0}",
           "member": "InternetAddressStatistics",
           "name": "InternetAddressStatistics",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1683,8 +1683,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道ID",
-          "example": "",
+          "document": "专用通道ID。",
+          "example": "dcx-xxx",
           "member": "string",
           "name": "DirectConnectTunnelId",
           "required": true,
@@ -1692,8 +1692,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件：\nroute-type：路由类型，取值：BGP/STATIC\nroute-subnet：路由cidr，取值如：192.68.1.0/24",
-          "example": "",
+          "document": "过滤条件：\nroute-type：路由类型，取值：BGP/STATIC；\nroute-subnet：路由cidr，取值如：192.68.1.0/24。",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1701,8 +1701,8 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
-          "example": "",
+          "document": "偏移量，默认为0。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1710,8 +1710,8 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100",
-          "example": "",
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1725,19 +1725,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "互联网通道路由列表",
-          "example": "",
+          "document": "互联网通道路由列表。",
+          "example": "无",
           "member": "DirectConnectTunnelRoute",
           "name": "Routes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录总数",
-          "example": "",
+          "document": "路由总数量。",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2827,7 +2829,7 @@
           "example": "dcxr-69sg663r",
           "member": "string",
           "name": "RouteId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2837,7 +2839,7 @@
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "DestinationCidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2847,7 +2849,7 @@
           "example": "BGP",
           "member": "string",
           "name": "RouteType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2857,7 +2859,7 @@
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2867,7 +2869,7 @@
           "example": "['123', '342']",
           "member": "string",
           "name": "ASPath",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2877,19 +2879,19 @@
           "example": "0.0.0.0",
           "member": "string",
           "name": "NextHop",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "路由更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由更新时间",
           "example": "2021-07-11 12:32:32",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2897,7 +2899,7 @@
           "example": "True",
           "member": "bool",
           "name": "ApplyOnTunnelEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -3149,7 +3151,7 @@
         {
           "disabled": false,
           "document": "物理专线名称。",
-          "example": "abc",
+          "example": "我的专线01",
           "member": "string",
           "name": "DirectConnectName",
           "required": false,
@@ -3311,7 +3313,7 @@
         {
           "disabled": false,
           "document": "腾讯侧互联IP。",
-          "example": "无",
+          "example": "192.168.0.1/24",
           "member": "string",
           "name": "TencentAddress",
           "required": false,
@@ -3320,7 +3322,7 @@
         {
           "disabled": false,
           "document": "用户侧互联IP。",
-          "example": "无",
+          "example": "192.168.0.3/24",
           "member": "string",
           "name": "CustomerAddress",
           "required": false,
@@ -3338,7 +3340,7 @@
         {
           "disabled": false,
           "document": "腾讯侧备用互联IP。",
-          "example": "无",
+          "example": "192.168.0.2/24",
           "member": "string",
           "name": "TencentBackupAddress",
           "required": false,

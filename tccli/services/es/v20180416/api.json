@@ -727,7 +727,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "\"\"",
+          "example": "es-sadfas",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -776,6 +776,16 @@
           "name": "ReasonType",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态相关信息",
+          "example": "关闭索引信息",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6863,6 +6873,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "远程IK分词启用词词典",
+          "example": "无",
+          "member": "string",
+          "name": "RemoteIkMainDict",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "远程IK分词停用词词词典",
+          "example": "无",
+          "member": "string",
+          "name": "RemoteIkStopword",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7244,6 +7276,16 @@
           "name": "IndexSettingsField",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引别名字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[alias1,alias2]",
+          "member": "string",
+          "name": "IndexAliasesField",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {

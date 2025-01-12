@@ -44,7 +44,7 @@ Output:
                 "ShareOrNot": 0,
                 "TencentBackupAddress": "192.168.0.2/29",
                 "NetworkType": "CCN",
-                "CloudAttachId": null,
+                "CloudAttachId": "",
                 "RouteType": "BGP",
                 "BgpPeer": {
                     "Asn": 65120,
@@ -106,7 +106,7 @@ Output:
                 "ShareOrNot": 0,
                 "TencentBackupAddress": "",
                 "NetworkType": "VPC",
-                "CloudAttachId": null,
+                "CloudAttachId": "",
                 "RouteType": "STATIC",
                 "RouteFilterPrefixes": [
                     {

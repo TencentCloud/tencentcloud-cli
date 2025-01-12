@@ -121,6 +121,58 @@ def doDescribeRealNameAuthInfo(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doGetAppIdByUin(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AccountClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.GetAppIdByUinRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.GetAppIdByUin(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetBackUpValidate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -433,7 +485,7 @@ def doGetUinByAppId(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetAppIdByUin(args, parsed_globals):
+def doBindGoogleAndPreLoginForSaaS(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -462,11 +514,11 @@ def doGetAppIdByUin(args, parsed_globals):
     client = mod.AccountClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetAppIdByUinRequest()
+    model = models.BindGoogleAndPreLoginForSaaSRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetAppIdByUin(model)
+        rsp = client.BindGoogleAndPreLoginForSaaS(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -519,6 +571,58 @@ def doLoginViaTCB(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.LoginViaTCB(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doSendEmailVerifyCode(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AccountClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.SendEmailVerifyCodeRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.SendEmailVerifyCode(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -901,6 +1005,58 @@ def doUpdatePhoneByAuthCodeForSaaS(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doRegisterSaaSAccountByGoogle(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AccountClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RegisterSaaSAccountByGoogleRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RegisterSaaSAccountByGoogle(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doGetMediaPlatformAccessToken(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1247,6 +1403,58 @@ def doSendSmsVerifyCode(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.SendSmsVerifyCode(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doRegisterCloudForSaaSIntl(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.AccountClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.RegisterCloudForSaaSIntlRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.RegisterCloudForSaaSIntl(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1629,7 +1837,7 @@ def doGetUpperLimit(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doSendEmailVerifyCode(args, parsed_globals):
+def doSendEmailVerifyCodeForSaaS(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1658,11 +1866,11 @@ def doSendEmailVerifyCode(args, parsed_globals):
     client = mod.AccountClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.SendEmailVerifyCodeRequest()
+    model = models.SendEmailVerifyCodeForSaaSRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.SendEmailVerifyCode(model)
+        rsp = client.SendEmailVerifyCodeForSaaS(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1746,14 +1954,16 @@ MODELS_MAP = {
 ACTION_MAP = {
     "DeleteWhitelistUin": doDeleteWhitelistUin,
     "DescribeRealNameAuthInfo": doDescribeRealNameAuthInfo,
+    "GetAppIdByUin": doGetAppIdByUin,
     "GetBackUpValidate": doGetBackUpValidate,
     "BindAccountForTCB": doBindAccountForTCB,
     "DescribeSensitiveInfoHashValue": doDescribeSensitiveInfoHashValue,
     "AddAccountBindForSaaS": doAddAccountBindForSaaS,
     "BatchCheckWhitelist": doBatchCheckWhitelist,
     "GetUinByAppId": doGetUinByAppId,
-    "GetAppIdByUin": doGetAppIdByUin,
+    "BindGoogleAndPreLoginForSaaS": doBindGoogleAndPreLoginForSaaS,
     "LoginViaTCB": doLoginViaTCB,
+    "SendEmailVerifyCode": doSendEmailVerifyCode,
     "UnbindTCBAccount": doUnbindTCBAccount,
     "RegisterAccountForTCB": doRegisterAccountForTCB,
     "AddWhitelistUin": doAddWhitelistUin,
@@ -1761,6 +1971,7 @@ ACTION_MAP = {
     "DescribeNickname": doDescribeNickname,
     "GetAuthNonSensitiveInfo": doGetAuthNonSensitiveInfo,
     "UpdatePhoneByAuthCodeForSaaS": doUpdatePhoneByAuthCodeForSaaS,
+    "RegisterSaaSAccountByGoogle": doRegisterSaaSAccountByGoogle,
     "GetMediaPlatformAccessToken": doGetMediaPlatformAccessToken,
     "DescribeTCBBinding": doDescribeTCBBinding,
     "GetAuthStatus": doGetAuthStatus,
@@ -1768,6 +1979,7 @@ ACTION_MAP = {
     "DescribeBasicAuthForSaaS": doDescribeBasicAuthForSaaS,
     "GetSiteProperties": doGetSiteProperties,
     "SendSmsVerifyCode": doSendSmsVerifyCode,
+    "RegisterCloudForSaaSIntl": doRegisterCloudForSaaSIntl,
     "DescribeMatchingUserListByUinPhone": doDescribeMatchingUserListByUinPhone,
     "ModifyTrade": doModifyTrade,
     "SaveBasicAuthForSaaS": doSaveBasicAuthForSaaS,
@@ -1775,7 +1987,7 @@ ACTION_MAP = {
     "GetTradeConfigList": doGetTradeConfigList,
     "DescribeUserTrade": doDescribeUserTrade,
     "GetUpperLimit": doGetUpperLimit,
-    "SendEmailVerifyCode": doSendEmailVerifyCode,
+    "SendEmailVerifyCodeForSaaS": doSendEmailVerifyCodeForSaaS,
     "CheckAccountExists": doCheckAccountExists,
 
 }

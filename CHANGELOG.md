@@ -1,3 +1,85 @@
+# Release 3.0.1135.1
+
+## 账号中心(account) 版本：2018-12-25
+
+### 第 16 次发布
+
+发布时间：2025-01-13 01:06:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindGoogleAndPreLoginForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/85663)
+* [RegisterCloudForSaaSIntl](http://document.tencentcloudapi.woa.com/document/product/1594/85662)
+* [RegisterSaaSAccountByGoogle](http://document.tencentcloudapi.woa.com/document/product/1594/85661)
+* [SendEmailVerifyCodeForSaaS](http://document.tencentcloudapi.woa.com/document/product/1594/85660)
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 101 次发布
+
+发布时间：2025-01-13 01:12:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateConsumer](http://document.tencentcloudapi.woa.com/document/product/614/66228)
+
+	* 新增入参：AdvancedConfig
+
+* [DescribeConsumer](http://document.tencentcloudapi.woa.com/document/product/614/66226)
+
+	* 新增出参：AdvancedConfig
+
+* [ModifyConsumer](http://document.tencentcloudapi.woa.com/document/product/614/66225)
+
+	* 新增入参：AdvancedConfig
+
+
+新增数据结构：
+
+* [AdvancedConsumerConfiguration](http://document.tencentcloudapi.woa.com/document/product/614/56471#AdvancedConsumerConfiguration)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 79 次发布
+
+发布时间：2025-01-13 01:19:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CheckOperation](http://document.tencentcloudapi.woa.com/document/product/845/83434)
+
+	* 新增出参：Message
+
+
+修改数据结构：
+
+* [EsDictionaryInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#EsDictionaryInfo)
+
+	* 新增成员：RemoteIkMainDict, RemoteIkStopword
+
+* [IndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#IndexMetaField)
+
+	* 新增成员：IndexAliasesField
+
+
+
+
 # Release 3.0.1134.1
 
 ## 费用中心(billing) 版本：2018-07-09

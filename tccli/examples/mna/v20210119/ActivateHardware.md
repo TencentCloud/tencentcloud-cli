@@ -9,7 +9,7 @@ tccli mna ActivateHardware --cli-unfold-argument  \
     --Hardware.0.Vendor vendor \
     --Hardware.0.SN AN \
     --Hardware.0.DeviceName name \
-    --Hardware.0.Description 描述 \
+    --Hardware.0.Description activateHardware info \
     --Hardware.0.DataKey keys
 ```
 
@@ -22,7 +22,7 @@ Output:
                 "Vendor": "vendor",
                 "SN": "AN",
                 "DeviceName": "name",
-                "Description": "描述",
+                "Description": "activateHardware info",
                 "DataKey": "keys",
                 "LicensePayMode": 1,
                 "AccessScope": 1
