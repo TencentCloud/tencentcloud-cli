@@ -5959,7 +5959,7 @@
         {
           "disabled": false,
           "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
-          "example": "[{\"AdvancedInfo\":\"{\\\"Parag\\\":{\\\"ParagNo\\\":1}}\",\"Confidence\":100,\"DetectedText\":\"轻断食:正在横扫全球的瘦身革命\",\"ItemPolygon\":{\"Height\":26,\"Width\":264,\"X\":446,\"Y\":93},\"Polygon\":[{\"X\":446,\"Y\":93},{\"X\":709,\"Y\":94},{\"X\":708,\"Y\":118},{\"X\":446,\"Y\":116}],\"WordCoordPoint\":[],\"Words\":[]},{\"AdvancedInfo\":\"{\\\"Parag\\\":{\\\"ParagNo\\\":2}}\",\"Confidence\":100,\"DetectedText\":\"专题报道。\",\"ItemPolygon\":{\"Height\":30,\"Width\":103,\"X\":47,\"Y\":198},\"Polygon\":[{\"X\":47,\"Y\":201},{\"X\":148,\"Y\":198},{\"X\":149,\"Y\":225},{\"X\":48,\"Y\":227}],\"WordCoordPoint\":[],\"Words\":[]},{\"AdvancedInfo\":\"{\\\"Parag\\\":{\\\"ParagNo\\\":3}}\"}]",
+          "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
           "output_required": true,
@@ -6070,7 +6070,7 @@
         {
           "disabled": false,
           "document": "检测到的文本信息，包括文本行内容、置信度、文本行坐标以及文本行旋转纠正后的坐标，具体内容请点击左侧链接。",
-          "example": "[{\"AdvancedInfo\":\"{\\\"Parag\\\":{\\\"ParagNo\\\":3}}\",\"Confidence\":100,\"DetectedText\":\"八色鸫\",\"ItemPolygon\":{\"Height\":28,\"Width\":85,\"X\":62,\"Y\":443},\"Polygon\":[{\"X\":62,\"Y\":443},{\"X\":147,\"Y\":442},{\"X\":147,\"Y\":470},{\"X\":63,\"Y\":471}],\"WordCoordPoint\":[],\"Words\":[]}]",
+          "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
           "output_required": true,
@@ -6281,7 +6281,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -13008,7 +13008,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
-          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/docume",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/RecognizeGeneralTextImageWarn/RecognizeGeneralTextImageWarn1.png",
           "member": "string",
           "name": "ImageUrl",
           "required": false,
@@ -13016,8 +13016,8 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n支持的图片像素：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
-          "example": "无",
+          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。\n支持的图片像素：需介于20-10000px之间。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -13044,7 +13044,7 @@
         {
           "disabled": false,
           "document": "支持的模板类型\n- General 通用告警（支持所有类型告警）\n- LicensePlate 车牌告警（支持翻拍告警）",
-          "example": "无",
+          "example": "General ",
           "member": "string",
           "name": "Type",
           "required": false,

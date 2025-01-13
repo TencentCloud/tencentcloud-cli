@@ -59,7 +59,8 @@ Output:
         "QrCode": {
             "ExpiredTime": 1695783727,
             "QrCodeId": "yDwJNUUckpkoj0mdUIJN2kC3XWFFaSuR",
-            "QrCodeUrl": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDwJNUUckpkoj0mdUIJN2kC3XWFFaSuR.png"
+            "QrCodeUrl": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDwJNUUckpkoj0mdUIJN2kC3XWFFaSuR.png",
+            "WeixinQrCodeUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a976edda49eacc2b264c2df468c30fcd69023cd782421bdbedddf8a95c7859d4467844c38fb9ea20b47d4b2f89396717f8deac5dcb25f32d718f0c13b48f53a2f6f69096b3b301aad56de87d7a8499fe374e5e2891dd778bb0c82394640fe124be22c63ba4e022a046cbc298006d3341"
         },
         "RequestId": "s1695178926924585393",
         "SignUrls": {
@@ -102,7 +103,8 @@ Output:
         "QrCode": {
             "ExpiredTime": 1695783727,
             "QrCodeId": "yDwJNUUckpkoj0mdUIJN2kC3XWFFaSuR",
-            "QrCodeUrl": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDwJNUUckpkoj0mdUIJN2kC3XWFFaSuR.png"
+            "QrCodeUrl": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDwJNUUckpkoj0mdUIJN2kC3XWFFaSuR.png",
+            "WeixinQrCodeUrl": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a976edda49eacc2b264c2df468c30fcd69023cd782421bdbedddf8a95c7859d4467844c38fb9ea20b47d4b2f89396717f8deac5dcb25f32d718f0c13b48f53a2f6f69096b3b301aad56de87d7a8499fe374e5e2891dd778bb0c82394640fe124be22c63ba4e022a046cbc298006d3341"
         },
         "RequestId": "s1695178926924585393",
         "SignUrls": {

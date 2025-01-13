@@ -14,13 +14,13 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "abc-123-xyz",
         "StartTime": 1630376705,
         "ExpiredTime": 1630377005,
         "Credentials": {
-            "TmpSecretId": "xx",
-            "TmpSecretKey": "xx",
-            "Token": "xx"
+            "TmpSecretId": "tmp-secretid-value",
+            "TmpSecretKey": "tmp-secretkey-value",
+            "Token": "token-value"
         }
     }
 }

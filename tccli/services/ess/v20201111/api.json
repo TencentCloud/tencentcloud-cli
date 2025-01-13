@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CreateBatchOrganizationRegistrationTasks": {
-      "document": "本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接\n该接口为异步提交任务接口,需要跟查询企业批量认证链接(DescribeBatchOrganizationRegistrationUrls) 配合使用.\n\n批量创建链接有以下限制：\n\n1. 单次最多创建10个企业。\n2. 一天同一家企业最多创建8000家企业。\n3. 同一批创建的企业不能重复 其中包括 企业名称，企业统一信用代码\n4. 跳转到小程序的实现，参考微信官方文档（分为全屏、半屏两种方式），如何配置也可以请参考: 跳转电子签小程序配置\n\n注：\n\n1. **此接口需要购买单独的实名套餐包方可调用，如有需求请联系对接人员评估**\n  \n2. 如果生成的链接是APP链接，跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n  \n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| --- | --- | --- |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接\n该接口为异步提交任务接口,需要跟查询企业批量认证链接(DescribeBatchOrganizationRegistrationUrls) 配合使用.\n\n批量创建链接有以下限制：\n\n1. 单次最多创建10个企业。\n2. 一天同一家企业最多创建8000家企业。\n3. 同一批创建的企业不能重复 其中包括 企业名称，企业统一信用代码\n4. 跳转到小程序的实现，参考微信官方文档（分为全屏、半屏两种方式），如何配置也可以请参考: 跳转电子签小程序配置\n\n注：\n\n1. 此接口需要 <font  color=\"red\"><b>购买单独的实名套餐包</b></font>方可调用，如有需求请联系对接人员评估\n  \n2. 如果生成的链接是APP链接，跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n  \n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| --- | --- | --- |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateBatchOrganizationRegistrationTasksRequest",
       "name": "创建企业批量认证链接",
       "output": "CreateBatchOrganizationRegistrationTasksResponse",
@@ -686,7 +686,7 @@
         {
           "disabled": false,
           "document": "超管名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -696,7 +696,7 @@
         {
           "disabled": false,
           "document": "超管手机号，打码显示\n示例值：138****1569\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -730,7 +730,7 @@
         {
           "disabled": false,
           "document": "被代理机构在电子签平台的机构编号，集团代理下场景必传",
-          "example": "无",
+          "example": "yDtwEUUckp7f87yrUygaLZxYk2SEodS7",
           "member": "string",
           "name": "ProxyOrganizationId",
           "required": false,
@@ -754,7 +754,7 @@
         {
           "disabled": false,
           "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "RecipientId",
           "required": true,
@@ -763,7 +763,7 @@
         {
           "disabled": false,
           "document": "签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式，可多选\n\n签名方式：\n<ul>\n<li>HANDWRITE-手写签名</li>\n<li>ESIGN-个人印章类型</li>\n<li>OCR_ESIGN-AI智能识别手写签名</li>\n<li>SYSTEM_ESIGN-系统签名</li>\n</ul>",
-          "example": "无",
+          "example": "[\"HANDWRITE\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -778,7 +778,7 @@
         {
           "disabled": false,
           "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n**0**：企业\n**1**：个人\n**3**：企业静默签署\n注：`类型为3（企业静默签署）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。`\n**7**: 个人自动签署，适用于个人自动签场景。\n注: `个人自动签场景为白名单功能，使用前请联系对接的客户经理沟通。`",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ApproverType",
           "required": true,
@@ -787,7 +787,7 @@
         {
           "disabled": false,
           "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "ApproverName",
           "required": false,
@@ -796,7 +796,7 @@
         {
           "disabled": false,
           "document": "签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此合同签署方。",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "ApproverMobile",
           "required": false,
@@ -805,7 +805,7 @@
         {
           "disabled": false,
           "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。\n",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -886,7 +886,7 @@
         {
           "disabled": false,
           "document": "签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得\n\n注： \n如果传进来的<font color=\"red\">UserId已经实名， 则忽略ApproverName，ApproverIdCardType，ApproverIdCardNumber，ApproverMobile这四个入参</font>（会用此UserId实名的身份证和登录的手机号覆盖）",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -895,7 +895,7 @@
         {
           "disabled": false,
           "document": "在企微场景下使用，需设置参数为**WEWORKAPP**，以表明合同来源于企微。",
-          "example": "无",
+          "example": "WEWORKAPP",
           "member": "string",
           "name": "ApproverSource",
           "required": false,
@@ -904,7 +904,7 @@
         {
           "disabled": false,
           "document": "在企业微信场景下，表明该合同流程为或签，其最大长度为64位字符串。\n所有参与或签的人员均需具备该标识。\n注意，在合同中，不同的或签参与人必须保证其CustomApproverTag唯一。\n如果或签签署人为本方企业微信参与人，则需要指定ApproverSource参数为WEWORKAPP。",
-          "example": "无",
+          "example": "n9527",
           "member": "string",
           "name": "CustomApproverTag",
           "required": false,
@@ -940,7 +940,7 @@
         {
           "disabled": false,
           "document": "此签署人（员工或者个人）签署前，是否需要发起方企业审批，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ApproverNeedSignReview",
           "required": false,
@@ -1000,7 +1000,7 @@
         {
           "disabled": false,
           "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "SignId",
           "output_required": false,
@@ -1010,7 +1010,7 @@
         {
           "disabled": false,
           "document": "签署方角色编号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
@@ -1020,7 +1020,7 @@
         {
           "disabled": false,
           "document": "签署方角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "甲方",
           "member": "string",
           "name": "ApproverRoleName",
           "output_required": false,
@@ -1063,7 +1063,7 @@
         {
           "disabled": false,
           "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** :  动态签署人（可发起合同后再补充签署人信息）注：`企业自动签不支持动态补充`</li></ul>\n\n注：\n`使用动态签署人能力前，需登陆腾讯电子签控制台打开服务开关`",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "FillType",
           "required": false,
@@ -1072,7 +1072,7 @@
         {
           "disabled": false,
           "document": "签署人阅读合同限制参数\n <br/>取值：\n<ul>\n<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>\n<li> LimitReadTime，阅读合同仅限制阅读时长</li>\n<li> LimitBottom，阅读合同仅限制必须阅读到底</li>\n<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>\n</ul>",
-          "example": "无",
+          "example": "3",
           "member": "string",
           "name": "FlowReadLimit",
           "required": false,
@@ -1235,7 +1235,7 @@
         {
           "disabled": false,
           "document": "扩展服务类型，和入参一致\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -1246,7 +1246,7 @@
         {
           "disabled": false,
           "document": "扩展服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "企业静默签（自动签署）",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1279,7 +1279,7 @@
         {
           "disabled": false,
           "document": "授权员工列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AuthUserTotal",
           "output_required": false,
@@ -1290,7 +1290,7 @@
         {
           "disabled": false,
           "document": "授权企业列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AuthOrganizationTotal",
           "output_required": false,
@@ -1353,10 +1353,10 @@
         {
           "disabled": false,
           "document": "电子签系统中的用户id",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1378,7 +1378,7 @@
         {
           "disabled": false,
           "document": "是否回调证书信息:\n<ul><li>**false**: 不需要(默认)</li>\n<li>**true**:需要</li></ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "CertInfoCallback",
           "required": false,
@@ -1387,7 +1387,7 @@
         {
           "disabled": false,
           "document": "是否支持用户自定义签名印章:\n<ul><li>**false**: 不能自己定义(默认)</li>\n<li>**true**: 可以自己定义</li></ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "UserDefineSeal",
           "required": false,
@@ -1396,7 +1396,7 @@
         {
           "disabled": false,
           "document": "回调中是否需要自动签将要使用的印章(签名) 图片的 base64:\n<ul><li>**false**: 不需要(默认)</li>\n<li>**true**: 需要</li></ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "SealImgCallback",
           "required": false,
@@ -1414,7 +1414,7 @@
         {
           "disabled": false,
           "document": "开通时候的身份验证方式, 取值为：\n<ul><li>**WEIXINAPP** : 微信人脸识别</li>\n<li>**INSIGHT** : 慧眼人脸认别</li>\n<li>**TELECOM** : 运营商三要素验证</li></ul>\n注：\n<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>\n<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>",
-          "example": "无",
+          "example": "[\"WEIXINAPP\"]",
           "member": "string",
           "name": "VerifyChannels",
           "required": false,
@@ -1423,7 +1423,7 @@
         {
           "disabled": false,
           "document": "设置用户自动签合同的扣费方式。\n\n<ul><li><b>1</b>: (默认)使用合同份额进行扣减</li></ul>",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LicenseType",
           "required": false,
@@ -1432,7 +1432,7 @@
         {
           "disabled": false,
           "document": "开通成功后前端页面跳转的url，此字段的用法场景请联系客户经理确认。\n\n注：`仅支持H5开通场景`, `跳转链接仅支持 https:// , qianapp:// 开头`\n\n跳转场景：\n<ul><li>**贵方H5 -> 腾讯电子签H5 -> 贵方H5** : JumpUrl格式: https://YOUR_CUSTOM_URL/xxxx，只需满足 https:// 开头的正确且合规的网址即可。</li>\n<li>**贵方原生App -> 腾讯电子签H5 -> 贵方原生App** : JumpUrl格式: qianapp://YOUR_CUSTOM_URL，只需满足 qianapp:// 开头的URL即可。`APP实现方，需要拦截Webview地址跳转，发现url是qianapp:// 开头时跳转到原生页面。`APP拦截地址跳转可参考：<a href='https://stackoverflow.com/questions/41693263/android-webview-err-unknown-url-scheme'>Android</a>，<a href='https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/webview/upi-intent-ios/'>IOS</a> </li></ul>\n\n成功结果返回：\n若贵方需要在跳转回时通过链接query参数提示开通成功，JumpUrl中的query应携带如下参数：`appendResult=qian`。这样腾讯电子签H5会在跳转回的url后面会添加query参数提示贵方签署成功，例如： qianapp://YOUR_CUSTOM_URL?action=sign&result=success&from=tencent_ess",
-          "example": "无",
+          "example": "https://jump.cn/jump",
           "member": "string",
           "name": "JumpUrl",
           "required": false,
@@ -1486,7 +1486,7 @@
         },
         {
           "disabled": false,
-          "document": "当前合同状态,如下是状态码对应的状态。\n<ul>\n<li>**0**: 还没有发起</li>\n<li>**1**: 等待签署</li>\n<li>**2**: 部分签署 </li>\n<li>**3**: 拒签</li>\n<li>**4**: 已签署 </li>\n<li>**5**: 已过期 </li>\n<li>**6**: 已撤销 </li>\n<li>**7**: 还没有预发起</li>\n<li>**8**: 等待填写</li>\n<li>**9**: 部分填写 </li>\n<li>**10**: 拒填</li>\n<li>**11**: 已解除</li>\n</ul>",
+          "document": "当前合同状态,如下是状态码对应的状态。\n<ul>\n<li>**0**: 还没有发起</li>\n<li>**1**: 等待签署</li>\n<li>**2**: 部分签署 </li>\n<li>**3**: 拒签</li>\n<li>**4**: 已签署 </li>\n<li>**5**: 已过期 </li>\n<li>**6**: 已撤销 </li>\n<li>**7**: 还没有预发起</li>\n<li>**8**: 等待填写</li>\n<li>**9**: 部分填写 </li>\n<li>**10**: 拒签</li>\n<li>**11**: 已解除</li>\n</ul>",
           "example": "4",
           "member": "int64",
           "name": "Status",
@@ -1547,7 +1547,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "空",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -1715,7 +1715,7 @@
         {
           "disabled": false,
           "document": "合同流程ID，为32位字符串。",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -1726,7 +1726,7 @@
         {
           "disabled": false,
           "document": "撤销失败原因",
-          "example": "无",
+          "example": "合同已经过期",
           "member": "string",
           "name": "Reason",
           "output_required": false,
@@ -1958,7 +1958,7 @@
         {
           "disabled": false,
           "document": "**在绝对定位方式和关键字定位方式下**，指定控件的高度， 控件高度是指控件在PDF文件中的高度，单位为pt（点）。\n",
-          "example": "无",
+          "example": "43",
           "member": "float",
           "name": "ComponentHeight",
           "output_required": true,
@@ -1969,7 +1969,7 @@
         {
           "disabled": false,
           "document": "**在绝对定位方式和关键字定位方式下**，指定控件宽度，控件宽度是指控件在PDF文件中的宽度，单位为pt（点）。\n",
-          "example": "无",
+          "example": "119",
           "member": "float",
           "name": "ComponentWidth",
           "output_required": true,
@@ -1980,7 +1980,7 @@
         {
           "disabled": false,
           "document": "**在绝对定位方式方式下**，指定控件所在PDF文件上的页码\n**在使用文件发起的情况下**，绝对定位方式的填写控件和签署控件支持使用负数来指定控件在PDF文件上的页码，使用负数时，页码从最后一页开始。例如：ComponentPage设置为-1，即代表在PDF文件的最后一页，以此类推。\n\n注：\n1. 页码编号是从<font color=\"red\">1</font>开始编号的。\n2.  <font color=\"red\">页面编号不能超过PDF文件的页码总数</font>。如果指定的页码超过了PDF文件的页码总数，在填写和签署时会出现错误，导致无法正常进行操作。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ComponentPage",
           "output_required": true,
@@ -1991,7 +1991,7 @@
         {
           "disabled": false,
           "document": "**在绝对定位方式和关键字定位方式下**，可以指定控件横向位置的位置，单位为pt（点）。",
-          "example": "无",
+          "example": "100",
           "member": "float",
           "name": "ComponentPosX",
           "output_required": true,
@@ -2002,7 +2002,7 @@
         {
           "disabled": false,
           "document": "**在绝对定位方式和关键字定位方式下**，可以指定控件纵向位置的位置，单位为pt（点）。",
-          "example": "无",
+          "example": "100",
           "member": "float",
           "name": "ComponentPosY",
           "output_required": true,
@@ -2024,7 +2024,7 @@
         {
           "disabled": false,
           "document": "控件生成的方式：\n<ul><li> <b>NORMAL</b> : 绝对定位控件</li>\n<li> <b>FIELD</b> : 表单域</li>\n<li> <b>KEYWORD</b> : 关键字（设置关键字时，请确保PDF原始文件内是关键字以文字形式保存在PDF文件中，不支持对图片内文字进行关键字查找）</li></ul>",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "GenerateMode",
           "output_required": true,
@@ -2035,7 +2035,7 @@
         {
           "disabled": false,
           "document": "控件唯一ID。\n\n**在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在关键字定位方式下**，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过\"^\"来决定是否使用关键字整词匹配能力。\n\n例：\n\n- 如传入的关键字<font color=\"red\">\"^甲方签署^\"</font >，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方（<font color=\"red\">前后不能有其他字符</font >）进行对应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前后可以有其他字符</font >）都会执行相应操作。\n\n\n注：`控件ID可以在一个PDF中不可重复`\n\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentId在模板编辑页面的位置</a>\n",
-          "example": "无",
+          "example": "ComponentId_01",
           "member": "string",
           "name": "ComponentId",
           "output_required": true,
@@ -2057,7 +2057,7 @@
         {
           "disabled": false,
           "document": "如果是<b>填写控件</b>，ComponentRequired表示在填写页面此控件是否必填\n<ul><li>false（默认）：可以不填写</li>\n<li>true ：必须填写此填写控件</li></ul>\n如果是<b>签署控件</b>，签批控件中签署意见等可以不填写， 其他签署控件不受此字段影响",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ComponentRequired",
           "output_required": true,
@@ -2068,7 +2068,7 @@
         {
           "disabled": false,
           "document": "**在通过接口拉取控件信息场景下**，为出参参数，此控件归属的参与方的角色ID角色（即RecipientId），**发起合同时候不要填写此字段留空即可**",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "ComponentRecipientId",
           "output_required": true,
@@ -2079,7 +2079,7 @@
         {
           "disabled": false,
           "document": "**在所有的定位方式下**，控件的扩展参数，为<font color=\"red\">JSON格式</font>，不同类型的控件会有部分非通用参数。\n\n<font color=\"red\">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li>\n<li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>\n<li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围12 :72</li></ul>\n<b>参数样例</b>：`{\"FontColor\":\"255,0,0\",\"FontSize\":12}`\n\n<font color=\"red\">ComponentType为WATERMARK时</font>，支持以下参数：\n<ul><li> <b>Font</b>：目前只支持黑体、宋体</li>\n<li> <b>FontSize</b>： 范围6 :24</li>\n<li> <b>Opacity</b>： 透明度，范围0 :1</li>\n<li> <b>Density</b>： 水印样式，1-宽松，2-标准（默认值），3-密集，</li>\n<li> <b>SubType</b>： 水印类型：CUSTOM_WATERMARK-自定义内容，PERSON_INFO_WATERMARK-访问者信息</li></ul>\n<b>参数样例</b>：`\"{\\\"Font\\\":\\\"黑体\\\",\\\"FontSize\\\":20,\\\"Opacity\\\":0.1,\\\"Density\\\":2,\\\"SubType\\\":\\\"PERSON_INFO_WATERMARK\\\"}\"`\n\n<font color=\"red\">ComponentType为FILL_IMAGE时</font>，支持以下参数：\n<ul><li> <b>NotMakeImageCenter</b>：bool。是否设置图片居中。false：居中（默认）。 true : 不居中</li>\n<li> <b>FillMethod</b> : int. 填充方式。0-铺满（默认）；1-等比例缩放</li></ul>\n\n<font color=\"red\">ComponentType为SIGN_SIGNATURE类型时</font>，可以通过**ComponentTypeLimit**参数控制签名方式\n<ul><li> <b>HANDWRITE</b> :  需要实时手写的手写签名</li>\n<li> <b>HANDWRITTEN_ESIGN</b> : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> : AI智能识别手写签名</li>\n<li> <b>ESIGN</b> : 个人印章类型</li>\n<li> <b>SYSTEM_ESIGN</b> : 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）</li>\n<li> <b>IMG_ESIGN</b> : 图片印章(该类型支持用户在签署将上传的PNG格式的图片作为签名)</li></ul>\n<b>参考样例</b>：`{\"ComponentTypeLimit\": [\"SYSTEM_ESIGN\"]}`\n印章的对应关系参考下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)<br><br>\n\n<font color=\"red\">ComponentType为SIGN_SEAL 或者 SIGN_PAGING_SEAL类型时</font>，可以通过**ComponentTypeLimit**参数控制签署方签署时要使用的印章类型，支持指定以下印章类型\n<ul><li> <b>OFFICIAL</b> :  企业公章</li>\n<li> <b>CONTRACT</b> : 合同专用章</li>\n<li> <b>FINANCE</b> : 财务专用章</li>\n<li> <b>PERSONNEL</b> : 人事专用章</li></ul>\n<b>参考样例</b>：`{\\\"ComponentTypeLimit\\\":[\\\"PERSONNEL\\\",\\\"FINANCE\\\"]}` 表示改印章签署区,客户需使用人事专用章或财务专用章盖章签署。<br><br>\n\n<font color=\"red\">ComponentType为SIGN_DATE时</font>，支持以下参数：\n<ul><li> <b>Font</b> :字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"</li>\n<li> <b>FontSize</b> : 数字类型，范围6-72，默认值为12</li>\n<li> <b>FontAlign</b> : 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐</li>\n<li> <b>Format</b> : 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。</li>\n<li> <b>Gaps</b> : 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数</li></ul>\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n<b>参数样例</b>： ` \"{\"Format\":\"yyyy m d\",\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"`\n\n<font color=\"red\">ComponentType为SIGN_SEAL类型时</font>，支持以下参数：\n<ul><li> <b>PageRanges</b> :PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）</li></ul>\n<b>参数样例</b>：` \"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"`\n\n<font color=\"red\">签署印章透明度功能设置，</font>当ComponentType为SIGN_SIGNATURE、SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署印章的透明度：\n<ul><li> <b>Opacity</b>：印章透明度，支持范围：0.6-1，0.7表示70%的透明度，1表示无透明度</li></ul>\n<b>参数样例</b>：`{\"Opacity\":0.7}`\n\n<font color=\"red\">签署印章大小功能设置，</font>当ComponentType为SIGN_SEAL、SIGN_PAGING_SEAL、SIGN_LEGAL_PERSON_SEAL时，可以通过以下参数设置签署时按照实际印章的大小进行签署，如果印章没有设置大小，那么默认会是4.2cm的印章大小：\n<ul><li> <b>UseSealSize</b>：使用印章设置的大小盖章，true表示使用印章设置的大小盖章，false表示使用签署控件的大小进行盖章；不传则为false</li></ul>\n<b>参数样例</b>：`{\"UseSealSize\":true}`\n\n<font color=\"red\">关键字模式下支持关键字找不到的情况下不进行报错的设置</font>\n<ul><li> <b>IgnoreKeywordError</b> :1-关键字查找不到时不进行报错</li></ul>\n场景说明：如果使用关键字进行定位，但是指定的PDF文件中又没有设置的关键字时，发起合同会进行关键字是否存在的校验，如果关键字不存在，会进行报错返回。如果不希望进行报错，可以设置\"IgnoreKeywordError\"来忽略错误。请注意，如果关键字签署控件对应的签署方在整个PDF文件中一个签署控件都没有，还是会触发报错逻辑。\n<b>参数样例</b>：` \"{\"IgnoreKeywordError\":1}\"`\n\n<font color=\"red\">ComponentType为SIGN_VIRTUAL_COMBINATION时</font>，支持以下参数：\n<ul>\n<li><b>Children:</b> 绝对定位模式下，用来指定此签批控件的组合子控件 </li>\n<b>参数样例</b>：<br>`{\"Children\":[\"ComponentId_29\",\"ComponentId_27\",\"ComponentId_28\",\"ComponentId_30\"]}`\n<li><b>ChildrenComponents:</b> 关键字定位模式下，用来指定此签批控件的组合子控件 </li>\nChildrenComponent结构体定义:\n<table border=\"1\">     <thead>         <tr>             <th>字段名称</th>             <th>类型</th>             <th>描述</th>         </tr>     </thead>     <tbody>         <tr>             <td>ComponentType</td>             <td>string</td>             <td>子控件类型-可选值:SIGN_SIGNATURE,SIGN_DATE,SIGN_SELECTOR,SIGN_MULTI_LINE_TEXT</td>         </tr>         <tr>             <td>ComponentName</td>             <td>string</td>             <td>子控件名称</td>         </tr>         <tr>             <td>Placeholder</td>             <td>string</td>             <td>子控件提示语</td>         </tr>         <tr>             <td>ComponentOffsetX</td>             <td>float</td>             <td>控件偏移位置X（相对于父控件（签批控件的ComponentX））</td>         </tr>         <tr>             <td>ComponentOffsetY</td>             <td>float</td>             <td>控件偏移位置Y 相对于父控件（签批控件的ComponentY））</td>         </tr>         <tr>             <td>ComponentWidth</td>             <td>float</td>             <td>控件宽</td>         </tr>         <tr>             <td>ComponentHeight</td>             <td>float</td>             <td>控件高</td>         </tr>         <tr>             <td>ComponentExtra</td>             <td>string</td>             <td>控件的附属信息，根据ComponentType设置</td>         </tr>     </tbody> </table>\n<b>参数样例</b>：\n  \n输入:\n<pre>\n{\n    ChildrenComponents: [\n        {\n            ComponentType: SIGN_SIGNATURE,\n            ComponentName: 个人签名,\n            Placeholder: 请签名,\n            ComponentOffsetX: 10,\n            ComponentOffsetY: 30,\n            ComponentWidth: 119,\n            ComponentHeight: 43,\n            ComponentExtra: {\\ComponentTypeLimit\\:[\\SYSTEM_ESIGN\\]}\n        },\n        {\n            ComponentType: SIGN_SELECTOR,\n            ComponentName: 是否同意此协议,\n            Placeholder: ,\n            ComponentOffsetX: 50,\n            ComponentOffsetY: 130,\n            ComponentWidth: 120,\n            ComponentHeight: 43,\n            ComponentExtra: {\\Values\\:[\\同意\\,\\不同意\\,\\再想想\\],\\FontSize\\:12,\\FontAlign\\:\\Left\\,\\Font\\:\\黑体\\,\\MultiSelect\\:false}\n        },\n        {\n            ComponentType: SIGN_MULTI_LINE_TEXT,\n            ComponentName: 批注附言,\n            Placeholder: ,\n            ComponentOffsetX: 150,\n            ComponentOffsetY: 300,\n            ComponentWidth: 200,\n            ComponentHeight: 86,\n            ComponentExtra: \n        }\n    ]\n}\n</pre>\n</ul>\n\n",
-          "example": "无",
+          "example": "{\"FontColor\":\"255,0,0\",\"FontSize\":12}",
           "member": "string",
           "name": "ComponentExtra",
           "output_required": true,
@@ -2090,7 +2090,7 @@
         {
           "disabled": false,
           "document": "**在通过接口拉取控件信息场景下**，为出参参数，此控件是否通过表单域定位方式生成，默认false-不是，**发起合同时候不要填写此字段留空即可**",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsFormType",
           "output_required": true,
@@ -2101,7 +2101,7 @@
         {
           "disabled": false,
           "document": "控件填充vaule，ComponentType和传入值类型对应关系：\n<ul><li> <b>TEXT</b> : 文本内容</li>\n<li> <b>MULTI_LINE_TEXT</b> : 文本内容，可以用  \\n 来控制换行位置 </li>\n<li> <b>CHECK_BOX</b> : true/false</li>\n<li> <b>FILL_IMAGE、ATTACHMENT</b> : 附件的FileId，需要通过UploadFiles接口上传获取</li>\n<li> <b>SELECTOR</b> : 选项值</li>\n<li> <b>DYNAMIC_TABLE</b>  - 传入json格式的表格内容，详见说明：[数据表格](https://qian.tencent.com/developers/company/dynamic_table)</li>\n<li> <b>DATE</b> : 格式化为：xxxx年xx月xx日（例如2024年05年28日）</li>\n<li> <b>SIGN_SEAL</b> : 印章ID，于控制台查询获取， [点击查看在控制台上位置](https://qcloudimg.tencent-cloud.cn/raw/f7b0f2ea4a534aada4b893dbf9671eae.png)</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 可以指定印章ID，于控制台查询获取， [点击查看在控制台上位置](https://qcloudimg.tencent-cloud.cn/raw/f7b0f2ea4a534aada4b893dbf9671eae.png)</li></ul>\n\n\n<b>控件值约束说明</b>：\n<table> <thead> <tr> <th>特殊控件</th> <th>填写约束</th> </tr> </thead> <tbody> <tr> <td>企业全称控件</td> <td>企业名称中文字符中文括号</td> </tr> <tr> <td>统一社会信用代码控件</td> <td>企业注册的统一社会信用代码</td> </tr> <tr> <td>法人名称控件</td> <td>最大50个字符，2到25个汉字或者1到50个字母</td> </tr> <tr> <td>签署意见控件</td> <td>签署意见最大长度为50字符</td> </tr> <tr> <td>签署人手机号控件</td> <td>国内手机号 13,14,15,16,17,18,19号段长度11位</td> </tr> <tr> <td>签署人身份证控件</td> <td>合法的身份证号码检查</td> </tr> <tr> <td>控件名称</td> <td>控件名称最大长度为20字符，不支持表情</td> </tr> <tr> <td>单行文本控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>多行文本控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>勾选框控件</td> <td>选择填字符串true，不选填字符串false</td> </tr> <tr> <td>选择器控件</td> <td>同单行文本控件约束，填写选择值中的字符串</td> </tr> <tr> <td>数字控件</td> <td>请输入有效的数字(可带小数点)</td> </tr> <tr> <td>日期控件</td> <td>格式：yyyy年mm月dd日</td> </tr> <tr> <td>附件控件</td> <td>JPG或PNG图片，上传数量限制，1到6个，最大6个附件，填写上传的资源ID</td> </tr> <tr> <td>图片控件</td> <td>JPG或PNG图片，填写上传的图片资源ID</td> </tr> <tr> <td>邮箱控件</td> <td>有效的邮箱地址, w3c标准</td> </tr> <tr> <td>地址控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>省市区控件</td> <td>只允许输入中文，英文，数字，中英文标点符号，不支持表情</td> </tr> <tr> <td>性别控件</td> <td>选择值中的字符串</td> </tr> <tr> <td>学历控件</td> <td>选择值中的字符串</td> </tr> <tr> <td>水印控件</td> <td>水印控件设置为CUSTOM_WATERMARK类型时的水印内容</td> </tr> </tbody> </table>\n注：   `部分特殊控件需要在控制台配置模板形式创建`",
-          "example": "无",
+          "example": "100元",
           "member": "string",
           "name": "ComponentValue",
           "output_required": true,
@@ -2112,7 +2112,7 @@
         {
           "disabled": false,
           "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。\n注意： `向左调整设置为负数， 向右调整设置成正数`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "float",
           "name": "OffsetX",
           "output_required": true,
@@ -2123,7 +2123,7 @@
         {
           "disabled": false,
           "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行纵坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏上或偏下，可以通过调整纵坐标方向的参数来使控件位置更加准确。\n注意： `向上调整设置为负数， 向下调整设置成正数`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10",
           "member": "float",
           "name": "OffsetY",
           "output_required": true,
@@ -2145,7 +2145,7 @@
         {
           "disabled": false,
           "document": "**如果控件是关键字定位方式**，在KeywordPage中指定关键字页码时，将只会在该页码中查找关键字，非该页码的关键字将不会查询出来。如果不设置查找所有页面中的关键字。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "KeywordPage",
           "output_required": true,
@@ -2156,7 +2156,7 @@
         {
           "disabled": false,
           "document": "**如果控件是关键字定位方式**，关键字生成的区域的对齐方式， 可以设置下面的值\n<ul><li> <b>Middle</b> :居中</li>\n<li> <b>Below</b> :正下方</li>\n<li> <b>Right</b> :正右方</li>\n<li> <b>LowerRight</b> :右下角</li>\n<li> <b>UpperRight</b> :右上角。</li></ul>\n示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方",
-          "example": "无",
+          "example": "LowerRight",
           "member": "string",
           "name": "RelativeLocation",
           "output_required": true,
@@ -2167,7 +2167,7 @@
         {
           "disabled": false,
           "document": "**如果控件是关键字定位方式**，关键字索引是指在PDF文件中存在多个相同的关键字时，通过索引指定使用哪一个关键字作为最后的结果。可以通过指定多个索引来同时使用多个关键字。例如，[0,2]表示使用PDF文件内第1个和第3个关键字位置作为最后的结果。\n\n注意：关键字索引是从0开始计数的",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "KeywordIndexes",
           "output_required": true,
@@ -2178,7 +2178,7 @@
         {
           "disabled": false,
           "document": "**web嵌入发起合同场景下**， 是否锁定填写和签署控件值不允许嵌入页面进行编辑\n<ul><li>false（默认）：不锁定控件值，允许在页面编辑控件值</li>\n<li>true：锁定控件值，在页面编辑控件值</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "LockComponentValue",
           "output_required": false,
@@ -2189,7 +2189,7 @@
         {
           "disabled": false,
           "document": "**web嵌入发起合同场景下**，是否禁止移动和删除填写和签署控件\n<ul><li> <b>false（默认）</b> :不禁止移动和删除控件</li>\n<li> <b>true</b> : 可以移动和删除控件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ForbidMoveAndDelete",
           "output_required": false,
@@ -2200,7 +2200,7 @@
         {
           "disabled": false,
           "document": "<font color=\"red\">【暂未使用】</font>日期签署控件的字号，默认为 12",
-          "example": "无",
+          "example": "12",
           "member": "int64",
           "name": "ComponentDateFontSize",
           "output_required": true,
@@ -2211,7 +2211,7 @@
         {
           "disabled": false,
           "document": "<font color=\"red\">【暂未使用】</font>第三方应用集成平台模板控件 ID 标识",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "ChannelComponentId",
           "output_required": true,
@@ -2222,7 +2222,7 @@
         {
           "disabled": false,
           "document": "<font color=\"red\">【暂未使用】</font>第三方应用集成中子客企业控件来源。\n<ul><li> <b>0</b> :平台指定；</li>\n<li> <b>1</b> :用户自定义</li></ul>",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "ChannelComponentSource",
           "output_required": true,
@@ -2239,7 +2239,7 @@
         {
           "disabled": false,
           "document": "控件类型，支持以下类型\n<ul><li>SIGN_SEAL : 印章控件</li>\n<li>SIGN_PAGING_SEAL : 骑缝章控件</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 企业法定代表人控件</li>\n<li>SIGN_SIGNATURE : 用户签名控件</li></ul>",
-          "example": "无",
+          "example": "SIGN_PAGING_SEAL ",
           "member": "string",
           "name": "ComponentType",
           "required": true,
@@ -2248,7 +2248,7 @@
         {
           "disabled": false,
           "document": "签署控件类型的值(可选)，用与限制签署时印章或者签名的选择范围\n\n1.当ComponentType 是 SIGN_SEAL 或者 SIGN_PAGING_SEAL 时可传入企业印章Id（支持多个）或者以下印章类型\n\n<ul><li> <b>OFFICIAL</b> :  企业公章</li>\n<li> <b>CONTRACT</b> : 合同专用章</li>\n<li> <b>FINANCE</b> : 财务专用章</li>\n<li> <b>PERSONNEL</b> : 人事专用章</li></ul>\n\n**注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个),他方企业签署人只能限制类型.若同时指定了印章类型和印章Id,以印章Id为主,印章类型会被忽略`**\n\n\n2.当ComponentType 是 SIGN_SIGNATURE 时可传入以下类型（支持多个）\n\n<ul><li>HANDWRITE : 需要实时手写的手写签名</li>\n<li>HANDWRITTEN_ESIGN : 长效手写签名， 是使用保存到个人中心的印章列表的手写签名(并且包含HANDWRITE)</li>\n<li>OCR_ESIGN : OCR印章（智慧手写签名）</li>\n<li>ESIGN : 个人印章</li>\n<li>SYSTEM_ESIGN : 系统印章</li></ul>\n\n3.当ComponentType 是 SIGN_LEGAL_PERSON_SEAL 时无需传递此参数。",
-          "example": "无",
+          "example": "OFFICIAL",
           "member": "string",
           "name": "ComponentValue",
           "required": false,
@@ -3921,7 +3921,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>",
+          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -3931,13 +3931,13 @@
         },
         {
           "disabled": true,
-          "document": "此字段已经废除,不再使用.\n出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此字段已经废除,不再使用.\n出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取",
           "example": "https://file.cn/1.pdf",
           "member": "string",
           "name": "ReportUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4284,7 +4284,7 @@
         {
           "disabled": false,
           "document": "定制化发起合同弹窗的描述信息，描述信息最长500字符\n",
-          "example": "\"\"",
+          "example": "\"合同不能转发和截图\"",
           "member": "string",
           "name": "CustomCreateFlowDescription",
           "required": false,
@@ -4293,7 +4293,7 @@
         {
           "disabled": false,
           "document": "  禁止添加签署方，若为true则在发起流程的可嵌入页面隐藏“添加签署人按钮”\n",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ForbidAddApprover",
           "required": false,
@@ -4302,7 +4302,7 @@
         {
           "disabled": false,
           "document": "  禁止设置设置签署流程属性 (顺序、合同签署认证方式等)，若为true则在发起流程的可嵌入页面隐藏签署流程设置面板\n",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ForbidEditFlowProperties",
           "required": false,
@@ -4311,7 +4311,7 @@
         {
           "disabled": false,
           "document": "在发起流程的可嵌入页面要隐藏的控件列表，和 ShowComponentTypes 参数 只能二选一使用，具体的控件类型如下\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
-          "example": "无",
+          "example": "[\"MULTI_LINE_TEXT\"]",
           "member": "string",
           "name": "HideComponentTypes",
           "required": false,
@@ -4320,7 +4320,7 @@
         {
           "disabled": false,
           "document": "在发起流程的可嵌入页面要显示的控件列表，和 HideComponentTypes 参数 只能二选一使用，具体的控件类型如下\n<ul><li>SIGN_SIGNATURE : 个人签名/印章</li>\n<li>SIGN_SEAL : 企业印章</li>\n<li>SIGN_PAGING_SEAL : 骑缝章</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 法定代表人章</li>\n<li>SIGN_APPROVE : 签批</li>\n<li>SIGN_OPINION : 签署意见</li>\n<li>BUSI-FULL-NAME  : 企业全称</li>\n<li>BUSI-CREDIT-CODE : 统一社会信用代码</li>\n<li>BUSI-LEGAL-NAME : 法人/经营者姓名</li>\n<li>PERSONAL-NAME : 签署人姓名</li>\n<li>PERSONAL-MOBILE : 签署人手机号</li>\n<li>PERSONAL-IDCARD-TYPE : 签署人证件类型</li>\n<li>PERSONAL-IDCARD : 签署人证件号</li>\n<li>TEXT : 单行文本</li>\n<li>MULTI_LINE_TEXT : 多行文本</li>\n<li>CHECK_BOX : 勾选框</li>\n<li>SELECTOR : 选择器</li>\n<li>DIGIT : 数字</li>\n<li>DATE : 日期</li>\n<li>FILL_IMAGE : 图片</li>\n<li>ATTACHMENT : 附件</li>\n<li>EMAIL : 邮箱</li>\n<li>LOCATION : 地址</li>\n<li>EDUCATION : 学历</li>\n<li>GENDER : 性别</li>\n<li>DISTRICT : 省市区</li></ul>",
-          "example": "无",
+          "example": "[\"MULTI_LINE_TEXT\"]",
           "member": "string",
           "name": "ShowComponentTypes",
           "required": false,
@@ -5517,7 +5517,7 @@
         {
           "disabled": false,
           "document": "对方打开链接认证时，对方填写的营业执照的社会信用代码是否与接口上传上来的要保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "UniformSocialCreditCodeSame",
           "required": false,
@@ -5526,7 +5526,7 @@
         {
           "disabled": false,
           "document": "对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>\n\np.s. 仅在法人姓名不为空时有效",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "LegalNameSame",
           "required": false,
@@ -5535,7 +5535,7 @@
         {
           "disabled": false,
           "document": "对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>\n\np.s. 仅在认证人姓名不为空时有效",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AdminNameSame",
           "required": false,
@@ -5544,7 +5544,7 @@
         {
           "disabled": false,
           "document": "对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>\n\np.s. 仅在认证人身份证号不为空时有效\n",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AdminIdCardNumberSame",
           "required": false,
@@ -5553,7 +5553,7 @@
         {
           "disabled": false,
           "document": "对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>\n<li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>\n<li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>\n</ul>\n\np.s. 仅在认证人手机号不为空时有效",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AdminMobileSame",
           "required": false,
@@ -5562,7 +5562,7 @@
         {
           "disabled": false,
           "document": "对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>\n\n\np.s. 仅在企业名称不为空时有效",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "OrganizationNameSame",
           "required": false,
@@ -5571,7 +5571,7 @@
         {
           "disabled": false,
           "document": "营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。",
-          "example": "无",
+          "example": "UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAANAAAAeGwvc3R5bGVzLnhtbKyYXW==",
           "member": "string",
           "name": "BusinessLicense",
           "required": false,
@@ -5580,7 +5580,7 @@
         {
           "disabled": false,
           "document": "跳转链接类型：\n\n<ul>\n<li><b>PC</b>：适用于PC端的认证链接</li>\n<li><b>APP</b>：用于全屏或半屏跳转的小程序链接</li>\n<li><b>SHORT_URL</b>：跳转小程序的链接的短链形式</li>\n<li><b>H5</b>：适用于H5页面的认证链接</li>\n<li><b>SHORT_H5</b>：H5认证链接的短链形式</li>\n</ul>\n",
-          "example": "无",
+          "example": "PC",
           "member": "string",
           "name": "Endpoint",
           "required": false,
@@ -5598,7 +5598,7 @@
         {
           "disabled": false,
           "document": "授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 \n授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。\np.s. 如果上传授权书 ，需遵循以下条件 \n1.  超管的信息（超管姓名，超管手机号）必须为必填参数。\n2.  认证方式AuthorizationTypes必须只能是上传授权书方式 ",
-          "example": "无",
+          "example": "UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAANAAAAeGwvc3R5bGVzLnhtbKyYXW",
           "member": "string",
           "name": "PowerOfAttorneys",
           "required": false,
@@ -5654,7 +5654,7 @@
         {
           "disabled": false,
           "document": "请指定需执行批量签署的流程ID，数量范围为1-100。\n您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。\n用户将利用链接对这些合同实施批量操作。",
-          "example": "无",
+          "example": "[\"yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw\"]",
           "member": "string",
           "name": "FlowIds",
           "required": true,
@@ -5672,7 +5672,7 @@
         {
           "disabled": false,
           "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。\nUserId必须是传入合同（FlowId）中的签署人。\n\n<ul>\n<li>1. 若UserId为空，Name和Mobile 必须提供。</li>\n<li>2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。</li>\n</ul>",
-          "example": "无",
+          "example": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -5681,7 +5681,7 @@
         {
           "disabled": false,
           "document": "员工姓名，必须与手机号码一起使用。\n如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -5690,7 +5690,7 @@
         {
           "disabled": false,
           "document": "员工手机号，必须与姓名一起使用。\n 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
-          "example": "无",
+          "example": "187****7192",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -5699,7 +5699,7 @@
         {
           "disabled": false,
           "document": "为签署方经办人在签署合同中的参与方ID，必须与参数FlowIds数组一一对应。\n您可以通过查询合同接口（DescribeFlowInfo）查询此参数。\n若传了此参数，则可以不传 UserId, Name, Mobile等参数",
-          "example": "无",
+          "example": "yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E",
           "member": "string",
           "name": "RecipientIds",
           "required": false,
@@ -5714,7 +5714,7 @@
         {
           "disabled": false,
           "document": "批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。",
-          "example": "无",
+          "example": "https://essurl.cn/bR8**HA",
           "member": "string",
           "name": "SignUrl",
           "output_required": true,
@@ -5724,7 +5724,7 @@
         {
           "disabled": false,
           "document": "链接过期截止时间，格式为Unix标准时间戳（秒），默认为7天后截止。",
-          "example": "无",
+          "example": "1736478119",
           "member": "int64",
           "name": "ExpiredTime",
           "output_required": true,
@@ -5755,7 +5755,7 @@
         {
           "disabled": false,
           "document": "到期时间（以秒为单位的时间戳），其上限为30天的有效期限。",
-          "example": "无",
+          "example": "1736494983",
           "member": "int64",
           "name": "ExpireTime",
           "required": true,
@@ -5770,7 +5770,7 @@
         {
           "disabled": false,
           "document": "加入集团二维码链接，子企业的管理员可以直接扫码进入。\n注意:1. 该链接有效期时间为ExpireTime，同时需要注意保密，不要外泄给无关用户。2. 该链接不支持小程序嵌入，仅支持<b>移动端浏览器</b>打开。3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
-          "example": "无",
+          "example": "https://essurl.cn/Y9b**O",
           "member": "string",
           "name": "Link",
           "output_required": true,
@@ -5780,7 +5780,7 @@
         {
           "disabled": false,
           "document": "到期时间（以秒为单位的时间戳）",
-          "example": "无",
+          "example": "1736495023",
           "member": "int64",
           "name": "ExpireTime",
           "output_required": true,
@@ -5790,7 +5790,7 @@
         {
           "disabled": false,
           "document": "加入集团短链接。\n注意:\n1. 该链接有效期时间为ExpireTime，同时需要注意保密，不要外泄给无关用户。\n2. 该链接不支持小程序嵌入，仅支持<b>移动端浏览器</b>打开。\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
-          "example": "无",
+          "example": "https://essurl.cn/Rg0**Q",
           "member": "string",
           "name": "JumpUrl",
           "output_required": true,
@@ -5800,7 +5800,7 @@
         {
           "disabled": false,
           "document": "腾讯电子签小程序加入集团链接。\n\n<li>小程序和APP集成使用</li>\n<li>得到的链接类似于`pages/guide?shortKey=yDw***k1xFc5`, 用法可以参考：<a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\" target=\"_blank\">跳转电子签小程序</a></li>\n\n\n注： <font color=\"red\">生成的链路后面不能再增加参数</font>",
-          "example": "无",
+          "example": "gh_da88f6188665",
           "member": "string",
           "name": "MiniAppPath",
           "output_required": false,
@@ -5905,7 +5905,7 @@
         {
           "disabled": false,
           "document": "被授企业id/授权方企业id（即OrganizationId），和AuthorizedOrganizationName二选一传入",
-          "example": "无",
+          "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "AuthorizedOrganizationId",
           "required": false,
@@ -5914,7 +5914,7 @@
         {
           "disabled": false,
           "document": "被授企业名称/授权方企业的名字，和AuthorizedOrganizationId二选一传入即可。请确认该名称与企业营业执照中注册的名称一致。\n注: `如果名称中包含英文括号()，请使用中文括号（）代替。`",
-          "example": "无",
+          "example": "企业名称",
           "member": "string",
           "name": "AuthorizedOrganizationName",
           "required": false,
@@ -5923,7 +5923,7 @@
         {
           "disabled": false,
           "document": "在设置印章授权时，可以指定特定的印章类型，以确保在授权过程中只使用相应类型的印章。支持的印章类型包括：\n\n<ul>\n<li><strong>OFFICIAL</strong>：企业公章，用于代表企业对外的正式文件和重要事务的认证。</li>\n<li><strong>CONTRACT</strong>：合同专用章，专门用于签署各类合同。</li>\n<li><strong>FINANCE</strong>：财务专用章，用于企业的财务相关文件，如发票、收据等财务凭证的认证。</li>\n<li><strong>PERSONNEL</strong>：人事专用章，用于人事管理相关文件，如劳动合同、人事任命等。</li>\n</ul>",
-          "example": "无",
+          "example": "OFFICIAL",
           "member": "string",
           "name": "SealTypes",
           "required": false,
@@ -5932,7 +5932,7 @@
         {
           "disabled": false,
           "document": "在处理授权关系时，授权的方向\n<ul>\n<li><strong>false</strong>（默认值）：表示我方授权他方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【被授权方】的企业名称，即接收授权的企业。</li>\n<li><strong>true</strong>：表示他方授权我方。在这种情况下，<code>AuthorizedOrganizationName</code> 代表的是【授权方】的企业名称，即提供授权的企业。</li>\n</ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "AuthToMe",
           "required": false,
@@ -5947,7 +5947,7 @@
         {
           "disabled": false,
           "document": "授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。",
-          "example": "无",
+          "example": "https://essurl.cn/x9nvWU8fTg",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -5957,7 +5957,7 @@
         {
           "disabled": false,
           "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径",
-          "example": "无",
+          "example": "pages/guide?from=default&where=mini& to=CONTRACT_DETAIL& id=yDwiBUUc*duRvquCSX8wd& shortKey=yDwivUA**W1yRsTre3",
           "member": "string",
           "name": "MiniAppPath",
           "output_required": false,
@@ -5967,7 +5967,7 @@
         {
           "disabled": false,
           "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
-          "example": "无",
+          "example": "1736477236",
           "member": "int64",
           "name": "ExpireTime",
           "output_required": false,
@@ -6120,7 +6120,7 @@
         {
           "disabled": false,
           "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
-          "example": "无",
+          "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -6129,7 +6129,7 @@
         {
           "disabled": false,
           "document": "自定义的合同流程的名称，长度不能超过200个字符，只能由中文汉字、中文标点、英文字母、阿拉伯数字、空格、小括号、中括号、中划线、下划线以及（,）、（;）、（.）、(&)、（+）组成。\n\n该名称还将用于合同签署完成后文件下载的默认文件名称。",
-          "example": "无",
+          "example": "合同名称",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -6156,7 +6156,7 @@
         {
           "disabled": false,
           "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n",
-          "example": "无",
+          "example": "1736477282",
           "member": "int64",
           "name": "Deadline",
           "required": false,
@@ -6165,7 +6165,7 @@
         {
           "disabled": false,
           "document": "用户自定义合同类型Id\n\n该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取\n注: `该参数如果和FlowType同时传，以该参数优先生效`",
-          "example": "无",
+          "example": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
           "member": "string",
           "name": "UserFlowTypeId",
           "required": false,
@@ -6219,7 +6219,7 @@
         {
           "disabled": false,
           "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedSignReview",
           "required": false,
@@ -6228,7 +6228,7 @@
         {
           "disabled": false,
           "document": "发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n\n若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。\n\n",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedCreateReview",
           "required": false,
@@ -6237,7 +6237,7 @@
         {
           "disabled": false,
           "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
-          "example": "无",
+          "example": "自定义数据",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -6255,7 +6255,7 @@
         {
           "disabled": false,
           "document": "合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接\n注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`",
-          "example": "无",
+          "example": "yDwcCUUgyg3tgmvhUEVzyNa15Zayy6Sf",
           "member": "string",
           "name": "FlowId",
           "required": false,
@@ -6297,7 +6297,7 @@
         {
           "disabled": false,
           "document": "发起流程的web页面链接，有效期5分钟",
-          "example": "无",
+          "example": "https://embed.test.qian.tencent.cn//contract-details?embed=1&code=yDwFJUUckpsm2e3xU6LVMFEMw1e4YIkb&channel=TENCENTCLOUD&businessId=yDwFFUUckps75s4pUEmvMvC8iyRPYukZ&businessType=DOCUMENT&scene=SINGLEPAGE",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -6307,7 +6307,7 @@
         {
           "disabled": false,
           "document": "创建的合同id（还未实际发起），每次调用会生成新的id，用户可以记录此字段对应后续页面发起的合同，若在页面上未成功发起，则此字段无效。",
-          "example": "无",
+          "example": "yDwcCUUgyg3tgmvhUEVzyNa15Zayy6Sf",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
@@ -6329,7 +6329,7 @@
         {
           "disabled": false,
           "document": "个人用户姓名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -6338,7 +6338,7 @@
         {
           "disabled": false,
           "document": "证件号码，应符合以下规则\n<ul><li> 中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
-          "example": "无",
+          "example": "420528****1929",
           "member": "string",
           "name": "IdCardNumber",
           "required": true,
@@ -6347,7 +6347,7 @@
         {
           "disabled": false,
           "document": "印章名称，长度1-50个字。",
-          "example": "无",
+          "example": "财务章",
           "member": "string",
           "name": "SealName",
           "required": true,
@@ -6365,7 +6365,7 @@
         {
           "disabled": false,
           "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同 中国大陆居民身份证)</li></ul>",
-          "example": "无",
+          "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
           "required": false,
@@ -6374,7 +6374,7 @@
         {
           "disabled": true,
           "document": "印章图片的base64\n注：已废弃\n请先通过UploadFiles接口上传文件，获取 FileId",
-          "example": "无",
+          "example": "已废弃",
           "member": "string",
           "name": "SealImage",
           "required": false,
@@ -6383,7 +6383,7 @@
         {
           "disabled": false,
           "document": "是否开启印章图片压缩处理，默认不开启，如需开启请设置为 true。当印章超过 2M 时建议开启，开启后图片的 hash 将发生变化。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "SealImageCompress",
           "required": false,
@@ -6392,7 +6392,7 @@
         {
           "disabled": false,
           "document": "手机号码；当需要开通自动签时，该参数必传",
-          "example": "无",
+          "example": "187****7831",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -6401,7 +6401,7 @@
         {
           "disabled": false,
           "document": "此字段已废弃，请勿继续使用。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "EnableAutoSign",
           "required": false,
@@ -6428,7 +6428,7 @@
         {
           "disabled": false,
           "document": "印章图片文件 id\n取值：\n填写的FileId通过UploadFiles接口上传文件获取。",
-          "example": "无",
+          "example": "false",
           "member": "string",
           "name": "FileId",
           "required": false,
@@ -6446,7 +6446,7 @@
         {
           "disabled": false,
           "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次 1-不绑定，发起合同时将按标准合同套餐进行扣减\t",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "LicenseType",
           "required": false,
@@ -6470,7 +6470,7 @@
         {
           "disabled": false,
           "document": "导入生成的印章ID，为32位字符串。\n建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。",
-          "example": "无",
+          "example": "yDCZHUUnitvronUuNTdBrElW0gOVqCfy",
           "member": "string",
           "name": "SealId",
           "output_required": true,
@@ -6583,7 +6583,7 @@
         {
           "disabled": false,
           "document": "<ul>\n  <li>0 : 发起审批成功页面（通过接口<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow/\" target=\"_blank\">创建发起流程web页面</a>发起时设置了NeedCreateReview参数为true）</li>\n</ul>",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -6592,7 +6592,7 @@
         {
           "disabled": false,
           "document": "结果页标题，不超过50字",
-          "example": "无",
+          "example": "发起成功",
           "member": "string",
           "name": "Title",
           "required": true,
@@ -6601,7 +6601,7 @@
         {
           "disabled": false,
           "document": "结果页描述，不超过200字",
-          "example": "无",
+          "example": "发起成功",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -6733,7 +6733,7 @@
         {
           "disabled": false,
           "document": "签署节点ID，用于生成动态签署人链接完成领取。\n\n注：`生成动态签署人补充链接时必传。`",
-          "example": "无",
+          "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "RecipientId",
           "required": false,
@@ -6751,7 +6751,7 @@
         {
           "disabled": false,
           "document": "<font color=\"red\">仅公众号 H5 跳转电子签小程序时</font>，如需签署完成的“返回应用”功能，在获取签署链接接口的 UrlUseEnv 参数需设置为 **WeChatOfficialAccounts**，小程序签署成功的结果页面中才会出现“返回应用”按钮。在用户点击“返回应用”按钮之后，会返回到公众号 H5。 \n\n参考 [公众号 H5 跳转电子签小程序](https://qian.tencent.com/developers/company/openwxminiprogram/#23-%E5%85%AC%E4%BC%97%E5%8F%B7-h5-%E4%B8%AD%E8%B7%B3%E8%BD%AC)。",
-          "example": "无",
+          "example": "WeChatOfficialAccounts",
           "member": "string",
           "name": "UrlUseEnv",
           "required": false,
@@ -6776,7 +6776,7 @@
         {
           "disabled": false,
           "document": "二维码，在生成动态签署人跳转封面页链接时返回",
-          "example": "无",
+          "example": "https://essurl.cn/wq**81uj",
           "member": "string",
           "name": "SchemeQrcodeUrl",
           "output_required": false,
@@ -6816,7 +6816,7 @@
         {
           "disabled": false,
           "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
-          "example": "无",
+          "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "SealId",
           "required": true,
@@ -6825,7 +6825,7 @@
         {
           "disabled": false,
           "document": "授权有效期，时间戳秒级。可以传0，代表有效期到2099年12月12日23点59分59秒。",
-          "example": "无",
+          "example": "1736478409",
           "member": "int64",
           "name": "Expired",
           "required": true,
@@ -6834,7 +6834,7 @@
         {
           "disabled": false,
           "document": "需要授权的用户UserId集合。跟上面的SealId参数配合使用。选填，跟上面的Users同时起作用",
-          "example": "无",
+          "example": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -6843,7 +6843,7 @@
         {
           "disabled": false,
           "document": "印章授权内容",
-          "example": "无",
+          "example": "印章授权内容",
           "member": "string",
           "name": "Policy",
           "required": false,
@@ -6867,7 +6867,7 @@
         {
           "disabled": false,
           "document": "最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
-          "example": "无",
+          "example": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
           "member": "string",
           "name": "UserIds",
           "output_required": true,
@@ -7306,7 +7306,7 @@
         {
           "disabled": false,
           "document": "腾讯电子签小程序的AppId，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。",
-          "example": "无",
+          "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -7316,7 +7316,7 @@
         {
           "disabled": false,
           "document": "腾讯电子签小程序的原始Id，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。",
-          "example": "无",
+          "example": "gh_da88f6188665",
           "member": "string",
           "name": "AppOriginalId",
           "output_required": false,
@@ -7336,7 +7336,7 @@
         {
           "disabled": false,
           "document": "腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用。",
-          "example": "无",
+          "example": "pages/home/index",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -7346,7 +7346,7 @@
         {
           "disabled": false,
           "document": "base64格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。",
-          "example": "无",
+          "example": "UEsDBBQACAAIAAAAAAAAAAAAAAAAAAAAAAANAAAAeGwvc3R5bGVzLnhtbKyYXW==",
           "member": "string",
           "name": "QrCode",
           "output_required": false,
@@ -7917,7 +7917,7 @@
         {
           "disabled": false,
           "document": "清除认证流产生的错误信息",
-          "example": "无",
+          "example": "企业认证不存在",
           "member": "string",
           "name": "Errormessage",
           "output_required": false,
@@ -8865,7 +8865,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>",
+          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -8990,7 +8990,7 @@
         {
           "disabled": false,
           "document": "查询内容控制\n\n<ul><li>**0**：模板列表及详情（默认）</li>\n<li>**1**：仅模板列表</li></ul>",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ContentType",
           "required": false,
@@ -9026,7 +9026,7 @@
         {
           "disabled": false,
           "document": "通过指定[第三方应用的应用号（ApplicationId）](https://qcloudimg.tencent-cloud.cn/raw/60efa1e9049732e5246b20a268882b1a.png)，您可以查询<a href=\"https://qcloudimg.tencent-cloud.cn/raw/18319e5e77f7d47eab493d43d47827d3.png\" target=\"_blank\">【应用模板库管理】</a>中某个第三方应用下的模板。\n\n<p><strong>注意事项：</strong></p>\n<ul><li>当 <strong>ApplicationId</strong> 为空时（默认），系统将查询<a href=\"https://qcloudimg.tencent-cloud.cn/raw/376943a1d472393dd5388592f2e85ee5.png\" target=\"_blank\">平台企业的所有模板</a>（自建应用使用的模板）。</li><li>当 <strong>ApplicationId</strong> 不为空时，系统将从<a href=\"https://qcloudimg.tencent-cloud.cn/raw/18319e5e77f7d47eab493d43d47827d3.png\" target=\"_blank\">【应用模板库管理】</a>中查询该特定应用下的模板（分享给第三方应用子企业的模板）。</li></ul>",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "ApplicationId",
           "required": false,
@@ -9035,7 +9035,7 @@
         {
           "disabled": true,
           "document": "默认为false，查询SaaS模板库列表；\n为true，查询第三方应用集成平台企业模板库管理列表",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsChannel",
           "required": false,
@@ -9062,7 +9062,7 @@
         {
           "disabled": false,
           "document": "是否获取模板预览链接。\n\n<ul><li><strong>false</strong>：不获取（默认）</li><li><strong>true</strong>：需要获取</li></ul>\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接, 有效期5分钟。可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "WithPreviewUrl",
           "required": false,
@@ -9118,7 +9118,7 @@
         {
           "disabled": false,
           "document": "查询类型，支持以下类型：\n<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>\n<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "QueryType",
           "required": true,
@@ -9136,7 +9136,7 @@
         {
           "disabled": false,
           "document": "查询的部门ID。\n注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`",
-          "example": "无",
+          "example": "yDxZtUyKQD2JuqUuO4zjERYG3XNeEJXw",
           "member": "string",
           "name": "DeptId",
           "required": false,
@@ -9145,7 +9145,7 @@
         {
           "disabled": false,
           "document": "查询的客户系统部门ID。\n注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`",
-          "example": "无",
+          "example": "dept_open_id_test",
           "member": "string",
           "name": "DeptOpenId",
           "required": false,
@@ -9294,7 +9294,7 @@
         {
           "disabled": false,
           "document": "指定分页每页返回的数据条数，单页最大支持 200。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -9321,7 +9321,7 @@
         {
           "disabled": false,
           "document": "OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。\n分页参数, 需要limit, offset 配合使用\n例如:\n您希望得到第三页的数据, 且每页限制最多10条\n您可以使用 LIMIT 10 OFFSET 20\n",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -9397,7 +9397,7 @@
         {
           "disabled": false,
           "document": "组织机构名称。 请确认该名称与企业营业执照中注册的名称一致。 如果名称中包含英文括号()，请使用中文括号（）代替。",
-          "example": "无",
+          "example": "测试企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -9406,7 +9406,7 @@
         {
           "disabled": false,
           "document": "企业统一社会信用代码\n注意：OrganizationName和UniformSocialCreditCode不能同时为空",
-          "example": "无",
+          "example": "JHVSH21******",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "required": false,
@@ -9415,7 +9415,7 @@
         {
           "disabled": false,
           "document": "法人姓名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "LegalName",
           "required": false,
@@ -9430,7 +9430,7 @@
         {
           "disabled": false,
           "document": "企业是否已认证",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsVerified",
           "output_required": true,
@@ -9440,7 +9440,7 @@
         {
           "disabled": false,
           "document": "企业认证状态 0-未认证 1-认证中 2-已认证",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AuthStatus",
           "output_required": true,
@@ -9460,7 +9460,7 @@
         {
           "disabled": false,
           "document": "企业在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多\"->\"企业设置\"->\"企业中心\"- 中查看企业电子签账号。\np.s. 只有当前企业认证成功的时候返回",
-          "example": "无",
+          "example": "yDwcCUUgyg3tgmwcUEVzyNaupO7DiB3E",
           "member": "string",
           "name": "OrganizationId",
           "output_required": false,
@@ -10150,7 +10150,7 @@
         {
           "disabled": false,
           "document": "活体视频的base64编码，mp4格式\n\n注:`需进行base64解码获取活体视频文件`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5rS75L2T6KeG6aKR55qEYmFzZTY057yW56CB77yMbXA05qC85byP",
           "member": "string",
           "name": "LiveNessVideo",
           "output_required": false,
@@ -10220,7 +10220,7 @@
         {
           "disabled": false,
           "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n\n在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
@@ -10231,7 +10231,7 @@
         {
           "disabled": false,
           "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDt1JUUckp77a2tqUyEmko8RVpCEHoNA",
           "member": "string",
           "name": "SignId",
           "output_required": false,
@@ -10242,7 +10242,7 @@
         {
           "disabled": false,
           "document": "签署方当前状态，会出现下面的状态\n\n2：待签署\n3：已签署\n4：已拒绝\n5：已过期\n6：已撤销\n8：待填写\n9：因为各种原因（签署人改名等）而终止\n10：填写完成\n15：已解除\n19：转他人处理\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "ApproverStatus",
           "output_required": false,
@@ -10364,7 +10364,7 @@
         {
           "disabled": false,
           "document": "印章来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "GENERATE",
           "member": "string",
           "name": "GenerateType",
           "output_required": false,
@@ -10375,7 +10375,7 @@
         {
           "disabled": false,
           "document": "印章来源类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "深圳电子印章",
           "member": "string",
           "name": "GenerateTypeDesc",
           "output_required": false,
@@ -10386,7 +10386,7 @@
         {
           "disabled": false,
           "document": "印章来源logo\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://file.cn/sist-seal-logo-alpha.png",
           "member": "string",
           "name": "GenerateTypeLogo",
           "output_required": false,
@@ -10403,20 +10403,20 @@
         {
           "disabled": false,
           "document": "用户userId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "角色id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH\"]",
           "member": "string",
           "name": "RoleIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -10429,7 +10429,7 @@
         {
           "disabled": false,
           "document": "员工名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
@@ -10439,7 +10439,7 @@
         {
           "disabled": false,
           "document": "员工手机号",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -10449,7 +10449,7 @@
         {
           "disabled": false,
           "document": "传入的企微账号id",
-          "example": "无",
+          "example": "oDjGHs-1yCnGrRovBj2yHij5JAAA",
           "member": "string",
           "name": "WeworkOpenId",
           "output_required": false,
@@ -10459,7 +10459,7 @@
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "无",
+          "example": "手机号已经被占用",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -10475,30 +10475,30 @@
         {
           "disabled": false,
           "document": "员工在电子签的userId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "员工在第三方平台的openId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "n9527",
           "member": "string",
           "name": "OpenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "无",
+          "example": "员工是公司的超级管理员",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -10511,7 +10511,7 @@
         {
           "disabled": false,
           "document": "用户传入的名称",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
@@ -10521,7 +10521,7 @@
         {
           "disabled": false,
           "document": "用户传入的手机号，明文展示",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -10531,7 +10531,7 @@
         {
           "disabled": false,
           "document": "失败原因",
-          "example": "无",
+          "example": "手机号已经被占用",
           "member": "string",
           "name": "Reason",
           "output_required": true,
@@ -10541,7 +10541,7 @@
         {
           "disabled": false,
           "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -10551,7 +10551,7 @@
         {
           "disabled": false,
           "document": "员工在第三方平台的openId",
-          "example": "无",
+          "example": "n9527",
           "member": "string",
           "name": "OpenId",
           "output_required": true,
@@ -10567,7 +10567,7 @@
         {
           "disabled": false,
           "document": "文件ID",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "FileId",
           "output_required": true,
@@ -10578,7 +10578,7 @@
         {
           "disabled": false,
           "document": "文件名",
-          "example": "无",
+          "example": "入职合同.PDF",
           "member": "string",
           "name": "FileName",
           "output_required": true,
@@ -10589,7 +10589,7 @@
         {
           "disabled": false,
           "document": "文件大小，单位为Byte",
-          "example": "无",
+          "example": "534543",
           "member": "int64",
           "name": "FileSize",
           "output_required": true,
@@ -10600,7 +10600,7 @@
         {
           "disabled": false,
           "document": "文件上传时间，格式为Unix标准时间戳（秒）",
-          "example": "无",
+          "example": "1736751627",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
@@ -10617,7 +10617,7 @@
         {
           "disabled": false,
           "document": "下载文件的URL，有效期为输入的UrlTtl，默认5分钟",
-          "example": "无",
+          "example": "https://file.cn/resourceId.pdf",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -10628,7 +10628,7 @@
         {
           "disabled": false,
           "document": "下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"width\":595.3,\"height\":841.9}",
           "member": "string",
           "name": "Option",
           "output_required": true,
@@ -10690,7 +10690,7 @@
         {
           "disabled": false,
           "document": "补充企业动态签署人时，需要指定对应企业名称",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -10708,7 +10708,7 @@
         {
           "disabled": false,
           "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`补充个人签署方时，若该用户已在电子签完成实名则可通过指定姓名和证件类型、证件号码完成补充。`",
-          "example": "无",
+          "example": "37000019890303000X",
           "member": "string",
           "name": "ApproverIdCardNumber",
           "required": false,
@@ -10732,7 +10732,7 @@
         {
           "disabled": false,
           "document": "为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
@@ -10742,7 +10742,7 @@
         {
           "disabled": false,
           "document": "补充失败错误说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "已经是合同的参与人",
           "member": "string",
           "name": "ErrMessage",
           "output_required": false,
@@ -10752,7 +10752,7 @@
         {
           "disabled": false,
           "document": "合同流程ID，为32位字符串。\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDt1iUUckp7xb05iUuWfBtZwW5IdVzLn",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
@@ -10768,60 +10768,60 @@
         {
           "disabled": false,
           "document": "控件Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "component_01",
           "member": "string",
           "name": "ComponentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "控件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "地址",
           "member": "string",
           "name": "ComponentName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "控件填写状态；0-未填写；1-已填写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ComponentFillStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "控件填写内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "深圳市南山区腾讯大厦",
           "member": "string",
           "name": "ComponentValue",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "控件所属参与方Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "ComponentRecipientId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://file.cn/resourceId.jpg",
           "member": "string",
           "name": "ImageUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11226,7 +11226,7 @@
         {
           "disabled": false,
           "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n\n注: `当approverType=0(企业签署方) 或 approverType=3(企业静默签署)时，必须指定`\n\n",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -11235,7 +11235,7 @@
         {
           "disabled": false,
           "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n在未指定签署人电子签UserId情况下，为必填参数",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "ApproverName",
           "required": false,
@@ -11244,7 +11244,7 @@
         {
           "disabled": false,
           "document": "签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 此手机号用于通知和用户的实名认证等环境，请确认手机号所有方为此合同签署方。\n\n注：`在未指定签署人电子签UserId情况下，为必填参数`\n",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "ApproverMobile",
           "required": false,
@@ -11271,7 +11271,7 @@
         {
           "disabled": false,
           "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n\n<b>模板发起合同时，该参数为必填项，可以通过[查询模板信息接口](https://qian.tencent.com/developers/companyApis/templatesAndFiles/DescribeFlowTemplates)获得。</b>\n<b>文件发起合同时，该参数无需传值。</b>\n\n如果开发者后续用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "RecipientId",
           "required": false,
@@ -11289,7 +11289,7 @@
         {
           "disabled": false,
           "document": "通知签署方经办人的方式,  有以下途径:\n<ul><li>  **sms**  :  (默认)短信</li>\n<li>   **none**   : 不通知</li></ul>\n\n注: `既是发起方又是签署方时，不给此签署方发送短信`",
-          "example": "无",
+          "example": "none",
           "member": "string",
           "name": "NotifyType",
           "required": false,
@@ -11298,7 +11298,7 @@
         {
           "disabled": false,
           "document": "合同强制需要阅读全文，无需传此参数",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsFullText",
           "required": false,
@@ -11307,7 +11307,7 @@
         {
           "disabled": false,
           "document": "签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。\n\n若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：\n<ul>\n<li>合同页数少于等于2页，阅读时间为3秒；</li>\n<li>合同页数为3到5页，阅读时间为5秒；</li>\n<li>合同页数大于等于6页，阅读时间为10秒。</li>\n</ul>",
-          "example": "无",
+          "example": "3",
           "member": "uint64",
           "name": "PreReadTime",
           "required": false,
@@ -11316,7 +11316,7 @@
         {
           "disabled": false,
           "document": "签署人userId，仅支持本企业的员工userid， 可在控制台组织管理处获得\n\n注： \n如果传进来的<font color=\"red\">UserId已经实名， 则忽略ApproverName，ApproverIdCardType，ApproverIdCardNumber，ApproverMobile这四个入参</font>（会用此UserId实名的身份证和登录的手机号覆盖）",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -11325,7 +11325,7 @@
         {
           "disabled": false,
           "document": "<font color=\"red\">字段已经废弃</font>，当前只支持true，默认为true",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Required",
           "required": false,
@@ -11334,7 +11334,7 @@
         {
           "disabled": false,
           "document": "在企微场景下使用，需设置参数为**WEWORKAPP**，以表明合同来源于企微。",
-          "example": "无",
+          "example": "WEWORKAPP",
           "member": "string",
           "name": "ApproverSource",
           "required": false,
@@ -11343,7 +11343,7 @@
         {
           "disabled": false,
           "document": "在企业微信场景下，表明该合同流程为或签，其最大长度为64位字符串。\n所有参与或签的人员均需具备该标识。\n注意，在合同中，不同的或签参与人必须保证其CustomApproverTag唯一。\n如果或签签署人为本方企业微信参与人，则需要指定ApproverSource参数为WEWORKAPP。",
-          "example": "无",
+          "example": "n9527",
           "member": "string",
           "name": "CustomApproverTag",
           "required": false,
@@ -11379,7 +11379,7 @@
         {
           "disabled": false,
           "document": "签署人的签署ID\n\n<ul>\n<li>在CreateFlow、CreatePrepareFlow等发起流程时不需要传入此参数，电子签后台系统会自动生成。</li>\n<li>在CreateFlowSignUrl、CreateBatchQuickSignUrl等生成签署链接时，可以通过查询详情接口获取签署人的SignId，然后可以将此值传入，为该签署人创建签署链接。这样可以避免重复传输姓名、手机号、证件号等其他信息。</li>\n</ul>",
-          "example": "无",
+          "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "SignId",
           "required": false,
@@ -11388,7 +11388,7 @@
         {
           "disabled": false,
           "document": "此签署人(员工或者个人)签署时，是否需要发起方企业审批，取值如下：\n<ul><li>**false**：（默认）不需要审批，直接签署。</li>\n<li>**true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li>如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li>如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n\n注：`此功能可用于与发起方企业内部的审批流程进行关联，支持手动、静默签署合同`\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/b14d5188ed0229d1401e74a9a49cab6d.png)",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ApproverNeedSignReview",
           "required": false,
@@ -11415,7 +11415,7 @@
         {
           "disabled": false,
           "document": "当签署方控件类型为 <b>SIGN_SIGNATURE</b> 时，可以指定签署方签名方式。如果不指定，签署人可以使用所有的签名类型，可指定的签名类型包括：\n\n<ul><li> <b>HANDWRITE</b> :需要实时手写的手写签名。</li>\n<li> <b>HANDWRITTEN_ESIGN</b> :长效手写签名， 是使用保存到个人中心的印章列表的手写签名。(并且包含HANDWRITE)</li>\n<li> <b>OCR_ESIGN</b> :AI智能识别手写签名。</li>\n<li> <b>ESIGN</b> :个人印章类型。</li>\n<li> <b>IMG_ESIGN</b>  : 图片印章。该类型支持用户在签署将上传的PNG格式的图片作为签名。</li>\n<li> <b>SYSTEM_ESIGN</b> :系统签名。该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署。</li></ul>\n\n各种签名的样式可以参考下图：\n![image](https://qcloudimg.tencent-cloud.cn/raw/ee0498856c060c065628a0c5ba780d6b.jpg)",
-          "example": "无",
+          "example": "[\"HANDWRITE\"]",
           "member": "string",
           "name": "ComponentLimitType",
           "required": false,
@@ -11599,7 +11599,7 @@
         {
           "disabled": false,
           "document": "签署节点ID，用于生成动态签署人链接完成领取。注：`生成动态签署人补充链接时必传。`",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "RecipientId",
           "required": false,
@@ -11640,7 +11640,7 @@
         {
           "disabled": false,
           "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n该名称还将用于合同签署完成后的下载文件名。",
-          "example": "无",
+          "example": "2025入职合同",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -11658,7 +11658,7 @@
         {
           "disabled": false,
           "document": "文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。\n建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。",
-          "example": "无",
+          "example": "[\"yDt1JUUckp77a2omUyEmko88eg49PTsN\"]",
           "member": "string",
           "name": "FileIds",
           "required": false,
@@ -11667,7 +11667,7 @@
         {
           "disabled": false,
           "document": "合同模板ID，为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。\n可登录腾讯电子签控制台，在 \"模板\"->\"模板中心\"->\"列表展示设置\"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "TemplateId",
           "required": false,
@@ -11675,8 +11675,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符\n示例值：劳务合同",
-          "example": "无",
+          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
+          "example": "劳务合同",
           "member": "string",
           "name": "FlowType",
           "required": false,
@@ -11685,7 +11685,7 @@
         {
           "disabled": false,
           "document": "签署流程描述,最大长度1000个字符",
-          "example": "无",
+          "example": "2025入职合同",
           "member": "string",
           "name": "FlowDescription",
           "required": false,
@@ -11694,7 +11694,7 @@
         {
           "disabled": false,
           "document": "签署流程的签署截止时间。\n\n值为unix时间戳,精确到秒,不传默认为当前时间一年后\n示例值：1604912664",
-          "example": "无",
+          "example": "1736751627",
           "member": "int64",
           "name": "Deadline",
           "required": false,
@@ -11712,7 +11712,7 @@
         {
           "disabled": false,
           "document": "调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
-          "example": "无",
+          "example": "VXNlckRhdGE=",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -11721,7 +11721,7 @@
         {
           "disabled": false,
           "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致\n示例值：true",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Unordered",
           "required": false,
@@ -11739,7 +11739,7 @@
         {
           "disabled": false,
           "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。\n示例值：true",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "NeedSignReview",
           "required": false,
@@ -11747,8 +11747,8 @@
         },
         {
           "disabled": false,
-          "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN\n示例值：E_PRESCRIPTION_AUTO_SIGN",
-          "example": "无",
+          "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN\n",
+          "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "AutoSignScene",
           "required": false,
@@ -11772,7 +11772,7 @@
         {
           "disabled": false,
           "document": "签署人校验方式,支持以下类型\n<ul><li>VerifyCheck : 人脸识别 (默认值)</li>\n<li>MobileCheck : 手机号验证</li></ul>\n参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
-          "example": "无",
+          "example": "VerifyCheck ",
           "member": "string",
           "name": "ApproverVerifyType",
           "required": false,
@@ -11781,7 +11781,7 @@
         {
           "disabled": false,
           "document": "发起合同（流程）组本方企业经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
-          "example": "无",
+          "example": "none ",
           "member": "string",
           "name": "SelfOrganizationApproverNotifyType",
           "required": false,
@@ -11790,7 +11790,7 @@
         {
           "disabled": false,
           "document": "发起合同（流程）组他方经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
-          "example": "无",
+          "example": "none",
           "member": "string",
           "name": "OtherApproverNotifyType",
           "required": false,
@@ -11953,7 +11953,7 @@
         {
           "disabled": false,
           "document": "成员企业名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -11963,7 +11963,7 @@
         {
           "disabled": false,
           "document": "成员企业别名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "Alias",
           "output_required": true,
@@ -11973,7 +11973,7 @@
         {
           "disabled": false,
           "document": "成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "OrganizationId",
           "output_required": true,
@@ -11983,7 +11983,7 @@
         {
           "disabled": false,
           "document": "记录更新时间， unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1736751627",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": true,
@@ -11993,7 +11993,7 @@
         {
           "disabled": false,
           "document": "成员企业加入集团的当前状态\n<ul><li> **1**：待授权</li>\n<li> **2**：已授权待激活</li>\n<li> **3**：拒绝授权</li>\n<li> **4**：已解除</li>\n<li> **5**：已加入</li>\n</ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -12003,7 +12003,7 @@
         {
           "disabled": false,
           "document": "是否为集团主企业\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsMainOrganization",
           "output_required": true,
@@ -12013,7 +12013,7 @@
         {
           "disabled": false,
           "document": "企业社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "91110108772551611J",
           "member": "string",
           "name": "IdCardNumber",
           "output_required": true,
@@ -12033,7 +12033,7 @@
         {
           "disabled": false,
           "document": "企业许可证Id，此字段暂时不需要关注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "企业许可证Id",
           "member": "string",
           "name": "License",
           "output_required": true,
@@ -12043,7 +12043,7 @@
         {
           "disabled": false,
           "document": "企业许可证过期时间，unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1736751627",
           "member": "uint64",
           "name": "LicenseExpireTime",
           "output_required": true,
@@ -12053,7 +12053,7 @@
         {
           "disabled": false,
           "document": "成员企业加入集团时间，unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1736751627",
           "member": "uint64",
           "name": "JoinTime",
           "output_required": true,
@@ -12063,7 +12063,7 @@
         {
           "disabled": false,
           "document": "是否使用自建审批流引擎（即不是企微审批流引擎）\n<ul><li> **true**：是</li>\n<li> **false**：否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "trye",
           "member": "bool",
           "name": "FlowEngineEnable",
           "output_required": true,
@@ -12079,7 +12079,7 @@
         {
           "disabled": false,
           "document": "授权企业id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "OrganizationId",
           "output_required": false,
@@ -12090,7 +12090,7 @@
         {
           "disabled": false,
           "document": "授权企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "output_required": false,
@@ -12101,7 +12101,7 @@
         {
           "disabled": false,
           "document": "被授权企业id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "AuthorizedOrganizationId",
           "output_required": false,
@@ -12112,7 +12112,7 @@
         {
           "disabled": false,
           "document": "被授权企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "李四示例企业",
           "member": "string",
           "name": "AuthorizedOrganizationName",
           "output_required": false,
@@ -12123,7 +12123,7 @@
         {
           "disabled": false,
           "document": "授权模板id（仅当授权方式为模板授权时有值）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "TemplateId",
           "output_required": false,
@@ -12134,7 +12134,7 @@
         {
           "disabled": false,
           "document": "授权模板名称（仅当授权方式为模板授权时有值）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "入职合同",
           "member": "string",
           "name": "TemplateName",
           "output_required": false,
@@ -12145,7 +12145,7 @@
         {
           "disabled": false,
           "document": "授权时间，格式为时间戳，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1736751627",
           "member": "int64",
           "name": "AuthorizeTime",
           "output_required": false,
@@ -12162,7 +12162,7 @@
         {
           "disabled": false,
           "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -12173,7 +12173,7 @@
         {
           "disabled": false,
           "document": "当前员工的归属情况，可能值是：\nMainOrg：在集团企业的场景下，返回此值代表是归属主企业\nCurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "MainOrg",
           "member": "string",
           "name": "BelongTo",
           "output_required": true,
@@ -12184,7 +12184,7 @@
         {
           "disabled": false,
           "document": "集团主企业id，当前企业为集团子企业时，该字段有值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "MainOrganizationId",
           "output_required": false,
@@ -12201,7 +12201,7 @@
         {
           "disabled": false,
           "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "caf2d1eab2632cd84a66593a23b769d9",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
@@ -12211,7 +12211,7 @@
         {
           "disabled": false,
           "document": "角色名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "超级管理员",
           "member": "string",
           "name": "RoleName",
           "output_required": true,
@@ -12221,7 +12221,7 @@
         {
           "disabled": false,
           "document": "角色状态，1-启用，2-禁用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "RoleStatus",
           "output_required": true,
@@ -12231,7 +12231,7 @@
         {
           "disabled": false,
           "document": "是否是集团角色，true-是，false-否\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsGroupRole",
           "output_required": true,
@@ -12241,7 +12241,7 @@
         {
           "disabled": false,
           "document": "管辖的子企业列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"]",
           "member": "string",
           "name": "SubOrgIdList",
           "output_required": true,
@@ -12387,7 +12387,7 @@
         {
           "disabled": false,
           "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wN",
           "member": "string",
           "name": "Video",
           "output_required": false,
@@ -12427,7 +12427,7 @@
         {
           "disabled": false,
           "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n\n注：`需进行base64解码获取视频文件`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "6KeG6aKRYmFzZTY0",
           "member": "string",
           "name": "Video",
           "output_required": false,
@@ -12437,7 +12437,7 @@
         {
           "disabled": false,
           "document": " 和答案匹配结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"0\"]",
           "member": "string",
           "name": "ResultCode",
           "output_required": false,
@@ -12447,7 +12447,7 @@
         {
           "disabled": false,
           "document": "回答问题语音识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"同意\"]",
           "member": "string",
           "name": "AsrResult",
           "output_required": false,
@@ -12803,7 +12803,7 @@
         {
           "disabled": false,
           "document": "角色id",
-          "example": "无",
+          "example": "yDxD6UxwxNjUy0fKyKBk09rtshL0DBuA",
           "member": "string",
           "name": "RoleId",
           "output_required": false,
@@ -12825,7 +12825,7 @@
         {
           "disabled": false,
           "document": "签署方经办人的类型，支持以下类型\n<ul><li> ORGANIZATION 企业（含企业自动签）</li>\n<li>PERSON 个人（含个人自动签）</li></ul>",
-          "example": "无",
+          "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproverType",
           "required": true,
@@ -12834,7 +12834,7 @@
         {
           "disabled": false,
           "document": "签署方经办人的姓名。 经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "ApproverName",
           "required": true,
@@ -12843,7 +12843,7 @@
         {
           "disabled": false,
           "document": "签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。 请确认手机号所有方为此合同签署方。",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "ApproverMobile",
           "required": false,
@@ -12861,7 +12861,7 @@
         {
           "disabled": false,
           "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>中国大陆居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>中国港澳居民来往内地通行证号码共11位。第1位为字母，“H”字头签发给中国香港居民，“M”字头签发给中国澳门居民；第2位至第11位为数字。</li>\n<li>中国港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
-          "example": "无",
+          "example": "37000019890303000X",
           "member": "string",
           "name": "ApproverIdCardNumber",
           "required": false,
@@ -12870,7 +12870,7 @@
         {
           "disabled": false,
           "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n如果签署方是企业签署方(approverType = 0 或者 approverType = 3)， 则企业名称必填。\n",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -12885,7 +12885,7 @@
         {
           "disabled": false,
           "document": "电子印章编号",
-          "example": "无",
+          "example": "yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
           "member": "string",
           "name": "SealId",
           "output_required": true,
@@ -12895,7 +12895,7 @@
         {
           "disabled": false,
           "document": "电子印章名称",
-          "example": "无",
+          "example": "张三示例企业公章",
           "member": "string",
           "name": "SealName",
           "output_required": true,
@@ -12905,7 +12905,7 @@
         {
           "disabled": false,
           "document": "电子印章授权时间戳，单位秒",
-          "example": "无",
+          "example": "1736751627",
           "member": "int64",
           "name": "CreateOn",
           "output_required": true,
@@ -12915,7 +12915,7 @@
         {
           "disabled": false,
           "document": "电子印章授权人的UserId",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -12925,7 +12925,7 @@
         {
           "disabled": false,
           "document": "电子印章策略Id",
-          "example": "无",
+          "example": "yDRIOUUja5b90Uy0fKyKFCQryVc5qKxW",
           "member": "string",
           "name": "SealPolicyId",
           "output_required": true,
@@ -12935,7 +12935,7 @@
         {
           "disabled": false,
           "document": "印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "SealStatus",
           "output_required": true,
@@ -12945,7 +12945,7 @@
         {
           "disabled": false,
           "document": "审核失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "印章错误",
           "member": "string",
           "name": "FailReason",
           "output_required": true,
@@ -12955,7 +12955,7 @@
         {
           "disabled": false,
           "document": "印章图片url，5分钟内有效",
-          "example": "无",
+          "example": "https://file.cn/sealid.jpg",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -12965,7 +12965,7 @@
         {
           "disabled": false,
           "document": "印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章",
-          "example": "无",
+          "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
           "output_required": true,
@@ -12975,7 +12975,7 @@
         {
           "disabled": false,
           "document": "用印申请是否为永久授权，true-是，false-否",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsAllTime",
           "output_required": true,
@@ -13093,7 +13093,7 @@
         {
           "disabled": false,
           "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "output_required": false,
@@ -13104,7 +13104,7 @@
         {
           "disabled": false,
           "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "37000019890303000X",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "output_required": false,
@@ -13115,7 +13115,7 @@
         {
           "disabled": false,
           "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "LegalName",
           "output_required": false,
@@ -13137,7 +13137,7 @@
         {
           "disabled": false,
           "document": "组织机构法人的证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "37000019890303000X",
           "member": "string",
           "name": "LegalIdCardNumber",
           "output_required": false,
@@ -13148,7 +13148,7 @@
         {
           "disabled": false,
           "document": "组织机构超管姓名。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "AdminName",
           "output_required": false,
@@ -13159,7 +13159,7 @@
         {
           "disabled": false,
           "document": "组织机构超管手机号。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "AdminMobile",
           "output_required": false,
@@ -13181,7 +13181,7 @@
         {
           "disabled": false,
           "document": "组织机构超管证件号码\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "37000019890303000X",
           "member": "string",
           "name": "AdminIdCardNumber",
           "output_required": false,
@@ -13192,7 +13192,7 @@
         {
           "disabled": false,
           "document": "原超管姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "李四",
           "member": "string",
           "name": "OldAdminName",
           "output_required": false,
@@ -13203,7 +13203,7 @@
         {
           "disabled": false,
           "document": "原超管手机号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "15100000000",
           "member": "string",
           "name": "OldAdminMobile",
           "output_required": false,
@@ -13225,7 +13225,7 @@
         {
           "disabled": false,
           "document": "原超管证件号码",
-          "example": "无",
+          "example": "65000019870404000X",
           "member": "string",
           "name": "OldAdminIdCardNumber",
           "output_required": false,
@@ -13298,7 +13298,7 @@
         {
           "disabled": false,
           "document": "验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "VerifyResult",
           "output_required": true,
@@ -13308,7 +13308,7 @@
         {
           "disabled": false,
           "document": "签署平台\n如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，\n如果文件不在腾讯电子签平台签署，则为**其他平台**。",
-          "example": "无",
+          "example": "腾讯电子签",
           "member": "string",
           "name": "SignPlatform",
           "output_required": true,
@@ -13318,7 +13318,7 @@
         {
           "disabled": false,
           "document": "申请证书的主体的名字\n\n如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下\n**企业**:  ESS@企业名称@编码\n**个人**: ESS@个人姓名@证件号@808854\n\n如果在其他平台签署的, 主体的名字参考其他平台的说明",
-          "example": "无",
+          "example": "ESS@典子谦示例企业@382919",
           "member": "string",
           "name": "SignerName",
           "output_required": true,
@@ -13328,7 +13328,7 @@
         {
           "disabled": false,
           "document": "签署时间的Unix时间戳，单位毫秒",
-          "example": "无",
+          "example": "1699252042000",
           "member": "int64",
           "name": "SignTime",
           "output_required": true,
@@ -13338,7 +13338,7 @@
         {
           "disabled": false,
           "document": "证书签名算法,  如SHA1withRSA等算法",
-          "example": "无",
+          "example": "SHA1withRSA",
           "member": "string",
           "name": "SignAlgorithm",
           "output_required": true,
@@ -13348,7 +13348,7 @@
         {
           "disabled": false,
           "document": "在数字证书申请过程中，系统会自动生成一个独一无二的序列号。",
-          "example": "无",
+          "example": "6c8e2911fadf70ea",
           "member": "string",
           "name": "CertSn",
           "output_required": true,
@@ -13358,7 +13358,7 @@
         {
           "disabled": false,
           "document": "证书起始时间的Unix时间戳，单位毫秒",
-          "example": "无",
+          "example": "1699006057000",
           "member": "int64",
           "name": "CertNotBefore",
           "output_required": true,
@@ -13368,7 +13368,7 @@
         {
           "disabled": false,
           "document": "证书过期时间的时间戳，单位毫秒",
-          "example": "无",
+          "example": "1730542057000",
           "member": "int64",
           "name": "CertNotAfter",
           "output_required": true,
@@ -13378,7 +13378,7 @@
         {
           "disabled": false,
           "document": "签名域横坐标，单位px",
-          "example": "无",
+          "example": "361.0799865722656",
           "member": "float",
           "name": "ComponentPosX",
           "output_required": true,
@@ -13388,7 +13388,7 @@
         {
           "disabled": false,
           "document": "签名域纵坐标，单位px",
-          "example": "无",
+          "example": "481.6199951171875",
           "member": "float",
           "name": "ComponentPosY",
           "output_required": true,
@@ -13398,7 +13398,7 @@
         {
           "disabled": false,
           "document": "签名域宽度，单位px",
-          "example": "无",
+          "example": "119",
           "member": "float",
           "name": "ComponentWidth",
           "output_required": true,
@@ -13408,7 +13408,7 @@
         {
           "disabled": false,
           "document": "签名域高度，单位px",
-          "example": "无",
+          "example": "14",
           "member": "float",
           "name": "ComponentHeight",
           "output_required": true,
@@ -13418,7 +13418,7 @@
         {
           "disabled": false,
           "document": "签名域所在页码，1～N",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ComponentPage",
           "output_required": true,
@@ -13434,7 +13434,7 @@
         {
           "disabled": false,
           "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "订单管理",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -13445,7 +13445,7 @@
         {
           "disabled": false,
           "document": "权限key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "BillOrderManagement",
           "member": "string",
           "name": "Key",
           "output_required": false,
@@ -13456,7 +13456,7 @@
         {
           "disabled": false,
           "document": "权限类型 1前端，2后端\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Type",
           "output_required": false,
@@ -13467,7 +13467,7 @@
         {
           "disabled": false,
           "document": "是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Hide",
           "output_required": false,
@@ -13478,7 +13478,7 @@
         {
           "disabled": false,
           "document": "数据权限标签 1:表示根节点，2:表示叶子结点\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DataLabel",
           "output_required": false,
@@ -13489,7 +13489,7 @@
         {
           "disabled": false,
           "document": "数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DataType",
           "output_required": false,
@@ -13500,7 +13500,7 @@
         {
           "disabled": false,
           "document": "数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "DataRange",
           "output_required": false,
@@ -13511,7 +13511,7 @@
         {
           "disabled": false,
           "document": "关联权限, 表示这个功能权限要受哪个数据权限管控\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "FlowsManagement",
           "member": "string",
           "name": "DataTo",
           "output_required": false,
@@ -13522,7 +13522,7 @@
         {
           "disabled": false,
           "document": "父级权限key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "BillInvoiceManagement",
           "member": "string",
           "name": "ParentKey",
           "output_required": false,
@@ -13533,7 +13533,7 @@
         {
           "disabled": false,
           "document": "是否选中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IsChecked",
           "output_required": false,
@@ -13561,7 +13561,7 @@
         {
           "disabled": false,
           "document": "权限组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "费用中心",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
@@ -13572,7 +13572,7 @@
         {
           "disabled": false,
           "document": "权限组key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "bill",
           "member": "string",
           "name": "GroupKey",
           "output_required": false,
@@ -13583,7 +13583,7 @@
         {
           "disabled": false,
           "document": "是否隐藏分组，0否1是\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "false",
           "member": "int64",
           "name": "Hide",
           "output_required": false,
@@ -13611,7 +13611,7 @@
         {
           "disabled": false,
           "document": "签署参与者ID，唯一标识",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "RecipientId",
           "output_required": true,
@@ -13633,7 +13633,7 @@
         {
           "disabled": false,
           "document": "描述信息",
-          "example": "无",
+          "example": "合同的甲方",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -13644,7 +13644,7 @@
         {
           "disabled": false,
           "document": "角色名称",
-          "example": "无",
+          "example": "甲方",
           "member": "string",
           "name": "RoleName",
           "output_required": true,
@@ -13655,7 +13655,7 @@
         {
           "disabled": false,
           "document": "是否需要验证，\n默认为false-不需要验证",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "RequireValidation",
           "output_required": true,
@@ -13666,7 +13666,7 @@
         {
           "disabled": false,
           "document": "是否需要签署，\n默认为true-需要签署",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "RequireSign",
           "output_required": true,
@@ -13677,7 +13677,7 @@
         {
           "disabled": false,
           "document": "此参与方添加的顺序，从0～N",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RoutingOrder",
           "output_required": true,
@@ -13688,7 +13688,7 @@
         {
           "disabled": false,
           "document": "是否需要发送，\n默认为true-需要发送",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "RequireDelivery",
           "output_required": true,
@@ -13699,7 +13699,7 @@
         {
           "disabled": false,
           "document": "邮箱地址",
-          "example": "无",
+          "example": "zhangsang@qq.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -13710,7 +13710,7 @@
         {
           "disabled": false,
           "document": "电话号码",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -13721,7 +13721,7 @@
         {
           "disabled": false,
           "document": "关联的用户ID，电子签系统的用户ID",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -13743,7 +13743,7 @@
         {
           "disabled": false,
           "document": "参与方的一些附属信息，json格式",
-          "example": "无",
+          "example": "{\"userData\":\"xxxx\"}",
           "member": "string",
           "name": "RecipientExtra",
           "output_required": true,
@@ -13754,7 +13754,7 @@
         {
           "disabled": false,
           "document": "签署人查看合同校验方式, 支持的类型如下:\n<ul><li> 1 :实名认证查看</li>\n<li> 2 :手机号校验查看</li></ul>",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
           "output_required": true,
@@ -13765,7 +13765,7 @@
         {
           "disabled": false,
           "document": "签署人进行合同签署时的认证方式，支持的类型如下:\n<ul><li> 1 :人脸认证</li>\n<li> 2 :签署密码</li>\n<li> 3 :运营商三要素认证</li>\n<li> 4 :UKey认证</li>\n<li> 5 :设备指纹识别</li>\n<li> 6 :设备面容识别</li></ul>",
-          "example": "无",
+          "example": "[1]",
           "member": "int64",
           "name": "ApproverSignTypes",
           "output_required": true,
@@ -13776,7 +13776,7 @@
         {
           "disabled": false,
           "document": "签署方是否可以转他人处理\n\n<ul><li> **false** : ( 默认)可以转他人处理</li>\n<li> **true** :不可以转他人处理</li></ul>",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "NoTransfer",
           "output_required": false,
@@ -13793,7 +13793,7 @@
         {
           "disabled": false,
           "document": "签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
@@ -13803,7 +13803,7 @@
         {
           "disabled": false,
           "document": "参与方填写状态\n<ul>\n<li>**空值** : 此参与方没有填写控件</li>\n<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>\n<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "RecipientFillStatus",
           "output_required": false,
@@ -13813,7 +13813,7 @@
         {
           "disabled": false,
           "document": "是否为发起方\n<ul><li>true-发起方</li>\n<li>false-参与方</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsPromoter",
           "output_required": false,
@@ -13839,7 +13839,7 @@
         {
           "disabled": false,
           "document": "法人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "LegalName",
           "output_required": false,
@@ -13861,7 +13861,7 @@
         {
           "disabled": false,
           "document": "社会统一信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "91110108772551611J",
           "member": "string",
           "name": "UnifiedSocialCreditCode",
           "output_required": false,
@@ -13878,7 +13878,7 @@
         {
           "disabled": false,
           "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
-          "example": "无",
+          "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": true,
@@ -13887,7 +13887,7 @@
         {
           "disabled": false,
           "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。",
-          "example": "无",
+          "example": "91110108772551611J",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "required": true,
@@ -13896,7 +13896,7 @@
         {
           "disabled": false,
           "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "LegalName",
           "required": true,
@@ -13914,7 +13914,7 @@
         {
           "disabled": false,
           "document": "组织机构超管姓名。\n在注册流程中，必须是超管本人进行操作。\n如果法人做为超管管理组织机构,超管姓名就是法人姓名\n如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "AdminName",
           "required": false,
@@ -13923,7 +13923,7 @@
         {
           "disabled": false,
           "document": "组织机构超管手机号。\n在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。\n如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "AdminMobile",
           "required": false,
@@ -13932,7 +13932,7 @@
         {
           "disabled": false,
           "document": "可选的此企业允许的授权方式, 可以设置的方式有:\n1：上传授权书\n2：法人授权超管\n5：授权书+对公打款\n\n\n注:\n`1. 当前仅支持一种认证方式`\n`2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`\n`3. 如果当前操作人是法人,则是法人认证`",
-          "example": "无",
+          "example": "[1]",
           "member": "uint64",
           "name": "AuthorizationTypes",
           "required": false,
@@ -13941,7 +13941,7 @@
         {
           "disabled": false,
           "document": "认证人身份证号，如果入参中传递超管授权书PowerOfAttorneys，则此参数为必填参数\n",
-          "example": "无",
+          "example": "37000019890303000X",
           "member": "string",
           "name": "AdminIdCardNumber",
           "required": false,
@@ -13950,7 +13950,7 @@
         {
           "disabled": false,
           "document": "认证人证件类型 \n支持以下类型\n<ul><li>ID_CARD : 中国大陆居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 中国港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 中国港澳台居民居住证(格式同中国大陆居民身份证)</li></ul>\n",
-          "example": "无",
+          "example": "ID_CARD",
           "member": "string",
           "name": "AdminIdCardType",
           "required": false,
@@ -13959,7 +13959,7 @@
         {
           "disabled": false,
           "document": "营业执照正面照(PNG或JPG) base64格式, 大小不超过5M",
-          "example": "无",
+          "example": "6JCl5Lia5omn54Wn5q2j6Z2i54Wn",
           "member": "string",
           "name": "BusinessLicense",
           "required": false,
@@ -13968,7 +13968,7 @@
         {
           "disabled": false,
           "document": "授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。\np.s. 如果上传授权书 ，需遵循以下条件\n1. 超管的信息（超管姓名，超管手机号）必须为必填参数。\n2. 超管的个人身份必须在电子签已经实名。\n2. 认证方式AuthorizationTypes必须只能是上传授权书方式 \n",
-          "example": "无",
+          "example": "5o6I5p2D5LmmKFBOR+aIlkpQR+aIllBERikgYmFzZTY05qC85byP",
           "member": "string",
           "name": "PowerOfAttorneys",
           "required": false,
@@ -14037,7 +14037,7 @@
         {
           "disabled": false,
           "document": "印章Id，签署控件类型为印章时，用于指定本企业签署方在解除协议中使用那个印章进行签署",
-          "example": "无",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "ApproverSignSealId",
           "required": false,
@@ -14046,7 +14046,7 @@
         {
           "disabled": false,
           "document": "要更换的原合同参与人RecipientId编号。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "RelievedApproverRecipientId",
           "required": false,
@@ -14122,7 +14122,7 @@
         {
           "disabled": false,
           "document": "合同流程ID，为32位字符串。",
-          "example": "yDwxxxxxxxW72Qaxm",
+          "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -14132,7 +14132,7 @@
         {
           "disabled": false,
           "document": "在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。",
-          "example": "\"\"",
+          "example": "今天已经催办过了",
           "member": "string",
           "name": "RemindMessage",
           "output_required": true,
@@ -14212,7 +14212,7 @@
         {
           "disabled": false,
           "document": "姓名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -14221,7 +14221,7 @@
         {
           "disabled": false,
           "document": "手机号",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -14236,7 +14236,7 @@
         {
           "disabled": false,
           "document": "印章ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "SealId",
           "output_required": true,
@@ -14247,7 +14247,7 @@
         {
           "disabled": false,
           "document": "印章类型。LEGAL_PERSON_SEAL: 法定代表人章；\nORGANIZATIONSEAL：企业印章；\nOFFICIAL：企业公章；\nCONTRACT：合同专用章\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
           "output_required": true,
@@ -14258,7 +14258,7 @@
         {
           "disabled": false,
           "document": "印章名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三示例企业公章",
           "member": "string",
           "name": "SealName",
           "output_required": true,
@@ -14670,7 +14670,7 @@
         {
           "disabled": false,
           "document": "员工名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
@@ -14680,7 +14680,7 @@
         {
           "disabled": false,
           "document": "员工手机号",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -14690,7 +14690,7 @@
         {
           "disabled": false,
           "document": "员工在电子签平台的id",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -14700,7 +14700,7 @@
         {
           "disabled": false,
           "document": "提示，当创建已存在未实名用户时，该字段有值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三已经注册了",
           "member": "string",
           "name": "Note",
           "output_required": true,
@@ -14710,7 +14710,7 @@
         {
           "disabled": false,
           "document": "传入的企微账号id",
-          "example": "无",
+          "example": "oDjGHs-1yCnGrRovBj2yHij5JAAA",
           "member": "string",
           "name": "WeworkOpenId",
           "output_required": false,
@@ -14720,7 +14720,7 @@
         {
           "disabled": false,
           "document": "员工邀请返回链接 根据入参的 InvitationNotifyType 和 Endpoint 返回链接 <table><tbody><tr><td>链接类型</td><td>有效期</td><td>示例</td></tr><tr><td>HTTP_SHORT_URL（短链）</td><td>一天</td><td>https://test.essurl.cn/fvG7UBEd0F</td></tr><tr><td>HTTP（长链）</td><td>一天</td><td>https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?where=mini&from=MSG&to=USER_VERIFY&verifyToken=yDCVbUUckpwocmfpUySko7IS83LTV0u0&expireTime=1710840183</td></tr><tr><td>H5</td><td>30 天</td><td>https://quick.test.qian.tencent.cn/guide?Code=yDCVbUUckpwtvxqoUbTw4VBBjLbfAtW7&CodeType=QUICK&shortKey=yDCVbUY7lhqV7mZlCL2d</td></tr><tr><td>APP</td><td>一天</td><td>/pages/guide/index?to=USER_VERIFY&verifyToken=yDCVbUUckpwocm96UySko7ISvEIZH7Yz&expireTime=1710840455 </td></tr></tbody></table>",
-          "example": "无",
+          "example": "https://test.essurl.cn/fvG7UBEd0F",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -14736,30 +14736,30 @@
         {
           "disabled": false,
           "document": "员工名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "员工手机号",
-          "example": "无",
+          "example": "18888888888",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "员工在电子签平台的id",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14772,7 +14772,7 @@
         {
           "disabled": false,
           "document": "传入的用户名称",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
@@ -14782,7 +14782,7 @@
         {
           "disabled": false,
           "document": "传入的手机号，没有打码",
-          "example": "无",
+          "example": "13200000000",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -14792,7 +14792,7 @@
         {
           "disabled": false,
           "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
-          "example": "无",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -14801,8 +14801,8 @@
         },
         {
           "disabled": false,
-          "document": "H5端员工实名链接\n\n只有入参 InvitationNotifyType = H5的时候才会进行返回。",
-          "example": "无",
+          "document": "H5端员工实名链接\n只有入参 InvitationNotifyType = H5的时候才会进行返回。",
+          "example": "https://jump.cn/success",
           "member": "string",
           "name": "Url",
           "output_required": false,
@@ -14906,7 +14906,7 @@
         {
           "disabled": false,
           "document": "此模板里边附件的资源ID",
-          "example": "无",
+          "example": "[\"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"]",
           "member": "string",
           "name": "AttachmentResourceIds",
           "output_required": true,
@@ -14928,7 +14928,7 @@
         {
           "disabled": false,
           "document": "此模板的状态可以分为以下几种：\n\n<b>-1</b>：不可用状态。\n<b>0</b>：草稿态，即模板正在编辑或未发布状态。\n<b>1</b>：正式态，只有正式态的模板才可以发起合同。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -14950,7 +14950,7 @@
         {
           "disabled": false,
           "document": "模板创建的时间戳，格式为Unix标准时间戳（秒）",
-          "example": "无",
+          "example": "1736751627",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
@@ -14972,7 +14972,7 @@
         {
           "disabled": false,
           "document": "模板类型可以分为以下两种：\n\n<b>1</b>：带有本企业自动签署的模板，即签署过程无需签署人手动操作，系统自动完成签署。\n<b>3</b>：普通模板，即签署人需要手动进行签署操作。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TemplateType",
           "output_required": true,
@@ -14983,7 +14983,7 @@
         {
           "disabled": false,
           "document": "模板可用状态可以分为以下两种：\n\n<b>1</b>：（默认）启用状态，即模板可以正常使用。\n<b>2</b>：停用状态，即模板暂时无法使用。\n\n可到控制台启停模板",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Available",
           "output_required": true,
@@ -14994,7 +14994,7 @@
         {
           "disabled": false,
           "document": "创建模板的企业ID，电子签的机构ID",
-          "example": "无",
+          "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "OrganizationId",
           "output_required": true,
@@ -15005,7 +15005,7 @@
         {
           "disabled": false,
           "document": "模板创建人用户ID",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "CreatorId",
           "output_required": true,
@@ -15049,7 +15049,7 @@
         {
           "disabled": false,
           "document": "模板是否已发布可以分为以下两种状态：\n\n<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。\n<b>false</b>：未发布状态，表示该模板还未发布，无法使用。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Published",
           "output_required": true,
@@ -15060,7 +15060,7 @@
         {
           "disabled": false,
           "document": "<b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
           "member": "string",
           "name": "ShareTemplateId",
           "output_required": true,
@@ -15255,7 +15255,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的文件内容",
-          "example": "无",
+          "example": "6KaB5pS+5paH5Lu255qE5YaF5a65",
           "member": "string",
           "name": "FileBody",
           "required": true,
@@ -15428,9 +15428,10 @@
         {
           "disabled": false,
           "document": "用户在平台的编号",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15441,6 +15442,7 @@
           "example": "无",
           "member": "string",
           "name": "Channel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15451,6 +15453,7 @@
           "example": "无",
           "member": "string",
           "name": "OpenId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15461,6 +15464,7 @@
           "example": "无",
           "member": "string",
           "name": "ClientIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15471,6 +15475,7 @@
           "example": "无",
           "member": "string",
           "name": "ProxyIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

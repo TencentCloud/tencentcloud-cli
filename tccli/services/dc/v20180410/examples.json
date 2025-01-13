@@ -144,9 +144,15 @@
     ],
     "DescribeInternetAddress": [
       {
-        "document": "",
+        "document": "通过远程出口过滤用户IP段",
+        "input": "POST / HTTP/1.1\nHost: dc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInternetAddress\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"nj-1\"\n            ],\n            \"Name\": \"RemoteArea\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Subnets\": [\n            {\n                \"Subnet\": \"2402:4e00:4020::\",\n                \"Region\": \"nj\",\n                \"ApplyTime\": \"2022-08-17 10:44:02\",\n                \"StopTime\": \"00-00-00 00:00:00\",\n                \"ReleaseTime\": \"00-00-00 00:00:00\",\n                \"Status\": 1,\n                \"AddrType\": 0,\n                \"MaskLen\": 64,\n                \"ReserveTime\": 8,\n                \"InstanceId\": \"ipv6-0yiowoa9\",\n                \"AppId\": 251009028,\n                \"AddrProto\": 1\n            },\n            {\n                \"Subnet\": \"10.10.10.0\",\n                \"Region\": \"nj\",\n                \"ApplyTime\": \"2022-08-16 20:24:54\",\n                \"StopTime\": \"00-00-00 00:00:00\",\n                \"ReleaseTime\": \"00-00-00 00:00:00\",\n                \"Status\": 1,\n                \"AddrType\": 1,\n                \"MaskLen\": 30,\n                \"ReserveTime\": 8,\n                \"InstanceId\": \"ipv4-ljm17pbl\",\n                \"AppId\": 251009028,\n                \"AddrProto\": 0\n            }\n        ],\n        \"RequestId\": \"eee7d064-e3ae-4020-8db9-dc0cf245ccd2\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "通过远程出口过滤用户IP段"
+      },
+      {
+        "document": "获取用户申请的公网地址信息",
         "input": "https://dc.tencentcloudapi.com/?Action=DescribeInternetAddress\n&Limit=20\n&Offset=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Subnets\": [\n            {\n                \"Status\": 0,\n                \"Subnet\": \"220.110.1.0\",\n                \"MaskLen\": 30,\n                \"AddrType\": 0,\n                \"AppId\": 251010426,\n                \"InstanceId\": \"ipv4-qmda2nqv\",\n                \"AddrProto\": 0,\n                \"StopTime\": \"2020-09-22 00:00:00\",\n                \"Region\": \"gz\",\n                \"ApplyTime\": \"2020-09-22 00:00:00\",\n                \"ReleaseTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Subnets\": [\n            {\n                \"Status\": 0,\n                \"Subnet\": \"220.110.1.0\",\n                \"MaskLen\": 30,\n                \"AddrType\": 0,\n                \"AppId\": 251010426,\n                \"InstanceId\": \"ipv4-qmda2nqv\",\n                \"AddrProto\": 0,\n                \"StopTime\": \"2020-09-22 00:00:00\",\n                \"Region\": \"gz\",\n                \"ApplyTime\": \"2020-09-22 00:00:00\",\n                \"ReleaseTime\": \"2020-09-22 00:00:00\",\n                \"ReserveTime\": 8\n            }\n        ],\n        \"RequestId\": \"24a0d7e5-4c13-49be-aa16-94f698fbef3e\"\n    }\n}",
         "title": "获取用户申请的公网地址信息"
       }
     ],

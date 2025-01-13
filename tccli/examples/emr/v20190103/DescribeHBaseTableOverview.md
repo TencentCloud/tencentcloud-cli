@@ -7,7 +7,7 @@ Input:
 ```
 tccli emr DescribeHBaseTableOverview --cli-unfold-argument  \
     --InstanceId emr-111df6u6 \
-    --Table test \
+    --Table table_test \
     --Offset 0 \
     --Limit 10 \
     --OrderField  \

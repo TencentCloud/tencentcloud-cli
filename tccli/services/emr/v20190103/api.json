@@ -1401,9 +1401,10 @@
         {
           "disabled": false,
           "document": "脚本位置，支持cos上的文件，且只支持https协议。",
-          "example": "",
+          "example": "https://beijing-111111.cos.ap-beijing.myqcloud.com/data/test.sh",
           "member": "string",
           "name": "Path",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1411,9 +1412,10 @@
         {
           "disabled": false,
           "document": "执行时间。\nresourceAfter 表示在机器资源申请成功后执行。\nclusterBefore 表示在集群初始化前执行。\nclusterAfter 表示在集群初始化后执行。",
-          "example": "",
+          "example": "resourceAfter",
           "member": "string",
           "name": "WhenRun",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1421,9 +1423,10 @@
         {
           "disabled": false,
           "document": "脚本参数",
-          "example": "",
+          "example": "arg_test",
           "member": "string",
           "name": "Args",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2513,7 +2516,7 @@
         {
           "disabled": false,
           "document": "集群id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"emr-riuzv9pw\"]",
           "member": "string",
           "name": "ClusterIdList",
           "output_required": false,
@@ -3017,13 +3020,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "emr-xxxxx",
+          "document": "实例ID",
+          "example": "emr-jkbz9e9q",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3157,7 +3160,7 @@
         {
           "disabled": false,
           "document": "[自定义软件配置](https://cloud.tencent.com/document/product/589/35655?from_cn_redirect=1)",
-          "example": "`{ \t\t\"serviceName\": \"HDFS\", \t\t\"classification\": \"hdfs-site.xml\", \t\t\"serviceVersion\": \"2.8.4\", \t\t\"properties\": { \t\t\t\"dfs.blocksize\": \"67108864\", \t\t\t\"dfs.client.slow.io.warning.threshold.ms\": \"900000\", \t\t\t\"output.replace-datanode-on-failure\": \"false\" \t\t} \t}`",
+          "example": "`{ \"serviceName\": \"\",\"classification\": \"\", \"serviceVersion\": \"\", \"properties\": { \"dfs.blocksize\": \"\", } }`",
           "member": "string",
           "name": "CustomConf",
           "required": false,
@@ -3234,13 +3237,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "emr-xxxxx",
+          "document": "实例ID",
+          "example": "emr-f2da1cd",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3545,7 +3548,7 @@
         {
           "disabled": false,
           "document": "cos桶路径，创建StarRocks存算分离集群时用到",
-          "example": "无",
+          "example": "aicv-prod-1306440315",
           "member": "string",
           "name": "CosBucket",
           "required": false,
@@ -5034,7 +5037,7 @@
         {
           "disabled": false,
           "document": "概览数据数组",
-          "example": "[                     {                         \"Table\":\"hbase_meta\",                         \"ReadRequestCount\":0,                         \"WriteRequestCount\":0,                         \"MemstoreSize\":768,                         \"StoreFileSize\":17273,                         \"Operation\":\"Regions,RegionServers\"                     }]",
+          "example": "无",
           "member": "OverviewRow",
           "name": "TableMonitorList",
           "output_required": true,
@@ -5054,7 +5057,7 @@
         {
           "disabled": false,
           "document": "表schema信息",
-          "example": "[{                         \"Name\":\"Table\",                         \"Sortable\":false,                         \"WithFilter\":false,                         \"Candidates\":null,                         \"Clickable\":true,                         \"Title\":\"表名\"                     }]",
+          "example": "无",
           "member": "TableSchemaItem",
           "name": "SchemaList",
           "output_required": true,
@@ -11714,20 +11717,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "重复任务执行的具体时刻，例如\"01:02:00\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "重复任务执行的具体时刻，例如\"01:02:00\"",
+          "example": "15:04:05",
           "member": "string",
           "name": "ExecuteAtTimeOfDay",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每月中的天数时间段描述，长度只能为2，例如[2,10]表示每月2-10号。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "DaysOfMonthRange",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -14363,7 +14368,7 @@
         {
           "disabled": false,
           "document": "取值范围\"DAY\",\"DOW\",\"DOM\",\"NONE\"，分别表示按天重复、按周重复、按月重复和一次执行。必须填写",
-          "example": "无",
+          "example": "NONE",
           "member": "string",
           "name": "RepeatType",
           "output_required": true,
@@ -14418,7 +14423,7 @@
         {
           "disabled": false,
           "document": "规则过期时间，超过该时间后，规则将自动置为暂停状态，形式为\"2020-07-23 00:00:00\"。必须填写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2026-01-09 23:59:59",
           "member": "string",
           "name": "Expire",
           "output_required": true,
@@ -14429,7 +14434,7 @@
         {
           "disabled": false,
           "document": "周期性规则开始时间",
-          "example": "无",
+          "example": "2024-01-09 23:59:59",
           "member": "string",
           "name": "StartTime",
           "output_required": false,

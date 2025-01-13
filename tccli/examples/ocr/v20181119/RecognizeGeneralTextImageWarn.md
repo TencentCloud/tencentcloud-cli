@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli ocr RecognizeGeneralTextImageWarn --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/RecognizeGeneralTextImageWarn/RecognizeGeneralTextImageWarn1.png \
+    --Type General
 ```
 
 Output: 
@@ -24,27 +25,8 @@ Output:
             "SpecificMatter": ""
         },
         "Copy": {
-            "IsWarn": true,
-            "Polygon": [
-                {
-                    "LeftBottom": {
-                        "X": 0,
-                        "Y": 0
-                    },
-                    "LeftTop": {
-                        "X": 0,
-                        "Y": 0
-                    },
-                    "RightBottom": {
-                        "X": 0,
-                        "Y": 0
-                    },
-                    "RightTop": {
-                        "X": 0,
-                        "Y": 0
-                    }
-                }
-            ],
+            "IsWarn": false,
+            "Polygon": [],
             "SpecificMatter": ""
         },
         "Reflection": {
@@ -76,7 +58,7 @@ Output:
             ],
             "SpecificMatter": ""
         },
-        "RequestId": "d8b2bf40-091e-43f1-a075-d98a5c9b2e1e"
+        "RequestId": "20bbcd54-6e63-4140-b777-2dea85a8ef66"
     }
 }
 ```

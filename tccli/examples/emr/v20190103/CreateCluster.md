@@ -16,14 +16,14 @@ tccli emr CreateCluster --cli-unfold-argument  \
     --SecurityGroupIds sg-xxx \
     --InstanceChargeType POSTPAID_BY_HOUR \
     --ProductVersion EMR-V3.5.0 \
-    --ClientToken xxx \
+    --ClientToken fasdlfhaldfhdlahfd4134322 \
     --EnableRemoteLoginFlag True \
     --InstanceChargePrepaid.RenewFlag True \
     --InstanceChargePrepaid.Period 1 \
     --InstanceName EMR350-JH6 \
     --EnableSupportHAFlag False \
     --ZoneResourceConfiguration.0.VirtualPrivateCloud.SubnetId subnet-xxx \
-    --ZoneResourceConfiguration.0.VirtualPrivateCloud.VpcId vpc-xxx \
+    --ZoneResourceConfiguration.0.VirtualPrivateCloud.VpcId vpc-1df1dafd \
     --ZoneResourceConfiguration.0.AllNodeResourceSpec.MasterResourceSpec.SystemDisk.0.Count 1 \
     --ZoneResourceConfiguration.0.AllNodeResourceSpec.MasterResourceSpec.SystemDisk.0.DiskSize 50 \
     --ZoneResourceConfiguration.0.AllNodeResourceSpec.MasterResourceSpec.SystemDisk.0.DiskType CLOUD_HSSD \

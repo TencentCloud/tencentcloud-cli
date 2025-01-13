@@ -13,7 +13,6 @@ Output:
 ```
 {
     "Response": {
-        "Angel": 359.989990234375,
         "Angle": 359.989990234375,
         "RequestId": "4021987a-5441-4160-981a-d084cd96b5ad",
         "TextDetections": [

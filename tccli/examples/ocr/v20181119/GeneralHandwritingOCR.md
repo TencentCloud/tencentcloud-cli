@@ -59,7 +59,6 @@ Output:
                 ]
             }
         ],
-        "Angel": 0,
         "Angle": 0,
         "RequestId": "b57e40af-a73c-4844-ae7e-344f06efb9e5"
     }
@@ -179,7 +178,6 @@ Output:
                 "WordPolygon": []
             }
         ],
-        "Angel": 0,
         "Angle": 0,
         "RequestId": "361e2ac6-ee7e-40d0-9463-5f05ecd4828e"
     }

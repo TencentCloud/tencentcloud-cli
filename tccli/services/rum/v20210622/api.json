@@ -6985,17 +6985,17 @@
           "example": "1",
           "member": "string",
           "name": "StaticDuration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "pv",
-          "example": "111",
+          "example": "10",
           "member": "string",
           "name": "PagePv",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7005,7 +7005,7 @@
           "example": "1",
           "member": "string",
           "name": "ApiFail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7015,7 +7015,7 @@
           "example": "12",
           "member": "string",
           "name": "ApiNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7025,7 +7025,7 @@
           "example": "12",
           "member": "string",
           "name": "StaticFail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7035,7 +7035,7 @@
           "example": "1",
           "member": "int64",
           "name": "ProjectID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7045,7 +7045,7 @@
           "example": "12",
           "member": "string",
           "name": "PageUv",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7055,27 +7055,27 @@
           "example": "12",
           "member": "string",
           "name": "ApiDuration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分数",
-          "example": "90",
+          "document": "项目总分",
+          "example": "100",
           "member": "string",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "error",
-          "example": "111",
+          "example": "10",
           "member": "string",
           "name": "PageError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7085,7 +7085,7 @@
           "example": "12",
           "member": "string",
           "name": "StaticNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7095,17 +7095,17 @@
           "example": "1",
           "member": "int64",
           "name": "RecordNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Duration",
-          "example": "111",
+          "example": "10",
           "member": "string",
           "name": "PageDuration",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7115,9 +7115,69 @@
           "example": "20230111",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页面性能评分",
+          "example": "10",
+          "member": "string",
+          "name": "PagePerformanceScore",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "js错误评分",
+          "example": "30",
+          "member": "string",
+          "name": "JsErrorScore",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API性能评分",
+          "example": "5",
+          "member": "string",
+          "name": "ApiPerformanceScore",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API可用性评分",
+          "example": "30",
+          "member": "string",
+          "name": "ApiAvaliableScore",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源性能评分",
+          "example": "5",
+          "member": "string",
+          "name": "StaticPerformanceScore",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "静态资源可用性评分",
+          "example": "20",
+          "member": "string",
+          "name": "StaticAvaliableScore",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

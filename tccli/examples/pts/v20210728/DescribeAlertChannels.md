@@ -25,13 +25,13 @@ Output:
                 "UpdatedAt": "2022-09-09 13:11:12",
                 "AMPConsumerId": "consumer-xx",
                 "CreatedAt": "2022-09-09 13:11:12",
-                "AppId": 0,
-                "Uin": "abc",
-                "SubAccountUin": "abc"
+                "AppId": 11111,
+                "Uin": "11100000",
+                "SubAccountUin": "22200000"
             }
         ],
         "Total": 1,
-        "RequestId": "req-xx"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

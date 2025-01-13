@@ -9929,7 +9929,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "启发式缓存配置开关，取值有：\non：开启\noff：关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启发式缓存配置开关，取值有：\non：开启\noff：关闭（默认）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "on",
           "member": "string",
           "name": "Switch",

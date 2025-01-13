@@ -6,38 +6,31 @@ Input:
 
 ```
 tccli pts DescribeRequestSummary --cli-unfold-argument  \
-    --ProjectId project-xx \
-    --JobId 123 \
-    --ScenarioId 123
+    --JobId job-kufs4qhc \
+    --ScenarioId scenario-ih54i7dm \
+    --ProjectId project-pf8s0daq
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "abc-123-xyz",
         "RequestSummarySet": [
             {
-                "Service": "http://pets.com/0",
-                "Method": "get",
-                "ErrorPercentage": 1,
-                "Count": 41253,
-                "Average": 0.4976391081807893,
-                "P90": 0.909354130052724,
-                "P95": 0.949354130052724,
-                "Min": 0.2198708260105447,
-                "Max": 0.9998708260105447
-            },
-            {
-                "Service": "http://pets.com/10",
-                "Method": "get",
-                "ErrorPercentage": 1,
-                "Count": 41252,
-                "Average": 0.49687854602238934,
-                "P90": 0.909354130052724,
-                "P95": 0.949698900331646,
-                "Min": 0.2198708260105447,
-                "Max": 0.9998708260105447
+                "Average": 0.0426436516818182,
+                "Count": 25,
+                "ErrorPercentage": 0,
+                "Max": 0.077895098,
+                "Method": "GET",
+                "Min": 0.007491527,
+                "P90": 0.08830936954286554,
+                "P95": 0.09415468477143277,
+                "P99": 0,
+                "RPS": 1.8336389398233037,
+                "Result": "",
+                "Service": "http://mockhttpbin.pts.svc.cluster.local/get",
+                "Status": ""
             }
         ]
     }
