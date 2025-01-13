@@ -1,25 +1,25 @@
 {
   "actions": {
     "DescribeApp": {
-      "document": "根据应用id查询物联卡应用详情",
+      "document": "产品下线\n\n根据应用id查询物联卡应用详情",
       "input": "DescribeAppRequest",
       "name": "查询应用详情",
       "output": "DescribeAppResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCard": {
-      "document": "查询卡片详细信息",
+      "document": "产品下线\n\n查询卡片详细信息",
       "input": "DescribeCardRequest",
       "name": "查询卡片详情",
       "output": "DescribeCardResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCards": {
-      "document": "查询卡片列表信息",
+      "document": "产品下线\n\n查询卡片列表信息",
       "input": "DescribeCardsRequest",
       "name": "查询卡片列表",
       "output": "DescribeCardsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSms": {
       "document": "查询短信列表",
@@ -29,11 +29,11 @@
       "status": "online"
     },
     "ModifyUserCardRemark": {
-      "document": "编辑卡片备注",
+      "document": "产品下线\n\n编辑卡片备注",
       "input": "ModifyUserCardRemarkRequest",
       "name": "编辑卡片备注",
       "output": "ModifyUserCardRemarkResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SendMultiSms": {
       "document": "群发短信",
@@ -43,11 +43,11 @@
       "status": "online"
     },
     "SendSms": {
-      "document": "发送短信息接口",
+      "document": "产品下线\n\n发送短信息接口",
       "input": "SendSmsRequest",
       "name": "发送短信息接口",
       "output": "SendSmsResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

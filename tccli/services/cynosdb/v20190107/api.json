@@ -637,6 +637,13 @@
       "output": "DescribeSupportProxyVersionResponse",
       "status": "online"
     },
+    "DescribeSyncJobStatus": {
+      "document": "查询同步任务状态",
+      "input": "DescribeSyncJobStatusRequest",
+      "name": "查询同步任务状态",
+      "output": "DescribeSyncJobStatusResponse",
+      "status": "online"
+    },
     "DescribeTasks": {
       "document": "本接口（DescribeTasks）用于查询任务列表。",
       "input": "DescribeTasksRequest",
@@ -1104,6 +1111,13 @@
       "input": "RollbackToNewClusterRequest",
       "name": "回档到新集群",
       "output": "RollbackToNewClusterResponse",
+      "status": "online"
+    },
+    "RollbackToNewClusterAndCreateSync": {
+      "document": "本接口（RollbackToNewCluster）用于回档到新集群并建立原集群和新集群的数据同步关系。",
+      "input": "RollbackToNewClusterAndCreateSyncRequest",
+      "name": "回档到新集群并建立同步",
+      "output": "RollbackToNewClusterAndCreateSyncResponse",
       "status": "online"
     },
     "SearchClusterDatabases": {
@@ -12931,6 +12945,102 @@
       ],
       "type": "object"
     },
+    "DescribeSyncJobStatusRequest": {
+      "document": "DescribeSyncJobStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原集群id",
+          "example": "cynosdbmysql-ck8fmk11",
+          "member": "string",
+          "name": "SrcClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标集群id",
+          "example": "cynosdbmysql-ck8fwx22",
+          "member": "string",
+          "name": "DstClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSyncJobStatusResponse": {
+      "document": "DescribeSyncJobStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "同步任务ID",
+          "example": "sync-rteem6x6",
+          "member": "string",
+          "name": "DtsJobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步任务状态",
+          "example": "Checking",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步两端数据量差距",
+          "example": "15",
+          "member": "int64",
+          "name": "MasterSlaveDistance",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步两端时间差距",
+          "example": "20",
+          "member": "int64",
+          "name": "SecondsBehindMaster",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步任务校验步骤信息",
+          "example": "无",
+          "member": "DtsStepInfo",
+          "name": "StepInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步任务错误信息",
+          "example": "无",
+          "member": "ErrInfo",
+          "name": "ErrInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTasksRequest": {
       "document": "DescribeTasks请求参数结构体",
       "members": [
@@ -13104,6 +13214,174 @@
         }
       ],
       "type": "object"
+    },
+    "DtsStepInfo": {
+      "document": "Dts同步任务步骤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤编号",
+          "example": "1",
+          "member": "int64",
+          "name": "StepNo",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤名",
+          "example": "连接DB检查",
+          "member": "string",
+          "name": "StepName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步骤标号",
+          "example": "ConnectDBCheck",
+          "member": "string",
+          "name": "StepId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤状态",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "DtsStepTip",
+          "name": "Errors",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "警告信息",
+          "example": "无",
+          "member": "DtsStepTip",
+          "name": "Warnings",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤进度",
+          "example": "100",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DtsStepTip": {
+      "document": "Dts同步任务步骤提示信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "Error: OptimizeCheck",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "修改目标库session级别explicit_defaults_for_timestamp参数为`ON`失败，错误信息详情 failed to run query set explicit_defaults_for_timestamp = on, err: Error 1227: Access denied; you need (at least one of) the SUPER privilege(s) for this operation ",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方式",
+          "example": "尝试以下两种方式任意一种即可：\\n 1、登录目标数据库，修改目标库explicit_defaults_for_timestamp参数为`ON`，并且在任务运行中保持explicit_defaults_for_timestamp参数不变\\n 2、登录源实例，并确保源实例中不存在IS_NULLABLE=NO 且 COLUMN_DEFAULT is NULL的timestamp类型的列，可执行{select TABLE_NAME, COLUMN_DEFAULT, IS_NULLABLE, COLUMN_NAME from information_schema.COLUMNS where TABLE_SCHEMA= SchemaName AND DATA_TYPE='timestamp';}语句，确认不符合要求的对应的表和列。请根据业务需要修改存量数据。并且修改源端 explicit_defaults_for_timestamp 为 `OFF`。\\n请确保有权限做上述调整。",
+          "member": "string",
+          "name": "Solution",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "帮助文档",
+          "example": "周边检查: cloud.tencent.com/document/product/571/58690",
+          "member": "string",
+          "name": "HelpDoc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "额外信息",
+          "example": "如果目标库explicit_defaults_for_timestamp参数不为`ON`，timestamp列的隐式转换规则可能会导致源库和目标库结构不一致",
+          "member": "string",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ErrInfo": {
+      "document": "同步任务错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误原因",
+          "example": "连接源或者目标实例出现网络错误。",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "dial tcp : i/o timeout",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解决方案",
+          "example": "请检查是否存在以上情况并解决。",
+          "member": "string",
+          "name": "Solution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ErrorLogItemExport": {
       "document": "错误日志导出格式",
@@ -21224,6 +21502,461 @@
         }
       ],
       "usage": "out"
+    },
+    "RollbackToNewClusterAndCreateSyncRequest": {
+      "document": "RollbackToNewClusterAndCreateSync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回档时，传入源集群ID，用于查找源poolId",
+          "example": "cynosdbmysql-j4szmd8h",
+          "member": "string",
+          "name": "OriginalClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步初始化选项",
+          "example": "None",
+          "member": "string",
+          "name": "InitType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所要同步的DML和DDL的选项",
+          "example": "[\"Insert\",\"Update\",\"Delete\",\"DDL\"]",
+          "member": "string",
+          "name": "OpTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "原集群同步账号名",
+          "example": "srcAccount",
+          "member": "string",
+          "name": "SrcUserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原集群同步账号密码",
+          "example": "2r2fdsff23#fds@",
+          "member": "string",
+          "name": "SrcPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标集群同步账号名",
+          "example": "dstAccount",
+          "member": "string",
+          "name": "DstUserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标集群同步账号密码",
+          "example": "sdfsd#fsds1124fd",
+          "member": "string",
+          "name": "DstPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Dts付费模式",
+          "example": "PostPay",
+          "member": "string",
+          "name": "DtsPayMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务规格",
+          "example": "Standard",
+          "member": "string",
+          "name": "Specification",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步链路规格",
+          "example": "medium",
+          "member": "string",
+          "name": "InstanceClass",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务模式",
+          "example": "fullMode",
+          "member": "string",
+          "name": "JobMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务运行模式",
+          "example": "Timed",
+          "member": "string",
+          "name": "RunMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Dts自动续费标识",
+          "example": "1",
+          "member": "int64",
+          "name": "DtsAutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "所属VPC网络ID",
+          "example": "vpc-1ptuei0b",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属子网ID",
+          "example": "subnet-1tmw9t4o",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称，长度小于64个字符，每个字符取值范围：大/小写字母，数字，特殊符号（'-','_','.'）",
+          "example": "MyClusterName",
+          "member": "string",
+          "name": "ClusterName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照回档，表示snapshotId；时间点回档，表示queryId，为0，表示需要判断时间点是否有效",
+          "example": "2159355",
+          "member": "uint64",
+          "name": "RollbackId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间点回档，指定时间；快照回档，快照时间",
+          "example": "2021-04-26 18:13:10",
+          "member": "string",
+          "name": "ExpectTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群创建需要绑定的tag数组信息",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Db类型\n当DbType为MYSQL时可选(默认NORMAL)：\n<li>NORMAL</li>\n<li>SERVERLESS</li>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "DbMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "1.0",
+          "member": "float",
+          "name": "MinCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "example": "2.0",
+          "member": "float",
+          "name": "MaxCpu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
+          "example": "yes",
+          "member": "string",
+          "name": "AutoPause",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
+          "example": "600",
+          "member": "int64",
+          "name": "AutoPauseDelay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "安全组id数组",
+          "example": "[\"sg-c76bzby1\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略Id数组",
+          "example": "[\"policy-5sges8yj\"]",
+          "member": "string",
+          "name": "AlarmPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "ClusterParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "参数模板ID，可以通过查询参数模板信息DescribeParamTemplates获得参数模板ID",
+          "example": "16058733",
+          "member": "int64",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例初始化配置信息，主要用于购买集群时选不同规格实例",
+          "example": "无",
+          "member": "InstanceInitInfo",
+          "name": "InstanceInitInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0-下单并支付 1-下单",
+          "example": "0",
+          "member": "int64",
+          "name": "DealMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计算节点付费模式：0-按量计费，1-预付费",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "3600",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单位",
+          "example": "s",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原ro实例信息",
+          "example": "[\"cynosdbmysql-ins-kub01z4h\",\"cynosdbmysql-ins-7oag83qt\"]",
+          "member": "string",
+          "name": "OriginalROInstanceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "同名表的处理",
+          "example": "ReportErrorAfterCheck",
+          "member": "string",
+          "name": "DealOfExistSameTable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "冲突处理选项",
+          "example": "ReportError",
+          "member": "string",
+          "name": "ConflictHandleType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据同步启动位点",
+          "example": "2024-12-19T10:11:52+08:00",
+          "member": "string",
+          "name": "StartPosition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务名称",
+          "example": "同步任务名称",
+          "member": "string",
+          "name": "JobName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务期待启动时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "ExpectRunTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密方法（由加密算法和密钥对版本组成）",
+          "example": "RSA-2048-v1",
+          "member": "string",
+          "name": "EncryptMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "同步任务购买时长",
+          "example": "3",
+          "member": "int64",
+          "name": "DtsTimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动删除克隆集群的__tencentdb__数据库",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoDeleteTencentDb",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackToNewClusterAndCreateSyncResponse": {
+      "document": "RollbackToNewClusterAndCreateSync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "冻结流水ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20190522160000003106844584180998",
+          "member": "string",
+          "name": "TranId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20190522112283\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbpg-ins-67rmucgk\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"20190522112290\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RollbackToNewClusterRequest": {
       "document": "RollbackToNewCluster请求参数结构体",

@@ -6,20 +6,14 @@ Input:
 
 ```
 tccli pts DescribeEnvironments --cli-unfold-argument  \
-    --ProjectIds project-xx \
-    --EnvIds env-xx \
-    --Name abc \
-    --Offset 0 \
-    --Limit 0 \
-    --OrderBy abc \
-    --Ascend True
+    --ProjectIds project-1a2b3c4d
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

@@ -13,22 +13,22 @@ tccli pts CreateFile --cli-unfold-argument  \
     --Size 100 \
     --Type csv \
     --LineCount 10 \
-    --HeadLines abc \
-    --TailLines abc \
+    --HeadLines head-line-content \
+    --TailLines tail-line-content \
     --HeaderInFile True \
-    --HeaderColumns abc \
-    --FileInfos.0.Name abc \
+    --HeaderColumns header-columns-content \
+    --FileInfos.0.Name file-name \
     --FileInfos.0.Size 0 \
-    --FileInfos.0.Type abc \
+    --FileInfos.0.Type file-type \
     --FileInfos.0.UpdatedAt 2020-09-22T00:00:00+00:00 \
-    --FileInfos.0.FileId abc
+    --FileInfos.0.FileId file-1a2b3c4d
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "70805f6a-d7e1-4247-9d5a-fde3afe2b377"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

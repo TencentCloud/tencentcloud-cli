@@ -1,3 +1,217 @@
+# Release 3.0.1136.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 118 次发布
+
+发布时间：2025-01-14 01:14:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSyncJobStatus](http://document.tencentcloudapi.woa.com/document/product/1003/85665)
+* [RollbackToNewClusterAndCreateSync](http://document.tencentcloudapi.woa.com/document/product/1003/85664)
+
+新增数据结构：
+
+* [DtsStepInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DtsStepInfo)
+* [DtsStepTip](http://document.tencentcloudapi.woa.com/document/product/1003/48097#DtsStepTip)
+* [ErrInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ErrInfo)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 125 次发布
+
+发布时间：2025-01-14 01:16:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StandardEngineResourceGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#StandardEngineResourceGroupInfo)
+
+	* 新增成员：SparkSpecMode, SparkSize, SparkMinSize
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 124 次发布
+
+发布时间：2025-01-14 01:19:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [RecipientOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#RecipientOption)
+
+修改数据结构：
+
+* [FailedCreateRoleData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FailedCreateRoleData)
+
+	* <font color="#dd0000">**修改成员**：</font>UserId, RoleIds
+
+* [FileInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FileInfo)
+
+	* 新增成员：FileType
+
+* [FilledComponent](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FilledComponent)
+
+	* <font color="#dd0000">**修改成员**：</font>ComponentId, ComponentName, ComponentFillStatus, ComponentValue, ComponentRecipientId, ImageUrl
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Recipient)
+
+	* 新增成员：RecipientOptionList
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#TemplateInfo)
+
+	* 新增成员：ApplicationId, BatchStartCanEditWatermark, CreateFlowEnableCoopedit, CreateFlowNeedApproval, HasApproverComponents, TemplateTag, UserData, AuthSeals, OriginResourceInfos, RecipientOptionList
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 178 次发布
+
+发布时间：2025-01-14 01:21:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FailedCreateRoleData](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FailedCreateRoleData)
+
+	* <font color="#dd0000">**修改成员**：</font>UserId, RoleIds
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 图片瘦身(ic) 版本：2019-03-07
+
+### 第 6 次发布
+
+发布时间：2025-01-14 01:25:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeApp
+* DescribeCard
+* DescribeCards
+* ModifyUserCardRemark
+* SendSms
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 17 次发布
+
+发布时间：2025-01-14 01:29:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ReconstructDocument](http://document.tencentcloudapi.woa.com/document/product/1764/85666)
+
+新增数据结构：
+
+* [Coord](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Coord)
+* [DocumentElement](http://document.tencentcloudapi.woa.com/document/product/1764/84021#DocumentElement)
+* [DocumentRecognizeInfo](http://document.tencentcloudapi.woa.com/document/product/1764/84021#DocumentRecognizeInfo)
+* [Polygon](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Polygon)
+* [ReconstructDocumentConfig](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ReconstructDocumentConfig)
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 28 次发布
+
+发布时间：2025-01-14 01:32:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ErrorSummary](http://document.tencentcloudapi.woa.com/document/product/1597/75228#ErrorSummary)
+
+	* <font color="#dd0000">**修改成员**：</font>Status, Result, Count, Rate, Message, Proto
+
+* [Project](http://document.tencentcloudapi.woa.com/document/product/1597/75228#Project)
+
+	* <font color="#dd0000">**修改成员**：</font>ProjectId, Name, Description, Tags, Status, CreatedAt, UpdatedAt
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 36 次发布
+
+发布时间：2025-01-14 01:33:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ScoreInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#ScoreInfo)
+
+	* 新增成员：PagePerformanceScore, JsErrorScore, ApiPerformanceScore, ApiAvaliableScore, StaticPerformanceScore, StaticAvaliableScore
+
+	* <font color="#dd0000">**修改成员**：</font>CreateTime
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 32 次发布
+
+发布时间：2025-01-14 01:36:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAbnormalProcessEventsExport
+* DescribeAbnormalProcessRulesExport
+* DescribeAccessControlRulesExport
+* DescribeAssetImageListExport
+* DescribeEscapeEventsExport
+
+
+
 # Release 3.0.1135.1
 
 ## 账号中心(account) 版本：2018-12-25

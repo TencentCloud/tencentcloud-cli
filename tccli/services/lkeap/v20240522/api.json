@@ -154,6 +154,13 @@
       "output": "QueryRewriteResponse",
       "status": "online"
     },
+    "ReconstructDocument": {
+      "document": "支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。\n\n体验期间单账号限制qps仅为1，若有正式接入需要请与产研团队沟通开放。",
+      "input": "ReconstructDocumentRequest",
+      "name": "文档解析",
+      "output": "ReconstructDocumentResponse",
+      "status": "online"
+    },
     "ReconstructDocumentDemo": {
       "document": "纯内部接口，不对外，用于官网Demo调用，封装解析引擎能力",
       "input": "ReconstructDocumentDemoRequest",
@@ -442,6 +449,32 @@
         }
       ],
       "type": "object"
+    },
+    "Coord": {
+      "document": "坐标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "横坐标",
+          "example": "无",
+          "member": "int64",
+          "name": "X",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "纵坐标",
+          "example": "无",
+          "member": "int64",
+          "name": "Y",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAttributeLabelRequest": {
       "document": "CreateAttributeLabel请求参数结构体",
@@ -928,6 +961,168 @@
         }
       ],
       "usage": "both"
+    },
+    "DocumentElement": {
+      "document": "文档元素字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档元素索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元素类型，包括paragraph、table、formula、figure、title、header、footer、figure_text\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元素内容，当type为figure或formula(公式识别关闭)时该字段内容为图片的位置\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元素坐标，左上角(x1, y1)，右上角(x2, y2)，右下角(x3, y3)，左下角(x4, y4)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Polygon",
+          "name": "Polygon",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元素层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入参开启EnableInsetImage后返回，表示在InsetImagePackage中的内嵌图片名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InsetImageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "嵌套的文档元素信息，一般包含的是文档内嵌入图片的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentElement",
+          "name": "Elements",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DocumentRecognizeInfo": {
+      "document": "单页文档识别的内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入PDF文件的页码，从1开始。输入图片的话值始终为1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旋转角度\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Angle",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AI算法识别处理后的图片高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AI算法识别处理后的图片宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片的原始高度，输入PDF文件则表示单页PDF转图片之后的图片高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OriginHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图片的原始宽度，输入PDF文件则表示单页PDF转图片之后的图片宽度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OriginWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档元素信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentElement",
+          "name": "Elements",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旋转角度\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "RotatedAngle",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DocumentUsage": {
       "document": "文档拆分任务的用量",
@@ -1421,6 +1616,52 @@
       ],
       "type": "object"
     },
+    "Polygon": {
+      "document": "文本的坐标，以四个顶点坐标表示\n注意：此字段可能返回 null，表示取不到有效值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "左上顶点坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "LeftTop",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "右上顶点坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "RightTop",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "右下顶点坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "RightBottom",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "左下顶点坐标",
+          "example": "无",
+          "member": "Coord",
+          "name": "LeftBottom",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QAObject": {
       "document": "问答对",
       "members": [
@@ -1584,6 +1825,21 @@
       ],
       "type": "object"
     },
+    "ReconstructDocumentConfig": {
+      "document": "ReconstructDocument配置选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的Markdown中是否嵌入图片",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableInsetImage",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "ReconstructDocumentDemoRequest": {
       "document": "ReconstructDocumentDemo请求参数结构体",
       "members": [
@@ -1672,6 +1928,99 @@
         }
       ],
       "usage": "out"
+    },
+    "ReconstructDocumentRequest": {
+      "document": "ReconstructDocument请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件的 Base64 值。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
+          "example": "无",
+          "member": "string",
+          "name": "FileBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件的 Url 地址。 支持的文件格式：PNG、JPG、JPEG、PDF。 支持的文件大小：所下载文件经 Base64 编码后不超过 8M。文件下载时间不超过 3 秒。 支持的图片像素：单边介于20-10000px之间。 文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "example": "无",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的起始页码，识别的页码包含当前值。默认为1，表示从pdf文件的第1页开始识别。",
+          "example": "1",
+          "member": "int64",
+          "name": "FileStartPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当传入文件是PDF类型时，用来指定pdf识别的结束页码，识别的页码包含当前值。默认为10，表示识别到pdf文件的第10页。单次调用最多支持识别10页内容，即FileEndPageNumber-FileStartPageNumber需要不大于10。",
+          "example": "3",
+          "member": "int64",
+          "name": "FileEndPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "配置选项，支持配置是否在生成的Markdown中是否嵌入图片",
+          "example": "无",
+          "member": "ReconstructDocumentConfig",
+          "name": "Config",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ReconstructDocumentResponse": {
+      "document": "ReconstructDocument返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别生成的Markdown文件base64编码的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MarkdownBase64",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入文件中嵌入的图片放在一个文件夹中打包为.zip压缩文件，识别生成的Markdown文件通过路径关联插入本文件夹中的图片。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InsetImagePackage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输入文件中嵌入的图片中文字内容的识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DocumentRecognizeInfo",
+          "name": "DocumentRecognizeInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReconstructDocumentSSEConfig": {
       "document": "ReconstructDocumentSSE 功能配置参数",

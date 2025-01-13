@@ -35,7 +35,7 @@ Output:
                 "Area": "华南地区"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "abc-123-xyz"
     }
 }
 ```

@@ -20093,6 +20093,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark类型资源组资源配置模式，fast：快速模式，custom：自定义模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom",
+          "member": "string",
+          "name": "SparkSpecMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark类型资源组资源上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "int64",
+          "name": "SparkSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Spark类型资源组资源最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "16",
+          "member": "int64",
+          "name": "SparkMinSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
