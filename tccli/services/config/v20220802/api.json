@@ -565,6 +565,7 @@
           "example": "instance-123",
           "member": "string",
           "name": "ResourceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -574,6 +575,7 @@
           "example": "QCS::CVM::Instance",
           "member": "string",
           "name": "ResourceType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -583,6 +585,7 @@
           "example": "cvm",
           "member": "string",
           "name": "ResourceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -592,6 +595,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -601,24 +605,27 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "ResourceZone",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "qq",
+          "example": "{\"\"}",
           "member": "string",
           "name": "Configuration",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12332",
+          "example": "2025-01-09 14:35:26",
           "member": "string",
           "name": "ResourceCreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -628,15 +635,17 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "资源更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2025-01-09 14:35:26",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1100,8 +1109,8 @@
         },
         {
           "disabled": false,
-          "document": "resourceName：资源名  resourceId ：资源ID",
-          "example": "无",
+          "document": "resourceName：资源名  resourceId ：资源ID resourceType：资源类型",
+          "example": "[     {         \"Values\": [             \"QCS::CVM::Instance\"         ],         \"Name\": \"resourceType\"     } ]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -1110,7 +1119,7 @@
         {
           "disabled": false,
           "document": "标签",
-          "example": " 无",
+          "example": "  [         {             \"TagKey\": \"TAG1\",             \"TagValue\": \"TAG3\"         }     ]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1119,7 +1128,7 @@
         {
           "disabled": false,
           "document": "下一页token",
-          "example": "\"\"",
+          "example": "E5WbfJQIT0Abtaj4RxODhsX",
           "member": "string",
           "name": "NextToken",
           "required": false,
@@ -1146,15 +1155,17 @@
           "example": "无",
           "member": "AggregateResourceInfo",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "下一页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x",
+          "example": "E5WbfJQIT0Abtaj4RxODhsX",
           "member": "string",
           "name": "NextToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1252,7 +1263,7 @@
         {
           "disabled": false,
           "document": "详情",
-          "example": "[     {         \"AccountGroupId\": null,         \"AccountGroupName\": null,         \"Annotation\": null,         \"CompliancePackId\": \"\",         \"CompliancePackName\": null,         \"ComplianceResult\": \"NON_COMPLIANT\",         \"ConfigRuleId\": \"cr-xxxxxxZePDhR0Bxxxxx\",         \"ConfigRuleInvokedTime\": null,         \"CreateTime\": \"2024-11-15 14:21:47\",         \"Description\": \"CAM用户下不存在已禁用的 AccessKey，则符合规则。\",         \"ExcludeResourceIdsScope\": [],         \"Identifier\": \"cam-user-invalid-ak-check\",         \"IdentifierType\": \"SYSTEM\",         \"InputParameter\": [],         \"Labels\": [             \"用户\",             \"密钥\"         ],         \"ManageInputParameter\": [],         \"ManageTriggerType\": [             \"ConfigurationItemChangeNotification\"         ],         \"RegionsScope\": [],         \"ResourceType\": [             \"QCS::CAM::User\"         ],         \"RiskLevel\": 3,         \"RuleName\": \"CAM用户下不存在已禁用的访问密钥AccessKey\",         \"RuleOwnerId\": xxxxxxx,         \"ServiceFunction\": null,         \"SourceCondition\": [],         \"Status\": \"ACTIVE\",         \"TagsScope\": [],         \"TriggerType\": [             {                 \"MaximumExecutionFrequency\": null,                 \"MessageType\": \"ConfigurationItemChangeNotification\"             }         ]     } ]",
+          "example": "无",
           "member": "ConfigRule",
           "name": "Items",
           "output_required": true,

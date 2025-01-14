@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cloudaudit StopLogging --cli-unfold-argument  \
-    --AuditName xxxxx
+    --AuditName audit_log
 ```
 
 Output: 

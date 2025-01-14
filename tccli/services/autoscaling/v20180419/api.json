@@ -1311,6 +1311,15 @@
           "name": "ClearMetaData",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClearMetadata",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1964,10 +1973,19 @@
         },
         {
           "disabled": false,
-          "document": "自定义metaData。",
+          "document": "自定义metadata。",
           "example": "无",
           "member": "Metadata",
           "name": "MetaData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
           "required": false,
           "type": "object"
         }
@@ -5762,6 +5780,15 @@
           "example": "无",
           "member": "Metadata",
           "name": "MetaData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
           "required": false,
           "type": "object"
         }

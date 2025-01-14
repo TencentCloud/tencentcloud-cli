@@ -7,7 +7,7 @@ Input:
 ```
 tccli cat UpdateProbeTaskAttributes --cli-unfold-argument  \
     --TaskId task-a3a9qbqy \
-    --Name 百度Test
+    --Name qq_Test
 ```
 
 Output: 

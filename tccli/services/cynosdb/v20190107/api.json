@@ -1114,7 +1114,7 @@
       "status": "online"
     },
     "RollbackToNewClusterAndCreateSync": {
-      "document": "本接口（RollbackToNewCluster）用于回档到新集群并建立原集群和新集群的数据同步关系。",
+      "document": "本接口（RollbackToNewClusterAndCreateSync）用于回档到新集群并建立原集群和新集群的数据同步关系。",
       "input": "RollbackToNewClusterAndCreateSyncRequest",
       "name": "回档到新集群并建立同步",
       "output": "RollbackToNewClusterAndCreateSyncResponse",
@@ -21517,7 +21517,7 @@
         },
         {
           "disabled": false,
-          "document": "回档时，传入源集群ID，用于查找源poolId",
+          "document": "源集群ID",
           "example": "cynosdbmysql-j4szmd8h",
           "member": "string",
           "name": "OriginalClusterId",
@@ -21526,7 +21526,7 @@
         },
         {
           "disabled": false,
-          "document": "同步初始化选项",
+          "document": "同步初始化选项，Data(全量数据初始化)、Structure(结构初始化)、Full(全量数据且结构初始化，默认)、None(仅增量)",
           "example": "None",
           "member": "string",
           "name": "InitType",
@@ -21535,7 +21535,7 @@
         },
         {
           "disabled": false,
-          "document": "所要同步的DML和DDL的选项",
+          "document": "所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)",
           "example": "[\"Insert\",\"Update\",\"Delete\",\"DDL\"]",
           "member": "string",
           "name": "OpTypes",
@@ -21589,7 +21589,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务规格",
+          "document": "同步任务规格，Standard(标准版)",
           "example": "Standard",
           "member": "string",
           "name": "Specification",
@@ -21598,7 +21598,7 @@
         },
         {
           "disabled": false,
-          "document": "同步链路规格",
+          "document": "同步链路规格，如micro,small,medium,large",
           "example": "medium",
           "member": "string",
           "name": "InstanceClass",
@@ -21616,7 +21616,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务运行模式",
+          "document": "同步任务运行模式，Immediate(立即运行)、Timed(定时运行)",
           "example": "Timed",
           "member": "string",
           "name": "RunMode",
@@ -21625,7 +21625,7 @@
         },
         {
           "disabled": false,
-          "document": "Dts自动续费标识",
+          "document": "Dts自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）",
           "example": "1",
           "member": "int64",
           "name": "DtsAutoRenewFlag",
@@ -21823,7 +21823,7 @@
         },
         {
           "disabled": false,
-          "document": "同名表的处理",
+          "document": "同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)",
           "example": "ReportErrorAfterCheck",
           "member": "string",
           "name": "DealOfExistSameTable",
@@ -21832,7 +21832,7 @@
         },
         {
           "disabled": false,
-          "document": "冲突处理选项",
+          "document": "冲突处理选项，ReportError(报错，默认为该值)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖)",
           "example": "ReportError",
           "member": "string",
           "name": "ConflictHandleType",
@@ -21841,7 +21841,7 @@
         },
         {
           "disabled": false,
-          "document": "数据同步启动位点",
+          "document": "数据同步启动位点，目前只支持时间格式：yyyy-mm-dd hh:mm:ss，InitType为None时必传",
           "example": "2024-12-19T10:11:52+08:00",
           "member": "string",
           "name": "StartPosition",
@@ -21859,7 +21859,7 @@
         },
         {
           "disabled": false,
-          "document": "同步任务期待启动时间",
+          "document": "同步任务期待启动时间：当RunMode取值为Timed时，此值必填，形如：\"2006-01-02 15:04:05\"",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ExpectRunTime",
@@ -21922,7 +21922,7 @@
         {
           "disabled": false,
           "document": "资源ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取资源ID）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"cynosdbpg-ins-67rmucgk\"]",
+          "example": "[\"cynosdbmysql-ins-67rmucgk\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
@@ -21932,7 +21932,7 @@
         {
           "disabled": false,
           "document": "集群ID列表（该字段已不再维护，请使用dealNames字段查询接口DescribeResourcesByDealName获取集群ID）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"cynosdbmysql-sls-9nts65r2\"]",
+          "example": "[\"cynosdbmysql-9nts65r2\"]",
           "member": "string",
           "name": "ClusterIds",
           "output_required": true,

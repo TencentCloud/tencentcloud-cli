@@ -705,7 +705,7 @@
       },
       {
         "document": "错误示例",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDsFolderTree\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1111\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDsFolderTree\n<公共请求参数>\n\n{\n    \"ProjectId\": \"2224252741354745856\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"当前用户角色或WeData版本没有权限，请进行角色授权或者升级WeData版本\"\n        },\n        \"RequestId\": \"78deafe3-7320-448e-a6a5-2fcb38a4e4a5\"\n    }\n}",
         "title": "错误示例"
       }

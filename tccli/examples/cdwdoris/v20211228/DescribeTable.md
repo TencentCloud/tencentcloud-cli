@@ -8,7 +8,7 @@ Input:
 tccli cdwdoris DescribeTable --cli-unfold-argument  \
     --InstanceId cdwdoris-bjizjxxx \
     --DbName demo \
-    --TableName test
+    --TableName table_add_table
 ```
 
 Output: 
@@ -81,7 +81,6 @@ Output:
             "Count": 3,
             "DistributionType": "Hash"
         },
-        "IndexInfos": null,
         "KeysType": "AGG_KEY",
         "Message": "",
         "Partition": {

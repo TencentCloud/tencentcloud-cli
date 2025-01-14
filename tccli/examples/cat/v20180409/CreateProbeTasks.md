@@ -43,8 +43,8 @@ tccli cat CreateProbeTasks --cli-unfold-argument  \
     --TaskType 5 \
     --Nodes 10001 \
     --Cron * 0-6 * * * \
-    --Tag.0.TagKey abc \
-    --Tag.0.TagValue a1
+    --Tag.0.TagKey 运营部门 \
+    --Tag.0.TagValue 产一
 ```
 
 Output: 
@@ -52,9 +52,9 @@ Output:
 {
     "Response": {
         "TaskIDs": [
-            "abc"
+            "task-abc"
         ],
-        "RequestId": "abc"
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

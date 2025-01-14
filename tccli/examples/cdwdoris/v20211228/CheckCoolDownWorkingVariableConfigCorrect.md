@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cdwdoris CheckCoolDownWorkingVariableConfigCorrect --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId cdwdoris-asdfu1x3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "abxasdfc-12xdvasf"
     }
 }
 ```
