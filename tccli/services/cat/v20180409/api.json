@@ -10,7 +10,7 @@
     "DeleteProbeTask": {
       "document": "删除拨测任务",
       "input": "DeleteProbeTaskRequest",
-      "name": "删除拨测任务",
+      "name": "删除任务",
       "output": "DeleteProbeTaskResponse",
       "status": "online"
     },
@@ -64,9 +64,9 @@
       "status": "online"
     },
     "SuspendProbeTask": {
-      "document": "暂停拨测任务",
+      "document": "暂停任务",
       "input": "SuspendProbeTaskRequest",
-      "name": "暂停拨测任务",
+      "name": "暂停任务",
       "output": "SuspendProbeTaskResponse",
       "status": "online"
     },
@@ -134,7 +134,7 @@
         {
           "disabled": false,
           "document": "拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。",
-          "example": "{}",
+          "example": "无",
           "member": "string",
           "name": "Parameters",
           "required": true,
@@ -161,7 +161,7 @@
         {
           "disabled": false,
           "document": "资源标签值",
-          "example": "[{\"TagKey\":\"a\", \"TagValue\": \"a1\"}]",
+          "example": "[{\"TagKey\":\"运营部门\", \"TagValue\": \"云产一\"}]",
           "member": "Tag",
           "name": "Tag",
           "required": false,
@@ -206,7 +206,7 @@
         {
           "disabled": false,
           "document": "供应商子账户同步标志",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "SubSyncFlag",
           "required": false,
@@ -261,7 +261,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -271,17 +271,17 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "TaskResult",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -507,10 +507,10 @@
         {
           "disabled": false,
           "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "SingleInstantTask",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -520,7 +520,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -602,6 +602,7 @@
           "example": "[{\"Code\":1000, \"Type\":1, \"Name\":\"北京\"}]",
           "member": "NodeDefineExt",
           "name": "NodeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -680,7 +681,7 @@
         {
           "disabled": false,
           "document": " 返回指标 JSON 序列化后的字符串，具体如下所示：\"[{\\\"name\\\":\\\"task_navigate_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"avg(first_screen_time) / 1000\\\"],\\\"values\\\":[[1641571200,6.756600000000001]],\\\"tags\\\":null}]\"",
-          "example": "\"\"",
+          "example": "gauge",
           "member": "string",
           "name": "MetricSet",
           "output_required": true,
@@ -898,7 +899,7 @@
         {
           "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "ProbeTask",
           "name": "TaskSet",
           "output_required": true,
@@ -1496,7 +1497,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1506,17 +1507,17 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务执行详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "TaskResult",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1639,7 +1640,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1649,17 +1650,17 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "TaskResult",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1803,7 +1804,7 @@
         {
           "disabled": false,
           "document": "拨测参数，详细参数配置可参考云拨测官网文档。",
-          "example": "{}",
+          "example": "无",
           "member": "string",
           "name": "Parameters",
           "required": true,

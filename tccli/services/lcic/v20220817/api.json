@@ -1375,7 +1375,7 @@
         {
           "disabled": false,
           "document": "文档大小，单位 字节",
-          "example": "123",
+          "example": "486",
           "member": "uint64",
           "name": "DocumentSize",
           "required": false,

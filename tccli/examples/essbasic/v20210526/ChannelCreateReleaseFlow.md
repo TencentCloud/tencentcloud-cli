@@ -14,8 +14,8 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。 \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿。 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同
 ```
 
 Output: 
@@ -46,8 +46,8 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.Mobile 15100000000 \
     --ReleasedApprovers.0.Name 李四 \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -84,8 +84,8 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.ApproverType ENTERPRISESERVER \
     --ReleasedApprovers.0.OrganizationName 典子谦示例企业 \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -129,8 +129,8 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。 \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿。 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同
 ```
 
 Output: 
@@ -165,8 +165,8 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.Name 典子谦 \
     --ReleasedApprovers.0.OrganizationName 典子谦示例企业 \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿。 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```

@@ -32,6 +32,7 @@ Output:
                         "OrganizationId": "",
                         "OrganizationName": "",
                         "ReceiptId": "yDwJWUUckpkt3r17UxsD2OmvMWKhPCsC",
+                        "RecipientId": "yDwJWUUckpkt3r17UxsD2OmvMWKhPCsC",
                         "SignId": "yDRS4UUgygqdcjjdUuO4zjEC0osCOsHS",
                         "SignOrder": 0
                     },
@@ -48,6 +49,7 @@ Output:
                         "OrganizationId": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
                         "OrganizationName": "张三示例企业",
                         "ReceiptId": "yDwJWUUckpkt3r1bUxsD2Om8NdhsvAFk",
+                        "RecipientId": "yDwJWUUckpkt3r1bUxsD2Om8NdhsvAFk",
                         "SignId": "yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR",
                         "SignOrder": 1
                     }
@@ -101,6 +103,7 @@ Output:
                         "OrganizationId": "",
                         "OrganizationName": "",
                         "ReceiptId": "yDwJWUUcss36hUx8VMjPR4jOb5ugrMSx",
+                        "RecipientId": "yDwJWUUcss36hUx8VMjPR4jOb5ugrMSx",
                         "SignId": "yDwJWUUcss36rUx8VMjPwzdNESvociQv",
                         "SignOrder": 0
                     }
@@ -130,6 +133,7 @@ Output:
                         "OrganizationId": "",
                         "OrganizationName": "",
                         "ReceiptId": "yDwJWUUcss36jUx8VMjPwPdsft773X11",
+                        "RecipientId": "yDwJWUUcss36jUx8VMjPwPdsft773X11",
                         "SignId": "yDwJWUUcss362Ux8VMjPvn1TbsDyp85v",
                         "SignOrder": 0
                     }

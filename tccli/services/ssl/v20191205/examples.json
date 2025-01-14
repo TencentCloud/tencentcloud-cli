@@ -161,7 +161,7 @@
       },
       {
         "document": "公共参数Region必传， Region表示操作cos对应地域的资源",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"ap-hongkong#ssl-server-1251810746#tencent.com\"\n    ],\n    \"ResourceType\": \"cos\"\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateInstance\n<公共请求参数>\n\n{\n    \"CertificateId\": \"vyRlKIeI\",\n    \"InstanceIdList\": [\n        \"ap-hongkong|ssl-server-1251810746|tencent.com\"\n    ],\n    \"ResourceType\": \"cos\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 1,\n        \"DeployStatus\": 0,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
         "title": "证书部署到cos云资源实例列表"
       },

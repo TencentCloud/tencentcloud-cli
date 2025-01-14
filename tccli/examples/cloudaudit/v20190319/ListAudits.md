@@ -15,7 +15,7 @@ Output:
             {
                 "AuditStatus": 0,
                 "CosBucketName": "bucket",
-                "AuditName": "test",
+                "AuditName": "audit_trail",
                 "LogFilePrefix": "audit"
             }
         ],

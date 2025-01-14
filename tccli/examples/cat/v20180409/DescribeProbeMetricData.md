@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "MetricSet": "[{\"name\":\"netenv_request_gauge\",\"columns\":[\"time\",\"sum(error_count)\"],\"values\":[[xxxxx,xxxxx]],\"tags\":null}]",
-        "RequestId": "xxxxx"
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

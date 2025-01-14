@@ -18,7 +18,10 @@ Output:
         "Jobs": [
             {
                 "Targets": [
-                    {}
+                    {
+                        "Url": "http://1.1.1.1:9000",
+                        "State": "down"
+                    }
                 ],
                 "Total": 1,
                 "Up": 0,

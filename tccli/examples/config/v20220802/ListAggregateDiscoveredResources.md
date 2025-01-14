@@ -22,6 +22,7 @@ Output:
     "Response": {
         "Items": [
             {
+                "ResourceOwnerName": "昵称",
                 "ResourceStatus": "1",
                 "ResourceOwnerId": 1,
                 "Tags": [

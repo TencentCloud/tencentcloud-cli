@@ -6,8 +6,12 @@ Input:
 
 ```
 tccli monitor CreatePrometheusRecordRuleYaml --cli-unfold-argument  \
-    --InstanceId prom-xxx \
-    --Content xxxx
+    --InstanceId prom-abcd \
+    --Name example \
+    --Content - name: example
+    rules:
+    - record: code:prometheus_http_requests_total:sum
+      expr: sum by (code) (prometheus_http_requests_total)
 ```
 
 Output: 

@@ -1,4 +1,4 @@
-**Example 1: 暂停拨测任务**
+**Example 1: 暂停任务**
 
 
 
@@ -17,12 +17,12 @@ Output:
         "Total": 1,
         "Results": [
             {
-                "ErrorMessage": "xx",
+                "ErrorMessage": "",
                 "Success": true,
-                "TaskId": "task-xx"
+                "TaskId": "task-xxx"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

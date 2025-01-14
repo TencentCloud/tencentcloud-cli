@@ -200,6 +200,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateStreamLinkSecurityGroup": [
+      {
+        "document": "创建安全组。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateStreamLinkSecurityGroup\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Whitelist\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateTranscodeTemplate": [
       {
         "document": "",
@@ -392,6 +400,14 @@
         "title": "请求示例"
       }
     ],
+    "DeleteStreamLinkSecurityGroup": [
+      {
+        "document": "删除安全组。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStreamLinkSecurityGroup\n<公共请求参数>\n\n{\n    \"Id\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DeleteTranscodeTemplate": [
       {
         "document": "",
@@ -486,6 +502,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DescribeContentReviewTemplates\n&Definitions.0=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ContentReviewTemplateSet\": [\n            {\n                \"Definition\": 0,\n                \"Name\": \"abc\",\n                \"Comment\": \"abc\",\n                \"PornConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"LabelSet\": [\n                            \"abc\"\n                        ],\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"TerrorismConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"LabelSet\": [\n                            \"abc\"\n                        ],\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"PoliticalConfigure\": {\n                    \"ImgReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"LabelSet\": [\n                            \"abc\"\n                        ],\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"ProhibitedConfigure\": {\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"UserDefineConfigure\": {\n                    \"FaceReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"LabelSet\": [\n                            \"abc\"\n                        ],\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"AsrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"LabelSet\": [\n                            \"abc\"\n                        ],\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    },\n                    \"OcrReviewInfo\": {\n                        \"Switch\": \"abc\",\n                        \"LabelSet\": [\n                            \"abc\"\n                        ],\n                        \"BlockConfidence\": 0,\n                        \"ReviewConfidence\": 0\n                    }\n                },\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取模板 ID 为 30 的智能审核模板"
+      }
+    ],
+    "DescribeGroupAttachFlowsById": [
+      {
+        "document": "根据安全组反差关联的Flow信息。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupAttachFlowsById\n<公共请求参数>\n\n{\n    \"Id\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"FlowId\": \"abc\",\n                \"FlowName\": \"abc\",\n                \"EventId\": \"abc\",\n                \"FlowRegion\": \"abc\",\n                \"OutputRegion\": \"abc\",\n                \"EventName\": \"abc\",\n                \"InputName\": \"abc\",\n                \"OutputName\": \"abc\",\n                \"InOutId\": \"abc\",\n                \"InOutType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DescribeImageSpriteTemplates": [
@@ -648,6 +672,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeStreamLinkSecurityGroups": [
+      {
+        "document": "批量查询安全组信息。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamLinkSecurityGroups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Id\": \"abc\",\n                \"Name\": \"abc\",\n                \"Whitelist\": [\n                    \"abc\"\n                ],\n                \"OccupiedInputs\": [\n                    \"abc\"\n                ],\n                \"Region\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeTaskDetail": [
       {
         "document": "查询任务结果",
@@ -744,6 +776,14 @@
         "input": "https://mps.tencentcloudapi.com/?Action=DisableWorkflow\r\n&WorkflowId=19000\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
         "title": "禁用工作流"
+      }
+    ],
+    "DisassociateSecurityGroup": [
+      {
+        "document": "批量解绑安全组下面关联的输入输出。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroup\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"UnattachInOutInfos\": [\n        {\n            \"FlowId\": \"abc\",\n            \"InOutId\": \"abc\",\n            \"InOutType\": \"abc\",\n            \"FlowRegion\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "EditMedia": [
@@ -977,6 +1017,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamLinkOutputInfo\n<公共请求参数>\n\n{\n    \"FlowId\": \"xx\",\n    \"Output\": {\n        \"OutputName\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"Description\": \"xx\",\n        \"RTPSettings\": {\n            \"IdleTimeout\": 1000,\n            \"FEC\": \"xx\",\n            \"Destinations\": [\n                {\n                    \"Ip\": \"xx\",\n                    \"Port\": 0\n                }\n            ]\n        },\n        \"SRTSettings\": {\n            \"Latency\": 1000,\n            \"PeerLatency\": 1000,\n            \"PbKeyLen\": 0,\n            \"RecvLatency\": 1000,\n            \"Passphrase\": \"xx\",\n            \"StreamId\": \"xx\",\n            \"PeerIdleTimeout\": 1000,\n            \"Destinations\": [\n                {\n                    \"Ip\": \"xx\",\n                    \"Port\": 10000\n                },\n                {\n                    \"Ip\": \"xx\",\n                    \"Port\": 10000\n                }\n            ]\n        },\n        \"OutputId\": \"xx\",\n        \"RTMPSettings\": {\n            \"ChunkSize\": 4096,\n            \"Destinations\": [\n                {\n                    \"Url\": \"xx\",\n                    \"StreamKey\": \"xx\"\n                },\n                {\n                    \"Url\": \"xx\",\n                    \"StreamKey\": \"xx\"\n                }\n            ]\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Info\": {\n            \"OutputId\": \"01746d03dd8c0956b92d34d30447\",\n            \"OutputName\": \"bbbb\",\n            \"OutputType\": \"Internet\",\n            \"Description\": \"description\",\n            \"Protocol\": \"SRT\",\n            \"OutputAddressList\": [\n                {\n                    \"Ip\": \"1.1.1.1\"\n                },\n                {\n                    \"Ip\": \"2.2.2.2\"\n                }\n            ],\n            \"OutputRegion\": \"ap-mumbai\",\n            \"RTSPPullSettings\": {\n                \"ServerUrls\": [\n                    {\n                        \"Url\": \"xx\"\n                    }\n                ]\n            },\n            \"RTMPPullSettings\": {\n                \"ServerUrls\": [\n                    {\n                        \"StreamKey\": \"xx\",\n                        \"TcUrl\": \"xx\"\n                    }\n                ]\n            },\n            \"AllowIpList\": [\n                \"xx\"\n            ],\n            \"SRTSettings\": {\n                \"Destinations\": [\n                    {\n                        \"Ip\": \"1.1.1.1\",\n                        \"Port\": 10000\n                    },\n                    {\n                        \"Ip\": \"1.1.1.1\",\n                        \"Port\": 10000\n                    }\n                ],\n                \"StreamId\": \"#!::u=johnny,t=file,m=publish,r=results.csv\",\n                \"Latency\": 1000,\n                \"RecvLatency\": 1000,\n                \"PeerLatency\": 1000,\n                \"PeerIdleTimeout\": 1000,\n                \"Passphrase\": \"\",\n                \"PbKeyLen\": 0\n            },\n            \"RTPSettings\": {\n                \"Destinations\": [],\n                \"FEC\": \"\",\n                \"IdleTimeout\": 0\n            },\n            \"RTMPSettings\": {\n                \"Destinations\": [],\n                \"IdleTimeout\": 0,\n                \"ChunkSize\": 0\n            }\n        },\n        \"RequestId\": \"aaaaa\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "ModifyStreamLinkSecurityGroup": [
+      {
+        "document": "更新安全组。",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStreamLinkSecurityGroup\n<公共请求参数>\n\n{\n    \"Id\": \"abc\",\n    \"Name\": \"abc\",\n    \"Whitelist\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],

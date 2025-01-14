@@ -22,7 +22,8 @@ Output:
         "QrCode": {
             "QrCodeUrl": "https://res.ess.tencent.cn/mp-gate/release/CHANNEL_CONTRACT_COVER/xxx",
             "ExpiredTime": 1693814798,
-            "QrCodeId": "yDRS****jEuBzwyiofZ"
+            "QrCodeId": "yDRS****jEuBzwyiofZ",
+            "WeixinQrCodeUrl": "https://embed.beta.qian.tencent.cn/code=yDtwRUUckp7fyqz6UuQZAp18BNrB74xu"
         },
         "SignUrls": {
             "EffectiveTime": "2022-08-05 15:55:01",
@@ -65,7 +66,8 @@ Output:
         "QrCode": {
             "ExpiredTime": 1695783727,
             "QrCodeId": "yDwJNUUckpkoj9mdUIJN2kC7XWFFaSuR",
-            "QrCodeUrl": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDwJNUUckpkoj9mdUIJN2kC7XWFFaSuR.png"
+            "QrCodeUrl": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDwJNUUckpkoj9mdUIJN2kC7XWFFaSuR.png",
+            "WeixinQrCodeUrl": "https://embed.beta.qian.tencent.cn/code=yDtwRUUckp7fyqz6UuQZAp18BNrB74xu"
         },
         "RequestId": "s1695178926924585393",
         "SignUrls": {
@@ -134,7 +136,8 @@ Output:
         "QrCode": {
             "QrCodeUrl": "https://res.ess.tencent.cn/mp-gate/release/CHANNEL_CONTRACT_COVER/xxx",
             "ExpiredTime": 1693814798,
-            "QrCodeId": "yDRS****jEuBzwyiofZ"
+            "QrCodeId": "yDRS****jEuBzwyiofZ",
+            "WeixinQrCodeUrl": "https://embed.beta.qian.tencent.cn/code=yDtwRUUckp7fyqz6UuQZAp18BNrB74xu"
         },
         "SignUrls": {
             "EffectiveTime": "2022-08-05 15:55:01",

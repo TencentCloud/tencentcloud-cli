@@ -17,8 +17,8 @@ Output:
             {
                 "City": "北京",
                 "Code": "10001",
-                "Name": "123",
-                "District": "1223",
+                "Name": "test_task",
+                "District": "beijing",
                 "NetService": "中国电信",
                 "Location": 0,
                 "Type": 1,
@@ -30,7 +30,7 @@ Output:
                 "CodeType": ""
             }
         ],
-        "RequestId": "123"
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

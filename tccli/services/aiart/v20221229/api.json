@@ -1072,7 +1072,7 @@
         },
         {
           "disabled": false,
-          "document": "对新背景的文本描述。\n最多支持256个 utf-8 字符，支持中、英文。",
+          "document": "对新背景的文本描述。\n最多支持256个 utf-8 字符，支持中、英文。\n如果 Prompt = \"BackgroundTemplate\" 代表启用背景模板，需要在参数 BackgroundTemplate 中指定一个背景名称。",
           "example": "放在充满鲜花的环境里，简洁风格，清新自然，广告摄影",
           "member": "string",
           "name": "Prompt",
@@ -1094,6 +1094,15 @@
           "example": "汽车",
           "member": "string",
           "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "背景模板。\n仅当 Prompt = \"BackgroundTemplate\" 时生效，可支持的模板详见 [商品背景模板列表](https://cloud.tencent.com/document/product/1668/115391) ，请传入字段“背景名称”中的值。",
+          "example": "彩虹渐变",
+          "member": "string",
+          "name": "BackgroundTemplate",
           "required": false,
           "type": "string"
         },
@@ -1151,7 +1160,7 @@
         {
           "disabled": false,
           "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
-          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7",
+          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg",
           "member": "string",
           "name": "ResultImage",
           "output_required": true,
@@ -1161,7 +1170,7 @@
         {
           "disabled": false,
           "document": "如果 MaskUrl 未传，则返回使用内置商品分割算法得到的 Mask 结果。",
-          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/mask.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7",
+          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/mask.jpg",
           "member": "string",
           "name": "MaskImage",
           "output_required": false,

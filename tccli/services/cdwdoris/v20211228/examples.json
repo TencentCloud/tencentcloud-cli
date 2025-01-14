@@ -19,8 +19,8 @@
     "CheckCoolDownWorkingVariableConfigCorrect": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCoolDownWorkingVariableConfigCorrect\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCoolDownWorkingVariableConfigCorrect\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-asdfu1x3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abxasdfc-12xdvasf\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -35,8 +35,8 @@
     "CreateCoolDownPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PolicyName\": \"abc\",\n    \"CoolDownTtl\": \"abc\",\n    \"CoolDownDatetime\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-aixanqx\",\n    \"PolicyName\": \"policy_name\",\n    \"CoolDownTtl\": \"1287\",\n    \"CoolDownDatetime\": \"2024-12-04\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abcacav-xasfdq2x-asdv1xa\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -171,8 +171,8 @@
     "DescribeDatabaseAuditRecords": [
       {
         "document": "获取数据库审计记录",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"PageSize\": 0,\n    \"PageNum\": 0,\n    \"OrderType\": \"abc\",\n    \"User\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SqlType\": \"abc\",\n    \"Sql\": \"abc\",\n    \"Users\": [\n        \"abc\"\n    ],\n    \"DbNames\": [\n        \"abc\"\n    ],\n    \"SqlTypes\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SlowQueryRecords\": {\n            \"OsUser\": \"abc\",\n            \"InitialQueryId\": \"abc\",\n            \"Sql\": \"abc\",\n            \"QueryStartTime\": \"abc\",\n            \"DurationMs\": 0,\n            \"ReadRows\": 0,\n            \"ResultRows\": 0,\n            \"ResultBytes\": 1,\n            \"MemoryUsage\": 0,\n            \"InitialAddress\": \"abc\",\n            \"DbName\": \"abc\",\n            \"SqlType\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-akxtck1n\",\n    \"StartTime\": \"2025-01-06 09:36:04\",\n    \"EndTime\": \"2025-01-06 10:36:04\",\n    \"PageSize\": 0,\n    \"PageNum\": 1,\n    \"OrderType\": \"DESC\",\n    \"Sql\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SlowQueryRecords\": {\n            \"OsUser\": \"test\",\n            \"InitialQueryId\": \"xasd-qxxc\",\n            \"Sql\": \"select * from abc\",\n            \"QueryStartTime\": \"2025-01-06 10:36:04\",\n            \"DurationMs\": 0,\n            \"ReadRows\": 0,\n            \"ResultRows\": 0,\n            \"ResultBytes\": 1,\n            \"MemoryUsage\": 0,\n            \"InitialAddress\": \"192.168.12.34\",\n            \"DbName\": \"ab1\",\n            \"SqlType\": \"INSERT\"\n        },\n        \"RequestId\": \"abc-2xz\"\n    }\n}",
         "title": "DescribeDatabaseAuditRecords"
       }
     ],

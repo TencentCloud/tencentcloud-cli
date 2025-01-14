@@ -133,6 +133,13 @@
       "output": "CreateStreamLinkOutputInfoResponse",
       "status": "online"
     },
+    "CreateStreamLinkSecurityGroup": {
+      "document": "创建安全组，数量限制5个。",
+      "input": "CreateStreamLinkSecurityGroupRequest",
+      "name": "创建安全组",
+      "output": "CreateStreamLinkSecurityGroupResponse",
+      "status": "online"
+    },
     "CreateTranscodeTemplate": {
       "document": "创建用户自定义转码模板，数量上限：1000",
       "input": "CreateTranscodeTemplateRequest",
@@ -280,6 +287,13 @@
       "output": "DeleteStreamLinkOutputResponse",
       "status": "online"
     },
+    "DeleteStreamLinkSecurityGroup": {
+      "document": "删除安全组。",
+      "input": "DeleteStreamLinkSecurityGroupRequest",
+      "name": "删除安全组",
+      "output": "DeleteStreamLinkSecurityGroupResponse",
+      "status": "online"
+    },
     "DeleteTranscodeTemplate": {
       "document": "删除用户自定义转码模板。",
       "input": "DeleteTranscodeTemplateRequest",
@@ -341,6 +355,13 @@
       "input": "DescribeContentReviewTemplatesRequest",
       "name": "获取智能审核模板列表",
       "output": "DescribeContentReviewTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeGroupAttachFlowsById": {
+      "document": "根据安全组反差关联的Flow信息。",
+      "input": "DescribeGroupAttachFlowsByIdRequest",
+      "name": "反查媒体传输安全组绑定的Flow信息",
+      "output": "DescribeGroupAttachFlowsByIdResponse",
       "status": "online"
     },
     "DescribeImageSpriteTemplates": {
@@ -483,6 +504,13 @@
       "output": "DescribeStreamLinkRegionsResponse",
       "status": "online"
     },
+    "DescribeStreamLinkSecurityGroups": {
+      "document": "批量查询安全组信息。",
+      "input": "DescribeStreamLinkSecurityGroupsRequest",
+      "name": "批量查询安全组信息",
+      "output": "DescribeStreamLinkSecurityGroupsResponse",
+      "status": "online"
+    },
     "DescribeTaskDetail": {
       "document": "通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。",
       "input": "DescribeTaskDetailRequest",
@@ -551,6 +579,13 @@
       "input": "DisableWorkflowRequest",
       "name": "禁用工作流",
       "output": "DisableWorkflowResponse",
+      "status": "online"
+    },
+    "DisassociateSecurityGroup": {
+      "document": "批量解绑安全组下面关联的输入输出。",
+      "input": "DisassociateSecurityGroupRequest",
+      "name": "批量解绑安全组",
+      "output": "DisassociateSecurityGroupResponse",
       "status": "online"
     },
     "EditMedia": {
@@ -698,6 +733,13 @@
       "input": "ModifyStreamLinkOutputInfoRequest",
       "name": "修改媒体传输的输出信息",
       "output": "ModifyStreamLinkOutputInfoResponse",
+      "status": "online"
+    },
+    "ModifyStreamLinkSecurityGroup": {
+      "document": "更新安全组。",
+      "input": "ModifyStreamLinkSecurityGroupRequest",
+      "name": "更新安全组",
+      "output": "ModifyStreamLinkSecurityGroupResponse",
       "status": "online"
     },
     "ModifyTranscodeTemplate": {
@@ -9284,7 +9326,7 @@
         },
         {
           "disabled": false,
-          "document": "转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。",
+          "document": "转推SRT的总延迟，默认0，单位ms，范围为[0, 3000]。此参数同时设置了发送方和接收方的延迟（recvlatency和peerlatency）为相同的值。建议配置为至少3倍RTT，以确保在网络拥塞时能够有效处理数据包的重传和确认",
           "example": "0",
           "member": "int64",
           "name": "Latency",
@@ -9293,7 +9335,7 @@
         },
         {
           "disabled": false,
-          "document": "转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。",
+          "document": "转推SRT的接收延迟，默认120，单位ms，范围为[0, 3000]。 此参数表示接收方用于缓存数据包的时间长度",
           "example": "120",
           "member": "int64",
           "name": "RecvLatency",
@@ -9302,7 +9344,7 @@
         },
         {
           "disabled": false,
-          "document": "转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。",
+          "document": "转推SRT的对端延迟，默认0，单位ms，范围为[0, 3000]。 此参数由发送方设置，用于告知接收方其期望的延迟缓冲时间",
           "example": "0",
           "member": "int64",
           "name": "PeerLatency",
@@ -9311,7 +9353,7 @@
         },
         {
           "disabled": false,
-          "document": "转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。",
+          "document": "转推SRT的对端空闲超时时间，默认5000，单位ms，范围为[1000, 10000]。 如果连接在设定的超时时间内没有活动，将会被关闭",
           "example": "5000",
           "member": "int64",
           "name": "PeerIdleTimeout",
@@ -9990,6 +10032,52 @@
           "name": "Info",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkSecurityGroupRequest": {
+      "document": "CreateStreamLinkSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组名称，限制大小写、数字和下划线，Region下唯一。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单列表，数量限制[1, 10]。",
+          "example": "[\"1.1.1.1\\/1\\r\\n\"]",
+          "member": "string",
+          "name": "Whitelist",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateStreamLinkSecurityGroupResponse": {
+      "document": "CreateStreamLinkSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组 ID。",
+          "example": "1111",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -10898,6 +10986,33 @@
       ],
       "type": "object"
     },
+    "DeleteStreamLinkSecurityGroupRequest": {
+      "document": "DeleteStreamLinkSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组 ID。",
+          "example": "1111",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteStreamLinkSecurityGroupResponse": {
+      "document": "DeleteStreamLinkSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTranscodeTemplateRequest": {
       "document": "DeleteTranscodeTemplate请求参数结构体",
       "members": [
@@ -11205,7 +11320,7 @@
         {
           "disabled": false,
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "“”",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -11213,7 +11328,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为纯音频，0表示视频，1表示纯音频",
+          "document": "是否为纯音频，0表示视频，1表示纯音频\n默认值：0",
           "example": "0",
           "member": "uint64",
           "name": "PureAudio",
@@ -11223,7 +11338,7 @@
         {
           "disabled": false,
           "document": "自适应转码模板标识过滤条件，长度限制：64 个字符",
-          "example": "\"\"",
+          "example": "Presetting HLS",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11607,6 +11722,43 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeGroupAttachFlowsByIdRequest": {
+      "document": "DescribeGroupAttachFlowsById请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体传输安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGroupAttachFlowsByIdResponse": {
+      "document": "DescribeGroupAttachFlowsById返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组反查的Flow信息列表。",
+          "example": "无",
+          "member": "FlowInOutResp",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeHLSPullSourceAddress": {
       "document": "查询输入的HLS配置信息。",
@@ -14070,6 +14222,33 @@
       ],
       "type": "object"
     },
+    "DescribeStreamLinkSecurityGroupsRequest": {
+      "document": "DescribeStreamLinkSecurityGroups请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeStreamLinkSecurityGroupsResponse": {
+      "document": "DescribeStreamLinkSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组信息列表。",
+          "example": "无",
+          "member": "SecurityGroupInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskDetailRequest": {
       "document": "DescribeTaskDetail请求参数结构体",
       "members": [
@@ -14924,6 +15103,42 @@
       ],
       "type": "object"
     },
+    "DisassociateSecurityGroupRequest": {
+      "document": "DisassociateSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体传输安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要解绑的输入输出信息列表。",
+          "example": "无",
+          "member": "UnattachSecurityGroupInOutInfo",
+          "name": "UnattachInOutInfos",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateSecurityGroupResponse": {
+      "document": "DisassociateSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DrmInfo": {
       "document": "Drm 加密信息。",
       "members": [
@@ -15570,6 +15785,112 @@
           "name": "Pid",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlowInOutResp": {
+      "document": "查询Flow的配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流Id。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该Flow关联的媒体传输事件EventId。",
+          "example": "eventid",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体传输输入流所属的区域，取值和InputRegion相同。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "FlowRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当返回是输出类型时非空，output所在Region。",
+          "example": "无",
+          "member": "string",
+          "name": "OutputRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EventName。",
+          "example": "无",
+          "member": "string",
+          "name": "EventName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InOutType为Input有效。",
+          "example": "无",
+          "member": "string",
+          "name": "InputName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "InOutType为Output有效。",
+          "example": "无",
+          "member": "string",
+          "name": "OutputName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Input或者Output的Id。",
+          "example": "无",
+          "member": "string",
+          "name": "InOutId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入/输出类型，可选值：\nInput：输入\nOutpu：输出。",
+          "example": "无",
+          "member": "string",
+          "name": "InOutType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -22333,6 +22654,51 @@
       ],
       "type": "object"
     },
+    "ModifyStreamLinkSecurityGroupRequest": {
+      "document": "ModifyStreamLinkSecurityGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组Id。",
+          "example": " 1111",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组名称，限制大小写、数字和下划线，长度[1, 32]，Region下唯一。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单列表，最多10个。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "Whitelist",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStreamLinkSecurityGroupResponse": {
+      "document": "ModifyStreamLinkSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTranscodeTemplateRequest": {
       "document": "ModifyTranscodeTemplate请求参数结构体",
       "members": [
@@ -26148,6 +26514,72 @@
       ],
       "usage": "both"
     },
+    "SecurityGroupInfo": {
+      "document": "安全组信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组 ID。",
+          "example": "test",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "安全组名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单列表。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "Whitelist",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的输入流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testinput",
+          "member": "string",
+          "name": "OccupiedInputs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全组地址。",
+          "example": "ap-mumbai",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的输出流列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testoutput",
+          "member": "string",
+          "name": "OccupiedOutputs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SegmentRecognitionItem": {
       "document": "智能拆条片段。",
       "members": [
@@ -26673,7 +27105,7 @@
         {
           "disabled": false,
           "document": "要压制到视频中的字幕文件地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "address",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -26695,7 +27127,7 @@
         {
           "disabled": false,
           "document": "字体类型，\n<li>hei.ttf：黑体</li>\n<li>song.ttf：宋体</li>\n<li>simkai.ttf：楷体</li>\n<li>arial.ttf：仅支持英文</li>\n默认hei.ttf\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "simhei.ttf",
+          "example": "simkai.ttf",
           "member": "string",
           "name": "FontType",
           "output_required": false,
@@ -27838,6 +28270,56 @@
       ],
       "usage": "in"
     },
+    "UnattachSecurityGroupInOutInfo": {
+      "document": "安全组解绑输入/输出请求信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该安全组关联的FlowId。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要解绑的输入/输出ID。",
+          "example": "无",
+          "member": "string",
+          "name": "InOutId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输入/输出类型，可选值：\nInput：输入\nOutput：输出。",
+          "example": "无",
+          "member": "string",
+          "name": "InOutType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Flow所在的Region，和input共用。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowRegion",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UrlInputInfo": {
       "document": "媒体处理 URL 对象信息。",
       "members": [
@@ -28405,7 +28887,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。\n注意：Codec为MV-HEVC时可以支持到7680",
           "example": "0",
           "member": "uint64",
           "name": "Width",
@@ -28416,7 +28898,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。",
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n默认值：0。\n注意：Codec为MV-HEVC时可以支持到7680",
           "example": "0",
           "member": "uint64",
           "name": "Height",
@@ -28708,7 +29190,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n注意：Codec为MV-HEVC时可以支持到7680\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Width",
@@ -28719,7 +29201,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。\n注意：Codec为MV-HEVC时可以支持到7680\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Height",

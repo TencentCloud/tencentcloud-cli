@@ -75,7 +75,7 @@ Input:
 tccli monitor CreateExporterIntegration --cli-unfold-argument  \
     --InstanceId prom-1 \
     --Kind raw-job \
-    --Content {"kind":"raw-job","spec":{"job":"job_name: test\nscrape_interval: 30s\nstatic_configs:\n- targets:\n  - 127.0.0.1:9090"}}
+    --Content {"kind":"raw-job","spec":{"job":"job_name: test-job\nscrape_interval: 30s\nstatic_configs:\n- targets:\n  - 127.0.0.1:9090"}}
 ```
 
 Output: 
@@ -83,7 +83,7 @@ Output:
 {
     "Response": {
         "Names": [
-            "test"
+            "test-job"
         ],
         "RequestId": "xyz"
     }
@@ -354,7 +354,7 @@ Input:
 tccli monitor CreateExporterIntegration --cli-unfold-argument  \
     --InstanceId prom-1 \
     --Kind qcloud-exporter \
-    --Content {"name":"test","kind":"qcloud-exporter","spec":{"instanceSpec":{"region":"广州","delaySeconds":0,"reload_interval_minutes":10,"useRole":true,"labels":{"labelKey":"labelValue","test":"test"}},"exporterSpec":{"cvm":true,"cbs":true},"scrapeSpec":{"relabelConfigs":"metricRelabelings:\n- action: labeldrop\n  regex: tmp_test_label\n"}}}
+    --Content {"name":"test-qcloud","kind":"qcloud-exporter","spec":{"instanceSpec":{"region":"广州","delaySeconds":0,"reload_interval_minutes":10,"useRole":true,"labels":{"labelKey":"labelValue","test":"test"}},"exporterSpec":{"cvm":true,"cbs":true},"scrapeSpec":{"relabelConfigs":"metricRelabelings:\n- action: labeldrop\n  regex: tmp_test_label\n"}}}
 ```
 
 Output: 
@@ -362,7 +362,7 @@ Output:
 {
     "Response": {
         "Names": [
-            "test"
+            "test-qcloud"
         ],
         "RequestId": "xyz"
     }
@@ -459,7 +459,7 @@ Input:
 tccli monitor CreateExporterIntegration --cli-unfold-argument  \
     --InstanceId prom-1 \
     --Kind blackbox-exporter \
-    --Content {"name":"test","kind":"blackbox-exporter","spec":{"instanceSpec":{"module":"http_get","urls":["host:port","http://abc","https://abc"],"noAllowRedirect":false,"insecureSkipVerify":true,"headers":{"Authorization":"Basic <Credentials>","test":"test"},"labels":{"labelKey":"labelValue","test":"test"}},"scrapeSpec":{"interval":"15s"}}}
+    --Content {"name":"test-blackbox","kind":"blackbox-exporter","spec":{"instanceSpec":{"module":"http_get","urls":["host:port","http://abc","https://abc"],"noAllowRedirect":false,"insecureSkipVerify":true,"headers":{"Authorization":"Basic <Credentials>","test":"test"},"labels":{"labelKey":"labelValue","test":"test"}},"scrapeSpec":{"interval":"15s"}}}
 ```
 
 Output: 
@@ -467,7 +467,7 @@ Output:
 {
     "Response": {
         "Names": [
-            "test"
+            "test-blackbox"
         ],
         "RequestId": "xyz"
     }

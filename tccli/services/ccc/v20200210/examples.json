@@ -24,6 +24,14 @@
         "title": "绑定坐席所属技能组示例"
       }
     ],
+    "CreateAIAgentCall": [
+      {
+        "document": "使用 AI Agent 发起外呼",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAIAgentCall\n<公共请求参数>\n\n{\n    \"Callee\": \"008612300000000\",\n    \"SdkAppId\": 1400000000,\n    \"AIAgentId\": 15,\n    \"Callers\": [\n        \"008601012345678\",\n        \"008601012345679\"\n    ],\n    \"PromptVariables\": [\n        {\n            \"Key\": \"foo\",\n            \"Value\": \"bar\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"SessionId\": \"6bb56a09278740bc80c5dc6dab783eff\"\n    }\n}",
+        "title": "使用 AI Agent 发起外呼"
+      }
+    ],
     "CreateAICall": [
       {
         "document": "本示例模拟某医院调用大模型对手术出院患者家长进行电话随访调查。",

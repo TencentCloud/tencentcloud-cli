@@ -15,14 +15,14 @@ tccli cat DescribeDetailedSingleProbeData --cli-unfold-argument  \
     --Limit 10 \
     --SelectedFields ProbeTime City Operator ProbeIP \
     --TaskID task-p4najqd4 \
-    --ScrollID xxx
+    --ScrollID DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlxxx==
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ScrollID": "xxx",
+        "ScrollID": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlxxx==",
         "TotalNumber": 10,
         "DataSet": [
             {
@@ -43,7 +43,7 @@ Output:
                 ]
             }
         ],
-        "RequestId": "asd"
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

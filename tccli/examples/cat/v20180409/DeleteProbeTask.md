@@ -1,4 +1,4 @@
-**Example 1: 删除拨测任务**
+**Example 1: 删除任务**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cat DeleteProbeTask --cli-unfold-argument  \
-    --TaskIds xx
+    --TaskIds task-xxx
 ```
 
 Output: 
@@ -17,12 +17,12 @@ Output:
         "Total": 0,
         "Results": [
             {
-                "ErrorMessage": "xx",
+                "ErrorMessage": "",
                 "Success": true,
-                "TaskId": "task-xx"
+                "TaskId": "task-xxx"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "720b3231-5a85-4f05-aaab-c9b9596xxxxx"
     }
 }
 ```

@@ -346,14 +346,14 @@
     "DeleteIntegrationTask": {
       "document": "删除集成任务",
       "input": "DeleteIntegrationTaskRequest",
-      "name": "删除集成任务",
+      "name": "删除实时集成任务",
       "output": "DeleteIntegrationTaskResponse",
       "status": "online"
     },
     "DeleteOfflineTask": {
       "document": "删除任务",
       "input": "DeleteOfflineTaskRequest",
-      "name": "删除任务",
+      "name": "删除离线任务",
       "output": "DeleteOfflineTaskResponse",
       "status": "online"
     },
@@ -1347,7 +1347,7 @@
     "LockIntegrationTask": {
       "document": "锁定集成任务",
       "input": "LockIntegrationTaskRequest",
-      "name": "锁定集成任务",
+      "name": "锁定实时集成任务",
       "output": "LockIntegrationTaskResponse",
       "status": "online"
     },
@@ -1515,7 +1515,7 @@
     "ResumeIntegrationTask": {
       "document": "继续集成任务",
       "input": "ResumeIntegrationTaskRequest",
-      "name": "继续集成任务",
+      "name": "继续实时集成任务",
       "output": "ResumeIntegrationTaskResponse",
       "status": "online"
     },
@@ -1564,14 +1564,14 @@
     "StartIntegrationTask": {
       "document": "启动集成任务",
       "input": "StartIntegrationTaskRequest",
-      "name": "启动集成任务",
+      "name": "启动实时集成任务",
       "output": "StartIntegrationTaskResponse",
       "status": "online"
     },
     "StopIntegrationTask": {
       "document": "停止集成任务",
       "input": "StopIntegrationTaskRequest",
-      "name": "停止集成任务",
+      "name": "停止实时集成任务",
       "output": "StopIntegrationTaskResponse",
       "status": "online"
     },
@@ -1613,7 +1613,7 @@
     "SuspendIntegrationTask": {
       "document": "暂停集成任务",
       "input": "SuspendIntegrationTaskRequest",
-      "name": "暂停集成任务",
+      "name": "暂停实时集成任务",
       "output": "SuspendIntegrationTaskResponse",
       "status": "online"
     },
@@ -1641,7 +1641,7 @@
     "UnlockIntegrationTask": {
       "document": "解锁集成任务",
       "input": "UnlockIntegrationTaskRequest",
-      "name": "解锁集成任务",
+      "name": "解锁实时集成任务",
       "output": "UnlockIntegrationTaskResponse",
       "status": "online"
     },
@@ -7629,6 +7629,15 @@
           "name": "SmartOptimizerWritten",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据优化表名",
+          "example": "\"aa\"",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7737,6 +7746,15 @@
           "example": "\"open\"",
           "member": "string",
           "name": "SmartOptimizerWritten",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据优化针对的表",
+          "example": "\"aa\"",
+          "member": "string",
+          "name": "TableName",
           "required": false,
           "type": "string"
         }
@@ -9025,6 +9043,15 @@
           "example": "ETL",
           "member": "string",
           "name": "WorkflowDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流类型,取值示例\n\n- cycle 周期工作流\n- manual 手动工作流\n",
+          "example": "cycle",
+          "member": "string",
+          "name": "WorkflowType",
           "required": false,
           "type": "string"
         }
@@ -14215,6 +14242,15 @@
           "name": "TaskNodeId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流类型, 使用场景: 任务复制,选择工作流. 取值范围\n\n- cycle    周期工作流\n- manual    手动工作流",
+          "example": "cycle",
+          "member": "string",
+          "name": "WorkflowType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15395,6 +15431,51 @@
           "name": "RequestFromSource",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期为基础数据进行日志匹配",
+          "example": "无",
+          "member": "InstanceLifeDetailDto",
+          "name": "InstanceLifeDetailDtoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当前生命周期",
+          "example": "0",
+          "member": "int64",
+          "name": "CurrentLifeRound",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期总数",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxLifeRound",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前生命周期重试次数",
+          "example": "1",
+          "member": "int64",
+          "name": "Tries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态加载日志",
+          "example": "true",
+          "member": "bool",
+          "name": "Dynamic",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15504,6 +15585,42 @@
           "name": "ExecutionFileType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生命周期为基础数据进行日志匹配。Dynamic=true动态获取日志链路中使用",
+          "example": "无",
+          "member": "InstanceLifeDetailDto",
+          "name": "InstanceLifeDetailDtoList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当前生命周期数",
+          "example": "1",
+          "member": "int64",
+          "name": "CurrentLifeRound",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前生命周期重试次数",
+          "example": "1",
+          "member": "int64",
+          "name": "Tries",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态获取日志信息标识",
+          "example": "true",
+          "member": "bool",
+          "name": "Dynamic",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -17179,6 +17296,24 @@
           "name": "ProjectIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle",
+          "example": "cycle",
+          "member": "string",
+          "name": "WorkflowTypeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割",
+          "example": "test_wf",
+          "member": "string",
+          "name": "KeyWord",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -25607,6 +25742,17 @@
         },
         {
           "disabled": false,
+          "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task name",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "数据时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -25746,6 +25892,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例当前总生命周期数",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalLifeRound",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskTypeOpsDto",
+          "name": "TaskType",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -26190,6 +26358,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志匹配节点信息",
+          "example": "NA",
+          "member": "string",
+          "name": "MatchedBrokerIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -29318,6 +29496,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补录时间顺序\nNORMAL： 正常\nORDER ： 按照实例时间顺序执行\nREVERSE： 实例数据时间逆序",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "MakeDataTimeOrder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -37881,6 +38069,69 @@
           "name": "AsyncMode",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）",
+          "example": "ALL",
+          "member": "string",
+          "name": "CheckParentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务原有自依赖配置 true（是）、false（否）",
+          "example": "true",
+          "member": "bool",
+          "name": "SameSelfDependType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例运行并发度",
+          "example": "2",
+          "member": "int64",
+          "name": "ParallelNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务原有自依赖配置 true（是）、false（否）",
+          "example": "true",
+          "member": "bool",
+          "name": "SameSelfWorkflowDependType",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "代表重新指定 的  是 或者 否  yes、 no",
+          "example": "yes",
+          "member": "string",
+          "name": "SelfWorkflowDependency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运行实例数据时间排序 0---正常  1--正序  2 – 逆序",
+          "example": "0",
+          "member": "int64",
+          "name": "DataTimeOrder",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重跑参数",
+          "example": "无",
+          "member": "string",
+          "name": "ReDoParams",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -43741,7 +43992,7 @@
           "example": "无",
           "member": "string",
           "name": "VirtualTaskId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43752,7 +44003,7 @@
           "example": "无",
           "member": "bool",
           "name": "VirtualFlag",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -43785,7 +44036,7 @@
           "example": "无",
           "member": "string",
           "name": "RealWorkflowId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43796,7 +44047,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkflowName",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43807,7 +44058,7 @@
           "example": "无",
           "member": "string",
           "name": "FolderId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43818,7 +44069,7 @@
           "example": "无",
           "member": "string",
           "name": "FolderName",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43829,7 +44080,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43840,7 +44091,7 @@
           "example": "无",
           "member": "string",
           "name": "LastUpdate",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43862,7 +44113,7 @@
           "example": "无",
           "member": "string",
           "name": "InCharge",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43873,7 +44124,7 @@
           "example": "无",
           "member": "string",
           "name": "InChargeId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43884,7 +44135,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43895,7 +44146,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43906,7 +44157,7 @@
           "example": "无",
           "member": "string",
           "name": "ExecutionStartTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43917,7 +44168,7 @@
           "example": "无",
           "member": "string",
           "name": "ExecutionEndTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43939,7 +44190,7 @@
           "example": "无",
           "member": "uint64",
           "name": "CycleStep",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -43950,7 +44201,7 @@
           "example": "无",
           "member": "string",
           "name": "CrontabExpression",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -43961,7 +44212,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DelayTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -43972,7 +44223,7 @@
           "example": "无",
           "member": "uint64",
           "name": "StartupTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -43983,7 +44234,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RetryWait",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -43994,7 +44245,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RetryAble",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -44005,7 +44256,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskAction",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44016,7 +44267,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TryLimit",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -44027,7 +44278,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RunPriority",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -44049,7 +44300,7 @@
           "example": "无",
           "member": "string",
           "name": "BrokerIp",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44060,7 +44311,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44071,7 +44322,7 @@
           "example": "无",
           "member": "string",
           "name": "MinDateTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44082,7 +44333,7 @@
           "example": "无",
           "member": "string",
           "name": "MaxDateTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44093,7 +44344,7 @@
           "example": "无",
           "member": "int64",
           "name": "ExecutionTTL",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -44104,7 +44355,7 @@
           "example": "无",
           "member": "string",
           "name": "SelfDepend",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44115,7 +44366,7 @@
           "example": "无",
           "member": "float",
           "name": "LeftCoordinate",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "float",
           "value_allowed_null": true
@@ -44126,7 +44377,7 @@
           "example": "无",
           "member": "float",
           "name": "TopCoordinate",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "float",
           "value_allowed_null": true
@@ -44137,7 +44388,7 @@
           "example": "无",
           "member": "string",
           "name": "Notes",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44148,7 +44399,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceInitStrategy",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44159,7 +44410,7 @@
           "example": "无",
           "member": "string",
           "name": "YarnQueue",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44170,7 +44421,7 @@
           "example": "无",
           "member": "string",
           "name": "LastSchedulerCommitTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44181,7 +44432,7 @@
           "example": "无",
           "member": "string",
           "name": "NormalizedJobStartTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44192,7 +44443,7 @@
           "example": "无",
           "member": "string",
           "name": "SchedulerDesc",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44203,7 +44454,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceGroup",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44214,7 +44465,7 @@
           "example": "无",
           "member": "string",
           "name": "Creator",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44225,7 +44476,7 @@
           "example": "无",
           "member": "string",
           "name": "DependencyRel",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44236,7 +44487,7 @@
           "example": "无",
           "member": "string",
           "name": "DependencyWorkflow",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44247,7 +44498,7 @@
           "example": "无",
           "member": "string",
           "name": "EventListenerConfig",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44258,7 +44509,7 @@
           "example": "无",
           "member": "string",
           "name": "EventPublisherConfig",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44269,7 +44520,7 @@
           "example": "无",
           "member": "string",
           "name": "VirtualTaskStatus",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44280,7 +44531,7 @@
           "example": "无",
           "member": "LinkOpsDto",
           "name": "TaskLinkInfo",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -44291,7 +44542,7 @@
           "example": "无",
           "member": "string",
           "name": "ProductName",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44302,7 +44553,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44313,7 +44564,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectIdent",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44324,7 +44575,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectName",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44335,7 +44586,7 @@
           "example": "无",
           "member": "string",
           "name": "OwnId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44346,7 +44597,7 @@
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44357,7 +44608,7 @@
           "example": "无",
           "member": "string",
           "name": "TenantId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44368,7 +44619,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateUser",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44379,7 +44630,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44390,7 +44641,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateUserId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44401,7 +44652,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskTypeId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -44412,7 +44663,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskTypeDesc",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44423,7 +44674,7 @@
           "example": "无",
           "member": "bool",
           "name": "ShowWorkflow",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -44434,7 +44685,7 @@
           "example": "无",
           "member": "string",
           "name": "FirstSubmitTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44445,7 +44696,7 @@
           "example": "无",
           "member": "string",
           "name": "FirstRunTime",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44456,7 +44707,7 @@
           "example": "无",
           "member": "string",
           "name": "ScheduleDesc",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44467,7 +44718,7 @@
           "example": "无",
           "member": "int64",
           "name": "CycleNum",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -44478,7 +44729,7 @@
           "example": "无",
           "member": "string",
           "name": "Crontab",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44489,7 +44740,7 @@
           "example": "无",
           "member": "string",
           "name": "StartDate",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44500,7 +44751,7 @@
           "example": "无",
           "member": "string",
           "name": "EndDate",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44511,7 +44762,7 @@
           "example": "无",
           "member": "string",
           "name": "CycleUnit",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44522,7 +44773,7 @@
           "example": "无",
           "member": "string",
           "name": "InitStrategy",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44533,7 +44784,7 @@
           "example": "无",
           "member": "string",
           "name": "Layer",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44544,7 +44795,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceServiceId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44555,7 +44806,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceServiceType",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44566,7 +44817,7 @@
           "example": "无",
           "member": "string",
           "name": "TargetServiceId",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44577,7 +44828,7 @@
           "example": "无",
           "member": "string",
           "name": "TargetServiceType",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44588,7 +44839,7 @@
           "example": "无",
           "member": "string",
           "name": "TasksStr",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -44599,7 +44850,7 @@
           "example": "无",
           "member": "bool",
           "name": "Submit",
-          "output_required": true,
+          "output_required": false,
           "required": true,
           "type": "bool",
           "value_allowed_null": true
@@ -46358,6 +46609,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkflowId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46368,6 +46620,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkflowDesc",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46378,6 +46631,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkflowName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46388,6 +46642,7 @@
           "example": "无",
           "member": "string",
           "name": "FolderId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46398,6 +46653,7 @@
           "example": "无",
           "member": "string",
           "name": "FolderIds",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -46408,6 +46664,7 @@
           "example": "无",
           "member": "TaskOpsDto",
           "name": "Tasks",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -46418,6 +46675,7 @@
           "example": "无",
           "member": "LinkOpsDto",
           "name": "Links",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -46428,6 +46686,7 @@
           "example": "无",
           "member": "string",
           "name": "UserGroupId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46438,6 +46697,7 @@
           "example": "无",
           "member": "string",
           "name": "UserGroupName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46448,6 +46708,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46458,6 +46719,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectIdent",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46468,6 +46730,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46478,6 +46741,7 @@
           "example": "无",
           "member": "string",
           "name": "Owner",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46488,6 +46752,18 @@
           "example": "无",
           "member": "string",
           "name": "OwnerId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流类型，周期cycle，手动manual\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cycle",
+          "member": "string",
+          "name": "WorkflowType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46504,7 +46780,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TaskCount",
-          "required": false,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -46514,7 +46790,7 @@
           "example": "无",
           "member": "string",
           "name": "FolderName",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46524,7 +46800,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkFlowId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46534,7 +46810,7 @@
           "example": "无",
           "member": "string",
           "name": "Owner",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46544,7 +46820,7 @@
           "example": "无",
           "member": "string",
           "name": "OwnerId",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46554,7 +46830,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46564,7 +46840,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectIdent",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46574,7 +46850,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectName",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46584,7 +46860,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkFlowDesc",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46594,7 +46870,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkFlowName",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46604,7 +46880,7 @@
           "example": "无",
           "member": "string",
           "name": "FolderId",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46614,7 +46890,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46624,7 +46900,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -46634,7 +46910,17 @@
           "example": "无",
           "member": "string",
           "name": "ModifyTime",
-          "required": false,
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流类型，周期cycle，手动manual\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cycle",
+          "member": "string",
+          "name": "WorkflowType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

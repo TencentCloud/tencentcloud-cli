@@ -890,7 +890,7 @@
       "status": "online"
     },
     "ModifyPrometheusRecordRuleYaml": {
-      "document": "通过yaml的方式修改Prometheus聚合实例",
+      "document": "通过yaml的方式修改Prometheus预聚合规则",
       "input": "ModifyPrometheusRecordRuleYamlRequest",
       "name": "通过yaml的方式修改Prometheus聚合实例",
       "output": "ModifyPrometheusRecordRuleYamlResponse",
@@ -2558,9 +2558,10 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cherry",
+          "example": "user-name",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2568,9 +2569,10 @@
         {
           "disabled": false,
           "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "user-password",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3934,7 +3936,7 @@
         {
           "disabled": false,
           "document": "返回创建成功的集成名称列表",
-          "example": "无",
+          "example": "kafka-name",
           "member": "string",
           "name": "Names",
           "output_required": true,
@@ -4461,7 +4463,7 @@
         {
           "disabled": false,
           "document": "Agent 名称",
-          "example": "test",
+          "example": "example",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -4476,10 +4478,10 @@
         {
           "disabled": false,
           "document": "创建成功的 Agent Id",
-          "example": "无",
+          "example": "agent-abcd",
           "member": "string",
           "name": "AgentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4880,7 +4882,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4889,7 +4891,7 @@
         {
           "disabled": false,
           "document": "yaml的内容",
-          "example": "xxx",
+          "example": "  - name: example     rules:     - record: code:prometheus_http_requests_total:sum       expr: sum by (code) (prometheus_http_requests_total)",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -4898,7 +4900,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "xxx",
+          "example": "example",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4925,7 +4927,7 @@
         {
           "disabled": false,
           "document": "Prometheus 实例 ID",
-          "example": "prom-id",
+          "example": "prom-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4934,7 +4936,7 @@
         {
           "disabled": false,
           "document": "Agent ID(可通过DescribePrometheusAgents 接口获取)",
-          "example": "agent-id",
+          "example": "agent-asfd",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -4958,7 +4960,7 @@
         {
           "disabled": false,
           "document": "成功创建抓取任务 Id",
-          "example": "无",
+          "example": "job-3er5",
           "member": "string",
           "name": "JobId",
           "output_required": true,
@@ -11481,7 +11483,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "xx",
+          "example": "prom-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11490,7 +11492,7 @@
         {
           "disabled": false,
           "document": "Agent 名称",
-          "example": "无",
+          "example": "example",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11499,7 +11501,7 @@
         {
           "disabled": false,
           "document": "Agent ID 列表",
-          "example": "无",
+          "example": "agent-abcd",
           "member": "string",
           "name": "AgentIds",
           "required": false,
@@ -11508,7 +11510,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -11517,7 +11519,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为20，最大值为100",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -11938,7 +11940,7 @@
         {
           "disabled": false,
           "document": "实例级别抓取配置",
-          "example": "prom-xxx",
+          "example": "prom-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -11962,7 +11964,7 @@
         {
           "disabled": false,
           "document": "配置内容",
-          "example": "xxxx",
+          "example": "global:   scrape_interval: 15s    evaluation_interval: 15s  scrape_configs:   - job_name: \"prometheus\"     static_configs:       - targets: [\"localhost:9090\"]    ",
           "member": "string",
           "name": "Config",
           "output_required": true,
@@ -12576,7 +12578,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
@@ -12911,7 +12913,7 @@
         {
           "disabled": false,
           "document": "地域 ID（RegionId 和 RegionName 只需要填一个）",
-          "example": "1234",
+          "example": "1",
           "member": "int64",
           "name": "RegionId",
           "required": false,
@@ -12975,7 +12977,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为 0",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -12984,7 +12986,7 @@
         {
           "disabled": false,
           "document": "规则 ID",
-          "example": "无",
+          "example": "rrule-abc",
           "member": "string",
           "name": "RuleId",
           "required": false,
@@ -13002,7 +13004,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "无",
+          "example": "example",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -13700,8 +13702,7 @@
           "member": "string",
           "name": "Type",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -13710,8 +13711,7 @@
           "member": "string",
           "name": "Key",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -13720,18 +13720,16 @@
           "member": "string",
           "name": "Value",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "过滤条件名称",
-          "example": "abc",
+          "example": "filter-name",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -13740,8 +13738,7 @@
           "member": "string",
           "name": "Values",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -16226,7 +16223,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "prom-xxx",
+          "example": "prom-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -16235,7 +16232,7 @@
         {
           "disabled": false,
           "document": "聚合实例名称",
-          "example": "xxx",
+          "example": "example",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -16244,7 +16241,7 @@
         {
           "disabled": false,
           "document": "新的内容",
-          "example": "xxx",
+          "example": "  - name: example     rules:     - record: code:prometheus_http_requests_total:sum       expr: sum by (code) (prometheus_http_requests_total)",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -16307,7 +16304,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "无",
+          "example": "prom-abcd",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -18383,7 +18380,7 @@
         {
           "disabled": false,
           "document": "该Job的targets列表",
-          "example": "xxx",
+          "example": "[{\"LastScrape\":\"2024-06-19 16:22:26\",\"ScrapeDuration\":0.2,\"Url\":\"http://1.1.1.1:9000\",\"Labels\":[{\"Name\":\"label-name\",\"Value\":\"label-value\"}],\"State\":\"down\",\"Error\":\"scrape timeout\"}]",
           "member": "PrometheusTarget",
           "name": "Targets",
           "output_required": true,
@@ -18393,7 +18390,7 @@
         {
           "disabled": false,
           "document": "job的名称",
-          "example": "xxx",
+          "example": "prom-job",
           "member": "string",
           "name": "JobName",
           "output_required": true,
@@ -18403,7 +18400,7 @@
         {
           "disabled": false,
           "document": "targets总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
@@ -18413,7 +18410,7 @@
         {
           "disabled": false,
           "document": "健康的target总数",
-          "example": "xxx",
+          "example": "1",
           "member": "uint64",
           "name": "Up",
           "output_required": true,
@@ -18594,7 +18591,7 @@
         },
         {
           "disabled": false,
-          "document": "Yaml内容",
+          "document": "如果该聚合规则来至模板，则TemplateId为模板id",
           "example": "temp-abc",
           "member": "string",
           "name": "TemplateId",
@@ -18604,8 +18601,8 @@
         },
         {
           "disabled": false,
-          "document": "如果该聚合规则来至模板，则TemplateId为模板id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "Yaml内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "metadata:\\n  name: tttttttt\\nspec:\\n  groups:\\n  - name: kube-apiserver.rules4\\n    rules:\\n    - expr: sum(metrics_test)\\n      labels:\\n        verb: read\\n      record: apiserver_request:burnrate1d4",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -18615,7 +18612,7 @@
         {
           "disabled": false,
           "document": "该聚合规则如果来源于用户集群crd资源定义，则ClusterId为所属集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cls-abc",
+          "example": "cls-jsghgr",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
@@ -18635,7 +18632,7 @@
         {
           "disabled": false,
           "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "rrule-djkrhbf",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -18957,7 +18954,28 @@
     },
     "PrometheusTarget": {
       "document": "prometheus一个抓取目标的信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "抓取目标的URL",
+          "example": "https://kubernetes.default.svc:443/api/v1/nodes/1.1.0.1/proxy/metrics",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "target当前状态,当前支持\nup = 健康\ndown = 不健康\nunknown = 未知",
+          "example": "up",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "PrometheusTemp": {

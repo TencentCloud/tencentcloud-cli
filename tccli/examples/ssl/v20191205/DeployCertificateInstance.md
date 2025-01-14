@@ -200,7 +200,7 @@ Input:
 ```
 tccli ssl DeployCertificateInstance --cli-unfold-argument  \
     --CertificateId vyRlKIeI \
-    --InstanceIdList ap-hongkong#ssl-server-1251810746#tencent.com \
+    --InstanceIdList ap-hongkong|ssl-server-1251810746|tencent.com \
     --ResourceType cos
 ```
 

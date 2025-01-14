@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli monitor DescribePrometheusGlobalConfig --cli-unfold-argument  \
-    --InstanceId prom-xxx
+    --InstanceId prom-abcd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Config": "abc",
+        "Config": "global:\n  scrape_interval: 15s \n  evaluation_interval: 15s \nscrape_configs:\n  - job_name: \"prometheus\"\n    static_configs:\n      - targets: [\"localhost:9090\"]",
         "ServiceMonitors": [
             {
                 "Name": "test-sm",
@@ -66,7 +66,7 @@ Output:
                 }
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
     }
 }
 ```

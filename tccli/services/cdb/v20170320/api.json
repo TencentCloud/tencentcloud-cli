@@ -3098,6 +3098,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件MD5值",
+          "example": "a4652186f0a0c0345422d0a6fb993c0f",
+          "member": "string",
+          "name": "MD5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8953,6 +8963,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8962,6 +8973,7 @@
           "example": "无",
           "member": "BackupInfo",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

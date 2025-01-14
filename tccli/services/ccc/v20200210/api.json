@@ -21,6 +21,13 @@
       "output": "BindStaffSkillGroupListResponse",
       "status": "online"
     },
+    "CreateAIAgentCall": {
+      "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
+      "input": "CreateAIAgentCallRequest",
+      "name": "创建AI智能体会话",
+      "output": "CreateAIAgentCallResponse",
+      "status": "online"
+    },
     "CreateAICall": {
       "document": "用于调用AI模型发起外呼通话，仅限自有电话号码使用，目前开通高级版座席**限时**免费体验。\n\n发起通话前，请先确认您的AI模型是否兼容 OpenAI、Azure 或 Minimax 协议，并前往模型服务商网站获取相关鉴权信息。 具体功能说明请参考文档 [腾讯云联络中心AI通话平台](https://cloud.tencent.com/document/product/679/112100)。",
       "input": "CreateAICallRequest",
@@ -1551,6 +1558,79 @@
       ],
       "usage": "both"
     },
+    "CreateAIAgentCallRequest": {
+      "document": "CreateAIAgentCall请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "AI智能体ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "AIAgentId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "被叫号码",
+          "example": "008613012345678",
+          "member": "string",
+          "name": "Callee",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主叫号码列表",
+          "example": "[\"008601012341234\", \"008601012341235\"]",
+          "member": "string",
+          "name": "Callers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "提示词变量",
+          "example": "[{\"Key\":\"foo\",\"Value\":\"bar\"}]",
+          "member": "Variable",
+          "name": "PromptVariables",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAIAgentCallResponse": {
+      "document": "CreateAIAgentCall返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新创建的会话 ID",
+          "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAICallRequest": {
       "document": "CreateAICall请求参数结构体",
       "members": [
@@ -1769,6 +1849,15 @@
           "name": "PromptVariables",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。",
+          "example": "500",
+          "member": "int64",
+          "name": "VadSilenceTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

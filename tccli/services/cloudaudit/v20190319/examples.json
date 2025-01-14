@@ -76,7 +76,7 @@
       {
         "document": "查询跟踪集概要",
         "input": "https://cloudaudit.tencentcloudapi.com/?Action=ListAudits\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AuditSummarys\": [\n            {\n                \"AuditStatus\": 0,\n                \"CosBucketName\": \"bucket\",\n                \"AuditName\": \"test\",\n                \"LogFilePrefix\": \"audit\"\n            }\n        ],\n        \"RequestId\": \"4c17b8ae-6b1e-4e68-bcff-825d73916011\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditSummarys\": [\n            {\n                \"AuditStatus\": 0,\n                \"CosBucketName\": \"bucket\",\n                \"AuditName\": \"audit_trail\",\n                \"LogFilePrefix\": \"audit\"\n            }\n        ],\n        \"RequestId\": \"4c17b8ae-6b1e-4e68-bcff-825d73916011\"\n    }\n}",
         "title": "查询跟踪集概要"
       }
     ],
@@ -139,7 +139,7 @@
     "StopLogging": [
       {
         "document": "关闭跟踪集",
-        "input": "https://cloudaudit.tencentcloudapi.com/?Action=StopLogging\n&AuditName=xxxxx\n&<公共请求参数>",
+        "input": "https://cloudaudit.tencentcloudapi.com/?Action=StopLogging\n&AuditName=audit_log\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"IsSuccess\": 1,\n        \"RequestId\": \"f6cdaf4a-062b-4ed1-9567-c4160a1c90fa\"\n    }\n}",
         "title": "关闭跟踪集"
       }
