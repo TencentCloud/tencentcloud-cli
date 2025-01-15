@@ -35,7 +35,7 @@
         {
           "disabled": false,
           "document": "姓名",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -44,7 +44,7 @@
         {
           "disabled": false,
           "document": "唯一身份id",
-          "example": "无",
+          "example": "h1h****bsd",
           "member": "string",
           "name": "IdentityUniqueId",
           "required": false,
@@ -53,7 +53,7 @@
         {
           "disabled": false,
           "document": "身份证号",
-          "example": "无",
+          "example": "610********4219",
           "member": "string",
           "name": "IdCardNumber",
           "required": false,
@@ -113,7 +113,7 @@
         {
           "disabled": false,
           "document": "验签申请经办人电话",
-          "example": "无",
+          "example": "187****6446",
           "member": "string",
           "name": "ApplyMobile",
           "required": true,
@@ -122,7 +122,7 @@
         {
           "disabled": false,
           "document": "验签文件id",
-          "example": "无",
+          "example": "5419c4b9f60*****a4f77bb517b092f5",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -131,7 +131,7 @@
         {
           "disabled": false,
           "document": "验签申请经办人邮箱",
-          "example": "无",
+          "example": "zhangsan**@qq.com",
           "member": "string",
           "name": "ApplyEmail",
           "required": false,
@@ -155,7 +155,7 @@
         {
           "disabled": false,
           "document": "签名id",
-          "example": "无",
+          "example": "695128****98250752",
           "member": "string",
           "name": "SignatureId",
           "output_required": false,
@@ -165,7 +165,7 @@
         {
           "disabled": false,
           "document": "code",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Code",
           "output_required": false,
@@ -175,7 +175,7 @@
         {
           "disabled": false,
           "document": "message",
-          "example": "无",
+          "example": "签章请求接收成功",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -197,7 +197,7 @@
         {
           "disabled": false,
           "document": "签名id",
-          "example": "无",
+          "example": "6921757****1854336",
           "member": "string",
           "name": "SignatureId",
           "required": true,
@@ -212,7 +212,7 @@
         {
           "disabled": false,
           "document": "下载url",
-          "example": "无",
+          "example": "https://file.nmgsca.com/verified/*********",
           "member": "string",
           "name": "ReportUrl",
           "output_required": false,
@@ -222,7 +222,7 @@
         {
           "disabled": false,
           "document": "code",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Code",
           "output_required": false,
@@ -232,7 +232,7 @@
         {
           "disabled": false,
           "document": "message",
-          "example": "无",
+          "example": "验签报告查询成功",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -254,7 +254,7 @@
         {
           "disabled": false,
           "document": "BASE64编码后的文件内容",
-          "example": "无",
+          "example": "shia*****klsnj",
           "member": "string",
           "name": "FileBody",
           "required": false,
@@ -293,7 +293,7 @@
         {
           "disabled": false,
           "document": "文件id列表",
-          "example": "无",
+          "example": "[\"5419c4b9f60*****a4f77bb517b092f5\"]",
           "member": "string",
           "name": "FileIds",
           "output_required": true,
@@ -303,7 +303,7 @@
         {
           "disabled": false,
           "document": "文件id总数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,

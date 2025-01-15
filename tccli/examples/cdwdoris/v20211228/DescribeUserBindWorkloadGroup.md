@@ -13,10 +13,10 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "ddbf7259-7486-4980-a8dc-88c557866f0a",
         "UserBindInfos": [
             {
-                "UserName": "test",
+                "UserName": "user1",
                 "WorkloadGroupName": "g1"
             },
             {

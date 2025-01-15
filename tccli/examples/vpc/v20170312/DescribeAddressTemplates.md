@@ -7,7 +7,7 @@ Input:
 ```
 tccli vpc DescribeAddressTemplates --cli-unfold-argument  \
     --Filters.0.Name address-template-name \
-    --Filters.0.Values TestName \
+    --Filters.0.Values demo \
     --Filters.1.Name address-template-id \
     --Filters.1.Values ipm-mdunqeb6
 ```
@@ -19,7 +19,7 @@ Output:
         "TotalCount": 1,
         "AddressTemplateSet": [
             {
-                "AddressTemplateName": "TestName",
+                "AddressTemplateName": "demo",
                 "AddressTemplateId": "ipm-mdunqeb6",
                 "AddressSet": [
                     "192.168.0.0/16",
@@ -27,11 +27,11 @@ Output:
                 ],
                 "AddressExtraSet": [
                     {
-                        "Description": "desc",
+                        "Description": "demo",
                         "Address": "192.168.0.0/16"
                     },
                     {
-                        "Description": "desc",
+                        "Description": "demo",
                         "Address": "192.128.8.8/17"
                     }
                 ],

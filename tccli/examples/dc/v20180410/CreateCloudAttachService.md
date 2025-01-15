@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dc CreateCloudAttachService --cli-unfold-argument  \
-    --Data.Name test \
+    --Data.Name 我的实例01 \
     --Data.IdcAddress 北京东城区IDC地址 \
     --Data.IdcType CUCC \
     --Data.Bandwidth 100 \
@@ -22,7 +22,7 @@ Output:
             "Uin": "100001332514",
             "CustomerAuthName": "网测技术",
             "InstanceId": "cas-3vocyz07",
-            "Name": "test",
+            "Name": "我的实例01",
             "AppId": "1254277469",
             "IapId": "",
             "IdcAddress": "北京东城区IDC地址",
@@ -34,7 +34,7 @@ Output:
             "RegionStatus": "same-region",
             "Status": "applying",
             "ApplyTime": "2024-10-14 13:04:33",
-            "ReadyTime": null,
+            "ReadyTime": "2038-01-08 23:59:59",
             "ExpireTime": "2038-01-08 23:59:59",
             "Telephone": "18888888888",
             "Remarks": "6个月，其他"

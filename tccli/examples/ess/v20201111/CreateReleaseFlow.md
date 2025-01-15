@@ -14,8 +14,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.Name 典子谦 \
     --ReleasedApprovers.0.RelievedApproverReceiptId yDRSRUUgygj6rqouUuO4zjESlnSFPcIE \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -42,8 +42,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --Operator.UserId xxxOUUgyxxxxEWA0dddl \
     --NeedRelievedFlowId xxxnGUUgygkgi7fdUx6JlVOE0wzdddd \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxxxx以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整,结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -73,8 +73,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.Name 李四 \
     --ReleasedApprovers.0.RelievedApproverReceiptId yDwFdUUckpsvi8mpUEn0aFR1tWzReoTk \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -108,8 +108,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.Name 典子谦 \
     --ReleasedApprovers.0.RelievedApproverReceiptId yDRSRUUgygj6rqouUuO4zjESlnSFPcIE \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -140,8 +140,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.RelievedApproverReceiptId yDRSRUUgygj6rqouUuO4zjESlnSFPcIE \
     --ReleasedApprovers.0.ApproverType ENTERPRISESERVER \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -171,8 +171,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.Name 典子谦 \
     --ReleasedApprovers.0.RelievedApproverReceiptId yDRscUUgyg1zr7vjUyJ8QKxxxxxxx \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整,结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```
@@ -205,8 +205,8 @@ tccli ess CreateReleaseFlow --cli-unfold-argument  \
     --ReleasedApprovers.0.ApproverSignRole 自定义的签署方角色(供应商) \
     --ReleasedApprovers.0.ApproverSignComponentType SIGN_SIGNATURE \
     --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方以作赔偿 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.OriginalOtherSettlement 原合同中的补充条款依然生效 \
+    --ReliveInfo.OtherDeals 解除后1天内部签署新的合同 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
 ```

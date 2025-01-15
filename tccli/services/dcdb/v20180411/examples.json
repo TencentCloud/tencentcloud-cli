@@ -51,7 +51,7 @@
     "CreateAccount": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-fdpjf5zh\",\n    \"UserName\": \"testuser1\",\n    \"Host\": \"172.17.%\",\n    \"Password\": \"1234qweri#\",\n    \"Description\": \"测试帐号\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"dcdbt-fdpjf5zh\",\n    \"UserName\": \"testuser1\",\n    \"Host\": \"172.17.%\",\n    \"Password\": \"1234qweri#\",\n    \"Description\": \"测试账号\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cc4e4dc-c3e9-4858-ab80-03e3526cf24d\",\n        \"InstanceId\": \"dcdbt-fdpjf5zh\",\n        \"UserName\": \"testuser1\",\n        \"Host\": \"172.17.%\",\n        \"ReadOnly\": 0\n    }\n}",
         "title": "为云数据库实例创建访问账号"
       }

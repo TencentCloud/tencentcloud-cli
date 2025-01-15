@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli ess CreateSealPolicy --cli-unfold-argument  \
-    --SealId 33eb007cdxxxxxx8b65f75905bd \
+    --SealId yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP \
     --Policy  \
-    --Operator.UserId 65fb0c591xxxaa382cc5ed0e \
-    --Expired 123 \
-    --Users.0.UserId test
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --Expired 1736906734 \
+    --Users.0.UserId yDRSRUUgygj6rqouUuO4zjESlnSFPcIE
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "test",
+        "RequestId": "49500cb4-ca5e-4da0-93fb-e15f3a710ed7 ",
         "UserIds": []
     }
 }

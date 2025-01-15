@@ -10,7 +10,7 @@ tccli dcdb CreateAccount --cli-unfold-argument  \
     --UserName testuser1 \
     --Host 172.17.% \
     --Password 1234qweri# \
-    --Description 测试帐号
+    --Description 测试账号
 ```
 
 Output: 

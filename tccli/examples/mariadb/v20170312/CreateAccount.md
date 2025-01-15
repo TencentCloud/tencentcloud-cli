@@ -7,7 +7,7 @@ Input:
 ```
 tccli mariadb CreateAccount --cli-unfold-argument  \
     --UserName testuser1 \
-    --Description 测试帐号 \
+    --Description 测试账号 \
     --InstanceId tdsql-fdpjf5zh \
     --ReadOnly 0 \
     --Host 172.17.% \

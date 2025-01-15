@@ -6,24 +6,20 @@ Input:
 
 ```
 tccli cdwdoris ModifyInstanceKeyValConfigs --cli-unfold-argument  \
-    --InstanceId 123 \
-    --DelItems.0.ConfKey 123 \
-    --DelItems.0.ConfValue 123 \
-    --FileName 123 \
-    --UpdateItems.0.ConfKey 123 \
-    --UpdateItems.0.ConfValue 123 \
-    --Message 123 \
-    --AddItems.0.ConfKey 123 \
-    --AddItems.0.ConfValue 123
+    --InstanceId cdwdoris-qliqegj3 \
+    --FileName fe.conf \
+    --UpdateItems.0.ConfKey balance_slot_num_per_path \
+    --UpdateItems.0.ConfValue 13 \
+    --Message add config
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "123",
-        "RequestId": "123",
-        "FlowId": 0
+        "ErrorMsg": "",
+        "RequestId": "117ad1ab-8571-4085-8356-382b6a5f07f6",
+        "FlowId": 8271
     }
 }
 ```

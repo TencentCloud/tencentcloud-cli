@@ -1339,20 +1339,20 @@
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "",
+          "example": "KDbFJUkn",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "与证书关联的负载均衡实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "LoadBalancer",
           "name": "LoadBalancers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2353,6 +2353,16 @@
           "name": "IPVersion",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tag",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4660,7 +4670,7 @@
         },
         {
           "disabled": false,
-          "document": "查询集群列表条件，详细的过滤条件如下：\n<li> cluster-type - String - 是否必填：否 - （过滤条件）按照 集群 的类型过滤，包括\"TGW\",\"STGW\",\"VPCGW\"。</li>\n<li> cluster-id - String - 是否必填：否 - （过滤条件）按照 集群 的唯一ID过滤，如 ：\"tgw-12345678\",\"stgw-12345678\",\"vpcgw-12345678\"。</li>\n<li> cluster-name - String - 是否必填：否 - （过滤条件）按照 集群 的名称过滤。</li>\n<li> cluster-tag - String - 是否必填：否 - （过滤条件）按照 集群 的标签过滤。（只有TGW/STGW集群有集群标签） </li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 集群 内的vip过滤。</li>\n<li> loadblancer-id - String - 是否必填：否 - （过滤条件）按照 集群 内的负载均衡唯一ID过滤。</li>\n<li> network - String - 是否必填：否 - （过滤条件）按照 集群 的网络类型过滤，如：\"Public\",\"Private\"。</li>\n<li> zone - String - 是否必填：否 - （过滤条件）按照 集群 所在可用区过滤，如：\"ap-guangzhou-1\"（广州一区）。</li>\n<li> isp -- String - 是否必填：否 - （过滤条件）按照TGW集群的 Isp 类型过滤，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\",\"INTERNAL\"。</li>",
+          "document": "查询集群列表条件，详细的过滤条件如下：\n<li> cluster-type - String - 是否必填：否 - （过滤条件）按照 集群 的类型过滤，包括\"TGW\",\"STGW\",\"VPCGW\"。</li>\n<li> cluster-id - String - 是否必填：否 - （过滤条件）按照 集群 的唯一ID过滤，如 ：\"tgw-12345678\",\"stgw-12345678\",\"vpcgw-12345678\"。</li>\n<li> cluster-name - String - 是否必填：否 - （过滤条件）按照 集群 的名称过滤。</li>\n<li> cluster-tag - String - 是否必填：否 - （过滤条件）按照 集群 的标签过滤。（只有TGW/STGW集群有集群标签） </li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照 集群 内的vip过滤。</li>\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照 集群 内的负载均衡唯一ID过滤。</li>\n<li> network - String - 是否必填：否 - （过滤条件）按照 集群 的网络类型过滤，如：\"Public\",\"Private\"。</li>\n<li> zone - String - 是否必填：否 - （过滤条件）按照 集群 所在可用区过滤，如：\"ap-guangzhou-1\"（广州一区）。</li>\n<li> isp -- String - 是否必填：否 - （过滤条件）按照TGW集群的 Isp 类型过滤，如：\"BGP\",\"CMCC\",\"CUCC\",\"CTCC\",\"INTERNAL\"。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5254,10 +5264,19 @@
         },
         {
           "disabled": false,
-          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：\n<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括\"PREPAID\",\"POSTPAID_BY_HOUR\"。</li>\n<li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li>\n<li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li>\n<li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li>\n<li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li>\n<li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如：\"BGP\",\"INTERNAL\",\"CMCC\",\"CTCC\",\"CUCC\"等。</li>\n<li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括\"clb.c2.medium\",\"clb.c3.small\",\"clb.c3.medium\",\"clb.c4.small\",\"clb.c4.medium\",\"clb.c4.large\",\"clb.c4.xlarge\"。</li>",
+          "document": "每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。<br/>`Filter.Name`和`Filter.Values`皆为必填项。详细的过滤条件如下：<li> charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的实例计费模式过滤，包括\"PREPAID\",\"POSTPAID_BY_HOUR\"。</li><li> internet-charge-type - String - 是否必填：否 - （过滤条件）按照 CLB 的网络计费模式过滤，包括\"BANDWIDTH_PREPAID\",\"TRAFFIC_POSTPAID_BY_HOUR\",\"BANDWIDTH_POSTPAID_BY_HOUR\",\"BANDWIDTH_PACKAGE\"。</li><li> master-zone-id - String - 是否必填：否 - （过滤条件）按照 CLB 的主可用区ID过滤，如 ：\"100001\" （对应的是广州一区）。</li><li> tag-key - String - 是否必填：否 - （过滤条件）按照 CLB 标签的键过滤。</li><li> tag:tag-key - String - 是否必填：否 - （过滤条件）按照CLB标签键值对进行过滤，tag-key使用具体的标签键进行替换。</li><li> function-name - String - 是否必填：否 - （过滤条件）按照 CLB 后端绑定的SCF云函数的函数名称过滤。</li><li> vip-isp - String - 是否必填：否 - （过滤条件）按照 CLB VIP的运营商类型过滤，如：\"BGP\",\"INTERNAL\",\"CMCC\",\"CTCC\",\"CUCC\"等。</li><li> sla-type - String - 是否必填：否 - （过滤条件）按照 CLB 的性能容量型规格过滤，包括\"clb.c1.small\",\"clb.c2.medium\",\"clb.c3.small\",\"clb.c3.medium\",\"clb.c4.small\",\"clb.c4.medium\",\"clb.c4.large\",\"clb.c4.xlarge\",\"others\"。</li><li> exclusive - uint64 - 是否必填：否 - （过滤条件）按照独占实例进行过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：\n<li> TargetCount：绑定的后端服务数量</li>",
+          "example": "无",
+          "member": "string",
+          "name": "AdditionalFields",
           "required": false,
           "type": "list"
         }
@@ -5640,6 +5659,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5649,6 +5669,7 @@
           "example": "无",
           "member": "TargetGroupInfo",
           "name": "TargetGroupSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7858,6 +7879,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已绑定的后端服务数量。",
+          "example": "5",
+          "member": "uint64",
+          "name": "TargetCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11452,6 +11484,56 @@
           "name": "AssociatedRule",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1",
+          "member": "string",
+          "name": "TargetGroupType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组已关联的规则数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "AssociatedRuleCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标组内的实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegisteredInstancesCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tag",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

@@ -11,8 +11,8 @@
     "CancelBackupJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelBackupJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"BackUpJobId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelBackupJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-asdfax1\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abasdfa-2893rkc\"\n    }\n}",
         "title": "test"
       }
     ],
@@ -51,8 +51,8 @@
     "CreateWorkloadGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xxx\",\n    \"WorkloadGroup\": {\n        \"WorkloadGroupName\": \"test\",\n        \"CpuShare\": 10,\n        \"MemoryLimit\": 20,\n        \"EnableMemoryOverCommit\": true\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xxx\",\n    \"WorkloadGroup\": {\n        \"WorkloadGroupName\": \"group_name\",\n        \"CpuShare\": 10,\n        \"MemoryLimit\": 20,\n        \"EnableMemoryOverCommit\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abxadsfc\"\n    }\n}",
         "title": "创建资源组"
       }
     ],
@@ -280,25 +280,43 @@
     ],
     "DescribeSpec": [
       {
-        "document": "购买页拉取集群的数据节点和zookeeper节点的规格列表",
+        "document": "购买页拉取集群节点规格列表",
         "input": "https://cdwdoris.tencentcloudapi.com/?Action=DescribeSpec\n&Zone=ap-guangzhou-1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"10058bc0-40e7-4eb0-9b4d\",\n        \"MasterSpec\": [\n            {\n                \"Name\": \"SCH3\",\n                \"Cpu\": 2,\n                \"Mem\": 4,\n                \"Type\": \"STANDARD\",\n                \"DataDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 32000,\n                    \"MinDiskSize\": 100,\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"DiskDesc\": \"增强型SSD云硬盘\"\n                },\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50,\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskDesc\": \"高性能云硬盘\"\n                },\n                \"MaxNodeSize\": 50,\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"2核4G\"\n            }\n        ],\n        \"CoreSpec\": [\n            {\n                \"Name\": \"SCH6\",\n                \"Cpu\": 4,\n                \"Mem\": 16,\n                \"Type\": \"STANDARD\",\n                \"DataDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 32000,\n                    \"MinDiskSize\": 100,\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"DiskDesc\": \"增强型SSD云硬盘\"\n                },\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50,\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"DiskDesc\": \"高性能云硬盘\"\n                },\n                \"MaxNodeSize\": 50,\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"4核16G\"\n            }\n        ],\n        \"AttachCBSSpec\": [\n            {\n                \"DiskCount\": 1,\n                \"MaxDiskSize\": 32000,\n                \"MinDiskSize\": 100,\n                \"DiskType\": \"CLOUD_HSSD\",\n                \"DiskDesc\": \"增强型SSD云硬盘\"\n            }\n        ]\n    }\n}",
         "title": "获取集群规格"
+      },
+      {
+        "document": "获取特定机型规格",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpec\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-chongqing-1\",\n    \"SpecName\": \"S_4_16_H\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AttachCBSSpec\": [\n            {\n                \"DiskCount\": 1,\n                \"DiskDesc\": \"增强型SSD云硬盘\",\n                \"DiskType\": \"CLOUD_HSSD\",\n                \"MaxDiskSize\": 32000,\n                \"MinDiskSize\": 1000\n            },\n            {\n                \"DiskCount\": 1,\n                \"DiskDesc\": \"SSD云硬盘\",\n                \"DiskType\": \"CLOUD_SSD\",\n                \"MaxDiskSize\": 32000,\n                \"MinDiskSize\": 1000\n            },\n            {\n                \"DiskCount\": 1,\n                \"DiskDesc\": \"高性能云硬盘\",\n                \"DiskType\": \"CLOUD_PREMIUM\",\n                \"MaxDiskSize\": 32000,\n                \"MinDiskSize\": 1000\n            }\n        ],\n        \"CNSpec\": [\n            {\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"4核16G\",\n                \"Cpu\": 4,\n                \"DataDisk\": {\n                    \"DiskCount\": 10,\n                    \"DiskDesc\": \"增强型SSD云硬盘\",\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"MaxDiskSize\": 320000,\n                    \"MinDiskSize\": 200\n                },\n                \"InstanceQuota\": 583,\n                \"MaxNodeSize\": 50,\n                \"Mem\": 16,\n                \"Name\": \"S_4_16_H\",\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"DiskDesc\": \"高性能云硬盘\",\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50\n                },\n                \"Type\": \"STANDARD\"\n            }\n        ],\n        \"CoreSpec\": [\n            {\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"4核16G\",\n                \"Cpu\": 4,\n                \"DataDisk\": {\n                    \"DiskCount\": 10,\n                    \"DiskDesc\": \"增强型SSD云硬盘\",\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"MaxDiskSize\": 320000,\n                    \"MinDiskSize\": 200\n                },\n                \"InstanceQuota\": 583,\n                \"MaxNodeSize\": 50,\n                \"Mem\": 16,\n                \"Name\": \"S_4_16_H\",\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"DiskDesc\": \"高性能云硬盘\",\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50\n                },\n                \"Type\": \"STANDARD\"\n            }\n        ],\n        \"MasterSpec\": [\n            {\n                \"Available\": true,\n                \"ComputeSpecDesc\": \"4核16G\",\n                \"Cpu\": 4,\n                \"DataDisk\": {\n                    \"DiskCount\": 10,\n                    \"DiskDesc\": \"增强型SSD云硬盘\",\n                    \"DiskType\": \"CLOUD_HSSD\",\n                    \"MaxDiskSize\": 320000,\n                    \"MinDiskSize\": 200\n                },\n                \"InstanceQuota\": 583,\n                \"MaxNodeSize\": 50,\n                \"Mem\": 16,\n                \"Name\": \"S_4_16_H\",\n                \"SystemDisk\": {\n                    \"DiskCount\": 1,\n                    \"DiskDesc\": \"高性能云硬盘\",\n                    \"DiskType\": \"CLOUD_PREMIUM\",\n                    \"MaxDiskSize\": 50,\n                    \"MinDiskSize\": 50\n                },\n                \"Type\": \"STANDARD\"\n            }\n        ],\n        \"RequestId\": \"d654c06b-173e-49d7-b368-c74aad9472f0\"\n    }\n}",
+        "title": "获取特定机型规格"
       }
     ],
     "DescribeSqlApis": [
       {
-        "document": "查询集群信息",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ApiType\": \"abc\",\n    \"UserName\": \"abc\",\n    \"WhiteHost\": \"abc\",\n    \"Catalog\": \"abc\",\n    \"Catalogs\": [\n        \"abc\"\n    ],\n    \"DatabaseName\": \"abc\",\n    \"TableName\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ReturnData\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询集群信息"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"ApiType\": \"GetDatabases\",\n    \"Catalog\": \"internal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"267b8c6c-d8ab-440c-bd01-7f060c76d572\",\n        \"ReturnData\": \"[\\\"__internal_schema\\\",\\\"db_demo\\\",\\\"demo\\\",\\\"information_schema\\\",\\\"mysql\\\"]\"\n    }\n}",
+        "title": "获取数据库列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"ApiType\": \"GetUsers\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"5d704cb1-9cce-41b0-8841-c20318fad683\",\n        \"ReturnData\": \"[{\\\"InstanceId\\\":\\\"cdwdoris-qliqegj3\\\",\\\"UserName\\\":\\\"admin\\\",\\\"WhiteHost\\\":\\\"\\\",\\\"Describe\\\":\\\"系统用户，权限不能修改，也不能删除\\\",\\\"GlobalPriList\\\":null},{\\\"InstanceId\\\":\\\"cdwdoris-qliqegj3\\\",\\\"UserName\\\":\\\"test\\\",\\\"WhiteHost\\\":\\\"%\\\",\\\"Describe\\\":\\\"\\\",\\\"GlobalPriList\\\":[\\\"ADMIN_PRIV\\\"]}]\"\n    }\n}",
+        "title": "获取用户列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"ApiType\": \"GetTables\",\n    \"Catalogs\": [\n        \"internal\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"4d1c7a4c-fd61-4537-a9f1-b377c9457f78\",\n        \"ReturnData\": \"{\\\"internal\\\":[{\\\"DatabaseName\\\":\\\"information_schema\\\",\\\"Tables\\\":[\\\"table_constraints\\\",\\\"referential_constraints\\\",\\\"columns\\\",\\\"schemata\\\",\\\"column_privileges\\\",\\\"column_statistics\\\",\\\"parameters\\\",\\\"statistics\\\",\\\"profiling\\\",\\\"key_column_usage\\\",\\\"global_variables\\\",\\\"table_privileges\\\",\\\"user_privileges\\\",\\\"partitions\\\",\\\"collations\\\",\\\"triggers\\\",\\\"engines\\\",\\\"active_queries\\\",\\\"metadata_name_ids\\\",\\\"files\\\",\\\"catalog_meta_cache_statistics\\\",\\\"processlist\\\",\\\"events\\\",\\\"table_properties\\\",\\\"session_variables\\\",\\\"workload_group_resource_usage\\\",\\\"rowsets\\\",\\\"file_cache_statistics\\\",\\\"views\\\",\\\"character_sets\\\",\\\"workload_groups\\\",\\\"workload_policy\\\",\\\"workload_group_privileges\\\",\\\"routines\\\",\\\"schema_privileges\\\",\\\"tables\\\",\\\"table_options\\\",\\\"backend_active_tasks\\\"]},{\\\"DatabaseName\\\":\\\"demo\\\",\\\"Tables\\\":[\\\"add_table2\\\"]},{\\\"DatabaseName\\\":\\\"__internal_schema\\\",\\\"Tables\\\":[\\\"audit_log\\\",\\\"column_statistics\\\",\\\"histogram_statistics\\\"]},{\\\"DatabaseName\\\":\\\"mysql\\\",\\\"Tables\\\":[\\\"procs_priv\\\",\\\"user\\\"]},{\\\"DatabaseName\\\":\\\"db_demo\\\",\\\"Tables\\\":[]}]}\"\n    }\n}",
+        "title": "获取数据库表列表"
       }
     ],
     "DescribeTableList": [
       {
         "document": "获取internal数据源和demo库下的表列表",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-bjizjxxx\",\n    \"DbName\": \"demo\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"28caf1f1-9192-477c-94d4-e910b87ca0fc\",\n        \"TableNames\": [\n            \"test\",\n            \"table\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"RequestId\": \"28caf1f1-9192-477c-94d4-e910b87ca0fc\",\n        \"TableNames\": [\n            \"add_table2\",\n            \"table\"\n        ]\n    }\n}",
         "title": "获取表列表"
       }
     ],
@@ -306,15 +324,15 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserBindWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"UserBindInfos\": [\n            {\n                \"UserName\": \"test\",\n                \"WorkloadGroupName\": \"g1\"\n            },\n            {\n                \"UserName\": \"admin\",\n                \"WorkloadGroupName\": \"normal\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ddbf7259-7486-4980-a8dc-88c557866f0a\",\n        \"UserBindInfos\": [\n            {\n                \"UserName\": \"user1\",\n                \"WorkloadGroupName\": \"g1\"\n            },\n            {\n                \"UserName\": \"admin\",\n                \"WorkloadGroupName\": \"normal\"\n            }\n        ]\n    }\n}",
         "title": "获取当前集群各用户绑定的资源信息"
       }
     ],
     "DescribeWorkloadGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"WorkloadGroups\": [\n            {\n                \"WorkloadGroupName\": \"abc\",\n                \"CpuShare\": 10,\n                \"MemoryLimit\": 10,\n                \"EnableMemoryOverCommit\": true\n            }\n        ],\n        \"Status\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"758726a5-3bdb-40ac-a77a-938ca3bde664\",\n        \"Status\": \"close\",\n        \"WorkloadGroups\": [\n            {\n                \"CpuHardLimit\": \"-1\",\n                \"CpuShare\": 100,\n                \"EnableMemoryOverCommit\": true,\n                \"MemoryLimit\": -1,\n                \"WorkloadGroupName\": \"_internal\"\n            },\n            {\n                \"CpuHardLimit\": \"-1\",\n                \"CpuShare\": 1024,\n                \"EnableMemoryOverCommit\": true,\n                \"MemoryLimit\": 30,\n                \"WorkloadGroupName\": \"normal\"\n            }\n        ]\n    }\n}",
         "title": "获取资源组信息"
       }
     ],
@@ -329,16 +347,16 @@
     "ModifyClusterConfigs": [
       {
         "document": "在集群配置页面修改集群配置文件接口，xml模式",
-        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=ModifyClusterConfigs\n&InstanceId=cdwch-xxxx\n&ModifyConfContext.0.FileName=xxxx\n&ModifyConfContext.0.OldConfValue=xxxxx\n&ModifyConfContext.0.NewConfValue=xxxx\n&Remark=xxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=ModifyClusterConfigs\n&InstanceId=cdwdoris-qliqegj3\n&ModifyConfContext.0.FileName=be.conf\n&ModifyConfContext.0.OldConfValue=31234\n&ModifyConfContext.0.NewConfValue=2123\n&Remark=addconf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dasfwer2341231-123sadwq42\",\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\"\n    }\n}",
         "title": "修改集群配置文件接口"
       }
     ],
     "ModifyCoolDownPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"PolicyName\": \"abc\",\n    \"CoolDownTtl\": \"abc\",\n    \"CoolDownDatetime\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"PolicyName\": \"20250114-18-00-降冷\",\n    \"CoolDownTtl\": \"36000\",\n    \"CoolDownDatetime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"07c7d295-69f8-45de-8b8b-7496101ede70\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -353,8 +371,8 @@
     "ModifyInstanceKeyValConfigs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceKeyValConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"123\",\n    \"DelItems\": [\n        {\n            \"ConfKey\": \"123\",\n            \"ConfValue\": \"123\"\n        }\n    ],\n    \"FileName\": \"123\",\n    \"UpdateItems\": [\n        {\n            \"ConfKey\": \"123\",\n            \"ConfValue\": \"123\"\n        }\n    ],\n    \"Message\": \"123\",\n    \"AddItems\": [\n        {\n            \"ConfKey\": \"123\",\n            \"ConfValue\": \"123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"123\",\n        \"RequestId\": \"123\",\n        \"FlowId\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceKeyValConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"FileName\": \"fe.conf\",\n    \"UpdateItems\": [\n        {\n            \"ConfKey\": \"balance_slot_num_per_path\",\n            \"ConfValue\": \"13\"\n        }\n    ],\n    \"Message\": \"add config\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"117ad1ab-8571-4085-8356-382b6a5f07f6\",\n        \"FlowId\": 8271\n    }\n}",
         "title": "示例"
       }
     ],
@@ -369,8 +387,8 @@
     "ModifySecurityGroups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"OldSecurityGroupIds\": [\n        \"abc\"\n    ],\n    \"ModifySecurityGroupIds\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"OldSecurityGroupIds\": [\n        \"sg-sda1da\"\n    ],\n    \"ModifySecurityGroupIds\": [\n        \"sg-ijf97z\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"117ad1ab-8571-4085-8356-382b6a5f07f6\"\n    }\n}",
         "title": "更改安全组"
       }
     ],
@@ -385,40 +403,40 @@
     "ModifyUserPrivilegesV3": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPrivilegesV3\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xx\",\n    \"UserName\": \"test\",\n    \"UserPrivileges\": {\n        \"IsSetGlobalCatalog\": true\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserPrivilegesV3\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"UserName\": \"user\",\n    \"UserPrivileges\": {\n        \"IsSetGlobalCatalog\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"InstanceId\": \"cdwdoris-qliqegj3\",\n        \"RequestId\": \"117ad1ab-8571-4085-8356-382b6a5f07f6\"\n    }\n}",
         "title": "设置全局catalog权限"
       }
     ],
     "ModifyWorkloadGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"WorkloadGroup\": {\n        \"WorkloadGroupName\": \"abc\",\n        \"CpuShare\": 10,\n        \"MemoryLimit\": 10,\n        \"EnableMemoryOverCommit\": true\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"WorkloadGroup\": {\n        \"WorkloadGroupName\": \"group1\",\n        \"CpuShare\": 10,\n        \"MemoryLimit\": 10,\n        \"EnableMemoryOverCommit\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"117ad1ab-8571-4085-8356-382b6a5f07f6\"\n    }\n}",
         "title": "修改资源组信息"
       }
     ],
     "ModifyWorkloadGroupStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkloadGroupStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"OperationType\": \"open\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkloadGroupStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"OperationType\": \"open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"117ad1ab-8571-4085-8356-382b6a5\"\n    }\n}",
         "title": "开启或关闭资源组"
       }
     ],
     "OpenCoolDown": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1f871458-9602-4b8b-bb9e-910edccb916e\"\n    }\n}",
         "title": "示例"
       }
     ],
     "OpenCoolDownPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"DatabaseName\": \"abc\",\n    \"TableName\": \"abc\",\n    \"OperationType\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"QueryDocument\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"Operation successful\",\n        \"QueryDocument\": \"SELECT * FROM customer_orders LIMIT 10\",\n        \"RequestId\": \"req-987654321\"\n    }\n}",
         "title": "开通"
       }
     ],

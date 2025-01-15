@@ -1250,7 +1250,7 @@
         {
           "disabled": false,
           "document": "消息列表",
-          "example": "[{\"ID\":\"msg_UT0ERwQZyW6uOYsrxl2Fho7f\",\"Object\":\"thread.message\",\"CreatedAt\":1727322128,\"ThreadID\":\"thread_UYvPK1D07EwzgFFXZLB1VGNE\",\"Status\":\"completed\",\"InCompleteDetails\":{\"Reason\":\"\"},\"CompletedAt\":1727322127,\"ImCompleteAt\":1727322127,\"Role\":\"assistant\",\"Content\":\"你好\",\"AssistantID\":\"\",\"RunID\":\"run_zopoDeYLpWNRu7eItUzJxaH1\",\"Attachments\":[],\"Metadata\":{}}]",
+          "example": "无",
           "member": "ThreadMessage",
           "name": "Data",
           "output_required": false,
@@ -1258,7 +1258,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "第一条消息 ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "msg_UT0ERwQZyW6uOYsrxl2Fho7f",
           "member": "string",
@@ -1268,9 +1268,9 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "最后一条消息 ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "msg_kP6Xm8FC0NchARWC5cNF2IU0",
+          "disabled": true,
+          "document": "已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "LastID",
           "output_required": false,
@@ -1293,6 +1293,26 @@
           "example": "list",
           "member": "string",
           "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第一条消息 ID",
+          "example": "msg_UT0ERwQZyW6uOYsrxl2Fho7f",
+          "member": "string",
+          "name": "FirstMsgID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一条消息 ID",
+          "example": "msg_kP6Xm8FC0NchARWC5cNF2IU0",
+          "member": "string",
+          "name": "LastMsgID",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

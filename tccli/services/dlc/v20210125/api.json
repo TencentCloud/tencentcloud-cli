@@ -16274,6 +16274,23 @@
       ],
       "usage": "both"
     },
+    "SmartOptimizerChangeTablePolicy": {
+      "document": "混合表中，change表的数据保存时间，单位为天",
+      "members": [
+        {
+          "disabled": false,
+          "document": "change表的数据保存时间，单位为天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "DataRetentionTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SmartOptimizerIndexPolicy": {
       "document": "SmartOptimizerIndexPolicy",
       "members": [
@@ -16405,6 +16422,17 @@
           "example": "无",
           "member": "SmartOptimizerIndexPolicy",
           "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SmartOptimizerChangeTablePolicy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartOptimizerChangeTablePolicy",
+          "name": "ChangeTable",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -17816,6 +17844,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "T-ICEBERG表的主键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PrimaryKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17882,7 +17921,7 @@
         {
           "disabled": false,
           "document": "数据表基本信息。",
-          "example": "{}",
+          "example": "{\"name\":\"test\"}",
           "member": "TableBaseInfo",
           "name": "TableBaseInfo",
           "output_required": true,
@@ -17892,7 +17931,7 @@
         {
           "disabled": false,
           "document": "数据表列信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "[{\"name\":\"aa\"}]",
           "member": "Column",
           "name": "Columns",
           "output_required": true,
@@ -17902,7 +17941,7 @@
         {
           "disabled": false,
           "document": "数据表分块信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "[{\"day\":\"a\"}]",
           "member": "Partition",
           "name": "Partitions",
           "output_required": true,
@@ -17922,7 +17961,7 @@
         {
           "disabled": false,
           "document": "数据表属性信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "[{\"day\":\"a\"}]",
           "member": "Property",
           "name": "Properties",
           "output_required": true,
@@ -17998,6 +18037,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "InputFormat的缩写",
+          "example": "orc",
+          "member": "string",
+          "name": "InputFormatShort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwdoris ModifyWorkloadGroupStatus --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId cdwdoris-qliqegj3 \
     --OperationType open
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "117ad1ab-8571-4085-8356-382b6a5"
     }
 }
 ```

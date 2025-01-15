@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli cdwdoris ModifyClusterConfigs --cli-unfold-argument  \
-    --InstanceId cdwch-xxxx \
-    --ModifyConfContext.0.FileName xxxx \
-    --ModifyConfContext.0.OldConfValue xxxxx \
-    --ModifyConfContext.0.NewConfValue xxxx \
-    --Remark xxxxx
+    --InstanceId cdwdoris-qliqegj3 \
+    --ModifyConfContext.0.FileName be.conf \
+    --ModifyConfContext.0.OldConfValue 31234 \
+    --ModifyConfContext.0.NewConfValue 2123 \
+    --Remark addconf
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxx-xxx",
+        "RequestId": "dasfwer2341231-123sadwq42",
         "FlowId": 0,
         "ErrorMsg": ""
     }

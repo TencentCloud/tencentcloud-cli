@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cdwdoris OpenCoolDown --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId cdwdoris-qliqegj3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "1f871458-9602-4b8b-bb9e-910edccb916e"
     }
 }
 ```

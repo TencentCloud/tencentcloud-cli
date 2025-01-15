@@ -11364,6 +11364,15 @@
           "name": "QueryAnswer",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询类型 filename 名称、 attribute 标签",
+          "example": "无",
+          "member": "string",
+          "name": "QueryType",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

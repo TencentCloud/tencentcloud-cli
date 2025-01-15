@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cdwdoris ModifySecurityGroups --cli-unfold-argument  \
-    --InstanceId abc \
-    --OldSecurityGroupIds abc \
-    --ModifySecurityGroupIds abc
+    --InstanceId cdwdoris-qliqegj3 \
+    --OldSecurityGroupIds sg-sda1da \
+    --ModifySecurityGroupIds sg-ijf97z
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "117ad1ab-8571-4085-8356-382b6a5f07f6"
     }
 }
 ```

@@ -1228,7 +1228,7 @@
         {
           "disabled": false,
           "document": "使用GetPublicKey返回的RSA2048公钥加密后的密码",
-          "example": "+5DzNPbJ5s6e/SkAFgMKQ4ezgmIyKqwHR/TtkwCQP5oFzYTpXJC6iEYVkAmlbreL8XX2I/YdNsqfy184B5sKt7LcfcvTCDspbQrDlRawvcWU0lLxvSpBgL4zXlixxOIR5UmC6lvSJFHOdMzoeK2UKGuV2EG3BMuvVthHAKaFDEQh5C5UP5FsN8G+Zsf27tofNm6KRFrQksNcYvFqMEnnGWV4luXISbJI0yK0m6kyKJSAgtHtDvsGBbJ1fA3RO1p5K/usvARNPB1jzjK5TJtG5eFDsPLXDHwiHh8clQpSLhYj531Ba1uXi9yL1Zkhoc0lf4y2xoJU3N+ce+6IAfJiaw==",
+          "example": "MTIzNDU2Nzg5MTA=",
           "member": "string",
           "name": "EncryptedPassword",
           "required": false,

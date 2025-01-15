@@ -151,13 +151,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件详情列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"EventList\": [         {           \"ProductId\": \"cvm\",           \"ProductName\": \"云服务器\",           \"RegionId\": \"ap-chongqing\",           \"RegionName\": \"重庆\",           \"StartTime\": \"2023-06-09 14:16:00\",           \"EndTime\": \"2023-06-09 14:28:00\",           \"CurrentStatus\": \"正常\"         }       ]",
+          "document": "事件详情列表",
+          "example": "\"EventList\":[{\"ProductId\":\"cvm\",\"ProductName\":\"云服务器\",\"RegionId\":\"ap-chongqing\",\"RegionName\":\"重庆\",\"StartTime\":\"2023-06-09 14:16:00\",\"EndTime\":\"2023-06-09 14:28:00\",\"CurrentStatus\":\"正常\"}]",
           "member": "EventDetail",
           "name": "EventList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

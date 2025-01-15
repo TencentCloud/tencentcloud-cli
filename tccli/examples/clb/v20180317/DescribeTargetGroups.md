@@ -82,13 +82,13 @@ Output:
                     {
                         "LocationId": "loc-jjqr0ric",
                         "Domain": "aaaa.com",
-                        "Url": "/",
+                        "Url": "/group",
                         "ListenerId": "lbl-m2q6sp9m",
                         "Port": 80,
                         "Protocol": "http",
                         "LoadBalancerId": "lb-phbx2420",
                         "LoadBalancerName": "lb-12f60e5",
-                        "ListenerName": "aaa"
+                        "ListenerName": "GROUP-LISTENER"
                     },
                     {
                         "LocationId": null,
@@ -99,7 +99,7 @@ Output:
                         "Protocol": "tcp",
                         "LoadBalancerId": "lb-phbx2420",
                         "LoadBalancerName": "lb-12f60e5",
-                        "ListenerName": "asdfsdf"
+                        "ListenerName": "TARGET-LISTENER"
                     }
                 ]
             },

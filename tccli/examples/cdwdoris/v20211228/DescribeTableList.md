@@ -17,7 +17,7 @@ Output:
         "Message": "",
         "RequestId": "28caf1f1-9192-477c-94d4-e910b87ca0fc",
         "TableNames": [
-            "test",
+            "add_table2",
             "table"
         ]
     }

@@ -25528,7 +25528,7 @@
         {
           "disabled": false,
           "document": "S3 bucket。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "aws-125678",
           "member": "string",
           "name": "S3Bucket",
           "output_required": false,
@@ -25539,7 +25539,7 @@
         {
           "disabled": false,
           "document": "S3 bucket 对应的区域，目前支持：  \nus-east-1  \neu-west-3\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ap-southeast-1",
+          "example": "us-east-1 ",
           "member": "string",
           "name": "S3Region",
           "output_required": false,
@@ -25561,7 +25561,7 @@
         {
           "disabled": false,
           "document": "AWS 内网访问 媒体资源的秘钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "6bb5******eff",
           "member": "string",
           "name": "S3SecretId",
           "output_required": false,
@@ -25572,7 +25572,7 @@
         {
           "disabled": false,
           "document": "AWS 内网访问 媒体资源的秘钥key。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "6bbc5******eff",
           "member": "string",
           "name": "S3SecretKey",
           "output_required": false,

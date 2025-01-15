@@ -558,13 +558,13 @@
         },
         {
           "disabled": false,
-          "document": "敏捷上云建设完成的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "敏捷上云建设完成的时间",
           "example": "2020-01-12 12:12:23",
           "member": "datetime",
           "name": "ReadyTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -655,6 +655,16 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入地域",
+          "example": "gz",
+          "member": "string",
+          "name": "ArRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -740,6 +750,15 @@
           "member": "string",
           "name": "Remarks",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入地域",
+          "example": "gz",
+          "member": "string",
+          "name": "ArRegion",
+          "required": false,
           "type": "string"
         }
       ],
