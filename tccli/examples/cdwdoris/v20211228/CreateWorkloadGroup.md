@@ -7,7 +7,7 @@ Input:
 ```
 tccli cdwdoris CreateWorkloadGroup --cli-unfold-argument  \
     --InstanceId cdwdoris-xxx \
-    --WorkloadGroup.WorkloadGroupName test \
+    --WorkloadGroup.WorkloadGroupName group_name \
     --WorkloadGroup.CpuShare 10 \
     --WorkloadGroup.MemoryLimit 20 \
     --WorkloadGroup.EnableMemoryOverCommit True
@@ -17,7 +17,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "abxadsfc"
     }
 }
 ```

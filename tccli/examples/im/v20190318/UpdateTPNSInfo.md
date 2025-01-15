@@ -7,10 +7,10 @@ Input:
 ```
 tccli im UpdateTPNSInfo --cli-unfold-argument  \
     --IMAccessId 140000100 \
-    --TPNSAccessInfo.0.AccessId 123 \
-    --TPNSAccessInfo.0.SecretKey abc \
+    --TPNSAccessInfo.0.AccessId 1500085000 \
+    --TPNSAccessInfo.0.SecretKey 0f17b7f09d7d6dcc05b37dc7c4330000 \
     --TPNSAccessInfo.0.Platform 15 \
-    --TPNSAccessInfo.0.AccessKey aaa \
+    --TPNSAccessInfo.0.AccessKey A9C21C5ODCVE \
     --TPNSAccessInfo.0.ZoneUrl https://abc.com
 ```
 
@@ -20,10 +20,10 @@ Output:
     "Response": {
         "TPNSUpdateRes": [
             {
-                "AccessId": 123,
-                "SecretKey": "abc",
+                "AccessId": 1500085000,
+                "SecretKey": "0f17b7f09d7d6dcc05b37dc7c4330000",
                 "Platform": 15,
-                "AccessKey": "aaa",
+                "AccessKey": "A9C21C5ODCVE",
                 "ErrorCode": 0,
                 "ErrorMessage": "ok",
                 "ZoneUrl": "https://abc.com"

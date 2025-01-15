@@ -10,7 +10,9 @@ tccli intlpartnersmgt QueryPolicyProductListByCode --cli-unfold-argument  \
     --ProductCode  \
     --ProductName  \
     --SubProductCode  \
-    --SubProductName CBM Memory Optimized BMM5
+    --SubProductName CBM Memory Optimized BMM5 \
+    --Page 1 \
+    --PageSize 200
 ```
 
 Output: 
@@ -32,7 +34,8 @@ Output:
                 "SubProductName": "CBM Memory Optimized BMM5"
             }
         ],
-        "RequestId": "5d1eb9c4-8e1b-4c8c-99b3-209e7ce35a34"
+        "RequestId": "5d1eb9c4-8e1b-4c8c-99b3-209e7ce35a34",
+        "Total": 55
     }
 }
 ```

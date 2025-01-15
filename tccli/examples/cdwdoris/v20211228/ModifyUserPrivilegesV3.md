@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cdwdoris ModifyUserPrivilegesV3 --cli-unfold-argument  \
-    --InstanceId cdwdoris-xx \
-    --UserName test \
+    --InstanceId cdwdoris-qliqegj3 \
+    --UserName user \
     --UserPrivileges.IsSetGlobalCatalog True
 ```
 
@@ -15,9 +15,9 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "InstanceId": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "InstanceId": "cdwdoris-qliqegj3",
+        "RequestId": "117ad1ab-8571-4085-8356-382b6a5f07f6"
     }
 }
 ```

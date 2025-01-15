@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli cdwdoris OpenCoolDownPolicy --cli-unfold-argument  \
-    --InstanceId abc \
-    --DatabaseName abc \
-    --TableName abc \
-    --OperationType abc
+    --InstanceId doris-12345678 \
+    --DatabaseName sales_db \
+    --TableName customer_orders \
+    --OperationType enable
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "QueryDocument": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "Operation successful",
+        "QueryDocument": "SELECT * FROM customer_orders LIMIT 10",
+        "RequestId": "req-987654321"
     }
 }
 ```

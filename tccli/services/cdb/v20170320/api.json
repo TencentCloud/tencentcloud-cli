@@ -1289,6 +1289,172 @@
     "serviceShortName": "cdb"
   },
   "objects": {
+    "ARoGroup": {
+      "document": "分析RO组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析RO组ID",
+          "example": "cdbarg-***",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析RO组名称",
+          "example": "testname",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源端主实例ID",
+          "example": "cdb-***",
+          "member": "string",
+          "name": "MasterInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络字符串ID",
+          "example": "vpc-**",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网字符串ID",
+          "example": "subnet-**",
+          "member": "string",
+          "name": "UniqSubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网虚拟IP",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口号",
+          "example": "3992",
+          "member": "int64",
+          "name": "VPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重分配方式",
+          "example": "system",
+          "member": "string",
+          "name": "WeightMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域数字ID",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区数字ID",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析RO组其下RO信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoGroupRelation",
+          "name": "RoInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RO组创建的时间",
+          "example": "2024-12-04 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网域名",
+          "example": "cdb.example.com",
+          "member": "string",
+          "name": "WanDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网状态",
+          "example": "0",
+          "member": "int64",
+          "name": "WanStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网端口",
+          "example": "3306",
+          "member": "int64",
+          "name": "WanVPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网ip",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "WanVip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Account": {
       "document": "数据库账号信息",
       "members": [
@@ -10822,6 +10988,15 @@
           "name": "QueryClusterInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含分型只读实例，可取值：0 - 不包含，1 - 包含。默认取值为0。\t",
+          "example": "0",
+          "member": "uint64",
+          "name": "WithAnalysisRo",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15723,6 +15898,26 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的网路架构。当返回TCSlB时：出参TgwVip和TgwVport表示的是TCSLB的地址。\t",
+          "example": "TCSLB",
+          "member": "string",
+          "name": "GatewayType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析型RO信息。",
+          "example": "无",
+          "member": "ARoGroup",
+          "name": "AnalysisRoGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -20410,6 +20605,192 @@
         }
       ],
       "usage": "in"
+    },
+    "RoGroupRelation": {
+      "document": "分析RO信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析RO实例ID。",
+          "example": "cdbaro-**",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析RO在线状态。",
+          "example": "online",
+          "member": "string",
+          "name": "RoStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权重大小。",
+          "example": "100",
+          "member": "int64",
+          "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分析型只读组ID。",
+          "example": "cdbarg-fvf0r2i2",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主实例ID。",
+          "example": "cdb-fvf0r2i2",
+          "member": "string",
+          "name": "MasterInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在可用区。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否欠费。1-未欠费",
+          "example": "1",
+          "member": "uint64",
+          "name": "HourFeeStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态。0-发货中；1-运行中。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例任务状态。1-升级中。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所在地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名。",
+          "example": "test_instance",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例到期时间。",
+          "example": "2024-12-05 00:00:00",
+          "member": "string",
+          "name": "DeadlineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "核数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘。",
+          "example": "500",
+          "member": "uint64",
+          "name": "Volume",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费类型。1-按量计费，0-包年包月。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PayType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例版本。",
+          "example": "1.2404",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型。5-分析型只读实例。",
+          "example": "5",
+          "member": "uint64",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RoInstanceInfo": {
       "document": "RO实例的详细信息",

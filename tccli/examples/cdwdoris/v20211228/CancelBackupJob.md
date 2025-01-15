@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwdoris CancelBackupJob --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId cdwdoris-asdfax1 \
     --BackUpJobId 0
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "abasdfa-2893rkc"
     }
 }
 ```

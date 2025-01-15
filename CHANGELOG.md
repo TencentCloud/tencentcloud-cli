@@ -1,3 +1,192 @@
+# Release 3.0.1138.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 129 次发布
+
+发布时间：2025-01-16 01:10:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/236/15872)
+
+	* 新增入参：WithAnalysisRo
+
+
+新增数据结构：
+
+* [ARoGroup](http://document.tencentcloudapi.woa.com/document/product/236/15878#ARoGroup)
+* [RoGroupRelation](http://document.tencentcloudapi.woa.com/document/product/236/15878#RoGroupRelation)
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
+
+	* 新增成员：GatewayType, AnalysisRoGroups
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 10 次发布
+
+发布时间：2025-01-16 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CloudAttachInfo](http://document.tencentcloudapi.woa.com/document/product/216/18418#CloudAttachInfo)
+
+	* 新增成员：ArRegion
+
+* [CreateCasInput](http://document.tencentcloudapi.woa.com/document/product/216/18418#CreateCasInput)
+
+	* 新增成员：ArRegion
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 126 次发布
+
+发布时间：2025-01-16 01:17:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [SmartOptimizerChangeTablePolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SmartOptimizerChangeTablePolicy)
+
+修改数据结构：
+
+* [SmartOptimizerPolicy](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SmartOptimizerPolicy)
+
+	* 新增成员：ChangeTable
+
+* [TableBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableBaseInfo)
+
+	* 新增成员：PrimaryKeys
+
+* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
+
+	* 新增成员：InputFormatShort
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 78 次发布
+
+发布时间：2025-01-16 01:19:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NodeHardwareInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#NodeHardwareInfo)
+
+	* 新增成员：TimingResource, TkeClusterId
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 23 次发布
+
+发布时间：2025-01-16 01:23:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryPolicyProductListByCode](http://document.tencentcloudapi.woa.com/document/product/1724/85474)
+
+	* 新增入参：Page, PageSize
+
+	* 新增出参：Total
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 194 次发布
+
+发布时间：2025-01-16 01:35:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAddressTemplateGroups](http://document.tencentcloudapi.woa.com/document/product/215/16716)
+
+	* 新增入参：OrderField, OrderDirection, MemberOrderField, MemberOrderDirection
+
+* [DescribeAddressTemplates](http://document.tencentcloudapi.woa.com/document/product/215/16717)
+
+	* 新增入参：OrderField, OrderDirection, MemberOrderField, MemberOrderDirection
+
+* [DescribeServiceTemplateGroups](http://document.tencentcloudapi.woa.com/document/product/215/16718)
+
+	* 新增入参：OrderField, OrderDirection, MemberOrderField, MemberOrderDirection
+
+* [DescribeServiceTemplates](http://document.tencentcloudapi.woa.com/document/product/215/16719)
+
+	* 新增入参：OrderField, OrderDirection, MemberOrderField, MemberOrderDirection
+
+
+修改数据结构：
+
+* [AddressInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressInfo)
+
+	* 新增成员：UpdatedTime
+
+* [AddressTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplate)
+
+	* 新增成员：UpdatedTime
+
+* [AddressTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateGroup)
+
+	* 新增成员：UpdatedTime
+
+* [AddressTemplateItem](http://document.tencentcloudapi.woa.com/document/product/215/15824#AddressTemplateItem)
+
+	* 新增成员：Description, UpdatedTime
+
+* [ServiceTemplate](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplate)
+
+	* 新增成员：UpdatedTime
+
+* [ServiceTemplateGroup](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServiceTemplateGroup)
+
+	* 新增成员：UpdatedTime
+
+* [ServicesInfo](http://document.tencentcloudapi.woa.com/document/product/215/15824#ServicesInfo)
+
+	* 新增成员：UpdatedTime
+
+
+
+
 # Release 3.0.1137.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

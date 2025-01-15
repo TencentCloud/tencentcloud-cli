@@ -3,8 +3,8 @@
     "UpdateTPNSInfo": [
       {
         "document": "",
-        "input": "https://im.tencentcloudapi.com/?Action=UpdateTPNSInfo\n&IMAccessId=140000100\n&TPNSAccessInfo.0.AccessId=123\n&TPNSAccessInfo.0.SecretKey=abc\n&TPNSAccessInfo.0.Platform=15\n&TPNSAccessInfo.0.AccessKey=aaa\n&TPNSAccessInfo.0.ZoneUrl=https://abc.com\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TPNSUpdateRes\": [\n            {\n                \"AccessId\": 123,\n                \"SecretKey\": \"abc\",\n                \"Platform\": 15,\n                \"AccessKey\": \"aaa\",\n                \"ErrorCode\": 0,\n                \"ErrorMessage\": \"ok\",\n                \"ZoneUrl\": \"https://abc.com\"\n            }\n        ],\n        \"RequestId\": \"e171fe05-990b-4f49-8111-8xb34ee957944\"\n    }\n}",
+        "input": "https://im.tencentcloudapi.com/?Action=UpdateTPNSInfo\n&IMAccessId=140000100\n&TPNSAccessInfo.0.AccessId=1500085000\n&TPNSAccessInfo.0.SecretKey=0f17b7f09d7d6dcc05b37dc7c4330000\n&TPNSAccessInfo.0.Platform=15\n&TPNSAccessInfo.0.AccessKey=A9C21C5ODCVE\n&TPNSAccessInfo.0.ZoneUrl=https://abc.com\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TPNSUpdateRes\": [\n            {\n                \"AccessId\": 1500085000,\n                \"SecretKey\": \"0f17b7f09d7d6dcc05b37dc7c4330000\",\n                \"Platform\": 15,\n                \"AccessKey\": \"A9C21C5ODCVE\",\n                \"ErrorCode\": 0,\n                \"ErrorMessage\": \"ok\",\n                \"ZoneUrl\": \"https://abc.com\"\n            }\n        ],\n        \"RequestId\": \"e171fe05-990b-4f49-8111-8xb34ee957944\"\n    }\n}",
         "title": "更新tpns信息"
       }
     ]

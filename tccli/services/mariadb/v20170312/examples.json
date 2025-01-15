@@ -51,7 +51,7 @@
     "CreateAccount": [
       {
         "document": "在tdsql-fdpjf5zh实例中创建可读写账号testuser1，密码为1234qweri#",
-        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"UserName\": \"testuser1\",\n    \"Description\": \"测试帐号\",\n    \"InstanceId\": \"tdsql-fdpjf5zh\",\n    \"ReadOnly\": \"0\",\n    \"Host\": \"172.17.%\",\n    \"Password\": \"1234qweri#\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"UserName\": \"testuser1\",\n    \"Description\": \"测试账号\",\n    \"InstanceId\": \"tdsql-fdpjf5zh\",\n    \"ReadOnly\": \"0\",\n    \"Host\": \"172.17.%\",\n    \"Password\": \"1234qweri#\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cc4e4dc-c3e9-4858-ab80-03e3526cf24d\",\n        \"InstanceId\": \"tdsql-fdpjf5zh\",\n        \"UserName\": \"testuser1\",\n        \"Host\": \"172.17.%\",\n        \"ReadOnly\": 0\n    }\n}",
         "title": "为云数据库实例创建访问账号"
       }

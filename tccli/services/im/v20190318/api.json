@@ -175,7 +175,7 @@
           "example": "无",
           "member": "TPNSUpdateRes",
           "name": "TPNSUpdateRes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
