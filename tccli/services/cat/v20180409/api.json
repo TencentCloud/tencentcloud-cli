@@ -134,7 +134,7 @@
         {
           "disabled": false,
           "document": "拨测参数，详细可参考云拨测官方文档,链接:https://cloud.tencent.com/document/product/248/87308#createprobetasks。",
-          "example": "无",
+          "example": "{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1}",
           "member": "string",
           "name": "Parameters",
           "required": true,
@@ -1337,7 +1337,7 @@
         {
           "disabled": false,
           "document": "拨测参数",
-          "example": "{}",
+          "example": "{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1}",
           "member": "string",
           "name": "Parameters",
           "output_required": true,
@@ -1750,7 +1750,7 @@
         {
           "disabled": false,
           "document": "任务名，该参数为空时不作任何修改。",
-          "example": "test",
+          "example": "update_task_attributes",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1804,7 +1804,7 @@
         {
           "disabled": false,
           "document": "拨测参数，详细参数配置可参考云拨测官网文档。",
-          "example": "无",
+          "example": "{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1}",
           "member": "string",
           "name": "Parameters",
           "required": true,

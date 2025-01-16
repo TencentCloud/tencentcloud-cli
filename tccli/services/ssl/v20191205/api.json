@@ -4797,6 +4797,15 @@
           "name": "IsPendingIssue",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选指定证书ID的证书，只支持有权限的证书ID",
+          "example": "[\"FxG06njc\"]",
+          "member": "string",
+          "name": "CertIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

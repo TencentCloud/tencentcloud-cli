@@ -253,7 +253,7 @@
     "CreateHiveTableByDDL": [
       {
         "document": "创建表",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTableByDDL\n<公共请求参数>\n\n{\n    \"DatasourceId\": \"12342313\",\n    \"Database\": \"hive\",\n    \"DDLSql\": \"select * from database;\",\n    \"Incharge\": \"231232\",\n    \"Privilege\": 0,\n    \"ProjectId\": \"124537\",\n    \"Type\": \"HIVE\",\n    \"Async\": true\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHiveTableByDDL\n<公共请求参数>\n\n{\n    \"DatasourceId\": \"12342313\",\n    \"Database\": \"hive\",\n    \"DDLSql\": \"Q1JFQVRFIFRBQkxFIGBhYWFgLmBiaWdfdGFibGVfMWAoCmBpZGAgaW50LApgbnVtMWAgaW50LApgbnVtMmAgaW50LApgbnVtM2AgaW50LApgbnVtNGAgaW50LApgbnVtNWAgaW50KQpyb3cgZm9ybWF0IGRlbGltaXRlZCAKZmllbGRzIHRlcm1pbmF0ZWQgYnkgJ1x0JyAKU1RPUkVEIEFTIFBBUlFVRVQ7\",\n    \"Incharge\": \"231232\",\n    \"Privilege\": 0,\n    \"ProjectId\": \"124537\",\n    \"Type\": \"HIVE\",\n    \"Async\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"tablename\",\n        \"TaskId\": \"25\",\n        \"RequestId\": \"as1cs2c123asyi23bh213cc\"\n    }\n}",
         "title": "CreateHiveTableByDDL"
       }
@@ -278,7 +278,7 @@
       {
         "document": "创建离线任务",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOfflineTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1486446569620893696\",\n    \"CycleStep\": 1,\n    \"DelayTime\": 0,\n    \"EndTime\": \"2099-12-31 00:00:00\",\n    \"Notes\": \"\",\n    \"StartTime\": \"2022-04-11 00:00:00\",\n    \"TaskName\": \"task test name\",\n    \"TypeId\": 27,\n    \"TaskAction\": \"\",\n    \"TaskMode\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"20220411181355382\",\n        \"Data\": \"true\",\n        \"RequestId\": \"7508483f-5202-44b3-a846-8c6efb42acb0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"20220411181355382\",\n        \"ArrangeSpaceTaskId\": null,\n        \"Data\": null,\n        \"RequestId\": \"7508483f-5202-44b3-a846-8c6efb42acb0\"\n    }\n}",
         "title": "创建离线任务"
       }
     ],
@@ -1462,6 +1462,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskScript\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"TaskId\": \"20220727140613327\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3100df93-5da5-45d1-b06b-dd08612f8224\",\n        \"Data\": {\n            \"ScriptContent\": \"#!/bin/bash\\n#******************************************************************#\\n##author: TBDS\\n##create time: 2022-07-27 14:06:13\\n#******************************************************************#\\necho \\\"222\\\"\"\n        }\n    }\n}",
         "title": "查询任务脚本范例"
+      }
+    ],
+    "DescribeTaskTableMetricOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskTableMetricOverview\n<公共请求参数>\n\n{\n    \"TaskId\": \"123\",\n    \"NodeType\": \"NodeType\",\n    \"TaskType\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"OrderFields\": [\n        {\n            \"Name\": \"Name\",\n            \"Direction\": \"Direction\"\n        }\n    ],\n    \"ProjectId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskTableMetricInfos\": [\n            {\n                \"DatabaseName\": \"DatabaseName\",\n                \"TableName\": \"TableName\",\n                \"TotalRecordNum\": 0,\n                \"TotalRecordByteNum\": 0,\n                \"TotalDirtyRecordNum\": 0,\n                \"SchemaName\": \"SchemaName\",\n                \"Topic\": \"Topic\",\n                \"Collection\": \"Collection\",\n                \"DataSourceName\": \"DataSourceName\",\n                \"NodeId\": \"123\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"MetricType\": \"num\",\n        \"RequestId\": \"as1cs2c123asyi23bh213cc\"\n    }\n}",
+        "title": "查询实时任务表粒度指标概览"
       }
     ],
     "DescribeTemplateDimCount": [

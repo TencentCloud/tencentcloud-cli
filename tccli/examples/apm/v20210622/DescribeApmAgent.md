@@ -1,6 +1,6 @@
-**Example 1: 获取 APM Agent信息**
+**Example 1: 获取 APM 接入点**
 
-
+获取 APM 接入点示例
 
 Input: 
 

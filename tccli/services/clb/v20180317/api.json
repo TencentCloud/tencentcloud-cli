@@ -5274,7 +5274,7 @@
         {
           "disabled": false,
           "document": "选择返回的扩充字段，不指定时，扩充字段默认不返回。详细支持的扩充字段如下：\n<li> TargetCount：绑定的后端服务数量</li>",
-          "example": "无",
+          "example": "[\"TargetCount\"]",
           "member": "string",
           "name": "AdditionalFields",
           "required": false,

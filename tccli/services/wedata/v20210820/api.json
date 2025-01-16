@@ -1176,6 +1176,13 @@
       "output": "DescribeTaskScriptResponse",
       "status": "online"
     },
+    "DescribeTaskTableMetricOverview": {
+      "document": "查询实时任务表粒度指标概览",
+      "input": "DescribeTaskTableMetricOverviewRequest",
+      "name": "查询实时任务表粒度指标概览",
+      "output": "DescribeTaskTableMetricOverviewResponse",
+      "status": "online"
+    },
     "DescribeTemplateDimCount": {
       "document": "查询规则模板维度分布情况",
       "input": "DescribeTemplateDimCountRequest",
@@ -7551,8 +7558,8 @@
         },
         {
           "disabled": false,
-          "document": "建hive表ddl",
-          "example": "\"CREATE TABLE IF NOT EXISTS employee\"",
+          "document": "建hive表ddl的base64编码",
+          "example": "\"Q1JFQVRFIFRBQkxFIGBhYWFgLmBiaWdfdGFibGVfMWAoCmBpZGAgaW50LApgbnVtMWAgaW50LApgbnVtMmAgaW50LApgbnVtM2AgaW50LApgbnVtNGAgaW50LApgbnVtNWAgaW50KQpyb3cgZm9ybWF0IGRlbGltaXRlZCAKZmllbGRzIHRlcm1pbmF0ZWQgYnkgJ1x0JyAKU1RPUkVEIEFTIFBBUlFVRVQ7\"",
           "member": "string",
           "name": "DDLSql",
           "required": true,
@@ -8074,13 +8081,13 @@
         },
         {
           "disabled": false,
-          "document": "结果",
-          "example": "”true\"",
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
           "member": "string",
           "name": "Data",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -21397,7 +21404,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "\"20220506145218687\"",
+          "example": "20220506145218687",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -21406,7 +21413,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "\"11022568003970304\"",
+          "example": "11022568003970304",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -21415,7 +21422,7 @@
         {
           "disabled": false,
           "document": "任务类型：201. stream,   202. offline",
-          "example": "\"201",
+          "example": "201",
           "member": "uint64",
           "name": "TaskType",
           "required": true,
@@ -21545,6 +21552,126 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskTableMetricOverviewRequest": {
+      "document": "DescribeTaskTableMetricOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务TaskId",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源类型，支持枚举： SOURCE、SINK",
+          "example": "\"SOURCE\"",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型：201. stream, 202. offline，当前只支持实时201",
+          "example": "201",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "根据SchemaName来模糊搜索",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "无",
+          "member": "OrderFields",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskTableMetricOverviewResponse": {
+      "document": "DescribeTaskTableMetricOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表粒度指标集合",
+          "example": "无",
+          "member": "TaskTableMetricInfo",
+          "name": "TaskTableMetricInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回列表类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"num\"",
+          "member": "string",
+          "name": "MetricType",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -32842,6 +32969,32 @@
           "disabled": false,
           "document": "排序方向：ASC|DESC",
           "example": "ASC",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "OrderFields": {
+      "document": "排序",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "desc",
           "member": "string",
           "name": "Direction",
           "required": false,
@@ -45032,6 +45185,282 @@
           "example": "user_01",
           "member": "string",
           "name": "InCharge",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskTableMetricInfo": {
+      "document": "任务表粒度指标信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalRecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalRecordByteNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总脏记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalDirtyRecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Schema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Collection名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Collection",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称",
+          "example": "测试数据源",
+          "member": "string",
+          "name": "DataSourceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点id",
+          "example": "1212",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "database1",
+          "member": "string",
+          "name": "LogicDatabase",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "逻辑表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table1",
+          "member": "string",
+          "name": "LogicTable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "逻辑schema名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogicSchema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物理表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskTableMetricInfo",
+          "name": "TaskTableMetricInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同步状态，0-未知，1-正常， 2-异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SyncStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Target数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetDatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Target表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetTableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Write总记录数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "WriteTotalRecordNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Write总字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WriteTotalRecordByteNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TargetSchema名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetSchemaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Targettopic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TargetCollection名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetCollection",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试数据源",
+          "member": "string",
+          "name": "TargetDataSourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1212",
+          "member": "string",
+          "name": "TargetNodeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读取条数的速度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "TotalRecordSpeed",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "写入条数的速度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "WriteTotalRecordSpeed",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1,2",
+          "member": "string",
+          "name": "ExceptionReason",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

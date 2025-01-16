@@ -304,7 +304,7 @@
     "EndRoom": {
       "document": "结束房间的直播",
       "input": "EndRoomRequest",
-      "name": "结束房间",
+      "name": "结束直播",
       "output": "EndRoomResponse",
       "status": "online"
     },
@@ -444,7 +444,7 @@
     "StartRoom": {
       "document": "开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。",
       "input": "StartRoomRequest",
-      "name": "开始房间",
+      "name": "开始直播",
       "output": "StartRoomResponse",
       "status": "online"
     },
@@ -6270,7 +6270,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名称。",
+          "document": "对应用户昵称。对应修改用户信息下“nickname“字段，在修改用户信息时，可以对该字段进行调整，从而更改用户的昵称。",
           "example": "nickname",
           "member": "string",
           "name": "Name",
@@ -6279,7 +6279,7 @@
         },
         {
           "disabled": false,
-          "document": "用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId\n。",
+          "document": "用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId。",
           "example": "id12345",
           "member": "string",
           "name": "OriginId",

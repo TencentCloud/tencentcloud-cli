@@ -23,7 +23,8 @@ Output:
 {
     "Response": {
         "TaskId": "20220411181355382",
-        "Data": "true",
+        "ArrangeSpaceTaskId": null,
+        "Data": null,
         "RequestId": "7508483f-5202-44b3-a846-8c6efb42acb0"
     }
 }

@@ -68,8 +68,8 @@ Output:
                 "Metadata": {}
             }
         ],
-        "FirstID": "msg_jtO6oVZmFtIi4T43eswXk6lJ",
-        "LastID": "msg_oJBEpYDXDZw5epfQYNrJEEJa",
+        "FirstMsgID": "msg_jtO6oVZmFtIi4T43eswXk6lJ",
+        "LastMsgID": "msg_oJBEpYDXDZw5epfQYNrJEEJa",
         "HasMore": false,
         "Object": "list"
     }

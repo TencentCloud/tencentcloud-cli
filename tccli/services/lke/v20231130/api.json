@@ -2478,7 +2478,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "无",
+          "example": "1844287616635371520",
           "member": "string",
           "name": "BotBizId",
           "required": true,
@@ -2487,7 +2487,7 @@
         {
           "disabled": false,
           "document": "拒答问题\n\n",
-          "example": "无",
+          "example": "你是谁你来自哪里你要到哪里去",
           "member": "string",
           "name": "Question",
           "required": true,
@@ -2495,8 +2495,8 @@
         },
         {
           "disabled": false,
-          "document": "拒答问题来源的数据源唯一id，取值1，2\n\n",
-          "example": "无",
+          "document": "拒答问题来源的数据源唯一id， - 拒答来源于不满意回复  2 - 拒答来源于手动添加",
+          "example": "2",
           "member": "uint64",
           "name": "BusinessSource",
           "required": true,
@@ -4309,7 +4309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器人ID",
+          "document": "应用ID",
           "example": "无",
           "member": "string",
           "name": "BotBizId",
@@ -4334,7 +4334,7 @@
         },
         {
           "disabled": false,
-          "document": "发布状态",
+          "document": "发布状态 ， 1-待发布 , 2-发布中 , 3-发布成功 , 4-发布失败 , 5-审核中 , 6-审核成功 , 7-审核失败 , 8-发布成功回调处理中 , 9-发布暂停 , 10-申诉审核中 , 11-申诉审核通过 , 12-申诉审核不通过",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -4344,7 +4344,7 @@
         },
         {
           "disabled": false,
-          "document": "是否编辑过\n",
+          "document": "是否编辑过, 当为true的时候表示可以发布",
           "example": "无",
           "member": "bool",
           "name": "IsUpdated",

@@ -1,6 +1,6 @@
-**Example 1: 拉取 APM 业务系统列表**
+**Example 1: 获取 APM 业务系统列表**
 
-拉取 APM 业务系统列表
+获取 APM 业务系统列表
 
 Input: 
 

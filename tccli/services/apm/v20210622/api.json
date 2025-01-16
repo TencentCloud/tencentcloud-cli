@@ -8,16 +8,16 @@
       "status": "online"
     },
     "DescribeApmAgent": {
-      "document": "获取 APM Agent信息",
+      "document": "获取 APM 接入点",
       "input": "DescribeApmAgentRequest",
-      "name": "获取 APM Agent 信息",
+      "name": "获取 APM 接入点",
       "output": "DescribeApmAgentResponse",
       "status": "online"
     },
     "DescribeApmInstances": {
-      "document": "拉取 APM 业务系统列表",
+      "document": "获取 APM 业务系统列表",
       "input": "DescribeApmInstancesRequest",
-      "name": "拉取 APM 业务系统列表",
+      "name": "获取 APM 业务系统列表",
       "output": "DescribeApmInstancesResponse",
       "status": "online"
     },
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "DescribeMetricRecords": {
-      "document": "拉取通用指标列表",
+      "document": "查询指标列表接口，查询指标更推荐使用DescribeGeneralMetricData接口",
       "input": "DescribeMetricRecordsRequest",
       "name": "通用指标列表接口",
       "output": "DescribeMetricRecordsResponse",
@@ -66,7 +66,7 @@
     "ModifyApmInstance": {
       "document": "修改APM业务系统接口",
       "input": "ModifyApmInstanceRequest",
-      "name": "修改APM业务系统",
+      "name": "修改 APM 业务系统",
       "output": "ModifyApmInstanceResponse",
       "status": "online"
     },
@@ -432,28 +432,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "昨日同比指标值，已弃用，不建议使用",
-          "example": "0",
+          "document": "指标名",
+          "example": "qps",
           "member": "string",
-          "name": "CompareVal",
+          "name": "Key",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Compare值结果数组，推荐使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "APMKVItem",
-          "name": "CompareVals",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "指标值",
-          "example": "0.0",
+          "document": "指标数值",
+          "example": "0.01",
           "member": "float",
           "name": "Value",
           "output_required": true,
@@ -472,23 +462,33 @@
         },
         {
           "disabled": false,
-          "document": "请求数",
-          "example": "req_count",
-          "member": "string",
-          "name": "Key",
+          "document": "同比结果数组，推荐使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[               {                 \"Key\": \"CompareByYesterday\",                 \"Value\": \"0.0%\"               }             ]",
+          "member": "APMKVItem",
+          "name": "CompareVals",
           "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "同环比上周期具体数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "同比上一个周期的具体指标数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[               {                 \"Key\": \"CompareByYesterday\",                 \"Value\": 8.092753335107176               }             ]",
           "member": "APMKV",
           "name": "LastPeriodValue",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "同比指标值，已弃用，不建议使用",
+          "example": "0",
+          "member": "string",
+          "name": "CompareVal",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -496,36 +496,6 @@
     "ApmInstanceDetail": {
       "document": "APM 业务系统信息",
       "members": [
-        {
-          "disabled": false,
-          "document": "存储使用量( MB )",
-          "example": "100",
-          "member": "float",
-          "name": "AmountOfUsedStorage",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "业务系统名",
-          "example": "测试 Demo",
-          "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "业务系统所属 Tag 列表",
-          "example": "无",
-          "member": "ApmTag",
-          "name": "Tags",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
         {
           "disabled": false,
           "document": "业务系统 ID",
@@ -538,52 +508,12 @@
         },
         {
           "disabled": false,
-          "document": "创建人 Uin",
-          "example": "12543625",
+          "document": "业务系统名",
+          "example": "测试 Demo",
           "member": "string",
-          "name": "CreateUin",
+          "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "该业务系统已上报的服务端应用数量",
-          "example": "2",
-          "member": "int64",
-          "name": "ServiceCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日均上报 Span 数",
-          "example": "100",
-          "member": "int64",
-          "name": "CountOfReportSpanPerDay",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "AppID 信息",
-          "example": "12653698",
-          "member": "int64",
-          "name": "AppId",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Trace 数据保存时长",
-          "example": "604800",
-          "member": "int64",
-          "name": "TraceDuration",
-          "output_required": true,
-          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -618,6 +548,76 @@
         },
         {
           "disabled": false,
+          "document": "业务系统 Tag 列表",
+          "example": "无",
+          "member": "ApmTag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AppID 信息",
+          "example": "12653698",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人 Uin",
+          "example": "12543625",
+          "member": "string",
+          "name": "CreateUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储使用量(单位：MB)",
+          "example": "100",
+          "member": "float",
+          "name": "AmountOfUsedStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该业务系统服务端应用数量",
+          "example": "2",
+          "member": "int64",
+          "name": "ServiceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日均上报 Span 数",
+          "example": "100",
+          "member": "int64",
+          "name": "CountOfReportSpanPerDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Trace 数据保存时长（单位：天）",
+          "example": "7",
+          "member": "int64",
+          "name": "TraceDuration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "业务系统上报额度",
           "example": "500000",
           "member": "int64",
@@ -628,7 +628,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统是否开通计费",
+          "document": "业务系统是否已开通计费（0=未开通，1=已开通）",
           "example": "1",
           "member": "int64",
           "name": "BillingInstance",
@@ -638,7 +638,7 @@
         },
         {
           "disabled": false,
-          "document": "错误率阈值",
+          "document": "错误警示线（单位：%）",
           "example": "30",
           "member": "int64",
           "name": "ErrRateThreshold",
@@ -648,7 +648,7 @@
         },
         {
           "disabled": false,
-          "document": "采样率阈值",
+          "document": "采样率（单位：%）",
           "example": "1",
           "member": "int64",
           "name": "SampleRate",
@@ -658,7 +658,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启错误采样 0  关 1 开",
+          "document": "是否开启错误采样（0=关, 1=开）",
           "example": "0",
           "member": "int64",
           "name": "ErrorSample",
@@ -668,7 +668,7 @@
         },
         {
           "disabled": false,
-          "document": "慢调用保存阈值",
+          "document": "采样慢调用保存阈值（单位：ms）",
           "example": "500",
           "member": "int64",
           "name": "SlowRequestSavedThreshold",
@@ -688,7 +688,7 @@
         },
         {
           "disabled": false,
-          "document": "日志来源",
+          "document": "日志源",
           "example": "CLS",
           "member": "string",
           "name": "LogSource",
@@ -698,7 +698,7 @@
         },
         {
           "disabled": false,
-          "document": "日志功能开关 0 关 | 1 开",
+          "document": "日志功能开关（0=关， 1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsRelatedLog",
@@ -708,7 +708,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "日志主题 ID",
           "example": "cls-acv12b",
           "member": "string",
           "name": "LogTopicID",
@@ -718,7 +718,7 @@
         },
         {
           "disabled": false,
-          "document": "该实例已上报的客户端应用数量",
+          "document": "该业务系统客户端应用数量",
           "example": "3",
           "member": "int64",
           "name": "ClientCount",
@@ -728,7 +728,7 @@
         },
         {
           "disabled": false,
-          "document": "该实例已上报的总应用数量",
+          "document": "该业务系统最近2天活跃应用数量",
           "example": "5",
           "member": "int64",
           "name": "TotalCount",
@@ -738,7 +738,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS 日志集 | ES 集群ID",
+          "document": "CLS 日志集",
           "example": "cls-v1241nb",
           "member": "string",
           "name": "LogSet",
@@ -748,7 +748,7 @@
         },
         {
           "disabled": false,
-          "document": "Metric 数据保存时长",
+          "document": "Metric 数据保存时长（单位：天）",
           "example": "30",
           "member": "int64",
           "name": "MetricDuration",
@@ -768,7 +768,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统计费模式\n1为预付费\n0为按量付费",
+          "document": "业务系统计费模式（1为预付费，0为按量付费）",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -788,7 +788,7 @@
         },
         {
           "disabled": false,
-          "document": "响应时间满意阈值",
+          "document": "响应时间警示线（单位：ms）",
           "example": "500",
           "member": "int64",
           "name": "ResponseDurationWarningThreshold",
@@ -808,7 +808,7 @@
         },
         {
           "disabled": false,
-          "document": "是否 tsf 默认业务系统（0=否，1-是）",
+          "document": "是否 TSF 默认业务系统（0=否，1=是）",
           "example": "0",
           "member": "int64",
           "name": "DefaultTSF",
@@ -818,7 +818,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关联 Dashboard： 0 关 1 开",
+          "document": "是否关联 Dashboard（0=关, 1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsRelatedDashboard",
@@ -828,7 +828,7 @@
         },
         {
           "disabled": false,
-          "document": "Dashboard ID",
+          "document": "关联的 Dashboard ID",
           "example": "dashboard-vcav134",
           "member": "string",
           "name": "DashboardTopicID",
@@ -838,7 +838,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启组件漏洞检测",
+          "document": "是否开启组件漏洞检测（0=关， 1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsInstrumentationVulnerabilityScan",
@@ -848,7 +848,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 SQL 注入分析",
+          "document": "是否开启 SQL 注入分析（0=关， 1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsSqlInjectionAnalysis",
@@ -864,21 +864,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "field数组",
+          "document": "field数组，用于指标的查询结果",
           "example": "无",
           "member": "ApmField",
           "name": "Fields",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "tag数组",
+          "document": "tag数组，用于区分 Groupby 的对象",
           "example": "无",
           "member": "ApmTag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -917,7 +917,7 @@
         {
           "disabled": false,
           "document": "业务系统名",
-          "example": "云监控-测试",
+          "example": "可观测-测试",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -926,7 +926,7 @@
         {
           "disabled": false,
           "document": "业务系统描述信息",
-          "example": "实例描述",
+          "example": "可观测-测试用的业务系统",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -934,7 +934,7 @@
         },
         {
           "disabled": false,
-          "document": "Trace 数据保存时长，单位为天默认存储为3天",
+          "document": "Trace 数据保存时长（单位：天，默认存储时长为3天）",
           "example": "3",
           "member": "int64",
           "name": "TraceDuration",
@@ -943,8 +943,8 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
-          "example": "[{ \t\t\"Key\": \"appid\", \t\t\"Value\": \"123123422\" \t}]",
+          "document": "业务系统 Tag 列表",
+          "example": "[{ \t\t\"Key\": \"AppID\", \t\t\"Value\": \"123123422\" \t}]",
           "member": "ApmTag",
           "name": "Tags",
           "required": false,
@@ -952,7 +952,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统上报额度值，默认赋值为0表示不限制上报额度",
+          "document": "业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃",
           "example": "100000000",
           "member": "uint64",
           "name": "SpanDailyCounters",
@@ -961,7 +961,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统的计费模式",
+          "document": "业务系统的计费模式（0=按量付费，1=预付费）",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -970,7 +970,7 @@
         },
         {
           "disabled": false,
-          "document": "（0=付费版；1=tsf 受限免费版；2=免费版）",
+          "document": "是否为免费版业务系统（0=付费版；1=TSF 受限免费版；2=免费版）",
           "example": "0",
           "member": "int64",
           "name": "Free",
@@ -1016,8 +1016,8 @@
         },
         {
           "disabled": false,
-          "document": "接入方式",
-          "example": "Skywalking",
+          "document": "接入方式，现支持 skywalking, ot, ebpf 方式接入上报，不填默认为 ot",
+          "example": "ot",
           "member": "string",
           "name": "AgentType",
           "required": false,
@@ -1025,8 +1025,8 @@
         },
         {
           "disabled": false,
-          "document": "环境",
-          "example": "外网",
+          "document": "上报环境，现支持 pl (内网上报), public (外网), inner (自研 VPC )环境上报，不传默认为 public",
+          "example": "public",
           "member": "string",
           "name": "NetworkMode",
           "required": false,
@@ -1034,8 +1034,8 @@
         },
         {
           "disabled": false,
-          "document": "语言",
-          "example": "Golang",
+          "document": "语言，现支持 java, golang, php, python, dotNet, nodejs 语言上报，不传默认为 golang",
+          "example": "java",
           "member": "string",
           "name": "LanguageEnvironment",
           "required": false,
@@ -1043,7 +1043,7 @@
         },
         {
           "disabled": false,
-          "document": "上报方式",
+          "document": "上报方式，已弃用",
           "example": "http",
           "member": "string",
           "name": "ReportMethod",
@@ -1081,7 +1081,7 @@
         {
           "disabled": false,
           "document": "Tag 列表",
-          "example": "[{ \t\t\"Key\": \"appid\", \t\t\"Value\": \"123123422\" \t}]",
+          "example": "[{ \t\t\"Key\": \"AppId\", \t\t\"Value\": \"123123422\" \t}]",
           "member": "ApmTag",
           "name": "Tags",
           "required": false,
@@ -1089,8 +1089,8 @@
         },
         {
           "disabled": false,
-          "document": "搜索业务系统名",
-          "example": "云监控-测试",
+          "document": "按业务系统名过滤",
+          "example": "可观测-测试",
           "member": "string",
           "name": "InstanceName",
           "required": false,
@@ -1098,7 +1098,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤业务系统 ID",
+          "document": "按业务系统 ID 过滤",
           "example": "[     \"apm-CVfliqa8U\",     \"apm-059oXBfTL\"   ]",
           "member": "string",
           "name": "InstanceIds",
@@ -1107,7 +1107,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询官方 Demo 业务系统",
+          "document": "是否查询官方 Demo 业务系统（0=非 Demo 业务系统，1=Demo 业务系统，默认为0）",
           "example": "0",
           "member": "int64",
           "name": "DemoInstanceFlag",
@@ -1116,7 +1116,7 @@
         },
         {
           "disabled": false,
-          "document": "是否查询全地域业务系统",
+          "document": "是否查询全地域业务系统（0=不查询全地域，1=查询全地域，默认为0）",
           "example": "1",
           "member": "int64",
           "name": "AllRegionsFlag",
@@ -1208,7 +1208,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "业务系统 ID",
           "example": "apm-ylTJfTSbn",
           "member": "string",
           "name": "InstanceId",
@@ -1244,7 +1244,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。",
+          "document": "起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）",
           "example": "1617123538",
           "member": "int64",
           "name": "StartTime",
@@ -1253,7 +1253,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。",
+          "document": "结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）",
           "example": "1617123538",
           "member": "int64",
           "name": "EndTime",
@@ -1262,7 +1262,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。",
+          "document": "是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。\n- 填入0，则计算开始时间到截止时间的指标数据。\n- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：\n - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。\n - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。\n - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。",
           "example": "60",
           "member": "int64",
           "name": "Period",
@@ -1271,7 +1271,7 @@
         },
         {
           "disabled": false,
-          "document": "对查询指标进行排序：\nKey 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)\nValue 填写排序方式：     \n- asc:对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
+          "document": "对查询指标进行排序：\nKey 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)\nValue 填写排序方式：     \n- asc：对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
           "example": "{ \t\"Key\": \"duration\",         \"Value\": \"desc\"",
           "member": "OrderBy",
           "name": "OrderBy",
@@ -1317,34 +1317,16 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页",
-          "example": "1",
-          "member": "int64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "列表项个数",
-          "example": "15",
-          "member": "int64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "排序",
-          "example": "{             \"Key\": \"startTime\",             \"Value\": \"desc\"         }",
-          "member": "OrderBy",
-          "name": "OrderBy",
+          "document": "业务系统 ID",
+          "example": "apm-CVfliqa8U",
+          "member": "string",
+          "name": "InstanceId",
           "required": false,
-          "type": "object"
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "Span查询开始时间戳（单位:秒）",
+          "document": "Span 查询开始时间戳（单位：秒）",
           "example": "1617123538",
           "member": "int64",
           "name": "StartTime",
@@ -1353,12 +1335,12 @@
         },
         {
           "disabled": false,
-          "document": "业务系统 ID",
-          "example": "apm-CVfliqa8U",
-          "member": "string",
-          "name": "InstanceId",
+          "document": "Span 查询结束时间戳（单位：秒）",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "EndTime",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1371,8 +1353,17 @@
         },
         {
           "disabled": false,
-          "document": "业务自身服务名",
-          "example": "tdmq",
+          "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
+          "example": "{             \"Key\": \"startTime\",             \"Value\": \"desc\"         }",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "业务自身服务名，控制台用户请填写taw",
+          "example": "taw",
           "member": "string",
           "name": "BusinessName",
           "required": false,
@@ -1380,10 +1371,19 @@
         },
         {
           "disabled": false,
-          "document": "Span查询结束时间戳（单位:秒）",
-          "example": "1617123538",
+          "document": "单页项目个数，默认为10000，合法取值范围为0～10000",
+          "example": "15",
           "member": "int64",
-          "name": "EndTime",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
           "required": false,
           "type": "int"
         }
@@ -1427,15 +1427,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件",
-          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
-          "member": "Filter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "指标列表",
           "example": "[{\"Compare\":\"1\",\"Compares\":[\"CompareByYesterday\",\"CompareByLastWeek\"],\"MetricName\":\"qps\"}]",
           "member": "QueryMetricItem",
@@ -1445,25 +1436,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合维度",
-          "example": "[\"service.instance\"]",
-          "member": "string",
-          "name": "GroupBy",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "排序",
-          "example": "{\"Key\":\"service_duration_avg\",\"Value\":\"DESC\"}",
-          "member": "OrderBy",
-          "name": "OrderBy",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "业务系统ID",
+          "document": "业务系统 ID",
           "example": "apm-CVfliqa8U",
           "member": "string",
           "name": "InstanceId",
@@ -1472,19 +1445,82 @@
         },
         {
           "disabled": false,
-          "document": "每页大小",
-          "example": "10",
+          "document": "开始时间（单位为秒）",
+          "example": "1618361193",
           "member": "uint64",
-          "name": "Limit",
+          "name": "StartTime",
           "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "结束时间（单位为秒）",
           "example": "1618361193",
           "member": "uint64",
-          "name": "StartTime",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Or 过滤条件",
+          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
+          "member": "Filter",
+          "name": "OrFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "聚合维度",
+          "example": "[\"service.instance\"]",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序\n现支持的 Key 有：\n\n- startTime(开始时间)\n- endTime(结束时间)\n- duration(响应时间)\n\n现支持的 Value 有：\n\n- desc(降序排序)\n- asc(升序排序)",
+          "example": "{\"Key\":\"service_duration_avg\",\"Value\":\"DESC\"}",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "业务名称，控制台用户请填写taw。",
+          "example": "taw",
+          "member": "string",
+          "name": "BusinessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "特殊处理查询结果",
+          "example": "service_runtime_thread_pool",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小，默认为1000，合法取值范围为0~1000",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
           "required": false,
           "type": "int"
         },
@@ -1496,24 +1532,6 @@
           "name": "Offset",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "1618361193",
-          "member": "uint64",
-          "name": "EndTime",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "业务名称（默认值：taw）",
-          "example": "taw",
-          "member": "string",
-          "name": "BusinessName",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -1532,24 +1550,6 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "Or过滤条件",
-          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
-          "member": "Filter",
-          "name": "OrFilters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "数据来源",
-          "example": "service_runtime_thread_pool",
-          "member": "string",
-          "name": "Type",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -1591,15 +1591,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "指标列表",
           "example": "无",
           "member": "QueryMetricItem",
@@ -1609,30 +1600,57 @@
         },
         {
           "disabled": false,
-          "document": "聚合维度",
-          "example": "service.name",
-          "member": "string",
-          "name": "GroupBy",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "排序",
-          "example": "无",
-          "member": "OrderBy",
-          "name": "OrderBy",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "业务系统ID",
+          "document": "业务系统 ID",
           "example": "apm-52Dpv13GR",
           "member": "string",
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "聚合维度",
+          "example": "service.name",
+          "member": "string",
+          "name": "GroupBy",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间（单位：秒）",
+          "example": "1618361193",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（单位：秒）",
+          "example": "1618361193",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式\nValue 填写：\n- asc：对查询指标进行升序排序\n- desc：对查询指标进行降序排序",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -1645,28 +1663,10 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "1618361193",
-          "member": "uint64",
-          "name": "StartTime",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "分页起始点",
           "example": "1",
           "member": "int64",
           "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "1618361193",
-          "member": "uint64",
-          "name": "EndTime",
           "required": false,
           "type": "int"
         }
@@ -1709,21 +1709,12 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "业务系统 ID",
           "example": "apm-52Dpv13GR",
           "member": "string",
           "name": "InstanceId",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "1734415200",
-          "member": "int64",
-          "name": "EndTime",
-          "required": false,
-          "type": "int"
         },
         {
           "disabled": false,
@@ -1736,7 +1727,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "开始时间（单位为秒）",
           "example": "1734400800",
           "member": "int64",
           "name": "StartTime",
@@ -1745,7 +1736,16 @@
         },
         {
           "disabled": false,
-          "document": "Or过滤条件",
+          "document": "结束时间（单位为秒）",
+          "example": "1734415200",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Or 过滤条件",
           "example": "无",
           "member": "Filter",
           "name": "OrFilters",
@@ -1940,7 +1940,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "业务系统 ID",
           "example": "apm-6Dxp7Nd0B",
           "member": "string",
           "name": "InstanceId",
@@ -1950,7 +1950,7 @@
         {
           "disabled": false,
           "document": "业务系统名",
-          "example": "云监控-测试",
+          "example": "可观测-测试",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1958,7 +1958,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "Tag 列表",
           "example": "无",
           "member": "ApmTag",
           "name": "Tags",
@@ -1967,8 +1967,8 @@
         },
         {
           "disabled": false,
-          "document": "业务系统详情",
-          "example": "云监控-测试用的业务系统",
+          "document": "业务系统描述",
+          "example": "可观测-测试用的业务系统",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1976,8 +1976,8 @@
         },
         {
           "disabled": false,
-          "document": "Trace数据保存时长",
-          "example": "604800",
+          "document": "Trace 数据保存时长（单位：天）",
+          "example": "7",
           "member": "int64",
           "name": "TraceDuration",
           "required": false,
@@ -2003,7 +2003,7 @@
         },
         {
           "disabled": false,
-          "document": "错误率阈值",
+          "document": "错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。",
           "example": "11",
           "member": "int64",
           "name": "ErrRateThreshold",
@@ -2012,7 +2012,7 @@
         },
         {
           "disabled": false,
-          "document": "采样率",
+          "document": "采样率（单位：%）",
           "example": "11",
           "member": "int64",
           "name": "SampleRate",
@@ -2021,7 +2021,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启错误采样 0 关 1 开",
+          "document": "是否开启错误采样（0=关, 1=开）",
           "example": "10",
           "member": "int64",
           "name": "ErrorSample",
@@ -2030,7 +2030,7 @@
         },
         {
           "disabled": false,
-          "document": "慢请求阈值",
+          "document": "采样慢调用保存阈值（单位：ms）",
           "example": "500",
           "member": "int64",
           "name": "SlowRequestSavedThreshold",
@@ -2039,7 +2039,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日志功能 0 关 1 开",
+          "document": "是否开启日志功能（0=关, 1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsRelatedLog",
@@ -2048,7 +2048,7 @@
         },
         {
           "disabled": false,
-          "document": "日志地域",
+          "document": "日志地域，开启日志功能后才会生效",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "LogRegion",
@@ -2057,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题ID | ES 索引名",
+          "document": "CLS 日志主题 ID，开启日志功能后才会生效",
           "example": "cls-1c1cac",
           "member": "string",
           "name": "LogTopicID",
@@ -2066,7 +2066,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集 | ES集群ID",
+          "document": "日志集，开启日志功能后才会生效",
           "example": "cls-av2q1f1",
           "member": "string",
           "name": "LogSet",
@@ -2075,7 +2075,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS | ES",
+          "document": "日志源，开启日志功能后才会生效",
           "example": "CLS",
           "member": "string",
           "name": "LogSource",
@@ -2093,7 +2093,7 @@
         },
         {
           "disabled": false,
-          "document": "修改计费模式\n1为预付费\n0为按量付费",
+          "document": "修改计费模式（1为预付费，0为按量付费）",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -2102,7 +2102,7 @@
         },
         {
           "disabled": false,
-          "document": "响应时间满意阈值",
+          "document": "响应时间警示线",
           "example": "500",
           "member": "int64",
           "name": "ResponseDurationWarningThreshold",
@@ -2111,7 +2111,7 @@
         },
         {
           "disabled": false,
-          "document": "（0=付费版；1=tsf受限免费版；2=免费版）",
+          "document": "是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0",
           "example": "0",
           "member": "int64",
           "name": "Free",
@@ -2120,7 +2120,7 @@
         },
         {
           "disabled": false,
-          "document": "是否关联dashboard： 0 关 1 开",
+          "document": "是否关联 Dashboard（0=关,1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsRelatedDashboard",
@@ -2129,7 +2129,7 @@
         },
         {
           "disabled": false,
-          "document": "dashboard ID",
+          "document": "关联的 Dashboard ID，开启关联 Dashboard 后才会生效",
           "example": "dashboard-agv1br13b",
           "member": "string",
           "name": "DashboardTopicID",
@@ -2138,7 +2138,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SQL注入检测",
+          "document": "是否开启 SQL 注入检测（0=关,1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsSqlInjectionAnalysis",
@@ -2147,7 +2147,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启组件漏洞检测",
+          "document": "是否开启组件漏洞检测（0=关,1=开）",
           "example": "0",
           "member": "int64",
           "name": "IsInstrumentationVulnerabilityScan",
@@ -2225,27 +2225,25 @@
       "type": "object"
     },
     "OrderBy": {
-      "document": "sql排序字段",
+      "document": "排序字段",
       "members": [
         {
           "disabled": false,
-          "document": "需要排序的字段",
-          "example": "traceID",
+          "document": "需要排序的字段，现支持 startTIme, endTime, duration",
+          "example": "startTime",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "顺序排序/倒序排序",
+          "document": "asc 顺序排序 / desc 倒序排序",
           "example": "asc",
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2264,21 +2262,21 @@
         },
         {
           "disabled": false,
+          "document": "同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) ",
+          "example": "CompareByYesterday",
+          "member": "string",
+          "name": "Compares",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "同比，已弃用，不建议使用",
           "example": "CompareByYesterday",
           "member": "string",
           "name": "Compare",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "同比，支持多种同比方式",
-          "example": "CompareByYesterday",
-          "member": "string",
-          "name": "Compares",
-          "required": false,
-          "type": "list"
         }
       ],
       "usage": "in"

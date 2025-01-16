@@ -13938,27 +13938,27 @@
           "example": "1000000000",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户权限",
-          "example": "无",
+          "example": "Admin",
           "member": "GrafanaAccountRole",
           "name": "Role",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "xxx",
+          "example": "该账户的相关描述",
           "member": "string",
           "name": "Notes",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13968,7 +13968,7 @@
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "CreateAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13978,17 +13978,17 @@
           "example": "grafana-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "用户主账号 UIN",
-          "example": "11111",
+          "example": "用户主账号 UIN",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14294,7 +14294,7 @@
           "example": "my-instance",
           "member": "string",
           "name": "IntegrationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14304,7 +14304,7 @@
           "example": "grafana",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14314,27 +14314,27 @@
           "example": "\"{}\"",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集成描述",
-          "example": "\"\"",
+          "example": "集成描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Grafana 跳转地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "Grafana 跳转地址(目前未使用，默认为空)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Grafana 地址",
           "member": "string",
           "name": "GrafanaURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14350,7 +14350,7 @@
           "example": "channel-id",
           "member": "string",
           "name": "ChannelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14360,17 +14360,17 @@
           "example": "channel-name",
           "member": "string",
           "name": "ChannelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "告警通道模板 ID 数组",
-          "example": "[]",
+          "example": "[\"receiver-1234abcd\"]",
           "member": "string",
           "name": "Receivers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14380,7 +14380,7 @@
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14390,7 +14390,7 @@
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime_iso",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14400,7 +14400,7 @@
           "example": "1",
           "member": "string",
           "name": "OrgId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14410,7 +14410,7 @@
           "example": "[\"2\", \"3\"]",
           "member": "string",
           "name": "ExtraOrgIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14420,7 +14420,7 @@
           "example": "[\"1\", \"2\", \"3\"]",
           "member": "string",
           "name": "OrgIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14430,7 +14430,7 @@
           "example": "[\"1\", \"2\", \"3\"]",
           "member": "string",
           "name": "OrganizationIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -17845,7 +17845,7 @@
           "example": "prom-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17855,7 +17855,7 @@
           "example": "20210101",
           "member": "string",
           "name": "CalcDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17865,7 +17865,7 @@
           "example": "1.1",
           "member": "float",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -17875,7 +17875,7 @@
           "example": "1.1",
           "member": "float",
           "name": "Basic",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -17885,7 +17885,7 @@
           "example": "1.1",
           "member": "float",
           "name": "Fee",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }

@@ -1302,6 +1302,15 @@
           "name": "ClearInstanceTags",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。",
+          "example": "false",
+          "member": "bool",
+          "name": "ClearMetadata",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1952,6 +1961,15 @@
           "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5067,6 +5085,51 @@
       ],
       "usage": "in"
     },
+    "Metadata": {
+      "document": "自定义 Metadata",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义 Metadata 键值对列表",
+          "example": "[{\"Key\": \"Key123_4-5\", \"Value\": \"valueExam\"}]",
+          "member": "MetadataItem",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MetadataItem": {
+      "document": "自定义 Metadata 的一组键值对信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义 MetaData 键",
+          "example": "keyA-123_4",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义 MetaData 值",
+          "example": "Value123",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MetricAlarm": {
       "document": "弹性伸缩告警指标",
       "members": [
@@ -5656,6 +5719,15 @@
           "name": "DedicatedClusterId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义metadata。",
+          "example": "无",
+          "member": "Metadata",
+          "name": "Metadata",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

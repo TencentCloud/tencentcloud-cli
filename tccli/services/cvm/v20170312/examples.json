@@ -640,6 +640,14 @@
         "title": "本示例将实例计费模式切换为预付费模式，且时长为1个月。"
       }
     ],
+    "ModifyInstancesDisasterRecoverGroup": [
+      {
+        "document": "调整实例所在置放群组",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyInstancesDisasterRecoverGroup\n&InstanceIds.0=ins-r8hr2upy\n&DisasterRecoverGroupId=ps-a66w6rlb\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d39d6c09-44e9-4e80-8661-77b5ff3cbc15\"\n    }\n}",
+        "title": "调整实例所在置放群组"
+      }
+    ],
     "ModifyInstancesProject": [
       {
         "document": "本示例用于修改两个实例所属的项目为指定的项目。",
