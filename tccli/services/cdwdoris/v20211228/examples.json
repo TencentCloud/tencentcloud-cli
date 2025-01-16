@@ -559,15 +559,15 @@
     "OpenCoolDownPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"Operation successful\",\n        \"QueryDocument\": \"SELECT * FROM customer_orders LIMIT 10\",\n        \"RequestId\": \"req-987654321\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenCoolDownPolicy\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"doris-12345678\",\n    \"DatabaseName\": \"sales_db\",\n    \"TableName\": \"customer_orders\",\n    \"OperationType\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"Operation successful\",\n        \"QueryDocument\": \"[{\\\"partition_name\\\": \\\"p1\\\", \\\"cool_down_status\\\": \\\"enabled\\\", \\\"cool_down_policy\\\": \\\"policy_7days\\\"}, {\\\"partition_name\\\": \\\"p2\\\", \\\"cool_down_status\\\": \\\"disabled\\\", \\\"cool_down_policy\\\": \\\"\\\"}]\",\n        \"RequestId\": \"req-987654321\"\n    }\n}",
         "title": "开通"
       }
     ],
     "QueryTableData": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTableData\n<公共请求参数>\n\n\n{\n   \"InstanceId\": \"cdwdoris-xx\",\n    \"Database\": \"__internal_schema\",\n    \"Table\": \"audit_log\",\n    \"SelectedFields\": [\"query_id\", \"time\", \"stmt\"],\n    \"PageNum\": 1,\n    \"PageSize\": 10\n\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTableData\n<公共请求参数>\n\n\n\n{\n   \"InstanceId\": \"cdwdoris-xx\",\n    \"Database\": \"__internal_schema\",\n    \"Table\": \"audit_log\",\n    \"SelectedFields\": [\"query_id\", \"time\", \"stmt\"],\n    \"PageNum\": 1,\n    \"PageSize\": 10\n\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 201884,\n        \"Fields\": [\n            \"query_id\",\n            \"time\",\n            \"stmt\"\n        ],\n        \"FieldTypes\": [\n            \"varchar(48)\",\n            \"datetime(3)\",\n            \"text\"\n        ],\n        \"Rows\": [\n            {\n                \"DataRow\": [\n                    \"101b40ffd49745f7-81390314edcbd685\",\n                    \"2024-09-02 12:21:43.566 +0800 CST\",\n                    \" SHOW PROC '/brokers'\"\n                ]\n            },\n            {\n                \"DataRow\": [\n                    \"10206b070d714e53-860d81312913b4f9\",\n                    \"2024-09-02 16:55:09.246 +0800 CST\",\n                    \" SHOW PROC '/backends'\"\n                ]\n            },\n            {\n                \"DataRow\": [\n                    \"10216c610b93435d-a9dab3ab3312e66a\",\n                    \"2024-09-02 20:53:25.565 +0800 CST\",\n                    \" SHOW PROC '/backends'\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx-xx-xx-xx-xx\"\n    }\n}",
         "title": "查询表"
       }
@@ -607,8 +607,8 @@
     "RestartClusterForNode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigName\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"cdwch-xxxx\",\n    \"ConfigName\": \"fe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 6331,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
         "title": "test"
       }
     ],
@@ -631,15 +631,15 @@
     "UpdateCoolDown": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Enable\": 1,\n    \"Bucket\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCoolDown\n<公共请求参数>\n\n\n\n{\n    \"InstanceId\": \"doris-123\",\n    \"Enable\": 1,\n    \"Bucket\": \"bucket6331\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1-2-3-4\"\n    }\n}",
         "title": "示例"
       }
     ],
     "UpdateDatabase": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDatabase\n<公共请求参数>\n\n\n{\n      \"InstanceId\": \"cdwdoris-7da9fumk\",\n    \"DbName\": \"demo1\",\n    \"Operation\": \"SET_QUOTA\",\n    \"Quota\": \"10T\",\n   \"CatalogName\": \"internal\"\n\n}\n",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDatabase\n<公共请求参数>\n\n\n\n{\n      \"InstanceId\": \"cdwdoris-7da9fumk\",\n    \"DbName\": \"demo1\",\n    \"Operation\": \"SET_QUOTA\",\n    \"Quota\": \"10T\",\n   \"CatalogName\": \"internal\"\n\n}\n",
         "output": "{\n    \"Response\": {\n        \"Success\": true,\n        \"Message\": \"Database quota set successfully.\",\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
         "title": "更新"
       }
@@ -647,7 +647,7 @@
     "UpdateTableSchema": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTableSchema\n<公共请求参数>\n\n\n\n\n\n\n{\n   \"InstanceId\": \"cdwdoris-7da9fumk\",\n    \"DbName\": \"demo1\",\n    \"TableName\": \"my_table_partition\",\n    \"Columns\": [\n        {\n            \"Name\": \"id\",\n            \"Type\": \"BIGINT\",\n            \"IsDistribution\": true,\n            \"IsKey\": true,\n            \"IsNull\":true\n           \n        },\n        {\n            \"Name\": \"name\",\n            \"Type\": \"VARCHAR(50)\",\n             \"IsKey\": true,\n            \"IsNull\":true\n             \n        },\n          {\n            \"Name\": \"name446\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":false,\n             \"DefaultValue\": \"1\"\n\n             \n        },\n               {\n            \"Name\": \"name449\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":false,\n             \"DefaultValue\": \"33\"\n\n             \n        },\n  \n\n\n         {\n            \"Name\": \"name333\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":true,\n            \"DefaultValue\": \"1\"\n             \n        },\n             \n        {\n            \"Name\": \"age2\",\n            \"Type\": \"INT\",\n            \"IsNull\":true\n        },\n        {\n            \"Name\": \"salary\",\n            \"Type\": \"DECIMAL(10, 5)\",\n            \"IsNull\":true\n        },\n        {\n            \"Name\": \"join_date\",\n            \"Type\": \"DATE\",\n            \"IsPartition\":true,\n            \"IsNull\":true\n        }\n    ],\n     \"IndexInfos\": [\n        {\n            \"IdxType\": \"NGRAM_BF\",\n            \"ColumnName\": \"name333\",\n            \"IdxName\": \"idx_name\",\n            \"IdxComment\": \"Optional comment about the index\",\n            \"IdxProperties\": [{\n                \"PropertyKey\":\"gram_size\",\n                \"PropertyValue\":\"3\"\n\n            },\n\n{\n                \"PropertyKey\":\"bf_size\",\n                \"PropertyValue\":\"1024\"\n\n            }]\n            }\n\n   \n    ],\n    \"Distribution\": {\n        \"DistributionType\": \"HASH\",\n        \"Count\": 64\n    },\n    \"TableComment\": \"Optional comment about the table=3\",\n    \"Properties\": [\n        {\n            \"PropertyKey\": \"bloom_filter_columns\",\n            \"PropertyValue\": \"age2\"\n        }\n    \n    ]\n\n\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTableSchema\n<公共请求参数>\n\n\n\n\n\n\n\n{\n   \"InstanceId\": \"cdwdoris-7da9fumk\",\n    \"DbName\": \"demo1\",\n    \"TableName\": \"my_table_partition\",\n    \"Columns\": [\n        {\n            \"Name\": \"id\",\n            \"Type\": \"BIGINT\",\n            \"IsDistribution\": true,\n            \"IsKey\": true,\n            \"IsNull\":true\n           \n        },\n        {\n            \"Name\": \"name\",\n            \"Type\": \"VARCHAR(50)\",\n             \"IsKey\": true,\n            \"IsNull\":true\n             \n        },\n          {\n            \"Name\": \"name446\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":false,\n             \"DefaultValue\": \"1\"\n\n             \n        },\n               {\n            \"Name\": \"name449\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":false,\n             \"DefaultValue\": \"33\"\n\n             \n        },\n  \n\n\n         {\n            \"Name\": \"name333\",\n            \"Type\": \"VARCHAR(50)\",\n            \"IsNull\":true,\n            \"DefaultValue\": \"1\"\n             \n        },\n             \n        {\n            \"Name\": \"age2\",\n            \"Type\": \"INT\",\n            \"IsNull\":true\n        },\n        {\n            \"Name\": \"salary\",\n            \"Type\": \"DECIMAL(10, 5)\",\n            \"IsNull\":true\n        },\n        {\n            \"Name\": \"join_date\",\n            \"Type\": \"DATE\",\n            \"IsPartition\":true,\n            \"IsNull\":true\n        }\n    ],\n     \"IndexInfos\": [\n        {\n            \"IdxType\": \"NGRAM_BF\",\n            \"ColumnName\": \"name333\",\n            \"IdxName\": \"idx_name\",\n            \"IdxComment\": \"Optional comment about the index\",\n            \"IdxProperties\": [{\n                \"PropertyKey\":\"gram_size\",\n                \"PropertyValue\":\"3\"\n\n            },\n\n{\n                \"PropertyKey\":\"bf_size\",\n                \"PropertyValue\":\"1024\"\n\n            }]\n            }\n\n   \n    ],\n    \"Distribution\": {\n        \"DistributionType\": \"HASH\",\n        \"Count\": 64\n    },\n    \"TableComment\": \"Optional comment about the table=3\",\n    \"Properties\": [\n        {\n            \"PropertyKey\": \"bloom_filter_columns\",\n            \"PropertyValue\": \"age2\"\n        }\n    \n    ]\n\n\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xx-xx-xx-xx\",\n        \"Success\": true,\n        \"Message\": \"Table schema updated successfully.\"\n    }\n}",
         "title": "修改表"
       }

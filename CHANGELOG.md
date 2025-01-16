@@ -1,3 +1,166 @@
+# Release 3.0.1139.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 45 次发布
+
+发布时间：2025-01-17 01:09:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ClearLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/54255)
+
+* [CreateLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20447)
+
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 46 次发布
+
+发布时间：2025-01-17 01:13:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CampConfiguration](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CampConfiguration)
+
+	* 新增成员：MountPropagation, SubPathExpr, Readonly
+
+* [ContainerMount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ContainerMount)
+
+	* 新增成员：MountPropagation, SubPathExpr
+
+* [HPASource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPASource)
+
+	* 新增成员：PanicThresholdUtilization
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 51 次发布
+
+发布时间：2025-01-17 01:18:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)
+
+	* 新增出参：TotalCount, DuplicateTables, ErrorMsg
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 18 次发布
+
+发布时间：2025-01-17 01:47:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReconstructDocument](http://document.tencentcloudapi.woa.com/document/product/1764/85666)
+
+	* 新增入参：FileType
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 76 次发布
+
+发布时间：2025-01-17 01:57:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificates](http://document.tencentcloudapi.woa.com/document/product/400/41671)
+
+	* 新增入参：CertIds
+
+
+
+
+## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+
+### 第 4 次发布
+
+发布时间：2025-01-17 01:59:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ExecuteSqlForBI](http://document.tencentcloudapi.woa.com/document/product/1741/81595)
+
+	* 新增入参：DbName
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 195 次发布
+
+发布时间：2025-01-17 02:10:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeNatsEipsInternal](http://document.tencentcloudapi.woa.com/document/product/215/85677)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 82 次发布
+
+发布时间：2025-01-17 02:15:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTaskTableMetricOverview](http://document.tencentcloudapi.woa.com/document/product/1607/85678)
+
+新增数据结构：
+
+* [OrderFields](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrderFields)
+* [TaskTableMetricInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskTableMetricInfo)
+
+
+
 # Release 3.0.1138.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

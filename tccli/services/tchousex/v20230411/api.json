@@ -169,7 +169,7 @@
         {
           "disabled": false,
           "document": "用户登录态信息",
-          "example": "xxx",
+          "example": "select * from test",
           "member": "string",
           "name": "SqlToken",
           "required": true,
@@ -187,9 +187,18 @@
         {
           "disabled": false,
           "document": "节点id",
-          "example": "xxx",
+          "example": "节点id",
           "member": "string",
           "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "test",
+          "member": "string",
+          "name": "DbName",
           "required": false,
           "type": "string"
         }
@@ -202,7 +211,7 @@
         {
           "disabled": false,
           "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "InstanceId",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -212,7 +221,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "ErrorMsg",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
@@ -222,7 +231,7 @@
         {
           "disabled": false,
           "document": "返回的序列化数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "ReturnData",
           "member": "string",
           "name": "ReturnData",
           "output_required": false,

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cdwdoris UpdateCoolDown --cli-unfold-argument  \
-    --InstanceId abc \
+    --InstanceId doris-123 \
     --Enable 1 \
-    --Bucket abc
+    --Bucket bucket6331
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "1-2-3-4"
     }
 }
 ```

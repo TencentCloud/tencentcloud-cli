@@ -1304,8 +1304,8 @@
           "type": "bool"
         },
         {
-          "disabled": false,
-          "document": "是否清空 MetaData，非必填，默认为 false。\n填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 MetaData。",
+          "disabled": true,
+          "document": "拼写异常，已废弃，请勿使用。",
           "example": "false",
           "member": "bool",
           "name": "ClearMetaData",
@@ -1972,8 +1972,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "自定义metadata。",
+          "disabled": true,
+          "document": "拼写异常，已废弃，请勿使用。",
           "example": "无",
           "member": "Metadata",
           "name": "MetaData",
@@ -5122,11 +5122,11 @@
       "usage": "in"
     },
     "Metadata": {
-      "document": "自定义 MetaData",
+      "document": "自定义 Metadata",
       "members": [
         {
           "disabled": false,
-          "document": "自定义 MetaData 键值对列表",
+          "document": "自定义 Metadata 键值对列表",
           "example": "[{\"Key\": \"Key123_4-5\", \"Value\": \"valueExam\"}]",
           "member": "MetadataItem",
           "name": "Items",
@@ -5139,7 +5139,7 @@
       "usage": "both"
     },
     "MetadataItem": {
-      "document": "自定义 MetaData 的一组键值对信息",
+      "document": "自定义 Metadata 的一组键值对信息",
       "members": [
         {
           "disabled": false,
@@ -5775,8 +5775,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "自定义metaData。",
+          "disabled": true,
+          "document": "拼写异常，已废弃，请勿使用。",
           "example": "无",
           "member": "Metadata",
           "name": "MetaData",

@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "ErrorMsg": "Operation successful",
-        "QueryDocument": "SELECT * FROM customer_orders LIMIT 10",
+        "QueryDocument": "[{\"partition_name\": \"p1\", \"cool_down_status\": \"enabled\", \"cool_down_policy\": \"policy_7days\"}, {\"partition_name\": \"p2\", \"cool_down_status\": \"disabled\", \"cool_down_policy\": \"\"}]",
         "RequestId": "req-987654321"
     }
 }

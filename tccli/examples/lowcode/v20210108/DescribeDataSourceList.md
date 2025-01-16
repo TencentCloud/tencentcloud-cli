@@ -8,22 +8,22 @@ Input:
 tccli lowcode DescribeDataSourceList --cli-unfold-argument  \
     --PageSize 10 \
     --PageIndex 1 \
-    --EnvId data-4jT6kVY \
+    --EnvId lowcode-4jT6kVY \
     --Appids data-4jT6kVY \
     --DataSourceIds data-4jT6kVY \
-    --DataSourceNames data-4jT6kVY \
-    --DataSourceType data-4jT6kVY \
-    --QueryOption.LikeName data-4jT6kVY \
-    --QueryOption.LikeTitle data-4jT6kVY \
-    --ViewIds data-4jT6kVY \
+    --DataSourceNames 4jT6kVY \
+    --DataSourceType mysql \
+    --QueryOption.LikeName 4jT6kVY \
+    --QueryOption.LikeTitle 用户 \
+    --ViewIds 4jT6kVY \
     --AppLinkStatus 0 \
     --QueryBindToApp 0 \
     --QueryConnector 0 \
-    --NotQuerySubTypeList data-4jT6kVY \
-    --ChannelList data-4jT6kVY \
+    --NotQuerySubTypeList d4jT6kVY \
+    --ChannelList 4jT6kVY \
     --QueryDataSourceRelationList True \
-    --DbInstanceType data-4jT6kVY \
-    --DatabaseTableNames data-4jT6kVY \
+    --DbInstanceType mysql \
+    --DatabaseTableNames sys_user \
     --QuerySystemModel True
 ```
 
@@ -35,41 +35,41 @@ Output:
             "Rows": [
                 {
                     "Id": "data-4jT6kVY",
-                    "Title": "data-4jT6kVY",
-                    "Name": "data-4jT6kVY",
-                    "Type": "data-4jT6kVY",
-                    "Description": "data-4jT6kVY",
-                    "Schema": "data-4jT6kVY",
+                    "Title": "用户",
+                    "Name": "sys_user",
+                    "Type": "database",
+                    "Description": "内置数据源",
+                    "Schema": "{\"x-primary-column\":\"name\",\"x-kind\":\"tcb\",\"name\":\"sys_user\",\"x-defaultMethods\":[\"wedaCreate\"]}",
                     "CmsProject": "data-4jT6kVY",
                     "PkgId": "lowcode-4jT6kVY",
                     "SchemaVersion": "2.0",
                     "CreatorId": "sys_user_1",
-                    "CreatedAt": "data-4jT6kVY",
-                    "UpdatedAt": "data-4jT6kVY",
+                    "CreatedAt": "sys",
+                    "UpdatedAt": "sys",
                     "EnvId": "lowcode-4jT6kVY",
                     "DataSourceVersion": "data-4jT6kVY",
                     "AppUsageList": [
                         {
                             "Id": "data-4jT6kVY",
-                            "Title": "data-4jT6kVY",
+                            "Title": "用户",
                             "EditStatusUse": 0,
                             "PreviewStatusUse": 0,
                             "OnlineStatusUse": 0,
                             "DataSourceId": "data-4jT6kVY"
                         }
                     ],
-                    "PublishedAt": "data-4jT6kVY",
+                    "PublishedAt": "sys",
                     "ChildDataSourceIds": [
                         "data-4jT6kVY"
                     ],
-                    "Fun": "data-4jT6kVY",
+                    "Fun": "{\"prviewPublishAt\":\"2024-11-19T17:28:57.919+0800\",\"onlinePublishAt\":\"2024-11-19T17:28:30.989+0800\",\"previewVersion\":2,\"onlineVersion\":2}",
                     "ScfStatus": 1,
                     "Methods": "data-4jT6kVY",
                     "ChildDataSourceNames": [
                         "data-4jT6kVY"
                     ],
                     "IsNewDataSource": 0,
-                    "ViewId": "data-4jT6kVY",
+                    "ViewId": "view-67vvgoe840",
                     "Configuration": "data-4jT6kVY",
                     "TemplateCode": "data-4jT6kVY",
                     "Source": 0,
@@ -78,7 +78,7 @@ Output:
                     "SubType": "data-4jT6kVY",
                     "AuthStatus": 0,
                     "AuthInfo": {
-                        "AuthUser": "data-4jT6kVY"
+                        "AuthUser": "sys"
                     },
                     "PublishStatus": 0,
                     "UpdateVersion": 0,
@@ -89,10 +89,10 @@ Output:
                             "RelateDataSourceName": "data-4jT6kVY"
                         }
                     ],
-                    "DbInstanceType": "data-4jT6kVY",
-                    "PreviewTableName": "data-4jT6kVY",
-                    "PublishedTableName": "data-4jT6kVY",
-                    "DbSourceType": "data-4jT6kVY"
+                    "DbInstanceType": "mysql",
+                    "PreviewTableName": "sys_user_pre",
+                    "PublishedTableName": "sys_user",
+                    "DbSourceType": "mysql"
                 }
             ],
             "Count": 1

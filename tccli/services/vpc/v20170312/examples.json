@@ -2408,6 +2408,14 @@
         "title": "用于获取nat的信息"
       }
     ],
+    "DescribeNatsEipsInternal": [
+      {
+        "document": "分页获取nat实例绑定的IP信息",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatsEipsInternal\n<公共请求参数>\n\n{\n    \"Limit\": 2,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"EipSet\": [\n            \"106.55.195.146\",\n            \"106.55.193.2\"\n        ],\n        \"RequestId\": \"f2de8e64-c50c-46d8-af06-1c328da7201c\",\n        \"TotalCount\": 37\n    }\n}",
+        "title": "分页获取nat实例绑定的IP信息"
+      }
+    ],
     "DescribeNetDetectStates": [
       {
         "document": "根据ID查询网络探测验证结果列表",

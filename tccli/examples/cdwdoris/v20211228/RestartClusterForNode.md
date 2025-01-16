@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli cdwdoris RestartClusterForNode --cli-unfold-argument  \
-    --InstanceId abc \
-    --ConfigName abc
+    --InstanceId cdwch-xxxx \
+    --ConfigName fe
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 0,
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "FlowId": 6331,
+        "ErrorMsg": "",
+        "RequestId": "1-2-3-4"
     }
 }
 ```

@@ -27,8 +27,8 @@
     "ExecuteSqlForBI": [
       {
         "document": "BI侧查询sql语句",
-        "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteSqlForBI\n<公共请求参数>\n\n{\n    \"DbType\": \"abc\",\n    \"Cluster\": \"abc\",\n    \"Sql\": \"abc\",\n    \"SqlToken\": \"abc\",\n    \"Host\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"ReturnData\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tchousex.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteSqlForBI\n<公共请求参数>\n\n{\n    \"DbType\": \"test\",\n    \"Cluster\": \"test\",\n    \"Sql\": \"test\",\n    \"SqlToken\": \"test\",\n    \"Host\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"test\",\n        \"ErrorMsg\": \"test\",\n        \"ReturnData\": \"test\",\n        \"RequestId\": \"test\"\n    }\n}",
         "title": "ExecuteSqlForBI"
       }
     ]

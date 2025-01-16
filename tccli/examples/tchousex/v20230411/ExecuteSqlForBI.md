@@ -6,21 +6,21 @@ Input:
 
 ```
 tccli tchousex ExecuteSqlForBI --cli-unfold-argument  \
-    --DbType abc \
-    --Cluster abc \
-    --Sql abc \
-    --SqlToken abc \
-    --Host abc
+    --DbType test \
+    --Cluster test \
+    --Sql test \
+    --SqlToken test \
+    --Host test
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "abc",
-        "ErrorMsg": "abc",
-        "ReturnData": "abc",
-        "RequestId": "abc"
+        "InstanceId": "test",
+        "ErrorMsg": "test",
+        "ReturnData": "test",
+        "RequestId": "test"
     }
 }
 ```
