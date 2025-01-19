@@ -88,7 +88,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=CheckIdNameDate\n&Name=韦小宝\n&IdCard= 11204416541220243X\n&ValidityBegin=20160204\n&ValidityEnd=20260204\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"查询成功\",\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"一致\",\n        \"RequestId\": \"8695c53f-776f-4ff5-a66d-84e67b352d20\"\n    }\n}",
         "title": "身份信息及有效期核验成功示例"
       },
       {
@@ -246,6 +246,20 @@
         "title": "获取结果成功"
       }
     ],
+    "GetFaceIdToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"BUSINESS\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FaceIdToken\": \"42S41B31D-5974-4674-EABB-8FFF1EC99F819\",\n        \"RequestId\": \"94b54cdf-d975-4718-b091-32f8d79d6397\"\n    }\n}",
+        "title": "获取 SDK 核验 Token成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFaceIdToken\n<公共请求参数>\n\n{\n    \"CompareLib\": \"LOCAL\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\",\n    \"ImageBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.ImageSizeTooLarge\",\n            \"Message\": \"图片尺寸过大。\"\n        },\n        \"RequestId\": \"ae8fbee0-f20e-4651-896e-e21e80d3822a\"\n    }\n}",
+        "title": "获取 SDK 核验 Token失败示例"
+      }
+    ],
     "GetFaceidRiskInfoToken": [
       {
         "document": "获取 SDK 核验 token。",
@@ -398,7 +412,7 @@
       {
         "document": "",
         "input": "https://faceid.tencentcloudapi.com/?Action=MobileNetworkTimeVerification\n&Mobile=13800138000\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"Range\": \"(24,+]\",\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"成功\",\n        \"Range\": \"[24,+)\",\n        \"RequestId\": \"f893bfcf-167d-45df-99aa-60a23fe5809d\"\n    }\n}",
         "title": "手机号在网时长核验成功示例"
       },
       {

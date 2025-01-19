@@ -687,36 +687,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份文件所在的cos桶\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "备份文件所在的cos桶",
+          "example": "https://tss-gz-130551234.cos.ap-guangzhou.myqcloud.com/",
           "member": "string",
           "name": "CosBucket",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份文件所在的完整cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "备份文件所在的完整cos路径",
+          "example": "cdwdoris-aaxe12",
           "member": "string",
           "name": "CosPath",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备份文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "备份文件名称",
+          "example": "snapshot-axxx",
           "member": "string",
           "name": "SnapShotPath",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -747,7 +747,7 @@
         {
           "disabled": false,
           "document": "库名",
-          "example": "abc",
+          "example": "test_db",
           "member": "string",
           "name": "DbName",
           "output_required": true,
@@ -817,7 +817,7 @@
         {
           "disabled": false,
           "document": "未完成任务",
-          "example": " a",
+          "example": " tasks",
           "member": "string",
           "name": "UnfinishedTasks",
           "output_required": true,
@@ -857,7 +857,7 @@
         {
           "disabled": false,
           "document": "超时信息",
-          "example": "111",
+          "example": "120",
           "member": "int64",
           "name": "Timeout",
           "output_required": true,
@@ -866,23 +866,23 @@
         },
         {
           "disabled": false,
-          "document": "备份实例id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "备份实例id",
+          "example": "6872",
           "member": "int64",
           "name": "BackupJobId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例对应snapshoit的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例对应snapshoit的id",
           "example": "2221",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -975,25 +975,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "用户名",
+          "example": "user_a",
           "member": "string",
           "name": "UserName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主机信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主机信息",
           "example": "%",
           "member": "string",
           "name": "Host",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3050,7 +3050,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "xx",
+          "example": "cdwdoris-akxtck1n",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -3059,7 +3059,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "xx",
+          "example": "2025-01-03 12:23:23\t",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -3068,7 +3068,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "xx",
+          "example": "2025-01-04 12:23:23\t",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3172,6 +3172,15 @@
           "name": "Catalogs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否是查询\t",
+          "example": "[true]\t",
+          "member": "bool",
+          "name": "IsQuery",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3182,7 +3191,7 @@
         {
           "disabled": false,
           "document": "日志的cos地址",
-          "example": "xx",
+          "example": "http://ap-guangzhou.com",
           "member": "string",
           "name": "CosUrl",
           "output_required": true,
@@ -4072,7 +4081,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "xx",
+          "example": "cdwdoris-3lnbut32",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4081,7 +4090,7 @@
         {
           "disabled": false,
           "document": "慢查询时间",
-          "example": "xx",
+          "example": "123",
           "member": "int64",
           "name": "QueryDurationMs",
           "required": true,
@@ -4090,7 +4099,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "xx",
+          "example": "2025-01-02 12:35:24\t",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4099,7 +4108,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "xx",
+          "example": "2025-01-02 14:35:24\t",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4108,7 +4117,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "xx",
+          "example": "ASC",
           "member": "string",
           "name": "DurationMs",
           "required": false,
@@ -4117,7 +4126,7 @@
         {
           "disabled": false,
           "document": "查询sql",
-          "example": "无",
+          "example": "select * from test",
           "member": "string",
           "name": "Sql",
           "required": false,
@@ -4126,7 +4135,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "ReadRows",
           "required": false,
@@ -4135,7 +4144,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "ResultBytes",
           "required": false,
@@ -4144,7 +4153,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "无",
+          "example": "ASC",
           "member": "string",
           "name": "MemoryUsage",
           "required": false,
@@ -4153,7 +4162,7 @@
         {
           "disabled": false,
           "document": "IsQuery条件",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "IsQuery",
           "required": false,
@@ -4176,6 +4185,24 @@
           "name": "CatalogName",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "MemoryUsage",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4186,7 +4213,7 @@
         {
           "disabled": false,
           "document": "cos地址",
-          "example": "xx",
+          "example": "http://cos-test.ap-guangzhou.com",
           "member": "string",
           "name": "CosUrl",
           "output_required": true,
@@ -4226,7 +4253,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "abc",
+          "example": "2025-01-02 12:35:24",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -4235,7 +4262,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "abc",
+          "example": "2025-01-02 18:35:24",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -4262,7 +4289,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "abc",
+          "example": "ASC",
           "member": "string",
           "name": "DurationMs",
           "required": false,
@@ -4330,6 +4357,24 @@
           "name": "MemoryUsage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "MemoryUsage",
+          "member": "string",
+          "name": "SortField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4359,23 +4404,23 @@
         },
         {
           "disabled": false,
-          "document": "所有数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所有数据库名",
           "example": "无",
           "member": "string",
           "name": "DBNameList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所有catalog名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所有catalog名",
           "example": "无",
           "member": "string",
           "name": "CatalogNameList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

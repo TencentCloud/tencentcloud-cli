@@ -6688,6 +6688,7 @@
           "example": "空",
           "member": "ReadOnlyGroup",
           "name": "ReadOnlyGroupList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7164,7 +7165,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36\n<li>后付费：只支持1",
+          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>\n<li>后付费：只支持1</li>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -7173,7 +7174,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用代金券：\n<li>true：使用\n<li>false：不使用\n默认值：false",
+          "document": "是否使用代金券：\n<li>true：使用</li>\n<li>false：不使用</li>\n默认值：false",
           "example": "true",
           "member": "bool",
           "name": "AutoVoucher",
@@ -8200,7 +8201,7 @@
         },
         {
           "disabled": false,
-          "document": "实例备份周期，按照星期维度，格式为小写星期英文单词",
+          "document": "实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如[\"1\",\"2\"]。",
           "example": "[\"monday\", \"tuesday\", \"wednesday\"]",
           "member": "string",
           "name": "BackupPeriod",
@@ -8215,6 +8216,24 @@
           "name": "LogBackupRetentionPeriod",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。",
+          "example": "0ee6843a-475b-5514-bd29-c432b75bb036",
+          "member": "string",
+          "name": "PlanId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要修改的备份计划名称。",
+          "example": "plan2",
+          "member": "string",
+          "name": "PlanName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8290,7 +8309,7 @@
         },
         {
           "disabled": false,
-          "document": "实例计费类型，目前支持：\n<li>PREPAID：预付费，即包年包月\n<li>POSTPAID_BY_HOUR：后付费，即按量计费\n默认值：PREPAID",
+          "document": "实例计费类型，目前支持：\n<li>PREPAID：预付费，即包年包月</li>\n<li>POSTPAID_BY_HOUR：后付费，即按量计费</li>\n默认值：PREPAID",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
@@ -8299,7 +8318,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36\n<li>后付费：只支持1",
+          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>\n<li>后付费：只支持1</li>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -8308,7 +8327,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标记：\n<li>0：手动续费\n<li>1：自动续费\n默认值：0",
+          "document": "续费标记：\n<li>0：手动续费</li>\n<li>1：自动续费</li>\n默认值：0",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -8317,7 +8336,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券：\n<li>0：否\n<li>1：是\n默认值：0",
+          "document": "是否自动使用代金券：\n<li>0：否</li>\n<li>1：是</li>\n默认值：0",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -10437,7 +10456,7 @@
         },
         {
           "disabled": false,
-          "document": "续费多少个月",
+          "document": "购买时长，单位：月。\n<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>\n<li>后付费：只支持1</li>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -10446,7 +10465,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动使用代金券,1是,0否，默认不使用",
+          "document": "是否自动使用代金券：\n<li>0：否</li>\n<li>1：是</li>\n默认值：0",
           "example": "0",
           "member": "int64",
           "name": "AutoVoucher",
@@ -10474,7 +10493,7 @@
           "example": "201806181256",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11703,7 +11722,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库版本状态，包括：\nAVAILABLE：可用；\nDEPRECATED：已弃用。",
+          "document": "数据库版本状态，包括：\nAVAILABLE：可用；\nUPGRADE_ONLY：不可创建，此版本仅可升级至高版本；\nDEPRECATED：已弃用。",
           "example": "AVAILABLE",
           "member": "string",
           "name": "Status",

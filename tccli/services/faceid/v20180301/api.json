@@ -710,7 +710,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "E证通流程的唯一标识，调用GetEidToken接口时生成。",
+          "document": "E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。",
           "example": "2B3B265E-2C91-5A62-B32D-D0CA5C3F1A15",
           "member": "string",
           "name": "EidToken",
@@ -1021,7 +1021,7 @@
         {
           "disabled": false,
           "document": "业务结果描述。",
-          "example": "核验一致",
+          "example": "一致",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -2151,7 +2151,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "人脸核身流程的标识，调用DetectAuth接口时生成。",
+          "document": "人脸核身流程的标识，调用[DetectAuth](https://cloud.tencent.com/document/product/1007/31816)接口时生成。",
           "example": "CF742D11-BD49-4704-A33F-B9372D6322D6",
           "member": "string",
           "name": "BizToken",
@@ -2624,7 +2624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EID商户id。\n- 字段长度最长50位。",
+          "document": "EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。\n- 字段长度最长50位。",
           "example": "0NSJ243206261600932123",
           "member": "string",
           "name": "MerchantId",
@@ -2704,7 +2704,7 @@
         {
           "disabled": false,
           "document": "发起核身流程的URL。\n- 用于H5场景核身。",
-          "example": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa50a8f2ac379585f53&redirect_uri=https%3A%2F%2Feid.faceid.qq.com%2Fapi%2Fv1%2FGetOpenId%3Ftoken%3DCE6611F1A-0F1E-455BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirec",
+          "example": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxa50a8f2ac379585f53&redirect_uri=https%3A%2F%2Feid.faceid.qq.com%2Fapi%2Fv1%2FGetOpenId%3Ftoken%3DCE6611F1A-0F1E-455BD-BE13-34C05CEA7681&component_appid=wx9802ee81e68d6dee#wechat_redirec",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -2725,7 +2725,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SDK人脸核身流程的标识。\n- 调用GetFaceIdToken接口时生成。",
+          "document": "SDK人脸核身流程的标识。\n- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。",
           "example": "CE6613F1A-0F1E-45BD-BE13-34C05CEA76181",
           "member": "string",
           "name": "FaceIdToken",
@@ -2890,7 +2890,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。",
+          "document": "SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。",
           "example": "CE6621F1A-0F1E-45BD-BE13-34C025CEA7681",
           "member": "string",
           "name": "FaceIdToken",
@@ -3014,7 +3014,7 @@
         {
           "disabled": false,
           "document": "SDK中生成的Meta字符串。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "Meta",
           "required": false,
@@ -3023,7 +3023,7 @@
         {
           "disabled": false,
           "document": "透传参数。\n- 1000长度字符串",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "Extra",
           "required": false,
@@ -4398,8 +4398,8 @@
         },
         {
           "disabled": false,
-          "document": "在网时长区间。\n- 格式为(a,b]，表示在网时长在a个月以上，b个月以下。\n- 若b为+时表示没有上限。",
-          "example": "(23,+]",
+          "document": "在网时长区间。\n- 格式为[a,b)，表示在网时长在a个月以上，b个月以下。\n- 若b为+时表示没有上限。",
+          "example": "[23,+)",
           "member": "string",
           "name": "Range",
           "output_required": true,
@@ -4661,7 +4661,7 @@
         },
         {
           "disabled": false,
-          "document": "旅行证件类的核验结果。\n- JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_pape r\":\"证件安全对象合法性验证结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} 。\n- 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "旅行证件类的核验结果。\n- JSON格式如下：\n{\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_paper\":\"证件安全对象合法性验证结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} 。\n- 取值范围： 0:验证通过，1: 验证不通过，2: 未验证，3:部分通过，当4项核验结果都为0时，表示证件为真。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CheckMRTD",

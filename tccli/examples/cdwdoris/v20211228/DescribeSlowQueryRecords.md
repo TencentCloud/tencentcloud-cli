@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli cdwdoris DescribeSlowQueryRecords --cli-unfold-argument  \
-    --InstanceId abc \
-    --QueryDurationMs 0 \
-    --StartTime abc \
-    --EndTime abc \
-    --PageSize 0 \
-    --PageNum 0 \
-    --DurationMs abc
+    --InstanceId cdwdoris-3lnbut3w \
+    --QueryDurationMs 3000 \
+    --EndTime 2025-01-03 15:13:48 \
+    --StartTime 2025-01-03 14:58:48 \
+    --PageSize 10 \
+    --PageNum 1 \
+    --IsQuery -1
 ```
 
 Output: 
@@ -22,19 +22,19 @@ Output:
         "TotalCount": 0,
         "SlowQueryRecords": [
             {
-                "OsUser": "abc",
-                "InitialQueryId": "abc",
-                "Sql": "abc",
-                "QueryStartTime": "abc",
-                "DurationMs": 0,
-                "ReadRows": 0,
-                "ResultRows": 0,
+                "OsUser": "user",
+                "InitialQueryId": "xadfa-2xasdfa-a74rax",
+                "Sql": "select * from test",
+                "QueryStartTime": "2025-01-02 12:23:12",
+                "DurationMs": 12,
+                "ReadRows": 1234,
+                "ResultRows": 364,
                 "ResultBytes": 1,
                 "MemoryUsage": 0,
-                "InitialAddress": "abc"
+                "InitialAddress": "192.168.13.24"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "asdfas-xadsfa-adssfad-1sdsa"
     }
 }
 ```

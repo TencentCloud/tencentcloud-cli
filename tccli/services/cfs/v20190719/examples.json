@@ -8,6 +8,14 @@
         "title": "绑定文件系统快照策略"
       }
     ],
+    "CreateAccessCert": [
+      {
+        "document": "创建访问凭证",
+        "input": "https://cfs.tencentcloudapi.com/?Action=CreateAccessCert\n&CertDesc=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\",\n        \"CertId\": \"cfscert-1234abcd\"\n    }\n}",
+        "title": "创建访问凭证"
+      }
+    ],
     "CreateAutoSnapshotPolicy": [
       {
         "document": "创建文件系统快照策略",

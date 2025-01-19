@@ -2211,6 +2211,24 @@
           "name": "InitCommand",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "主域名。",
+          "example": "tencent.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子域名。",
+          "example": "www",
+          "member": "string",
+          "name": "Subdomain",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

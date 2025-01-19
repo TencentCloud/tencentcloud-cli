@@ -8657,7 +8657,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。",
+          "document": "输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
@@ -21779,7 +21779,7 @@
         },
         {
           "disabled": false,
-          "document": "输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。\n当输出包含RTP时，输入只能是RTP。\n当输出包含RTMP时，输入可以是SRT/RTMP。\n当输出包含SRT时，输入只能是SRT。",
+          "document": "输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。\t-",
           "example": "SRT",
           "member": "string",
           "name": "Protocol",

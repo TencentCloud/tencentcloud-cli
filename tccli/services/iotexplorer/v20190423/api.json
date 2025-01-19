@@ -357,6 +357,13 @@
       "output": "DescribeCloudStorageEventsResponse",
       "status": "online"
     },
+    "DescribeCloudStorageEventsWithAITasks": {
+      "document": "拉取云存事件列表",
+      "input": "DescribeCloudStorageEventsWithAITasksRequest",
+      "name": "拉取云存事件及 AI 分析任务列表",
+      "output": "DescribeCloudStorageEventsWithAITasksResponse",
+      "status": "online"
+    },
     "DescribeCloudStorageMultiThumbnail": {
       "document": "拉取多个云存事件缩略图",
       "input": "DescribeCloudStorageMultiThumbnailRequest",
@@ -2088,7 +2095,7 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可能取值：\n\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩",
+          "document": "云存 AI 服务类型。可能取值：\n\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩\n- `VideoToText`：视频语义理解",
           "example": "Highlight",
           "member": "string",
           "name": "ServiceType",
@@ -2250,6 +2257,82 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudStorageEventWithAITasks": {
+      "document": "云存事件及其关联的云存 AI 任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件起始时间（Unix 时间戳，秒级",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件结束时间（Unix 时间戳，秒级",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件缩略图",
+          "example": "/100008401725/AQTV2839QJ/sp01_328202375/events/123.jpg",
+          "member": "string",
+          "name": "Thumbnail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件ID",
+          "example": "low_power",
+          "member": "string",
+          "name": "EventId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件录像上传状态，Finished: 全部上传成功 Partial: 部分上传成功 Failed: 上传失败\t",
+          "example": "Finished",
+          "member": "string",
+          "name": "UploadStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件自定义数据\t",
+          "example": "name",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件关联的云存 AI 任务列表",
+          "example": "无",
+          "member": "CloudStorageAIServiceTask",
+          "name": "AITasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CloudStoragePackageInfo": {
       "document": "云存套餐包信息",
@@ -4860,7 +4943,7 @@
         },
         {
           "disabled": false,
-          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩",
+          "document": "云存 AI 服务类型。可选值：\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩\n- `VideoToText`：视频语义理解",
           "example": "Highlight",
           "member": "string",
           "name": "ServiceType",
@@ -5106,6 +5189,164 @@
           "document": "云存事件列表",
           "example": "无",
           "member": "CloudStorageEvent",
+          "name": "Events",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拉取结果是否已经结束",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内部结果数量，并不等同于事件总数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频播放URL",
+          "example": "http://test.iotvideo.tencentcs.com/timeshift/live/test.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsWithAITasksRequest": {
+      "document": "DescribeCloudStorageEventsWithAITasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "QDA1PZLBNB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev01",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件关联的视频 AI 分析服务类型（支持多选）。可选值：\n\n- `RealtimeObjectDetect`：目标检测\n- `Highlight`：视频浓缩\n- `VideoToText`：视频语义理解",
+          "example": "[\"Highlight\"]",
+          "member": "string",
+          "name": "ServiceTypes",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间（Unix 时间戳，秒级）, 为0 表示 当前时间 - 24h",
+          "example": "1560355200",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（Unix 时间戳，秒级）, 为0 表示当前时间",
+          "example": "1601196327",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求上下文, 用作查询游标",
+          "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询数据项目的最大数量, 默认为10。假设传Size=10，返回的实际事件数量为N，则 5 <= N <= 10。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件标识符，可以用来指定查询特定的事件，如果不指定，则查询所有事件。",
+          "example": "low_voltage",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "user",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsWithAITasksResponse": {
+      "document": "DescribeCloudStorageEventsWithAITasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云存事件列表",
+          "example": "无",
+          "member": "CloudStorageEventWithAITasks",
           "name": "Events",
           "output_required": true,
           "type": "list",

@@ -15,7 +15,7 @@ Output:
     "Response": {
         "Result": "0",
         "Description": "成功",
-        "Range": "(24,+]",
+        "Range": "[24,+)",
         "RequestId": "f893bfcf-167d-45df-99aa-60a23fe5809d"
     }
 }

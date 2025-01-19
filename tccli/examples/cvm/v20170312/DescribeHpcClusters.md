@@ -24,7 +24,14 @@ Output:
                 "Zone": "ap-guangzhou-3",
                 "CurrentNum": 0,
                 "InstanceIds": [],
-                "CreateTime": "2020-06-02T07:55:05Z"
+                "HpcClusterNetMode": 30,
+                "CreateTime": "2020-06-02T07:55:05Z",
+                "Tags": [
+                    {
+                        "Key": "tag_key",
+                        "Value": "tag_value"
+                    }
+                ]
             },
             {
                 "HpcClusterId": "hpc-p64fdfa9",
@@ -34,7 +41,14 @@ Output:
                 "Zone": "ap-guangzhou-3",
                 "CurrentNum": 0,
                 "InstanceIds": [],
-                "CreateTime": "2020-06-02T07:51:58Z"
+                "HpcClusterNetMode": 30,
+                "CreateTime": "2020-06-02T07:51:58Z",
+                "Tags": [
+                    {
+                        "Key": "tag_key",
+                        "Value": "tag_value"
+                    }
+                ]
             }
         ],
         "TotalCount": 2,
