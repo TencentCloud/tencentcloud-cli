@@ -6,27 +6,21 @@ Input:
 
 ```
 tccli cdwdoris DescribeDatabaseAuditDownload --cli-unfold-argument  \
-    --InstanceId abc \
-    --StartTime abc \
-    --EndTime abc \
+    --InstanceId cdwdoris-akxtck1n \
+    --StartTime 2025-01-06 09:36:04 \
+    --EndTime 2025-01-06 10:36:04 \
     --PageSize 0 \
-    --PageNum 0 \
-    --OrderType abc \
-    --User abc \
-    --DbName abc \
-    --SqlType abc \
-    --Sql abc \
-    --Users abc \
-    --DbNames abc \
-    --SqlTypes abc
+    --PageNum 1 \
+    --OrderType DESC \
+    --Sql 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CosUrl": "abc",
-        "RequestId": "abc"
+        "CosUrl": "http://abc",
+        "RequestId": "abc-1xas"
     }
 }
 ```

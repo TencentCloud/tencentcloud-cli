@@ -1,77 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 弹性伸缩(as) 版本：2018-04-19
-
-### 第 45 次发布
-
-发布时间：2025-01-17 01:09:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ClearLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/54255)
-
-* [CreateLaunchConfiguration](http://document.tencentcloudapi.woa.com/document/product/377/20447)
-
-* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
-
-
-
-
-## 应用管理平台(camp) 版本：2022-09-20
-
-### 第 46 次发布
-
-发布时间：2025-01-17 01:13:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [CampConfiguration](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CampConfiguration)
-
-	* 新增成员：MountPropagation, SubPathExpr, Readonly
-
-* [ContainerMount](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ContainerMount)
-
-	* 新增成员：MountPropagation, SubPathExpr
-
-* [HPASource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPASource)
-
-	* 新增成员：PanicThresholdUtilization
-
-
-
-
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
-### 第 51 次发布
+### 第 52 次发布
 
-发布时间：2025-01-17 01:18:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1706/84367)
-
-	* 新增出参：TotalCount, DuplicateTables, ErrorMsg
-
-
-
-
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
-
-### 第 18 次发布
-
-发布时间：2025-01-17 01:47:08
+发布时间：2025-01-20 01:10:25
 
 本次发布包含了以下内容：
 
@@ -79,56 +12,26 @@
 
 修改接口：
 
-* [ReconstructDocument](http://document.tencentcloudapi.woa.com/document/product/1764/85666)
+* [DescribeDatabaseAuditDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82866)
 
-	* 新增入参：FileType
+	* 新增入参：IsQuery
 
+* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82862)
 
+	* 新增入参：SortField, SortOrder
 
+* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
 
-## SSL 证书(ssl) 版本：2019-12-05
-
-### 第 76 次发布
-
-发布时间：2025-01-17 01:57:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCertificates](http://document.tencentcloudapi.woa.com/document/product/400/41671)
-
-	* 新增入参：CertIds
+	* 新增入参：SortField, SortOrder
 
 
 
 
-## 腾讯云数据仓库TCHouse-X(tchousex) 版本：2023-04-11
+## 文件存储(cfs) 版本：2019-07-19
 
-### 第 4 次发布
+### 第 26 次发布
 
-发布时间：2025-01-17 01:59:59
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ExecuteSqlForBI](http://document.tencentcloudapi.woa.com/document/product/1741/81595)
-
-	* 新增入参：DbName
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 195 次发布
-
-发布时间：2025-01-17 02:10:43
+发布时间：2025-01-20 01:10:59
 
 本次发布包含了以下内容：
 
@@ -136,15 +39,15 @@
 
 新增接口：
 
-* [DescribeNatsEipsInternal](http://document.tencentcloudapi.woa.com/document/product/215/85677)
+* [CreateAccessCert](http://document.tencentcloudapi.woa.com/document/product/582/85680)
 
 
 
-## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
-### 第 82 次发布
+### 第 24 次发布
 
-发布时间：2025-01-17 02:15:40
+发布时间：2025-01-20 01:19:10
 
 本次发布包含了以下内容：
 
@@ -152,12 +55,72 @@
 
 新增接口：
 
-* [DescribeTaskTableMetricOverview](http://document.tencentcloudapi.woa.com/document/product/1607/85678)
+* [DescribeCustomerBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/85681)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 64 次发布
+
+发布时间：2025-01-20 01:19:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudStorageEventsWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/85682)
 
 新增数据结构：
 
-* [OrderFields](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrderFields)
-* [TaskTableMetricInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskTableMetricInfo)
+* [CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 65 次发布
+
+发布时间：2025-01-20 01:21:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：DomainName, Subdomain
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 34 次发布
+
+发布时间：2025-01-20 01:24:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/68067)
+
+	* 新增入参：PlanId, PlanName
+
+
+修改数据结构：
+
+* [BackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupPlan)
+
+	* 新增成员：PlanId, PlanName, LogBackupRetentionPeriod, CreatedTime, UpdatedTime, PlanType, BackupPeriodType
+
 
 
 
@@ -20131,6 +20094,29 @@
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
 
+### 第 52 次发布
+
+发布时间：2025-01-20 01:10:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDatabaseAuditDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82866)
+
+	* 新增入参：IsQuery
+
+* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82862)
+
+	* 新增入参：SortField, SortOrder
+
+* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
+
+	* 新增入参：SortField, SortOrder
+
+
 ### 第 51 次发布
 
 发布时间：2025-01-17 01:18:11
@@ -21840,6 +21826,18 @@
 
 
 ## 文件存储(cfs) 版本：2019-07-19
+
+### 第 26 次发布
+
+发布时间：2025-01-20 01:10:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateAccessCert](http://document.tencentcloudapi.woa.com/document/product/582/85680)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 25 次发布
 
@@ -68406,6 +68404,18 @@
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
+### 第 24 次发布
+
+发布时间：2025-01-20 01:19:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCustomerBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/85681)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 23 次发布
 
 发布时间：2025-01-16 01:23:26
@@ -69413,6 +69423,22 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 64 次发布
+
+发布时间：2025-01-20 01:19:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCloudStorageEventsWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/85682)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks)](http://document.tencentcloudapi.woa.com/document/product/1081/34988#[CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks))
 
 ### 第 63 次发布
 
@@ -73613,6 +73639,21 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 65 次发布
+
+发布时间：2025-01-20 01:21:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：DomainName, Subdomain
+
 
 ### 第 64 次发布
 
@@ -90673,6 +90714,28 @@
 
 
 ## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 34 次发布
+
+发布时间：2025-01-20 01:24:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/68067)
+
+	* 新增入参：PlanId, PlanName
+
+
+修改数据结构：
+
+* [BackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupPlan)
+
+	* 新增成员：PlanId, PlanName, LogBackupRetentionPeriod, CreatedTime, UpdatedTime, PlanType, BackupPeriodType
+
 
 ### 第 33 次发布
 
@@ -127277,7 +127340,7 @@
 
 新增接口：
 
-* [[DescribeNatsEipsInternal](http://document.tencentcloudapi.woa.com/document/product/215/85677)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeNatsEipsInternal](http://document.tencentcloudapi.woa.com/document/product/215/85677)
 
 ### 第 194 次发布
 
@@ -134864,12 +134927,12 @@
 
 新增接口：
 
-* [[DescribeTaskTableMetricOverview](http://document.tencentcloudapi.woa.com/document/product/1607/85678)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTaskTableMetricOverview](http://document.tencentcloudapi.woa.com/document/product/1607/85678)
 
 新增数据结构：
 
-* [[OrderFields](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrderFields)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[OrderFields](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrderFields))
-* [[TaskTableMetricInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskTableMetricInfo)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[TaskTableMetricInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskTableMetricInfo))
+* [OrderFields](http://document.tencentcloudapi.woa.com/document/product/1607/77747#OrderFields)
+* [TaskTableMetricInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TaskTableMetricInfo)
 
 ### 第 81 次发布
 

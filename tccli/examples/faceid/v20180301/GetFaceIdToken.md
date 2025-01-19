@@ -1,6 +1,6 @@
-**Example 1: 获取 SDK 核验 token成功**
+**Example 1: 获取 SDK 核验 Token成功示例**
 
-获取 SDK 核验 token。
+
 
 Input: 
 
@@ -21,9 +21,9 @@ Output:
 }
 ```
 
-**Example 2: 获取 SDK 核验 token失败**
+**Example 2: 获取 SDK 核验 Token失败示例**
 
-获取 SDK 核验 token失败，传入图片尺寸过大。
+
 
 Input: 
 

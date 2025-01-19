@@ -82,11 +82,13 @@ Output:
             "DBNodeSet": [
                 {
                     "Role": "Primary",
-                    "Zone": "ap-guangzhou-2"
+                    "Zone": "ap-guangzhou-2",
+                    "DedicatedClusterId": ""
                 },
                 {
                     "Role": "Standby",
-                    "Zone": "ap-guangzhou-3"
+                    "Zone": "ap-guangzhou-3",
+                    "DedicatedClusterId": ""
                 }
             ]
         }

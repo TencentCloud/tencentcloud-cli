@@ -1,3 +1,129 @@
+# Release 3.0.1140.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 52 次发布
+
+发布时间：2025-01-20 01:10:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDatabaseAuditDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82866)
+
+	* 新增入参：IsQuery
+
+* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82862)
+
+	* 新增入参：SortField, SortOrder
+
+* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
+
+	* 新增入参：SortField, SortOrder
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 26 次发布
+
+发布时间：2025-01-20 01:10:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAccessCert](http://document.tencentcloudapi.woa.com/document/product/582/85680)
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 24 次发布
+
+发布时间：2025-01-20 01:19:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCustomerBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/85681)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 64 次发布
+
+发布时间：2025-01-20 01:19:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudStorageEventsWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/85682)
+
+新增数据结构：
+
+* [CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 65 次发布
+
+发布时间：2025-01-20 01:21:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
+
+	* 新增入参：DomainName, Subdomain
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 34 次发布
+
+发布时间：2025-01-20 01:24:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/68067)
+
+	* 新增入参：PlanId, PlanName
+
+
+修改数据结构：
+
+* [BackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupPlan)
+
+	* 新增成员：PlanId, PlanName, LogBackupRetentionPeriod, CreatedTime, UpdatedTime, PlanType, BackupPeriodType
+
+
+
+
 # Release 3.0.1139.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

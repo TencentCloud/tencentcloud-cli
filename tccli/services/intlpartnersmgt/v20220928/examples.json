@@ -100,6 +100,32 @@
         "title": "DescribeCustomerBillDetail"
       }
     ],
+    "DescribeCustomerBillDownloadUrl": [
+      {
+        "document": "经销商下载直接子客L2资源账单",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2024-12\",\n    \"FileType\": \"billResource\",\n    \"CustomerUinType\": \"Customer\",\n    \"CustomerUin\": 800000425835\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://partner-bill-xxxx.cos.ap-singapore.myqcloud.com/L2-bill_by_Instance-800000425835-202412-xx-test.csv\",\n        \"Ready\": 1,\n        \"RequestId\": \"fa772ee3-e610-4e5b-905e-35c92a13e052\"\n    }\n}",
+        "title": "DescribeCustomerBillDownloadUrl-1"
+      },
+      {
+        "document": "经销商获取间接子客L3账单详情链接",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2024-12\",\n    \"FileType\": \"billDetail\",\n    \"CustomerUinType\": \"ResellerCustomer\",\n    \"CustomerUin\": 800001608331\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://partner-bill-xxx.cos.ap-singapore.myqcloud.com/L3-bill_details-800001608331-202412-xxx-test.csv\",\n        \"Ready\": 1,\n        \"RequestId\": \"b93fad4a-1ef8-4011-a93b-bf8b6b5ee3ee\"\n    }\n}",
+        "title": "DescribeCustomerBillDownloadUrl-2"
+      },
+      {
+        "document": "经销商获取全部子客L2资源账单包（已出账）",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2024-11\",\n    \"FileType\": \"billResourcePack\",\n    \"CustomerUinType\": \"Customer\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://partner-bill-xxx.cos.ap-singapore.myqcloud.com/%2Fmnt/bill/en/L2-bill_by_Instance-800000950266-AllCustomersBills-202411-xxx-test.zip\",\n        \"Ready\": 1,\n        \"RequestId\": \"0aa8fe2c-5221-4d94-b481-3f329c89b25a\"\n    }\n}",
+        "title": "DescribeCustomerBillDownloadUrl-3"
+      },
+      {
+        "document": "经销商获取全部间接子客L3账单详情账单包（已出账）",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2024-11\",\n    \"FileType\": \"billDetailPack\",\n    \"CustomerUinType\": \"ResellerCustomer\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://partner-bill-xxxx.cos.ap-singapore.myqcloud.com/%2Fmnt/bill/en/L3-bill_details-800000950266-AllResellersBills-202411-xxxx-test.zip\",\n        \"Ready\": 1,\n        \"RequestId\": \"fb76a1cd-7b8e-435a-909e-3f8ec3b91c9a\"\n    }\n}",
+        "title": "DescribeCustomerBillDownloadUrl-4"
+      }
+    ],
     "DescribeCustomerBillSummary": [
       {
         "document": "通过API获取子客账单汇总值",
