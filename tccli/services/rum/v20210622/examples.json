@@ -424,7 +424,7 @@
       {
         "document": "获取首页Score",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScores\n<公共请求参数>\n\n{\n    \"EndTime\": \"2022051914\",\n    \"ID\": 1,\n    \"StartTime\": \"2020011920\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ScoreSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ScoreSet\": [\n            {\n                \"ApiAvaliableScore\": \"30\",\n                \"ApiDuration\": \"0\",\n                \"ApiFail\": \"0\",\n                \"ApiNum\": \"0\",\n                \"ApiPerformanceScore\": \"5\",\n                \"CreateTime\": \"\",\n                \"JsErrorScore\": \"30\",\n                \"PageDuration\": \"0\",\n                \"PageError\": \"0\",\n                \"PagePerformanceScore\": \"10\",\n                \"PagePv\": \"1\",\n                \"PageUv\": \"0\",\n                \"ProjectID\": 1,\n                \"RecordNum\": 1,\n                \"Score\": \"100\",\n                \"StaticAvaliableScore\": \"20\",\n                \"StaticDuration\": \"210\",\n                \"StaticFail\": \"0\",\n                \"StaticNum\": \"9\",\n                \"StaticPerformanceScore\": \"5\"\n            }\n        ],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取首页Score"
       }
     ],

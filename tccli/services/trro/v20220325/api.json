@@ -1204,7 +1204,7 @@
           "example": "无",
           "member": "SessionIntervalStatistic",
           "name": "SessionStatistics",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1268,7 +1268,7 @@
           "example": "10",
           "member": "uint64",
           "name": "SessionNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1278,7 +1278,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1288,7 +1288,7 @@
           "example": "30",
           "member": "uint64",
           "name": "ActiveFieldDeviceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1298,7 +1298,7 @@
           "example": "60",
           "member": "uint64",
           "name": "ActiveRemoteDeviceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1308,7 +1308,7 @@
           "example": "90",
           "member": "uint64",
           "name": "NotBadSessionRatio",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

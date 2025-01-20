@@ -590,6 +590,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "欢迎消息优先级，0默认，1高优，高优不能被打断。",
+          "example": "0",
+          "member": "uint64",
+          "name": "WelcomeMessagePriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

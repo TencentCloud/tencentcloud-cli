@@ -386,9 +386,9 @@
       "status": "online"
     },
     "ModifyUserProfile": {
-      "document": "此接口用于修改用户配置，如头像，昵称/用户名等。",
+      "document": "此接口用于修改用户信息，例如头像、昵称（用户名）等。注意，课中的用户信息不会立即同步修改，需待下次上课时，修改后的信息才会更新显示。",
       "input": "ModifyUserProfileRequest",
-      "name": "修改用户配置",
+      "name": "修改用户信息",
       "output": "ModifyUserProfileResponse",
       "status": "online"
     },
@@ -6092,7 +6092,7 @@
         },
         {
           "disabled": false,
-          "document": "待修改的用户名",
+          "document": "待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。",
           "example": "zhanwsan",
           "member": "string",
           "name": "Nickname",

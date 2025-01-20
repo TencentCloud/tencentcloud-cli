@@ -408,6 +408,14 @@
         "title": "测试获取云原生API网关配置信息"
       }
     ],
+    "DescribeCloudNativeAPIGatewayInfoByIp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayInfoByIp\n<公共请求参数>\n\n{\n    \"PublicNetworkIP\": \"1.1.1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"gateway-a1337ce3\",\n            \"GroupId\": \"group-a1337ce\"\n        },\n        \"RequestId\": \"86e4eecf-51a5-4dda-9cec-68650a9b8c3b\"\n    }\n}",
+        "title": "根据公网ip查询云原生网关实例信息"
+      }
+    ],
     "DescribeCloudNativeAPIGatewayNodes": [
       {
         "document": "",

@@ -357,6 +357,13 @@
       "output": "DescribeCloudNativeAPIGatewayConfigResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayInfoByIp": {
+      "document": "根据公网IP查询云原生网关实例信息",
+      "input": "DescribeCloudNativeAPIGatewayInfoByIpRequest",
+      "name": "根据公网IP查询云原生网关实例信息",
+      "output": "DescribeCloudNativeAPIGatewayInfoByIpResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayNodes": {
       "document": "获取云原生网关节点列表",
       "input": "DescribeCloudNativeAPIGatewayNodesRequest",
@@ -6739,6 +6746,43 @@
       ],
       "usage": "out"
     },
+    "DescribeCloudNativeAPIGatewayInfoByIpRequest": {
+      "document": "DescribeCloudNativeAPIGatewayInfoByIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生网关的公网ip",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PublicNetworkIP",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayInfoByIpResponse": {
+      "document": "DescribeCloudNativeAPIGatewayInfoByIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出参\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"GatewayId\":\"gateway-2f2e3c42\",\"GroupId\":\"group-c01e82b6\"}",
+          "member": "DescribeInstanceInfoByIpResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayNodesRequest": {
       "document": "DescribeCloudNativeAPIGatewayNodes请求参数结构体",
       "members": [
@@ -8952,6 +8996,32 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeInstanceInfoByIpResult": {
+      "document": "根据公网IP查询云原生网关实例信息出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-xxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeInstanceRegionInfo": {
       "document": "实例地域信息描述",

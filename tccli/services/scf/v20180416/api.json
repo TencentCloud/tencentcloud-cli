@@ -2294,7 +2294,7 @@
         },
         {
           "disabled": false,
-          "document": "函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)",
+          "document": "函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/17244)",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -3996,7 +3996,7 @@
           "example": "tcr-xxx",
           "member": "string",
           "name": "RegistryId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4007,7 +4007,7 @@
           "example": "\"entrypoint.sh\"",
           "member": "string",
           "name": "EntryPoint",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4018,7 +4018,7 @@
           "example": "python",
           "member": "string",
           "name": "Command",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4029,7 +4029,7 @@
           "example": " -u app.py",
           "member": "string",
           "name": "Args",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4040,7 +4040,7 @@
           "example": "False",
           "member": "bool",
           "name": "ContainerImageAccelerate",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -4051,7 +4051,7 @@
           "example": "9000",
           "member": "int64",
           "name": "ImagePort",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -4451,7 +4451,7 @@
         },
         {
           "disabled": false,
-          "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)",
+          "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88Layer.EF.BC.89.E7.8A.B6.E6.80.81)",
           "example": "Active",
           "member": "string",
           "name": "Status",
