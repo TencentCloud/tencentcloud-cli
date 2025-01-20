@@ -205,9 +205,9 @@
 | region | [地域管理系统](http://document.tencentcloudapi.woa.com/document/product/1596) | 2024-12-20 01:42:12 |
 | rkp | [风险探针](http://document.tencentcloudapi.woa.com/document/product/1169) | 2023-12-25 01:56:15 |
 | rp | [注册保护](http://document.tencentcloudapi.woa.com/document/product/1191) | 2022-03-08 08:03:09 |
-| rum | [前端性能监控](http://document.tencentcloudapi.woa.com/document/product/1464) | 2025-01-14 01:33:43 |
+| rum | [前端性能监控](http://document.tencentcloudapi.woa.com/document/product/1464) | 2025-01-21 01:23:10 |
 | sag | [应用级智能网关](http://document.tencentcloudapi.woa.com/document/product/1075) | 2024-10-18 02:07:22 |
-| scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2025-01-09 01:35:16 |
+| scf | [云函数](http://document.tencentcloudapi.woa.com/document/product/583) | 2025-01-21 01:23:28 |
 | secmocker | [API 安全测试模拟产品](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-09-30 00:02:17 |
 | ses | [邮件推送](http://document.tencentcloudapi.woa.com/document/product/1288) | 2024-10-22 02:16:29 |
 | smh | [智能媒资托管](http://document.tencentcloudapi.woa.com/document/product/1339) | 2024-12-17 01:48:28 |
@@ -270,9 +270,9 @@
 | trdp | [流量风险决策平台](http://document.tencentcloudapi.woa.com/document/product/1604) | 2024-03-20 01:27:41 |
 | trocket | [消息队列 RocketMQ 版](http://document.tencentcloudapi.woa.com/document/product/1493) | 2025-01-06 01:34:10 |
 | trp | [T-Sec-安心平台(RP)](http://document.tencentcloudapi.woa.com/document/product/1458) | 2023-09-21 03:34:26 |
-| trro | [远程实时操控](http://document.tencentcloudapi.woa.com/document/product/1584) | 2025-01-13 01:31:39 |
-| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2025-01-15 01:44:32 |
-| tse | [微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2025-01-15 01:44:50 |
+| trro | [远程实时操控](http://document.tencentcloudapi.woa.com/document/product/1584) | 2025-01-21 01:27:37 |
+| trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | 2025-01-21 01:27:48 |
+| tse | [微服务引擎](http://document.tencentcloudapi.woa.com/document/product/1364) | 2025-01-21 01:28:07 |
 | tsf | [微服务平台 TSF](http://document.tencentcloudapi.woa.com/document/product/649) | 2024-12-30 01:41:51 |
 | tsi | [腾讯同传系统](http://document.tencentcloudapi.woa.com/document/product/1399) | 2024-10-23 02:39:46 |
 | tsw | [微服务观测平台 TSW](http://document.tencentcloudapi.woa.com/document/product/1311) | 2024-10-15 11:52:43 |
@@ -283,7 +283,7 @@
 | vm | [视频内容安全](http://document.tencentcloudapi.woa.com/document/product/1265) | 2024-07-26 01:26:39 |
 | vms | [语音消息](http://document.tencentcloudapi.woa.com/document/product/1128) | 2024-03-20 01:28:46 |
 | vod | [云点播](http://document.tencentcloudapi.woa.com/document/product/266) | 2023-07-03 01:53:25 |
-| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2025-01-20 01:35:08 |
+| vpc | [私有网络](http://document.tencentcloudapi.woa.com/document/product/215) | 2025-01-21 01:29:22 |
 | vpcdefensor | [网络守护神](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-03-20 01:29:50 |
 | vrs | [声音复刻](http://document.tencentcloudapi.woa.com/document/product/1283) | 2024-12-18 11:33:36 |
 | vtc | [视频转译](http://document.tencentcloudapi.woa.com/document/product/1769) | 2024-10-16 01:34:07 |

@@ -1,3 +1,60 @@
+# Release 3.0.1141.1
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 81 次发布
+
+发布时间：2025-01-21 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+
+	* 新增成员：WelcomeMessagePriority
+
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 82 次发布
+
+发布时间：2025-01-21 01:28:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudNativeAPIGatewayInfoByIp](http://document.tencentcloudapi.woa.com/document/product/1364/85683)
+
+新增数据结构：
+
+* [DescribeInstanceInfoByIpResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeInstanceInfoByIpResult)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 196 次发布
+
+发布时间：2025-01-21 01:29:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRouteList](http://document.tencentcloudapi.woa.com/document/product/215/85684)
+
+
+
 # Release 3.0.1140.1
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28

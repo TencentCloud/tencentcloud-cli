@@ -2626,6 +2626,14 @@
         "title": "查询路由策略冲突列表"
       }
     ],
+    "DescribeRouteList": [
+      {
+        "document": "通过路由表ID作为过滤条件，查询1条路由条目",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRouteList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"route-table-id\",\n            \"Values\": [\n                \"rtb-la2qkgku\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4525a651-aa66-451e-bb20-839c967e9172\",\n        \"RouteSet\": [\n            {\n                \"CdcId\": \"\",\n                \"CreatedTime\": \"2024-12-27 16:44:44\",\n                \"DestinationCidrBlock\": \"\",\n                \"DestinationIpv6CidrBlock\": \"2402:4e00:1717:bc00::/64\",\n                \"Enabled\": true,\n                \"GatewayId\": \"ccn-j0w29irz\",\n                \"GatewayType\": \"CCN\",\n                \"IsCdc\": false,\n                \"PublishedToVbc\": false,\n                \"RouteDescription\": \"\",\n                \"RouteId\": 0,\n                \"RouteItemId\": \"rti6-exmyaywi\",\n                \"RouteTableId\": \"rtb-la2qkgku\",\n                \"RouteType\": \"CCN\",\n                \"SubnetRouteAlgorithm\": \"\"\n            }\n        ],\n        \"TotalCount\": 7\n    }\n}",
+        "title": "查询路由条目"
+      }
+    ],
     "DescribeRouteTableAssociatedInstances": [
       {
         "document": "查询路由表绑定实例列表",

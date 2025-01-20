@@ -1,126 +1,57 @@
 # 本版本更新包含以下内容：
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+## 实时音视频(trtc) 版本：2019-07-22
 
-### 第 52 次发布
+### 第 81 次发布
 
-发布时间：2025-01-20 01:10:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDatabaseAuditDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82866)
-
-	* 新增入参：IsQuery
-
-* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82862)
-
-	* 新增入参：SortField, SortOrder
-
-* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
-
-	* 新增入参：SortField, SortOrder
-
-
-
-
-## 文件存储(cfs) 版本：2019-07-19
-
-### 第 26 次发布
-
-发布时间：2025-01-20 01:10:59
+发布时间：2025-01-21 01:27:48
 
 本次发布包含了以下内容：
 
 改善已有的文档。
-
-新增接口：
-
-* [CreateAccessCert](http://document.tencentcloudapi.woa.com/document/product/582/85680)
-
-
-
-## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
-
-### 第 24 次发布
-
-发布时间：2025-01-20 01:19:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCustomerBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/85681)
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 64 次发布
-
-发布时间：2025-01-20 01:19:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCloudStorageEventsWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/85682)
-
-新增数据结构：
-
-* [CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks)
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 65 次发布
-
-发布时间：2025-01-20 01:21:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateInstances](http://document.tencentcloudapi.woa.com/document/product/1207/69573)
-
-	* 新增入参：DomainName, Subdomain
-
-
-
-
-## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
-
-### 第 34 次发布
-
-发布时间：2025-01-20 01:24:08
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/68067)
-
-	* 新增入参：PlanId, PlanName
-
 
 修改数据结构：
 
-* [BackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/16778#BackupPlan)
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
 
-	* 新增成员：PlanId, PlanName, LogBackupRetentionPeriod, CreatedTime, UpdatedTime, PlanType, BackupPeriodType
+	* 新增成员：WelcomeMessagePriority
 
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 82 次发布
+
+发布时间：2025-01-21 01:28:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudNativeAPIGatewayInfoByIp](http://document.tencentcloudapi.woa.com/document/product/1364/85683)
+
+新增数据结构：
+
+* [DescribeInstanceInfoByIpResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeInstanceInfoByIpResult)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 196 次发布
+
+发布时间：2025-01-21 01:29:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRouteList](http://document.tencentcloudapi.woa.com/document/product/215/85684)
 
 
 
@@ -21837,7 +21768,7 @@
 
 新增接口：
 
-* [[CreateAccessCert](http://document.tencentcloudapi.woa.com/document/product/582/85680)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateAccessCert](http://document.tencentcloudapi.woa.com/document/product/582/85680)
 
 ### 第 25 次发布
 
@@ -68414,7 +68345,7 @@
 
 新增接口：
 
-* [[DescribeCustomerBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/85681)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCustomerBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/85681)
 
 ### 第 23 次发布
 
@@ -69434,11 +69365,11 @@
 
 新增接口：
 
-* [[DescribeCloudStorageEventsWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/85682)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCloudStorageEventsWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/85682)
 
 新增数据结构：
 
-* [[CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks)](http://document.tencentcloudapi.woa.com/document/product/1081/34988#[CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks))
+* [CloudStorageEventWithAITasks](http://document.tencentcloudapi.woa.com/document/product/1081/34988#CloudStorageEventWithAITasks)
 
 ### 第 63 次发布
 
@@ -119102,6 +119033,21 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 81 次发布
+
+发布时间：2025-01-21 01:27:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AgentConfig](http://document.tencentcloudapi.woa.com/document/product/647/44055#AgentConfig)
+
+	* 新增成员：WelcomeMessagePriority
+
+
 ### 第 80 次发布
 
 发布时间：2025-01-10 01:41:06
@@ -120660,6 +120606,22 @@
 
 
 ## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 82 次发布
+
+发布时间：2025-01-21 01:28:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeCloudNativeAPIGatewayInfoByIp](http://document.tencentcloudapi.woa.com/document/product/1364/85683)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DescribeInstanceInfoByIpResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeInstanceInfoByIpResult)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[DescribeInstanceInfoByIpResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeInstanceInfoByIpResult))
 
 ### 第 81 次发布
 
@@ -127329,6 +127291,18 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 196 次发布
+
+发布时间：2025-01-21 01:29:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeRouteList](http://document.tencentcloudapi.woa.com/document/product/215/85684)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 195 次发布
 

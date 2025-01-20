@@ -11,7 +11,7 @@
     "AddOptimizerEngines": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOptimizerEngines\n<公共请求参数>\n\n{\n    \"Catalog\": \"DataLakeCatalog\",\n    \"Engines\": [\n        {\n            \"HouseName\": \"abc\",\n            \"HouseId\": \"abc\",\n            \"HouseSize\": 0\n        }\n    ],\n    \"Database\": \"mydb\",\n    \"Table\": \"mytb\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOptimizerEngines\n<公共请求参数>\n\n{\n    \"Catalog\": \"DataLakeCatalog\",\n    \"Engines\": [\n        {\n            \"HouseName\": \"test_engine\",\n            \"HouseId\": \"DataEngine-123\",\n            \"HouseSize\": 0\n        }\n    ],\n    \"Database\": \"mydb\",\n    \"Table\": \"mytb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1304581893_25027_1709796072623_223\"\n    }\n}",
         "title": "实例一"
       }
