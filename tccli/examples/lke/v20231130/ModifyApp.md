@@ -19,9 +19,14 @@ tccli lke ModifyApp --cli-unfold-argument  \
     --AppConfig.KnowledgeQa.Model.ContextLimit 0 \
     --AppConfig.KnowledgeQa.Model.Desc  \
     --AppConfig.KnowledgeQa.Model.TokenBalance 0 \
+    --AppConfig.KnowledgeQa.Model.Temperature 0.5 \
+    --AppConfig.KnowledgeQa.Model.TopP 0.5 \
     --AppConfig.KnowledgeQa.Output.Method 1 \
     --AppConfig.KnowledgeQa.Output.BareAnswer 针对您这个问题，我暂时还无法进行回答，请换一个问题吧。 \
     --AppConfig.KnowledgeQa.Output.UseGeneralKnowledge False \
+    --AppConfig.KnowledgeQa.Pattern standard \
+    --AppConfig.KnowledgeQa.Plugins.0.PluginId 3ad9ddae-587e-4bcc-ae07-ad13bfb1aaca \
+    --AppConfig.KnowledgeQa.Plugins.0.ToolId 0ca8d482-1e77-462b-bc21-xddd7c8f052f69 \
     --AppConfig.KnowledgeQa.RoleDescription 角色：客服
 技能：提供客户支持、解决技术问题
 说法风格：耐心、友好
@@ -66,7 +71,20 @@ tccli lke ModifyApp --cli-unfold-argument  \
     --AppConfig.KnowledgeQa.SearchRange.ApiVarAttrInfos.0.ApiVarId 7a6d67e0-eff1-406b-b092-3b8072c19570 \
     --AppConfig.KnowledgeQa.SearchRange.ApiVarAttrInfos.0.AttrBizId 18537d934840613760 \
     --AppConfig.KnowledgeQa.SearchRange.Condition and \
-    --AppConfig.KnowledgeQa.Workflow.IsEnabled True
+    --AppConfig.KnowledgeQa.SearchStrategy.StrategyType 0 \
+    --AppConfig.KnowledgeQa.SearchStrategy.TableEnhancement False \
+    --AppConfig.KnowledgeQa.Workflow.IsEnabled True \
+    --AppConfig.KnowledgeQa.Workflow.UsePdl False \
+    --AppConfig.KnowledgeQa.SingleWorkflow.WorkflowId 单工作流ID \
+    --AppConfig.KnowledgeQa.ThoughtModel.AliasName 精调Function-call模型 \
+    --AppConfig.KnowledgeQa.ThoughtModel.ContextLimit 0 \
+    --AppConfig.KnowledgeQa.ThoughtModel.Desc  \
+    --AppConfig.KnowledgeQa.ThoughtModel.HistoryLimit 0 \
+    --AppConfig.KnowledgeQa.ThoughtModel.IsUseContext False \
+    --AppConfig.KnowledgeQa.ThoughtModel.Name function-call-pro \
+    --AppConfig.KnowledgeQa.ThoughtModel.TokenBalance 0 \
+    --AppConfig.KnowledgeQa.ThoughtModel.Temperature 0.5 \
+    --AppConfig.KnowledgeQa.ThoughtModel.TopP 0.5
 ```
 
 Output: 

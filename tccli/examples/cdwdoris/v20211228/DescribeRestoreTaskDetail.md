@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwdoris DescribeRestoreTaskDetail --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId cdwdoris-xxx \
     --BackUpJobId 0
 ```
 
@@ -16,29 +16,31 @@ Output:
     "Response": {
         "RestoreStatus": [
             {
-                "Status": "xx",
-                "FinishedTime": "xx",
-                "MetaPreparedTime": "xx",
-                "RestoreObjects": "xx",
-                "Timestamp": "xx",
-                "ReplicaAllocation": "xx",
-                "TaskErrMsg": "xx",
+                "Status": "str",
+                "FinishedTime": "str",
+                "MetaPreparedTime": "str",
+                "RestoreObjects": "str",
+                "Timestamp": "str",
+                "ReplicaAllocation": "str",
+                "TaskErrMsg": "str",
                 "JobId": 0,
-                "CreateTime": "xx",
-                "State": "xx",
-                "SnapshotFinishedTime": "xx",
+                "CreateTime": "str",
+                "State": "str",
+                "SnapshotFinishedTime": "str",
                 "Timeout": 0,
-                "DownloadFinishedTime": "xx",
-                "UnfinishedTasks": "xx",
-                "Progress": "xx",
-                "Label": "xx",
-                "ReplicationNum": "xx",
-                "DbName": "xx",
+                "DownloadFinishedTime": "str",
+                "UnfinishedTasks": "str",
+                "Progress": "str",
+                "Label": "str",
+                "ReplicationNum": "str",
+                "DbName": "str",
+                "ReserveReplica": true,
+                "ReserveDynamicPartitionEnable": true,
                 "AllowLoad": true
             }
         ],
-        "RequestId": "xx",
-        "ErrorMsg": "xx"
+        "RequestId": "str",
+        "ErrorMsg": "str"
     }
 }
 ```

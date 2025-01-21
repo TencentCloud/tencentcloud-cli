@@ -11,8 +11,8 @@
     "CreateDatasource": [
       {
         "document": "创建数据源",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"abc\",\n    \"DbPort\": 1,\n    \"ServiceType\": \"abc\",\n    \"DbType\": \"abc\",\n    \"Charset\": \"abc\",\n    \"DbUser\": \"abc\",\n    \"DbPwd\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SourceName\": \"abc\",\n    \"ProjectId\": 1,\n    \"Catalog\": \"abc\",\n    \"DataOrigin\": \"abc\",\n    \"DataOriginProjectId\": \"abc\",\n    \"DataOriginDatasourceId\": \"abc\",\n    \"ExtraParam\": \"abc\",\n    \"UniqVpcId\": \"abc\",\n    \"Vip\": \"abc\",\n    \"Vport\": \"abc\",\n    \"VpcId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Id\": 0,\n            \"AccessKey\": \"abc\",\n            \"ProjectId\": 1,\n            \"TranId\": \"abc\",\n            \"TranStatus\": 0\n        },\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"0.0.0.0\",\n    \"DbPort\": \"3307\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Own\\\"}\",\n    \"DbType\": \"MONGODB\",\n    \"DataOrigin\": \"\",\n    \"Charset\": \"utf8\",\n    \"Catalog\": \"\",\n    \"DbUser\": \"username\",\n    \"DbName\": \"name\",\n    \"DbPwd\": \"password\",\n    \"SourceName\": \"测试vpc\",\n    \"VpcId\": \"vpcid\",\n    \"UniqVpcId\": \"vpc-\",\n    \"Vip\": \"\",\n    \"Vport\": \"\",\n    \"ExtraParam\": \"\",\n    \"DataOriginProjectId\": \"\",\n    \"DataOriginDatasourceId\": \"\",\n    \"UseVPC\": true,\n    \"RegionId\": \"gz\",\n    \"ProjectId\": 517\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"服务器内部错误\",\n        \"RequestId\": \"xxx-xx-x\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"服务器内部错误\",\n            \"ErrorMessage\": \"服务器内部错误\",\n            \"ErrorLevel\": \"ERROR\"\n        }\n    }\n}",
         "title": "创建数据源"
       }
     ],
@@ -173,8 +173,8 @@
     "ModifyDatasource": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"abc\",\n    \"DbPort\": 1,\n    \"ServiceType\": \"abc\",\n    \"DbType\": \"abc\",\n    \"Charset\": \"abc\",\n    \"DbUser\": \"abc\",\n    \"DbPwd\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SourceName\": \"abc\",\n    \"Id\": 0,\n    \"ProjectId\": 1,\n    \"Catalog\": \"abc\",\n    \"DataOrigin\": \"abc\",\n    \"DataOriginProjectId\": \"abc\",\n    \"DataOriginDatasourceId\": \"abc\",\n    \"ExtraParam\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDatasource\n<公共请求参数>\n\n{\n    \"DbHost\": \"0.0.0.0\",\n    \"DbPort\": \"3307\",\n    \"ServiceType\": \"{\\\"Type\\\":\\\"Own\\\"}\",\n    \"DbType\": \"MONGODB\",\n    \"DataOrigin\": \"\",\n    \"Charset\": \"utf8\",\n    \"Catalog\": \"\",\n    \"DbUser\": \"username\",\n    \"DbName\": \"name\",\n    \"DbPwd\": \"password\",\n    \"SourceName\": \"测试vpc\",\n    \"VpcId\": \"vpcid\",\n    \"UniqVpcId\": \"vpc-\",\n    \"Vip\": \"\",\n    \"Vport\": \"\",\n    \"ExtraParam\": \"\",\n    \"DataOriginProjectId\": \"\",\n    \"DataOriginDatasourceId\": \"\",\n    \"UseVPC\": true,\n    \"RegionId\": \"gz\",\n    \"ProjectId\": 517,\n    \"Id\": 134\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"服务器内部错误\",\n        \"RequestId\": \"xxx-xx-x\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"服务器内部错误\",\n            \"ErrorMessage\": \"服务器内部错误\",\n            \"ErrorLevel\": \"ERROR\"\n        }\n    }\n}",
         "title": "更新数据源"
       }
     ],
@@ -203,8 +203,8 @@
     "ModifyUserRole": [
       {
         "document": "修改用户角色信息",
-        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRole\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"RoleIdList\": [\n        0\n    ],\n    \"Email\": \"abc\",\n    \"UserName\": \"abc\",\n    \"PhoneNumber\": \"abc\",\n    \"AreaCode\": \"abc\",\n    \"AppUserId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"abc\",\n            \"ErrorLevel\": \"abc\",\n            \"DocLink\": \"abc\",\n            \"FAQ\": \"abc\",\n            \"ReservedField\": \"abc\"\n        },\n        \"Extra\": \"abc\",\n        \"Msg\": \"abc\",\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRole\n<公共请求参数>\n\n{\n    \"UserId\": \"21021\",\n    \"RoleIdList\": [\n        0,\n        1,\n        231,\n        213\n    ],\n    \"Email\": \"2313**2312@qq.com\",\n    \"UserName\": \"zhangsn\",\n    \"PhoneNumber\": \"86212***12\",\n    \"AreaCode\": \"086\",\n    \"AppUserId\": \"123142\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorInfo\": {\n            \"ErrorTip\": \"\",\n            \"ErrorLevel\": \"ERROR\",\n            \"DocLink\": \"\",\n            \"FAQ\": \"\",\n            \"ReservedField\": \"\"\n        },\n        \"Extra\": \"\",\n        \"Msg\": \"失败\",\n        \"Data\": \"\",\n        \"RequestId\": \"sddsdfsbghbwe1-211ds\"\n    }\n}",
         "title": "修改用户角色信息"
       }
     ],

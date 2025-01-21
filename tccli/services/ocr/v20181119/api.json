@@ -357,6 +357,13 @@
       "output": "RecognizeForeignPermanentResidentIdCardResponse",
       "status": "online"
     },
+    "RecognizeGeneralCardWarn": {
+      "document": "支持通用证照的有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能，支持通用证照的ps伪造检测，可以应用于各种证件信息有效性校验场景。",
+      "input": "RecognizeGeneralCardWarnRequest",
+      "name": "通用卡证鉴伪",
+      "output": "RecognizeGeneralCardWarnResponse",
+      "status": "online"
+    },
     "RecognizeGeneralInvoice": {
       "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicFlightTicketFull</td>\n          <td> 电子发票(机票行程单)</td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicTrainTicketFull</td>\n          <td> 电子发票(铁路电子客票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "RecognizeGeneralInvoiceRequest",
@@ -6125,6 +6132,42 @@
         }
       ],
       "type": "object"
+    },
+    "GeneralCardWarnInfo": {
+      "document": "通用卡证鉴伪告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否存在该告警",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWarn",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险程度",
+          "example": "0.5",
+          "member": "float",
+          "name": "RiskConfidence",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警位置四点坐标",
+          "example": "无",
+          "member": "Polygon",
+          "name": "Polygon",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "GeneralEfficientOCRRequest": {
       "document": "GeneralEfficientOCR请求参数结构体",
@@ -12870,6 +12913,139 @@
           "example": "\"ImageCoordinates\": {         \"Height\": 0,         \"Width\": 0,         \"X\": 0,         \"Y\": 0       }",
           "member": "PortraitImageInfo",
           "name": "PortraitImageInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeGeneralCardWarnRequest": {
+      "document": "RecognizeGeneralCardWarn请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片链接",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralPro1.png\t",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==\t",
+          "member": "string",
+          "name": "ImageBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "卡证类型参数，包含以下范围：  \ndefault：通用卡证  \nidcard：身份证  \npassport：护照  \nbizlicense：营业执照  \nregcertificate：登记证书  \nresidpermit：居住证  \ntranspermit：通行证  \nsignboard：门头照  \nbankcard：银行卡  \ndrivinglicense：驾驶证、行驶证",
+          "example": "default",
+          "member": "string",
+          "name": "CardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPdf",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "PdfPageNumber",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecognizeGeneralCardWarnResponse": {
+      "document": "RecognizeGeneralCardWarn返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "卡证类型参数，包含以下范围： \ndefault：通用卡证\nidcard：身份证 \npassport：护照 \nbizlicense：营业执照 \nregcertificate：登记证书 \nresidpermit：居住证 \ntranspermit：通行证 \nsignboard：门头照 \nbankcard：银行卡 \ndrivinglicense：驾驶证、行驶证",
+          "example": "无",
+          "member": "string",
+          "name": "CardType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模糊信息",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "Blur",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "边框不完整信息",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "BorderIncomplete",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "复印件信息",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "Copy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ps篡改信息",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "Ps",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "反光信息",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "Reflection",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "翻拍件信息",
+          "example": "无",
+          "member": "GeneralCardWarnInfo",
+          "name": "Reprint",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

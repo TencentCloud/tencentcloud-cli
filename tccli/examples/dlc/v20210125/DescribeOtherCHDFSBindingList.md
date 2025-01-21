@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc DescribeOtherCHDFSBindingList --cli-unfold-argument  \
-    --BucketId abc
+    --BucketId dlcce79-*-*-*-*
 ```
 
 Output: 
@@ -15,18 +15,41 @@ Output:
     "Response": {
         "OtherCHDFSBindingList": [
             {
-                "ProductName": "abc",
+                "ProductName": "other",
                 "SuperUser": [
-                    "abc"
+                    "root"
                 ],
                 "VpcInfo": [
                     {
-                        "VpcId": "abc",
-                        "VpcName": "abc",
+                        "RuleId": 1111,
+                        "AccessGroupId": "ag-234",
+                        "VpcId": "vpc-123456",
+                        "VpcName": "",
                         "VpcCidrBlock": [
                             {
-                                "CidrId": "abc",
-                                "CidrAddr": "abc"
+                                "CidrId": "",
+                                "CidrAddr": "10.*.*.*/16"
+                            }
+                        ]
+                    }
+                ],
+                "IsBind": false
+            },
+            {
+                "ProductName": "other",
+                "SuperUser": [
+                    "root"
+                ],
+                "VpcInfo": [
+                    {
+                        "RuleId": 2222,
+                        "AccessGroupId": "ag-123",
+                        "VpcId": "vpc-123456",
+                        "VpcName": "",
+                        "VpcCidrBlock": [
+                            {
+                                "CidrId": "",
+                                "CidrAddr": "172.*.*.*/16"
                             }
                         ]
                     }
@@ -34,8 +57,8 @@ Output:
                 "IsBind": true
             }
         ],
-        "Total": 0,
-        "RequestId": "abc"
+        "RequestId": "3f110545-d05a-4c7c-a851-94c11cf9d4c2",
+        "Total": 2
     }
 }
 ```

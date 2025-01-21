@@ -310,9 +310,10 @@
         {
           "disabled": false,
           "document": "编辑是否可见\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ShowEdit",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -320,9 +321,10 @@
         {
           "disabled": false,
           "document": "编辑是否可点击\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsEdit",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -330,9 +332,10 @@
         {
           "disabled": false,
           "document": "编辑按钮的文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "编辑",
           "member": "string",
           "name": "EditText",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -340,9 +343,10 @@
         {
           "disabled": false,
           "document": "编辑不可用时的提示文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "编辑提示",
           "member": "string",
           "name": "EditTips",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -350,9 +354,10 @@
         {
           "disabled": false,
           "document": "删除是否可见\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ShowDel",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -360,9 +365,10 @@
         {
           "disabled": false,
           "document": "删除是否可点击\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsDel",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -370,9 +376,10 @@
         {
           "disabled": false,
           "document": "删除按钮的文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "删除",
           "member": "string",
           "name": "DelText",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -380,9 +387,10 @@
         {
           "disabled": false,
           "document": "删除不可用时的提示文本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "删除提示",
           "member": "string",
           "name": "DelTips",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -390,9 +398,10 @@
         {
           "disabled": false,
           "document": "复制是否可见\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ShowCopy",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -400,9 +409,10 @@
         {
           "disabled": false,
           "document": "是否可见\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ShowView",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -410,9 +420,10 @@
         {
           "disabled": false,
           "document": "是否可重命名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "ShowRename",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -700,7 +711,7 @@
         {
           "disabled": false,
           "document": "HOST",
-          "example": "1",
+          "example": "192.168.101.1",
           "member": "string",
           "name": "DbHost",
           "required": true,
@@ -709,7 +720,7 @@
         {
           "disabled": false,
           "document": "端口",
-          "example": "1",
+          "example": "3306",
           "member": "uint64",
           "name": "DbPort",
           "required": true,
@@ -718,7 +729,7 @@
         {
           "disabled": false,
           "document": "后端提供字典：域类型，1、腾讯云，2、本地",
-          "example": "1",
+          "example": "MYSQL",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -727,7 +738,7 @@
         {
           "disabled": false,
           "document": "驱动",
-          "example": "1",
+          "example": "MYSQL",
           "member": "string",
           "name": "DbType",
           "required": true,
@@ -736,7 +747,7 @@
         {
           "disabled": false,
           "document": "数据库编码",
-          "example": "1",
+          "example": "utf8",
           "member": "string",
           "name": "Charset",
           "required": true,
@@ -745,7 +756,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "1",
+          "example": "root",
           "member": "string",
           "name": "DbUser",
           "required": true,
@@ -754,7 +765,7 @@
         {
           "disabled": false,
           "document": "密码",
-          "example": "1",
+          "example": "******",
           "member": "string",
           "name": "DbPwd",
           "required": true,
@@ -763,7 +774,7 @@
         {
           "disabled": false,
           "document": "数据库名称",
-          "example": "1",
+          "example": "bi_demo",
           "member": "string",
           "name": "DbName",
           "required": true,
@@ -772,7 +783,7 @@
         {
           "disabled": false,
           "document": "数据库别名",
-          "example": "1",
+          "example": "腾讯云官方示例数据库",
           "member": "string",
           "name": "SourceName",
           "required": true,
@@ -781,7 +792,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "1",
+          "example": "1101",
           "member": "uint64",
           "name": "ProjectId",
           "required": true,
@@ -790,7 +801,7 @@
         {
           "disabled": false,
           "document": "catalog值",
-          "example": "test",
+          "example": "public",
           "member": "string",
           "name": "Catalog",
           "required": false,
@@ -799,7 +810,7 @@
         {
           "disabled": false,
           "document": "第三方数据源标识",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DataOrigin",
           "required": false,
@@ -808,7 +819,7 @@
         {
           "disabled": false,
           "document": "第三方项目id",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DataOriginProjectId",
           "required": false,
@@ -817,7 +828,7 @@
         {
           "disabled": false,
           "document": "第三方数据源id",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DataOriginDatasourceId",
           "required": false,
@@ -826,7 +837,7 @@
         {
           "disabled": false,
           "document": "扩展参数",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ExtraParam",
           "required": false,
@@ -835,7 +846,7 @@
         {
           "disabled": false,
           "document": "腾讯云私有网络统一标识",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -844,7 +855,7 @@
         {
           "disabled": false,
           "document": "私有网络ip",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -853,7 +864,7 @@
         {
           "disabled": false,
           "document": "私有网络端口",
-          "example": "无",
+          "example": "1150",
           "member": "string",
           "name": "Vport",
           "required": false,
@@ -862,7 +873,7 @@
         {
           "disabled": false,
           "document": "腾讯云私有网络标识",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "VpcId",
           "required": false,
@@ -871,11 +882,29 @@
         {
           "disabled": false,
           "document": "操作权限限制",
-          "example": "无",
+          "example": "10",
           "member": "string",
           "name": "OperationAuthLimit",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "开启vpc",
+          "example": "true",
+          "member": "bool",
+          "name": "UseVPC",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -916,7 +945,7 @@
         {
           "disabled": false,
           "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "成功",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -1566,7 +1595,7 @@
         {
           "disabled": false,
           "document": "连接类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "JDBC",
           "member": "string",
           "name": "ConnectType",
           "output_required": true,
@@ -1576,7 +1605,7 @@
         {
           "disabled": false,
           "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1101",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -1586,7 +1615,7 @@
         {
           "disabled": false,
           "document": "数据源描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "描述",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -1596,7 +1625,7 @@
         {
           "disabled": false,
           "document": "数据源状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SUCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -1606,7 +1635,7 @@
         {
           "disabled": false,
           "document": "来源平台\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "SourcePlat",
           "output_required": true,
@@ -1616,7 +1645,7 @@
         {
           "disabled": false,
           "document": "扩展参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"xx\":\"sasd\"}",
           "member": "string",
           "name": "ExtraParam",
           "output_required": true,
@@ -1626,7 +1655,7 @@
         {
           "disabled": false,
           "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "AddInfo",
           "output_required": true,
@@ -1636,7 +1665,7 @@
         {
           "disabled": false,
           "document": "项目名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "测试项目",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -1646,7 +1675,7 @@
         {
           "disabled": false,
           "document": "引擎类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "EngineType",
           "output_required": true,
@@ -1656,7 +1685,7 @@
         {
           "disabled": false,
           "document": "数据源负责人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Manager",
           "output_required": true,
@@ -1666,7 +1695,7 @@
         {
           "disabled": false,
           "document": "特定操作人员白名单\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "OperatorWhitelist",
           "output_required": true,
@@ -1676,7 +1705,7 @@
         {
           "disabled": false,
           "document": "数据源的vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -1686,7 +1715,7 @@
         {
           "disabled": false,
           "document": "数据源的uniqVpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "11",
           "member": "string",
           "name": "UniqVpcId",
           "output_required": true,
@@ -1696,7 +1725,7 @@
         {
           "disabled": false,
           "document": "数据源的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "gz",
           "member": "string",
           "name": "RegionId",
           "output_required": true,
@@ -1706,7 +1735,7 @@
         {
           "disabled": false,
           "document": "操作属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "add",
           "member": "BaseStateAction",
           "name": "StateAction",
           "output_required": true,
@@ -1716,7 +1745,7 @@
         {
           "disabled": false,
           "document": "更新人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "zhangsna",
           "member": "string",
           "name": "UpdatedUser",
           "output_required": true,
@@ -1736,7 +1765,7 @@
         {
           "disabled": false,
           "document": "权限值列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"bi_datasource_read\",\"bi_datasource_write\"]",
           "member": "string",
           "name": "AuthList",
           "output_required": true,
@@ -1746,7 +1775,7 @@
         {
           "disabled": false,
           "document": "第三方数据源标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "DataOrigin",
           "output_required": false,
@@ -1756,7 +1785,7 @@
         {
           "disabled": false,
           "document": "第三方项目id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1101",
           "member": "string",
           "name": "DataOriginProjectId",
           "output_required": false,
@@ -1766,7 +1795,7 @@
         {
           "disabled": false,
           "document": "第三方数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "110101",
           "member": "string",
           "name": "DataOriginDatasourceId",
           "output_required": false,
@@ -1776,7 +1805,7 @@
         {
           "disabled": false,
           "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "ClusterId",
           "output_required": false,
@@ -1786,11 +1815,21 @@
         {
           "disabled": false,
           "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Mysql",
           "member": "string",
           "name": "DbTypeName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "UseVPC",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -2160,7 +2199,7 @@
         {
           "disabled": false,
           "document": "数据库名称检索",
-          "example": "\"abc\"",
+          "example": "示例数据库",
           "member": "string",
           "name": "DbName",
           "required": false,
@@ -2187,7 +2226,7 @@
         {
           "disabled": false,
           "document": "搜索关键词",
-          "example": "aaa",
+          "example": "示例数据库",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -2196,7 +2235,7 @@
         {
           "disabled": false,
           "document": "过滤无权限列表的参数（0 全量，1 使用权限，2 编辑权限）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PermissionType",
           "required": false,
@@ -3230,7 +3269,7 @@
         {
           "disabled": false,
           "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "dsasasddaqwdsdaads",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
@@ -3252,7 +3291,7 @@
         {
           "disabled": false,
           "document": "事务id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "dwedffdssdsd",
           "member": "string",
           "name": "TranId",
           "output_required": false,
@@ -3263,7 +3302,7 @@
         {
           "disabled": false,
           "document": "事务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TranStatus",
           "output_required": false,
@@ -3635,7 +3674,7 @@
         {
           "disabled": false,
           "document": "第三方数据源标识",
-          "example": "无",
+          "example": "ssa",
           "member": "string",
           "name": "DataOrigin",
           "required": false,
@@ -3644,7 +3683,7 @@
         {
           "disabled": false,
           "document": "第三方项目id",
-          "example": "无",
+          "example": "1021",
           "member": "string",
           "name": "DataOriginProjectId",
           "required": false,
@@ -3653,7 +3692,7 @@
         {
           "disabled": false,
           "document": "第三方数据源id",
-          "example": "无",
+          "example": "2129",
           "member": "string",
           "name": "DataOriginDatasourceId",
           "required": false,
@@ -3662,7 +3701,7 @@
         {
           "disabled": false,
           "document": "扩展参数",
-          "example": "无",
+          "example": "{\"xx\":\"wq\"}",
           "member": "string",
           "name": "ExtraParam",
           "required": false,
@@ -3671,7 +3710,7 @@
         {
           "disabled": false,
           "document": "腾讯云私有网络统一标识",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "UniqVpcId",
           "required": false,
@@ -3680,7 +3719,7 @@
         {
           "disabled": false,
           "document": "私有网络ip",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "Vip",
           "required": false,
@@ -3689,7 +3728,7 @@
         {
           "disabled": false,
           "document": "私有网络端口",
-          "example": "无",
+          "example": "920",
           "member": "string",
           "name": "Vport",
           "required": false,
@@ -3698,9 +3737,27 @@
         {
           "disabled": false,
           "document": "腾讯云私有网络标识",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启vpc\t",
+          "example": "true",
+          "member": "bool",
+          "name": "UseVPC",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "gz\t",
+          "member": "string",
+          "name": "RegionId",
           "required": false,
           "type": "string"
         }
@@ -3743,7 +3800,7 @@
         {
           "disabled": false,
           "document": "提示\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "成功",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -4025,7 +4082,7 @@
         {
           "disabled": false,
           "document": "用户ID",
-          "example": "无",
+          "example": "120120",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -4034,7 +4091,7 @@
         {
           "disabled": false,
           "document": "角色ID 列表",
-          "example": "无",
+          "example": "[2121,231,342]",
           "member": "int64",
           "name": "RoleIdList",
           "required": false,
@@ -4043,7 +4100,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "无",
+          "example": "32131***312@qq.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -4052,7 +4109,7 @@
         {
           "disabled": false,
           "document": "用户名",
-          "example": "无",
+          "example": "zhangsn",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -4061,7 +4118,7 @@
         {
           "disabled": false,
           "document": "手机号",
-          "example": "无",
+          "example": "861212***211",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -4070,7 +4127,7 @@
         {
           "disabled": false,
           "document": "手机区号",
-          "example": "无",
+          "example": "086",
           "member": "string",
           "name": "AreaCode",
           "required": false,
@@ -4079,7 +4136,7 @@
         {
           "disabled": false,
           "document": "企业微信应用用户id",
-          "example": "无",
+          "example": "12012",
           "member": "string",
           "name": "AppUserId",
           "required": false,
@@ -4088,9 +4145,36 @@
         {
           "disabled": false,
           "document": "是否开启手机验证码登录（0 关闭，1 开启）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "LoginSecurityStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启密码过期提醒（0 关闭，1 开启",
+          "example": "0",
+          "member": "int64",
+          "name": "ResetPassWordTip",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "强制修改密码（0 关闭，1 开启）",
+          "example": "0",
+          "member": "int64",
+          "name": "ForceResetPassWord",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "密码过期提醒时间，30、60、90（默认）、180天",
+          "example": "90",
+          "member": "int64",
+          "name": "PasswordExpired",
           "required": false,
           "type": "int"
         }
@@ -4113,7 +4197,7 @@
         {
           "disabled": false,
           "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"xsa\":\"sa\"}",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -4123,7 +4207,7 @@
         {
           "disabled": false,
           "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -4227,7 +4311,7 @@
         {
           "disabled": false,
           "document": "权限值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "bi_datasource_read",
           "member": "string",
           "name": "ModuleId",
           "output_required": true,
@@ -4238,7 +4322,7 @@
         {
           "disabled": false,
           "document": "可见/可用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "usable",
           "member": "string",
           "name": "IncludeType",
           "output_required": true,
@@ -4249,7 +4333,7 @@
         {
           "disabled": false,
           "document": "目标升级版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "v1",
           "member": "string",
           "name": "UpgradeVersionType",
           "output_required": true,
@@ -4260,7 +4344,7 @@
         {
           "disabled": false,
           "document": "补充信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "请升级到基础版或者专业版",
           "member": "string",
           "name": "Tips",
           "output_required": true,
@@ -4271,7 +4355,7 @@
         {
           "disabled": false,
           "document": "补充信息的key值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "basic",
           "member": "string",
           "name": "TipsKey",
           "output_required": false,
@@ -4288,9 +4372,10 @@
         {
           "disabled": false,
           "document": "分组名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "bi_datasource",
           "member": "string",
           "name": "ModuleGroup",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4298,9 +4383,10 @@
         {
           "disabled": false,
           "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "无",
           "member": "PermissionComponent",
           "name": "Components",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

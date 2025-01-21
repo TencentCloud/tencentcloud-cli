@@ -32,7 +32,7 @@ Output:
                     "Cache": {
                         "Switch": "on",
                         "CacheTime": 0,
-                        "IgnoreCacheControl": "abc"
+                        "IgnoreCacheControl": "off"
                     },
                     "NoCache": {
                         "Switch": "on"
@@ -40,8 +40,8 @@ Output:
                     "FollowOrigin": {
                         "Switch": "on",
                         "DefaultCacheTime": 0,
-                        "DefaultCache": "abc",
-                        "DefaultCacheStrategy": "abc"
+                        "DefaultCache": "on",
+                        "DefaultCacheStrategy": "on"
                     }
                 },
                 "CacheKey": {
@@ -91,8 +91,8 @@ Output:
                         "TLSv1.2",
                         "TLSv1.3"
                     ],
-                    "ApplyType": "abc",
-                    "CipherSuite": "abc"
+                    "ApplyType": "apply",
+                    "CipherSuite": "loose-v2023"
                 },
                 "Ipv6": {
                     "Switch": "off"

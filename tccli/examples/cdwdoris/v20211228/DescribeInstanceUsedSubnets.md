@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli cdwdoris DescribeInstanceUsedSubnets --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId str
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "VpcId": "abc",
+        "VpcId": "str",
         "UsedSubnets": [
-            "abc"
+            "str"
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

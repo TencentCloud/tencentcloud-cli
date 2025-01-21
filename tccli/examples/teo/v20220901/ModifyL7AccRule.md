@@ -1,0 +1,195 @@
+**Example 1: 修改规则**
+
+修改规则引擎的单条规则内容。
+
+Input: 
+
+```
+tccli teo ModifyL7AccRule --cli-unfold-argument  \
+    --ZoneId zone-27q0p0bali12 \
+    --Rule.RuleId rule-djuq23 \
+    --Rule.RuleName 测试规则 \
+    --Rule.Status disable \
+    --Rule.Description '注释 1' '注释 2' \
+    --Rule.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.Actions.0.Name ModifyOrigin \
+    --Rule.Branches.0.Actions.0.ModifyOriginParameters.OriginType IPDomain \
+    --Rule.Branches.0.Actions.0.ModifyOriginParameters.Origin 1.1.1.1 \
+    --Rule.Branches.0.Actions.0.ModifyOriginParameters.OriginProtocol follow \
+    --Rule.Branches.0.Actions.0.ModifyOriginParameters.HTTPOriginPort 80 \
+    --Rule.Branches.0.Actions.0.ModifyOriginParameters.HTTPSOriginPort 443 \
+    --Rule.Branches.0.SubRules.0.Description 节点缓存TTL示例 \
+    --Rule.Branches.0.SubRules.0.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.0.Branches.0.Actions.0.Name Cache \
+    --Rule.Branches.0.SubRules.0.Branches.0.Actions.0.CacheParameters.FollowOrigin.Switch on \
+    --Rule.Branches.0.SubRules.0.Branches.0.Actions.0.CacheParameters.FollowOrigin.DefaultCache on \
+    --Rule.Branches.0.SubRules.0.Branches.0.Actions.0.CacheParameters.FollowOrigin.DefaultCacheStrategy on \
+    --Rule.Branches.0.SubRules.0.Branches.0.Actions.0.CacheParameters.FollowOrigin.DefaultCacheTime 0 \
+    --Rule.Branches.0.SubRules.1.Description 浏览器缓存TTL示例 \
+    --Rule.Branches.0.SubRules.1.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.1.Branches.0.Actions.0.Name MaxAge \
+    --Rule.Branches.0.SubRules.1.Branches.0.Actions.0.MaxAgeParameters.FollowOrigin off \
+    --Rule.Branches.0.SubRules.1.Branches.0.Actions.0.MaxAgeParameters.CacheTime 0 \
+    --Rule.Branches.0.SubRules.2.Description 自定义CacheKey示例 \
+    --Rule.Branches.0.SubRules.2.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.Name CacheKey \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.FullURLCache off \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.QueryString.Switch on \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.QueryString.Action includeCustom \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.QueryString.Values name1 name2 \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.IgnoreCase on \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.Header.Switch on \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.Header.Values EO-Client-Device EO-Client-OS \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.Scheme on \
+    --Rule.Branches.0.SubRules.2.Branches.0.Actions.0.CacheKeyParameters.Cookie.Switch off \
+    --Rule.Branches.0.SubRules.3.Description 状态码缓存TTL示例 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.Name StatusCodeCache \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.0.StatusCode 400 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.0.CacheTime 4 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.1.StatusCode 401 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.1.CacheTime 180 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.2.StatusCode 403 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.2.CacheTime 7200 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.3.StatusCode 404 \
+    --Rule.Branches.0.SubRules.3.Branches.0.Actions.0.StatusCodeCacheParameters.StatusCodeCacheParams.3.CacheTime 86400 \
+    --Rule.Branches.0.SubRules.4.Description 缓存预刷新示例 \
+    --Rule.Branches.0.SubRules.4.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.4.Branches.0.Actions.0.Name CachePrefresh \
+    --Rule.Branches.0.SubRules.4.Branches.0.Actions.0.CachePrefreshParameters.Switch on \
+    --Rule.Branches.0.SubRules.4.Branches.0.Actions.0.CachePrefreshParameters.CacheTimePercent 80 \
+    --Rule.Branches.0.SubRules.5.Description 离线缓存示例 \
+    --Rule.Branches.0.SubRules.5.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.5.Branches.0.Actions.0.Name OfflineCache \
+    --Rule.Branches.0.SubRules.5.Branches.0.Actions.0.OfflineCacheParameters.Switch on \
+    --Rule.Branches.0.SubRules.6.Description HTTP2示例 \
+    --Rule.Branches.0.SubRules.6.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.6.Branches.0.Actions.0.Name HTTP2 \
+    --Rule.Branches.0.SubRules.6.Branches.0.Actions.0.HTTP2Parameters.Switch on \
+    --Rule.Branches.0.SubRules.7.Description QUIC示例 \
+    --Rule.Branches.0.SubRules.7.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.7.Branches.0.Actions.0.Name QUIC \
+    --Rule.Branches.0.SubRules.7.Branches.0.Actions.0.QUICParameters.Switch on \
+    --Rule.Branches.0.SubRules.8.Description WebSocket示例 \
+    --Rule.Branches.0.SubRules.8.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.8.Branches.0.Actions.0.Name WebSocket \
+    --Rule.Branches.0.SubRules.8.Branches.0.Actions.0.WebSocketParameters.Switch on \
+    --Rule.Branches.0.SubRules.8.Branches.0.Actions.0.WebSocketParameters.Timeout 30 \
+    --Rule.Branches.0.SubRules.9.Description 最大上传大小示例 \
+    --Rule.Branches.0.SubRules.9.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.9.Branches.0.Actions.0.Name PostMaxSize \
+    --Rule.Branches.0.SubRules.9.Branches.0.Actions.0.PostMaxSizeParameters.Switch on \
+    --Rule.Branches.0.SubRules.9.Branches.0.Actions.0.PostMaxSizeParameters.MaxSize 524288000 \
+    --Rule.Branches.0.SubRules.10.Description 智能压缩示例 \
+    --Rule.Branches.0.SubRules.10.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.10.Branches.0.Actions.0.Name Compression \
+    --Rule.Branches.0.SubRules.10.Branches.0.Actions.0.CompressionParameters.Switch on \
+    --Rule.Branches.0.SubRules.10.Branches.0.Actions.0.CompressionParameters.Algorithms gzip \
+    --Rule.Branches.0.SubRules.11.Description 智能加速示例 \
+    --Rule.Branches.0.SubRules.11.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.11.Branches.0.Actions.0.Name SmartRouting \
+    --Rule.Branches.0.SubRules.11.Branches.0.Actions.0.SmartRoutingParameters.Switch on \
+    --Rule.Branches.0.SubRules.12.Description HTTP2回源示例 \
+    --Rule.Branches.0.SubRules.12.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.12.Branches.0.Actions.0.Name UpstreamHTTP2 \
+    --Rule.Branches.0.SubRules.12.Branches.0.Actions.0.UpstreamHTTP2Parameters.Switch off \
+    --Rule.Branches.0.SubRules.13.Description 回源超时时间示例 \
+    --Rule.Branches.0.SubRules.13.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.13.Branches.0.Actions.0.Name HTTPUpstreamTimeout \
+    --Rule.Branches.0.SubRules.13.Branches.0.Actions.0.HTTPUpstreamTimeoutParameters.ResponseTimeout 15 \
+    --Rule.Branches.0.SubRules.14.Description '强制 HTTPS示例' \
+    --Rule.Branches.0.SubRules.14.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.14.Branches.0.Actions.0.Name ForceRedirectHTTPS \
+    --Rule.Branches.0.SubRules.14.Branches.0.Actions.0.ForceRedirectHTTPSParameters.Switch on \
+    --Rule.Branches.0.SubRules.14.Branches.0.Actions.0.ForceRedirectHTTPSParameters.RedirectStatusCode 302 \
+    --Rule.Branches.0.SubRules.15.Description HSTS示例 \
+    --Rule.Branches.0.SubRules.15.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.15.Branches.0.Actions.0.Name HSTS \
+    --Rule.Branches.0.SubRules.15.Branches.0.Actions.0.HSTSParameters.Switch on \
+    --Rule.Branches.0.SubRules.15.Branches.0.Actions.0.HSTSParameters.Timeout 1000 \
+    --Rule.Branches.0.SubRules.15.Branches.0.Actions.0.HSTSParameters.IncludeSubDomains on \
+    --Rule.Branches.0.SubRules.15.Branches.0.Actions.0.HSTSParameters.Preload on \
+    --Rule.Branches.0.SubRules.16.Description 'SSL/TLS 安全配置示例' \
+    --Rule.Branches.0.SubRules.16.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.16.Branches.0.Actions.0.Name TLSConfig \
+    --Rule.Branches.0.SubRules.16.Branches.0.Actions.0.TLSConfigParameters.Version TLSv1 TLSv1.1 TLSv1.2 TLSv1.3 \
+    --Rule.Branches.0.SubRules.16.Branches.0.Actions.0.TLSConfigParameters.CipherSuite loose-v2023 \
+    --Rule.Branches.0.SubRules.17.Description 'OCSP 装订示例' 回源请求参数设置示例 回源跟随重定向示例 自定义错误页面示例 分片回源示例 \
+    --Rule.Branches.0.SubRules.17.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.0.Name OCSPStapling \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.0.OCSPStaplingParameters.Switch on \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.1.Name UpstreamRequest \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.1.UpstreamRequestParameters.QueryString.Switch on \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.1.UpstreamRequestParameters.QueryString.Action includeCustom \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.1.UpstreamRequestParameters.QueryString.Values name1 name2 \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.1.UpstreamRequestParameters.Cookie.Switch on \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.1.UpstreamRequestParameters.Cookie.Action full \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.2.Name UpstreamFollowRedirect \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.2.UpstreamFollowRedirectParameters.Switch on \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.2.UpstreamFollowRedirectParameters.MaxTimes 3 \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.3.Name ErrorPage \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.3.ErrorPageParameters.ErrorPageParams.0.StatusCode 400 \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.3.ErrorPageParameters.ErrorPageParams.0.RedirectURL http://www.test-v.com/custom-page.html \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.3.ErrorPageParameters.ErrorPageParams.1.StatusCode 403 \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.3.ErrorPageParameters.ErrorPageParams.1.RedirectURL http://www.test-v.com/custom-page1.html \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.4.Name RangeOriginPull \
+    --Rule.Branches.0.SubRules.17.Branches.0.Actions.4.RangeOriginPullParameters.Switch on \
+    --Rule.Branches.0.SubRules.18.Description '回源 HTTPS示例' '修改 HTTP 回源请求头示例' 'Host Header 重写示例' '访问 URL 重定向示例' 'Token 鉴权示例' \
+    --Rule.Branches.0.SubRules.18.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.0.Name OriginPullProtocol \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.Name ModifyRequestHeader \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.0.Action add \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.0.Name EO-Client-Browser \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.1.Action del \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.1.Name EO-Client-Device \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.2.Action set \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.1.ModifyRequestHeaderParameters.HeaderActions.2.Name EO-Client-OS \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.2.Name HostHeader \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.2.HostHeaderParameters.Action followOrigin \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.3.Name AccessURLRedirect \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.3.AccessURLRedirectParameters.StatusCode 302 \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.3.AccessURLRedirectParameters.Protocol follow \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.3.AccessURLRedirectParameters.HostName.Action follow \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.3.AccessURLRedirectParameters.URLPath.Action follow \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.3.AccessURLRedirectParameters.QueryString.Action full \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.4.Name Authentication \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.4.AuthenticationParameters.AuthType TypeA \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.4.AuthenticationParameters.Timeout 5 \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.4.AuthenticationParameters.SecretKey BCChgIM4o0k08Uk0Jgi3f27ir3 \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.4.AuthenticationParameters.BackupSecretKey 3deJ7O6CsqlIk \
+    --Rule.Branches.0.SubRules.18.Branches.0.Actions.4.AuthenticationParameters.AuthParam test123QQ \
+    --Rule.Branches.0.SubRules.19.Description '修改 HTTP 节点响应头示例' '客户端 IP 头部示例' '客户端 IP 地理位置头部示例' 'HTTP 应答示例' '回源 URL 重写示例' \
+    --Rule.Branches.0.SubRules.19.Branches.0.Condition ${http.request.host} in ['www.example.com'] \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.Name ModifyResponseHeader \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.0.Action add \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.0.Name Access-Control-Allow-Methods \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.0.Value POST,GET \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.1.Action set \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.1.Name Access-Control-Allow-Origin \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.1.Value http://test.com,http://1.1.1.1 \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.2.Action del \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.0.ModifyResponseHeaderParameters.HeaderActions.2.Name Content-Disposition \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.Name ClientIPHeader \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.ClientIPHeaderParameters.Switch on \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.1.ClientIPHeaderParameters.HeaderName test \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.2.Name ClientIPCountry \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.2.ClientIPCountryParameters.Switch on \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.2.ClientIPCountryParameters.HeaderName EO-Client-IPCountry \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.3.Name HttpResponse \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.3.HttpResponseParameters.StatusCode 400 \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.3.HttpResponseParameters.ResponsePage p-30tcxgl8i0ls \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.4.Name UpstreamURLRewrite \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.4.UpstreamURLRewriteParameters.Type Path \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.4.UpstreamURLRewriteParameters.Action addPrefix \
+    --Rule.Branches.0.SubRules.19.Branches.0.Actions.4.UpstreamURLRewriteParameters.Value /prefix
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "811d2583-310c-41f4-b5e7-abe407404sxsd"
+    }
+}
+```
+

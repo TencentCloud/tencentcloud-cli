@@ -6,33 +6,23 @@ Input:
 
 ```
 tccli dlc AlterDMSDatabase --cli-unfold-argument  \
-    --CurrentName abc \
-    --SchemaName abc \
-    --Location abc \
-    --Asset.Id 0 \
-    --Asset.Name abc \
-    --Asset.Guid abc \
-    --Asset.Catalog abc \
-    --Asset.Description abc \
-    --Asset.Owner abc \
-    --Asset.OwnerAccount abc \
-    --Asset.PermValues.0.Key abc \
-    --Asset.PermValues.0.Value abc \
-    --Asset.Params.0.Key abc \
-    --Asset.Params.0.Value abc \
-    --Asset.BizParams.0.Key abc \
-    --Asset.BizParams.0.Value abc \
-    --Asset.DataVersion 0 \
-    --Asset.CreateTime 2020-09-22T00:00:00+00:00 \
-    --Asset.ModifiedTime 2020-09-22T00:00:00+00:00 \
-    --Asset.DatasourceId 0
+    --CurrentName database1 \
+    --SchemaName DataLakeCatalog \
+    --Location cosn://********** \
+    --Asset.Name database1 \
+    --Asset.Catalog DataLakeCatalog \
+    --Asset.Description alter description \
+    --Asset.Params.0.Key param1 \
+    --Asset.Params.0.Value default param \
+    --Asset.BizParams.0.Key bizparam \
+    --Asset.BizParams.0.Value default param
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "********-****-****-****-d91707f15fae"
     }
 }
 ```

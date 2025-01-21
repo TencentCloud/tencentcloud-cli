@@ -666,7 +666,7 @@
         {
           "disabled": false,
           "document": "实例购买渠道(\"cdn\" 等)",
-          "example": "\"\"",
+          "example": "cdn",
           "member": "string",
           "name": "BuyingChannel",
           "required": false,
@@ -708,7 +708,7 @@
         {
           "disabled": false,
           "document": "实例Id",
-          "example": "taw-12345678",
+          "example": "****49878",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -717,13 +717,13 @@
         },
         {
           "disabled": false,
-          "document": "预付费订单 id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "20211011688006794751081",
+          "document": "预付费订单 ，预付费不为null，后付费为null",
+          "example": "****94751081",
           "member": "string",
           "name": "DealName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -914,8 +914,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID：taw-123",
-          "example": "taw-123",
+          "document": "实例ID：****-1792",
+          "example": "****-1793",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -938,13 +938,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回消息,请求成功才会返回，出现异常默认为null",
           "example": "success",
           "member": "string",
           "name": "Msg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3441,7 +3441,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -3522,7 +3522,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -3531,7 +3531,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -3618,7 +3618,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -3795,7 +3795,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -3876,7 +3876,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -3885,7 +3885,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -3972,7 +3972,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"total\\\":0}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -4030,7 +4030,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -4111,7 +4111,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -4120,7 +4120,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -4207,7 +4207,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"series\\\":[{\\\"name\\\":\\\"static_project_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\",\\\"successRate\\\",\\\"avgDuration\\\",\\\"connectTime\\\",\\\"domainLookupTime\\\"],\\\"values\\\":[[1737246360,null,null,null,null,null]],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -4265,7 +4265,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -4346,7 +4346,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -4355,7 +4355,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -4500,7 +4500,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -4581,7 +4581,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -4590,7 +4590,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -4677,7 +4677,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\"request_id\":\"19f7743c-8a5d-4c41-ad6a-742a145b685d\",\"results\":[{\"statement_id\":0,\"total\":0,\"offset\":\"\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -4726,7 +4726,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "3.2.1",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -4816,7 +4816,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -4825,7 +4825,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -4903,7 +4903,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\"request_id\":\"2fe018e0-9e76-46cb-9ddb-cfbd6835ff19\",\"results\":[{\"statement_id\":0,\"series\":[{\"name\":\"webvitals_page_statistics\",\"columns\":[\"time\",\"LCP\",\"FID\",\"CLS\",\"FCP\"],\"values\":[[0,null,null,null,null]]}],\"total\":1,\"offset\":\"\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -4949,7 +4949,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "\"\"",
+          "example": "\"request error\"",
           "member": "string",
           "name": "Content",
           "output_required": true,
@@ -4991,7 +4991,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "123",
+          "example": "2",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
@@ -5006,7 +5006,7 @@
         {
           "disabled": false,
           "document": "上报率数组列表",
-          "example": "无",
+          "example": "[{\"ID\": 17,\"ProjectID\": 8,\"ProjectInterface\": \"web\",\"ReportRate\": 10,\"ReportType\": 1}]",
           "member": "ProjectLimit",
           "name": "ProjectLimitSet",
           "output_required": true,
@@ -5143,13 +5143,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "pv列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "pv列表",
+          "example": "[{\"ProjectId\":26,\"Pv\":\"236\",\"CreateTime\":\"20241123\"}]",
           "member": "RumPvInfo",
           "name": "ProjectPvSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5288,7 +5288,7 @@
         {
           "disabled": false,
           "document": "查询过滤条件（根据sourcemap的文件名模糊匹配）",
-          "example": "无",
+          "example": "test.js",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -5303,7 +5303,7 @@
         {
           "disabled": false,
           "document": "文件信息列表",
-          "example": "无",
+          "example": "[{\"Version\":\"0.01\",\"FileKey\":\"****test\",\"FileName\":\"a.js.map\",\"FileHash\":\"****test\"}]",
           "member": "ReleaseFile",
           "name": "Files",
           "output_required": true,
@@ -5343,7 +5343,7 @@
         {
           "disabled": false,
           "document": "单次查询返回的原始日志条数，最大值为100（必填）",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -5352,7 +5352,7 @@
         {
           "disabled": false,
           "document": "页数，第几页",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "required": true,
@@ -5403,7 +5403,7 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "\"{\\\"code\\\":0,\\\"data\\\":[{\\\"1737254300150\\\":1},{\\\"1737254310941\\\":1}],\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"c946f00ee5369b735c1db85c7e2fe6ff\\\"}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5540,7 +5540,7 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "\"{\"code\":0,\"data\":{\"page\\\":1,\"pageSize\":999,\"totalCount\":1}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5580,7 +5580,7 @@
         {
           "disabled": false,
           "document": "单次查询返回的原始日志条数，最大值为100（必填）",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -5589,7 +5589,7 @@
         {
           "disabled": false,
           "document": "页数，第几页",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "required": true,
@@ -5631,7 +5631,7 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "\"{\\\"code\\\":0,\\\"data\\\":{\\\"total\\\":0,\\\"limit\\\":100,\\\"page\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"2158d1c1abbae2f1a5238786fd061c7e\\\"}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5662,7 +5662,7 @@
         {
           "disabled": false,
           "document": "单次查询返回的原始日志条数，最大值为100（必填）",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -5704,7 +5704,7 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "\"{\"code\":0,\"data\":[],\"msg\":\"\"}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5873,7 +5873,7 @@
         {
           "disabled": false,
           "document": "计费状态",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ChargeStatuses",
           "required": false,
@@ -5882,7 +5882,7 @@
         {
           "disabled": false,
           "document": "计费类型",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ChargeTypes",
           "required": false,
@@ -5891,7 +5891,7 @@
         {
           "disabled": false,
           "document": "分页Limit",
-          "example": "1",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -5900,7 +5900,7 @@
         {
           "disabled": false,
           "document": "分页Offset",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -5909,7 +5909,7 @@
         {
           "disabled": false,
           "document": "片区Id",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "AreaIds",
           "required": false,
@@ -5918,7 +5918,7 @@
         {
           "disabled": false,
           "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "InstanceStatuses",
           "required": false,
@@ -5927,7 +5927,7 @@
         {
           "disabled": false,
           "document": "实例Id, 该参数已废弃，请在Filters内注明",
-          "example": "无",
+          "example": "****7ixj431zO1",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -5936,7 +5936,7 @@
         {
           "disabled": false,
           "document": "过滤参数；demo模式传{\"Name\": \"IsDemo\", \"Values\":[\"1\"]}",
-          "example": "无",
+          "example": "[{\"Name\":\"Region\",\"Values\":[\"ap-guangzhou\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -6113,6 +6113,92 @@
       ],
       "usage": "in"
     },
+    "Kafka": {
+      "document": "旁路kafka配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1：开启\n0：关闭",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableKafka",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "host地址",
+          "example": "9.134.190.4:9092",
+          "member": "string",
+          "name": "KafkaHost",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topic",
+          "example": "hello",
+          "member": "string",
+          "name": "KafkaTopic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "KafkaVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "username",
+          "example": "hawchen",
+          "member": "string",
+          "name": "SaslUserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "password",
+          "example": "12345214",
+          "member": "string",
+          "name": "SaslPassword",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssl",
+          "example": "plain",
+          "member": "string",
+          "name": "SaslMechanism",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "默认算子id为0新增算子\n一旦算子新增成功会返回正确的算子id值",
+          "example": "0",
+          "member": "uint64",
+          "name": "SinkId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyInstanceRequest": {
       "document": "ModifyInstance请求参数结构体",
       "members": [
@@ -6164,7 +6250,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "1234",
+          "example": "1",
           "member": "int64",
           "name": "ProjectID",
           "required": true,
@@ -6214,13 +6300,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回信息",
           "example": "success",
           "member": "string",
           "name": "Msg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6359,6 +6445,7 @@
           "example": "web",
           "member": "string",
           "name": "ProjectInterface",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6369,6 +6456,7 @@
           "example": "10",
           "member": "int64",
           "name": "ReportRate",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6379,6 +6467,7 @@
           "example": "1",
           "member": "int64",
           "name": "ReportType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6386,9 +6475,10 @@
         {
           "disabled": false,
           "document": "主键ID",
-          "example": "1",
+          "example": "8",
           "member": "int64",
           "name": "ID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6396,9 +6486,10 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "123",
+          "example": "8",
           "member": "int64",
           "name": "ProjectID",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6415,7 +6506,8 @@
           "example": "0.0.1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6425,7 +6517,8 @@
           "example": "DFFDSGGSDFFDS",
           "member": "string",
           "name": "FileKey",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6435,7 +6528,8 @@
           "example": "a.js.map",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6445,22 +6539,24 @@
           "example": "asdfdsfdsg/f/g",
           "member": "string",
           "name": "FileHash",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件 id",
           "example": "1",
           "member": "int64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ResumeInstanceRequest": {
       "document": "ResumeInstance请求参数结构体",
@@ -6601,7 +6697,7 @@
           "example": "2",
           "member": "int64",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6611,7 +6707,7 @@
           "example": "1",
           "member": "int64",
           "name": "AreaId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6621,7 +6717,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6631,7 +6727,7 @@
           "example": "taw-12345678",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6641,17 +6737,17 @@
           "example": "1",
           "member": "int64",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例描述",
-          "example": "测试",
+          "example": "taw-user",
           "member": "string",
           "name": "InstanceDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6661,7 +6757,7 @@
           "example": "1",
           "member": "int64",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6671,7 +6767,7 @@
           "example": "1",
           "member": "int64",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6681,7 +6777,7 @@
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "UpdatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6691,17 +6787,17 @@
           "example": "30",
           "member": "int64",
           "name": "DataRetentionDays",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "测试",
+          "example": "taw-user",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6711,19 +6807,19 @@
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例类型 1:原web相关类型 2:app端类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例类型 1:原web相关类型 2:app端类型",
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6737,17 +6833,17 @@
           "example": "测试项目",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者 id",
-          "example": "123456",
+          "example": "ouyang",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6757,7 +6853,7 @@
           "example": "tam-123",
           "member": "string",
           "name": "InstanceID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6767,7 +6863,7 @@
           "example": "log",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6777,29 +6873,29 @@
           "example": "2020-04-26 00:00:00",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目仓库地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目仓库地址",
           "example": "http://github.com/xxx/yyy",
           "member": "string",
           "name": "Repo",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目网址地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目网址地址",
           "example": "http://cloud.tencent.com/index.html",
           "member": "string",
           "name": "URL",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6807,7 +6903,7 @@
           "example": "12",
           "member": "string",
           "name": "Rate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6817,7 +6913,7 @@
           "example": "hjkysfkey12",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6827,7 +6923,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableURLGroup",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6837,7 +6933,7 @@
           "example": "tamIns",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6847,7 +6943,7 @@
           "example": "1",
           "member": "int64",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6857,49 +6953,59 @@
           "example": "tam-key",
           "member": "string",
           "name": "InstanceKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目描述",
           "example": "这是一个项目描述",
           "member": "string",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否星标  1:是 0:否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否星标  1:是 0:否",
           "example": "1",
           "member": "int64",
           "name": "IsStar",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目状态(1 创建中，2 运行中，3 异常，4 重启中，5 停止中，6 已停止， 7 销毁中，8 已销毁)",
           "example": "2",
           "member": "int64",
           "name": "ProjectStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "日志接入点，用户忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "日志接入点，用户忽略。",
           "example": "RUM_LOG_1",
           "member": "string",
           "name": "AccessPoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kafka旁路配置信息",
+          "example": "Kafka",
+          "member": "Kafka",
+          "name": "Kafka",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6913,19 +7019,19 @@
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "pv访问量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "document": "pv访问量",
+          "example": "813",
           "member": "string",
           "name": "Pv",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6933,7 +7039,7 @@
           "example": "20201102",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7271,7 +7377,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7281,7 +7387,7 @@
           "example": "taw-123",
           "member": "string",
           "name": "InstanceID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7291,47 +7397,47 @@
           "example": "20200527221900",
           "member": "string",
           "name": "Ttl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "白名单自增ID",
-          "example": "12",
+          "example": "18",
           "member": "string",
           "name": "ID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "业务唯一标识",
-          "example": "111",
+          "example": "****563044",
           "member": "string",
           "name": "WhitelistUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建者ID",
-          "example": "1111",
+          "example": "T. hao",
           "member": "string",
           "name": "CreateUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "aid标识",
-          "example": "222",
+          "example": "****237",
           "member": "string",
           "name": "Aid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7341,7 +7447,7 @@
           "example": "20200527221900",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

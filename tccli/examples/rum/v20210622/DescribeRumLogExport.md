@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "RequestId": "763188d1-9f99-45e8-8bbf-bcdffa8f58f0",
-        "Result": ""
+        "Result": "无"
     }
 }
 ```
@@ -34,7 +34,7 @@ tccli rum DescribeRumLogExport --cli-unfold-argument  \
     --Name logDemo \
     --Fields date \
     --StartTime 1714103013 \
-    --Query * \
+    --Query id:0 \
     --EndTime 1714103013 \
     --ID 0
 ```

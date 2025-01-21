@@ -119,6 +119,13 @@
       "output": "CreateL4ProxyRulesResponse",
       "status": "online"
     },
+    "CreateL7AccRules": {
+      "document": "本接口用于在[规则引擎](https://cloud.tencent.com/document/product/1552/70901)中创建规则，支持批量创建。",
+      "input": "CreateL7AccRulesRequest",
+      "name": "创建七层加速规则",
+      "output": "CreateL7AccRulesResponse",
+      "status": "online"
+    },
     "CreateLoadBalancer": {
       "document": "创建负载均衡实例。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223)。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
       "input": "CreateLoadBalancerRequest",
@@ -273,6 +280,13 @@
       "output": "DeleteL4ProxyRulesResponse",
       "status": "online"
     },
+    "DeleteL7AccRules": {
+      "document": "本接口用于删除[规则引擎](https://cloud.tencent.com/document/product/1552/70901)的规则，支持批量删除。",
+      "input": "DeleteL7AccRulesRequest",
+      "name": "删除七层加速规则",
+      "output": "DeleteL7AccRulesResponse",
+      "status": "online"
+    },
     "DeleteLoadBalancer": {
       "document": "删除负载均衡实例，若负载均衡示例被其他服务（例如：四层代理等）引用的时候，示例无法被删除，需要先解除引用关系。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
       "input": "DeleteLoadBalancerRequest",
@@ -295,9 +309,9 @@
       "status": "online"
     },
     "DeleteRules": {
-      "document": "批量删除规则引擎规则。",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DeleteL7AccRules](https://cloud.tencent.com/document/product/1552/115821)。",
       "input": "DeleteRulesRequest",
-      "name": "批量删除规则引擎规则",
+      "name": "批量删除规则引擎规则（旧）",
       "output": "DeleteRulesResponse",
       "status": "online"
     },
@@ -470,9 +484,9 @@
       "status": "online"
     },
     "DescribeHostsSetting": {
-      "document": "用于查询域名配置信息",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，可通过 [DescribeL7AccSetting](https://cloud.tencent.com/document/product/1552/115819) 和 [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820) 来获取域名的详细配置。",
       "input": "DescribeHostsSettingRequest",
-      "name": "查询域名详细配置",
+      "name": "查询域名详细配置（旧）",
       "output": "DescribeHostsSettingResponse",
       "status": "online"
     },
@@ -502,6 +516,20 @@
       "input": "DescribeL4ProxyRulesRequest",
       "name": "查询四层代理转发规则列表",
       "output": "DescribeL4ProxyRulesResponse",
+      "status": "online"
+    },
+    "DescribeL7AccRules": {
+      "document": "本接口用于查询[规则引擎](https://cloud.tencent.com/document/product/1552/70901)的规则列表。",
+      "input": "DescribeL7AccRulesRequest",
+      "name": "查询七层加速规则",
+      "output": "DescribeL7AccRulesResponse",
+      "status": "online"
+    },
+    "DescribeL7AccSetting": {
+      "document": "本接口用于查询[站点加速](https://cloud.tencent.com/document/product/1552/96193)全局配置。",
+      "input": "DescribeL7AccSettingRequest",
+      "name": "查询七层加速全局配置",
+      "output": "DescribeL7AccSettingResponse",
       "status": "online"
     },
     "DescribeLoadBalancerList": {
@@ -561,16 +589,16 @@
       "status": "online"
     },
     "DescribeRules": {
-      "document": "查询规则引擎规则。",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820)。",
       "input": "DescribeRulesRequest",
-      "name": "查询规则引擎规则",
+      "name": "查询规则引擎规则（旧）",
       "output": "DescribeRulesResponse",
       "status": "online"
     },
     "DescribeRulesSetting": {
-      "document": "返回规则引擎可应用匹配请求的设置列表及其详细建议配置信息",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [RuleEngineAction](https://cloud.tencent.com/document/product/1552/80721#RuleEngineAction)。",
       "input": "DescribeRulesSettingRequest",
-      "name": "查询规则引擎的设置参数",
+      "name": "查询规则引擎的设置参数（旧）",
       "output": "DescribeRulesSettingResponse",
       "status": "online"
     },
@@ -638,9 +666,9 @@
       "status": "online"
     },
     "DescribeZoneSetting": {
-      "document": "用于查询站点的所有配置信息。",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccSetting](https://cloud.tencent.com/document/product/1552/115819)。",
       "input": "DescribeZoneSettingRequest",
-      "name": "查询站点配置",
+      "name": "查询站点配置（旧）",
       "output": "DescribeZoneSettingResponse",
       "status": "online"
     },
@@ -847,6 +875,20 @@
       "output": "ModifyL4ProxyStatusResponse",
       "status": "online"
     },
+    "ModifyL7AccRule": {
+      "document": "本接口用于修改[规则引擎](https://cloud.tencent.com/document/product/1552/70901)中的规则，单次仅支持修改单条规则。",
+      "input": "ModifyL7AccRuleRequest",
+      "name": "修改七层加速规则",
+      "output": "ModifyL7AccRuleResponse",
+      "status": "online"
+    },
+    "ModifyL7AccSetting": {
+      "document": "本接口用于修改[站点加速](https://cloud.tencent.com/document/product/1552/96193)全局配置。",
+      "input": "ModifyL7AccSettingRequest",
+      "name": "修改七层加速全局配置",
+      "output": "ModifyL7AccSettingResponse",
+      "status": "online"
+    },
     "ModifyLoadBalancer": {
       "document": "修改负载均衡实例配置。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。",
       "input": "ModifyLoadBalancerRequest",
@@ -904,9 +946,9 @@
       "status": "online"
     },
     "ModifyZoneSetting": {
-      "document": "用于修改站点配置",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccSetting](https://cloud.tencent.com/document/product/1552/115817)。",
       "input": "ModifyZoneSettingRequest",
-      "name": "修改站点配置",
+      "name": "修改站点配置（旧）",
       "output": "ModifyZoneSettingResponse",
       "status": "online"
     },
@@ -956,6 +998,23 @@
           "member": "string",
           "name": "Switch",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AccelerateMainlandParameters": {
+      "document": "中国大陆加速优化配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "中国大陆加速优化配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1169,6 +1228,84 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AccessURLRedirectParameters": {
+      "document": "访问 URL 重定向 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码，取值为 301、302、303、307、308 之一。",
+          "example": "301",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标请求协议，取值有：\n<li>http：目标请求协议 HTTP；</li>\n<li>https：目标请求协议 HTTPS；</li>\n<li>follow：跟随请求。</li>",
+          "example": "follow",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标 HostName 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostName",
+          "name": "HostName",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "URLPath",
+          "name": "URLPath",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "携带查询参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessURLRedirectQueryString",
+          "name": "QueryString",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AccessURLRedirectQueryString": {
+      "document": "访问 URL 重定向 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行动作，取值有：\n<li>full：全部保留；</li>\n<li>ignore：全部忽略。</li>",
+          "example": "full",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2183,6 +2320,89 @@
       ],
       "usage": "out"
     },
+    "AuthenticationParameters": {
+      "document": "Token 鉴权 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "鉴权类型。取值有：\n\n<li>TypeA：鉴权方式 A 类型，具体含义请参考 [鉴权方式 A](https://cloud.tencent.com/document/product/1552/109329)；</li>\n<li>TypeB：鉴权方式 B 类型，具体含义请参考 [鉴权方式 B](https://cloud.tencent.com/document/product/1552/109330)；</li>\n<li>TypeC：鉴权方式 C 类型，具体含义请参考 [鉴权方式 C](https://cloud.tencent.com/document/product/1552/109331)；</li>\n<li>TypeD：鉴权方式 D 类型，具体含义请参考 [鉴权方式 D](https://cloud.tencent.com/document/product/1552/109332)；</li>\n<li>TypeVOD：鉴权方式 V 类型，具体含义请参考 [鉴权方式 V](https://cloud.tencent.com/document/product/1552/109333)。</li>",
+          "example": "TypeA",
+          "member": "string",
+          "name": "AuthType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主鉴权密钥，由 6～40 位大小写英文字母或数字组成，不能包含 \" 和 $。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权 URL 的有效时长，单位为秒，取值：1～630720000。用于判断客户端访问请求是否过期：\n<li>若当前时间超过 “timestamp + 有效时长” 时间，则为过期请求，直接返回 403。</li>\n<li>若当前时间未超过 “timestamp + 有效时长” 时间，则请求未过期，继续校验 md5 字符串。</li>注意：当 AuthType 为 TypeA、TypeB、TypeC、TypeD 之一时，此字段必填。",
+          "example": "500",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备鉴权密钥，由 6～40 位大小写英文字母或数字组成，不能包含 \" 和 $。",
+          "example": "无",
+          "member": "string",
+          "name": "BackupSecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权参数名称，节点将校验此参数名对应的值。由 1～100 位大小写字母、数字或下划线组成。<br>注意：当 AuthType 为 TypeA、TypeD 之一时，此字段必填。",
+          "example": "auth_param",
+          "member": "string",
+          "name": "AuthParam",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权时间戳，和 AuthParam 字段的值不能相同。<br>注意：当 AuthType 为 TypeD 时，此字段必填。",
+          "example": "auth_time",
+          "member": "string",
+          "name": "TimeParam",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权时间格式，取值有：\n<li>dec：十进制；</li>\n<li>hex：十六进制。</li>注意：当 AuthType 为 TypeD 时，此字段必填。默认为 hex。",
+          "example": "dec",
+          "member": "string",
+          "name": "TimeFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BillingData": {
       "document": "计费数据项",
       "members": [
@@ -2949,6 +3169,73 @@
       ],
       "usage": "both"
     },
+    "CacheConfigCustomTime": {
+      "document": "节点缓存 TTL 自定义缓存时间配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义缓存时间开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义缓存时间数值，单位为秒，取值：0-315360000。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "10800",
+          "member": "int64",
+          "name": "CacheTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheConfigParameters": {
+      "document": "节点缓存 TTL 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "遵循源站缓存配置。FollowOrigin、NoCache、CustomTime 最多只能配置一个 Switch 为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FollowOrigin",
+          "name": "FollowOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不缓存配置。FollowOrigin、NoCache、CustomTime 最多只能配置一个 Switch 为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoCache",
+          "name": "NoCache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义缓存时间配置。FollowOrigin、NoCache、CustomTime 最多只能配置一个 Switch 为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigCustomTime",
+          "name": "CustomTime",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CacheKey": {
       "document": "缓存键配置。",
       "members": [
@@ -2985,6 +3272,262 @@
       ],
       "usage": "both"
     },
+    "CacheKeyConfigParameters": {
+      "document": "缓存键配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启全路径缓存，取值有：\n<li>on：开启全路径缓存（即关闭参数忽略）；</li>\n<li>off：关闭全路径缓存（即开启参数忽略）。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "FullURLCache",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略大小写缓存，取值有：\n<li>on：忽略；</li>\n<li>off：不忽略。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "IgnoreCase",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字符串保留配置参数。此字段和 FullURLCache 必须同时设置，但不能同为 on。",
+          "example": "无",
+          "member": "CacheKeyQueryString",
+          "name": "QueryString",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheKeyCookie": {
+      "document": "自定义 Cache Key Cookie 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "功能开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存动作，取值有：\n<li>full：全部保留；</li>\n<li> ignore：全部忽略；</li>\n<li> includeCustom：保留指定参数；</li>\n<li>excludeCustom：忽略指定参数。</li>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "full",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义 Cache Key Cookie 名称列表。<br>注意：当 Action 为 includeCustom 或 excludeCustom 时，此字段必填；当 Action 为 full 或 ignore 时，无需填写此字段，若填写则不生效。",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheKeyHeader": {
+      "document": "自定义 Cache Key HTTP 请求头配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "功能开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义 Cache Key HTTP 请求头列表。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheKeyParameters": {
+      "document": "自定义 Cache Key 配置参数。该配置参数的 FullURLCache 和 QueryString 采用组合表达，具体示例可以参考：\n- 查询字符串全部保留。开启忽略大小写。\n```\n{\n  \"CacheKey\": {\n    \"FullURLCache\": \"on\",\n    \"QueryString\": {\n      \"Switch\": \"off\"\n    },\n    \"IgnoreCase\": \"on\"\n  }\n}\n```\n- 查询字符串全部忽略。开启忽略大小写。\n```\n{\n  \"CacheKey\": {\n    \"FullURLCache\": \"off\",\n    \"QueryString\": {\n      \"Switch\": \"off\"\n    },\n    \"IgnoreCase\": \"on\"\n  }\n}\n```\n- 查询字符串保留指定参数。关闭忽略大小写。\n```\n{\n  \"CacheKey\": {\n    \"FullURLCache\": \"off\",\n    \"QueryString\": {\n        \"Switch\": \"on\",\n        \"Action\": \"includeCustom\",\n        \"Values\": [\"name1\",\"name2\",\"name3\"]\n    },\n    \"IgnoreCase\": \"off\"\n  }\n}\n```\n- 查询字符串忽略指定参数。关闭忽略大小写。\n```\n{\n  \"CacheKey\": {\n    \"FullURLCache\": \"off\",\n    \"QueryString\": {\n        \"Switch\": \"on\",\n        \"Action\": \"excludeCustom\",\n        \"Values\": [\"name1\",\"name2\",\"name3\"]\n    },\n    \"IgnoreCase\": \"off\"\n  }\n}\n```",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询字符串全部保留开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>注意：FullURLCache、IgnoreCase、Header、Scheme、Cookie 至少设置一个配置。此字段和 QueryString.Switch 必须同时设置，但不能同为 on。",
+          "example": "on",
+          "member": "string",
+          "name": "FullURLCache",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字符串保留配置参数。此字段和 FullURLCache 必须同时设置，但不能同为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKeyQueryString",
+          "name": "QueryString",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "忽略大小写开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>注意：FullURLCache、IgnoreCase、Header、Scheme、Cookie 至少设置一个配置。",
+          "example": "on",
+          "member": "string",
+          "name": "IgnoreCase",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 请求头配置参数。FullURLCache、IgnoreCase、Header、Scheme、Cookie 至少设置一个配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKeyHeader",
+          "name": "Header",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求协议开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>注意：FullURLCache、IgnoreCase、Header、Scheme、Cookie 至少设置一个配置。",
+          "example": "on",
+          "member": "string",
+          "name": "Scheme",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cookie 配置参数。FullURLCache、IgnoreCase、Header、Scheme、Cookie 至少设置一个配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKeyCookie",
+          "name": "Cookie",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheKeyQueryString": {
+      "document": "自定义 Cache Key 查询字符串配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询字符串保留/忽略指定参数开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字符串保留/忽略指定参数动作。取值有：\n<li>includeCustom：表示保留部分参数；</li>\n<li>excludeCustom：表示忽略部分参数。</li>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "includeCustom",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字符串中需保留/忽略的参数名列表。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "[\"\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CacheParameters": {
+      "document": "节点缓存 TTL 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存遵循源站。不填表示不设置该配置，FollowOrigin、NoCache、CustomTime 最多只能配置一个 Switch 为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FollowOrigin",
+          "name": "FollowOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不缓存。不填表示不设置该配置，FollowOrigin、NoCache、CustomTime 最多只能配置一个 Switch 为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NoCache",
+          "name": "NoCache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义缓存时间。不填表示不设置该配置，FollowOrigin、NoCache、CustomTime 最多只能配置一个 Switch 为 on。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomTime",
+          "name": "CustomTime",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CachePrefresh": {
       "document": "缓存预刷新",
       "members": [
@@ -3007,6 +3550,34 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CachePrefreshParameters": {
+      "document": "缓存预刷新 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存预刷新开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预刷新时间设置为节点缓存时间的百分比数值，取值：1～99。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "80",
+          "member": "int64",
+          "name": "CacheTimePercent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3191,6 +3762,62 @@
       ],
       "usage": "out"
     },
+    "ClientIPCountryParameters": {
+      "document": "回源时携带客户端 IP 所属地域信息，值的格式为 ISO-3166-1 两位字母代码。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存放客户端 IP 所属地域信息的请求头名称，当 Switch=on 时有效。为空则使用默认值：EO-Client-IPCountry。",
+          "example": "EO-Client-IPCountry",
+          "member": "string",
+          "name": "HeaderName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ClientIPHeaderParameters": {
+      "document": "存储客户端请求IP的头部信息配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源时，存放客户端 IP 的请求头名称。当 Switch 为 on 时，该参数必填。该参数不允许填写 X-Forwarded-For。",
+          "example": "X-ClientIp",
+          "member": "string",
+          "name": "HeaderName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClientIpCountry": {
       "document": "回源时携带客户端IP所属地域信息，值的格式为ISO-3166-1两位字母代码。",
       "members": [
@@ -3331,6 +3958,34 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CompressionParameters": {
+      "document": "智能压缩配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能压缩配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的压缩算法列表。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：\n<li>brotli：brotli 算法；</li>\n<li>gzip：gzip 算法。</li>",
+          "example": "[\"brotli\",\"gzip\"]",
+          "member": "string",
+          "name": "Algorithms",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4515,6 +5170,52 @@
       ],
       "type": "object"
     },
+    "CreateL7AccRulesRequest": {
+      "document": "CreateL7AccRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-27q0p0bali16",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则内容。",
+          "example": "无",
+          "member": "RuleEngineItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateL7AccRulesResponse": {
+      "document": "CreateL7AccRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则 ID 列表。",
+          "example": "[\"rule-qbjifysd\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLoadBalancerRequest": {
       "document": "CreateLoadBalancer请求参数结构体",
       "members": [
@@ -5591,6 +6292,45 @@
       ],
       "usage": "both"
     },
+    "CustomTime": {
+      "document": "节点缓存 TTL 自定义缓存时间参数配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义缓存时间开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "忽略源站 CacheControl 开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "on",
+          "member": "string",
+          "name": "IgnoreCacheControl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义缓存时间数值，单位为秒，取值：0～315360000。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "0",
+          "member": "int64",
+          "name": "CacheTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CustomizedHeader": {
       "document": "负载均衡实例 HTTP/HTTPS 健康检查策略下可配置的自定义头部。",
       "members": [
@@ -6336,6 +7076,42 @@
     },
     "DeleteL4ProxyRulesResponse": {
       "document": "DeleteL4ProxyRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL7AccRulesRequest": {
+      "document": "DeleteL7AccRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-26r78x31ny86",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的规则 ID 列表。您可以通过 DescribeL7AccRules 获取 Ruleid。",
+          "example": "[\"rule-bx3zke8q\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteL7AccRulesResponse": {
+      "document": "DeleteL7AccRules返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8571,6 +9347,117 @@
       ],
       "type": "object"
     },
+    "DescribeL7AccRulesRequest": {
+      "document": "DescribeL7AccRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-qbjifysd",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20，不填写此参数时默认按顺序返回站点下的规则。详细的过滤条件如下：\n<li>rule-id：按照规则 ID 进行过滤。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目，默认值：20，上限：1000。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7AccRulesResponse": {
+      "document": "DescribeL7AccRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表，规则按照从上到下的顺序执行，详情参考[规则生效优先级](https://cloud.tencent.com/document/product/1552/70901#.E4.BC.98.E5.85.88.E7.BA.A7)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleEngineItem",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7AccSettingRequest": {
+      "document": "DescribeL7AccSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-21xfqlh4qjee",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeL7AccSettingResponse": {
+      "document": "DescribeL7AccSetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点加速全局配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneConfigParameters",
+          "name": "ZoneSetting",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoadBalancerListRequest": {
       "document": "DescribeLoadBalancerList请求参数结构体",
       "members": [
@@ -9229,7 +10116,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>rule-id：按照规则 ID 进行过滤。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -11069,6 +11956,51 @@
       ],
       "usage": "out"
     },
+    "ErrorPage": {
+      "document": "自定义错误页面。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码。支持范围为 400、403、404、405、414、416、451、500、501、502、503、504。",
+          "example": "404",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向 URL，需要为完整跳转路径，如 https://www.test.com/error.html。",
+          "example": "http://www.test.com/error.html",
+          "member": "string",
+          "name": "RedirectURL",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ErrorPageParameters": {
+      "document": "自定义错误页面配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义错误页面配置列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorPage",
+          "name": "ErrorPageParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ErrorPageReference": {
       "document": "自定义错误页面被引用的来源",
       "members": [
@@ -11551,6 +12483,34 @@
       ],
       "usage": "both"
     },
+    "ForceRedirectHTTPSParameters": {
+      "document": "访问协议强制 HTTPS 跳转配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问强制跳转配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向状态码。当 Switch 为 on 时，此字段必填，否则此字段不生效。取值有：\n<li>301：301跳转；</li>\n<li>302：302跳转。</li>",
+          "example": "302",
+          "member": "int64",
+          "name": "RedirectStatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Function": {
       "document": "边缘函数详情",
       "members": [
@@ -11795,6 +12755,135 @@
       ],
       "usage": "both"
     },
+    "GrpcParameters": {
+      "document": "gRPC 配置项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "gRPC 配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HSTSParameters": {
+      "document": "HSTS 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HSTS 配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存 HSTS 头部时间，单位为秒，取值：1-31536000。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "10800",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许其他子域名继承相同的 HSTS 头部，取值有：\n<li>on：允许其他子域名继承相同的 HSTS 头部；</li>\n<li>off：不允许其他子域名继承相同的 HSTS 头部。</li>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "on",
+          "member": "string",
+          "name": "IncludeSubDomains",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许浏览器预加载 HSTS 头部，取值有：\n<li>on：允许浏览器预加载 HSTS 头部；</li>\n<li>off：不允许浏览器预加载 HSTS 头部。</li>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "on",
+          "member": "string",
+          "name": "Preload",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTP2Parameters": {
+      "document": "HTTP2 接入配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP2 接入配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTPResponseParameters": {
+      "document": "HTTP 应答配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应状态码。支持 2XX、4XX、5XX，不包括 499、514、101、301、302、303、509、520-599。",
+          "example": "400",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应页面 ID。",
+          "example": "p-30tcxgl8i0ls",
+          "member": "string",
+          "name": "ResponsePage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HTTPUpstreamTimeoutParameters": {
+      "document": "七层回源超时配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 应答超时时间，单位为秒，取值：5～600。",
+          "example": "15",
+          "member": "int64",
+          "name": "ResponseTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HandleFunctionRuntimeEnvironmentRequest": {
       "document": "HandleFunctionRuntimeEnvironment请求参数结构体",
       "members": [
@@ -11869,6 +12958,45 @@
           "member": "string",
           "name": "Value",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HeaderAction": {
+      "document": "HTTP 头部设置规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 头部设置方式。取值有：\n<li>set：设置。变更指定头部参数的取值为设置后的值；</li>\n<li>del：删除。删除指定的头部参数；</li>\n<li>add：增加。增加指定的头部参数。</li>",
+          "example": "set",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 头部名称。",
+          "example": "X-Header",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 头部值。当 Action 取值为 set 或者 add 时，该参数必填；当 Action 取值为 del 时，该参数无需填写。",
+          "example": "X-value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12016,6 +13144,62 @@
           "example": "recv_context",
           "member": "string",
           "name": "RecvContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HostHeaderParameters": {
+      "document": "Host Header 重写配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行动作，取值有：\n<li>followOrigin：跟随源站域名；</li>\n<li>custom：自定义。</li>",
+          "example": "followOrigin",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Host Header 重写，需要填写完整域名。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "ServerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HostName": {
+      "document": "访问 URL 重定向 HostName 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标 HostName 配置，取值有：\n<li>follow：跟随请求；</li>\n<li>custom：自定义。</li>",
+          "example": "follow",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标 HostName 自定义取值，最大长度 1024。<br>注意：当 Action 为 custom 时，此字段必填；当 Action 为 follow 时，此字段不生效。",
+          "example": "www.show.com",
+          "member": "string",
+          "name": "Value",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -12243,6 +13427,23 @@
         }
       ],
       "usage": "out"
+    },
+    "IPv6Parameters": {
+      "document": "IPv6 访问配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IPv6 访问功能配置，取值有：\n<li>on：开启 IPv6 访问功能；</li>\n<li>off：关闭 IPv6 访问功能。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Identification": {
       "document": "站点验证信息",
@@ -13412,6 +14613,34 @@
       ],
       "usage": "both"
     },
+    "MaxAgeParameters": {
+      "document": "浏览器缓存 TTL 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "遵循源站 Cache-Control 开关，取值有：\n<li>on：遵循源站，忽略 CacheTime 时间设置；</li>\n<li>off：不遵循源站，使用 CacheTime 时间设置。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "FollowOrigin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义缓存时间数值，单位为秒，取值：0～315360000。<br>注意：当 FollowOrigin 为 off 时，表示不遵循源站，使用 CacheTime 设置缓存时间，否则此字段不生效。",
+          "example": "无",
+          "member": "int64",
+          "name": "CacheTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyAccelerationDomainRequest": {
       "document": "ModifyAccelerationDomain请求参数结构体",
       "members": [
@@ -14573,6 +15802,78 @@
       ],
       "type": "object"
     },
+    "ModifyL7AccRuleRequest": {
+      "document": "ModifyL7AccRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-djuqmq",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的规则。您可以先通过 DescribeL7AccRules 接口来获取需要修改的规则的 Ruleid，然后传入修改后的规则内容，原规则内容会被覆盖式更新。",
+          "example": "无",
+          "member": "RuleEngineItem",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7AccRuleResponse": {
+      "document": "ModifyL7AccRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7AccSettingRequest": {
+      "document": "ModifyL7AccSetting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-21xfqlh4qjee",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "站点加速全局配置，该参数中的配置会对站点下的所有域名生效。您只需直接修改所需的配置，未传入的其他配置将保持原有状态。\n\n",
+          "example": "无",
+          "member": "ZoneConfig",
+          "name": "ZoneConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyL7AccSettingResponse": {
+      "document": "ModifyL7AccSetting返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLoadBalancerRequest": {
       "document": "ModifyLoadBalancer请求参数结构体",
       "members": [
@@ -14725,6 +16026,89 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyOriginParameters": {
+      "document": "修改源站配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站类型。取值有：\n<li>IPDomain：IPV4、IPV6 或域名类型源站；</li>\n<li>OriginGroup：源站组类型源站；</li>\n<li>LoadBalance：负载均衡，该功能内测中，如需使用，请提工单或联系智能客服；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWSS3：支持 AWS S3 协议的所有对象存储源站。</li>",
+          "example": "IPDomain",
+          "member": "string",
+          "name": "OriginType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IPDomain 时，该参数请填写 IPV4、IPV6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数请填写 COS 桶的访问域名；</li>\n<li>当 OriginType = AWSS3，该参数请填写 S3 桶的访问域名；</li>\n<li>当 OriginType = OriginGroup 时，该参数请填写源站组 ID；</li>\n<li>当 OriginType = LoadBalance 时，该参数请填写负载均衡实例 ID，该功能当前仅白名单开放。</li>",
+          "example": "1.2.3.4",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源协议配置。当 OriginType 取值为 IPDomain、OriginGroup、LoadBalance 时该参数必填。取值有：\n<li>http：使用 HTTP 协议；</li>\n<li>https：使用 HTTPS 协议；</li>\n<li>follow：协议跟随。</li>",
+          "example": "follow",
+          "member": "string",
+          "name": "OriginProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 http 或者 follow 时生效。",
+          "example": "80",
+          "member": "int64",
+          "name": "HTTPOriginPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS 回源端口，取值范围 1～65535。该参数仅当回源协议 OriginProtocol 为 https 或者 follow 时生效。",
+          "example": "443",
+          "member": "int64",
+          "name": "HTTPSOriginPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWSS3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>不填写时，默认值为off。",
+          "example": "on",
+          "member": "string",
+          "name": "PrivateAccess",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有鉴权使用参数，该参数仅当 OriginType = AWSS3 且 PrivateAccess = on 时会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OriginPrivateParameters",
+          "name": "PrivateParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifyPlanRequest": {
       "document": "ModifyPlan请求参数结构体",
@@ -14887,6 +16271,40 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyRequestHeaderParameters": {
+      "document": "修改 HTTP 回源请求头配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 头部设置规则列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeaderAction",
+          "name": "HeaderActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyResponseHeaderParameters": {
+      "document": "修改 HTTP 节点响应头配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP 回源头部规则列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeaderAction",
+          "name": "HeaderActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifyRuleRequest": {
       "document": "ModifyRule请求参数结构体",
@@ -15481,6 +16899,23 @@
       ],
       "usage": "out"
     },
+    "OCSPStaplingParameters": {
+      "document": "OCSP 装订配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "OCSP 装订配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OfflineCache": {
       "document": "离线缓存是否开启",
       "members": [
@@ -15491,6 +16926,23 @@
           "member": "string",
           "name": "Switch",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "OfflineCacheParameters": {
+      "document": "离线缓存是否开启。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "离线缓存开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15995,6 +17447,56 @@
       ],
       "usage": "in"
     },
+    "OriginPrivateParameters": {
+      "document": "对象存储源站私有鉴权参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "鉴权参数 Access Key ID。",
+          "example": "sdfwae12",
+          "member": "string",
+          "name": "AccessKeyId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权参数 Secret Access Key。",
+          "example": "afdfe122",
+          "member": "string",
+          "name": "SecretAccessKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "鉴权版本。取值有：\n<li>v2：v2版本；</li>\n<li>v4：v4版本。</li>",
+          "example": "v4",
+          "member": "string",
+          "name": "SignatureVersion",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶地域。",
+          "example": "us-east1",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OriginProtectionInfo": {
       "document": "源站防护信息",
       "members": [
@@ -16327,6 +17829,34 @@
       ],
       "usage": "both"
     },
+    "PostMaxSizeParameters": {
+      "document": "POST 请求上传文件流式传输最大限制。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启 POST 请求上传文件限制，单位为 Byte，平台默认为限制为 32 * 2<sup>20</sup> Byte，取值有：<li>on：开启限制；</li><li>off：关闭限制。</li>",
+          "example": "on/off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "POST 请求上传文件流式传输最大限制，单位为 Byte，取值：1 * 2<sup>20</sup> Byte～500 * 2<sup>20</sup> Byte。",
+          "example": "10000000",
+          "member": "int64",
+          "name": "MaxSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PrepaidPlanParam": {
       "document": "预付费套餐计费参数",
       "members": [
@@ -16373,6 +17903,23 @@
           "name": "Value",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QUICParameters": {
+      "document": "QUIC 配置项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "QUIC 配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16515,6 +18062,23 @@
         }
       ],
       "usage": "out"
+    },
+    "RangeOriginPullParameters": {
+      "document": "分片回源配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分片回源开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RateLimitConfig": {
       "document": "速率限制规则",
@@ -17296,6 +18860,45 @@
       ],
       "usage": "out"
     },
+    "ResponseSpeedLimitParameters": {
+      "document": "单连接下载限速配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载限速模式，取值有：\n<li>LimitUponDownload：全过程下载限速；</li>\n<li>LimitAfterSpecificBytesDownloaded：全速下载特定字节后开始限速；</li>\n<li>LimitAfterSpecificSecondsDownloaded：全速下载特定时间后开始限速。</li>",
+          "example": "LimitUponDownload",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限速值，单位为：KB/s，填写数值，指定限速大小。",
+          "example": "1000",
+          "member": "string",
+          "name": "MaxSpeed",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限速开始值，可以为下载大小或指定时长，单位为：KB或s，当 Mode 取值为 LimitAfterSpecificBytesDownloaded 或 LimitAfterSpecificSecondsDownloaded 时，该参数必填。填写数值，指定下载大小或指定时长。",
+          "example": "10",
+          "member": "string",
+          "name": "StartAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RewriteAction": {
       "document": "规则引擎HTTP请求头/响应头类型的动作",
       "members": [
@@ -17375,6 +18978,45 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleBranch": {
+      "document": "子规则分支。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "[匹配条件\n](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。",
+          "example": "\"${http.request.host} in ['test.test.com']\"",
+          "member": "string",
+          "name": "Condition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "[操作](https://cloud.tencent.com/document/product/1552/90438#c7bd7e02-9247-4a72-b0e4-11c27cadb198)。<br>注意：Actions 和 SubRules 不可同时为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleEngineAction",
+          "name": "Actions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子规则列表。此列表中时存在多条规则，按照从上往下的顺序依次执行。<br>注意：SubRules 和 Actions 不可同时为空。且当前只支持填写一层 SubRules。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleEngineSubRule",
+          "name": "SubRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17572,6 +19214,497 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleEngineAction": {
+      "document": "规则引擎操作。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作名称。名称需要与参数结构体对应，例如 Name=Cache，则 CacheParameters 必填。\n<li>Cache：节点缓存 TTL；</li>\n<li>CacheKey：自定义 Cache Key；</li>\n<li>CachePrefresh：缓存预刷新；</li>\n<li>AccessURLRedirect：访问 URL 重定向；</li>\n<li>UpstreamURLRewrite：回源 URL 重写；</li>\n<li>QUIC：QUIC；</li>\n<li>WebSocket：WebSocket；</li>\n<li>Authentication：Token 鉴权；</li>\n<li>MaxAge：浏览器缓存 TTL；</li>\n<li>StatusCodeCache：状态码缓存 TTL；</li>\n<li>OfflineCache：离线缓存；</li>\n<li>SmartRouting：智能加速；</li>\n<li>RangeOriginPull：分片回源 ；</li>\n<li>UpstreamHTTP2：HTTP2 回源；</li>\n<li>HostHeader：Host Header 重写；</li>\n<li>ForceRedirectHTTPS：访问协议强制 HTTPS 跳转配置；</li>\n<li>OriginPullProtocol：回源 HTTPS；</li>\n<li>Compression：智能压缩配置；</li>\n<li>HSTS：HSTS；</li>\n<li>ClientIPHeader：存储客户端请求 IP 的头部信息配置；</li>\n<li>OCSPStapling：OCSP 装订；</li>\n<li>HTTP2：HTTP2 接入；</li>\n<li>PostMaxSize：POST 请求上传文件流式传输最大限制配置；</li>\n<li>ClientIPCountry：回源时携带客户端 IP 所属地域信息；</li>\n<li>UpstreamFollowRedirect：回源跟随重定向参数配置；</li>\n<li>UpstreamRequest：回源请求参数；</li>\n<li>TLSConfig：SSL/TLS 安全；</li>\n<li>ModifyOrigin：修改源站；</li>\n<li>HTTPUpstreamTimeout：七层回源超时配置；</li>\n<li>HttpResponse：HTTP 应答；</li>\n<li>ErrorPage：自定义错误页面；</li>\n<li>ModifyResponseHeader：修改 HTTP 节点响应头；</li>\n<li>ModifyRequestHeader：修改 HTTP 节点请求头；</li>\n<li>ResponseSpeedLimit：单连接下载限速。</li>\n<li>SetContentIdentifierParameters：设置内容标识符。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点缓存 TTL 配置参数，当 Name 取值为 Cache 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheParameters",
+          "name": "CacheParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义 Cache Key 配置参数，当 Name 取值为 CacheKey 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKeyParameters",
+          "name": "CacheKeyParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存预刷新配置参数，当 Name 取值为 CachePrefresh 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CachePrefreshParameters",
+          "name": "CachePrefreshParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问 URL 重定向配置参数，当 Name 取值为 AccessURLRedirect 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessURLRedirectParameters",
+          "name": "AccessURLRedirectParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源 URL 重写配置参数，当 Name 取值为 UpstreamURLRewrite 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamURLRewriteParameters",
+          "name": "UpstreamURLRewriteParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "QUIC 配置参数，当 Name 取值为 QUIC 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QUICParameters",
+          "name": "QUICParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "WebSocket 配置参数，当 Name 取值为 WebSocket 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebSocketParameters",
+          "name": "WebSocketParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Token 鉴权配置参数，当 Name 取值为 Authentication 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthenticationParameters",
+          "name": "AuthenticationParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "浏览器缓存 TTL 配置参数，当 Name 取值为 MaxAge 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAgeParameters",
+          "name": "MaxAgeParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态码缓存 TTL 配置参数，当 Name 取值为 StatusCodeCache 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatusCodeCacheParameters",
+          "name": "StatusCodeCacheParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线缓存配置参数，当 Name 取值为 OfflineCache 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OfflineCacheParameters",
+          "name": "OfflineCacheParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能加速配置参数，当 Name 取值为 SmartRouting 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartRoutingParameters",
+          "name": "SmartRoutingParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分片回源配置参数，当 Name 取值为 RangeOriginPull 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RangeOriginPullParameters",
+          "name": "RangeOriginPullParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP2 回源配置参数，当 Name 取值为 UpstreamHTTP2 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHTTP2Parameters",
+          "name": "UpstreamHTTP2Parameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Host Header 重写配置参数，当 Name 取值为 HostHeader 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostHeaderParameters",
+          "name": "HostHeaderParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问协议强制 HTTPS 跳转配置，当 Name 取值为 ForceRedirectHTTPS 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceRedirectHTTPSParameters",
+          "name": "ForceRedirectHTTPSParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能压缩配置，当 Name 取值为 Compression 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompressionParameters",
+          "name": "CompressionParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HSTS 配置参数，当 Name 取值为 HSTS 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HSTSParameters",
+          "name": "HSTSParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储客户端请求 IP 的头部信息配置，当 Name 取值为 ClientIPHeader 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIPHeaderParameters",
+          "name": "ClientIPHeaderParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OCSP 装订配置参数，当 Name 取值为 OCSPStapling 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OCSPStaplingParameters",
+          "name": "OCSPStaplingParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP2 接入配置参数，当 Name 取值为 HTTP2 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HTTP2Parameters",
+          "name": "HTTP2Parameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "POST 请求上传文件流式传输最大限制配置，当 Name 取值为 PostMaxSize 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostMaxSizeParameters",
+          "name": "PostMaxSizeParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源时携带客户端 IP 所属地域信息配置参数，当 Name 取值为 ClientIPCountry 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIPCountryParameters",
+          "name": "ClientIPCountryParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源跟随重定向参数配置，当 Name 取值为 UpstreamFollowRedirect 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamFollowRedirectParameters",
+          "name": "UpstreamFollowRedirectParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源请求参数配置参数，当 Name 取值为 UpstreamRequest 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamRequestParameters",
+          "name": "UpstreamRequestParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SSL/TLS 安全配置参数，当 Name 取值为 TLSConfig 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TLSConfigParameters",
+          "name": "TLSConfigParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改源站配置参数，当 Name 取值为 ModifyOrigin 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyOriginParameters",
+          "name": "ModifyOriginParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "七层回源超时配置，当 Name 取值为 HTTPUpstreamTimeout 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HTTPUpstreamTimeoutParameters",
+          "name": "HTTPUpstreamTimeoutParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP 应答配置参数，当 Name 取值为 HttpResponse 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HTTPResponseParameters",
+          "name": "HttpResponseParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义错误页面配置参数，当 Name 取值为 ErrorPage 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorPageParameters",
+          "name": "ErrorPageParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改 HTTP 节点响应头配置参数，当 Name 取值为 ModifyResponseHeader 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyResponseHeaderParameters",
+          "name": "ModifyResponseHeaderParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改 HTTP 节点请求头配置参数，当 Name 取值为 ModifyRequestHeader 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModifyRequestHeaderParameters",
+          "name": "ModifyRequestHeaderParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单连接下载限速配置参数，当 Name 取值为 ResponseSpeedLimit 时，该参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResponseSpeedLimitParameters",
+          "name": "ResponseSpeedLimitParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容标识配置参数，当 Name 取值为 HttpResponse 时，该参数必填。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SetContentIdentifierParameters",
+          "name": "SetContentIdentifierParameters",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleEngineItem": {
+      "document": "规则引擎规则详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则状态。取值有：<li> enable: 启用； </li><li> disable: 未启用。</li>",
+          "example": "enable",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则 ID。规则的唯一性标识，当调用 ModifyL7AccRules 时，该参数必填。",
+          "example": "rule-30maftui9q4f",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则名称。名称长度限制不超过 255 个字符。",
+          "example": "rule test",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则注释。可以填写多个注释。",
+          "example": "[\"name1\"]",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子规则分支。此列表当前只支持填写一项规则，多填无效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleBranch",
+          "name": "Branches",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则优先级。仅作为出参使用。",
+          "example": "1",
+          "member": "int64",
+          "name": "RulePriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleEngineSubRule": {
+      "document": "子规则。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子规则分支\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleBranch",
+          "name": "Branches",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则注释。",
+          "example": "[\"tag1\", \"tag2\"]",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18262,6 +20395,23 @@
       ],
       "usage": "both"
     },
+    "SetContentIdentifierParameters": {
+      "document": "内容标识配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容标识id",
+          "example": "eocontent-33lltqf1cmyf",
+          "member": "string",
+          "name": "ContentIdentifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SkipCondition": {
       "document": "例外规则的跳过匹配条件，即在例外时根据本匹配条件，略过指定字段及内容。",
       "members": [
@@ -18436,6 +20586,23 @@
       ],
       "usage": "both"
     },
+    "SmartRoutingParameters": {
+      "document": "智能加速配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能加速配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StandardDebug": {
       "document": "支持标准debug结构体",
       "members": [
@@ -18471,6 +20638,90 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StandardDebugParameters": {
+      "document": "Debug 调试结构体。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Debug 功能开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "允许的客户端来源。支持填写 IPv4 以及 IPv6 的 IP 网段。0.0.0.0/0 表示允许所有 IPv4 客户端进行调试；::/0 表示允许所有 IPv6 客户端进行调试；不能填写 127.0.0.1。<br>注意：当 Switch 字段为 on 时，此字段必填，且填写个数为 1～100；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "[\"9.142.236.194\", \"43.154.226.0/24\"]",
+          "member": "string",
+          "name": "AllowClientIPList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Debug 功能到期时间。超出设置的时间，则功能失效。<br>注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "2023-06-30T17:37:56+0800",
+          "member": "datetime_iso",
+          "name": "Expires",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StatusCodeCacheParam": {
+      "document": "状态码缓存 TTL 配置参数内部结构。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码，取值为 400、 401、403、 404、 405、 407、 414、 500、 501、 502、 503、 504、 509、 514 之一。",
+          "example": "400",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存时间数值，单位为秒，取值：0～31536000。",
+          "example": "0",
+          "member": "int64",
+          "name": "CacheTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StatusCodeCacheParameters": {
+      "document": "状态码缓存 TTL 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码缓存 TTL 。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatusCodeCacheParam",
+          "name": "StatusCodeCacheParams",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -18593,6 +20844,34 @@
           "member": "string",
           "name": "WebSwitch",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TLSConfigParameters": {
+      "document": "SSL/TLS 安全配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TLS 版本。至少填写一个，如果是多个时，需要为连续版本号，例如：开启 TLS1、1.1、1.2 和 1.3，不可仅开启 1 和 1.2 而关闭 1.1。取值有：<li>TLSv1：TLSv1 版本；</li><li>TLSv1.1：TLSv1.1 版本；</li><li>TLSv1.2：TLSv1.2 版本；</li><li>TLSv1.3：TLSv1.3 版本。</li>",
+          "example": "[\"TLSv1\", \"TLSv1.1\", \"TLSv1.2\", \"TLSv1.3\"]",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码套件。详细介绍请参考 [TLS 版本及密码套件说明](https://cloud.tencent.com/document/product/1552/86545)。取值有：<li>loose-v2023：loose-v2023 密码套件；</li><li>general-v2023：general-v2023 密码套件；</li><li>strict-v2023：strict-v2023 密码套件。</li>",
+          "example": "loose-v2023",
+          "member": "string",
+          "name": "CipherSuite",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18967,6 +21246,45 @@
       ],
       "usage": "out"
     },
+    "URLPath": {
+      "document": "访问 URL 重定向路径配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行动作，取值有：\n<li>follow：跟随请求；</li>\n<li>custom：自定义；</li>\n<li>regex：正则匹配。</li>",
+          "example": "custom",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正则匹配的表达式，长度范围为 1～1024。<br>注意：当 Action 为 regex 时，此字段必填；当 Action 为 follow 或 custom 时，无需填写此字段，若填写则不生效。",
+          "example": "无",
+          "member": "string",
+          "name": "Regex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重定向的目标URL，长度范围为 1～1024。<br>注意：当 Action 为 regex 或 custom 时，此字段必填；当 Action 为 follow 时，无需填写此字段，若填写则不生效。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpgradePlanRequest": {
       "document": "UpgradePlan请求参数结构体",
       "members": [
@@ -19039,6 +21357,51 @@
       ],
       "usage": "both"
     },
+    "UpstreamFollowRedirectParameters": {
+      "document": "回源跟随重定向参数配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源跟随重定向配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大重定向次数。取值为 1-5。\n注意：当 Switch 为 on 时，此字段必填；当 Switch 为 off 时，无需填写此字段，若填写则不生效。",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxTimes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpstreamHTTP2Parameters": {
+      "document": "HTTP2 回源配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "HTTP2 回源配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpstreamHttp2": {
       "document": "Http2回源配置",
       "members": [
@@ -19049,6 +21412,151 @@
           "member": "string",
           "name": "Switch",
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpstreamRequestCookie": {
+      "document": "回源请求参数 Cookie 配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源请求参数 Cookie 配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源请求参数 Cookie 模式。当 Switch 为 on 时，该参数必填。取值有：\n<li>full：表示全部保留；</li>\n<li>ignore：表示全部忽略；</li>\n<li>includeCustom：表示保留部分参数；</li>\n<li>excludeCustom：表示忽略部分参数。</li>",
+          "example": "includeCustom",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定参数值。仅当查询字符串模式 Action 为 includeCustom 或者 excludeCustom 时该参数生效，用于指定需要保留或者忽略的参数。最大支持 10 个参数。",
+          "example": "[\"name1\", \"name2\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpstreamRequestParameters": {
+      "document": "回源请求参数配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询字符串配置。可选配置项，不填表示不配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamRequestQueryString",
+          "name": "QueryString",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Cookie 配置。可选配置项，不填表示不配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamRequestCookie",
+          "name": "Cookie",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UpstreamRequestQueryString": {
+      "document": "回源请求参数查询字符串配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源请求参数查询字符串配置开关，取值有：\n<li>on：开启；</li>\n<li>off：关闭。</li>",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字符串模式。当 Switch 为 on 时，该参数必填。取值有：\n<li>full：全部保留；</li>\n<li>ignore：全部忽略；</li>\n<li>includeCustom：保留部分参数；</li>\n<li>excludeCustom：忽略部分参数。</li>",
+          "example": "includeCustom",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定参数值。仅当查询字符串模式 Action 为 includeCustom 或者 excludeCustom 时该参数生效，用于指定需要保留或者忽略的参数。最大支持 10 个参数。",
+          "example": "[\"name1\", \"name2\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpstreamURLRewriteParameters": {
+      "document": "回源 URL 重写 配置参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回源 URL 重写类型，仅支持填写 Path。",
+          "example": "Path",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源 URL 重写动作。取值有：\n<li>replace：替换路径前缀；</li>\n<li>addPrefix：增加路径前缀；</li>\n<li>rmvPrefix：移除路径前缀。</li>",
+          "example": "replace",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源 URL 重写值，最大长度 1024，必须以 / 开头。<br>注意：当 Action 为 addPrefix 时，不能以 / 结尾；当 Action 为 rmvPrefix 时，不能存在 *。",
+          "example": "/prefix",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19298,6 +21806,34 @@
       ],
       "usage": "both"
     },
+    "WebSocketParameters": {
+      "document": "WebSocket 配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "WebSocket 超时时间配置开关，取值有：\n<li>on：使用 Timeout 作为 WebSocket 超时时间；</li>\n<li>off：平台仍支持 WebSocket 连接，此时使用系统默认的 15 秒为超时时间。</li>",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超时时间，单位为秒，最大超时时间 120 秒。<br>注意：当 Switch 为 on 时，此字段必填，否则此字段不生效。",
+          "example": "10",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Zone": {
       "document": "站点信息",
       "members": [
@@ -19507,6 +22043,280 @@
           "example": "无",
           "member": "OwnershipVerification",
           "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneConfig": {
+      "document": "站点加速配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能加速配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartRoutingParameters",
+          "name": "SmartRouting",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存过期时间配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheConfigParameters",
+          "name": "Cache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "浏览器缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MaxAgeParameters",
+          "name": "MaxAge",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点缓存键配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheKeyConfigParameters",
+          "name": "CacheKey",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存预刷新配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CachePrefreshParameters",
+          "name": "CachePrefresh",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "离线缓存配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OfflineCacheParameters",
+          "name": "OfflineCache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能压缩配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CompressionParameters",
+          "name": "Compression",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问协议强制 HTTPS 跳转配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceRedirectHTTPSParameters",
+          "name": "ForceRedirectHTTPS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HSTS 相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HSTSParameters",
+          "name": "HSTS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TLS 相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TLSConfigParameters",
+          "name": "TLSConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OCSP 装订配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OCSPStaplingParameters",
+          "name": "OCSPStapling",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP2 相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HTTP2Parameters",
+          "name": "HTTP2",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "QUIC 访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QUICParameters",
+          "name": "QUIC",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP2 回源配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHTTP2Parameters",
+          "name": "UpstreamHTTP2",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IPv6 访问配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IPv6Parameters",
+          "name": "IPv6",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "WebSocket 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WebSocketParameters",
+          "name": "WebSocket",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "POST 请求传输配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostMaxSizeParameters",
+          "name": "PostMaxSize",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端 IP 回源请求头配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIPHeaderParameters",
+          "name": "ClientIPHeader",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源时是否携带客户端 IP 所属地域信息的配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClientIPCountryParameters",
+          "name": "ClientIPCountry",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "gRPC 协议支持配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GrpcParameters",
+          "name": "Grpc",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中国大陆加速优化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccelerateMainlandParameters",
+          "name": "AccelerateMainland",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准 Debug 配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StandardDebugParameters",
+          "name": "StandardDebug",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ZoneConfigParameters": {
+      "document": "站点配置相关信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点名称。",
+          "example": "example.com",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "站点配置信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneConfig",
+          "name": "ZoneConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true

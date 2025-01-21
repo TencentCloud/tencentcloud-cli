@@ -6,41 +6,42 @@ Input:
 
 ```
 tccli bi CreateDatasource --cli-unfold-argument  \
-    --DbHost abc \
-    --DbPort 1 \
-    --ServiceType abc \
-    --DbType abc \
-    --Charset abc \
-    --DbUser abc \
-    --DbPwd abc \
-    --DbName abc \
-    --SourceName abc \
-    --ProjectId 1 \
-    --Catalog abc \
-    --DataOrigin abc \
-    --DataOriginProjectId abc \
-    --DataOriginDatasourceId abc \
-    --ExtraParam abc \
-    --UniqVpcId abc \
-    --Vip abc \
-    --Vport abc \
-    --VpcId abc
+    --DbHost 0.0.0.0 \
+    --DbPort 3307 \
+    --ServiceType {"Type":"Own"} \
+    --DbType MONGODB \
+    --DataOrigin  \
+    --Charset utf8 \
+    --Catalog  \
+    --DbUser username \
+    --DbName name \
+    --DbPwd password \
+    --SourceName 测试vpc \
+    --VpcId vpcid \
+    --UniqVpcId vpc- \
+    --Vip  \
+    --Vport  \
+    --ExtraParam  \
+    --DataOriginProjectId  \
+    --DataOriginDatasourceId  \
+    --UseVPC True \
+    --RegionId gz \
+    --ProjectId 517
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": {
-            "Id": 0,
-            "AccessKey": "abc",
-            "ProjectId": 1,
-            "TranId": "abc",
-            "TranStatus": 0
-        },
-        "Extra": "abc",
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Msg": "服务器内部错误",
+        "RequestId": "xxx-xx-x",
+        "Extra": "",
+        "Data": null,
+        "ErrorInfo": {
+            "ErrorTip": "服务器内部错误",
+            "ErrorMessage": "服务器内部错误",
+            "ErrorLevel": "ERROR"
+        }
     }
 }
 ```

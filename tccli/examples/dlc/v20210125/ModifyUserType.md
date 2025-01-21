@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli dlc ModifyUserType --cli-unfold-argument  \
-    --UserType xx \
-    --UserId xx
+    --UserId 182xxxxx342 \
+    --UserType ADMIN
 ```
 
 Output: 

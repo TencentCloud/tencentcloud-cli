@@ -13,24 +13,24 @@ Output:
     "Response": {
         "Items": [
             {
-                "Name": "abc",
-                "Desc": "abc",
+                "Name": "name",
+                "Desc": "desc",
                 "Regions": [
                     {
-                        "Name": "abc",
-                        "Desc": "abc",
+                        "Name": "name",
+                        "Desc": "desc",
                         "RegionId": 0,
                         "Zones": [
                             {
-                                "Name": "abc",
-                                "Desc": "abc",
+                                "Name": "str",
+                                "Desc": "str",
                                 "ZoneId": 0,
                                 "Encrypt": 0
                             }
                         ],
                         "Count": 0,
                         "IsInternationalSite": 1,
-                        "Bucket": "abc"
+                        "Bucket": "str"
                     }
                 ]
             }
@@ -38,14 +38,14 @@ Output:
         "FrontEndRules": [
             {
                 "ID": 0,
-                "Name": "abc",
-                "Rule": "abc"
+                "Name": "str",
+                "Rule": "str"
             }
         ],
         "AvailableWhiteListNames": [
-            "abc"
+            "str"
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

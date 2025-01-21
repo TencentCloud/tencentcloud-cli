@@ -5,7 +5,14 @@
 Input: 
 
 ```
-tccli rum DescribeTawInstances --cli-unfold-argument ```
+tccli rum DescribeTawInstances --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1 \
+    --Filters.0.Name Region \
+    --Filters.0.Values ap-guangzhou \
+    --Filters.1.Name InstanceType \
+    --Filters.1.Values 1
+```
 
 Output: 
 ```
@@ -13,28 +20,28 @@ Output:
     "Response": {
         "InstanceSet": [
             {
-                "InstanceStatus": 0,
-                "AreaId": 0,
+                "AreaId": 1,
+                "ChargeStatus": 1,
+                "ChargeType": 1,
+                "ClusterId": 0,
+                "CreatedAt": "2024-12-17 11:12:55",
+                "DataRetentionDays": 30,
+                "InstanceDesc": "test333",
+                "InstanceId": "****GmpbKG4",
+                "InstanceName": "test-333",
+                "InstanceStatus": 2,
+                "InstanceType": 1,
                 "Tags": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "二级业务",
+                        "Value": "未分配业务_200003722"
                     }
                 ],
-                "InstanceId": "abc",
-                "ClusterId": 0,
-                "InstanceDesc": "abc",
-                "ChargeStatus": 0,
-                "ChargeType": 0,
-                "UpdatedAt": "abc",
-                "DataRetentionDays": 0,
-                "InstanceName": "abc",
-                "CreatedAt": "abc",
-                "InstanceType": 0
+                "UpdatedAt": "2024-12-18 18:22:01"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "8c3247ac-bafa-4e62-a73b-0b8c88e05202",
+        "TotalCount": 1
     }
 }
 ```

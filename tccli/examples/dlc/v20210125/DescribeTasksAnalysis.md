@@ -14,7 +14,7 @@ Output:
         "RequestId": "580668d5-d47c-44a1-86ea-273843d94778",
         "TaskList": [
             {
-                "Id": "67ea3d23b70611efbc745254006dc901",
+                "Id": "67ea3d234006dc901",
                 "State": 2,
                 "SQL": "select * from tpcds_sql_orc.store_sales limit 100000",
                 "DataEngineName": "super_spark_270",

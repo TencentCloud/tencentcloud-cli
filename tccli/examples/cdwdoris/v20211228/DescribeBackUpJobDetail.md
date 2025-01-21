@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwdoris DescribeBackUpJobDetail --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId cdwdoris-str \
     --BackUpJobId 0
 ```
 
@@ -14,12 +14,16 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
+        "RequestId": "12345-abcde-67890-fghij",
         "TableContents": [
             {
-                "Table": "xx",
-                "TotalBytes": 0,
-                "Database": "xx"
+                "Database": "SalesDB",
+                "Table": "Orders",
+                "TotalBytes": 1048576,
+                "SingleReplicaBytes": "524288",
+                "BackupStatus": 1,
+                "BackupErrorMsg": "",
+                "IsOpenCoolDown": true
             }
         ]
     }

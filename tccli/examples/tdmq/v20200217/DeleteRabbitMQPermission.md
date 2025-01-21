@@ -7,8 +7,8 @@ Input:
 ```
 tccli tdmq DeleteRabbitMQPermission --cli-unfold-argument  \
     --InstanceId amqp-jero744g \
-    --User test_user \
-    --VirtualHost /
+    --User admin \
+    --VirtualHost tdmq_data
 ```
 
 Output: 

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli dlc CheckLockMetaData --cli-unfold-argument  \
-    --LockId 0 \
-    --DatasourceConnectionName xx
+    --LockId 1 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "LockId": 0,
-        "LockState": "xx",
-        "RequestId": "xx"
+        "LockId": 1,
+        "LockState": "ACQUIRED",
+        "RequestId": "********-****-****-****-842f5f01a127"
     }
 }
 ```

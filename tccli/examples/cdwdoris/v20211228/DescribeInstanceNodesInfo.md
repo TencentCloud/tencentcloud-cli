@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwdoris DescribeInstanceNodesInfo --cli-unfold-argument  \
-    --InstanceID abc
+    --InstanceID cdwdoris-xxx
 ```
 
 Output: 
@@ -14,13 +14,13 @@ Output:
 {
     "Response": {
         "BeNodes": [
-            "abc"
+            "str"
         ],
         "FeNodes": [
-            "abc"
+            "str"
         ],
-        "FeMaster": "abc",
-        "RequestId": "abc"
+        "FeMaster": "str",
+        "RequestId": "str"
     }
 }
 ```
@@ -33,7 +33,7 @@ Input:
 
 ```
 tccli cdwdoris DescribeInstanceNodesInfo --cli-unfold-argument  \
-    --InstanceID abc
+    --InstanceID cdwdoris-xxx
 ```
 
 Output: 
@@ -41,13 +41,13 @@ Output:
 {
     "Response": {
         "BeNodes": [
-            "abc"
+            "str"
         ],
         "FeNodes": [
-            "abc"
+            "str"
         ],
-        "FeMaster": "abc",
-        "RequestId": "abc"
+        "FeMaster": "str",
+        "RequestId": "str"
     }
 }
 ```

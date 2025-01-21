@@ -6,112 +6,79 @@ Input:
 
 ```
 tccli dlc DescribeTable --cli-unfold-argument  \
-    --DatabaseName testdb \
-    --TableName table1
+    --TableName table2 \
+    --DatabaseName database1 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "********-****-****-****-b20a8b876cfb",
         "Table": {
-            "TableBaseInfo": {
-                "DatabaseName": "abc",
-                "TableName": "abc",
-                "DatasourceConnectionName": "abc",
-                "TableComment": "abc",
-                "Type": "abc",
-                "TableFormat": "abc",
-                "UserAlias": "abc",
-                "UserSubUin": "abc",
-                "GovernPolicy": {
-                    "RuleType": "abc",
-                    "GovernEngine": "abc"
-                },
-                "DbGovernPolicyIsDisable": "abc",
-                "SmartPolicy": {
-                    "BaseInfo": {
-                        "Uin": "abc",
-                        "PolicyType": "abc",
-                        "Catalog": "abc",
-                        "Database": "abc",
-                        "Table": "abc",
-                        "AppId": "abc"
-                    },
-                    "Policy": {
-                        "Inherit": "abc",
-                        "Resources": [
-                            {
-                                "AttributionType": "abc",
-                                "ResourceType": "abc",
-                                "Name": "abc",
-                                "Instance": "abc",
-                                "Favor": [
-                                    {
-                                        "Priority": 0,
-                                        "Catalog": "abc",
-                                        "DataBase": "abc",
-                                        "Table": "abc"
-                                    }
-                                ],
-                                "Status": 0
-                            }
-                        ],
-                        "Written": {
-                            "WrittenEnable": "abc"
-                        },
-                        "Lifecycle": {
-                            "LifecycleEnable": "abc",
-                            "Expiration": 0,
-                            "DropTable": true
-                        },
-                        "Index": {
-                            "IndexEnable": "abc"
-                        }
-                    }
-                }
-            },
             "Columns": [
                 {
-                    "Name": "abc",
-                    "Type": "abc",
-                    "Comment": "abc",
+                    "Comment": "test col",
+                    "CreateTime": "1736941935000",
+                    "DataMaskStrategyInfo": null,
+                    "IsPartition": true,
+                    "ModifiedTime": "",
+                    "Name": "column1",
+                    "Nullable": "",
+                    "Position": 0,
                     "Precision": 0,
                     "Scale": 0,
-                    "Nullable": "abc",
-                    "Position": 0,
-                    "CreateTime": "abc",
-                    "ModifiedTime": "abc",
-                    "IsPartition": true
+                    "Type": "int"
                 }
             ],
+            "CreateTime": "1736853257000",
+            "HeatValue": 10,
+            "InputFormat": "org.apache.hadoop.mapred.FileInputFormat",
+            "InputFormatShort": "parquet",
+            "Location": "cosn://********",
+            "ModifiedTime": "1736941935000",
             "Partitions": [
                 {
-                    "Name": "abc",
-                    "Type": "abc",
-                    "Comment": "abc",
-                    "Transform": "abc",
-                    "TransformArgs": [
-                        "abc"
-                    ],
-                    "CreateTime": 0
+                    "Comment": "test col",
+                    "CreateTime": 0,
+                    "Name": "column1",
+                    "Transform": "identity",
+                    "TransformArgs": null,
+                    "Type": "int"
                 }
             ],
-            "Location": "abc",
             "Properties": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "comment",
+                    "Value": "test comment"
+                },
+                {
+                    "Key": "property1",
+                    "Value": "test property"
+                },
+                {
+                    "Key": "test property",
+                    "Value": "default value"
                 }
             ],
-            "ModifiedTime": "abc",
-            "CreateTime": "abc",
-            "InputFormat": "abc",
-            "StorageSize": 0,
             "RecordCount": 0,
-            "MapMaterializedViewName": "abc"
-        },
-        "RequestId": "abc"
+            "StorageSize": 0,
+            "TableBaseInfo": {
+                "DatabaseName": "database1",
+                "DatasourceConnectionName": "",
+                "DbGovernPolicyIsDisable": "",
+                "GovernPolicy": {
+                    "RuleType": "none"
+                },
+                "TableComment": null,
+                "TableFormat": "ICEBERG",
+                "TableName": "table2",
+                "Type": "MANAGED_TABLE",
+                "UserAlias": "t********",
+                "UserSubUin": "1*********6"
+            }
+        }
     }
 }
 ```

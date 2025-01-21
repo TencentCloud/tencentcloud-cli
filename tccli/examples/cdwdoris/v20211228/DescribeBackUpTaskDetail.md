@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwdoris DescribeBackUpTaskDetail --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId str \
     --BackUpJobId 0
 ```
 
@@ -14,26 +14,26 @@ Output:
 ```
 {
     "Response": {
-        "ErrorMsg": "xx",
+        "ErrorMsg": "str",
         "BackupStatus": [
             {
-                "Status": "xx",
-                "FinishedTime": "xx",
-                "BackupObjects": "xx",
-                "SnapshotName": "xx",
-                "TaskErrMsg": "xx",
+                "Status": "str",
+                "FinishedTime": "str",
+                "BackupObjects": "str",
+                "SnapshotName": "str",
+                "TaskErrMsg": "str",
                 "JobId": 0,
-                "UnfinishedTasks": "xx",
-                "State": "xx",
-                "SnapshotFinishedTime": "xx",
+                "UnfinishedTasks": "str",
+                "State": "str",
+                "SnapshotFinishedTime": "str",
                 "Timeout": 0,
-                "UploadFinishedTime": "xx",
-                "Progress": "xx",
-                "CreateTime": "xx",
-                "DbName": "xx"
+                "UploadFinishedTime": "str",
+                "Progress": "str",
+                "CreateTime": "str",
+                "DbName": "str"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "str"
     }
 }
 ```

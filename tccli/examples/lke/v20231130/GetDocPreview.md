@@ -19,7 +19,8 @@ Output:
         "CosUrl": "/corp/1681586131361275904/1681597542412103680/doc/E0dQM9X41QmyAWiTQMkC-7807575532.docx",
         "Url": "https://qi***an-q**t-12***16161.cos.ap-guangzhou.myqcloud.com/%2Fcorp/1737374492379124992/17986106392328008704/doc/pXaeDgJsQEEDjryWEKwU-1806238910230430080.md",
         "Bucket": "",
-        "RequestId": "7814bdbe-da7e-401e-95c4-3e861d5298ee"
+        "RequestId": "7814bdbe-da7e-401e-95c4-3e861d5298ee",
+        "NewName": ""
     }
 }
 ```

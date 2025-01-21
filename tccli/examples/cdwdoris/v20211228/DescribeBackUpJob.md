@@ -18,23 +18,23 @@ Output:
         "BackUpJobs": [
             {
                 "JobId": 0,
-                "Snapshot": "abc",
+                "Snapshot": "str",
                 "BackUpSize": 0,
-                "BackUpTime": "abc",
-                "ExpireTime": "abc",
-                "JobStatus": "abc",
+                "BackUpTime": "str",
+                "ExpireTime": "str",
+                "JobStatus": "str",
                 "BackupType": 0,
                 "BackupTimeType": 0,
                 "DorisSourceInfo": {
-                    "Host": "abc",
+                    "Host": "str",
                     "Port": 0,
-                    "User": "abc",
-                    "Password": "abc"
+                    "User": "str",
+                    "Password": "str"
                 },
                 "JobStatusNum": 0
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

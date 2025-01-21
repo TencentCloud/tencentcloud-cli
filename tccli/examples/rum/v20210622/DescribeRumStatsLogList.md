@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "RequestId": "7987e9a1-cece-4468-b104-cd239f2f6cd6",
-        "Result": ""
+        "Result": "{\"code\":0,\"data\":[],\"msg\":\"\"}"
     }
 }
 ```

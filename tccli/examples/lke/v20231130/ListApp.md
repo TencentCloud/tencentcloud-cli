@@ -26,7 +26,9 @@ Output:
                 "AppStatusDesc": "运行中",
                 "UpdateTime": "1731407395",
                 "Operator": "操作人",
-                "ModelName": "精调知识大模型标准版"
+                "ModelName": "精调知识大模型标准版",
+                "Pattern": "standard",
+                "ThoughtModelAliasName": "意图识别模型高级版"
             }
         ],
         "RequestId": "143a9f30-a21c-4eb3-af82-ccacd4cdcbfd"

@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli dlc DeleteCHDFSBindingProduct --cli-unfold-argument  \
-    --MountPoint abc \
-    --BucketType abc \
-    --ProductName abc \
-    --EngineName abc
+    --MountPoint f14xxxxfwhda-1234 \
+    --BucketType cos \
+    --ProductName DLC \
+    --EngineName dlc_engine
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "82e314c2-24cc-44b0-8d04-a6b939ea90d6"
     }
 }
 ```

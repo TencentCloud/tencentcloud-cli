@@ -5219,7 +5219,7 @@
         {
           "disabled": false,
           "document": "用户名，登录时使用",
-          "example": "test_user",
+          "example": "admin",
           "member": "string",
           "name": "User",
           "required": true,
@@ -5227,7 +5227,7 @@
         },
         {
           "disabled": false,
-          "document": "vhost名",
+          "document": "vhost名称",
           "example": "tdmq_data",
           "member": "string",
           "name": "VirtualHost",
@@ -8661,7 +8661,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "amqp-xxxxx",
+          "example": "amqp-jero744g",
           "member": "string",
           "name": "ClusterId",
           "required": true,

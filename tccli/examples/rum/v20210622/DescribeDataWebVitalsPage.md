@@ -32,8 +32,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xxxx",
-        "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
+        "RequestId": "2fe018e0-9e76-46cb-9ddb-cfbd6835ff19",
+        "Result": "{\"request_id\":\"2fe018e0-9e76-46cb-9ddb-cfbd6835ff19\",\"results\":[{\"statement_id\":0,\"series\":[{\"name\":\"webvitals_page_statistics\",\"columns\":[\"time\",\"LCP\",\"FID\",\"CLS\",\"FCP\"],\"values\":[[0,null,null,null,null]]}],\"total\":1,\"offset\":\"\"}]}"
     }
 }
 ```
