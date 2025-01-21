@@ -1602,6 +1602,15 @@
           "name": "CpuSize",
           "required": false,
           "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "插件信息",
+          "example": "空",
+          "member": "PluginConfig",
+          "name": "Plugins",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3692,7 +3701,7 @@
         },
         {
           "disabled": false,
-          "document": "函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)",
+          "document": "函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/115197)",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -4101,6 +4110,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "插件信息",
+          "example": "空",
+          "member": "PluginConfig",
+          "name": "Plugins",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -4283,7 +4302,7 @@
         },
         {
           "disabled": false,
-          "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)",
+          "document": "层的具体版本当前状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/115197#.E5.B1.82.EF.BC.88layer.EF.BC.89.E7.8A.B6.E6.80.81)",
           "example": "Active",
           "member": "string",
           "name": "Status",
@@ -6641,6 +6660,78 @@
       ],
       "usage": "both"
     },
+    "PluginConfig": {
+      "document": "函数关联的插件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件名称",
+          "example": "plugin1",
+          "member": "string",
+          "name": "PluginName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件版本",
+          "example": "3",
+          "member": "int64",
+          "name": "PluginVersion",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件的延时终止时间。函数调用结束后，插件等待此时间间隔后退出。",
+          "example": "3",
+          "member": "int64",
+          "name": "PreStopTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件运行分配内存，单位MB",
+          "example": "128",
+          "member": "int64",
+          "name": "MemorySize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件运行分配的CPU",
+          "example": "1",
+          "member": "float",
+          "name": "CpuSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件是否使用函数的CLS",
+          "example": "false",
+          "member": "bool",
+          "name": "UseFunctionCls",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ProtocolParams": {
       "document": "HTTP函数支持其他访问协议的参数",
       "members": [
@@ -8467,6 +8558,15 @@
           "name": "DiskSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "插件信息",
+          "example": "空",
+          "member": "PluginConfig",
+          "name": "Plugins",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

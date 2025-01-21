@@ -6,29 +6,29 @@ Input:
 
 ```
 tccli dlc DescribeTablesName --cli-unfold-argument  \
-    --Limit 0 \
-    --Offset 1 \
-    --DatabaseName abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --DatasourceConnectionName abc \
-    --StartTime abc \
-    --EndTime abc \
-    --Sort abc \
+    --DatabaseName dlc_db \
+    --Limit 20 \
+    --Offset 0 \
+    --Filters.0.Name table-name \
+    --Filters.0.Values dlc_detail \
+    --DatasourceConnectionName emr_hive \
+    --StartTime 2024-12-02 15:04:05 \
+    --EndTime 2025-01-02 15:04:05 \
+    --Sort UpdateTime \
     --Asc True \
-    --TableType abc \
-    --TableFormat abc
+    --TableType Table \
+    --TableFormat HIVE
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "********-****-****-****-102073fb4fe8",
         "TableNameList": [
-            "abc"
+            "dlc_detail"
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```

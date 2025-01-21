@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cdwdoris DescribeInstancesHealthState --cli-unfold-argument  \
-    --InstanceID abc
+    --InstanceID str
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "abc",
-        "RequestId": "abc"
+        "Data": "str",
+        "RequestId": "str"
     }
 }
 ```

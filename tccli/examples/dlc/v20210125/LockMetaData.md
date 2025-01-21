@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli dlc LockMetaData --cli-unfold-argument  \
-    --LockComponentList.0.DataOperationType xx \
+    --LockComponentList.0.DataOperationType UNSET \
     --LockComponentList.0.IsDynamicPartitionWrite True \
-    --LockComponentList.0.LockLevel xx \
-    --LockComponentList.0.Partition xx \
-    --LockComponentList.0.TableName xx \
-    --LockComponentList.0.LockType xx \
+    --LockComponentList.0.LockLevel TABLE \
+    --LockComponentList.0.Partition  \
+    --LockComponentList.0.TableName dlc_table \
+    --LockComponentList.0.LockType EXCLUSIVE \
     --LockComponentList.0.IsAcid True \
-    --LockComponentList.0.DbName xx \
+    --LockComponentList.0.DbName dbdlc \
     --TxnId 0 \
-    --DatasourceConnectionName xx
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
@@ -23,8 +23,8 @@ Output:
 {
     "Response": {
         "LockId": 0,
-        "LockState": "xx",
-        "RequestId": "xx"
+        "LockState": "ACQUIRED",
+        "RequestId": "776333b3-fab2-44eb-ad5c-98ea6fb4506b"
     }
 }
 ```

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli cdwdoris DescribeClusterConfigsHistory --cli-unfold-argument  \
-    --InstanceId abc \
-    --ConfigFileNames abc \
+    --InstanceId str \
+    --ConfigFileNames str \
     --Offset 0 \
     --Limit 0 \
-    --StartTime abc \
-    --EndTime abc
+    --StartTime str \
+    --EndTime str
 ```
 
 Output: 
@@ -21,15 +21,15 @@ Output:
         "TotalCount": 0,
         "ClusterConfHistory": [
             {
-                "FileName": "abc",
-                "NewConfValue": "abc",
-                "OldConfValue": "abc",
-                "Remark": "abc",
-                "ModifyTime": "abc",
-                "UserUin": "abc"
+                "FileName": "str",
+                "NewConfValue": "str",
+                "OldConfValue": "str",
+                "Remark": "str",
+                "ModifyTime": "str",
+                "UserUin": "str"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

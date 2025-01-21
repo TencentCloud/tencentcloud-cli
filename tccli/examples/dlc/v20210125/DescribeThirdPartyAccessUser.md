@@ -11,12 +11,12 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "584515f3-835f-459d-b93b-d6c6f64c0daa",
+        "RequestId": "584515f3-*-*-*-*",
         "UserInfo": {
-            "AppId": "123456",
-            "CreateTime": "2024-05-22T09:49:56+08:00",
+            "AppId": "130****831",
+            "CreateTime": "2024-10-24T16:23:01+08:00",
             "Id": 5,
-            "Uin": "123456"
+            "Uin": "1000****6626"
         }
     }
 }

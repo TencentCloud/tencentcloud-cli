@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli cdwdoris DescribeCoolDownPolicies --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId str
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
+        "ErrorMsg": "str",
         "List": [
             {
-                "PolicyName": "abc",
-                "CooldownDatetime": "abc",
-                "CooldownTtl": "abc"
+                "PolicyName": "str",
+                "CooldownDatetime": "str",
+                "CooldownTtl": "str"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

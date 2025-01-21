@@ -8,7 +8,7 @@ Input:
 tccli dlc ReportHeartbeatMetaData --cli-unfold-argument  \
     --LockId 0 \
     --TxnId 0 \
-    --DatasourceConnectionName xx
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

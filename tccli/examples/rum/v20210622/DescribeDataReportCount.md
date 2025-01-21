@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xxxx",
+        "Result": "无",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

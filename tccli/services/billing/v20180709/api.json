@@ -15566,7 +15566,7 @@
         {
           "disabled": false,
           "document": "资源包产品Code一层 -- 以上查询字段必须至少填一个",
-          "example": "\"\"",
+          "example": "\"p_trade_t_s\"",
           "member": "string",
           "name": "ProductCode",
           "required": true,
@@ -15575,7 +15575,7 @@
         {
           "disabled": false,
           "document": "抵扣起始时间",
-          "example": "\"\"",
+          "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "DeductionTimeBegin",
           "required": true,
@@ -15584,7 +15584,7 @@
         {
           "disabled": false,
           "document": "抵扣截止时间, 抵扣起始时间和抵扣截止时间必须同时存在，并且开始时间和结束时间需要再同一天内",
-          "example": "\"\"",
+          "example": "\"2024-10-02 00:00:00\"",
           "member": "string",
           "name": "DeductionTimeEnd",
           "required": true,
@@ -15593,7 +15593,7 @@
         {
           "disabled": false,
           "document": "资源包ID，非必须",
-          "example": "\"\"",
+          "example": "\"test-1000023111\"",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -15602,7 +15602,7 @@
         {
           "disabled": false,
           "document": "被抵扣实例ID，非必须",
-          "example": "\"\"",
+          "example": "\"test-1000023\"",
           "member": "string",
           "name": "SerialId",
           "required": false,
@@ -15611,7 +15611,7 @@
         {
           "disabled": false,
           "document": "资源包产品Code二层，若存在，则productCode 一定要存在",
-          "example": "\"\"",
+          "example": "\"sp_trade_t_s\"",
           "member": "string",
           "name": "SubProductCode",
           "required": false,
@@ -15641,6 +15641,15 @@
           "example": "**",
           "member": "string",
           "name": "DeductionProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "商品码Code，支持多项",
+          "example": "[\"RAV_code_013_PAuvBxg8jD\"]",
+          "member": "string",
+          "name": "PackageCodes",
           "required": false,
           "type": "list"
         }
@@ -19519,6 +19528,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用量",
+          "example": "0",
+          "member": "string",
+          "name": "CapacityUsed",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19539,7 +19558,7 @@
         {
           "disabled": false,
           "document": "uin, 资源包所属用户",
-          "example": "\"\"",
+          "example": "\"1000031232\"",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -19559,7 +19578,7 @@
         {
           "disabled": false,
           "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"test\"",
           "member": "string",
           "name": "DealName",
           "output_required": true,
@@ -19579,7 +19598,7 @@
         {
           "disabled": false,
           "document": "一层Code",
-          "example": "\"\"",
+          "example": "\"p_trade_t_s\"",
           "member": "string",
           "name": "ProductCode",
           "output_required": true,
@@ -19589,7 +19608,7 @@
         {
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"测试商品\"",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -19599,7 +19618,7 @@
         {
           "disabled": false,
           "document": "二层Code",
-          "example": "\"\"",
+          "example": "\"sp_trade_t_s\"",
           "member": "string",
           "name": "SubProductCode",
           "output_required": true,
@@ -19609,7 +19628,7 @@
         {
           "disabled": false,
           "document": "二层产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"测试商品\"",
           "member": "string",
           "name": "SubProductName",
           "output_required": true,
@@ -19629,7 +19648,7 @@
         {
           "disabled": false,
           "document": "单位",
-          "example": "\"\"",
+          "example": "\"min\"",
           "member": "string",
           "name": "CapacityUnit",
           "output_required": true,
@@ -19639,7 +19658,7 @@
         {
           "disabled": false,
           "document": "订阅时长套餐包\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"测试商品\"",
           "member": "string",
           "name": "PackageName",
           "output_required": true,
@@ -19699,7 +19718,7 @@
         {
           "disabled": false,
           "document": "资源包类型：1-单产品通用包、2-单产品专用包、3-多产品通用包、4-多产品专用包",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "PackageType",
           "output_required": true,
@@ -19729,7 +19748,7 @@
         {
           "disabled": false,
           "document": "资源ID, 示例：ri-pdxhd7d8",
-          "example": "\"\"",
+          "example": "\"10000232222\"",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -19739,7 +19758,7 @@
         {
           "disabled": false,
           "document": "账户类型： 1-RI / 2-资源包",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -19759,7 +19778,7 @@
         {
           "disabled": false,
           "document": "资源包ID, 用于在资源包系统检索资源包详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"TRADE_t_s_code\"",
           "member": "string",
           "name": "PackageCode",
           "output_required": true,
@@ -19799,7 +19818,7 @@
         {
           "disabled": false,
           "document": "原始单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"min\"",
           "member": "string",
           "name": "OriginUnit",
           "output_required": true,
@@ -19829,7 +19848,7 @@
         {
           "disabled": false,
           "document": "单周期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "CycleStartTime",
           "output_required": true,
@@ -19839,7 +19858,7 @@
         {
           "disabled": false,
           "document": "单周期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "CycleEndTime",
           "output_required": true,
@@ -20019,11 +20038,31 @@
         {
           "disabled": false,
           "document": "业务自定义查询周期/切片详细信息",
-          "example": "[]",
+          "example": "无",
           "member": "SlicePeriodResourcePackage",
           "name": "SlicePeriodResourcePackages",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CapacityUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用量精确值",
+          "example": "\"1000\"",
+          "member": "string",
+          "name": "CapacityUsedPrecise",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -20121,7 +20160,7 @@
         {
           "disabled": false,
           "document": "uin, 资源包所属用户",
-          "example": "\"\"",
+          "example": "\"1000031232\"",
           "member": "string",
           "name": "Uin",
           "output_required": true,
@@ -20141,7 +20180,7 @@
         {
           "disabled": false,
           "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"test\"",
           "member": "string",
           "name": "DealName",
           "output_required": true,
@@ -20161,7 +20200,7 @@
         {
           "disabled": false,
           "document": "一层Code",
-          "example": "\"\"",
+          "example": "\"p_trade_t_s\"",
           "member": "string",
           "name": "ProductCode",
           "output_required": true,
@@ -20171,7 +20210,7 @@
         {
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"测试商品一层名称\"",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -20181,7 +20220,7 @@
         {
           "disabled": false,
           "document": "二层Code",
-          "example": "\"\"",
+          "example": "\"sp_trade_t_s\"",
           "member": "string",
           "name": "SubProductCode",
           "output_required": true,
@@ -20191,7 +20230,7 @@
         {
           "disabled": false,
           "document": "二层产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"测试商品二层名称\"",
           "member": "string",
           "name": "SubProductName",
           "output_required": true,
@@ -20221,7 +20260,7 @@
         {
           "disabled": false,
           "document": "单位",
-          "example": "\"\"",
+          "example": "\"min\"",
           "member": "string",
           "name": "CapacityUnit",
           "output_required": true,
@@ -20231,7 +20270,7 @@
         {
           "disabled": false,
           "document": "订阅时长套餐包\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"测试商品包名称\"",
           "member": "string",
           "name": "PackageName",
           "output_required": true,
@@ -20291,7 +20330,7 @@
         {
           "disabled": false,
           "document": "资源包类型：1-单产品通用包、2-单产品专用包、3-多产品通用包、4-多产品专用包",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "PackageType",
           "output_required": true,
@@ -20321,7 +20360,7 @@
         {
           "disabled": false,
           "document": "资源ID, 示例：ri-pdxhd7d8",
-          "example": "\"\"",
+          "example": "\"10000232222\"",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -20331,7 +20370,7 @@
         {
           "disabled": false,
           "document": "账户类型： 1-RI / 2-资源包",
-          "example": "\"\"",
+          "example": "\"1\"",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -20361,7 +20400,7 @@
         {
           "disabled": false,
           "document": "资源包ID, 用于在资源包系统检索资源包详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"TRADE_t_s_code\"",
           "member": "string",
           "name": "PackageCode",
           "output_required": true,
@@ -20421,7 +20460,7 @@
         {
           "disabled": false,
           "document": "原始单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"min\"",
           "member": "string",
           "name": "OriginUnit",
           "output_required": true,
@@ -20451,7 +20490,7 @@
         {
           "disabled": false,
           "document": "单周期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"2024-10-01 00:00:00\"",
           "member": "string",
           "name": "CycleStartTime",
           "output_required": true,
@@ -20461,7 +20500,7 @@
         {
           "disabled": false,
           "document": "单周期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "\"2024-11-01 00:00:00\"",
           "member": "string",
           "name": "CycleEndTime",
           "output_required": true,
@@ -20627,6 +20666,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CapacityUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用量精确值",
+          "example": "\"1000\"",
+          "member": "string",
+          "name": "CapacityUsedPrecise",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

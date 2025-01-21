@@ -21,7 +21,7 @@ Output:
     "Response": {
         "TotalCount": 0,
         "SlowQueryRecords": {
-            "OsUser": "test",
+            "OsUser": "str",
             "InitialQueryId": "xasd-qxxc",
             "Sql": "select * from abc",
             "QueryStartTime": "2025-01-06 10:36:04",

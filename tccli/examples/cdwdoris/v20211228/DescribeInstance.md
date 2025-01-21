@@ -14,32 +14,32 @@ Output:
 {
     "Response": {
         "InstanceInfo": {
-            "InstanceId": "abc",
-            "InstanceName": "abc",
-            "Status": "abc",
-            "Version": "abc",
-            "Region": "abc",
-            "Zone": "abc",
-            "VpcId": "abc",
-            "SubnetId": "abc",
-            "PayMode": "abc",
-            "CreateTime": "abc",
-            "ExpireTime": "abc",
+            "InstanceId": "str",
+            "InstanceName": "str",
+            "Status": "str",
+            "Version": "str",
+            "Region": "str",
+            "Zone": "str",
+            "VpcId": "str",
+            "SubnetId": "str",
+            "PayMode": "str",
+            "CreateTime": "str",
+            "ExpireTime": "str",
             "MasterSummary": {
-                "Spec": "abc",
+                "Spec": "str",
                 "NodeSize": 0,
                 "Core": 0,
                 "Memory": 0,
                 "Disk": 0,
-                "DiskType": "abc",
-                "DiskDesc": "abc",
+                "DiskType": "str",
+                "DiskDesc": "str",
                 "AttachCBSSpec": {
-                    "DiskType": "abc",
+                    "DiskType": "str",
                     "DiskSize": 0,
                     "DiskCount": 0,
-                    "DiskDesc": "abc"
+                    "DiskDesc": "str"
                 },
-                "SubProductType": "abc",
+                "SubProductType": "str",
                 "SpecCore": 0,
                 "SpecMemory": 0,
                 "DiskCount": 0,
@@ -47,56 +47,56 @@ Output:
                 "MaxDiskSize": 0
             },
             "CoreSummary": {
-                "Spec": "abc",
+                "Spec": "str",
                 "NodeSize": 0,
                 "Core": 0,
                 "Memory": 0,
                 "Disk": 0,
-                "DiskType": "abc",
-                "DiskDesc": "abc",
+                "DiskType": "str",
+                "DiskDesc": "str",
                 "AttachCBSSpec": {
-                    "DiskType": "abc",
+                    "DiskType": "str",
                     "DiskSize": 0,
                     "DiskCount": 0,
-                    "DiskDesc": "abc"
+                    "DiskDesc": "str"
                 },
-                "SubProductType": "abc",
+                "SubProductType": "str",
                 "SpecCore": 0,
                 "SpecMemory": 0,
                 "DiskCount": 0,
                 "Encrypt": 0,
                 "MaxDiskSize": 0
             },
-            "HA": "abc",
+            "HA": "str",
             "HaType": 0,
-            "AccessInfo": "abc",
+            "AccessInfo": "str",
             "Id": 0,
             "RegionId": 0,
-            "ZoneDesc": "abc",
-            "FlowMsg": "abc",
-            "StatusDesc": "abc",
+            "ZoneDesc": "str",
+            "FlowMsg": "str",
+            "StatusDesc": "str",
             "RenewFlag": true,
             "Tags": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "str",
+                    "TagValue": "str"
                 }
             ],
-            "Monitor": "abc",
+            "Monitor": "str",
             "HasClsTopic": true,
-            "ClsTopicId": "abc",
-            "ClsLogSetId": "abc",
+            "ClsTopicId": "str",
+            "ClsLogSetId": "str",
             "EnableXMLConfig": 0,
-            "RegionDesc": "abc",
-            "Eip": "abc",
+            "RegionDesc": "str",
+            "Eip": "str",
             "CosMoveFactor": 0,
-            "Kind": "abc",
-            "CosBucketName": "abc",
+            "Kind": "str",
+            "CosBucketName": "str",
             "CanAttachCbs": true,
-            "BuildVersion": "abc",
-            "Components": "abc"
+            "BuildVersion": "str",
+            "Components": "str"
         },
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

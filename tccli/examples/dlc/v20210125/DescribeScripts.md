@@ -18,16 +18,16 @@ Output:
     "Response": {
         "Scripts": [
             {
-                "ScriptId": "abc",
-                "ScriptName": "abc",
-                "ScriptDesc": "abc",
-                "DatabaseName": "abc",
-                "SQLStatement": "abc",
+                "ScriptId": "2c15fe4e-9a71-443a-a079-10b681cd173c",
+                "ScriptName": "createScript_autotest",
+                "ScriptDesc": "2c15fe4e-9a71-443a-a079-10b681cd173c",
+                "DatabaseName": "dlc_database",
+                "SQLStatement": "select* from abc",
                 "UpdateTime": 0
             }
         ],
         "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "2c15fe4e-9a71-443a-a079-10b681cd173c"
     }
 }
 ```

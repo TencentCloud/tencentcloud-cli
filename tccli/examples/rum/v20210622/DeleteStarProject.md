@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli rum DeleteStarProject --cli-unfold-argument  \
-    --InstanceID taw-123 \
+    --InstanceID ****-1793 \
     --ID 1
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "Msg": "xxxx",
+        "Msg": "success",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

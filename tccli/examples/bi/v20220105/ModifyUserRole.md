@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli bi ModifyUserRole --cli-unfold-argument  \
-    --UserId abc \
-    --RoleIdList 0 \
-    --Email abc \
-    --UserName abc \
-    --PhoneNumber abc \
-    --AreaCode abc \
-    --AppUserId abc
+    --UserId 21021 \
+    --RoleIdList 0 1 231 213 \
+    --Email 2313**2312@qq.com \
+    --UserName zhangsn \
+    --PhoneNumber 86212***12 \
+    --AreaCode 086 \
+    --AppUserId 123142
 ```
 
 Output: 
@@ -20,16 +20,16 @@ Output:
 {
     "Response": {
         "ErrorInfo": {
-            "ErrorTip": "abc",
-            "ErrorLevel": "abc",
-            "DocLink": "abc",
-            "FAQ": "abc",
-            "ReservedField": "abc"
+            "ErrorTip": "",
+            "ErrorLevel": "ERROR",
+            "DocLink": "",
+            "FAQ": "",
+            "ReservedField": ""
         },
-        "Extra": "abc",
-        "Msg": "abc",
-        "Data": "abc",
-        "RequestId": "abc"
+        "Extra": "",
+        "Msg": "失败",
+        "Data": "",
+        "RequestId": "sddsdfsbghbwe1-211ds"
     }
 }
 ```

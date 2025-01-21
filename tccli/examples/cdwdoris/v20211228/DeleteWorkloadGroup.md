@@ -7,14 +7,14 @@ Input:
 ```
 tccli cdwdoris DeleteWorkloadGroup --cli-unfold-argument  \
     --InstanceId cdwdoris-xxx \
-    --WorkloadGroupName test
+    --WorkloadGroupName name
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "rqid"
     }
 }
 ```

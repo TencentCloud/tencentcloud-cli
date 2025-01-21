@@ -7,7 +7,7 @@ Input:
 ```
 tccli dlc UnlockMetaData --cli-unfold-argument  \
     --LockId 0 \
-    --DatasourceConnectionName xx
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

@@ -976,22 +976,6 @@
         "title": "网络攻击日志列表"
       }
     ],
-    "DescribeAttackSource": [
-      {
-        "document": "查询攻击溯源",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackSource\n<公共请求参数>\n\n{\n    \"BeginDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\",\n    \"Uuid\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"AttackSource\": {\n            \"EventInfoParam\": \"xx\",\n            \"Nodes\": [\n                {\n                    \"EventId\": 1,\n                    \"Level\": 1,\n                    \"EventType\": \"xx\",\n                    \"NodeDesc\": \"xx\",\n                    \"NodeId\": \"xx\",\n                    \"StartTime\": \"xx\",\n                    \"Ip\": \"xx\",\n                    \"EndTime\": \"xx\"\n                }\n            ],\n            \"Edges\": [\n                {\n                    \"To\": \"xx\",\n                    \"From\": \"xx\"\n                }\n            ]\n        }\n    }\n}",
-        "title": "查询攻击溯源"
-      }
-    ],
-    "DescribeAttackSourceEvents": [
-      {
-        "document": "查询攻击溯源",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackSourceEvents\n<公共请求参数>\n\n{\n    \"BeginDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\",\n    \"Uuid\": \"xx\",\n    \"EventInfoParam\": \"dsss\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Uuid\": \"xx\",\n                \"Level\": 1,\n                \"EventType\": 1,\n                \"Content\": \"xx\",\n                \"CreatedTime\": \"xx\",\n                \"LevelZh\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询攻击溯源"
-      }
-    ],
     "DescribeAttackStatistics": [
       {
         "document": "网络攻击数据统计",

@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli cdwdoris DescribeCoolDownTableData --cli-unfold-argument  \
-    --InstanceId abc \
-    --DatabaseName abc
+    --InstanceId str \
+    --DatabaseName str
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
+        "ErrorMsg": "str",
         "List": [
             {
-                "TableName": "abc",
-                "Size": "abc",
-                "RemoteSize": "abc"
+                "TableName": "str",
+                "Size": "str",
+                "RemoteSize": "str"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

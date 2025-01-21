@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq DescribeRabbitMQVipInstance --cli-unfold-argument  \
-    --ClusterId amqp-test
+    --ClusterId amqp-jero744g
 ```
 
 Output: 
@@ -16,8 +16,8 @@ Output:
         "ClusterInfo": {
             "AutoRenewFlag": 1,
             "ChannelNumber": 1,
-            "ClusterId": "amqp-test",
-            "ClusterName": "test",
+            "ClusterId": "amqp-jero744g",
+            "ClusterName": "tencent_cloud",
             "ClusterStatus": 1,
             "ClusterVersion": "3.8.30",
             "ConnectionNumber": 1,
@@ -37,16 +37,10 @@ Output:
             "VirtualHostNumber": 1,
             "Vpcs": [
                 {
-                    "SubnetId": "subnet-test1",
+                    "SubnetId": "subnet-67y9wil4",
                     "VpcDataStreamEndpointStatus": "ON",
-                    "VpcEndpoint": "amqp://10.0.0.4:5672",
-                    "VpcId": "vpc-test1"
-                },
-                {
-                    "SubnetId": "subnet-test2",
-                    "VpcDataStreamEndpointStatus": "ON",
-                    "VpcEndpoint": "amqp://10.0.0.10:5672",
-                    "VpcId": "vpc-test2"
+                    "VpcEndpoint": "amqp://10.0.0.2:5672",
+                    "VpcId": "vpc-5ghsr4p9"
                 }
             ],
             "ZoneIds": [
@@ -60,7 +54,7 @@ Output:
                 "VpcEndpointInfo": null,
                 "VpcPrometheusEndpoint": []
             },
-            "PublicAccessEndpoint": "amqp://106.55.176.111:5672",
+            "PublicAccessEndpoint": "amqp://127.0.0.1:5672",
             "PublicAccessEndpointStatus": true,
             "PublicControlConsoleSwitchStatus": true,
             "PublicDataStreamStatus": "ON",
@@ -68,9 +62,9 @@ Output:
             "VpcControlConsoleSwitchStatus": false,
             "VpcWebConsoleEndpoint": "http://127.0.0.1:15672",
             "VpcWebConsoleSwitchStatus": "OFF",
-            "WebConsoleDomainEndpoint": "http://amqp-test.dashboard.rabbitmq.xx.public.tencenttdmq.com:15672",
-            "WebConsoleEndpoint": "http://106.55.176.11:15672",
-            "WebConsolePassword": "Fs98DBo9C1IuN4L0",
+            "WebConsoleDomainEndpoint": "http://amqp-jero744g.dashboard.rabbitmq.xx.public.tencenttdmq.com:15672",
+            "WebConsoleEndpoint": "http://127.0.0.1:15672",
+            "WebConsolePassword": "Fs78DBo2C3IuN4L0",
             "WebConsoleUsername": "admin"
         },
         "ClusterSpecInfo": {
@@ -82,11 +76,11 @@ Output:
             "SpecName": "体验型"
         },
         "ClusterWhiteListInfo": {
-            "PublicControlConsoleWhiteList": "127.0.0.1,171.216.138.56",
+            "PublicControlConsoleWhiteList": "127.0.0.1",
             "PublicControlConsoleWhiteListStatus": "ON",
-            "PublicDataStreamWhiteList": "127.0.0.1,125.69.38.199",
+            "PublicDataStreamWhiteList": "127.0.0.1",
             "PublicDataStreamWhiteListStatus": "ON",
-            "WhiteList": "127.0.0.1,171.216.138.56"
+            "WhiteList": "127.0.0.1"
         },
         "ExchangeQuota": {
             "MaxExchange": 1000,

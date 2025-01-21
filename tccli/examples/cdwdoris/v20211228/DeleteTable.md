@@ -8,7 +8,7 @@ Input:
 tccli cdwdoris DeleteTable --cli-unfold-argument  \
     --InstanceId cdwdoris-bjizjxxx \
     --DbName demo \
-    --TableName test \
+    --TableName table1 \
     --IsForce False
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "Message": "",
+        "Message": "message1",
         "RequestId": "41de726a-0bd6-4794-8324-5fd73c312886"
     }
 }

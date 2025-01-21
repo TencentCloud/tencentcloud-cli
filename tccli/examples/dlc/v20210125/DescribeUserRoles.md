@@ -8,53 +8,9 @@ Input:
 tccli dlc DescribeUserRoles --cli-unfold-argument  \
     --Limit 0 \
     --Offset 0 \
-    --Fuzzy abc \
-    --SortBy abc \
-    --Sorting abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Total": 0,
-        "UserRoles": [
-            {
-                "RoleId": 0,
-                "AppId": "abc",
-                "Uin": "abc",
-                "Arn": "abc",
-                "ModifyTime": 0,
-                "Desc": "abc",
-                "RoleName": "abc",
-                "Creator": "abc",
-                "CosPermissionList": [
-                    {
-                        "CosPath": "abc",
-                        "Permissions": [
-                            "abc"
-                        ]
-                    }
-                ],
-                "PermissionJson": "abc"
-            }
-        ],
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 列举用户角色信息**
-
-
-
-Input: 
-
-```
-tccli dlc DescribeUserRoles --cli-unfold-argument  \
-    --Fuzzy 1 \
-    --Limit 0 \
-    --Offset 0
+    --Fuzzy roleName \
+    --SortBy modify_time \
+    --Sorting desc
 ```
 
 Output: 
@@ -64,15 +20,26 @@ Output:
         "Total": 1,
         "UserRoles": [
             {
-                "RoleId": 0,
-                "AppId": "1234",
-                "Uin": "1234",
-                "ModifyTime": 1650424290,
-                "Arn": "11",
-                "Desc": "test role"
+                "RoleId": 110,
+                "AppId": "125****421",
+                "Uin": "1000*****740",
+                "Arn": "***roleName/***cos02",
+                "ModifyTime": 0,
+                "Desc": "test_arn",
+                "RoleName": "NULL",
+                "Creator": "1000*****356",
+                "CosPermissionList": [
+                    {
+                        "CosPath": "cosn://***",
+                        "Permissions": [
+                            "read"
+                        ]
+                    }
+                ],
+                "PermissionJson": "deny"
             }
         ],
-        "RequestId": "2ae4707a-9f72-44aa-9fd4-65cb739d6301"
+        "RequestId": "490e0b63-ae1a-4faf-a689-a5cde719cdc3"
     }
 }
 ```

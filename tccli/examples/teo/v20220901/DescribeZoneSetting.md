@@ -109,7 +109,7 @@ Output:
                     "30.12.34.11"
                 ],
                 "OriginPullProtocol": "follow",
-                "CosPrivateAccess": "abc"
+                "CosPrivateAccess": "off"
             },
             "PostMaxSize": {
                 "MaxSize": 524288000,

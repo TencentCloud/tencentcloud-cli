@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli cdwdoris DescribeCoolDownBackends --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId str
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
+        "ErrorMsg": "str",
         "List": [
             {
-                "Host": "abc",
-                "DataUsedCapacity": "abc",
-                "TotalCapacity": "abc",
-                "RemoteUsedCapacity": "abc"
+                "Host": "str",
+                "DataUsedCapacity": "str",
+                "TotalCapacity": "str",
+                "RemoteUsedCapacity": "str"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "str"
     }
 }
 ```

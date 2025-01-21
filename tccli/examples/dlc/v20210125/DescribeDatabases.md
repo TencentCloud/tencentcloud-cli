@@ -6,9 +6,11 @@ Input:
 
 ```
 tccli dlc DescribeDatabases --cli-unfold-argument  \
+    --Limit 10 \
+    --Offset 0 \
+    --KeyWord database1 \
     --DatasourceConnectionName DataLakeCatalog \
-    --Limit 1 \
-    --Offset 0
+    --Sort CreateTime
 ```
 
 Output: 
@@ -17,56 +19,27 @@ Output:
     "Response": {
         "DatabaseList": [
             {
-                "DatabaseName": "abc",
-                "Comment": "abc",
+                "Comment": "default description",
+                "CreateTime": "1737372787000",
+                "DatabaseName": "database1",
+                "GovernPolicy": {
+                    "InheritDataBase": "default",
+                    "RuleType": "none"
+                },
+                "Location": "",
+                "ModifiedTime": "1737372787000",
                 "Properties": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "param1",
+                        "Value": "default param"
                     }
                 ],
-                "CreateTime": "abc",
-                "ModifiedTime": "abc",
-                "Location": "abc",
-                "UserAlias": "abc",
-                "UserSubUin": "abc",
-                "GovernPolicy": {
-                    "RewriteDataPolicy": {
-                        "RewriteDataEnable": "abc",
-                        "Engine": "abc",
-                        "MinInputFiles": 0,
-                        "TargetFileSizeBytes": 0,
-                        "IntervalMin": 0
-                    },
-                    "ExpiredSnapshotsPolicy": {
-                        "ExpiredSnapshotsEnable": "abc",
-                        "Engine": "abc",
-                        "RetainLast": 0,
-                        "BeforeDays": 0,
-                        "MaxConcurrentDeletes": 0,
-                        "IntervalMin": 0
-                    },
-                    "RemoveOrphanFilesPolicy": {
-                        "RemoveOrphanFilesEnable": "abc",
-                        "Engine": "abc",
-                        "BeforeDays": 0,
-                        "MaxConcurrentDeletes": 0,
-                        "IntervalMin": 0
-                    },
-                    "MergeManifestsPolicy": {
-                        "MergeManifestsEnable": "abc",
-                        "Engine": "abc",
-                        "IntervalMin": 0
-                    },
-                    "InheritDataBase": "abc",
-                    "RuleType": "abc",
-                    "GovernEngine": "abc"
-                },
-                "DatabaseId": "abc"
+                "UserAlias": "",
+                "UserSubUin": ""
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "RequestId": "********-****-****-****-2d2f1a350edb",
+        "TotalCount": 1
     }
 }
 ```

@@ -6,157 +6,73 @@ Input:
 
 ```
 tccli dlc DescribeTables --cli-unfold-argument  \
-    --Limit 1 \
+    --Limit 20 \
     --Offset 0 \
-    --DatabaseName testdb \
-    --DatasourceConnectionName DataLakeCatalog
+    --DatabaseName database1 \
+    --Filters.0.Name table-name \
+    --Filters.0.Values table2 \
+    --DatasourceConnectionName DataLakeCatalog \
+    --Sort CreateTime
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "********-****-****-****-ea237088c286",
         "TableList": [
             {
-                "TableBaseInfo": {
-                    "DatabaseName": "abc",
-                    "TableName": "abc",
-                    "DatasourceConnectionName": "abc",
-                    "TableComment": "abc",
-                    "Type": "abc",
-                    "TableFormat": "abc",
-                    "UserAlias": "abc",
-                    "UserSubUin": "abc",
-                    "GovernPolicy": {
-                        "RewriteDataPolicy": {
-                            "RewriteDataEnable": "abc",
-                            "Engine": "abc",
-                            "MinInputFiles": 0,
-                            "TargetFileSizeBytes": 0,
-                            "IntervalMin": 0
-                        },
-                        "ExpiredSnapshotsPolicy": {
-                            "ExpiredSnapshotsEnable": "abc",
-                            "Engine": "abc",
-                            "RetainLast": 0,
-                            "BeforeDays": 0,
-                            "MaxConcurrentDeletes": 0,
-                            "IntervalMin": 0
-                        },
-                        "RemoveOrphanFilesPolicy": {
-                            "RemoveOrphanFilesEnable": "abc",
-                            "Engine": "abc",
-                            "BeforeDays": 0,
-                            "MaxConcurrentDeletes": 0,
-                            "IntervalMin": 0
-                        },
-                        "MergeManifestsPolicy": {
-                            "MergeManifestsEnable": "abc",
-                            "Engine": "abc",
-                            "IntervalMin": 0
-                        },
-                        "InheritDataBase": "abc",
-                        "RuleType": "abc",
-                        "GovernEngine": "abc",
-                        "Mode": 0,
-                        "PrimaryKeys": "abc"
-                    },
-                    "DbGovernPolicyIsDisable": "abc",
-                    "SmartPolicy": {
-                        "BaseInfo": {
-                            "Uin": "abc",
-                            "PolicyType": "abc",
-                            "Catalog": "abc",
-                            "Database": "abc",
-                            "Table": "abc",
-                            "AppId": "abc"
-                        },
-                        "Policy": {
-                            "Inherit": "abc",
-                            "Resources": [
-                                {
-                                    "AttributionType": "abc",
-                                    "ResourceType": "abc",
-                                    "Name": "abc",
-                                    "Instance": "abc",
-                                    "Favor": [
-                                        {
-                                            "Priority": 0,
-                                            "Catalog": "abc",
-                                            "DataBase": "abc",
-                                            "Table": "abc"
-                                        }
-                                    ],
-                                    "Status": 0
-                                }
-                            ],
-                            "Written": {
-                                "WrittenEnable": "abc",
-                                "AdvancePolicy": {
-                                    "CompactEnable": "abc",
-                                    "DeleteEnable": "abc",
-                                    "MinInputFiles": 0,
-                                    "TargetFileSizeBytes": 0,
-                                    "RetainLast": 0,
-                                    "BeforeDays": 0,
-                                    "ExpiredSnapshotsIntervalMin": 0,
-                                    "RemoveOrphanIntervalMin": 0
-                                }
-                            },
-                            "Lifecycle": {
-                                "LifecycleEnable": "abc",
-                                "Expiration": 0,
-                                "DropTable": true
-                            },
-                            "Index": {
-                                "IndexEnable": "abc"
-                            }
-                        }
-                    }
-                },
-                "Columns": [
-                    {
-                        "Name": "abc",
-                        "Type": "abc",
-                        "Comment": "abc",
-                        "Precision": 0,
-                        "Scale": 0,
-                        "Nullable": "abc",
-                        "Position": 0,
-                        "CreateTime": "abc",
-                        "ModifiedTime": "abc",
-                        "IsPartition": true
-                    }
-                ],
+                "Columns": null,
+                "CreateTime": "1736853257000",
+                "HeatValue": 10,
+                "InputFormat": "org.apache.hadoop.mapred.FileInputFormat",
+                "InputFormatShort": "parquet",
+                "Location": "cosn://********",
+                "ModifiedTime": "1736941935000",
                 "Partitions": [
                     {
-                        "Name": "abc",
-                        "Type": "abc",
-                        "Comment": "abc",
-                        "Transform": "abc",
-                        "TransformArgs": [
-                            "abc"
-                        ],
-                        "CreateTime": 0
+                        "Comment": "",
+                        "CreateTime": 0,
+                        "Name": "column1",
+                        "Transform": "identity",
+                        "TransformArgs": null,
+                        "Type": ""
                     }
                 ],
-                "Location": "abc",
                 "Properties": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "property1",
+                        "Value": "test property"
+                    },
+                    {
+                        "Key": "test property",
+                        "Value": "default value"
+                    },
+                    {
+                        "Key": "metadata_location",
+                        "Value": "cosn://********"
                     }
                 ],
-                "ModifiedTime": "abc",
-                "CreateTime": "abc",
-                "InputFormat": "abc",
-                "StorageSize": 0,
                 "RecordCount": 0,
-                "MapMaterializedViewName": "abc"
+                "StorageSize": 0,
+                "TableBaseInfo": {
+                    "DatabaseName": "database1",
+                    "DatasourceConnectionName": "",
+                    "DbGovernPolicyIsDisable": "true",
+                    "GovernPolicy": {
+                        "InheritDataBase": "default",
+                        "RuleType": "none"
+                    },
+                    "TableComment": null,
+                    "TableFormat": "ICEBERG",
+                    "TableName": "table2",
+                    "Type": "MANAGED_TABLE",
+                    "UserAlias": "t**********",
+                    "UserSubUin": "1**********6"
+                }
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "abc"
+        "TotalCount": 1
     }
 }
 ```

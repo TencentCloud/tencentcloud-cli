@@ -16,23 +16,9 @@ Output:
     "Response": {
         "DbInfos": [
             {
-                "DbName": "test",
-                "Location": "",
-                "Properties": null
-            },
-            {
                 "DbName": "db1",
                 "Location": "",
-                "Properties": [
-                    {
-                        "PropertyKey": "min_load_replica_num",
-                        "PropertyValue": "-1"
-                    },
-                    {
-                        "PropertyKey": "replication_allocation",
-                        "PropertyValue": "tag.location.default: 3"
-                    }
-                ]
+                "Properties": []
             }
         ],
         "Message": "",

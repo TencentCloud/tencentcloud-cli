@@ -10732,12 +10732,21 @@
         },
         {
           "disabled": false,
-          "document": "此接口用于控制动作序列，动作类型如下\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecurityLevel为2、4、5时传入此参数不同动作类型生效；否则接口报错。",
+          "document": "控制动作序列，动作类型如下\n“blink”\n“mouth”\n“nod”\n“shake”\n可以选择四个中的1-2个动作。\n单动作示例：“blink”\n多动作示例：“blink,mouth”.\n默认值为blink\n仅当SecurityLevel为2、4、5时传入此参数不同动作类型生效；否则接口报错。",
           "example": "blink",
           "member": "string",
           "name": "ActionList",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "控制活体重试次数。取值范围1-99。",
+          "example": "3",
+          "member": "int64",
+          "name": "LivenessRetryLimit",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

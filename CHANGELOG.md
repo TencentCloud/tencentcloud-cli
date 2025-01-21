@@ -1,3 +1,362 @@
+# Release 3.0.1142.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 22 次发布
+
+发布时间：2025-01-22 01:08:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDatasource](http://document.tencentcloudapi.woa.com/document/product/1707/82012)
+
+	* 新增入参：UseVPC, RegionId
+
+* [ModifyDatasource](http://document.tencentcloudapi.woa.com/document/product/1707/82009)
+
+	* 新增入参：UseVPC, RegionId
+
+* [ModifyUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82038)
+
+	* 新增入参：ResetPassWordTip, ForceResetPassWord, PasswordExpired
+
+
+修改数据结构：
+
+* [DatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#DatasourceInfo)
+
+	* 新增成员：UseVPC
+
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 80 次发布
+
+发布时间：2025-01-22 01:08:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/82324)
+
+	* 新增入参：PackageCodes
+
+
+修改数据结构：
+
+* [MeasureAccountDosageCapacity](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosageCapacity)
+
+	* 新增成员：CapacityUsed
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：CapacityUsed, CapacityUsedPrecise
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：CapacityUsed, CapacityUsedPrecise
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 53 次发布
+
+发布时间：2025-01-22 01:11:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstanceNew](http://document.tencentcloudapi.woa.com/document/product/1706/82859)
+
+	* 新增入参：UserMultiZoneInfoArr
+
+* [DescribeBackUpJobDetail](http://document.tencentcloudapi.woa.com/document/product/1706/84385)
+
+	* 新增出参：ErrorMsg, IsUnknownVersion, Msg
+
+
+修改数据结构：
+
+* [BackUpJobDisplay](http://document.tencentcloudapi.woa.com/document/product/1706/80309#BackUpJobDisplay)
+
+	* 新增成员：ErrorReason
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 21 次发布
+
+发布时间：2025-01-22 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/1694/79902)
+
+	* 新增入参：ArchName
+
+
+修改数据结构：
+
+* [TaskListItem](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskListItem)
+
+	* 新增成员：ArchId, ArchName
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 115 次发布
+
+发布时间：2025-01-22 01:15:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAttackSource
+* DescribeAttackSourceEvents
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* AttackSource
+* AttackSourceEdge
+* AttackSourceEvent
+* AttackSourceNode
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 127 次发布
+
+发布时间：2025-01-22 01:17:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataEngineBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineBasicInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>State, CreateTime, UpdateTime, Message, DataEngineId, DataEngineType, AppId, UserUin
+
+* [JobLogResult](http://document.tencentcloudapi.woa.com/document/product/1342/53778#JobLogResult)
+
+	* <font color="#dd0000">**修改成员**：</font>PkgLogId
+
+* [OtherCHDFSBinding](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OtherCHDFSBinding)
+
+	* <font color="#dd0000">**修改成员**：</font>ProductName, SuperUser, VpcInfo, IsBind
+
+* [PrestoMonitorMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#PrestoMonitorMetrics)
+
+	* <font color="#dd0000">**修改成员**：</font>LocalCacheHitRate, FragmentCacheHitRate
+
+* [SparkSessionBatchLogOperate](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkSessionBatchLogOperate)
+
+	* <font color="#dd0000">**修改成员**：</font>Text, Operate, Supplement
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 79 次发布
+
+发布时间：2025-01-22 01:22:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：LivenessRetryLimit
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 37 次发布
+
+发布时间：2025-01-22 01:37:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Kafka](http://document.tencentcloudapi.woa.com/document/product/1464/61476#Kafka)
+
+修改数据结构：
+
+* [ReleaseFile](http://document.tencentcloudapi.woa.com/document/product/1464/61476#ReleaseFile)
+
+	* <font color="#dd0000">**修改成员**：</font>Version, FileKey, FileName, FileHash, ID
+
+* [RumInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumInstanceInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceType
+
+* [RumProject](http://document.tencentcloudapi.woa.com/document/product/1464/61476#RumProject)
+
+	* 新增成员：Kafka
+
+	* <font color="#dd0000">**修改成员**：</font>AccessPoint
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 55 次发布
+
+发布时间：2025-01-22 01:38:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+
+	* 新增入参：Plugins
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增出参：Plugins
+
+* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
+
+	* 新增入参：Plugins
+
+
+新增数据结构：
+
+* [PluginConfig](http://document.tencentcloudapi.woa.com/document/product/583/17244#PluginConfig)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 47 次发布
+
+发布时间：2025-01-22 01:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateL7AccRules](http://document.tencentcloudapi.woa.com/document/product/1738/85690)
+* [DeleteL7AccRules](http://document.tencentcloudapi.woa.com/document/product/1738/85689)
+* [DescribeL7AccRules](http://document.tencentcloudapi.woa.com/document/product/1738/85688)
+* [DescribeL7AccSetting](http://document.tencentcloudapi.woa.com/document/product/1738/85687)
+* [ModifyL7AccRule](http://document.tencentcloudapi.woa.com/document/product/1738/85686)
+* [ModifyL7AccSetting](http://document.tencentcloudapi.woa.com/document/product/1738/85685)
+
+新增数据结构：
+
+* [AccelerateMainlandParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AccelerateMainlandParameters)
+* [AccessURLRedirectParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AccessURLRedirectParameters)
+* [AccessURLRedirectQueryString](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AccessURLRedirectQueryString)
+* [AuthenticationParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AuthenticationParameters)
+* [CacheConfigCustomTime](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheConfigCustomTime)
+* [CacheConfigParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheConfigParameters)
+* [CacheKeyConfigParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheKeyConfigParameters)
+* [CacheKeyCookie](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheKeyCookie)
+* [CacheKeyHeader](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheKeyHeader)
+* [CacheKeyParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheKeyParameters)
+* [CacheKeyQueryString](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheKeyQueryString)
+* [CacheParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CacheParameters)
+* [CachePrefreshParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CachePrefreshParameters)
+* [ClientIPCountryParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ClientIPCountryParameters)
+* [ClientIPHeaderParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ClientIPHeaderParameters)
+* [CompressionParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CompressionParameters)
+* [CustomTime](http://document.tencentcloudapi.woa.com/document/product/1738/81211#CustomTime)
+* [ErrorPage](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ErrorPage)
+* [ErrorPageParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ErrorPageParameters)
+* [ForceRedirectHTTPSParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ForceRedirectHTTPSParameters)
+* [GrpcParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#GrpcParameters)
+* [HSTSParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HSTSParameters)
+* [HTTP2Parameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HTTP2Parameters)
+* [HTTPResponseParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HTTPResponseParameters)
+* [HTTPUpstreamTimeoutParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HTTPUpstreamTimeoutParameters)
+* [HeaderAction](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HeaderAction)
+* [HostHeaderParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HostHeaderParameters)
+* [HostName](http://document.tencentcloudapi.woa.com/document/product/1738/81211#HostName)
+* [IPv6Parameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#IPv6Parameters)
+* [MaxAgeParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#MaxAgeParameters)
+* [ModifyOriginParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ModifyOriginParameters)
+* [ModifyRequestHeaderParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ModifyRequestHeaderParameters)
+* [ModifyResponseHeaderParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ModifyResponseHeaderParameters)
+* [OCSPStaplingParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OCSPStaplingParameters)
+* [OfflineCacheParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OfflineCacheParameters)
+* [OriginHostHeaderParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginHostHeaderParameters)
+* [OriginPrivateParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginPrivateParameters)
+* [OriginPullProtocolParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginPullProtocolParameters)
+* [PostMaxSizeParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#PostMaxSizeParameters)
+* [PrimaryBackupOriginParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#PrimaryBackupOriginParameters)
+* [QUICParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#QUICParameters)
+* [RangeOriginPullParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RangeOriginPullParameters)
+* [ResponseSpeedLimitParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ResponseSpeedLimitParameters)
+* [RuleBranch](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RuleBranch)
+* [RuleEngineAction](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RuleEngineAction)
+* [RuleEngineItem](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RuleEngineItem)
+* [RuleEngineSubRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RuleEngineSubRule)
+* [SetContentIdentifierParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SetContentIdentifierParameters)
+* [SmartRoutingParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#SmartRoutingParameters)
+* [StandardDebugParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#StandardDebugParameters)
+* [StatusCodeCacheParam](http://document.tencentcloudapi.woa.com/document/product/1738/81211#StatusCodeCacheParam)
+* [StatusCodeCacheParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#StatusCodeCacheParameters)
+* [TLSConfigParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#TLSConfigParameters)
+* [URLPath](http://document.tencentcloudapi.woa.com/document/product/1738/81211#URLPath)
+* [UpstreamFollowRedirectParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamFollowRedirectParameters)
+* [UpstreamHTTP2Parameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamHTTP2Parameters)
+* [UpstreamRequestCookie](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamRequestCookie)
+* [UpstreamRequestParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamRequestParameters)
+* [UpstreamRequestQueryString](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamRequestQueryString)
+* [UpstreamURLRewriteParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#UpstreamURLRewriteParameters)
+* [WebSocketParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#WebSocketParameters)
+* [ZoneConfig](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ZoneConfig)
+* [ZoneConfigParameters](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ZoneConfigParameters)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.1141.1
 
 ## 实时音视频(trtc) 版本：2019-07-22

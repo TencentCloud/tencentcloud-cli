@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli dlc DeleteTable --cli-unfold-argument  \
-    --TableBaseInfo.TableName abc \
+    --TableBaseInfo.TableName table2 \
     --TableBaseInfo.DatasourceConnectionName DataLakeCatalog \
-    --TableBaseInfo.DatabaseName db
+    --TableBaseInfo.DatabaseName database1
 ```
 
 Output: 

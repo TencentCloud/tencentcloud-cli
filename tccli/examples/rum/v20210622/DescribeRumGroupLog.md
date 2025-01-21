@@ -9,7 +9,7 @@ tccli rum DescribeRumGroupLog --cli-unfold-argument  \
     --OrderBy asc \
     --ID 1 \
     --Limit 1 \
-    --GroupField  \
+    --GroupField date \
     --StartTime 1 \
     --Query 1 \
     --EndTime 1 \
@@ -21,7 +21,7 @@ Output:
 {
     "Response": {
         "RequestId": "81a43a52-d00f-462a-82da-89841117f4ca",
-        "Result": ""
+        "Result": "{\"code\":0,\"data\":[{\"1737254300150\":1},{\"1737254310941\":1}],\"msg\":\"\",\"request_id\":\"81a43a52-d00f-462a-82da-89841117f4ca\"}"
     }
 }
 ```
@@ -48,7 +48,7 @@ Output:
 ```
 {
     "Response": {
-        "Result": "Traceback (most recent call last):\n  File \"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\", line 1763, in _execute\n    result = self.prepare()\n  File \"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\", line 2538, in prepare\n    raise HTTPError(self._status_code)\ntornado.web.HTTPError: HTTP 404: Not Found\n",
+        "Result": "{\"code\":0,\"data\":[{\"1737254300150\":1},{\"1737254310941\":1}],\"msg\":\"\",\"request_id\":\"65a8fec7-2b39-4b11-893f-3715279d235f\"}",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

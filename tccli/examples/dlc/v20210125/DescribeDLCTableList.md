@@ -6,275 +6,155 @@ Input:
 
 ```
 tccli dlc DescribeDLCTableList --cli-unfold-argument  \
-    --DbName abc \
-    --Catalog abc \
-    --Filters.Name abc \
-    --Filters.Values abc \
-    --Type abc \
-    --StartTime abc \
-    --EndTime abc \
-    --Limit 0 \
+    --DbName wyh_db_auth \
+    --Catalog DaataLakeCatalog \
+    --Filters.Name table-name \
+    --Filters.Values table2 \
+    --Type MANAGED_TABLE \
+    --Limit 10 \
     --Offset 0 \
-    --Sort abc \
+    --Sort CreateTime \
     --Asc True \
-    --TableFormat abc
+    --TableFormat ICEBERG
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "********-****-****-****-079d7ab5f226",
         "TableList": [
             {
-                "TableBaseInfo": {
-                    "DatabaseName": "abc",
-                    "TableName": "abc",
-                    "DatasourceConnectionName": "abc",
-                    "TableComment": "abc",
-                    "Type": "abc",
-                    "TableFormat": "abc",
-                    "UserAlias": "abc",
-                    "UserSubUin": "abc",
-                    "GovernPolicy": {
-                        "RewriteDataPolicy": {
-                            "RewriteDataEnable": "abc",
-                            "Engine": "abc",
-                            "MinInputFiles": 0,
-                            "TargetFileSizeBytes": 0,
-                            "IntervalMin": 0,
-                            "AdvanceParameters": {
-                                "CowRewriteEnable": "abc",
-                                "RewriteStrategy": "abc",
-                                "SortOrders": [
-                                    {
-                                        "Column": "abc",
-                                        "SortDirection": "abc",
-                                        "NullOrder": "abc"
-                                    }
-                                ]
-                            }
-                        },
-                        "ExpiredSnapshotsPolicy": {
-                            "ExpiredSnapshotsEnable": "abc",
-                            "Engine": "abc",
-                            "RetainLast": 0,
-                            "BeforeDays": 0,
-                            "MaxConcurrentDeletes": 0,
-                            "IntervalMin": 0
-                        },
-                        "RemoveOrphanFilesPolicy": {
-                            "RemoveOrphanFilesEnable": "abc",
-                            "Engine": "abc",
-                            "BeforeDays": 0,
-                            "MaxConcurrentDeletes": 0,
-                            "IntervalMin": 0
-                        },
-                        "MergeManifestsPolicy": {
-                            "MergeManifestsEnable": "abc",
-                            "Engine": "abc",
-                            "IntervalMin": 0
-                        },
-                        "InheritDataBase": "abc",
-                        "RuleType": "abc",
-                        "GovernEngine": "abc",
-                        "Mode": 0,
-                        "PrimaryKeys": "abc"
-                    },
-                    "DbGovernPolicyIsDisable": "abc",
-                    "SmartPolicy": {
-                        "BaseInfo": {
-                            "Uin": "abc",
-                            "PolicyType": "abc",
-                            "Catalog": "abc",
-                            "Database": "abc",
-                            "Table": "abc",
-                            "AppId": "abc"
-                        },
-                        "Policy": {
-                            "Inherit": "abc",
-                            "Resources": [
-                                {
-                                    "AttributionType": "abc",
-                                    "ResourceType": "abc",
-                                    "Name": "abc",
-                                    "Instance": "abc",
-                                    "Favor": [
-                                        {
-                                            "Priority": 0,
-                                            "Catalog": "abc",
-                                            "DataBase": "abc",
-                                            "Table": "abc"
-                                        }
-                                    ],
-                                    "Status": 0
-                                }
-                            ],
-                            "Written": {
-                                "WrittenEnable": "abc",
-                                "AdvancePolicy": {
-                                    "CompactEnable": "abc",
-                                    "DeleteEnable": "abc",
-                                    "MinInputFiles": 0,
-                                    "TargetFileSizeBytes": 0,
-                                    "RetainLast": 0,
-                                    "BeforeDays": 0,
-                                    "ExpiredSnapshotsIntervalMin": 0,
-                                    "RemoveOrphanIntervalMin": 0,
-                                    "CowCompactEnable": "abc",
-                                    "CompactStrategy": "abc",
-                                    "SortOrders": [
-                                        {
-                                            "Column": "abc",
-                                            "SortDirection": "abc",
-                                            "NullOrder": "abc"
-                                        }
-                                    ]
-                                }
-                            },
-                            "Lifecycle": {
-                                "LifecycleEnable": "abc",
-                                "Expiration": 0,
-                                "DropTable": true,
-                                "ExpiredField": "abc",
-                                "ExpiredFieldFormat": "abc"
-                            },
-                            "Index": {
-                                "IndexEnable": "abc"
-                            }
-                        }
-                    }
-                },
                 "Columns": [
                     {
-                        "Name": "abc",
-                        "Type": "abc",
-                        "Comment": "abc",
-                        "Default": "abc",
-                        "NotNull": true,
+                        "Comment": "test col",
+                        "Default": "",
+                        "IsPartition": true,
+                        "Name": "column1",
+                        "NotNull": false,
                         "Precision": 0,
                         "Scale": 0,
-                        "Position": 0,
-                        "IsPartition": true
+                        "Type": "int"
                     }
                 ],
+                "CreateTime": "1736853257000",
+                "ExternalDataConfiguration": {
+                    "LifeTime": 0,
+                    "PartitionKeys": null,
+                    "Partitions": null,
+                    "Retention": 0,
+                    "Sds": null,
+                    "ViewExpandedText": "",
+                    "ViewOriginalText": ""
+                },
+                "HeatValue": 1,
+                "InputFormat": "org.apache.hadoop.mapred.FileInputFormat",
+                "Location": "cosn://**********",
+                "MapMaterializedViewName": "",
+                "ModifiedTime": "1736853257000",
                 "Partitions": [
                     {
-                        "Name": "abc",
-                        "Type": "abc",
-                        "Comment": "abc",
-                        "PartitionType": "abc",
-                        "PartitionFormat": "abc",
-                        "PartitionDot": 0,
-                        "Transform": "abc",
-                        "TransformArgs": [
-                            "abc"
-                        ]
+                        "Comment": "test col",
+                        "Name": "column1",
+                        "Transform": "identity",
+                        "TransformArgs": [],
+                        "Type": "int"
                     }
                 ],
-                "Location": "abc",
                 "Properties": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "dlc_sub_uin",
+                        "Value": "1**********6"
+                    },
+                    {
+                        "Key": "lakehouse.storage.type",
+                        "Value": "lakefs"
+                    },
+                    {
+                        "Key": "comment",
+                        "Value": "test comment"
+                    },
+                    {
+                        "Key": "property1",
+                        "Value": "test property"
+                    },
+                    {
+                        "Key": "snapshot-count",
+                        "Value": "0"
+                    },
+                    {
+                        "Key": "write.distribution-mode",
+                        "Value": "hash"
+                    },
+                    {
+                        "Key": "write.metadata.metrics.default",
+                        "Value": "full"
+                    },
+                    {
+                        "Key": "table_type",
+                        "Value": "ICEBERG"
+                    },
+                    {
+                        "Key": "owner",
+                        "Value": "******Fg"
+                    },
+                    {
+                        "Key": "transient_lastDdlTime",
+                        "Value": "1736853257438"
+                    },
+                    {
+                        "Key": "write.metadata.delete-after-commit.enabled",
+                        "Value": "true"
+                    },
+                    {
+                        "Key": "write.metadata.previous-versions-max",
+                        "Value": "100"
+                    },
+                    {
+                        "Key": "metadata_location",
+                        "Value": "cosn://**********"
+                    },
+                    {
+                        "Key": "current-schema",
+                        "Value": "{\"type\":\"struct\",\"schema-id\":0,\"fields\":[{\"id\":1,\"name\":\"column1\",\"required\":false,\"type\":\"int\",\"doc\":\"test col\"}]}"
+                    },
+                    {
+                        "Key": "uuid",
+                        "Value": "********-****-****-****-b62d30fd42ae"
+                    },
+                    {
+                        "Key": "smart-optimizer.inherit",
+                        "Value": "default"
+                    },
+                    {
+                        "Key": "default-partition-spec",
+                        "Value": "{\"spec-id\":0,\"fields\":[{\"name\":\"column1\",\"transform\":\"identity\",\"source-id\":1,\"field-id\":1000}]}"
+                    },
+                    {
+                        "Key": "EXTERNAL",
+                        "Value": "TRUE"
                     }
                 ],
-                "ModifiedTime": "abc",
-                "CreateTime": "abc",
-                "InputFormat": "abc",
-                "StorageSize": 0,
                 "RecordCount": 0,
-                "MapMaterializedViewName": "abc",
-                "HeatValue": 0,
-                "ExternalDataConfiguration": {
-                    "Sds": {
-                        "Location": "abc",
-                        "InputFormat": "abc",
-                        "OutputFormat": "abc",
-                        "NumBuckets": 0,
-                        "Compressed": true,
-                        "StoredAsSubDirectories": true,
-                        "SerdeLib": "abc",
-                        "SerdeName": "abc",
-                        "Params": [],
-                        "SerdeParams": [],
-                        "SortColumns": [],
-                        "BucketCols": [
-                            "abc"
-                        ],
-                        "SortCols": {
-                            "Col": "abc",
-                            "Order": 0
-                        },
-                        "Cols": [
-                            {
-                                "Name": "abc",
-                                "Description": "abc",
-                                "Type": "abc",
-                                "Position": 0,
-                                "IsPartition": true,
-                                "BizParams": [],
-                                "Params": []
-                            }
-                        ]
+                "StorageSize": 0,
+                "TableBaseInfo": {
+                    "DatabaseName": "database1",
+                    "DatasourceConnectionName": "",
+                    "DbGovernPolicyIsDisable": "",
+                    "GovernPolicy": {
+                        "InheritDataBase": "default",
+                        "RuleType": "none"
                     },
-                    "ViewOriginalText": "abc",
-                    "ViewExpandedText": "abc",
-                    "Retention": 0,
-                    "LifeTime": 0,
-                    "Partitions": [
-                        {
-                            "DatabaseName": "abc",
-                            "SchemaName": "abc",
-                            "TableName": "abc",
-                            "DataVersion": 0,
-                            "Name": "abc",
-                            "Params": [],
-                            "Values": [
-                                "abc"
-                            ],
-                            "StorageSize": 0,
-                            "RecordCount": 0,
-                            "CreateTime": "2020-09-22T00:00:00+00:00",
-                            "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                            "LastAccessTime": "2020-09-22T00:00:00+00:00",
-                            "Sds": {
-                                "Location": "abc",
-                                "InputFormat": "abc",
-                                "OutputFormat": "abc",
-                                "NumBuckets": 0,
-                                "Compressed": true,
-                                "StoredAsSubDirectories": true,
-                                "SerdeLib": "abc",
-                                "SerdeName": "abc",
-                                "Params": [],
-                                "SerdeParams": [],
-                                "SortColumns": [],
-                                "BucketCols": [
-                                    "abc"
-                                ],
-                                "SortCols": {
-                                    "Col": "abc",
-                                    "Order": 0
-                                },
-                                "Cols": [
-                                    {
-                                        "Name": "abc",
-                                        "Description": "abc",
-                                        "Type": "abc",
-                                        "Position": 0,
-                                        "IsPartition": true,
-                                        "BizParams": [],
-                                        "Params": []
-                                    }
-                                ]
-                            }
-                        }
-                    ]
+                    "TableComment": null,
+                    "TableFormat": "ICEBERG",
+                    "TableName": "table2",
+                    "Type": "MANAGED_TABLE",
+                    "UserAlias": "t********g",
+                    "UserSubUin": "1**********6"
                 }
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 0
     }
 }
 ```

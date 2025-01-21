@@ -6,17 +6,17 @@ Input:
 
 ```
 tccli dlc CreateCHDFSBindingProduct --cli-unfold-argument  \
-    --MountPoint abc \
-    --BucketType abc \
-    --ProductName abc \
-    --EngineName abc
+    --MountPoint bi-gz \
+    --BucketType cos \
+    --ProductName DLC \
+    --EngineName guiyin
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "82e112c2-24cc-44b0-8d04-a6b939ea90d6"
     }
 }
 ```
