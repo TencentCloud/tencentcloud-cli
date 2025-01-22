@@ -395,8 +395,8 @@
     "ModifyUserBindWorkloadGroup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserBindWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"BindUsers\": [\n        {\n            \"UserName\": \"test\",\n            \"Host\": \"%\"\n        },\n        {\n            \"UserName\": \"test\",\n            \"Host\": \"127.0.0.1\"\n        }\n    ],\n    \"OldWorkloadGroupName\": \"abc\",\n    \"NewWorkloadGroupName\": \"abc1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserBindWorkloadGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-qliqegj3\",\n    \"BindUsers\": [\n        {\n            \"UserName\": \"admin\",\n            \"Host\": \"%\"\n        },\n        {\n            \"UserName\": \"cuser\",\n            \"Host\": \"127.0.0.1\"\n        }\n    ],\n    \"OldWorkloadGroupName\": \"group1\",\n    \"NewWorkloadGroupName\": \"newgroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"117ad1ab-8571-4085-8356-382b6a5f07f6\"\n    }\n}",
         "title": "修改用户绑定的资源组"
       }
     ],

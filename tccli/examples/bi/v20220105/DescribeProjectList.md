@@ -8,7 +8,7 @@ Input:
 tccli bi DescribeProjectList --cli-unfold-argument  \
     --PageSize 1 \
     --PageNo 1 \
-    --Keyword abc \
+    --Keyword demo \
     --AllPage True
 ```
 
@@ -17,47 +17,47 @@ Output:
 {
     "Response": {
         "ErrorInfo": {
-            "ErrorTip": "abc",
-            "ErrorLevel": "abc",
-            "DocLink": "abc",
-            "FAQ": "abc",
-            "ReservedField": "abc"
+            "ErrorTip": "",
+            "ErrorLevel": "INFO",
+            "DocLink": "数据不存在",
+            "FAQ": "",
+            "ReservedField": ""
         },
-        "Extra": "abc",
-        "Msg": "abc",
+        "Extra": "",
+        "Msg": "成功",
         "Data": {
             "List": [
                 {
                     "Id": 1,
-                    "Logo": "abc",
-                    "Name": "abc",
-                    "ColorCode": "abc",
-                    "CreatedUser": "abc",
-                    "CreatedAt": "abc",
+                    "Logo": "http://www.cloud.com***/logo.png",
+                    "Name": "测试",
+                    "ColorCode": "#666",
+                    "CreatedUser": "张三",
+                    "CreatedAt": "张三",
                     "MemberCount": 0,
                     "PageCount": 0,
-                    "LastModifyName": "abc",
-                    "Source": "abc",
+                    "LastModifyName": "张三",
+                    "Source": "",
                     "Apply": true,
-                    "UpdatedUser": "abc",
-                    "UpdatedAt": "abc",
-                    "CorpId": "abc",
-                    "Mark": "abc",
-                    "Seed": "abc",
+                    "UpdatedUser": "张三",
+                    "UpdatedAt": "张三",
+                    "CorpId": "10010101",
+                    "Mark": "备注",
+                    "Seed": "",
                     "AuthList": [
-                        "abc"
+                        "10101"
                     ],
-                    "PanelScope": "abc",
+                    "PanelScope": "scope",
                     "IsExternalManage": true,
-                    "ManagePlatform": "abc",
+                    "ManagePlatform": "saas",
                     "ConfigList": [
                         {
-                            "ModuleGroup": "abc",
+                            "ModuleGroup": "project",
                             "Components": [
                                 {
-                                    "ModuleId": "abc",
-                                    "IncludeType": "abc",
-                                    "Params": "abc"
+                                    "ModuleId": "10101",
+                                    "IncludeType": "useable",
+                                    "Params": ""
                                 }
                             ]
                         }
@@ -67,7 +67,7 @@ Output:
             "Total": 1,
             "TotalPages": 1
         },
-        "RequestId": "abc"
+        "RequestId": "dfjksak10w1qdsk2312"
     }
 }
 ```

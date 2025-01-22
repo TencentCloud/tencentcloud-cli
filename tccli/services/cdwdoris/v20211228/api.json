@@ -4140,7 +4140,7 @@
         {
           "disabled": false,
           "document": "慢查询时间",
-          "example": "123",
+          "example": "287",
           "member": "int64",
           "name": "QueryDurationMs",
           "required": true,
@@ -4445,7 +4445,7 @@
         {
           "disabled": false,
           "document": "记录列表",
-          "example": "[\"xx\",\"abc\"]",
+          "example": "[\"x1x\",\"ab2c\"]",
           "member": "SlowQueryRecord",
           "name": "SlowQueryRecords",
           "output_required": true,
@@ -4455,7 +4455,7 @@
         {
           "disabled": false,
           "document": "所有数据库名",
-          "example": "无",
+          "example": "[\"db1\",\"db2\"]",
           "member": "string",
           "name": "DBNameList",
           "output_required": false,
@@ -4465,7 +4465,7 @@
         {
           "disabled": false,
           "document": "所有catalog名",
-          "example": "无",
+          "example": "[\"c1\",\"c2\"]",
           "member": "string",
           "name": "CatalogNameList",
           "output_required": false,
@@ -6323,7 +6323,7 @@
         {
           "disabled": false,
           "document": "需要绑定资源组的用户信息，如果一个账户拥有多个主机信息，需要将这些信息都传入",
-          "example": "无",
+          "example": "bind_user",
           "member": "BindUser",
           "name": "BindUsers",
           "required": false,
@@ -6356,7 +6356,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "error message",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,

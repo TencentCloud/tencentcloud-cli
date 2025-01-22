@@ -6,24 +6,24 @@ Input:
 
 ```
 tccli bi CreateProject --cli-unfold-argument  \
-    --Name abc \
-    --Logo abc \
-    --ColorCode abc \
-    --Mark abc \
+    --Name 测试项目 \
+    --Logo https://tencent.cloud.com/logo.png \
+    --ColorCode #ffffff \
+    --Mark 创建项目 \
     --IsApply True \
-    --DefaultPanelType 0
+    --DefaultPanelType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Extra": "abc",
+        "Extra": "1",
         "Data": {
-            "Id": 0
+            "Id": 11010
         },
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Msg": "成功",
+        "RequestId": "dsjasdk121kdsfjksadk"
     }
 }
 ```

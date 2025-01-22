@@ -17,43 +17,43 @@ Output:
 {
     "Response": {
         "ErrorInfo": {
-            "ErrorTip": "abc",
-            "ErrorLevel": "abc",
-            "DocLink": "abc",
-            "FAQ": "abc",
-            "ReservedField": "abc"
+            "ErrorTip": "",
+            "ErrorLevel": "INFO",
+            "DocLink": "",
+            "FAQ": "",
+            "ReservedField": ""
         },
         "Data": {
             "List": [
                 {
-                    "UserId": "abc",
-                    "UserName": "abc",
-                    "CorpId": "abc",
-                    "Email": "abc",
+                    "UserId": "1101",
+                    "UserName": "zhangsn",
+                    "CorpId": "1012",
+                    "Email": "242***@qq.com",
                     "LastLogin": "2020-09-22T00:00:00+00:00",
                     "Status": 0,
                     "FirstModify": 0,
-                    "PhoneNumber": "abc",
-                    "AreaCode": "abc",
-                    "CreatedUser": "abc",
+                    "PhoneNumber": "86212***21",
+                    "AreaCode": "086",
+                    "CreatedUser": "zhangsna",
                     "CreatedAt": "2020-09-22T00:00:00+00:00",
-                    "UpdatedUser": "abc",
+                    "UpdatedUser": "zhangsn",
                     "UpdatedAt": "2020-09-22T00:00:00+00:00",
-                    "GlobalUserName": "abc",
-                    "Mobile": "abc",
-                    "AppId": "abc",
-                    "AppUserId": "abc",
-                    "AppUserAliasName": "abc",
-                    "AppUserName": "abc",
+                    "GlobalUserName": "zhangsn",
+                    "Mobile": "153****798",
+                    "AppId": "101",
+                    "AppUserId": "zhangsn",
+                    "AppUserAliasName": "zhangsa",
+                    "AppUserName": "zjang",
                     "InValidateAppRange": true
                 }
             ],
             "Total": 0,
             "TotalPages": 0
         },
-        "Extra": "abc",
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Extra": "",
+        "Msg": "成功",
+        "RequestId": "sddfsdf212ffdf-dsdas"
     }
 }
 ```

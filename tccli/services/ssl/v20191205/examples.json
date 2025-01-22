@@ -40,6 +40,14 @@
         "title": "检查证书域名验证"
       }
     ],
+    "CheckCertificateExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificateExist\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RepeatCertId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询证书内容是否存在"
+      }
+    ],
     "CommitCertificateInformation": [
       {
         "document": "提交证书订单",

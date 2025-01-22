@@ -1,0 +1,525 @@
+{
+  "actions": {
+    "AcceptTccVpcEndPointConnect": {
+      "document": "接受终端节点连接",
+      "input": "AcceptTccVpcEndPointConnectRequest",
+      "name": "接受终端节点连接",
+      "output": "AcceptTccVpcEndPointConnectResponse",
+      "status": "online"
+    },
+    "BindTccVpcEndPointServiceWhiteList": {
+      "document": "绑定终端节点服务白名单用户",
+      "input": "BindTccVpcEndPointServiceWhiteListRequest",
+      "name": "绑定终端节点服务用户白名单",
+      "output": "BindTccVpcEndPointServiceWhiteListResponse",
+      "status": "online"
+    },
+    "DescribeTccCatalog": {
+      "document": "获取Tcc数据目录详情",
+      "input": "DescribeTccCatalogRequest",
+      "name": "获取Tcc数据目录信息",
+      "output": "DescribeTccCatalogResponse",
+      "status": "online"
+    },
+    "DescribeTccCatalogs": {
+      "document": "获取Tcc数据目录列表",
+      "input": "DescribeTccCatalogsRequest",
+      "name": "获取Tcc数据目录列表",
+      "output": "DescribeTccCatalogsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2024-10-24",
+    "api_brief": "提供了通过API进行管控元数据（Catalog、Schema、Table、Volume）以及提供资源管控能力和用户行为操作管控能力（收藏、浏览）",
+    "serviceNameCN": "统一Catalog服务",
+    "serviceShortName": "tccatalog"
+  },
+  "objects": {
+    "AcceptTccVpcEndPointConnectRequest": {
+      "document": "AcceptTccVpcEndPointConnect请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点服务Id",
+          "example": "vpcsvc-6jsieksl3",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终端节点id",
+          "example": "[vpce-sjdh8hd2]",
+          "member": "string",
+          "name": "EndPointId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否接受连接",
+          "example": "true",
+          "member": "bool",
+          "name": "AcceptFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "AcceptTccVpcEndPointConnectResponse": {
+      "document": "AcceptTccVpcEndPointConnect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindTccVpcEndPointServiceWhiteListRequest": {
+      "document": "BindTccVpcEndPointServiceWhiteList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点服务Id",
+          "example": "vpcsvc-6jsieksl3",
+          "member": "string",
+          "name": "EndPointServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要开白的用户Uin",
+          "example": "123456789",
+          "member": "string",
+          "name": "UserUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户描述",
+          "example": "测试用户",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindTccVpcEndPointServiceWhiteListResponse": {
+      "document": "BindTccVpcEndPointServiceWhiteList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTccCatalogRequest": {
+      "document": "DescribeTccCatalog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录Id",
+          "example": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1",
+          "member": "string",
+          "name": "CatalogId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTccCatalogResponse": {
+      "document": "DescribeTccCatalog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Tcc数据目录信息",
+          "example": "复杂类型",
+          "member": "TccCatalogConfig",
+          "name": "TccCatalog",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTccCatalogsRequest": {
+      "document": "DescribeTccCatalogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录Id",
+          "example": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1",
+          "member": "string",
+          "name": "CatalogId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据目录名称",
+          "example": "TccHiveCatalog",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据目录类型,当前支持：TCC-HIVE",
+          "example": "TCC-HIVE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态信息：注册中0，待测试1，连接成功2，连接失败3，删除中4，已删除5",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作人uin",
+          "example": "3783892123",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTccCatalogsResponse": {
+      "document": "DescribeTccCatalogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录列表",
+          "example": "复杂类型",
+          "member": "TccCatalogSet",
+          "name": "TccCatalogSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NetWork": {
+      "document": "网络配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc实例id",
+          "example": "vpc-test",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc网段",
+          "example": "10.0.0.1/12",
+          "member": "string",
+          "name": "VpcCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网实例id",
+          "example": "subnet-test",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网网段",
+          "example": "10.0.0.1/24",
+          "member": "string",
+          "name": "SubnetCidrBlock",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TccCatalogConfig": {
+      "document": "Tcc数据目录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录唯一id",
+          "example": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据目录名字",
+          "example": "TccHiveCatalog",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据目录类型,当前支持：TCC-HIVE",
+          "example": "TCC-HIVE",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "测试连接",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态信息：注册中0，待测试1，连接成功2，连接失败3，删除中4，已删除5",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Tcc数据目录连接信息",
+          "example": "复杂类型",
+          "member": "TccConnectionConfig",
+          "name": "Connection",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人uin",
+          "example": "3783892123",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TccCatalogSet": {
+      "document": "Tcc数据目录信息集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录唯一id",
+          "example": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据目录名字",
+          "example": "TccHiveCatalog",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据目录类型,当前支持：TCC-HIVE",
+          "example": "TCC-HIVE",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态信息：注册中0，待测试1，连接成功2，连接失败3，删除中4，已删除5",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作人uin",
+          "example": "3783892123",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2024-01-01 12:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TccConnection": {
+      "document": "Tcc数据目录连接配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "终端节点服务Id",
+          "example": "vpcsvc-6jsieksl3",
+          "member": "string",
+          "name": "EndpointServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据连接串",
+          "example": "thrift://127.0.0.1:9083\t",
+          "member": "string",
+          "name": "MetaStoreUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t网络信息",
+          "example": "复杂类型",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TccConnectionConfig": {
+      "document": "Tcc数据目录连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Tcc数据目录连接配置",
+          "example": "复杂类型",
+          "member": "TccConnection",
+          "name": "TccHive",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

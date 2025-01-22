@@ -782,6 +782,14 @@
         "title": "创建批量操作企业初始化链接"
       }
     ],
+    "CreateBatchOrganizationAuthorizationUrl": [
+      {
+        "document": "根据批量注册企业子任务 Id 和超管的三要素生成批量认证链接。\n1. 批量注册企业子任务是由接口 [CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任务接口](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks)  生成的。\n2. 调用[查询企业批量认证链接DescribeBatchOrganizationRegistrationUrls](https://qian.tencent.com/developers/partnerApis/accounts/DescribeBatchOrganizationRegistrationUrls)，获得子任务 TaskId。\n3. Endpoint 设置为长链接，会生成一条长链。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchOrganizationAuthorizationUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ceshi\"\n        },\n        \"ProxyOrganizationOpenId\": \"ceshi_org\",\n        \"AppId\": \"60e16350b0361c888ecb30477d2c16e9\"\n    },\n    \"SubTaskIds\": [\n        \"yDCHlUUckpaeefmfUxPr7deu6g5PvvJz\",\n        \"yDCHlUUckpaeix9uU0ETNLSzHbAxJxLj\"\n    ],\n    \"AdminName\": \"典子谦\",\n    \"AdminMobile\": \"13200000000\",\n    \"AdminIdCardType\": \"ID_CARD\",\n    \"AdminIdCardNumber\": \"620000198802020000\",\n    \"Endpoint\": \"HTTP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?to=AUTHORIZATION_ENTERPRISE_FOR_BATCH_SUBMIT&shortKey=yDCHHURDfCVEoeNYGCc6\",\n        \"ErrorMessages\": [],\n        \"ExpireTime\": 1724165376,\n        \"RequestId\": \"s1723560576553977682\"\n    }\n}",
+        "title": "根据批量注册企业子任务 Id 和超管的三要素生成批量认证链接"
+      }
+    ],
     "CreateBatchOrganizationRegistrationTasks": [
       {
         "document": "用户同时创建3个企业， 创建链接成功",

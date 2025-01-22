@@ -1,0 +1,37 @@
+{
+  "actions": {
+    "AcceptTccVpcEndPointConnect": [
+      {
+        "document": "接受终端节点连接",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AcceptVpcEndPointConnect\n<公共请求参数>\n\n{\n    \"EndPointServiceId\": \"vpcsvc-6jsieksl3\",\n    \"EndPointId\": [\n        \"vpce-sjdh8hd2\"\n    ],\n    \"AcceptFlag\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "接受终端节点连接"
+      }
+    ],
+    "BindTccVpcEndPointServiceWhiteList": [
+      {
+        "document": "绑定终端节点服务白名单用户",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindVpcEndPointServiceWhiteList\n<公共请求参数>\n\n{\n    \"EndPointServiceId\": \"vpcsvc-6jsieksl3\",\n    \"UserUin\": \"123456789\",\n    \"Description\": \"测试用户\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "绑定终端节点服务白名单用户"
+      }
+    ],
+    "DescribeTccCatalog": [
+      {
+        "document": "获取Tcc数据目录详情",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTccCatalog\n<公共请求参数>\n\n{\n    \"CatalogId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TccCatalog\": {\n            \"Id\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n            \"Name\": \"TccHiveCatalog\",\n            \"Type\": \"TCC-HIVE\",\n            \"Comment\": \"测试数据目录\",\n            \"Status\": 2,\n            \"Connection\": {\n                \"TccHive\": {\n                    \"EndpointServiceId\": \"vpcsvc-6jsieksl3\",\n                    \"MetaStoreUrl\": \"thrift://127.0.0.1:9083\",\n                    \"NetWork\": {\n                        \"VpcId\": \"vpc-test\",\n                        \"VpcCidrBlock\": \"10.0.0.1/12\",\n                        \"SubnetId\": \"subnet-test\",\n                        \"SubnetCidrBlock\": \"10.0.0.1/24\"\n                    }\n                }\n            },\n            \"Operator\": \"3783892123\",\n            \"CreateTime\": \"2024-01-01 12:00:00\",\n            \"UpdateTime\": \"2024-01-01 12:00:00\"\n        },\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取Tcc数据目录详情"
+      }
+    ],
+    "DescribeTccCatalogs": [
+      {
+        "document": "获取Tcc数据目录列表",
+        "input": "POST / HTTP/1.1\nHost: tccatalog.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTccCatalogs\n<公共请求参数>\n\n{\n    \"CatalogId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TccCatalogSet\": [\n            {\n                \"Id\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n                \"Name\": \"TccHiveCatalog\",\n                \"Type\": \"TCC-HIVE\",\n                \"Status\": 2,\n                \"Operator\": \"3783892123\",\n                \"CreateTime\": \"2024-01-01 12:00:00\",\n                \"UpdateTime\": \"2024-01-01 12:00:00\"\n            }\n        ],\n        \"Total\": 10,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取Tcc数据目录列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}
