@@ -1,43 +1,4 @@
-**Example 1: 更新云数据源**
-
-
-
-Input: 
-
-```
-tccli bi ModifyDatasourceCloud --cli-unfold-argument  \
-    --ServiceType abc \
-    --DbType abc \
-    --Charset abc \
-    --DbUser abc \
-    --DbPwd abc \
-    --DbName abc \
-    --SourceName abc \
-    --ProjectId abc \
-    --Vip abc \
-    --Vport abc \
-    --VpcId abc \
-    --UniqVpcId abc \
-    --RegionId abc \
-    --ExtraParam abc \
-    --Id 1 \
-    --InstanceId abc \
-    --ProdDbName abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": "abc",
-        "Extra": "abc",
-        "Msg": "abc",
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 2: 更新云数据库示例**
+**Example 1: 更新云数据库示例**
 
 
 
@@ -46,19 +7,19 @@ Input:
 ```
 tccli bi ModifyDatasourceCloud --cli-unfold-argument  \
     --Id 1 \
-    --ProjectId abc \
+    --ProjectId 21313 \
     --SourceName 数据库别名 \
     --Vport 3306 \
-    --VpcId 123456 \
+    --VpcId 2131314 \
     --Charset utf8 \
     --ExtraParam  \
     --DbUser root \
     --ServiceType {"Type":"Cloud","Region":"ap-guangzhou","InstanceId":"cdb-bdb0juh5"} \
     --DbType MySQL \
-    --UniqVpcId vpc-123 \
+    --UniqVpcId vpc-54343 \
     --RegionId gz \
     --DbName power-test \
-    --DbPwd 12345 \
+    --DbPwd 2424***231312 \
     --Vip 
 ```
 

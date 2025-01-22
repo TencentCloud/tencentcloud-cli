@@ -31,17 +31,17 @@
           "example": "queue-xxxxx",
           "member": "string",
           "name": "DeadLetterQueue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "死信队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "deadletterQueue",
           "member": "string",
           "name": "DeadLetterQueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -51,7 +51,7 @@
           "example": "300",
           "member": "uint64",
           "name": "MaxTimeToLive",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -61,7 +61,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Policy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -71,7 +71,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxReceiveCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -87,17 +87,17 @@
           "example": "queue-xxxxxxx",
           "member": "string",
           "name": "QueueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "testqueue",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -128,7 +128,7 @@
         {
           "disabled": false,
           "document": "精确匹配QueueName",
-          "example": "test",
+          "example": "testQueue",
           "member": "string",
           "name": "QueueName",
           "required": false,
@@ -171,7 +171,7 @@
         {
           "disabled": false,
           "document": "队列详情列表。",
-          "example": "[]",
+          "example": "无",
           "member": "QueueSet",
           "name": "QueueSet",
           "output_required": true,
@@ -193,7 +193,7 @@
         {
           "disabled": false,
           "document": "标签匹配。",
-          "example": "aa",
+          "example": "key1",
           "member": "string",
           "name": "TagKey",
           "required": false,
@@ -220,7 +220,7 @@
         {
           "disabled": false,
           "document": "目前只支持过滤TopicName ， 且只能填一个过滤值。",
-          "example": "[]",
+          "example": "[{\"Values\":[\"testtopic\"],\"Name\":\"topicName\"}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -254,7 +254,7 @@
         {
           "disabled": false,
           "document": "主题详情列表。",
-          "example": "[]",
+          "example": "无",
           "member": "TopicSet",
           "name": "TopicSet",
           "output_required": true,
@@ -305,7 +305,7 @@
           "example": "queue-xxxxxxxx",
           "member": "string",
           "name": "QueueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -315,7 +315,7 @@
           "example": "10",
           "member": "uint64",
           "name": "RewindSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -325,7 +325,7 @@
           "example": "100000004332",
           "member": "uint64",
           "name": "CreateUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -335,7 +335,7 @@
           "example": "1645087331",
           "member": "uint64",
           "name": "LastModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -345,17 +345,17 @@
           "example": "30",
           "member": "uint64",
           "name": "VisibilityTimeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "消息队列名字。",
-          "example": "test",
+          "example": "testqueue",
           "member": "string",
           "name": "QueueName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -365,7 +365,7 @@
           "example": "false",
           "member": "bool",
           "name": "Trace",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -375,7 +375,7 @@
           "example": "{\"key\":\"value\"}",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -385,7 +385,7 @@
           "example": "10",
           "member": "uint64",
           "name": "RewindMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -395,7 +395,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MaxDelaySeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -405,7 +405,7 @@
           "example": "1",
           "member": "TransactionPolicy",
           "name": "TransactionPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -415,7 +415,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -425,7 +425,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DelayMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -435,7 +435,7 @@
           "example": "10000000000",
           "member": "uint64",
           "name": "MaxMsgHeapNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -445,7 +445,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PollingWaitSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -455,7 +455,7 @@
           "example": "5000",
           "member": "uint64",
           "name": "Bps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -465,7 +465,7 @@
           "example": "1",
           "member": "uint64",
           "name": "InactiveMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -475,7 +475,7 @@
           "example": "1",
           "member": "DeadLetterPolicy",
           "name": "DeadLetterPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -485,7 +485,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ActiveMsgNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -495,7 +495,7 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxMsgSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -505,7 +505,7 @@
           "example": "1645087331",
           "member": "uint64",
           "name": "MinMsgTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -515,7 +515,7 @@
           "example": "1",
           "member": "DeadLetterSource",
           "name": "DeadLetterSource",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -525,7 +525,7 @@
           "example": "false",
           "member": "bool",
           "name": "Transaction",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -535,7 +535,7 @@
           "example": "5000",
           "member": "uint64",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -545,7 +545,7 @@
           "example": "1645087331",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -555,7 +555,7 @@
           "example": "1",
           "member": "int64",
           "name": "Migrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -568,20 +568,20 @@
         {
           "disabled": false,
           "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "testKey",
           "member": "string",
           "name": "TagKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "testvalue",
           "member": "string",
           "name": "TagValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -597,7 +597,7 @@
           "example": "12",
           "member": "uint64",
           "name": "MsgCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -607,7 +607,7 @@
           "example": "topic-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -617,7 +617,7 @@
           "example": "1024",
           "member": "uint64",
           "name": "MaxMsgSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -627,7 +627,7 @@
           "example": "0",
           "member": "bool",
           "name": "Trace",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -637,7 +637,7 @@
           "example": "{\"key\":\"value\"}",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -647,7 +647,7 @@
           "example": "10000004321",
           "member": "uint64",
           "name": "CreateUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -657,17 +657,17 @@
           "example": "1",
           "member": "uint64",
           "name": "FilterType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "testTopic",
           "member": "string",
           "name": "TopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -677,7 +677,7 @@
           "example": "1645087331",
           "member": "uint64",
           "name": "LastModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -687,7 +687,7 @@
           "example": "86400",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -697,7 +697,7 @@
           "example": "5000",
           "member": "uint64",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -707,7 +707,7 @@
           "example": "1645087331",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -717,7 +717,7 @@
           "example": "1",
           "member": "int64",
           "name": "Migrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

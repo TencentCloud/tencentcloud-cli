@@ -7,18 +7,18 @@ Input:
 ```
 tccli bi DeleteProject --cli-unfold-argument  \
     --Id 1 \
-    --Seed abc \
-    --DefaultPanelType 0
+    --Seed sdadfas \
+    --DefaultPanelType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Extra": "abc",
-        "Data": "abc",
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Extra": "额外参数",
+        "Data": "1",
+        "Msg": "成功",
+        "RequestId": "dsdlsdlcdfkdskask212"
     }
 }
 ```

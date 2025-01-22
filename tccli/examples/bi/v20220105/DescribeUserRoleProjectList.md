@@ -17,13 +17,13 @@ Output:
 {
     "Response": {
         "ErrorInfo": {
-            "ErrorTip": "abc",
-            "ErrorLevel": "abc",
-            "DocLink": "abc",
-            "FAQ": "abc",
-            "ReservedField": "abc"
+            "ErrorTip": "",
+            "ErrorLevel": "INFO",
+            "DocLink": "",
+            "FAQ": "",
+            "ReservedField": ""
         },
-        "Extra": "abc",
+        "Extra": "",
         "Data": {
             "Total": 0,
             "TotalPages": 0,
@@ -32,40 +32,40 @@ Output:
                     "Id": 1,
                     "RoleList": [
                         {
-                            "RoleName": "abc",
+                            "RoleName": "企业管理员",
                             "RoleId": 0,
-                            "ProjectId": 0,
-                            "ProjectName": "abc",
+                            "ProjectId": 210210,
+                            "ProjectName": "测试项目",
                             "ScopeType": 0,
-                            "ModuleCollection": "abc"
+                            "ModuleCollection": "project"
                         }
                     ],
                     "RoleIdList": [
                         1
                     ],
-                    "UserId": "abc",
-                    "UserName": "abc",
-                    "CorpId": "abc",
-                    "Email": "abc",
-                    "CreatedUser": "abc",
-                    "CreatedAt": "abc",
-                    "UpdatedUser": "abc",
-                    "UpdatedAt": "abc",
+                    "UserId": "21021",
+                    "UserName": "zhangsn",
+                    "CorpId": "1202101",
+                    "Email": "1213***@qq.com",
+                    "CreatedUser": "zhangsna",
+                    "CreatedAt": "zhangsna",
+                    "UpdatedUser": "zhangsna",
+                    "UpdatedAt": "2020-09-22 00:00:00",
                     "LastLogin": "2020-09-22T00:00:00+00:00",
                     "Status": 0,
-                    "PhoneNumber": "abc",
-                    "AreaCode": "abc",
+                    "PhoneNumber": "152****423",
+                    "AreaCode": "086",
                     "RootAccount": true,
                     "CorpAdmin": true,
-                    "AppUserId": "abc",
-                    "AppUserAliasName": "abc",
-                    "AppUserName": "abc",
+                    "AppUserId": "2103",
+                    "AppUserAliasName": "zhangsn",
+                    "AppUserName": "zhjang",
                     "InValidateAppRange": true
                 }
             ]
         },
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Msg": "成功",
+        "RequestId": "3211dfZ12-2331"
     }
 }
 ```

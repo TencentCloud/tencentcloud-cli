@@ -1,3 +1,67 @@
+# Release 3.0.1143.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 23 次发布
+
+发布时间：2025-01-23 01:08:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Project](http://document.tencentcloudapi.woa.com/document/product/1707/80324#Project)
+
+	* <font color="#dd0000">**修改成员**：</font>PanelScope, IsExternalManage, ManagePlatform, ConfigList
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 35 次发布
+
+发布时间：2025-01-23 01:16:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRedisTopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/85631)
+
+	* 新增入参：Offset
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 179 次发布
+
+发布时间：2025-01-23 01:18:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchOrganizationAuthorizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85691)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
 # Release 3.0.1142.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

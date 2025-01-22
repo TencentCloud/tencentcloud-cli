@@ -4763,7 +4763,7 @@
         {
           "disabled": false,
           "document": "操作记录总数",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
@@ -4773,7 +4773,7 @@
         {
           "disabled": false,
           "document": "操作记录具体数据",
-          "example": "无",
+          "example": "operations",
           "member": "InstanceOperation",
           "name": "Operations",
           "output_required": false,
@@ -4783,7 +4783,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "message",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -5457,7 +5457,7 @@
         {
           "disabled": false,
           "document": "慢查询时间",
-          "example": "123",
+          "example": "287",
           "member": "int64",
           "name": "QueryDurationMs",
           "required": true,
@@ -5762,7 +5762,7 @@
         {
           "disabled": false,
           "document": "记录列表",
-          "example": "[\"xx\",\"abc\"]",
+          "example": "[\"x1x\",\"ab2c\"]",
           "member": "SlowQueryRecord",
           "name": "SlowQueryRecords",
           "output_required": true,
@@ -5772,7 +5772,7 @@
         {
           "disabled": false,
           "document": "所有数据库名",
-          "example": "无",
+          "example": "[\"db1\",\"db2\"]",
           "member": "string",
           "name": "DBNameList",
           "output_required": false,
@@ -5782,7 +5782,7 @@
         {
           "disabled": false,
           "document": "所有catalog名",
-          "example": "无",
+          "example": "[\"c1\",\"c2\"]",
           "member": "string",
           "name": "CatalogNameList",
           "output_required": false,
@@ -6281,7 +6281,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "cdwdoris-xxx",
+          "example": "cdwdoris-qliqegj3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -6290,7 +6290,7 @@
         {
           "disabled": false,
           "document": "使用该用户进行操作，该用户需要有对应的权限。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
-          "example": "xx",
+          "example": "user1",
           "member": "string",
           "name": "UserName",
           "required": false,
@@ -6299,7 +6299,7 @@
         {
           "disabled": false,
           "document": "用户对应的密码。如果该TCHouse-D集群使用CAM用户注册内核账户，则不需要填写",
-          "example": "xx",
+          "example": "dsa***dazd",
           "member": "string",
           "name": "PassWord",
           "required": false,
@@ -6322,23 +6322,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "账户详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账户详细信息",
           "example": "无",
           "member": "AccountDetailInfo",
           "name": "AccountInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "与不同主机关联的权限配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "与不同主机关联的权限配置信息",
           "example": "无",
           "member": "PermissionHostInfo",
           "name": "Permissions",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8547,7 +8547,7 @@
         {
           "disabled": false,
           "document": "需要绑定资源组的用户信息，如果一个账户拥有多个主机信息，需要将这些信息都传入",
-          "example": "无",
+          "example": "bind_user",
           "member": "BindUser",
           "name": "BindUsers",
           "required": false,
@@ -8580,7 +8580,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "error message",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": false,
@@ -11394,7 +11394,7 @@
         {
           "disabled": false,
           "document": "要设置的属性键值对",
-          "example": "无",
+          "example": "properties",
           "member": "PropertiesMap",
           "name": "Properties",
           "required": false,

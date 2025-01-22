@@ -17,27 +17,27 @@ Output:
 {
     "Response": {
         "ErrorInfo": {
-            "ErrorTip": "abc",
-            "ErrorMessage": "abc",
-            "ErrorLevel": "abc",
-            "DocLink": "abc",
-            "FAQ": "abc",
-            "ReservedField": "abc"
+            "ErrorTip": "",
+            "ErrorMessage": "接口错误",
+            "ErrorLevel": "ERROR",
+            "DocLink": "",
+            "FAQ": "",
+            "ReservedField": ""
         },
-        "Extra": "abc",
+        "Extra": "",
         "Data": {
-            "PicType": "abc",
+            "PicType": "PNG",
             "List": [
                 {
-                    "Content": "abc",
-                    "WidgetId": "abc"
+                    "Content": "",
+                    "WidgetId": "saia192"
                 }
             ],
-            "TranId": "abc",
+            "TranId": "qwq211221",
             "TranStatus": 0
         },
-        "Msg": "abc",
-        "RequestId": "abc"
+        "Msg": "失败",
+        "RequestId": "ddsds122321-fdsd12"
     }
 }
 ```

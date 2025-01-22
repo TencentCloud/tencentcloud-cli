@@ -1,4 +1,4 @@
-**Example 1: 查询**
+**Example 1: 获取 Doris 用户的详细信息，包括账户信息、权限主机和权限配置。**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli cdwdoris DescribeUserPolicy --cli-unfold-argument  \
-    --InstanceId abc \
-    --UserName abc \
-    --PassWord abc \
-    --WhiteHost abc
+    --InstanceId cdwdoris-qliqegj3 \
+    --UserName user1 \
+    --PassWord 1****dz \
+    --WhiteHost %
 ```
 
 Output: 
@@ -17,28 +17,19 @@ Output:
 {
     "Response": {
         "AccountInfo": {
-            "UserName": "abc",
             "Host": "%",
-            "UserDescription": ""
+            "UserDescription": "",
+            "UserName": "user1"
         },
         "Permissions": {
-            "GlobalPermissions": null,
-            "CatalogPermissions": [
-                {
-                    "CatalogName": "internal",
-                    "Permissions": [
-                        "SELECT_PRIV",
-                        "LOAD_PRIV",
-                        "ALTER_PRIV",
-                        "CREATE_PRIV",
-                        "DROP_PRIV"
-                    ]
-                }
-            ],
+            "CatalogPermissions": null,
             "DatabasePermissions": null,
+            "GlobalPermissions": [
+                "ADMIN_PRIV"
+            ],
             "TablePermissions": null
         },
-        "RequestId": "xxx-xx-xx-xx-xxxx"
+        "RequestId": "4b63a3b4-2900-4d47-b536-2fd80ccc16dd"
     }
 }
 ```

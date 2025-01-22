@@ -7,11 +7,11 @@ Input:
 ```
 tccli bi ModifyUserRoleProject --cli-unfold-argument  \
     --ProjectId 0 \
-    --UserId abc \
+    --UserId 12233 \
     --RoleIdList 0 \
-    --Email abc \
-    --UserName abc \
-    --AppUserId abc
+    --Email 2313***312@qq.com \
+    --UserName zhangsn \
+    --AppUserId dsfg
 ```
 
 Output: 
@@ -19,16 +19,16 @@ Output:
 {
     "Response": {
         "ErrorInfo": {
-            "ErrorTip": "abc",
-            "ErrorLevel": "abc",
-            "DocLink": "abc",
-            "FAQ": "abc",
-            "ReservedField": "abc"
+            "ErrorTip": "",
+            "ErrorLevel": "INFO",
+            "DocLink": "",
+            "FAQ": "",
+            "ReservedField": ""
         },
-        "Extra": "abc",
-        "Msg": "abc",
-        "Data": "abc",
-        "RequestId": "abc"
+        "Extra": "",
+        "Msg": "成功",
+        "Data": "",
+        "RequestId": "sadd23jdsh-123cdjds"
     }
 }
 ```

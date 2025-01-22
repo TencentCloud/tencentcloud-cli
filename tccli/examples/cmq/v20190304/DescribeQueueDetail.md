@@ -16,7 +16,7 @@ Output:
             {
                 "Tags": [],
                 "QueueId": "queue-kc7m75to",
-                "QueueName": "test",
+                "QueueName": "testqueue",
                 "CreateUin": 20548499,
                 "Qps": 5000,
                 "Bps": 52428800,
@@ -48,7 +48,7 @@ Output:
             {
                 "Tags": [],
                 "QueueId": "queue-0v0y40j4",
-                "QueueName": "test123",
+                "QueueName": "test123aa",
                 "CreateUin": 20548499,
                 "Qps": 5000,
                 "Bps": 52428800,
@@ -65,7 +65,7 @@ Output:
                 "DeadLetterSource": [
                     {
                         "QueueId": "queue-kc7m75to",
-                        "QueueName": "test"
+                        "QueueName": "testawd"
                     }
                 ],
                 "DeadLetterPolicy": null,
