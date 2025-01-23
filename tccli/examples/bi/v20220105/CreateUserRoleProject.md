@@ -11,7 +11,7 @@ tccli bi CreateUserRoleProject --cli-unfold-argument  \
     --ProjectId 000 \
     --RoleIdList 100100 \
     --UserInfoList.0.UserName tommyho \
-    --UserInfoList.0.PhoneNumber 123456789 \
+    --UserInfoList.0.PhoneNumber 152****12313 \
     --UserInfoList.0.AreaCode 86 \
     --UserInfoList.0.UserId tommyho \
     --UserInfoList.0.Email 123@qq.com

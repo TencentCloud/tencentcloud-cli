@@ -266,7 +266,7 @@
         {
           "disabled": false,
           "document": "额外参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "返回为空",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -276,7 +276,7 @@
         {
           "disabled": false,
           "document": "结果数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"Data\": { \"Result\": true }",
           "member": "ApplyEmbedTokenInfo",
           "name": "Data",
           "output_required": true,
@@ -286,7 +286,7 @@
         {
           "disabled": false,
           "document": "结果描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "success",
+          "example": "成功",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -1531,7 +1531,7 @@
         {
           "disabled": false,
           "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "额外参数",
+          "example": "返回为空",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -1541,7 +1541,7 @@
         {
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "{\"Id\":1}",
           "member": "DataId",
           "name": "Data",
           "output_required": true,
@@ -1616,7 +1616,7 @@
         {
           "disabled": false,
           "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "返回为空",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -1810,7 +1810,7 @@
         {
           "disabled": false,
           "document": "catalog值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "presto catalog",
           "member": "string",
           "name": "Catalog",
           "output_required": true,
@@ -1840,7 +1840,7 @@
         {
           "disabled": false,
           "document": "数据源描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "描述",
+          "example": "数据源建表信息",
           "member": "string",
           "name": "Desc",
           "output_required": true,
@@ -1890,7 +1890,7 @@
         {
           "disabled": false,
           "document": "项目名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试项目",
+          "example": "bi项目",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -2825,7 +2825,7 @@
         {
           "disabled": false,
           "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"xx\":\"adfa\"}",
+          "example": "返回为空",
           "member": "string",
           "name": "Extra",
           "output_required": true,
@@ -2845,7 +2845,7 @@
         {
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"List\":\"\"}",
           "member": "ProjectListData",
           "name": "Data",
           "output_required": true,
@@ -3438,7 +3438,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "123",
+          "example": "110101",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3966,7 +3966,7 @@
         {
           "disabled": false,
           "document": "catalog值",
-          "example": "test",
+          "example": "presto catalog",
           "member": "string",
           "name": "Catalog",
           "required": false,
@@ -4239,7 +4239,7 @@
         {
           "disabled": false,
           "document": "返回数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "返回为null",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -4361,7 +4361,7 @@
         {
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "返回为null",
           "member": "string",
           "name": "Data",
           "output_required": true,

@@ -1,3 +1,60 @@
+# Release 3.0.1144.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 75 次发布
+
+发布时间：2025-01-24 01:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAICallExtractResult](http://document.tencentcloudapi.woa.com/document/product/679/85693)
+
+修改接口：
+
+* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
+
+	* 新增入参：WelcomeMessagePriority, ExtractConfig
+
+
+新增数据结构：
+
+* [AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement)
+* [AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement)
+* [AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo)
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 25 次发布
+
+发布时间：2025-01-24 01:25:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/68359)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+
+
+修改数据结构：
+
+* [EmailSender](http://document.tencentcloudapi.woa.com/document/product/1288/51053#EmailSender)
+
+	* 新增成员：SmtpPwdType
+
+
+
+
 # Release 3.0.1143.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

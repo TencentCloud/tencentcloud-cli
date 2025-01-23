@@ -7,7 +7,7 @@ Input:
 ```
 tccli ses UpdateEmailTemplate --cli-unfold-argument  \
     --TemplateID 10091 \
-    --TemplateName xx \
+    --TemplateName myTemplate \
     --TemplateContent.Html PGh0bWw+dGhpcyBpcyBhIGV4YW1wbGUge3tjb2RlfX08L2h0bWw+ \
     --TemplateContent.Text dGhpcyBpcyBhIGV4YW1wbGU=
 ```

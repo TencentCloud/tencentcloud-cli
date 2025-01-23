@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli rum DescribeAppSingleCaseDetailList --cli-unfold-argument  \
-    --Filter [] \
+    --Filter {"category__in":["PERF_CRASH"]} \
     --ProjectID 1 \
     --FilterSimple {"entrance_time__gte":1671025353000,"entrance_time__lte":1671284553000,"feature_md5":"8aba3b8538d7d843c558012c11219e1d","category__in":["PERF_CRASH"]} \
-    --From singleton_v2_dist \
+    --From db.name \
     --Fields [["as","device_id","device_id"],"entrance_time",["as","feature_md5","feature_md5"],["as","version","version"],["as","id","id"],["as","user_id","user_id"]] \
     --Limit 200 \
     --OrderBy 'entrance_time desc'

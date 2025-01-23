@@ -369,7 +369,7 @@
         {
           "disabled": false,
           "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com。如需填写发件人说明，请按照\n发信人 &lt;邮件地址&gt; 的方式填写，例如：\n腾讯云团队 &lt;noreply@mail.qcloud.com&gt;",
-          "example": "abc@ef.com",
+          "example": "test@example.com",
           "member": "string",
           "name": "FromEmailAddress",
           "required": true,
@@ -378,7 +378,7 @@
         {
           "disabled": false,
           "document": "收件人列表ID",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
           "required": true,
@@ -405,7 +405,7 @@
         {
           "disabled": false,
           "document": "邮件的“回复”电子邮件地址。可以填写您能收到邮件的邮箱地址，可以是个人邮箱。如果不填，收件人的回复邮件将会发送失败。",
-          "example": "abc@ef.com",
+          "example": "test@example.com",
           "member": "string",
           "name": "ReplyToAddresses",
           "required": false,
@@ -483,7 +483,7 @@
         {
           "disabled": false,
           "document": "发送任务ID",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -688,7 +688,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2024-06-26 16:46:30",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -724,7 +724,7 @@
         {
           "disabled": false,
           "document": "邮箱被拉黑时间",
-          "example": "无",
+          "example": "2024-12-24 02:09:33",
           "member": "datetime",
           "name": "BounceTime",
           "output_required": true,
@@ -734,7 +734,7 @@
         {
           "disabled": false,
           "document": "被拉黑的邮箱地址",
-          "example": "无",
+          "example": "block@example.com",
           "member": "string",
           "name": "EmailAddress",
           "output_required": true,
@@ -744,7 +744,7 @@
         {
           "disabled": false,
           "document": "被拉黑的理由\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "552 1 Requested mail action aborted, mailbox not found",
           "member": "string",
           "name": "IspDesc",
           "output_required": false,
@@ -882,7 +882,7 @@
         {
           "disabled": false,
           "document": "您的发信域名，建议使用三级以上域名。例如：mail.qcloud.com。",
-          "example": "",
+          "example": "mail.qcloud.com",
           "member": "string",
           "name": "EmailIdentity",
           "required": true,
@@ -897,27 +897,30 @@
         {
           "disabled": false,
           "document": "验证类型。固定值：DOMAIN",
-          "example": "",
+          "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否已通过验证",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "VerifiedForSendingStatus",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "需要配置的DNS信息",
-          "example": "",
+          "example": "无",
           "member": "DNSAttributes",
           "name": "Attributes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -963,7 +966,7 @@
         {
           "disabled": false,
           "document": "用户appId, 直接访问腾讯云客户不用填写该字段",
-          "example": "1345",
+          "example": "1",
           "member": "uint64",
           "name": "UserAppId",
           "required": false,
@@ -978,10 +981,10 @@
         {
           "disabled": false,
           "document": "模板id",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TemplateID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1000,7 +1003,7 @@
         {
           "disabled": false,
           "document": "收件人列表ID",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
           "required": true,
@@ -1009,7 +1012,7 @@
         {
           "disabled": false,
           "document": "邮箱",
-          "example": "[\"xxx@abc.com\"]",
+          "example": "[\"example@gmail.com\"]",
           "member": "string",
           "name": "Emails",
           "required": true,
@@ -1021,6 +1024,56 @@
     "CreateReceiverDetailResponse": {
       "document": "CreateReceiverDetail返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "收件人总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际上传数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "ValidCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据过长数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "TooLongCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮件地址为空数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "EmptyEmailCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重复数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "RepeatCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1146,10 +1199,10 @@
         {
           "disabled": false,
           "document": "收件人列表id，后续根据收件人列表id上传收件人地址",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1171,6 +1224,7 @@
           "example": "2021-09-11 09:10:11",
           "member": "string",
           "name": "BeginTime",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1181,6 +1235,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IntervalTime",
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1191,12 +1246,13 @@
           "example": "0",
           "member": "uint64",
           "name": "TermCycle",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DNSAttributes": {
       "document": "用于描述DNS记录的域名、记录类型、期望得到的值、目前配置的值",
@@ -1204,50 +1260,50 @@
         {
           "disabled": false,
           "document": "记录类型 CNAME | A | TXT | MX",
-          "example": "",
+          "example": "TXT",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "example.com",
           "member": "string",
           "name": "SendDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "需要配置的值",
-          "example": "",
+          "example": "v=spf1 include:qcloudmail.com ~all",
           "member": "string",
           "name": "ExpectedValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "腾讯云目前检测到的值",
-          "example": "",
+          "example": "v=spf1 include:qcloudmail.com ~all",
           "member": "string",
           "name": "CurrentValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "检测是否通过，创建时默认为false",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -1260,7 +1316,7 @@
         {
           "disabled": false,
           "document": "需要清除的黑名单邮箱列表，数组长度至少为1",
-          "example": "",
+          "example": "example@gmail.com",
           "member": "string",
           "name": "EmailAddressList",
           "required": true,
@@ -1314,7 +1370,7 @@
         {
           "disabled": false,
           "document": "发信地址",
-          "example": "",
+          "example": "test@example.com",
           "member": "string",
           "name": "EmailAddress",
           "required": true,
@@ -1341,7 +1397,7 @@
         {
           "disabled": false,
           "document": "发信域名",
-          "example": "",
+          "example": "example.com",
           "member": "string",
           "name": "EmailIdentity",
           "required": true,
@@ -1478,32 +1534,42 @@
         {
           "disabled": false,
           "document": "发信地址",
-          "example": "",
+          "example": "sender@example.com",
           "member": "string",
           "name": "EmailAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发信人别名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "发信人别名",
+          "example": "name",
           "member": "string",
           "name": "EmailSenderName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "创建时间",
+          "example": "2024-12-10 16:44:16",
           "member": "uint64",
           "name": "CreatedTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "smtp密码类型,0=没有设置密码,1=已经设置了密码",
+          "example": "0",
+          "member": "uint64",
+          "name": "SmtpPwdType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1514,7 +1580,7 @@
         {
           "disabled": false,
           "document": "发信域名",
-          "example": "",
+          "example": "example.com",
           "member": "string",
           "name": "EmailIdentity",
           "required": true,
@@ -1529,27 +1595,30 @@
         {
           "disabled": false,
           "document": "验证类型。固定值：DOMAIN",
-          "example": "",
+          "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否已通过验证",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "VerifiedForSendingStatus",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "DNS配置详情",
-          "example": "",
+          "example": "无",
           "member": "DNSAttributes",
           "name": "Attributes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1843,7 +1912,7 @@
         {
           "disabled": false,
           "document": "已废弃",
-          "example": "无",
+          "example": "已废弃",
           "member": "string",
           "name": "TaskID",
           "required": false,
@@ -1858,7 +1927,7 @@
         {
           "disabled": false,
           "document": "黑名单列表",
-          "example": "    \"BlackList\": [       {         \"BounceTime\": \"2023-09-06 11:21:35\",         \"EmailAddress\": \"xxx@gmail.com\",         \"IspDesc\": \"550 5.1.1 The email account that you tried to reach does not exist. Please try\\n5.1.1 double-checking the recipient's email addre\"       }     ]",
+          "example": "无",
           "member": "BlackEmailAddress",
           "name": "BlackList",
           "output_required": true,
@@ -1968,12 +2037,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "发信地址列表详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "发信地址列表详情",
+          "example": "[{\"EmailAddress\":\"one@mail.cloudses.com\",\"EmailSenderName\":\"oneName\",\"CreatedTimestamp\":1685096987,\"SmtpPwdType\":0},{\"EmailAddress\":\"two@mail.cloudses.com\",\"EmailSenderName\":\"twoName\",\"CreatedTimestamp\":1682393466,\"SmtpPwdType\":1}]",
           "member": "EmailSender",
           "name": "EmailSenders",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2093,7 +2163,7 @@
         {
           "disabled": false,
           "document": "收件人列表ID,CreateReceiver接口创建收件人列表时会返回该值",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
           "required": true,
@@ -2120,7 +2190,7 @@
         {
           "disabled": false,
           "document": "收件人地址，长度0-50，示例：xxx@te.com，支持模糊查询",
-          "example": "xxx@te.com",
+          "example": "test@example.com",
           "member": "string",
           "name": "Email",
           "required": false,
@@ -2162,7 +2232,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -2256,10 +2326,10 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2269,7 +2339,7 @@
           "example": "无",
           "member": "ReceiverData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2315,7 +2385,7 @@
         {
           "disabled": false,
           "document": "收件人列表ID",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
           "required": false,
@@ -2339,10 +2409,10 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2352,7 +2422,7 @@
           "example": "无",
           "member": "SendTaskData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2371,7 +2441,7 @@
         {
           "disabled": false,
           "document": "收件人列表ID",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
           "output_required": true,
@@ -2548,7 +2618,7 @@
         {
           "disabled": false,
           "document": "收信人邮箱地址，最多支持群发50人。注意：邮件内容会显示所有收件人地址，非群发邮件请多次调用API发送。",
-          "example": "无",
+          "example": "destination@mail.qcloud.com",
           "member": "string",
           "name": "Destination",
           "required": true,
@@ -2575,7 +2645,7 @@
         {
           "disabled": false,
           "document": "抄送人邮箱地址，最多支持抄送20人。",
-          "example": "无",
+          "example": "cc@mail.qcloud.com",
           "member": "string",
           "name": "Cc",
           "required": false,
@@ -2583,8 +2653,8 @@
         },
         {
           "disabled": false,
-          "document": "密送人邮箱地址，最多支持抄送20人。",
-          "example": "无",
+          "document": "密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。",
+          "example": "bcc@mail.qcloud.com",
           "member": "string",
           "name": "Bcc",
           "required": false,
@@ -2687,27 +2757,27 @@
           "example": "qcloudses-30-4123414323-date-20210101094334-syNARhMTbKI1",
           "member": "string",
           "name": "MessageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "收件人邮箱",
-          "example": "abc@ef.com",
+          "example": "address@example.com",
           "member": "string",
           "name": "ToEmailAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发件人邮箱",
-          "example": "abc@ef.com",
+          "example": "address@example.com",
           "member": "string",
           "name": "FromEmailAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2717,7 +2787,7 @@
           "example": "0",
           "member": "int64",
           "name": "SendStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2727,7 +2797,7 @@
           "example": "0",
           "member": "int64",
           "name": "DeliverStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2737,7 +2807,7 @@
           "example": "无",
           "member": "string",
           "name": "DeliverMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2747,7 +2817,7 @@
           "example": "1609831698",
           "member": "int64",
           "name": "RequestTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2757,7 +2827,7 @@
           "example": "1609831698",
           "member": "int64",
           "name": "DeliverTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2767,7 +2837,7 @@
           "example": "true",
           "member": "bool",
           "name": "UserOpened",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2777,7 +2847,7 @@
           "example": "true",
           "member": "bool",
           "name": "UserClicked",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2787,7 +2857,7 @@
           "example": "true",
           "member": "bool",
           "name": "UserUnsubscribed",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2797,7 +2867,7 @@
           "example": "true",
           "member": "bool",
           "name": "UserComplainted",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -2813,27 +2883,27 @@
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发信地址",
-          "example": "123@abc.com",
+          "example": "address@example.com",
           "member": "string",
           "name": "FromEmailAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "收件人列表Id",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "ReceiverId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2843,7 +2913,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2853,7 +2923,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2863,7 +2933,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RequestCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2873,7 +2943,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SendCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2883,7 +2953,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CacheCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2893,7 +2963,7 @@
           "example": "2021-09-09 12:12:13",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2903,7 +2973,7 @@
           "example": "2021-09-09 12:12:13",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2913,7 +2983,7 @@
           "example": "邮件主题",
           "member": "string",
           "name": "Subject",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2923,7 +2993,7 @@
           "example": "无",
           "member": "Template",
           "name": "Template",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2933,7 +3003,7 @@
           "example": "无",
           "member": "CycleEmailParam",
           "name": "CycleParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2943,7 +3013,7 @@
           "example": "无",
           "member": "TimedEmailParam",
           "name": "TimedParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2953,7 +3023,7 @@
           "example": "余额不足",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2963,7 +3033,7 @@
           "example": "收件人列表名称",
           "member": "string",
           "name": "ReceiversName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2976,22 +3046,20 @@
         {
           "disabled": false,
           "document": "base64之后的Html代码。需要包含所有的代码信息，不要包含外部css，否则会导致显示格式错乱",
-          "example": "",
+          "example": "PGh0bWw+PGhlYWQ+PHRpdGxlPkV4YW1wbGUgSFRNTDwvdGl0bGU+PC9oZWFkPjxib2R5PjxwPkhlbGxvLCB3b3JsZDwvcD48L2JvZHk+PC9odG1sPg==",
           "member": "string",
           "name": "Html",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "base64之后的纯文本信息，如果没有Html，邮件中会直接显示纯文本；如果有Html，它代表邮件的纯文本样式",
-          "example": "",
+          "example": "SGVsbG8sIHdvcmxkIQ==",
           "member": "string",
           "name": "Text",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3002,9 +3070,10 @@
         {
           "disabled": false,
           "document": "模板ID。如果没有模板，请先新建一个",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TemplateID",
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3012,15 +3081,16 @@
         {
           "disabled": false,
           "document": "模板中的变量参数，请使用json.dump将json对象格式化为string类型。该对象是一组键值对，每个Key代表模板中的一个变量，模板中的变量使用{{键}}表示，相应的值在发送时会被替换为{{值}}。\n注意：参数值不能是html等复杂类型的数据。\n示例：{\"name\":\"xxx\",\"age\":\"xx\"}",
-          "example": "{\"name\":\"xxx\",\"age\":\"xx\"}",
+          "example": "{\"name\":\"andy\",\"age\":\"24\"}",
           "member": "string",
           "name": "TemplateData",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TemplateContent": {
       "document": "模板内容，TEXT和HTML必须至少存在一项，建议使用TEXT和HTML的组合",
@@ -3113,12 +3183,13 @@
           "example": "2021-09-11 09:10:11",
           "member": "string",
           "name": "BeginTime",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "UpdateCustomBlackListRequest": {
       "document": "UpdateCustomBlackList请求参数结构体",
@@ -3171,7 +3242,7 @@
         {
           "disabled": false,
           "document": "请求验证的域名",
-          "example": "",
+          "example": "example.com",
           "member": "string",
           "name": "EmailIdentity",
           "required": true,
@@ -3186,27 +3257,30 @@
         {
           "disabled": false,
           "document": "验证类型。固定值：DOMAIN",
-          "example": "",
+          "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否已通过验证",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "VerifiedForSendingStatus",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "需要配置的DNS信息",
-          "example": "",
+          "example": "无",
           "member": "DNSAttributes",
           "name": "Attributes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3225,7 +3299,7 @@
         {
           "disabled": false,
           "document": "smtp密码，长度限制64",
-          "example": "123",
+          "example": "yourPassword",
           "member": "string",
           "name": "Password",
           "required": true,
@@ -3234,7 +3308,7 @@
         {
           "disabled": false,
           "document": "发信邮箱,长度限制128",
-          "example": "123@abc.com",
+          "example": "address@example.com",
           "member": "string",
           "name": "EmailAddress",
           "required": true,
@@ -3279,7 +3353,7 @@
         {
           "disabled": false,
           "document": "模板名字",
-          "example": "xx",
+          "example": "myTemplateName",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -3288,7 +3362,7 @@
         {
           "disabled": false,
           "document": "邮件模板分类，直接访问腾讯云用户会忽略该字段",
-          "example": "xx",
+          "example": "notice",
           "member": "string",
           "name": "Category",
           "required": false,
@@ -3297,7 +3371,7 @@
         {
           "disabled": false,
           "document": "用户账号id， 直接访问腾讯云用户不用传该字段",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "UserAppId",
           "required": false,

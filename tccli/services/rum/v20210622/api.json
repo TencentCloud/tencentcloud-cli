@@ -765,7 +765,7 @@
         {
           "disabled": false,
           "document": "uin：业务方标识",
-          "example": "123123",
+          "example": "136",
           "member": "string",
           "name": "WhitelistUin",
           "required": true,
@@ -789,7 +789,7 @@
         {
           "disabled": false,
           "document": "消息",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Msg",
           "output_required": true,
@@ -992,10 +992,10 @@
         {
           "disabled": false,
           "document": "消息success",
-          "example": "无",
+          "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1059,7 +1059,7 @@
         {
           "disabled": false,
           "document": "group by 条件",
-          "example": "无",
+          "example": "[\"request_cnt\"]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -1068,7 +1068,7 @@
         {
           "disabled": false,
           "document": "order by 条件",
-          "example": "无",
+          "example": "[\"request_cnt desc\"]",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1177,7 +1177,7 @@
         {
           "disabled": false,
           "document": "group by 条件",
-          "example": "无",
+          "example": "[\"launch_cnt\"]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -1186,7 +1186,7 @@
         {
           "disabled": false,
           "document": "order by 条件",
-          "example": "无",
+          "example": "[\"launch_cnt desc\"]",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1268,7 +1268,7 @@
         {
           "disabled": false,
           "document": "查询指标 field",
-          "example": "[[\\\"as\\\",[\\\"if\\\",[\\\"equals\\\",\\\"launch_cnt\\\",[\\\"toInt64\\\",0]],0,[",
+          "example": "\"[[\\\"as\\\",\\\"device_id\\\",\\\"device_id\\\"],\\\"entrance_time\\\",[\\\"as\\\",\\\"feature_md5\\\",\\\"feature_md5\\\"],[\\\"as\\\",\\\"version\\\",\\\"version\\\"],[\\\"as\\\",\\\"id\\\",\\\"id\\\"],[\\\"as\\\",\\\"user_id\\\",\\\"user_id\\\"]]\"",
           "member": "string",
           "name": "Fields",
           "required": true,
@@ -1277,7 +1277,7 @@
         {
           "disabled": false,
           "document": "查询的过滤条件",
-          "example": "[\\\"or\\\",[\\\"and\\\",[\\\"equals\\\",\\\"category\\\",\\\"'PERF_CRASH'\\\"],[\\\"i",
+          "example": "\"{\"category__in\\\":[\\\"PERF_CRASH\\\"]}\"",
           "member": "string",
           "name": "Filter",
           "required": true,
@@ -1295,7 +1295,7 @@
         {
           "disabled": false,
           "document": "group by 条件",
-          "example": "无",
+          "example": "[\"entrance_time\"]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -1304,7 +1304,7 @@
         {
           "disabled": false,
           "document": "order by 条件",
-          "example": "无",
+          "example": "[\"entrance_time desc\"]",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1313,7 +1313,7 @@
         {
           "disabled": false,
           "document": "limit 参数",
-          "example": "1",
+          "example": "8",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1404,7 +1404,7 @@
         {
           "disabled": false,
           "document": "group by 条件",
-          "example": "无",
+          "example": "[\"app_id\"]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -1413,7 +1413,7 @@
         {
           "disabled": false,
           "document": "order by 条件",
-          "example": "无",
+          "example": "[\"crash_cnt desc\"]",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -1504,7 +1504,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -1585,7 +1585,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -1594,7 +1594,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -1681,7 +1681,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"Result\": \"{\\\"request_id\\\":\\\"44202a67-c864-4d29-82f4-bfd483327e60\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"},{\\\"statement_id\\\":1,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -1739,7 +1739,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -1820,7 +1820,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -1829,7 +1829,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -1907,7 +1907,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"97e9e8cc-e106-4034-889c-c8f8d3451057\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -1965,7 +1965,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -2046,7 +2046,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -2055,7 +2055,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -2160,7 +2160,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\",",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -2218,7 +2218,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -2299,7 +2299,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -2308,7 +2308,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -2395,7 +2395,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"1cf7b9da-6160-4176-a46d-a88bf7a152bb\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -2453,7 +2453,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -2534,7 +2534,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -2543,7 +2543,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -2657,7 +2657,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"d446c290-7034-47d3-8d72-46e7a692f5ac\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -2712,10 +2712,10 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\",",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2770,7 +2770,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -2851,7 +2851,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -2860,7 +2860,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -2938,7 +2938,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -3059,7 +3059,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -3068,7 +3068,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -3077,7 +3077,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -3173,7 +3173,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"ddec0dc8-3268-4571-9ac0-566ae7537495\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0},{\\\"statement_id\\\":2,\\\"total\\\":0},{\\\"statement_id\\\":3,\\\"total\\\":0}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -3231,7 +3231,7 @@
         {
           "disabled": false,
           "document": "自定义2",
-          "example": "abc",
+          "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
           "required": false,
@@ -3312,7 +3312,7 @@
         {
           "disabled": false,
           "document": "自定义3",
-          "example": "abc",
+          "example": "normal",
           "member": "string",
           "name": "ExtThird",
           "required": false,
@@ -3321,7 +3321,7 @@
         {
           "disabled": false,
           "document": "自定义1",
-          "example": "abc",
+          "example": "offline",
           "member": "string",
           "name": "ExtFirst",
           "required": false,
@@ -3390,7 +3390,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -3698,7 +3698,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"4d50a7e7-cb3a-47af-a4ff-f545bfd54880\\\",\\\"results\\\":[{\\\"statement_id\\\":1,\\\"series\\\":[{\\\"name\\\":\\\"log_url_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\"],\\\"values\\\":[],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -3720,7 +3720,7 @@
         {
           "disabled": false,
           "document": "查询字符串",
-          "example": "\"\"",
+          "example": "\"select delta(count) as allCount from db.name where time >= 1621240040s and time <= 1621243620s and id='1613' group by \\\"ext3\\\" slimit 1000\"",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -3744,10 +3744,10 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\",",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4449,7 +4449,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "无",
+          "example": "\"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -5514,7 +5514,7 @@
         {
           "disabled": false,
           "document": "field条件",
-          "example": "无",
+          "example": "[\"msg\",\"url\"]",
           "member": "string",
           "name": "Fields",
           "required": false,
@@ -5529,7 +5529,7 @@
         {
           "disabled": false,
           "document": "返回字符串",
-          "example": "无",
+          "example": "{ \t\"RequestId\": \"da2124e7-3dec-47d8-a3e2-0a84b9128571\", \t\"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"id\\\":234875,\\\"name\\\":\\\"132445_log\\\",\\\"message\\\":\\\"\\\"},\\\"msg\\\":\\\"\\\"}\" }",
           "member": "string",
           "name": "Result",
           "output_required": true,

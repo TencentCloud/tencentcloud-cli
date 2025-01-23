@@ -9,7 +9,7 @@ tccli ses ListReceivers --cli-unfold-argument  \
     --Status 1 \
     --Offset 1 \
     --Limit 1 \
-    --KeyWord xx
+    --KeyWord keyword
 ```
 
 Output: 
@@ -24,10 +24,10 @@ Output:
                 "ReceiverId": 123,
                 "ReceiversName": "name",
                 "CreateTime": "2021-09-28 16:40:35",
-                "Desc": "描述"
+                "Desc": "some description"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "38049379278d43208c59916a4806b0c4"
     }
 }
 ```

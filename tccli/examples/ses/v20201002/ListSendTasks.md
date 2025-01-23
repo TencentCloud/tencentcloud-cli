@@ -30,7 +30,7 @@ Output:
                 "TaskStatus": 1,
                 "ReceiverId": 1,
                 "RequestCount": 1,
-                "TaskId": "123",
+                "TaskId": "1",
                 "TaskType": 1,
                 "Template": {
                     "TemplateData": "{\"name\":\"name\"}",
@@ -47,7 +47,7 @@ Output:
                 "ReceiversName": "名称"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "38049379278d43208c59916a4806b0c4"
     }
 }
 ```

@@ -1,52 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 商业智能分析 BI(bi) 版本：2022-01-05
+## 云联络中心(ccc) 版本：2020-02-10
 
-### 第 23 次发布
+### 第 75 次发布
 
-发布时间：2025-01-23 01:08:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Project](http://document.tencentcloudapi.woa.com/document/product/1707/80324#Project)
-
-	* <font color="#dd0000">**修改成员**：</font>PanelScope, IsExternalManage, ManagePlatform, ConfigList
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
-
-### 第 35 次发布
-
-发布时间：2025-01-23 01:16:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeRedisTopHotKeys](http://document.tencentcloudapi.woa.com/document/product/1130/85631)
-
-	* 新增入参：Offset
-
-
-
-
-## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 179 次发布
-
-发布时间：2025-01-23 01:18:55
+发布时间：2025-01-24 01:10:14
 
 本次发布包含了以下内容：
 
@@ -54,11 +12,46 @@
 
 新增接口：
 
-* [CreateBatchOrganizationAuthorizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85691)
+* [DescribeAICallExtractResult](http://document.tencentcloudapi.woa.com/document/product/679/85693)
+
+修改接口：
+
+* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
+
+	* 新增入参：WelcomeMessagePriority, ExtractConfig
+
+
+新增数据结构：
+
+* [AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement)
+* [AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement)
+* [AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo)
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 25 次发布
+
+发布时间：2025-01-24 01:25:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/68359)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+
+
+修改数据结构：
+
+* [EmailSender](http://document.tencentcloudapi.woa.com/document/product/1288/51053#EmailSender)
+
+	* 新增成员：SmtpPwdType
+
 
 
 
@@ -14043,6 +14036,31 @@
 
 
 ## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 75 次发布
+
+发布时间：2025-01-24 01:10:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAICallExtractResult](http://document.tencentcloudapi.woa.com/document/product/679/85693)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
+
+	* 新增入参：WelcomeMessagePriority, ExtractConfig
+
+
+新增数据结构：
+
+* [[AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement))
+* [[AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement))
+* [[AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo))
 
 ### 第 74 次发布
 
@@ -59545,7 +59563,7 @@
 
 新增接口：
 
-* [[CreateBatchOrganizationAuthorizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85691)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateBatchOrganizationAuthorizationUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85691)
 
 ### 第 178 次发布
 
@@ -96156,6 +96174,28 @@
 
 
 ## 邮件推送(ses) 版本：2020-10-02
+
+### 第 25 次发布
+
+发布时间：2025-01-24 01:25:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/68359)
+
+	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
+
+
+修改数据结构：
+
+* [EmailSender](http://document.tencentcloudapi.woa.com/document/product/1288/51053#EmailSender)
+
+	* 新增成员：SmtpPwdType
+
 
 ### 第 24 次发布
 
