@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "RequestId": "763188d1-9f99-45e8-8bbf-bcdffa8f58f0",
-        "Result": "无"
+        "Result": "{\"code\":0,\"data\":{\"id\":1,\"name\":\"132445_log\",\"message\":\"\"},\"msg\":\"\"}"
     }
 }
 ```
@@ -34,16 +34,16 @@ tccli rum DescribeRumLogExport --cli-unfold-argument  \
     --Name logDemo \
     --Fields date \
     --StartTime 1714103013 \
-    --Query id:0 \
+    --Query id:15 \
     --EndTime 1714103013 \
-    --ID 0
+    --ID 15
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Result": "Traceback (most recent call last):\n  File \"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\", line 1763, in _execute\n    result = self.prepare()\n  File \"/opt/app-root/lib64/python3.8/site-packages/tornado/web.py\", line 2538, in prepare\n    raise HTTPError(self._status_code)\ntornado.web.HTTPError: HTTP 404: Not Found\n",
+        "Result": "{\"code\":0,\"data\":{\"id\":15,\"name\":\"132495_log\",\"message\":\"\"},\"msg\":\"\"}",
         "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
     }
 }

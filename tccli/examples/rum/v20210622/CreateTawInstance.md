@@ -10,7 +10,7 @@ tccli rum CreateTawInstance --cli-unfold-argument  \
     --InstanceName ****VPH0Jn \
     --ChargeType 1 \
     --DataRetentionDays 30 \
-    --InstanceDesc test
+    --InstanceDesc 业务系统
 ```
 
 Output: 

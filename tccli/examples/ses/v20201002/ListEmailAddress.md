@@ -16,12 +16,14 @@ Output:
             {
                 "EmailAddress": "service@mail.qcloud.com",
                 "EmailSenderName": "腾讯云邮件通知",
-                "CreatedTimestamp": 1602143617
+                "CreatedTimestamp": 1602143617,
+                "SmtpPwdType": 0
             },
             {
                 "EmailAddress": "verify@mail.qcloud.com",
                 "EmailSenderName": "腾讯云验证码",
-                "CreatedTimestamp": 1602143617
+                "CreatedTimestamp": 1602143617,
+                "SmtpPwdType": 1
             }
         ]
     }

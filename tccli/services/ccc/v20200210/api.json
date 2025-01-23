@@ -147,6 +147,13 @@
       "output": "DeleteStaffResponse",
       "status": "online"
     },
+    "DescribeAICallExtractResult": {
+      "document": "获取 AI 通话内容提取结果。",
+      "input": "DescribeAICallExtractResultRequest",
+      "name": "查询 AI 通话内容提取结果",
+      "output": "DescribeAICallExtractResultResponse",
+      "status": "online"
+    },
     "DescribeActiveCarrierPrivilegeNumber": {
       "document": "查询生效运营商白名单规则",
       "input": "DescribeActiveCarrierPrivilegeNumberRequest",
@@ -449,6 +456,149 @@
     "serviceShortName": "ccc"
   },
   "objects": {
+    "AICallExtractConfigElement": {
+      "document": "AI 通话提取配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项类型，包括\nText 文本\nSelector 选项\nBoolean 布尔值\nNumber 数字",
+          "example": "Number",
+          "member": "string",
+          "name": "InfoType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置项名称，不可重复",
+          "example": "姓名",
+          "member": "string",
+          "name": "InfoName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置项具体内容",
+          "example": "客户姓名",
+          "member": "string",
+          "name": "InfoContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置项提取内容示例",
+          "example": "[\"张三\"]",
+          "member": "string",
+          "name": "Examples",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "InfoType 为 Selector，需要配置此字段",
+          "example": "[\"动力\",\"内饰\",\"价格\"]",
+          "member": "string",
+          "name": "Choices",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "AICallExtractResultElement": {
+      "document": "AI 通话提取结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提取信息的类型\nText 文本\nSelector 选项\nBoolean 布尔值\nNumber 数字",
+          "example": "Number",
+          "member": "string",
+          "name": "InfoType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取信息的名称",
+          "example": "驾龄",
+          "member": "string",
+          "name": "InfoName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取信息的具体描述",
+          "example": "客户具体驾龄是多少年",
+          "member": "string",
+          "name": "InfoContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取信息的具体结果",
+          "example": "{\"Boolean\":true}",
+          "member": "AICallExtractResultInfo",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AICallExtractResultInfo": {
+      "document": "AI 通话结果具体信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提取的类型是文本",
+          "example": "xx省xx市xx区xx街道",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取的内型是选项",
+          "example": "[\"动力\",\"价格\"]",
+          "member": "string",
+          "name": "Chosen",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取类型是布尔值",
+          "example": "true",
+          "member": "bool",
+          "name": "Boolean",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提取类型是数字",
+          "example": "7.0",
+          "member": "float",
+          "name": "Number",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AITransferItem": {
       "document": "AI转人工配置项",
       "members": [
@@ -1735,6 +1885,15 @@
         },
         {
           "disabled": false,
+          "document": "0: 默认可打断， 1：高优先不可打断",
+          "example": "0",
+          "member": "int64",
+          "name": "WelcomeMessagePriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断",
           "example": "60000",
           "member": "int64",
@@ -1753,7 +1912,7 @@
         },
         {
           "disabled": false,
-          "document": "打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断",
+          "document": "打断AI说话模式，默认为0，0表示自动打断，1表示不打断。",
           "example": "1",
           "member": "int64",
           "name": "InterruptMode",
@@ -1858,6 +2017,15 @@
           "name": "VadSilenceTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通话内容提取配置",
+          "example": "[{\"InfoType\": \"Boolean\", \"InfoName\": \"兴趣\", \"InfoContent\": \"用户是否对产品感兴趣\"}]",
+          "member": "AICallExtractConfigElement",
+          "name": "ExtractConfig",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3012,6 +3180,70 @@
           "member": "string",
           "name": "OnlineStaffList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAICallExtractResultRequest": {
+      "document": "DescribeAICallExtractResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID（必填），可以查看 https://console.cloud.tencent.com/ccc",
+          "example": "1400000000",
+          "member": "int64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查找起始时间",
+          "example": "1737350008",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查找结束时间",
+          "example": "1737356008",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAICallExtractResultResponse": {
+      "document": "DescribeAICallExtractResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果列表",
+          "example": "[{\"InfoType\":\"Boolean\",\"InfoName\":\"兴趣\",\"InfoContent\":\"用户是否对产品感兴趣\",\"Result\":{\"Boolean\":true}}]",
+          "member": "AICallExtractResultElement",
+          "name": "ResultList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

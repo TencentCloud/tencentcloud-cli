@@ -33,8 +33,8 @@ Output:
 ```
 {
     "Response": {
-        "Result": "xxxx",
-        "RequestId": "65a8fec7-2b39-4b11-893f-3715279d235f"
+        "Result": "{\"request_id\":\"1cf7b9da-6160-4176-a46d-a88bf7a152bb\",\"results\":[{\"statement_id\":0,\"total\":0,\"offset\":\"\"}]}",
+        "RequestId": "1cf7b9da-6160-4176-a46d-a88bf7a152bb"
     }
 }
 ```

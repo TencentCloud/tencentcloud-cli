@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli rum DescribeAppSingleCaseList --cli-unfold-argument  \
-    --Filter [] \
+    --Filter {"app_id": 1} \
     --ProjectID 1 \
     --FilterSimple {"entrance_time__gte":1671370185000,"entrance_time__lte":1671456585000,"category__in":["PERF_CRASH"]} \
     --From 'singleton_v2_dist' \

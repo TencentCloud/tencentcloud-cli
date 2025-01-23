@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli ses UpdateEmailSmtpPassWord --cli-unfold-argument  \
-    --Password 123 \
-    --EmailAddress abc@ef.com
+    --Password yourPassword \
+    --EmailAddress address@example.com
 ```
 
 Output: 

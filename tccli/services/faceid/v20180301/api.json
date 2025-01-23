@@ -2395,7 +2395,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "E证通流程的唯一标识，调用GetEidToken接口时生成。",
+          "document": "E证通流程的唯一标识，调用[GetEidToken](https://cloud.tencent.com/document/product/1007/54089)接口时生成。",
           "example": "CE661F1A-0F1E-45BD-BE133-34C05CEA76812",
           "member": "string",
           "name": "EidToken",

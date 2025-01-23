@@ -6,15 +6,20 @@ Input:
 
 ```
 tccli ses CreateReceiverDetail --cli-unfold-argument  \
-    --ReceiverId 123 \
-    --Emails 123 456@bc.com
+    --ReceiverId 1 \
+    --Emails example@gmail.com example@qq.com
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "8979fc1e-9564-4fc9-bf7d-2958ce679b72"
+        "EmptyEmailCount": 0,
+        "RepeatCount": 1,
+        "RequestId": "b7ba8907-7b5f-4750-be7e-573d3f75bf8c",
+        "TooLongCount": 0,
+        "TotalCount": 2,
+        "ValidCount": 1
     }
 }
 ```

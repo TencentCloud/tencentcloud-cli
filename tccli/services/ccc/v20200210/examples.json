@@ -168,6 +168,14 @@
         "title": "删除坐席信息示例"
       }
     ],
+    "DescribeAICallExtractResult": [
+      {
+        "document": "查询 AI 通话内容提取结果示例",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAICall\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000000,\n    \"SessionId\": \"adcf61b8-dbb9-4c20-87bf-c0744c04bade\",\n    \"StartTime\": 1737350008,\n    \"EndTime\": 1737356008\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6bb56a09-2787-40bc-80c5-dc6dab783eff\",\n        \"ResultList\": [\n            {\n                \"InfoType\": \"Boolean\",\n                \"InfoName\": \"兴趣\",\n                \"InfoContent\": \"用户是否对产品感兴趣\",\n                \"Result\": {\n                    \"Text\": \"\",\n                    \"Chosen\": [],\n                    \"Boolean\": true,\n                    \"Number\": 0\n                }\n            }\n        ]\n    }\n}",
+        "title": "查询 AI 通话内容提取结果示例"
+      }
+    ],
     "DescribeActiveCarrierPrivilegeNumber": [
       {
         "document": "查询生效的白名单规则",

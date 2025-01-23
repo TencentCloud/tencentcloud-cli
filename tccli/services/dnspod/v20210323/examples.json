@@ -589,7 +589,7 @@
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.site\",\n    \"DomainId\": 62,\n    \"SubDomain\": \"bbbb\",\n    \"RecordType\": \"A\",\n    \"RecordLine\": \"默认\",\n    \"RecordLineId\": \"0\",\n    \"Value\": \"129.23.32.32\",\n    \"MX\": 0,\n    \"TTL\": 600,\n    \"Weight\": 10,\n    \"Status\": \"DISABLE\",\n    \"RecordId\": 162\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"RecordId\": 162\n    }\n}",
-        "title": "添加记录"
+        "title": "修改记录"
       }
     ],
     "ModifyRecordBatch": [

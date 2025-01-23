@@ -30,7 +30,7 @@ Output:
                 {
                     "Id": 1,
                     "Logo": "http://www.cloud.com***/logo.png",
-                    "Name": "测试",
+                    "Name": "bi项目",
                     "ColorCode": "#666",
                     "CreatedUser": "张三",
                     "CreatedAt": "张三",
@@ -42,7 +42,7 @@ Output:
                     "UpdatedUser": "张三",
                     "UpdatedAt": "张三",
                     "CorpId": "10010101",
-                    "Mark": "备注",
+                    "Mark": "说明备注",
                     "Seed": "",
                     "AuthList": [
                         "10101"
