@@ -57,7 +57,7 @@
 | cetcd | [云原生 ETCD](http://document.tencentcloudapi.woa.com/document/product/) | 2022-08-30 11:15:23 |
 | cfg | [混沌演练平台](http://document.tencentcloudapi.woa.com/document/product/1500) | 2025-01-22 01:13:24 |
 | cfs | [文件存储](http://document.tencentcloudapi.woa.com/document/product/582) | 2025-01-20 01:10:59 |
-| cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2025-01-13 01:11:51 |
+| cfw | [云防火墙](http://document.tencentcloudapi.woa.com/document/product/1132) | 2025-01-27 01:10:47 |
 | chdfs | [云 HDFS](http://document.tencentcloudapi.woa.com/document/product/1105) | 2024-12-27 01:17:02 |
 | ciam | [账号风控平台](http://document.tencentcloudapi.woa.com/document/product/1441) | 2024-10-28 01:23:04 |
 | cii | [智能保险助手](http://document.tencentcloudapi.woa.com/document/product/1368) | 2024-03-20 01:11:32 |
@@ -158,7 +158,7 @@
 | keewidb | [云数据库 KeeWiDB](http://document.tencentcloudapi.woa.com/document/product/1520) | 2025-01-09 01:30:05 |
 | kms | [密钥管理系统](http://document.tencentcloudapi.woa.com/document/product/573) | 2024-11-07 01:57:30 |
 | lcic | [低代码互动课堂](http://document.tencentcloudapi.woa.com/document/product/1639) | 2023-08-11 01:32:09 |
-| lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2025-01-20 01:21:24 |
+| lighthouse | [轻量应用服务器](http://document.tencentcloudapi.woa.com/document/product/1207) | 2025-01-27 01:19:41 |
 | lighthousedb | [轻量数据库服务LighthouseDB](http://document.tencentcloudapi.woa.com/document/product/-1) | 2024-12-31 01:31:29 |
 | live | [云直播CSS](http://document.tencentcloudapi.woa.com/document/product/267) | 2025-01-14 01:28:45 |
 | lke | [大模型知识引擎](http://document.tencentcloudapi.woa.com/document/product/1759) | 2024-06-21 01:19:32 |
@@ -251,7 +251,7 @@
 | tdmq | [消息队列 TDMQ](http://document.tencentcloudapi.woa.com/document/product/1179) | 2025-01-22 01:42:01 |
 | tds | [设备安全](http://document.tencentcloudapi.woa.com/document/product/1628) | 2024-11-14 02:20:21 |
 | tem | [弹性微服务](http://document.tencentcloudapi.woa.com/document/product/1371) | 2024-12-31 01:45:21 |
-| teo | [边缘安全加速平台](http://document.tencentcloudapi.woa.com/document/product/1552) | 2025-01-22 01:42:44 |
+| teo | [边缘安全加速平台](http://document.tencentcloudapi.woa.com/document/product/1552) | 2025-01-27 01:26:27 |
 | thpc | [高性能计算平台](http://document.tencentcloudapi.woa.com/document/product/1527) | 2025-01-01 01:34:57 |
 | tia | [智能钛机器学习](http://document.tencentcloudapi.woa.com/document/product/) | 2024-03-20 01:27:10 |
 | tic | [资源编排 TIC](http://document.tencentcloudapi.woa.com/document/product/1213) | 2024-11-18 02:10:12 |

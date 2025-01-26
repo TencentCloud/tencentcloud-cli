@@ -1,57 +1,18 @@
 # 本版本更新包含以下内容：
 
-## 云联络中心(ccc) 版本：2020-02-10
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 75 次发布
+### 第 65 次发布
 
-发布时间：2025-01-24 01:10:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeAICallExtractResult](http://document.tencentcloudapi.woa.com/document/product/679/85693)
-
-修改接口：
-
-* [CreateAICall](http://document.tencentcloudapi.woa.com/document/product/679/84920)
-
-	* 新增入参：WelcomeMessagePriority, ExtractConfig
-
-
-新增数据结构：
-
-* [AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement)
-* [AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement)
-* [AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo)
-
-
-
-## 邮件推送(ses) 版本：2020-10-02
-
-### 第 25 次发布
-
-发布时间：2025-01-24 01:25:56
+发布时间：2025-01-27 01:10:47
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**删除接口**：</font>
 
-* [CreateReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/68359)
-
-	* 新增出参：TotalCount, ValidCount, TooLongCount, EmptyEmailCount, RepeatCount
-
-
-修改数据结构：
-
-* [EmailSender](http://document.tencentcloudapi.woa.com/document/product/1288/51053#EmailSender)
-
-	* 新增成员：SmtpPwdType
-
+* ModifyAllVPCSwitchStatus
 
 
 
@@ -14047,7 +14008,7 @@
 
 新增接口：
 
-* [[DescribeAICallExtractResult](http://document.tencentcloudapi.woa.com/document/product/679/85693)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAICallExtractResult](http://document.tencentcloudapi.woa.com/document/product/679/85693)
 
 修改接口：
 
@@ -14058,9 +14019,9 @@
 
 新增数据结构：
 
-* [[AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement))
-* [[AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement))
-* [[AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo)](http://document.tencentcloudapi.woa.com/document/product/679/47715#[AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo))
+* [AICallExtractConfigElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractConfigElement)
+* [AICallExtractResultElement](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultElement)
+* [AICallExtractResultInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#AICallExtractResultInfo)
 
 ### 第 74 次发布
 
@@ -22393,6 +22354,18 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 65 次发布
+
+发布时间：2025-01-27 01:10:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyAllVPCSwitchStatus
 
 ### 第 64 次发布
 
