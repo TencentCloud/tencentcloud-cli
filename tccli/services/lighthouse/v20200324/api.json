@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DescribeResetInstanceBlueprints": {
-      "document": "本接口（DescribeResetInstanceBlueprints）查询重置实例的镜像信息。",
+      "document": "本接口（DescribeResetInstanceBlueprints）查询重置实例的镜像信息。对于游戏专区实例，该接口只会返回当前镜像，且不支持 Filters 参数。",
       "input": "DescribeResetInstanceBlueprintsRequest",
       "name": "查询重置实例的镜像信息",
       "output": "DescribeResetInstanceBlueprintsResponse",
@@ -680,7 +680,7 @@
       "status": "online"
     },
     "ResetInstance": {
-      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。",
+      "document": "本接口（ResetInstance）用于重装指定实例上的镜像。\n\n* 如果指定了 BlueprintId 参数，则使用指定的镜像重装；否则按照当前实例使用的镜像进行重装。\n* 系统盘将会被格式化，并重置；请确保系统盘中无重要文件。\n* 目前不支持实例使用该接口实现 LINUX_UNIX 和 WINDOWS 操作系统切换。\n* 本接口为异步接口，请求发送成功后会返回一个 RequestId，此时操作并未立即完成。实例操作结果可以通过调用 <a href=\"https://cloud.tencent.com/document/product/1207/47573\" target=\"_blank\">DescribeInstances</a> 接口查询，如果实例的最新操作状态（LatestOperationState）为“SUCCESS”，则代表操作成功。\n* 对于游戏专区实例，仅支持重装当前镜像。",
       "input": "ResetInstanceRequest",
       "name": "重装系统",
       "output": "ResetInstanceResponse",
@@ -2848,7 +2848,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐 ID 列表。可通过[DescribeBundles](https://cloud.tencent.com/document/product/1207/47575)接口返回值中的BundleId获取。",
+          "document": "套餐 ID 列表。每次请求批量套餐的上限为 100。可通过[DescribeBundles](https://cloud.tencent.com/document/product/1207/47575)接口返回值中的BundleId获取。",
           "example": "[\"bundle_ntp_small1_500”]",
           "member": "string",
           "name": "BundleIds",

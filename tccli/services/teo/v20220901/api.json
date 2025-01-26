@@ -176,9 +176,9 @@
       "status": "online"
     },
     "CreateRule": {
-      "document": "规则引擎创建规则。",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [CreateL7AccRules](https://cloud.tencent.com/document/product/1552/115822)。",
       "input": "CreateRuleRequest",
-      "name": "创建规则引擎规则",
+      "name": "创建规则引擎规则（旧）",
       "output": "CreateRuleResponse",
       "status": "online"
     },
@@ -918,9 +918,9 @@
       "status": "online"
     },
     "ModifyRule": {
-      "document": "修改规则引擎规则。",
+      "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccRule](https://cloud.tencent.com/document/product/1552/115818)。",
       "input": "ModifyRuleRequest",
-      "name": "修改规则引擎规则",
+      "name": "修改规则引擎规则（旧）",
       "output": "ModifyRuleResponse",
       "status": "online"
     },
@@ -5863,7 +5863,7 @@
         {
           "disabled": false,
           "document": "规则标签。",
-          "example": "[]",
+          "example": "test",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -16357,7 +16357,7 @@
         {
           "disabled": false,
           "document": "规则标签。",
-          "example": "[]",
+          "example": "test",
           "member": "string",
           "name": "Tags",
           "required": false,

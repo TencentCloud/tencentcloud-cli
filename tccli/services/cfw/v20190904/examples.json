@@ -636,14 +636,6 @@
         "title": "启用停用全部规则"
       }
     ],
-    "ModifyAllVPCSwitchStatus": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAllVPCSwitchStatus\n<公共请求参数>\n\n{\n    \"FireWallVpcIds\": [],\n    \"Status\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "一键开启和关闭"
-      }
-    ],
     "ModifyAssetScan": [
       {
         "document": "",
