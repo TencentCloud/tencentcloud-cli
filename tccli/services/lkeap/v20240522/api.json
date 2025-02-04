@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ChatCompletions": {
+      "document": "对话",
+      "input": "ChatCompletionsRequest",
+      "name": "对话",
+      "output": "ChatCompletionsResponse",
+      "status": "online"
+    },
     "CreateAttributeLabel": {
       "document": "用于为问答对创建属性标签，以便对内容进行分类和管理。 使用场景：当需要为问答对添加分类标签和属性标记时使用，比如为问答对添加“售后”标签。",
       "input": "CreateAttributeLabelRequest",
@@ -288,6 +295,51 @@
         }
       ],
       "usage": "both"
+    },
+    "ChatCompletionsRequest": {
+      "document": "ChatCompletions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "deepseek-r1",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "会话列表",
+          "example": "[{\"role\":\"user\",\"content\":\"你好\"}]",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否流式输出",
+          "example": "true",
+          "member": "bool",
+          "name": "Stream",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatCompletionsResponse": {
+      "document": "ChatCompletions返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateAttributeLabelRequest": {
       "document": "CreateAttributeLabel请求参数结构体",
