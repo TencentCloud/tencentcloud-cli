@@ -15,7 +15,7 @@ tccli mongodb InquirePriceCreateDBInstances --cli-unfold-argument  \
     --NodeNum 3 \
     --ReplicateSetNum 1 \
     --MachineCode HIO10G \
-    --MongoVersion MONGO_36_WT
+    --MongoVersion MONGO_50_WT
 ```
 
 Output: 

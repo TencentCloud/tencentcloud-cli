@@ -237,8 +237,8 @@
     "DescribeComponentsStatus": [
       {
         "document": "查看组件状态列表",
-        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComponentsStatus\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeComponentsStatus\n<公共请求参数>\n\n{\n    \"InstanceID\": \"tad-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1551786f-73bb-4891-a1f8-a878e6a4c429\"\n    }\n}",
         "title": "查看组件状态列表"
       }
     ],

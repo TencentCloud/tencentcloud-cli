@@ -1,3 +1,37 @@
+# Release 3.0.1146.1
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 19 次发布
+
+发布时间：2025-02-06 01:20:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增出参：Created, Usage, Id, Choices, Model
+
+
+新增数据结构：
+
+* [ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage)
+* [Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice)
+* [Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)
+
+修改数据结构：
+
+* [Message](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Message)
+
+	* 新增成员：ReasoningContent
+
+
+
+
 # Release 3.0.1145.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

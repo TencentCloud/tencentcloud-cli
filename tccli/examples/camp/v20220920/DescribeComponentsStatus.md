@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli camp DescribeComponentsStatus --cli-unfold-argument  \
-    --InstanceID abc
+    --InstanceID tad-xxxxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "1551786f-73bb-4891-a1f8-a878e6a4c429"
     }
 }
 ```

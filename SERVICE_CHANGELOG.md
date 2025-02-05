@@ -1,18 +1,34 @@
 # 本版本更新包含以下内容：
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
 
-### 第 65 次发布
+### 第 19 次发布
 
-发布时间：2025-01-27 01:10:47
+发布时间：2025-02-06 01:20:27
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**删除接口**：</font>
+修改接口：
 
-* ModifyAllVPCSwitchStatus
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增出参：Created, Usage, Id, Choices, Model
+
+
+新增数据结构：
+
+* [ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage)
+* [Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice)
+* [Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)
+
+修改数据结构：
+
+* [Message](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Message)
+
+	* 新增成员：ReasoningContent
+
 
 
 
@@ -77218,6 +77234,34 @@
 
 
 ## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 19 次发布
+
+发布时间：2025-02-06 01:20:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增出参：Created, Usage, Id, Choices, Model
+
+
+新增数据结构：
+
+* [[ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage))
+* [[Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice))
+* [[Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta))
+
+修改数据结构：
+
+* [Message](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Message)
+
+	* 新增成员：ReasoningContent
+
 
 ### 第 18 次发布
 
