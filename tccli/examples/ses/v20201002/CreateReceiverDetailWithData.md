@@ -7,8 +7,8 @@ Input:
 ```
 tccli ses CreateReceiverDetailWithData --cli-unfold-argument  \
     --ReceiverId 123 \
-    --Datas.0.Email 456@bc.com \
-    --Datas.0.TemplateData {"name":"aa","age":"12"}
+    --Datas.0.Email example@gmail.com \
+    --Datas.0.TemplateData {"name":"john","age":"12"}
 ```
 
 Output: 

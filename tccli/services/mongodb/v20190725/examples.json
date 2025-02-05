@@ -35,7 +35,7 @@
     "CreateDBInstance": [
       {
         "document": "当前示例仅适合4.0版本，其余版本请严格参考传入参数中各版本说明项",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"GoodsNum\": \"1\",\n    \"Zone\": \"ap-guangzhou-2\",\n    \"ProjectId\": \"0\",\n    \"MachineCode\": \"HIO10G\",\n    \"Period\": \"1\",\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": \"250\",\n    \"MongoVersion\": \"MONGO_40_WT\",\n    \"NodeNum\": \"3\",\n    \"ReplicateSetNum\": \"1\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-fyrtjbqw\",\n    \"Password\": \"pwd123456\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDBInstance\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"GoodsNum\": 1,\n    \"Zone\": \"ap-guangzhou-2\",\n    \"ProjectId\": 0,\n    \"MachineCode\": \"HIO10G\",\n    \"Period\": 1,\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": 250,\n    \"MongoVersion\": \"MONGO_40_WT\",\n    \"NodeNum\": 3,\n    \"ReplicateSetNum\": 1,\n    \"Memory\": 4,\n    \"SubnetId\": \"subnet-fyrtjbqw\",\n    \"Password\": \"pwd123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\n        \"DealId\": \"7142863\",\n        \"InstanceIds\": [\n            \"cmgo-po5f899l\"\n        ]\n    }\n}",
         "title": "创建包年包月的云数据库实例"
       }
@@ -115,7 +115,7 @@
     "DescribeDBBackups": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-f555zzzz\",\n    \"BackupMethod\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-f555zzzz\",\n    \"BackupMethod\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"BackupList\": [],\n        \"TotalCount\": 0\n    }\n}",
         "title": "查询云数据库实例的备份文件信息"
       }
@@ -219,8 +219,8 @@
     "EnableTransparentDataEncryption": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"abcabc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"abcd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"myEncryptionkey\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"a8dce7a4-d488-49c9-8d24-33cf623f5992\"\n    }\n}",
         "title": "开启实例数据透明加密"
       }
     ],
@@ -243,7 +243,7 @@
     "InquirePriceCreateDBInstances": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateDBInstances\n<公共请求参数>\n\n{\n    \"GoodsNum\": \"2\",\n    \"Zone\": \"ap-guangzhou-4\",\n    \"Memory\": \"4\",\n    \"Period\": \"1\",\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": \"100\",\n    \"NodeNum\": \"3\",\n    \"ReplicateSetNum\": \"1\",\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_36_WT\"\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceCreateDBInstances\n<公共请求参数>\n\n{\n    \"GoodsNum\": 2,\n    \"Zone\": \"ap-guangzhou-4\",\n    \"Memory\": 4,\n    \"Period\": \"1\",\n    \"ClusterType\": \"REPLSET\",\n    \"Volume\": 100,\n    \"NodeNum\": 3,\n    \"ReplicateSetNum\": 1,\n    \"MachineCode\": \"HIO10G\",\n    \"MongoVersion\": \"MONGO_50_WT\"\n}",
         "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"DiscountPrice\": 1340,\n            \"OriginalPrice\": 1340,\n            \"UnitPrice\": 670\n        },\n        \"RequestId\": \"fb8b4646-389d-44cc-ab8c-98c081cbdad3\"\n    }\n}",
         "title": "查询新购数据库实例价格"
       }

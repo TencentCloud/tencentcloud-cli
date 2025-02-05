@@ -90,7 +90,7 @@ tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --Messages.2.Role user \
     --Messages.2.Content 请给我讲个字数小于10个字的搞笑笑话 \
     --Messages.3.Role assistant \
-    --Messages.3.Content 猫头鹰遇见眯眯眼，看得眼睛都眯成线。” \
+    --Messages.3.Content 猫头鹰遇见眯眯眼，看得眼睛都眯成线。 \
     --Messages.4.Role user \
     --Messages.4.Content 不好笑，换一个吧
 ```

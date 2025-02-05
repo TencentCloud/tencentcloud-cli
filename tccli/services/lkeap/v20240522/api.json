@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChatCompletions": {
-      "document": "对话",
+      "document": "#### 接口功能\n\n调用接口，发起一次对话请求。\n\n#### 已支持的模型\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大支持8K输出长度。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    - 支持64K上下文长度，最大支持8K输出长度。\n\n#### 计费说明\n- 限时免费\n\n本接口调用DeepSeek系列模型限时免费。即日至北京时间2025年2月25日23:59:59，所有腾讯云用户均可享受DeepSeek-V3、DeepSeek-R1模型限时免费服务，单账号限制接口并发上限为5。在此之后，模型价格将恢复至原价。\n- 标准计费（2025年2月26日起生效）\n![image](https://cdn.xiaowei.qq.com/static/lke/deepseek-token.png)\n\n\n#### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
       "input": "ChatCompletionsRequest",
       "name": "对话",
       "output": "ChatCompletionsResponse",
@@ -325,6 +325,24 @@
           "name": "Stream",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "控制生成的随机性，较高的值会产生更多样化的输出。",
+          "example": "0.6",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "最大生成的token数量",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxTokens",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -333,6 +351,56 @@
       "document": "ChatCompletions返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "Unix 时间戳，单位为秒。",
+          "example": "1705634032",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token 统计信息。\n按照总 Token 数量计费。",
+          "example": "无",
+          "member": "ChatUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次请求的 RequestId。",
+          "example": "9c772634-8824-43e8-bc24-8bc4c19b9151",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回复内容。",
+          "example": "无",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型名称。",
+          "example": "deepseek-r1",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
           "member": "string",
           "name": "RequestId",
@@ -340,6 +408,88 @@
         }
       ],
       "type": "object"
+    },
+    "ChatUsage": {
+      "document": "消耗量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入token数",
+          "example": "10",
+          "member": "int64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出token数",
+          "example": "10",
+          "member": "int64",
+          "name": "CompletionTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总token数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Choice": {
+      "document": "返回的回复, 支持多个",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结束标志位，可能为 stop、 sensitive或者tool_calls。\nstop 表示输出正常结束。\nsensitive 只在开启流式输出审核时会出现，表示安全审核未通过。\ntool_calls 标识函数调用。",
+          "example": "stop",
+          "member": "string",
+          "name": "FinishReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量返回值，流式调用时使用该字段。",
+          "example": "无",
+          "member": "Delta",
+          "name": "Delta",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回值，非流式调用时使用该字段。",
+          "example": "无",
+          "member": "Message",
+          "name": "Message",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引值，流式调用时使用该字段。",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAttributeLabelRequest": {
       "document": "CreateAttributeLabel请求参数结构体",
@@ -738,6 +888,32 @@
         }
       ],
       "type": "object"
+    },
+    "Delta": {
+      "document": "返回的内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名称。",
+          "example": "assistant",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容详情。",
+          "example": "你好！请问有什么我可以帮助你的吗？",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeDocRequest": {
       "document": "DescribeDoc请求参数结构体",
@@ -1202,6 +1378,17 @@
           "example": "content",
           "member": "string",
           "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "思维链内容。\nReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。",
+          "example": "无",
+          "member": "string",
+          "name": "ReasoningContent",
           "output_required": false,
           "required": false,
           "type": "string",

@@ -71,7 +71,7 @@
     "CreateReceiverDetailWithData": [
       {
         "document": "添加收件人地址附带模板参数",
-        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReceiverDetailWithData\n<公共请求参数>\n\n{\n    \"ReceiverId\": 123,\n    \"Datas\": [\n        {\n            \"Email\": \"456@bc.com\",\n            \"TemplateData\": \"{\\\"name\\\":\\\"aa\\\",\\\"age\\\":\\\"12\\\"}\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReceiverDetailWithData\n<公共请求参数>\n\n{\n    \"ReceiverId\": 123,\n    \"Datas\": [\n        {\n            \"Email\": \"example@gmail.com\",\n            \"TemplateData\": \"{\\\"name\\\":\\\"john\\\",\\\"age\\\":\\\"12\\\"}\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
         "title": "添加收件人地址附带模板参数"
       }
