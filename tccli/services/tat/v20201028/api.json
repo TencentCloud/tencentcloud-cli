@@ -826,7 +826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "注册码描述。",
+          "document": "注册码描述。最大长度为 128 字符。",
           "example": "此注册码用于注册托管实例。",
           "member": "string",
           "name": "Description",
@@ -835,7 +835,7 @@
         },
         {
           "disabled": false,
-          "document": "注册实例名称前缀。",
+          "document": "注册实例名称前缀。最大长度为 32 字符。",
           "example": "register-test",
           "member": "string",
           "name": "InstanceNamePrefix",
@@ -844,8 +844,8 @@
         },
         {
           "disabled": false,
-          "document": "该注册码允许注册的实例数目。默认限制为10个。",
-          "example": "100",
+          "document": "该注册码允许注册的实例数目。默认值为 10，最小值为 1，最大值为 10000。",
+          "example": "10",
           "member": "int64",
           "name": "RegisterLimit",
           "required": false,
@@ -853,8 +853,8 @@
         },
         {
           "disabled": false,
-          "document": "该注册码的有效时间，单位为小时。默认为4小时。",
-          "example": "2",
+          "document": "该注册码的有效时间，单位为小时。默认值为 4。\n\n- 若传入值小于等于 99999，则以小时为单位设置有效时间。\n- 若传入值大于 99999，则设置为长期有效。",
+          "example": "4",
           "member": "int64",
           "name": "EffectiveTime",
           "required": false,

@@ -473,11 +473,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "终端节点服务Id",
+          "document": "引擎终端节点服务Id",
           "example": "vpcsvc-6jsieksl3",
           "member": "string",
           "name": "EndpointServiceId",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -488,21 +489,56 @@
           "member": "string",
           "name": "MetaStoreUrl",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "\t网络信息",
+          "document": "网络信息",
           "example": "复杂类型",
           "member": "NetWork",
           "name": "NetWork",
           "output_required": false,
+          "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hive版本",
+          "example": "3.1.3",
+          "member": "string",
+          "name": "HiveVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hive location",
+          "example": "cosn://xxxx",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HMS终端节点服务",
+          "example": "vpcsvc-6jsiek27s",
+          "member": "string",
+          "name": "HmsEndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TccConnectionConfig": {
       "document": "Tcc数据目录连接信息",

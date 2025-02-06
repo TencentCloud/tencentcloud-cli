@@ -8962,7 +8962,7 @@
         {
           "disabled": false,
           "document": "若为cdc防火墙时填充该id",
-          "example": "cluster-xxx",
+          "example": "cluster-dxd31akg",
           "member": "string",
           "name": "CdcId",
           "required": false,
@@ -13504,7 +13504,7 @@
         {
           "disabled": false,
           "document": "资产id",
-          "example": "ins-123456",
+          "example": "ins-nl6svll8",
           "member": "string",
           "name": "InsID",
           "output_required": true,
@@ -13514,7 +13514,7 @@
         {
           "disabled": false,
           "document": "资产名称",
-          "example": "ins-机器",
+          "example": "Dev Proxy",
           "member": "string",
           "name": "InsName",
           "output_required": true,

@@ -6,23 +6,23 @@ Input:
 
 ```
 tccli cdwdoris ActionAlterUser --cli-unfold-argument  \
-    --UserInfo.InstanceId abc \
-    --UserInfo.UserName abc \
-    --UserInfo.PassWord abc \
-    --UserInfo.WhiteHost abc \
-    --UserInfo.OldWhiteHost abc \
-    --UserInfo.Describe abc \
-    --UserInfo.OldPwd abc \
-    --ApiType abc \
-    --UserPrivilege 0
+    --UserInfo.InstanceId cdwdoris-xasdf \
+    --UserInfo.UserName user \
+    --UserInfo.PassWord pwd \
+    --UserInfo.WhiteHost host \
+    --UserInfo.OldWhiteHost o_host \
+    --UserInfo.Describe describe \
+    --UserInfo.OldPwd pwd \
+    --ApiType type \
+    --UserPrivilege 3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "err",
+        "RequestId": "xawef0-asxca"
     }
 }
 ```

@@ -329,6 +329,13 @@
       "output": "ModifyInstanceResponse",
       "status": "online"
     },
+    "ModifyInstanceEndpoint": {
+      "document": "修改 RocketMQ 5.x 集群接入点。",
+      "input": "ModifyInstanceEndpointRequest",
+      "name": "修改集群接入点",
+      "output": "ModifyInstanceEndpointResponse",
+      "status": "online"
+    },
     "ModifyMQTTInsPublicEndpoint": {
       "document": "更新MQTT实例公网接入点",
       "input": "ModifyMQTTInsPublicEndpointRequest",
@@ -5805,6 +5812,69 @@
     },
     "ModifyConsumerGroupResponse": {
       "document": "ModifyConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceEndpointRequest": {
+      "document": "ModifyInstanceEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rmq-72mo3a9o",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入点类型，\nPUBLIC 公网",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽，Mbps为单位",
+          "example": "2",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网安全组信息",
+          "example": "无",
+          "member": "IpRule",
+          "name": "IpRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "公网是否按流量计费",
+          "example": "false",
+          "member": "bool",
+          "name": "BillingFlow",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceEndpointResponse": {
+      "document": "ModifyInstanceEndpoint返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
