@@ -1,34 +1,88 @@
 # 本版本更新包含以下内容：
 
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 19 次发布
+### 第 130 次发布
 
-发布时间：2025-02-06 01:20:27
+发布时间：2025-02-07 01:09:57
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+<font color="#dd0000">**预下线接口**：</font>
 
-* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
-
-	* 新增出参：Created, Usage, Id, Choices, Model
+* DescribeCpuExpandStrategy
 
 
-新增数据结构：
 
-* [ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage)
-* [Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice)
-* [Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 66 次发布
+
+发布时间：2025-02-07 01:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
 
 修改数据结构：
 
-* [Message](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Message)
+* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
 
-	* 新增成员：ReasoningContent
+	* 新增成员：InFlowMax, OutFlowMax
 
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 79 次发布
+
+发布时间：2025-02-07 01:21:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PidSelector](http://document.tencentcloudapi.woa.com/document/product/862/37615#PidSelector)
+
+修改数据结构：
+
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+
+	* 新增成员：PidSelector
+
+* [DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlow)
+
+	* 新增成员：AllowedInputProtocols, AllowedOutputProtocols
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：PidSelector
+
+* [ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo)
+
+	* 新增成员：PidSelector
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 34 次发布
+
+发布时间：2025-02-07 01:27:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyInstanceEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/85695)
 
 
 
@@ -15422,6 +15476,18 @@
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
 
+### 第 130 次发布
+
+发布时间：2025-02-07 01:09:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeCpuExpandStrategy
+
 ### 第 129 次发布
 
 发布时间：2025-01-16 01:10:35
@@ -22370,6 +22436,21 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 66 次发布
+
+发布时间：2025-02-07 01:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
+
+	* 新增成员：InFlowMax, OutFlowMax
+
 
 ### 第 65 次发布
 
@@ -77252,9 +77333,9 @@
 
 新增数据结构：
 
-* [[ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage))
-* [[Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice))
-* [[Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)](http://document.tencentcloudapi.woa.com/document/product/1764/84021#[Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta))
+* [ChatUsage](http://document.tencentcloudapi.woa.com/document/product/1764/84021#ChatUsage)
+* [Choice](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Choice)
+* [Delta](http://document.tencentcloudapi.woa.com/document/product/1764/84021#Delta)
 
 修改数据结构：
 
@@ -82347,6 +82428,37 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 79 次发布
+
+发布时间：2025-02-07 01:21:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[PidSelector](http://document.tencentcloudapi.woa.com/document/product/862/37615#PidSelector)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[PidSelector](http://document.tencentcloudapi.woa.com/document/product/862/37615#PidSelector))
+
+修改数据结构：
+
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+
+	* 新增成员：PidSelector
+
+* [DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlow)
+
+	* 新增成员：AllowedInputProtocols, AllowedOutputProtocols
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：PidSelector
+
+* [ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo)
+
+	* 新增成员：PidSelector
+
 
 ### 第 78 次发布
 
@@ -118369,6 +118481,18 @@
 
 
 ## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 34 次发布
+
+发布时间：2025-02-07 01:27:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyInstanceEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/85695)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 33 次发布
 

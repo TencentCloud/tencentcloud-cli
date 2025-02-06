@@ -9523,7 +9523,7 @@
         {
           "disabled": false,
           "document": "若为cdc防火墙时填充该id",
-          "example": "cluster-xxx",
+          "example": "cluster-dxd31akg",
           "member": "string",
           "name": "CdcId",
           "required": false,
@@ -14031,13 +14031,35 @@
         {
           "disabled": false,
           "document": "弹性带宽上限，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1024",
           "member": "int64",
           "name": "ElasticBandwidth",
           "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "七天入向峰值带宽，单位bps",
+          "example": "1000",
+          "member": "int64",
+          "name": "InFlowMax",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "七天出向峰值带宽，单位bps",
+          "example": "1000",
+          "member": "int64",
+          "name": "OutFlowMax",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14175,7 +14197,7 @@
         {
           "disabled": false,
           "document": "资产id",
-          "example": "ins-123456",
+          "example": "ins-nl6svll8",
           "member": "string",
           "name": "InsID",
           "output_required": true,
@@ -14185,7 +14207,7 @@
         {
           "disabled": false,
           "document": "资产名称",
-          "example": "ins-机器",
+          "example": "Dev Proxy",
           "member": "string",
           "name": "InsName",
           "output_required": true,

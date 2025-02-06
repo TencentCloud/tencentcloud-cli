@@ -1,3 +1,91 @@
+# Release 3.0.1147.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 130 次发布
+
+发布时间：2025-02-07 01:09:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeCpuExpandStrategy
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 66 次发布
+
+发布时间：2025-02-07 01:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SerialRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#SerialRegionInfo)
+
+	* 新增成员：InFlowMax, OutFlowMax
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 79 次发布
+
+发布时间：2025-02-07 01:21:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PidSelector](http://document.tencentcloudapi.woa.com/document/product/862/37615#PidSelector)
+
+修改数据结构：
+
+* [CreateOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#CreateOutputInfo)
+
+	* 新增成员：PidSelector
+
+* [DescribeFlow](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeFlow)
+
+	* 新增成员：AllowedInputProtocols, AllowedOutputProtocols
+
+* [DescribeOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#DescribeOutput)
+
+	* 新增成员：PidSelector
+
+* [ModifyOutputInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ModifyOutputInfo)
+
+	* 新增成员：PidSelector
+
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 34 次发布
+
+发布时间：2025-02-07 01:27:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyInstanceEndpoint](http://document.tencentcloudapi.woa.com/document/product/1739/85695)
+
+
+
 # Release 3.0.1146.1
 
 ## 知识引擎原子能力(lkeap) 版本：2024-05-22
