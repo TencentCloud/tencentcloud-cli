@@ -1,3 +1,45 @@
+# Release 3.0.1148.1
+
+## 统一Catalog服务(tccatalog) 版本：2024-10-24
+
+### 第 1 次发布
+
+发布时间：2025-02-08 12:11:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AcceptTccVpcEndPointConnect](http://document.tencentcloudapi.woa.com/document/product/1785/85704)
+* [BindTccVpcEndPointServiceWhiteList](http://document.tencentcloudapi.woa.com/document/product/1785/85703)
+* [CheckCatalogConnectivity](http://document.tencentcloudapi.woa.com/document/product/1785/85702)
+* [DescribeCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85701)
+* [DescribeTccCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85700)
+* [DescribeTccCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85699)
+* [DescribeTccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85698)
+* [ModifyCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85697)
+
+新增数据结构：
+
+* [CatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#CatalogConfig)
+* [ConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ConnectionConfig)
+* [DLCConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DLCConnection)
+* [DorisConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DorisConnection)
+* [HiveConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#HiveConnection)
+* [KVPair](http://document.tencentcloudapi.woa.com/document/product/1785/85705#KVPair)
+* [MysqlConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#MysqlConnection)
+* [NetWork](http://document.tencentcloudapi.woa.com/document/product/1785/85705#NetWork)
+* [TccCatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogConfig)
+* [TccCatalogSet](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogSet)
+* [TccConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnection)
+* [TccConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnectionConfig)
+* [TccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccVipInternal)
+* [VolumeConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#VolumeConnection)
+
+
+
 # Release 3.0.1147.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
