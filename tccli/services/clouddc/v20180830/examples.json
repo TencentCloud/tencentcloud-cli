@@ -120,6 +120,14 @@
         "title": "示例"
       }
     ],
+    "DescribePkgExist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: entmap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePkgExist\n<公共请求参数>\n\n{\n    \"TaskId\": [\n        100000428\n    ],\n    \"QueryUin\": \"100032961887\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExistResult\": [\n            {\n                \"Result\": 0,\n                \"TaskId\": 100000428\n            }\n        ],\n        \"RequestId\": \"0\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeProductProjectInfo": [
       {
         "document": "解决的TO拆解问题（TO问题关联）或者  自身的规划\n界面/逻辑/数据字段/审批流\n文档链接：https://iwiki.woa.com/pages/viewpage.action?pageId=395934565",

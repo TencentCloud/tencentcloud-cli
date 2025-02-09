@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DeregisterMigrationTask": [
-      {
-        "document": "取消注册迁移任务",
-        "input": "https://msp.tencentcloudapi.com/?Action=DeregisterMigrationTask\r\n&TaskId=msp-1vogaxgk\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1aedbb4-b674-4833-b68f-3c90938252d5\"\n    }\n}",
-        "title": "取消注册迁移任务"
-      }
-    ],
     "DescribeMigrationTask": [
       {
         "document": "获取指定迁移任务详情",

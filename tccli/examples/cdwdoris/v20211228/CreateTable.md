@@ -8,7 +8,7 @@ Input:
 tccli cdwdoris CreateTable --cli-unfold-argument  \
     --InstanceId cdwdoris-lrqz7cd4 \
     --DbName demo \
-    --TableName test \
+    --TableName t_name \
     --KeysType AGG_KEY \
     --Columns.0.Name user_id \
     --Columns.0.Type LARGEINT \

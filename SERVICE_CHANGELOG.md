@@ -1,10 +1,45 @@
 # 本版本更新包含以下内容：
 
-## 统一Catalog服务(tccatalog) 版本：2024-10-24
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 1 次发布
+### 第 67 次发布
 
-发布时间：2025-02-08 12:11:21
+发布时间：2025-02-10 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AddAcRule
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 99 次发布
+
+发布时间：2025-02-10 01:11:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstanceAttributes](http://document.tencentcloudapi.woa.com/document/product/597/40832)
+
+	* 新增入参：UncleanLeaderElectionEnable
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 14 次发布
+
+发布时间：2025-02-10 01:12:13
 
 本次发布包含了以下内容：
 
@@ -12,31 +47,88 @@
 
 新增接口：
 
-* [AcceptTccVpcEndPointConnect](http://document.tencentcloudapi.woa.com/document/product/1785/85704)
-* [BindTccVpcEndPointServiceWhiteList](http://document.tencentcloudapi.woa.com/document/product/1785/85703)
-* [CheckCatalogConnectivity](http://document.tencentcloudapi.woa.com/document/product/1785/85702)
-* [DescribeCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85701)
-* [DescribeTccCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85700)
-* [DescribeTccCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85699)
-* [DescribeTccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85698)
-* [ModifyCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85697)
+* [DescribePkgExist](http://document.tencentcloudapi.woa.com/document/product/1626/85718)
 
 新增数据结构：
 
-* [CatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#CatalogConfig)
-* [ConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ConnectionConfig)
-* [DLCConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DLCConnection)
-* [DorisConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DorisConnection)
-* [HiveConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#HiveConnection)
-* [KVPair](http://document.tencentcloudapi.woa.com/document/product/1785/85705#KVPair)
-* [MysqlConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#MysqlConnection)
-* [NetWork](http://document.tencentcloudapi.woa.com/document/product/1785/85705#NetWork)
-* [TccCatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogConfig)
-* [TccCatalogSet](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogSet)
-* [TccConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnection)
-* [TccConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnectionConfig)
-* [TccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccVipInternal)
-* [VolumeConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#VolumeConnection)
+* [DescribePkgExistRsp](http://document.tencentcloudapi.woa.com/document/product/1626/78427#DescribePkgExistRsp)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 116 次发布
+
+发布时间：2025-02-10 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAttackLogs
+* DescribeComponentStatistics
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ComponentStatistics
+* DefendAttackLog
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 25 次发布
+
+发布时间：2025-02-10 01:19:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApproveClientApply](http://document.tencentcloudapi.woa.com/document/product/1724/85720)
+* [QueryCustomerBillingQuota](http://document.tencentcloudapi.woa.com/document/product/1724/85721)
+* [QueryPendingClientsV2](http://document.tencentcloudapi.woa.com/document/product/1724/85719)
+
+新增数据结构：
+
+* [QueryCustomerBillingQuotaData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryCustomerBillingQuotaData)
+* [QueryPendingCustomersItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryPendingCustomersItem)
+
+
+
+## 迁移服务平台(msp) 版本：2018-03-19
+
+### 第 5 次发布
+
+发布时间：2025-02-10 01:36:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeregisterMigrationTask
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 82 次发布
+
+发布时间：2025-02-10 01:42:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAIPlaygroundConfig](http://document.tencentcloudapi.woa.com/document/product/647/85728)
 
 
 
@@ -22391,6 +22483,18 @@
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 67 次发布
+
+发布时间：2025-02-10 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* AddAcRule
+
 ### 第 66 次发布
 
 发布时间：2025-02-07 01:11:19
@@ -24460,6 +24564,21 @@
 
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 99 次发布
+
+发布时间：2025-02-10 01:11:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstanceAttributes](http://document.tencentcloudapi.woa.com/document/product/597/40832)
+
+	* 新增入参：UncleanLeaderElectionEnable
+
 
 ### 第 98 次发布
 
@@ -28461,6 +28580,22 @@
 
 
 ## 磐石(clouddc) 版本：2018-08-30
+
+### 第 14 次发布
+
+发布时间：2025-02-10 01:12:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribePkgExist](http://document.tencentcloudapi.woa.com/document/product/1626/85718)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DescribePkgExistRsp](http://document.tencentcloudapi.woa.com/document/product/1626/78427#DescribePkgExistRsp)](http://document.tencentcloudapi.woa.com/document/product/1626/78427#[DescribePkgExistRsp](http://document.tencentcloudapi.woa.com/document/product/1626/78427#DescribePkgExistRsp))
 
 ### 第 13 次发布
 
@@ -36937,6 +37072,24 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 116 次发布
+
+发布时间：2025-02-10 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeAttackLogs
+* DescribeComponentStatistics
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ComponentStatistics
+* DefendAttackLog
 
 ### 第 115 次发布
 
@@ -68600,6 +68753,25 @@
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
 
+### 第 25 次发布
+
+发布时间：2025-02-10 01:19:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ApproveClientApply](http://document.tencentcloudapi.woa.com/document/product/1724/85720)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryCustomerBillingQuota](http://document.tencentcloudapi.woa.com/document/product/1724/85721)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[QueryPendingClientsV2](http://document.tencentcloudapi.woa.com/document/product/1724/85719)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[QueryCustomerBillingQuotaData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryCustomerBillingQuotaData)](http://document.tencentcloudapi.woa.com/document/product/1724/80754#[QueryCustomerBillingQuotaData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryCustomerBillingQuotaData))
+* [[QueryPendingCustomersItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryPendingCustomersItem)](http://document.tencentcloudapi.woa.com/document/product/1724/80754#[QueryPendingCustomersItem](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryPendingCustomersItem))
+
 ### 第 24 次发布
 
 发布时间：2025-01-20 01:19:10
@@ -85741,6 +85913,18 @@
 
 
 ## 迁移服务平台(msp) 版本：2018-03-19
+
+### 第 5 次发布
+
+发布时间：2025-02-10 01:36:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeregisterMigrationTask
 
 ### 第 4 次发布
 
@@ -103743,31 +103927,31 @@
 
 新增接口：
 
-* [[AcceptTccVpcEndPointConnect](http://document.tencentcloudapi.woa.com/document/product/1785/85704)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[BindTccVpcEndPointServiceWhiteList](http://document.tencentcloudapi.woa.com/document/product/1785/85703)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CheckCatalogConnectivity](http://document.tencentcloudapi.woa.com/document/product/1785/85702)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85701)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTccCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85700)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTccCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85699)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85698)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85697)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AcceptTccVpcEndPointConnect](http://document.tencentcloudapi.woa.com/document/product/1785/85704)
+* [BindTccVpcEndPointServiceWhiteList](http://document.tencentcloudapi.woa.com/document/product/1785/85703)
+* [CheckCatalogConnectivity](http://document.tencentcloudapi.woa.com/document/product/1785/85702)
+* [DescribeCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85701)
+* [DescribeTccCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85700)
+* [DescribeTccCatalogs](http://document.tencentcloudapi.woa.com/document/product/1785/85699)
+* [DescribeTccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85698)
+* [ModifyCatalog](http://document.tencentcloudapi.woa.com/document/product/1785/85697)
 
 新增数据结构：
 
-* [[CatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#CatalogConfig)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[CatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#CatalogConfig))
-* [[ConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ConnectionConfig)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[ConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ConnectionConfig))
-* [[DLCConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DLCConnection)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[DLCConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DLCConnection))
-* [[DorisConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DorisConnection)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[DorisConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DorisConnection))
-* [[HiveConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#HiveConnection)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[HiveConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#HiveConnection))
-* [[KVPair](http://document.tencentcloudapi.woa.com/document/product/1785/85705#KVPair)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[KVPair](http://document.tencentcloudapi.woa.com/document/product/1785/85705#KVPair))
-* [[MysqlConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#MysqlConnection)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[MysqlConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#MysqlConnection))
-* [[NetWork](http://document.tencentcloudapi.woa.com/document/product/1785/85705#NetWork)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[NetWork](http://document.tencentcloudapi.woa.com/document/product/1785/85705#NetWork))
-* [[TccCatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogConfig)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[TccCatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogConfig))
-* [[TccCatalogSet](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogSet)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[TccCatalogSet](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogSet))
-* [[TccConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnection)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[TccConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnection))
-* [[TccConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnectionConfig)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[TccConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnectionConfig))
-* [[TccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccVipInternal)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[TccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccVipInternal))
-* [[VolumeConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#VolumeConnection)](http://document.tencentcloudapi.woa.com/document/product/1785/85705#[VolumeConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#VolumeConnection))
+* [CatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#CatalogConfig)
+* [ConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#ConnectionConfig)
+* [DLCConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DLCConnection)
+* [DorisConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#DorisConnection)
+* [HiveConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#HiveConnection)
+* [KVPair](http://document.tencentcloudapi.woa.com/document/product/1785/85705#KVPair)
+* [MysqlConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#MysqlConnection)
+* [NetWork](http://document.tencentcloudapi.woa.com/document/product/1785/85705#NetWork)
+* [TccCatalogConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogConfig)
+* [TccCatalogSet](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccCatalogSet)
+* [TccConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnection)
+* [TccConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccConnectionConfig)
+* [TccVipInternal](http://document.tencentcloudapi.woa.com/document/product/1785/85705#TccVipInternal)
+* [VolumeConnection](http://document.tencentcloudapi.woa.com/document/product/1785/85705#VolumeConnection)
 
 
 
@@ -119570,6 +119754,18 @@
 
 
 ## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 82 次发布
+
+发布时间：2025-02-10 01:42:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAIPlaygroundConfig](http://document.tencentcloudapi.woa.com/document/product/647/85728)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 81 次发布
 

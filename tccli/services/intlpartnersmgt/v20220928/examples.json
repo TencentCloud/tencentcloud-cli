@@ -16,6 +16,14 @@
         "title": "设置客户信用额度"
       }
     ],
+    "ApproveClientApply": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApproveClientApply\n<公共请求参数>\n\n{\n    \"ClientUin\": \"1000000000\",\n    \"ApproveType\": \"pass\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0aa8fe2c-****-4d94-b481-3f329******a\"\n    }\n}",
+        "title": "审批子客申请"
+      }
+    ],
     "CreateAccount": [
       {
         "document": "申请创建客户账户",
@@ -206,6 +214,26 @@
         "title": "查询子客信用"
       }
     ],
+    "QueryCustomerBillingQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{\n    \"EventId\": \"1\",\n    \"ComponentName\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Force\": 0,\n            \"RemainingCredit\": 0,\n            \"RemainingVoucher\": 0,\n            \"TotalCredit\": 0\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{\n    \"EventId\": 123,\n    \"ComponentName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemainingCredit\": 0.0,\n            \"RemainingVoucher\": 0.0,\n            \"TotalCredit\": 0.0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "QueryCustomerBillingQuota"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{\n    \"EventId\": \"0\",\n    \"ComponentName\": \"字符串\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemainingCredit\": 0,\n            \"RemainingVoucher\": 0,\n            \"TotalCredit\": 0\n        },\n        \"RequestId\": \"0117004b-2653-4146-b637-73c05e067172\"\n    }\n}",
+        "title": "QueryCustomerBillingQuota示例"
+      }
+    ],
     "QueryCustomerUinListByResellerUin": [
       {
         "document": "有权限的账户输入正确的经销商",
@@ -236,6 +264,14 @@
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryPartnerCredit\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RemainingCredit\": 1000.1,\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c7\",\n        \"TotalCredit\": 1050.1,\n        \"AllocatedCredit\": 50\n    }\n}",
         "title": "查询合作伙伴信用额度"
+      }
+    ],
+    "QueryPendingClientsV2": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryPendingClientsV2\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 100,\n        \"Data\": [\n            {\n                \"ClientUin\": \"20000000000\",\n                \"Name\": \"tom\",\n                \"Type\": \"A\",\n                \"Mobile\": \"188****1234\",\n                \"Email\": \"abc@gmail.com\",\n                \"ApplyTime\": \"2024-01-03 15:11:10\",\n                \"Status\": \"Reviewing\"\n            }\n        ],\n        \"RequestId\": \"0aa8fe2c-****-4d94-b481-3f329******a\"\n    }\n}",
+        "title": "查询申请中子客信息"
       }
     ],
     "QueryPolicyProductListByCode": [

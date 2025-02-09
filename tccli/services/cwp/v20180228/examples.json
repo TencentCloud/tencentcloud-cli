@@ -968,14 +968,6 @@
         "title": "网络攻击检测列表"
       }
     ],
-    "DescribeAttackLogs": [
-      {
-        "document": "网络攻击日志列表",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeAttackLogs\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AttackLogs\": [\n            {\n                \"Id\": 1,\n                \"Uuid\": \"abc\",\n                \"SrcIp\": \"abc\",\n                \"SrcPort\": 1,\n                \"HttpMethod\": \"abc\",\n                \"HttpCgi\": \"abc\",\n                \"HttpParam\": \"abc\",\n                \"VulType\": \"abc\",\n                \"CreatedAt\": \"abc\",\n                \"MachineIp\": \"abc\",\n                \"MachineName\": \"abc\",\n                \"DstIp\": \"abc\",\n                \"DstPort\": 1,\n                \"HttpContent\": \"abc\",\n                \"MachineExtraInfo\": {\n                    \"WanIP\": \"abc\",\n                    \"PrivateIP\": \"abc\",\n                    \"NetworkType\": 0,\n                    \"NetworkName\": \"abc\",\n                    \"InstanceID\": \"abc\",\n                    \"HostName\": \"abc\"\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "网络攻击日志列表"
-      }
-    ],
     "DescribeAttackStatistics": [
       {
         "document": "网络攻击数据统计",
@@ -1380,14 +1372,6 @@
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClientException\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-11-21 15:16:00\",\n    \"Limit\": \"10\",\n    \"ExceptionType\": \"1\",\n    \"StartTime\": \"2020-11-21 15:16:00\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"HostIP\": \"172.23.16.2\",\n                \"InstanceID\": \"ins-kz85kljw\",\n                \"Uuid\": \"2e6353e4-0498-450a-9be5-77e2537247f6\",\n                \"OfflineTime\": \"2022-04-24T17:52:37+08:00\",\n                \"UninstallTime\": \"2020-11-21 15:16:00\",\n                \"UninstallCmd\": \"sh ******\"\n            }\n        ],\n        \"RequestId\": \"1248a7df-c3fe-4930-b3ff-2af956cf8d66\",\n        \"TotalCount\": 944\n    }\n}",
         "title": "示例1"
-      }
-    ],
-    "DescribeComponentStatistics": [
-      {
-        "document": "获取组件统计列表",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeComponentStatistics\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ComponentStatistics\": [\n            {\n                \"Id\": 100010,\n                \"MachineNum\": 10,\n                \"ComponentName\": \"machine-name\",\n                \"ComponentType\": \"WEB\",\n                \"Description\": \"description\"\n            }\n        ],\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\",\n        \"TotalCount\": 100\n    }\n}",
-        "title": "获取组件统计列表"
       }
     ],
     "DescribeDefenceEventDetail": [

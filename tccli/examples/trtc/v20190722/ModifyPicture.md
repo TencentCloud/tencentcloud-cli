@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli trtc ModifyPicture --cli-unfold-argument  \
-    --PictureId 123456 \
-    --Height 12 \
-    --Width 15 \
-    --XPosition 15 \
-    --YPosition 36 \
-    --SdkAppId 30
+    --PictureId 10081 \
+    --Height 80 \
+    --Width 70 \
+    --XPosition 10 \
+    --YPosition 20 \
+    --SdkAppId 1500000001
 ```
 
 Output: 

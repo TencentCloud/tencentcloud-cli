@@ -14,6 +14,13 @@
       "output": "AllocateCustomerCreditResponse",
       "status": "online"
     },
+    "ApproveClientApply": {
+      "document": "描述说明：该接口用于经销商审批客户成为子客的申请。注意：该接口需要申请白名单后使用，如有需要请联系您的商务开白。\n\n可调用角色：经销商、一级经销商、二级经销商",
+      "input": "ApproveClientApplyRequest",
+      "name": "审批子客申请",
+      "output": "ApproveClientApplyResponse",
+      "status": "online"
+    },
     "CreateAccount": {
       "document": "当前接口用作一级经销商/二级经销商创建腾讯云子客账号，账号创建完成后将自动与合作伙伴账号绑定。\n注意事项：\n1、创建腾讯云账号，输入的邮箱、手机号，需要合作伙伴做有效性验证。\n2、客户首次登录需要补充个人信息\n3、该接口需要申请白名单使用，请联系渠道经理发起申请流程。",
       "input": "CreateAccountRequest",
@@ -154,6 +161,13 @@
       "output": "QueryCreditQuotaResponse",
       "status": "online"
     },
+    "QueryCustomerBillingQuota": {
+      "document": "实时查询子客信用余额",
+      "input": "QueryCustomerBillingQuotaRequest",
+      "name": "查询子客信用余额",
+      "output": "QueryCustomerBillingQuotaResponse",
+      "status": "online"
+    },
     "QueryCustomerUinListByResellerUin": {
       "document": "内部接口",
       "input": "QueryCustomerUinListByResellerUinRequest",
@@ -180,6 +194,13 @@
       "input": "QueryPartnerCreditRequest",
       "name": "查询合作伙伴信用额度",
       "output": "QueryPartnerCreditResponse",
+      "status": "online"
+    },
+    "QueryPendingClientsV2": {
+      "document": "描述说明：该接口用于经销商查询待审核的子客信息列表，查询后可调用接口 审批子客申请 审核子客的申请。注意：该接口需要申请白名单后使用，如有需要请联系您的商务开白。\n\n可调用角色：经销商、一级经销商、二级经销商",
+      "input": "QueryPendingClientsV2Request",
+      "name": "查询申请中子客",
+      "output": "QueryPendingClientsV2Response",
       "status": "online"
     },
     "QueryPolicyProductListByCode": {
@@ -391,6 +412,51 @@
           "type": "float",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApproveClientApplyRequest": {
+      "document": "ApproveClientApply请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子客uin",
+          "example": "1000000000",
+          "member": "int64",
+          "name": "ClientUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "审批类型。仅支持pass和reject",
+          "example": "pass",
+          "member": "string",
+          "name": "ApproveType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拒绝原因。仅在ApproveType为reject场景下填写",
+          "example": "miss accout info",
+          "member": "string",
+          "name": "RejectReason",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApproveClientApplyResponse": {
+      "document": "ApproveClientApply返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2729,6 +2795,118 @@
       ],
       "type": "object"
     },
+    "QueryCustomerBillingQuotaData": {
+      "document": "子客信用余额数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总信用额度(单位：元)，精度保留至2位小数",
+          "example": "0.00",
+          "member": "float",
+          "name": "TotalCredit",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余信用额度(单位：元)，精度保留至2位小数",
+          "example": "0.00",
+          "member": "float",
+          "name": "RemainingCredit",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余代金券总额 (单位：元) ，精度保留至2位小数",
+          "example": "0.00",
+          "member": "float",
+          "name": "RemainingVoucher",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "强制状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Force",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预付费冻结金额",
+          "example": "0.00",
+          "member": "float",
+          "name": "PrepayFrozen",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后付费冻结金额",
+          "example": "0.00",
+          "member": "float",
+          "name": "PostpayFrozen",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryCustomerBillingQuotaRequest": {
+      "document": "QueryCustomerBillingQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件id，用于标记请求事件，通常为随机数",
+          "example": "1",
+          "member": "int64",
+          "name": "EventId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求发起的源头",
+          "example": "a",
+          "member": "string",
+          "name": "ComponentName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCustomerBillingQuotaResponse": {
+      "document": "QueryCustomerBillingQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "额度相关数据",
+          "example": "{...}",
+          "member": "QueryCustomerBillingQuotaData",
+          "name": "Data",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryCustomerUinListByResellerUinRequest": {
       "document": "QueryCustomerUinListByResellerUin请求参数结构体",
       "members": [],
@@ -3094,6 +3272,138 @@
         }
       ],
       "type": "object"
+    },
+    "QueryPendingClientsV2Request": {
+      "document": "QueryPendingClientsV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码。起始页码为1",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量。分页数量[1,100]",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryPendingClientsV2Response": {
+      "document": "QueryPendingClientsV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请中子客详情",
+          "example": "无",
+          "member": "QueryPendingCustomersItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请中子客总数量",
+          "example": "20",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryPendingCustomersItem": {
+      "document": "待审核子客",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请时间",
+          "example": "1",
+          "member": "string",
+          "name": "ApplyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子客uin",
+          "example": "1",
+          "member": "uint64",
+          "name": "ClientUin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱",
+          "example": "1",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电话",
+          "example": "1",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审核状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子客类型",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "QueryPolicyProductListByCodeRequest": {
       "document": "QueryPolicyProductListByCode请求参数结构体",

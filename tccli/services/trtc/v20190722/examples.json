@@ -97,7 +97,7 @@
     "DeletePicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=1234567890\n&SdkAppId=123456789\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=18813\n&SdkAppId=140000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "删除图片"
       }
@@ -108,6 +108,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"SV1FR+XTtvzAjRxZZ+aof1DfJF00VSBBNE0zR9W-PEpgCPBmt402BbnqMCdom79LtZO-VbLyV1nhVY1pFauWgrW12BevPvJ5Zn010RnD6vj3hgfbV0.\"\n}",
         "output": "{\n    \"Response\": {\n        \"StartTime\": \"abc\",\n        \"Status\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询对话任务状态"
+      }
+    ],
+    "DescribeAIPlaygroundConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIPlaygroundConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Base\": \"{\\\"Region\\\":\\\"ap-beijing\\\",\\\"WelcomeMessage\\\":\\\"hello\\\",\\\"InterruptMode\\\":0,\\\"InterruptSpeechDuration\\\":400}\",\n        \"ASR\": \"{\\\"Language\\\":\\\"zh\\\",\\\"VadSilenceTime\\\":800}\",\n        \"LLM\": \"{\\\"LLMType\\\":\\\"openai\\\",\\\"Model\\\":\\\"chat\\\",\\\"APIUrl\\\":\\\"https://api.test.com/test\\\",\\\"SystemPrompt\\\":\\\"你是对话助手\\\",\\\"APIKey\\\":\\\"eyJhbG\\\",\\\"History\\\":5,\\\"Streaming\\\":true}\",\n        \"TTS\": \"{\\\"TTSType\\\":\\\"minimax\\\",\\\"Model\\\":\\\"speech\\\",\\\"ApiUrl\\\":\\\"https://api.test.com/test\\\",\\\"GroupId\\\":\\\"181066989\\\",\\\"ApiKey\\\":\\\"eyJhbG\\\",\\\"VoiceType\\\":\\\"female\\\",\\\"Speed\\\":1}\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "获取AI对话调试工具配置"
       }
     ],
     "DescribeAITranscription": [
@@ -167,8 +175,8 @@
     "DescribePicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DescribePicture\n&SdkAppId=123456\n&PictureId=123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"PictureInfo\": [\n            {\n                \"PictureId\": 1,\n                \"Height\": 12,\n                \"Width\": 13,\n                \"XPosition\": 14,\n                \"YPosition\": 15,\n                \"SdkAppId\": 123456\n            },\n            {\n                \"PictureId\": 2,\n                \"Height\": 22,\n                \"Width\": 23,\n                \"XPosition\": 24,\n                \"YPosition\": 25,\n                \"SdkAppId\": 123456\n            }\n        ],\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\n    }\n}",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribePicture\n&SdkAppId=140000001\n&PictureId=100861\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"PictureInfo\": [\n            {\n                \"PictureId\": 100861,\n                \"Height\": 120,\n                \"Width\": 113,\n                \"XPosition\": 124,\n                \"YPosition\": 150,\n                \"SdkAppId\": 140000001\n            }\n        ],\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\n    }\n}",
         "title": "查询图片信息"
       }
     ],
@@ -391,7 +399,7 @@
     "ModifyPicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=123456\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&SdkAppId=30\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=10081\n&Height=80\n&Width=70\n&XPosition=10\n&YPosition=20\n&SdkAppId=1500000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "修改图片相关参数"
       }

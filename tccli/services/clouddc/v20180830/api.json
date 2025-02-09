@@ -105,6 +105,13 @@
       "output": "DescribeOrganizationInfoResponse",
       "status": "online"
     },
+    "DescribePkgExist": {
+      "document": "判断公司或者UIN是否在对应分群中",
+      "input": "DescribePkgExistRequest",
+      "name": "分群判存",
+      "output": "DescribePkgExistResponse",
+      "status": "online"
+    },
     "DescribeProductProjectInfo": {
       "document": "产研接口--获取产品项目信息\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
       "input": "DescribeProductProjectInfoRequest",
@@ -1278,6 +1285,87 @@
         }
       ],
       "type": "object"
+    },
+    "DescribePkgExistRequest": {
+      "document": "DescribePkgExist请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分群ID",
+          "example": "[100000428]",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需判存的uin",
+          "example": "100032961887",
+          "member": "string",
+          "name": "QueryUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需判存的公司名称",
+          "example": "腾讯云计算(沈阳)有限责任公司",
+          "member": "string",
+          "name": "Company",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePkgExistResponse": {
+      "document": "DescribePkgExist返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "判存结果",
+          "example": "[{\"Uin\": \"100000428\",\"Result\": 0},{\"Uin\": \"100000460\",\"Result\": 0}]",
+          "member": "DescribePkgExistRsp",
+          "name": "ExistResult",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePkgExistRsp": {
+      "document": "判存返回结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的TaskId",
+          "example": "100000428",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果：0-不在分群；1-在分群",
+          "example": "0",
+          "member": "int64",
+          "name": "Result",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeProductProjectInfoRequest": {
       "document": "DescribeProductProjectInfo请求参数结构体",
