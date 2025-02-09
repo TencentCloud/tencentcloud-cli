@@ -18812,7 +18812,7 @@
           "example": "2204",
           "member": "uint64",
           "name": "ResourceVPort",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -18821,7 +18821,7 @@
           "example": "admin",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -18830,7 +18830,7 @@
           "example": "pass",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -18839,6 +18839,15 @@
           "example": "all",
           "member": "string",
           "name": "AuthRange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自建数据资产的名称，支持修改",
+          "example": "我的自建资产",
+          "member": "string",
+          "name": "ResourceName",
           "required": false,
           "type": "string"
         }

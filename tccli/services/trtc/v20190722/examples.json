@@ -51,7 +51,7 @@
     "DeletePicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=1234567890\n&SdkAppId=123456789\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DeletePicture\n&PictureId=18813\n&SdkAppId=140000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "删除图片"
       }
@@ -99,8 +99,8 @@
     "DescribePicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DescribePicture\n&SdkAppId=123456\n&PictureId=123\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"PictureInfo\": [\n            {\n                \"PictureId\": 1,\n                \"Height\": 12,\n                \"Width\": 13,\n                \"XPosition\": 14,\n                \"YPosition\": 15,\n                \"SdkAppId\": 123456\n            },\n            {\n                \"PictureId\": 2,\n                \"Height\": 22,\n                \"Width\": 23,\n                \"XPosition\": 24,\n                \"YPosition\": 25,\n                \"SdkAppId\": 123456\n            }\n        ],\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\n    }\n}",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribePicture\n&SdkAppId=140000001\n&PictureId=100861\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 2,\n        \"PictureInfo\": [\n            {\n                \"PictureId\": 100861,\n                \"Height\": 120,\n                \"Width\": 113,\n                \"XPosition\": 124,\n                \"YPosition\": 150,\n                \"SdkAppId\": 140000001\n            }\n        ],\n        \"RequestId\": \"83ca6fdd-cf4c-46a9-a577-74c3497ad3fa\"\n    }\n}",
         "title": "查询图片信息"
       }
     ],
@@ -299,7 +299,7 @@
     "ModifyPicture": [
       {
         "document": "",
-        "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=123456\n&Height=12\n&Width=15\n&XPosition=15\n&YPosition=36\n&SdkAppId=30\n&<公共请求参数>",
+        "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=10081\n&Height=80\n&Width=70\n&XPosition=10\n&YPosition=20\n&SdkAppId=1500000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "修改图片相关参数"
       }

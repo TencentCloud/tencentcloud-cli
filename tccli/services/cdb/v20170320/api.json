@@ -5898,7 +5898,7 @@
         {
           "disabled": false,
           "document": "只读实例信息。购买只读实例时，该参数必传。",
-          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": \"5\",\"MinRoInGroup\": \"1\",\"RoOfflineDelay\": \"1\"}",
+          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": 5,\"MinRoInGroup\": 1,\"RoOfflineDelay\": 1}",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,
@@ -6323,7 +6323,7 @@
         {
           "disabled": false,
           "document": "只读实例参数。购买只读实例时，该参数必传。",
-          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": \"5\",\"MinRoInGroup\": \"1\",\"RoOfflineDelay\": \"1\"}",
+          "example": "{\"RoGroupMode\": \"allinone\",\"RoGroupName\": \"jersey\",\"RoMaxDelayTime\": 5,\"MinRoInGroup\": 1,\"RoOfflineDelay\": 1}",
           "member": "RoGroup",
           "name": "RoGroup",
           "required": false,

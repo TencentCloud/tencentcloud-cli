@@ -12168,7 +12168,7 @@
         {
           "disabled": false,
           "document": "规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "基础1",
           "member": "string",
           "name": "SpecName",
           "output_required": true,
@@ -12844,7 +12844,7 @@
         {
           "disabled": false,
           "document": "模板列表",
-          "example": "[{\"Name\":\"abc\",\"Describe\":\"abc\",\"Level\":\"abc\",\"RecordRules\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"RawJobs\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"ServiceMonitors\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"PodMonitors\":[{\"Name\":\"abc\",\"Config\":\"abc\",\"TemplateId\":\"abc\",\"Targets\":{\"Total\":1,\"Up\":1,\"Down\":1,\"Unknown\":1}}],\"TemplateId\":\"abc\",\"UpdateTime\":\"abc\",\"Version\":\"abc\",\"IsDefault\":true,\"AlertDetailRules\":[{\"Id\":\"abc\",\"Name\":\"abc\",\"TemplateId\":\"abc\",\"Notification\":{\"Enabled\":true,\"Type\":\"abc\",\"WebHook\":\"abc\",\"AlertManager\":{\"ClusterType\":\"abc\",\"ClusterId\":\"abc\",\"Url\":\"abc\"},\"RepeatInterval\":\"abc\",\"TimeRangeStart\":\"abc\",\"TimeRangeEnd\":\"abc\",\"NotifyWay\":[\"abc\"],\"ReceiverGroups\":[\"abc\"],\"PhoneNotifyOrder\":[1],\"PhoneCircleTimes\":0,\"PhoneInnerInterval\":0,\"PhoneCircleInterval\":0,\"PhoneArriveNotice\":true},\"Rules\":[{\"Name\":\"abc\",\"Rule\":\"abc\",\"Labels\":[{\"Name\":\"abc\",\"Value\":\"abc\"}],\"Template\":\"abc\",\"For\":\"abc\",\"Describe\":\"abc\",\"Annotations\":[{\"Name\":\"abc\",\"Value\":\"abc\"}],\"RuleState\":0}],\"UpdatedAt\":\"abc\",\"ClusterId\":\"abc\",\"Interval\":\"abc\"}],\"TargetsTotal\": 0}]",
+          "example": "无",
           "member": "PrometheusTemp",
           "name": "Templates",
           "output_required": true,
@@ -13143,7 +13143,7 @@
         {
           "disabled": false,
           "document": "Prometheus 实例 ID",
-          "example": "",
+          "example": "prom-abc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13152,7 +13152,7 @@
         {
           "disabled": false,
           "document": "<li>类型是 TKE，为对应的腾讯云容器服务集群 ID</li>",
-          "example": "",
+          "example": "cls-abc",
           "member": "string",
           "name": "KubeClusterId",
           "required": true,
@@ -13161,7 +13161,7 @@
         {
           "disabled": false,
           "document": "用户 Kubernetes 集群类型：\n<li> 1 = 容器服务集群(TKE) </li>",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "KubeType",
           "required": true,
@@ -13176,9 +13176,10 @@
         {
           "disabled": false,
           "document": "返回服务发现列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "ServiceDiscoveryItem",
           "name": "ServiceDiscoverySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13890,7 +13891,7 @@
         {
           "disabled": false,
           "document": "Prometheus 实例 ID",
-          "example": "",
+          "example": "prom-abc",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -13899,7 +13900,7 @@
         {
           "disabled": false,
           "document": "Prometheus Agent ID",
-          "example": "",
+          "example": "agent-abc",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -13914,9 +13915,10 @@
         {
           "disabled": false,
           "document": "Agent 管理命令",
-          "example": "",
+          "example": "无",
           "member": "ManagementCommand",
           "name": "Command",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18886,40 +18888,40 @@
         {
           "disabled": false,
           "document": "任务名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "redis-monitor",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Agent ID",
-          "example": "",
+          "example": "agent-abc",
           "member": "string",
           "name": "AgentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务 ID",
-          "example": "",
+          "example": "job-abc",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "job_name: \"redis-monitor\"\\nstatic_configs:\\n- targets: [\"localhost:8080\"]",
           "member": "string",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -19622,7 +19624,7 @@
         {
           "disabled": false,
           "document": "RelabelConfig\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "- source_labels: [label]   target_label: label1",
           "member": "string",
           "name": "URLRelabelConfig",
           "output_required": true,
@@ -19642,7 +19644,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "最大block\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
@@ -19653,7 +19655,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "Label\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",

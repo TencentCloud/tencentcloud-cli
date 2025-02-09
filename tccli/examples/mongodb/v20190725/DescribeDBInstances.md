@@ -7,7 +7,7 @@ Input:
 ```
 tccli mongodb DescribeDBInstances --cli-unfold-argument  \
     --Status 0 \
-    --OrderBy DESC \
+    --OrderBy ProjectId \
     --InstanceIds cmgo-3vgr**** \
     --VpcId vpc-gfb3**** \
     --Tags.0.TagKey testTag \

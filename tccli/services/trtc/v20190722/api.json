@@ -1346,7 +1346,7 @@
         {
           "disabled": false,
           "document": "图片id",
-          "example": "123",
+          "example": "18813",
           "member": "uint64",
           "name": "PictureId",
           "required": true,
@@ -1355,7 +1355,7 @@
         {
           "disabled": false,
           "document": "应用id",
-          "example": "123",
+          "example": "140000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1803,7 +1803,7 @@
         {
           "disabled": false,
           "document": "应用ID",
-          "example": "1234567",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1812,7 +1812,7 @@
         {
           "disabled": false,
           "document": "图片ID，不填时返回该应用下所有图片",
-          "example": "123",
+          "example": "100861",
           "member": "uint64",
           "name": "PictureId",
           "required": false,
@@ -1848,7 +1848,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1858,7 +1858,7 @@
           "example": "无",
           "member": "PictureInfo",
           "name": "PictureInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4710,7 +4710,7 @@
         {
           "disabled": false,
           "document": "字符串内容为待显示在该画面的主播对应的UserId，如果不指定，会按照主播加入房间的顺序匹配。",
-          "example": "123",
+          "example": "user_1",
           "member": "string",
           "name": "UserId",
           "required": false,
@@ -4788,7 +4788,7 @@
         {
           "disabled": false,
           "document": "录制背景颜色，RGB的颜色表的16进制表示，每个颜色通过8bit长度标识，默认为黑色。比如橙色对应的RGB为 R:255 G:165 B:0, 那么对应的字符串描述为#FFA500，格式规范：‘#‘开头，后面跟固定RGB的颜色值",
-          "example": "123",
+          "example": "#FF0000",
           "member": "string",
           "name": "BackGroundColor",
           "required": false,
@@ -4797,7 +4797,7 @@
         {
           "disabled": false,
           "document": "在布局模式为1：悬浮布局和 2：屏幕分享布局时，设定为显示大视频画面的UserId。不填的话：悬浮布局默认是第一个进房间的主播，屏幕分享布局默认是背景色",
-          "example": "123",
+          "example": "user_1",
           "member": "string",
           "name": "MaxResolutionUserId",
           "required": false,
@@ -5007,7 +5007,7 @@
         {
           "disabled": false,
           "document": "图片id",
-          "example": "123",
+          "example": "10081",
           "member": "uint64",
           "name": "PictureId",
           "required": true,
@@ -5016,7 +5016,7 @@
         {
           "disabled": false,
           "document": "应用id",
-          "example": "123",
+          "example": "1500000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5025,7 +5025,7 @@
         {
           "disabled": false,
           "document": "图片长度",
-          "example": "12",
+          "example": "80",
           "member": "uint64",
           "name": "Height",
           "required": false,
@@ -5034,7 +5034,7 @@
         {
           "disabled": false,
           "document": "图片宽度",
-          "example": "15",
+          "example": "70",
           "member": "uint64",
           "name": "Width",
           "required": false,
@@ -5043,7 +5043,7 @@
         {
           "disabled": false,
           "document": "显示位置x轴方向",
-          "example": "15",
+          "example": "10",
           "member": "uint64",
           "name": "XPosition",
           "required": false,
@@ -5052,7 +5052,7 @@
         {
           "disabled": false,
           "document": "显示位置y轴方向",
-          "example": "16",
+          "example": "20",
           "member": "uint64",
           "name": "YPosition",
           "required": false,
@@ -7115,10 +7115,10 @@
         {
           "disabled": false,
           "document": "录制文件对应的UserId，如果是混流的话的这里返回的是空串。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "user_1",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7128,7 +7128,7 @@
           "example": "xxx.m3u8",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7138,7 +7138,7 @@
           "example": "audio_video",
           "member": "string",
           "name": "TrackType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7148,7 +7148,7 @@
           "example": "1562724852626",
           "member": "uint64",
           "name": "BeginTimeStamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7344,7 +7344,7 @@
         {
           "disabled": false,
           "document": "任务流上下文，任务完成回调时透传。",
-          "example": "\"\"",
+          "example": "\"session_context_example\"",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -7353,7 +7353,7 @@
         {
           "disabled": false,
           "document": "上传上下文，上传完成回调时透传。",
-          "example": "\"\"",
+          "example": "\"source_context_example\"",
           "member": "string",
           "name": "SourceContext",
           "required": false,
@@ -7371,7 +7371,7 @@
         {
           "disabled": false,
           "document": "仅支持API录制上传vod，该参数表示用户可以自定义录制文件名前缀，【限制长度为64字节，只允许包含大小写英文字母（a-zA-Z）、数字（0-9）及下划线和连词符】。前缀与自动生成的录制文件名之间用`__UserDefine_u_` 分开。",
-          "example": "\"\"",
+          "example": "\"user_prefix\"",
           "member": "string",
           "name": "UserDefineRecordId",
           "required": false,

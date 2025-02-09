@@ -292,6 +292,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务clbip",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ClbIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务clbPort",
+          "example": "11808",
+          "member": "string",
+          "name": "ClbPort",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -18,52 +18,16 @@ Output:
     "Response": {
         "Templates": [
             {
-                "Name": "test",
-                "Describe": "test",
+                "Name": "template",
+                "Describe": "template",
                 "Level": "instance",
-                "RecordRules": [
-                    {
-                        "Name": "testRule",
-                        "Config": "abc",
-                        "TemplateId": "temp-asdj",
-                        "Targets": {
-                            "Total": 1,
-                            "Up": 1,
-                            "Down": 1,
-                            "Unknown": 1
-                        }
-                    }
-                ],
-                "RawJobs": [
-                    {
-                        "Name": "abc",
-                        "Config": "abc",
-                        "TemplateId": "abc",
-                        "Targets": {
-                            "Total": 1,
-                            "Up": 1,
-                            "Down": 1,
-                            "Unknown": 1
-                        }
-                    }
-                ],
-                "ServiceMonitors": [
-                    {
-                        "Name": "test-sm",
-                        "Config": "abc",
-                        "TemplateId": "temp-asdj",
-                        "Targets": {
-                            "Total": 1,
-                            "Up": 1,
-                            "Down": 1,
-                            "Unknown": 1
-                        }
-                    }
-                ],
+                "RecordRules": [],
+                "RawJobs": [],
+                "ServiceMonitors": [],
                 "PodMonitors": [
                     {
                         "Name": "test-pm",
-                        "Config": "abc",
+                        "Config": "apiVersion: monitoring.coreos.com/v1\nkind: PodMonitor\nmetadata:\n  name: example-app\n  labels:\n    team: frontend\nspec:\n  selector:\n    matchLabels:\n      app: example-app\n  podMetricsEndpoints:\n  - port: web",
                         "TemplateId": "temp-asdj",
                         "Targets": {
                             "Total": 1,
@@ -77,63 +41,7 @@ Output:
                 "UpdateTime": "2024-07-16T08:28:54Z",
                 "Version": "v1",
                 "IsDefault": true,
-                "AlertDetailRules": [
-                    {
-                        "Id": "rule-asdk",
-                        "Name": "testAlert",
-                        "TemplateId": "temp-asdj",
-                        "Notification": {
-                            "Enabled": true,
-                            "Type": "amp",
-                            "WebHook": "abc",
-                            "AlertManager": {
-                                "ClusterType": "tke",
-                                "ClusterId": "cls-askj",
-                                "Url": "http://asasdkfh:9000"
-                            },
-                            "RepeatInterval": "5m",
-                            "TimeRangeStart": "00:00:00",
-                            "TimeRangeEnd": "23:59:59",
-                            "NotifyWay": [
-                                "abc"
-                            ],
-                            "ReceiverGroups": [
-                                "notice-yakj"
-                            ],
-                            "PhoneNotifyOrder": [
-                                1
-                            ],
-                            "PhoneCircleTimes": 0,
-                            "PhoneInnerInterval": 0,
-                            "PhoneCircleInterval": 0,
-                            "PhoneArriveNotice": true
-                        },
-                        "Rules": [
-                            {
-                                "Name": "rule-ajdb",
-                                "Rule": "avg by (abc) skdj",
-                                "Labels": [
-                                    {
-                                        "Name": "label-name",
-                                        "Value": "label-value"
-                                    }
-                                ],
-                                "Template": "temp-asdj",
-                                "For": "5m",
-                                "Describe": "test-temp",
-                                "Annotations": [
-                                    {
-                                        "Name": "label-name",
-                                        "Value": "label-value"
-                                    }
-                                ],
-                                "RuleState": 0
-                            }
-                        ],
-                        "UpdatedAt": "2024-07-16 16:28:54",
-                        "ClusterId": "cls-djfb"
-                    }
-                ],
+                "AlertDetailRules": [],
                 "TargetsTotal": 0
             }
         ],

@@ -6102,6 +6102,17 @@
         },
         {
           "disabled": false,
+          "document": "IPv6网段或IPv6地址(互斥)。\n示例值：::/0。\n\n和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。",
+          "example": "::/0",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "取值：ACCEPT，DROP。默认为 ACCEPT。",
           "example": "ACCEPT",
           "member": "string",
@@ -6164,6 +6175,16 @@
           "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrBlock",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv6网段或IPv6地址(互斥)。\n示例值：::/0。\n\n和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。",
+          "example": "::/0",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7098,6 +7119,26 @@
           "name": "InstanceRestrictState",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述实例是否支持IPv6。",
+          "example": "无",
+          "member": "SupportIpv6Detail",
+          "name": "SupportIpv6Detail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IPv6地址列表。",
+          "example": "[\"2402:4e00:c000:100:c0b4:df6e:e276:6\"]",
+          "member": "string",
+          "name": "PublicIpv6Addresses",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9576,6 +9617,42 @@
         }
       ],
       "type": "object"
+    },
+    "SupportIpv6Detail": {
+      "document": "实例支持IPv6详情描述。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否支持开启IPv6。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupport",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情。\n\n当IsSupport为True，Detail枚举值为:\n\nEFFECTIVE_IMMEDIATELY: 立即生效\n\nEFFECTIVE_AFTER_REBOOT: 分配过程需要开关机，用户需备份数据\n\n \n\n当IsSupport为False，Detail枚举值为:\n\nHAD_BEEN_ASSIGNED: 已分配IPv6地址\n\nREGION_NOT_SUPPORT: 地域不支持\n\nBLUEPRINT_NOT_SUPPORT: 镜像不支持\n\nBUNDLE_INSTANCE_NOT_SUPPORT: 套餐实例不支持\n\nBUNDLE_BANDWIDTH_NOT_SUPPORT: 套餐带宽不支持",
+          "example": "HAD_BEEN_ASSIGNED",
+          "member": "string",
+          "name": "Detail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息。",
+          "example": "The current instance has been assigned an IPv6 address.",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SystemDisk": {
       "document": "描述了操作系统所在块设备即系统盘的信息。",

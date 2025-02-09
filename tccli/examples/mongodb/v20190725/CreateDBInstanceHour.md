@@ -15,7 +15,7 @@ tccli mongodb CreateDBInstanceHour --cli-unfold-argument  \
     --NodeNum 2 \
     --ReplicateSetNum 1 \
     --MachineCode HIO10G \
-    --MongoVersion MONGO_40_WT
+    --MongoVersion MONGO_50_WT
 ```
 
 Output: 

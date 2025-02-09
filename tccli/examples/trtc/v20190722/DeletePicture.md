@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trtc DeletePicture --cli-unfold-argument  \
-    --PictureId 1234567890 \
-    --SdkAppId 123456789
+    --PictureId 18813 \
+    --SdkAppId 140000001
 ```
 
 Output: 

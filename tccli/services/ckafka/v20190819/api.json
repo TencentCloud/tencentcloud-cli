@@ -13612,8 +13612,8 @@
         },
         {
           "disabled": false,
-          "document": "升配Rebalance时间 参数已废弃,忽略不填!!!",
-          "example": "20",
+          "document": "用于修改升级版本或升配定时任务的执行时间，Unix时间戳，精确到秒",
+          "example": "1566144000",
           "member": "int64",
           "name": "RebalanceTime",
           "required": false,
@@ -13643,6 +13643,15 @@
           "example": "8388680",
           "member": "uint64",
           "name": "MaxMessageByte",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "UncleanLeaderElectionEnable",
           "required": false,
           "type": "int"
         }

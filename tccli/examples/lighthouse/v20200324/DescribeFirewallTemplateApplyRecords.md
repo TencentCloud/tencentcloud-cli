@@ -36,6 +36,7 @@ Output:
                         "FirewallRule": {
                             "Action": "ACCEPT",
                             "CidrBlock": "0.0.0.0/0",
+                            "Ipv6CidrBlock": "",
                             "FirewallRuleDescription": "tcp 80",
                             "Port": "81",
                             "Protocol": "TCP"
@@ -46,6 +47,7 @@ Output:
                         "FirewallRule": {
                             "Action": "DROP",
                             "CidrBlock": "0.0.0.0/0",
+                            "Ipv6CidrBlock": "",
                             "FirewallRuleDescription": "udp 80",
                             "Port": "81",
                             "Protocol": "UDP"
