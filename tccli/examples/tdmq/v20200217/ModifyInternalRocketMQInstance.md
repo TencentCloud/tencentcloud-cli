@@ -1,17 +1,20 @@
-**Example 1: 修改实例属性**
+**Example 1: 更新实例属性topic数量请求参数**
 
-修改实例属性
+更新实例属性
 
 Input: 
 
 ```
-tccli tdmq ModifyInternalRocketMQInstance --cli-unfold-argument ```
+tccli tdmq ModifyInternalRocketMQInstance --cli-unfold-argument  \
+    --InstanceId rmq-sk87wwkd223 \
+    --MaxTopics 20
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "c6e6c84c-186e-473f-a228-3dba29827415"
     }
 }
 ```

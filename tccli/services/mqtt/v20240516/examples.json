@@ -16,6 +16,22 @@
         "title": "示例"
       }
     ],
+    "CreateInsPublicEndpoint": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInsPublicEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"Bandwidth\": 2,\n    \"Rules\": [\n        {\n            \"IpRule\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"remark\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"416510a6-f614-487d-bbca-e7fdbf72fc29\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceType\": \"BASIC\",\n    \"Name\": \"instance-1\",\n    \"SkuCode\": \"basic_1k\",\n    \"Remark\": \"this is remark\",\n    \"VpcList\": [\n        {\n            \"VpcId\": \"vpc-9a5wnirv\",\n            \"SubnetId\": \"subnet-0tw6tlfi\"\n        }\n    ],\n    \"IpRules\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Allow\": true,\n            \"Remark\": \"11111111\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"02107c9d-cbea-418c-bafc-740300fdefad\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateJWKSAuthenticator": [
       {
         "document": "示例",
@@ -37,6 +53,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Topic\": \"topic1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-7pnqmkrx\",\n        \"RequestId\": \"dff879db-cb6f-4ffb-b820-ea6f391a8da7\",\n        \"Topic\": \"topic1\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateUser": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Remark\": \"remark\",\n    \"Username\": \"123\",\n    \"Password\": \"456\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"25cb77a7-2add-4086-8fd2-a05b5bd34776\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -72,11 +96,35 @@
         "title": "示例"
       }
     ],
+    "DeleteInsPublicEndpoint": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTInsPublicEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"de89c7dd-7c3e-4546-a2ca-91c5baa0415f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-wjgxr8jg\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"84afeb76-9175-47ec-a6f1-8d0af0c0aae6\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteTopic": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"Topic\": \"home\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"f3a081b8-dc97-4d62-bb1a-d1aa9fe80da8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteUser": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Username\": \"123\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"74625f9b-ce92-43d5-ba0b-9a85ddb99041\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -118,6 +166,14 @@
         "title": "示例"
       }
     ],
+    "DescribeInsPublicEndpoints": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInsPublicEndpoints\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-gn8qoq3z\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Bandwidth\": 2,\n        \"Endpoints\": [\n            {\n                \"Host\": \"mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com\",\n                \"Port\": 8888,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-ws\",\n                \"Url\": \"mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com:8888\",\n                \"VpcId\": null\n            },\n            {\n                \"Host\": \"mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com\",\n                \"Port\": 1883,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-tcp\",\n                \"Url\": \"mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com:1883\",\n                \"VpcId\": null\n            },\n            {\n                \"Host\": \"mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com\",\n                \"Port\": 8883,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-tls\",\n                \"Url\": \"mqtt-gn8qoq3z-cd.mqtt.public.tencenttdmq.com:8883\",\n                \"VpcId\": null\n            }\n        ],\n        \"InstanceId\": \"mqtt-gn8qoq3z\",\n        \"RequestId\": \"3891d712-94f7-4d03-9420-fae4fa3a61ea\",\n        \"Rules\": [\n            {\n                \"Allow\": true,\n                \"IpRule\": \"0.0.0.0/0\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"Status\": \"NORMAL\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeInstance": [
       {
         "document": "示例",
@@ -150,11 +206,35 @@
         "title": "示例"
       }
     ],
+    "DescribeUserList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTUserList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CreatedTime\": 1705392159000,\n                \"ModifiedTime\": 1705392159000,\n                \"Password\": \"pwd1\",\n                \"Remark\": \"remark\",\n                \"Username\": \"user1\"\n            }\n        ],\n        \"RequestId\": \"8e86117c-a56c-4598-9e1f-4a039eed6e3a\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyAuthorizationPolicy": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuthorizationPolicy\n<公共请求参数>\n\n{\n    \"Id\": 18,\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"PolicyName\": \"policy-1\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"657a771d-a70e-4c0d-a70a-eb7f82471000\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyInsPublicEndpoint": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTInsPublicEndpoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Bandwidth\": 2,\n    \"Rules\": [\n        {\n            \"IpRule\": \"2.2.2.2\",\n            \"Allow\": true,\n            \"Remark\": \"555\"\n        }\n    ]\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"02eb3529-3440-44e9-b2c8-1e65c7017c09\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyInstance": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Name\": \"instance-2\",\n    \"Remark\": \"ramark2\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"9955522b-ac27-46c1-8a16-3ed6f98f9c5c\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -179,6 +259,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-rvb5xxrn\",\n    \"Topic\": \"222\",\n    \"Remark\": \"444\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"29a02c3b-66ee-4442-acb7-3545b8e044b7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyUser": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Username\": \"user2\",\n    \"Remark\": \"remark2\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"85d3aeee-ba25-47cc-8c17-7ad837b877ba\"\n    }\n}",
         "title": "示例"
       }
     ],

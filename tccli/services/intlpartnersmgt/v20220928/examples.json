@@ -50,10 +50,16 @@
     ],
     "DescribeBillDownloadUrl": [
       {
-        "document": "用于子客下载账单文件，返回账单文件url\n\n\t\nPOST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDownloadUrl",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2023-10\",\n    \"FileType\": \"L3\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://xxxx.cos.ap-singapore.myqcloud.com/L3-bill_details.csv\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "DescribeBillDownloadUrl"
+        "document": "子客获取自己的账单链接。请求下载文件生成中，请等待文件生成完成后重新下载",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2023-12\",\n    \"FileType\": \"L3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"\",\n        \"Ready\": 0,\n        \"RequestId\": \"1737bf56-fbb4-4a57-a08b-73901b74abf3\"\n    }\n}",
+        "title": "DescribeBillDownloadUrl-1"
+      },
+      {
+        "document": "子客获取自己的账单链接。文件已生成，请通过下载链接获取文件。",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillDownloadUrl\n<公共请求参数>\n\n{\n    \"Month\": \"2024-12\",\n    \"FileType\": \"L2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://xxxx.cos.ap-singapore.myqcloud.com/L3-bill_details.csv\",\n        \"Ready\": 1,\n        \"RequestId\": \"845ac46e-20a7-4cab-8930-d5e6d2104885\"\n    }\n}",
+        "title": "DescribeBillDownloadUrl-2"
       }
     ],
     "DescribeBillSummary": [
@@ -206,31 +212,11 @@
         "title": "查询用户列表信用"
       }
     ],
-    "QueryCreditQuota": [
-      {
-        "document": "计费查询子客信用",
-        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCreditQuota\n<公共请求参数>\n\n{\n    \"ClientUin\": 123,\n    \"ComponentName\": \"qcost\",\n    \"QueryMode\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCredit\": 100,\n        \"RemainingCredit\": 100,\n        \"RemainingVoucher\": 0,\n        \"PrepayFrozen\": 0,\n        \"PostpayFrozen\": 0,\n        \"Force\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
-        "title": "查询子客信用"
-      }
-    ],
     "QueryCustomerBillingQuota": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{\n    \"EventId\": \"1\",\n    \"ComponentName\": \"123\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Force\": 0,\n            \"RemainingCredit\": 0,\n            \"RemainingVoucher\": 0,\n            \"TotalCredit\": 0\n        },\n        \"RequestId\": \"xxx\"\n    }\n}",
-        "title": "1"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{\n    \"EventId\": 123,\n    \"ComponentName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemainingCredit\": 0.0,\n            \"RemainingVoucher\": 0.0,\n            \"TotalCredit\": 0.0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "QueryCustomerBillingQuota"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{\n    \"EventId\": \"0\",\n    \"ComponentName\": \"字符串\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemainingCredit\": 0,\n            \"RemainingVoucher\": 0,\n            \"TotalCredit\": 0\n        },\n        \"RequestId\": \"0117004b-2653-4146-b637-73c05e067172\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomerBillingQuota\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RemainingCredit\": 0,\n            \"RemainingVoucher\": 0,\n            \"PrepayFrozen\": 0,\n            \"PostpayFrozen\": 0,\n            \"Force\": 0,\n            \"TotalCredit\": 0\n        },\n        \"RequestId\": \"0117004b-2653-4146-b637-73c05e067172\"\n    }\n}",
         "title": "QueryCustomerBillingQuota示例"
       }
     ],

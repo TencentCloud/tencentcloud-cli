@@ -1,3 +1,231 @@
+# Release 3.0.1150.1
+
+## 运维安全中心（堡垒机）(bh) 版本：2023-04-18
+
+### 第 4 次发布
+
+发布时间：2025-02-11 01:08:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85297)
+
+	* 新增入参：AppAssetIdSet
+
+* [DescribeAcls](http://document.tencentcloudapi.woa.com/document/product/1780/85293)
+
+	* 新增入参：AuthorizedAppAssetIdSet
+
+* [DescribeDeviceGroupMembers](http://document.tencentcloudapi.woa.com/document/product/1780/85250)
+
+	* 新增入参：KindSet
+
+* [DescribeUsers](http://document.tencentcloudapi.woa.com/document/product/1780/85285)
+
+	* 新增入参：AuthorizedAppAssetIdSet
+
+* [ModifyAcl](http://document.tencentcloudapi.woa.com/document/product/1780/85291)
+
+	* 新增入参：AppAssetIdSet
+
+* [SearchSession](http://document.tencentcloudapi.woa.com/document/product/1780/85309)
+
+	* 新增入参：AppAssetKindSet, AppAssetUrl
+
+	* 新增出参：SessionSet
+
+
+新增数据结构：
+
+* [AppAsset](http://document.tencentcloudapi.woa.com/document/product/1780/85236#AppAsset)
+* [SessionResult](http://document.tencentcloudapi.woa.com/document/product/1780/85236#SessionResult)
+
+修改数据结构：
+
+* [Acl](http://document.tencentcloudapi.woa.com/document/product/1780/85236#Acl)
+
+	* 新增成员：AppAssetSet
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 40 次发布
+
+发布时间：2025-02-11 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Disk](http://document.tencentcloudapi.woa.com/document/product/362/15669#Disk)
+
+	* 新增成员：EncryptType
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 102 次发布
+
+发布时间：2025-02-11 01:12:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/614/56456)
+
+	* 新增入参：TopicId
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 26 次发布
+
+发布时间：2025-02-11 01:19:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* QueryCreditQuota
+
+修改接口：
+
+* [DescribeBillDownloadUrl](http://document.tencentcloudapi.woa.com/document/product/1724/83762)
+
+	* 新增出参：Ready
+
+* [QueryCustomerBillingQuota](http://document.tencentcloudapi.woa.com/document/product/1724/85721)
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 25 次发布
+
+发布时间：2025-02-11 01:22:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowDetails](http://document.tencentcloudapi.woa.com/document/product/1385/55846#FlowDetails)
+
+	* <font color="#dd0000">**修改成员**：</font>NetDetails, DeviceId, MaxValue, AvgValue, TotalValue
+
+
+
+
+## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+
+### 第 6 次发布
+
+发布时间：2025-02-11 01:22:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1773/85735)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1773/85734)
+* [CreateUser](http://document.tencentcloudapi.woa.com/document/product/1773/85741)
+* [DeleteInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1773/85733)
+* [DeleteInstance](http://document.tencentcloudapi.woa.com/document/product/1773/85732)
+* [DeleteUser](http://document.tencentcloudapi.woa.com/document/product/1773/85740)
+* [DescribeInsPublicEndpoints](http://document.tencentcloudapi.woa.com/document/product/1773/85731)
+* [DescribeUserList](http://document.tencentcloudapi.woa.com/document/product/1773/85739)
+* [ModifyInsPublicEndpoint](http://document.tencentcloudapi.woa.com/document/product/1773/85730)
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1773/85729)
+* [ModifyUser](http://document.tencentcloudapi.woa.com/document/product/1773/85738)
+
+新增数据结构：
+
+* [IpRule](http://document.tencentcloudapi.woa.com/document/product/1773/84898#IpRule)
+* [MQTTEndpointItem](http://document.tencentcloudapi.woa.com/document/product/1773/84898#MQTTEndpointItem)
+* [MQTTUserItem](http://document.tencentcloudapi.woa.com/document/product/1773/84898#MQTTUserItem)
+* [PublicAccessRule](http://document.tencentcloudapi.woa.com/document/product/1773/84898#PublicAccessRule)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1773/84898#Tag)
+* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1773/84898#VpcInfo)
+
+
+
+## 迁移服务平台(msp) 版本：2018-03-19
+
+### 第 6 次发布
+
+发布时间：2025-02-11 01:26:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ListMigrationProject
+* ListMigrationTask
+* ModifyMigrationTaskBelongToProject
+* ModifyMigrationTaskStatus
+* RegisterMigrationTask
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 77 次发布
+
+发布时间：2025-02-11 01:28:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CertificateInfoSubmit](http://document.tencentcloudapi.woa.com/document/product/400/85744)
+* [CertificateOrderSubmit](http://document.tencentcloudapi.woa.com/document/product/400/85743)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 135 次发布
+
+发布时间：2025-02-11 01:31:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInternalRocketMQInstance](http://document.tencentcloudapi.woa.com/document/product/1179/85493)
+
+	* 新增入参：MessageRetention, MaxRetention, MinRetention, AclEnabled
+
+
+
+
 # Release 3.0.1149.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

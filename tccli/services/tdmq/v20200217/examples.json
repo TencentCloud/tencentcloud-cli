@@ -1176,10 +1176,10 @@
     ],
     "ModifyInternalRocketMQInstance": [
       {
-        "document": "修改实例属性",
-        "input": "{\n  \"InstanceId\": \"xx\",\n  \"MaxNamespaces\": 1,\n  \"MaxTopics\": 1,\n  \"MaxGroups\": 1,\n  \"MaxQueuesPerTopic\": 1,\n  \"RateLimit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "修改实例属性"
+        "document": "更新实例属性",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInternalRocketMQInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-sk87wwkd223\",\n    \"MaxTopics\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6e6c84c-186e-473f-a228-3dba29827415\"\n    }\n}",
+        "title": "更新实例属性topic数量请求参数"
       }
     ],
     "ModifyInternalRocketMQInstanceAcl": [

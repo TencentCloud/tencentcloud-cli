@@ -1544,33 +1544,33 @@
         },
         {
           "disabled": false,
-          "document": "网卡名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡名",
           "example": "\"eth1\"",
           "member": "string",
           "name": "NetInfoName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下行实时速率（浮点数类型代替上一版本DataRx的整型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下行实时速率（浮点数类型代替上一版本DataRx的整型）",
           "example": "12.3",
           "member": "float",
           "name": "DownRate",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上行实时速率（浮点数类型代替上一版本TxRate的整型）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上行实时速率（浮点数类型代替上一版本TxRate的整型）",
           "example": "1.23",
           "member": "float",
           "name": "UpRate",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1662,53 +1662,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "流量数据点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量数据点",
           "example": "无",
           "member": "NetDetails",
           "name": "NetDetails",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备ID",
           "example": "\"mna-xxx\"",
           "member": "string",
           "name": "DeviceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量最大值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量最大值（单位：bytes）",
           "example": "51548",
           "member": "float",
           "name": "MaxValue",
-          "required": false,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量平均值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量平均值（单位：bytes）",
           "example": "15441",
           "member": "float",
           "name": "AvgValue",
-          "required": false,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量总值（单位：bytes）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量总值（单位：bytes）",
           "example": "656546",
           "member": "float",
           "name": "TotalValue",
-          "required": false,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

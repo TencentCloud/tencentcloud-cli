@@ -16055,6 +16055,42 @@
           "name": "RateLimit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改实例消息保留时间，仅限专享实例，小时为单位",
+          "example": "12",
+          "member": "int64",
+          "name": "MessageRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改最大可调整消息保留时间，小时为单位",
+          "example": "168",
+          "member": "int64",
+          "name": "MaxRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改最小可调整消息保留时间，小时为单位",
+          "example": "24",
+          "member": "int64",
+          "name": "MinRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启acl，默认开启true",
+          "example": "无",
+          "member": "string",
+          "name": "AclEnabled",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

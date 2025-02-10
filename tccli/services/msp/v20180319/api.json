@@ -22,39 +22,39 @@
       "status": "online"
     },
     "ListMigrationProject": {
-      "document": "获取迁移项目名称列表",
+      "document": "旧版产品接口，当前已废弃不可用\n\n获取迁移项目名称列表",
       "input": "ListMigrationProjectRequest",
       "name": "获取迁移项目名称列表",
       "output": "ListMigrationProjectResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListMigrationTask": {
-      "document": "获取迁移任务列表",
+      "document": "旧版产品遗留，当前已经废弃不可用\n\n获取迁移任务列表",
       "input": "ListMigrationTaskRequest",
       "name": "获取迁移任务列表",
       "output": "ListMigrationTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMigrationTaskBelongToProject": {
-      "document": "更改迁移任务所属项目",
+      "document": "旧版产品遗留，当前已经废弃不可用\n\n更改迁移任务所属项目",
       "input": "ModifyMigrationTaskBelongToProjectRequest",
       "name": "更改迁移任务所属项目",
       "output": "ModifyMigrationTaskBelongToProjectResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyMigrationTaskStatus": {
-      "document": "更新迁移任务状态",
+      "document": "旧版产品遗留，当前已经废弃不可用\n\n更新迁移任务状态",
       "input": "ModifyMigrationTaskStatusRequest",
       "name": "更新迁移任务状态",
       "output": "ModifyMigrationTaskStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "RegisterMigrationTask": {
-      "document": "注册迁移任务",
+      "document": "旧版产品遗留，当前已经废弃不可用\n\n注册迁移任务",
       "input": "RegisterMigrationTaskRequest",
       "name": "注册迁移任务",
       "output": "RegisterMigrationTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {
