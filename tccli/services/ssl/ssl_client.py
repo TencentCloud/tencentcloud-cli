@@ -173,7 +173,7 @@ def doDescribeHostCdnInstanceList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCancelAuditCertificate(args, parsed_globals):
+def doCheckCertificateDomainVerification(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -202,11 +202,11 @@ def doCancelAuditCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CancelAuditCertificateRequest()
+    model = models.CheckCertificateDomainVerificationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CancelAuditCertificate(model)
+        rsp = client.CheckCertificateDomainVerification(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -363,6 +363,58 @@ def doDeleteManager(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteManager(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCertificateInfoSubmit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CertificateInfoSubmitRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CertificateInfoSubmit(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -987,6 +1039,58 @@ def doCancelCertificateOrder(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CancelCertificateOrder(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCertificateOrderSubmit(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CertificateOrderSubmitRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CertificateOrderSubmit(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1941,7 +2045,7 @@ def doDescribeCertificateBindResourceTaskResult(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCheckCertificateDomainVerification(args, parsed_globals):
+def doCancelAuditCertificate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1970,11 +2074,11 @@ def doCheckCertificateDomainVerification(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CheckCertificateDomainVerificationRequest()
+    model = models.CancelAuditCertificateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CheckCertificateDomainVerification(model)
+        rsp = client.CancelAuditCertificate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2357,7 +2461,7 @@ def doDescribeHostUpdateRecord(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCertificateByPackage(args, parsed_globals):
+def doCreateCertificate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2386,11 +2490,11 @@ def doCreateCertificateByPackage(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCertificateByPackageRequest()
+    model = models.CreateCertificateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCertificateByPackage(model)
+        rsp = client.CreateCertificate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2721,7 +2825,7 @@ def doDescribeHostApiGatewayInstanceList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateCertificate(args, parsed_globals):
+def doCreateCertificateByPackage(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2750,11 +2854,11 @@ def doCreateCertificate(args, parsed_globals):
     client = mod.SslClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateCertificateRequest()
+    model = models.CreateCertificateByPackageRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateCertificate(model)
+        rsp = client.CreateCertificateByPackage(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3203,10 +3307,11 @@ ACTION_MAP = {
     "DescribeHostCosInstanceList": doDescribeHostCosInstanceList,
     "DescribeCertificates": doDescribeCertificates,
     "DescribeHostCdnInstanceList": doDescribeHostCdnInstanceList,
-    "CancelAuditCertificate": doCancelAuditCertificate,
+    "CheckCertificateDomainVerification": doCheckCertificateDomainVerification,
     "DescribeHostTkeInstanceList": doDescribeHostTkeInstanceList,
     "UploadRevokeLetter": doUploadRevokeLetter,
     "DeleteManager": doDeleteManager,
+    "CertificateInfoSubmit": doCertificateInfoSubmit,
     "DescribeDownloadCertificateUrl": doDescribeDownloadCertificateUrl,
     "DeployCertificateInstance": doDeployCertificateInstance,
     "SubmitAuditManager": doSubmitAuditManager,
@@ -3219,6 +3324,7 @@ ACTION_MAP = {
     "DescribeHostClbInstanceList": doDescribeHostClbInstanceList,
     "DescribeHostTeoInstanceList": doDescribeHostTeoInstanceList,
     "CancelCertificateOrder": doCancelCertificateOrder,
+    "CertificateOrderSubmit": doCertificateOrderSubmit,
     "DownloadCertificate": doDownloadCertificate,
     "DeleteCertificate": doDeleteCertificate,
     "VerifyManager": doVerifyManager,
@@ -3237,7 +3343,7 @@ ACTION_MAP = {
     "DeployCertificateRecordRollback": doDeployCertificateRecordRollback,
     "DeployCertificateRecordRetry": doDeployCertificateRecordRetry,
     "DescribeCertificateBindResourceTaskResult": doDescribeCertificateBindResourceTaskResult,
-    "CheckCertificateDomainVerification": doCheckCertificateDomainVerification,
+    "CancelAuditCertificate": doCancelAuditCertificate,
     "DescribeHostDeployRecord": doDescribeHostDeployRecord,
     "UpdateCertificateRecordRetry": doUpdateCertificateRecordRetry,
     "DescribeDeleteCertificatesTaskResult": doDescribeDeleteCertificatesTaskResult,
@@ -3245,14 +3351,14 @@ ACTION_MAP = {
     "ModifyCertificateAlias": doModifyCertificateAlias,
     "DescribeHostUpdateRecordDetail": doDescribeHostUpdateRecordDetail,
     "DescribeHostUpdateRecord": doDescribeHostUpdateRecord,
-    "CreateCertificateByPackage": doCreateCertificateByPackage,
+    "CreateCertificate": doCreateCertificate,
     "UploadConfirmLetter": doUploadConfirmLetter,
     "DescribeHostLighthouseInstanceList": doDescribeHostLighthouseInstanceList,
     "UpdateCertificateRecordRollback": doUpdateCertificateRecordRollback,
     "DescribeHostVodInstanceList": doDescribeHostVodInstanceList,
     "DescribeCertificateOperateLogs": doDescribeCertificateOperateLogs,
     "DescribeHostApiGatewayInstanceList": doDescribeHostApiGatewayInstanceList,
-    "CreateCertificate": doCreateCertificate,
+    "CreateCertificateByPackage": doCreateCertificateByPackage,
     "CreateCertificateBindResourceSyncTask": doCreateCertificateBindResourceSyncTask,
     "ModifyCertificatesExpiringNotificationSwitch": doModifyCertificatesExpiringNotificationSwitch,
     "ReplaceCertificate": doReplaceCertificate,

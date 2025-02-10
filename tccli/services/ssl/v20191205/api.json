@@ -21,6 +21,20 @@
       "output": "CancelCertificateOrderResponse",
       "status": "online"
     },
+    "CertificateInfoSubmit": {
+      "document": "付费提交证书资料",
+      "input": "CertificateInfoSubmitRequest",
+      "name": "付费提交证书资料",
+      "output": "CertificateInfoSubmitResponse",
+      "status": "online"
+    },
+    "CertificateOrderSubmit": {
+      "document": "提交付费证书订单",
+      "input": "CertificateOrderSubmitRequest",
+      "name": "提交付费证书订单",
+      "output": "CertificateOrderSubmitResponse",
+      "status": "online"
+    },
     "CheckCertificateChain": {
       "document": "本接口（CheckCertificateChain）用于检查证书链是否完整。",
       "input": "CheckCertificateChainRequest",
@@ -1201,6 +1215,438 @@
       ],
       "usage": "out"
     },
+    "CertificateInfoSubmitRequest": {
+      "document": "CertificateInfoSubmit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CSR 生成方式：online = 在线生成, upload = 手动上传。",
+          "example": "无",
+          "member": "string",
+          "name": "GenCsrType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定证书的主域名。",
+          "example": "无",
+          "member": "string",
+          "name": "CertCommonName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织信息类型：1，个人； 2， 公司； ",
+          "example": "无",
+          "member": "uint64",
+          "name": "CompanyType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公司证件类型（）",
+          "example": "无",
+          "member": "string",
+          "name": "OrgIdType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "OrgIdNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人证件类型",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人证件类型",
+          "example": "无",
+          "member": "string",
+          "name": "TechIdType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "TechIdNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司ID",
+          "example": "无",
+          "member": "string",
+          "name": "CompanyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传的 CSR 内容。如果GenCsrType为upload则该字段必传",
+          "example": "无",
+          "member": "string",
+          "name": "Csr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名数组（多域名证书可以上传）。",
+          "example": "无",
+          "member": "string",
+          "name": "DnsNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "私钥密码（非必填）。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyPass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司名称。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgOrganization",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部门名称。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgDivision",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司详细地址。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国家名称，如中国：CN 。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgCountry",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司所在城市。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgCity",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司所在省份。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司座机区号。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgPhoneArea",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司座机号码。",
+          "example": "无",
+          "member": "string",
+          "name": "OrgPhoneNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人名。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminFirstName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人姓。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminLastName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人手机号码。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人邮箱地址。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人职位。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人名。",
+          "example": "无",
+          "member": "string",
+          "name": "TechFirstName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人姓。",
+          "example": "无",
+          "member": "string",
+          "name": "TechLastName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人邮箱地址。",
+          "example": "无",
+          "member": "string",
+          "name": "ContactEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动续费： 0， 不开启；  1， 开启； 默认为0",
+          "example": "无",
+          "member": "uint64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "证书加密参数",
+          "example": "无",
+          "member": "string",
+          "name": "CsrKeyParameter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书加密方式",
+          "example": "无",
+          "member": "string",
+          "name": "CsrEncryptAlgo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人ID",
+          "example": "无",
+          "member": "string",
+          "name": "ManagerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人电话",
+          "example": "无",
+          "member": "string",
+          "name": "TechPhone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人邮箱",
+          "example": "无",
+          "member": "string",
+          "name": "TechEmail",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人职位",
+          "example": "无",
+          "member": "string",
+          "name": "TechTitle",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CertificateInfoSubmitResponse": {
+      "document": "CertificateInfoSubmit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CertificateOrderSubmitRequest": {
+      "document": "CertificateOrderSubmit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除自动DNS验证值：0，不删除； 1，删除； 默认不删除",
+          "example": "无",
+          "member": "uint64",
+          "name": "DeleteDnsAutoRecord",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证",
+          "example": "无",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CertificateOrderSubmitResponse": {
+      "document": "CertificateOrderSubmit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CA机构侧订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否预审核",
+          "example": "无",
+          "member": "bool",
+          "name": "IsAudited",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Certificates": {
       "document": "获取证书列表（DescribeCertificates）返回参数键为 Certificates 的内容。",
       "members": [
@@ -1867,7 +2313,7 @@
         {
           "disabled": false,
           "document": "证书公钥内容， 包含证书链",
-          "example": "无",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIFGDCCBACgAwIBAgISBPCgHOEnsbZ-----END CERTIFICATE-----",
           "member": "string",
           "name": "CertificatePublicKey",
           "required": true,
@@ -1882,7 +2328,7 @@
         {
           "disabled": false,
           "document": "重复的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "GswyCokt",
           "member": "string",
           "name": "RepeatCertId",
           "output_required": true,

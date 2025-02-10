@@ -9152,6 +9152,15 @@
           "name": "RISTSettings",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "example": "无",
+          "member": "PidSelector",
+          "name": "PidSelector",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -11620,7 +11629,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11630,7 +11639,7 @@
           "example": "无",
           "member": "string",
           "name": "FlowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11640,7 +11649,7 @@
           "example": "IDLE",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11650,7 +11659,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11660,7 +11669,7 @@
           "example": "无",
           "member": "DescribeInput",
           "name": "InputGroup",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11670,7 +11679,7 @@
           "example": "无",
           "member": "DescribeOutput",
           "name": "OutputGroup",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11680,7 +11689,7 @@
           "example": "eventid",
           "member": "string",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11690,8 +11699,28 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该Flow允许创建的输入协议",
+          "example": "[SRT, RTMP]",
+          "member": "string",
+          "name": "AllowedInputProtocols",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该Flow允许创建的输出协议",
+          "example": "[SRT, RTMP]",
+          "member": "string",
+          "name": "AllowedOutputProtocols",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -12579,6 +12608,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "example": "无",
+          "member": "PidSelector",
+          "name": "PidSelector",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -22043,6 +22082,15 @@
           "name": "OutputType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+          "example": "无",
+          "member": "PidSelector",
+          "name": "PidSelector",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -23606,6 +23654,34 @@
         }
       ],
       "type": "object"
+    },
+    "PidSelector": {
+      "document": "对于含有多个音/视频轨的流，可以指定需要使用的轨道",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对于含有多音轨的流, 可以通过输入PID来指定需要使用的音轨，PID可以输入1到8191之间的正整数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[123,124]",
+          "member": "int64",
+          "name": "AudioPID",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对于含有多个视频轨的流，可以通过输入PID来指定需要使用的视频轨，PID可以输入1到8191之间的正整数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[123,124]",
+          "member": "int64",
+          "name": "VideoPID",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PoliticalAsrReviewTemplateInfo": {
       "document": "语音涉敏任务控制参数",

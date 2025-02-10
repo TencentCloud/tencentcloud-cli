@@ -62,7 +62,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源语言，支持\nzh：简体中文\nzh-HK：繁体中文\nzh-TW：繁体中文\nzh-TR：繁体中文\nen：英语\nar：阿拉伯语\nde：德语\nes：西班牙语\nfr：法语\nit：意大利语\nja：日语\npt：葡萄牙语\nru：俄语\nko：韩语\nth：泰语",
+          "document": "源语言，支持\nzh：简体中文\nzh-HK：繁体中文\nzh-TW：繁体中文\nzh-TR：繁体中文\nen：英语\nar：阿拉伯语\nde：德语\nes：西班牙语\nfr：法语\nit：意大利语\nja：日语\npt：葡萄牙语\nru：俄语\nko：韩语\ntr：土耳其语\nvi：越南语\nth：泰语",
           "example": "zh",
           "member": "string",
           "name": "Source",

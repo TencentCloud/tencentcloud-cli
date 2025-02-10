@@ -24,6 +24,22 @@
         "title": "取消证书订单"
       }
     ],
+    "CertificateInfoSubmit": [
+      {
+        "document": "付费证书提交资料",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CertificateInfoSubmit\n<公共请求参数>\n\n{\n    \"CertId\": \"abc\",\n    \"GenCsrType\": \"abc\",\n    \"Csr\": \"abc\",\n    \"CertCommonName\": \"abc\",\n    \"DnsNames\": [\n        \"abc\"\n    ],\n    \"KeyPass\": \"abc\",\n    \"OrgOrganization\": \"abc\",\n    \"OrgDivision\": \"abc\",\n    \"OrgAddress\": \"abc\",\n    \"OrgCountry\": \"abc\",\n    \"OrgCity\": \"abc\",\n    \"OrgRegion\": \"abc\",\n    \"OrgPhoneArea\": \"abc\",\n    \"OrgPhoneNumber\": \"abc\",\n    \"VerifyType\": \"abc\",\n    \"AdminFirstName\": \"abc\",\n    \"AdminLastName\": \"abc\",\n    \"AdminPhone\": \"abc\",\n    \"AdminEmail\": \"abc\",\n    \"AdminTitle\": \"abc\",\n    \"TechFirstName\": \"abc\",\n    \"TechLastName\": \"abc\",\n    \"ContactEmail\": \"abc\",\n    \"CompanyType\": 1,\n    \"AutoRenewFlag\": 1,\n    \"CsrKeyParameter\": \"abc\",\n    \"CsrEncryptAlgo\": \"abc\",\n    \"ManagerId\": \"abc\",\n    \"TechPhone\": \"abc\",\n    \"TechEmail\": \"abc\",\n    \"TechTitle\": \"abc\",\n    \"OrgIdType\": \"abc\",\n    \"OrgIdNumber\": \"abc\",\n    \"AdminIdType\": \"abc\",\n    \"AdminIdNumber\": \"abc\",\n    \"TechIdType\": \"abc\",\n    \"TechIdNumber\": \"abc\",\n    \"CompanyId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "付费证书提交资料"
+      }
+    ],
+    "CertificateOrderSubmit": [
+      {
+        "document": "付费证书提交订单",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CertificateOrderSubmit\n<公共请求参数>\n\n{\n    \"CertId\": \"abc\",\n    \"DeleteDnsAutoRecord\": 1,\n    \"VerifyType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"abc\",\n        \"Status\": 1,\n        \"IsAudited\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "付费证书提交订单"
+      }
+    ],
     "CheckCertificateChain": [
       {
         "document": "对证书链完整性进行检查",
@@ -43,8 +59,8 @@
     "CheckCertificateExist": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificateExist\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RepeatCertId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckCertificateExist\n<公共请求参数>\n\n{\n    \"CertificatePublicKey\": \"-----BEGIN CERTIFICATE-----\\nMIIFGDCCBACgAwIBAgISBPCgHOEnsbZ/-----END CERTIFICATE-----\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RepeatCertId\": \"GswyCokt\",\n        \"RequestId\": \"f85b93a5-9040-49e4-865e-bd47cb35794a\"\n    }\n}",
         "title": "查询证书内容是否存在"
       }
     ],

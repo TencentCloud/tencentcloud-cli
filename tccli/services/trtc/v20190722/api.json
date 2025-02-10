@@ -422,13 +422,13 @@
         },
         {
           "disabled": false,
-          "document": "远端用户ID,\"\"：表示异常事件不是由远端用户产生\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "远端用户ID,\"\"：表示异常事件不是由远端用户产生",
           "example": "itachi3",
           "member": "string",
           "name": "PeerId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1037,7 +1037,7 @@
         {
           "disabled": false,
           "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。",
-          "example": "1234",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1046,7 +1046,7 @@
         {
           "disabled": false,
           "document": "TRTC的[RoomId](https://cloud.tencent.com/document/product/647/46351#roomid)，录制的TRTC房间所对应的RoomId。\n注：房间号类型默认为整型，若房间号类型为字符串，请通过RoomIdType指定。\n",
-          "example": "1234",
+          "example": "room_366",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -1118,7 +1118,7 @@
         {
           "disabled": false,
           "document": "接口可以调用的时效性，从成功开启录制并获得任务ID后开始计算，超时后无法调用查询、更新和停止等接口，但是录制任务不会停止。 参数的单位是小时，默认72小时（3天），最大可设置720小时（30天），最小设置6小时。举例说明：如果不设置该参数，那么开始录制成功后，查询、更新和停止录制的调用时效为72个小时。",
-          "example": "无",
+          "example": "24",
           "member": "uint64",
           "name": "ResourceExpiredHour",
           "required": false,
@@ -1127,7 +1127,7 @@
         {
           "disabled": false,
           "document": "TRTC房间权限加密串，只有在TRTC控制台启用了高级权限控制的时候需要携带，在TRTC控制台如果开启高级权限控制后，TRTC 的后台服务系统会校验一个叫做 [PrivateMapKey] 的“权限票据”，权限票据中包含了一个加密后的 RoomId 和一个加密后的“权限位列表”。由于 PrivateMapKey 中包含 RoomId，所以只提供了 UserSig 没有提供 PrivateMapKey 时，并不能进入指定的房间。",
-          "example": "无",
+          "example": "eJw1jcEKgkAURX9FZlvY****fL9rfNX4_",
           "member": "string",
           "name": "PrivateMapKey",
           "required": false,
@@ -1142,7 +1142,7 @@
         {
           "disabled": false,
           "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。任务 ID需要业务保存下来，作为下次针对这个录制任务操作的参数。",
-          "example": "test",
+          "example": "-m9-bVVU7k801X-VX8gO***GrDFLaZwKKZ5-fTXqywE.",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -1300,7 +1300,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
-          "example": "1234",
+          "example": "1400**366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1309,7 +1309,7 @@
         {
           "disabled": false,
           "document": "录制任务的唯一Id，在启动录制成功后会返回。",
-          "example": "1234",
+          "example": "-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1324,10 +1324,10 @@
         {
           "disabled": false,
           "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。",
-          "example": "1234",
+          "example": "-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1672,7 +1672,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
-          "example": "1234",
+          "example": "1400***366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1681,7 +1681,7 @@
         {
           "disabled": false,
           "document": "录制任务的唯一Id，在启动录制成功后会返回。",
-          "example": "123",
+          "example": "-m9jKgBv***dPBQE.",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -1696,7 +1696,7 @@
         {
           "disabled": false,
           "document": "录制任务的唯一Id。",
-          "example": "123",
+          "example": "-m9jKgBv***dPBQE.",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -1716,7 +1716,7 @@
         {
           "disabled": false,
           "document": "录制文件信息。",
-          "example": "[{\"FileName\": \"1400188366_555666__UserId_s_amVmZjM.__UserId_e_main_audiovideo.m3u8\",\"UserId\": \"jeff3\",\"TrackType\": \"audio_video\",\"BeginTimeStamp\": 1730087526709}]",
+          "example": "[{\"FileName\": \"***_main_audio.m3u8\",\"UserId\": \"jeff3\",\"TrackType\": \"audio\",\"BeginTimeStamp\": 1730087526709}]",
           "member": "StorageFile",
           "name": "StorageFileList",
           "output_required": true,
@@ -3491,7 +3491,7 @@
         {
           "disabled": false,
           "document": "混流-输出流背景图片URL地址，支持png、jpg、jpeg、bmp格式，暂不支持透明通道。URL链接长度限制为512字节。BackgroundImageUrl和BackgroundImageId参数都填时，以BackgroundImageUrl为准。图片大小限制不超过2MB。",
-          "example": "xxx",
+          "example": "https://******.png",
           "member": "string",
           "name": "BackgroundImageUrl",
           "required": false,
@@ -4943,7 +4943,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId，和录制的房间所对应的SDKAppId相同。",
-          "example": "1234",
+          "example": "1400**366",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -4952,7 +4952,7 @@
         {
           "disabled": false,
           "document": "录制任务的唯一Id，在启动录制成功后会返回。",
-          "example": "1234",
+          "example": "-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -4985,10 +4985,10 @@
         {
           "disabled": false,
           "document": "云录制服务分配的任务 ID。任务 ID 是对一次录制生命周期过程的唯一标识，结束录制时会失去意义。",
-          "example": "1234",
+          "example": "-m9-bVVU7gzdSqvsV***Y+QMYNee2QE.",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5333,22 +5333,20 @@
         {
           "disabled": false,
           "document": "腾讯云直播BizId。",
-          "example": "",
+          "example": "3891",
           "member": "uint64",
           "name": "BizId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "第三方CDN转推的目的地址，同时只支持转推一个第三方CDN地址。",
-          "example": "",
+          "example": "[\"rtmp://***.com/live/liveteststream\"]",
           "member": "string",
           "name": "PublishCdnUrls",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5378,13 +5376,13 @@
         },
         {
           "disabled": false,
-          "document": "对端Id,为空时表示上行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对端Id,为空时表示上行数据",
           "example": "1806",
           "member": "string",
           "name": "PeerId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -1183,7 +1183,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘大小，单位为GB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小</li><br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小</li><br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。</li>",
+          "document": "云硬盘大小，单位为GiB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小</li><br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小</li><br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。</li>",
           "example": "500",
           "member": "uint64",
           "name": "DiskSize",
@@ -2584,7 +2584,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘大小，单位GB。",
+          "document": "云硬盘大小，单位GiB。",
           "example": "50",
           "member": "uint64",
           "name": "DiskSize",
@@ -2770,6 +2770,16 @@
           "name": "BurstPerformance",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENCRYPT_V1",
+          "member": "string",
+          "name": "EncryptType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

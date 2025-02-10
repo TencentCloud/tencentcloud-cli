@@ -14,6 +14,20 @@
       "output": "CreateAuthorizationPolicyResponse",
       "status": "online"
     },
+    "CreateInsPublicEndpoint": {
+      "document": "为MQTT实例创建公网接入点",
+      "input": "CreateInsPublicEndpointRequest",
+      "name": "为MQTT实例创建公网接入点",
+      "output": "CreateInsPublicEndpointResponse",
+      "status": "online"
+    },
+    "CreateInstance": {
+      "document": "购买新的MQTT实例",
+      "input": "CreateInstanceRequest",
+      "name": "购买MQTT实例",
+      "output": "CreateInstanceResponse",
+      "status": "online"
+    },
     "CreateJWKSAuthenticator": {
       "document": "创建一个jwks的认证",
       "input": "CreateJWKSAuthenticatorRequest",
@@ -33,6 +47,13 @@
       "input": "CreateTopicRequest",
       "name": "创建MQTT主题",
       "output": "CreateTopicResponse",
+      "status": "online"
+    },
+    "CreateUser": {
+      "document": "添加mqtt角色",
+      "input": "CreateUserRequest",
+      "name": "添加MQTT角色",
+      "output": "CreateUserResponse",
       "status": "online"
     },
     "DeactivateDeviceCertificate": {
@@ -63,11 +84,32 @@
       "output": "DeleteDeviceCertificateResponse",
       "status": "online"
     },
+    "DeleteInsPublicEndpoint": {
+      "document": "删除MQTT实例的公网接入点",
+      "input": "DeleteInsPublicEndpointRequest",
+      "name": "删除MQTT实例的公网接入点",
+      "output": "DeleteInsPublicEndpointResponse",
+      "status": "online"
+    },
+    "DeleteInstance": {
+      "document": "删除MQTT实例",
+      "input": "DeleteInstanceRequest",
+      "name": "删除MQTT实例",
+      "output": "DeleteInstanceResponse",
+      "status": "online"
+    },
     "DeleteTopic": {
       "document": "删除MQTT主题",
       "input": "DeleteTopicRequest",
       "name": "删除MQTT主题",
       "output": "DeleteTopicResponse",
+      "status": "online"
+    },
+    "DeleteUser": {
+      "document": "删除MQTT访问用户",
+      "input": "DeleteUserRequest",
+      "name": "删除MQTT角色",
+      "output": "DeleteUserResponse",
       "status": "online"
     },
     "DescribeAuthenticator": {
@@ -98,6 +140,13 @@
       "output": "DescribeDeviceCertificatesResponse",
       "status": "online"
     },
+    "DescribeInsPublicEndpoints": {
+      "document": "查询MQTT实例公网接入点",
+      "input": "DescribeInsPublicEndpointsRequest",
+      "name": "查询MQTT实例公网接入点",
+      "output": "DescribeInsPublicEndpointsResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "查询实例信息",
       "input": "DescribeInstanceRequest",
@@ -126,11 +175,32 @@
       "output": "DescribeTopicListResponse",
       "status": "online"
     },
+    "DescribeUserList": {
+      "document": "查询用户列表，Filter参数使用说明如下：\n\n1. Username，用户名称模糊搜索",
+      "input": "DescribeUserListRequest",
+      "name": "查询MQTT用户列表",
+      "output": "DescribeUserListResponse",
+      "status": "online"
+    },
     "ModifyAuthorizationPolicy": {
       "document": "修改策略规则",
       "input": "ModifyAuthorizationPolicyRequest",
       "name": "修改授权策略",
       "output": "ModifyAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "ModifyInsPublicEndpoint": {
+      "document": "更新MQTT实例公网接入点",
+      "input": "ModifyInsPublicEndpointRequest",
+      "name": "更新MQTT实例公网接入点",
+      "output": "ModifyInsPublicEndpointResponse",
+      "status": "online"
+    },
+    "ModifyInstance": {
+      "document": "修改实例属性",
+      "input": "ModifyInstanceRequest",
+      "name": "修改MQTT实例属性",
+      "output": "ModifyInstanceResponse",
       "status": "online"
     },
     "ModifyJWKSAuthenticator": {
@@ -152,6 +222,13 @@
       "input": "ModifyTopicRequest",
       "name": "修改MQTT主题属性",
       "output": "ModifyTopicResponse",
+      "status": "online"
+    },
+    "ModifyUser": {
+      "document": "修改MQTT角色",
+      "input": "ModifyUserRequest",
+      "name": "修改MQTT角色",
+      "output": "ModifyUserResponse",
       "status": "online"
     },
     "RegisterDeviceCertificate": {
@@ -548,6 +625,187 @@
       ],
       "type": "object"
     },
+    "CreateInsPublicEndpointRequest": {
+      "document": "CreateInsPublicEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "带宽,单位Mbps",
+          "example": "2",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网访问规则",
+          "example": "[ \t\t{ \t\t\t\"IpRule\": \"1.1.1.1\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"remark\" \t\t} \t]",
+          "member": "PublicAccessRule",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInsPublicEndpointResponse": {
+      "document": "CreateInsPublicEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型，\nBASIC 基础版\nPRO  专业版",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "abcd",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品规格，可用规格可通过接口DescribeProductSKUList查询",
+          "example": "basic_1k",
+          "member": "string",
+          "name": "SkuCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "[{\"tag1-key\":\"tag1-value\",\"tag2-key\":\"tag2-value\"}]",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定的VPC信息",
+          "example": " [ \t\t{ \t\t\t\"VpcId\": \"vpc-9a5wnirv\", \t\t\t\"SubnetId\": \"subnet-0tw6tlfi\" \t\t} \t]",
+          "member": "VpcInfo",
+          "name": "VpcList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePublic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽（单位：兆）",
+          "example": "1",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网访问白名单",
+          "example": "[ \t\t{ \t\t\t\"Ip\": \"1.1.1.1\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"11111111\" \t\t} \t]",
+          "member": "IpRule",
+          "name": "IpRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费（0: 不自动续费；1: 自动续费）",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长（单位：月）",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式（0: 后付费；1: 预付费）",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateJWKSAuthenticatorRequest": {
       "document": "CreateJWKSAuthenticator请求参数结构体",
       "members": [
@@ -775,6 +1033,60 @@
       ],
       "type": "object"
     },
+    "CreateUserRequest": {
+      "document": "CreateUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码，该字段为空时候则后端会默认生成",
+          "example": "pwd",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserResponse": {
+      "document": "CreateUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeactivateDeviceCertificateRequest": {
       "document": "DeactivateDeviceCertificate请求参数结构体",
       "members": [
@@ -919,6 +1231,60 @@
       ],
       "type": "object"
     },
+    "DeleteInsPublicEndpointRequest": {
+      "document": "DeleteInsPublicEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInsPublicEndpointResponse": {
+      "document": "DeleteInsPublicEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTopicRequest": {
       "document": "DeleteTopic请求参数结构体",
       "members": [
@@ -945,6 +1311,42 @@
     },
     "DeleteTopicResponse": {
       "document": "DeleteTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserRequest": {
+      "document": "DeleteUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserResponse": {
+      "document": "DeleteUser返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1286,6 +1688,83 @@
           "name": "Data",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInsPublicEndpointsRequest": {
+      "document": "DescribeInsPublicEndpoints请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInsPublicEndpointsResponse": {
+      "document": "DescribeInsPublicEndpoints返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入点",
+          "example": "[                     {                         \"Type\": \"mqtt-tcp\",                         \"Url\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com:1883\",                         \"VpcId\": null,                         \"SubnetId\": null,                         \"Host\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com\",                         \"Port\": 1883                     },                     {                         \"Type\": \"mqtt-ws\",                         \"Url\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com:8888\",                         \"VpcId\": null,                         \"SubnetId\": null,                         \"Host\": \"mqtt-abc1234-gz.mqtt.public.tencenttdmq.com\",                         \"Port\": 8888                     }                 ]",
+          "member": "MQTTEndpointItem",
+          "name": "Endpoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽",
+          "example": "2",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网访问规则",
+          "example": "[                     {                         \"IpRule\": \"127.0.0.1\",                         \"Allow\": true,                         \"Remark\": null                     }                 ]",
+          "member": "PublicAccessRule",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网状态：\n    NORMAL-正常\n    CLOSING-关闭中\n    MODIFYING-修改中\n    CREATING-开启中\n    CLOSE-关闭",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1686,7 +2165,7 @@
         {
           "disabled": false,
           "document": "主题列表",
-          "example": "[                     {                         \"InstanceId\": \"mqtt-mwmdg9dm\",                         \"Topic\": \"2222\",                         \"Remark\": \"\"                     },                     {                         \"InstanceId\": \"mqtt-mwmdg9dm\",                         \"Topic\": \"home\",                         \"Remark\": \"\"                     }                 ]",
+          "example": "[ ]",
           "member": "MQTTTopicItem",
           "name": "Data",
           "output_required": true,
@@ -1767,6 +2246,80 @@
           "name": "CreatedTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserListRequest": {
+      "document": "DescribeUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表支持字段\nUsername：Username模糊查询",
+          "example": "[{\"Name\":\"Username\",\"Values\":[\"user1\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserListResponse": {
+      "document": "DescribeUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色信息列表",
+          "example": "[ \t\t\t{ \t\t\t\t\"CreatedTime\": 1705392159000, \t\t\t\t\"ModifiedTime\": 1705392159000, \t\t\t\t\"Password\": \"sunjianxiong\", \t\t\t\t\"PermRead\": true, \t\t\t\t\"PermWrite\": true, \t\t\t\t\"Remark\": \"\", \t\t\t\t\"Username\": \"user1\" \t\t\t} \t\t]",
+          "member": "MQTTUserItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1948,6 +2501,45 @@
       ],
       "usage": "in"
     },
+    "IpRule": {
+      "document": "IP规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许放行",
+          "example": "true",
+          "member": "bool",
+          "name": "Allow",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "remark1",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MQTTAuthenticatorItem": {
       "document": "MQTT认证器信息",
       "members": [
@@ -2003,6 +2595,89 @@
         }
       ],
       "usage": "out"
+    },
+    "MQTTEndpointItem": {
+      "document": "MQTTEndpoint",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-tcp",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-12345-cd.mqtt.public.tencenttdmq.com:1883",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpc信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-23dada",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-dadaf",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mqtt-12345-cd.mqtt.public.tencenttdmq.com",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1883",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MQTTInstanceItem": {
       "document": "MQTT 实例信息",
@@ -2246,6 +2921,62 @@
       ],
       "usage": "out"
     },
+    "MQTTUserItem": {
+      "document": "MQTT集群用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user1",
+          "member": "string",
+          "name": "Username",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "pd",
+          "member": "string",
+          "name": "Password",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "remark1",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒为单位",
+          "example": "1712739629775",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，秒为单位",
+          "example": "1712739629775",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyAuthorizationPolicyRequest": {
       "document": "ModifyAuthorizationPolicy请求参数结构体",
       "members": [
@@ -2380,6 +3111,123 @@
     },
     "ModifyAuthorizationPolicyResponse": {
       "document": "ModifyAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInsPublicEndpointRequest": {
+      "document": "ModifyInsPublicEndpoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "带宽，单位：Mbps",
+          "example": "2",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网访问规则",
+          "example": "[ \t\t{ \t\t\t\"IpRule\": \"2.2.2.2\", \t\t\t\"Allow\": true, \t\t\t\"Remark\": \"555\" \t\t} \t]",
+          "member": "PublicAccessRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInsPublicEndpointResponse": {
+      "document": "ModifyInsPublicEndpoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要修改实例名称",
+          "example": "instance1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要修改的备注信息",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要变更的配置规格",
+          "example": "pro_4k_4",
+          "member": "string",
+          "name": "SkuCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端证书注册方式：\nJITP：自动注册\nAPI：手动通过API注册",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "DeviceCertificateProvisionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动注册证书是否自动激活",
+          "example": "false",
+          "member": "bool",
+          "name": "AutomaticActivation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2597,6 +3445,90 @@
       ],
       "type": "object"
     },
+    "ModifyUserRequest": {
+      "document": "ModifyUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "remark",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserResponse": {
+      "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PublicAccessRule": {
+      "document": "公网访问安全规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip网段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "IpRule",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许或者拒绝\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Allow",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RegisterDeviceCertificateRequest": {
       "document": "RegisterDeviceCertificate请求参数结构体",
       "members": [
@@ -2705,6 +3637,34 @@
       ],
       "type": "object"
     },
+    "Tag": {
+      "document": "标签数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TagFilter": {
       "document": "标签过滤器",
       "members": [
@@ -2764,6 +3724,30 @@
         }
       ],
       "type": "object"
+    },
+    "VpcInfo": {
+      "document": "VPC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC ID",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"
