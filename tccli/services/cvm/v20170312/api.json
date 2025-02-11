@@ -5936,7 +5936,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
-          "example": "无",
+          "example": "[{'ResourceType': 'image', 'Tags': [{'Key': 'ServiceInstance', 'Value': 'dfs-digital-facilities-system-isc-prod'}]}]",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -5972,7 +5972,7 @@
         {
           "disabled": false,
           "document": "导入的数据盘列表",
-          "example": "[]",
+          "example": "[{\"ImageUrl\": \"https://user-test-1317392000.cos.ap-guangzhou.myqcloud.com/snap-xxxx.qcow2\"}]",
           "member": "ImportImageDataDisk",
           "name": "ImportImageDataDiskList",
           "required": false,
@@ -5984,6 +5984,16 @@
     "ImportImageResponse": {
       "document": "ImportImage返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "镜像 ID",
+          "example": "img-ds656asd",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

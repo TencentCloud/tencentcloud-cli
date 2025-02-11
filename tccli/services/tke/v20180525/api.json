@@ -17342,6 +17342,15 @@
           "name": "RawValues",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅做安装检查，设置为true时仅做检查，不会安装组件",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -25592,6 +25601,15 @@
           "name": "UpdateStrategy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否仅做更新检查，设置为true时仅做检查，不会更新组件",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -11,7 +11,7 @@
     "CreateReleaseFile": [
       {
         "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=CreateReleaseFile\n&ProjectID=1\n&Files.0.Version='0.0.1'\n&Files.0.FileName='a.js.map'\n&Files.0.FileKey='1-0.0.1-a.js.map'\n&Files.0.FileHash='sadfjfhdkhfksdjhg;'\n&<公共请求参数>",
+        "input": "https://rum.tencentcloudapi.com/?Action=CreateReleaseFile\n&ProjectID=1\n&Files.0.Version='0.0.1'\n&Files.0.FileName='a.js.map'\n&Files.0.FileKey='1-0.0.1-a.js.map'\n&Files.0.FileHash='XNdLOW5RN***'\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "创建文件记录"
       }
@@ -90,7 +90,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppDimensionMetrics\n<公共请求参数>\n\n{\n    \"Filter\": \"'[]'\",\n    \"ProjectID\": 1,\n    \"FilterSimple\": \"'{\\\\\\\"entrance_time__gte\\\\\\\":1671367462000,\\\\\\\"entrance_time__lte\\\\\\\":1671453862000,\\\\\\\"category__in\\\\\\\":[\\\\\\\"PERF_NET_REQUEST\\\\\\\"],\\\\\\\"d4\\\\\\\":\\\\\\\"false\\\\\\\",\\\\\\\"d3\\\\\\\":\\\\\\\"http\\\\\\\",\\\\\\\"v1__lte\\\\\\\":300000}'\",\n    \"From\": \"'kv_7_dist'\",\n    \"Fields\": \"'[[\\\\\\\"explodeDimensions\\\\\\\",\\\\\\\"d2\\\\\\\",\\\\\\\"d8\\\\\\\"],[\\\\\\\"as\\\\\\\",[\\\\\\\"multiIf\\\\\\\",[\\\\\\\"equals\\\\\\\",\\\\\\\"dimension_name\\\\\\\",\\\\\\\"'d2'\\\\\\\"],\\\\\\\"'domain'\\\\\\\",[\\\\\\\"equals\\\\\\\",\\\\\\\"dimension_name\\\\\\\",\\\\\\\"'d8'\\\\\\\"],\\\\\\\"'region'\\\\\\\",\\\\\\\"dimension_name\\\\\\\"],\\\\\\\"dimension\\\\\\\"],[\\\\\\\"as\\\\\\\",[\\\\\\\"avg\\\\\\\",\\\\\\\"v1\\\\\\\"],\\\\\\\"cost_time\\\\\\\"],[\\\\\\\"as\\\\\\\",[\\\\\\\"count\\\\\\\",1],\\\\\\\"request_cnt\\\\\\\"],[\\\\\\\"as\\\\\\\",[\\\\\\\"aggByPartition\\\\\\\",\\\\\\\"sum\\\\\\\",\\\\\\\"request_cnt\\\\\\\",\\\\\\\"dimension_name\\\\\\\"],\\\\\\\"total_request_cnt\\\\\\\"],[\\\\\\\"as\\\\\\\",\\\\\\\"total_request_cnt\\\\\\\",\\\\\\\"total_cnt\\\\\\\"],[\\\\\\\"as\\\\\\\",\\\\\\\"request_cnt\\\\\\\",\\\\\\\"cnt\\\\\\\"],[\\\\\\\"as\\\\\\\",[\\\\\\\"aggByPartition\\\\\\\",\\\\\\\"row_number\\\\\\\",\\\\\\\"none\\\\\\\",\\\\\\\"dimension_name\\\\\\\",[\\\\\\\"order_by\\\\\\\",\\\\\\\"request_cnt\\\\\\\",\\\\\\\"desc\\\\\\\"]],\\\\\\\"rank_cnt\\\\\\\"]]'\",\n    \"Limit\": 1000\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"'{\\\"status\\\":\\\"ok\\\",\\\"code\\\":10000,\\\"msg\\\":\\\"ok\\\",\\\"data\\\":[{\\\"by_dimension\\\":[\\\"d2\\\",\\\"m.zhipin.com\\\"],\\\"cnt\\\":1280,\\\"cost_time\\\":1480,\\\"dimension\\\":\\\"domain\\\",\\\"dimension_name\\\":\\\"d2\\\",\\\"dimension_value\\\":\\\"m.zhipin.com\\\",\\\"rank_cnt\\\":1,\\\"request_cnt\\\":1280,\\\"total_cnt\\\":1280,\\\"total_request_cnt\\\":1280},{\\\"by_dimension\\\":[\\\"d8\\\",\\\"unsupported\\\"],\\\"cnt\\\":1280,\\\"cost_time\\\":1480,\\\"dimension\\\":\\\"region\\\",\\\"dimension_name\\\":\\\"d8\\\",\\\"dimension_value\\\":\\\"unsupported\\\",\\\"rank_cnt\\\":1,\\\"request_cnt\\\":1280,\\\"total_cnt\\\":1280,\\\"total_request_cnt\\\":1280}]}'\",\n        \"RequestId\": \"8a211fc4-7ce2-40ce-ad49-1c29cca2f3fc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"'{\\\"status\\\":\\\"ok\\\",\\\"code\\\":10000,\\\"msg\\\":\\\"ok\\\",\\\"data\\\":[{\\\"by_dimension\\\":[\\\"d2\\\",\\\"m.zipkin.com\\\"],\\\"cnt\\\":1280,\\\"cost_time\\\":1480,\\\"dimension\\\":\\\"domain\\\",\\\"dimension_name\\\":\\\"d2\\\",\\\"dimension_value\\\":\\\"m.zipkin.com\\\",\\\"rank_cnt\\\":1,\\\"request_cnt\\\":1280,\\\"total_cnt\\\":1280,\\\"total_request_cnt\\\":1280},{\\\"by_dimension\\\":[\\\"d8\\\",\\\"unsupported\\\"],\\\"cnt\\\":1280,\\\"cost_time\\\":1480,\\\"dimension\\\":\\\"region\\\",\\\"dimension_name\\\":\\\"d8\\\",\\\"dimension_value\\\":\\\"unsupported\\\",\\\"rank_cnt\\\":1,\\\"request_cnt\\\":1280,\\\"total_cnt\\\":1280,\\\"total_request_cnt\\\":1280}]}'\",\n        \"RequestId\": \"8a211fc4-7ce2-40ce-ad49-1c29cca2f3fc\"\n    }\n}",
         "title": "查询多维分析数据"
       }
     ],
@@ -121,7 +121,7 @@
     "DescribeData": [
       {
         "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeData\n&ID=1\n&Query=\"select delta(count) as allCount from db.name where time >= 1621240040s and time <= 1621243620s and id='1613' group by \\\"ext3\\\" slimit 1000\"\n&<公共请求参数>",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeData\n&ID=1\n&Query=\"select delta(count) as allCount from db.name where time >= 1621240040s and time <= 1621243620s and id='1613' group by \\\"ext3\\\" limit 1000\"\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"request_id\\\":\\\"65a8fec7-2b39-4b11-893f-3715279d235f\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0},{\\\"statement_id\\\":1,\\\"total\\\":0}]}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "转发获取data信息"
       }
@@ -338,7 +338,7 @@
       {
         "document": "获取临时密钥",
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeReleaseFileSign\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"dahfldaflndfdfdsf\",\n        \"SecretID\": \"asdkadalsdlsafk\",\n        \"SessionToken\": \"fdslkfjdkjfldsjfdfdf\",\n        \"StartTime\": 1232132132,\n        \"ExpiredTime\": 123212143434,\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"OnKjAEea4W5***\",\n        \"SecretID\": \"AKIDDHDvz_oW***\",\n        \"SessionToken\": \"2nTxEweEOsBoGaz0sjm***\",\n        \"StartTime\": 1739258276,\n        \"ExpiredTime\": 1739260076,\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取临时密钥"
       }
     ],
@@ -382,13 +382,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"ID\": 234763,\n    \"PageSize\": 999\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01a45bad-d053-4af8-9f60-0c4293574f5d\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1,\\\"totalPage\\\":1,\\\"data\\\":[{\\\"id\\\":234763,\\\"name\\\":\\\"124858_log\\\",\\\"status\\\":\\\"\\\",\\\"message\\\":\\\"任务创建成功\\\",\\\"progress\\\":0,\\\"url\\\":\\\"\\\",\\\"updateUser\\\":\\\"tickli\\\",\\\"updateTime\\\":\\\"2025-01-19 10:13:04\\\",\\\"type\\\":\\\"json\\\",\\\"createUser\\\":\\\"tickli\\\",\\\"createTime\\\":\\\"2025-01-19 10:13:04\\\"}]},\\\"msg\\\":\\\"\\\"}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"01a45bad-d053-4af8-9f60-0c4293574f5d\",\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1,\\\"totalPage\\\":1,\\\"data\\\":[{\\\"id\\\":234763,\\\"name\\\":\\\"124858_log\\\",\\\"status\\\":\\\"\\\",\\\"message\\\":\\\"任务创建成功\\\",\\\"progress\\\":0,\\\"url\\\":\\\"\\\",\\\"updateUser\\\":\\\"TICLI\\\",\\\"updateTime\\\":\\\"2025-01-19 10:13:04\\\",\\\"type\\\":\\\"json\\\",\\\"createUser\\\":\\\"TICLI\\\",\\\"createTime\\\":\\\"2025-01-19 10:13:04\\\"}]},\\\"msg\\\":\\\"\\\"}\"\n    }\n}",
         "title": "xc"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRumLogExports\n<公共请求参数>\n\n{\n    \"PageSize\": 999,\n    \"ID\": 10,\n    \"PageNum\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1,\\\"totalPage\\\":1,\\\"data\\\":[{\\\"id\\\":10,\\\"name\\\":\\\"10_log\\\",\\\"status\\\":\\\"\\\",\\\"message\\\":\\\"任务创建成功\\\",\\\"progress\\\":0,\\\"url\\\":\\\"\\\",\\\"updateUser\\\":\\\"tickli\\\",\\\"updateTime\\\":\\\"2025-01-19 10:14:04\\\",\\\"type\\\":\\\"json\\\",\\\"createUser\\\":\\\"tickli\\\",\\\"createTime\\\":\\\"2025-01-19 10:14:04\\\"}]},\\\"msg\\\":\\\"\\\"}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"page\\\":1,\\\"pageSize\\\":999,\\\"totalCount\\\":1,\\\"totalPage\\\":1,\\\"data\\\":[{\\\"id\\\":10,\\\"name\\\":\\\"10_log\\\",\\\"status\\\":\\\"\\\",\\\"message\\\":\\\"任务创建成功\\\",\\\"progress\\\":0,\\\"url\\\":\\\"\\\",\\\"updateUser\\\":\\\"TICLI\\\",\\\"updateTime\\\":\\\"2025-01-19 10:14:04\\\",\\\"type\\\":\\\"json\\\",\\\"createUser\\\":\\\"TICLI\\\",\\\"createTime\\\":\\\"2025-01-19 10:14:04\\\"}]},\\\"msg\\\":\\\"\\\"}\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
       }
     ],

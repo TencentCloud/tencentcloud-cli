@@ -17,7 +17,7 @@
     "CreateAttributeLabel": [
       {
         "document": "添加属性标签",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"Labels\": [\n        {\n            \"LabelName\": \"现代\"\n        },\n        {\n            \"LabelName\": \"流行\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAttributeLabel\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"AttributeKey\": \"style\",\n    \"AttributeName\": \"风格\",\n    \"Labels\": [\n        {\n            \"LabelName\": \"现代\"\n        },\n        {\n            \"LabelName\": \"流行\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3973e13a-926f-40a5-91d7-d61a56083314\"\n    }\n}",
         "title": "添加属性标签"
       }
@@ -33,14 +33,14 @@
     "CreateQA": [
       {
         "document": "创建问答对",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"28c960e9-c3ba-4a6d-be28-0d5d0dcca5ca\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是腾讯大模型知识引擎\",\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"QaId\": \"1830995120618932160\",\n        \"RequestId\": \"28c960e9-c3ba-4a6d-be28-0d5d0dcca5ca\"\n    }\n}",
         "title": "创建问答对"
       },
       {
         "document": "创建无标签问答对",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a37897c3-acf5-420a-bc32-9a1da9348c13\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是腾讯大模型知识引擎\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QaId\": \"1831158575324892608\",\n        \"RequestId\": \"a37897c3-acf5-420a-bc32-9a1da9348c13\"\n    }\n}",
         "title": "创建无标签问答对"
       }
     ],
@@ -63,7 +63,7 @@
     "DeleteAttributeLabels": [
       {
         "document": "删除属性标签",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttributeLabel\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttributeLabel\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"AttributeIds\": [\n        \"1830996257455365986\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1966c811-59a6-4385-bd4f-4ce12bdaa21a\"\n    }\n}",
         "title": "删除属性标签"
       }
@@ -71,7 +71,7 @@
     "DeleteDocs": [
       {
         "document": "删除文档",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDoc\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDoc\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"DocIds\": [\n        \"1830996257459865536\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3d05737-0b05-45cd-aa6a-fe16213cfe01\"\n    }\n}",
         "title": "删除文档"
       }
@@ -87,7 +87,7 @@
     "DeleteQAs": [
       {
         "document": "删除qa",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQA\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"QaIds\": [\n        \"1830996257459865536\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c081879-196a-4df0-87ac-07e73a00952e\"\n    }\n}",
         "title": "删除问答对"
       }
@@ -95,8 +95,8 @@
     "DescribeDoc": [
       {
         "document": "查询文档详情",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDoc\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf318516-67a7-41df-9460-e581b4ecedbd\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDoc\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"DocId\": \"1830881178265519872\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocId\": \"1830881178265519872\",\n        \"FileName\": \"product_manuals.docx\",\n        \"RequestId\": \"bf318516-67a7-41df-9460-e581b4ecedbd\",\n        \"Status\": \"Parsing\"\n    }\n}",
         "title": "查询文档详情"
       }
     ],
@@ -127,7 +127,7 @@
     "ImportQAs": [
       {
         "document": "批量导入问答对",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportQAs\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportQAs\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"FileName\": \"qa_import.xlsx\",\n    \"FileUrl\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/file/qa_import.xlsx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"21305ff4-94c7-4113-9977-9b20427e0a2a\"\n    }\n}",
         "title": "批量导入问答对"
       }
@@ -135,31 +135,31 @@
     "ListAttributeLabels": [
       {
         "document": "获取标签列表",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAttributeLabel\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttributeId\": \"1830880287852529408\",\n                \"AttributeKey\": \"stylee\",\n                \"AttributeName\": \"风格\",\n                \"Labels\": [\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"流行\"\n                    },\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"现代\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c5821f64-064a-448c-9279-b40eff06f4ae\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAttributeLabel\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"PageNumber\": 1,\n    \"PageSize\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AttributeId\": \"1830880287852529408\",\n                \"AttributeKey\": \"stylee\",\n                \"AttributeName\": \"风格\",\n                \"Labels\": [\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"流行\"\n                    },\n                    {\n                        \"LabelId\": \"1830880287852529408\",\n                        \"LabelName\": \"现代\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"c5821f64-064a-448c-9279-b40eff06f4ae\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取标签列表"
       }
     ],
     "ListDocs": [
       {
         "document": "获取文档列表",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDocs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DocId\": \"1830985874053466048\",\n                \"FileName\": \"product_manuals.docx\",\n                \"Status\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"292da1b4-1125-4423-b7cd-5cf3b14eb98d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDocs\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"DocId\": \"1830985874053466048\",\n                \"FileName\": \"product_manuals.docx\",\n                \"Status\": \"Success\"\n            }\n        ],\n        \"RequestId\": \"292da1b4-1125-4423-b7cd-5cf3b14eb98d\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取文档列表"
       }
     ],
     "ListQAs": [
       {
         "document": "查询已经上传的问答对列表",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQAs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Answer\": \"我是腾讯大模型知识引擎\",\n                \"AttributeLabels\": [\n                    {\n                        \"AttributeId\": \"1830880287852529408\",\n                        \"LabelIds\": [\n                            \"1830880287865112320\"\n                        ]\n                    }\n                ],\n                \"QaId\": \"1830882708456671000\",\n                \"Question\": \"你是谁\"\n            }\n        ],\n        \"RequestId\": \"5f95d7c7-c881-49d1-98fc-34f138d8ca54\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListQAs\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"49019910127\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Answer\": \"我是腾讯大模型知识引擎\",\n                \"AttributeLabels\": [\n                    {\n                        \"AttributeId\": \"1830880287852529408\",\n                        \"LabelIds\": [\n                            \"1830880287865112320\"\n                        ]\n                    }\n                ],\n                \"QaId\": \"1830882708456671000\",\n                \"Question\": \"你是谁\"\n            }\n        ],\n        \"RequestId\": \"5f95d7c7-c881-49d1-98fc-34f138d8ca54\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "获取问答对列表"
       }
     ],
     "ModifyAttributeLabel": [
       {
         "document": "修改属性标签",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttributeLabel\n<公共请求参数>\n\n{\n    \"Labels\": [\n        {\n            \"LabelId\": \"1830993312978765760\",\n            \"LabelName\": \"主流\"\n        },\n        {\n            \"LabelId\": \"1830993312978765761\",\n            \"LabelName\": \"现代\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttributeLabel\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"AttributeId\": \"1830993312966182848\",\n    \"AttributeKey\": \"style\",\n    \"AttributeName\": \"风格\",\n    \"Labels\": [\n        {\n            \"LabelId\": \"1830993312978765760\",\n            \"LabelName\": \"主流\"\n        },\n        {\n            \"LabelId\": \"1830993312978765761\",\n            \"LabelName\": \"现代\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"04ba0a85-161a-408a-9c80-029601af9775\"\n    }\n}",
         "title": "修改属性标签"
       }
@@ -167,7 +167,7 @@
     "ModifyQA": [
       {
         "document": "修改问答对",
-        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: lkeap.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"KnowledgeBaseId\": \"4901991032\",\n    \"QaId\": \"1830995120618932160\",\n    \"Question\": \"你是谁\",\n    \"Answer\": \"我是腾讯大模型知识引擎\",\n    \"AttributeLabels\": [\n        {\n            \"AttributeId\": \"1830994685416869312\",\n            \"LabelIds\": [\n                \"1830994685429452224\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f4843c1-8f3b-4a0b-ad7e-91b47f2b93c7\"\n    }\n}",
         "title": "修改问答对"
       }

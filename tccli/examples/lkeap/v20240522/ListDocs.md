@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli lkeap ListDocs --cli-unfold-argument ```
+tccli lkeap ListDocs --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --PageNumber 1 \
+    --PageSize 10
+```
 
 Output: 
 ```
@@ -18,7 +22,8 @@ Output:
                 "Status": "Success"
             }
         ],
-        "RequestId": "292da1b4-1125-4423-b7cd-5cf3b14eb98d"
+        "RequestId": "292da1b4-1125-4423-b7cd-5cf3b14eb98d",
+        "TotalCount": 1
     }
 }
 ```

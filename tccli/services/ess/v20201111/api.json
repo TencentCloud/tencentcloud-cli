@@ -9491,7 +9491,7 @@
         {
           "disabled": false,
           "document": "指定分页每页返回的数据条数，单页最大1000",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -9500,7 +9500,7 @@
         {
           "disabled": false,
           "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -9509,7 +9509,7 @@
         {
           "disabled": false,
           "document": "查询成员企业的企业名，模糊匹配",
-          "example": "无",
+          "example": "典子谦示例企业",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -9518,7 +9518,7 @@
         {
           "disabled": false,
           "document": "成员企业加入集团的当前状态\n<ul><li> **1**：待授权</li>\n<li> **2**：已授权待激活</li>\n<li> **3**：拒绝授权</li>\n<li> **4**：已解除</li>\n<li> **5**：已加入</li>\n</ul>",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -9527,7 +9527,7 @@
         {
           "disabled": false,
           "document": "是否导出当前成员企业数据\n<ul><li> **false**：不导出（默认值）</li>\n<li> **true**：导出</li></ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Export",
           "required": false,
@@ -9536,7 +9536,7 @@
         {
           "disabled": false,
           "document": "成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取",
-          "example": "无",
+          "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -9550,63 +9550,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的资源实例总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合查询条件的资源实例总数量。",
           "example": "100",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已授权待激活的子企业总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已授权待激活的子企业总数量",
           "example": "10",
           "member": "uint64",
           "name": "JoinedTotal",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
-          "document": "已加入的企业数量(废弃,请使用ActivatedTotal)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已加入的企业数量(废弃,请使用ActivatedTotal)",
           "example": "10",
           "member": "uint64",
           "name": "ActivedTotal",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "如果入参Export为 true 时使用，表示导出Excel的url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "http://xxxx.com",
+          "document": "如果入参Export为 true 时使用，表示导出Excel的url",
+          "example": "http://file.com/exports",
           "member": "string",
           "name": "ExportUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成员企业信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业信息列表",
           "example": "无",
           "member": "GroupOrganization",
           "name": "List",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已加入的子企业总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已加入的子企业总数量",
           "example": "50",
           "member": "uint64",
           "name": "ActivatedTotal",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

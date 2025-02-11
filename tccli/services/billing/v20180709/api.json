@@ -14631,9 +14631,10 @@
         {
           "disabled": false,
           "document": "商品详情名称标识",
-          "example": "",
+          "example": "云硬盘类型",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14641,9 +14642,10 @@
         {
           "disabled": false,
           "document": "商品详情",
-          "example": "",
+          "example": "系统盘",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

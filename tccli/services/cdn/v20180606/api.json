@@ -2382,6 +2382,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2392,16 +2393,18 @@
           "example": "dfss12nk",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "dsfds13m",
+          "document": "密钥，字段为脱敏返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wn***************mg",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2412,6 +2415,7 @@
           "example": "gz",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2422,6 +2426,7 @@
           "example": "hw-oss",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10420,6 +10425,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10430,16 +10436,18 @@
           "example": "SYWKY0DAR8I5NXZO93YT",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "密钥\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "5Hhn0uss213Szfgysb6nOkWaGA6Z4V956n8NtSmg",
+          "document": "密钥，字段为脱敏返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wn***************mg",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10450,6 +10458,7 @@
           "example": "hw-1-163",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12943,6 +12952,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12950,19 +12960,21 @@
         {
           "disabled": false,
           "document": "访问ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "AKkjqrfjaoidn",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "密钥，字段为脱敏返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wn***************mg\t",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12973,6 +12985,7 @@
           "example": "gz",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12983,6 +12996,7 @@
           "example": "hw-oss",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12999,6 +13013,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13009,16 +13024,18 @@
           "example": "TXUIWY0BAR8I5NXZ693YU",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "4Gwn2uss513uytKysb6nOkWaGA6Z4V956n8NtSmg\t",
+          "document": "密钥，字段位脱敏返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wn***************mg",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13029,6 +13046,7 @@
           "example": "gz",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13039,6 +13057,7 @@
           "example": "bucket-name",
           "member": "string",
           "name": "Bucket",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13945,6 +13964,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13955,16 +13975,18 @@
           "example": "ousbDM5xlzuAZJEhhwcLj8makXkYiaAvciZHqAQj",
           "member": "string",
           "name": "AccessKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "密钥",
-          "example": "c109ES08UcSUNdSA1rN04tSBJ8I45BrxMZQn3vtL",
+          "document": "密钥，字段为脱敏返回。",
+          "example": "wn***************mg",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

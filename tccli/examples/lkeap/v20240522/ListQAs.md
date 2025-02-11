@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli lkeap ListQAs --cli-unfold-argument ```
+tccli lkeap ListQAs --cli-unfold-argument  \
+    --KnowledgeBaseId 49019910127 \
+    --PageNumber 1 \
+    --PageSize 10
+```
 
 Output: 
 ```
@@ -26,7 +30,8 @@ Output:
                 "Question": "你是谁"
             }
         ],
-        "RequestId": "5f95d7c7-c881-49d1-98fc-34f138d8ca54"
+        "RequestId": "5f95d7c7-c881-49d1-98fc-34f138d8ca54",
+        "TotalCount": 1
     }
 }
 ```

@@ -1164,7 +1164,7 @@
         {
           "disabled": false,
           "document": "应用id",
-          "example": "1234567",
+          "example": "1400000001",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1173,7 +1173,7 @@
         {
           "disabled": false,
           "document": "图片内容经base64编码后的string格式,最大长度为2M",
-          "example": "abcde",
+          "example": "MTg4MTM=",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -1233,9 +1233,10 @@
         {
           "disabled": false,
           "document": "图片id",
-          "example": "123",
+          "example": "18813",
           "member": "uint64",
           "name": "PictureId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1771,7 +1772,7 @@
         {
           "disabled": false,
           "document": "用量类型，与UsageValue中各个位置的值对应。",
-          "example": "无",
+          "example": "[\"Audio\",\"SDH264\",\"HDH264\",\"FullHDH264\",\"2KH264\",\"4KH264\",\"SDH265\",\"HDH265\",\"FullHDH265\",\"2KH265\",\"4KH265\"]",
           "member": "string",
           "name": "UsageKey",
           "output_required": true,
@@ -1974,7 +1975,7 @@
         {
           "disabled": false,
           "document": "用量类型，与UsageValue中各个位置的值对应。",
-          "example": "无",
+          "example": "[\"Audio\",\"SD\",\"HD\",\"FullHD\",\"2K\",\"4K\"]",
           "member": "string",
           "name": "UsageKey",
           "output_required": true,
@@ -2039,7 +2040,7 @@
         {
           "disabled": false,
           "document": "用量类型，与UsageValue中各个位置的值对应。",
-          "example": "无",
+          "example": "[\"Bandwidth\"]",
           "member": "string",
           "name": "UsageKey",
           "output_required": true,
@@ -2928,7 +2929,7 @@
         {
           "disabled": false,
           "document": "用量类型，与UsageValue中各个位置的值对应。",
-          "example": "无",
+          "example": "[\"Audio\",\"SD\",\"HD\",\"FullHD\",\"2K\",\"4K\"]",
           "member": "string",
           "name": "UsageKey",
           "output_required": true,

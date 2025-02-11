@@ -152,6 +152,14 @@
         "title": "查询参数模板详情"
       }
     ],
+    "DescribeDBInstanceURL": [
+      {
+        "document": "获取指定实例的 URI 形式的连接串访问地址示例，包含 URI 类型、URI 连接串。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceURL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-g5*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e4cb480-9d32-11ec-8dfc-037b69052954\",\n        \"Urls\": [\n            {\n                \"Address\": \"mongodb://mongouser:******@10.*.0.**:27017,10.*.0.**:27017/test?authSource=admin\",\n                \"URLType\": \"CLUSTER_ALL\"\n            },\n            {\n                \"Address\": \"mongodb://mongouser:******@10.*.0.**:27017,10.*.0.**:27017/test?authSource=admin&readPreference=secondaryPreferred\",\n                \"URLType\": \"CLUSTER_READ_SECONDARY\"\n            }\n        ]\n    }\n}",
+        "title": "获取访问实例的 URI。"
+      }
+    ],
     "DescribeDBInstances": [
       {
         "document": "查询实例列表",

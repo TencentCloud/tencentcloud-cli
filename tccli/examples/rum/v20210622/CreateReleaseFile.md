@@ -10,7 +10,7 @@ tccli rum CreateReleaseFile --cli-unfold-argument  \
     --Files.0.Version '0.0.1' \
     --Files.0.FileName 'a.js.map' \
     --Files.0.FileKey '1-0.0.1-a.js.map' \
-    --Files.0.FileHash 'sadfjfhdkhfksdjhg;'
+    --Files.0.FileHash 'XNdLOW5RN***'
 ```
 
 Output: 

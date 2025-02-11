@@ -6469,7 +6469,7 @@
         {
           "disabled": false,
           "document": "认证流认证失败信息",
-          "example": "无",
+          "example": "[\"企业信息错误\"]",
           "member": "string",
           "name": "ErrorMessages",
           "output_required": true,
@@ -6479,7 +6479,7 @@
         {
           "disabled": false,
           "document": "链接过期时间，为 7 天后，创建时间，格式为Unix标准时间戳（秒）。",
-          "example": "无",
+          "example": "1739241985",
           "member": "uint64",
           "name": "ExpireTime",
           "output_required": true,

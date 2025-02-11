@@ -18987,7 +18987,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "[匹配条件\n](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。",
+          "document": "[匹配条件](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。",
           "example": "\"${http.request.host} in ['test.test.com']\"",
           "member": "string",
           "name": "Condition",

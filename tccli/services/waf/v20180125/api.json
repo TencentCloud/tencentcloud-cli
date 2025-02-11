@@ -14705,7 +14705,7 @@
         {
           "disabled": false,
           "document": "API安全资源包",
-          "example": "{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_api\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-23 00:01:51\",\"EndTime\":\"2024-12-01 00:01:51\",\"InquireNum\":1,\"UsedNum\":0,\"BillingItem\":\"sv_wsm_waf_scene_ent\",\"RenewFlag\":1,\"APICPWaf\":0,\"APINPWaf\":0,\"IsAPISecurityTrial\":0}",
+          "example": "{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_0_api\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-23 00:01:51\",\"EndTime\":\"2024-12-01 00:01:51\",\"InquireNum\":1,\"UsedNum\":0,\"BillingItem\":\"sv_wsm_waf_scene_ent\",\"RenewFlag\":1}",
           "member": "ApiPkg",
           "name": "ApiPkg",
           "output_required": false,
@@ -14716,7 +14716,7 @@
         {
           "disabled": false,
           "document": "小程序安全加速包",
-          "example": "{\"ResourceIds\":\"waf_2kw60zgy0908e8j3_1_mini\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-11 11:31:01\",\"EndTime\":\"2024-12-01 11:31:01\",\"Count\":5,\"BillingItem\":\"sv_wsm_waf_scene_mini\",\"RenewFlag\":1,\"AccessAppidNum\":4,\"DdosThreshold\":300,\"ElasticMode\":1,\"ElasticBilling\":473000}",
+          "example": "{\"ResourceIds\":\"waf_mini\",\"Status\":1,\"Region\":1,\"BeginTime\":\"2024-04-11 11:31:01\",\"EndTime\":\"2024-12-01 11:31:01\",\"Count\":5,\"BillingItem\":\"sv_wsm_waf_scene_mini\",\"RenewFlag\":1,\"AccessAppidNum\":4,\"DdosThreshold\":300,\"ElasticMode\":1,\"ElasticBilling\":10}",
           "member": "MiniPkg",
           "name": "MiniPkg",
           "output_required": false,
@@ -14785,6 +14785,28 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeDelayFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近3天最大qps",
+          "example": "300",
+          "member": "uint64",
+          "name": "Last3MaxQPS",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近3天最大带宽",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Last3MaxBandwidth",
           "output_required": false,
           "required": false,
           "type": "int",

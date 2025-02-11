@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli lkeap DeleteAttributeLabels --cli-unfold-argument ```
+tccli lkeap DeleteAttributeLabels --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --AttributeIds 1830996257455365986
+```
 
 Output: 
 ```

@@ -6,6 +6,10 @@ Input:
 
 ```
 tccli lkeap ModifyAttributeLabel --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --AttributeId 1830993312966182848 \
+    --AttributeKey style \
+    --AttributeName 风格 \
     --Labels.0.LabelId 1830993312978765760 \
     --Labels.0.LabelName 主流 \
     --Labels.1.LabelId 1830993312978765761 \

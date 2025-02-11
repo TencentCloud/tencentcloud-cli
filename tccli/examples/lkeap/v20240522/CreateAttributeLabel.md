@@ -6,6 +6,9 @@ Input:
 
 ```
 tccli lkeap CreateAttributeLabel --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --AttributeKey style \
+    --AttributeName 风格 \
     --Labels.0.LabelName 现代 \
     --Labels.1.LabelName 流行
 ```

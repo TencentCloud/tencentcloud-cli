@@ -947,8 +947,8 @@
         },
         {
           "disabled": false,
-          "document": "域名状态",
-          "example": "enable",
+          "document": "域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭",
+          "example": "online",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -5569,7 +5569,7 @@
         {
           "disabled": false,
           "document": "部署资源类型apigateway",
-          "example": "clb",
+          "example": "apigateway",
           "member": "string",
           "name": "ResourceType",
           "required": false,
@@ -6341,7 +6341,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数列表",
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6898,7 +6898,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数列表",
+          "document": "过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7479,12 +7479,12 @@
       "type": "object"
     },
     "DomainValidationResult": {
-      "document": "域名验证结果",
+      "document": "证书域名验证结果",
       "members": [
         {
           "disabled": false,
-          "document": "域名。",
-          "example": "qq.com",
+          "document": "证书绑定的域名。",
+          "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -7493,7 +7493,7 @@
         },
         {
           "disabled": false,
-          "document": "验证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DNS",
           "member": "string",
           "name": "VerifyType",
@@ -7503,8 +7503,8 @@
         },
         {
           "disabled": false,
-          "document": "本地检查结果。",
-          "example": "1",
+          "document": "腾讯云检测结果，取值：1（验证通过）； -1（被限频或者 txt record not found）；-2（txt record not match）；-3（ns record not found）；-4（file not found）；-5（file not match）；-6（cname record not found）；-7（cname record not match）；-8（ns record not found）-9（file not found）；-10（file not match）\n",
+          "example": "-1",
           "member": "int64",
           "name": "LocalCheck",
           "output_required": true,
@@ -7513,8 +7513,8 @@
         },
         {
           "disabled": false,
-          "document": "CA检查结果。",
-          "example": "1",
+          "document": "CA检查结果。取值： -1（未检测通过）；2（检测通过）",
+          "example": "-1",
           "member": "int64",
           "name": "CaCheck",
           "output_required": true,
@@ -7523,8 +7523,8 @@
         },
         {
           "disabled": false,
-          "document": "检查失败原因。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "fail",
+          "document": "检查失败原因。状态LocalCheck的具体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "txt record not found",
           "member": "string",
           "name": "LocalCheckFailReason",
           "output_required": true,
@@ -7534,7 +7534,7 @@
         {
           "disabled": false,
           "document": "检查到的值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"www.**.com\"]",
+          "example": "[\"2025020702351560msettk82zj7nc30anr3n0lon5l6zm5shot5qznawf8mgun1r\"]",
           "member": "string",
           "name": "CheckValue",
           "output_required": true,
@@ -7543,7 +7543,7 @@
         },
         {
           "disabled": false,
-          "document": "是否频繁请求。",
+          "document": "是否被限频拦截， 取值：false（未被限频）；true（被限频）",
           "example": "false",
           "member": "bool",
           "name": "Frequently",
@@ -7553,7 +7553,7 @@
         },
         {
           "disabled": false,
-          "document": "是否已经签发。",
+          "document": "证书是否已经签发。取值： false（未签发）；true（已签发）",
           "example": "false",
           "member": "bool",
           "name": "Issued",
@@ -10206,8 +10206,8 @@
         },
         {
           "disabled": false,
-          "document": "域名状态",
-          "example": "enable",
+          "document": "域名状态\ndeployed：已部署；\nprocessing：部署中；\napplying：申请中；\nfailed：申请失败；\nissued：绑定失败。",
+          "example": "deployed",
           "member": "string",
           "name": "Status",
           "output_required": true,

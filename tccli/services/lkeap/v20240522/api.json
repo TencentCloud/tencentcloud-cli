@@ -496,6 +496,33 @@
       "members": [
         {
           "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性标识，最大40个英文字符，如style",
+          "example": "style",
+          "member": "string",
+          "name": "AttributeKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性名称，最大80个英文字符，如风格",
+          "example": "风格",
+          "member": "string",
+          "name": "AttributeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "属性标签信息",
           "example": "无",
           "member": "AttributeLabelItem",
@@ -550,6 +577,33 @@
       "members": [
         {
           "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题，最大1000个英文字符",
+          "example": "你是谁",
+          "member": "string",
+          "name": "Question",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "答案，最大4000个英文字符",
+          "example": "我是腾讯大模型知识引擎",
+          "member": "string",
+          "name": "Answer",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "属性标签",
           "example": "无",
           "member": "AttributeLabelReferItem",
@@ -563,6 +617,16 @@
     "CreateQAResponse": {
       "document": "CreateQA返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "问答对ID",
+          "example": "1830996257459865536",
+          "member": "string",
+          "name": "QaId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -813,7 +877,26 @@
     },
     "DeleteAttributeLabelsRequest": {
       "document": "DeleteAttributeLabels请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性ID",
+          "example": "[\"1830996257455365986\"]",
+          "member": "string",
+          "name": "AttributeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DeleteAttributeLabelsResponse": {
@@ -830,7 +913,26 @@
     },
     "DeleteDocsRequest": {
       "document": "DeleteDocs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID列表。支持批量删除，数量不超过100",
+          "example": "[\"1830996256553674598\"]",
+          "member": "string",
+          "name": "DocIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DeleteDocsResponse": {
@@ -874,7 +976,26 @@
     },
     "DeleteQAsRequest": {
       "document": "DeleteQAs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问答对ID列表。支持批量删除，数量不超过100",
+          "example": "[\"1830996257459865536\"]",
+          "member": "string",
+          "name": "QaIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DeleteQAsResponse": {
@@ -917,12 +1038,71 @@
     },
     "DescribeDocRequest": {
       "document": "DescribeDoc请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "1830994598655366257",
+          "member": "string",
+          "name": "DocId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeDocResponse": {
       "document": "DescribeDoc返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "无",
+          "member": "string",
+          "name": "DocId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，\n\n- Uploading  上传中  \n- Auditing 审核中\n- Parsing 解析中  \n- ParseFailed 解析失败\n- Indexing 创建索引中  \n- IndexFailed 创建索引失败\n- Success  发布成功\n- Failed  失败",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "无",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "属性标签",
@@ -958,7 +1138,7 @@
         },
         {
           "disabled": false,
-          "document": " 状态，\n- Uploading  上传中  \n- Parsing 解析中  \n- ParseFailed 解析失败\n- Indexing 创建索引中  \n- IndexFailed 创建索引失败\n- Success  发布成功\n- Failed  失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 状态，\n- Uploading  上传中  \n- Auditing 审核中\n- Parsing 解析中  \n- ParseFailed 解析失败\n- Indexing 创建索引中  \n- IndexFailed 创建索引失败\n- Success  发布成功\n- Failed  失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -1238,7 +1418,44 @@
     },
     "ImportQAsRequest": {
       "document": "ImportQAs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": "qa_import.xlsx",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件的 Url 地址。文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 Url 速度和稳定性可能受一定影响。\n导入模板：https://cdn.xiaowei.qq.com/lke/assets//static/批量导入问答模板v6.xlsx",
+          "example": "https://xxx.cos.ap-shanghai.myqcloud.com/file/qa_import.xlsx",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，仅支持XLSX格式，请使用模板",
+          "example": "XLSX",
+          "member": "string",
+          "name": "FileType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ImportQAsResponse": {
@@ -1279,12 +1496,50 @@
     },
     "ListAttributeLabelsRequest": {
       "document": "ListAttributeLabels请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，最大50，默认20",
+          "example": "50",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ListAttributeLabelsResponse": {
       "document": "ListAttributeLabels返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "属性总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "属性标签列表",
@@ -1306,12 +1561,50 @@
     },
     "ListDocsRequest": {
       "document": "ListDocs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，最大50，默认20",
+          "example": "50",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ListDocsResponse": {
       "document": "ListDocs返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "文档总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "文档信息",
@@ -1333,12 +1626,50 @@
     },
     "ListQAsRequest": {
       "document": "ListQAs请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，最大50，默认20",
+          "example": "50",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ListQAsResponse": {
       "document": "ListQAs返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "问答对总数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "问答对信息",
@@ -1402,6 +1733,42 @@
       "members": [
         {
           "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性ID",
+          "example": "1830996257459865531",
+          "member": "string",
+          "name": "AttributeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性标识，最大40个英文字符，如style",
+          "example": "stlye",
+          "member": "string",
+          "name": "AttributeKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性名称，最大80个英文字符，如风格",
+          "example": "风格",
+          "member": "string",
+          "name": "AttributeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "属性标签",
           "example": "无",
           "member": "AttributeLabelItem",
@@ -1427,6 +1794,42 @@
     "ModifyQARequest": {
       "document": "ModifyQA请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问答对ID",
+          "example": "1830995120618932160",
+          "member": "string",
+          "name": "QaId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "问题，最大1000个英文字符",
+          "example": "你是谁",
+          "member": "string",
+          "name": "Question",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "答案，最大4000个英文字符",
+          "example": "我是腾讯大模型知识引擎",
+          "member": "string",
+          "name": "Answer",
+          "required": true,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "属性标签",
