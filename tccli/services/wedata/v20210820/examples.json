@@ -830,6 +830,14 @@
         "title": "样例"
       }
     ],
+    "DescribeInstanceDetailInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceDetailInfo\n<公共请求参数>\n\n{\n    \"TaskId\": \"231232313\",\n    \"CurRunDate\": \"2024-10-01 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TaskId\": \"231232313\",\n                \"CurRunDate\": \"2024-10-01 00:00:00\",\n                \"LifeRound\": 0,\n                \"RunType\": \"REDO\",\n                \"Tries\": 0,\n                \"InstanceLifeDetailDtoList\": [\n                    {\n                        \"State\": \"RUNNING\",\n                        \"StartTime\": \"231232313\"\n                    }\n                ],\n                \"RunnerState\": \"RUNNING\",\n                \"ErrorDesc\": \"\",\n                \"ErrorCodeLevel\": \"\",\n                \"InstanceLogListOpsDto\": {\n                    \"TaskId\": \"231232313\",\n                    \"CurRunDate\": \"2024-10-01 00:00:00\",\n                    \"Tries\": \"1\",\n                    \"LastUpdate\": \"2024-10-01 00:00:00\",\n                    \"BrokerIp\": \"10.0.0.1\",\n                    \"FileSize\": \"1000\",\n                    \"OriginFileName\": \"test.log\",\n                    \"CreateTime\": \"2024-10-01 00:00:00\",\n                    \"InstanceLogType\": \"2\",\n                    \"TaskName\": \"测试任务\",\n                    \"CostTime\": \"10\",\n                    \"InstanceStatus\": \"RUNNING\",\n                    \"CodeFileName\": \"info.log\",\n                    \"ExtensionInfo\": [\n                        {\n                            \"Key\": \"\",\n                            \"Value\": \"\",\n                            \"Description\": \"\"\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"12312434\"\n    }\n}",
+        "title": "样例"
+      }
+    ],
     "DescribeInstanceLastLog": [
       {
         "document": "",

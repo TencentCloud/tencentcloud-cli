@@ -1,11 +1,11 @@
 {
   "actions": {
     "DescribeMigrationTask": {
-      "document": "获取指定迁移任务详情",
+      "document": "旧版产品遗留，当前已经废弃不可用\n\n获取指定迁移任务详情",
       "input": "DescribeMigrationTaskRequest",
       "name": "获取指定迁移任务详情",
       "output": "DescribeMigrationTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeSurveyTasks": {
       "document": "基于内部用户信息查询调研任务列表",

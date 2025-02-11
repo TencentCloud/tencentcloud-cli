@@ -6,6 +6,9 @@ Input:
 
 ```
 tccli lkeap CreateQA --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --Question 你是谁 \
+    --Answer 我是腾讯大模型知识引擎 \
     --AttributeLabels.0.AttributeId 1830994685416869312 \
     --AttributeLabels.0.LabelIds 1830994685429452224
 ```
@@ -14,6 +17,7 @@ Output:
 ```
 {
     "Response": {
+        "QaId": "1830995120618932160",
         "RequestId": "28c960e9-c3ba-4a6d-be28-0d5d0dcca5ca"
     }
 }
@@ -26,12 +30,17 @@ Output:
 Input: 
 
 ```
-tccli lkeap CreateQA --cli-unfold-argument ```
+tccli lkeap CreateQA --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --Question 你是谁 \
+    --Answer 我是腾讯大模型知识引擎
+```
 
 Output: 
 ```
 {
     "Response": {
+        "QaId": "1831158575324892608",
         "RequestId": "a37897c3-acf5-420a-bc32-9a1da9348c13"
     }
 }

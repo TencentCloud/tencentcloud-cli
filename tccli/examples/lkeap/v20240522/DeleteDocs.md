@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli lkeap DeleteDocs --cli-unfold-argument ```
+tccli lkeap DeleteDocs --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --DocIds 1830996257459865536
+```
 
 Output: 
 ```

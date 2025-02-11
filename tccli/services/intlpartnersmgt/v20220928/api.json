@@ -211,21 +211,21 @@
       "status": "online"
     },
     "QueryVoucherAmountByUin": {
-      "document": "根据客户uin查询代金券额度",
+      "document": "描述说明：当前接口用作一级经销商/二级经销商根据客户uin查询代金券额度。\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "QueryVoucherAmountByUinRequest",
       "name": "根据客户uin查询代金券额度",
       "output": "QueryVoucherAmountByUinResponse",
       "status": "online"
     },
     "QueryVoucherListByUin": {
-      "document": "根据客户uin查询代金券列表",
+      "document": "描述说明：当前接口用作一级经销商/二级经销商根据客户uin查询代金券列表。\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "QueryVoucherListByUinRequest",
       "name": "根据客户uin查询代金券列表",
       "output": "QueryVoucherListByUinResponse",
       "status": "online"
     },
     "QueryVoucherPool": {
-      "document": "查询代金券额度池",
+      "document": "描述说明：当前接口用作一级经销商/二级经销商查询代金券额度池。\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "QueryVoucherPoolRequest",
       "name": "查询代金券额度池",
       "output": "QueryVoucherPoolResponse",

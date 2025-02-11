@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli lkeap ListAttributeLabels --cli-unfold-argument ```
+tccli lkeap ListAttributeLabels --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --PageNumber 1 \
+    --PageSize 50
+```
 
 Output: 
 ```
@@ -28,7 +32,8 @@ Output:
                 ]
             }
         ],
-        "RequestId": "c5821f64-064a-448c-9279-b40eff06f4ae"
+        "RequestId": "c5821f64-064a-448c-9279-b40eff06f4ae",
+        "TotalCount": 1
     }
 }
 ```

@@ -165,7 +165,7 @@
   "metadata": {
     "apiVersion": "2022-03-25",
     "api_brief": "介绍如果使用API创建远程操控项目，并对现场设备和远端设备进行管理，查看远控会话数据等",
-    "serviceNameCN": "远程实时操控",
+    "serviceNameCN": "实时互动-工业能源版",
     "serviceShortName": "trro"
   },
   "objects": {

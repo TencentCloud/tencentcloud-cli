@@ -28,7 +28,7 @@
         {
           "disabled": false,
           "document": "验证码，仅支持填写数字，实际播报语音时，会自动在数字前补充语音文本\"您的验证码是\"。",
-          "example": "1234",
+          "example": "8253",
           "member": "string",
           "name": "CodeMessage",
           "required": true,
@@ -64,7 +64,7 @@
         {
           "disabled": false,
           "document": "用户的 session 内容，腾讯 server 回包中会原样返回。",
-          "example": "test",
+          "example": "sc-t",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -82,7 +82,7 @@
           "example": "无",
           "member": "SendStatus",
           "name": "SendStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -101,20 +101,20 @@
         {
           "disabled": false,
           "document": "标识本次发送 ID，标识一次下发记录。",
-          "example": "",
+          "example": "12582bce-403c-11eb-96b8-525400476c37",
           "member": "string",
           "name": "CallId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户的 session 内容，腾讯 server 回包中会原样返回。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "sc-t",
           "member": "string",
           "name": "SessionContext",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -172,7 +172,7 @@
         {
           "disabled": false,
           "document": "用户的 session 内容，腾讯 server 回包中会原样返回。",
-          "example": "test",
+          "example": "sc-t",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -190,7 +190,7 @@
           "example": "无",
           "member": "SendStatus",
           "name": "SendStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

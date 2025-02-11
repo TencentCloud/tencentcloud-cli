@@ -178,7 +178,7 @@
     "GetExportControlUnderwriting": {
       "document": "通过测算单获取出口管制、包销",
       "input": "GetExportControlUnderwritingRequest",
-      "name": "通过测算单获取出口管制、包销",
+      "name": "通过测算单获取出口管制、包销、专利风险管控",
       "output": "GetExportControlUnderwritingResponse",
       "status": "online"
     },
@@ -1959,6 +1959,42 @@
       ],
       "usage": "out"
     },
+    "ExportControlEstimate": {
+      "document": "测算单标签出口管制、包销",
+      "members": [
+        {
+          "disabled": false,
+          "document": "测算单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EstimateCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否带有“出口管制合规”， 0否  1是 -1未查询到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsExportControl",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否带有“专利风险管控”， 0否  1是 -1未查询到",
+          "example": "无",
+          "member": "int64",
+          "name": "IsPatentRiskControl",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetBatchListRequest": {
       "document": "GetBatchList请求参数结构体",
       "members": [
@@ -2034,12 +2070,32 @@
     },
     "GetExportControlUnderwritingRequest": {
       "document": "GetExportControlUnderwriting请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "测算单号,单次最大5个",
+          "example": "无",
+          "member": "string",
+          "name": "EstimateCodeList",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "GetExportControlUnderwritingResponse": {
       "document": "GetExportControlUnderwriting返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "通过测算单获取出口管制、包销 响应",
+          "example": "无",
+          "member": "ExportControlEstimate",
+          "name": "EstimateList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

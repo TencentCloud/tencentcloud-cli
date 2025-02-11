@@ -133,6 +133,13 @@
       "output": "DescribeDBInstanceParamTplDetailResponse",
       "status": "online"
     },
+    "DescribeDBInstanceURL": {
+      "document": "本接口（DescribeDBInstanceURL）用于获取指定实例的 URI 形式的连接串访问地址示例。",
+      "input": "DescribeDBInstanceURLRequest",
+      "name": "获取实例连接的URI。",
+      "output": "DescribeDBInstanceURLResponse",
+      "status": "online"
+    },
     "DescribeDBInstances": {
       "document": "本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选主实例、灾备实例和只读实例信息列表。",
       "input": "DescribeDBInstancesRequest",
@@ -1794,6 +1801,32 @@
       ],
       "usage": "both"
     },
+    "DbURL": {
+      "document": "数据库实例 URI 形式的连接串访问地址示例。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指 URI 类别，包括：，\n- CLUSTER_ALL：指通过该 URI 连接库实例的主节点，可读写。\n- CLUSTER_READ_READONLY：指通过该 URI 连接实例只读节点。\n- CLUSTER_READ_SECONDARY：指通过该 URI 连接实例从节点。\n- CLUSTER_READ_SECONDARY_AND_READONLY：指通过该 URI 连接实例只读从节点。\n- CLUSTER_PRIMARY_AND_SECONDARY：指通过该 URI 连接实例 主节点与从节点。\n- MONGOS_ALL：指通过该  URI 连接每个 Mongos 节点，可读写。\n- MONGOS_READ_READONLY：指通过该 URI 连接 Mongos 的只读节点。\n- MONGOS_READ_SECONDARY：指通过该 URI 连接 Mongos 的从节点。\n- MONGOS_READ_PRIMARY_AND_SECONDARY：指通过该URI 连接 Mongos 的主节点与从节点。\n- MONGOS_READ_SECONDARY_AND_READONLY：指通过该URI 连接 Mongos 的从节点与只读节点。",
+          "example": "MONGOS_ALL",
+          "member": "string",
+          "name": "URLType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 URI 形式的连接串访问地址示例。",
+          "example": "无",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteAccountUserRequest": {
       "document": "DeleteAccountUser请求参数结构体",
       "members": [
@@ -2719,6 +2752,43 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceURLRequest": {
+      "document": "DescribeDBInstanceURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb#/)在实例列表复制实例 ID。",
+          "example": "cmgo-p8vn********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceURLResponse": {
+      "document": "DescribeDBInstanceURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 URI 形式的连接串访问地址示例。包含：URI 类型及连接串地址。",
+          "example": "无",
+          "member": "DbURL",
+          "name": "Urls",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

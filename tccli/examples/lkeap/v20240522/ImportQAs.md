@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli lkeap ImportQAs --cli-unfold-argument ```
+tccli lkeap ImportQAs --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --FileName qa_import.xlsx \
+    --FileUrl https://xxx.cos.ap-guangzhou.myqcloud.com/file/qa_import.xlsx
+```
 
 Output: 
 ```

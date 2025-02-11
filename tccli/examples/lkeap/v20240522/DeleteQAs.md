@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli lkeap DeleteQAs --cli-unfold-argument ```
+tccli lkeap DeleteQAs --cli-unfold-argument  \
+    --KnowledgeBaseId 4901991032 \
+    --QaIds 1830996257459865536
+```
 
 Output: 
 ```

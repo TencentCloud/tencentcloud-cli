@@ -203,9 +203,9 @@
     "GetExportControlUnderwriting": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetExportControlUnderwriting\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f9dde13-0059-4d6b-9c18-f3a4a6eefa49\"\n    }\n}",
-        "title": "通过测算单获取出口管制"
+        "input": "POST / HTTP/1.1\nHost: clouddc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetExportControlUnderwriting\n<公共请求参数>\n\n{\n    \"EstimateCodeList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"EstimateList\": [\n            {\n                \"EstimateCode\": \"Q2024042214686\",\n                \"IsExportControl\": 0,\n                \"IsPatentRiskControl\": 1\n            },\n            {\n                \"EstimateCode\": \"Q20240428147L4-01-01\",\n                \"IsExportControl\": 0,\n                \"IsPatentRiskControl\": 1\n            },\n            {\n                \"EstimateCode\": \"Q2023021012HHQ\",\n                \"IsExportControl\": 0,\n                \"IsPatentRiskControl\": 1\n            },\n            {\n                \"EstimateCode\": \"Q20230724133AQ\",\n                \"IsExportControl\": 0,\n                \"IsPatentRiskControl\": 1\n            },\n            {\n                \"EstimateCode\": \"Q20230706130YU\",\n                \"IsExportControl\": 0,\n                \"IsPatentRiskControl\": 1\n            }\n        ],\n        \"RequestId\": \"1f9dde13-0059-4d6b-9c18-f3a4a6eefa49\"\n    }\n}",
+        "title": "通过测算单获取出口管制、专利风险管制"
       }
     ],
     "GetTreeNode": [

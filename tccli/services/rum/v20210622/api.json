@@ -536,7 +536,7 @@
           "example": "success",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3720,7 +3720,7 @@
         {
           "disabled": false,
           "document": "查询字符串",
-          "example": "\"select delta(count) as allCount from db.name where time >= 1621240040s and time <= 1621243620s and id='1613' group by \\\"ext3\\\" slimit 1000\"",
+          "example": "\"select delta(count) as allCount from db.name where time >= 1621240040s and time <= 1621243620s and id='1613' group by \\\"ext3\\\" limit 1000\"",
           "member": "string",
           "name": "Query",
           "required": true,
@@ -5097,7 +5097,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃，demo模式请在Filters内注明",
           "example": "1",
           "member": "int64",
@@ -5252,7 +5252,7 @@
         {
           "disabled": false,
           "document": "临时密钥key",
-          "example": "sfdgfgfgfdf",
+          "example": "OnKjAEea4W5***",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
@@ -5262,7 +5262,7 @@
         {
           "disabled": false,
           "document": "临时密钥 id",
-          "example": "dfdfdfdgfgfbf",
+          "example": "AKIDDHDvz_o***",
           "member": "string",
           "name": "SecretID",
           "output_required": true,
@@ -5272,7 +5272,7 @@
         {
           "disabled": false,
           "document": "临时密钥临时 token",
-          "example": "asdfdsfdsgg",
+          "example": "2nTxEweEOsBo***",
           "member": "string",
           "name": "SessionToken",
           "output_required": true,
@@ -5282,7 +5282,7 @@
         {
           "disabled": false,
           "document": "开始时间戳",
-          "example": "123787043",
+          "example": "1739258276",
           "member": "int64",
           "name": "StartTime",
           "output_required": true,
@@ -5292,7 +5292,7 @@
         {
           "disabled": false,
           "document": "过期时间戳",
-          "example": "23435436565",
+          "example": "1739260076",
           "member": "int64",
           "name": "ExpiredTime",
           "output_required": true,
@@ -5795,7 +5795,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃",
           "example": "1",
           "member": "int64",
@@ -5969,7 +5969,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例Id, 该参数已废弃，请在Filters内注明",
           "example": "****7ixj431zO1",
           "member": "string",
@@ -5987,7 +5987,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该参数已废弃，demo模式请在Filters内注明",
           "example": "1",
           "member": "int64",
@@ -6203,7 +6203,7 @@
         {
           "disabled": false,
           "document": "username",
-          "example": "hawchen",
+          "example": "hachen",
           "member": "string",
           "name": "SaslUserName",
           "output_required": true,

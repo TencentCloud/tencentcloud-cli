@@ -18,7 +18,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": "'{\"status\":\"ok\",\"code\":10000,\"msg\":\"ok\",\"data\":[{\"by_dimension\":[\"d2\",\"m.zhipin.com\"],\"cnt\":1280,\"cost_time\":1480,\"dimension\":\"domain\",\"dimension_name\":\"d2\",\"dimension_value\":\"m.zhipin.com\",\"rank_cnt\":1,\"request_cnt\":1280,\"total_cnt\":1280,\"total_request_cnt\":1280},{\"by_dimension\":[\"d8\",\"unsupported\"],\"cnt\":1280,\"cost_time\":1480,\"dimension\":\"region\",\"dimension_name\":\"d8\",\"dimension_value\":\"unsupported\",\"rank_cnt\":1,\"request_cnt\":1280,\"total_cnt\":1280,\"total_request_cnt\":1280}]}'",
+        "Data": "'{\"status\":\"ok\",\"code\":10000,\"msg\":\"ok\",\"data\":[{\"by_dimension\":[\"d2\",\"m.zipkin.com\"],\"cnt\":1280,\"cost_time\":1480,\"dimension\":\"domain\",\"dimension_name\":\"d2\",\"dimension_value\":\"m.zipkin.com\",\"rank_cnt\":1,\"request_cnt\":1280,\"total_cnt\":1280,\"total_request_cnt\":1280},{\"by_dimension\":[\"d8\",\"unsupported\"],\"cnt\":1280,\"cost_time\":1480,\"dimension\":\"region\",\"dimension_name\":\"d8\",\"dimension_value\":\"unsupported\",\"rank_cnt\":1,\"request_cnt\":1280,\"total_cnt\":1280,\"total_request_cnt\":1280}]}'",
         "RequestId": "8a211fc4-7ce2-40ce-ad49-1c29cca2f3fc"
     }
 }
