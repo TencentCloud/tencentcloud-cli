@@ -36,42 +36,42 @@
       "status": "online"
     },
     "DescribeBillDetail": {
-      "document": "子客查询自己的账单详情",
+      "document": "描述说明：子客查询自己的账单详情\n可调用角色：子客",
       "input": "DescribeBillDetailRequest",
       "name": "子客查询自己的账单详情",
       "output": "DescribeBillDetailResponse",
       "status": "online"
     },
     "DescribeBillDownloadUrl": {
-      "document": "用于子客下载账单文件，返回账单文件url",
+      "document": "描述说明：用于子客下载账单文件，返回账单文件url\n可调用角色：子客",
       "input": "DescribeBillDownloadUrlRequest",
       "name": "子客下载账单文件链接",
       "output": "DescribeBillDownloadUrlResponse",
       "status": "online"
     },
     "DescribeBillSummary": {
-      "document": "子客计费中心L1账单 对外api",
+      "document": "描述说明：子客计费中心L1账单 对外api\n可调用角色：子客",
       "input": "DescribeBillSummaryRequest",
       "name": "子客计费中心L1账单对外api",
       "output": "DescribeBillSummaryResponse",
       "status": "online"
     },
     "DescribeBillSummaryByPayMode": {
-      "document": "通过API获取子客账单付费模式汇总值",
+      "document": "描述说明：通过API获取子客账单付费模式汇总值\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "DescribeBillSummaryByPayModeRequest",
       "name": "通过API获取子客账单付费模式汇总值",
       "output": "DescribeBillSummaryByPayModeResponse",
       "status": "online"
     },
     "DescribeBillSummaryByProduct": {
-      "document": "获取子客账单产品维度汇总值",
+      "document": "描述说明：获取子客账单产品维度汇总值\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "DescribeBillSummaryByProductRequest",
       "name": "获取子客账单产品维度汇总值",
       "output": "DescribeBillSummaryByProductResponse",
       "status": "online"
     },
     "DescribeBillSummaryByRegion": {
-      "document": "通过API获取子客账单地域汇总值",
+      "document": "描述说明：通过API获取子客账单地域汇总值\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "DescribeBillSummaryByRegionRequest",
       "name": "通过API获取子客账单地域汇总值",
       "output": "DescribeBillSummaryByRegionResponse",
@@ -197,7 +197,7 @@
       "status": "online"
     },
     "QueryPolicyProductListByCode": {
-      "document": "本接口提供查询指定政策范围的产品列表信息。如需调用此接口，请与你的商务经理联系申请加入到调用白名单。",
+      "document": "描述说明：本接口提供查询指定政策范围的产品列表信息。如需调用此接口，请与你的商务经理联系申请加入到调用白名单。\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "QueryPolicyProductListByCodeRequest",
       "name": "政策产品范围查询",
       "output": "QueryPolicyProductListByCodeResponse",
@@ -1711,7 +1711,7 @@
         {
           "disabled": false,
           "document": "账单维度详细汇总",
-          "example": "[   {     \"Business\": [       {         \"BusinessCodeName\": \"cloud block storage\",         \"BusinessCode\": \"p_cbs\",         \"OriginalCost\": \"0.003585\",         \"VoucherPayAmount\": \"0\",         \"RICost\": \"0\",         \"TotalCost\": \"0.003585\"       }     ],     \"OriginalCost\": \"0.003585\",     \"VoucherPayAmount\": \"0\",     \"RICost\": \"0\",     \"TotalCost\": \"0.003585\"     \"GroupKey\": \"0\",     \"GroupValue\": \"default\"   } ]",
+          "example": "[{\"Business\":[],\"OriginalCost\": \"0.003585\",\"VoucherPayAmount\":\"0\",\"RICost\":\"0\",\"TotalCost\":\"0.003585\",\"GroupKey\":\"0\",\"GroupValue\":\"default\"}]",
           "member": "SummaryDetails",
           "name": "SummaryDetail",
           "output_required": true,

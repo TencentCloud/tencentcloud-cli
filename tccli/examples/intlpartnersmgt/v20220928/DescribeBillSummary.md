@@ -41,7 +41,7 @@ Output:
                 "GroupValue": "default"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "abc123"
     }
 }
 ```
@@ -88,7 +88,7 @@ Output:
                 "GroupValue": "default"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "abc123"
     }
 }
 ```
@@ -117,7 +117,7 @@ Output:
     "Response": {
         "SummaryDetail": [
             {
-                "Business": null,
+                "Business": [],
                 "OriginalCost": "148.40000000",
                 "VoucherPayAmount": "129.70000000",
                 "RICost": "0.00000000",
@@ -126,7 +126,7 @@ Output:
                 "GroupValue": "cloud block storage"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "abc123"
     }
 }
 ```

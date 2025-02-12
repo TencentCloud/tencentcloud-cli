@@ -1,35 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 磐石(clouddc) 版本：2018-08-30
+## 弹性 MapReduce(emr) 版本：2019-01-03
 
-### 第 15 次发布
+### 第 79 次发布
 
-发布时间：2025-02-12 01:11:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GetExportControlUnderwriting](http://document.tencentcloudapi.woa.com/document/product/1626/85541)
-
-	* 新增入参：EstimateCodeList
-
-	* 新增出参：EstimateList
-
-
-新增数据结构：
-
-* [ExportControlEstimate](http://document.tencentcloudapi.woa.com/document/product/1626/78427#ExportControlEstimate)
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 125 次发布
-
-发布时间：2025-02-12 01:17:01
+发布时间：2025-02-13 01:15:50
 
 本次发布包含了以下内容：
 
@@ -37,91 +12,18 @@
 
 修改数据结构：
 
-* [GroupOrganization](http://document.tencentcloudapi.woa.com/document/product/1668/79360#GroupOrganization)
+* [SLInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SLInstanceInfo)
 
-	* <font color="#dd0000">**修改成员**：</font>WorkflowNumber
-
-
-
-
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
-
-### 第 20 次发布
-
-发布时间：2025-02-12 01:21:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85629)
-
-	* 新增入参：KnowledgeBaseId, AttributeKey, AttributeName
-
-* [CreateQA](http://document.tencentcloudapi.woa.com/document/product/1764/84936)
-
-	* 新增入参：KnowledgeBaseId, Question, Answer
-
-	* 新增出参：QaId
-
-* [DeleteAttributeLabels](http://document.tencentcloudapi.woa.com/document/product/1764/85628)
-
-	* 新增入参：KnowledgeBaseId, AttributeIds
-
-* [DeleteDocs](http://document.tencentcloudapi.woa.com/document/product/1764/84935)
-
-	* 新增入参：KnowledgeBaseId, DocIds
-
-* [DeleteQAs](http://document.tencentcloudapi.woa.com/document/product/1764/85627)
-
-	* 新增入参：KnowledgeBaseId, QaIds
-
-* [DescribeDoc](http://document.tencentcloudapi.woa.com/document/product/1764/84933)
-
-	* 新增入参：KnowledgeBaseId, DocId
-
-	* 新增出参：DocId, Status, FileName, UpdateTime
-
-* [ImportQAs](http://document.tencentcloudapi.woa.com/document/product/1764/84932)
-
-	* 新增入参：KnowledgeBaseId, FileName, FileUrl, FileType
-
-* [ListAttributeLabels](http://document.tencentcloudapi.woa.com/document/product/1764/85626)
-
-	* 新增入参：KnowledgeBaseId, PageNumber, PageSize
-
-	* 新增出参：TotalCount
-
-* [ListDocs](http://document.tencentcloudapi.woa.com/document/product/1764/84931)
-
-	* 新增入参：KnowledgeBaseId, PageNumber, PageSize
-
-	* 新增出参：TotalCount
-
-* [ListQAs](http://document.tencentcloudapi.woa.com/document/product/1764/84930)
-
-	* 新增入参：KnowledgeBaseId, PageNumber, PageSize
-
-	* 新增出参：TotalCount
-
-* [ModifyAttributeLabel](http://document.tencentcloudapi.woa.com/document/product/1764/85625)
-
-	* 新增入参：KnowledgeBaseId, AttributeId, AttributeKey, AttributeName
-
-* [ModifyQA](http://document.tencentcloudapi.woa.com/document/product/1764/85624)
-
-	* 新增入参：KnowledgeBaseId, QaId, Question, Answer
+	* 新增成员：HealthStatus
 
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 36 次发布
+### 第 126 次发布
 
-发布时间：2025-02-12 01:22:38
+发布时间：2025-02-13 01:16:38
 
 本次发布包含了以下内容：
 
@@ -129,23 +31,40 @@
 
 新增接口：
 
-* [DescribeDBInstanceURL](http://document.tencentcloudapi.woa.com/document/product/240/85745)
+* [CreateFileCounterSign](http://document.tencentcloudapi.woa.com/document/product/1668/85751)
+* [DescribeFileCounterSignResult](http://document.tencentcloudapi.woa.com/document/product/1668/85750)
+* [VerifyDigitFile](http://document.tencentcloudapi.woa.com/document/product/1668/85749)
 
 新增数据结构：
 
-* [DbURL](http://document.tencentcloudapi.woa.com/document/product/240/38576#DbURL)
+* [VerifyDigitFileResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#VerifyDigitFileResult)
 
 
 
-## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 24 次发布
+
+发布时间：2025-02-13 01:18:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo)
+
+	* 新增成员：SceneId, Status, CallbackUrl
 
 
 
-## 迁移服务平台(msp) 版本：2018-03-19
 
-### 第 7 次发布
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
 
-发布时间：2025-02-12 01:23:34
+### 第 21 次发布
+
+发布时间：2025-02-13 01:21:51
 
 本次发布包含了以下内容：
 
@@ -153,74 +72,38 @@
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* DescribeMigrationTask
+* ReconstructDocumentDemo
 
 
 
-## 前端性能监控(rum) 版本：2021-06-22
+## 媒体处理(mps) 版本：2019-06-12
 
-### 第 38 次发布
+### 第 80 次发布
 
-发布时间：2025-02-12 01:25:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeProjects](http://document.tencentcloudapi.woa.com/document/product/1464/61475)
-
-* [DescribeScores](http://document.tencentcloudapi.woa.com/document/product/1464/61951)
-
-* [DescribeTawInstances](http://document.tencentcloudapi.woa.com/document/product/1464/69213)
-
-
-
-
-## 安全凭证服务(sts) 版本：2018-08-13
-
-### 第 9 次发布
-
-发布时间：2025-02-12 01:27:19
+发布时间：2025-02-13 01:22:37
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [AssumeRole](http://document.tencentcloudapi.woa.com/document/product/1312/48197)
+* [AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)
 
-	* 新增入参：UserUin
+	* 新增成员：Title, Keywords
+
+* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
+
+	* 新增成员：Title, Keywords
 
 
 
 
 ## 私有网络(vpc) 版本：2017-03-12
 
-### 第 197 次发布
+### 第 198 次发布
 
-发布时间：2025-02-12 01:32:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CloneSecurityGroup](http://document.tencentcloudapi.woa.com/document/product/215/51025)
-
-	* <font color="#dd0000">**修改入参**：</font>Tags
-
-
-
-
-## Web 应用防火墙(waf) 版本：2018-01-25
-
-### 第 76 次发布
-
-发布时间：2025-02-12 01:33:41
+发布时间：2025-02-13 01:31:43
 
 本次发布包含了以下内容：
 
@@ -228,34 +111,36 @@
 
 新增接口：
 
-* [DescribeUseCdnWithoutOpenProxyDomains](http://document.tencentcloudapi.woa.com/document/product/627/85746)
-
-新增数据结构：
-
-* [RiskDomain](http://document.tencentcloudapi.woa.com/document/product/627/53609#RiskDomain)
-
-修改数据结构：
-
-* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#InstanceInfo)
-
-	* 新增成员：Last3MaxQPS, Last3MaxBandwidth
-
+* [CheckTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85754)
+* [ModifyTrafficMirrorAttribute](http://document.tencentcloudapi.woa.com/document/product/215/85753)
+* [UpdateTrafficMirrorDirection](http://document.tencentcloudapi.woa.com/document/product/215/85752)
 
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
-### 第 83 次发布
+### 第 84 次发布
 
-发布时间：2025-02-12 01:34:33
+发布时间：2025-02-13 01:34:13
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+新增数据结构：
 
-* [DescribeInstanceDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85747)
+* [CreateAndDDLSupport](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CreateAndDDLSupport)
+
+修改数据结构：
+
+* [DatabaseMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseMeta)
+
+	* 新增成员：ModifiedTimeByTables, LastAccessTimeByTables
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：OwnerByEngine, ErrorTips, IfSupportCreateAndDDL
+
 
 
 
@@ -28791,7 +28676,7 @@
 
 新增数据结构：
 
-* [[ExportControlEstimate](http://document.tencentcloudapi.woa.com/document/product/1626/78427#ExportControlEstimate)](http://document.tencentcloudapi.woa.com/document/product/1626/78427#[ExportControlEstimate](http://document.tencentcloudapi.woa.com/document/product/1626/78427#ExportControlEstimate))
+* [ExportControlEstimate](http://document.tencentcloudapi.woa.com/document/product/1626/78427#ExportControlEstimate)
 
 ### 第 14 次发布
 
@@ -53791,6 +53676,21 @@
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
+### 第 79 次发布
+
+发布时间：2025-02-13 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SLInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SLInstanceInfo)
+
+	* 新增成员：HealthStatus
+
+
 ### 第 78 次发布
 
 发布时间：2025-01-16 01:19:49
@@ -57344,6 +57244,24 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 126 次发布
+
+发布时间：2025-02-13 01:16:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateFileCounterSign](http://document.tencentcloudapi.woa.com/document/product/1668/85751)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeFileCounterSignResult](http://document.tencentcloudapi.woa.com/document/product/1668/85750)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[VerifyDigitFile](http://document.tencentcloudapi.woa.com/document/product/1668/85749)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[VerifyDigitFileResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#VerifyDigitFileResult)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[VerifyDigitFileResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#VerifyDigitFileResult))
 
 ### 第 125 次发布
 
@@ -66108,6 +66026,21 @@
 
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 24 次发布
+
+发布时间：2025-02-13 01:18:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo)
+
+	* 新增成员：SceneId, Status, CallbackUrl
+
 
 ### 第 23 次发布
 
@@ -77705,6 +77638,18 @@
 
 ## 知识引擎原子能力(lkeap) 版本：2024-05-22
 
+### 第 21 次发布
+
+发布时间：2025-02-13 01:21:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ReconstructDocumentDemo
+
 ### 第 20 次发布
 
 发布时间：2025-02-12 01:21:20
@@ -80266,11 +80211,11 @@
 
 新增接口：
 
-* [[DescribeDBInstanceURL](http://document.tencentcloudapi.woa.com/document/product/240/85745)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDBInstanceURL](http://document.tencentcloudapi.woa.com/document/product/240/85745)
 
 新增数据结构：
 
-* [[DbURL](http://document.tencentcloudapi.woa.com/document/product/240/38576#DbURL)](http://document.tencentcloudapi.woa.com/document/product/240/38576#[DbURL](http://document.tencentcloudapi.woa.com/document/product/240/38576#DbURL))
+* [DbURL](http://document.tencentcloudapi.woa.com/document/product/240/38576#DbURL)
 
 ### 第 35 次发布
 
@@ -82917,6 +82862,25 @@
 
 
 ## 媒体处理(mps) 版本：2019-06-12
+
+### 第 80 次发布
+
+发布时间：2025-02-13 01:22:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)
+
+	* 新增成员：Title, Keywords
+
+* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
+
+	* 新增成员：Title, Keywords
+
 
 ### 第 79 次发布
 
@@ -128508,6 +128472,20 @@
 
 ## 私有网络(vpc) 版本：2017-03-12
 
+### 第 198 次发布
+
+发布时间：2025-02-13 01:31:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85754)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyTrafficMirrorAttribute](http://document.tencentcloudapi.woa.com/document/product/215/85753)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateTrafficMirrorDirection](http://document.tencentcloudapi.woa.com/document/product/215/85752)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 197 次发布
 
 发布时间：2025-02-12 01:32:17
@@ -133961,11 +133939,11 @@
 
 新增接口：
 
-* [[DescribeUseCdnWithoutOpenProxyDomains](http://document.tencentcloudapi.woa.com/document/product/627/85746)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeUseCdnWithoutOpenProxyDomains](http://document.tencentcloudapi.woa.com/document/product/627/85746)
 
 新增数据结构：
 
-* [[RiskDomain](http://document.tencentcloudapi.woa.com/document/product/627/53609#RiskDomain)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[RiskDomain](http://document.tencentcloudapi.woa.com/document/product/627/53609#RiskDomain))
+* [RiskDomain](http://document.tencentcloudapi.woa.com/document/product/627/53609#RiskDomain)
 
 修改数据结构：
 
@@ -136145,6 +136123,29 @@
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
 
+### 第 84 次发布
+
+发布时间：2025-02-13 01:34:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[CreateAndDDLSupport](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CreateAndDDLSupport)](http://document.tencentcloudapi.woa.com/document/product/1607/77747#[CreateAndDDLSupport](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CreateAndDDLSupport))
+
+修改数据结构：
+
+* [DatabaseMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseMeta)
+
+	* 新增成员：ModifiedTimeByTables, LastAccessTimeByTables
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：OwnerByEngine, ErrorTips, IfSupportCreateAndDDL
+
+
 ### 第 83 次发布
 
 发布时间：2025-02-12 01:34:33
@@ -136155,7 +136156,7 @@
 
 新增接口：
 
-* [[DescribeInstanceDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85747)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstanceDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1607/85747)
 
 ### 第 82 次发布
 

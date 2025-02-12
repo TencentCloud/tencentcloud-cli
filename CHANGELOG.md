@@ -1,3 +1,149 @@
+# Release 3.0.1152.1
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 79 次发布
+
+发布时间：2025-02-13 01:15:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SLInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SLInstanceInfo)
+
+	* 新增成员：HealthStatus
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 126 次发布
+
+发布时间：2025-02-13 01:16:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateFileCounterSign](http://document.tencentcloudapi.woa.com/document/product/1668/85751)
+* [DescribeFileCounterSignResult](http://document.tencentcloudapi.woa.com/document/product/1668/85750)
+* [VerifyDigitFile](http://document.tencentcloudapi.woa.com/document/product/1668/85749)
+
+新增数据结构：
+
+* [VerifyDigitFileResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#VerifyDigitFileResult)
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 24 次发布
+
+发布时间：2025-02-13 01:18:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/607/35375#SceneInfo)
+
+	* 新增成员：SceneId, Status, CallbackUrl
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 21 次发布
+
+发布时间：2025-02-13 01:21:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* ReconstructDocumentDemo
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 80 次发布
+
+发布时间：2025-02-13 01:22:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)
+
+	* 新增成员：Title, Keywords
+
+* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
+
+	* 新增成员：Title, Keywords
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 198 次发布
+
+发布时间：2025-02-13 01:31:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckTrafficMirror](http://document.tencentcloudapi.woa.com/document/product/215/85754)
+* [ModifyTrafficMirrorAttribute](http://document.tencentcloudapi.woa.com/document/product/215/85753)
+* [UpdateTrafficMirrorDirection](http://document.tencentcloudapi.woa.com/document/product/215/85752)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 84 次发布
+
+发布时间：2025-02-13 01:34:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CreateAndDDLSupport](http://document.tencentcloudapi.woa.com/document/product/1607/77747#CreateAndDDLSupport)
+
+修改数据结构：
+
+* [DatabaseMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DatabaseMeta)
+
+	* 新增成员：ModifiedTimeByTables, LastAccessTimeByTables
+
+* [TableMeta](http://document.tencentcloudapi.woa.com/document/product/1607/77747#TableMeta)
+
+	* 新增成员：OwnerByEngine, ErrorTips, IfSupportCreateAndDDL
+
+
+
+
 # Release 3.0.1151.1
 
 ## 磐石(clouddc) 版本：2018-08-30

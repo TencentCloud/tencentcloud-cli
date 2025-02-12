@@ -110,13 +110,13 @@
         },
         {
           "disabled": false,
-          "document": "用户的 session 内容，腾讯 server 回包中会原样返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户的 session 内容，腾讯 server 回包中会原样返回。",
           "example": "sc-t",
           "member": "string",
           "name": "SessionContext",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

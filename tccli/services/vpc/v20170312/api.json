@@ -259,6 +259,13 @@
       "output": "CheckRoutingTableRouteSubnetOverlapInternalResponse",
       "status": "online"
     },
+    "CheckTrafficMirror": {
+      "document": "检查流量镜像的采集端接收端（公网IP类型）",
+      "input": "CheckTrafficMirrorRequest",
+      "name": "检查流量镜像的采集端接收端",
+      "output": "CheckTrafficMirrorResponse",
+      "status": "online"
+    },
     "ClearRouteTableSelectionPolicies": {
       "document": "本接口（ClearRouteTableSelectionPolicies）用于清空指定云联网的路由表选择策略。",
       "input": "ClearRouteTableSelectionPoliciesRequest",
@@ -3248,6 +3255,13 @@
       "output": "ModifyTemplateMemberResponse",
       "status": "online"
     },
+    "ModifyTrafficMirrorAttribute": {
+      "document": "本接口（ModifyTrafficMirrorAttribute）用于修改流量镜像实例属性。\n注意：只支持修改名字和描述信息",
+      "input": "ModifyTrafficMirrorAttributeRequest",
+      "name": "修改流量镜像属性",
+      "output": "ModifyTrafficMirrorAttributeResponse",
+      "status": "online"
+    },
     "ModifyVmIsolationInternal": {
       "document": "设置CVM隔离级别 原始DFW接口: isolateVM",
       "input": "ModifyVmIsolationInternalRequest",
@@ -3715,6 +3729,13 @@
       "input": "UpdateTrafficMirrorAllFilterRequest",
       "name": "更新流量镜像过滤规则或者采集对象",
       "output": "UpdateTrafficMirrorAllFilterResponse",
+      "status": "online"
+    },
+    "UpdateTrafficMirrorDirection": {
+      "document": "本接口（UpdateTrafficMirrorDirection）用于更新流量镜像实例的采集方向。",
+      "input": "UpdateTrafficMirrorDirectionRequest",
+      "name": "更新流量镜像采集方向",
+      "output": "UpdateTrafficMirrorDirectionResponse",
       "status": "online"
     },
     "UpdateVipTgwAndInstanceInternal": {
@@ -9467,6 +9488,69 @@
       ],
       "type": "object"
     },
+    "CheckTrafficMirrorRequest": {
+      "document": "CheckTrafficMirror请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像所属的vpc",
+          "example": "vpc-bx0vq62",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像的实例id",
+          "example": "imgf-cvfp7xo8",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像的采集端IP列表",
+          "example": "['10.0.0.1']",
+          "member": "string",
+          "name": "CollectorSources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像的接收端的子网",
+          "example": "subnet-dl3wd0vq",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像采集端的",
+          "example": "无",
+          "member": "TrafficMirrorTarget",
+          "name": "CollectorTarget",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckTrafficMirrorResponse": {
+      "document": "CheckTrafficMirror返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CidrForCcn": {
       "document": "用于发布云联网的cidr信息",
       "members": [
@@ -9948,7 +10032,7 @@
         {
           "disabled": false,
           "document": "云服务器实例ID。",
-          "example": "ins-12345678",
+          "example": "ins-efe0238e",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -9957,7 +10041,7 @@
         {
           "disabled": false,
           "document": "指定的内网IP信息，单次最多指定10个。",
-          "example": "10.0.0.0",
+          "example": "[{\"PrivateIpAddress\": \"10.0.0.10\"}]",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -9984,7 +10068,7 @@
         {
           "disabled": false,
           "document": "指定绑定的安全组，例如：['sg-1dd51d']。",
-          "example": "--",
+          "example": "[\"sg-lb68uglp\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -10002,7 +10086,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "--",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10089,7 +10173,7 @@
         {
           "disabled": false,
           "document": "弹性网卡实例。",
-          "example": "--",
+          "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
           "output_required": true,
@@ -12291,7 +12375,7 @@
         {
           "disabled": false,
           "document": "弹性网卡名称，最大长度不能超过60个字节。",
-          "example": "TestNIC",
+          "example": "demo",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": true,
@@ -12309,7 +12393,7 @@
         {
           "disabled": false,
           "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
-          "example": "TestDesc",
+          "example": "demo",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -12354,7 +12438,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "[]",
+          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -12414,7 +12498,7 @@
         {
           "disabled": false,
           "document": "弹性网卡实例。",
-          "example": "{\"AttachType\": 0, \"Attachment\": null, \"Business\": \"cvm\", \"CdcId\": \"\", \"CreatedTime\": \"\", \"EniType\": 0, \"GroupSet\": [], \"Ipv6AddressSet\": [], \"MacAddress\": \"20:90:6F:2A:11:3D\", \"NetworkInterfaceDescription\": \"\", \"NetworkInterfaceId\": \"eni-ndaunxuo\", \"NetworkInterfaceName\": \"TEST_ENI\", \"Primary\": false, \"PrivateIpAddressSet\": [{\"AddressId\": \"\", \"Description\": \"\", \"IsWanIpBlocked\": false, \"Primary\": true, \"PrivateIpAddress\": \"192.168.0.10\", \"PublicIpAddress\": \"\", \"QosLevel\": \"PT\", \"State\": \"PENDING\"}], \"QosLevel\": \"PT\", \"State\": \"PENDING\", \"SubnetId\": \"subnet-r8x0gown\", \"TagSet\": [], \"VpcId\": \"vpc-67kr6ava\", \"Zone\": \"\"}",
+          "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
           "output_required": true,
@@ -42039,6 +42123,51 @@
       ],
       "type": "object"
     },
+    "ModifyTrafficMirrorAttributeRequest": {
+      "document": "ModifyTrafficMirrorAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例ID",
+          "example": "imgf-7h62jza4",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像实例名称",
+          "example": "TEST",
+          "member": "string",
+          "name": "TrafficMirrorName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像实例描述信息",
+          "example": "TEST",
+          "member": "string",
+          "name": "TrafficMirrorDescription",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrafficMirrorAttributeResponse": {
+      "document": "ModifyTrafficMirrorAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyVmIsolationInternalRequest": {
       "document": "ModifyVmIsolationInternal请求参数结构体",
       "members": [
@@ -52106,6 +52235,42 @@
     },
     "UpdateTrafficMirrorAllFilterResponse": {
       "document": "UpdateTrafficMirrorAllFilter返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTrafficMirrorDirectionRequest": {
+      "document": "UpdateTrafficMirrorDirection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量镜像实例ID",
+          "example": "imgf-cvfp7xo8",
+          "member": "string",
+          "name": "TrafficMirrorId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量镜像采集方向",
+          "example": "INGRESS",
+          "member": "string",
+          "name": "Direction",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTrafficMirrorDirectionResponse": {
+      "document": "UpdateTrafficMirrorDirection返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

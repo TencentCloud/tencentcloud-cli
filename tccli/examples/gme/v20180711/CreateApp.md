@@ -15,6 +15,15 @@ tccli gme CreateApp --cli-unfold-argument  \
     --VoiceMessageConf.Status open \
     --VoiceMessageConf.Language all \
     --VoiceFilterConf.Status close \
+    --VoiceFilterConf.SceneInfos.0.CallbackUrl http://xxx.xxxrealtimexxx.com \
+    --VoiceFilterConf.SceneInfos.0.SceneId RealTime \
+    --VoiceFilterConf.SceneInfos.0.Status False \
+    --VoiceFilterConf.SceneInfos.1.CallbackUrl http://xxx.xxxvoicemessagexxx.com \
+    --VoiceFilterConf.SceneInfos.1.SceneId VoiceMessage \
+    --VoiceFilterConf.SceneInfos.1.Status False \
+    --VoiceFilterConf.SceneInfos.2.CallbackUrl http://xxx.xxxgmeapixxx.com \
+    --VoiceFilterConf.SceneInfos.2.SceneId GMECloudApi \
+    --VoiceFilterConf.SceneInfos.2.Status False \
     --AsrConf.Status close \
     --Tags.0.TagKey abc \
     --Tags.0.TagValue abc
@@ -39,9 +48,21 @@ Output:
             "SecretKey": "7f9xxac16axxx49x",
             "VoiceFilterConf": {
                 "SceneInfos": [
-                    {},
-                    {},
-                    {}
+                    {
+                        "CallbackUrl": "http://xxx.xxxrealtimexxx.com",
+                        "SceneId": "RealTime",
+                        "Status": false
+                    },
+                    {
+                        "CallbackUrl": "http://xxx.xxxvoicemessagexxx.com",
+                        "SceneId": "VoiceMessage",
+                        "Status": false
+                    },
+                    {
+                        "CallbackUrl": "http://xxx.xxxgmeapixxx.com",
+                        "SceneId": "GMECloudApi",
+                        "Status": false
+                    }
                 ],
                 "Status": "close"
             },
