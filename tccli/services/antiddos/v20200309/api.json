@@ -2109,6 +2109,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2119,6 +2120,7 @@
           "example": "public",
           "member": "string",
           "name": "BizType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2129,6 +2131,7 @@
           "example": "none",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2139,6 +2142,7 @@
           "example": "cvm",
           "member": "string",
           "name": "DeviceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2149,6 +2153,7 @@
           "example": "5",
           "member": "uint64",
           "name": "IspCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -2156,9 +2161,10 @@
         {
           "disabled": false,
           "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3137,7 +3143,7 @@
         },
         {
           "disabled": false,
-          "document": "如果该资源实例为域名化资产则，该参数必填",
+          "document": "如果该资源实例为域名化资产以及跨地域绑定则，该参数必填",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "FilterRegion",
@@ -12222,20 +12228,20 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "msg",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "成功/错误码",
-          "example": "无",
+          "example": "200",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

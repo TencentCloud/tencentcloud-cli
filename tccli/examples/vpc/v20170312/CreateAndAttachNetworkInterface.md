@@ -9,14 +9,14 @@ tccli vpc CreateAndAttachNetworkInterface --cli-unfold-argument  \
     --VpcId vpc-0akbol5v \
     --Tags.0.Value shanghai \
     --Tags.0.Key city \
-    --InstanceId ins-12345678 \
+    --InstanceId ins-ms7c7gcr \
     --PrivateIpAddresses.0.Primary true \
     --PrivateIpAddresses.0.PrivateIpAddress 172.16.64.13 \
     --SecurityGroupIds sg-05bb4upy \
-    --NetworkInterfaceDescription TestDesc \
+    --NetworkInterfaceDescription demo \
     --SecondaryPrivateIpAddressCount 1 \
     --SubnetId subnet-76r802pg \
-    --NetworkInterfaceName TestNIC
+    --NetworkInterfaceName demo
 ```
 
 Output: 
@@ -27,8 +27,8 @@ Output:
             "NetworkInterfaceId": "eni-irk5qhhl",
             "VpcId": "vpc-0akbol5v",
             "SubnetId": "subnet-76r802pg",
-            "NetworkInterfaceName": "TestNIC",
-            "NetworkInterfaceDescription": "TestDesc",
+            "NetworkInterfaceName": "demo",
+            "NetworkInterfaceDescription": "demo",
             "MacAddress": "20:90:6F:62:33:E2",
             "Business": "TKE",
             "CdcId": "",
@@ -49,7 +49,7 @@ Output:
                 }
             ],
             "Attachment": {
-                "InstanceId": "ins-12345678",
+                "InstanceId": "ins-ms7c7gcr",
                 "DeviceIndex": 1,
                 "InstanceAccountId": "251007979",
                 "AttachTime": "2021-06-17 11:24:24"

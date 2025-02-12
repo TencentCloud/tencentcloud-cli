@@ -7096,6 +7096,32 @@
       ],
       "type": "object"
     },
+    "CreateAndDDLSupport": {
+      "document": "是否支持creat 或ddl",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否支持select\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportSelect",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持ddl\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportDdl",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CreateCustomFunctionRequest": {
       "document": "CreateCustomFunction请求参数结构体",
       "members": [
@@ -10228,7 +10254,7 @@
         {
           "disabled": false,
           "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "example": "88882",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
@@ -10268,7 +10294,7 @@
         {
           "disabled": false,
           "document": "项目英文名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "example": "wedata",
           "member": "string",
           "name": "ProjectName",
           "output_required": true,
@@ -10368,7 +10394,7 @@
         {
           "disabled": false,
           "document": "数据库ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "1223",
           "member": "string",
           "name": "DatabaseId",
           "output_required": true,
@@ -10473,6 +10499,26 @@
           "name": "ClusterName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库下表的最新更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ModifiedTimeByTables",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库下表的最新访问时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LastAccessTimeByTables",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -42737,6 +42783,36 @@
           "name": "HasBizPermission",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎侧创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerByEngine",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户无映射账户，请先完成账户映射后再来申请。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorTips",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持select or ddl\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateAndDDLSupport",
+          "name": "IfSupportCreateAndDDL",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

@@ -8,7 +8,7 @@ Input:
 tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --TopP 1 \
     --Temperature 1 \
-    --Model hunyuan-pro \
+    --Model hunyuan-turbo \
     --Stream True \
     --Messages.0.Role system \
     --Messages.0.Content 将英文单词转换为包括中文翻译、英文释义和一个例句的完整解释。请检查所有信息是否准确，并在回答时保持简洁，不需要任何其他反馈。 \
@@ -81,7 +81,7 @@ Input:
 tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --TopP 1 \
     --Temperature 1 \
-    --Model hunyuan-pro \
+    --Model hunyuan-turbo \
     --Stream True \
     --Messages.0.Role user \
     --Messages.0.Content 请介绍下自己 \
@@ -132,7 +132,7 @@ Input:
 tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --TopP 0 \
     --Temperature 4.8 \
-    --Model hunyuan-pro \
+    --Model hunyuan-turbo \
     --Messages.0.Role user \
     --Messages.0.Content 介绍下自己
 ```
@@ -160,7 +160,7 @@ Input:
 tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --TopP 1 \
     --Temperature 1 \
-    --Model hunyuan-pro \
+    --Model hunyuan-turbo \
     --Stream True \
     --Messages.0.Role user \
     --Messages.0.Content 计算1+1
@@ -200,7 +200,7 @@ tccli hunyuan ChatCompletions --cli-unfold-argument  \
     --TopP 0 \
     --Stream False \
     --Temperature 0 \
-    --Model hunyuan-pro \
+    --Model hunyuan-turbo \
     --Messages.0.Role user \
     --Messages.0.Content 你好呀！
 ```
@@ -488,7 +488,7 @@ Input:
 
 ```
 tccli hunyuan ChatCompletions --cli-unfold-argument  \
-    --Model hunyuan-pro \
+    --Model hunyuan-turbo \
     --Messages.0.Role user \
     --Messages.0.Content 黄金价格为什么上涨？ \
     --Stream True \

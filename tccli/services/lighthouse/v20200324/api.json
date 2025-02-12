@@ -7323,13 +7323,13 @@
         },
         {
           "disabled": false,
-          "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。",
           "example": "无",
           "member": "DiscountDetail",
           "name": "DiscountDetail",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7411,43 +7411,43 @@
       "members": [
         {
           "disabled": false,
-          "document": " 来源：RESTRICT：封禁、FREEZW：冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 来源：RESTRICT：封禁、FREEZW：冻结",
           "example": "FREEZING",
           "member": "string",
           "name": "Source",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否允许自助解封：1是，2否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许自助解封：1是，2否",
           "example": "2",
           "member": "string",
           "name": "State",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "违规类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "违规类型",
           "example": "未备案",
           "member": "string",
           "name": "Reason",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "违规内容（URL、关联域名）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "违规内容（URL、关联域名）",
           "example": "http://157.*.*.29/",
           "member": "string",
           "name": "Content",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

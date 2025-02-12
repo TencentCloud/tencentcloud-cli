@@ -364,6 +364,26 @@
         "title": "创建企业扩展服务授权- 批量签署"
       }
     ],
+    "CreateFileCounterSign": [
+      {
+        "document": "文件CA加签--同步模式",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileCounterSign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCpyUc*******************bsVny9l\"\n    },\n    \"SyncMode\": true,\n    \"FileId\": \"yDtwuU*******************FYPZ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxx\",\n        \"ResultFileId\": \"yD45ww**********************ZIM1o\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"yDsdsU********************EtgCQI7\"\n    }\n}",
+        "title": "文件CA加签--同步模式"
+      },
+      {
+        "document": "文件CA加签--异步模式",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileCounterSign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCpyUc*******************bsVny9l\"\n    },\n    \"SyncMode\": true,\n    \"FileId\": \"yDtwuU*******************FYPZ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"谢谢谢谢谢谢休息休息\",\n        \"ResultFileId\": \"\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"yDtww************************EtgCQI7\"\n    }\n}",
+        "title": "文件CA加签--异步模式"
+      },
+      {
+        "document": "文件CA加签，使用同步模式，且集团主企业使用子企业CA进行加签场景",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileCounterSign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCpyUc*******************bsVny9l\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"yUIdyeU*******************bsdf234l\"\n    },\n    \"SyncMode\": true,\n    \"FileId\": \"yDtwuU*******************FYPZ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxxxxx\",\n        \"ResultFileId\": \"yD45ww**********************ZIM1o\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"yDsdsU********************EtgCQI7\"\n    }\n}",
+        "title": "文件CA加签--同步模式--主带子场景"
+      }
+    ],
     "CreateFlow": [
       {
         "document": "创建一个单C流程",
@@ -1372,6 +1392,14 @@
         "title": "查询不支持的特定扩展服务"
       }
     ],
+    "DescribeFileCounterSignResult": [
+      {
+        "document": "根据TaskId查询任务结果",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileCounterSignResult\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDCpyUc*******************bsVny9l\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"yUIdyeU*******************bsdf234l\"\n    },\n    \"TaskId\": \"yDtwuU*******************FYPZ\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorDetail\": \"\",\n        \"RequestId\": \"s1737011895277384406\",\n        \"ResultFileId\": \"yDtwwUUckp7m1csmUuFhivskVdRNkoJ9\",\n        \"Status\": \"FINISHED\"\n    }\n}",
+        "title": "根据TaskId查询任务结果"
+      }
+    ],
     "DescribeFileUrls": [
       {
         "document": "",
@@ -1838,6 +1866,14 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFiles\n<公共请求参数>\n\n{\n    \"FileType\": \"docx\",\n    \"Caller\": {\n        \"OperatorId\": \"yDxbWUyKQDxg**zjEB8mxCcDjAyF\"\n    },\n    \"FileInfos\": [\n        {\n            \"FileBody\": \"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\",\n            \"FileName\": \"张三的入职合同.docx\"\n        }\n    ],\n    \"BusinessType\": \"DOCUMENT\"\n}",
         "output": "{\n    \"Response\": {\n        \"FileIds\": [\n            \"yDRSRUUgygj6rqizUuO4zjExzqqRar1F\"\n        ],\n        \"RequestId\": \"f56f474xxxxxx72d6312bf\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "上传Word合同文件(后序需要转换)"
+      }
+    ],
+    "VerifyDigitFile": [
+      {
+        "document": "1.填入加签后的文件Id，对文件进行验证",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDigitFile\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"FileId\": \"yDwFdUUckpsveo27UEQPEVo14KnASuGI\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PdfResourceMd5\": \"213CA8C1C84B7BAA73F6FD3959C2F079\",\n        \"RequestId\": \"s1739352792186436957\",\n        \"VerifyDigitFileResults\": [\n            {\n                \"CertNotAfter\": 1754852419000,\n                \"CertNotBefore\": 1723316419000,\n                \"CertSn\": \"2201c8e9cdd3abb6\",\n                \"SignAlgorithm\": \"SHA256withRSA\",\n                \"SignTime\": 1737103505000,\n                \"SignType\": 1,\n                \"SignerName\": \"ESS@XXXXX责任公司测试@662001\"\n            }\n        ],\n        \"VerifyResult\": 1,\n        \"VerifySerialNo\": \"17393527923979\"\n    }\n}",
+        "title": "加签文件验证成功示例"
       }
     ],
     "VerifyPdf": [

@@ -286,6 +286,14 @@
         "title": "根据网络探测ID验证探测参数"
       }
     ],
+    "CheckTrafficMirror": [
+      {
+        "document": "检查公网IP类型流量镜像的采集端和接收端",
+        "input": "https://vpc.tencentcloudapi.com/?Action=CheckTrafficMirror\n&VpcId=vpc-xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7469d6ba-c0fa-4cc4-9ac7-e244a20cb8c0\"\n    }\n}",
+        "title": "检查公网IP类型流量镜像的采集端和接收端"
+      }
+    ],
     "ClearRouteTableSelectionPolicies": [
       {
         "document": "清空云联网路由选择策略",
@@ -333,8 +341,8 @@
     "CreateAndAttachNetworkInterface": [
       {
         "document": "创建弹性网卡并绑定云服务器",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndAttachNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"InstanceId\": \"ins-12345678\",\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"TestNIC\",\n            \"NetworkInterfaceDescription\": \"TestDesc\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"QosLevel\": \"DEFAULT\",\n            \"ResourceId\": \"\",\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\",\n                    \"QosLevel\": \"DEFAULT\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-12345678\",\n                \"DeviceIndex\": 1,\n                \"InstanceAccountId\": \"251007979\",\n                \"AttachTime\": \"2021-06-17 11:24:24\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndAttachNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"InstanceId\": \"ins-ms7c7gcr\",\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"demo\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"demo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"NetworkInterfaceId\": \"eni-irk5qhhl\",\n            \"VpcId\": \"vpc-0akbol5v\",\n            \"SubnetId\": \"subnet-76r802pg\",\n            \"NetworkInterfaceName\": \"demo\",\n            \"NetworkInterfaceDescription\": \"demo\",\n            \"MacAddress\": \"20:90:6F:62:33:E2\",\n            \"Business\": \"TKE\",\n            \"CdcId\": \"\",\n            \"EniType\": 1,\n            \"AttachType\": 1,\n            \"QosLevel\": \"DEFAULT\",\n            \"ResourceId\": \"\",\n            \"PrivateIpAddressSet\": [\n                {\n                    \"PrivateIpAddress\": \"172.16.64.13\",\n                    \"Primary\": true,\n                    \"AddressId\": \"\",\n                    \"PublicIpAddress\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"State\": \"PENDING\",\n                    \"QosLevel\": \"DEFAULT\"\n                }\n            ],\n            \"Attachment\": {\n                \"InstanceId\": \"ins-ms7c7gcr\",\n                \"DeviceIndex\": 1,\n                \"InstanceAccountId\": \"251007979\",\n                \"AttachTime\": \"2021-06-17 11:24:24\"\n            },\n            \"GroupSet\": [],\n            \"Primary\": false,\n            \"State\": \"PENDING\",\n            \"Zone\": \"\",\n            \"CreatedTime\": \"\",\n            \"Ipv6AddressSet\": [],\n            \"TagSet\": [\n                {\n                    \"Key\": \"city\",\n                    \"Value\": \"shanghai\"\n                }\n            ]\n        },\n        \"RequestId\": \"5cf1a813-d4f8-4e0c-8f90-c155a84a3ea1\"\n    }\n}",
         "title": "创建弹性网卡并绑定云服务器"
       }
     ],
@@ -565,8 +573,8 @@
     "CreateNetworkInterface": [
       {
         "document": "创建弹性网卡",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"TestDesc\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"TestNIC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"AttachType\": 0,\n            \"Attachment\": null,\n            \"Business\": \"cvm\",\n            \"CdcId\": \"\",\n            \"CreatedTime\": \"\",\n            \"EniType\": 0,\n            \"GroupSet\": [],\n            \"Ipv6AddressSet\": [],\n            \"MacAddress\": \"20:90:6F:2A:11:3D\",\n            \"NetworkInterfaceDescription\": \"\",\n            \"NetworkInterfaceId\": \"eni-ndaunxuo\",\n            \"NetworkInterfaceName\": \"TEST_ENI\",\n            \"Primary\": false,\n            \"PrivateIpAddressSet\": [\n                {\n                    \"AddressId\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"Primary\": true,\n                    \"PrivateIpAddress\": \"10.0.0.3\",\n                    \"PublicIpAddress\": \"\",\n                    \"QosLevel\": \"PT\",\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"QosLevel\": \"PT\",\n            \"ResourceId\": null,\n            \"State\": \"PENDING\",\n            \"SubnetId\": \"subnet-r8x0gown\",\n            \"TagSet\": [],\n            \"VpcId\": \"vpc-67kr6ava\",\n            \"Zone\": \"\"\n        },\n        \"RequestId\": \"a5c5cd4d-9024-4465-a8c0-5b0979ec806e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkInterface\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-0akbol5v\",\n    \"Tags\": [\n        {\n            \"Value\": \"shanghai\",\n            \"Key\": \"city\"\n        }\n    ],\n    \"PrivateIpAddresses\": [\n        {\n            \"Primary\": \"true\",\n            \"PrivateIpAddress\": \"172.16.64.13\"\n        }\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-05bb4upy\"\n    ],\n    \"NetworkInterfaceDescription\": \"demo\",\n    \"SecondaryPrivateIpAddressCount\": \"1\",\n    \"SubnetId\": \"subnet-76r802pg\",\n    \"NetworkInterfaceName\": \"demo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkInterface\": {\n            \"AttachType\": 0,\n            \"Attachment\": null,\n            \"Business\": \"cvm\",\n            \"CdcId\": \"\",\n            \"CreatedTime\": \"\",\n            \"EniType\": 0,\n            \"GroupSet\": [],\n            \"Ipv6AddressSet\": [],\n            \"MacAddress\": \"20:90:6F:2A:11:3D\",\n            \"NetworkInterfaceDescription\": \"\",\n            \"NetworkInterfaceId\": \"eni-ndaunxuo\",\n            \"NetworkInterfaceName\": \"demo\",\n            \"Primary\": false,\n            \"PrivateIpAddressSet\": [\n                {\n                    \"AddressId\": \"\",\n                    \"Description\": \"\",\n                    \"IsWanIpBlocked\": false,\n                    \"Primary\": true,\n                    \"PrivateIpAddress\": \"10.0.0.3\",\n                    \"PublicIpAddress\": \"\",\n                    \"QosLevel\": \"PT\",\n                    \"State\": \"PENDING\"\n                }\n            ],\n            \"QosLevel\": \"PT\",\n            \"ResourceId\": null,\n            \"State\": \"PENDING\",\n            \"SubnetId\": \"subnet-r8x0gown\",\n            \"TagSet\": [],\n            \"VpcId\": \"vpc-67kr6ava\",\n            \"Zone\": \"\"\n        },\n        \"RequestId\": \"a5c5cd4d-9024-4465-a8c0-5b0979ec806e\"\n    }\n}",
         "title": "创建弹性网卡"
       }
     ],
@@ -694,6 +702,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=CreateSubnets\n&VpcId=vpc-6v2ht8q5\n&Subnets.0.CidrBlock=10.4.14.0/24\n&Subnets.0.SubnetName=t1\n&Subnets.0.Zone=ap-guangzhou-2\n&Tags.0.Key=city\n&Tags.0.Value=shanghai\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SubnetSet\": [\n            {\n                \"NetworkAclId\": \"acl-6v2ht8q5\",\n                \"RouteTableId\": \"rtb-pwtiswpd\",\n                \"VpcId\": \"vpc-6v2ht8q5\",\n                \"EnableBroadcast\": false,\n                \"Zone\": \"ap-guangzhou-2\",\n                \"IsCdcSubnet\": 0,\n                \"Ipv6CidrBlock\": \"\",\n                \"CdcId\": \"\",\n                \"AvailableIpAddressCount\": 1,\n                \"IsRemoteVpcSnat\": true,\n                \"SubnetName\": \"t1\",\n                \"TotalIpAddressCount\": 1,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"city\",\n                        \"Value\": \"shanghai\"\n                    }\n                ],\n                \"CreatedTime\": \"2023-03-29 14:32:17\",\n                \"SubnetId\": \"subnet-5v5nrzz9\",\n                \"CidrBlock\": \"10.4.14.0/24\",\n                \"IsDefault\": false\n            }\n        ],\n        \"RequestId\": \"158ac65e-d504-42f6-baac-b716f5855254\"\n    }\n}",
         "title": "批量创建子网"
+      }
+    ],
+    "CreateTrafficMirror": [
+      {
+        "document": "创建流量镜像",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTrafficMirror\n<公共请求参数>\n\n{\n    \"Direction\": \"EGRESS\",\n    \"NatId\": \"nat-qo7kugz0\",\n    \"TrafficMirrorName\": \"test\",\n    \"State\": \"RUNNING\",\n    \"VpcId\": \"vpc-39lpx32d\",\n    \"CollectorTarget\": {\n        \"AlgHash\": \"FIVE_TUPLE_FLOW\",\n        \"TargetIps\": [\n            \"172.16.16.10\"\n        ]\n    },\n    \"CollectorSrcs\": [\n        \"eni-39lpv32n\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TrafficMirror\": {\n            \"VpcId\": \"vpc-fo8nfm00\",\n            \"TrafficMirrorId\": \"imgf-ewrpvb00\",\n            \"TrafficMirrorName\": \"UpdateTrafficMirrorDirection_tUhhZ7Jj\",\n            \"TrafficMirrorDescribe\": \"\",\n            \"State\": \"RUNNING\",\n            \"Direction\": \"EGRESS\",\n            \"CollectorSrcs\": [\n                \"eni-4qq71jmz\"\n            ],\n            \"NatId\": \"\",\n            \"CollectorNormalFilters\": [],\n            \"CollectorTarget\": {\n                \"AlgHash\": \"ENI\",\n                \"TargetType\": \"IP\",\n                \"TargetIps\": [\n                    \"10.0.0.0\"\n                ],\n                \"TargetEndPoints\": []\n            },\n            \"CreateTime\": \"0000-00-00 00:00:00\"\n        },\n        \"RequestId\": \"941e5605-e17c-45b8-bd80-031386e29559\"\n    }\n}",
+        "title": "创建流量镜像"
       }
     ],
     "CreateTrafficPackages": [
@@ -1144,6 +1160,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTemplateMember\n&TemplateId=ppmg-test1234\n&TemplateMember.0.Member=ppm-test1234\n&TemplateMember.1.Member=ppm-demo1234\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ba7c7681-e051-469a-b0fc-210a373490a4\"\n    }\n}",
         "title": "添加协议端口组模板成员"
+      }
+    ],
+    "DeleteTrafficMirror": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DeleteTrafficMirror\n&TrafficMirrorId=imgf-cvfp7xo8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "删除流量镜像"
       }
     ],
     "DeleteTrafficPackages": [
@@ -2074,6 +2098,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantCcns\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"false\"\n            ],\n            \"Name\": \"is-security-lock\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CcnSet\": [\n            {\n                \"CcnId\": \"ccn-d0s0mkw1\"\n            },\n            {\n                \"CcnId\": \"ccn-kwgk02zl\"\n            },\n            {\n                \"CcnId\": \"ccn-gyt67ffz\"\n            },\n            {\n                \"CcnId\": \"ccn-e7wopzfz\"\n            }\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"495efea0-0073-451c-a577-77a23626432c\"\n    }\n}",
         "title": "根据is-security-lock过滤查询"
+      }
+    ],
+    "DescribeTrafficMirrors": [
+      {
+        "document": "查询流量镜像实例信息",
+        "input": "https://vpc.tencentcloudapi.com/?Action=DescribeTrafficMirrors\n&TrafficMirrorIds.0=&Filters.Name=&Filters.Values.0=\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TrafficMirrorSet\": [\n            {\n                \"VpcId\": \"vpc-dh0wcvhp\",\n                \"TrafficMirrorId\": \"imgf-dh0wcvhp\",\n                \"TrafficMirrorName\": \"test\",\n                \"TrafficMirrorDescribe\": \"test\",\n                \"State\": \"RUNNING\",\n                \"Direction\": \"INGRESS\",\n                \"CollectorSrcs\": [\n                    \"eni-dh0wcvhp\"\n                ],\n                \"NatId\": \"\",\n                \"CollectorNormalFilters\": [\n                    {\n                        \"SrcNet\": \"10.0.0.0/24\",\n                        \"DstNet\": \"192.168.0.0/24\",\n                        \"SrcPort\": \"5000\",\n                        \"DstPort\": \"3456\",\n                        \"Protocol\": \"TCP\"\n                    }\n                ],\n                \"CollectorTarget\": {\n                    \"TargetIps\": [\n                        \"172.16.0.3\"\n                    ],\n                    \"AlgHash\": \"ENI\",\n                    \"TargetEndPoints\": [],\n                    \"TargetType\": \"ENI\"\n                },\n                \"CreateTime\": \"2021-08-09 15:44:30\",\n                \"Type\": 1,\n                \"SubnetId\": \"subnet-dh0wcvhp\",\n                \"TargetInfo\": [\n                    {\n                        \"TargetId\": \"eni-dh0wcvhp\",\n                        \"TargetName\": \"test\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "查询流量镜像实例信息"
       }
     ],
     "DescribeTrafficPackages": [
@@ -3114,6 +3146,14 @@
         "title": "修改协议端口组模板成员"
       }
     ],
+    "ModifyTrafficMirrorAttribute": [
+      {
+        "document": "修改流量镜像属性",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyTrafficMirrorAttribute\r\n&TrafficMirrorId=imgf-7h62jza4\r\n&TrafficMirrorName=test\r\n&TrafficMirrorDescription=test_info\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "修改流量镜像属性"
+      }
+    ],
     "ModifyVpcAttribute": [
       {
         "document": "修改VPC属性",
@@ -3406,6 +3446,30 @@
         "title": "重置路由表名称和路由策略"
       }
     ],
+    "ResetTrafficMirrorFilter": [
+      {
+        "document": "更新流量镜像过滤规则",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResetTrafficMirrorFilter\r\n&TrafficMirrorId=imgf-cvfp7xo8\r\n&NatId=nat-qo7kugzg\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "更新流量镜像过滤规则"
+      }
+    ],
+    "ResetTrafficMirrorSrcs": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResetTrafficMirrorSrcs\n&TrafficMirrorId=imgf-cvfp7xo8\n&CollectorSrcs.0=subnet-q304e5h2\n&CollectorSrcs.1=subnet-7v7ev09m\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "重置流量镜像采集对象"
+      }
+    ],
+    "ResetTrafficMirrorTarget": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ResetTrafficMirrorTarget\n&TrafficMirrorId=imgf-cvfp7xo8\n&CollectorTarget.TargetIps.0=172.16.0.3\n&CollectorTarget.AlgHash=FIVE_TUPLE_FLOW\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "更新流量镜像接收目的信息"
+      }
+    ],
     "ResetVpnConnection": [
       {
         "document": "本接口（ResetVpnConnection）用于重置VPN通道。",
@@ -3458,6 +3522,22 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVpnGatewaysRenewFlag\n<公共请求参数>\n\n{\n    \"AutoRenewFlag\": 0,\n    \"Type\": \"IPSEC\",\n    \"VpnGatewayIds\": [\n        \"vpn-xxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f3d2629-a1f0-435e-86d7-fca86a499897\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "StartTrafficMirror": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=StartTrafficMirror\n&TrafficMirrorId=imgf-cvfp7xo8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "开启流量镜像"
+      }
+    ],
+    "StopTrafficMirror": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=StopTrafficMirror\n&TrafficMirrorId=imgf-cvfp7xo8\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "关闭流量镜像"
       }
     ],
     "TransformAddress": [
@@ -3514,6 +3594,22 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnlockCcns\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4c3b75e-6d01-4f81-8d31-618f2eae444d\"\n    }\n}",
         "title": "解封云联网实例"
+      }
+    ],
+    "UpdateTrafficMirrorAllFilter": [
+      {
+        "document": "",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UpdateTrafficMirrorAllFilter\n&TrafficMirrorId=imgf-cvfp7xo8\n&Direction=ALL\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "更新流量镜像过滤规则或者采集对象"
+      }
+    ],
+    "UpdateTrafficMirrorDirection": [
+      {
+        "document": "更改流量镜像采集方向",
+        "input": "https://vpc.tencentcloudapi.com/?Action=UpdateTrafficMirrorDirection\r\n&TrafficMirrorId=imgf-cvfp7xo8\r\n&Direction=INGRESS\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"404428db-f850-40c2-803d-0aae49aba43a\"\n    }\n}",
+        "title": "更改流量镜像采集方向"
       }
     ],
     "WithdrawNotifyRoutes": [

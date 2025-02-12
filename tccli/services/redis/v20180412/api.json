@@ -2955,13 +2955,13 @@
         },
         {
           "disabled": false,
-          "document": "备份文件信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备份文件信息列表。",
           "example": "无",
           "member": "BackupDownloadInfo",
           "name": "BackupInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3325,23 +3325,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号详细信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号详细信息。",
           "example": "无",
           "member": "Account",
           "name": "Accounts",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号个数。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3473,83 +3473,83 @@
       "members": [
         {
           "disabled": false,
-          "document": "DTS任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DTS任务ID",
           "example": "dts-l2g434lt",
           "member": "string",
           "name": "JobId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DTS任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DTS任务名称",
           "example": "redis_dts_test28",
           "member": "string",
           "name": "JobName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）",
           "example": "10",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态描述",
           "example": "已失败",
           "member": "string",
           "name": "StatusDesc",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "同步时延，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "同步时延，单位：字节",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "断开时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "断开时间",
           "example": "2019-08-16 17:10:13",
           "member": "string",
           "name": "CutDownTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源实例信息",
           "example": "无",
           "member": "DescribeInstanceDTSInstanceInfo",
           "name": "SrcInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目标实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "目标实例信息",
           "example": "无",
           "member": "DescribeInstanceDTSInstanceInfo",
           "name": "DstInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4255,13 +4255,13 @@
         },
         {
           "disabled": false,
-          "document": "Proxy节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Proxy节点信息。",
           "example": "无",
           "member": "ProxyNodes",
           "name": "Proxy",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4275,13 +4275,13 @@
         },
         {
           "disabled": false,
-          "document": "Redis节点信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Redis节点信息。",
           "example": "无",
           "member": "RedisNodes",
           "name": "Redis",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4295,13 +4295,13 @@
         },
         {
           "disabled": false,
-          "document": "该参数不再使用，请忽略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该参数不再使用，请忽略。",
           "example": "无",
           "member": "TendisNodes",
           "name": "Tendis",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6373,13 +6373,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "15236",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6464,23 +6464,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误：ERROR，正确OK（已废弃）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误：ERROR，正确OK（已废弃）",
           "example": "OK",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "16321",
           "member": "int64",
           "name": "TaskId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6809,13 +6809,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "价格，单位：分",
           "example": "30400",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6855,13 +6855,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "价格，单位：分。",
           "example": "100800",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6919,13 +6919,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "价格，单位：分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "价格，单位：分",
           "example": "30400",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

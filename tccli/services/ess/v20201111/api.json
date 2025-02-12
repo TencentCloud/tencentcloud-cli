@@ -119,6 +119,13 @@
       "output": "CreateExtendedServiceAuthInfosResponse",
       "status": "online"
     },
+    "CreateFileCounterSign": {
+      "document": "此接口用于发起数字文件CA加签操作。可以使用同步或者异步模式进行。\n\n**注意： 1. 文件类型暂时仅支持PDF类型文件。2. 此接口为『数字文件CA加签服务』白名单功能，使用前请联系对接的客户经理沟通。**",
+      "input": "CreateFileCounterSignRequest",
+      "name": "文件加签接口",
+      "output": "CreateFileCounterSignResponse",
+      "status": "online"
+    },
     "CreateFlow": {
       "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/1f38ebd7c5afed8763ad961741d81438.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能\n<br>\n\n<font color=\"red\">相关视频指引</font> <br>\n1. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/createflow_seversign.mp4\" target=\"_blank\">创建静默（自动）签署模板和开通自动签署</a><br>\n2. <a href=\"https://dyn.ess.tencent.cn/guide/apivideo/flow_document_start.mp4\" target=\"_blank\">用模板创建发起合同</a><br>",
       "input": "CreateFlowRequest",
@@ -455,6 +462,13 @@
       "output": "DescribeExtendedServiceAuthInfosResponse",
       "status": "online"
     },
+    "DescribeFileCounterSignResult": {
+      "document": "文件CA加签任务结果查询接口，用于查询 CreateFileCounterSign接口 发起的异步加签任务。\n\n注意：`此接口为『数字文件CA加签服务』白名单功能，使用前请联系对接的客户经理沟通。`",
+      "input": "DescribeFileCounterSignResultRequest",
+      "name": "文件加签任务结果轮询接口",
+      "output": "DescribeFileCounterSignResultResponse",
+      "status": "online"
+    },
     "DescribeFileUrls": {
       "document": "本接口（DescribeFileUrls）用于查询文件的下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。\n\n\n### 2. 确保合同的PDF已经合成后，再调用本接口。\n\n用户创建合同或者提交签署动作后，后台需要1~3秒的时间就进行合同PDF合成或者签名，为了确保您下载的是签署完成的完整合同文件，我们建议采取下面两种方式的一种来<font color=\"red\"><b>确保PDF已经合成完成，然后在调用本接口</b></font>。\n\n**第一种**：请确保您的系统配置了[接收合同完成通知的回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign)功能。一旦所有参与方签署完毕，我们的系统将自动向您提供的回调地址发送完成通知。\n\n**第二种**：通过调用我们的[获取合同信息](https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowBriefs)接口来主动检查合同的签署状态。请仅在确认合同状态为“签署完成”后，进行文件的下载操作。\n\n### 3.  链接具有有效期限\n<font color=\"red\"><b>生成的链接是有时间限制的，过期后将无法访问</b></font>。您可以在接口返回的信息中查看具体的过期时间。为避免错误，请确保在链接过期之前进行下载操作。",
       "input": "DescribeFileUrlsRequest",
@@ -663,6 +677,13 @@
       "input": "UploadFilesRequest",
       "name": "上传文件",
       "output": "UploadFilesResponse",
+      "status": "online"
+    },
+    "VerifyDigitFile": {
+      "document": "对加签后的文件进行数字签名验证，判断数字签名是否有效。",
+      "input": "VerifyDigitFileRequest",
+      "name": "加签文件验签接口",
+      "output": "VerifyDigitFileResponse",
       "status": "online"
     },
     "VerifyPdf": {
@@ -3425,6 +3446,90 @@
     "CreateExtendedServiceAuthInfosResponse": {
       "document": "CreateExtendedServiceAuthInfos返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileCounterSignRequest": {
+      "document": "CreateFileCounterSign请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要加签的文件Id。\n\n注: `暂时只支持pdf类型的文件`",
+          "example": "yDtwRUUckp7f7e************qq28pI",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用同步模式。\n<ul><li><b>false</b>:异步模式，返回taskId。需要使用taskId轮询结果查询接口。</li>\n<li><b>true</b>: 同步模式，此接口将直接返回taskId和ResultFileId(加签后文件id)。</li></ul>\n注：\n1. 当加签文件较大的时候，建议使用异步接口进行操作。否则文件加签时间过长会导致接口超时。",
+          "example": "false",
+          "member": "bool",
+          "name": "SyncMode",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFileCounterSignResponse": {
+      "document": "CreateFileCounterSign返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加签任务的状态。\n\n<ul>\n<li><b>PROCESSING</b>: 任务正在执行中。</li>\n<li><b>FINISHED</b>: 已执行成功</li>\n</ul>",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加签完成后新的文件Id",
+          "example": "yDtwRUUckp7f7e************qq28pI",
+          "member": "string",
+          "name": "ResultFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步模式下用于轮询状态的任务Id",
+          "example": "yDCmrUUc************6",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8561,6 +8666,81 @@
       ],
       "type": "object"
     },
+    "DescribeFileCounterSignResultRequest": {
+      "document": "DescribeFileCounterSignResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "加签任务Id",
+          "example": "yDtwwU****************pfyw8AO",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileCounterSignResultResponse": {
+      "document": "DescribeFileCounterSignResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加签任务的状态。\n\n<ul>\n<li><b>PROCESSING</b>: 任务正在执行中。</li>\n<li><b>FINISHED</b>: 已执行成功</li>\n<li><b>FAILED</b>: 执行失败</li>\n</ul>",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加签完成后新的文件Id",
+          "example": "yDtwRUUckp7f7e************qq28pI",
+          "member": "string",
+          "name": "ResultFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败的错误信息，加签任务失败的情况下会返回。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeFileUrlsRequest": {
       "document": "DescribeFileUrls请求参数结构体",
       "members": [
@@ -8575,7 +8755,7 @@
         },
         {
           "disabled": false,
-          "document": "文件对应的业务类型，目前支持：\n<ul>\n<li>**FLOW ** : <font color=\"red\">如需下载合同文件请选择此项</font></li>\n<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>\n<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>\n<li>**SEAL  **: 如需下载印章图片请选择此项</li>\n</ul>",
+          "document": "文件对应的业务类型，目前支持：<ul><li>**FLOW ** : <font color=\"red\">如需下载合同文件请选择此项</font></li><li>**TEMPLATE ** : 如需下载模板文件请选择此项</li><li>**DOCUMENT  **: 如需下载文档文件请选择此项</li><li>**SEAL  **: 如需下载印章图片请选择此项</li><li>**DIGITFILE**: 如需下载加签文件请选择此项</li></ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",
@@ -8584,7 +8764,7 @@
         },
         {
           "disabled": false,
-          "document": "业务编号的数组，取值如下：\n<ul>\n<li>流程编号</li>\n<li>模板编号</li>\n<li>文档编号</li>\n<li>印章编号</li>\n<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>\n</ul>",
+          "document": "业务编号的数组，取值如下：<ul><li>流程编号</li><li>模板编号</li><li>文档编号</li><li>印章编号</li><li>加签文件编号</li><li>如需下载合同文件请传入FlowId，最大支持20个资源</li></ul>",
           "example": "[\"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\",\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]",
           "member": "string",
           "name": "BusinessIds",
@@ -15517,6 +15697,174 @@
         }
       ],
       "usage": "in"
+    },
+    "VerifyDigitFileRequest": {
+      "document": "VerifyDigitFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "加签接口返回的文件Id",
+          "example": "yDwcCUUgyg3tgmvhUEVzyNa15Zayy6Sf",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyDigitFileResponse": {
+      "document": "VerifyDigitFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加签文件MD5哈希值",
+          "example": "C39BBA405153FB9A0705BEF095351CBD",
+          "member": "string",
+          "name": "PdfResourceMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验签结果代码，代码的含义如下：<ul><li>**1**：文件验证成功。</li><li>**2**：文件验证失败。</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "VerifyResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验签序列号, 为11为数组组成的字符串",
+          "example": "17364056473214",
+          "member": "string",
+          "name": "VerifySerialNo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验签结果详情，每个签名域对应的验签结果。",
+          "example": "无",
+          "member": "VerifyDigitFileResult",
+          "name": "VerifyDigitFileResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyDigitFileResult": {
+      "document": "数字加签文件验签结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书起始时间的Unix时间戳，单位毫秒",
+          "example": "1699006057000",
+          "member": "int64",
+          "name": "CertNotBefore",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书过期时间的时间戳，单位毫秒",
+          "example": "1730542057000",
+          "member": "int64",
+          "name": "CertNotAfter",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号，在数字证书申请过程中，系统会自动生成一个独一无二的序号。\t",
+          "example": "6c8e2911fadf70ea",
+          "member": "string",
+          "name": "CertSn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书签名算法, 如SHA1withRSA等算法",
+          "example": "SHA1withRSA",
+          "member": "string",
+          "name": "SignAlgorithm",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签署时间的Unix时间戳，单位毫秒",
+          "example": "1699252042000",
+          "member": "int64",
+          "name": "SignTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名类型。0表示带签章的数字签名，1表示仅数字签名",
+          "example": "1",
+          "member": "int64",
+          "name": "SignType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请证书的主体的名字\n\n如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下\n**企业**:  ESS@企业名称@编码\n**个人**: ESS@个人姓名@证件号@808854\n\n如果在其他平台签署的, 主体的名字参考其他平台的说明",
+          "example": "ESS@典子谦示例企业@382919",
+          "member": "string",
+          "name": "SignerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "VerifyPdfRequest": {
       "document": "VerifyPdf请求参数结构体",

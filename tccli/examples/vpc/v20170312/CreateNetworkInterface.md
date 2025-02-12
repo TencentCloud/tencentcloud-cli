@@ -12,10 +12,10 @@ tccli vpc CreateNetworkInterface --cli-unfold-argument  \
     --PrivateIpAddresses.0.Primary true \
     --PrivateIpAddresses.0.PrivateIpAddress 172.16.64.13 \
     --SecurityGroupIds sg-05bb4upy \
-    --NetworkInterfaceDescription TestDesc \
+    --NetworkInterfaceDescription demo \
     --SecondaryPrivateIpAddressCount 1 \
     --SubnetId subnet-76r802pg \
-    --NetworkInterfaceName TestNIC
+    --NetworkInterfaceName demo
 ```
 
 Output: 
@@ -34,7 +34,7 @@ Output:
             "MacAddress": "20:90:6F:2A:11:3D",
             "NetworkInterfaceDescription": "",
             "NetworkInterfaceId": "eni-ndaunxuo",
-            "NetworkInterfaceName": "TEST_ENI",
+            "NetworkInterfaceName": "demo",
             "Primary": false,
             "PrivateIpAddressSet": [
                 {

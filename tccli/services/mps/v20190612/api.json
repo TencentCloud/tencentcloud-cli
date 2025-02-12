@@ -3061,6 +3061,26 @@
         },
         {
           "disabled": false,
+          "document": "分段标题",
+          "example": "分段标题",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分段关键词",
+          "example": "[\"words1\",\"words2\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "分段起始时间点，秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "float",
@@ -19224,6 +19244,26 @@
           "name": "Confidence",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能描述标题",
+          "example": "标题",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能描述关键词",
+          "example": "[\"word1\",\"word2\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -281,33 +281,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "实时语音统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实时语音统计数据",
           "example": "{\"MainLandPcu\":1,\"OverseaDuration\":1,\"OverseaPcu\":1,\"OverseaDau\":1,\"MainLandDuration\":1,\"MainLandDau\":1}",
           "member": "RealTimeSpeechStatisticsItem",
           "name": "RealtimeSpeechStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音消息统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音消息统计数据",
           "example": "{\"Dau\":1018}",
           "member": "VoiceMessageStatisticsItem",
           "name": "VoiceMessageStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音过滤统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音过滤统计数据",
           "example": "{\"Duration\" : 18000}",
           "member": "VoiceFilterStatisticsItem",
           "name": "VoiceFilterStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -321,43 +321,43 @@
         },
         {
           "disabled": false,
-          "document": "录音转文本用量统计数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录音转文本用量统计数据",
           "example": "{\"Data\":0}",
           "member": "AudioTextStatisticsItem",
           "name": "AudioTextStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流式转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流式转文本用量数据",
           "example": "{\"Data\":0}",
           "member": "StreamTextStatisticsItem",
           "name": "StreamTextStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "海外转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "海外转文本用量数据",
           "example": "{\"Data\":0}",
           "member": "OverseaTextStatisticsItem",
           "name": "OverseaTextStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实时语音转文本用量数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实时语音转文本用量数据",
           "example": "{\"Data\":0}",
           "member": "RealtimeTextStatisticsItem",
           "name": "RealtimeTextStatisticsItem",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -595,13 +595,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计值，单位：秒",
           "example": "1.23",
           "member": "float",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2511,13 +2511,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.23",
+          "document": "统计值，单位：秒",
+          "example": "324.88",
           "member": "float",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2619,13 +2619,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.23",
+          "document": "统计值，单位：秒",
+          "example": "451.26",
           "member": "float",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2994,7 +2994,41 @@
     },
     "SceneInfo": {
       "document": "SceneInfo场景信息\n'RealTime','实时语音分析',\n'VoiceMessage','语音消息',\n'GMECloudApi':'GME云API接口'",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "'RealTime','实时语音分析',\n'VoiceMessage','语音消息',\n'GMECloudApi':'GME云API接口'",
+          "example": "RealTime",
+          "member": "string",
+          "name": "SceneId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态，true开启/false关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户回调地址",
+          "example": "https://0.0.0.0/user_callback",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "both"
     },
     "ServiceStatus": {
@@ -3210,13 +3244,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计值，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1.23",
+          "document": "统计值，单位：秒",
+          "example": "825.31",
           "member": "float",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3227,9 +3261,10 @@
         {
           "disabled": false,
           "document": "订阅音频流黑名单，指定不订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表不订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数",
-          "example": "无",
+          "example": "7619",
           "member": "string",
           "name": "UnSubscribeUserIds",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -3237,38 +3272,41 @@
         {
           "disabled": false,
           "document": "订阅音频流白名单，指定订阅哪几个UserId的音频流，例如[\"1\", \"2\", \"3\"], 代表订阅UserId 1，2，3的音频流。默认不填订阅房间内所有音频流，订阅列表用户数不超过20。\n注意：只能同时设置UnSubscribeAudioUserIds、SubscribeAudioUserIds 其中1个参数。",
-          "example": "无",
+          "example": "3342",
           "member": "string",
           "name": "SubscribeUserIds",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Tag": {
       "document": "标签列表",
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签键",
+          "example": "tag_key1",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "标签值",
+          "example": "tag_value1",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

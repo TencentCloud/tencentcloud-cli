@@ -57,9 +57,9 @@
       "status": "online"
     },
     "BindDocumentToRoom": {
-      "document": "绑定文档到房间",
+      "document": "功能概述\n本接口提供教学场景下的课程文档预绑定能力，支持将课件课堂ID进行关联映射，实现课件的自动化预加载。\n\n应用场景建议\n\n绑定时机\n推荐在创建课堂预约阶段同步完成文档绑定操作，确保课件资源在课堂开始前完成上传。\n\n接口限制与频控策略\n\n频控维度\n开发者账号维度限频\n默认频控阈值为20 QPS（每秒请求次数）\n\n最佳实践建议\n\n重试策略\n当触发限频错误时，建议采用以下策略：\n启用退避重试机制（建议使用指数退避算法）\n初始重试间隔不低于500ms\n最大重试次数不超过3次",
       "input": "BindDocumentToRoomRequest",
-      "name": "绑定文档到房间",
+      "name": "绑定课件到房间",
       "output": "BindDocumentToRoomResponse",
       "status": "online"
     },
@@ -3989,23 +3989,23 @@
         },
         {
           "disabled": false,
-          "document": "秒级unix时间戳，实际房间开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "秒级unix时间戳，实际房间开始时间。",
           "example": "1675677337",
           "member": "uint64",
           "name": "RealStartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "秒级unix时间戳，实际房间结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "秒级unix时间戳，实际房间结束时间。",
           "example": "1675677337",
           "member": "uint64",
           "name": "RealEndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4320,13 +4320,13 @@
         },
         {
           "disabled": false,
-          "document": "用户在客户系统的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户在客户系统的Id",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
           "name": "OriginId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4826,13 +4826,13 @@
         },
         {
           "disabled": false,
-          "document": "详细事件内容。包含相应的类型、发生的时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "详细事件内容。包含相应的类型、发生的时间戳。",
           "example": "[{\"Timestamp\":1234,\"EventType\":\"RoomStart\",\"EventData\":{\"RoomId\":123456}}]",
           "member": "EventInfo",
           "name": "Events",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5019,43 +5019,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "老师视频区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "老师视频区域的水印参数配置",
           "example": "无",
           "member": "WatermarkConfig",
           "name": "TeacherLogo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "白板区域的水印参数配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "白板区域的水印参数配置",
           "example": "无",
           "member": "WatermarkConfig",
           "name": "BoardLogo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "背景图片配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "背景图片配置",
           "example": "无",
           "member": "BackgroundPictureConfig",
           "name": "BackgroundPicture",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文字水印配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文字水印配置",
           "example": "无",
           "member": "TextMarkConfig",
           "name": "Text",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

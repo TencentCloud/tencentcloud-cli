@@ -15010,7 +15010,7 @@
       "type": "object"
     },
     "SLInstanceInfo": {
-      "document": "Serverless HBase 实例信息",
+      "document": "Serverless HBase实例信息",
       "members": [
         {
           "disabled": false,
@@ -15039,6 +15039,16 @@
           "member": "string",
           "name": "StatusDesc",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "健康状态",
+          "example": "Green",
+          "member": "string",
+          "name": "HealthStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

@@ -2784,7 +2784,7 @@
         },
         {
           "disabled": false,
-          "document": "字段是否不完整\n0 字段正常\n1 字段不完整",
+          "document": "字段是否不完整（value内容）\n0 字段正常\n1 字段不完整",
           "example": "无",
           "member": "int64",
           "name": "IsInComplete",
@@ -2794,10 +2794,30 @@
         },
         {
           "disabled": false,
-          "document": "字段反光\n0 字段正常\n1 字段有反光",
+          "document": "字段反光（value内容）\n0 字段正常\n1 字段有反光",
           "example": "无",
           "member": "int64",
           "name": "IsReflect",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段是否不完整（key内容）\n0 字段正常\n1 字段不完整",
+          "example": "无",
+          "member": "int64",
+          "name": "IsKeyInComplete",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段反光（key内容）\n0 字段正常\n1 字段有反光",
+          "example": "无",
+          "member": "int64",
+          "name": "IsKeyReflect",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false

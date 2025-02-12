@@ -18575,7 +18575,7 @@
         {
           "disabled": false,
           "document": "录制文件名。\n支持的特殊占位符有：\n{StreamID}: 流ID\n{StartYear}: 开始时间-年\n{StartMonth}: 开始时间-月\n{StartDay}: 开始时间-日\n{StartHour}: 开始时间-小时\n{StartMinute}: 开始时间-分钟\n{StartSecond}: 开始时间-秒\n{StartMillisecond}: 开始时间-毫秒\n{EndYear}: 结束时间-年\n{EndMonth}: 结束时间-月\n{EndDay}: 结束时间-日\n{EndHour}: 结束时间-小时\n{EndMinute}: 结束时间-分钟\n{EndSecond}: 结束时间-秒\n{EndMillisecond}: 结束时间-毫秒\n\n若未设置默认录制文件名为{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
-          "example": "{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{Star",
+          "example": "{StreamID}_{StartYear}-{StartMonth}-{StartDay}-{StartHour}-{StartMinute}-{StartSecond}_{EndYear}-{EndMonth}-{EndDay}-{EndHour}-{EndMinute}-{EndSecond}",
           "member": "string",
           "name": "VodFileName",
           "output_required": true,
