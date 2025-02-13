@@ -498,43 +498,43 @@
         },
         {
           "disabled": false,
-          "document": "备注。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注。",
           "example": "腾讯云助手账号",
           "member": "string",
           "name": "Comment",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "昵称。",
           "example": "腾讯云助手",
           "member": "string",
           "name": "Nickname",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户头像地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户头像地址。",
           "example": "https://cloudcache.tencent-cloud.com/qcloud/portal/kit/images/slice/logo.23996906.svg",
           "member": "string",
           "name": "Avatar",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义信息。",
           "example": "普通用户",
           "member": "string",
           "name": "Customize",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -814,7 +814,7 @@
           "example": "无",
           "member": "Instance",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -824,7 +824,7 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1061,7 +1061,7 @@
           "example": "tyc9msci",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1071,7 +1071,7 @@
           "example": "tyc9msci.cofile.net",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1081,7 +1081,7 @@
           "example": "2021-10-12T03:53:29Z",
           "member": "datetime_iso",
           "name": "EffectiveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1091,7 +1091,7 @@
           "example": "2021-11-12T15:59:59Z",
           "member": "datetime_iso",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1101,7 +1101,7 @@
           "example": "5",
           "member": "uint64",
           "name": "UserLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1111,7 +1111,7 @@
           "example": "107374182400",
           "member": "string",
           "name": "StorageLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1121,7 +1121,7 @@
           "example": "100",
           "member": "uint64",
           "name": "StorageLimitGB",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1131,7 +1131,7 @@
           "example": "false",
           "member": "bool",
           "name": "Isolated",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1141,7 +1141,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1151,7 +1151,27 @@
           "example": "+86-18988888888",
           "member": "string",
           "name": "SuperAdminAccount",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自选桶模式下，展示存储桶使用",
+          "example": "joestorage-1253960454",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自选桶模式下，展示日志桶使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "joelog-1253960454",
+          "member": "string",
+          "name": "LogBucket",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1861,7 +1881,7 @@
           "example": "tyc9msci",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1871,7 +1891,7 @@
           "example": "tyc9msci.cofile.net",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1881,7 +1901,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1891,7 +1911,7 @@
           "example": "107374182400",
           "member": "string",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1901,7 +1921,7 @@
           "example": "100",
           "member": "uint64",
           "name": "SizeGB",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1911,7 +1931,7 @@
           "example": "89017835619",
           "member": "string",
           "name": "Remain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1921,7 +1941,7 @@
           "example": "18356346781",
           "member": "string",
           "name": "Used",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1931,7 +1951,7 @@
           "example": "17.10",
           "member": "string",
           "name": "UsedPercentage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1941,7 +1961,7 @@
           "example": "2021-10-12T03:53:29Z",
           "member": "datetime_iso",
           "name": "EffectiveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1951,7 +1971,7 @@
           "example": "2021-11-12T15:59:59Z",
           "member": "datetime_iso",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

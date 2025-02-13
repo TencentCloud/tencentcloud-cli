@@ -7,8 +7,8 @@ Input:
 ```
 tccli vpc ModifyTrafficMirrorAttribute --cli-unfold-argument  \
     --TrafficMirrorId imgf-7h62jza4 \
-    --TrafficMirrorName test \
-    --TrafficMirrorDescription test_info
+    --TrafficMirrorName demo \
+    --TrafficMirrorDescription demo
 ```
 
 Output: 

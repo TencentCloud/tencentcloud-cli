@@ -464,6 +464,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeInstancesByIdsInternal": [
+      {
+        "document": "根据实例数字id查询实例信息\n",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesInternal\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        40040052,\n        2031210388\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"Appid\": 1322111773,\n                \"AzMode\": 2,\n                \"CreateTime\": \"\",\n                \"CurrentProxyVersion\": \"5.8.10\",\n                \"CurrentRedisVersion\": \"7.0.22\",\n                \"InstanceId\": 40040000,\n                \"InstanceName\": \"crs-0y59u***\",\n                \"Locked\": 0,\n                \"Locker\": 0,\n                \"MonitorVersion\": 1,\n                \"PolarisServer\": \"\",\n                \"ProductVersion\": \"local\",\n                \"RegionId\": 16,\n                \"SerialId\": \"crs-0y59u***\",\n                \"Status\": 2,\n                \"SubnetId\": 1702798,\n                \"Type\": 17,\n                \"Uin\": \"100034079035\",\n                \"UpdateTime\": \"2025-01-22 11:12:48\",\n                \"UpgradeProxyVersion\": \"\",\n                \"UpgradeRedisVersion\": \"\",\n                \"VPort\": 6379,\n                \"Vip\": \"172.27.0.12\",\n                \"VpcId\": 3606966,\n                \"WanAddress\": \"\",\n                \"ZoneId\": 160001\n            }\n        ],\n        \"RequestId\": \"e60cf466-8daa-4feb-a230-d938ef21*****\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "访问实例"
+      }
+    ],
     "DescribeLanCheck": [
       {
         "document": "",

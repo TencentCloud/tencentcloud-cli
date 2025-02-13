@@ -8,7 +8,7 @@ Input:
 tccli vpc CreateTrafficMirror --cli-unfold-argument  \
     --Direction EGRESS \
     --NatId nat-qo7kugz0 \
-    --TrafficMirrorName test \
+    --TrafficMirrorName demo \
     --State RUNNING \
     --VpcId vpc-39lpx32d \
     --CollectorTarget.AlgHash FIVE_TUPLE_FLOW \

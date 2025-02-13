@@ -385,6 +385,13 @@
       "output": "DescribeInstancesResponse",
       "status": "online"
     },
+    "DescribeInstancesByIdsInternal": {
+      "document": "实例详细信息列表。限安全（需要一个根据实例id转serialid的接口）和架构师（需要redis_instance表）使用，内部使用！",
+      "input": "DescribeInstancesByIdsInternalRequest",
+      "name": "根据id查询Redis实例列表-内部",
+      "output": "DescribeInstancesByIdsInternalResponse",
+      "status": "online"
+    },
     "DescribeLanCheck": {
       "document": "添加内网连接检查",
       "input": "DescribeLanCheckRequest",
@@ -4865,6 +4872,53 @@
       ],
       "type": "object"
     },
+    "DescribeInstancesByIdsInternalRequest": {
+      "document": "DescribeInstancesByIdsInternal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id，最多可以传 20 个",
+          "example": "[2031217749,2031217748]",
+          "member": "int64",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesByIdsInternalResponse": {
+      "document": "DescribeInstancesByIdsInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数量。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例详细信息列表。",
+          "example": "无",
+          "member": "InstanceSetSecurity_Inner",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -8606,6 +8660,272 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceSetSecurity_Inner": {
+      "document": "实例详细信息列表。限安全（需要一个根据实例id转serialid的接口）和架构师（需要redis_instance表）使用，内部使用！",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "2031217749",
+          "member": "int64",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字符串id",
+          "example": "crs-7asi9***",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称。",
+          "example": "crs-7asi9***",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。\n",
+          "example": "2031217749",
+          "member": "int64",
+          "name": "Appid",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin。\n",
+          "example": "2031217749",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域id，1为广州",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域 ID。",
+          "example": "100001",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型。\n- 2：Redis 2.8 内存版（标准架构）。\n- 3：CKV 3.2 内存版（标准架构）。\n- 4：CKV 3.2 内存版（集群架构）。\n- 5：Redis 2.8 内存版（单机）。\n- 6：Redis 4.0 内存版（标准架构）。\n- 7：Redis 4.0 内存版（集群架构）。\n- 8：Redis 5.0 内存版（标准架构）。\n- 9：Redis 5.0 内存版（集群架构）。\n- 15：Redis 6.2 内存版（标准架构）。\n- 16：Redis 6.2 内存版（集群架构）。\n- 17：Redis 7.0 内存版（标准架构）。\n- 18：Redis 7.0 内存版（集群架构）。",
+          "example": "7",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>",
+          "example": "cloud",
+          "member": "string",
+          "name": "ProductVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。",
+          "example": "4.3.0",
+          "member": "string",
+          "name": "CurrentRedisVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例当前Proxy版本。",
+          "example": "5.5.0",
+          "member": "string",
+          "name": "CurrentProxyVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例可升级Cache小版本。",
+          "example": "6.0.0",
+          "member": "string",
+          "name": "UpgradeRedisVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例可升级Proxy版本。",
+          "example": "5.6.0",
+          "member": "string",
+          "name": "UpgradeProxyVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络 ID，例如75101。",
+          "example": "1",
+          "member": "int64",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络下子网ID，如：46315。",
+          "example": "10",
+          "member": "int64",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 VIP。",
+          "example": "10.20.3.1",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例端口号。",
+          "example": "6379",
+          "member": "int64",
+          "name": "VPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "北极星服务地址，内部使用。",
+          "example": "txcloud-paas-crs-xxx",
+          "member": "string",
+          "name": "PolarisServer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网地址。",
+          "example": "gz-crs-xxx.sql.tencentcdb.com",
+          "member": "string",
+          "name": "WanAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Locked",
+          "example": "0",
+          "member": "int64",
+          "name": "Locked",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Locker",
+          "example": "0",
+          "member": "int64",
+          "name": "Locker",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2为运行中，1流程中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例创建时间。格式如：2020-01-15 10:20:00。",
+          "example": "2020-01-15 10:20:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据更新时间。格式如：2020-02-15 10:20:00。",
+          "example": "2020-02-15 10:20:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控版本，0分钟级监控，1秒级监控",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0，单az；1，多az",
+          "example": "1",
+          "member": "int64",
+          "name": "AzMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

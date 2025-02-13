@@ -2997,6 +2997,15 @@
           "name": "Subdomain",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例增强服务。",
+          "example": "无",
+          "member": "EnhancedService",
+          "name": "EnhancedService",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7179,6 +7188,30 @@
       ],
       "usage": "both"
     },
+    "EnhancedService": {
+      "document": "描述了实例的增强服务启用情况与其设置，如IPv6等。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启IPv6相关特性描述。",
+          "example": "无",
+          "member": "Ipv6Service",
+          "name": "Ipv6Service",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启主机安全轻量版。",
+          "example": "无",
+          "member": "SecurityService",
+          "name": "SecurityService",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "Filter": {
       "document": ">描述键值对过滤器，用于条件过滤查询。例如过滤名称等\n> * 若存在多个`Filter`时，`Filter`间的关系为逻辑与（`AND`）关系。\n> * 若同一个`Filter`存在多个`Values`，同一`Filter`下`Values`间的关系为逻辑或（`OR`）关系。\n>\n> 以DescribeInstances接口的`Filter`为例。若我们需要查询实例名称（`instance-name`）为test ***并且*** 实例内网IP（`private-ip-address`）为10.10.10.10的实例时，可如下实现：\n```\nFilters.0.Name=instance-name\n&Filters.0.Values.0=test\n&Filters.1.Name=private-ip-address\n&Filters.1.Values.0=10.10.10.10\n```",
       "members": [
@@ -8947,7 +8980,7 @@
           "example": "FREEZING",
           "member": "string",
           "name": "Source",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8957,7 +8990,7 @@
           "example": "2",
           "member": "string",
           "name": "State",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8967,7 +9000,7 @@
           "example": "未备案",
           "member": "string",
           "name": "Reason",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8977,7 +9010,7 @@
           "example": "http://157.*.*.29/",
           "member": "string",
           "name": "Content",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9141,6 +9174,21 @@
         }
       ],
       "usage": "out"
+    },
+    "Ipv6Service": {
+      "document": "开启IPv6相关特性描述。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启IPv6特性，自动分配IPv6地址。取值范围：\ntrue：表示开启。\nfalse：表示不开启。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "IsolateDisksRequest": {
       "document": "IsolateDisks请求参数结构体",
@@ -10890,6 +10938,21 @@
         }
       ],
       "usage": "out"
+    },
+    "SecurityService": {
+      "document": "是否开启主机安全轻量版。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启云主机服务。取值范围：\ntrue：表示开启云安全服务。\nfalse：表示不开启云安全服务。\n默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     },
     "ShareBlueprintAcrossAccountsRequest": {
       "document": "ShareBlueprintAcrossAccounts请求参数结构体",

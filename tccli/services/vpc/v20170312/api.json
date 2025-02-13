@@ -13724,7 +13724,7 @@
         {
           "disabled": false,
           "document": "流量镜像名字。",
-          "example": "test",
+          "example": "demo",
           "member": "string",
           "name": "TrafficMirrorName",
           "required": true,
@@ -13733,7 +13733,7 @@
         {
           "disabled": false,
           "document": "流量镜像描述。",
-          "example": "desc",
+          "example": "demo",
           "member": "string",
           "name": "TrafficMirrorDescribe",
           "required": false,
@@ -13759,8 +13759,8 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像的采集对象，支持eni_xxxx。",
-          "example": "[\"vpc-39lpv32n\\r\\n\"]",
+          "document": "流量镜像的采集对象。",
+          "example": "[\"vpc-39lpv32n\"]",
           "member": "string",
           "name": "CollectorSrcs",
           "required": false,
@@ -13814,7 +13814,7 @@
         {
           "disabled": false,
           "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "无",
+          "example": "[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -13832,6 +13832,7 @@
           "example": "无",
           "member": "TrafficMirror",
           "name": "TrafficMirror",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15104,8 +15105,8 @@
         },
         {
           "disabled": false,
-          "document": "认证算法。可选 'SHA1', 'MD5', 'NONE'，默认NONE。",
-          "example": "HMAC-SHA1",
+          "document": "认证算法。可选 'SHA1'，默认SHA1。",
+          "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorithm",
           "required": false,
@@ -15113,8 +15114,8 @@
         },
         {
           "disabled": false,
-          "document": "加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 'NONE'，默认NONE。",
-          "example": "AES-128",
+          "document": "加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。",
+          "example": "AES-128-CBC",
           "member": "string",
           "name": "EncryptAlgorithm",
           "required": false,
@@ -28545,7 +28546,7 @@
         },
         {
           "disabled": false,
-          "document": "流量镜像查询过滤调节",
+          "document": "流量镜像查询过滤调节。\nvpc-id ：VPC实例ID，例如：vpc-f49l6u0z。\ntraffic-mirror-id：流量镜像实例ID。\ntraffic-mirror-name：流量镜像名称。\ntag-key ：按照标签键进行过滤。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -28582,6 +28583,7 @@
           "example": "无",
           "member": "TrafficMirror",
           "name": "TrafficMirrorSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -42138,7 +42140,7 @@
         {
           "disabled": false,
           "document": "流量镜像实例名称",
-          "example": "TEST",
+          "example": "demo",
           "member": "string",
           "name": "TrafficMirrorName",
           "required": false,
@@ -42147,7 +42149,7 @@
         {
           "disabled": false,
           "document": "流量镜像实例描述信息",
-          "example": "TEST",
+          "example": "demo",
           "member": "string",
           "name": "TrafficMirrorDescription",
           "required": false,
@@ -42942,8 +42944,8 @@
         },
         {
           "disabled": false,
-          "document": "加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE",
-          "example": "AES-128",
+          "document": "加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。",
+          "example": "AES-128-CBC",
           "member": "string",
           "name": "EncryptAlgorithm",
           "required": false,
@@ -42951,8 +42953,8 @@
         },
         {
           "disabled": false,
-          "document": "认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE",
-          "example": "HMAC-SHA1",
+          "document": "认证算法。可选 'SHA1'，默认SHA1。",
+          "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorithm",
           "required": false,
@@ -50871,7 +50873,7 @@
           "example": "vpc-7zayowkt",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -50881,27 +50883,27 @@
           "example": "imgf-oc2mpbni",
           "member": "string",
           "name": "TrafficMirrorId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量镜像名字。",
-          "example": "test_vxlan",
+          "example": "demo",
           "member": "string",
           "name": "TrafficMirrorName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量镜像描述。",
-          "example": "desc",
+          "example": "demo",
           "member": "string",
           "name": "TrafficMirrorDescribe",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -50911,7 +50913,7 @@
           "example": "RUNNING",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -50921,7 +50923,7 @@
           "example": "ALL",
           "member": "string",
           "name": "Direction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -50931,17 +50933,17 @@
           "example": "[\"vpc-7zayowkt\"]",
           "member": "string",
           "name": "CollectorSrcs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量镜像过滤的nat网关实例ID。",
-          "example": "\"\"",
+          "example": "nat-qo7kugz0",
           "member": "string",
           "name": "NatId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -50951,7 +50953,7 @@
           "example": "无",
           "member": "TrafficMirrorFilter",
           "name": "CollectorNormalFilters",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -50961,7 +50963,7 @@
           "example": "无",
           "member": "TrafficMirrorTarget",
           "name": "CollectorTarget",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -50971,7 +50973,7 @@
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -50981,17 +50983,17 @@
           "example": "VPC",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "流量镜像所属的子网ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "subnet-6zwa44xm",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -51001,7 +51003,7 @@
           "example": "无",
           "member": "TrafficMirrorTargetResourceInfo",
           "name": "TargetInfo",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -51014,9 +51016,10 @@
         {
           "disabled": false,
           "document": "过滤规则的源网段",
-          "example": "",
+          "example": "10.0.0.0/24",
           "member": "string",
           "name": "SrcNet",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -51024,9 +51027,10 @@
         {
           "disabled": false,
           "document": "过滤规则的目的网段",
-          "example": "",
+          "example": "192.168.0.0/24",
           "member": "string",
           "name": "DstNet",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -51034,9 +51038,10 @@
         {
           "disabled": false,
           "document": "过滤规则的协议",
-          "example": "",
+          "example": "ALL",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -51044,9 +51049,10 @@
         {
           "disabled": false,
           "document": "过滤规则的源端口，默认值1-65535",
-          "example": "",
+          "example": "5000",
           "member": "string",
           "name": "SrcPort",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -51054,9 +51060,10 @@
         {
           "disabled": false,
           "document": "过滤规则的目的端口，默认值1-65535",
-          "example": "",
+          "example": "3456",
           "member": "string",
           "name": "DstPort",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

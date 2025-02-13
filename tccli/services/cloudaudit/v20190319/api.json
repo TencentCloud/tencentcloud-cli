@@ -3,14 +3,14 @@
     "CreateAuditTrack": {
       "document": "创建操作审计跟踪集",
       "input": "CreateAuditTrackRequest",
-      "name": "创建操作审计跟踪集",
+      "name": "创建指定事件跟踪集",
       "output": "CreateAuditTrackResponse",
       "status": "online"
     },
     "CreateEventsAuditTrack": {
       "document": "创建操作审计跟踪集",
       "input": "CreateEventsAuditTrackRequest",
-      "name": "创建操作审计跟踪集（多事件）",
+      "name": "创建全部事件跟踪集",
       "output": "CreateEventsAuditTrackResponse",
       "status": "online"
     },
@@ -432,7 +432,7 @@
         {
           "disabled": false,
           "document": "数据过滤条件",
-          "example": "{     \"ResourceFields\": [         {             \"ResourceType\": \"cam\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"AddSubAccount\",                 \"AddSubAccountCheckingMFA\"             ]         },         {             \"ResourceType\": \"cvm\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"*\"             ]         },         {             \"ResourceType\": \"tke\",             \"ActionType\": \"*\",             \"EventNames\": [                 \"*\"             ]         }     ] }",
+          "example": "{\"ResourceFields\":[{\"ResourceType\":\"cam\",\"ActionType\":\"*\",\"EventNames\":[\"AddSubAccount\",\"AddSubAccountCheckingMFA\"]},{\"ResourceType\":\"cvm\",\"ActionType\":\"*\",\"EventNames\":[\"*\"]},{\"ResourceType\":\"tke\",\"ActionType\":\"*\",\"EventNames\":[\"*\"]}]}",
           "member": "Filter",
           "name": "Filters",
           "required": true,
