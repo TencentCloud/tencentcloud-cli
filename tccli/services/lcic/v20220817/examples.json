@@ -306,6 +306,14 @@
         "title": "DescribeRecordStream"
       }
     ],
+    "DescribeRecordTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordTask\n<公共请求参数>\n\n{\n    \"SdkAppId\": 38901738,\n    \"RoomId\": 567825\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"743fff05-5133b-4c4e-a572-99917288eded3\",\n        \"TaskId\": \"d4ckjh5-9b1e-5648-ab79-0123khjk6b\"\n    }\n}",
+        "title": "查询录制任务ID"
+      }
+    ],
     "DescribeRoom": [
       {
         "document": "获取房间信息",

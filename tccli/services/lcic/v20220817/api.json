@@ -252,6 +252,13 @@
       "output": "DescribeRecordStreamResponse",
       "status": "online"
     },
+    "DescribeRecordTask": {
+      "document": "查询录制任务ID",
+      "input": "DescribeRecordTaskRequest",
+      "name": "查询录制任务ID",
+      "output": "DescribeRecordTaskResponse",
+      "status": "online"
+    },
     "DescribeRoom": {
       "document": "获取房间配置信息",
       "input": "DescribeRoomRequest",
@@ -3498,6 +3505,52 @@
           "name": "StreamInfo",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordTaskRequest": {
+      "document": "DescribeRecordTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "学校ID",
+          "example": "3456721",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "9090",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordTaskResponse": {
+      "document": "DescribeRecordTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "2432324323",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

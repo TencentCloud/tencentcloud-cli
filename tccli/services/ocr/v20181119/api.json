@@ -185,14 +185,14 @@
     "GetOCRResult": {
       "document": "获取ocr结果",
       "input": "GetOCRResultRequest",
-      "name": "得到ocr的信息",
+      "name": "获取OCR识别结果",
       "output": "GetOCRResultResponse",
       "status": "online"
     },
     "GetOCRToken": {
       "document": "获取ocr的token值",
       "input": "GetOCRTokenRequest",
-      "name": "得到ocr的token",
+      "name": "获取OCR Token",
       "output": "GetOCRTokenResponse",
       "status": "online"
     },
@@ -7157,6 +7157,15 @@
           "name": "ReflectWarn",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启头像剪切",
+          "example": "false",
+          "member": "bool",
+          "name": "CropPortrait",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -7292,8 +7301,8 @@
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "地址（人像面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京市石景山区高新技术园腾讯大楼",
           "member": "string",
           "name": "Address",
           "output_required": false,
@@ -7302,8 +7311,8 @@
         },
         {
           "disabled": false,
-          "document": "签发机关\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "发证机关（国徽面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "深圳市公安局南山分局",
           "member": "string",
           "name": "Authority",
           "output_required": false,
@@ -7312,8 +7321,8 @@
         },
         {
           "disabled": false,
-          "document": "出生日期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "出生日期（人像面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1987/1/1",
           "member": "string",
           "name": "Birth",
           "output_required": false,
@@ -7322,8 +7331,8 @@
         },
         {
           "disabled": false,
-          "document": "身份证号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "身份证号（人像面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "440524198701010014",
           "member": "string",
           "name": "IdNum",
           "output_required": false,
@@ -7332,8 +7341,8 @@
         },
         {
           "disabled": false,
-          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "名字（人像面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "李明",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -7342,8 +7351,8 @@
         },
         {
           "disabled": false,
-          "document": "地区\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "民族（人像面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "汉",
           "member": "string",
           "name": "Nation",
           "output_required": false,
@@ -7352,8 +7361,8 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "性别（人像面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "男",
           "member": "string",
           "name": "Sex",
           "output_required": false,
@@ -7362,8 +7371,8 @@
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "证件有效期（国徽面）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2017.08.12-2037.08.12",
           "member": "string",
           "name": "ValidDate",
           "output_required": false,
@@ -7373,7 +7382,7 @@
         {
           "disabled": false,
           "document": "请求的id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "03f05619-5e99-42e3-bc47-17a88e47b3ff",
           "member": "string",
           "name": "RequestId",
           "output_required": false,
@@ -7383,7 +7392,7 @@
         {
           "disabled": false,
           "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Success",
           "member": "string",
           "name": "ErrorCode",
           "output_required": false,
@@ -7393,7 +7402,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "成功",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -7403,9 +7412,19 @@
         {
           "disabled": false,
           "document": "原图地址",
-          "example": "无",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证头像照片的地址（人像面）",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg",
+          "member": "string",
+          "name": "PortraitUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

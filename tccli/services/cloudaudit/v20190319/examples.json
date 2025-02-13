@@ -12,7 +12,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEventsAuditTrack\n<公共请求参数>\n\n{\n    \"Name\": \"test_track\",\n    \"Status\": 1,\n    \"Storage\": {\n        \"StorageType\": \"cos\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageName\": \"audit_test\",\n        \"StoragePrefix\": \"audit_config\",\n        \"StorageAccountId\": \"2345345\",\n        \"StorageAppId\": \"23456546\"\n    },\n    \"Filters\": {\n        \"ResourceFields\": [\n            {\n                \"ResourceType\": \"cam\",\n                \"ActionType\": \"Read\",\n                \"EventNames\": [\n                    \"ConsoleLogin\"\n                ]\n            }\n        ]\n    },\n    \"TrackForAllMembers\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TrackId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TrackId\": 1,\n        \"RequestId\": \"7f9b29d-be2c-4061-afb2-b43fdd72\"\n    }\n}",
         "title": "创建操作审计跟踪集"
       }
     ],

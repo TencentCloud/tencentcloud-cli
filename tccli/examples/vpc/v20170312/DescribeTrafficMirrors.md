@@ -19,8 +19,8 @@ Output:
             {
                 "VpcId": "vpc-dh0wcvhp",
                 "TrafficMirrorId": "imgf-dh0wcvhp",
-                "TrafficMirrorName": "test",
-                "TrafficMirrorDescribe": "test",
+                "TrafficMirrorName": "demo",
+                "TrafficMirrorDescribe": "demo",
                 "State": "RUNNING",
                 "Direction": "INGRESS",
                 "CollectorSrcs": [
@@ -45,12 +45,12 @@ Output:
                     "TargetType": "ENI"
                 },
                 "CreateTime": "2021-08-09 15:44:30",
-                "Type": 1,
+                "Type": "VPC",
                 "SubnetId": "subnet-dh0wcvhp",
                 "TargetInfo": [
                     {
                         "TargetId": "eni-dh0wcvhp",
-                        "TargetName": "test"
+                        "TargetName": "demo"
                     }
                 ]
             }

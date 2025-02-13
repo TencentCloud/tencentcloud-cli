@@ -7,7 +7,7 @@ Input:
 ```
 tccli antiddos DescribeL7RulesBySSLCertId --cli-unfold-argument  \
     --Status bindable \
-    --CertIds xxx
+    --CertIds id-xxxx
 ```
 
 Output: 

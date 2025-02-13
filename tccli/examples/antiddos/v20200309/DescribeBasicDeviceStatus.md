@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli antiddos DescribeBasicDeviceStatus --cli-unfold-argument  \
-    --IpList abc \
-    --IdList abc \
+    --IpList 1.1.1.1 \
+    --IdList 222 \
     --FilterRegion 1
 ```
 
@@ -17,14 +17,14 @@ Output:
     "Response": {
         "Data": [
             {
-                "Key": "abc",
-                "Value": "abc"
+                "Key": "1.1.1.1",
+                "Value": "2"
             }
         ],
         "CLBData": [
             {
-                "Key": "abc",
-                "Value": "abc"
+                "Key": "1.1.1.1",
+                "Value": "3"
             }
         ],
         "CnameWafData": [
@@ -33,7 +33,7 @@ Output:
                 "Value": "1"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "07a620b1"
     }
 }
 ```

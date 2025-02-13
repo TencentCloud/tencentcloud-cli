@@ -14,7 +14,7 @@ tccli antiddos CreateCCReqLimitPolicy --cli-unfold-argument  \
     --Policy.Mode equal \
     --Policy.Period 10 \
     --Policy.RequestNum 500 \
-    --Policy.Uri / \
+    --Policy.Uri www.abc.com \
     --Protocol http
 ```
 

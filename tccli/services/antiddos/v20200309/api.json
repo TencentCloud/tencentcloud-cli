@@ -666,7 +666,7 @@
       "status": "online"
     },
     "SwitchWaterPrintConfig": {
-      "document": "开启或关闭DDoS防护的水印防护配置",
+      "document": "开启或关闭DDoS防护的水印防护配置，此功能为付费增值服务，有需求请联系售后",
       "input": "SwitchWaterPrintConfigRequest",
       "name": "开启或关闭DDoS防护的水印防护配置",
       "output": "SwitchWaterPrintConfigResponse",
@@ -2772,7 +2772,7 @@
         {
           "disabled": false,
           "document": "配置ID，配置添加成功后生成；添加新配置时不用填写此字段，修改或删除配置时需要填写配置ID",
-          "example": "0",
+          "example": "ccGeoip-00000111",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -2909,17 +2909,17 @@
           "example": "无",
           "member": "InsL7Rules",
           "name": "L7Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书ID",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3198,8 +3198,8 @@
         },
         {
           "disabled": false,
-          "document": "协议， 可取值HTTP，HTTPS",
-          "example": "HTTP",
+          "document": "协议， 可取值http，https，http/https",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -3270,8 +3270,8 @@
         },
         {
           "disabled": false,
-          "document": "协议，可取值HTTP，HTTPS",
-          "example": "HTTP",
+          "document": "协议，可取值http, https, http/https",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -3297,7 +3297,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为兜底频控",
+          "document": "是否为兜底频控 0表示不是 1表示是",
           "example": "1",
           "member": "int64",
           "name": "IsGlobal",
@@ -4164,9 +4164,10 @@
         {
           "disabled": false,
           "document": "限速模式，取值[\n1(基于源IP限速)\n2(基于目的端口限速)\n]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -4174,9 +4175,10 @@
         {
           "disabled": false,
           "document": "限速值，每种类型的限速值最多支持1个；该字段数组至少有一种限速值",
-          "example": "",
+          "example": "1",
           "member": "SpeedValue",
           "name": "SpeedValues",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -4184,9 +4186,10 @@
         {
           "disabled": false,
           "document": "此字段已弃用，请填写新字段DstPortList。",
-          "example": "",
+          "example": "DstPortList",
           "member": "PortSegment",
           "name": "DstPortScopes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4194,9 +4197,10 @@
         {
           "disabled": false,
           "document": "配置ID，配置添加成功后生成；添加新限制配置时不用填写此字段，修改或删除限速配置时需要填写配置ID",
-          "example": "",
+          "example": "id-xx",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4204,9 +4208,10 @@
         {
           "disabled": false,
           "document": "IP protocol numbers, 取值[\nALL(所有协议)\nTCP(tcp协议)\nUDP(udp协议)\nSMP(smp协议)\n1;2-100(自定义协议号范围,最多8个)\n]\n注意：当自定义协议号范围时，只能填写协议号，多个范围;分隔；当填写ALL时不能再填写其他协议或协议号。",
-          "example": "",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "ProtocolList",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4214,9 +4219,10 @@
         {
           "disabled": false,
           "document": "端口范围列表，最多8个，多个;分隔，范围表示用-；此端口范围必须填写；填写样式1:0-65535，样式2:80;443;1000-2000",
-          "example": "",
+          "example": "80",
           "member": "string",
           "name": "DstPortList",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4256,9 +4262,10 @@
         {
           "disabled": false,
           "document": "告警阈值类型，取值[\n1(入流量告警阈值)\n2(攻击清洗流量告警阈值)\n]",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AlarmType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4266,9 +4273,10 @@
         {
           "disabled": false,
           "document": "告警阈值，单位Mbps，取值>=0；当作为输入参数时，设置0会删除告警阈值配置；",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "AlarmThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4924,7 +4932,7 @@
         {
           "disabled": false,
           "document": "IP 资源列表",
-          "example": "[\"\\u20181.1.1.1\\u2019\\r\\n\"]",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -4933,7 +4941,7 @@
         {
           "disabled": false,
           "document": "域名化资源传id",
-          "example": "无",
+          "example": "id-xx",
           "member": "string",
           "name": "IdList",
           "required": false,
@@ -4942,7 +4950,7 @@
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "无",
+          "example": "guangzhou ",
           "member": "uint64",
           "name": "FilterRegion",
           "required": false,
@@ -4951,7 +4959,7 @@
         {
           "disabled": false,
           "document": "cnameWaf资源",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "CnameWafIdList",
           "required": false,
@@ -5034,7 +5042,7 @@
         },
         {
           "disabled": false,
-          "document": "统计纬度，可取值intraffic, outtraffic, inpkg, outpkg",
+          "document": "统计维度，可取值intraffic, outtraffic, inpkg, outpkg； intraffic：入流量 outtraffic：出流量 inpkg：入包速率 outpkg：出包速率",
           "example": "outtraffic",
           "member": "string",
           "name": "MetricName",
@@ -5068,7 +5076,7 @@
         {
           "disabled": false,
           "document": "曲线图各个时间点的值",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "DataList",
           "output_required": true,
@@ -5247,7 +5255,7 @@
         {
           "disabled": false,
           "document": "资源实例ID",
-          "example": "xx",
+          "example": "bgpip-00000",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -5280,7 +5288,7 @@
         {
           "disabled": false,
           "document": "曲线图各个时间点的值",
-          "example": "无",
+          "example": "1.2",
           "member": "float",
           "name": "DataList",
           "output_required": true,
@@ -5322,7 +5330,7 @@
         {
           "disabled": false,
           "document": "统计方式，可取值max, min, avg, sum, 如统计纬度是流量速率或包量速率，仅可取值max",
-          "example": "xx",
+          "example": "max",
           "member": "string",
           "name": "Statistics",
           "required": true,
@@ -5331,7 +5339,7 @@
         {
           "disabled": false,
           "document": "DDoS防护子产品代号（bgpip表示高防IP）",
-          "example": "xx",
+          "example": "bgp",
           "member": "string",
           "name": "Business",
           "required": true,
@@ -5367,7 +5375,7 @@
         {
           "disabled": false,
           "document": "资源实例ID",
-          "example": "xx",
+          "example": "bgp-0000",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -5376,7 +5384,7 @@
         {
           "disabled": false,
           "document": "统计纬度，可取值connum, new_conn, inactive_conn, intraffic, outtraffic, inpkg, outpkg, qps",
-          "example": "xx",
+          "example": "intraffic",
           "member": "string",
           "name": "MetricName",
           "required": true,
@@ -5385,7 +5393,7 @@
         {
           "disabled": false,
           "document": "统计纬度为qps时，可选特定域名查询",
-          "example": "xx",
+          "example": "test.tencentddos.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -5403,7 +5411,7 @@
         {
           "disabled": false,
           "document": "业务类型可取值domain, port\nport：端口业务\ndomain：域名业务",
-          "example": "无",
+          "example": "domain",
           "member": "string",
           "name": "BusinessType",
           "required": false,
@@ -5418,7 +5426,7 @@
         {
           "disabled": false,
           "document": "曲线图各个时间点的值",
-          "example": "无",
+          "example": "[1.2,2.2]",
           "member": "float",
           "name": "DataList",
           "output_required": true,
@@ -6386,7 +6394,7 @@
         {
           "disabled": false,
           "document": "可选参数，按照IP进行过滤",
-          "example": "无",
+          "example": "\"1.1.1.1\"",
           "member": "string",
           "name": "FilterIp",
           "required": false,
@@ -6395,7 +6403,7 @@
         {
           "disabled": false,
           "document": "可选参数，按照实例id进行过滤",
-          "example": "无",
+          "example": "\"id-xxxx\"",
           "member": "string",
           "name": "FilterInstanceId",
           "required": false,
@@ -6413,7 +6421,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6423,7 +6431,7 @@
           "example": "无",
           "member": "ConnectLimitRelation",
           "name": "ConfigList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6667,7 +6675,7 @@
           "example": "无",
           "member": "IpBlockData",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6713,7 +6721,7 @@
           "example": "无",
           "member": "CertIdInsL7Rules",
           "name": "CertSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7195,7 +7203,7 @@
           "example": "2",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7205,7 +7213,7 @@
           "example": "无",
           "member": "BlackWhiteIpRelation",
           "name": "IpList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7620,7 +7628,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7630,7 +7638,7 @@
           "example": "无",
           "member": "PacketFilterRelation",
           "name": "ConfigList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8006,7 +8014,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8016,7 +8024,7 @@
           "example": "无",
           "member": "WaterPrintRelation",
           "name": "ConfigList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8044,7 +8052,7 @@
         {
           "disabled": false,
           "document": "规则Id列表",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "RuleIdList",
           "required": false,
@@ -8274,7 +8282,7 @@
           "example": "ddos",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8284,7 +8292,7 @@
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8294,7 +8302,7 @@
           "example": "2021-05-24 14:23:54",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8304,7 +8312,7 @@
           "example": "86400",
           "member": "uint64",
           "name": "Period",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8314,7 +8322,7 @@
           "example": "[0, 0, 0, 0, 0, 0]",
           "member": "uint64",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8324,7 +8332,7 @@
           "example": "5",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8388,7 +8396,7 @@
         {
           "disabled": false,
           "document": "资源的IP",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -9358,50 +9366,50 @@
         {
           "disabled": false,
           "document": "状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）",
-          "example": "无",
+          "example": "Blocked",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源IP",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "封堵时间",
-          "example": "无",
+          "example": "2024.10.1",
           "member": "datetime",
           "name": "BlockTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "解封时间（预计解封时间）",
-          "example": "无",
+          "example": "2024.10.2",
           "member": "datetime",
           "name": "UnBlockTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）",
-          "example": "无",
+          "example": "user",
           "member": "string",
           "name": "ActionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9411,7 +9419,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "ProtectFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -9450,20 +9458,20 @@
         {
           "disabled": false,
           "document": "字段名称",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字段取值",
-          "example": "无",
+          "example": "value",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9748,9 +9756,10 @@
         {
           "disabled": false,
           "document": "配置状态，0： 正常，1：配置中，2：配置失败",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9758,9 +9767,10 @@
         {
           "disabled": false,
           "document": "=1表示开启；=0表示关闭",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Enable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9768,9 +9778,10 @@
         {
           "disabled": false,
           "document": "规则ID",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9778,9 +9789,10 @@
         {
           "disabled": false,
           "document": "检查目录的URL，默认为/",
-          "example": "无",
+          "example": "url",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9788,9 +9800,10 @@
         {
           "disabled": false,
           "document": "检测间隔时间，单位秒",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Interval",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9798,9 +9811,10 @@
         {
           "disabled": false,
           "document": "健康阈值，单位次",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "AliveNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9808,9 +9822,10 @@
         {
           "disabled": false,
           "document": "不健康阈值，单位次",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "KickNum",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9818,9 +9833,10 @@
         {
           "disabled": false,
           "document": "HTTP请求方式，取值[HEAD,GET]",
-          "example": "无",
+          "example": "GET",
           "member": "string",
           "name": "Method",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9828,9 +9844,10 @@
         {
           "disabled": false,
           "document": "健康检查判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "StatusCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9838,9 +9855,10 @@
         {
           "disabled": false,
           "document": "是否同时下发http和https规则健康检查配置",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "ProtocolFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9848,9 +9866,10 @@
         {
           "disabled": false,
           "document": "被动探测开关，=1表示开启；=0表示关闭",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PassiveEnable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9858,9 +9877,10 @@
         {
           "disabled": false,
           "document": "被动探测不健康屏蔽时间",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "BlockInter",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9868,9 +9888,10 @@
         {
           "disabled": false,
           "document": "被动探测不健康统计间隔",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "FailedCountInter",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9878,9 +9899,10 @@
         {
           "disabled": false,
           "document": "被动探测不健康阈值",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "FailedThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9888,9 +9910,10 @@
         {
           "disabled": false,
           "document": "被动探测判定正常状态码，1xx =1, 2xx=2, 3xx=4, 4xx=8,5xx=16，多个状态码值加和",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PassiveStatusCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9898,9 +9921,10 @@
         {
           "disabled": false,
           "document": "被动探测配置状态，0： 正常，1：配置中，2：配置失败",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PassiveStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10182,7 +10206,7 @@
         },
         {
           "disabled": false,
-          "document": "策略方式。可取值：alg、drop。alg指返回验证码方式验证，drop表示该访问丢弃。",
+          "document": "策略方式。可取值：alg、drop、trans。alg指返回验证码方式验证，drop表示该访问丢弃，trans表示该访问放行。",
           "example": "alg",
           "member": "string",
           "name": "PolicyAction",
@@ -10290,8 +10314,8 @@
         },
         {
           "disabled": false,
-          "document": "协议，可取值HTTP，HTTPS",
-          "example": "HTTP",
+          "document": "协议，可取值http，https，http/https",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -10753,7 +10777,7 @@
         {
           "disabled": false,
           "document": "域名名称",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "DomainUserName",
           "required": true,
@@ -11195,7 +11219,7 @@
           "example": "ddosev-00000424",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11205,7 +11229,7 @@
           "example": "10.24.145.26",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11215,7 +11239,7 @@
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11225,7 +11249,7 @@
           "example": "2021-03-17 12:32:12",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11235,7 +11259,7 @@
           "example": "SYNFLOOD",
           "member": "string",
           "name": "AttackType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11245,7 +11269,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AttackStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11255,7 +11279,7 @@
           "example": "23526",
           "member": "uint64",
           "name": "Mbps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11265,7 +11289,7 @@
           "example": "235623",
           "member": "uint64",
           "name": "Pps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11275,7 +11299,7 @@
           "example": "bgpip",
           "member": "string",
           "name": "Business",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11285,17 +11309,17 @@
           "example": "bgpip-00001001",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "高防实例名称",
-          "example": "无",
+          "example": "高防实例名称",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11337,6 +11361,7 @@
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11347,6 +11372,7 @@
           "example": "1000",
           "member": "int64",
           "name": "SportStart",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11357,6 +11383,7 @@
           "example": "1001",
           "member": "int64",
           "name": "SportEnd",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11367,6 +11394,7 @@
           "example": "1000",
           "member": "int64",
           "name": "DportStart",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11377,6 +11405,7 @@
           "example": "1001",
           "member": "int64",
           "name": "DportEnd",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11387,6 +11416,7 @@
           "example": "300",
           "member": "int64",
           "name": "PktlenMin",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11397,16 +11427,18 @@
           "example": "500",
           "member": "int64",
           "name": "PktlenMax",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "动作，取值[\ndrop(丢弃)\ntransmit(放行)\ndrop_black(丢弃并拉黑)\ndrop_rst(拦截)\ndrop_black_rst(拦截并拉黑)\nforward(继续防护)\n]",
+          "document": "动作，取值[\ndrop(丢弃)\ntransmit(放行)\ndrop_black(丢弃并拉黑)\ndrop_rst(拦截)（已废弃，不支持drop_rst）\ndrop_black_rst(拦截并拉黑)（已废弃，不支持drop_black_rst）\nforward(继续防护)\n]",
           "example": "drop",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11417,26 +11449,29 @@
           "example": "begin_l5",
           "member": "string",
           "name": "MatchBegin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测类型，取值[\nsunday(关键字)\npcre(正则表达式)\n]",
+          "document": "检测类型，取值[\nsunday(关键字)\npcre(正则表达式) （已废弃，仅支持sunday）\n]",
           "example": "sunday",
           "member": "string",
           "name": "MatchType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "document": "检测值，关键字符串或正则表达式,取值[ 当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码; 最多支持63位; ]",
           "example": "\\x313233",
           "member": "string",
           "name": "Str",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11447,6 +11482,7 @@
           "example": "500",
           "member": "int64",
           "name": "Depth",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11457,96 +11493,106 @@
           "example": "100",
           "member": "int64",
           "name": "Offset",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否包含检测值，取值[\n0(包含)\n1(不包含)\n]",
+          "document": "是否包含检测值，取值[\n0(包含)\n1(不包含) （已废弃，仅支持0）\n]",
           "example": "0",
           "member": "int64",
           "name": "IsNot",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当有第二个检测条件时，与第一检测条件的且或关系，取值[\nand(且的关系)\nnone(当没有第二个检测条件时填写此值)\n]",
+          "document": "\n当有第二个检测条件时，与第一检测条件的且或关系，取值[\nand(且的关系) （已废弃，仅支持none）\nnone(当没有第二个检测条件时填写此值)\n]",
           "example": "none",
           "member": "string",
           "name": "MatchLogic",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "第二个检测位置，取值[\nbegin_l5(载荷)\nno_match(不匹配)\n]",
+          "document": "（已废弃）",
           "example": "begin_l5",
           "member": "string",
           "name": "MatchBegin2",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "第二个检测类型，取值[\nsunday(关键字)\npcre(正则表达式)\n]",
+          "document": "（已废弃）",
           "example": "sunday",
           "member": "string",
           "name": "MatchType2",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "第二个检测值，关键字符串或正则表达式,取值[\n当检测类型为sunday时，请填写字符串或者16进制字节码，例如\\x313233对应的是字符串\"123\"的16进制字节码;\n当检测类型为pcre时, 请填写正则表达式字符串;\n]",
+          "document": "（已废弃）",
           "example": "\\x313233",
           "member": "string",
           "name": "Str2",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "从第二个检测位置开始的第二个检测深度，取值[0,1500]",
+          "document": "（已废弃）",
           "example": "500",
           "member": "int64",
           "name": "Depth2",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "从第二个检测位置开始的偏移量，取值范围[0,Depth2]",
+          "document": "（已废弃）",
           "example": "200",
           "member": "int64",
           "name": "Offset2",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "第二个检测是否包含检测值，取值[\n0(包含)\n1(不包含)\n]",
+          "document": "（已废弃）",
           "example": "0",
           "member": "int64",
           "name": "IsNot2",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；",
-          "example": "无",
+          "document": "特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；当修改/删除新特征过滤配置时，此字段必填；",
+          "example": "id-xxx",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11557,6 +11603,7 @@
           "example": "50",
           "member": "int64",
           "name": "PktLenGT",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11910,22 +11957,20 @@
         {
           "disabled": false,
           "document": "协议（tcp；udp）",
-          "example": "无",
+          "example": "tcp",
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "端口",
-          "example": "无",
+          "example": "80",
           "member": "uint64",
           "name": "Port",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -12100,9 +12145,10 @@
         {
           "disabled": false,
           "document": "源站的地址（IP或者域名）",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "RealServer",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12110,9 +12156,10 @@
         {
           "disabled": false,
           "document": "源站的地址类型，取值[\n1(域名地址)\n2(IP地址)\n]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "RsType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12120,9 +12167,10 @@
         {
           "disabled": false,
           "document": "源站的回源权重，取值1~100",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12130,9 +12178,10 @@
         {
           "disabled": false,
           "document": "端口号：0~65535",
-          "example": "无",
+          "example": "80",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -12303,18 +12352,16 @@
           "member": "string",
           "name": "TagKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "标签键值列表",
-          "example": "无",
+          "example": "232",
           "member": "string",
           "name": "TagValue",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -12354,6 +12401,7 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12364,6 +12412,7 @@
           "example": "0",
           "member": "int64",
           "name": "OpenStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12374,6 +12423,7 @@
           "example": "[{80,TCP}]",
           "member": "ForwardListener",
           "name": "Listeners",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -12381,9 +12431,10 @@
         {
           "disabled": false,
           "document": "水印添加成功后生成的水印密钥列表，一条水印最少1个密钥，最多2个密钥",
-          "example": "[]",
+          "example": "[\"key\"]",
           "member": "WaterPrintKey",
           "name": "Keys",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -12394,19 +12445,21 @@
           "example": "checkall",
           "member": "string",
           "name": "Verify",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验",
           "example": "1",
           "member": "int64",
           "name": "CloudSdkProxy",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12417,9 +12470,10 @@
         {
           "disabled": false,
           "document": "密钥版本号",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "KeyVersion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12427,9 +12481,10 @@
         {
           "disabled": false,
           "document": "密钥内容",
-          "example": "无",
+          "example": "0090-12301-1212",
           "member": "string",
           "name": "KeyContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12437,9 +12492,10 @@
         {
           "disabled": false,
           "document": "密钥ID",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "KeyId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12447,9 +12503,10 @@
         {
           "disabled": false,
           "document": "密钥启用状态，只有一个取值1(启用)",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "KeyOpenStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -12457,9 +12514,10 @@
         {
           "disabled": false,
           "document": "密钥生成时间",
-          "example": "无",
+          "example": "2024.10.1",
           "member": "datetime",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

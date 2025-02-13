@@ -37,6 +37,7 @@ Output:
                             "FrontendPortEnd": 0
                         }
                     ],
+                    "CloudSdkProxy": 1,
                     "OpenStatus": 0,
                     "Offset": 30
                 },

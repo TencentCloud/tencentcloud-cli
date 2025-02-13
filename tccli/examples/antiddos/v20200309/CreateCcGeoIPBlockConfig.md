@@ -11,7 +11,7 @@ tccli antiddos CreateCcGeoIPBlockConfig --cli-unfold-argument  \
     --Domain www.test.com \
     --Protocol http \
     --CcGeoIPBlockConfig.Action drop \
-    --CcGeoIPBlockConfig.Id 0 \
+    --CcGeoIPBlockConfig.Id ccGeoip-00000111 \
     --CcGeoIPBlockConfig.RegionType oversea \
     --CcGeoIPBlockConfig.AreaList 100025
 ```

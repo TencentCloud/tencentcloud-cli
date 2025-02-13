@@ -4088,6 +4088,15 @@
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic&Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedPerms",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4284,6 +4293,15 @@
           "example": "测试角色",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
           "required": false,
           "type": "string"
         }
@@ -11770,6 +11788,67 @@
       ],
       "type": "object"
     },
+    "DetailedRolePerm": {
+      "document": "Topic&Group维度的权限配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限对应的资源",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Resource",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启生产权限",
+          "example": "true",
+          "member": "bool",
+          "name": "PermWrite",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费权限",
+          "example": "false",
+          "member": "bool",
+          "name": "PermRead",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权资源类型（Topic:主题; Group:消费组）",
+          "example": "Topic",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源备注",
+          "example": "test remark info.",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Environment": {
       "document": "命名空间信息",
       "members": [
@@ -13787,6 +13866,15 @@
           "name": "ClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic&Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedPerms",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14101,6 +14189,15 @@
           "example": "测试修改",
           "member": "string",
           "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
           "required": false,
           "type": "string"
         }

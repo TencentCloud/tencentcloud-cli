@@ -694,7 +694,7 @@
       "status": "online"
     },
     "UnlockAccount": {
-      "document": "解除数据库账号的锁定，解锁后账号可以登陆数据库。",
+      "document": "解除数据库账号的锁定，解锁后账号可以登录数据库。",
       "input": "UnlockAccountRequest",
       "name": "解除数据库账号锁定",
       "output": "UnlockAccountResponse",

@@ -46,6 +46,7 @@ Output:
                     "Action": "drop",
                     "Protocol": "tcp",
                     "MatchType": "sunday",
+                    "PktLenGT": 50,
                     "DportEnd": 0,
                     "Offset2": 5,
                     "Depth2": 20,

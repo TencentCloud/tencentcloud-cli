@@ -368,6 +368,24 @@
           "name": "DiskId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoStopInstance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoStartInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

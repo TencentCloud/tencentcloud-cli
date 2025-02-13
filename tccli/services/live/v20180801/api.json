@@ -2218,7 +2218,7 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "aaa",
+          "example": "回调模板1",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -2228,7 +2228,7 @@
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "xxx",
+          "example": "场景1回调模版配置",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -2318,12 +2318,32 @@
         {
           "disabled": false,
           "document": "音频审核回调 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://domain.com/path",
           "member": "string",
           "name": "AudioAuditNotifyUrl",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录制异常回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "RecordExceptionNotifyUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制异常回调级别，可选择：error: 错误。alarm: 告警。",
+          "example": "[\"error\"]",
+          "member": "string",
+          "name": "RecordExceptionLevels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4564,6 +4584,24 @@
           "name": "AudioAuditNotifyUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制异常回调 URL。",
+          "example": "http://domain.com/path",
+          "member": "string",
+          "name": "RecordExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制异常回调级别，可选择：error、warning、info。",
+          "example": "[\"error\"]",
+          "member": "string",
+          "name": "RecordExceptionLevels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -15604,6 +15642,24 @@
           "name": "AudioAuditNotifyUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制异常回调 URL。\t",
+          "example": "http://domain.com/path\t",
+          "member": "string",
+          "name": "RecordExceptionNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制异常回调级别，可选择：error、warning、info。",
+          "example": "[\"error\"]",
+          "member": "string",
+          "name": "RecordExceptionLevels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

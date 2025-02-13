@@ -7415,7 +7415,7 @@
           "example": "FREEZING",
           "member": "string",
           "name": "Source",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7425,7 +7425,7 @@
           "example": "2",
           "member": "string",
           "name": "State",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7435,7 +7435,7 @@
           "example": "未备案",
           "member": "string",
           "name": "Reason",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7445,7 +7445,7 @@
           "example": "http://157.*.*.29/",
           "member": "string",
           "name": "Content",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

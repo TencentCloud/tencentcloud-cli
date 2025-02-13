@@ -561,11 +561,11 @@
       "status": "online"
     },
     "DescribeDrInstancePage": {
-      "document": "分页查询试运行实例列表",
+      "document": "无效API，没有上线过的业务功能\n\n分页查询试运行实例列表",
       "input": "DescribeDrInstancePageRequest",
       "name": "分页查询试运行实例列表",
       "output": "DescribeDrInstancePageResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeDsFolderTree": {
       "document": "查询目录树",
@@ -1142,11 +1142,11 @@
       "status": "online"
     },
     "DescribeTaskByCycleReport": {
-      "document": "任务状态周期增长趋势",
+      "document": "能够调通但该API已经没有使用了，看北京数据最后一次上报是23年10月，有接近一千万条数据历史无效数据。当前策略，云API示例修订然后已经分析出来的无效API走预下线流程。\nhttps://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20&action=DescribeTaskByCycleReport\n这两天在分析API的时候 有较多运维大屏的原始API当前已经没有使用了，但API没有下线。预计需要专项去梳理这一系列待下线API。\n\n任务状态周期增长趋势",
       "input": "DescribeTaskByCycleReportRequest",
       "name": "任务状态周期增长趋势",
       "output": "DescribeTaskByCycleReportResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeTaskByStatusReport": {
       "document": "任务状态趋势",
@@ -11325,7 +11325,7 @@
         },
         {
           "disabled": false,
-          "document": "使用状态",
+          "document": "使用状态， 为ture 判断资源的使用状态，如果使用中则不能删除",
           "example": "true",
           "member": "bool",
           "name": "UseStatus",
@@ -11343,8 +11343,8 @@
         },
         {
           "disabled": false,
-          "document": "资源路径列表",
-          "example": "[\"qminliu/datastudio_sg.txt\"]",
+          "document": "需要删除的资源路径列表 即资源管理中的目录结构",
+          "example": "[\"/datastudio/resource/qminliu/datastudio_sg\"]",
           "member": "string",
           "name": "FilePaths",
           "required": false,
@@ -26648,6 +26648,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行平台通用协议",
+          "example": "无",
+          "member": "PairDto",
+          "name": "ExecutionExtendedProps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -33511,7 +33521,7 @@
           "example": "Name",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -33521,9 +33531,19 @@
           "example": "Tom",
           "member": "string",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "yarn id",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

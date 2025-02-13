@@ -274,7 +274,7 @@
       "status": "online"
     },
     "DescribeRoleList": {
-      "document": "查询角色列表，Filter参数使用说明如下：\n\n1. RoleName，角色名称模糊搜索",
+      "document": "查询角色列表，Filter参数使用说明如下：\n\n1. RoleName，角色名称模糊搜索\n2. AccessKey，AccessKey模糊搜索",
       "input": "DescribeRoleListRequest",
       "name": "查询角色列表",
       "output": "DescribeRoleListResponse",
@@ -1168,15 +1168,6 @@
         },
         {
           "disabled": false,
-          "document": "备注",
-          "example": "测试角色",
-          "member": "string",
-          "name": "Remark",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "是否开启生产权限",
           "example": "true",
           "member": "bool",
@@ -1192,6 +1183,33 @@
           "name": "PermRead",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "测试角色",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic&Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedPerms",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4304,6 +4322,67 @@
       ],
       "type": "object"
     },
+    "DetailedRolePerm": {
+      "document": "Topic&Group维度的权限配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限对应的资源",
+          "example": "test_topic",
+          "member": "string",
+          "name": "Resource",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启生产权限",
+          "example": "true",
+          "member": "bool",
+          "name": "PermWrite",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费权限",
+          "example": "true",
+          "member": "bool",
+          "name": "PermRead",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权资源类型（Topic:主题; Group:消费组）",
+          "example": "Topic",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源备注",
+          "example": "test_remark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Endpoint": {
       "document": "接入点信息",
       "members": [
@@ -6277,12 +6356,30 @@
         },
         {
           "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群维度；TopicAndGroup：主题和消费组维度）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "备注",
-          "example": "测试修改",
+          "example": "remark info",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic&Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedPerms",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6744,6 +6841,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）",
+          "example": "CLUSTER",
+          "member": "string",
+          "name": "PermType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Topic和Group维度权限配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedRolePerms",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

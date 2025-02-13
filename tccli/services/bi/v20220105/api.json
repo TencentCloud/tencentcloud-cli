@@ -4217,7 +4217,7 @@
         {
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "返回为null",
           "member": "string",
           "name": "Data",
           "output_required": true,

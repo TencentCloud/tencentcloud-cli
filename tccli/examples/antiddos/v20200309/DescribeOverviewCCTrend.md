@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli antiddos DescribeOverviewCCTrend --cli-unfold-argument  \
-    --Period 0 \
+    --Period 3600 \
     --StartTime 2020-09-22 00:00:00 \
-    --EndTime 2020-09-22 00:00:00 \
-    --MetricName bps
+    --EndTime 2020-09-23 00:00:00 \
+    --MetricName dropqps
 ```
 
 Output: 
