@@ -19,7 +19,7 @@
     "CreatePPTCheckTask": [
       {
         "document": "创建PPT检测任务，识别动态转码不支持的元素列表",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"http://example.com/%E6%B5%8B%E8%AF%95.pptx\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePPTCheckTask\n<公共请求参数>\n\n{\n    \"Url\": \"http://example.com/%E6%B5%8B%E8%AF%95.pptx\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT检测任务"
       }
@@ -35,13 +35,13 @@
     "CreateTranscode": [
       {
         "document": "创建PPT动态转码任务，并生成分辨率为960x540的缩略图",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"ThumbnailResolution\": \"960x540\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"ThumbnailResolution\": \"960x540\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT动态转码任务"
       },
       {
         "document": "创建PPT静态转码任务",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"IsStaticPPT\": \"True\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"IsStaticPPT\": \"True\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g6ls63ps49vteb8bk1mb\"\n    }\n}",
         "title": "创建PPT静态转码任务"
       }
@@ -49,7 +49,7 @@
     "CreateVideoGenerationTask": [
       {
         "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=xxxxx\n&<公共请求参数>",
+        "input": "https://tiw.tencentcloudapi.com/?Action=CreateVideoGenerationTask\n&SdkAppId=1400000001\n&OnlineRecordTaskId=bj0mt2l23osdj300hl30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"g7khk7f809vterp942mb\"\n    }\n}",
         "title": "开始录制视频生成"
       }
@@ -197,7 +197,7 @@
     "DescribeTIWRoomDailyUsage": [
       {
         "document": "查询2022-11-24到2022-11-25的互动白板房间计费用量",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTIWRoomDailyUsage\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400000001\",\n    \"SubProduct\": \"sp_tiw_board\",\n    \"Limit\": \"20\",\n    \"StartTime\": \"2022-11-24\",\n    \"Offset\": \"0\",\n    \"EndTime\": \"2022-11-25\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTIWRoomDailyUsage\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000001,\n    \"SubProduct\": \"sp_tiw_board\",\n    \"Limit\": 20,\n    \"StartTime\": \"2022-11-24\",\n    \"Offset\": 0,\n    \"EndTime\": \"2022-11-25\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"916f3549-8e91-467c-afcb-b8dacf188e12\",\n        \"Usages\": [\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 432946024,\n                \"Value\": 5\n            },\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 523696026,\n                \"Value\": 60\n            },\n            {\n                \"Time\": \"2022-11-24\",\n                \"SdkAppId\": 1400000001,\n                \"SubProduct\": \"sp_tiw_board\",\n                \"RoomID\": 1284910005,\n                \"Value\": 4\n            }\n        ],\n        \"Total\": 3\n    }\n}",
         "title": "查询房间维度每天计费用量"
       }
@@ -219,7 +219,7 @@
     "DescribeTranscodeByUrl": [
       {
         "document": "通过url查询文档动态转码任务状态",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscode\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"SdkAppId\": 1400000001\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTranscodeByUrl\n<公共请求参数>\n\n{\n    \"Url\": \"https://path/to/document.ppt\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"Status\": \"FINISHED\",\n        \"TaskId\": \"0agdnligqtgtvkm65emb\"\n    }\n}",
         "title": "通过url查询文档动态转码任务状态"
       }
@@ -369,7 +369,7 @@
     "ModifyWhiteboardBucketConfig": [
       {
         "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=ModifyWhiteboardBucketConfig\n&SdkAppId=1400000001\n&TaskType=recording\n&BucketLocation=ap-guangzhou\n&BucketName=test-120000001\n&BucketPrefix=doc\n&ResultDomain=https://bucket.com\n&<公共请求参数>",
+        "input": "https://tiw.tencentcloudapi.com/?Action=ModifyWhiteboardBucketConfig\n&SdkAppId=1400000001\n&TaskType=recording\n&BucketLocation=ap-guangzhou\n&BucketName=test-120000001\n&BucketPrefix=doc\n&ResultDomain=bucket.cos.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
         "title": "设置应用资源配置"
       }
@@ -495,7 +495,7 @@
     "StartWhiteboardPush": [
       {
         "document": "创建一个白板推流任务",
-        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": \"1203\",\n    \"SdkAppId\": \"1400000001\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartWhiteboardPush\n<公共请求参数>\n\n{\n    \"PushUserId\": \"tic_push_user_1203_141551\",\n    \"PushUserSig\": \"usersig_of_<tic_push_user_1203_141551>\",\n    \"RoomId\": 1203,\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"Backup\": \"{\\\"RequestId\\\":\\\"8e9b2bc4-ec7f-46cd-823b-66676e2375f8\\\",\\\"TaskId\\\":\\\"052lfmu5uc3lp0rrqvvb\\\"}\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"TaskId\": \"bj0mt2l23osdj300hl30\"\n    }\n}",
         "title": "开始白板推流"
       }

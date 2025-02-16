@@ -11,7 +11,7 @@ tccli tiw ModifyWhiteboardBucketConfig --cli-unfold-argument  \
     --BucketLocation ap-guangzhou \
     --BucketName test-120000001 \
     --BucketPrefix doc \
-    --ResultDomain https://bucket.com
+    --ResultDomain bucket.cos.com
 ```
 
 Output: 

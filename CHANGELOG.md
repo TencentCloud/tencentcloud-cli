@@ -1,3 +1,116 @@
+# Release 3.0.1154.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 42 次发布
+
+发布时间：2025-02-17 01:09:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/362/16312)
+
+	* 新增入参：KmsKeyId
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 131 次发布
+
+发布时间：2025-02-17 01:10:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoStrategy](http://document.tencentcloudapi.woa.com/document/product/236/15878#AutoStrategy)
+
+	* 新增成员：ExpandSecondPeriod, ShrinkSecondPeriod
+
+	* <font color="#dd0000">**修改成员**：</font>ExpandPeriod, ShrinkPeriod
+
+
+
+
+## 知识引擎原子能力(lkeap) 版本：2024-05-22
+
+### 第 22 次发布
+
+发布时间：2025-02-17 01:20:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+
+	* 新增入参：EnableSearch
+
+* [UploadDocRealtime](http://document.tencentcloudapi.woa.com/document/product/1764/84927)
+
+	* 新增入参：KnowledgeBaseId, FileName, FileType, FileUrl, ExpireTime
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 78 次发布
+
+发布时间：2025-02-17 01:24:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CertificateInfoSubmit](http://document.tencentcloudapi.woa.com/document/product/400/85744)
+
+	* <font color="#dd0000">**修改入参**：</font>OrgIdType, OrgIdNumber, AdminIdType, AdminIdNumber, TechIdType, TechIdNumber
+
+* [DescribeHostApiGatewayInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77806)
+
+* [DescribeHostCdnInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77805)
+
+* [DescribeHostLighthouseInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77799)
+
+* [DescribeHostTeoInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77797)
+
+	* <font color="#dd0000">**修改入参**：</font>ResourceType
+
+
+
+
+## 威胁情报云查服务(tics) 版本：2018-11-15
+
+### 第 2 次发布
+
+发布时间：2025-02-17 01:30:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeDomainInfo
+* DescribeFileInfo
+* DescribeIpInfo
+* DescribeThreatInfo
+
+
+
 # Release 3.0.1153.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

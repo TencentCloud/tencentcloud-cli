@@ -155,7 +155,7 @@
       "status": "online"
     },
     "DescribeTIWRoomDailyUsage": {
-      "document": "查询互动白板房间维度每天计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量\n",
+      "document": "查询互动白板房间维度每天计费用量。\n1. 单次查询统计区间最多不能超过31天。\n2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量",
       "input": "DescribeTIWRoomDailyUsageRequest",
       "name": "查询房间维度每天计费用量",
       "output": "DescribeTIWRoomDailyUsageResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "DescribeTranscodeByUrl": {
-      "document": "通过文档URL查询转码任务，返回最近一次的转码任务状态",
+      "document": "通过文档URL查询转码任务，返回最近一天内最新的转码任务状态",
       "input": "DescribeTranscodeByUrlRequest",
       "name": "通过文档URL查询转码任务状态",
       "output": "DescribeTranscodeByUrlResponse",
@@ -704,7 +704,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。\n\n指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。\n\n目前支持检测的不兼容元素类型及对应的自动处理方式如下：\n0: 不支持的墨迹类型\n-- 自动处理方式：移除墨迹\n\n1: 自动翻页\n-- 自动处理方式：移除自动翻页设置，并修改为单击切换\n\n2: 已损坏音视频\n-- 自动处理方式：移除对损坏音视频的引用\n\n3: 不可访问资源\n-- 自动处理方式：移除对不可访问的资源的引用\n\n4: 只读文件\n-- 自动处理方式：移除只读设置\n\n5: 不支持的元素编辑锁定状态\n-- 自动处理方式：移除锁定状态\n\n6: 可能有兼容问题的字体\n-- 自动处理方式： 不支持处理\n\n7: 设置了柔化边缘的GIF图片\n-- 自动处理方式：移除柔化边缘设置\n\n8: 存在不兼容的空格下划线\n-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常\n\n9: 存在设置了分段动画的数学公式和文本混合内容\n-- 自动处理方式： 不支持处理\n\n10: 存在设置了分段动画的渐变色文本\n-- 自动处理方式： 不支持处理\n\n11: 存在不兼容的分散对齐方式\n-- 自动处理方式： 不支持处理\n\n12: 存在不兼容的多倍行距设置\n-- 自动处理方式： 不支持处理",
+          "document": "此参数仅在`AutoHandleUnsupportedElement`参数为`true`的情况下有效。\n\n指定需要自动处理的不兼容元素类型，默认对所有不兼容的元素进行自动处理。\n\n目前支持检测的不兼容元素类型及对应的自动处理方式如下：\n0: 不支持的墨迹类型\n-- 自动处理方式：移除墨迹\n\n1: 自动翻页\n-- 自动处理方式：移除自动翻页设置，并修改为单击切换\n\n2: 已损坏音视频\n-- 自动处理方式：移除对损坏音视频的引用\n\n3: 不可访问资源\n-- 自动处理方式：移除对不可访问的资源的引用\n\n4: 只读文件\n-- 自动处理方式：移除只读设置\n\n5: 不支持的元素编辑锁定状态\n-- 自动处理方式：移除锁定状态\n\n6: 可能有兼容问题的字体\n-- 自动处理方式： 不支持处理\n\n7: 设置了柔化边缘的GIF图片\n-- 自动处理方式：移除柔化边缘设置\n\n8: 存在不兼容的空格下划线\n-- 自动处理方式：通过调整空格下划线前后文本的字体语言体系，保证空格下划线表现正常\n\n9: 存在设置了分段动画的数学公式和文本混合内容\n-- 自动处理方式： 不支持处理\n\n10: 存在设置了分段动画的渐变色文本\n-- 自动处理方式： 不支持处理\n\n11: 存在不兼容的分散对齐方式\n-- 自动处理方式： 不支持处理\n\n12: 存在不兼容的多倍行距设置\n-- 自动处理方式： 不支持处理\n\n13: 存在带有特殊符号内容的datetime类型的a:fld标签元素\n-- 自动处理方式： a:fld标签替换为普通文本",
           "example": "[0, 1, 2]",
           "member": "int64",
           "name": "AutoHandleUnsupportedElementTypes",
@@ -959,8 +959,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "录制任务的TaskId",
-          "example": "",
+          "document": "实时录制任务的TaskId",
+          "example": "bj0mt2l23osdj300hl30",
           "member": "string",
           "name": "OnlineRecordTaskId",
           "required": true,
@@ -969,7 +969,7 @@
         {
           "disabled": false,
           "document": "客户的SdkAppId",
-          "example": "",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -978,7 +978,7 @@
         {
           "disabled": false,
           "document": "视频生成的白板参数，例如白板宽高等。\n\n此参数与开始录制接口提供的Whiteboard参数互斥，在本接口与开始录制接口都提供了Whiteboard参数时，优先使用本接口指定的Whiteboard参数进行视频生成，否则使用开始录制接口提供的Whiteboard参数进行视频生成。",
-          "example": "",
+          "example": "1280*960",
           "member": "Whiteboard",
           "name": "Whiteboard",
           "required": false,
@@ -987,7 +987,7 @@
         {
           "disabled": false,
           "document": "视频拼接参数\n\n此参数与开始录制接口提供的Concat参数互斥，在本接口与开始录制接口都提供了Concat参数时，优先使用本接口指定的Concat参数进行视频拼接，否则使用开始录制接口提供的Concat参数进行视频拼接。",
-          "example": "",
+          "example": "否",
           "member": "Concat",
           "name": "Concat",
           "required": false,
@@ -996,7 +996,7 @@
         {
           "disabled": false,
           "document": "视频生成混流参数\n\n此参数与开始录制接口提供的MixStream参数互斥，在本接口与开始录制接口都提供了MixStream参数时，优先使用本接口指定的MixStream参数进行视频混流，否则使用开始录制接口提供的MixStream参数进行视频拼混流。",
-          "example": "",
+          "example": "否",
           "member": "MixStream",
           "name": "MixStream",
           "required": false,
@@ -1005,7 +1005,7 @@
         {
           "disabled": false,
           "document": "视频生成控制参数，用于更精细地指定需要生成哪些流，某一路流是否禁用音频，是否只录制小画面等\n\n此参数与开始录制接口提供的RecordControl参数互斥，在本接口与开始录制接口都提供了RecordControl参数时，优先使用本接口指定的RecordControl参数进行视频生成控制，否则使用开始录制接口提供的RecordControl参数进行视频拼生成控制。",
-          "example": "",
+          "example": "否",
           "member": "RecordControl",
           "name": "RecordControl",
           "required": false,
@@ -1014,7 +1014,7 @@
         {
           "disabled": false,
           "document": "内部参数",
-          "example": "",
+          "example": "'''",
           "member": "string",
           "name": "ExtraData",
           "required": false,
@@ -1029,9 +1029,10 @@
         {
           "disabled": false,
           "document": "视频生成的任务Id",
-          "example": "",
+          "example": "bj0mt2l23osdj300hl30",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1797,7 +1798,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "",
+          "example": "2019-10-01 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
           "required": true,
@@ -1806,7 +1807,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "",
+          "example": "2019-12-31 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -2311,7 +2312,7 @@
           "example": "无",
           "member": "RoomUsageDataItem",
           "name": "Usages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2321,7 +2322,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2676,7 +2677,7 @@
         {
           "disabled": false,
           "document": "统计时间段的开始时间",
-          "example": "",
+          "example": "2019-10-01 00:00:00",
           "member": "datetime",
           "name": "BeginTime",
           "required": true,
@@ -2685,7 +2686,7 @@
         {
           "disabled": false,
           "document": "统计时间段的结束时间",
-          "example": "",
+          "example": "2019-12-31 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -2694,7 +2695,7 @@
         {
           "disabled": false,
           "document": "需要获取用量的子产品列表",
-          "example": "",
+          "example": "sp_tiw_ric",
           "member": "string",
           "name": "SubProducts",
           "required": true,
@@ -2703,7 +2704,7 @@
         {
           "disabled": false,
           "document": "true: 返回加权后的数据\nfalse: 返回原始数据",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "IsWeighted",
           "required": false,
@@ -3715,7 +3716,7 @@
         {
           "disabled": false,
           "document": "客户的SdkAppId",
-          "example": "",
+          "example": "1400000001",
           "member": "int64",
           "name": "SdkAppId",
           "required": true,
@@ -3724,7 +3725,7 @@
         {
           "disabled": false,
           "document": "需要查询的任务类型\nrecording: 实时录制\ntranscode: 文档转码",
-          "example": "",
+          "example": "recording",
           "member": "string",
           "name": "TaskType",
           "required": true,
@@ -3733,7 +3734,7 @@
         {
           "disabled": false,
           "document": "COS存储桶名字",
-          "example": "",
+          "example": "test-120000001",
           "member": "string",
           "name": "BucketName",
           "required": true,
@@ -3742,7 +3743,7 @@
         {
           "disabled": false,
           "document": "COS存储桶地域",
-          "example": "",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketLocation",
           "required": true,
@@ -3751,7 +3752,7 @@
         {
           "disabled": false,
           "document": "存储桶里资源前缀",
-          "example": "",
+          "example": "doc",
           "member": "string",
           "name": "BucketPrefix",
           "required": true,
@@ -3760,7 +3761,7 @@
         {
           "disabled": false,
           "document": "返回Url域名",
-          "example": "",
+          "example": "bucket.cos.com",
           "member": "string",
           "name": "ResultDomain",
           "required": true,
@@ -4949,8 +4950,8 @@
         },
         {
           "disabled": false,
-          "document": "需要录制的白板房间号，取值范围: (1, 4294967295)。\n\n1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为1234，则IM群组ID为\"1234\"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。\n2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。",
-          "example": "12345",
+          "document": "需要录制的白板房间号，取值范围: (1, 4294967295)。\n\n1. 在没有指定`GroupId`的情况下，实时录制默认以`RoomId`的字符串表达形式作为同步白板信令的IM群组ID（比如`RoomId`为12358，则IM群组ID为\"12358\"），并加群进行信令同步，请在开始录制前确保相应IM群组已创建完成，否则会导致录制失败。\n2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为TRTC房间号进房拉流进行录制。",
+          "example": "12358",
           "member": "int64",
           "name": "RoomId",
           "required": true,
@@ -4959,7 +4960,7 @@
         {
           "disabled": false,
           "document": "用于录制服务进房的用户ID，最大长度不能大于60个字节，格式为`tic_record_user_${RoomId}_${Random}`，其中 `${RoomId} `与录制房间号对应，`${Random}`为一个随机字符串。\n该ID必须是一个单独的未在SDK中使用的ID，录制服务使用这个用户ID进入房间进行音视频与白板录制，若该ID和SDK中使用的ID重复，会导致SDK和录制服务互踢，影响正常录制。",
-          "example": "tic_record_user_880528_1258",
+          "example": "tic_record_user_12358_1258",
           "member": "string",
           "name": "RecordUserId",
           "required": true,
@@ -4977,7 +4978,7 @@
         {
           "disabled": false,
           "document": "白板进行信令同步的 IM 群组 ID。\n在没有指定`GroupId`的情况下，实时录制服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。\n在指定了`GroupId`的情况下，实时录制将优先使用`GroupId`作为同步白板信令的群组ID。请在开始录制前确保相应的IM群组已创建完成，否则会导致录制失败。",
-          "example": "12345",
+          "example": "12358",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -5049,7 +5050,7 @@
         {
           "disabled": false,
           "document": "聊天群组ID，此字段仅适用于`视频生成模式`\n\n在`视频生成模式`下，默认会记录白板群组内的非白板信令消息，如果指定了`ChatGroupId`，则会记录指定群ID的聊天消息。",
-          "example": "12345",
+          "example": "12358",
           "member": "string",
           "name": "ChatGroupId",
           "required": false,
@@ -5076,7 +5077,7 @@
         {
           "disabled": false,
           "document": "TRTC数字类型房间号，取值范围: (1, 4294967295)。\n\n在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为实时录制拉TRTC流的TRTC房间号。\n\n当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。",
-          "example": "12345",
+          "example": "12358",
           "member": "int64",
           "name": "TRTCRoomId",
           "required": false,
@@ -5131,7 +5132,7 @@
         {
           "disabled": false,
           "document": "需要推流的白板房间号，取值范围: (1, 4294967295)。\n\n1. 在没有指定`GroupId`的情况下，白板推流默认以`RoomId`的字符串表达形式作为IM群组ID（比如RoomId为1234，则IM群组ID为\"1234\"），并加群进行信令同步，请在开始推流前确保相应IM群组已创建完成，否则会导致推流失败。\n2. 在没有指定`TRTCRoomId`和`TRTCRoomIdStr`的情况下，默认会以`RoomId`作为白板流进行推流的TRTC房间号。",
-          "example": "12345",
+          "example": "1268",
           "member": "int64",
           "name": "RoomId",
           "required": true,
@@ -5139,8 +5140,8 @@
         },
         {
           "disabled": false,
-          "document": "用于白板推流服务进入白板房间的用户ID。在没有额外指定`IMAuthParam`和`TRTCAuthParam`的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该用户ID必须是一个单独的未同时在其他地方使用的用户ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该用户ID和其他地方同时在使用的用户ID重复，会导致白板推流服务与其他使用场景帐号互踢，影响正常推流。",
-          "example": "tic_push_12345_xxx",
+          "document": "用于白板推流服务进入白板房间的用户ID。在没有额外指定`IMAuthParam`和`TRTCAuthParam`的情况下，这个用户ID同时会用于IM登录、IM加群、TRTC进房推流等操作。\n用户ID最大长度不能大于60个字节，该用户ID必须是一个单独的未同时在其他地方使用的用户ID，白板推流服务使用这个用户ID进入房间进行白板音视频推流，若该用户ID和其他地方同时在使用的用户ID重复，会导致白板推流服务与其他使用场景账号互踢，影响正常推流。",
+          "example": "tic_push_1268_xxx",
           "member": "string",
           "name": "PushUserId",
           "required": true,
@@ -5266,7 +5267,7 @@
         {
           "disabled": false,
           "document": "TRTC数字类型房间号，取值范围: (1, 4294967295)。\n\n在同时指定了`RoomId`与`TRTCRoomId`的情况下，优先使用`TRTCRoomId`作为白板流进行推流的TRTC房间号。\n\n当指定了`TRTCRoomIdStr`的情况下，此字段将被忽略。",
-          "example": "12345",
+          "example": "1368",
           "member": "int64",
           "name": "TRTCRoomId",
           "required": false,
@@ -5311,7 +5312,7 @@
         {
           "disabled": false,
           "document": "白板进行信令同步的 IM 群组 ID。\n在没有指定`GroupId`的情况下，白板推流服务将使用 `RoomId` 的字符串形式作为同步白板信令的IM群组ID。\n在指定了`GroupId`的情况下，白板推流将优先`GroupId`作为同步白板信令的群组ID。请在开始推流前确保指定的IM群组已创建完成，否则会导致推流失败。",
-          "example": "12345",
+          "example": "1368",
           "member": "string",
           "name": "GroupId",
           "required": false,

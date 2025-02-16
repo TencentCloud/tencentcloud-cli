@@ -1,32 +1,32 @@
 {
   "actions": {
     "DescribeDomainInfo": {
-      "document": "提供域名相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+      "document": "老接口，已经废弃\n\n提供域名相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
       "input": "DescribeDomainInfoRequest",
       "name": "查询域名信誉",
       "output": "DescribeDomainInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeFileInfo": {
-      "document": "提供文件相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+      "document": "老接口，已经废弃\n\n提供文件相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
       "input": "DescribeFileInfoRequest",
       "name": "查询文件信誉",
       "output": "DescribeFileInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeIpInfo": {
-      "document": "提供IP相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
+      "document": "老接口，已经废弃\n\n提供IP相关的基础信息以及与攻击事件（团伙、家族）、恶意文件等相关联信息。",
       "input": "DescribeIpInfoRequest",
       "name": "查询IP信誉",
       "output": "DescribeIpInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeThreatInfo": {
-      "document": "提供IP和域名相关威胁情报信息查询，这些信息可以辅助检测失陷主机、帮助SIEM/SOC等系统做研判决策、帮助运营团队对设备报警的编排处理。",
+      "document": "老接口，已经废弃\n\n提供IP和域名相关威胁情报信息查询，这些信息可以辅助检测失陷主机、帮助SIEM/SOC等系统做研判决策、帮助运营团队对设备报警的编排处理。",
       "input": "DescribeThreatInfoRequest",
       "name": "查询威胁情报",
       "output": "DescribeThreatInfoResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {
