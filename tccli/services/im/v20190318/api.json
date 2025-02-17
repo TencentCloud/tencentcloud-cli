@@ -91,53 +91,53 @@
         },
         {
           "disabled": false,
-          "document": "tpns应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tpns应用id",
           "example": "1500001",
           "member": "uint64",
           "name": "AccessId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "secret key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "secret key",
           "example": "0f17b7f09d7d6dcc05b37dc7c4330000",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "15 - android, 16 - ios, 17 - mac\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "15 - android, 16 - ios, 17 - mac",
           "example": "15",
           "member": "uint64",
           "name": "Platform",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "access key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "access key",
           "example": "A9C21C5ODCVE",
           "member": "string",
           "name": "AccessKey",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址",
           "example": "https://api.tpns.tencent.com",
           "member": "string",
           "name": "ZoneUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

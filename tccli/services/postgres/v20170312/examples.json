@@ -46,6 +46,14 @@
         "title": "创建数据库超级账号"
       }
     ],
+    "CreateBackupPlan": [
+      {
+        "document": "创建一个名字为plan1的备份策略，每个月的1/2号的凌晨1点至2点进行数据备份，并且数据文件保留40天。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBackupPlan\n<公共请求参数>\n\n{\n    \"PlanName\": \"plan1\",\n    \"BackupPeriodType\": \"month\",\n    \"DBInstanceId\": \"postgres-kwk4tq23\",\n    \"MinBackupStartTime\": \"01:00:00\",\n    \"MaxBackupStartTime\": \"02:00:00\",\n    \"BackupPeriod\": [\n        \"1\",\n        \"2\"\n    ],\n    \"BaseBackupRetentionPeriod\": \"40\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\",\n        \"PlanId\": \"1111111\"\n    }\n}",
+        "title": "创建月度制备份策略。"
+      }
+    ],
     "CreateBaseBackup": [
       {
         "document": "手动创建实例数据备份。",
@@ -150,6 +158,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccount\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5cz25tr5\",\n    \"UserName\": \"asdfghjkl\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6a620-d337-4c7e-a4cc-8b7c082de489\"\n    }\n}",
         "title": "删除数据库账号"
+      }
+    ],
+    "DeleteBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupPlan\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-kwk4tq23\",\n    \"PlanId\": \"1111111\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a61e500-aa33-454c-9ec2-da2a368c39ab\"\n    }\n}",
+        "title": "删除备份策略"
       }
     ],
     "DeleteBaseBackup": [
@@ -372,6 +388,20 @@
         "title": "查询实例指定参数信息"
       }
     ],
+    "DescribeDBInstanceSSLConfig": [
+      {
+        "document": "查询结果显示实例SSL信息",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-hf8jo5pr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"25cc2555-14a2-454f-af08-6bd691315335\",\n        \"SSLEnabled\": true,\n        \"CAUrl\": \"http://testdownload.url\",\n        \"ConnectAddress\": \"10.0.0.4\"\n    }\n}",
+        "title": "实例SSL处于开启状态"
+      },
+      {
+        "document": "查询结果显示实例SSL关闭，无下载链接及保护地址信息",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-6bwgamo3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CAUrl\": \"\",\n        \"ConnectAddress\": \"\",\n        \"RequestId\": \"042e21a5-14b2-4b41-8dd4-4cf870ae10bf\",\n        \"SSLEnabled\": false\n    }\n}",
+        "title": "实例SSL处于关闭状态"
+      }
+    ],
     "DescribeDBInstanceSecurityGroups": [
       {
         "document": "查询实例安全组",
@@ -584,6 +614,26 @@
         "title": "慢日志列表查询示例"
       }
     ],
+    "DescribeTasks": [
+      {
+        "document": "查询最新1条任务记录",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"OrderBy\": \"StartTime\",\n    \"OrderByType\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": 1202345,\n                \"TaskType\": \"RestoreDatabase\",\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"StartTime\": \"2024-09-27 13:14:11\",\n                \"EndTime\": \"2024-09-27 13:18:11\",\n                \"Status\": \"Success\",\n                \"Progress\": 100,\n                \"TaskDetail\": {}\n            }\n        ],\n        \"RequestId\": \"3f164712-8746-464f-a490-3084a470000e\",\n        \"TotalCount\": 20\n    }\n}",
+        "title": "查询最新1条任务记录"
+      },
+      {
+        "document": "查询指定任务ID的任务",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"TaskId\": 120321,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7460a34c-2cf8-4d5c-9346-6977830da6e1\",\n        \"TaskSet\": [\n            {\n                \"DBInstanceId\": \"postgres-0e3hth5b\",\n                \"EndTime\": \"\",\n                \"Progress\": 0,\n                \"StartTime\": \"2024-09-27 16:06:02\",\n                \"Status\": \"Running\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"\",\n                    \"Input\": \"\",\n                    \"Output\": \"\"\n                },\n                \"TaskId\": 120321,\n                \"TaskType\": \"DestroyInstance\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定任务ID的任务"
+      },
+      {
+        "document": "分页查询指定实例的所有任务",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTasks\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-q6fj84vb\",\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"53872de1-b750-4aa4-b660-5a3627a44d34\",\n        \"TaskSet\": [\n            {\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"EndTime\": \"2024-09-27 13:18:11\",\n                \"Progress\": 100,\n                \"StartTime\": \"2024-09-27 13:14:11\",\n                \"Status\": \"Success\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"[{\\\"StepId\\\":1,\\\"StepName\\\":\\\"Pre-check\\\"},{\\\"StepId\\\":2,\\\"StepName\\\":\\\"Download Base Backup\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"download cos file success, cost time:12 s\\\"},{\\\"StepId\\\":3,\\\"StepName\\\":\\\"Download WAL Logs and Redo\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"specifyBackupSet type ,skip download wal log and redo step\\\"},{\\\"StepId\\\":4,\\\"StepName\\\":\\\"Execute Recovery\\\"},{\\\"StepId\\\":5,\\\"StepName\\\":\\\"Task Complete\\\"}]\",\n                    \"CurrentStep\": \"Task Complete\",\n                    \"Input\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"BackupSetTime\\\":\\\"2024-09-26 19:11:45\\\"}\",\n                    \"Output\": \"{\\\"BeforeRestoreObjects\\\":[\\\"postgres\\\"],\\\"AfterRestoreObjects\\\":[\\\"postgres_bak_1727414053\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"BackupSetTime\\\":\\\"2024-09-26 19:11:45\\\",\\\"Message\\\":\\\"success\\\"}\"\n                },\n                \"TaskId\": 120006,\n                \"TaskType\": \"RestoreDatabase\"\n            },\n            {\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"EndTime\": \"2024-09-27 13:13:31\",\n                \"Progress\": 100,\n                \"StartTime\": \"2024-09-27 13:09:15\",\n                \"Status\": \"Success\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"[{\\\"StepId\\\":1,\\\"StepName\\\":\\\"Pre-check\\\"},{\\\"StepId\\\":2,\\\"StepName\\\":\\\"Download Base Backup\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"download cos file success, cost time:11 s\\\"},{\\\"StepId\\\":3,\\\"StepName\\\":\\\"Download WAL Logs and Redo\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"specifyBackupSet type ,skip download wal log and redo step\\\"},{\\\"StepId\\\":4,\\\"StepName\\\":\\\"Execute Recovery\\\"},{\\\"StepId\\\":5,\\\"StepName\\\":\\\"Task Complete\\\"}]\",\n                    \"CurrentStep\": \"Task Complete\",\n                    \"Input\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"BackupSetTime\\\":\\\"2024-09-26T19:11:45+08:00\\\"}\",\n                    \"Output\": \"{\\\"BeforeRestoreObjects\\\":[\\\"postgres\\\"],\\\"AfterRestoreObjects\\\":[\\\"postgres_bak_1727413757\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"BackupSetTime\\\":\\\"2024-09-26T19:11:45+08:00\\\",\\\"Message\\\":\\\"success\\\"}\"\n                },\n                \"TaskId\": 120005,\n                \"TaskType\": \"RestoreDatabase\"\n            },\n            {\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"EndTime\": \"2024-09-27 12:35:58\",\n                \"Progress\": 100,\n                \"StartTime\": \"2024-09-27 12:31:50\",\n                \"Status\": \"Success\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"[{\\\"StepId\\\":1,\\\"StepName\\\":\\\"Pre-check\\\"},{\\\"StepId\\\":2,\\\"StepName\\\":\\\"Download Base Backup\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"download cos file success, cost time:1 s\\\"},{\\\"StepId\\\":3,\\\"StepName\\\":\\\"Download WAL Logs and Redo\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"specifyBackupSet type ,skip download wal log and redo step\\\"},{\\\"StepId\\\":4,\\\"StepName\\\":\\\"Execute Recovery\\\"},{\\\"StepId\\\":5,\\\"StepName\\\":\\\"Task Complete\\\"}]\",\n                    \"CurrentStep\": \"Task Complete\",\n                    \"Input\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\"}\",\n                    \"Output\": \"{\\\"BeforeRestoreObjects\\\":[\\\"postgres\\\"],\\\"AfterRestoreObjects\\\":[\\\"postgres_bak_1727411512\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"Message\\\":\\\"success\\\"}\"\n                },\n                \"TaskId\": 120004,\n                \"TaskType\": \"RestoreDatabase\"\n            },\n            {\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"EndTime\": \"2024-09-27 12:31:28\",\n                \"Progress\": 100,\n                \"StartTime\": \"2024-09-27 12:30:06\",\n                \"Status\": \"Success\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"[{\\\"StepId\\\":1,\\\"StepName\\\":\\\"Pre-check\\\"},{\\\"StepId\\\":2,\\\"StepName\\\":\\\"Download Base Backup\\\"},{\\\"StepId\\\":3,\\\"StepName\\\":\\\"Download WAL Logs and Redo\\\"},{\\\"StepId\\\":4,\\\"StepName\\\":\\\"Execute Recovery\\\"},{\\\"StepId\\\":5,\\\"StepName\\\":\\\"Task Complete\\\"}]\",\n                    \"CurrentStep\": \"Task Complete\",\n                    \"Input\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"timestamp\\\",\\\"RestoreTargetTime\\\":\\\"2024-09-26 15:20:14\\\"}\",\n                    \"Output\": \"{\\\"BeforeRestoreObjects\\\":[\\\"postgres\\\"],\\\"AfterRestoreObjects\\\":[\\\"postgres_bak_1727411408\\\"],\\\"RestoreType\\\":\\\"timestamp\\\",\\\"RestoreTargetTime\\\":\\\"2024-09-26 15:20:14\\\",\\\"Message\\\":\\\"success\\\"}\"\n                },\n                \"TaskId\": 120003,\n                \"TaskType\": \"RestoreDatabase\"\n            },\n            {\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"EndTime\": \"2024-09-27 12:29:04\",\n                \"Progress\": 100,\n                \"StartTime\": \"2024-09-27 12:24:29\",\n                \"Status\": \"Success\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"[{\\\"StepId\\\":1,\\\"StepName\\\":\\\"Pre-check\\\"},{\\\"StepId\\\":2,\\\"StepName\\\":\\\"Download Base Backup\\\"},{\\\"StepId\\\":3,\\\"StepName\\\":\\\"Download WAL Logs and Redo\\\"},{\\\"StepId\\\":4,\\\"StepName\\\":\\\"Execute Recovery\\\"},{\\\"StepId\\\":5,\\\"StepName\\\":\\\"Task Complete\\\"}]\",\n                    \"CurrentStep\": \"Task Complete\",\n                    \"Input\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"timestamp\\\",\\\"RestoreTargetTime\\\":\\\"2024-09-26 15:20:14\\\"}\",\n                    \"Output\": \"{\\\"BeforeRestoreObjects\\\":[\\\"postgres\\\"],\\\"AfterRestoreObjects\\\":[\\\"postgres_bak_1727411071\\\"],\\\"RestoreType\\\":\\\"timestamp\\\",\\\"RestoreTargetTime\\\":\\\"2024-09-26 15:20:14\\\",\\\"Message\\\":\\\"success\\\"}\"\n                },\n                \"TaskId\": 120002,\n                \"TaskType\": \"RestoreDatabase\"\n            },\n            {\n                \"DBInstanceId\": \"postgres-q6fj84vb\",\n                \"EndTime\": \"2024-09-27 11:32:50\",\n                \"Progress\": 100,\n                \"StartTime\": \"2024-09-27 11:29:03\",\n                \"Status\": \"Success\",\n                \"TaskDetail\": {\n                    \"AllSteps\": \"[{\\\"StepId\\\":1,\\\"StepName\\\":\\\"Pre-check\\\"},{\\\"StepId\\\":2,\\\"StepName\\\":\\\"Download Base Backup\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"download cos file success, cost time:1 s\\\"},{\\\"StepId\\\":3,\\\"StepName\\\":\\\"Download WAL Logs and Redo\\\",\\\"StepProcess\\\":100,\\\"StepMessage\\\":\\\"specifyBackupSet type ,skip download wal log and redo step\\\"},{\\\"StepId\\\":4,\\\"StepName\\\":\\\"Execute Recovery\\\"},{\\\"StepId\\\":5,\\\"StepName\\\":\\\"Task Complete\\\"}]\",\n                    \"CurrentStep\": \"Task Complete\",\n                    \"Input\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"BackupSetId\\\":\\\"17083520-3ce6-5b50-9c25-73ff3d4d80b7\\\"}\",\n                    \"Output\": \"{\\\"RestoreObjects\\\":[\\\"postgres\\\"],\\\"RestoreType\\\":\\\"specifyBackupSet\\\",\\\"BackupSetId\\\":\\\"17083520-3ce6-5b50-9c25-73ff3d4d80b7\\\",\\\"RestoreTargetTime\\\":\\\"1970-01-01 08:00:00\\\",\\\"Message\\\":\\\"success\\\"}\"\n                },\n                \"TaskId\": 120001,\n                \"TaskType\": \"RestoreDatabase\"\n            }\n        ],\n        \"TotalCount\": 6\n    }\n}",
+        "title": "查询指定实例的任务"
+      }
+    ],
     "DescribeZones": [
       {
         "document": "",
@@ -774,6 +824,20 @@
         "title": "ModifyDBInstanceReadOnlyGroup"
       }
     ],
+    "ModifyDBInstanceSSLConfig": [
+      {
+        "document": "关闭实例SSL",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5gevh7gr\",\n    \"SSLEnabled\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5878440a-028f-4fe4-8786-240665d0105e\",\n        \"TaskId\": 100015\n    }\n}",
+        "title": "关闭SSL"
+      },
+      {
+        "document": "开启实例SSL，并设置保护地址为实例内网地址",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSSLConfig\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-5gevh7gr\",\n    \"SSLEnabled\": true,\n    \"ConnectAddress\": \"10.6.0.4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e39921c1-2d50-4c55-8bca-8bdff0a387e8\",\n        \"TaskId\": 100016\n    }\n}",
+        "title": "开启SSL"
+      }
+    ],
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "修改安全组。",
@@ -826,6 +890,14 @@
         "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyParameterTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"497857b4-4676-5583-8359-b697fe5968d9\",\n    \"TemplateName\": \"test_template\",\n    \"TemplateDescription\": \"This template is used for testing environment\",\n    \"ModifyParamEntrySet\": [\n        {\n            \"Name\": \"max_wal_senders\",\n            \"ExpectedValue\": \"360\"\n        },\n        {\n            \"Name\": \"max_logical_replication_workers\",\n            \"ExpectedValue\": \"360\"\n        }\n    ],\n    \"DeleteParamSet\": [\n        \"wal_level\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ace8140-6b9e-4e81-a8ad-ef3f92b2aa90\"\n    }\n}",
         "title": "修改参数模板"
+      }
+    ],
+    "ModifyReadOnlyDBInstanceWeight": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReadOnlyDBInstanceWeight\n<公共请求参数>\n\n{\n    \"ReadOnlyGroupId\": \"\\\"pgrogp-test\\\"\",\n    \"DBInstanceId\": \"\\\"pgro-e0tfm161\\\"\",\n    \"Weight\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d43b2a9f-070c-480b-a0bb-7c210428cfe8\"\n    }\n}",
+        "title": "ModifyReadOnlyDBInstanceWeight"
       }
     ],
     "ModifyReadOnlyGroupConfig": [

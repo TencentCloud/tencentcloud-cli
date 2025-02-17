@@ -11,8 +11,7 @@ tccli iotexplorer CreateCloudStorageAIServiceTask --cli-unfold-argument  \
     --ServiceType Highlight \
     --StartTime 1710487888 \
     --EndTime 1710487898 \
-    --ChannelId 0 \
-    --Config {}
+    --ChannelId 0
 ```
 
 Output: 
@@ -39,7 +38,6 @@ tccli iotexplorer CreateCloudStorageAIServiceTask --cli-unfold-argument  \
     --StartTime 1710487888 \
     --EndTime 1710487898 \
     --ChannelId 0 \
-    --Config {} \
     --VideoURLs https://example.com/video.mp4
 ```
 

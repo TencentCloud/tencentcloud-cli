@@ -2619,7 +2619,7 @@
         {
           "disabled": false,
           "document": "任务Id，全局唯一",
-          "example": "“”",
+          "example": "8548111ce1611ef8bb45254006a8683",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -15553,7 +15553,7 @@
         {
           "disabled": false,
           "document": "下一次分页参数，第一次传空",
-          "example": "xx",
+          "example": "null",
           "member": "string",
           "name": "Context",
           "required": true,
@@ -15595,7 +15595,7 @@
         {
           "disabled": false,
           "document": "下一次分页参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Y29udGV4dC0xNjRiYzJlMy02OGM3LTQwNDctOTU1Ni0zYjkwMThkYTY3YWMxNzM4ODAyNzgxNDc4",
           "member": "string",
           "name": "Context",
           "output_required": true,
@@ -15625,7 +15625,7 @@
         {
           "disabled": false,
           "document": "日志url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "null",
           "member": "string",
           "name": "LogUrl",
           "output_required": true,
@@ -17343,7 +17343,7 @@
         {
           "disabled": false,
           "document": "创建者",
-          "example": "test",
+          "example": "1000****040",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -19734,20 +19734,20 @@
         {
           "disabled": false,
           "document": "shuffle写溢出到COS数据量，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ShuffleWriteBytesCos",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "shuffle写数据量，单位：byte\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "59174754650",
           "member": "int64",
           "name": "ShuffleWriteBytesTotal",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -21052,7 +21052,7 @@
         {
           "disabled": false,
           "document": "T-ICEBERG表的主键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "id",
           "member": "string",
           "name": "PrimaryKeys",
           "output_required": false,
@@ -23108,7 +23108,7 @@
         {
           "disabled": false,
           "document": "子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "subnet-e4****xj",
           "member": "string",
           "name": "CidrId",
           "output_required": true,
@@ -23136,7 +23136,7 @@
         {
           "disabled": false,
           "document": "vpc Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "vpc-f37xxxx",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
@@ -23147,7 +23147,7 @@
         {
           "disabled": false,
           "document": "vpc子网\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "10.0.0.1/22",
+          "example": "10.*.*.*/*",
           "member": "string",
           "name": "VpcCidrBlock",
           "output_required": true,
@@ -23158,7 +23158,7 @@
         {
           "disabled": false,
           "document": "规则Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4549",
           "member": "int64",
           "name": "RuleId",
           "output_required": false,
@@ -23169,7 +23169,7 @@
         {
           "disabled": false,
           "document": "权限组Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "ag-cj91234e",
           "member": "string",
           "name": "AccessGroupId",
           "output_required": false,

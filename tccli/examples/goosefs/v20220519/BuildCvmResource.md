@@ -6,11 +6,13 @@ Input:
 
 ```
 tccli goosefs BuildCvmResource --cli-unfold-argument  \
+    --CvmType S6.LARGE16 \
     --OwnerUin 3472213910 \
-    --CvmType S5.2XLARGE16 \
     --CvmCount 3 \
     --BuildZone ap-nanjing-1 \
-    --NodeType 2
+    --NodeType 2 \
+    --Model C60 \
+    --FileSystemId 
 ```
 
 Output: 

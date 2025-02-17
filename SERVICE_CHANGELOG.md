@@ -1,29 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云硬盘(cbs) 版本：2017-03-12
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 42 次发布
+### 第 128 次发布
 
-发布时间：2025-02-17 01:09:38
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateDisks](http://document.tencentcloudapi.woa.com/document/product/362/16312)
-
-	* 新增入参：KmsKeyId
-
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 131 次发布
-
-发布时间：2025-02-17 01:10:02
+发布时间：2025-02-18 01:15:11
 
 本次发布包含了以下内容：
 
@@ -31,20 +12,41 @@
 
 修改数据结构：
 
-* [AutoStrategy](http://document.tencentcloudapi.woa.com/document/product/236/15878#AutoStrategy)
+* [SparkMonitorMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkMonitorMetrics)
 
-	* 新增成员：ExpandSecondPeriod, ShrinkSecondPeriod
-
-	* <font color="#dd0000">**修改成员**：</font>ExpandPeriod, ShrinkPeriod
+	* <font color="#dd0000">**修改成员**：</font>ShuffleWriteBytesCos, ShuffleWriteBytesTotal
 
 
 
 
-## 知识引擎原子能力(lkeap) 版本：2024-05-22
+## 游戏多媒体引擎(gme) 版本：2018-07-11
 
-### 第 22 次发布
+### 第 25 次发布
 
-发布时间：2025-02-17 01:20:51
+发布时间：2025-02-18 01:18:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateAppResp](http://document.tencentcloudapi.woa.com/document/product/607/35375#CreateAppResp)
+
+	* <font color="#dd0000">**修改成员**：</font>AsrConf
+
+* [RoomUser](http://document.tencentcloudapi.woa.com/document/product/607/35375#RoomUser)
+
+	* <font color="#dd0000">**修改成员**：</font>StrUins
+
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 14 次发布
+
+发布时间：2025-02-18 01:19:05
 
 本次发布包含了以下内容：
 
@@ -52,22 +54,65 @@
 
 修改接口：
 
-* [ChatCompletions](http://document.tencentcloudapi.woa.com/document/product/1764/83973)
+* [BuildCvmResource](http://document.tencentcloudapi.woa.com/document/product/1716/85110)
 
-	* 新增入参：EnableSearch
+	* 新增入参：Model, FileSystemId
 
-* [UploadDocRealtime](http://document.tencentcloudapi.woa.com/document/product/1764/84927)
+	* <font color="#dd0000">**修改入参**：</font>CvmType
 
-	* 新增入参：KnowledgeBaseId, FileName, FileType, FileUrl, ExpireTime
 
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 67 次发布
+
+发布时间：2025-02-18 01:21:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TotalPrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#TotalPrice)
+
+	* <font color="#dd0000">**修改成员**：</font>OriginalPrice, DiscountPrice
+
+
+
+
+## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
+
+### 第 35 次发布
+
+发布时间：2025-02-18 01:28:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/85763)
+* [DeleteBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/85762)
+* [DescribeDBInstanceSSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/85761)
+* [DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/409/85766)
+* [ModifyDBInstanceSSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/85760)
+* [ModifyReadOnlyDBInstanceWeight](http://document.tencentcloudapi.woa.com/document/product/409/85764)
+
+新增数据结构：
+
+* [TaskDetail](http://document.tencentcloudapi.woa.com/document/product/409/16778#TaskDetail)
+* [TaskSet](http://document.tencentcloudapi.woa.com/document/product/409/16778#TaskSet)
 
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
-### 第 78 次发布
+### 第 79 次发布
 
-发布时间：2025-02-17 01:24:27
+发布时间：2025-02-18 01:30:47
 
 本次发布包含了以下内容：
 
@@ -75,39 +120,42 @@
 
 修改接口：
 
-* [CertificateInfoSubmit](http://document.tencentcloudapi.woa.com/document/product/400/85744)
+* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
 
-	* <font color="#dd0000">**修改入参**：</font>OrgIdType, OrgIdNumber, AdminIdType, AdminIdNumber, TechIdType, TechIdNumber
 
-* [DescribeHostApiGatewayInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77806)
+修改数据结构：
 
-* [DescribeHostCdnInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77805)
+* [BatchDeleteFail](http://document.tencentcloudapi.woa.com/document/product/400/41679#BatchDeleteFail)
 
-* [DescribeHostLighthouseInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77799)
-
-* [DescribeHostTeoInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77797)
-
-	* <font color="#dd0000">**修改入参**：</font>ResourceType
+	* <font color="#dd0000">**修改成员**：</font>CertId, Msg
 
 
 
 
-## 威胁情报云查服务(tics) 版本：2018-11-15
+## 边缘安全加速平台(teo) 版本：2022-09-01
 
-### 第 2 次发布
+### 第 48 次发布
 
-发布时间：2025-02-17 01:30:18
+发布时间：2025-02-18 01:33:29
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-<font color="#dd0000">**预下线接口**：</font>
+修改数据结构：
 
-* DescribeDomainInfo
-* DescribeFileInfo
-* DescribeIpInfo
-* DescribeThreatInfo
+* [OriginDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginDetail)
+
+	* 新增成员：VodOriginScope, VodBucketId
+
+* [OriginInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginInfo)
+
+	* 新增成员：VodOriginScope, VodBucketId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
 
 
 
@@ -46588,6 +46636,21 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 128 次发布
+
+发布时间：2025-02-18 01:15:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SparkMonitorMetrics](http://document.tencentcloudapi.woa.com/document/product/1342/53778#SparkMonitorMetrics)
+
+	* <font color="#dd0000">**修改成员**：</font>ShuffleWriteBytesCos, ShuffleWriteBytesTotal
+
+
 ### 第 127 次发布
 
 发布时间：2025-01-22 01:17:39
@@ -66075,6 +66138,25 @@
 
 ## 游戏多媒体引擎(gme) 版本：2018-07-11
 
+### 第 25 次发布
+
+发布时间：2025-02-18 01:18:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateAppResp](http://document.tencentcloudapi.woa.com/document/product/607/35375#CreateAppResp)
+
+	* <font color="#dd0000">**修改成员**：</font>AsrConf
+
+* [RoomUser](http://document.tencentcloudapi.woa.com/document/product/607/35375#RoomUser)
+
+	* <font color="#dd0000">**修改成员**：</font>StrUins
+
+
 ### 第 24 次发布
 
 发布时间：2025-02-13 01:18:15
@@ -66559,6 +66641,23 @@
 
 
 ## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 14 次发布
+
+发布时间：2025-02-18 01:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BuildCvmResource](http://document.tencentcloudapi.woa.com/document/product/1716/85110)
+
+	* 新增入参：Model, FileSystemId
+
+	* <font color="#dd0000">**修改入参**：</font>CvmType
+
 
 ### 第 13 次发布
 
@@ -74251,6 +74350,21 @@
 
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 67 次发布
+
+发布时间：2025-02-18 01:21:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TotalPrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#TotalPrice)
+
+	* <font color="#dd0000">**修改成员**：</font>OriginalPrice, DiscountPrice
+
 
 ### 第 66 次发布
 
@@ -91654,6 +91768,28 @@
 
 ## 云数据库 PostgreSQL(postgres) 版本：2017-03-12
 
+### 第 35 次发布
+
+发布时间：2025-02-18 01:28:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/85763)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteBackupPlan](http://document.tencentcloudapi.woa.com/document/product/409/85762)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeDBInstanceSSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/85761)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeTasks](http://document.tencentcloudapi.woa.com/document/product/409/85766)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyDBInstanceSSLConfig](http://document.tencentcloudapi.woa.com/document/product/409/85760)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyReadOnlyDBInstanceWeight](http://document.tencentcloudapi.woa.com/document/product/409/85764)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[TaskDetail](http://document.tencentcloudapi.woa.com/document/product/409/16778#TaskDetail)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[TaskDetail](http://document.tencentcloudapi.woa.com/document/product/409/16778#TaskDetail))
+* [[TaskSet](http://document.tencentcloudapi.woa.com/document/product/409/16778#TaskSet)](http://document.tencentcloudapi.woa.com/document/product/409/16778#[TaskSet](http://document.tencentcloudapi.woa.com/document/product/409/16778#TaskSet))
+
 ### 第 34 次发布
 
 发布时间：2025-01-20 01:24:08
@@ -99842,6 +99978,26 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 79 次发布
+
+发布时间：2025-02-18 01:30:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeManagerDetail](http://document.tencentcloudapi.woa.com/document/product/400/52673)
+
+
+修改数据结构：
+
+* [BatchDeleteFail](http://document.tencentcloudapi.woa.com/document/product/400/41679#BatchDeleteFail)
+
+	* <font color="#dd0000">**修改成员**：</font>CertId, Msg
+
 
 ### 第 78 次发布
 
@@ -112161,6 +112317,25 @@
 
 
 ## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 48 次发布
+
+发布时间：2025-02-18 01:33:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OriginDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginDetail)
+
+	* 新增成员：VodOriginScope, VodBucketId
+
+* [OriginInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginInfo)
+
+	* 新增成员：VodOriginScope, VodBucketId
+
 
 ### 第 47 次发布
 

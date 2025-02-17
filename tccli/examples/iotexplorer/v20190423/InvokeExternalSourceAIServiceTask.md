@@ -8,8 +8,7 @@ Input:
 tccli iotexplorer InvokeExternalSourceAIServiceTask --cli-unfold-argument  \
     --ProductId TQBDY6RPI9 \
     --ServiceType Highlight \
-    --VideoURLs https://example.com/video.mp4 \
-    --Config {}
+    --VideoURLs https://example.com/video.mp4
 ```
 
 Output: 
@@ -49,8 +48,7 @@ Input:
 tccli iotexplorer InvokeExternalSourceAIServiceTask --cli-unfold-argument  \
     --ProductId TQBDY6RPI9 \
     --ServiceType Highlight \
-    --VideoURLs https://example.com/video.mp4 \
-    --Config {}
+    --VideoURLs https://example.com/video.mp4
 ```
 
 Output: 

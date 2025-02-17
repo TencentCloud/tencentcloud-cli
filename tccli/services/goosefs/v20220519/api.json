@@ -461,15 +461,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "cvm 的机型",
-          "example": "S6.2XLARGE128",
-          "member": "string",
-          "name": "CvmType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "购买数量",
           "example": "10",
           "member": "uint64",
@@ -484,6 +475,15 @@
           "member": "string",
           "name": "BuildZone",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cvm类型",
+          "example": "S6.LARGE16",
+          "member": "string",
+          "name": "CvmType",
+          "required": false,
           "type": "string"
         },
         {
@@ -503,6 +503,24 @@
           "name": "NodeType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "goosefsx的类型",
+          "example": "C60",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统ID",
+          "example": "x-c60-a1b2c3d4",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -51,7 +51,7 @@
     "BuildCvmResource": [
       {
         "document": "创建预留资源",
-        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildCvmResource\n<公共请求参数>\n\n{\n    \"OwnerUin\": 3472213910,\n    \"CvmType\": \"S5.2XLARGE16\",\n    \"CvmCount\": 3,\n    \"BuildZone\": \"ap-nanjing-1\",\n    \"NodeType\": 2\n}",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BuildCvmResource\n<公共请求参数>\n\n{\n    \"CvmType\": \"S6.LARGE16\",\n    \"OwnerUin\": 3472213910,\n    \"CvmCount\": 3,\n    \"BuildZone\": \"ap-nanjing-1\",\n    \"NodeType\": 2,\n    \"Model\": \"C60\",\n    \"FileSystemId\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85b8b7a3-5ca5-40e6-b051-dcd5a836a1ed\"\n    }\n}",
         "title": "创建预留资源"
       }

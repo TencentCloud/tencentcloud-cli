@@ -29,7 +29,7 @@ Output:
                 "ModifyTime": 0,
                 "Status": 0,
                 "Register": false,
-                "Relation": "123456",
+                "Relation": "foobar@tencent.com",
                 "RelationName": "foobar"
             }
         ]

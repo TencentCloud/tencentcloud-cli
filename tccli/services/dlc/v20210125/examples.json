@@ -1065,8 +1065,8 @@
     "ListTaskJobLogDetail": [
       {
         "document": "查询spark 作业任务的日志详情",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTaskJobLogDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"StartTime\": 0,\n    \"EndTime\": 0,\n    \"Limit\": 0,\n    \"Context\": \"abc\",\n    \"Asc\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"BatchId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Context\": \"abc\",\n        \"ListOver\": true,\n        \"Results\": [\n            {\n                \"Time\": 0,\n                \"TopicId\": \"abc\",\n                \"TopicName\": \"abc\",\n                \"LogJson\": \"abc\",\n                \"PkgLogId\": \"abc\"\n            }\n        ],\n        \"LogUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTaskJobLogDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"c88e7e08-71fc-4a74-8164-4c4ff4605e53\",\n    \"StartTime\": 1735991656000,\n    \"EndTime\": 1736510056000,\n    \"Limit\": 1000,\n    \"Context\": \"\",\n    \"Asc\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"spark-job-log-name\",\n            \"Values\": [\n                \"kyuubi-spark-batch-f2ee3489-ab52-4ade-bf88-416142bc2bc0-driver\"\n            ]\n        }\n    ],\n    \"BatchId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"\",\n        \"ListOver\": true,\n        \"Results\": [\n            {\n                \"Time\": 0,\n                \"TopicId\": \"7f0ea2ee-*-*-*-*\",\n                \"TopicName\": \"eks-cls\",\n                \"LogJson\": \"25/01/10 19:15:52 INFO Thread-1 BufferPool: Begin to release the buffers.\",\n                \"PkgLogId\": \"1835035\"\n            }\n        ],\n        \"LogUrl\": \"\",\n        \"RequestId\": \"ead726f9-1efa-4051-b082-7aec472a580f\"\n    }\n}",
         "title": "查询日志详情"
       }
     ],
