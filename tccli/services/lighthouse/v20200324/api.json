@@ -4442,7 +4442,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -4451,7 +4451,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID。",
+          "document": "容器ID。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
           "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
           "member": "string",
           "name": "ContainerId",
@@ -4470,6 +4470,7 @@
           "example": "无",
           "member": "DockerContainerConfiguration",
           "name": "ContainerConfiguration",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9296,13 +9297,13 @@
         },
         {
           "disabled": false,
-          "document": "密钥对关联的实例 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对关联的实例 ID 列表。",
           "example": "[\"lhins-afge14se\"]",
           "member": "string",
           "name": "AssociatedInstanceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9465,13 +9466,13 @@
         },
         {
           "disabled": false,
-          "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空",
           "example": "不支持升级至该套餐。",
           "member": "string",
           "name": "NotSupportModifyMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11073,43 +11074,43 @@
         },
         {
           "disabled": false,
-          "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。",
           "example": "RollbackInstanceSnapshot",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。",
           "example": "96aee6e3-172c-4f0f-be7c-fc46b9865763",
           "member": "string",
           "name": "LatestOperationRequestId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的创建时间。",
           "example": "2020-09-03T06:51:23Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

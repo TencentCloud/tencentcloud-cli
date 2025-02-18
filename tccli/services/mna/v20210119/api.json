@@ -84,6 +84,20 @@
       "output": "DescribeQosResponse",
       "status": "deprecated"
     },
+    "DownloadActiveDeviceCount": {
+      "document": "下载活跃设备数量统计",
+      "input": "DownloadActiveDeviceCountRequest",
+      "name": "下载活跃设备数量统计",
+      "output": "DownloadActiveDeviceCountResponse",
+      "status": "online"
+    },
+    "GetActiveDeviceCount": {
+      "document": "活跃设备数量统计",
+      "input": "GetActiveDeviceCountRequest",
+      "name": "活跃设备数量统计",
+      "output": "GetActiveDeviceCountResponse",
+      "status": "online"
+    },
     "GetDevice": {
       "document": "通过指定设备的ID查找设备详细信息",
       "input": "GetDeviceRequest",
@@ -458,6 +472,32 @@
         }
       ],
       "type": "object"
+    },
+    "ActiveDeviceList": {
+      "document": "激活设备数统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "2024-11-20",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AddDeviceRequest": {
       "document": "AddDevice请求参数结构体",
@@ -1621,6 +1661,79 @@
       ],
       "usage": "out"
     },
+    "DownloadActiveDeviceCountRequest": {
+      "document": "DownloadActiveDeviceCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询粒度。0:day, 1:week, 2:month, 不传默认为day",
+          "example": "0",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。单位秒",
+          "example": "1732176361",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。单位秒",
+          "example": "1732176361",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备组, 不传查询全部",
+          "example": "group1",
+          "member": "string",
+          "name": "DevGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadActiveDeviceCountResponse": {
+      "document": "DownloadActiveDeviceCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "URL地址",
+          "example": "http://cos.com",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ExpectedThreshold": {
       "document": "用户期望门限",
       "members": [
@@ -1858,6 +1971,139 @@
         }
       ],
       "usage": "out"
+    },
+    "GetActiveDeviceCountRequest": {
+      "document": "GetActiveDeviceCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询粒度。0:day, 1:week, 2:month, 不传默认为day",
+          "example": "0",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。单位秒",
+          "example": "1732176361",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。单位秒",
+          "example": "1732176361",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备组, 不传查询全部",
+          "example": "group1",
+          "member": "string",
+          "name": "DevGroup",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetActiveDeviceCountResponse": {
+      "document": "GetActiveDeviceCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "激活设备统计",
+          "example": "[                     {                         \"count\": 1,                         \"time\": \"2024-11-20\"                     }                 ]",
+          "member": "ActiveDeviceList",
+          "name": "ActiveDeviceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询粒度，0:day, 1:week, 2:month, 不传默认为day",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2024-11-20",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2024-11-20",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备组",
+          "example": "group1",
+          "member": "string",
+          "name": "DevGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权",
+          "example": "1",
+          "member": "string",
+          "name": "LicenseType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "251198806",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetDevicePayModeRequest": {
       "document": "GetDevicePayMode请求参数结构体",

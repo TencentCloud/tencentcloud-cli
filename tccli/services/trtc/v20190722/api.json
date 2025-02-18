@@ -6906,33 +6906,33 @@
         },
         {
           "disabled": false,
-          "document": "房间人数，用户重复进入同一个房间为1次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间人数，用户重复进入同一个房间为1次",
           "example": "108",
           "member": "uint64",
           "name": "UserNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间人次，用户每次进入房间为一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间人次，用户每次进入房间为一次",
           "example": "10086",
           "member": "uint64",
           "name": "UserCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "sdkappid下一天内的房间数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "sdkappid下一天内的房间数",
           "example": "65",
           "member": "uint64",
           "name": "RoomNumbers",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

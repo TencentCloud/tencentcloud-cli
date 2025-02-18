@@ -7651,7 +7651,7 @@
           "example": "12356742345",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7661,7 +7661,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7671,7 +7671,7 @@
           "example": "2021-09-28 12:10:10",
           "member": "string",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7681,8 +7681,18 @@
           "example": "1",
           "member": "int64",
           "name": "CheckStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CodeId，用于创建/修改模板时的参数传入",
+          "example": "2322",
+          "member": "string",
+          "name": "CodeId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

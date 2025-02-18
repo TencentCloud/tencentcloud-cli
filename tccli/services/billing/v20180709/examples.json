@@ -16,14 +16,6 @@
         "title": "批量设置分账标签"
       }
     ],
-    "CreateSavingPlanOrder": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSpOrder\n<公共请求参数>\n\n{\n    \"RegionId\": 47,\n    \"ZoneId\": 470004,\n    \"PrePayType\": \"1\",\n    \"SpecifyEffectTime\": \"2023-10-21 00:00:00\",\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"y\",\n    \"CommodityCode\": \"svp_common_CYq7cGNk3FaV\",\n    \"PromiseUseAmount\": 10000,\n    \"ClientToken\": \"sp-856f5555-8064-43e9-8b7e-d04c5a9d6a9a,856f5555806443e98b7ed04c5a9d6a9a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BigDealId\": \"20231020400000764159521\",\n        \"RequestId\": \"7525ef6b-ac63-4fa6-9bd4-d8c3c8b96220\"\n    }\n}",
-        "title": "结算计划下单"
-      }
-    ],
     "DeleteAllocationTag": [
       {
         "document": "批量取消设置分账标签",
@@ -460,6 +452,14 @@
         "title": "TCCC-查询tccc_valueadded_tts按天汇总用量"
       }
     ],
+    "DescribeMeasureDetailListCompress": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMeasureDetailListCompress\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_cdn\",\n    \"DosageType\": \"request_cdn_https\",\n    \"DosageVersion\": \"1\",\n    \"StartTime\": \"2024-09-24 00:00:00\",\n    \"EndTime\": \"2024-12-24 23:59:59\",\n    \"DetailName\": \"domain1Min\",\n    \"PageSize\": 100,\n    \"PageToken\": \"\",\n    \"Attribute\": [\n        {\n            \"Name\": \"area\",\n            \"Value\": \"1000\"\n        },\n        {\n            \"Name\": \"realm\",\n            \"Value\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"H4sIAAAAAAAAAKtWCkhMTw3Jz07NU7JSUtJRckktSczM8cksLlGyio6tBQDcDY01IAAAAA==\",\n        \"RequestId\": \"a0438d20-cd99-4af8-8872-68364616a789\"\n    }\n}",
+        "title": "p_cdn查询明细流水_结果压缩"
+      }
+    ],
     "DescribeMeasureDetailTotal": [
       {
         "document": "TCCC-查询总量",
@@ -536,28 +536,12 @@
         "title": "查询节省计划覆盖率数据"
       }
     ],
-    "DescribeSavingPlanOverview": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpOverviewDetail\n<公共请求参数>\n\n{\n    \"StartDate\": \"2023-01-10\",\n    \"EndDate\": \"2023-10-20\",\n    \"Offset\": 0,\n    \"Limit\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"Overviews\": [\n            {\n                \"BuyTime\": \"2023-10-23 01:39:39\",\n                \"EndTime\": \"2023-11-23 01:59:59\",\n                \"PayAmount\": \"730\",\n                \"PayType\": 1,\n                \"Region\": [\n                    \"1\"\n                ],\n                \"SavingAmount\": \"0\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-10-23 01:00:00\",\n                \"Status\": 2\n            },\n            {\n                \"BuyTime\": \"2023-10-21 01:40:24\",\n                \"EndTime\": \"2023-11-21 01:59:59\",\n                \"PayAmount\": \"730\",\n                \"PayType\": 1,\n                \"Region\": [\n                    \"1\"\n                ],\n                \"SavingAmount\": \"0\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-10-21 01:00:00\",\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"402f99cc-6ccf-49f5-a79e-ebd7ca680ef3\",\n        \"Total\": 64\n    }\n}",
-        "title": "查询节省计划明细示例"
-      }
-    ],
     "DescribeSavingPlanResourceInfo": [
       {
         "document": "查询名下可共享的sp资源详细",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanResourceInfo\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 1,\n    \"CreateStartDate\": \"2023-06-01\",\n    \"CreateEndDate\": \"2023-09-30\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"37963bb4-f4ac-4c20-8c83-97d751f1aa91\",\n        \"SavingPlanInfoData\": [\n            {\n                \"BuyTime\": \"2023-09-07 10:30:11\",\n                \"EndTime\": \"2023-09-17 10:00:00\",\n                \"MatchingSavingPlanProductRule\": [\n                    {\n                        \"BillingItemCode\": \"v_cvm_cpu\",\n                        \"MatchFlag\": \"include\",\n                        \"ProductCode\": \"p_cvm\",\n                        \"SubBillingItemCode\": \"sv_cvm_cpu_s2\",\n                        \"SubProductCode\": \"sp_cvm_s2\"\n                    }\n                ],\n                \"MatchingSavingPlanRegionRule\": [\n                    {\n                        \"RegionId\": \"1\",\n                        \"ZoneIdList\": [\n                            \"*\"\n                        ]\n                    }\n                ],\n                \"SpId\": \"svp-victotman-test2\",\n                \"SpType\": \"svp_common\",\n                \"StartTime\": \"2023-09-17 10:00:00\",\n                \"Status\": 1\n            }\n        ],\n        \"Total\": 3\n    }\n}",
         "title": "输出示例"
-      }
-    ],
-    "DescribeSavingPlanUsage": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpUsageDetail\n<公共请求参数>\n\n{\n    \"StartDate\": \"2023-01-10\",\n    \"EndDate\": \"2023-10-20\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"TimeInterval\": \"day\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b04c956e-b3f5-442d-89cf-8e380f3fd408\",\n        \"Total\": 1,\n        \"Usages\": [\n            {\n                \"CostAmount\": \"440\",\n                \"DeductAmount\": \"440\",\n                \"DosageAmount\": \"0\",\n                \"LossAmount\": \"0\",\n                \"NetSavings\": \"-440\",\n                \"PromiseAmount\": \"440\",\n                \"Region\": [\n                    \"*\"\n                ],\n                \"SpType\": \"svp_common\",\n                \"Status\": 1,\n                \"UtilizationRate\": 100\n            }\n        ]\n    }\n}",
-        "title": "节省计划使用率查询示例"
       }
     ],
     "DescribeTagList": [

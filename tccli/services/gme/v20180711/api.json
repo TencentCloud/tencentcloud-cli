@@ -504,7 +504,7 @@
         {
           "disabled": false,
           "document": "服务开关状态",
-          "example": "[]",
+          "example": "无",
           "member": "ServiceStatus",
           "name": "ServiceConf",
           "output_required": true,
@@ -514,7 +514,7 @@
         {
           "disabled": false,
           "document": "应用ID(AppID)",
-          "example": "1",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
           "output_required": true,
@@ -524,7 +524,7 @@
         {
           "disabled": false,
           "document": "应用名称",
-          "example": "xx",
+          "example": "app_test",
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -554,7 +554,7 @@
         {
           "disabled": false,
           "document": "创建时间，Unix时间戳格式",
-          "example": "1",
+          "example": "1736238797",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -573,13 +573,13 @@
         },
         {
           "disabled": false,
-          "document": "是否是3.0应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是3.0应用",
           "example": "1",
           "member": "uint64",
           "name": "NewVersion",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3046,63 +3046,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "实时语音服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实时语音服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "RealTimeSpeech",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音消息服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音消息服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "VoiceMessage",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音内容安全服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音内容安全服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "Porn",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音录制服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音录制服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "Live",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音转文本服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音转文本服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "RealTimeAsr",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文本翻译服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本翻译服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "TextTranslate",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

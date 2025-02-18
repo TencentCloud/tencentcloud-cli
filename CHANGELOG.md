@@ -1,3 +1,188 @@
+# Release 3.0.1156.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 81 次发布
+
+发布时间：2025-02-19 01:14:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMeasureDetailListCompress](http://document.tencentcloudapi.woa.com/document/product/555/85768)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateSavingPlanOrder
+* DescribeSavingPlanOverview
+* DescribeSavingPlanUsage
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* SavingPlanOverviewDetail
+* SavingPlanUsageDetail
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 38 次发布
+
+发布时间：2025-02-19 01:21:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PhoneEmailData](http://document.tencentcloudapi.woa.com/document/product/242/38895#PhoneEmailData)
+
+	* 新增成员：CodeId
+
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 26 次发布
+
+发布时间：2025-02-19 01:24:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceStatus](http://document.tencentcloudapi.woa.com/document/product/607/35375#ServiceStatus)
+
+	* <font color="#dd0000">**修改成员**：</font>TextTranslate
+
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 15 次发布
+
+发布时间：2025-02-19 01:24:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AllocateFileSystemId](http://document.tencentcloudapi.woa.com/document/product/1716/85769)
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 26 次发布
+
+发布时间：2025-02-19 01:28:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DownloadActiveDeviceCount](http://document.tencentcloudapi.woa.com/document/product/1385/85771)
+* [GetActiveDeviceCount](http://document.tencentcloudapi.woa.com/document/product/1385/85770)
+
+新增数据结构：
+
+* [ActiveDeviceList](http://document.tencentcloudapi.woa.com/document/product/1385/55846#ActiveDeviceList)
+
+
+
+## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+
+### 第 7 次发布
+
+发布时间：2025-02-19 01:29:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ActivateCaCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85779)
+* [ApplyRegistrationCode](http://document.tencentcloudapi.woa.com/document/product/1773/85773)
+* [DeactivateCaCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85778)
+* [DeleteCaCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85777)
+* [DescribeCaCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85776)
+* [DescribeCaCertificates](http://document.tencentcloudapi.woa.com/document/product/1773/85775)
+* [ModifyInstanceCertBinding](http://document.tencentcloudapi.woa.com/document/product/1773/85772)
+* [RegisterCaCertificate](http://document.tencentcloudapi.woa.com/document/product/1773/85774)
+
+新增数据结构：
+
+* [CaCertificateItem](http://document.tencentcloudapi.woa.com/document/product/1773/84898#CaCertificateItem)
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 14 次发布
+
+发布时间：2025-02-19 01:32:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeProductDictionaryList](http://document.tencentcloudapi.woa.com/document/product/1732/81368)
+
+	* 新增入参：SpaCode
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 137 次发布
+
+发布时间：2025-02-19 01:36:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RocketMQRoleConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQRoleConfig)
+
+	* 新增成员：PermType, DetailedRolePerms
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 86 次发布
+
+发布时间：2025-02-19 01:41:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddProjectUserRole](http://document.tencentcloudapi.woa.com/document/product/1607/85780)
+
+
+
 # Release 3.0.1155.1
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25

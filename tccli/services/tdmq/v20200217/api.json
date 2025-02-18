@@ -22292,6 +22292,24 @@
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）",
+          "example": "Cluster",
+          "member": "string",
+          "name": "PermType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic和Group维度权限配置",
+          "example": "无",
+          "member": "DetailedRolePerm",
+          "name": "DetailedRolePerms",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

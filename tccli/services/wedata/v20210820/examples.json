@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AddProjectUserRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddProjectUserRole\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c315ddb4-27fd-4bb3-8626-f9c9dd3aefda\"\n    }\n}",
+        "title": "成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddProjectUserRole\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "添加项目用户角色"
+      }
+    ],
     "BatchCreateIntegrationTaskAlarms": [
       {
         "document": "",
