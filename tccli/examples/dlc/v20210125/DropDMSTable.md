@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli dlc DropDMSTable --cli-unfold-argument  \
+    --DatasourceConnectionName DataLakeCatalog \
     --DbName database1 \
     --Name table1 \
     --DeleteData True

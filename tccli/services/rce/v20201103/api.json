@@ -601,7 +601,7 @@
         {
           "disabled": false,
           "document": "加密内容",
-          "example": "无",
+          "example": "****QpLQfNqD",
           "member": "string",
           "name": "CryptoContent",
           "required": true,

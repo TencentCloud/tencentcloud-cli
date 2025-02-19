@@ -1,3 +1,312 @@
+# Release 3.0.1157.1
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 100 次发布
+
+发布时间：2025-02-20 01:16:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceAttributesResponse](http://document.tencentcloudapi.woa.com/document/product/597/40861#InstanceAttributesResponse)
+
+	* 新增成员：UncleanLeaderElectionEnable
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 118 次发布
+
+发布时间：2025-02-20 01:18:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeSecurityProtectionStat
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 51 次发布
+
+发布时间：2025-02-20 01:20:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelOnlineDDLJob](http://document.tencentcloudapi.woa.com/document/product/557/85784)
+* [DescribeOnlineDDLJob](http://document.tencentcloudapi.woa.com/document/product/557/85783)
+
+新增数据结构：
+
+* [DDLDetail](http://document.tencentcloudapi.woa.com/document/product/557/16142#DDLDetail)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 129 次发布
+
+发布时间：2025-02-20 01:20:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AlterDMSDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/75088)
+
+	* 新增入参：DatasourceConnectionName
+
+* [AlterDMSPartition](http://document.tencentcloudapi.woa.com/document/product/1342/75087)
+
+	* 新增入参：DatasourceConnectionName
+
+* [AlterDMSTable](http://document.tencentcloudapi.woa.com/document/product/1342/75086)
+
+	* 新增入参：DatasourceConnectionName
+
+* [CreateDMSDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/75085)
+
+	* 新增入参：DatasourceConnectionName
+
+* [CreateDMSTable](http://document.tencentcloudapi.woa.com/document/product/1342/75084)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DescribeDMSDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/75083)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DescribeDMSDatabaseList](http://document.tencentcloudapi.woa.com/document/product/1342/84650)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DescribeDMSPartitions](http://document.tencentcloudapi.woa.com/document/product/1342/75082)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DescribeDMSTable](http://document.tencentcloudapi.woa.com/document/product/1342/75081)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DescribeDMSTables](http://document.tencentcloudapi.woa.com/document/product/1342/75080)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DropDMSDatabase](http://document.tencentcloudapi.woa.com/document/product/1342/75079)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DropDMSPartitions](http://document.tencentcloudapi.woa.com/document/product/1342/75078)
+
+	* 新增入参：DatasourceConnectionName
+
+* [DropDMSTable](http://document.tencentcloudapi.woa.com/document/product/1342/75077)
+
+	* 新增入参：DatasourceConnectionName
+
+
+修改数据结构：
+
+* [DMSPartition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DMSPartition)
+
+	* 新增成员：DatasourceConnectionName
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 39 次发布
+
+发布时间：2025-02-20 01:22:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTemplate](http://document.tencentcloudapi.woa.com/document/product/242/49208)
+
+	* 新增入参：VerifyInfo
+
+* [DeletePhoneEmail](http://document.tencentcloudapi.woa.com/document/product/242/62668)
+
+	* 新增入参：CodeId
+
+* [ModifyTemplate](http://document.tencentcloudapi.woa.com/document/product/242/83798)
+
+	* 新增入参：VerifyInfo, Scene
+
+
+新增数据结构：
+
+* [VerifyInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#VerifyInfo)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 80 次发布
+
+发布时间：2025-02-20 01:24:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Operation](http://document.tencentcloudapi.woa.com/document/product/845/30634#Operation)
+
+	* 新增成员：ShowName
+
+* [TaskDetail](http://document.tencentcloudapi.woa.com/document/product/845/30634#TaskDetail)
+
+	* 新增成员：ShowName
+
+	* <font color="#dd0000">**修改成员**：</font>ProcessInfo
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 27 次发布
+
+发布时间：2025-02-20 01:26:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAccount](http://document.tencentcloudapi.woa.com/document/product/1724/80745)
+
+	* 新增入参：TradeOne, TradeTwo
+
+
+修改数据结构：
+
+* [QueryCustomersCreditData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#QueryCustomersCreditData)
+
+	* 新增成员：PostpayFreezeCredit, PrepayFreezeCredit
+
+
+
+
+## 消息队列 MQTT 版(mqtt) 版本：2024-05-16
+
+### 第 8 次发布
+
+发布时间：2025-02-20 01:30:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeProductSKUList](http://document.tencentcloudapi.woa.com/document/product/1773/85785)
+
+新增数据结构：
+
+* [PriceTag](http://document.tencentcloudapi.woa.com/document/product/1773/84898#PriceTag)
+* [ProductSkuItem](http://document.tencentcloudapi.woa.com/document/product/1773/84898#ProductSkuItem)
+
+
+
+## 流量反欺诈(taf) 版本：2020-02-10
+
+### 第 14 次发布
+
+发布时间：2025-02-20 01:33:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* RecognizeCustomizedAudience
+* RecognizePreciseTargetAudience
+* RecognizeTargetAudience
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Device
+* InputBusinessEncryptData
+* InputRecognizeTargetAudience
+* OutputRecognizeTargetAudience
+* OutputRecognizeTargetAudienceValue
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 49 次发布
+
+发布时间：2025-02-20 01:35:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrefetchTask](http://document.tencentcloudapi.woa.com/document/product/1738/81210)
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 87 次发布
+
+发布时间：2025-02-20 01:39:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DataSourceEnvInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DataSourceEnvInfo)
+
+修改数据结构：
+
+* [DataSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DataSourceInfo)
+
+	* 新增成员：DisplayType, Env, DatasourceUrn, Model, DataSourceEnvInfos
+
+* [Project](http://document.tencentcloudapi.woa.com/document/product/1607/77747#Project)
+
+	* 新增成员：SecondModuleList
+
+
+
+
 # Release 3.0.1156.1
 
 ## 费用中心(billing) 版本：2018-07-09

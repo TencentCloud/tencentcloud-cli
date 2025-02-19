@@ -48,3 +48,29 @@ Output:
 }
 ```
 
+**Example 3: 获取BizToken失败示例**
+
+
+
+Input: 
+
+```
+tccli faceid DetectAuth --cli-unfold-argument  \
+    --RuleId 999 \
+    --IdCard 11204416541220243X \
+    --Name 韦小宝
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.RuleIdNotExist",
+            "Message": "RuleId不存在，请到人脸核身控制台申请。"
+        },
+        "RequestId": "e90c9abf-dcb3-4efa-97fc-5c4501b8182c"
+    }
+}
+```
+

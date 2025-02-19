@@ -1336,6 +1336,15 @@
           "name": "Asset",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1390,6 +1399,15 @@
           "name": "Partition",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1568,6 +1586,15 @@
           "example": "table1",
           "member": "string",
           "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
         }
@@ -3567,6 +3594,15 @@
           "name": "Name",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3727,6 +3763,15 @@
           "example": "表名称",
           "member": "string",
           "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
         }
@@ -6265,6 +6310,17 @@
           "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9174,8 +9230,8 @@
         },
         {
           "disabled": false,
-          "document": "匹配规则",
-          "example": "*",
+          "document": "匹配规则，只支持填*",
+          "example": "无",
           "member": "string",
           "name": "Pattern",
           "required": false,
@@ -9216,6 +9272,15 @@
           "name": "Asc",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9267,7 +9332,7 @@
         {
           "disabled": false,
           "document": "schema名称",
-          "example": "xxxx",
+          "example": "schema1",
           "member": "string",
           "name": "SchemaName",
           "required": false,
@@ -9275,10 +9340,19 @@
         },
         {
           "disabled": false,
-          "document": "匹配规则",
-          "example": "*",
+          "document": "匹配规则，只支持填*",
+          "example": "无",
           "member": "string",
           "name": "Pattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
         }
@@ -9447,6 +9521,15 @@
           "name": "Expression",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9515,8 +9598,8 @@
         },
         {
           "disabled": false,
-          "document": "数据目录",
-          "example": "DataLakeCatalog",
+          "document": "catalog类型",
+          "example": "hive",
           "member": "string",
           "name": "Catalog",
           "required": false,
@@ -9533,8 +9616,8 @@
         },
         {
           "disabled": false,
-          "document": "查询模式",
-          "example": "*",
+          "document": "查询模式，只支持填*",
+          "example": "无",
           "member": "string",
           "name": "Pattern",
           "required": false,
@@ -9546,6 +9629,15 @@
           "example": "EXTERNAL",
           "member": "string",
           "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
           "required": false,
           "type": "string"
         }
@@ -9776,8 +9868,8 @@
         },
         {
           "disabled": false,
-          "document": "数据目录",
-          "example": "DataLakeCatalog",
+          "document": "catalog类型",
+          "example": "hive",
           "member": "string",
           "name": "Catalog",
           "required": false,
@@ -9794,8 +9886,8 @@
         },
         {
           "disabled": false,
-          "document": "查询模式",
-          "example": "*",
+          "document": "查询模式，只支持填*",
+          "example": "无",
           "member": "string",
           "name": "Pattern",
           "required": false,
@@ -9863,6 +9955,15 @@
           "name": "Asc",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14294,6 +14395,15 @@
           "name": "Cascade",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14366,6 +14476,15 @@
           "name": "DeleteData",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14430,6 +14549,15 @@
           "name": "EnvProps",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据目录信息",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -25,7 +25,8 @@ tccli dlc CreateDMSDatabase --cli-unfold-argument  \
     --Asset.Name api_test \
     --SchemaName api_test \
     --Location cosn://api_test \
-    --Name api_test
+    --Name api_test \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

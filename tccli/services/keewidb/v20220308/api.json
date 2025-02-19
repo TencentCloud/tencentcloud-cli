@@ -22,7 +22,7 @@
       "status": "online"
     },
     "ClearInstance": {
-      "document": "本接口（ClearInstance）用于清空实例数据。",
+      "document": "本接口（ClearInstance）用于清空实例数据。\n> **说明**：在清空数据流程中，系统将自动进行数据备份，耗时较长，请您耐心等待并提前做好时间规划。",
       "input": "ClearInstanceRequest",
       "name": "清空实例数据",
       "output": "ClearInstanceResponse",
@@ -557,7 +557,7 @@
           "example": "10856",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

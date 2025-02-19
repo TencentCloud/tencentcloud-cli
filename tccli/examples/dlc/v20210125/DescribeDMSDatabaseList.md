@@ -7,8 +7,7 @@ Input:
 ```
 tccli dlc DescribeDMSDatabaseList --cli-unfold-argument  \
     --Name Name1 \
-    --SchemaName Schema1 \
-    --Pattern *
+    --SchemaName Schema1
 ```
 
 Output: 
@@ -23,27 +22,27 @@ Output:
                 "Asset": {
                     "Id": 0,
                     "Name": "table1",
-                    "Guid": "abc",
+                    "Guid": "*******",
                     "Catalog": "catalog",
                     "Description": "test",
-                    "Owner": "abc",
-                    "OwnerAccount": "abc",
+                    "Owner": "*******",
+                    "OwnerAccount": "********",
                     "PermValues": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "perm",
+                            "Value": "default"
                         }
                     ],
                     "Params": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "param",
+                            "Value": "default"
                         }
                     ],
                     "BizParams": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "bizparam",
+                            "Value": "default"
                         }
                     ],
                     "DataVersion": 1,
@@ -54,7 +53,7 @@ Output:
             }
         ],
         "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "****-****"
     }
 }
 ```

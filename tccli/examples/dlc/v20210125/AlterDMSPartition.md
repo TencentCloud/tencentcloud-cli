@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli dlc AlterDMSPartition --cli-unfold-argument  \
+    --DatasourceConnectionName DataLakeCatalog \
     --CurrentDbName database1 \
     --CurrentTableName table2 \
     --CurrentValues 1 \

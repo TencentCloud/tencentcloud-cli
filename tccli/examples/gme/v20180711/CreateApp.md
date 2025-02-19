@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli gme CreateApp --cli-unfold-argument  \
-    --AppName 123 \
+    --AppName simple_gme_application \
     --ProjectId 0 \
     --EngineList android \
     --RegionList mainland \
@@ -25,8 +25,8 @@ tccli gme CreateApp --cli-unfold-argument  \
     --VoiceFilterConf.SceneInfos.2.SceneId GMECloudApi \
     --VoiceFilterConf.SceneInfos.2.Status False \
     --AsrConf.Status close \
-    --Tags.0.TagKey abc \
-    --Tags.0.TagValue abc
+    --Tags.0.TagKey tag_key_1 \
+    --Tags.0.TagValue tag_value
 ```
 
 Output: 
@@ -34,7 +34,7 @@ Output:
 {
     "Response": {
         "Data": {
-            "AppName": "123",
+            "AppName": "simple_gme_application",
             "AsrConf": {
                 "Status": "close"
             },

@@ -993,7 +993,7 @@
         {
           "disabled": false,
           "document": "云厂商代码",
-          "example": "tencent",
+          "example": "云厂商代码",
           "member": "string",
           "name": "CloudCode",
           "output_required": false,
@@ -1003,7 +1003,7 @@
         {
           "disabled": false,
           "document": "自动化助手信息",
-          "example": "{\\\"TaskId\\\":\\\"9001\\\",\\\"TaskName\\\":\\\"autotest\\\",\\\"LastTime\\\":\\\"1999-01-01 00:00:01\\\"}",
+          "example": "cmd_json",
           "member": "string",
           "name": "AutoTask",
           "output_required": false,
@@ -1641,7 +1641,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "www.test.com",
+          "example": "url.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -1847,7 +1847,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "cfwnat-xxx",
+          "example": "cfwnat-id",
           "member": "string",
           "name": "CfwInsId",
           "output_required": true,
@@ -1857,7 +1857,7 @@
         {
           "disabled": false,
           "document": "当前版本",
-          "example": "cfw_v3.2.1.xxx",
+          "example": "cfw_v3.2.10",
           "member": "string",
           "name": "CurVersion",
           "output_required": true,
@@ -1927,7 +1927,7 @@
         {
           "disabled": false,
           "document": "预约升级时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "YYYY-MM-DD HH:MM",
+          "example": "2024-01-09 14:50:00",
           "member": "string",
           "name": "ReserveTime",
           "output_required": false,
@@ -1937,7 +1937,7 @@
         {
           "disabled": false,
           "document": "预约版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cfw_v4.1.1.xxx",
+          "example": "cfw_v4.1.1.12",
           "member": "string",
           "name": "ReserveVersion",
           "output_required": false,
@@ -3092,7 +3092,7 @@
         {
           "disabled": false,
           "document": "如果要创建域名则必填",
-          "example": "domain.gz.tencentcs.com",
+          "example": "www.domainexample.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -3643,7 +3643,7 @@
         {
           "disabled": false,
           "document": "访问源",
-          "example": "1.1.1.1",
+          "example": "192.177.54.82",
           "member": "string",
           "name": "SourceIp",
           "required": true,
@@ -3661,7 +3661,7 @@
         {
           "disabled": false,
           "document": "访问目的",
-          "example": "cdb-123",
+          "example": "cdb-id",
           "member": "string",
           "name": "TargetIp",
           "required": true,
@@ -3840,7 +3840,7 @@
         {
           "disabled": false,
           "document": "模板id",
-          "example": "mb_***_***",
+          "example": "mb_b66f_568d",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -4193,7 +4193,7 @@
         {
           "disabled": false,
           "document": "组id",
-          "example": "cfwrg-id*************",
+          "example": "cfwrg-0e89a384fc29",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -4639,7 +4639,7 @@
         {
           "disabled": false,
           "document": "访问源名称",
-          "example": "内实例1",
+          "example": "内部实例1",
           "member": "string",
           "name": "SourceName",
           "output_required": false,
@@ -4715,7 +4715,7 @@
         {
           "disabled": false,
           "document": "内网地址。",
-          "example": "10.10.1.1",
+          "example": "10.10.1.112",
           "member": "string",
           "name": "PrivateIpAddress",
           "output_required": true,
@@ -4755,7 +4755,7 @@
         {
           "disabled": false,
           "document": "所属防火墙实例id",
-          "example": "cfwnat-xxx",
+          "example": "cfwnat-id",
           "member": "string",
           "name": "FwInsId",
           "output_required": false,
@@ -4765,7 +4765,7 @@
         {
           "disabled": false,
           "document": "关联的nat网关Id",
-          "example": "nat-xxx",
+          "example": "natgw-id",
           "member": "string",
           "name": "NatGwId",
           "output_required": false,
@@ -5626,7 +5626,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "2021-05-26",
+          "example": "2021-05-26 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -5644,7 +5644,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "2021-05-21",
+          "example": "2021-05-21 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -5851,7 +5851,7 @@
         {
           "disabled": false,
           "document": "选定的版本，基于选定的版本判断实例是否可升级和回退到该版本",
-          "example": "cfw_v4.1.1.xxx",
+          "example": "cfw_v4.1.1.11",
           "member": "string",
           "name": "SelectedVersion",
           "required": false,
@@ -6736,7 +6736,7 @@
         {
           "disabled": false,
           "document": "日志列表",
-          "example": "{\"AppProtocolList\":null,\"Data\":\"[{\\\"StartTime\\\":\\\"2024-11-0115:20:00\\\",\\\"EndTime\\\":\\\"2024-11-0115:23:01\\\",\\\"SourceIp\\\":\\\"1.1.1.1\\\",\\\"TargetIp\\\":\\\"1.1.1.1\\\",\\\"SourcePrivateId\\\":\\\"vpc-2d8akqf5\\\",\\\"TargetPrivateId\\\":\\\"vpc-n0nyt8w7\\\",\\\"SourcePort\\\":\\\"59000\\\",\\\"TargetPort\\\":\\\"5001\\\",\\\"Direction\\\":\\\"1\\\",\\\"Domain\\\":\\\"\\\",\\\"Protocol\\\":\\\"TCP\\\",\\\"SwitchId\\\":\\\"cfws-4177e03f66\\\",\\\"SwtichName\\\":\\\"cfws-4177e03f66-switch1\\\",\\\"InstName\\\":\\\"\\\",\\\"InstanceID\\\":\\\"\\\",\\\"ReceivePackageNum\\\":1139962,\\\"ReceiveBytesNum\\\":1655072852,\\\"SendPackageNum\\\":115493,\\\"SendBytesNum\\\":8315616,\\\"FlowPackageNum\\\":1255455,\\\"FlowBytesNum\\\":1663388468,\\\"SourcePrivateName\\\":\\\"dora--IPV6-1\\\",\\\"TargetPrivateName\\\":\\\"dora-IPV6-2\\\",\\\"SourceInsName\\\":\\\"性能客户端\\\",\\\"TargetInsName\\\":\\\"性能服务端\\\",\\\"SrcInsID\\\":\\\"ins-muctdnk4\\\",\\\"DstInsID\\\":\\\"ins-q8vss5oq\\\",\\\"Address\\\":\\\"\\\",\\\"Supplier\\\":\\\"\\\",\\\"PublicIp\\\":\\\"\\\",\\\"PublicPort\\\":\\\"\\\",\\\"FwGroupId\\\":\\\"cfwg-dc7c585f\\\",\\\"FwGroupName\\\":\\\"-性能测试\\\"}]\",\"RequestId\":\"8d7fc0ae-ba1a-45d1-b33d-14c24dafc233\",\"ReturnCode\":0,\"ReturnMsg\":\"success\",\"Total\":74128060}",
+          "example": "\"AppProtocolList\":null,\"Data\":\"\",\"RequestId\":\"8d7fc0ae-ba1a-45d1-b33d-14c24dafc233\",\"ReturnCode\":0,\"ReturnMsg\":\"success\",\"Total\":74128060",
           "member": "string",
           "name": "Data",
           "output_required": true,
@@ -8541,7 +8541,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "ins-abcdabdc",
+          "example": "ins-d1da23dx",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -8731,7 +8731,7 @@
         {
           "disabled": false,
           "document": "域名化CLB的域名",
-          "example": "www.***.com",
+          "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
@@ -8766,7 +8766,7 @@
         {
           "disabled": false,
           "document": "vpc 中第一个EIP开关打开，需要指定子网创建私有连接",
-          "example": "subnet-xxxxxxxx",
+          "example": "subnet-1da3s2xd",
           "member": "string",
           "name": "SubnetId",
           "required": false,
@@ -8799,7 +8799,7 @@
         {
           "disabled": false,
           "document": "版本",
-          "example": "cfw_v3.2.1.xxx",
+          "example": "cfw_v3.2.1",
           "member": "string",
           "name": "Version",
           "output_required": true,
@@ -8809,7 +8809,7 @@
         {
           "disabled": false,
           "document": "版本描述详情",
-          "example": "无",
+          "example": "cfw版本升级",
           "member": "string",
           "name": "Detail",
           "output_required": true,
@@ -8829,7 +8829,7 @@
         {
           "disabled": false,
           "document": "版本发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "YYYY-MM-DD HH:MM:SS",
+          "example": "2024-11-22 10:22:11",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -8876,7 +8876,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": "autotest",
+          "example": "自动化任务",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -11929,7 +11929,7 @@
         {
           "disabled": false,
           "document": "Nat网关名称",
-          "example": "testName",
+          "example": "NAT网关",
           "member": "string",
           "name": "NatGatewayName",
           "output_required": true,
@@ -12333,7 +12333,7 @@
         {
           "disabled": false,
           "document": "网络实例ID",
-          "example": "vpc-xxxxxxxx",
+          "example": "vpc-bjvuftia",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -14469,7 +14469,7 @@
         {
           "disabled": false,
           "document": "模板Id",
-          "example": "pp-test",
+          "example": "pp-15181",
           "member": "string",
           "name": "TemplateId",
           "output_required": false,
@@ -14970,7 +14970,7 @@
         {
           "disabled": false,
           "document": "防火墙(组)ID",
-          "example": "cfwg-xxxxxxxx",
+          "example": "cfwg-15181",
           "member": "string",
           "name": "FwGroupId",
           "output_required": true,
@@ -15030,7 +15030,7 @@
         {
           "disabled": false,
           "document": "VPC防火墙实例卡片信息数组",
-          "example": "[ { \"FwGroupId\": \"cfwg-48b0ce59\", \"FwInsName\": \"[autotest]【勿动】自动化测试-上海\", \"FwInsId\": \"cfwew-091fafd3\", \"FwMode\": 1, \"CcnId\": [ \"ccn-2stwf6cr\" ], \"CcnName\": [ \"[autotest][勿删]自动化测试\" ], \"PeerConnectionId\": null, \"PeerConnectionName\": null, \"FwCvmLst\": [ { \"FwInsId\": \"cfwew-091fafd3\", \"Region\": \"ap-shanghai\", \"RegionZh\": \"上海\", \"RegionDetail\": \"华东地区\", \"ZoneZh\": \"上海二区\", \"ZoneZhBack\": \"上海二区\", \"BandWidth\": 1024 } ], \"JoinInsLst\": [ { \"JoinType\": \"VPC\", \"Num\": 2 } ], \"JoinInsIdLst\": [ \"vpc-msa9dvac\", \"vpc-q9h93ip4\" ], \"FwGateway\": [ { \"GatewayId\": \"havip-0zv7jxun\", \"VpcId\": \"vpc-eo9n3mq2\", \"IpAddress\": \"10.183.0.4\" } ], \"JoinInsNum\": 2, \"FwSwitchNum\": 1, \"Status\": 0, \"Time\": \"2023-09-07 12:55:14\", \"Width\": 1024, \"UserVpcWidth\": 11264, \"RuleUsed\": 56, \"RuleMax\": 20000, \"FlowMax\": 29322, \"EngineVersion\": \"cfw_v4.0.2.1050\", \"UpdateEnable\": 1, \"TrafficMode\": \"Normal\" } ]",
+          "example": "[ { \"FwGroupId\": \"cfwg-48b0ce59\", \"FwInsName\": \"[autotest]\", \"FwInsId\": \"cfwew-091fafd3\", \"FwMode\": 1} ]",
           "member": "VpcFwInstanceInfo",
           "name": "FwInstanceLst",
           "output_required": false,
@@ -15116,7 +15116,7 @@
         {
           "disabled": false,
           "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "cfws-xxxxxxx",
+          "example": "cfws-1515153",
           "member": "string",
           "name": "FwGroupId",
           "output_required": true,
@@ -15126,7 +15126,7 @@
         {
           "disabled": false,
           "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "防火墙测试",
+          "example": "防火墙",
           "member": "string",
           "name": "FwGroupName",
           "output_required": true,
@@ -15161,7 +15161,7 @@
         {
           "disabled": false,
           "document": "私有网络模式下接入的VpcId列表；仅私有网络模式使用",
-          "example": "[\"vpc-xxx\",\"vpc-xxx\"]",
+          "example": "[\"vpc-151515\",\"vpc-151515\"]",
           "member": "string",
           "name": "VpcIds",
           "required": true,
@@ -15179,7 +15179,7 @@
         {
           "disabled": false,
           "document": "防火墙实例ID (编辑场景传)",
-          "example": "cfwew-xxxxxxxx",
+          "example": "cfwew-151515",
           "member": "string",
           "name": "FwInsId",
           "required": false,
@@ -15315,7 +15315,7 @@
         {
           "disabled": false,
           "document": "VPC防火墙CVM的列表",
-          "example": "[{\"FwInsId\":\"cfwew-75066e5a\",\"Region\":\"ap-chongqing\",\"RegionZh\":\"重庆\",\"RegionDetail\":\"西南地区\",\"ZoneZh\":\"重庆一区\",\"ZoneZhBack\":\"重庆一区\",\"BandWidth\":50},{\"FwInsId\":\"cfwew-75066e5a\",\"Region\":\"ap-chengdu\",\"RegionZh\":\"成都\",\"RegionDetail\":\"西南地区\",\"ZoneZh\":\"成都一区\",\"ZoneZhBack\":\"成都一区\",\"BandWidth\":50}]",
+          "example": "[{\"FwInsId\":\"cfwew-75066e5a\",\"Region\":\"ap-chongqing\",\"RegionZh\":\"重庆\",\"BandWidth\":50},{\"FwInsId\":\"cfwew-75066e5a\",\"Region\":\"ap-chengdu\",\"RegionZh\":\"成都\",\"BandWidth\":50}]",
           "member": "VpcFwCvmInsInfo",
           "name": "FwCvmLst",
           "output_required": false,
@@ -15403,7 +15403,7 @@
         {
           "disabled": false,
           "document": "接入的vpc列表",
-          "example": "[\"vpc-abcdabcd\"]",
+          "example": "[\"vpc-1515151\"]",
           "member": "string",
           "name": "JoinInsIdLst",
           "output_required": false,
@@ -15540,7 +15540,7 @@
         {
           "disabled": false,
           "document": "VPC防火墙实例名称",
-          "example": "防火墙测试-实例1",
+          "example": "防火墙-实例1",
           "member": "string",
           "name": "FwInsName",
           "output_required": true,
@@ -15616,7 +15616,7 @@
         {
           "disabled": false,
           "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ndomain：域名规则，例如*.qq.com",
-          "example": "*.qq.com",
+          "example": "qq.com",
           "member": "string",
           "name": "DestContent",
           "output_required": true,

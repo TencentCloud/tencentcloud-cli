@@ -32,7 +32,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c9308288-2016-4197-bba1-baf0a9ea0a6f",
+        "RequestId": "c9308288-****-baf0a9ea0a6f",
         "Template": {
             "IsBlack": false,
             "AuditReason": "",
@@ -43,9 +43,9 @@ Output:
             "InvalidReason": "",
             "CertificateInfo": {
                 "CertificateType": "YYZZ",
-                "CertificateCode": "44190****075",
-                "ImgUrl": "https://xyz.cos.ap-shanghai.myqcloud/mkdiwe.jpeg",
-                "OriginImgUrl": "https://xyz.cos.ap-shanghai.myqcloud/mkdiwe.jpeg",
+                "CertificateCode": "4****075",
+                "ImgUrl": "image.jpg",
+                "OriginImgUrl": "image.jpg",
                 "RegistrantCertificateType": "",
                 "RegistrantCertificateCode": "",
                 "RegistrantImgUrl": ""
@@ -63,12 +63,12 @@ Output:
                 "Email": "121****@qq.com",
                 "City": "nan shan qu",
                 "RegistrantNameCN": "企业名",
-                "StreetCN": "万利达大厦",
-                "Street": "wanlidadasha",
-                "ProvinceCN": "深圳市",
+                "StreetCN": "*大厦",
+                "Street": "*sha",
+                "ProvinceCN": "*市",
                 "CountryCN": "中国",
-                "CityCN": "南山区",
-                "Telephone": "13****52"
+                "CityCN": "*区",
+                "Telephone": "13****2"
             },
             "IsDefault": "no"
         }

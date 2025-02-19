@@ -6,13 +6,14 @@ Input:
 
 ```
 tccli dlc DescribeDMSPartitions --cli-unfold-argument  \
-    --Name abc \
-    --TableName abc \
-    --PartValues abc \
-    --Values abc \
-    --DatabaseName abc \
-    --PartitionNames abc \
-    --SchemaName abc
+    --Name partition1 \
+    --TableName table1 \
+    --PartValues 1 \
+    --Values 1 \
+    --DatabaseName database1 \
+    --PartitionNames partition1 \
+    --SchemaName schema1 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
@@ -21,13 +22,13 @@ Output:
     "Response": {
         "Partitions": [
             {
-                "DatabaseName": "abc",
-                "SchemaName": "abc",
-                "TableName": "abc",
+                "DatabaseName": "database1",
+                "SchemaName": "schema1",
+                "TableName": "table1",
                 "DataVersion": 0,
-                "Name": "abc",
+                "Name": "partition1",
                 "Values": [
-                    "abc"
+                    "1"
                 ],
                 "StorageSize": 0,
                 "RecordCount": 0,
@@ -36,43 +37,43 @@ Output:
                 "LastAccessTime": "2020-09-22T00:00:00+00:00",
                 "Params": [
                     {
-                        "Key": "abc",
-                        "Value": "abc"
+                        "Key": "param1",
+                        "Value": "default"
                     }
                 ],
                 "Sds": {
-                    "Location": "abc",
-                    "InputFormat": "abc",
-                    "OutputFormat": "abc",
+                    "Location": "cosn://*******",
+                    "InputFormat": "org.apache.hadoop.mapred.TextInputFormat",
+                    "OutputFormat": "org.apache.hadoop.hive.ql.io.IgnoreKeyTextOutputFormat",
                     "NumBuckets": 0,
                     "Compressed": true,
                     "StoredAsSubDirectories": true,
-                    "SerdeLib": "abc",
-                    "SerdeName": "abc",
+                    "SerdeLib": "org.apache.hadoop.hive.serde2.OpenCSVSerde",
+                    "SerdeName": "serdename",
                     "BucketCols": [
-                        "abc"
+                        "column1"
                     ],
                     "SerdeParams": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "serde param",
+                            "Value": "default"
                         }
                     ],
                     "Params": [
                         {
-                            "Key": "abc",
-                            "Value": "abc"
+                            "Key": "param1",
+                            "Value": "default"
                         }
                     ],
                     "SortCols": {
-                        "Col": "abc",
+                        "Col": "column1",
                         "Order": 0
                     },
                     "Cols": [
                         {
-                            "Name": "abc",
-                            "Description": "abc",
-                            "Type": "abc",
+                            "Name": "column1",
+                            "Description": "default description",
+                            "Type": "int",
                             "Position": 0,
                             "IsPartition": true,
                             "BizParams": [],
@@ -81,15 +82,15 @@ Output:
                     ],
                     "SortColumns": [
                         {
-                            "Col": "abc",
+                            "Col": "column1",
                             "Order": 0
                         }
                     ]
                 }
             }
         ],
-        "Total": 0,
-        "RequestId": "abc"
+        "Total": 1,
+        "RequestId": "*******-********"
     }
 }
 ```

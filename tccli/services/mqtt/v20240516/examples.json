@@ -238,6 +238,14 @@
         "title": "示例"
       }
     ],
+    "DescribeProductSKUList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductSKUList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MQTTProductSkuList\": [\n            {\n                \"ClientNumLimit\": 1,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"SkuCode\": \"mqtt_1k\",\n                \"TopicNumLimit\": 1,\n                \"TpsLimit\": 1\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"SkuCode\": \"basic_1k\",\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000\n            }\n        ],\n        \"RequestId\": \"2be05982-b125-4259-b965-c487949cd896\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeTopic": [
       {
         "document": "示例",

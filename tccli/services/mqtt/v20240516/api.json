@@ -203,6 +203,13 @@
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
+    "DescribeProductSKUList": {
+      "document": "获取产品售卖规格",
+      "input": "DescribeProductSKUListRequest",
+      "name": "获取MQTT产品售卖规格",
+      "output": "DescribeProductSKUListResponse",
+      "status": "online"
+    },
     "DescribeTopic": {
       "document": "查询mqtt主题详情",
       "input": "DescribeTopicRequest",
@@ -2647,6 +2654,43 @@
       ],
       "type": "object"
     },
+    "DescribeProductSKUListRequest": {
+      "document": "DescribeProductSKUList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductSKUListResponse": {
+      "document": "DescribeProductSKUList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mqtt商品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1, \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"OnSale\": true, \t\t\t\t\"ProxySpecCore\": 2, \t\t\t\t\"ProxySpecCount\": 1, \t\t\t\t\"ProxySpecMemory\": 4, \t\t\t\t\"SkuCode\": \"mqtt_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1, \t\t\t\t\"TopicNumLimit\": 1, \t\t\t\t\"TpsLimit\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1000, \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"OnSale\": true, \t\t\t\t\"ProxySpecCore\": 1, \t\t\t\t\"ProxySpecCount\": 2, \t\t\t\t\"ProxySpecMemory\": 2, \t\t\t\t\"SkuCode\": \"basic_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1000, \t\t\t\t\"TopicNumLimit\": 25, \t\t\t\t\"TpsLimit\": 1000 \t\t\t} \t\t]",
+          "member": "ProductSkuItem",
+          "name": "MQTTProductSkuList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicListRequest": {
       "document": "DescribeTopicList请求参数结构体",
       "members": [
@@ -4101,6 +4145,148 @@
         }
       ],
       "type": "object"
+    },
+    "PriceTag": {
+      "document": "价格标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计价名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计价类别",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项标签",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Step",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductSkuItem": {
+      "document": "MQTT ProductSkuItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格类型\nBASIC：基础版\nPRO ：专业版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic_1000",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否售卖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "OnSale",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "topic num限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端连接数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ClientNumLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单客户端最大订阅数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxSubscriptionPerClient",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权规则条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AuthorizationPolicyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceTag",
+          "name": "PriceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PublicAccessRule": {
       "document": "公网访问安全规则",

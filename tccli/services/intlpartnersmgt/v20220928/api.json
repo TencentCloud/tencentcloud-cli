@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateAccount": {
-      "document": "当前接口用作一级经销商/二级经销商创建腾讯云子客账号，账号创建完成后将自动与合作伙伴账号绑定。\n注意事项：\n1、创建腾讯云账号，输入的邮箱、手机号，需要合作伙伴做有效性验证。\n2、客户首次登录需要补充个人信息\n3、该接口需要申请白名单使用，请联系渠道经理发起申请流程。",
+      "document": "当前接口用作一级经销商/二级经销商创建腾讯云子客账号，账号创建完成后将自动与合作伙伴账号绑定。\n注意事项：\n1、创建腾讯云账号，输入的邮箱、手机号，需要合作伙伴做有效性验证。\n2、客户首次登录需要补充个人信息\n3、该接口需要申请白名单使用，请联系渠道经理发起申请流程。\n\n可调用角色：一级经销商、二级经销商、经销商",
       "input": "CreateAccountRequest",
       "name": "创建客户接口",
       "output": "CreateAccountResponse",
@@ -1034,6 +1034,24 @@
           "example": "584265",
           "member": "string",
           "name": "VerifyCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一级行业id，该参数为必填项，调用 GetTradeConfigList 接口获取 ",
+          "example": "kghy_01",
+          "member": "string",
+          "name": "TradeOne",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "二级行业id，该参数为必填项，调用 GetTradeConfigList 接口获取",
+          "example": "kghy_0101",
+          "member": "string",
+          "name": "TradeTwo",
           "required": false,
           "type": "string"
         }
@@ -2944,6 +2962,26 @@
           "name": "Force",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后付费冻结金额",
+          "example": "123.123",
+          "member": "float",
+          "name": "PostpayFreezeCredit",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费冻结金额",
+          "example": "123.345",
+          "member": "float",
+          "name": "PrepayFreezeCredit",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

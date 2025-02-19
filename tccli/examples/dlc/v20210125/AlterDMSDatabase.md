@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli dlc AlterDMSDatabase --cli-unfold-argument  \
+    --DatasourceConnectionName DataLakeCatalog \
     --CurrentName database1 \
-    --SchemaName DataLakeCatalog \
+    --SchemaName schema1 \
     --Location cosn://********** \
     --Asset.Name database1 \
     --Asset.Catalog DataLakeCatalog \

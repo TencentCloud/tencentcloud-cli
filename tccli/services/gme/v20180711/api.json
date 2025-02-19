@@ -694,7 +694,7 @@
         {
           "disabled": false,
           "document": "需要支持的引擎列表，默认全选。\n取值：android/ios/unity/cocos/unreal/windows",
-          "example": "无",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "EngineList",
           "required": false,
@@ -703,7 +703,7 @@
         {
           "disabled": false,
           "document": "服务区域列表，默认全选。\n取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东",
-          "example": "无",
+          "example": "[\"mainland\",\"na\"]",
           "member": "string",
           "name": "RegionList",
           "required": false,
@@ -862,6 +862,7 @@
           "example": "无",
           "member": "CreateAppResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1486,7 +1487,7 @@
         {
           "disabled": false,
           "document": "所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用",
-          "example": "测试",
+          "example": "app_game",
           "member": "string",
           "name": "SearchText",
           "required": true,

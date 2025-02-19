@@ -9,160 +9,142 @@ tccli dlc DescribeDMSTables --cli-unfold-argument  \
     --Name name1 \
     --Keyword key \
     --Pattern pattern \
-    --Catalog DataLakeCatalog \
+    --Catalog hive \
     --SchemaName name \
     --Type t1 \
-    --DbName db1
+    --DbName db1 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "********-********",
         "TableList": [
             {
-                "Table": {
-                    "ViewOriginalText": "abc",
-                    "ViewExpandedText": "abc",
-                    "Retention": 0,
-                    "Columns": [],
-                    "Sds": {
-                        "Location": "abc",
-                        "InputFormat": "abc",
-                        "OutputFormat": "abc",
-                        "NumBuckets": 0,
-                        "Compressed": true,
-                        "StoredAsSubDirectories": true,
-                        "SerdeLib": "abc",
-                        "SerdeName": "abc",
-                        "BucketCols": [
-                            "abc"
-                        ],
-                        "SerdeParams": [
-                            {
-                                "Key": "abc",
-                                "Value": "abc"
-                            }
-                        ],
-                        "Params": [
-                            {
-                                "Key": "abc",
-                                "Value": "abc"
-                            }
-                        ],
-                        "SortCols": {
-                            "Col": "abc",
-                            "Order": 0
-                        },
-                        "Cols": [
-                            {
-                                "Name": "abc",
-                                "Description": "abc",
-                                "Type": "abc",
-                                "Position": 0,
-                                "Params": [
-                                    {
-                                        "Key": "abc",
-                                        "Value": "abc"
-                                    }
-                                ],
-                                "IsPartition": true
-                            }
-                        ],
-                        "SortColumns": [
-                            {
-                                "Col": "abc",
-                                "Order": 0
-                            }
-                        ]
-                    },
-                    "PartitionKeys": [
-                        {
-                            "Name": "abc",
-                            "Description": "abc",
-                            "Type": "abc",
-                            "Position": 0,
-                            "IsPartition": true
-                        }
-                    ],
-                    "Partitions": [
-                        {
-                            "DatabaseName": "abc",
-                            "SchemaName": "abc",
-                            "TableName": "abc",
-                            "DataVersion": 0,
-                            "Name": "abc",
-                            "Params": [],
-                            "Values": [
-                                "abc"
-                            ],
-                            "StorageSize": 0,
-                            "RecordCount": 0,
-                            "CreateTime": "2020-09-22T00:00:00+00:00",
-                            "ModifiedTime": "2020-09-22T00:00:00+00:00",
-                            "LastAccessTime": "2020-09-22T00:00:00+00:00",
-                            "Sds": {
-                                "Location": "abc",
-                                "InputFormat": "abc",
-                                "OutputFormat": "abc",
-                                "NumBuckets": 0,
-                                "Compressed": true,
-                                "StoredAsSubDirectories": true,
-                                "SerdeLib": "abc",
-                                "SerdeName": "abc",
-                                "Params": [],
-                                "SerdeParams": [],
-                                "SortColumns": [],
-                                "BucketCols": [
-                                    "abc"
-                                ],
-                                "SortCols": {
-                                    "Col": "abc",
-                                    "Order": 0
-                                },
-                                "Cols": [
-                                    {
-                                        "Name": "abc",
-                                        "Description": "abc",
-                                        "Type": "abc",
-                                        "Position": 0,
-                                        "IsPartition": true
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "Type": "abc",
-                    "DbName": "abc",
-                    "SchemaName": "abc",
-                    "StorageSize": 0,
-                    "RecordCount": 0,
-                    "LifeTime": 0,
-                    "LastAccessTime": "2020-09-22T00:00:00+00:00",
-                    "DataUpdateTime": "2020-09-22T00:00:00+00:00",
-                    "StructUpdateTime": "2020-09-22T00:00:00+00:00",
-                    "Name": "abc"
-                },
                 "Asset": {
-                    "Id": 0,
-                    "Name": "abc",
-                    "Guid": "abc",
-                    "Catalog": "abc",
-                    "Description": "abc",
-                    "Owner": "abc",
-                    "OwnerAccount": "abc",
-                    "DataVersion": 0,
+                    "BizParams": [],
+                    "Catalog": "hive",
                     "CreateTime": "2020-09-22T00:00:00+00:00",
-                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                    "DataVersion": 0,
                     "DatasourceId": 0,
-                    "Params": [],
-                    "PermValues": [],
-                    "BizParams": []
+                    "Description": "",
+                    "Guid": "********",
+                    "Id": 12345678,
+                    "ModifiedTime": "2020-09-22T00:00:00+00:00",
+                    "Name": "",
+                    "Owner": "root",
+                    "OwnerAccount": "",
+                    "Params": [
+                        {
+                            "Key": "owner",
+                            "Value": "root"
+                        },
+                        {
+                            "Key": "table_type",
+                            "Value": "ICEBERG"
+                        },
+                        {
+                            "Key": "totalSize",
+                            "Value": "772"
+                        },
+                        {
+                            "Key": "numFiles",
+                            "Value": "2"
+                        },
+                        {
+                            "Key": "current-snapshot-id",
+                            "Value": "********"
+                        },
+                        {
+                            "Key": "previous_metadata_location",
+                            "Value": "cosn://********"
+                        },
+                        {
+                            "Key": "snapshot-count",
+                            "Value": "1"
+                        },
+                        {
+                            "Key": "transient_lastDdlTime",
+                            "Value": "1739174775725"
+                        },
+                        {
+                            "Key": "EXTERNAL",
+                            "Value": "TRUE"
+                        },
+                        {
+                            "Key": "metadata_location",
+                            "Value": "cosn://********"
+                        },
+                        {
+                            "Key": "numRows",
+                            "Value": "2"
+                        },
+                        {
+                            "Key": "uuid",
+                            "Value": "********"
+                        },
+                        {
+                            "Key": "current-snapshot-timestamp-ms",
+                            "Value": "1739174803467"
+                        },
+                        {
+                            "Key": "current-snapshot-summary",
+                            "Value": "{\"spark.app.id\":\"spark-********\",\"added-data-files\":\"2\",\"added-records\":\"2\",\"added-files-size\":\"772\",\"changed-partition-count\":\"1\",\"total-records\":\"2\",\"total-files-size\":\"772\",\"total-data-files\":\"2\",\"total-delete-files\":\"0\",\"total-position-deletes\":\"0\",\"total-equality-deletes\":\"0\"}"
+                        },
+                        {
+                            "Key": "lakehouse.storage.type",
+                            "Value": "lakefs"
+                        },
+                        {
+                            "Key": "write.parquet.compression-codec",
+                            "Value": "zstd"
+                        },
+                        {
+                            "Key": "current-schema",
+                            "Value": "{\"type\":\"struct\",\"schema-id\":0,\"fields\":[{\"id\":1,\"name\":\"a\",\"required\":false,\"type\":\"int\"}]}"
+                        }
+                    ],
+                    "PermValues": []
+                },
+                "Table": {
+                    "Columns": null,
+                    "SchemaName": "",
+                    "Retention": 1,
+                    "DataUpdateTime": "2020-09-22T00:00:00+00:00",
+                    "DbName": "a1",
+                    "LastAccessTime": "2020-09-22T00:00:00+00:00",
+                    "LifeTime": 0,
+                    "Name": "tb1111",
+                    "PartitionKeys": [],
+                    "Partitions": null,
+                    "RecordCount": 2,
+                    "Sds": {
+                        "BucketCols": null,
+                        "Cols": null,
+                        "Compressed": false,
+                        "InputFormat": "",
+                        "Location": "",
+                        "NumBuckets": 0,
+                        "OutputFormat": "",
+                        "Params": null,
+                        "SerdeLib": "",
+                        "SerdeName": "",
+                        "SerdeParams": null,
+                        "SortCols": null,
+                        "SortColumns": null,
+                        "StoredAsSubDirectories": false
+                    },
+                    "StorageSize": 772,
+                    "StructUpdateTime": "2020-09-22T00:00:00+00:00",
+                    "Type": "EXTERNAL_TABLE",
+                    "ViewExpandedText": "",
+                    "ViewOriginalText": ""
                 }
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "TotalCount": 44
     }
 }
 ```

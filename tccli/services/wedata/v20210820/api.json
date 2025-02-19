@@ -9879,6 +9879,100 @@
       ],
       "usage": "out"
     },
+    "DataSourceEnvInfo": {
+      "document": "数据源环境信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "production",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hive",
+          "member": "string",
+          "name": "DataSourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-asf418ag",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\t{\"key\":\"value\"}",
+          "member": "string",
+          "name": "Params",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "156431984651549",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1235",
+          "member": "string",
+          "name": "DataSourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "env环境的数据源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6546",
+          "member": "string",
+          "name": "EnvDataSourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\t{\"key\":\"value\"}",
+          "member": "string",
+          "name": "BizParams",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DataSourceInfo": {
       "document": "数据源对象",
       "members": [
@@ -9888,7 +9982,7 @@
           "example": "default",
           "member": "string",
           "name": "DatabaseName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9898,7 +9992,7 @@
           "example": "Desc",
           "member": "string",
           "name": "Description",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9908,7 +10002,7 @@
           "example": "10035",
           "member": "uint64",
           "name": "ID",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9918,7 +10012,7 @@
           "example": "null",
           "member": "string",
           "name": "Instance",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9928,7 +10022,7 @@
           "example": "mysql_test",
           "member": "string",
           "name": "Name",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9938,7 +10032,7 @@
           "example": "beijing",
           "member": "string",
           "name": "Region",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9948,7 +10042,7 @@
           "example": "MYSQL",
           "member": "string",
           "name": "Type",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9958,7 +10052,7 @@
           "example": "cdb-xxx",
           "member": "string",
           "name": "ClusterId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9968,7 +10062,7 @@
           "example": "87654321345678",
           "member": "uint64",
           "name": "AppId",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9978,7 +10072,7 @@
           "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "BizParams",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9988,7 +10082,7 @@
           "example": "DB",
           "member": "string",
           "name": "Category",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9998,7 +10092,7 @@
           "example": "test",
           "member": "string",
           "name": "Display",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10008,7 +10102,7 @@
           "example": "100653484",
           "member": "string",
           "name": "OwnerAccount",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10018,7 +10112,7 @@
           "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "Params",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10028,7 +10122,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10038,7 +10132,7 @@
           "example": "admin",
           "member": "string",
           "name": "OwnerAccountName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10048,7 +10142,7 @@
           "example": "emr-7ih89qvf",
           "member": "string",
           "name": "ClusterName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10058,7 +10152,7 @@
           "example": "1",
           "member": "string",
           "name": "OwnerProjectId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10068,7 +10162,7 @@
           "example": "test",
           "member": "string",
           "name": "OwnerProjectName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10078,7 +10172,7 @@
           "example": "test_ident",
           "member": "string",
           "name": "OwnerProjectIdent",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10088,7 +10182,7 @@
           "example": "test",
           "member": "string",
           "name": "AuthorityProjectName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10098,7 +10192,7 @@
           "example": "aaasdg",
           "member": "string",
           "name": "AuthorityUserName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10108,7 +10202,7 @@
           "example": "true",
           "member": "bool",
           "name": "Edit",
-          "output_required": true,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -10118,7 +10212,7 @@
           "example": "true",
           "member": "bool",
           "name": "Author",
-          "output_required": true,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -10128,7 +10222,7 @@
           "example": "true",
           "member": "bool",
           "name": "Deliver",
-          "output_required": true,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -10138,7 +10232,7 @@
           "example": "Available",
           "member": "string",
           "name": "DataSourceStatus",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10148,7 +10242,7 @@
           "example": "1712823812655",
           "member": "int64",
           "name": "CreateTime",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10158,7 +10252,7 @@
           "example": "123",
           "member": "string",
           "name": "ParamsString",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10168,7 +10262,7 @@
           "example": "123",
           "member": "string",
           "name": "BizParamsString",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10178,7 +10272,7 @@
           "example": "123",
           "member": "int64",
           "name": "ModifiedTime",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10188,7 +10282,7 @@
           "example": "MYSQL",
           "member": "string",
           "name": "ShowType",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10225,11 +10319,61 @@
         {
           "disabled": false,
           "document": "数据源连接状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "1",
           "member": "DataSourceConnectStatus",
           "name": "ConnectStatus",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源展示类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hive",
+          "member": "string",
+          "name": "DisplayType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源环境\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "production",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13653851789HIVEemr-3hkbg9ej",
+          "member": "string",
+          "name": "DatasourceUrn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否标准模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "simple",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 数据源环境信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{ \"Env\": \"production\"}",
+          "member": "DataSourceEnvInfo",
+          "name": "DataSourceEnvInfos",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -34538,7 +34682,7 @@
         {
           "disabled": false,
           "document": "项目的额外配置参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{etr='a'}",
           "member": "string",
           "name": "Params",
           "output_required": true,
@@ -34623,6 +34767,16 @@
           "name": "Model",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二级菜单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[101101,101102]",
+          "member": "string",
+          "name": "SecondModuleList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
