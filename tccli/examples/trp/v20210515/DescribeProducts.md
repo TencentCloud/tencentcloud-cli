@@ -32,7 +32,7 @@ Output:
                 "CreateTime": "2021-11-30T09:00:33.000Z",
                 "UpdateTime": "2021-11-30T09:16:23.000Z",
                 "Ext": {
-                    "Value": "xxx"
+                    "Value": "自定义"
                 },
                 "MerchantName": "demo",
                 "CertState": 1

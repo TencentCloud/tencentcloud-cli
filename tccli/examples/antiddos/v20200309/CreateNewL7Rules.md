@@ -17,7 +17,7 @@ tccli antiddos CreateNewL7Rules --cli-unfold-argument  \
     --Rules.0.SourceList.1.Source 1.1.1.10 \
     --Rules.0.SourceList.1.Weight 100 \
     --Rules.0.KeepEnable 0 \
-    --Rules.0.RuleName test \
+    --Rules.0.RuleName name \
     --VipList 192.168.1.1 \
     --IdList bgpip-000001 \
     --Business bgpip

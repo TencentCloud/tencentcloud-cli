@@ -16,15 +16,15 @@ Output:
     "Response": {
         "SubscribeRecordUserIds": {
             "SubscribeUserIds": [
-                3342
+                "3342"
             ],
             "UnSubscribeUserIds": [
-                7619
+                "7619"
             ]
         },
         "RecordMode": 1,
         "RequestId": "h9167d24-a2c6-1125-a5bd-5c023ba721c2",
-        "TaskId": 446192236330927912
+        "TaskId": 446192236330927940
     }
 }
 ```

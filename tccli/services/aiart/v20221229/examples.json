@@ -35,8 +35,8 @@
     "ImageToImage": [
       {
         "document": "调用成功示例",
-        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageToImage\n<公共请求参数>\n\n{\n    \"InputImage\": \"/asoaisjdio\",\n    \"Prompt\": \"女孩\",\n    \"Styles\": [\n        \"201\"\n    ],\n    \"ResultConfig\": {\n        \"Resolution\": \"768:768\"\n    },\n    \"Strength\": 0.5\n}",
-        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"/asjdioajsoi\",\n        \"RequestId\": \"301bfc25-61ca-4ece-b03e-f6aefb547969\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageToImage\n<公共请求参数>\n\n{\n    \"InputUrl\": \"https://xxx.com/image.jpg\",\n    \"Prompt\": \"女孩\",\n    \"Styles\": [\n        \"201\"\n    ],\n    \"ResultConfig\": {\n        \"Resolution\": \"768:768\"\n    },\n    \"Strength\": 0.5,\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultImage\": \"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\",\n        \"RequestId\": \"301bfc25-61ca-4ece-b03e-f6aefb547969\"\n    }\n}",
         "title": "调用示例"
       }
     ],

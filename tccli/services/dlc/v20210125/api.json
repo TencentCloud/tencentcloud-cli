@@ -5794,13 +5794,13 @@
         },
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回信息",
           "example": "测试资源",
           "member": "string",
           "name": "Message",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5814,33 +5814,33 @@
         },
         {
           "disabled": false,
-          "document": "引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch",
           "example": "SparkSQL",
           "member": "string",
           "name": "DataEngineType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID",
           "example": "130****568",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号ID",
           "example": "1000****6235",
           "member": "string",
           "name": "UserUin",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5886,25 +5886,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置项",
           "example": "dlc.query.execution.timeout",
           "member": "string",
           "name": "ConfigItem",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置值",
           "example": "360",
           "member": "string",
           "name": "ConfigValue",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6665,33 +6665,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "引擎ID",
           "example": "dataengine-abc",
           "member": "string",
           "name": "DataEngineId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "引擎名称",
           "example": "dlc_engine",
           "member": "string",
           "name": "DataEngineName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "引擎规格详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "引擎规格详情",
           "example": " [             {                 \"StartTime\": \"2024-06-06 12:00:00\",                 \"EndTime\": \"2024-06-06 13:00:00\",                 \"CU\": 0             }         ]",
           "member": "DataEngineScaleInfoDetail",
           "name": "ScaleDetail",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6701,33 +6701,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计开始时间，格式为：yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计开始时间，格式为：yyyy-MM-dd HH:mm:ss",
           "example": "2024-06-06 12:00:00",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "统计结束时间，格式为：yyyy-MM-dd HH:mm:ss\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计结束时间，格式为：yyyy-MM-dd HH:mm:ss",
           "example": "2024-06-06 13:00:00",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前统计时间段，引擎规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前统计时间段，引擎规格",
           "example": "16",
           "member": "int64",
           "name": "CU",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

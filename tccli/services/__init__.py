@@ -21,9 +21,6 @@ def action_caller(service):
 
 
 SERVICE_VERSIONS = {
-    "aa": [
-        "2020-02-24"
-    ],
     "aai": [
         "2018-05-22"
     ],

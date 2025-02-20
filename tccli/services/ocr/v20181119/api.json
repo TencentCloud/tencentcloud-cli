@@ -2932,6 +2932,32 @@
       ],
       "type": "object"
     },
+    "CustomsPaymentReceipt": {
+      "document": "海关缴款书",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)，支持以下字段： 税号 、纳税人识别号 、纳税人名称 、金额合计大写 、金额合计小写 、填发日期 、税务机关 、填票人。 示例值：纳税人识别号",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DetailInformationOfAirTicketTupleList": {
       "document": "机票详细信息元组",
       "members": [
@@ -8177,7 +8203,7 @@
         },
         {
           "disabled": false,
-          "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票",
+          "document": "识别出的图片所属的票据类型。\n-1：未知类型\n0：出租车发票\n1：定额发票\n2：火车票\n3：增值税发票\n5：机票行程单\n8：通用机打发票\n9：汽车票\n10：轮船票\n11：增值税发票（卷票）\n12：购车发票\n13：过路过桥费发票\n15：非税发票\n16：全电发票\n17：医疗发票\n18：完税凭证\n19：海关缴款书",
           "example": "3",
           "member": "int64",
           "name": "Type",
@@ -16366,6 +16392,26 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完税凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaxPayment",
+          "name": "TaxPayment",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "海关缴款\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomsPaymentReceipt",
+          "name": "CustomsPaymentReceipt",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -17153,6 +17199,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaxPayment": {
+      "document": "完税凭证",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别出的字段名称(关键字)，支持以下字段：\n税号 、纳税人识别号 、纳税人名称 、金额合计大写 、金额合计小写 、填发日期 、税务机关 、填票人。\n示例值：纳税人识别号",
+          "example": "无",
+          "member": "OtherInvoiceItem",
+          "name": "Content",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

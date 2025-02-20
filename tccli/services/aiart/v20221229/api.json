@@ -559,7 +559,7 @@
         {
           "disabled": false,
           "document": "输入图 Base64 数据。\n算法将根据输入的图片，结合文本描述智能生成与之相关的图像。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "无",
+          "example": "/9j/4QlQaHR0c...N6a2M5ZCI",
           "member": "string",
           "name": "InputImage",
           "required": false,
@@ -568,7 +568,7 @@
         {
           "disabled": false,
           "document": "输入图 Url。\n算法将根据输入的图片，结合文本描述智能生成与之相关的图像。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：单边分辨率小于5000且大于50，转成 Base64 字符串后小于 8MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
-          "example": "无",
+          "example": "https://xxx.com/image.jpg",
           "member": "string",
           "name": "InputUrl",
           "required": false,
@@ -595,7 +595,7 @@
         {
           "disabled": false,
           "document": "绘画风格。\n请在  [图像风格化风格列表](https://cloud.tencent.com/document/product/1668/86250) 中选择期望的风格，传入风格编号。\n推荐使用且只使用一种风格。不传默认使用201（日系动漫风格）。",
-          "example": "无",
+          "example": "[\"201\"]",
           "member": "string",
           "name": "Styles",
           "required": false,
@@ -604,7 +604,7 @@
         {
           "disabled": false,
           "document": "生成图结果的配置，包括输出图片分辨率和尺寸等。\n支持生成以下分辨率的图片：origin（与输入图分辨率一致，长边最高为2000，超出将做等比例缩小）、768:768（1:1）、768:1024（3:4）、1024:768（4:3）。\n不传默认使用origin。",
-          "example": "无",
+          "example": "768:768",
           "member": "ResultConfig",
           "name": "ResultConfig",
           "required": false,
@@ -613,7 +613,7 @@
         {
           "disabled": false,
           "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图使用了 AI 绘画技术，是 AI 生成的图片。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LogoAdd",
           "required": false,
@@ -622,7 +622,7 @@
         {
           "disabled": false,
           "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
-          "example": "无",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
           "member": "LogoParam",
           "name": "LogoParam",
           "required": false,
@@ -631,7 +631,7 @@
         {
           "disabled": false,
           "document": "生成自由度。\nStrength 值越小，生成图和原图越接近，取值范围(0, 1]，不传使用模型内置的默认值。\n推荐的取值范围为0.6 - 0.8。",
-          "example": "无",
+          "example": "0.5",
           "member": "float",
           "name": "Strength",
           "required": false,
@@ -640,7 +640,7 @@
         {
           "disabled": false,
           "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。",
-          "example": "base64",
+          "example": "url",
           "member": "string",
           "name": "RspImgType",
           "required": false,
@@ -649,7 +649,7 @@
         {
           "disabled": false,
           "document": "画质增强开关，默认关闭。\n1：开启\n0：关闭\n开启后将增强图像的画质清晰度，生成耗时有所增加。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "EnhanceImage",
           "required": false,
@@ -658,7 +658,7 @@
         {
           "disabled": false,
           "document": "细节优化的面部数量上限，支持0 ~ 6，默认为0。\n若上传大于0的值，将以此为上限对每张图片中面积占比较小的面部进行细节修复，生成耗时根据实际优化的面部个数有所增加。",
-          "example": "0",
+          "example": "1",
           "member": "int64",
           "name": "RestoreFace",
           "required": false,
@@ -673,7 +673,7 @@
         {
           "disabled": false,
           "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
-          "example": "无",
+          "example": "https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7",
           "member": "string",
           "name": "ResultImage",
           "output_required": true,
@@ -1564,7 +1564,7 @@
         {
           "disabled": false,
           "document": "美照生成数量。\n支持1 ~ 4张，默认生成4张。",
-          "example": "1",
+          "example": "4",
           "member": "int64",
           "name": "Num",
           "required": false,
@@ -1572,7 +1572,7 @@
         },
         {
           "disabled": false,
-          "document": "美照生成风格。\n仅对单人美照生效，单人可支持选择不同风格。需按照美照生成数量，在数组中逐一填入每张美照的风格名称。如果不传，默认取不重复的随机风格顺序。\n多人美照只支持 balanced 一种风格，该参数不生效。\n可选风格：<ul><li>real：面部相似度更高。</li><li>balanced：平衡面部真实感和美观度。</li><li>extured：脸部皮肤更具真实感。</li><li>beautiful：脸部美观度更高。</li></ul>",
+          "document": "美照生成风格。\n仅对单人美照生效，单人可支持选择不同风格。需按照美照生成数量，在数组中逐一填入每张美照的风格名称。如果不传，默认取不重复的随机风格顺序。\n多人美照只支持 balanced 一种风格，该参数不生效。\n可选风格：<ul><li>real：面部相似度更高。</li><li>balanced：平衡面部真实感和美观度。</li><li>textured：脸部皮肤更具真实感。</li><li>beautiful：脸部美观度更高。</li></ul>",
           "example": "[\"real\", \"balanced\", \"textured\", \"beautiful\"]",
           "member": "string",
           "name": "Style",

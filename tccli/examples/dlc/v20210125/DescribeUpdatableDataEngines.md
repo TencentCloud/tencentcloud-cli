@@ -6,7 +6,9 @@ Input:
 
 ```
 tccli dlc DescribeUpdatableDataEngines --cli-unfold-argument  \
-    --DataEngineConfigCommand UpdateSparkSQLResultPath
+    --DataEngineConfigCommand UpdateTaskResultPath \
+    --UseLakeFs True \
+    --CustomResultPath cosn://test-bucket/dir
 ```
 
 Output: 
@@ -15,19 +17,19 @@ Output:
     "Response": {
         "DataEngineBasicInfos": [
             {
-                "DataEngineName": "abc",
-                "State": 0,
-                "CreateTime": 0,
-                "UpdateTime": 0,
-                "Message": "abc",
-                "DataEngineId": "abc",
-                "DataEngineType": "abc",
-                "AppId": 0,
-                "UserUin": "abc"
+                "DataEngineId": "DataEngine-houseid1",
+                "DataEngineName": "SparkSQL",
+                "AppId": 130001173,
+                "UserUin": "1000117",
+                "State": 2,
+                "CreateTime": 1729758961,
+                "UpdateTime": 1729758961,
+                "Message": "",
+                "DataEngineType": "SparkSQL"
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "abc"
+        "RequestId": "5441bd1b-af71-4bd1-97f0-33568cf387b7",
+        "TotalCount": 1
     }
 }
 ```

@@ -47,6 +47,8 @@ Output:
                 "Tgw": 2,
                 "ZoneId": 0,
                 "Name": "",
+                "EOFlag": 0,
+                "ElasticBandwidth": 2000,
                 "V6Flag": 1,
                 "Domain": "",
                 "Status": "idle",

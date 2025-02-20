@@ -244,7 +244,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMerchants\n<公共请求参数>\n\n{\n    \"Name\": \"商户名称\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Merchants\": [\n            {\n                \"Remark\": \"商户备注信息\",\n                \"Name\": \"商户名称\",\n                \"CorpId\": 10000,\n                \"UpdateTime\": \"2023-08-15T02:47:35.000Z\",\n                \"MerchantId\": \"abc\",\n                \"CodeRule\": \"https://xxx.xxx.com/qr/(.*)\",\n                \"CreateTime\": \"2023-08-15T02:47:35.000Z\",\n                \"CodeType\": 0,\n                \"CodeUrl\": \"https://xxx.xxx.com\"\n            }\n        ],\n        \"RequestId\": \"eaa3ccac-d2f5-4df0-a8b3-7b51324e9283\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Merchants\": [\n            {\n                \"Remark\": \"商户备注信息\",\n                \"Name\": \"商户名称\",\n                \"CorpId\": 10000,\n                \"UpdateTime\": \"2023-08-15T02:47:35.000Z\",\n                \"MerchantId\": \"pn30msjjxwga\",\n                \"CodeRule\": \"https://xxx.xxx.com/qr/(.*)\",\n                \"CreateTime\": \"2023-08-15T02:47:35.000Z\",\n                \"CodeType\": 0,\n                \"CodeUrl\": \"https://xxx.xxx.com\"\n            }\n        ],\n        \"RequestId\": \"eaa3ccac-d2f5-4df0-a8b3-7b51324e9283\"\n    }\n}",
         "title": "查询商户列表"
       }
     ],
@@ -260,7 +260,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlanQRCodes\n<公共请求参数>\n\n{\n    \"PlanId\": 67087,\n    \"StartTime\": \"2023-10-10 00:00:00\",\n    \"EndTime\": \"2023-10-10 23:59:59\",\n    \"PageNo\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Ret\": 0,\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Url\": \"https://anxin.qq.com/q99j9ovp5c6sok7l5g\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Ret\": 0,\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Url\": \"https://anxin.qq.com/q99j9ovp5c6sok7l5g\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"1ybwr6bdn3yp\"\n    }\n}",
         "title": "查询安心计划二维码列表"
       }
     ],
@@ -268,7 +268,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductById\n<公共请求参数>\n\n{\n    \"ProductId\": \"eqdmnz7020bmtvi9\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"85tfp1sn78r9m1568i\",\n            \"CorpId\": 10000,\n            \"MerchantId\": \"eqdmnz7020bmtvi9\",\n            \"ProductCode\": \"85tfp1sn78r9m1568i\",\n            \"Name\": \"demo5\",\n            \"Specification\": \"100ml\",\n            \"Remark\": \"desc\",\n            \"Logo\": [\n                \"https://xxx.xxx.com/logo.png\"\n            ],\n            \"CreateTime\": \"2021-11-30T09:00:33.000Z\",\n            \"UpdateTime\": \"2021-11-30T09:16:23.000Z\",\n            \"Ext\": {\n                \"Value\": \"xxx\"\n            },\n            \"MerchantName\": \"demo\",\n            \"CertState\": 1\n        },\n        \"RequestId\": \"06356857-6961-4b9d-bf1e-df5e0311358e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Product\": {\n            \"ProductId\": \"85tfp1sn78r9m1568i\",\n            \"CorpId\": 10000,\n            \"MerchantId\": \"eqdmnz7020bmtvi9\",\n            \"ProductCode\": \"85tfp1sn78r9m1568i\",\n            \"Name\": \"demo5\",\n            \"Specification\": \"100ml\",\n            \"Remark\": \"desc\",\n            \"Logo\": [\n                \"https://xxx.xxx.com/logo.png\"\n            ],\n            \"CreateTime\": \"2021-11-30T09:00:33.000Z\",\n            \"UpdateTime\": \"2021-11-30T09:16:23.000Z\",\n            \"Ext\": {\n                \"Value\": \"自定义\"\n            },\n            \"MerchantName\": \"demo\",\n            \"CertState\": 1\n        },\n        \"RequestId\": \"06356857-6961-4b9d-bf1e-df5e0311358e\"\n    }\n}",
         "title": "查询商品信息"
       }
     ],
@@ -276,7 +276,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProducts\n<公共请求参数>\n\n{\n    \"Name\": \"商品名称\",\n    \"MerchantId\": \"商户ID\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1,\n    \"CertState\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"85tfp1sn78r9m1568i\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"eqdmnz7020bmtvi9\",\n                \"ProductCode\": \"85tfp1sn78r9m1568i\",\n                \"Name\": \"demo5\",\n                \"Specification\": \"100ml\",\n                \"Remark\": \"desc\",\n                \"Logo\": [\n                    \"https://xxx.xxx.com/logo.png\"\n                ],\n                \"CreateTime\": \"2021-11-30T09:00:33.000Z\",\n                \"UpdateTime\": \"2021-11-30T09:16:23.000Z\",\n                \"Ext\": {\n                    \"Value\": \"xxx\"\n                },\n                \"MerchantName\": \"demo\",\n                \"CertState\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eaa3ccac-d2f5-4df0-a8b3-7b51324e9283\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [\n            {\n                \"ProductId\": \"85tfp1sn78r9m1568i\",\n                \"CorpId\": 10000,\n                \"MerchantId\": \"eqdmnz7020bmtvi9\",\n                \"ProductCode\": \"85tfp1sn78r9m1568i\",\n                \"Name\": \"demo5\",\n                \"Specification\": \"100ml\",\n                \"Remark\": \"desc\",\n                \"Logo\": [\n                    \"https://xxx.xxx.com/logo.png\"\n                ],\n                \"CreateTime\": \"2021-11-30T09:00:33.000Z\",\n                \"UpdateTime\": \"2021-11-30T09:16:23.000Z\",\n                \"Ext\": {\n                    \"Value\": \"自定义\"\n                },\n                \"MerchantName\": \"demo\",\n                \"CertState\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eaa3ccac-d2f5-4df0-a8b3-7b51324e9283\"\n    }\n}",
         "title": "查询商品列表"
       }
     ],
@@ -379,7 +379,7 @@
     "ModifyMerchant": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMerchant\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"Name\": \"demo\",\n    \"Remark\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMerchant\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"Name\": \"demo\",\n    \"Remark\": \"备注\"\n}",
         "output": "{\n    \"Response\": {\n        \"MerchantId\": \"eqdmnz7020bmtvi9\",\n        \"RequestId\": \"511b8969-7d23-46f6-bd64-cdfab11c9134\"\n    }\n}",
         "title": "编辑商户"
       }

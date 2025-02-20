@@ -14,6 +14,13 @@
       "output": "ApplySnapshotResponse",
       "status": "online"
     },
+    "ApplySnapshotGroup": {
+      "document": "本接口（ApplySnapshotGroup）用于回滚快照组，将实例恢复到创建快照组时刻的状态。\n* 1.可选择快照组全部或部分盘进行回滚；\n* 2.如果回滚的盘中包含已挂载的盘，要求这些盘必须挂载在同一实例上，且要求该实例已关机才能回滚；\n* 3.回滚为异步操作，接口返回成功不代表回滚成功，可通过调DescribeSnapshotGroups接口查询快照组的状态。",
+      "input": "ApplySnapshotGroupRequest",
+      "name": "回滚快照组",
+      "output": "ApplySnapshotGroupResponse",
+      "status": "online"
+    },
     "AttachDisks": {
       "document": "本接口（AttachDisks）用于挂载云硬盘。\n \n* 支持批量操作，将多块云盘挂载到同一云主机。如果多个云盘中存在不允许挂载的云盘，则操作不执行，返回特定的错误码。\n* 本接口为异步接口，当挂载云盘的请求成功返回时，表示后台已发起挂载云盘的操作，可通过接口[DescribeDisks](/document/product/362/16315)来查询对应云盘的状态，如果云盘的状态由“ATTACHING”变为“ATTACHED”，则为挂载成功。",
       "input": "AttachDisksRequest",
@@ -63,6 +70,13 @@
       "output": "CreateSnapshotResponse",
       "status": "online"
     },
+    "CreateSnapshotGroup": {
+      "document": "本接口（CreateSnapshotGroup）用于创建快照组。\n* 创建快照组的云硬盘列表必须挂载在同一实例上；\n* 可选择挂载在实例上的全部或部分盘创建快照组。",
+      "input": "CreateSnapshotGroupRequest",
+      "name": "创建快照组",
+      "output": "CreateSnapshotGroupResponse",
+      "status": "online"
+    },
     "DeleteAutoSnapshotPolicies": {
       "document": "本接口（DeleteAutoSnapshotPolicies）用于删除定期快照策略。\n\n*  支持批量操作。如果多个定期快照策略存在无法删除的，则操作不执行，以特定错误码返回。",
       "input": "DeleteAutoSnapshotPoliciesRequest",
@@ -75,6 +89,13 @@
       "input": "DeleteDiskBackupsRequest",
       "name": "删除云硬盘备份点",
       "output": "DeleteDiskBackupsResponse",
+      "status": "online"
+    },
+    "DeleteSnapshotGroup": {
+      "document": "本接口（DeleteSnapshotGroup）用于删除快照组，一次调用仅支持删除一个快照组。\n* 默认会删除快照组内的所有快照；\n* 如果快照组内的快照有关联镜像，则删除失败，所有快照均不会删除；如果需要同时删除快照绑定的镜像，可传入参数DeleteBindImages等于true。",
+      "input": "DeleteSnapshotGroupRequest",
+      "name": "删除快照组",
+      "output": "DeleteSnapshotGroupResponse",
       "status": "online"
     },
     "DeleteSnapshots": {
@@ -131,6 +152,13 @@
       "input": "DescribeInstancesDiskNumRequest",
       "name": "查询实例关联的云硬盘数量",
       "output": "DescribeInstancesDiskNumResponse",
+      "status": "online"
+    },
+    "DescribeSnapshotGroups": {
+      "document": "本接口（DescribeSnapshotGroups）用于查询快照组列表。\n* 可以根据快照组ID、快照组状态、快照组关联的快照ID等来查询快照组列表，不同条件之间为与(AND)的关系，过滤信息详细请见过滤器`Filter`。\n* 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的快照组列表。",
+      "input": "DescribeSnapshotGroupsRequest",
+      "name": "查询快照组列表",
+      "output": "DescribeSnapshotGroupsResponse",
       "status": "online"
     },
     "DescribeSnapshotOverview": {
@@ -348,6 +376,32 @@
       ],
       "usage": "both"
     },
+    "ApplyDisk": {
+      "document": "本参数用于快照组回滚接口的入参，表示回滚的云盘、快照列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照组关联的快照ID。",
+          "example": "snap-cznei4gl",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组关联快照对应的原云硬盘ID。",
+          "example": "disk-1ly0wu8c",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ApplyDiskBackupRequest": {
       "document": "ApplyDiskBackup请求参数结构体",
       "members": [
@@ -392,6 +446,60 @@
     },
     "ApplyDiskBackupResponse": {
       "document": "ApplyDiskBackup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplySnapshotGroupRequest": {
+      "document": "ApplySnapshotGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回滚的快照组ID。",
+          "example": "csnap-csoplz7u",
+          "member": "string",
+          "name": "SnapshotGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回滚的快照组关联的快照ID，及快照对应的原云硬盘ID列表。",
+          "example": "无",
+          "member": "ApplyDisk",
+          "name": "ApplyDisks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "回滚前是否执行自动关机。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoStopInstance",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "回滚完成后是否自动开机。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoStartInstance",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplySnapshotGroupResponse": {
+      "document": "ApplySnapshotGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1323,6 +1431,61 @@
       ],
       "type": "object"
     },
+    "CreateSnapshotGroupRequest": {
+      "document": "CreateSnapshotGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要创建快照组的云硬盘ID列表，必须选择挂载在同一实例上的盘列表。",
+          "example": "[\"disk-6rag8jef\"]",
+          "member": "string",
+          "name": "DiskIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "快照组名称，快照组关联的快照也会继承快照组的名称。例如：快照组名称为testSnapshotGroup，快照组关联两个快照，则两个快照的名称分别为testSnapshotGroup_0，testSnapshotGroup_1。",
+          "example": "testSnapGroup",
+          "member": "string",
+          "name": "SnapshotGroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照组需要绑定的标签列表。",
+          "example": "[{\"Key\": \"tagKey\", \"Value\": \"tagVal\"}]",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSnapshotGroupResponse": {
+      "document": "CreateSnapshotGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的快照组ID。",
+          "example": "csnap-oavcw09g",
+          "member": "string",
+          "name": "SnapshotGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSnapshotRequest": {
       "document": "CreateSnapshot请求参数结构体",
       "members": [
@@ -1440,6 +1603,51 @@
     },
     "DeleteDiskBackupsResponse": {
       "document": "DeleteDiskBackups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotGroupRequest": {
+      "document": "DeleteSnapshotGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照组ID。",
+          "example": "csnap-gv9naz67",
+          "member": "string",
+          "name": "SnapshotGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "快照组ID 列表。此参数与快照组 ID 至少传 1 个，同时传会与快照组 ID 合并。",
+          "example": "[\"csnap-gv9naz66\"]",
+          "member": "string",
+          "name": "SnapshotGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否同时删除快照组关联的镜像；取值为false，表示不删除快照组绑定的镜像，此时，如果快照组有绑定的镜像，删除会失败；取值为true，表示同时删除快照组绑定的镜像；默认值为false。",
+          "example": "true",
+          "member": "bool",
+          "name": "DeleteBindImages",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSnapshotGroupResponse": {
+      "document": "DeleteSnapshotGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2028,6 +2236,69 @@
           "example": "无",
           "member": "AttachDetail",
           "name": "AttachDetail",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotGroupsRequest": {
+      "document": "DescribeSnapshotGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。<br><li>snapshot-group-id - Array of String - 是否必填：否 -（过滤条件）按快照组ID过滤 <br><li>snapshot-group-state - Array of String - 是否必填：否 -（过滤条件）按快照组状态过滤。(NORMAL: 正常 | CREATING:创建中 | ROLLBACKING:回滚中) <br><li>snapshot-group-name - Array of String - 是否必填：否 -（过滤条件）按快照组名称过滤 <br><li>snapshot-id - Array of String - 是否必填：否 -（过滤条件）按快照组内的快照ID过滤",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotGroupsResponse": {
+      "document": "DescribeSnapshotGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的总数量。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组列表详情。",
+          "example": "无",
+          "member": "SnapshotGroup",
+          "name": "SnapshotGroupSet",
           "type": "list",
           "value_allowed_null": false
         },
@@ -4308,11 +4579,11 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "document": "云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。",
           "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -4604,6 +4875,142 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SnapshotGroup": {
+      "document": "描述快照组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "快照组ID。",
+          "example": "csnap-csoplz7u",
+          "member": "string",
+          "name": "SnapshotGroupId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组类型。NORMAL: 普通快照组，非一致性快照。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "SnapshotGroupType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组是否包含系统盘快照。",
+          "example": "true",
+          "member": "bool",
+          "name": "ContainRootSnapshot",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组包含的快照ID列表。",
+          "example": "[\"snap-31gfd8na\"]",
+          "member": "string",
+          "name": "SnapshotIdSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组状态。<br><li>NORMAL: 正常<br><li>CREATING:创建中<br><li>ROLLBACKING:回滚中",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "SnapshotGroupState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组创建进度。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组创建时间。",
+          "example": "2022-05-25T12:14:53.243893+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组最新修改时间",
+          "example": "2022-05-25T12:14:53.243893+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组关联的镜像列表。",
+          "example": "[]",
+          "member": "Image",
+          "name": "Images",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组名称。",
+          "example": "test",
+          "member": "string",
+          "name": "SnapshotGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组关联的镜像数量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ImageCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组是否永久保留",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照组到期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-05-25T12:14:53.243893+08:00",
+          "member": "datetime_iso",
+          "name": "DeadlineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -7,13 +7,13 @@ Input:
 ```
 tccli antiddos DescribeBGPIPL7Rules --cli-unfold-argument  \
     --StatusList 1 \
-    --Domain abc \
-    --Business abc \
-    --Ip abc \
+    --Domain www.abc.com \
+    --Business bgp \
+    --Ip 1.1.1.1 \
     --Limit 1 \
     --Offset 1 \
-    --ProtocolList abc \
-    --Cname abc \
+    --ProtocolList http \
+    --Cname www.ab.com \
     --Export True
 ```
 
@@ -24,23 +24,23 @@ Output:
         "Rules": [
             {
                 "Region": 1,
-                "Id": "abc",
-                "Ip": "abc",
-                "RuleId": "abc",
-                "RuleName": "abc",
-                "Protocol": "abc",
-                "Domain": "abc",
+                "Id": "id",
+                "Ip": "1.1.1.1",
+                "RuleId": "id",
+                "RuleName": "name",
+                "Protocol": "http",
+                "Domain": "www.abc.com",
                 "LbType": 1,
                 "KeepEnable": 1,
                 "KeepTime": 1,
                 "SourceType": 1,
                 "CertType": 1,
-                "SSLId": "abc",
-                "Cert": "abc",
-                "PrivateKey": "abc",
+                "SSLId": "id",
+                "Cert": "cert",
+                "PrivateKey": "key",
                 "SourceList": [
                     {
-                        "Source": "abc",
+                        "Source": "1.1.1.1",
                         "Weight": 1,
                         "Port": 1,
                         "Backup": 1
@@ -50,7 +50,7 @@ Output:
                 "CCStatus": 1,
                 "CCEnable": 1,
                 "CCThreshold": 1,
-                "CCLevel": "abc",
+                "CCLevel": "1",
                 "ModifyTime": "2020-09-22 00:00:00",
                 "HttpsToHttpEnable": 1,
                 "VirtualPort": 1,
@@ -63,12 +63,12 @@ Output:
             {
                 "Status": 1,
                 "Enable": 1,
-                "RuleId": "abc",
-                "Url": "abc",
+                "RuleId": "id",
+                "Url": "url",
                 "Interval": 1,
                 "AliveNum": 1,
                 "KickNum": 1,
-                "Method": "abc",
+                "Method": "post",
                 "StatusCode": 1,
                 "ProtocolFlag": 1,
                 "PassiveEnable": 1,
@@ -80,7 +80,7 @@ Output:
             }
         ],
         "Total": 1,
-        "RequestId": "abc"
+        "RequestId": "08afbb87-5a2c-4562-acbd-eef06a47c7db"
     }
 }
 ```

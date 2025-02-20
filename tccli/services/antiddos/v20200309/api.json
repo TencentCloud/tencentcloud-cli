@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DescribeListBGPIPInstances": {
-      "document": "获取高防IP资产实例列表\n",
+      "document": "获取高防IP资产实例列表",
       "input": "DescribeListBGPIPInstancesRequest",
       "name": "获取高防IP资产实例列表",
       "output": "DescribeListBGPIPInstancesResponse",
@@ -791,7 +791,7 @@
           "example": "200",
           "member": "uint64",
           "name": "NormalBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -801,7 +801,7 @@
           "example": "60",
           "member": "uint64",
           "name": "ForwardRulesLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -811,7 +811,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -821,7 +821,7 @@
           "example": "2022-06-18 18:36:44",
           "member": "string",
           "name": "CurDeadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1181,7 +1181,7 @@
         {
           "disabled": false,
           "document": "重保实例\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "ConvoyId",
           "output_required": true,
@@ -1329,7 +1329,7 @@
         {
           "disabled": false,
           "document": "转发协议，取值[http, https]",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
@@ -1340,7 +1340,7 @@
         {
           "disabled": false,
           "document": "转发域名",
-          "example": "无",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -1351,7 +1351,7 @@
         {
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "LbType",
           "output_required": true,
@@ -1362,7 +1362,7 @@
         {
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "KeepEnable",
           "output_required": true,
@@ -1373,7 +1373,7 @@
         {
           "disabled": false,
           "document": "会话保持时间，单位秒",
-          "example": "无",
+          "example": "12",
           "member": "uint64",
           "name": "KeepTime",
           "output_required": true,
@@ -1384,7 +1384,7 @@
         {
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SourceType",
           "output_required": true,
@@ -1406,7 +1406,7 @@
         {
           "disabled": false,
           "document": "区域码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Region",
           "output_required": true,
@@ -1417,7 +1417,7 @@
         {
           "disabled": false,
           "document": "资源Id",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -1428,7 +1428,7 @@
         {
           "disabled": false,
           "document": "资源Ip",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "output_required": true,
@@ -1439,7 +1439,7 @@
         {
           "disabled": false,
           "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
-          "example": "无",
+          "example": "ruleid",
           "member": "string",
           "name": "RuleId",
           "output_required": true,
@@ -1450,7 +1450,7 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
@@ -1461,7 +1461,7 @@
         {
           "disabled": false,
           "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CertType",
           "output_required": true,
@@ -1472,7 +1472,7 @@
         {
           "disabled": false,
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "SSLId",
           "output_required": true,
@@ -1483,7 +1483,7 @@
         {
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
+          "example": "cert",
           "member": "string",
           "name": "Cert",
           "output_required": true,
@@ -1494,7 +1494,7 @@
         {
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "PrivateKey",
           "output_required": true,
@@ -1505,7 +1505,7 @@
         {
           "disabled": false,
           "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -1516,7 +1516,7 @@
         {
           "disabled": false,
           "document": "cc防护状态，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCStatus",
           "output_required": true,
@@ -1527,7 +1527,7 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCEnable",
           "output_required": true,
@@ -1538,7 +1538,7 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护阈值（已废弃）",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CCThreshold",
           "output_required": true,
@@ -1549,7 +1549,7 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护等级",
-          "example": "无",
+          "example": "宽松",
           "member": "string",
           "name": "CCLevel",
           "output_required": true,
@@ -1560,7 +1560,7 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "无",
+          "example": "2024.10.1",
           "member": "datetime",
           "name": "ModifyTime",
           "output_required": true,
@@ -1571,7 +1571,7 @@
         {
           "disabled": false,
           "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "HttpsToHttpEnable",
           "output_required": true,
@@ -1582,7 +1582,7 @@
         {
           "disabled": false,
           "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "80",
           "member": "uint64",
           "name": "VirtualPort",
           "output_required": true,
@@ -1593,7 +1593,7 @@
         {
           "disabled": false,
           "document": "http强制跳转https，1表示打开，0表示关闭",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "RewriteHttps",
           "output_required": true,
@@ -1604,7 +1604,7 @@
         {
           "disabled": false,
           "document": "规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "ErrCode",
           "output_required": true,
@@ -1702,7 +1702,7 @@
         {
           "disabled": false,
           "document": "资产实例的名称",
-          "example": "“”",
+          "example": "“id-123”",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -1832,7 +1832,7 @@
         {
           "disabled": false,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024.10.1",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
@@ -1901,7 +1901,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1911,7 +1911,7 @@
           "example": "10",
           "member": "uint64",
           "name": "ProtectCountLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1921,7 +1921,7 @@
           "example": "10",
           "member": "uint64",
           "name": "ProtectIPNumberLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1931,7 +1931,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1941,7 +1941,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UnionPackFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1951,7 +1951,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ServiceBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1961,7 +1961,7 @@
           "example": "0",
           "member": "uint64",
           "name": "BattleEditionFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1971,7 +1971,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ChannelEditionFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1981,7 +1981,7 @@
           "example": "0",
           "member": "uint64",
           "name": "EnterpriseFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1991,7 +1991,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ElasticLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2001,7 +2001,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DownGradeProtect",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4803,7 +4803,7 @@
         {
           "disabled": false,
           "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
-          "example": "无",
+          "example": "creat",
           "member": "uint64",
           "name": "StatusList",
           "required": false,
@@ -4812,7 +4812,7 @@
         {
           "disabled": false,
           "document": "域名搜索，选填，当需要搜索域名请填写",
-          "example": "无",
+          "example": "www.xxx.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -4830,7 +4830,7 @@
         {
           "disabled": false,
           "document": "一页条数，默认值100，最大值100，超过100最大返回100条",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -4839,7 +4839,7 @@
         {
           "disabled": false,
           "document": "规则偏移量，取值为(页码-1)*一页条数",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -4848,7 +4848,7 @@
         {
           "disabled": false,
           "document": "转发协议搜索，选填，取值[http, https, http/https]",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "ProtocolList",
           "required": false,
@@ -4866,7 +4866,7 @@
         {
           "disabled": false,
           "document": "默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Export",
           "required": false,
@@ -5615,8 +5615,8 @@
         },
         {
           "disabled": false,
-          "document": "协议，可取值HTTP，HTTPS",
-          "example": "HTTP",
+          "document": "协议，可取值http、https、http/https",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -5634,7 +5634,7 @@
           "example": "loose",
           "member": "string",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6893,7 +6893,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6903,7 +6903,7 @@
           "example": "无",
           "member": "BGPIPInstance",
           "name": "InstanceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6967,7 +6967,7 @@
         {
           "disabled": false,
           "document": "名称搜索",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "FilterName",
           "required": false,
@@ -7092,7 +7092,7 @@
         },
         {
           "disabled": false,
-          "document": "是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 \n",
+          "document": "是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0",
           "example": "1",
           "member": "uint64",
           "name": "FilterPlanCntFlag",
@@ -7111,7 +7111,7 @@
         {
           "disabled": false,
           "document": "zoenid列表",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "FilterZoneIdList",
           "required": false,
@@ -8108,7 +8108,7 @@
         {
           "disabled": false,
           "document": "状态搜索，选填，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
-          "example": "无",
+          "example": "[1,2]",
           "member": "uint64",
           "name": "StatusList",
           "required": false,
@@ -8117,7 +8117,7 @@
         {
           "disabled": false,
           "document": "域名搜索，选填，当需要搜索域名请填写",
-          "example": "无",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
           "required": false,
@@ -8135,7 +8135,7 @@
         {
           "disabled": false,
           "document": "一页条数，默认值100，最大值100，超过100最大返回100条",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -8144,7 +8144,7 @@
         {
           "disabled": false,
           "document": "规则偏移量，取值为(页码-1)*一页条数",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8153,7 +8153,7 @@
         {
           "disabled": false,
           "document": "转发协议搜索，选填，取值[http, https, http/https]",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "ProtocolList",
           "required": false,
@@ -8171,7 +8171,7 @@
         {
           "disabled": false,
           "document": "默认为false，当为true时，将不对各个规则做策略检查，直接导出所有规则",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "Export",
           "required": false,
@@ -8967,9 +8967,10 @@
         {
           "disabled": false,
           "document": "IP地址",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8977,9 +8978,10 @@
         {
           "disabled": false,
           "document": "云产品类型，取值[\npublic（CVM产品），\nbm（黑石产品），\neni（弹性网卡），\nvpngw（VPN网关），\n natgw（NAT网关），\nwaf（Web应用安全产品），\nfpc（金融产品），\ngaap（GAAP产品）, \nother(托管IP)\n]",
-          "example": "无",
+          "example": "cvm",
           "member": "string",
           "name": "BizType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8987,9 +8989,10 @@
         {
           "disabled": false,
           "document": "云产品子类型，取值[cvm（CVM），lb（负载均衡器），eni（弹性网卡），vpngw（VPN），natgw（NAT），waf（WAF），fpc（金融），gaap（GAAP），other（托管IP），eip（黑石弹性IP）]",
-          "example": "无",
+          "example": "cvm",
           "member": "string",
           "name": "DeviceType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8997,9 +9000,10 @@
         {
           "disabled": false,
           "document": "IP所属的云产品实例ID，例如是弹性网卡的IP，InstanceId为弹性网卡的ID(eni-*); 如果是托管IP没有对应的资源实例ID,InstanceId为\"\"",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9007,9 +9011,10 @@
         {
           "disabled": false,
           "document": "域名化资产对应的域名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9484,9 +9489,10 @@
         {
           "disabled": false,
           "document": "回源IP或域名",
-          "example": "无",
+          "example": "source",
           "member": "string",
           "name": "Source",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9494,9 +9500,10 @@
         {
           "disabled": false,
           "document": "权重值，取值[0,100]，暂不支持",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "Weight",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9504,9 +9511,10 @@
         {
           "disabled": false,
           "document": "8000\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8000",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9514,9 +9522,10 @@
         {
           "disabled": false,
           "document": "备份源站，1: 备份源站，0: 普通源站\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "backup",
           "member": "uint64",
           "name": "Backup",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9530,9 +9539,10 @@
         {
           "disabled": false,
           "document": "会话保持时间，单位秒",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "KeepTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9540,9 +9550,10 @@
         {
           "disabled": false,
           "document": "转发域名",
-          "example": "无",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9550,9 +9561,10 @@
         {
           "disabled": false,
           "document": "转发协议，取值[http, https]",
-          "example": "无",
+          "example": "80",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9560,9 +9572,10 @@
         {
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SourceType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9570,9 +9583,10 @@
         {
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "LbType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9583,6 +9597,7 @@
           "example": "无",
           "member": "L4RuleSource",
           "name": "SourceList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -9590,9 +9605,10 @@
         {
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "KeepEnable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9600,9 +9616,10 @@
         {
           "disabled": false,
           "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9610,9 +9627,10 @@
         {
           "disabled": false,
           "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9620,9 +9638,10 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护阈值",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9630,9 +9649,10 @@
         {
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "PrivateKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9640,9 +9660,10 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCEnable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9650,9 +9671,10 @@
         {
           "disabled": false,
           "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "HttpsToHttpEnable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9660,9 +9682,10 @@
         {
           "disabled": false,
           "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CertType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9670,9 +9693,10 @@
         {
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
+          "example": "cert",
           "member": "string",
           "name": "Cert",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9680,9 +9704,10 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护等级",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "CCLevel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9690,9 +9715,10 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "RuleName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9700,9 +9726,10 @@
         {
           "disabled": false,
           "document": "cc防护状态，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9710,9 +9737,10 @@
         {
           "disabled": false,
           "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "80",
           "member": "uint64",
           "name": "VirtualPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9720,9 +9748,10 @@
         {
           "disabled": false,
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "SSLId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9730,9 +9759,10 @@
         {
           "disabled": false,
           "document": "同ruleId",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9740,9 +9770,10 @@
         {
           "disabled": false,
           "document": "智能cc开关，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCAIEnable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10152,8 +10183,8 @@
         },
         {
           "disabled": false,
-          "document": "协议，可取值HTTP，HTTPS",
-          "example": "HTTP",
+          "document": "协议，可取值http、https、http/https",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -10940,9 +10971,10 @@
         {
           "disabled": false,
           "document": "转发协议，取值[http, https]",
-          "example": "无",
+          "example": "http",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10950,9 +10982,10 @@
         {
           "disabled": false,
           "document": "转发域名",
-          "example": "无",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10960,9 +10993,10 @@
         {
           "disabled": false,
           "document": "负载均衡方式，取值[1(加权轮询)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "LbType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -10970,9 +11004,10 @@
         {
           "disabled": false,
           "document": "会话保持开关，取值[0(会话保持关闭)，1(会话保持开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "KeepEnable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -10980,9 +11015,10 @@
         {
           "disabled": false,
           "document": "会话保持时间，单位秒",
-          "example": "无",
+          "example": "15",
           "member": "uint64",
           "name": "KeepTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -10990,9 +11026,10 @@
         {
           "disabled": false,
           "document": "回源方式，取值[1(域名回源)，2(IP回源)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "SourceType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -11003,6 +11040,7 @@
           "example": "无",
           "member": "L4RuleSource",
           "name": "SourceList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -11010,9 +11048,10 @@
         {
           "disabled": false,
           "document": "区域码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11020,9 +11059,10 @@
         {
           "disabled": false,
           "document": "资源Id",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11030,9 +11070,10 @@
         {
           "disabled": false,
           "document": "资源Ip",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11040,9 +11081,10 @@
         {
           "disabled": false,
           "document": "规则ID，当添加新规则时可以不用填写此字段；当修改或者删除规则时需要填写此字段；",
-          "example": "无",
+          "example": "id-xxx",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11050,9 +11092,10 @@
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "无",
+          "example": "name",
           "member": "string",
           "name": "RuleName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11060,9 +11103,10 @@
         {
           "disabled": false,
           "document": "证书来源，当转发协议为https时必须填，取值[2(腾讯云托管证书)]，当转发协议为http时也可以填0",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CertType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11070,9 +11114,10 @@
         {
           "disabled": false,
           "document": "当证书来源为腾讯云托管证书时，此字段必须填写托管证书ID",
-          "example": "无",
+          "example": "id-xx",
           "member": "string",
           "name": "SSLId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11080,9 +11125,10 @@
         {
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书内容；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
+          "example": "cert",
           "member": "string",
           "name": "Cert",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11090,9 +11136,10 @@
         {
           "disabled": false,
           "document": "当证书来源为自有证书时，此字段必须填写证书密钥；(因已不再支持自有证书，此字段已弃用，请不用填写此字段)",
-          "example": "无",
+          "example": "key",
           "member": "string",
           "name": "PrivateKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11100,9 +11147,10 @@
         {
           "disabled": false,
           "document": "规则状态，取值[0(规则配置成功)，1(规则配置生效中)，2(规则配置失败)，3(规则删除生效中)，5(规则删除失败)，6(规则等待配置)，7(规则等待删除)，8(规则待配置证书)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11110,9 +11158,10 @@
         {
           "disabled": false,
           "document": "cc防护状态，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11120,19 +11169,32 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护状态，取值[0(关闭), 1(开启)]",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "CCEnable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HTTPS协议的CC防护阈值",
-          "example": "无",
+          "document": "HTTPS协议的CC防护阈值（已废弃）",
+          "example": "1",
           "member": "uint64",
           "name": "CCThreshold",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS协议的CC防护阈值 -1：默认防御阈值\n0: 关闭\n大于0：自定义防护阈值",
+          "example": "1",
+          "member": "uint64",
+          "name": "CCThresholdNew",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11140,9 +11202,10 @@
         {
           "disabled": false,
           "document": "HTTPS协议的CC防护等级",
-          "example": "无",
+          "example": "loose",
           "member": "string",
           "name": "CCLevel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11150,9 +11213,10 @@
         {
           "disabled": false,
           "document": "修改时间",
-          "example": "无",
+          "example": "2024.10.01",
           "member": "datetime",
           "name": "ModifyTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11160,9 +11224,10 @@
         {
           "disabled": false,
           "document": "是否开启Https协议使用Http回源，取值[0(关闭), 1(开启)]，不填写默认是关闭",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "HttpsToHttpEnable",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11170,9 +11235,10 @@
         {
           "disabled": false,
           "document": "接入端口值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "80",
           "member": "uint64",
           "name": "VirtualPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -11180,9 +11246,10 @@
         {
           "disabled": false,
           "document": "http强制跳转https，1表示打开，0表示关闭",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "RewriteHttps",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11190,9 +11257,10 @@
         {
           "disabled": false,
           "document": "规则配置失败时的详细错误原因(仅当Status=2时有效)，1001证书不存在，1002证书获取失败，1003证书上传失败，1004证书已过期",
-          "example": "无",
+          "example": "100",
           "member": "uint64",
           "name": "ErrCode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11203,6 +11271,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -12221,50 +12290,50 @@
         {
           "disabled": false,
           "document": "保底带宽\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "ProtectBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "NormalBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "转发规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "ForwardRulesLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "自动续费标记\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"2024.12.1\"",
           "member": "string",
           "name": "CurDeadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

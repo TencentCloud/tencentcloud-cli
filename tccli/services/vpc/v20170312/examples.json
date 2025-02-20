@@ -1266,6 +1266,14 @@
         "title": "查询账号网络属性"
       }
     ],
+    "DescribeAddressBandwidthRange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressBandwidthRange\n<公共请求参数>\n\n{\n    \"AddressIds\": [\n        \"eip-j12z7dfx\",\n        \"eip-8b56zjpn\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BandwidthRangeSet\": [\n            {\n                \"BandwidthLowerLimit\": 1,\n                \"BandwidthUpperLimit\": 2000,\n                \"ResourceId\": \"eip-8b56zjpn\"\n            },\n            {\n                \"BandwidthLowerLimit\": 1,\n                \"BandwidthUpperLimit\": 100,\n                \"ResourceId\": \"eip-j12z7dfx\"\n            }\n        ],\n        \"RequestId\": \"fc7f673e-8fca-43d0-a4f3-18e567cf6826\"\n    }\n}",
+        "title": "查询指定EIP可调整带宽范围的上下限"
+      }
+    ],
     "DescribeAddressQuota": [
       {
         "document": "查询弹性公网IP配额。",
@@ -1316,6 +1324,14 @@
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssistantCidr\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"AssistantCidrSet\": [\n            {\n                \"VpcId\": \"vpc-6v2ht8q5\",\n                \"CidrBlock\": \"10.10.0.0/24\",\n                \"AssistantType\": 0,\n                \"SubnetSet\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"c65ffbe5-512a-44fd-9611-99d12f4e565d\"\n    }\n}",
         "title": "查询辅助CIDR列表"
+      }
+    ],
+    "DescribeBandwidthPackageBandwidthRange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandwidthPackageBandwidthRange\n<公共请求参数>\n\n{\n    \"BandwidthPackageIds\": [\n        \"bwp-enjefhij\",\n        \"bwp-l5jt4oz1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BandwidthRangeSet\": [\n            {\n                \"BandwidthLowerLimit\": 300,\n                \"BandwidthUpperLimit\": 5000,\n                \"ResourceId\": \"bwp-enjefhij\"\n            },\n            {\n                \"BandwidthLowerLimit\": 100,\n                \"BandwidthUpperLimit\": 5000,\n                \"ResourceId\": \"bwp-l5jt4oz1\"\n            }\n        ],\n        \"RequestId\": \"d3c929a2-5b2e-4c90-b826-b4807dd96052\"\n    }\n}",
+        "title": "查询指定带宽包的带宽上下限范围"
       }
     ],
     "DescribeBandwidthPackageBillUsage": [

@@ -21,9 +21,9 @@ Output:
             {
                 "InstanceDetail": {
                     "EipList": [
-                        "abc"
+                        "1.1.1.1"
                     ],
-                    "InstanceId": "abc"
+                    "InstanceId": "id-xxx"
                 },
                 "SpecificationLimit": {
                     "ProtectBandwidth": 1,
@@ -44,32 +44,32 @@ Output:
                     "Last7DayAttackCount": 1
                 },
                 "Region": {
-                    "Region": "abc"
+                    "Region": "guangzhou"
                 },
-                "Status": "abc",
+                "Status": "1",
                 "CreatedTime": "2020-09-22 00:00:00",
                 "ExpiredTime": "2020-09-22 00:00:00",
-                "Name": "abc",
+                "Name": "name",
                 "PackInfo": {
-                    "PackType": "abc",
-                    "PackId": "abc"
+                    "PackType": "type",
+                    "PackId": "id"
                 },
                 "EipProductInfos": [
                     {
-                        "Ip": "abc",
-                        "BizType": "abc",
-                        "DeviceType": "abc",
-                        "InstanceId": "abc",
-                        "Domain": "abc"
+                        "Ip": "1.1.1.1",
+                        "BizType": "eip",
+                        "DeviceType": "eip",
+                        "InstanceId": "ins-xx",
+                        "Domain": "www.abc.com"
                     }
                 ],
-                "BoundStatus": "abc",
-                "DDoSLevel": "abc",
+                "BoundStatus": "creat",
+                "DDoSLevel": "1",
                 "CCEnable": 0,
                 "TagInfoList": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "key",
+                        "TagValue": "value"
                     }
                 ],
                 "IpCountNewFlag": 1,
@@ -78,11 +78,11 @@ Output:
                 "FreeServiceBandwidth": 1,
                 "ElasticServiceBandwidth": 1,
                 "GiftServiceBandWidth": 0,
-                "ModifyTime": "abc",
+                "ModifyTime": "2024.12.1",
                 "BasicPlusFlag": 1
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "08afbb87-5a2c-4562-acbd-eef06a47c7db"
     }
 }
 ```

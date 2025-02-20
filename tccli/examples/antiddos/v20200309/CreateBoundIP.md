@@ -32,7 +32,7 @@ Output:
             "Message": "msg",
             "Code": "200"
         },
-        "RequestId": "reqid"
+        "RequestId": "08afbb87-5a2c-4562-acbd-eef06a47c7db"
     }
 }
 ```

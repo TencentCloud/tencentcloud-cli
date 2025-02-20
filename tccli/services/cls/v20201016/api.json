@@ -10917,6 +10917,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "json解析模式，开启首层数据解析",
+          "example": "false",
+          "member": "bool",
+          "name": "ParseArray",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

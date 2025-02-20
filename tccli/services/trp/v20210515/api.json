@@ -395,6 +395,7 @@
           "example": "商品名称2",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -405,6 +406,7 @@
           "example": "demo",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -415,6 +417,7 @@
           "example": "text",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -425,6 +428,7 @@
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -435,6 +439,7 @@
           "example": "false",
           "member": "bool",
           "name": "Hidden",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -442,9 +447,10 @@
         {
           "disabled": false,
           "document": "多个值",
-          "example": "无",
+          "example": "url1,url2",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -455,6 +461,7 @@
           "example": "ID",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -462,9 +469,10 @@
         {
           "disabled": false,
           "document": "扩展字段",
-          "example": "无",
+          "example": "custom",
           "member": "string",
           "name": "Ext",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -514,25 +522,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "码url\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "码url",
+          "example": "https://anxin.qq.com/q99j9ovp5c6sok7l5g",
           "member": "string",
           "name": "Code",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "上链数据",
+          "example": "[{ Label: '商品名称', Type: 'text', Value: '安全中心' }];",
           "member": "ChainValue",
           "name": "Data",
           "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -542,33 +550,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "区块hash\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区块hash",
           "example": "0xfc7f37ba117bb01afd237c6949f7d6a0b0d4a4c785b3fb90cd9004e0335a9d",
           "member": "string",
           "name": "BlockHash",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区块高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区块高度",
           "example": "28102",
           "member": "string",
           "name": "BlockHeight",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区块时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区块时间",
           "example": "2021",
           "member": "string",
           "name": "BlockTime",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -578,36 +589,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "标题名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标题名字",
           "example": "图片",
           "member": "string",
           "name": "Label",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "类型，文字：\"text\"，图片：\"image\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型，文字：\"text\"，图片：\"image\"",
           "example": "image",
           "member": "string",
           "name": "Type",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "值，文字类型：\"abc\"，图片类型：\"\"/images/img.png\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "值，文字类型：\"abc\"，图片类型：\"\"/images/img.png\"",
           "example": "/images/img.png",
           "member": "string",
           "name": "Value",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -617,143 +628,143 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次号",
           "example": "20121212000001",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "1000",
           "member": "int64",
           "name": "CorpId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "批次编码(未使用)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次编码(未使用)",
           "example": "20121212000001",
           "member": "string",
           "name": "BatchCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码数量",
           "example": "10",
           "member": "int64",
           "name": "CodeCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属商户ID",
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品ID",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "批次类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次类型",
           "example": "0",
           "member": "int64",
           "name": "BatchType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "备注",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "微信模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "微信模板",
           "example": "微信模板",
           "member": "string",
           "name": "MpTpl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次状态 0: 未激活 1: 已激活 -1: 已冻结",
           "example": "0",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "修改时间",
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属商户名称",
           "example": "所属商户名称",
           "member": "string",
           "name": "MerchantName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "产品名称",
           "example": "产品名称",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
@@ -767,13 +778,13 @@
         },
         {
           "disabled": false,
-          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板名称",
           "example": "模板名称",
           "member": "string",
           "name": "TplName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -839,233 +850,233 @@
       "members": [
         {
           "disabled": false,
-          "document": "码id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "码id",
+          "example": "1ybwr6bdn3yp",
           "member": "string",
           "name": "PackId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业id",
           "example": "1",
           "member": "int64",
           "name": "CorpId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "商户id",
+          "example": "nryuk93frqhphqjw25",
           "member": "string",
           "name": "MerchantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "制码状态 init: 初始化, pending: 执行中, done: 完成, error: 失败",
+          "example": "init",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行日志",
           "example": "[time] xx",
           "member": "string",
           "name": "Log",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建人",
           "example": "1",
           "member": "string",
           "name": "CreateUser",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码数",
           "example": "1",
           "member": "int64",
           "name": "Amount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "防伪码长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "防伪码长度",
           "example": "1",
           "member": "int64",
           "name": "CodeLength",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "码类型",
+          "example": "number",
           "member": "string",
           "name": "CodeType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否暗码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否暗码",
           "example": "1",
           "member": "int64",
           "name": "Cipher",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "[弃用] 文字码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "[弃用] 文字码地址，通过另一个接口查",
+          "example": "url1",
           "member": "string",
           "name": "TextUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "[弃用] 二维码地址，通过另一个接口查\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "[弃用] 二维码地址，通过另一个接口查",
+          "example": "url1",
           "member": "string",
           "name": "PackUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "商户名",
+          "example": "商户名称",
           "member": "string",
           "name": "MerchantName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码规则类型 0: 默认, 1: 自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则类型 0: 默认, 1: 自定义",
           "example": "0",
           "member": "int64",
           "name": "RuleType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "自定义码规则ID",
+          "example": "97zu51y30awe",
           "member": "string",
           "name": "CustomId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码包类型 0: 普通码包 1: 层级码包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码包类型 0: 普通码包 1: 层级码包",
           "example": "0",
           "member": "int64",
           "name": "PackType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "生码层级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生码层级",
           "example": "1",
           "member": "uint64",
           "name": "PackLevel",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "层级码配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "层级码配置",
           "example": " 无",
           "member": "PackSpec",
           "name": "PackSpec",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商品名称",
+          "example": "商品名称",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商品规格",
+          "example": "100ml",
           "member": "string",
           "name": "ProductSpecification",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商品ID",
+          "example": "0yzvafuth4ne2oxf0v",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1079,53 +1090,53 @@
         },
         {
           "disabled": false,
-          "document": "场景码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景码",
           "example": "1",
           "member": "int64",
           "name": "SceneCode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "码规则",
+          "example": "https://anxin.qq.com/(.*)",
           "member": "string",
           "name": "CodeRule",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已使用码数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "已使用码数",
+          "example": "0",
           "member": "int64",
           "name": "UsedAmount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始流水号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "开始流水号",
+          "example": "0",
           "member": "uint64",
           "name": "SerialStart",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束流水号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "结束流水号",
+          "example": "0",
           "member": "uint64",
           "name": "SerialEnd",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1135,36 +1146,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "码段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码段名称",
           "example": "码段",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码段类型",
           "example": "0",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码段内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "码段内容",
+          "example": "20250219",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1179,14 +1190,14 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展字段",
           "example": "str",
           "member": "string",
           "name": "Ext",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1315,7 +1326,7 @@
         {
           "disabled": false,
           "document": "批次ID，留空时系统自动生成",
-          "example": "\"\"",
+          "example": "uevdikb06zy5",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -1384,7 +1395,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "abc",
+          "example": "uevdikb06zy5",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
@@ -1406,7 +1417,7 @@
         {
           "disabled": false,
           "document": "商户ID",
-          "example": "aaa",
+          "example": "jjzrg8llvl4a",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -1496,7 +1507,7 @@
         {
           "disabled": false,
           "document": "关联产品ID",
-          "example": "无",
+          "example": "grodcygelxn7364rmm",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -1529,7 +1540,7 @@
         {
           "disabled": false,
           "document": "码包ID",
-          "example": "abc",
+          "example": "0hjx6rr6ei4j",
           "member": "string",
           "name": "PackId",
           "output_required": true,
@@ -1637,13 +1648,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "1000",
           "member": "uint64",
           "name": "CorpId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1660,7 +1671,7 @@
         {
           "disabled": false,
           "document": "商户ID",
-          "example": "aaa",
+          "example": "jjzrg8llvl4a",
           "member": "string",
           "name": "MerchantId",
           "required": true,
@@ -1750,7 +1761,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "无",
+          "example": "grodcygelxn7364rmm",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -1783,7 +1794,7 @@
         {
           "disabled": false,
           "document": "码包ID",
-          "example": "abc",
+          "example": "0hjx6rr6ei4j",
           "member": "string",
           "name": "PackId",
           "output_required": true,
@@ -1855,13 +1866,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则ID",
           "example": "awai9jd37ne73t",
           "member": "string",
           "name": "CustomId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1928,13 +1939,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户标识码",
           "example": "awai9jd37ng3de73t",
           "member": "string",
           "name": "MerchantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1996,7 +2007,7 @@
         {
           "disabled": false,
           "document": "商品图片",
-          "example": "无",
+          "example": "[\"http://cdn.com/1.png\"]",
           "member": "string",
           "name": "Logo",
           "required": false,
@@ -2028,13 +2039,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品ID",
           "example": "tz6jpscwky41u23o9b",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2060,7 +2071,7 @@
         {
           "disabled": false,
           "document": "溯源ID",
-          "example": "aaa",
+          "example": "9cz33jTOBIcKir4glzAS",
           "member": "string",
           "name": "TraceId",
           "required": false,
@@ -2075,7 +2086,7 @@
         {
           "disabled": false,
           "document": "溯源ID",
-          "example": "abc",
+          "example": "9cz33jTOBIcKir4glzAS",
           "member": "string",
           "name": "TraceId",
           "output_required": true,
@@ -2129,13 +2140,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次ID",
           "example": "batchid",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2152,7 +2163,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "ccc",
+          "example": "07wa9ed1l4yl",
           "member": "string",
           "name": "BatchId",
           "required": true,
@@ -2203,7 +2214,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "abc",
+          "example": "07wa9ed1l4yl",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
@@ -2254,7 +2265,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "ccc",
+          "example": "07wa9ed1l4yl",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -2308,7 +2319,7 @@
         {
           "disabled": false,
           "document": "[无效] 溯源ID",
-          "example": "abc",
+          "example": "9cz33jTOBIcKir4glzAS",
           "member": "string",
           "name": "TraceId",
           "required": false,
@@ -2350,7 +2361,7 @@
         {
           "disabled": false,
           "document": "溯源ID",
-          "example": "abc",
+          "example": "9cz33jTOBIcKir4glzAS",
           "member": "string",
           "name": "TraceId",
           "output_required": true,
@@ -2375,39 +2386,39 @@
           "example": "xxxid",
           "member": "string",
           "name": "CustomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则名",
           "example": "规则名",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "10000",
           "member": "uint64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户ID",
           "example": "MerchantId",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2415,7 +2426,7 @@
           "example": "10",
           "member": "uint64",
           "name": "CodeLength",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2425,17 +2436,17 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "码段配置",
-          "example": "[]",
+          "example": "无",
           "member": "CodePart",
           "name": "CodeParts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2445,7 +2456,7 @@
           "example": "2022-09-19T11:46:53.000Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2455,7 +2466,7 @@
           "example": "2022-09-19T11:46:53.000Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2537,13 +2548,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户标识码",
           "example": "\"awai9jd37ng3de7p3t\"",
           "member": "string",
           "name": "MerchantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2583,13 +2594,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品ID",
           "example": "awai9jd37ng3de7p3t",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2629,13 +2640,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "溯源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源id",
           "example": "\"awai9jd37ng3de7p3t\"",
           "member": "string",
           "name": "TraceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2907,7 +2918,7 @@
         {
           "disabled": false,
           "document": "批次类型 0:溯源 1:营销",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "BatchType",
           "required": false,
@@ -2916,7 +2927,7 @@
         {
           "disabled": false,
           "document": "企业ID",
-          "example": "0",
+          "example": "10000",
           "member": "uint64",
           "name": "CorpId",
           "required": false,
@@ -2939,23 +2950,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "批次列表",
           "example": "无",
           "member": "CodeBatch",
           "name": "CodeBatchs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2995,13 +3006,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码包状态 init: 初始化, pending: 执行中, done: 完成, error: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码包状态 init: 初始化, pending: 执行中, done: 完成, error: 失败",
           "example": "done",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3041,33 +3052,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "文字码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文字码包地址",
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "图片码包地址，可能为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片码包地址，可能为空",
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
           "name": "ImgUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文字码包Key，用于上传导入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文字码包Key，用于上传导入",
           "example": "anxin/xxx.zip",
           "member": "string",
           "name": "FileKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3226,13 +3237,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码列表",
           "example": "无",
           "member": "CodeItem",
           "name": "Codes",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3290,23 +3301,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "子企业额度使用情况\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "子企业额度使用情况",
+          "example": "无",
           "member": "CorpQuota",
           "name": "CorpQuotas",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录总数量",
           "example": "22",
           "member": "uint64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3346,13 +3357,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则信息",
           "example": "无",
           "member": "CustomRule",
           "name": "CustomRule",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3428,23 +3439,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "码规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则列表",
           "example": "无",
           "member": "CustomRule",
           "name": "CustomRules",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3484,13 +3495,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码包地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码包地址",
           "example": "https://cdn.xx/xxx.zip",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3530,13 +3541,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户信息",
           "example": "无",
           "member": "Merchant",
           "name": "Merchant",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3603,23 +3614,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "商户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户列表",
           "example": "无",
           "member": "Merchant",
           "name": "Merchants",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3636,7 +3647,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "2023-05-29",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -3645,7 +3656,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "2023-06-29",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3654,7 +3665,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNo",
           "required": true,
@@ -3663,7 +3674,7 @@
         {
           "disabled": false,
           "document": "页大小",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -3678,7 +3689,7 @@
         {
           "disabled": false,
           "document": "返回码",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Ret",
           "output_required": false,
@@ -3688,7 +3699,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3720,7 +3731,7 @@
         {
           "disabled": false,
           "document": "计划ID",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "PlanId",
           "required": true,
@@ -3729,7 +3740,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "无",
+          "example": "2023-05-29",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -3738,7 +3749,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "无",
+          "example": "2023-06-29",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -3747,7 +3758,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNo",
           "required": true,
@@ -3756,7 +3767,7 @@
         {
           "disabled": false,
           "document": "页大小",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -3771,7 +3782,7 @@
         {
           "disabled": false,
           "document": "返回码",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Ret",
           "output_required": false,
@@ -3781,7 +3792,7 @@
         {
           "disabled": false,
           "document": "总数",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -3836,13 +3847,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品信息",
           "example": "无",
           "member": "Product",
           "name": "Product",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3918,23 +3929,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品列表",
           "example": "无",
           "member": "Product",
           "name": "Products",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4060,7 +4071,7 @@
         {
           "disabled": false,
           "document": "安心码",
-          "example": "无",
+          "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
           "name": "Code",
           "required": false,
@@ -4069,7 +4080,7 @@
         {
           "disabled": false,
           "document": "小程序用户ID",
-          "example": "无",
+          "example": "otcFg44LHRVsy",
           "member": "string",
           "name": "Openid",
           "required": false,
@@ -4180,7 +4191,7 @@
         {
           "disabled": false,
           "document": "安心码",
-          "example": "无",
+          "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500",
           "member": "string",
           "name": "Code",
           "required": false,
@@ -4231,13 +4242,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "临时token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时token",
           "example": "AbXtx",
           "member": "string",
           "name": "Token",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4288,7 +4299,7 @@
         {
           "disabled": false,
           "document": "码路径，如level是2，则为 [1级, 2级]",
-          "example": "无",
+          "example": "[https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9_00024381374200500]",
           "member": "string",
           "name": "CodePath",
           "output_required": true,
@@ -4337,7 +4348,7 @@
         {
           "disabled": false,
           "document": "批次ID，弃用",
-          "example": "abc",
+          "example": "20241022112952826",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -4360,23 +4371,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标识列表",
           "example": "无",
           "member": "TraceCode",
           "name": "TraceCodes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "条数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4621,7 +4632,7 @@
         {
           "disabled": false,
           "document": "加密数据，将AuthorizedData结构体数组（数组最大长度不超过20）序列化成JSON字符串，对得到的字符串加密并填充到该字段。",
-          "example": "abc",
+          "example": "051pk8tyhgc9",
           "member": "string",
           "name": "EncryptData",
           "required": true,
@@ -4665,7 +4676,7 @@
         {
           "disabled": false,
           "document": "任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "任务失败",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -4684,7 +4695,7 @@
           "example": "\"eqdmnz7020bmtvi9\"",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4694,7 +4705,7 @@
           "example": "10000",
           "member": "int64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4704,19 +4715,19 @@
           "example": "\"demo\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"abcdd\"",
+          "document": "备注",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4724,7 +4735,7 @@
           "example": "\"2021-11-30T08:19:40.000Z\"",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4734,7 +4745,7 @@
           "example": "\"2021-12-06T08:09:17.000Z\"",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4744,7 +4755,7 @@
           "example": "\"^https://anxin.mtest.qq.com/qr/eqdmnz7020bmtvi9_(.*)\"",
           "member": "string",
           "name": "CodeRule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4754,19 +4765,19 @@
           "example": "0",
           "member": "int64",
           "name": "CodeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "第三方码域名前缀\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第三方码域名前缀",
           "example": "https://anxin.m.qq.com",
           "member": "string",
           "name": "CodeUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4873,7 +4884,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "abc",
+          "example": "20220114161517935",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
@@ -4945,13 +4956,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则ID",
           "example": "awai9jd37ne73t",
           "member": "string",
           "name": "CustomId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5000,13 +5011,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码规则ID",
           "example": "awai9jd37ne73t",
           "member": "string",
           "name": "CustomId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5082,13 +5093,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商户标识码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户标识码",
           "example": "awai9jd37ng3de7p3t",
           "member": "string",
           "name": "MerchantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5173,13 +5184,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品ID",
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5241,7 +5252,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "aaa",
+          "example": "20220114161517935",
           "member": "string",
           "name": "BatchId",
           "required": true,
@@ -5294,7 +5305,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "xx",
+          "example": "20220114161517935",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
@@ -5325,7 +5336,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "aa",
+          "example": "97zu51y30awe",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -5357,13 +5368,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "批次ID",
+          "example": "97zu51y30awe",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5389,7 +5400,7 @@
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "ccc",
+          "example": "20220114161517935",
           "member": "string",
           "name": "BatchId",
           "required": false,
@@ -5539,7 +5550,7 @@
         {
           "disabled": false,
           "document": "溯源ID",
-          "example": "abc",
+          "example": "0aGJOEs8Ydc5LJhkAL0Lf",
           "member": "string",
           "name": "TraceId",
           "output_required": true,
@@ -5560,33 +5571,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "推送状态，0表示成功。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推送状态，0表示成功。",
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "错误码。",
+          "example": "ERROR_AUTH",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "错误信息描述。",
+          "example": "鉴权失败",
           "member": "string",
           "name": "Value",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5629,47 +5640,47 @@
         },
         {
           "disabled": false,
-          "document": "码规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxid",
+          "document": "码规则ID",
+          "example": "10001",
           "member": "string",
           "name": "CustomId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码段配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "码段配置",
+          "example": "[{ Name: '名称', Type: '类型', Value: '具体的值', Length: 8, Ext: '' }];",
           "member": "CodePart",
           "name": "CodeParts",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "包装单位\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "包装单位",
+          "example": "个",
           "member": "string",
           "name": "Unit",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "场景值",
+          "example": "1",
           "member": "int64",
           "name": "SceneCode",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5679,69 +5690,69 @@
       "members": [
         {
           "disabled": false,
-          "document": "启用头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "启用头",
           "example": "false",
           "member": "bool",
           "name": "HeadEnabled",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标题",
           "example": "标题",
           "member": "string",
           "name": "HeadTitle",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标识符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标识符",
           "example": "product",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序AppId",
           "example": "AppId",
           "member": "string",
           "name": "AppId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序AppPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序AppPath",
           "example": "AppPath",
           "member": "string",
           "name": "AppPath",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "小程序名称AppName\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "小程序名称AppName",
           "example": "AppName",
           "member": "string",
           "name": "AppName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5751,25 +5762,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "二维码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "二维码",
+          "example": "https://code.com",
           "member": "string",
           "name": "Url",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态，0:未激活 1:已激活 2:已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "状态，0:未激活 1:已激活 2:已冻结",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5779,80 +5790,80 @@
       "members": [
         {
           "disabled": false,
-          "document": "二维码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "二维码",
+          "example": "https://anxin.qq.com/q99j9ovp5c6sok7l5g",
           "member": "string",
           "name": "Url",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "OpenID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "OpenID",
+          "example": "g3ST2ZYcreGP9jpqgKHOjuB1e0GrlI0t",
           "member": "string",
           "name": "OpenId",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扫码时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "扫码时间",
+          "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "ScanTime",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP 地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "IP 地址",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "国家",
+          "example": "中国",
           "member": "string",
           "name": "Country",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "省份",
+          "example": "广东省",
           "member": "string",
           "name": "Province",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "城市",
+          "example": "广州市",
           "member": "string",
           "name": "City",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5896,7 +5907,7 @@
         {
           "disabled": false,
           "document": "企业id",
-          "example": "0",
+          "example": "10000",
           "member": "int64",
           "name": "CorpId",
           "output_required": true,
@@ -5917,36 +5928,36 @@
         },
         {
           "disabled": false,
-          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品规格",
           "example": "”100ml“",
           "member": "string",
           "name": "Specification",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”“",
+          "document": "备注",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品图片\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商品图片",
+          "example": "https://product.png",
           "member": "string",
           "name": "Logo",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5972,14 +5983,14 @@
         },
         {
           "disabled": false,
-          "document": "预留字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预留字段",
           "example": "无",
           "member": "Ext",
           "name": "Ext",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5994,14 +6005,14 @@
         },
         {
           "disabled": false,
-          "document": "认证状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证状态",
           "example": "1",
           "member": "int64",
           "name": "CertState",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6011,179 +6022,179 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务开始时间",
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务结束时间",
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配额ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配额ID",
           "example": "1000",
           "member": "uint64",
           "name": "QuotaId",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "1000",
           "member": "uint64",
           "name": "CorpId",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开通服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开通服务",
           "example": "[\"track\"]",
           "member": "string",
           "name": "Services",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户配额",
           "example": "1000",
           "member": "int64",
           "name": "FactoryQuota",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品配额",
           "example": "1000",
           "member": "int64",
           "name": "ItemQuota",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "溯源码配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源码配额",
           "example": "10000",
           "member": "int64",
           "name": "TrackQuota",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "销售码配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "销售码配额",
           "example": "1000",
           "member": "int64",
           "name": "SaleQuota",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上链配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上链配额",
           "example": "1000",
           "member": "int64",
           "name": "ChainQuota",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "风控配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风控配额",
           "example": "1000",
           "member": "int64",
           "name": "RiskQuota",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AI文字数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI文字数量",
           "example": "1000",
           "member": "int64",
           "name": "AigcTextQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AI图片数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AI图片数量",
           "example": "1000",
           "member": "int64",
           "name": "AigcImageQuota",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "溯源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源类型",
           "example": "0",
           "member": "int64",
           "name": "TrackType",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开通版本 lite:轻量版, basic:基础版, standard:标准版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开通版本 lite:轻量版, basic:基础版, standard:标准版",
           "example": "basic",
           "member": "string",
           "name": "Version",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启企业认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启企业认证",
           "example": "0",
           "member": "uint64",
           "name": "ProductCertify",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6203,18 +6214,18 @@
         },
         {
           "disabled": false,
-          "document": "微信小程序openid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "微信小程序openid",
+          "example": "openID",
           "member": "string",
           "name": "Openid",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "扫码时间",
-          "example": "无",
+          "example": "2024-10-30T07:16:21.265Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -6224,7 +6235,7 @@
         {
           "disabled": false,
           "document": "溯源码",
-          "example": "无",
+          "example": "https://anxin.m.qq.com/qr/eqdmnz7020bmtvi9",
           "member": "string",
           "name": "Code",
           "output_required": false,
@@ -6243,63 +6254,63 @@
         },
         {
           "disabled": false,
-          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商户ID",
+          "example": "10001",
           "member": "string",
           "name": "MerchantId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商品ID",
+          "example": "10001",
           "member": "string",
           "name": "ProductId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "批次ID",
+          "example": "1001",
           "member": "string",
           "name": "BatchId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省份",
           "example": "广东省",
           "member": "string",
           "name": "Province",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地市",
           "example": "广州市",
           "member": "string",
           "name": "City",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区/县\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区/县",
           "example": "天河区",
           "member": "string",
           "name": "District",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6356,153 +6367,153 @@
         },
         {
           "disabled": false,
-          "document": "微信openid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "微信openid",
+          "example": "g3ST2ZYcreGP9jpqgKHOjuB1e0GrlI0t",
           "member": "string",
           "name": "Openid",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "微信昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "aba",
+          "document": "微信昵称",
+          "example": "微信用户",
           "member": "string",
           "name": "Nickname",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "码",
+          "example": "https://anxin.qq.com/q99j9ovp5c6sok7l5g",
           "member": "string",
           "name": "Code",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "10000",
           "member": "int64",
           "name": "CorpId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商户ID",
+          "example": "pn30msjjxwga",
           "member": "string",
           "name": "MerchantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商品ID",
+          "example": "97zu51y30awe",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ip地址",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "国家",
+          "example": "中国",
           "member": "string",
           "name": "Country",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "省份",
           "example": "广东省",
           "member": "string",
           "name": "Province",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "城市",
           "example": "广州市",
           "member": "string",
           "name": "City",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "县/区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "县/区",
           "example": "天河区",
           "member": "string",
           "name": "District",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "微信 unionid\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "微信 unionid",
+          "example": "ue1Hd0ne2dzIy1oE",
           "member": "string",
           "name": "Unionid",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "首次扫码 0:否, 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次扫码 0:否, 1:是",
           "example": "0",
           "member": "int64",
           "name": "First",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "批次ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "批次ID",
+          "example": "20241022112952826",
           "member": "string",
           "name": "BatchId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6516,33 +6527,33 @@
         },
         {
           "disabled": false,
-          "document": "商户名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "商户名称",
+          "example": "商户名称",
           "member": "string",
           "name": "MerchantName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "产品名称",
+          "example": "产品名称",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "产品Logo\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "产品Logo",
+          "example": "https://webcdn.m.qq.com/youma/web-client/v1.6.2-prod.1039/assets/mp-qrcode-DVjsEEp9.png",
           "member": "string",
           "name": "ProductLogo",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6576,7 +6587,7 @@
           "example": "https://anxin.m.qq.com/qr/bmy7uus50t54",
           "member": "string",
           "name": "Code",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6586,37 +6597,37 @@
           "example": "10000",
           "member": "uint64",
           "name": "CorpId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商户ID",
-          "example": "无",
+          "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "无",
+          "example": "84fg5ouaxfc6",
           "member": "string",
           "name": "ProductId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "批次ID",
-          "example": "无",
+          "example": "20220112171205331",
           "member": "string",
           "name": "BatchId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6626,7 +6637,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Pv",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6636,47 +6647,47 @@
           "example": "1",
           "member": "uint64",
           "name": "Uv",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2021-12-10 17:31:06",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2021-12-10 17:31:06",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "商户名称",
-          "example": "无",
+          "example": "商户名称",
           "member": "string",
           "name": "MerchantName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品名称",
-          "example": "无",
+          "example": "商品名称",
           "member": "string",
           "name": "ProductName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6818,33 +6829,33 @@
         },
         {
           "disabled": false,
-          "document": "码层级详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码层级详情",
           "example": "无",
           "member": "PackSpec",
           "name": "PackSpec",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "场景码",
+          "example": "1",
           "member": "uint64",
           "name": "SceneCode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流水码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "流水码",
+          "example": "1000200000306",
           "member": "uint64",
           "name": "SerialCode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6858,6 +6869,7 @@
           "example": "VyKxxkmi_myRD6ulG6HFo",
           "member": "string",
           "name": "TraceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6868,6 +6880,7 @@
           "example": "10",
           "member": "uint64",
           "name": "CorpId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6878,19 +6891,21 @@
           "example": "码类型",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "码值，跟码类型一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "码值，跟码类型一一对应",
           "example": "xfetmgoiky2nms6nk8",
           "member": "string",
           "name": "Code",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6898,6 +6913,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Rank",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6908,6 +6924,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Phase",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6918,69 +6935,76 @@
           "example": "环节名称",
           "member": "string",
           "name": "PhaseName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "溯源时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源时间",
           "example": "2021-12-03T02:58:48.000Z",
           "member": "string",
           "name": "TraceTime",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上链状态 0: 未上链 1: 上链中 2: 已上链 -1: 异常",
           "example": "2",
           "member": "uint64",
           "name": "ChainStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上链时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上链时间",
           "example": "2021-12-06T09:20:57.000Z",
           "member": "string",
           "name": "ChainTime",
+          "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上链数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上链数据",
           "example": "无",
           "member": "ChainData",
           "name": "ChainData",
+          "output_required": true,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "溯源阶段配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源阶段配置",
           "example": "无",
           "member": "PhaseData",
           "name": "PhaseData",
+          "output_required": true,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6988,6 +7012,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6998,6 +7023,7 @@
           "example": "无",
           "member": "TraceItem",
           "name": "TraceItems",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7014,6 +7040,7 @@
           "example": "商品名称2",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7024,6 +7051,7 @@
           "example": "demo",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7034,6 +7062,7 @@
           "example": "text",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7041,9 +7070,10 @@
         {
           "disabled": false,
           "document": "多个值",
-          "example": "无",
+          "example": "url1,url2",
           "member": "string",
           "name": "Values",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -7054,6 +7084,7 @@
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -7064,6 +7095,7 @@
           "example": "false",
           "member": "bool",
           "name": "Hidden",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -7074,6 +7106,7 @@
           "example": "ID",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7081,9 +7114,10 @@
         {
           "disabled": false,
           "document": "扩展字段",
-          "example": "无",
+          "example": "custom",
           "member": "string",
           "name": "Ext",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7094,6 +7128,7 @@
           "example": "无",
           "member": "TraceItem",
           "name": "Attrs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7104,6 +7139,7 @@
           "example": "无",
           "member": "TraceData",
           "name": "List",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7116,63 +7152,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业ID",
           "example": "1",
           "member": "uint64",
           "name": "CorpId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商户配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商户配额",
           "example": "10",
           "member": "int64",
           "name": "FactoryCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "商品数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "商品数量",
           "example": "10",
           "member": "int64",
           "name": "ItemCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "溯源码量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "溯源码量",
           "example": "10",
           "member": "int64",
           "name": "TrackCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "营销码额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "营销码额度",
           "example": "10",
           "member": "int64",
           "name": "SaleCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "区块链上链次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "区块链上链次数",
           "example": "10",
           "member": "int64",
           "name": "ChainCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
@@ -7186,13 +7222,13 @@
         },
         {
           "disabled": false,
-          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时间",
           "example": "2020-05-20",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

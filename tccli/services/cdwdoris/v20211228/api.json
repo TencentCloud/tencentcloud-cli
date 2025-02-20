@@ -2873,7 +2873,7 @@
         },
         {
           "disabled": false,
-          "document": "0集群维度 1节点维度",
+          "document": "0集群维度 1节点维度 2启动脚本 3计算组维度",
           "example": "0",
           "member": "int64",
           "name": "ClusterConfigType",
@@ -2886,6 +2886,15 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "IPAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算组id",
+          "example": "tchd-f625kxu6-123ac",
+          "member": "string",
+          "name": "ComputeGroupId",
           "required": false,
           "type": "string"
         }

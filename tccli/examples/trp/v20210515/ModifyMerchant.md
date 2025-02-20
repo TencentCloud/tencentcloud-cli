@@ -8,7 +8,7 @@ Input:
 tccli trp ModifyMerchant --cli-unfold-argument  \
     --MerchantId eqdmnz7020bmtvi9 \
     --Name demo \
-    --Remark abc
+    --Remark 备注
 ```
 
 Output: 

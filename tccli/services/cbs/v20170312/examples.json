@@ -16,6 +16,14 @@
         "title": "回滚快照"
       }
     ],
+    "ApplySnapshotGroup": [
+      {
+        "document": "回滚指定快照组：csnap-gv9naz6b",
+        "input": "https://cbs.tencentcloudapi.com/?Action=ApplySnapshotGroup\n&SnapshotGroupId=csnap-gv9naz6b\n&ApplyDisks.0.SnapshotId=snap-cznei4gl\n&ApplyDisks.0.DiskId=disk-1ly0wu8c\n&ApplyDisks.1.SnapshotId=snap-0axttvv9\n&ApplyDisks.1.DiskId=disk-lt8ajfvk\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2fe82060-d27c-4b0a-8c73-50db42586d9c\"\n    }\n}",
+        "title": "回滚快照组"
+      }
+    ],
     "AttachDisks": [
       {
         "document": "将云硬盘disk-lzrg2pwi挂载到子机ins-dyzmimrw上",
@@ -84,6 +92,14 @@
         "title": "创建快照"
       }
     ],
+    "CreateSnapshotGroup": [
+      {
+        "document": "创建快照组",
+        "input": "https://cbs.tencentcloudapi.com/?Action=CreateSnapshotGroup\n&DiskIds.0=disk-lt8ajfvk\n&DiskIds.1=disk-1ly0wu8c\n&SnapshotGroupName=testSnapshotGroup\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9f12982-0c74-4d7e-aaeb-dd965ff2c9dc\",\n        \"SnapshotGroupId\": \"csnap-oavcw09g\"\n    }\n}",
+        "title": "创建快照组"
+      }
+    ],
     "DeleteAutoSnapshotPolicies": [
       {
         "document": "删除指定定期快照策略：asp-mrsrn243、asp-3lpl7ev3",
@@ -98,6 +114,14 @@
         "input": "POST / HTTP/1.1\nHost: cbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDiskBackups\n<公共请求参数>\n\n{\n    \"DiskBackupIds\": [\n        \"dbp-xxxxxxxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a79a4333-ac8e-426c-8cfe-2923c4010d64\"\n    }\n}",
         "title": "删除云硬盘备份点"
+      }
+    ],
+    "DeleteSnapshotGroup": [
+      {
+        "document": "删除快照组，并同时删除快照组绑定的镜像。",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DeleteSnapshotGroup\n&SnapshotGroupId=csnap-gv9naz6b\n&DeleteBindImages=true\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7c2dd0f-59b1-4243-af5f-8443a1527daa\"\n    }\n}",
+        "title": "删除快照组"
       }
     ],
     "DeleteSnapshots": [
@@ -162,6 +186,14 @@
         "input": "https://cbs.tencentcloudapi.com/?Action=DescribeInstancesDiskNum\n&InstanceIds.0=ins-9w5d2buw\n&InstanceIds.1=ins-jw0vit58\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AttachDetail\": [\n            {\n                \"InstanceId\": \"ins-9w5d2buw\",\n                \"AttachedDiskCount\": 1,\n                \"MaxAttachCount\": 10\n            },\n            {\n                \"InstanceId\": \"ins-jw0vit58\",\n                \"AttachedDiskCount\": 2,\n                \"MaxAttachCount\": 10\n            }\n        ],\n        \"RequestId\": \"55db49cf-b9d7-da27-825b-5a02ba6884ca\"\n    }\n}",
         "title": "查询多个实例挂载的云硬盘数量"
+      }
+    ],
+    "DescribeSnapshotGroups": [
+      {
+        "document": "查询所有快照组列表",
+        "input": "https://cbs.tencentcloudapi.com/?Action=DescribeSnapshotGroups\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"8c068f14-5e4d-471a-ab1f-26890ada5952\",\n        \"SnapshotGroupSet\": [\n            {\n                \"SnapshotGroupId\": \"csnap-csoplz7u\",\n                \"SnapshotGroupType\": \"NORMAL\",\n                \"ContainRootSnapshot\": true,\n                \"SnapshotIdSet\": [\n                    \"snap-31gfd8na\",\n                    \"snap-patkqtz4\",\n                    \"snap-1yirzaum\"\n                ],\n                \"SnapshotGroupState\": \"ROLLBACKING\",\n                \"Percent\": 100,\n                \"SnapshotGroupName\": \"aubreyxu2\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Images\": [],\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageCount\": 0,\n                \"DeadlineTime\": null,\n                \"IsPermanent\": true\n            },\n            {\n                \"SnapshotGroupId\": \"csnap-orard7la\",\n                \"SnapshotGroupType\": \"NORMAL\",\n                \"ContainRootSnapshot\": true,\n                \"SnapshotIdSet\": [\n                    \"snap-50j8l0o8\"\n                ],\n                \"SnapshotGroupState\": \"NORMAL\",\n                \"Percent\": 100,\n                \"SnapshotGroupName\": \"aubreyxu1\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Images\": [\n                    {\n                        \"ImageName\": \"快照组自定义镜像\",\n                        \"ImageId\": \"img-nmz7p8wt\"\n                    }\n                ],\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ImageCount\": 1,\n                \"DeadlineTime\": null,\n                \"IsPermanent\": true\n            }\n        ]\n    }\n}",
+        "title": "查询所有快照组列表"
       }
     ],
     "DescribeSnapshotOverview": [

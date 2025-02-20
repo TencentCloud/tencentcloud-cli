@@ -785,8 +785,8 @@
     "DescribeUpdatableDataEngines": [
       {
         "document": "查询需要更新结果桶集群配置的sparksql引擎",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpdatableDataEngines\n<公共请求参数>\n\n{\n    \"DataEngineConfigCommand\": \"UpdateSparkSQLResultPath\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataEngineBasicInfos\": [\n            {\n                \"DataEngineName\": \"abc\",\n                \"State\": 0,\n                \"CreateTime\": 0,\n                \"UpdateTime\": 0,\n                \"Message\": \"abc\",\n                \"DataEngineId\": \"abc\",\n                \"DataEngineType\": \"abc\",\n                \"AppId\": 0,\n                \"UserUin\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpdatableDataEngines\n<公共请求参数>\n\n{\n    \"DataEngineConfigCommand\": \"UpdateTaskResultPath\",\n    \"UseLakeFs\": true,\n    \"CustomResultPath\": \"cosn://test-bucket/dir\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineBasicInfos\": [\n            {\n                \"DataEngineId\": \"DataEngine-houseid1\",\n                \"DataEngineName\": \"SparkSQL\",\n                \"AppId\": 130001173,\n                \"UserUin\": \"1000117\",\n                \"State\": 2,\n                \"CreateTime\": 1729758961,\n                \"UpdateTime\": 1729758961,\n                \"Message\": \"\",\n                \"DataEngineType\": \"SparkSQL\"\n            }\n        ],\n        \"RequestId\": \"5441bd1b-af71-4bd1-97f0-33568cf387b7\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询需要更新结果桶集群配置的sparksql引擎"
       }
     ],

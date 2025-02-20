@@ -1186,7 +1186,7 @@
           "example": "mail.qcloud.com",
           "member": "string",
           "name": "IdentityName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1196,7 +1196,7 @@
           "example": "DOMAIN",
           "member": "string",
           "name": "IdentityType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1206,7 +1206,7 @@
           "example": "false",
           "member": "bool",
           "name": "SendingEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1216,7 +1216,7 @@
           "example": "10",
           "member": "uint64",
           "name": "CurrentReputationLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1226,8 +1226,18 @@
           "example": "10000",
           "member": "uint64",
           "name": "DailyQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名配置的独立ip",
+          "example": "[\"0.0.0.0\",\"1.1.1.1\"]",
+          "member": "string",
+          "name": "SendIp",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

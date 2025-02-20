@@ -22,7 +22,7 @@ Output:
                 "Name": "商户名称",
                 "CorpId": 10000,
                 "UpdateTime": "2023-08-15T02:47:35.000Z",
-                "MerchantId": "abc",
+                "MerchantId": "pn30msjjxwga",
                 "CodeRule": "https://xxx.xxx.com/qr/(.*)",
                 "CreateTime": "2023-08-15T02:47:35.000Z",
                 "CodeType": 0,
