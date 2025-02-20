@@ -1,3 +1,231 @@
+# Release 3.0.1158.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 82 次发布
+
+发布时间：2025-02-21 01:08:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BindProperty](http://document.tencentcloudapi.woa.com/document/product/555/19183#BindProperty)
+
+	* <font color="#dd0000">**修改成员**：</font>PropertyKey, PropertyValue
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：SlicePeriodUsageDetails
+
+	* <font color="#dd0000">**删除成员**：</font>SlicePeriodResourcePackages
+
+
+
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 43 次发布
+
+发布时间：2025-02-21 01:09:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ApplySnapshotGroup](http://document.tencentcloudapi.woa.com/document/product/362/85818)
+* [CreateSnapshotGroup](http://document.tencentcloudapi.woa.com/document/product/362/85817)
+* [DeleteSnapshotGroup](http://document.tencentcloudapi.woa.com/document/product/362/85816)
+* [DescribeSnapshotGroups](http://document.tencentcloudapi.woa.com/document/product/362/85815)
+
+修改接口：
+
+* [ResizeDisk](http://document.tencentcloudapi.woa.com/document/product/362/16310)
+
+	* 新增入参：DiskIds
+
+	* <font color="#dd0000">**修改入参**：</font>DiskId
+
+
+新增数据结构：
+
+* [ApplyDisk](http://document.tencentcloudapi.woa.com/document/product/362/15669#ApplyDisk)
+* [SnapshotGroup](http://document.tencentcloudapi.woa.com/document/product/362/15669#SnapshotGroup)
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 54 次发布
+
+发布时间：2025-02-21 01:11:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/82867)
+
+	* 新增入参：ComputeGroupId
+
+
+
+
+## 消息队列 CKafka 版(ckafka) 版本：2019-08-19
+
+### 第 101 次发布
+
+发布时间：2025-02-21 01:12:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/597/40835)
+
+	* 新增入参：Filters
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 103 次发布
+
+发布时间：2025-02-21 01:13:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LogRechargeRuleInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogRechargeRuleInfo)
+
+	* 新增成员：ParseArray
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 28 次发布
+
+发布时间：2025-02-21 01:20:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetTradeConfigList](http://document.tencentcloudapi.woa.com/document/product/1724/85819)
+
+新增数据结构：
+
+* [TradeOneNode](http://document.tencentcloudapi.woa.com/document/product/1724/80754#TradeOneNode)
+* [TradeTwoNode](http://document.tencentcloudapi.woa.com/document/product/1724/80754#TradeTwoNode)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 68 次发布
+
+发布时间：2025-02-21 01:22:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUserQualifiedCrowdPackages](http://document.tencentcloudapi.woa.com/document/product/1207/85820)
+
+新增数据结构：
+
+* [CrowdPackage](http://document.tencentcloudapi.woa.com/document/product/1207/47576#CrowdPackage)
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 26 次发布
+
+发布时间：2025-02-21 01:26:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [EmailIdentity](http://document.tencentcloudapi.woa.com/document/product/1288/51053#EmailIdentity)
+
+	* 新增成员：SendIp
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 33 次发布
+
+发布时间：2025-02-21 01:28:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SecLogDeliveryClsSettingInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SecLogDeliveryClsSettingInfo)
+
+	* 新增成员：SubLogType, ErrMsg
+
+* [SecLogDeliveryKafkaSettingInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SecLogDeliveryKafkaSettingInfo)
+
+	* 新增成员：SubLogType, ErrMsg
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 199 次发布
+
+发布时间：2025-02-21 01:31:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAddressBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/215/85821)
+* [DescribeBandwidthPackageBandwidthRange](http://document.tencentcloudapi.woa.com/document/product/215/85822)
+
+修改接口：
+
+* [AssociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16700)
+
+	* 新增入参：ServiceRoleOwner
+
+
+新增数据结构：
+
+* [BandwidthRange](http://document.tencentcloudapi.woa.com/document/product/215/15824#BandwidthRange)
+
+
+
 # Release 3.0.1157.1
 
 ## 消息队列 CKafka 版(ckafka) 版本：2019-08-19

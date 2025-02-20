@@ -126,6 +126,13 @@
       "output": "GetCountryCodesResponse",
       "status": "online"
     },
+    "GetTradeConfigList": {
+      "document": "该接口用于查询行业信息，包括一级行业、二级行业。",
+      "input": "GetTradeConfigListRequest",
+      "name": "查询行业列表",
+      "output": "GetTradeConfigListResponse",
+      "status": "online"
+    },
     "ModifyClientRemark": {
       "document": "修改代客备注",
       "input": "ModifyClientRemarkRequest",
@@ -2279,6 +2286,33 @@
       ],
       "type": "object"
     },
+    "GetTradeConfigListRequest": {
+      "document": "GetTradeConfigList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetTradeConfigListResponse": {
+      "document": "GetTradeConfigList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行业信息",
+          "example": "无",
+          "member": "TradeOneNode",
+          "name": "TradeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyClientRemarkRequest": {
       "document": "ModifyClientRemark请求参数结构体",
       "members": [
@@ -3906,6 +3940,78 @@
           "member": "string",
           "name": "TagValue",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TradeOneNode": {
+      "document": "一级行业信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一级行业id",
+          "example": "kghy_01",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一级行业name",
+          "example": "农林牧渔业",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "一级行业下对应的二级行业",
+          "example": "[{\"id\": \"kghy_0101\",\"name\": \"农业\",\"trade_info\": \"kghy_01\"},{\"id\": \"kghy_0102\",\"name\": \"林业\",\"trade_info\": \"kghy_01\"}]",
+          "member": "TradeTwoNode",
+          "name": "Children",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TradeTwoNode": {
+      "document": "二级行业信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级行业id",
+          "example": "kghy_0101",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二级行业name",
+          "example": "农业",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "行业信息",
+          "example": "kghy_0101",
+          "member": "string",
+          "name": "TradeInfo",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

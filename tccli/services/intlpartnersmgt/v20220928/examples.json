@@ -180,6 +180,14 @@
         "title": "获取国家、地区代码"
       }
     ],
+    "GetTradeConfigList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTradeConfigList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TradeList\": [\n            {\n                \"Id\": \"kghy_01\",\n                \"Name\": \"农林牧渔业\",\n                \"Children\": [\n                    {\n                        \"Id\": \"kghy_0101\",\n                        \"Name\": \"农业\",\n                        \"TradeInfo\": \"kghy_01\"\n                    },\n                    {\n                        \"Id\": \"kghy_0102\",\n                        \"Name\": \"林业\",\n                        \"TradeInfo\": \"kghy_01\"\n                    },\n                    {\n                        \"Id\": \"kghy_0103\",\n                        \"Name\": \"畜牧业\",\n                        \"TradeInfo\": \"kghy_01\"\n                    },\n                    {\n                        \"Id\": \"kghy_0104\",\n                        \"Name\": \"渔业\",\n                        \"TradeInfo\": \"kghy_01\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc123\"\n    }\n}",
+        "title": "查询行业信息"
+      }
+    ],
     "ModifyClientRemark": [
       {
         "document": "",

@@ -41267,6 +41267,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志类型\t",
+          "example": "[\"asset_container\"]\t",
+          "member": "string",
+          "name": "SubLogType",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "error",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -41276,7 +41298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志类型",
+          "document": "安全日志模块",
           "example": "container_****",
           "member": "string",
           "name": "LogType",
@@ -41316,6 +41338,28 @@
           "output_required": true,
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志类型",
+          "example": "[\"asset_container\"]",
+          "member": "string",
+          "name": "SubLogType",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "error",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

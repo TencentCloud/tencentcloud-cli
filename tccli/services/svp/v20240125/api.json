@@ -720,23 +720,23 @@
         },
         {
           "disabled": false,
-          "document": "支付类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支付类型",
           "example": "1 全预付 2 部分预付 3 全不预付",
           "member": "uint64",
           "name": "PayType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "购买时间 yyyy-mm-dd HH:mm:ss格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时间 yyyy-mm-dd HH:mm:ss格式",
           "example": "2023-06-01 00:00:00",
           "member": "string",
           "name": "BuyTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -836,13 +836,13 @@
         },
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "[\"*\"]",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

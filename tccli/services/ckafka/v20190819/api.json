@@ -8603,6 +8603,15 @@
           "name": "VpcId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "[{\"Name\":\"Serverless\",\"Values\":[\"1\"]}]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
