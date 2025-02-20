@@ -2462,14 +2462,6 @@
         "title": "获取安全事件数统计数据"
       }
     ],
-    "DescribeSecurityProtectionStat": [
-      {
-        "document": "",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSecurityProtectionStat\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"AssetManageStat\": 1,\n        \"SecureBasicLineStat\": 1,\n        \"ExpertServiceStat\": 1,\n        \"LoginLogStat\": 1,\n        \"VulManageStat\": 1,\n        \"FileTamperStat\": 1,\n        \"WarningSetStat\": 1,\n        \"DiscoverBruteAttackStat\": 1,\n        \"DefenseBruteAttackStat\": 1,\n        \"RequestId\": \"e79efea3-3f70-46c0-a7e1-ed38a2476098\",\n        \"ReverseShellStat\": 1,\n        \"LogAnalysisStat\": 1,\n        \"PrivilegeStat\": 1,\n        \"MalwareScanStat\": 1,\n        \"WebPageStat\": 1,\n        \"EventBashStat\": 1,\n        \"MaliciousRequestStat\": 1\n    }\n}",
-        "title": "获取安全防护状态"
-      }
-    ],
     "DescribeSecurityTrends": [
       {
         "document": "获取安全事件统计数据。",

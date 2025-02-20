@@ -7,30 +7,6 @@
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"Level\": 4,\n                \"UserIp\": \"203.205.141.118\"\n            }\n        },\n        \"RequestId\": \"be7d30aa-a824-4b5d-9b53-288e9dae2423\"\n    }\n}",
         "title": "IP风险查询接口"
       }
-    ],
-    "RecognizeCustomizedAudience": [
-      {
-        "document": "",
-        "input": "https://taf.tencentcloudapi.com/?Action=RecognizeCustomizedAudience\r\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&BspData.AccountType=2\r\n&BspData.ModelIdList.0=5128\r\n&BspData.ModelIdList.1=5129\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"ModelId\": 5128,\n                    \"IsFound\": 1,\n                    \"Score\": 120\n                },\n                {\n                    \"ModelId\": 5129,\n                    \"IsFound\": 0,\n                    \"Score\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "RecognizeCustomizedAudience"
-      }
-    ],
-    "RecognizePreciseTargetAudience": [
-      {
-        "document": "",
-        "input": "https://taf.tencentcloudapi.com/?Action=RecognizePreciseTargetAudience\r\n&BspData.Uid=bfd81ee3ed27ad31c95ca75e21365973\r\n&BspData.AccountType=2\r\n&BspData.ModelIdList.0=5128\r\n&BspData.ModelIdList.1=5129\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": [\n                {\n                    \"ModelId\": 5128,\n                    \"IsFound\": 1,\n                    \"Score\": 120\n                },\n                {\n                    \"ModelId\": 5129,\n                    \"IsFound\": 0,\n                    \"Score\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
-        "title": "RecognizePreciseTargetAudience"
-      }
-    ],
-    "RecognizeTargetAudience": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: taf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeTargetAudience\n<公共请求参数>\n\n{\n  \"BspData\": {\n    \"Uid\": \"892022376********ec97a65130bce53\",\n    \"AccountType\": 256,\n    \"ModelIdList\": [\n      5427\n    ],\n    \"IsAuthorized\": 1\n  },\n  \"BusinessEncryptData\": {\n    \"EncryptMethod\": 1,\n    \"EncryptData\": \"7ecfc5536b47f4fa7d********b67564caab7e6845531f02fd28feb8122f7afa\",\n    \"EncryptMode\": 1,\n    \"PaddingType\": 1\n  }\n}\n\n",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Message\": \"OK\",\n            \"Code\": 0,\n            \"Value\": [\n                {\n                    \"Uid\": \"892022376********ec97a65130bce53\",\n                    \"IsFound\": 0,\n                    \"Score\": 0,\n                    \"ModelId\": 5427,\n                    \"ModelType\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"c98f2f4f-****-****-****-669fb2679589\"\n    }\n}",
-        "title": "RecognizeTargetAudience"
-      }
     ]
   },
   "version": "1.0"

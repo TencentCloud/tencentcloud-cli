@@ -11,8 +11,8 @@ tccli dlc DescribeDMSTable --cli-unfold-argument  \
     --Name test \
     --Catalog  \
     --Keyword  \
-    --Pattern * \
-    --Type  EXTERNAL_TABLE
+    --Type  EXTERNAL_TABLE \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
@@ -87,7 +87,7 @@ Output:
                 },
                 {
                     "Key": "table_spec_internal_v_0_1_1",
-                    "Value": "[]"
+                    "Value": "[ ]"
                 },
                 {
                     "Key": "uuid",

@@ -112,7 +112,8 @@ tccli dlc CreateDMSTable --cli-unfold-argument  \
     --Partitions.0.SchemaName f_value \
     --Partitions.0.StorageSize 0 \
     --Partitions.0.CreateTime 2020-09-22T00:00:00+00:00 \
-    --Name tb_test
+    --Name tb_test \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

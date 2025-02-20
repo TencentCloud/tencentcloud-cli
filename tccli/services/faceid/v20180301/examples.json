@@ -144,6 +144,12 @@
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAuth\n<公共请求参数>\n\n{\n    \"RuleId\": \"0\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\",\n    \"Extra\": \"Orderid=f904f4cf75db4f8fdc4f942c7f7a\",\n    \"RedirectUrl\": \"http://www.qq.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"BizToken\": \"CE661F1A-0F1E-45BD-BE13-34C05CEA7681\",\n        \"Url\": \"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2cca36a86d5035ae&redirect_uri=http%3A%2F%2Fopen.faceid.qq.com%2Fv1%2Fapi%2FgetCode%3FbizRedirect%3Dhttp%253A%252F%252Ffaceid.qq.com%252Fapi%252Fauth%252FgetOpenidAndSaveToken%253Ftoken%253DCE661F1A-0F1E-45BD-BE13-34C05CEA7681&response_type=code&scope=snsapi_base&state=&component_appid=wx9802ee81e68d6dee#wechat_redirect\",\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "H5获取BizToken成功示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetectAuth\n<公共请求参数>\n\n{\n    \"RuleId\": \"999\",\n    \"IdCard\": \"11204416541220243X\",\n    \"Name\": \"韦小宝\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.RuleIdNotExist\",\n            \"Message\": \"RuleId不存在，请到人脸核身控制台申请。\"\n        },\n        \"RequestId\": \"e90c9abf-dcb3-4efa-97fc-5c4501b8182c\"\n    }\n}",
+        "title": "获取BizToken失败示例"
       }
     ],
     "EncryptedPhoneVerification": [

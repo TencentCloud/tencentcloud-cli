@@ -10161,7 +10161,7 @@
         {
           "disabled": false,
           "document": "安全组信息",
-          "example": "无",
+          "example": " [{\"CreateTime\": \"2017-04-13 15:00:06\",\"Inbound\": [],\"Outbound\": [],\"ProjectId\": 0,\"SecurityGroupId\": \"sg-ajr1jzdd\",\"SecurityGroupName\": \"CynosDB\",\"SecurityGroupRemark\": \"\"}]",
           "member": "SecurityGroup",
           "name": "Groups",
           "output_required": true,

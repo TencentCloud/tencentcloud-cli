@@ -1,9 +1,9 @@
 {
   "actions": {
     "ChatCompletions": {
-      "document": "#### 接口功能\n\n调用接口，发起一次对话请求。\n如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1772/115968)\n\n#### 已支持的模型\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大支持8K输出长度。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    - 支持64K上下文长度，最大支持8K输出长度。\n\n#### 计费说明\n- 限时免费\n\n本接口调用DeepSeek系列模型限时免费。即日至北京时间2025年2月25日23:59:59，所有腾讯云用户均可享受DeepSeek-V3、DeepSeek-R1模型限时免费服务，单账号限制接口并发上限为5。在此之后，模型价格将恢复至原价。\n- 标准计费（2025年2月26日起生效）\n\n ![image](https://cdn.xiaowei.qq.com/static/lke/deekseep-token0212.png)\n\n### Openai兼容协议接口\n知识引擎原子能力大模型对话 API 兼容了 OpenAI 的接口规范，这意味着您可以直接使用 OpenAI 官方提供的 SDK 来调用大模型对话接口。您仅需要将 base_url 和 [api_key](https://cloud.tencent.com/document/product/1772/115970) 替换成相关配置，不需要对应用做额外修改，即可无缝将您的应用切换到相应的大模型。请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1772/115968)。\n> base_url：  https://api.lkeap.cloud.tencent.com/v1\n\n> api_key的获取请参考[API KEY管理](https://cloud.tencent.com/document/product/1772/115970)\n\n\n#### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
+      "document": "#### 接口功能\n\n调用接口，发起一次对话请求。\n如需使用OpenAI兼容接口， 请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)\n\n#### 已支持的模型\n- DeepSeek-V3（model 参数值为**deepseek-v3**）\n    - DeepSeek-V3为671B参数MoE模型，在百科知识、数学推理等多项任务上优势突出，评测成绩在主流榜单中位列开源模型榜首。\n    - 支持64K上下文长度，最大输入56k，最大输出8k（不含思维链）。\n- DeepSeek-R1（model 参数值为**deepseek-r1**）\n    - DeepSeek-R1为671B模型，使用强化学习训练，推理过程包含大量反思和验证，思维链长度可达数万字。 该系列模型在数学、代码以及各种复杂逻辑推理任务上推理效果优异，并为用户展现了完整的思考过程。\n    -  支持64K上下文长度，最大输入56k，最大输出8k（不含思维链）。\n\n#### 计费说明\n- 限时免费\n\n本接口调用DeepSeek系列模型限时免费。即日至北京时间2025年2月25日23:59:59，所有腾讯云用户均可享受DeepSeek-V3、DeepSeek-R1模型限时免费服务，单账号限制接口并发上限为5。在此之后，模型价格将恢复至原价。\n- 标准计费（2025年2月26日起生效）\n\n ![image](https://cdn.xiaowei.qq.com/static/lke/deekseep-token0212.png)\n\n### Openai兼容协议接口\n知识引擎原子能力大模型对话 API 兼容了 OpenAI 的接口规范，这意味着您可以直接使用 OpenAI 官方提供的 SDK 来调用大模型对话接口。您仅需要将 base_url 和 [api_key](https://cloud.tencent.com/document/product/1772/115970) 替换成相关配置，不需要对应用做额外修改，即可无缝将您的应用切换到相应的大模型。请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)。\n> base_url：  https://api.lkeap.cloud.tencent.com/v1\n\n> api_key的获取请参考[API KEY管理](https://cloud.tencent.com/document/product/1772/115970)\n\n\n#### 快速接入\n1. 完成[实名认证](https://console.cloud.tencent.com/developer/auth)。\n2. 主账户前往[控制台](https://console.cloud.tencent.com/lkeap)开通服务。若为子账户，需由主账号在[权限管理](https://console.cloud.tencent.com/cam)中为子账号授权，关联预设策略，策略名称：QcloudLKEAPFullAccess。\n3. 通过API Explorer[在线调试](https://console.cloud.tencent.com/api/explorer?Product=lkeap&Version=2024-05-22&Action=ChatCompletions)。\n4. 使用[官方 SDK ](https://cloud.tencent.com/document/product/1772/115963#SDK)调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）。\n\n-----------\n\n### SDK调用示例\n通过本地代码调用本接口（支持Python/Java/PHP/Go/Node.js/.NET等语言）：下面的代码以 Python 语言为例，展示如何访问腾讯云上的DeepSeek模型API的样例。\n（1）安装环境\n```\npython3 -m pip install --upgrade tencentcloud-sdk-python-common\npython3 -m pip install --upgrade tencentcloud-sdk-python-lkeap\n```\n\n（2）示例代码\n\n- 其中SecretKey和SecretID需要从腾讯云控制台获取\n\n- 参数params中模型Model字段可以选择“deepseek-r1“和“deepseek-v3”\n\n```\n# -*- coding: utf-8 -*-\nimport json\n\nfrom tencentcloud.common.common_client import CommonClient\nfrom tencentcloud.common import credential\nfrom tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException\nfrom tencentcloud.common.profile.client_profile import ClientProfile\nfrom tencentcloud.common.profile.http_profile import HttpProfile\n\nclass NonStreamResponse(object):\n    def __init__(self):\n        self.response = \"\"\n\n    def _deserialize(self, obj):\n        self.response = json.dumps(obj)\n\ntry:\n    # 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey，此处还需注意密钥对的保密\n    # 代码泄露可能会导致 SecretId 和 SecretKey 泄露，并威胁账号下所有资源的安全性。以下代码示例仅供参考，建议采用更安全的方式来使用密钥，请参见：https://cloud.tencent.com/document/product/1278/85305\n    # 密钥可前往官网控制台 https://console.cloud.tencent.com/cam/capi 进行获取\n    cred = credential.Credential(\"\", \"\")\n\n    httpProfile = HttpProfile()\n    httpProfile.endpoint = \"lkeap.tencentcloudapi.com\"\n    httpProfile.reqTimeout = 40000  # 流式接口可能耗时较长\n    clientProfile = ClientProfile()\n    clientProfile.httpProfile = httpProfile\n\n    params = \"{\\\"Model\\\":\\\"deepseek-r1\\\",\\\"Messages\\\":[{\\\"Role\\\":\\\"user\\\",\\\"Content\\\":\\\"你好\\\"}],\\\"Stream\\\":true}\";\n    common_client = CommonClient(\"lkeap\", \"2024-05-22\", cred, \"ap-guangzhou\", profile=clientProfile)\n    resp = common_client._call_and_deserialize(\"ChatCompletions\", json.loads(params), NonStreamResponse)\n    if isinstance(resp, NonStreamResponse):  # 非流式响应\n        print(resp.response)\n    else:  # 流式响应\n        for event in resp:\n            print(event)\nexcept TencentCloudSDKException as err:\n    print(err)\n\n```\n\n**DeepSeek-R1使用建议**\n\n1. 将温度设置在 0.5-0.7 范围内（建议为0.6），以防止无休止的重复或不连贯的输出。\n2. 避免添加system prompt，所有说明都应包含在user prompt中。",
       "input": "ChatCompletionsRequest",
-      "name": "对话",
+      "name": "DeepSeek API 接口",
       "output": "ChatCompletionsResponse",
       "status": "online"
     },
@@ -169,14 +169,14 @@
       "status": "online"
     },
     "UploadDoc": {
-      "document": "用于上传文档内容。上传的文档将存储在知识库中，可以通过SearchKnowledge知识库内容检索接口进行检索。 \n使用场景：适用于需要长期存储和检索的文档内容，如产品手册、用户指南等。",
+      "document": "用于上传文档内容。上传的文档将存储在知识库中，可以通过RetrieveKnowledge[知识库内容检索接口](https://cloud.tencent.com/document/product/1772/115349)进行检索。 \n使用场景：适用于需要长期存储和检索的文档内容，如产品手册、用户指南等。",
       "input": "UploadDocRequest",
       "name": "上传文档",
       "output": "UploadDocResponse",
       "status": "online"
     },
     "UploadDocRealtime": {
-      "document": "用于上传实时文档内容。实时文档在上传后可以立即通过SearchRealtime进行实时检索，适用于在会话中对文档进行问答的场景。",
+      "document": "用于上传实时文档内容。\n实时文档在上传后可以立即通过SearchRealtime进行实时检索，适用于在会话中对文档进行问答的场景。",
       "input": "UploadDocRealtimeRequest",
       "name": "实时文档上传",
       "output": "UploadDocRealtimeResponse",
@@ -450,7 +450,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结束标志位，可能为 stop、 sensitive或者tool_calls。\nstop 表示输出正常结束。\nsensitive 只在开启流式输出审核时会出现，表示安全审核未通过。\ntool_calls 标识函数调用。",
+          "document": "结束标志位，可能为 stop、 content_filter。\nstop 表示输出正常结束。\ncontent_filter 只在开启流式输出审核时会出现，表示安全审核未通过。",
           "example": "stop",
           "member": "string",
           "name": "FinishReason",
@@ -683,7 +683,7 @@
         },
         {
           "disabled": false,
-          "document": "文件的 Base64 值。\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
+          "document": "文件的 Base64 值。\n支持的文件类型： PNG、JPG、JPEG、PDF、GIF、BMP、TIFF\n支持的文件大小：所下载文件经Base64编码后不超过 8M。文件下载时间不超过 3 秒。\n支持的图片像素：单边介于20-10000px之间。\n文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。",
           "example": "无",
           "member": "string",
           "name": "FileBase64",
@@ -2334,7 +2334,7 @@
         {
           "disabled": false,
           "document": "检索结果",
-          "example": "[{\"Metadata\":{\"Type\":\"DOC\",\"ResultSource\":\"SEMANTIC\",\"ChunkPageNumbers\":[1,2]},\"Score\":0,\"Title\":\"example.pdf\",\"Content\":\"国庆放7天假\"}]",
+          "example": "[{\"Metadata\":{\"Type\":\"DOC\",\"ResultSource\":\"SEMANTIC\",\"ChunkPageNumbers\":[1,2]},\"Title\":\"example.pdf\",\"Content\":\"国庆放7天假\"}]",
           "member": "RetrievalRecord",
           "name": "Records",
           "output_required": false,
@@ -2458,7 +2458,53 @@
     },
     "UploadDocRealtimeRequest": {
       "document": "UploadDocRealtime请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库ID",
+          "example": "4901991032",
+          "member": "string",
+          "name": "KnowledgeBaseId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名，可选。\n**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。",
+          "example": "example.pdf",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型。\n**支持的文件类型：**\n- `PDF`、`DOC`、`DOCX`、`XLS`、`XLSX`、`PPT`、`PPTX`、`MD`、`TXT`、`PNG`、`JPG`、`JPEG`、`CSV`、`HTML`、`EPUB`\n\n**支持的文件大小：**\n - `PDF`、`DOCX`、`DOC`、`PPT`、`PPTX` 最大 200M \n - `TXT`、`MD` 最大10M \n - 其他 最大20M",
+          "example": "PDF",
+          "member": "string",
+          "name": "FileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件的 URL 地址。\n文件存储于腾讯云的 URL 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。 非腾讯云存储的 URL 速度和稳定性可能受一定影响。\n参考：[腾讯云COS文档](https://cloud.tencent.com/document/product/436/7749)",
+          "example": "https://example.com/example.pdf",
+          "member": "string",
+          "name": "FileUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间的秒数，最长24小时，默认24小时",
+          "example": "86400",
+          "member": "int64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "UploadDocRealtimeResponse": {
@@ -2487,7 +2533,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名，可选。\n**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。",
+          "document": "文件名。\n**需带文件类型后缀**",
           "example": "example.pdf",
           "member": "string",
           "name": "FileName",

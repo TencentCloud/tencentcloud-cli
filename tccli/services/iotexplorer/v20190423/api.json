@@ -2797,7 +2797,7 @@
         {
           "disabled": false,
           "document": "视频分析识别区域",
-          "example": "{}",
+          "example": "{”x0\":0,\"x1\":640,\"y0\":0,\"y1\":480}",
           "member": "string",
           "name": "ROI",
           "required": false,
@@ -3042,7 +3042,7 @@
         {
           "disabled": false,
           "document": "视频分析识别区域",
-          "example": "{}",
+          "example": "{”x0\":0,\"x1\":640,\"y0\":0,\"y1\":480}",
           "member": "string",
           "name": "ROI",
           "required": false,
@@ -11120,7 +11120,7 @@
         {
           "disabled": false,
           "document": "视频分析识别区域",
-          "example": "{}",
+          "example": "{”x0\":0,\"x1\":640,\"y0\":0,\"y1\":480}",
           "member": "string",
           "name": "ROI",
           "required": false,
@@ -11240,7 +11240,7 @@
         {
           "disabled": false,
           "document": "视频分析识别区域",
-          "example": "{}",
+          "example": "{”x0\":0,\"x1\":640,\"y0\":0,\"y1\":480}",
           "member": "string",
           "name": "ROI",
           "required": false,

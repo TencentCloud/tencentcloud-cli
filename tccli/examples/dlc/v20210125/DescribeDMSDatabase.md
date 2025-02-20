@@ -8,40 +8,40 @@ Input:
 tccli dlc DescribeDMSDatabase --cli-unfold-argument  \
     --Name Name1 \
     --SchemaName Schema1 \
-    --Pattern *
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Name": "abc",
-        "SchemaName": "abc",
-        "Location": "abc",
+        "Name": "Name1",
+        "SchemaName": "Schema1",
+        "Location": "cosn://******",
         "Asset": {
             "Id": 0,
-            "Name": "abc",
-            "Guid": "abc",
-            "Catalog": "abc",
-            "Description": "abc",
-            "Owner": "abc",
-            "OwnerAccount": "abc",
+            "Name": "Name1",
+            "Guid": "********",
+            "Catalog": "hive",
+            "Description": "default descrtiption",
+            "Owner": "********",
+            "OwnerAccount": "********",
             "PermValues": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "perm",
+                    "Value": "default"
                 }
             ],
             "Params": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "param",
+                    "Value": "defualt"
                 }
             ],
             "BizParams": [
                 {
-                    "Key": "abc",
-                    "Value": "abc"
+                    "Key": "bizparam",
+                    "Value": "default"
                 }
             ],
             "DataVersion": 0,
@@ -49,7 +49,7 @@ Output:
             "ModifiedTime": "2020-09-22T00:00:00+00:00",
             "DatasourceId": 0
         },
-        "RequestId": "abc"
+        "RequestId": "****-****"
     }
 }
 ```

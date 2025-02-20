@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli ssl ModifyCertificateProject --cli-unfold-argument  \
-    --CertificateIdList ABCD1234 ABCD1235 ABCD1236 \
+    --CertificateIdList 8ea2a8ee 4084da1d e45e529f \
     --ProjectId 673782
 ```
 
@@ -16,9 +16,9 @@ Output:
     "Response": {
         "FailCertificates": [],
         "SuccessCertificates": [
-            "ABCD1234",
-            "ABCD1235",
-            "ABCD1236"
+            "8ea2a8ee",
+            "4084da1d",
+            "e45e529f"
         ],
         "RequestId": "95adbcc1-a0bb-4b9c-acf6-5c4e514b945f"
     }

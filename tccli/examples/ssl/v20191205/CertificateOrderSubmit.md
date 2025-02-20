@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli ssl CertificateOrderSubmit --cli-unfold-argument  \
-    --CertId abc \
+    --CertId Dsqef134 \
     --DeleteDnsAutoRecord 1 \
-    --VerifyType abc
+    --VerifyType DNS
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "OrderId": "abc",
-        "Status": 1,
+        "OrderId": "SO8zRv29",
+        "Status": 8,
         "IsAudited": true,
-        "RequestId": "abc"
+        "RequestId": "9b397ac6-7d01-4fbc-8acc-52dd6ff0877b"
     }
 }
 ```

@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli cynosdb DescribeDBSecurityGroups --cli-unfold-argument  \
-    --InstanceId cynosdbpg-ins-jhi2gdi0
+    --InstanceId cynosdbmysql-ins-jhi2gdi0 \
+    --InstanceGroupId cynosdbmysql-grp-b28sjso2
 ```
 
 Output: 

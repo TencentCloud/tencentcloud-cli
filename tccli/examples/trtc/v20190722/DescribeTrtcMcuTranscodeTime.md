@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli trtc DescribeTrtcMcuTranscodeTime --cli-unfold-argument  \
-    --SdkAppId 1400123456 \
+    --EndTime 2020-09-08 \
     --StartTime 2020-09-07 \
-    --EndTime 2020-09-08
+    --SdkAppId 1400123456
 ```
 
 Output: 
@@ -21,11 +21,12 @@ Output:
                 "TotalNum": 1,
                 "SdkAppIdTranscodeTimeUsages": [
                     {
-                        "AudioTime": 1,
-                        "VideoTimeHd": 1,
-                        "VideoTimeFhd": 1,
-                        "VideoTimeSd": 1,
-                        "TimeKey": "xx"
+                        "Flux": 10,
+                        "AudioTime": 12,
+                        "VideoTimeHd": 21,
+                        "VideoTimeFhd": 234,
+                        "VideoTimeSd": 198,
+                        "TimeKey": "2020-09-07"
                     }
                 ]
             }

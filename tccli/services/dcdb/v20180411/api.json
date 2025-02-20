@@ -21,6 +21,13 @@
       "output": "CancelDcnJobResponse",
       "status": "online"
     },
+    "CancelOnlineDDLJob": {
+      "document": "取消 Online DDL 任务",
+      "input": "CancelOnlineDDLJobRequest",
+      "name": "取消在线DDL任务",
+      "output": "CancelOnlineDDLJobResponse",
+      "status": "online"
+    },
     "CloneAccount": {
       "document": "本接口（CloneAccount）用于克隆实例账户。",
       "input": "CloneAccountRequest",
@@ -278,6 +285,13 @@
       "input": "DescribeLogFileRetentionPeriodRequest",
       "name": "查看备份日志备份天数",
       "output": "DescribeLogFileRetentionPeriodResponse",
+      "status": "online"
+    },
+    "DescribeOnlineDDLJob": {
+      "document": "查询Online DDL 任务详情",
+      "input": "DescribeOnlineDDLJobRequest",
+      "name": "查询在线DDL任务",
+      "output": "DescribeOnlineDDLJobResponse",
       "status": "online"
     },
     "DescribeOrders": {
@@ -829,6 +843,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelOnlineDDLJobRequest": {
+      "document": "CancelOnlineDDLJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tdsqlshard-8jbp1qpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要暂停的 Online DDL 任务对应的流程Id。创建任务时，CreateOnlineDDLJob 会返回此流程Id",
+          "example": "12357",
+          "member": "uint64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelOnlineDDLJobResponse": {
+      "document": "CancelOnlineDDLJob返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3137,6 +3187,102 @@
           "name": "Range",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DDLDetail": {
+      "document": "DDL任务执行详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分片Id",
+          "example": "set_1729674200_1",
+          "member": "string",
+          "name": "ShardSerialId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "product_db",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表",
+          "example": "user_tbl",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行的DDL任务内容",
+          "example": "add column add_col_2 varchar(32);",
+          "member": "string",
+          "name": "Alter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始执行时间",
+          "example": "2025-01-16 16:26:15 +0800 CST",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务状态。0 成功； 1失败；  2进行中",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务详细描述信息",
+          "example": "job is waiting to start",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务当前所处阶段",
+          "example": "wating_start",
+          "member": "string",
+          "name": "Stage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切换状态：1: 未到切换阶段；2：正在等待进行表切换；3: 正在进行切换；4: 切换成功；5: 切换失败",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -6259,6 +6405,82 @@
           "name": "Days",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOnlineDDLJobRequest": {
+      "document": "DescribeOnlineDDLJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "tdsqlshard-8jbp1qpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Online DDL 对应的流程Id。创建任务时，CreateOnlineDDLJob 会返回此流程Id",
+          "example": "12357",
+          "member": "uint64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOnlineDDLJobResponse": {
+      "document": "DescribeOnlineDDLJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态。0：成功；1：失败；大于1：进行中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度百分比",
+          "example": "50",
+          "member": "int64",
+          "name": "Process",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息或提示信息",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各分片DDL执行详情",
+          "example": "无",
+          "member": "DDLDetail",
+          "name": "DDLDetails",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

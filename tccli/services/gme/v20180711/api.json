@@ -504,7 +504,7 @@
         {
           "disabled": false,
           "document": "服务开关状态",
-          "example": "[]",
+          "example": "无",
           "member": "ServiceStatus",
           "name": "ServiceConf",
           "output_required": true,
@@ -514,7 +514,7 @@
         {
           "disabled": false,
           "document": "应用ID(AppID)",
-          "example": "1",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
           "output_required": true,
@@ -524,7 +524,7 @@
         {
           "disabled": false,
           "document": "应用名称",
-          "example": "xx",
+          "example": "app_test",
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -554,7 +554,7 @@
         {
           "disabled": false,
           "document": "创建时间，Unix时间戳格式",
-          "example": "1",
+          "example": "1736238797",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
@@ -684,7 +684,7 @@
         {
           "disabled": false,
           "document": "需要支持的引擎列表，默认全选。\n取值：android/ios/unity/cocos/unreal/windows",
-          "example": "无",
+          "example": "[\"0\",\"1\"]",
           "member": "string",
           "name": "EngineList",
           "required": false,
@@ -693,7 +693,7 @@
         {
           "disabled": false,
           "document": "服务区域列表，默认全选。\n取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东",
-          "example": "无",
+          "example": "[\"mainland\",\"na\"]",
           "member": "string",
           "name": "RegionList",
           "required": false,
@@ -753,20 +753,20 @@
         {
           "disabled": false,
           "document": "应用ID，由后台自动生成。",
-          "example": "123456",
+          "example": "1400000000",
           "member": "uint64",
           "name": "BizId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "应用名称，透传输入参数的AppName",
-          "example": "abcd",
+          "example": "app_test1",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -776,7 +776,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -786,57 +786,57 @@
           "example": "sdsd",
           "member": "string",
           "name": "SecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "服务创建时间戳",
-          "example": "123456",
+          "example": "1736238797",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实时语音服务配置数据",
-          "example": "{}",
+          "example": "无",
           "member": "RealtimeSpeechConf",
           "name": "RealtimeSpeechConf",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "语音消息服务配置数据",
-          "example": "{}",
+          "example": "无",
           "member": "VoiceMessageConf",
           "name": "VoiceMessageConf",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "语音分析服务配置数据",
-          "example": "{}",
+          "example": "无",
           "member": "VoiceFilterConf",
           "name": "VoiceFilterConf",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "语音转文本服务配置数据",
-          "example": "{}",
+          "example": "无",
           "member": "AsrConf",
           "name": "AsrConf",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -852,6 +852,7 @@
           "example": "无",
           "member": "CreateAppResp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1476,7 +1477,7 @@
         {
           "disabled": false,
           "document": "所查找应用名称的关键字，支持模糊匹配查找。空串表示查询所有应用",
-          "example": "测试",
+          "example": "app_game",
           "member": "string",
           "name": "SearchText",
           "required": true,
@@ -1770,27 +1771,27 @@
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据唯一 ID",
-          "example": "1234",
+          "example": "1400000000_test_data_id",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "检测完成的时间戳",
-          "example": "1234",
+          "example": "1566720906",
           "member": "uint64",
           "name": "ScanFinishTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1800,7 +1801,7 @@
           "example": "false",
           "member": "bool",
           "name": "HitFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1810,37 +1811,37 @@
           "example": "false",
           "member": "bool",
           "name": "Live",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务返回描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "document": "业务返回描述",
+          "example": "Success",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测结果，Code 为 0 时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "检测结果，Code 为 0 时返回",
+          "example": "无",
           "member": "ScanPiece",
           "name": "ScanPiece",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "提交检测的时间戳",
-          "example": "1234",
+          "example": "1574684231",
           "member": "uint64",
           "name": "ScanStartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1850,17 +1851,17 @@
           "example": "[\"default\"]",
           "member": "string",
           "name": "Scenes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "语音检测任务 ID，由后台分配",
-          "example": "abcdefgh",
+          "example": "6330xxxx-9xx7-11ed-98e3-52xxxxe4ac3b",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1870,7 +1871,7 @@
           "example": "http://xx.mp3",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1880,7 +1881,7 @@
           "example": "Success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1890,7 +1891,7 @@
           "example": "140011111",
           "member": "uint64",
           "name": "BizId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2165,20 +2166,20 @@
         {
           "disabled": false,
           "document": "进入房间时间",
-          "example": "无",
+          "example": "1606355700701",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "退出房间时间",
-          "example": "无",
+          "example": "1606355712545",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -2682,42 +2683,42 @@
         {
           "disabled": false,
           "document": "房间id",
-          "example": "1234",
+          "example": "261974",
           "member": "uint64",
           "name": "RoomId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间里用户uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[123456]",
+          "document": "房间里用户uin列表",
+          "example": "[100261]",
           "member": "uint64",
           "name": "Uins",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "字符串房间id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"1234\"",
+          "document": "字符串房间id",
+          "example": "\"261974\"",
           "member": "string",
           "name": "StrRoomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间里用户字符串uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"1234\"]",
+          "document": "房间里用户字符串uin列表",
+          "example": "[\"100261\"]",
           "member": "string",
           "name": "StrUins",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2783,13 +2784,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "流检测时返回，音频转存地址，保留30min\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "流检测时返回，音频转存地址，保留30min",
+          "example": "https://cos.xxx.com/tianyu-xxx-1200000000/w-audio-ZxxxI8xxxqGxxxxr/audio_0_1600000000.mp3?X-Amz-xxxxxxxxx=",
           "member": "string",
           "name": "DumpUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2797,19 +2798,19 @@
           "example": "false",
           "member": "bool",
           "name": "HitFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "违规主要类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "违规主要类型",
           "example": "normal",
           "member": "string",
           "name": "MainType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2817,69 +2818,69 @@
           "example": "无",
           "member": "ScanDetail",
           "name": "ScanDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "gme实时语音房间ID，透传任务传入时的RoomId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "document": "gme实时语音房间ID，透传任务传入时的RoomId",
+          "example": "261974",
           "member": "string",
           "name": "RoomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "gme实时语音用户ID，透传任务传入时的OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "12345",
+          "document": "gme实时语音用户ID，透传任务传入时的OpenId",
+          "example": "1001807",
           "member": "string",
           "name": "OpenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "备注",
+          "example": "现在开始第一段测试....",
           "member": "string",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流检测时分片在流中的偏移时间，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流检测时分片在流中的偏移时间，单位毫秒",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流检测时分片时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流检测时分片时长",
           "example": "0",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分片开始检测时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分片开始检测时间",
           "example": "0",
           "member": "uint64",
           "name": "PieceStartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3036,63 +3037,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "实时语音服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实时语音服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "RealTimeSpeech",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音消息服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音消息服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "VoiceMessage",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音内容安全服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音内容安全服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "Porn",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音录制服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音录制服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "Live",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "语音转文本服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "语音转文本服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "RealTimeAsr",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文本翻译服务开关状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本翻译服务开关状态",
           "example": "1",
           "member": "StatusInfo",
           "name": "TextTranslate",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3505,22 +3506,24 @@
         {
           "disabled": false,
           "document": "语音过滤服务开关，取值：open/close",
-          "example": "无",
+          "example": "open",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景配置信息，如开关状态，回调地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景配置信息，如开关状态，回调地址。",
           "example": "无",
           "member": "SceneInfo",
           "name": "SceneInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

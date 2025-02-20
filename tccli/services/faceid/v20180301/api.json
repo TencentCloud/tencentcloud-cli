@@ -1272,7 +1272,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（语音播报+语音回答模式）使用的文案。\n- 包括：系统语音播报的文本、需要核验的标准文本。\n- 当前仅支持1轮问答。",
+          "document": "意愿核身（语音播报+语音回答模式）使用的文案。\n- 包括：系统语音播报的文本、需要核验的标准文本。\n- 问答模式支持1-10轮（不超过10轮）的意愿确认。",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -1281,7 +1281,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 当前仅支持一个提示文本。",
+          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。",
           "example": "无",
           "member": "IntentionActionConfig",
           "name": "IntentionActions",
@@ -2556,7 +2556,7 @@
         {
           "disabled": false,
           "document": "意愿核身朗读模式使用的文案。\n- 若未使用意愿核身朗读功能，该字段无需传入。\n- 默认为空，最长可接受120的字符串长度。",
-          "example": "\"\"",
+          "example": "\"请阅读\"",
           "member": "string",
           "name": "IntentionVerifyText",
           "required": false,
@@ -2564,7 +2564,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身问答模式的配置列表。\n- 当前仅支持一个问答。",
+          "document": "意愿核身问答模式的配置列表。\n- 问答模式支持1-10轮（不超过10轮）的意愿确认。",
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
@@ -2573,7 +2573,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 默认为空，最长可接受150的字符串长度。",
+          "document": "意愿核身（点头确认模式）使用的文案。\n- 若未使用意愿核身（点头确认模式），则该字段无需传入。\n- 默认为空，最长可接受150的字符串长度。\n- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。",
           "example": "无",
           "member": "IntentionActionConfig",
           "name": "IntentionActions",

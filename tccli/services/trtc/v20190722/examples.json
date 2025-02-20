@@ -219,8 +219,8 @@
     "DescribeTrtcMcuTranscodeTime": [
       {
         "document": "多日查询",
-        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeTrtcMcuTranscodeTime\n&SdkAppId=1400123456\n&StartTime=2020-09-07\n&EndTime=2020-09-08\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"TotalNum\": 1,\n                \"SdkAppIdTranscodeTimeUsages\": [\n                    {\n                        \"AudioTime\": 1,\n                        \"VideoTimeHd\": 1,\n                        \"VideoTimeFhd\": 1,\n                        \"VideoTimeSd\": 1,\n                        \"TimeKey\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b23\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrtcMcuTranscodeTime\n<公共请求参数>\n\n{\n    \"EndTime\": \"2020-09-08\",\n    \"StartTime\": \"2020-09-07\",\n    \"SdkAppId\": \"1400123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"SdkAppId\": \"1400123456\",\n                \"TotalNum\": 1,\n                \"SdkAppIdTranscodeTimeUsages\": [\n                    {\n                        \"Flux\": 10,\n                        \"AudioTime\": 12,\n                        \"VideoTimeHd\": 21,\n                        \"VideoTimeFhd\": 234,\n                        \"VideoTimeSd\": 198,\n                        \"TimeKey\": \"2020-09-07\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"644956b8-9f7c-44c5-b833-31d91dba1b23\"\n    }\n}",
         "title": "查询旁路转码计费时长"
       }
     ],

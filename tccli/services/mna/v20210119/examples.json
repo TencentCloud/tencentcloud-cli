@@ -96,6 +96,22 @@
         "title": "获取Qos加速状态"
       }
     ],
+    "DownloadActiveDeviceCount": [
+      {
+        "document": "下载活跃设备数量统计",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadActiveDeviceCount\n<公共请求参数>\n\n{\n    \"Period\": 0,\n    \"StartTime\": 1732176361,\n    \"EndTime\": 1732176362,\n    \"DevGroup\": \"comollit\",\n    \"LicenseType\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"FilePath\": \"http://cos.com\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "下载活跃设备数量统计"
+      }
+    ],
+    "GetActiveDeviceCount": [
+      {
+        "document": "查询活跃设备数量统计",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetActiveDeviceCount\n<公共请求参数>\n\n{\n    \"Period\": 0,\n    \"StartTime\": 1732176361,\n    \"EndTime\": 1732176362,\n    \"DevGroup\": \"comollit\",\n    \"LicenseType\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"ActiveDeviceList\": [\n            {\n                \"Count\": 1,\n                \"Time\": \"2024-11-20\"\n            }\n        ],\n        \"DevGroup\": \"group1\",\n        \"EndTime\": \"2024-11-20\",\n        \"LicenseType\": \"1\",\n        \"Period\": 0,\n        \"StartTime\": \"2024-11-20\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "活跃设备数量统计"
+      }
+    ],
     "GetDevice": [
       {
         "document": "获取设备基本信息和网络信息",

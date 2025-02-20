@@ -1,10 +1,26 @@
 {
   "actions": {
+    "ActivateCaCertificate": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateCaCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"ab925a7a-bac9-4a6c-bf81-af13f9f9db48\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ActivateDeviceCertificate": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActivateDeviceCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mmgej724\",\n    \"DeviceCertificateSn\": \"eef68a582b94254296e54ce754f94d707a59912\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"d769f88e-6eac-4f72-98d8-b7fb1edb9429\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ApplyRegistrationCode": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyRegistrationCode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-jeredv33\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"mqtt-jeredv33\",\n        \"RegistrationCode\": \"bb180052-7df5-4ff3-bda9-9b12fed8bf39\",\n        \"RequestId\": \"8251a13b-b8a0-4134-bc43-5b3ab4253f92\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -64,6 +80,14 @@
         "title": "示例"
       }
     ],
+    "DeactivateCaCertificate": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeactivateCaCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"7ec2bb28-db0c-47a8-99dd-589732de4f58\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeactivateDeviceCertificate": [
       {
         "document": "示例",
@@ -85,6 +109,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuthorizationPolicy\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"Id\": 8\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"ed018161-ce7a-4ccc-bf9e-b85f4dbf2e2a\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteCaCertificate": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCaCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c180b739-df35-41a7-b7d0-796c8b4e9c55\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -150,6 +182,22 @@
         "title": "示例"
       }
     ],
+    "DescribeCaCertificate": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaCertificate\n<公共请求参数>\n\n{\n    \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n    \"InstanceId\": \"mqtt-jbgwp4ae\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"CaCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\nBQAwgZIxCzAJBgNVBAYTAmNuMQ0wCwYDVQQIDAR4aWFuMQ0wCwYDVQQHDARodXlp\\nMREwDwYDVQQKDAhqZWhhbnN1bjEWMBQGA1UECwwNdW5pdCBqZWhhbnN1bjEVMBMG\\nA1UEAwwMc3Vuamlhbnhpb25nMSMwIQYJKoZIhvc1UEBwwEaHV5aTERMA8GA1UECgwI\\namVoYW5zdW4xFjAUBgNVB\\n-----END CERTIFICATE-----\\n\",\n        \"CaCn\": \"sn\",\n        \"CaIssuerCn\": \"cn\",\n        \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n        \"CreatedTime\": 1724050364000,\n        \"Format\": \"PEM\",\n        \"LastActivationTime\": 1724050364340,\n        \"LastInactivationTime\": 0,\n        \"NotAfterTime\": 2030344601000,\n        \"NotBeforeTime\": 1724052316000,\n        \"RequestId\": \"7cb5d884-35a0-4f35-9cca-24c7d748a034\",\n        \"Status\": \"ACTIVE\",\n        \"UpdateTime\": 1724050364000\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCaCertificates": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaCertificates\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mmgej724\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CaCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\",\n                \"CaCn\": \"cn\",\n                \"CaSn\": \"1b1e3bf3702110125887a3a721a7e66f05522513\",\n                \"CreatedTime\": 1719992244000,\n                \"Format\": \"PEM\",\n                \"Status\": \"ACTIVE\",\n                \"UpdateTime\": 1719992244000,\n                \"LastInactivationTime\": 1719992244000,\n                \"LastActivationTime\": 1719992244000,\n                \"VerificationCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIID7TCCAtWgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmRIwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\"\n            }\n        ],\n        \"RequestId\": \"d03f799b-1244-45d7-9e03-0ceaf8f63fed\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeDeviceCertificate": [
       {
         "document": "示例",
@@ -187,6 +235,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientNumLimit\": 1,\n                \"CreateTime\": 1705565760,\n                \"InstanceId\": \"mqtt-wjgxr8jg\",\n                \"InstanceName\": \"su-0118-no-pub\",\n                \"InstanceStatus\": \"CREATE_FAILURE\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"mqtt_1k\",\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 1,\n                \"TpsLimit\": 1,\n                \"Version\": \"1\"\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"CreateTime\": 1705391046,\n                \"InstanceId\": \"mqtt-47ka4rdr\",\n                \"InstanceName\": \"sun-0116\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"BASIC\",\n                \"Remark\": \"this is remark\",\n                \"SkuCode\": \"basic_1k\",\n                \"TopicNum\": 25,\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000,\n                \"Version\": \"1\"\n            }\n        ],\n        \"RequestId\": \"9424369d-904f-4fa2-b407-0bd5e536e989\",\n        \"TotalCount\": 10\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeProductSKUList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductSKUList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MQTTProductSkuList\": [\n            {\n                \"ClientNumLimit\": 1,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"SkuCode\": \"mqtt_1k\",\n                \"TopicNumLimit\": 1,\n                \"TpsLimit\": 1\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"SkuCode\": \"basic_1k\",\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000\n            }\n        ],\n        \"RequestId\": \"2be05982-b125-4259-b965-c487949cd896\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "示例"
       }
     ],
@@ -238,6 +294,14 @@
         "title": "示例"
       }
     ],
+    "ModifyInstanceCertBinding": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceCertBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-jeredv33\",\n    \"SSLServerCertId\": \"\",\n    \"SSLCaCertId\": \"\",\n    \"X509Mode\": \"TLS\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"91843178-a4a3-4ced-b5d9-f679962393c4\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyJWKSAuthenticator": [
       {
         "document": "示例",
@@ -267,6 +331,14 @@
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMQTTUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-7pnqmkrx\",\n    \"Username\": \"user2\",\n    \"Remark\": \"remark2\"\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"85d3aeee-ba25-47cc-8c17-7ad837b877ba\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RegisterCaCertificate": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterCaCertificate\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\",\n    \"CaCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\",\n    \"VerificationCertificate\": \"-----BEGIN CERTIFICATE-----\\nMIID7TCCAtWgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmRIwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"2773beef-8527-4cc1-9e84-f15d56eaa7d9\"\n    }\n}",
         "title": "示例"
       }
     ],

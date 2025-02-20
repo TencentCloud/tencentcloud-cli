@@ -1,0 +1,237 @@
+{
+  "actions": {
+    "CreateRabbitMQServerlessBinding": [
+      {
+        "document": "添加绑定关系",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slnatbyves\",\n    \"VirtualHost\": \"vhost\",\n    \"Source\": \"fanout-exchange-1061997075421934168\",\n    \"DestinationType\": \"queue\",\n    \"Destination\": \"queue-623992266636621729\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BindingId\": 0,\n        \"InstanceId\": \"amqp-slnatbyves\",\n        \"RequestId\": \"1dd2c068-0d69-4ec4-a9e5-adce8cffa43b\",\n        \"VirtualHost\": \"vhost\"\n    }\n}",
+        "title": "添加绑定关系"
+      }
+    ],
+    "CreateRabbitMQServerlessExchange": [
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessExchange\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slmejnrgtz\",\n    \"VirtualHost\": \"vhost1\",\n    \"ExchangeName\": \"exchange2\",\n    \"ExchangeType\": \"fanout\",\n    \"Remark\": \"测试交换机\",\n    \"Durable\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ExchangeName\": \"exchange2\",\n        \"RequestId\": \"01f525e3-fc29-498e-a801-741cee1aed9e\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "CreateRabbitMQServerlessQueue": [
+      {
+        "document": "创建RabbitMQ队列",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessQueue\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slmejnrgtz\",\n    \"VirtualHost\": \"vhost1\",\n    \"QueueName\": \"queue1\",\n    \"QueueType\": \"vhost1\",\n    \"Remark\": \"测试队列\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QueueName\": \"queue1\",\n        \"RequestId\": \"941a7f2b-26f7-413f-b91f-341678cd00f6\"\n    }\n}",
+        "title": "创建RabbitMQ队列"
+      }
+    ],
+    "CreateRabbitMQServerlessUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"abc123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"User\": \"test_user\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "CreateRabbitMQServerlessVirtualHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRabbitMQServerlessVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"VirtualHost\": \"testVhost\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteRabbitMQServerlessBinding": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQServerlessBinding\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"BindingId\": 127441\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cxvxcvcxfsdfds\",\n        \"InstanceId\": \"amqp-44w9928j\",\n        \"VirtualHost\": \"testVhost\",\n        \"BindingId\": 127441\n    }\n}",
+        "title": "解绑RabbitMQ路由关系"
+      }
+    ],
+    "DeleteRabbitMQServerlessExchange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQServerlessExchange\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slrlpeddnr\",\n    \"VirtualHost\": \"testVhost\",\n    \"ExchangeName\": \"testExchange\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExchangeName\": \"testExchange\",\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteRabbitMQServerlessPermission": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQServerlessPermission\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"VirtualHost\": \"testVhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteRabbitMQServerlessQueue": [
+      {
+        "document": "成功",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQServerlessQueue\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slmejnrgtz\",\n    \"VirtualHost\": \"vhost1\",\n    \"QueueName\": \"queue1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QueueName\": \"queue1\",\n        \"RequestId\": \"7df3c05e-80eb-4d92-b6af-760940b4a2ca\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteRabbitMQServerlessUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQServerlessUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-xxx\",\n    \"User\": \"test_user\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteRabbitMQServerlessVirtualHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRabbitMQServerlessVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeRabbitMQServerlessBindings": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessBindings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slfxemauoa\",\n    \"VirtualHost\": \"test_vhost3213\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"SourceExchange\": \"test_exchange\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"99ff7b6b-bc6e-48e7-8ef6-cffcf74393f6\",\n        \"TotalCount\": 1,\n        \"BindingInfoList\": [\n            {\n                \"BindingId\": 18921,\n                \"VirtualHost\": \"test_vhost3213\",\n                \"Source\": \"test_exchange\",\n                \"DestinationType\": \"queue\",\n                \"Destination\": \"test_queue\",\n                \"RoutingKey\": \"testRoutingKey\",\n                \"SourceExchangeType\": \"direct\",\n                \"CreateTime\": \"2025-01-16 19:52:51\",\n                \"ModifyTime\": \"2025-01-16 19:52:51\"\n            }\n        ]\n    }\n}",
+        "title": "查询路由绑定信息"
+      }
+    ],
+    "DescribeRabbitMQServerlessConnection": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessConnection\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\",\n        \"Connections\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询RabbitMQ连接列表"
+      }
+    ],
+    "DescribeRabbitMQServerlessConsumers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessConsumers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-jero744g\",\n    \"VirtualHost\": \"testVhost\",\n    \"QueueName\": \"testQueue\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"SearchWord\": \"testSearchWord\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"ConsumerInfoList\": [\n            {\n                \"ClientIp\": \"119.147.10.198\",\n                \"ConsumerTag\": \"ctag1.6473a72d0293494197684c6c3261318b\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询RabbitMQ队列消费者列表"
+      }
+    ],
+    "DescribeRabbitMQServerlessExchangeDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessExchangeDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slfxemauoa\",\n    \"VirtualHost\": \"test_vhost3213\",\n    \"ExchangeName\": \"test_exchange\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4d30e41-d8c5-4651-81f6-ee286c909030\",\n        \"ExchangeName\": \"test_exchange\",\n        \"Remark\": \"\",\n        \"Durable\": false,\n        \"AutoDelete\": false,\n        \"Internal\": false,\n        \"AlternateExchange\": \"\",\n        \"ExchangeType\": \"direct\",\n        \"VirtualHost\": \"test_vhost3213\",\n        \"ExchangeCreator\": \"user\",\n        \"Arguments\": \"\"\n    }\n}",
+        "title": "查看Exchange详细信息"
+      }
+    ],
+    "DescribeRabbitMQServerlessExchanges": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessExame\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"vhost1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request1\",\n        \"ExchangeInfoList\": [\n            {\n                \"ExchangeName\": \"test1\",\n                \"ExchangeType\": \"fanout\",\n                \"Remark\": \"test1\",\n                \"VirtualHost\": \"vhost1\",\n                \"ExchangeCreator\": \"user\",\n                \"CreateTimeStamp\": \"2022-12-04 01:08:43\",\n                \"ModTimeStamp\": \"2022-12-04 01:08:43\"\n            },\n            {\n                \"ExchangeName\": \"test2\",\n                \"ExchangeType\": \"direct\",\n                \"Remark\": \"test2\",\n                \"VirtualHost\": \"vhost1\",\n                \"ExchangeCreator\": \"user\",\n                \"CreateTimeStamp\": \"2022-12-04 01:08:43\",\n                \"ModTimeStamp\": \"2022-12-04 01:08:43\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeRabbitMQServerlessInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slnatby\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bae00352-45fb-46ea-8960-2c8ce102db5f\",\n        \"ClusterInfo\": {\n            \"InstanceType\": 1,\n            \"ClusterName\": \"devCluster\",\n            \"ClusterId\": \"amqp-slnatby\",\n            \"Region\": \"ap-guangzhou\",\n            \"CreateTime\": 1737775135000,\n            \"Remark\": \"\",\n            \"Vpcs\": [\n                {\n                    \"VpcId\": \"vpc-test\",\n                    \"SubnetId\": \"subnet-test\",\n                    \"VpcEndpoint\": \"amqp://10.0.0.1:5672\",\n                    \"VpcDataStreamEndpointStatus\": \"ON\"\n                }\n            ],\n            \"ZoneIds\": null,\n            \"VirtualHostNumber\": 2,\n            \"QueueNumber\": 11,\n            \"ChannelNumber\": 0,\n            \"ConnectionNumber\": 0,\n            \"ConsumerNumber\": 0,\n            \"ExchangeNumber\": 13,\n            \"MessagePublishRate\": 0,\n            \"MessageConsumeRate\": 0,\n            \"MessageStackNumber\": 19,\n            \"ExpireTime\": 1740453535000,\n            \"ExceptionInformation\": null,\n            \"ClusterStatus\": 1,\n            \"AutoRenewFlag\": 1,\n            \"ClusterVersion\": \"0.1.0\",\n            \"PayMode\": 0,\n            \"MessageRetainTime\": 72,\n            \"MirrorQueuePolicyFlag\": null\n        },\n        \"ClusterNetInfo\": {\n            \"PublicDataStreamStatus\": \"OFF\",\n            \"PublicAccessEndpoint\": null\n        },\n        \"ClusterWhiteListInfo\": {\n            \"PublicDataStreamWhiteList\": null,\n            \"PublicDataStreamWhiteListStatus\": \"OFF\"\n        },\n        \"ClusterSpecInfo\": {\n            \"SpecName\": \"BASIC\",\n            \"MaxTps\": 2000,\n            \"MaxQueueNum\": 100,\n            \"MaxVhostNum\": 250,\n            \"MaxExchangeNum\": 100,\n            \"MaxConnNum\": 2000,\n            \"MaxUserNum\": 20,\n            \"MaxBandWidth\": 0,\n            \"PublicNetworkTps\": 3\n        },\n        \"VirtualHostQuota\": {\n            \"MaxVirtualHost\": 250,\n            \"UsedVirtualHost\": 2\n        },\n        \"ExchangeQuota\": {\n            \"MaxExchange\": 100,\n            \"UsedExchange\": 13\n        },\n        \"QueueQuota\": {\n            \"MaxQueue\": 100,\n            \"UsedQueue\": 11\n        },\n        \"UserQuota\": {\n            \"MaxUser\": 20,\n            \"UsedUser\": 1\n        }\n    }\n}",
+        "title": "实例详情示例"
+      }
+    ],
+    "DescribeRabbitMQServerlessPermission": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessPermission\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slfxemauoa\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"VirtualHost\": \"\",\n    \"User\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8edba56c-fe02-4e15-8e56-af2a7c4d3760\",\n        \"TotalCount\": 1,\n        \"RabbitMQPermissionList\": [\n            {\n                \"InstanceId\": \"amqp-slfxemauoa\",\n                \"User\": \"test_role\",\n                \"VirtualHost\": \"test_vhost3213\",\n                \"ConfigRegexp\": \".*\",\n                \"WriteRegexp\": \".*\",\n                \"ReadRegexp\": \".*\",\n                \"CreateTime\": \"2025-01-16 19:52:53\",\n                \"ModifyTime\": \"2025-01-16 19:52:53\"\n            }\n        ]\n    }\n}",
+        "title": "查询RabbitMQ权限列表"
+      }
+    ],
+    "DescribeRabbitMQServerlessQueueDetail": [
+      {
+        "document": "查询RabbitMQ队列详情",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessQueueDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slmejnrgtz\",\n    \"VirtualHost\": \"vhost1\",\n    \"QueueName\": \"queue1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e44774dc-597a-45d0-8a41-e5a13bae3878\",\n        \"InstanceId\": \"amqp-slygmxjifs\",\n        \"VirtualHost\": \"test-vhost\",\n        \"QueueName\": \"queue-test\",\n        \"QueueType\": \"classic\",\n        \"Consumers\": 0,\n        \"Durable\": true,\n        \"AutoDelete\": false,\n        \"Remark\": \"\",\n        \"MessageTTL\": 100000,\n        \"AutoExpire\": 1,\n        \"MaxLength\": 100,\n        \"MaxLengthBytes\": 1204,\n        \"DeliveryLimit\": 100,\n        \"OverflowBehaviour\": \"\",\n        \"DeadLetterExchange\": \"\",\n        \"DeadLetterRoutingKey\": \"\",\n        \"SingleActiveConsumer\": false,\n        \"MaximumPriority\": 100,\n        \"LazyMode\": false,\n        \"MasterLocator\": \"\",\n        \"MaxInMemoryLength\": 1024,\n        \"MaxInMemoryBytes\": 1024,\n        \"CreateTime\": 1739935376,\n        \"Node\": \"\",\n        \"DeadLetterStrategy\": \"\",\n        \"QueueLeaderLocator\": \"\",\n        \"QuorumInitialGroupSize\": 100,\n        \"Exclusive\": false,\n        \"Policy\": \"\",\n        \"Arguments\": \"{\\\"x-ordered\\\": false}\"\n    }\n}",
+        "title": "查询RabbitMQ队列详情"
+      }
+    ],
+    "DescribeRabbitMQServerlessQueues": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessQueues\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b5d9dd2-b80f-40da-8c8c-fd180a78be38\",\n        \"TotalCount\": 1,\n        \"QueueInfoList\": [\n            {\n                \"QueueName\": \"ledou-test\",\n                \"Remark\": \"\",\n                \"ConsumerDetail\": {\n                    \"ConsumersNumber\": 0\n                },\n                \"QueueType\": \"normal\",\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0,\n                \"CreateTime\": \"2024-10-16 14:39:58:000\",\n                \"ModifyTime\": \"2024-10-16 14:39:58:000\",\n                \"Durable\": true,\n                \"AutoDelete\": false,\n                \"InstanceId\": \"ramqp-cpssyrct\",\n                \"VirtualHost\": \"testVhost\",\n                \"Node\": \"\",\n                \"Policy\": \"\",\n                \"Arguments\": \"{\\\"x-message-ttl\\\":100000.0}\",\n                \"Exclusive\": false\n            }\n        ]\n    }\n}",
+        "title": "查询RabbitMQ队列列表"
+      }
+    ],
+    "DescribeRabbitMQServerlessUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12bedf1e-5377-46e1-ae05-07225440b16f\",\n        \"TotalCount\": 1,\n        \"RabbitMQUserList\": [\n            {\n                \"InstanceId\": \"ramqp-cpssyrct\",\n                \"User\": \"testUser\",\n                \"Password\": \"\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"CreateTime\": \"2024-10-21 15:52:45:000\",\n                \"ModifyTime\": \"2024-10-21 15:52:45:000\",\n                \"Type\": \"default\",\n                \"MaxConnections\": null,\n                \"MaxChannels\": null\n            }\n        ]\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeRabbitMQServerlessVirtualHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQServerlessVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc0de4d7-31c0-47ca-8142-d803d704a44b\",\n        \"TotalCount\": 2,\n        \"VirtualHostList\": [\n            {\n                \"InstanceId\": \"ramqp-cpssyrct\",\n                \"VirtualHost\": \"testVhost\",\n                \"Description\": \"default vhost\",\n                \"Tags\": [],\n                \"CreateTime\": \"2024-10-14 20:06:40:000\",\n                \"ModifyTime\": \"2024-10-14 20:06:40:000\",\n                \"VirtualHostStatistics\": {\n                    \"CurrentQueues\": 0,\n                    \"CurrentExchanges\": 0,\n                    \"CurrentConnections\": 0,\n                    \"CurrentChannels\": 0,\n                    \"CurrentUsers\": 0\n                },\n                \"Status\": \"running\",\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0,\n                \"MirrorQueuePolicyFlag\": false\n            },\n            {\n                \"InstanceId\": \"ramqp-cpssyrct\",\n                \"VirtualHost\": \"ledou-test\",\n                \"Description\": \"\",\n                \"Tags\": [],\n                \"CreateTime\": \"2024-10-16 14:38:58:000\",\n                \"ModifyTime\": \"2024-10-16 14:38:58:000\",\n                \"VirtualHostStatistics\": {\n                    \"CurrentQueues\": 0,\n                    \"CurrentExchanges\": 0,\n                    \"CurrentConnections\": 0,\n                    \"CurrentChannels\": 0,\n                    \"CurrentUsers\": 0\n                },\n                \"Status\": \"running\",\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0,\n                \"MirrorQueuePolicyFlag\": false\n            }\n        ]\n    }\n}",
+        "title": "查询RabbitMQ vhost列表"
+      }
+    ],
+    "ListRabbitMQServerlessInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRabbitMQServerlessInstances\n<公共请求参数>\n\n{\n    \"Filters\": [],\n    \"Limit\": 2,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Instances\": [\n            {\n                \"AutoRenewFlag\": 1,\n                \"ClusterStatus\": 1,\n                \"CreateTime\": 1737028115000,\n                \"ExceptionInformation\": null,\n                \"ExpireTime\": 1739706515000,\n                \"InstanceId\": \"amqp-slfxemauoa\",\n                \"InstanceName\": \"test_yunchao_8816\",\n                \"InstanceType\": 1,\n                \"InstanceVersion\": \"0.1.0\",\n                \"MaxBandWidth\": 0,\n                \"MaxStorage\": 0,\n                \"MaxTps\": 2000,\n                \"NodeCount\": 0,\n                \"PayMode\": 0,\n                \"PublicAccessEndpoint\": null,\n                \"Remark\": \"\",\n                \"SpecName\": \"基础版\",\n                \"Status\": 1,\n                \"Vpcs\": []\n            },\n            {\n                \"AutoRenewFlag\": 1,\n                \"ClusterStatus\": 1,\n                \"CreateTime\": 1736912606000,\n                \"ExceptionInformation\": null,\n                \"ExpireTime\": 1739591006000,\n                \"InstanceId\": \"amqp-slirnlmwlm\",\n                \"InstanceName\": \"test_yunchao_001\",\n                \"InstanceType\": 1,\n                \"InstanceVersion\": \"0.1.0\",\n                \"MaxBandWidth\": 0,\n                \"MaxStorage\": 0,\n                \"MaxTps\": 2000,\n                \"NodeCount\": 0,\n                \"PayMode\": 0,\n                \"PublicAccessEndpoint\": null,\n                \"Remark\": \"\",\n                \"SpecName\": \"基础版\",\n                \"Status\": 1,\n                \"Vpcs\": [\n                    {\n                        \"SubnetId\": \"subnet-1j1p6omq\",\n                        \"VpcDataStreamEndpointStatus\": \"ON\",\n                        \"VpcEndpoint\": \"amqp://10.0.0.2:5672\",\n                        \"VpcId\": \"vpc-f7zemc2v\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"cc77d367-76b7-4aef-b5d6-e471ed254758\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "获取实例列表"
+      }
+    ],
+    "ModifyRabbitMQServerlessExchange": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQServerlessExchange\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"ExchangeName\": \"testExchange\",\n    \"Remark\": \"newRemark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request1\",\n        \"ExchangeName\": \"testExchange\"\n    }\n}",
+        "title": "修改RabbitMQ exchange"
+      }
+    ],
+    "ModifyRabbitMQServerlessInstance": [
+      {
+        "document": "修改集群信息",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQServerlessInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-slmejnrgtz\",\n    \"ClusterName\": \"dev-env\",\n    \"Remark\": \"测试修改\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"amqp-slmejnrgtz\",\n        \"RequestId\": \"ec77f16a-1349-4014-9eda-1cdc0b35f341\"\n    }\n}",
+        "title": "修改集群信息"
+      }
+    ],
+    "ModifyRabbitMQServerlessPermission": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQServerlessPermission\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"VirtualHost\": \"testVhost\",\n    \"ConfigRegexp\": \".*\",\n    \"WriteRegexp\": \".*\",\n    \"ReadRegexp\": \".*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "ModifyRabbitMQServerlessQueue": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQServerlessQueue\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"QueueName\": \"testQueueName\",\n    \"Remark\": \"newRemark\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"vcbdasdasdsadsa\",\n        \"QueueName\": \"cc\"\n    }\n}",
+        "title": "修改RabbitMQ队列"
+      }
+    ],
+    "ModifyRabbitMQServerlessUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQServerlessUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"User\": \"test_user\",\n    \"Password\": \"abcABC123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "修改RabbitMQ的用户"
+      }
+    ],
+    "ModifyRabbitMQServerlessVirtualHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trabbit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRabbitMQServerlessVirtualHost\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"testVhost\",\n    \"Description\": \"test vhost\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dsfsdfs\"\n    }\n}",
+        "title": "成功"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -24,6 +24,14 @@
         "title": "无"
       }
     ],
+    "CancelOnlineDDLJob": [
+      {
+        "document": "取消 Online DDL 任务，未返回错误信息说明成功取消",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-a2csrmsr\",\n    \"FlowId\": 1143769\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9524d8fa-8598-414a-a3a1-4134c9631ca2\"\n    }\n}",
+        "title": "取消 Online DDL 任务"
+      }
+    ],
     "CloneAccount": [
       {
         "document": "",
@@ -348,6 +356,14 @@
         "input": "https://dcdb.tencentcloudapi.com/?Action=DescribeLogFileRetentionPeriod\n&InstanceId=dcdbt-ak4b3m9l\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Days\": 30,\n        \"InstanceId\": \"dcdbt-ak4b3m9l\",\n        \"RequestId\": \"a6e96bd9-ec89-4c02-9738-d33e783a4bae\"\n    }\n}",
         "title": "查看备份日志备份天数"
+      }
+    ],
+    "DescribeOnlineDDLJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOnlineDDLJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsqlshard-a2csrmsr\",\n    \"FlowId\": 1143769\n}",
+        "output": "{\n    \"Response\": {\n        \"DDLDetails\": [\n            {\n                \"Alter\": \"add column add_col1;\",\n                \"BeginTime\": \"2025-01-16 16:26:15 +0800 CST\",\n                \"DbName\": \"db_prod\",\n                \"Desc\": \"Error Error altering new table `db_prod`.`_tbl_user_new`: DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 [for Statement \\\"ALTER TABLE `db_prod`.`_tbl_user_new` add column add_col1;\\\"] at ./pt-online-schema-change line 9121.\\n\",\n                \"ShardSerialId\": \"set_1734351063_1\",\n                \"Stage\": \"before_alter_new_table\",\n                \"Status\": 1,\n                \"SwitchStatus\": 0,\n                \"Table\": \"tbl_user\"\n            }\n        ],\n        \"ErrorMessage\": \"Error Error altering new table `db_prod`.`_tbl_user_new`: DBD::mysql::db do failed: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 [for Statement \\\"ALTER TABLE `db_prod`.`_tbl_user_new` add column add_col1;\\\"] at ./pt-online-schema-change line 9121.\\n\",\n        \"Process\": 100,\n        \"RequestId\": \"9524d8fa-8598-414a-a3a1-4134c9631ca2\",\n        \"Status\": 1\n    }\n}",
+        "title": "查询OnlineDDL任务详情"
       }
     ],
     "DescribeOrders": [

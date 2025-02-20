@@ -1,0 +1,266 @@
+{
+  "actions": {
+    "GetMonitorData": {
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
+      "input": "GetMonitorDataRequest",
+      "name": "拉取指标监控数据",
+      "output": "GetMonitorDataResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-06-16",
+    "api_brief": "介绍如何使用API对腾讯云可观测平台进行操作，包括查询监控数据、创建报警规则等。",
+    "serviceNameCN": "腾讯云可观测平台",
+    "serviceShortName": "monitor"
+  },
+  "objects": {
+    "DataPoint": {
+      "document": "监控数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例对象维度组合",
+          "example": "{\"Name\":\"instanceId\", \"Value\":\"ins-jiyyjnea\"}",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了",
+          "example": "[1736784000, 1736784060]",
+          "member": "float",
+          "name": "Timestamps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控值数组，该数组和Timestamps一一对应",
+          "example": "[10, 5.8, 7000.54]",
+          "member": "float",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Dimension": {
+      "document": "实例对象的维度组合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "instanceId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-123",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Expr": {
+      "document": "计算算子",
+      "members": [
+        {
+          "disabled": false,
+          "document": "算子名称",
+          "example": "PERCENTILE",
+          "member": "string",
+          "name": "Function",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算子入参值",
+          "example": "99",
+          "member": "float",
+          "name": "N",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "GetMonitorDataRequest": {
+      "document": "GetMonitorData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称，如CPUUsage，仅支持单指标拉取。各个云产品的详细指标说明请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的指标英文名即为MetricName",
+          "example": "CPUUsage",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取10个实例的监控数据。",
+          "example": "无",
+          "member": "Instance",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监控统计周期，如60。默认为取值为300，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的统计周期列即为支持的统计周期。单请求的数据点数限制为1440个。",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间，如2018-09-22T19:51:23+08:00",
+          "example": "2019-03-24T10:51:23+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，如2018-09-22T20:51:23+08:00，默认为当前时间。 EndTime不能小于StartTime",
+          "example": "2019-03-24T20:51:23+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算算子",
+          "example": "{ \"Function\": \"PECENTILE\", \"N\": 99 }",
+          "member": "Expr",
+          "name": "Expr",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMonitorDataResponse": {
+      "document": "GetMonitorData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计周期",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名",
+          "example": "CPUUsage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据点数组",
+          "example": "无",
+          "member": "DataPoint",
+          "name": "DataPoints",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2019-03-24T10:50:00+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2019-03-24T20:50:00+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Instance": {
+      "document": "实例维度组合数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的维度组合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

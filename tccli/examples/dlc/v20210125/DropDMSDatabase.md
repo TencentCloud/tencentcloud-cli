@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli dlc DropDMSDatabase --cli-unfold-argument  \
+    --DatasourceConnectionName DataLakeCatalog \
     --Name Name1 \
     --DeleteData False \
     --Cascade False

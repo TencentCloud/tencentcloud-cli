@@ -35,8 +35,8 @@ Output:
 ```
 {
     "Response": {
-        "Id": 0,
-        "RequestId": "abc"
+        "Id": 1145,
+        "RequestId": "foo-bar"
     }
 }
 ```

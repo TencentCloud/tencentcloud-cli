@@ -13261,25 +13261,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "0:不基于统计检测\n1:发生次数高于固定值\n2:发生次数高于周期平均值的百分之\n3:发生次数高于用户平均值的百分之\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0:不基于统计检测\n1:发生次数高于固定值\n2:发生次数高于周期平均值的百分之\n3:发生次数高于用户平均值的百分之",
           "example": "0",
           "member": "int64",
           "name": "OperatorType",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "统计值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "统计值",
           "example": "21.2",
           "member": "float",
           "name": "Value",
           "output_required": true,
           "required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14378,133 +14378,133 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略id",
           "example": "rule-abc1234",
           "member": "string",
           "name": "RuleID",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则名称",
           "example": "海外IP调用高危接口",
           "member": "string",
           "name": "RuleName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略类型\n0:系统策略\n1:自定义策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略类型\n0:系统策略\n1:自定义策略",
           "example": "系统策略",
           "member": "int64",
           "name": "RuleType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略等级\n0:提示\n1:低危\n2:中危\n3:高危\n4:严重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略等级\n0:提示\n1:低危\n2:中危\n3:高危\n4:严重",
           "example": "严重",
           "member": "int64",
           "name": "RuleLevel",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略内容",
           "example": "这是一个策略内容描述",
           "member": "string",
           "name": "RuleContent",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略开关",
           "example": "false",
           "member": "bool",
           "name": "RuleStatus",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命中次数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1234",
+          "document": "命中次数",
+          "example": "10",
           "member": "uint64",
           "name": "HitCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属账号Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属账号Appid",
           "example": "125000000",
           "member": "string",
           "name": "AppID",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "多账号，成员ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "多账号，成员ID",
+          "example": "mem-1c2**124",
           "member": "string",
           "name": "MemberID",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Uin\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "Uin",
+          "example": "10007**421",
           "member": "string",
           "name": "Uin",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "昵称",
+          "example": "乌龙",
           "member": "string",
           "name": "Nickname",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义规则具体内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义规则具体内容",
           "example": "自定义规则具体内容",
           "member": "UebaCustomRule",
           "name": "CustomRuleDetail",
-          "output_required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云类型\n腾讯云：0\naws：1\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "云类型\n腾讯云：0\naws：1",
+          "example": "0",
           "member": "int64",
           "name": "CloudType",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

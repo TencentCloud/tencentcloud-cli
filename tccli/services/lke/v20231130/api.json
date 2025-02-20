@@ -795,6 +795,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作流节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "大模型1",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于展示思考放在哪个回复气泡中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReplyIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9038,6 +9060,15 @@
           "example": "无",
           "member": "string",
           "name": "QueryAnswer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类ID",
+          "example": "无",
+          "member": "string",
+          "name": "CateBizId",
           "required": false,
           "type": "string"
         },

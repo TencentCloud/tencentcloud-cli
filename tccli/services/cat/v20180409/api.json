@@ -1456,6 +1456,7 @@
           "example": "probe-task1",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1466,12 +1467,13 @@
           "example": "www.baidu.com",
           "member": "string",
           "name": "TargetAddress",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ResumeProbeTaskRequest": {
       "document": "ResumeProbeTask请求参数结构体",

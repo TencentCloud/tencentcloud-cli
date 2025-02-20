@@ -1,4 +1,4 @@
-**Example 1: 检查证书域名验证**
+**Example 1: 检查证书域名验证结果**
 
 
 
@@ -15,14 +15,14 @@ Output:
     "Response": {
         "VerificationResults": [
             {
-                "Domain": "*.umcare.cn",
+                "Domain": "ninghhuang.online",
                 "VerifyType": "DNS",
-                "LocalCheck": 1,
-                "CaCheck": 1,
-                "LocalCheckFailReason": "",
+                "LocalCheck": -1,
+                "CaCheck": -1,
+                "LocalCheckFailReason": "txt record not found",
                 "CheckValue": [],
                 "Frequently": false,
-                "Issued": true
+                "Issued": false
             }
         ],
         "RequestId": "14727a68-3b90-4408-99c9-dea6d7de9456"

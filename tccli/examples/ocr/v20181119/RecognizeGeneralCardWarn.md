@@ -19,11 +19,11 @@ Output:
             "RiskConfidence": 0.01
         },
         "BorderIncomplete": {
-            "IsWarn": true,
+            "IsWarn": false,
             "Polygon": [],
-            "RiskConfidence": 0.99
+            "RiskConfidence": 0.01
         },
-        "CardType": "idcard",
+        "CardType": "IDCard",
         "Copy": {
             "IsWarn": false,
             "Polygon": [],
@@ -34,144 +34,144 @@ Output:
             "Polygon": [
                 {
                     "LeftBottom": {
-                        "X": 679,
-                        "Y": 524
+                        "X": 477,
+                        "Y": 494
                     },
                     "LeftTop": {
-                        "X": 679,
-                        "Y": 86
+                        "X": 477,
+                        "Y": 257
                     },
                     "RightBottom": {
-                        "X": 985,
-                        "Y": 524
+                        "X": 662,
+                        "Y": 494
                     },
                     "RightTop": {
-                        "X": 985,
-                        "Y": 86
+                        "X": 662,
+                        "Y": 257
                     }
                 },
                 {
                     "LeftBottom": {
-                        "X": 377,
-                        "Y": 627
+                        "X": 309,
+                        "Y": 551
                     },
                     "LeftTop": {
-                        "X": 377,
-                        "Y": 582
+                        "X": 309,
+                        "Y": 527
                     },
                     "RightBottom": {
-                        "X": 947,
-                        "Y": 627
+                        "X": 617,
+                        "Y": 551
                     },
                     "RightTop": {
-                        "X": 947,
-                        "Y": 582
+                        "X": 617,
+                        "Y": 527
                     }
                 },
                 {
                     "LeftBottom": {
-                        "X": 205,
-                        "Y": 135
+                        "X": 210,
+                        "Y": 461
                     },
                     "LeftTop": {
-                        "X": 205,
-                        "Y": 93
+                        "X": 210,
+                        "Y": 403
                     },
                     "RightBottom": {
-                        "X": 288,
-                        "Y": 135
+                        "X": 417,
+                        "Y": 461
                     },
                     "RightTop": {
-                        "X": 288,
-                        "Y": 93
+                        "X": 417,
+                        "Y": 403
                     }
                 },
                 {
                     "LeftBottom": {
-                        "X": 206,
-                        "Y": 307
+                        "X": 218,
+                        "Y": 284
                     },
                     "LeftTop": {
-                        "X": 206,
-                        "Y": 269
+                        "X": 218,
+                        "Y": 256
                     },
                     "RightBottom": {
-                        "X": 297,
-                        "Y": 307
+                        "X": 284,
+                        "Y": 284
                     },
                     "RightTop": {
-                        "X": 297,
-                        "Y": 269
+                        "X": 284,
+                        "Y": 256
                     }
                 },
                 {
                     "LeftBottom": {
-                        "X": 206,
-                        "Y": 221
+                        "X": 216,
+                        "Y": 379
                     },
                     "LeftTop": {
-                        "X": 206,
-                        "Y": 183
+                        "X": 216,
+                        "Y": 358
                     },
                     "RightBottom": {
-                        "X": 244,
-                        "Y": 221
+                        "X": 268,
+                        "Y": 379
                     },
                     "RightTop": {
-                        "X": 244,
-                        "Y": 183
+                        "X": 268,
+                        "Y": 358
                     }
                 },
                 {
                     "LeftBottom": {
-                        "X": 198,
-                        "Y": 402
+                        "X": 309,
+                        "Y": 377
                     },
                     "LeftTop": {
-                        "X": 198,
-                        "Y": 359
+                        "X": 309,
+                        "Y": 356
                     },
                     "RightBottom": {
-                        "X": 649,
-                        "Y": 402
+                        "X": 326,
+                        "Y": 377
                     },
                     "RightTop": {
-                        "X": 649,
-                        "Y": 359
+                        "X": 326,
+                        "Y": 356
                     }
                 },
                 {
                     "LeftBottom": {
-                        "X": 630,
-                        "Y": 623
+                        "X": 361,
+                        "Y": 378
                     },
                     "LeftTop": {
-                        "X": 630,
-                        "Y": 582
+                        "X": 361,
+                        "Y": 356
                     },
                     "RightBottom": {
-                        "X": 661,
-                        "Y": 623
+                        "X": 386,
+                        "Y": 378
                     },
                     "RightTop": {
-                        "X": 661,
-                        "Y": 582
+                        "X": 386,
+                        "Y": 356
                     }
                 }
             ],
-            "RiskConfidence": 0.7648103
+            "RiskConfidence": 0.9318133
         },
         "Reflection": {
             "IsWarn": false,
             "Polygon": [],
-            "RiskConfidence": 0.04
+            "RiskConfidence": 0.01
         },
         "Reprint": {
             "IsWarn": false,
             "Polygon": [],
             "RiskConfidence": 0.01
         },
-        "RequestId": "b4bdbf23-9788-413f-90b4-ffe2cedf773b"
+        "RequestId": "b8b73be7-2d64-49c6-8cbc-3b1d2b5f3651"
     }
 }
 ```

@@ -31,7 +31,7 @@
     "CertificateOrderSubmit": {
       "document": "提交付费证书订单",
       "input": "CertificateOrderSubmitRequest",
-      "name": "提交付费证书订单",
+      "name": "付费证书提交订单",
       "output": "CertificateOrderSubmitResponse",
       "status": "online"
     },
@@ -43,9 +43,9 @@
       "status": "online"
     },
     "CheckCertificateDomainVerification": {
-      "document": "检查证书域名验证",
+      "document": "检查证书域名验证结果",
       "input": "CheckCertificateDomainVerificationRequest",
-      "name": "检查证书域名验证",
+      "name": "检查证书域名验证是否通过",
       "output": "CheckCertificateDomainVerificationResponse",
       "status": "online"
     },
@@ -57,9 +57,9 @@
       "status": "online"
     },
     "CommitCertificateInformation": {
-      "document": "提交证书订单到CA机构。",
+      "document": "付费证书提交订单； 本接口不维护新功能， 可使用新接口进行提交， [CertificateOrderSubmit](https://cloud.tencent.com/document/product/400/116032)",
       "input": "CommitCertificateInformationRequest",
-      "name": "提交证书订单",
+      "name": "付费证书提交证书订单",
       "output": "CommitCertificateInformationResponse",
       "status": "online"
     },
@@ -127,9 +127,9 @@
       "status": "online"
     },
     "DeployCertificateRecordRollback": {
-      "document": "云资源部署一键回滚",
+      "document": "云资源部署成功记录回滚， 部署失败的记录不会回滚； 接口调用成功后， 会创建一个用于回滚的部署任务， 并返回该任务的ID",
       "input": "DeployCertificateRecordRollbackRequest",
-      "name": "云资源部署一键回滚",
+      "name": "云资源部署成功记录回滚",
       "output": "DeployCertificateRecordRollbackResponse",
       "status": "online"
     },
@@ -248,7 +248,7 @@
     "DescribeHostDeployRecordDetail": {
       "document": "查询证书云资源部署记录详情列表",
       "input": "DescribeHostDeployRecordDetailRequest",
-      "name": "查询证书云资源部署记录详情列表",
+      "name": "查询证书云资源部署记录详情",
       "output": "DescribeHostDeployRecordDetailResponse",
       "status": "online"
     },
@@ -288,9 +288,9 @@
       "status": "online"
     },
     "DescribeHostUpdateRecordDetail": {
-      "document": "查询证书云资源更新记录详情列表",
+      "document": "查询证书云资源更新记录详情",
       "input": "DescribeHostUpdateRecordDetailRequest",
-      "name": "查询证书云资源更新记录详情列表",
+      "name": "查询证书云资源更新记录详情",
       "output": "DescribeHostUpdateRecordDetailResponse",
       "status": "online"
     },
@@ -386,30 +386,30 @@
       "status": "online"
     },
     "SubmitCertificateInformation": {
-      "document": "提交证书资料。输入参数信息可以分多次提交，但提交的证书资料应最低限度保持完整。",
+      "document": "付费证书提交资料； 本接口不维护新功能， 可使用新接口进行资料提交， [CertificateInfoSubmit](https://cloud.tencent.com/document/product/400/116033)",
       "input": "SubmitCertificateInformationRequest",
-      "name": "提交证书资料",
+      "name": "付费证书提交资料",
       "output": "SubmitCertificateInformationResponse",
       "status": "online"
     },
     "UpdateCertificateInstance": {
       "document": "一键更新旧证书资源，本接口为异步接口， 调用之后DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常",
       "input": "UpdateCertificateInstanceRequest",
-      "name": "一键更新旧证书资源",
+      "name": "一键更新新旧证书资源",
       "output": "UpdateCertificateInstanceResponse",
       "status": "online"
     },
     "UpdateCertificateRecordRetry": {
       "document": "云资源更新重试部署记录",
       "input": "UpdateCertificateRecordRetryRequest",
-      "name": "云资源更新重试部署记录",
+      "name": "云资源更新失败重试部署记录",
       "output": "UpdateCertificateRecordRetryResponse",
       "status": "online"
     },
     "UpdateCertificateRecordRollback": {
-      "document": "云资源更新一键回滚",
+      "document": "云资源更新成功记录回滚， 只对更新已成功的记录回滚",
       "input": "UpdateCertificateRecordRollbackRequest",
-      "name": "云资源更新一键回滚",
+      "name": "云资源更新成功记录回滚",
       "output": "UpdateCertificateRecordRollbackResponse",
       "status": "online"
     },
@@ -484,13 +484,13 @@
         },
         {
           "disabled": false,
-          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书ID",
           "example": "hehs**hes",
           "member": "string",
           "name": "CertId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -520,13 +520,13 @@
         },
         {
           "disabled": false,
-          "document": "apigateway实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "apigateway实例详情\t",
           "example": "无",
           "member": "ApiGatewayInstanceDetail",
           "name": "InstanceList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -540,13 +540,13 @@
         },
         {
           "disabled": false,
-          "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否查询异常",
           "example": "no service",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -556,7 +556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。",
+          "document": "证书域名验证方式：\nDNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号\nDNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值\nFILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217",
           "example": "DNS_AUTO",
           "member": "string",
           "name": "DvAuthMethod",
@@ -565,8 +565,8 @@
         },
         {
           "disabled": false,
-          "document": "域名。",
-          "example": "www.xxxxx.com",
+          "document": "证书绑定的域名。",
+          "example": "tencent.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
@@ -574,8 +574,8 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID。",
-          "example": "37482",
+          "document": "证书关联的项目 ID。 默认为0（默认项目）",
+          "example": "0",
           "member": "uint64",
           "name": "ProjectId",
           "required": false,
@@ -583,7 +583,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。",
+          "document": "证书类型， 可不传，目前仅支持类型83。83 = TrustAsia C1 DV Free。",
           "example": "83",
           "member": "string",
           "name": "PackageType",
@@ -592,8 +592,8 @@
         },
         {
           "disabled": false,
-          "document": "邮箱。",
-          "example": "xxxxxx@qq.com",
+          "document": "证书订单关联邮箱。默认为腾讯云账号邮箱， 不存在则关联固定邮箱",
+          "example": "ssl@tencent.com",
           "member": "string",
           "name": "ContactEmail",
           "required": false,
@@ -601,7 +601,7 @@
         },
         {
           "disabled": false,
-          "document": "手机。",
+          "document": "证书关联手机号码，  不存在则关联固定手机号码",
           "example": "188******778",
           "member": "string",
           "name": "ContactPhone",
@@ -610,7 +610,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期，默认3个月，目前仅支持3个月。",
+          "document": "证书有效期，默认3（月），目前仅支持3个月。",
           "example": "3",
           "member": "string",
           "name": "ValidityPeriod",
@@ -619,7 +619,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法，支持 RSA及ECC。",
+          "document": "加密算法，取值为ECC、RSA， 默认为RSA",
           "example": "RSA",
           "member": "string",
           "name": "CsrEncryptAlgo",
@@ -637,7 +637,7 @@
         },
         {
           "disabled": false,
-          "document": "CSR 的加密密码。",
+          "document": "私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密",
           "example": "******",
           "member": "string",
           "name": "CsrKeyPassword",
@@ -646,7 +646,7 @@
         },
         {
           "disabled": false,
-          "document": "备注名称。",
+          "document": "证书别名",
           "example": "******",
           "member": "string",
           "name": "Alias",
@@ -655,8 +655,8 @@
         },
         {
           "disabled": false,
-          "document": "原证书 ID，用于重新申请。",
-          "example": "heyxs**hs",
+          "document": "旧证书 ID，用于证书续费（证书有效期在30天内，且未过期），会建立续费关系， 可用于托管； 不传则表示新申请证书",
+          "example": "LqQxgqUe",
           "member": "string",
           "name": "OldCertificateId",
           "required": false,
@@ -664,7 +664,7 @@
         },
         {
           "disabled": false,
-          "document": "权益包ID，用于免费证书扩容包使用",
+          "document": "权益包ID，用于免费证书扩容包使用， 免费证书扩容包已下线",
           "example": "pid****xsj",
           "member": "string",
           "name": "PackageId",
@@ -682,8 +682,8 @@
         },
         {
           "disabled": false,
-          "document": "域名数组（多域名证书可以上传）。\t",
-          "example": "[\"www.**.com\"]",
+          "document": "证书绑定的其他域名，待开放。目前不支持此参数",
+          "example": "[\"www.tencent.com\"]",
           "member": "string",
           "name": "DnsNames",
           "required": false,
@@ -697,8 +697,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
-          "example": "hey**je",
+          "document": "新申请成功的证书 ID。",
+          "example": "LqQxgqUe",
           "member": "string",
           "name": "CertificateId",
           "output_required": true,
@@ -719,23 +719,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败的证书ID",
           "example": "23y5RzQp",
           "member": "string",
           "name": "CertId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败的原因",
           "example": "当前证书未过期，不能被删除",
           "member": "string",
           "name": "Msg",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -745,13 +745,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -765,13 +765,13 @@
         },
         {
           "disabled": false,
-          "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否查询异常",
           "example": "no result",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -807,43 +807,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例详情",
           "example": "无",
           "member": "CosInstanceDetail",
           "name": "InstanceList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域下总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域下总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -957,7 +957,7 @@
         },
         {
           "disabled": false,
-          "document": "域名计费状态",
+          "document": "域名计费状态，on表示开启，off表示关闭。",
           "example": "on",
           "member": "string",
           "name": "HttpsBillingSwitch",
@@ -983,23 +983,23 @@
         },
         {
           "disabled": false,
-          "document": "cdn域名详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cdn域名详情\t",
           "example": "无",
           "member": "CdnInstanceDetail",
           "name": "InstanceList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否查询异常",
           "example": "no result",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1118,23 +1118,23 @@
         },
         {
           "disabled": false,
-          "document": "根证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "根证书ID",
           "example": "hesy**nnn",
           "member": "string",
           "name": "CertCaId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证",
           "example": "UNIDIRECTIONAL",
           "member": "string",
           "name": "SSLMode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1144,17 +1144,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书可配置域名数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书可配置域名数量。",
           "example": "1",
           "member": "string",
           "name": "DomainNumber",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原始证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "续费原证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "heysh**h",
           "member": "string",
           "name": "OriginCertificateId",
@@ -1174,7 +1174,7 @@
         },
         {
           "disabled": false,
-          "document": "重颁发证书新 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重颁发证书ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vsgev**hs",
           "member": "string",
           "name": "ReplacedFor",
@@ -1184,7 +1184,7 @@
         },
         {
           "disabled": false,
-          "document": "新订单证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "续费证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "eyrud**jjs",
           "member": "string",
           "name": "RenewOrder",
@@ -1194,23 +1194,23 @@
         },
         {
           "disabled": false,
-          "document": "是否是国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是国密证书",
           "example": "1",
           "member": "int64",
           "name": "SMCert",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公司类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公司类型，取值：1（个人）；2（公司）",
           "example": "1",
           "member": "int64",
           "name": "CompanyType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1220,7 +1220,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
+          "document": "待提交资料的付费证书 ID。\t",
           "example": "无",
           "member": "string",
           "name": "CertId",
@@ -1229,7 +1229,7 @@
         },
         {
           "disabled": false,
-          "document": "CSR 生成方式：online = 在线生成, upload = 手动上传。",
+          "document": "此字段必传。 CSR 生成方式， 取值为：\n- online：腾讯云提交的填写的参数信息生成CSR和私钥，并由腾讯云加密存储\n- parse：自行生成CSR和私钥，并通过上传CSR申请证书",
           "example": "无",
           "member": "string",
           "name": "GenCsrType",
@@ -1238,7 +1238,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定证书的主域名。",
+          "document": "证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致",
           "example": "无",
           "member": "string",
           "name": "CertCommonName",
@@ -1247,7 +1247,7 @@
         },
         {
           "disabled": false,
-          "document": "组织信息类型：1，个人； 2， 公司； ",
+          "document": "组织信息类型， 取值范围：\n1（个人）：仅DV类型证书可设置为1， 个人类型证书组织信息字段可不传：Org开头，Admin开头，Tech开头\n2（公司）：所有类型证书都可设置为2， 按需传组织信息字段",
           "example": "无",
           "member": "uint64",
           "name": "CompanyType",
@@ -1256,61 +1256,7 @@
         },
         {
           "disabled": false,
-          "document": "公司证件类型（）",
-          "example": "无",
-          "member": "string",
-          "name": "OrgIdType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "公司证件号码",
-          "example": "无",
-          "member": "string",
-          "name": "OrgIdNumber",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "管理人证件类型",
-          "example": "无",
-          "member": "string",
-          "name": "AdminIdType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "管理人证件号码",
-          "example": "无",
-          "member": "string",
-          "name": "AdminIdNumber",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人证件类型",
-          "example": "无",
-          "member": "string",
-          "name": "TechIdType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人证件号码",
-          "example": "无",
-          "member": "string",
-          "name": "TechIdNumber",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "公司ID",
+          "document": "公司ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的公司信息， 则本参数传0 ； 若存在满足当前订单的公司信息， 可以根据 [DescribeCompanies](https://cloud.tencent.com/document/product/400/90375) 查看公司ID； 若传了公司ID，则Org开头的参数可不传\n\n",
           "example": "无",
           "member": "string",
           "name": "CompanyId",
@@ -1319,7 +1265,61 @@
         },
         {
           "disabled": false,
-          "document": "上传的 CSR 内容。如果GenCsrType为upload则该字段必传",
+          "document": "公司证件类型，取值范围：\nTYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段\nOTHERS（其他）",
+          "example": "无",
+          "member": "string",
+          "name": "OrgIdType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公司证件号码，取值范围：\nTYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820\n",
+          "example": "无",
+          "member": "string",
+          "name": "OrgIdNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人证件类型，取值范围：\nSFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段\nHZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "管理人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段， 取值范围：\nSFZ（身份证）：110000xxxxxxxx1242\nHZ（护照）:EFxxxxxxx",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人证件类型，取值范围：\nSFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段\nHZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段",
+          "example": "无",
+          "member": "string",
+          "name": "TechIdType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "联系人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段，取值范围：\nSFZ（身份证）：110000xxxxxxxx1242\nHZ（护照）:EFxxxxxxx",
+          "example": "无",
+          "member": "string",
+          "name": "TechIdNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传的 CSR 内容。\n若GenCsrType为parse， 则此字段必传。",
           "example": "无",
           "member": "string",
           "name": "Csr",
@@ -1328,7 +1328,7 @@
         },
         {
           "disabled": false,
-          "document": "域名数组（多域名证书可以上传）。",
+          "document": "证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填",
           "example": "无",
           "member": "string",
           "name": "DnsNames",
@@ -1337,7 +1337,7 @@
         },
         {
           "disabled": false,
-          "document": "私钥密码（非必填）。",
+          "document": "私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密\t",
           "example": "无",
           "member": "string",
           "name": "KeyPass",
@@ -1346,7 +1346,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称。",
+          "document": "公司名称。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgOrganization",
@@ -1355,7 +1355,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称。",
+          "document": "部门名称。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgDivision",
@@ -1364,7 +1364,7 @@
         },
         {
           "disabled": false,
-          "document": "公司详细地址。",
+          "document": "公司详细地址。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgAddress",
@@ -1373,7 +1373,7 @@
         },
         {
           "disabled": false,
-          "document": "国家名称，如中国：CN 。",
+          "document": "国家名称，如中国：CN 。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgCountry",
@@ -1382,7 +1382,7 @@
         },
         {
           "disabled": false,
-          "document": "公司所在城市。",
+          "document": "公司所在城市。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgCity",
@@ -1391,7 +1391,7 @@
         },
         {
           "disabled": false,
-          "document": "公司所在省份。",
+          "document": "公司所在省份。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgRegion",
@@ -1400,7 +1400,7 @@
         },
         {
           "disabled": false,
-          "document": "公司座机区号。",
+          "document": "公司所属区号。若没有传CompanyId或者ManagerId， 则此字段必传\n如：021。  手机号码传 86",
           "example": "无",
           "member": "string",
           "name": "OrgPhoneArea",
@@ -1409,7 +1409,7 @@
         },
         {
           "disabled": false,
-          "document": "公司座机号码。",
+          "document": "公司所属号码。若没有传CompanyId或者ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "OrgPhoneNumber",
@@ -1418,7 +1418,7 @@
         },
         {
           "disabled": false,
-          "document": "证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。",
+          "document": "证书域名验证方式：\nDNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号\nDNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值\nFILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217",
           "example": "无",
           "member": "string",
           "name": "VerifyType",
@@ -1427,7 +1427,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人名。",
+          "document": "管理人名。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "AdminFirstName",
@@ -1436,7 +1436,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人姓。",
+          "document": "管理人姓。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "AdminLastName",
@@ -1445,7 +1445,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人手机号码。",
+          "document": "管理人手机号码。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "AdminPhone",
@@ -1454,7 +1454,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人邮箱地址。",
+          "document": "管理人邮箱地址。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "AdminEmail",
@@ -1463,7 +1463,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人职位。",
+          "document": "管理人职位。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "AdminTitle",
@@ -1472,7 +1472,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人名。",
+          "document": "联系人名。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "TechFirstName",
@@ -1481,7 +1481,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人姓。",
+          "document": "联系人姓。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "TechLastName",
@@ -1490,7 +1490,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人邮箱地址。",
+          "document": "联系人邮箱地址。CompanyType为1时， 此字段必传",
           "example": "无",
           "member": "string",
           "name": "ContactEmail",
@@ -1508,7 +1508,7 @@
         },
         {
           "disabled": false,
-          "document": "证书加密参数",
+          "document": "密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填\n国密证书类型本字段不用传",
           "example": "无",
           "member": "string",
           "name": "CsrKeyParameter",
@@ -1517,7 +1517,7 @@
         },
         {
           "disabled": false,
-          "document": "证书加密方式",
+          "document": "加密算法，取值为ECC、RSA， 默认为RSA\n国密证书类型本字段不用传",
           "example": "无",
           "member": "string",
           "name": "CsrEncryptAlgo",
@@ -1526,7 +1526,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人ID",
+          "document": "管理人ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的管理人信息， 则本参数传0 ； 若存在满足当前订单的管理人信息， 可以根据 [DescribeManagers](https://cloud.tencent.com/document/product/400/52672) 查看管理人ID； 若传了管理人ID，则Org开头、Admin开头、Tech开头的参数可不传； 管理人ID会包含公司信息\n",
           "example": "无",
           "member": "string",
           "name": "ManagerId",
@@ -1535,7 +1535,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人电话",
+          "document": "联系人电话。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "TechPhone",
@@ -1553,7 +1553,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人职位",
+          "document": "联系人职位。若没有传ManagerId， 则此字段必传",
           "example": "无",
           "member": "string",
           "name": "TechTitle",
@@ -1580,7 +1580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
+          "document": "待提交资料的付费证书 ID。\t",
           "example": "无",
           "member": "string",
           "name": "CertId",
@@ -1598,7 +1598,7 @@
         },
         {
           "disabled": false,
-          "document": "域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证",
+          "document": "证书域名验证方式：\nDNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号\nDNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值\nFILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面",
           "example": "无",
           "member": "string",
           "name": "VerifyType",
@@ -1617,6 +1617,7 @@
           "example": "无",
           "member": "string",
           "name": "OrderId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1626,6 +1627,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1635,6 +1637,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsAudited",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1652,563 +1655,563 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户 UIN。",
           "example": "815836472",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目 ID。",
           "example": "27383",
           "member": "string",
           "name": "ProjectId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书来源：\ntrustasia：亚洲诚信，\nupload：用户上传。\nwosign：沃通\nsheca：上海CA",
           "example": "upload",
           "member": "string",
           "name": "From",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书套餐类型：\n2 = TrustAsia TLS RSA CA，3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = Wotrus 国密域名型证书，34 = Wotrus 国密域名型多域名证书，35 = Wotrus 国密域名型通配符证书，37 = Wotrus 国密企业型证书，38 = Wotrus 国密企业型多域名证书，39 = Wotrus 国密企业型通配符证书，40 = Wotrus 国密增强型证书，41 = Wotrus 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书，43 = DNSPod-企业型(OV)SSL证书，44 = DNSPod-企业型(OV)通配符SSL证书，45 = DNSPod-企业型(OV)多域名SSL证书， 46 = DNSPod-增强型(EV)SSL证书，47 = DNSPod-增强型(EV)多域名SSL证书，48 = DNSPod-域名型(DV)SSL证书，49 = DNSPod-域名型(DV)通配符SSL证书，50 = DNSPod-域名型(DV)多域名SSL证书，51 = DNSPod（国密）-企业型(OV)SSL证书，52 = DNSPod（国密）-企业型(OV)通配符SSL证书，53 = DNSPod（国密）-企业型(OV)多域名SSL证书，54 = DNSPod（国密）-域名型(DV)SSL证书，55 = DNSPod（国密）-域名型(DV)通配符SSL证书， 56 = DNSPod（国密）-域名型(DV)多域名SSL证书，57 = SecureSite 企业型专业版多域名(OV Pro)，58 = SecureSite 企业型多域名(OV)，59 = SecureSite 增强型专业版多域名(EV Pro)，60 = SecureSite 增强型多域名(EV)，61 = Geotrust 增强型多域名(EV)，83 = TrustAsia C1 DV Free\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书套餐类型：\nnull：用户上传证书（没有套餐类型），\n2：TrustAsia TLS RSA CA， \n3：SecureSite 增强型企业版（EV Pro）， \n4：SecureSite 增强型（EV）， \n5：SecureSite 企业型专业版（OV Pro），\n6：SecureSite 企业型（OV）， \n7：SecureSite 企业型（OV）通配符， \n8：Geotrust 增强型（EV）， \n9：Geotrust 企业型（OV）， \n10：Geotrust 企业型（OV）通配符， \n11：TrustAsia 域名型多域名 SSL 证书， \n12：TrustAsia 域名型（DV）通配符， \n13：TrustAsia 企业型通配符（OV）SSL 证书（D3）， \n14：TrustAsia 企业型（OV）SSL 证书（D3）， \n15：TrustAsia 企业型多域名 （OV）SSL 证书（D3）， \n16：TrustAsia 增强型 （EV）SSL 证书（D3）， \n17：TrustAsia 增强型多域名（EV）SSL 证书（D3）， \n18：GlobalSign 企业型（OV）SSL 证书， \n19：GlobalSign 企业型通配符 （OV）SSL 证书， \n20：GlobalSign 增强型 （EV）SSL 证书， \n21：TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， \n22：GlobalSign 企业型多域名（OV）SSL 证书， \n23：GlobalSign 企业型通配符多域名（OV）SSL 证书，\n24：GlobalSign 增强型多域名（EV）SSL 证书，\n25：Wotrus 域名型证书，\n26：Wotrus 域名型多域名证书，\n27：Wotrus 域名型通配符证书，\n28：Wotrus 企业型证书，\n29：Wotrus 企业型多域名证书，\n30：Wotrus 企业型通配符证书，\n31：Wotrus 增强型证书，\n32：Wotrus 增强型多域名证书，\n33：WoTrus-国密域名型证书，\n34：WoTrus-国密域名型证书（多域名），\n35：WoTrus-国密域名型证书（通配符），\n37：WoTrus-国密企业型证书，\n38：WoTrus-国密企业型证书（多域名），\n39：WoTrus-国密企业型证书（通配符），\n40：WoTrus-国密增强型证书，\n41：WoTrus-国密增强型证书（多域名），\n42：TrustAsia-域名型证书（通配符多域名），\n43：DNSPod-企业型(OV)SSL证书\n44：DNSPod-企业型(OV)通配符SSL证书\n45：DNSPod-企业型(OV)多域名SSL证书\n46：DNSPod-增强型(EV)SSL证书\n47：DNSPod-增强型(EV)多域名SSL证书\n48：DNSPod-域名型(DV)SSL证书\n49：DNSPod-域名型(DV)通配符SSL证书\n50：DNSPod-域名型(DV)多域名SSL证书\n51：DNSPod（国密）-企业型(OV)SSL证书\n52：DNSPod（国密）-企业型(OV)通配符SSL证书\n53：DNSPod（国密）-企业型(OV)多域名SSL证书\n54：DNSPod（国密）-域名型(DV)SSL证书\n55：DNSPod（国密）-域名型(DV)通配符SSL证书\n56：DNSPod（国密）-域名型(DV)多域名SSL证书\n57：SecureSite 企业型专业版多域名(OV Pro)\n58：SecureSite 企业型多域名(OV)\n59：SecureSite 增强型专业版多域名(EV Pro)\n60：SecureSite 增强型多域名(EV)\n61：Geotrust 增强型多域名(EV)\n75：SecureSite 企业型(OV)\n76：SecureSite 企业型(OV)通配符\n77：SecureSite 增强型(EV)\n78：Geotrust 企业型(OV)\n79：Geotrust 企业型(OV)通配符\n80：Geotrust 增强型(EV)\n81：GlobalSign 企业型（OV）SSL证书\n82：GlobalSign 企业型通配符 （OV）SSL证书\n83：TrustAsia C1 DV Free\n85：GlobalSign 增强型 （EV）SSL证书\n88：GlobalSign 企业型通配符多域名 （OV）SSL证书\n89：GlobalSign 企业型多域名 （OV）SSL证书\n90：GlobalSign 增强型多域名（EV） SSL证书\n91：Geotrust 增强型多域名(EV)\n92：SecureSite 企业型专业版多域名(OV Pro)\n93：SecureSite 企业型多域名(OV)\n94：SecureSite 增强型专业版多域名(EV Pro)\n95：SecureSite 增强型多域名(EV)\n96：SecureSite 增强型专业版(EV Pro)\n97：SecureSite 企业型专业版(OV Pro)\n98：CFCA 企业型(OV)SSL证书\n99：CFCA 企业型多域名(OV)SSL证书\n100：CFCA 企业型通配符(OV)SSL证书\n101：CFCA 增强型(EV)SSL证书",
           "example": "2",
           "member": "string",
           "name": "PackageType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书类型：CA = 客户端证书，SVR = 服务器证书。",
           "example": "CA",
           "member": "string",
           "name": "CertificateType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "颁发者。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "Wosign",
+          "document": "证书产品名称",
+          "example": "trustasia",
           "member": "string",
           "name": "ProductZhName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主域名。",
           "example": "www.***.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注名称。",
           "example": "hello",
           "member": "string",
           "name": "Alias",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态。0：审核中，1：已通过，2：审核失败，3：已过期，4：验证方式为 DNS_AUTO 类型的证书， 已添加DNS记录，5：企业证书，待提交，6：订单取消中，7：已取消，8：已提交资料， 待上传确认函，9：证书吊销中，10：已吊销，11：重颁发中，12：待上传吊销确认函，13：免费证书待提交资料状态，14：已退款，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 自动添加DNS记录，5 = 企业证书，待提交资料，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 证书已退款。 15 = 证书迁移中",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书扩展信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书扩展信息。",
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "漏洞扫描状态：INACTIVE = 未开启，ACTIVE = 已开启",
           "example": "INACTIVE",
           "member": "string",
           "name": "VulnerabilityStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态信息。",
           "example": "wait-issue",
           "member": "string",
           "name": "StatusMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，DNS_PROXY = DNS代理验证。FILE_PROXY = 文件代理验证",
           "example": "DNS_AUTO",
           "member": "string",
           "name": "VerifyType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书生效时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书生效时间。",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CertBeginTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书过期时间。",
           "example": "2019-09-18 20:00:00",
           "member": "string",
           "name": "CertEndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书有效期，单位（月）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书有效期，单位（月）。",
           "example": "1",
           "member": "string",
           "name": "ValidityPeriod",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间。",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "InsertTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书 ID。",
           "example": "heys**he",
           "member": "string",
           "name": "CertificateId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书包含的多个域名（包含主域名）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书包含的多个域名（包含主域名）。",
           "example": "[\"www.hey**.com\"]",
           "member": "string",
           "name": "SubjectAltName",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书类型名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书类型名称。",
           "example": "rustAsia TLS RSA CA",
           "member": "string",
           "name": "PackageTypeName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态名称。",
           "example": "证书已颁发",
           "member": "string",
           "name": "StatusName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为 VIP 客户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为 VIP 客户。",
           "example": "true",
           "member": "bool",
           "name": "IsVip",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为 DV 版证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为 DV 版证书。",
           "example": "true",
           "member": "bool",
           "name": "IsDv",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为泛域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为泛域名证书。",
           "example": "true",
           "member": "bool",
           "name": "IsWildcard",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否启用了漏洞扫描功能。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否启用了漏洞扫描功能。",
           "example": "true",
           "member": "bool",
           "name": "IsVulnerability",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否可续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可续费。",
           "example": "true",
           "member": "bool",
           "name": "RenewAble",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "项目信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "项目信息。",
           "example": "无",
           "member": "ProjectInfo",
           "name": "ProjectInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联的云资源，暂不可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的云资源，暂不可用",
           "example": "[\"clb\"]",
           "member": "string",
           "name": "BoundResource",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否可部署。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可部署。",
           "example": "true",
           "member": "bool",
           "name": "Deployable",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否已忽略到期通知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否已忽略到期通知",
           "example": "true",
           "member": "bool",
           "name": "IsIgnore",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否国密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否国密证书",
           "example": "true",
           "member": "bool",
           "name": "IsSM",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书算法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书算法",
           "example": "RSA",
           "member": "string",
           "name": "EncryptAlgorithm",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传CA证书的加密算法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传CA证书的加密算法",
           "example": "[\"RSA\"]",
           "member": "string",
           "name": "CAEncryptAlgorithms",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传CA证书的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传CA证书的过期时间",
           "example": "[\"2018-09-18 20:00:00\"]",
           "member": "string",
           "name": "CAEndTimes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上传CA证书的通用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上传CA证书的通用名称",
           "example": "[\"RootCa\"]",
           "member": "string",
           "name": "CACommonNames",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书预审核信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书预审核信息",
           "example": "无",
           "member": "PreAuditInfo",
           "name": "PreAuditInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否自动续费",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 ",
           "example": "1",
           "member": "int64",
           "name": "HostingStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "托管完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管完成时间",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "HostingCompleteTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "托管新证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管新证书ID",
           "example": "gegsh**hs",
           "member": "string",
           "name": "HostingRenewCertId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "存在的续费证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存在的续费证书ID",
           "example": "he**hehs",
           "member": "string",
           "name": "HasRenewOrder",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "重颁发证书原证书是否删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "重颁发证书原证书是否删除",
           "example": "true",
           "member": "bool",
           "name": "ReplaceOriCertIsDelete",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否即将过期， 证书即将到期的30天内为即将过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否即将过期， 证书即将到期的30天内为即将过期",
           "example": "true",
           "member": "bool",
           "name": "IsExpiring",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "DV证书添加验证截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DV证书添加验证截止时间",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "DVAuthDeadline",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名验证通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名验证通过时间",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "ValidationPassedTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书关联的多域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书关联的多域名",
           "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "CertSANs",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名验证驳回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名验证驳回信息",
           "example": "no right",
           "member": "string",
           "name": "AwaitingValidationMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否允许下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否允许下载",
           "example": "true",
           "member": "bool",
           "name": "AllowDownload",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书域名是否全部在DNSPOD托管解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名是否全部在DNSPOD托管解析",
           "example": "true",
           "member": "bool",
           "name": "IsDNSPODResolve",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是权益点购买的证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是权益点购买的证书",
           "example": "true",
           "member": "bool",
           "name": "IsPackage",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否存在私钥密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否存在私钥密码",
           "example": "true",
           "member": "bool",
           "name": "KeyPasswordCustomFlag",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other",
           "example": "无",
           "member": "SupportDownloadType",
           "name": "SupportDownloadType",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书吊销完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书吊销完成时间",
           "example": "2018-09-18 20:00:00",
           "member": "string",
           "name": "CertRevokedTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "托管资源类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管资源类型列表",
           "example": "[\"clb\"]",
           "member": "string",
           "name": "HostingResourceTypes",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "托管配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管配置信息",
           "example": "无",
           "member": "HostingConfig",
           "name": "HostingConfig",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2275,8 +2278,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书ID。",
-          "example": "heh**jsjs",
+          "document": "证书ID。 ",
+          "example": "Lmvo5PJy",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -2290,7 +2293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名验证结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证结果列表， 证书若绑定了多个域名， 则返回数组有多份\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DomainValidationResult",
           "name": "VerificationResults",
@@ -2369,13 +2372,13 @@
         },
         {
           "disabled": false,
-          "document": "CLB监听器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CLB监听器列表",
           "example": "无",
           "member": "ClbListener",
           "name": "Listeners",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2395,13 +2398,13 @@
         },
         {
           "disabled": false,
-          "document": "clb实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "clb实例详情",
           "example": "无",
           "member": "ClbInstanceDetail",
           "name": "InstanceList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2415,13 +2418,13 @@
         },
         {
           "disabled": false,
-          "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否查询异常",
           "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2471,33 +2474,33 @@
         },
         {
           "disabled": false,
-          "document": "监听器绑定的证书数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器绑定的证书数据",
           "example": "无",
           "member": "Certificate",
           "name": "Certificate",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监听器规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监听器规则列表",
           "example": "无",
           "member": "ClbListenerRule",
           "name": "Rules",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不匹配域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不匹配域名列表",
           "example": "[\"www.****.com\"]",
           "member": "string",
           "name": "NoMatchDomains",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2537,33 +2540,33 @@
         },
         {
           "disabled": false,
-          "document": "规则已绑定的证书数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则已绑定的证书数据",
           "example": "无",
           "member": "Certificate",
           "name": "Certificate",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不匹配域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不匹配域名列表",
           "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "NoMatchDomains",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则绑定的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则绑定的路径",
           "example": "/url",
           "member": "string",
           "name": "Url",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2573,8 +2576,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
-          "example": "heh**kkk",
+          "document": "待提交资料的付费证书 ID。\t",
+          "example": "LqQxgqUe",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -2582,7 +2585,7 @@
         },
         {
           "disabled": false,
-          "document": "域名验证方式，如 DNS,DNS_AUTO,FILE",
+          "document": "证书域名验证方式：\nDNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号\nDNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值\nFILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217",
           "example": "DNS",
           "member": "string",
           "name": "VerifyType",
@@ -2699,33 +2702,33 @@
         },
         {
           "disabled": false,
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "公司证件类型，取值范围：\nTYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段\nOTHERS（其他）",
+          "example": "TYDMZ",
           "member": "string",
           "name": "IdType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "ID号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "178383",
+          "document": "公司证件号码，取值范围：\nTYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820",
+          "example": "11532xxxxxxxx24820",
           "member": "string",
           "name": "IdNumber",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2782,13 +2785,13 @@
         },
         {
           "disabled": false,
-          "document": "已绑定的证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已绑定的证书ID",
           "example": "heysy**hshw",
           "member": "string",
           "name": "CertId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2802,23 +2805,23 @@
         },
         {
           "disabled": false,
-          "document": "存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储桶名称",
           "example": "cos-*****",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "存储桶地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "存储桶地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2874,8 +2877,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书产品PID。",
-          "example": "100078",
+          "document": "证书产品PID，以下是对每个PID及其对应的证书文字说明：\n1. 1022451 - CFCA-增强型(EV)SSL证书\n2. 1022449 - CFCA-企业型(OV) SSL证书(通配符)\n3. 1022447 - CFCA-企业型(OV)SSL证书\n4. 1014028 - DNSPod亚信国密-企业型(OV)通配符证书\n5. 1014030 - DNSPod亚信国密-企业型(OV)多域名证书\n6. 1014026 - DNSPod亚信国密-企业型(OV)证书\n7. 1014022 - DNSPod亚信国密-域名型(DV)通配符证书\n8. 1014024 - DNSPod亚信国密-域名型(DV)多域名证书\n9. 1014020 - DNSPod亚信国密-域名型(DV)证书\n10. 1013949 - DNSPod SSL 域名型SSL证书(C1)\n11. 1013953 - DNSPod SSL域名型多域名SSL证书(C1)\n12. 1013951 - DNSPod-SSL域名型DV（泛域名）\n13. 1013955 - DNSPod 企业型SSL证书(C1)\n14. 1013959 - DNSPod 企业型多域名SSL证书(C1)\n15. 1013957 - DNSPod 企业型通配符SSL证书(C1)\n16. 1013961 - DNSPod 增强型 SSL 证书(C1)\n17. 1013963 - DNSPod 增强型多域名SSL证书(C1)\n18. 1005919 - TrustAsia-域名型DV（通配符多域名）\n19. 1013882 - SecureSite-增强型专业版EVPro（多域名）\n20. 1018559 - SecureSite-增强型专业版EVPro（单域名）\n21. 1013910 - GlobalSign-增强型EV（多域名）\n22. 1013904 - GlobalSign-增强型EV（单域名）\n23. 1013898 - TrustAsia-增强型EV（多域名）\n24. 1013888 - TrustAsia-增强型EV（单域名）\n25. 1013886 - GeoTrust-增强型EV（多域名）\n26. 1018529 - GeoTrust-增强型EV（单域名）\n27. 1013880 - SecureSite-增强型EV（多域名）\n28. 1018557 - SecureSite-增强型EV（单域名）\n29. 1018586 - TrustAsia-域名型DV（泛域名）\n30. 1018584 - TrustAsia-域名型DV（多域名）\n31. 1013878 - SecureSite-企业型专业版OV Pro（多域名）\n32. 1018582 - SecureSite-企业型专业版OV Pro（单域名）\n33. 1013908 - GlobalSign-企业型OV（通配符多域名）\n34. 1013902 - GlobalSign-企业型OV（泛域名）\n35. 1013906 - GlobalSign-企业型OV（多域名）\n36. 1013900 - GlobalSign-企业型OV（单域名）\n37. 1013896 - TrustAsia-企业型OV（通配符多域名）\n38. 1013892 - TrustAsia-企业型OV（泛域名）\n39. 1013894 - TrustAsia-企业型OV（多域名）\n40. 1013890 - TrustAsia-企业型OV（单域名）\n41. 1004360 - GeoTrust-企业型OV（泛域名）\n42. 1013884 - GeoTrust-企业型OV（单域名）\n43. 1013874 - SecureSite-企业型OV（泛域名）\n44. 1013876 - SecureSite-企业型OV（多域名）\n45. 1018580 - SecureSite-企业型OV（单域名）\n46. 1004460 - DNSPod-国密增强型证书（多域名）\n47. 1004458 - DNSPod-国密增强型证书\n48. 1004370 - DNSPod-国密企业型证书（通配符）\n49. 1004368 - DNSPod-国密企业型证书（多域名）\n50. 1004366 - DNSPod-国密企业型证书\n51. 1004362 - DNSPod-国密域名型证书（通配符）\n52. 1004364 - DNSPod-国密域名型证书（多域名）\n53. 1004358 - DNSPod-国密域名型证书\n54. 1004456 - WoTrus-增强型证书（多域名）\n55. 1004454 - WoTrus-增强型证书\n56. 1004168 - WoTrus-企业型证书（通配符）\n57. 1004166 - WoTrus-企业型证书（多域名）\n58. 1004164 - WoTrus-企业型证书\n59. 1004159 - WoTrus-域名型证书（通配符）\n60. 1004161 - WoTrus-域名型证书（多域名）\n61. 1004157 - WoTrus-域名型证书",
+          "example": "1022451",
           "member": "uint64",
           "name": "ProductPid",
           "required": true,
@@ -2884,7 +2887,7 @@
         {
           "disabled": false,
           "document": "要消耗的权益包ID。",
-          "example": "pid-82****92",
+          "example": "[\"Z21120315430001\"]",
           "member": "string",
           "name": "PackageIds",
           "required": true,
@@ -2937,8 +2940,8 @@
         },
         {
           "disabled": false,
-          "document": "续费证书CSR的算法类型。",
-          "example": "online",
+          "document": "续费证书CSR的算法类型：RSA,ECC,SM2",
+          "example": "RSA",
           "member": "string",
           "name": "RenewAlgorithmType",
           "required": false,
@@ -2946,8 +2949,8 @@
         },
         {
           "disabled": false,
-          "document": "续费证书CSR的算法参数。",
-          "example": "RSA",
+          "document": "续费证书CSR的算法参数:2048,4096,prime256v1",
+          "example": "2048",
           "member": "string",
           "name": "RenewAlgorithmParam",
           "required": false,
@@ -3027,8 +3030,8 @@
         },
         {
           "disabled": false,
-          "document": "询价参数",
-          "example": "hes**hw",
+          "document": "询价参数，以下是对每个询价参数及其对应的证书文字说明：\n1. sv_ssl_cost_cfca_ca_ev - CFCA-增强型(EV)SSL证书\n2. sv_ssl_cost_cfca_ca_ovwildcard - CFCA-企业型(OV) SSL证书(通配符)\n3. sv_ssl_cost_cfca_ca_ov - CFCA-企业型(OV)SSL证书\n4. sv_ssl_cost_dnspod_ca_sm2_ovwildcard - DNSPod亚信国密-企业型(OV)通配符证书\n5. sv_ssl_cost_dnspod_ca_sm2_ovmultidomain - DNSPod亚信国密-企业型(OV)多域名证书\n6. sv_ssl_cost_dnspod_ca_sm2_ov - DNSPod亚信国密-企业型(OV)证书\n7. sv_ssl_cost_dnspod_ca_sm2_dvwildcard - DNSPod亚信国密-域名型(DV)通配符证书\n8. sv_ssl_cost_dnspod_ca_sm2_dvmultidomain - DNSPod亚信国密-域名型(DV)多域名证书\n9. sv_ssl_cost_dnspod_ca_sm2_dv - DNSPod亚信国密-域名型(DV)证书\n10. sv_ssl_cost_dnspod_ca_dv - DNSPod SSL 域名型SSL证书(C1)\n11. sv_ssl_cost_dnspod_ca_dvmultidomain - DNSPod SSL域名型多域名SSL证书(C1)\n12. sv_ssl_cost_dnspod_ca_dvwildcard - DNSPod-SSL域名型DV（泛域名）\n13. sv_ssl_cost_dnspod_ca_ov - DNSPod 企业型SSL证书(C1)\n14. sv_ssl_cost_dnspod_ca_ovmultidomain - DNSPod 企业型多域名SSL证书(C1)\n15. sv_ssl_cost_dnspod_ca_ovwildcard - DNSPod 企业型通配符SSL证书(C1)\n16. sv_ssl_cost_dnspod_ca_ev - DNSPod 增强型 SSL 证书(C1)\n17. sv_ssl_cost_dnspod_ca_evmultidomain - DNSPod 增强型多域名SSL证书(C1)\n18. sv_ssl_cost_trustasia_dvwildcardmulti - TrustAsia-域名型DV（通配符多域名）\n19. sv_ssl_cost_securesiteevpromul_sh - SecureSite-增强型专业版EVPro（多域名）\n20. sv_ssl_cost_symantec_evpro - SecureSite-增强型专业版EVPro（单域名）\n21. sv_ssl_cost_globalsign_ev_mul_sh - GlobalSign-增强型EV（多域名）\n22. sv_ssl_cost_globalsign_ev - GlobalSign-增强型EV（单域名）\n23. sv_ssl_cost_trustasia_evmultidomain - TrustAsia-增强型EV（多域名）\n24. sv_ssl_cost_trustasia_ev - TrustAsia-增强型EV（单域名）\n25. sv_ssl_cost_geotrust_evmultidomain - GeoTrust-增强型EV（多域名）\n26. sv_ssl_cost_geotrust_ev - GeoTrust-增强型EV（单域名）\n27. sv_ssl_cost_symantec_evmultidomain - SecureSite-增强型EV（多域名）\n28. sv_ssl_cost_symantec_ev - SecureSite-增强型EV（单域名）\n29. sv_ssl_cost_trustasia_dvwildcard - TrustAsia-域名型DV（泛域名）\n30. sv_ssl_cost_trustasia_dvmultidomain - TrustAsia-域名型DV（多域名）\n31. sv_ssl_cost_symantec_ovpromultidomain - SecureSite-企业型专业版OV Pro（多域名）\n32. sv_ssl_cost_symantec_ovpro - SecureSite-企业型专业版OV Pro（单域名）\n33. sv_ssl_cost_globalsign_ovwildcardmulti - GlobalSign-企业型OV（通配符多域名）\n34. sv_ssl_cost_globalsign_ovwildcard - GlobalSign-企业型OV（泛域名）\n35. sv_ssl_cost_globalsign_ovmultidomain - GlobalSign-企业型OV（多域名）\n36. sv_ssl_cost_globalsign_ov - GlobalSign-企业型OV（单域名）\n37. sv_ssl_cost_trustasia_ovwildcardmulti - TrustAsia-企业型OV（通配符多域名）\n38. sv_ssl_cost_trustasia_ovwildcard - TrustAsia-企业型OV（泛域名）\n39. sv_ssl_cost_trustasia_ovmultidomain - TrustAsia-企业型OV（多域名）\n40. sv_ssl_cost_trustasia_ov - TrustAsia-企业型OV（单域名）\n41. sv_ssl_cost_geotrust_ovwildcard - GeoTrust-企业型OV（泛域名）\n42. sv_ssl_cost_geotrust_ov - GeoTrust-企业型OV（单域名）\n43. sv_ssl_cost_symantec_ovwildcard - SecureSite-企业型OV（泛域名）\n44. sv_ssl_cost_symantec_ovmultidomain - SecureSite-企业型OV（多域名）\n45. sv_ssl_cost_symantec_ov - SecureSite-企业型OV（单域名）\n46. sv_ssl_cost_dnspod_evmultidomain - DNSPod-国密增强型证书（多域名）\n47. sv_ssl_cost_dnspod_ev - DNSPod-国密增强型证书\n48. sv_ssl_cost_dnspod_ovwildcard - DNSPod-国密企业型证书（通配符）\n49. sv_ssl_cost_dnspod_ovmultidomain - DNSPod-国密企业型证书（多域名）\n50. sv_ssl_cost_dnspod_ov - DNSPod-国密企业型证书\n51. sv_ssl_cost_dnspod_dvwildcard - DNSPod-国密域名型证书（通配符）\n52. sv_ssl_cost_dnspod_dvmultidomain - DNSPod-国密域名型证书（多域名）\n53. sv_ssl_cost_dnspod_dv - DNSPod-国密域名型证书\n54. sv_ssl_cost_wotrus_evmultidomain - WoTrus-增强型证书（多域名）\n55. sv_ssl_cost_wotrus_ev - WoTrus-增强型证书\n56. sv_ssl_cost_wotrus_ovwildcard - WoTrus-企业型证书（通配符）\n57. sv_ssl_cost_wotrus_ovmultidomain - WoTrus-企业型证书（多域名）\n58. sv_ssl_cost_wotrus_ov - WoTrus-企业型证书\n59. sv_ssl_cost_wotrus_dvwildcard - WoTrus-域名型证书（通配符）\n60. sv_ssl_cost_wotrus_dvmultidomain - WoTrus-域名型证书（多域名）\n61. sv_ssl_cost_wotrus_dv - WoTrus-域名型证书",
+          "example": "sv_ssl_cost_cfca_ca_ev",
           "member": "string",
           "name": "PriceKey",
           "required": false,
@@ -3187,13 +3190,13 @@
         },
         {
           "disabled": false,
-          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书ID",
           "example": "www.***.com",
           "member": "string",
           "name": "CertId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3223,23 +3226,23 @@
         },
         {
           "disabled": false,
-          "document": "ddos实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ddos实例详情\t",
           "example": "无",
           "member": "DdosInstanceDetail",
           "name": "InstanceList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否查询异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否查询异常",
           "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3314,7 +3317,7 @@
         },
         {
           "disabled": false,
-          "document": "删除时是否检查证书关联了云资源。默认不检查。如需要检查关联云资源 (需授权服务角色SSL_QCSLinkedRoleInReplaceLoadCertificate)，完成授权后，删除将变成异步任务，接口会返回异步任务ID。需搭配 DescribeDeleteCertificatesTaskResult接口使用，查询删除任务是否成功。",
+          "document": "删除时是否检查证书关联了云资源。默认不检查。如需要检查关联云资源 (需授权服务角色SSL_QCSLinkedRoleInReplaceLoadCertificate)，完成授权后且该参数传true，删除将变成异步任务，接口会返回异步任务ID。需搭配 DescribeDeleteCertificatesTaskResult接口使用，查询删除任务是否成功。",
           "example": "true",
           "member": "bool",
           "name": "IsSync",
@@ -3438,33 +3441,33 @@
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "no region",
           "member": "string",
           "name": "Error",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前结果缓存时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前结果缓存时间",
           "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "CacheTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "包含的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "包含的域名",
           "example": "[\"www.**.com\"]",
           "member": "string",
           "name": "Domains",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3593,7 +3596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId",
+          "document": "待重试部署记录ID, 就是通过DeployCertificateInstance返回的DeployRecordId",
           "example": "7474",
           "member": "int64",
           "name": "DeployRecordId",
@@ -3650,13 +3653,13 @@
         },
         {
           "disabled": false,
-          "document": "原绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原绑定证书ID",
           "example": "ehy**nsn",
           "member": "string",
           "name": "OldCertId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3680,13 +3683,13 @@
         },
         {
           "disabled": false,
-          "document": "部署监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署监听器ID",
           "example": "lbl-****",
           "member": "string",
           "name": "ListenerId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3700,13 +3703,13 @@
         },
         {
           "disabled": false,
-          "document": "部署监听器协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署监听器协议",
           "example": "https",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3720,13 +3723,13 @@
         },
         {
           "disabled": false,
-          "document": "部署错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署错误信息",
           "example": "no domain",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3770,83 +3773,83 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "COS存储桶名称",
           "example": "cos-****",
           "member": "string",
           "name": "Bucket",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间名称",
           "example": "zrhname",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "secret名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "secret名称",
           "example": "testSc",
           "member": "string",
           "name": "SecretName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "端口",
           "example": "90",
           "member": "int64",
           "name": "Port",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "TCB环境ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TCB环境ID",
           "example": "tcb-****",
           "member": "string",
           "name": "EnvId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署的TCB类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署的TCB类型",
           "example": "tcb",
           "member": "string",
           "name": "TCBType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署的TCB地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署的TCB地域",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署CLB监听器的Url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署CLB监听器的Url",
           "example": "[\"/zrh1\",\"/zrh2\"]",
           "member": "string",
           "name": "Url",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3896,7 +3899,7 @@
         },
         {
           "disabled": false,
-          "document": "部署状态",
+          "document": "部署状态:0 未开始， 1 成功， 2 失败",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -3962,23 +3965,23 @@
         },
         {
           "disabled": false,
-          "document": "不建议使用。字段返回和Resources相同。本字段后续只返回null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不建议使用。字段返回和Resources相同。本字段后续只返回null",
           "example": "[\"resources\"]",
           "member": "string",
           "name": "ResourceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联资源ID或关联域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联资源ID或关联域名。",
           "example": "[\"www.***.com\"]",
           "member": "string",
           "name": "Resources",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4006,7 +4009,7 @@
         },
         {
           "disabled": false,
-          "document": "当前偏移量",
+          "document": "当前偏移量，默认为0",
           "example": "10",
           "member": "string",
           "name": "Offset",
@@ -4015,7 +4018,7 @@
         },
         {
           "disabled": false,
-          "document": "查询资源类型的结果详情， 不传则查询所有",
+          "document": "查询资源类型的结果详情， 不传则查询所有，取值支持：\n- clb\n- cdn\n- ddos\n- live\n- vod\n- waf\n- apigateway\n- teo\n- tke\n- cos\n- tse\n- tcb",
           "example": "[\"clb\"]",
           "member": "string",
           "name": "ResourceTypes",
@@ -4024,7 +4027,7 @@
         },
         {
           "disabled": false,
-          "document": "查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持",
+          "document": "查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "Regions",
@@ -4243,7 +4246,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书所属用户主账号 UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "818****6472",
           "member": "string",
           "name": "OwnerUin",
@@ -4263,7 +4266,7 @@
         },
         {
           "disabled": false,
-          "document": "证书来源：trustasia = 亚洲诚信，upload = 用户上传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书来源：\ntrustasia：亚洲诚信，\nupload：用户上传。\nwosign：沃通\nsheca：上海CA\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "trustasia",
           "member": "string",
           "name": "From",
@@ -4283,7 +4286,7 @@
         },
         {
           "disabled": false,
-          "document": "证书套餐类型：null = 用户上传证书（没有套餐类型），1 = GeoTrust DV SSL CA - G3， 2 = TrustAsia TLS RSA CA， 3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = DNSPod 国密域名型证书，34 = DNSPod 国密域名型多域名证书，35 = DNSPod 国密域名型通配符证书，37 = DNSPod 国密企业型证书，38 = DNSPod 国密企业型多域名证书，39 = DNSPod 国密企业型通配符证书，40 = DNSPod 国密增强型证书，41 = DNSPod 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书套餐类型：\nnull：用户上传证书（没有套餐类型），\n2：TrustAsia TLS RSA CA， \n3：SecureSite 增强型企业版（EV Pro）， \n4：SecureSite 增强型（EV）， \n5：SecureSite 企业型专业版（OV Pro），\n6：SecureSite 企业型（OV）， \n7：SecureSite 企业型（OV）通配符， \n8：Geotrust 增强型（EV）， \n9：Geotrust 企业型（OV）， \n10：Geotrust 企业型（OV）通配符， \n11：TrustAsia 域名型多域名 SSL 证书， \n12：TrustAsia 域名型（DV）通配符， \n13：TrustAsia 企业型通配符（OV）SSL 证书（D3）， \n14：TrustAsia 企业型（OV）SSL 证书（D3）， \n15：TrustAsia 企业型多域名 （OV）SSL 证书（D3）， \n16：TrustAsia 增强型 （EV）SSL 证书（D3）， \n17：TrustAsia 增强型多域名（EV）SSL 证书（D3）， \n18：GlobalSign 企业型（OV）SSL 证书， \n19：GlobalSign 企业型通配符 （OV）SSL 证书， \n20：GlobalSign 增强型 （EV）SSL 证书， \n21：TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， \n22：GlobalSign 企业型多域名（OV）SSL 证书， \n23：GlobalSign 企业型通配符多域名（OV）SSL 证书，\n24：GlobalSign 增强型多域名（EV）SSL 证书，\n25：Wotrus 域名型证书，\n26：Wotrus 域名型多域名证书，\n27：Wotrus 域名型通配符证书，\n28：Wotrus 企业型证书，\n29：Wotrus 企业型多域名证书，\n30：Wotrus 企业型通配符证书，\n31：Wotrus 增强型证书，\n32：Wotrus 增强型多域名证书，\n33：WoTrus-国密域名型证书，\n34：WoTrus-国密域名型证书（多域名），\n35：WoTrus-国密域名型证书（通配符），\n37：WoTrus-国密企业型证书，\n38：WoTrus-国密企业型证书（多域名），\n39：WoTrus-国密企业型证书（通配符），\n40：WoTrus-国密增强型证书，\n41：WoTrus-国密增强型证书（多域名），\n42：TrustAsia-域名型证书（通配符多域名），\n43：DNSPod-企业型(OV)SSL证书\n44：DNSPod-企业型(OV)通配符SSL证书\n45：DNSPod-企业型(OV)多域名SSL证书\n46：DNSPod-增强型(EV)SSL证书\n47：DNSPod-增强型(EV)多域名SSL证书\n48：DNSPod-域名型(DV)SSL证书\n49：DNSPod-域名型(DV)通配符SSL证书\n50：DNSPod-域名型(DV)多域名SSL证书\n51：DNSPod（国密）-企业型(OV)SSL证书\n52：DNSPod（国密）-企业型(OV)通配符SSL证书\n53：DNSPod（国密）-企业型(OV)多域名SSL证书\n54：DNSPod（国密）-域名型(DV)SSL证书\n55：DNSPod（国密）-域名型(DV)通配符SSL证书\n56：DNSPod（国密）-域名型(DV)多域名SSL证书\n57：SecureSite 企业型专业版多域名(OV Pro)\n58：SecureSite 企业型多域名(OV)\n59：SecureSite 增强型专业版多域名(EV Pro)\n60：SecureSite 增强型多域名(EV)\n61：Geotrust 增强型多域名(EV)\n75：SecureSite 企业型(OV)\n76：SecureSite 企业型(OV)通配符\n77：SecureSite 增强型(EV)\n78：Geotrust 企业型(OV)\n79：Geotrust 企业型(OV)通配符\n80：Geotrust 增强型(EV)\n81：GlobalSign 企业型（OV）SSL证书\n82：GlobalSign 企业型通配符 （OV）SSL证书\n83：TrustAsia C1 DV Free\n85：GlobalSign 增强型 （EV）SSL证书\n88：GlobalSign 企业型通配符多域名 （OV）SSL证书\n89：GlobalSign 企业型多域名 （OV）SSL证书\n90：GlobalSign 增强型多域名（EV） SSL证书\n91：Geotrust 增强型多域名(EV)\n92：SecureSite 企业型专业版多域名(OV Pro)\n93：SecureSite 企业型多域名(OV)\n94：SecureSite 增强型专业版多域名(EV Pro)\n95：SecureSite 增强型多域名(EV)\n96：SecureSite 增强型专业版(EV Pro)\n97：SecureSite 企业型专业版(OV Pro)\n98：CFCA 企业型(OV)SSL证书\n99：CFCA 企业型多域名(OV)SSL证书\n100：CFCA 企业型通配符(OV)SSL证书\n101：CFCA 增强型(EV)SSL证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "83",
           "member": "string",
           "name": "PackageType",
@@ -4293,7 +4296,7 @@
         },
         {
           "disabled": false,
-          "document": "颁发者。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TrustAsia C1 DV Free",
           "member": "string",
           "name": "ProductZhName",
@@ -4303,7 +4306,7 @@
         },
         {
           "disabled": false,
-          "document": "域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书绑定通用名称域名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nin*****ang.online",
           "member": "string",
           "name": "Domain",
@@ -4323,7 +4326,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 自动添加DNS记录，5 = 企业证书，待提交资料，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 证书已退款。 15 = 证书迁移中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -4333,7 +4336,7 @@
         },
         {
           "disabled": false,
-          "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态信息。 取值范围：\n//通用状态信息\n1、PRE-REVIEWING：预审核中\n2、LEGAL-REVIEWING：法务审核中\n3、CA-REVIEWING：CA审核中\n4、PENDING-DCV：域名验证中\n5、WAIT-ISSUE：等待签发（域名验证已通过）\n//证书审核失败状态信息\n1、订单审核失败\n2、CA审核失败，域名未通过安全审查\n3、域名验证超时，订单自动关闭，请您重新进行证书申请\n4、证书资料未通过证书CA机构审核，审核人员会致电您证书预留的联系方式，请您留意来电。后续可通过“修改资料”重新提交资料\n待持续完善\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CA-REVIEWING",
           "member": "string",
           "name": "StatusMsg",
@@ -4393,7 +4396,7 @@
         },
         {
           "disabled": false,
-          "document": "申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书申请时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-12-03 19:38:47",
           "member": "datetime",
           "name": "InsertTime",
@@ -4403,7 +4406,7 @@
         },
         {
           "disabled": false,
-          "document": "订单 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA订单 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "hehys****jsj",
           "member": "string",
           "name": "OrderId",
@@ -4423,7 +4426,7 @@
         },
         {
           "disabled": false,
-          "document": "证书私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私钥证书， 国密证书则为签名证书中的私钥证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-----BEGIN RSA PRIVATE KEY----***",
           "member": "string",
           "name": "CertificatePrivateKey",
@@ -4433,7 +4436,7 @@
         },
         {
           "disabled": false,
-          "document": "证书公钥（即证书内容）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公钥证书， 国密则为签名证书中的公钥证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-----BEGIN CERTIFICATE-----***",
           "member": "string",
           "name": "CertificatePublicKey",
@@ -4443,7 +4446,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DvAuthDetail",
           "name": "DvAuthDetail",
@@ -4543,7 +4546,7 @@
         },
         {
           "disabled": false,
-          "document": "提交的资料信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费证书提交的资料信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SubmittedData",
           "name": "SubmittedData",
@@ -4593,7 +4596,7 @@
         },
         {
           "disabled": false,
-          "document": "国密加密证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国密加密证书公钥， 仅国密证书有值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-----BEGIN CERTIFICATE-",
           "member": "string",
           "name": "EncryptCert",
@@ -4603,7 +4606,7 @@
         },
         {
           "disabled": false,
-          "document": "国密加密私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "国密加密私钥证书， 仅国密证书有值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "----BEGIN RSA PRIVATE KEY----***",
           "member": "string",
           "name": "EncryptPrivateKey",
@@ -4633,7 +4636,7 @@
         },
         {
           "disabled": false,
-          "document": "证书算法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书加密算法（国密证书特有）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RSA 2048",
           "member": "string",
           "name": "EncryptAlgorithm",
@@ -4684,7 +4687,7 @@
         },
         {
           "disabled": false,
-          "document": "请求日志数量，默认为20。",
+          "document": "请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -4794,7 +4797,7 @@
         },
         {
           "disabled": false,
-          "document": "证书来源：trustasia = 亚洲诚信，upload = 用户上传。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书来源：\ntrustasia：亚洲诚信，\nupload：用户上传。\nwosign：沃通\nsheca：上海CA\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "upload",
           "member": "string",
           "name": "From",
@@ -4814,7 +4817,7 @@
         },
         {
           "disabled": false,
-          "document": "证书套餐类型： 2 = TrustAsia TLS RSA CA，3 = SecureSite 增强型企业版（EV Pro）， 4 = SecureSite 增强型（EV）， 5 = SecureSite 企业型专业版（OV Pro）， 6 = SecureSite 企业型（OV）， 7 = SecureSite 企业型（OV）通配符， 8 = Geotrust 增强型（EV）， 9 = Geotrust 企业型（OV）， 10 = Geotrust 企业型（OV）通配符， 11 = TrustAsia 域名型多域名 SSL 证书， 12 = TrustAsia 域名型（DV）通配符， 13 = TrustAsia 企业型通配符（OV）SSL 证书（D3）， 14 = TrustAsia 企业型（OV）SSL 证书（D3）， 15 = TrustAsia 企业型多域名 （OV）SSL 证书（D3）， 16 = TrustAsia 增强型 （EV）SSL 证书（D3）， 17 = TrustAsia 增强型多域名（EV）SSL 证书（D3）， 18 = GlobalSign 企业型（OV）SSL 证书， 19 = GlobalSign 企业型通配符 （OV）SSL 证书， 20 = GlobalSign 增强型 （EV）SSL 证书， 21 = TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， 22 = GlobalSign 企业型多域名（OV）SSL 证书， 23 = GlobalSign 企业型通配符多域名（OV）SSL 证书， 24 = GlobalSign 增强型多域名（EV）SSL 证书，25 = Wotrus 域名型证书，26 = Wotrus 域名型多域名证书，27 = Wotrus 域名型通配符证书，28 = Wotrus 企业型证书，29 = Wotrus 企业型多域名证书，30 = Wotrus 企业型通配符证书，31 = Wotrus 增强型证书，32 = Wotrus 增强型多域名证书，33 = Wotrus 国密域名型证书，34 = Wotrus 国密域名型多域名证书，35 = Wotrus 国密域名型通配符证书，37 = Wotrus 国密企业型证书，38 = Wotrus 国密企业型多域名证书，39 = Wotrus 国密企业型通配符证书，40 = Wotrus 国密增强型证书，41 = Wotrus 国密增强型多域名证书，42 = TrustAsia 域名型通配符多域名证书，43 = DNSPod-企业型(OV)SSL证书，44 = DNSPod-企业型(OV)通配符SSL证书，45 = DNSPod-企业型(OV)多域名SSL证书， 46 = DNSPod-增强型(EV)SSL证书，47 = DNSPod-增强型(EV)多域名SSL证书，48 = DNSPod-域名型(DV)SSL证书，49 = DNSPod-域名型(DV)通配符SSL证书，50 = DNSPod-域名型(DV)多域名SSL证书，51 = DNSPod（国密）-企业型(OV)SSL证书，52 = DNSPod（国密）-企业型(OV)通配符SSL证书，53 = DNSPod（国密）-企业型(OV)多域名SSL证书，54 = DNSPod（国密）-域名型(DV)SSL证书，55 = DNSPod（国密）-域名型(DV)通配符SSL证书， 56 = DNSPod（国密）-域名型(DV)多域名SSL证书，57 = SecureSite 企业型专业版多域名(OV Pro)，58 = SecureSite 企业型多域名(OV)，59 = SecureSite 增强型专业版多域名(EV Pro)，60 = SecureSite 增强型多域名(EV)，61 = Geotrust 增强型多域名(EV)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书套餐类型：\nnull：用户上传证书（没有套餐类型），\n2：TrustAsia TLS RSA CA， \n3：SecureSite 增强型企业版（EV Pro）， \n4：SecureSite 增强型（EV）， \n5：SecureSite 企业型专业版（OV Pro），\n6：SecureSite 企业型（OV）， \n7：SecureSite 企业型（OV）通配符， \n8：Geotrust 增强型（EV）， \n9：Geotrust 企业型（OV）， \n10：Geotrust 企业型（OV）通配符， \n11：TrustAsia 域名型多域名 SSL 证书， \n12：TrustAsia 域名型（DV）通配符， \n13：TrustAsia 企业型通配符（OV）SSL 证书（D3）， \n14：TrustAsia 企业型（OV）SSL 证书（D3）， \n15：TrustAsia 企业型多域名 （OV）SSL 证书（D3）， \n16：TrustAsia 增强型 （EV）SSL 证书（D3）， \n17：TrustAsia 增强型多域名（EV）SSL 证书（D3）， \n18：GlobalSign 企业型（OV）SSL 证书， \n19：GlobalSign 企业型通配符 （OV）SSL 证书， \n20：GlobalSign 增强型 （EV）SSL 证书， \n21：TrustAsia 企业型通配符多域名（OV）SSL 证书（D3）， \n22：GlobalSign 企业型多域名（OV）SSL 证书， \n23：GlobalSign 企业型通配符多域名（OV）SSL 证书，\n24：GlobalSign 增强型多域名（EV）SSL 证书，\n25：Wotrus 域名型证书，\n26：Wotrus 域名型多域名证书，\n27：Wotrus 域名型通配符证书，\n28：Wotrus 企业型证书，\n29：Wotrus 企业型多域名证书，\n30：Wotrus 企业型通配符证书，\n31：Wotrus 增强型证书，\n32：Wotrus 增强型多域名证书，\n33：WoTrus-国密域名型证书，\n34：WoTrus-国密域名型证书（多域名），\n35：WoTrus-国密域名型证书（通配符），\n37：WoTrus-国密企业型证书，\n38：WoTrus-国密企业型证书（多域名），\n39：WoTrus-国密企业型证书（通配符），\n40：WoTrus-国密增强型证书，\n41：WoTrus-国密增强型证书（多域名），\n42：TrustAsia-域名型证书（通配符多域名），\n43：DNSPod-企业型(OV)SSL证书\n44：DNSPod-企业型(OV)通配符SSL证书\n45：DNSPod-企业型(OV)多域名SSL证书\n46：DNSPod-增强型(EV)SSL证书\n47：DNSPod-增强型(EV)多域名SSL证书\n48：DNSPod-域名型(DV)SSL证书\n49：DNSPod-域名型(DV)通配符SSL证书\n50：DNSPod-域名型(DV)多域名SSL证书\n51：DNSPod（国密）-企业型(OV)SSL证书\n52：DNSPod（国密）-企业型(OV)通配符SSL证书\n53：DNSPod（国密）-企业型(OV)多域名SSL证书\n54：DNSPod（国密）-域名型(DV)SSL证书\n55：DNSPod（国密）-域名型(DV)通配符SSL证书\n56：DNSPod（国密）-域名型(DV)多域名SSL证书\n57：SecureSite 企业型专业版多域名(OV Pro)\n58：SecureSite 企业型多域名(OV)\n59：SecureSite 增强型专业版多域名(EV Pro)\n60：SecureSite 增强型多域名(EV)\n61：Geotrust 增强型多域名(EV)\n75：SecureSite 企业型(OV)\n76：SecureSite 企业型(OV)通配符\n77：SecureSite 增强型(EV)\n78：Geotrust 企业型(OV)\n79：Geotrust 企业型(OV)通配符\n80：Geotrust 增强型(EV)\n81：GlobalSign 企业型（OV）SSL证书\n82：GlobalSign 企业型通配符 （OV）SSL证书\n83：TrustAsia C1 DV Free\n85：GlobalSign 增强型 （EV）SSL证书\n88：GlobalSign 企业型通配符多域名 （OV）SSL证书\n89：GlobalSign 企业型多域名 （OV）SSL证书\n90：GlobalSign 增强型多域名（EV） SSL证书\n91：Geotrust 增强型多域名(EV)\n92：SecureSite 企业型专业版多域名(OV Pro)\n93：SecureSite 企业型多域名(OV)\n94：SecureSite 增强型专业版多域名(EV Pro)\n95：SecureSite 增强型多域名(EV)\n96：SecureSite 增强型专业版(EV Pro)\n97：SecureSite 企业型专业版(OV Pro)\n98：CFCA 企业型(OV)SSL证书\n99：CFCA 企业型多域名(OV)SSL证书\n100：CFCA 企业型通配符(OV)SSL证书\n101：CFCA 增强型(EV)SSL证书\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "string",
           "name": "PackageType",
@@ -4824,7 +4827,7 @@
         },
         {
           "disabled": false,
-          "document": "证书颁发者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TrustAsia C1 DV Free",
           "member": "string",
           "name": "ProductZhName",
@@ -4854,7 +4857,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 自动添加DNS记录，5 = 企业证书，待提交资料，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 证书已退款。 15 = 证书迁移中\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -4864,7 +4867,7 @@
         },
         {
           "disabled": false,
-          "document": "状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态信息。 取值范围：\n//通用状态信息\n1、PRE-REVIEWING：预审核中\n2、LEGAL-REVIEWING：法务审核中\n3、CA-REVIEWING：CA审核中\n4、PENDING-DCV：域名验证中\n5、WAIT-ISSUE：等待签发（域名验证已通过）\n//证书审核失败状态信息\n1、订单审核失败\n2、CA审核失败，域名未通过安全审查\n3、域名验证超时，订单自动关闭，请您重新进行证书申请\n4、证书资料未通过证书CA机构审核，审核人员会致电您证书预留的联系方式，请您留意来电。后续可通过“修改资料”重新提交资料\n待持续完善\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CA-REVIEWING",
           "member": "string",
           "name": "StatusMsg",
@@ -4874,7 +4877,7 @@
         },
         {
           "disabled": false,
-          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，EMAIL = 邮件验证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证类型：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证，DNS_PROXY = DNS代理验证。FILE_PROXY = 文件代理验证\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DNS_AUTO",
           "member": "string",
           "name": "VerifyType",
@@ -5094,7 +5097,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书的所有加密方式\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA证书的所有加密方式。仅证书类型CertificateType为CA有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"RSA\"]",
           "member": "string",
           "name": "CAEncryptAlgorithms",
@@ -5104,7 +5107,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书的所有通用名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA证书的所有通用名称。仅证书类型CertificateType为CA有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"TrustAsia C1 DV Free\"]",
           "member": "string",
           "name": "CACommonNames",
@@ -5114,7 +5117,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书所有的到期时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA证书所有的到期时间。仅证书类型CertificateType为CA有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"2024-11-27 17:44:36\"]",
           "member": "string",
           "name": "CAEndTimes",
@@ -5146,7 +5149,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始。",
+          "document": "分页偏移量，从0开始。 默认为0",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5164,7 +5167,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。",
+          "document": "搜索关键词，模糊匹配证书 ID、备注名称、证书域名",
           "example": "string",
           "member": "string",
           "name": "SearchKey",
@@ -5191,7 +5194,7 @@
         },
         {
           "disabled": false,
-          "document": "按到期时间排序：DESC = 降序， ASC = 升序。",
+          "document": "默认按照证书申请时间降序； 若传排序则按到期时间排序：DESC = 证书到期时间降序， ASC = 证书到期时间升序。",
           "example": "DESC ",
           "member": "string",
           "name": "ExpirationSort",
@@ -5200,7 +5203,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
+          "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 已退款。 15 = 证书迁移中",
           "example": "[1]",
           "member": "uint64",
           "name": "CertificateStatus",
@@ -5337,7 +5340,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页偏移量",
+          "document": "分页偏移量，默认值为0.",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5346,7 +5349,7 @@
         },
         {
           "disabled": false,
-          "document": "分页每页限制数",
+          "document": "分页每页限制数，默认值为0，最大值1000.",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -5448,7 +5451,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型:clb,cdn,live,waf,antiddos",
+          "document": "资源类型:clb,cdn,live,waf,antiddos,teo",
           "example": "clb",
           "member": "string",
           "name": "ResourceType",
@@ -5567,7 +5570,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "部署资源类型apigateway",
           "example": "apigateway",
           "member": "string",
@@ -5586,7 +5589,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认10。\t",
+          "document": "每页数量，默认10，最大值为200。\t",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -5595,7 +5598,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始。\t",
+          "document": "分页偏移量，默认值为0。",
           "example": "0",
           "member": "string",
           "name": "Offset",
@@ -5668,7 +5671,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "部署资源类型cdn",
           "example": "cdn",
           "member": "string",
@@ -5687,7 +5690,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始。\t",
+          "document": "分页偏移量，默认值为0。\t",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5696,7 +5699,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认10。\t",
+          "document": "每页数量，默认10，最大值为200。\t",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6154,7 +6157,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署记录ID",
+          "document": "部署记录ID，通过调用DeployCertificateInstance接口返回的记录ID， 或者通过DeployCertificateRecordRollback回滚接口返回的记录ID",
           "example": "17993",
           "member": "string",
           "name": "DeployRecordId",
@@ -6163,8 +6166,8 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始。",
-          "example": "1",
+          "document": "分页偏移量，从0开始。默认为0",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -6172,7 +6175,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认10。",
+          "document": "每页数量，默认10。最大值为200",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6187,7 +6190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -6276,7 +6279,7 @@
         },
         {
           "disabled": false,
-          "document": "支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse",
+          "document": "支持的资源类型如下,clb,cdn,ddos,waf,apigateway,teo,tke,cos,lighthouse,vod,tcb,tse,live",
           "example": "clb",
           "member": "string",
           "name": "ResourceType",
@@ -6349,7 +6352,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "部署资源类型 lighthouse",
           "example": "lighthouse",
           "member": "string",
@@ -6478,12 +6481,12 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "部署资源类型",
           "example": "teo",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6515,7 +6518,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始。",
+          "document": "分页偏移量，默认值为0.",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6524,7 +6527,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认10。\t",
+          "document": "每页数量，默认10，最大值为200。\t",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6711,7 +6714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键更新记录ID,从接口UpdateCertificateInstance获得",
+          "document": "部署记录ID，通过调用UpdateCertificateInstance接口返回的记录ID， 或者通过UpdateCertificateRecordRollback回滚接口返回的记录ID",
           "example": "177999",
           "member": "string",
           "name": "DeployRecordId",
@@ -6720,7 +6723,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量，默认10。",
+          "document": "每页数量，默认10。最大值为200",
           "example": "10",
           "member": "string",
           "name": "Limit",
@@ -6729,7 +6732,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，从0开始。",
+          "document": "分页偏移量，从0开始。默认为0",
           "example": "0",
           "member": "string",
           "name": "Offset",
@@ -6880,7 +6883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待部署的证书ID",
+          "document": "待部署的证书ID,必填选项",
           "example": "heyst**hs",
           "member": "string",
           "name": "CertificateId",
@@ -7068,7 +7071,7 @@
       "document": "DescribeManagerDetail返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "状态: audit: 审核中 ok: 审核通过 invalid: 失效 expiring: 即将过期 expired: 已过期",
           "example": "ok",
           "member": "string",
@@ -7280,7 +7283,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量",
+          "document": "分页偏移量，如果不传默认值为0",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -7289,7 +7292,7 @@
         },
         {
           "disabled": false,
-          "document": "分页每页数量",
+          "document": "分页每页数量，如果不传默认值为10，最大值为1000",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -7325,8 +7328,8 @@
         },
         {
           "disabled": false,
-          "document": "管理人姓/管理人名/邮箱/部门精准匹配",
-          "example": "腾讯/tencent@tencent.com/开发一部",
+          "document": "根据这样的格式:管理人姓|管理人名|邮箱|部门 ,进行精准匹配",
+          "example": "luke|sky|tencent@tencent.com|开发一部",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -7390,8 +7393,8 @@
         },
         {
           "disabled": false,
-          "document": "按状态筛选。",
-          "example": "enable",
+          "document": "按状态筛选。状态值包括usable(可用)，used(已用)，expired(已过期)，refund(已退款)\n",
+          "example": "refund",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -7399,8 +7402,8 @@
         },
         {
           "disabled": false,
-          "document": "按过期时间升序或降序排列。",
-          "example": "2019-09-08 20:00:00",
+          "document": "按过期时间升序或降序排列，可选值为asc(升序)和desc(降序)",
+          "example": "asc",
           "member": "string",
           "name": "ExpireTime",
           "required": false,
@@ -7409,7 +7412,7 @@
         {
           "disabled": false,
           "document": "按权益包ID搜索。",
-          "example": "pid-100**777",
+          "example": "X22080117530008",
           "member": "string",
           "name": "PackageId",
           "required": false,
@@ -7417,8 +7420,8 @@
         },
         {
           "disabled": false,
-          "document": "按权益包类型搜索。",
-          "example": "ssl",
+          "document": "按权益包类型搜索。类型包括：ssl_100(证书批量权益100点)，ssl_500(证书批量权益500点），ssl_2000(证书批量权益2000点）",
+          "example": "ssl_100",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -7493,13 +7496,13 @@
         },
         {
           "disabled": false,
-          "document": "域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY",
           "example": "DNS",
           "member": "string",
           "name": "VerifyType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7523,23 +7526,23 @@
         },
         {
           "disabled": false,
-          "document": "检查失败原因。状态LocalCheck的具体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查失败原因。状态LocalCheck的具体描述",
           "example": "txt record not found",
           "member": "string",
           "name": "LocalCheckFailReason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检查到的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "检查到的值。",
           "example": "[\"2025020702351560msettk82zj7nc30anr3n0lon5l6zm5shot5qznawf8mgun1r\"]",
           "member": "string",
           "name": "CheckValue",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7616,7 +7619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证记录Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "_895b7ee8eb1662e895c90a649c01bc2e.nin****ang.online",
           "member": "string",
           "name": "DvAuthKey",
@@ -7626,7 +7629,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证记录值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f0923331a7c7598def3fe522dbaab630.7bbc2a79620205e7edf2e3f8028f08dc.cmcdt3ax6qhp87.trust-provider.com",
           "member": "string",
           "name": "DvAuthValue",
@@ -7636,7 +7639,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证域名值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "n******uang.online",
           "member": "string",
           "name": "DvAuthDomain",
@@ -7646,7 +7649,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证文件路径， 仅FILE、FILE_PROXY使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/path",
           "member": "string",
           "name": "DvAuthPath",
@@ -7656,7 +7659,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证子域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证子域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "_895b7ee8eb1662e895c90a649c01bc2e",
           "member": "string",
           "name": "DvAuthKeySubDomain",
@@ -7666,7 +7669,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证信息， 存在多个域名验证使用本字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DvAuths",
           "name": "DvAuths",
@@ -7682,7 +7685,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "DV 认证密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证记录Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "_895b7ee8eb1662e895c90a649c01bc2e.ning****g.online",
           "member": "string",
           "name": "DvAuthKey",
@@ -7692,7 +7695,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证记录值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f0923331a7c7598def3fe522dbaab630.7bbc2a79620205e7edf2e3f8028f08dc.cmcdt3ax6qhp87.trust-provider.com",
           "member": "string",
           "name": "DvAuthValue",
@@ -7702,7 +7705,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证值域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证域名值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ning****ng.online",
           "member": "string",
           "name": "DvAuthDomain",
@@ -7712,7 +7715,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证值路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证文件路径， 仅FILE、FILE_PROXY使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/path",
           "member": "string",
           "name": "DvAuthPath",
@@ -7722,7 +7725,7 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证子域名，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "证书域名验证子域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "_895b7ee8eb1662e895c90a649c01bc2e",
           "member": "string",
           "name": "DvAuthSubDomain",
@@ -7732,8 +7735,8 @@
         },
         {
           "disabled": false,
-          "document": "DV 认证类型。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "CNAME",
+          "document": "证书域名验证类型，取值：\nTXT：DNS域名验证添加TXT记录\nFILE：域名文件验证\nCNAME：DNS域名验证添加CNAME记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TXT",
           "member": "string",
           "name": "DvAuthVerifyType",
           "output_required": true,
@@ -8376,7 +8379,7 @@
         {
           "disabled": false,
           "document": "证书ID列表。最多50个",
-          "example": "[heh***js]",
+          "example": "[\"heh***js\"]",
           "member": "string",
           "name": "CertificateIds",
           "required": true,
@@ -8422,7 +8425,7 @@
         {
           "disabled": false,
           "document": "操作证书动作。",
-          "example": "revoke",
+          "example": "用户[uin: 100017155920] 申请免费证书 证书[id: LNTHz0N0]",
           "member": "string",
           "name": "Action",
           "output_required": true,
@@ -8471,7 +8474,7 @@
         },
         {
           "disabled": false,
-          "document": "操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个操作类型都对应一个具体的操作描述。以下是对每个操作类型及其描述的文字说明：\n1. apply - 表示申请一个免费的证书。\n2. delete - 表示删除操作。\n3. download - 表示下载操作。\n4. upload - 表示上传操作。\n5. revoke - 表示吊销证书。\n6. cancelRevoke - 表示取消吊销操作。\n7. updateAlias - 表示更新备注信息。\n8. changeProject - 表示将证书分配到某个项目。\n9. uploadConfirmLetter - 表示上传确认函。\n10. cancel - 表示取消订单操作。\n11. replace - 表示重颁发证书。\n12. downloadConfirmLetter - 表示下载证书吊销确认函。\n13. editRevokeLetter - 表示上传证书吊销确认函。\n14. renewVIP - 表示续费付费证书。\n15. applyVIP - 表示申请付费证书。\n16. submitInfo - 表示提交资料。\n17. downloadConfirmLetter - 表示下载确认函模版。\n18. uploadFromYunAPI - 表示通过云 API 上传。\n19. transferIn - 表示证书转入操作。\n20. transferOut - 表示证书转出操作。\n21. refund - 表示申请退款。\n22. multiYearsRenew - 表示多年期自动续期。\n23. modifyDownloadLimit - 表示修改下载限制开关。\n24. issued - 表示证书签发。\n25. domainValidationPassed - 表示域名验证完成。\n26. Resubmit - 表示证书重新申请。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "revoke",
           "member": "string",
           "name": "Type",
@@ -8633,13 +8636,13 @@
         },
         {
           "disabled": false,
-          "document": "转入的PackageID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转入的PackageID。",
           "example": "pid-****",
           "member": "string",
           "name": "ReceivePackageId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8683,23 +8686,23 @@
         },
         {
           "disabled": false,
-          "document": "接收者uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收者uin。",
           "example": "18747373",
           "member": "uint64",
           "name": "ReceiverUin",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "接收时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收时间。",
           "example": "2018-09-10 12:00:00",
           "member": "string",
           "name": "ReceiveTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8838,8 +8841,8 @@
         },
         {
           "disabled": false,
-          "document": "CSR 内容。",
-          "example": "hye***jsj",
+          "document": "CSR 内容，手动上传的时候需要。",
+          "example": "-----BEGIN CERTIFICATE REQUEST-----\\\\nMIIBajCCARECAQAwga4xCzAJBgNVBAYTAkNOMRswGQYDVQQIDBLDp8Kmwo/DpcK7\\\\n-----END CERTIFICATE REQUEST-----",
           "member": "string",
           "name": "CsrContent",
           "required": false,
@@ -8857,7 +8860,7 @@
         {
           "disabled": false,
           "document": "重颁发原因。",
-          "example": "do not want",
+          "example": "不想要了",
           "member": "string",
           "name": "Reason",
           "required": false,
@@ -8911,7 +8914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云资源类型",
+          "document": "云资源类型，支持clb、waf、apigateway、cos、tke、tse、tcb",
           "example": "clb",
           "member": "string",
           "name": "ResourceType",
@@ -8945,7 +8948,7 @@
         {
           "disabled": false,
           "document": "吊销证书原因。",
-          "example": "do not want",
+          "example": "不想要了",
           "member": "string",
           "name": "Reason",
           "required": false,
@@ -8977,7 +8980,7 @@
       "type": "object"
     },
     "RevokeDomainValidateAuths": {
-      "document": "返回参数键为 RevokeDomainValidateAuths 的内容。",
+      "document": "吊销证书域名验证信息。",
       "members": [
         {
           "disabled": false,
@@ -9100,8 +9103,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
-          "example": "heysh**hehs",
+          "document": "待提交资料的付费证书 ID。",
+          "example": "LqQxgqUe",
           "member": "string",
           "name": "CertificateId",
           "required": true,
@@ -9109,7 +9112,7 @@
         },
         {
           "disabled": false,
-          "document": "CSR 生成方式：online = 在线生成, parse = 手动上传。",
+          "document": "此字段必传。 CSR 生成方式， 取值为：\nonline：腾讯云提交的填写的参数信息生成CSR和私钥， 并由腾讯云加密存储\nparse：自行生成CSR和私钥， 并通过上传CSR申请证书",
           "example": "online",
           "member": "string",
           "name": "CsrType",
@@ -9118,8 +9121,8 @@
         },
         {
           "disabled": false,
-          "document": "上传的 CSR 内容。",
-          "example": "hey*******jjsj",
+          "document": "上传的 CSR 内容。\n若CstType为parse， 则此字段必传。",
+          "example": "无",
           "member": "string",
           "name": "CsrContent",
           "required": false,
@@ -9127,8 +9130,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定证书的域名。",
-          "example": "www.hh***.com",
+          "document": "证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致",
+          "example": "tencent.com",
           "member": "string",
           "name": "CertificateDomain",
           "required": false,
@@ -9136,8 +9139,8 @@
         },
         {
           "disabled": false,
-          "document": "上传的域名数组（多域名证书可以上传）。",
-          "example": "[\"www.hh***.com\"]",
+          "document": "证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填",
+          "example": "[\"www.tencent.com\"]",
           "member": "string",
           "name": "DomainList",
           "required": false,
@@ -9145,8 +9148,8 @@
         },
         {
           "disabled": false,
-          "document": "私钥密码（非必填）。",
-          "example": "password",
+          "document": "私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密\t",
+          "example": "无",
           "member": "string",
           "name": "KeyPassword",
           "required": false,
@@ -9154,7 +9157,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称。",
+          "document": "字段必传， 公司名称。",
           "example": "Tencent",
           "member": "string",
           "name": "OrganizationName",
@@ -9163,7 +9166,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称。",
+          "document": "字段必传， 部门名称。",
           "example": "IT",
           "member": "string",
           "name": "OrganizationDivision",
@@ -9172,7 +9175,7 @@
         },
         {
           "disabled": false,
-          "document": "公司详细地址。",
+          "document": "字段必传， 公司详细地址。",
           "example": "Shenzhen",
           "member": "string",
           "name": "OrganizationAddress",
@@ -9181,7 +9184,7 @@
         },
         {
           "disabled": false,
-          "document": "国家名称，如中国：CN 。",
+          "document": "字段必传， 国家名称，传CN即可",
           "example": "China",
           "member": "string",
           "name": "OrganizationCountry",
@@ -9190,7 +9193,7 @@
         },
         {
           "disabled": false,
-          "document": "公司所在城市。",
+          "document": "字段必传， 公司所在城市。",
           "example": "Shenzhen",
           "member": "string",
           "name": "OrganizationCity",
@@ -9199,7 +9202,7 @@
         },
         {
           "disabled": false,
-          "document": "公司所在省份。",
+          "document": "字段必传， 公司所在省份。",
           "example": "Guangdong",
           "member": "string",
           "name": "OrganizationRegion",
@@ -9217,7 +9220,7 @@
         },
         {
           "disabled": false,
-          "document": "公司座机区号。",
+          "document": "字段必传， 公司座机区号。",
           "example": "021",
           "member": "string",
           "name": "PhoneAreaCode",
@@ -9226,8 +9229,8 @@
         },
         {
           "disabled": false,
-          "document": "公司座机号码。",
-          "example": "021-1382344",
+          "document": "字段必传， 公司座机号码。",
+          "example": "1382344",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -9244,7 +9247,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人名。",
+          "document": "字段必传，管理人名。",
           "example": "Luke",
           "member": "string",
           "name": "AdminFirstName",
@@ -9253,7 +9256,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人姓。",
+          "document": "字段必传，管理人姓。",
           "example": "SKy",
           "member": "string",
           "name": "AdminLastName",
@@ -9262,7 +9265,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人手机号码。",
+          "document": "字段必传，管理人手机号码。",
           "example": "183****663",
           "member": "string",
           "name": "AdminPhoneNum",
@@ -9271,7 +9274,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人邮箱地址。",
+          "document": "字段必传，管理人邮箱地址。",
           "example": "hhhy@qq.com",
           "member": "string",
           "name": "AdminEmail",
@@ -9280,7 +9283,7 @@
         },
         {
           "disabled": false,
-          "document": "管理人职位。",
+          "document": "字段必传，管理人职位。",
           "example": "IT",
           "member": "string",
           "name": "AdminPosition",
@@ -9289,7 +9292,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人名。",
+          "document": "字段必传，联系人名。",
           "example": "Luke",
           "member": "string",
           "name": "ContactFirstName",
@@ -9298,7 +9301,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人姓。",
+          "document": "字段必传，联系人姓。",
           "example": "SKy",
           "member": "string",
           "name": "ContactLastName",
@@ -9307,7 +9310,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人邮箱地址。",
+          "document": "字段必传，联系人邮箱地址。",
           "example": "hhhy@qq.com",
           "member": "string",
           "name": "ContactEmail",
@@ -9316,7 +9319,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人手机号码。",
+          "document": "字段必传，联系人手机号码。",
           "example": "183****663",
           "member": "string",
           "name": "ContactNumber",
@@ -9325,7 +9328,7 @@
         },
         {
           "disabled": false,
-          "document": "联系人职位。",
+          "document": "字段必传，联系人职位。",
           "example": "IT",
           "member": "string",
           "name": "ContactPosition",
@@ -9350,7 +9353,7 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "sada12",
+          "example": "LqQxgqUe",
           "member": "string",
           "name": "CertificateId",
           "output_required": true,
@@ -10468,7 +10471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新",
+          "document": "一键更新的旧证书ID。 通过查询该证书ID绑定的云资源，然后使用新证书对这些云资源进行更新",
           "example": "hey**shje",
           "member": "string",
           "name": "OldCertificateId",
@@ -10486,7 +10489,7 @@
         },
         {
           "disabled": false,
-          "document": "一键更新新证书ID，不传则证书公钥和私钥必传",
+          "document": "一键更新的新证书ID。 不传该参数，则公钥证书和私钥证书必传",
           "example": "hey**shje",
           "member": "string",
           "name": "CertificateId",
@@ -10504,7 +10507,7 @@
         },
         {
           "disabled": false,
-          "document": "云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等",
+          "document": "云资源需要部署的地域列表，支持地域的云资源类型必传，取值：clb、tke、apigateway、waf、tcb、tse、cos",
           "example": "无",
           "member": "ResourceTypeRegions",
           "name": "ResourceTypesRegions",
@@ -10513,7 +10516,7 @@
         },
         {
           "disabled": false,
-          "document": "证书公钥， 若上传证书公钥， 则CertificateId不用传",
+          "document": "公钥证书， 若上传公钥证书，那么私钥证书必传。  则CertificateId不用传",
           "example": "-----BEGIN CERTIFICATE----****",
           "member": "string",
           "name": "CertificatePublicKey",
@@ -10522,7 +10525,7 @@
         },
         {
           "disabled": false,
-          "document": "证书私钥，若上传证书公钥， 则CertificateId不用传",
+          "document": "私钥证书，若上传私钥证书， 那么公钥证书必传；  则CertificateId不用传",
           "example": "-----BEGIN RSA PRIVATE KEY----***",
           "member": "string",
           "name": "CertificatePrivateKey",
@@ -10540,7 +10543,7 @@
         },
         {
           "disabled": false,
-          "document": "相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数",
+          "document": "相同的证书是否允许重复上传，若选择上传公钥私钥证书， 则可以配置该参数。 若存在相同重复证书，则更新任务会失败",
           "example": "true",
           "member": "bool",
           "name": "Repeatable",
@@ -10549,7 +10552,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许下载，若选择上传证书， 则可以配置该参数",
+          "document": "是否允许下载，若选择上传公私钥证书， 则可以配置该参数",
           "example": "true",
           "member": "bool",
           "name": "AllowDownload",
@@ -10558,7 +10561,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表，若选择上传证书， 则可以配置该参数",
+          "document": "标签列表，若选择上传公私钥证书， 则可以配置该参数",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
@@ -10567,7 +10570,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID，若选择上传证书， 则可以配置该参数",
+          "document": "项目 ID，若选择上传公私钥证书， 则可以配置该参数",
           "example": "1788",
           "member": "uint64",
           "name": "ProjectId",
@@ -10582,7 +10585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云资源部署任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "17636",
           "member": "uint64",
           "name": "DeployRecordId",
@@ -10592,7 +10595,7 @@
         },
         {
           "disabled": false,
-          "document": "部署状态，1表示部署成功，0表示部署失败",
+          "document": "更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID",
           "example": "1",
           "member": "int64",
           "name": "DeployStatus",
@@ -10624,7 +10627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID",
+          "document": "待重试部署记录ID,通过UpdateCertificateInstance得到部署记录ID。 本参数不传的话，则DeployRecordDetailId必传",
           "example": "748939",
           "member": "int64",
           "name": "DeployRecordId",
@@ -10633,7 +10636,7 @@
         },
         {
           "disabled": false,
-          "document": "待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得",
+          "document": "待重试部署记录详情ID,通过DescribeHostUpdateRecordDetail接口获得， 本参数不传的话， 则DeployRecordId必传",
           "example": "6637737",
           "member": "int64",
           "name": "DeployRecordDetailId",
@@ -10660,7 +10663,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待重试部署记录ID,通过UpdateCertificateInstance获得",
+          "document": "更新证书待回滚的记录ID, 通过UpdateCertificateInstance获得",
           "example": "7377374",
           "member": "int64",
           "name": "DeployRecordId",
@@ -10675,7 +10678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "回滚部署记录ID",
+          "document": "新生成的回滚部署任务的记录ID",
           "example": "778392",
           "member": "int64",
           "name": "DeployRecordId",
@@ -10697,7 +10700,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "详情记录id",
+          "document": "更新详情记录id",
           "example": "178383",
           "member": "uint64",
           "name": "Id",
@@ -10707,7 +10710,7 @@
         },
         {
           "disabled": false,
-          "document": "新证书ID",
+          "document": "新旧证书更新 - 新证书ID",
           "example": "heysh**heh",
           "member": "string",
           "name": "CertId",
@@ -10717,7 +10720,7 @@
         },
         {
           "disabled": false,
-          "document": "旧证书ID",
+          "document": "新旧证书更新 - 旧证书ID",
           "example": "hens*8hsh",
           "member": "string",
           "name": "OldCertId",
@@ -10737,8 +10740,8 @@
         },
         {
           "disabled": false,
-          "document": "部署资源类型",
-          "example": "CLB",
+          "document": "新旧证书更新云资源的云资源类型：\n- clb\n- cdn\n- ddos\n- live\n- vod\n- waf\n- apigateway\n- teo\n- tke\n- cos\n- tse\n- tcb",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -10757,8 +10760,8 @@
         },
         {
           "disabled": false,
-          "document": "部署状态",
-          "example": "1",
+          "document": "部署状态， 取值范围：\n0：待部署\n1：部署成功\n2：部署失败\n3：部署中\n4：回滚成功\n5：回滚失败\n6：无资源，无需部署",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -10929,12 +10932,12 @@
       "usage": "out"
     },
     "UpdateRecordDetails": {
-      "document": "更新记录详情列表",
+      "document": "更新记录详情",
       "members": [
         {
           "disabled": false,
-          "document": "部署资源类型",
-          "example": "CLB",
+          "document": "新旧证书更新云资源的云资源类型：\n- clb\n- cdn\n- ddos\n- live\n- vod\n- waf\n- apigateway\n- teo\n- tke\n- cos\n- tse\n- tcb",
+          "example": "clb",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
@@ -10943,7 +10946,7 @@
         },
         {
           "disabled": false,
-          "document": "部署资源详情列表",
+          "document": "该云资源更新详情",
           "example": "无",
           "member": "UpdateRecordDetail",
           "name": "List",
@@ -10953,7 +10956,7 @@
         },
         {
           "disabled": false,
-          "document": "该部署资源总数",
+          "document": "该云资源更新资源总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",

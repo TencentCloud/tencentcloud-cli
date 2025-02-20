@@ -48,6 +48,14 @@
         "title": "成功"
       }
     ],
+    "QueryGlamPicJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryGlamPicJob\n<公共请求参数>\n\n{\n    \"JobId\": \"251197749-1739792863-ff707c2a-ed24-11ef-b774-525400c5aaa8-0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobErrorCode\": \"\",\n        \"JobErrorMsg\": \"\",\n        \"JobStatusCode\": \"5\",\n        \"JobStatusMsg\": \"处理完成\",\n        \"RequestId\": \"fcf5d2a6-bd68-4a86-a931-28dd6322e457\",\n        \"ResultDetails\": [\n            \"Success\"\n        ],\n        \"ResultImage\": [\n            \"https://xxx.cos.ap-guangzhou.myqcloud.com/glam_pic/xxx.jpg\"\n        ]\n    }\n}",
+        "title": "查询美照任务"
+      }
+    ],
     "QueryMemeJob": [
       {
         "document": "",
@@ -94,6 +102,14 @@
         "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitDrawPortraitJob\n<公共请求参数>\n\n{\n    \"ModelId\": \"test\",\n    \"StyleId\": \"zhengjian_female\",\n    \"ImageNum\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"abcdefg\",\n        \"RequestId\": \"94b5192b-b40b-4f0c-b4f8-edfa7092f8b9\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "SubmitGlamPicJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitGlamPicJob\n<公共请求参数>\n\n{\n    \"TemplateUrl\": \"https://xxx.com/template.jpg\",\n    \"FaceInfos\": [\n        {\n            \"ImageUrls\": [\n                \"https://xxx.com/input.jpg\"\n            ]\n        }\n    ],\n    \"Num\": 1,\n    \"Similarity\": 0.6\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"251197749-1739859949-31f02502-edc1-11ef-a849-525400c5aaa8-0\",\n        \"RequestId\": \"d878c2e1-7108-40b5-aecf-4fb37a6e5695\"\n    }\n}",
+        "title": "提交美照任务"
       }
     ],
     "SubmitMemeJob": [

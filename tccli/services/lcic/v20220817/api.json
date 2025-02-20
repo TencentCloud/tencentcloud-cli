@@ -626,63 +626,63 @@
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "demo",
           "member": "string",
           "name": "AppName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用状态 1正常 2停用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用状态 1正常 2停用",
           "example": "1",
           "member": "int64",
           "name": "State",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1试用 2轻量版 3标准版 4旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1试用 2轻量版 3标准版 4旗舰版",
           "example": "2",
           "member": "int64",
           "name": "AppVersion",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-01-19 15:58:21",
           "member": "string",
           "name": "CreatedAt",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回调\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调",
           "example": "http://callback.qcloud.com",
           "member": "string",
           "name": "Callback",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回调Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调Key",
           "example": "nflhhtF0",
           "member": "string",
           "name": "CallbackKey",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -743,13 +743,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "背景图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "背景图片的url",
           "example": "url",
           "member": "string",
           "name": "Url",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1144,23 +1144,23 @@
         },
         {
           "disabled": false,
-          "document": "用户ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID。",
           "example": "58HJKL908",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。",
           "example": "58Hlop908",
           "member": "string",
           "name": "OriginId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1257,53 +1257,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "课堂iD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课堂iD",
           "example": "3451381",
           "member": "uint64",
           "name": "RoomId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID",
           "example": "abc123",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "评分时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评分时间",
           "example": "1704038400",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "课堂评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课堂评分",
           "example": "100",
           "member": "uint64",
           "name": "Score",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "课堂评价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课堂评价",
           "example": "优秀",
           "member": "string",
           "name": "ScoreMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1893,36 +1893,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义消息数据。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义消息数据。",
           "example": "你好",
           "member": "string",
           "name": "Data",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义消息描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义消息描述信息。",
           "example": "自定义消息描述",
           "member": "string",
           "name": "Desc",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩展字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展字段。",
           "example": "CHAT",
           "member": "string",
           "name": "Ext",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3094,7 +3094,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "123456",
+          "example": "13465287",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -3119,7 +3119,7 @@
         {
           "disabled": false,
           "document": "群组名称",
-          "example": "test",
+          "example": "group_name",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
@@ -4395,213 +4395,213 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档Id",
           "example": "fdsfdsd",
           "member": "string",
           "name": "DocumentId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档原址url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档原址url",
           "example": "https://sdffdsjhgfcgh-2347283829d265a6414f8.pdf",
           "member": "string",
           "name": "DocumentUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档名称",
           "example": "课堂文档",
           "member": "string",
           "name": "DocumentName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档所有者UserId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档所有者UserId",
           "example": "teacher_123",
           "member": "string",
           "name": "Owner",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用Id",
           "example": "3782108",
           "member": "uint64",
           "name": "SdkAppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档权限，0：私有课件 1：公共课件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档权限，0：私有课件 1：公共课件",
           "example": "1",
           "member": "uint64",
           "name": "Permission",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码结果，无需转码为空，转码成功为结果url，转码失败为错误码",
           "example": "90890",
           "member": "string",
           "name": "TranscodeResult",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转码类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码类型",
           "example": "1",
           "member": "uint64",
           "name": "TranscodeType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转码进度， 0 - 100 表示（0% - 100%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码进度， 0 - 100 表示（0% - 100%）",
           "example": "1",
           "member": "uint64",
           "name": "TranscodeProgress",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码状态，0为无需转码，1为正在转码，2为转码失败，3为转码成功",
           "example": "0",
           "member": "uint64",
           "name": "TranscodeState",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转码失败后的错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码失败后的错误信息",
           "example": "9092",
           "member": "string",
           "name": "TranscodeInfo",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档类型",
           "example": "mp4",
           "member": "string",
           "name": "DocumentType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档大小，单位：字节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档大小，单位：字节",
           "example": "1",
           "member": "uint64",
           "name": "DocumentSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新的UNIX时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新的UNIX时间戳",
           "example": "1000",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "课件页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课件页数",
           "example": "1",
           "member": "uint64",
           "name": "Pages",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "宽，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "宽，仅在静态转码的课件有效",
           "example": "1",
           "member": "uint64",
           "name": "Width",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高，仅在静态转码的课件有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高，仅在静态转码的课件有效",
           "example": "1",
           "member": "uint64",
           "name": "Height",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "封面，仅转码的课件会生成封面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "封面，仅转码的课件会生成封面",
           "example": "KPLowMp",
           "member": "string",
           "name": "Cover",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "课件预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课件预览地址",
           "example": "https://sdffdsjhgfcgh-2347283829d265a6414f8.pdf",
           "member": "string",
           "name": "Preview",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档的分辨率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档的分辨率",
           "example": "793x1122",
           "member": "string",
           "name": "Resolution",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转码后文档的最小分辨率，和创建文档时传入的参数一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转码后文档的最小分辨率，和创建文档时传入的参数一致。",
           "example": "1280x720",
           "member": "string",
           "name": "MinScaleResolution",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4638,63 +4638,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "事件发生的房间号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件发生的房间号。",
           "example": "3461739",
           "member": "uint64",
           "name": "RoomId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件发生的用户。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件发生的用户。",
           "example": "user_123",
           "member": "string",
           "name": "UserId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户设备类型。0: Unknown; 1: Windows; 2: macOS; 3: Android; 4: iOS; 5: Web; 6: Mobile webpage; 7: Weixin Mini Program.",
           "example": "5",
           "member": "uint64",
           "name": "Device",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制时长。单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制时长。单位：秒",
           "example": "5",
           "member": "uint64",
           "name": "Duration",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制文件大小",
           "example": "12334",
           "member": "uint64",
           "name": "RecordSize",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制url",
           "example": "https://url/f0.mp4",
           "member": "string",
           "name": "RecordUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4724,13 +4724,13 @@
         },
         {
           "disabled": false,
-          "document": "事件详细内容，包含房间号,成员类型事件包含用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件详细内容，包含房间号,成员类型事件包含用户Id。",
           "example": "{\"RoomId\":1234}",
           "member": "EventDataInfo",
           "name": "EventData",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5148,43 +5148,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "群组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "群组ID",
           "example": "fdghdhdfh",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "群组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "群组名称",
           "example": "群租名称",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "群组主讲人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "群组主讲人ID",
           "example": "Tecbjkkklljlsd",
           "member": "string",
           "name": "TeacherId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "群组类型 \n0-基础群组 \n1-组合群组，若为1时会返回子群组ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "群组类型 \n0-基础群组 \n1-组合群组，若为1时会返回子群组ID列表",
           "example": "群组类型",
           "member": "uint64",
           "name": "GroupType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5644,23 +5644,23 @@
         },
         {
           "disabled": false,
-          "document": "用户的上台状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户的上台状态",
           "example": "0",
           "member": "int64",
           "name": "Stage",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线",
           "example": "0",
           "member": "uint64",
           "name": "CurrentState",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5670,43 +5670,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息类型。0表示文本消息，1表示图片消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息类型。0表示文本消息，1表示图片消息",
           "example": "0",
           "member": "int64",
           "name": "MessageType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文本消息内容。message type为0时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文本消息内容。message type为0时有效。",
           "example": "text",
           "member": "string",
           "name": "TextMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "图片消息URL。 message type为1时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片消息URL。 message type为1时有效。",
           "example": "url",
           "member": "string",
           "name": "ImageMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义消息内容。message type为2时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义消息内容。message type为2时有效。",
           "example": "{\"Data\":\"data\",\"Desc\":\"custom_message\",\"Ext\":\"CHAT\"}",
           "member": "CustomMsgContent",
           "name": "CustomMessage",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5716,43 +5716,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息时间戳",
           "example": "1676879993",
           "member": "int64",
           "name": "Timestamp",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息发送者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息发送者",
           "example": "Kbghad78",
           "member": "string",
           "name": "FromAccount",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息序列号，当前课堂内唯一且单调递增\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息序列号，当前课堂内唯一且单调递增",
           "example": "87650890",
           "member": "int64",
           "name": "Seq",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "历史消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "历史消息列表",
           "example": "无",
           "member": "MessageItem",
           "name": "MessageBody",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6227,23 +6227,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户 ID",
           "example": "2WqeRoOMJKQqnnL1lILRFHpdFla",
           "member": "string",
           "name": "MemberAccount",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "禁言到的时间（使用 UTC 时间，即世界协调时间）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "禁言到的时间（使用 UTC 时间，即世界协调时间）",
           "example": "1458115189",
           "member": "uint64",
           "name": "MutedUntil",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6264,7 +6264,7 @@
         {
           "disabled": false,
           "document": "问题内容",
-          "example": "测试",
+          "example": "问题内容",
           "member": "string",
           "name": "QuestionContent",
           "output_required": true,
@@ -6293,13 +6293,13 @@
         },
         {
           "disabled": false,
-          "document": "每个选项答题人数统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每个选项答题人数统计",
           "example": "无",
           "member": "AnswerStat",
           "name": "AnswerStats",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6906,43 +6906,43 @@
         },
         {
           "disabled": false,
-          "document": "logo地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "logo地址",
           "example": "https://tcic-test-1257307760.file.myqcloud.com/customcontent/3571863/default_1709023088_default_1705651176_default.png",
           "member": "string",
           "name": "LogoUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主页地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主页地址",
           "example": "https://de-class.qcloudtiw.com/login.html",
           "member": "string",
           "name": "HomeUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义的js\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义的js",
           "example": "https://1257307760.file.myqcloud.com/customcontent/2540731/test_1617001147_custom_new.js",
           "member": "string",
           "name": "JSUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义的css\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义的css",
           "example": "https://1257307760.file.myqcloud.com/customcontent/2261473/test_1611219710_custom.css",
           "member": "string",
           "name": "CSSUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7384,102 +7384,102 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID",
           "example": "2gh42vb232jj24h2",
           "member": "string",
           "name": "UserId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "1233",
           "member": "uint64",
           "name": "StartTime",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "21412",
           "member": "uint64",
           "name": "StopTime",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总时长",
           "example": "12",
           "member": "uint64",
           "name": "Duration",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件格式",
           "example": "mp4",
           "member": "string",
           "name": "FileFormat",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流url",
           "example": "http://123.com",
           "member": "string",
           "name": "RecordUrl",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流大小",
           "example": "6798",
           "member": "uint64",
           "name": "RecordSize",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流ID",
           "example": "1238392",
           "member": "string",
           "name": "VideoId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流类型",
           "example": "mix",
           "member": "string",
           "name": "Role",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7607,23 +7607,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "文字水印内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文字水印内容",
           "example": "text",
           "member": "string",
           "name": "Text",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文字水印颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文字水印颜色",
           "example": "黑",
           "member": "string",
           "name": "Color",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7745,53 +7745,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用Id。",
           "example": "397682",
           "member": "uint64",
           "name": "SdkAppId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户Id。",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户昵称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户昵称。",
           "example": "Tom",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户头像Url。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户头像Url。",
           "example": "https://sdffdsjhgfcgh-2347283829d265a6414f8.pdf",
           "member": "string",
           "name": "Avatar",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户在客户系统的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户在客户系统的Id",
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
           "name": "OriginId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7801,53 +7801,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "水印图片的url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印图片的url",
           "example": "url",
           "member": "string",
           "name": "Url",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印宽。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印宽。为比例值",
           "example": "0.5",
           "member": "float",
           "name": "Width",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印高。为比例值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印高。为比例值",
           "example": "0.5",
           "member": "float",
           "name": "Height",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印X偏移, 取值:0-100, 表示区域X方向的百分比。比如50，则表示位于X轴中间。",
           "example": "50",
           "member": "float",
           "name": "LocationX",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "水印Y偏移, 取值:0-100, 表示区域Y方向的百分比。比如50，则表示位于Y轴中间。",
           "example": "50",
           "member": "float",
           "name": "LocationY",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

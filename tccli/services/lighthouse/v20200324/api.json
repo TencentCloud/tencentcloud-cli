@@ -1224,13 +1224,13 @@
         },
         {
           "disabled": false,
-          "document": "CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。",
           "example": "img-cs2rrmp0",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1254,13 +1254,13 @@
         },
         {
           "disabled": false,
-          "document": "镜像关联使用场景Id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像关联使用场景Id列表。",
           "example": "[\"lhsc-123456\"]",
           "member": "string",
           "name": "SceneIdSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1502,13 +1502,13 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "套餐类型描述信息。",
           "example": "通用型",
           "member": "string",
           "name": "BundleTypeDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1662,24 +1662,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境变量Key",
+          "document": "环境变量Key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "K1",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "环境变量值",
+          "document": "环境变量值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "V1",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateBlueprintRequest": {
       "document": "CreateBlueprint请求参数结构体",
@@ -2301,7 +2305,7 @@
           "example": "lhdisk-f3vgfci1",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2311,7 +2315,7 @@
           "example": "0.8",
           "member": "float",
           "name": "OriginalDiskPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2321,7 +2325,7 @@
           "example": "0.8",
           "member": "float",
           "name": "OriginalPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2331,7 +2335,7 @@
           "example": "0.5",
           "member": "float",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -2341,19 +2345,19 @@
           "example": "0.4",
           "member": "float",
           "name": "DiscountPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据盘挂载的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘挂载的实例ID。",
           "example": "lhins-abcdef",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3457,7 +3461,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/1207/47573)接口返回值中的InstanceId获取。",
           "example": "lhins-nwycpjl3",
           "member": "string",
           "name": "InstanceId",
@@ -3466,7 +3470,7 @@
         },
         {
           "disabled": false,
-          "document": "容器ID。",
+          "document": "容器ID。可通过[DescribeDockerContainers](https://cloud.tencent.com/document/product/1207/95473)接口返回值中的ContainerId获取。",
           "example": "809e9d4014f08811779c07639ec13a53ee70ba166201611298611c883e553415",
           "member": "string",
           "name": "ContainerId",
@@ -3485,6 +3489,7 @@
           "example": "无",
           "member": "DockerContainerConfiguration",
           "name": "ContainerConfiguration",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5417,33 +5422,33 @@
         },
         {
           "disabled": false,
-          "document": "上一次操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次操作",
           "example": "ApplyDiskBackup",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上一次操作状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次操作状态",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上一次请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次请求ID",
           "example": "cd7f9d77-c19b-4490-8d5e-42a776383f90",
           "member": "string",
           "name": "LatestOperationRequestId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5776,13 +5781,13 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。",
           "example": "2020-04-28T03:46:09Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5975,6 +5980,7 @@
           "example": "80",
           "member": "int64",
           "name": "HostPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5985,29 +5991,32 @@
           "example": "80",
           "member": "int64",
           "name": "ContainerPort",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "对外绑定IP，默认0.0.0.0\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对外绑定IP，默认0.0.0.0",
           "example": "0.0.0.0",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "协议，默认tcp，支持tcp/udp/sctp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议，默认tcp，支持tcp/udp/sctp",
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7153,13 +7162,13 @@
         },
         {
           "disabled": false,
-          "document": "实例违规详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例违规详情。",
           "example": "无",
           "member": "InstanceViolationDetail",
           "name": "InstanceViolationDetail",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7193,13 +7202,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 ID。",
           "example": "lhins-abcd1234",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7287,13 +7296,13 @@
         },
         {
           "disabled": false,
-          "document": "价格货币单位。取值范围CNY:人民币。USD:美元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "价格货币单位。取值范围CNY:人民币。USD:美元。",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7303,23 +7312,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID。",
           "example": "lhins-xxxxxx",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "询价信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "询价信息。",
           "example": "无",
           "member": "InstancePrice",
           "name": "InstancePrice",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7586,13 +7595,13 @@
         },
         {
           "disabled": false,
-          "document": "密钥对关联的实例 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥对关联的实例 ID 列表。",
           "example": "[\"lhins-afge14se\"]",
           "member": "string",
           "name": "AssociatedInstanceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7746,13 +7755,13 @@
         },
         {
           "disabled": false,
-          "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不支持套餐变更原因信息。变更套餐状态为\"AVAILABLE\"时, 该信息为空",
           "example": "不支持升级至该套餐。",
           "member": "string",
           "name": "NotSupportModifyMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9313,43 +9322,43 @@
         },
         {
           "disabled": false,
-          "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。",
           "example": "RollbackInstanceSnapshot",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>",
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。",
           "example": "96aee6e3-172c-4f0f-be7c-fc46b9865763",
           "member": "string",
           "name": "LatestOperationRequestId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "快照的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "快照的创建时间。",
           "example": "2020-09-03T06:51:23Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9777,23 +9786,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "原始总计价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始总计价格。",
           "example": "10.0",
           "member": "float",
           "name": "OriginalPrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣总计价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣总计价格。",
           "example": "9.0",
           "member": "float",
           "name": "DiscountPrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9853,33 +9862,33 @@
         },
         {
           "disabled": false,
-          "document": "流量包生效周期开始时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包生效周期开始时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2020-06-28T08:15:18Z",
           "member": "datetime_iso",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量包生效周期结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包生效周期结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2020-07-28T08:15:17Z",
           "member": "datetime_iso",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流量包到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
           "example": "2020-07-28T08:15:18Z",
           "member": "datetime_iso",
           "name": "Deadline",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

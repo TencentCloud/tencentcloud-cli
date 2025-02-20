@@ -1,10 +1,24 @@
 {
   "actions": {
+    "ActivateCaCertificate": {
+      "document": "激活Ca证书",
+      "input": "ActivateCaCertificateRequest",
+      "name": "激活Ca证书",
+      "output": "ActivateCaCertificateResponse",
+      "status": "online"
+    },
     "ActivateDeviceCertificate": {
       "document": "生效设备证书",
       "input": "ActivateDeviceCertificateRequest",
       "name": "生效设备证书",
       "output": "ActivateDeviceCertificateResponse",
+      "status": "online"
+    },
+    "ApplyRegistrationCode": {
+      "document": "申请ca注册码",
+      "input": "ApplyRegistrationCodeRequest",
+      "name": "申请注册ca用的注册码",
+      "output": "ApplyRegistrationCodeResponse",
       "status": "online"
     },
     "CreateAuthorizationPolicy": {
@@ -56,6 +70,13 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
+    "DeactivateCaCertificate": {
+      "document": "失效Ca证书",
+      "input": "DeactivateCaCertificateRequest",
+      "name": "失效Ca证书",
+      "output": "DeactivateCaCertificateResponse",
+      "status": "online"
+    },
     "DeactivateDeviceCertificate": {
       "document": "失效Ca证书",
       "input": "DeactivateDeviceCertificateRequest",
@@ -75,6 +96,13 @@
       "input": "DeleteAuthorizationPolicyRequest",
       "name": "删除授权策略",
       "output": "DeleteAuthorizationPolicyResponse",
+      "status": "online"
+    },
+    "DeleteCaCertificate": {
+      "document": "删除Ca证书",
+      "input": "DeleteCaCertificateRequest",
+      "name": "删除Ca证书",
+      "output": "DeleteCaCertificateResponse",
       "status": "online"
     },
     "DeleteDeviceCertificate": {
@@ -126,6 +154,20 @@
       "output": "DescribeAuthorizationPoliciesResponse",
       "status": "online"
     },
+    "DescribeCaCertificate": {
+      "document": "查询Ca证书详情接口",
+      "input": "DescribeCaCertificateRequest",
+      "name": "查询Ca证书详情",
+      "output": "DescribeCaCertificateResponse",
+      "status": "online"
+    },
+    "DescribeCaCertificates": {
+      "document": "查询集群下的ca证书信息",
+      "input": "DescribeCaCertificatesRequest",
+      "name": "查询集群CA证书列表",
+      "output": "DescribeCaCertificatesResponse",
+      "status": "online"
+    },
     "DescribeDeviceCertificate": {
       "document": "查询设备证书详情接口",
       "input": "DescribeDeviceCertificateRequest",
@@ -159,6 +201,13 @@
       "input": "DescribeInstanceListRequest",
       "name": "获取MQTT实例列表",
       "output": "DescribeInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeProductSKUList": {
+      "document": "获取产品售卖规格",
+      "input": "DescribeProductSKUListRequest",
+      "name": "获取MQTT产品售卖规格",
+      "output": "DescribeProductSKUListResponse",
       "status": "online"
     },
     "DescribeTopic": {
@@ -203,6 +252,13 @@
       "output": "ModifyInstanceResponse",
       "status": "online"
     },
+    "ModifyInstanceCertBinding": {
+      "document": "更新MQTT集群绑定证书\n参数传空，则为删除证书",
+      "input": "ModifyInstanceCertBindingRequest",
+      "name": "更新MQTT集群证书证书",
+      "output": "ModifyInstanceCertBindingResponse",
+      "status": "online"
+    },
     "ModifyJWKSAuthenticator": {
       "document": "修改MQTT JWKS 认证器",
       "input": "ModifyJWKSAuthenticatorRequest",
@@ -229,6 +285,13 @@
       "input": "ModifyUserRequest",
       "name": "修改MQTT角色",
       "output": "ModifyUserResponse",
+      "status": "online"
+    },
+    "RegisterCaCertificate": {
+      "document": "注册ca证书",
+      "input": "RegisterCaCertificateRequest",
+      "name": "注册CA证书",
+      "output": "RegisterCaCertificateResponse",
       "status": "online"
     },
     "RegisterDeviceCertificate": {
@@ -260,6 +323,42 @@
     "serviceShortName": "mqtt"
   },
   "objects": {
+    "ActivateCaCertificateRequest": {
+      "document": "ActivateCaCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "1a2b3c",
+          "member": "string",
+          "name": "CaSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateCaCertificateResponse": {
+      "document": "ActivateCaCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ActivateDeviceCertificateRequest": {
       "document": "ActivateDeviceCertificate请求参数结构体",
       "members": [
@@ -287,6 +386,53 @@
     "ActivateDeviceCertificateResponse": {
       "document": "ActivateDeviceCertificate返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyRegistrationCodeRequest": {
+      "document": "ApplyRegistrationCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyRegistrationCodeResponse": {
+      "document": "ApplyRegistrationCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册码",
+          "example": "bb180052-7df5-4ff3-bda9-9b12fed8bf39",
+          "member": "string",
+          "name": "RegistrationCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -489,6 +635,142 @@
         }
       ],
       "usage": "both"
+    },
+    "CaCertificateItem": {
+      "document": "CA证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "common name",
+          "example": "12",
+          "member": "string",
+          "name": "CaCn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CaCertificate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "123",
+          "member": "string",
+          "name": "CaSn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书格式",
+          "example": "PEM",
+          "member": "string",
+          "name": "Format",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验证证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIID7TCCAtWgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmRIwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "VerificationCertificate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ca状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastActivationTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次去激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastInactivationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Ca证书颁发者CN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AA",
+          "member": "string",
+          "name": "CaIssuerCn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotBeforeTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotAfterTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateAuthorizationPolicyRequest": {
       "document": "CreateAuthorizationPolicy请求参数结构体",
@@ -1087,6 +1369,42 @@
       ],
       "type": "object"
     },
+    "DeactivateCaCertificateRequest": {
+      "document": "DeactivateCaCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "1a2b3c",
+          "member": "string",
+          "name": "CaSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeactivateCaCertificateResponse": {
+      "document": "DeactivateCaCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeactivateDeviceCertificateRequest": {
       "document": "DeactivateDeviceCertificate请求参数结构体",
       "members": [
@@ -1185,6 +1503,42 @@
     },
     "DeleteAuthorizationPolicyResponse": {
       "document": "DeleteAuthorizationPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCaCertificateRequest": {
+      "document": "DeleteCaCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-1234567",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "1a2b3c",
+          "member": "string",
+          "name": "CaSn",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCaCertificateResponse": {
+      "document": "DeleteCaCertificate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1426,6 +1780,199 @@
           "document": "规则",
           "example": "[ \t\t\t{ \t\t\t\t\"Actions\": \"connect\", \t\t\t\t\"ClientId\": null, \t\t\t\t\"CreatedTime\": 1721813529000, \t\t\t\t\"Effect\": \"allow\", \t\t\t\t\"Id\": 7, \t\t\t\t\"InstanceId\": \"mqtt-g4r4x85z\", \t\t\t\t\"Ip\": null, \t\t\t\t\"PolicyName\": \"policy2\", \t\t\t\t\"Priority\": 2, \t\t\t\t\"Qos\": null, \t\t\t\t\"Remark\": \"\", \t\t\t\t\"Resources\": \"topic1\", \t\t\t\t\"Retain\": 2, \t\t\t\t\"UpdateTime\": 1721813529000, \t\t\t\t\"Username\": null, \t\t\t\t\"Version\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"Actions\": \"connect\", \t\t\t\t\"ClientId\": null, \t\t\t\t\"CreatedTime\": 1721813039000, \t\t\t\t\"Effect\": \"allow\", \t\t\t\t\"Id\": 1, \t\t\t\t\"InstanceId\": \"mqtt-g4r4x85z\", \t\t\t\t\"Ip\": null, \t\t\t\t\"PolicyName\": \"policy3\", \t\t\t\t\"Priority\": 3, \t\t\t\t\"Qos\": null, \t\t\t\t\"Remark\": \"111\", \t\t\t\t\"Resources\": \"topic1\", \t\t\t\t\"Retain\": 3, \t\t\t\t\"UpdateTime\": 1721813039000, \t\t\t\t\"Username\": \"user1\", \t\t\t\t\"Version\": 1 \t\t\t} \t\t]",
           "member": "AuthorizationPolicyItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaCertificateRequest": {
+      "document": "DescribeCaCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ca证书sn",
+          "example": "123",
+          "member": "string",
+          "name": "CaSn",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaCertificateResponse": {
+      "document": "DescribeCaCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次更新时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失效日期",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotAfterTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次激活时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastActivationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次吊销时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "LastInactivationTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书序列号",
+          "example": "123",
+          "member": "string",
+          "name": "CaSn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "common name",
+          "example": "common name",
+          "member": "string",
+          "name": "CaCn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书内容",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\nBQAwgZIxCzAJBgNVBAYTAmNuMQ0wCwYDVQQIDAR4aWFuMQ0wCwYDVQQHDARodXlp\\nMREwDwYDVQQKDAhqZWhhbnN1bjEWMBQGA1UECwwNdW5pdCBqZWhhbnN1bjEVMBMG\\nA1UEAwwMc3Vuamlhbnhpb25nMSMwIQYJKoZIhvc1UEBwwEaHV5aTERMA8GA1UECgwI\\namVoYW5zdW4xFjAUBgNVB\\n-----END CERTIFICATE-----\\n",
+          "member": "string",
+          "name": "CaCertificate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书格式",
+          "example": "PEM",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ca证书颁发者CN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AA",
+          "member": "string",
+          "name": "CaIssuerCn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效开始时间",
+          "example": "1713164969433",
+          "member": "int64",
+          "name": "NotBeforeTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaCertificatesRequest": {
+      "document": "DescribeCaCertificates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCaCertificatesResponse": {
+      "document": "DescribeCaCertificates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ca证书列表",
+          "example": "1",
+          "member": "CaCertificateItem",
           "name": "Data",
           "output_required": false,
           "type": "list",
@@ -2097,6 +2644,43 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductSKUListRequest": {
+      "document": "DescribeProductSKUList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductSKUListResponse": {
+      "document": "DescribeProductSKUList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mqtt商品配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[ \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1, \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"OnSale\": true, \t\t\t\t\"ProxySpecCore\": 2, \t\t\t\t\"ProxySpecCount\": 1, \t\t\t\t\"ProxySpecMemory\": 4, \t\t\t\t\"SkuCode\": \"mqtt_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1, \t\t\t\t\"TopicNumLimit\": 1, \t\t\t\t\"TpsLimit\": 1 \t\t\t}, \t\t\t{ \t\t\t\t\"ClientNumLimit\": 1000, \t\t\t\t\"InstanceType\": \"BASIC\", \t\t\t\t\"OnSale\": true, \t\t\t\t\"ProxySpecCore\": 1, \t\t\t\t\"ProxySpecCount\": 2, \t\t\t\t\"ProxySpecMemory\": 2, \t\t\t\t\"SkuCode\": \"basic_1k\", \t\t\t\t\"SubscriptionNumLimit\": 1000, \t\t\t\t\"TopicNumLimit\": 25, \t\t\t\t\"TpsLimit\": 1000 \t\t\t} \t\t]",
+          "member": "ProductSkuItem",
+          "name": "MQTTProductSkuList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3166,6 +3750,78 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceCertBindingRequest": {
+      "document": "ModifyInstanceCertBinding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务端证书id",
+          "example": "serverCertId",
+          "member": "string",
+          "name": "SSLServerCertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CA证书id",
+          "example": "caId",
+          "member": "string",
+          "name": "SSLCaCertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密通信方式\nTLS：单向证书认证\nmTLS：双向证书认证\nBYOC：一设备一证书认证",
+          "example": "TLS",
+          "member": "string",
+          "name": "X509Mode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备证书注册类型：\nJITP，自动注册；\nMANUAL 手动注册",
+          "example": "JITP",
+          "member": "string",
+          "name": "DeviceCertificateProvisionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动激活，默认为false",
+          "example": "false",
+          "member": "bool",
+          "name": "AutomaticActivation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceCertBindingResponse": {
+      "document": "ModifyInstanceCertBinding返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceRequest": {
       "document": "ModifyInstance请求参数结构体",
       "members": [
@@ -3490,6 +4146,148 @@
       ],
       "type": "object"
     },
+    "PriceTag": {
+      "document": "价格标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计价名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计价类别",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项标签",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "步长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Step",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductSkuItem": {
+      "document": "MQTT ProductSkuItem",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格类型\nBASIC：基础版\nPRO ：专业版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "basic_1000",
+          "member": "string",
+          "name": "SkuCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否售卖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "OnSale",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "topic num限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "TpsLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端连接数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "ClientNumLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单客户端最大订阅数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxSubscriptionPerClient",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权规则条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AuthorizationPolicyLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PriceTag",
+          "name": "PriceTags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PublicAccessRule": {
       "document": "公网访问安全规则",
       "members": [
@@ -3528,6 +4326,69 @@
         }
       ],
       "usage": "both"
+    },
+    "RegisterCaCertificateRequest": {
+      "document": "RegisterCaCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CA证书",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
+          "member": "string",
+          "name": "CaCertificate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验证证书",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
+          "member": "string",
+          "name": "VerificationCertificate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书格式，不传默认PEM格式",
+          "example": "PEM",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书状态，不传默认ACTIVE状态\n    ACTIVE,//激活\n    INACTIVE,//未激活\n    REVOKED,//吊销\n    PENDING_ACTIVATION,//注册待激活",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RegisterCaCertificateResponse": {
+      "document": "RegisterCaCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RegisterDeviceCertificateRequest": {
       "document": "RegisterDeviceCertificate请求参数结构体",

@@ -247,8 +247,8 @@
     "DescribeGroup": [
       {
         "document": "获取群组详情",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"abcdfdfg\",\n    \"SdkAppId\": 12345678\n}",
-        "output": "{\n    \"Response\": {\n        \"GroupId\": \"9012\",\n        \"GroupName\": \"test\",\n        \"TeacherId\": \"jklP90Mp\",\n        \"GroupType\": 1,\n        \"SubGroupIds\": [\n            \"12290\"\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"2CvDgjRNjylAs\",\n    \"SdkAppId\": 13465287\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"2CvDgjRNjylAs\",\n        \"GroupName\": \"myGroup01\",\n        \"TeacherId\": \"2i5WfUzRRC2Eb2uNmLNv96gzxCv\",\n        \"GroupType\": 1,\n        \"SubGroupIds\": [\n            \"BZB4iZc0F6ko\"\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "获取群组详情"
       }
     ],

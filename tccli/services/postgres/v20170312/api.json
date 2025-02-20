@@ -35,6 +35,13 @@
       "output": "CreateAccountResponse",
       "status": "online"
     },
+    "CreateBackupPlan": {
+      "document": "此接口用于创建备份策略。",
+      "input": "CreateBackupPlanRequest",
+      "name": "创建备份计划",
+      "output": "CreateBackupPlanResponse",
+      "status": "online"
+    },
     "CreateBaseBackup": {
       "document": "本接口（CreateBaseBackup）用于创建实例的数据备份。",
       "input": "CreateBaseBackupRequest",
@@ -110,6 +117,13 @@
       "input": "DeleteAccountRequest",
       "name": "删除数据库账号",
       "output": "DeleteAccountResponse",
+      "status": "online"
+    },
+    "DeleteBackupPlan": {
+      "document": "删除备份策略",
+      "input": "DeleteBackupPlanRequest",
+      "name": "删除备份计划",
+      "output": "DeleteBackupPlanResponse",
       "status": "online"
     },
     "DeleteBaseBackup": {
@@ -273,6 +287,13 @@
       "output": "DescribeDBInstanceParametersResponse",
       "status": "online"
     },
+    "DescribeDBInstanceSSLConfig": {
+      "document": "本接口用于查询实例SSL状态",
+      "input": "DescribeDBInstanceSSLConfigRequest",
+      "name": "查询实例SSL配置",
+      "output": "DescribeDBInstanceSSLConfigResponse",
+      "status": "online"
+    },
     "DescribeDBInstanceSecurityGroups": {
       "document": "本接口（DescribeDBInstanceSecurityGroups）用于查询实例安全组。",
       "input": "DescribeDBInstanceSecurityGroupsRequest",
@@ -427,6 +448,13 @@
       "output": "DescribeSlowQueryListResponse",
       "status": "online"
     },
+    "DescribeTasks": {
+      "document": "本接口（DescribeTasks）用于查询任务列表，展示异步任务的执行进度。\n注：本接口中展示的步骤为总结性步骤，可能伴随着版本迭代进行调整，不建议作为关键逻辑使用",
+      "input": "DescribeTasksRequest",
+      "name": "查询任务列表",
+      "output": "DescribeTasksResponse",
+      "status": "online"
+    },
     "DescribeZones": {
       "document": "本接口 (DescribeZones) 用于查询支持的可用区信息。",
       "input": "DescribeZonesRequest",
@@ -567,6 +595,13 @@
       "output": "ModifyDBInstanceReadOnlyGroupResponse",
       "status": "online"
     },
+    "ModifyDBInstanceSSLConfig": {
+      "document": "本接口用于修改实例SSL配置，功能包含开启、关闭、修改SSL证书保护的连接地址。",
+      "input": "ModifyDBInstanceSSLConfigRequest",
+      "name": "修改实例SSL配置",
+      "output": "ModifyDBInstanceSSLConfigResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改实例安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -607,6 +642,13 @@
       "input": "ModifyParameterTemplateRequest",
       "name": "修改参数模板",
       "output": "ModifyParameterTemplateResponse",
+      "status": "online"
+    },
+    "ModifyReadOnlyDBInstanceWeight": {
+      "document": "本接口（ModifyReadOnlyDBInstanceWeight）用于修改只读实例权重",
+      "input": "ModifyReadOnlyDBInstanceWeightRequest",
+      "name": "修改只读实例权重",
+      "output": "ModifyReadOnlyDBInstanceWeightResponse",
       "status": "online"
     },
     "ModifyReadOnlyGroupConfig": {
@@ -1078,6 +1120,76 @@
           "member": "string",
           "name": "MaxBackupStartTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划ID",
+          "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划自定义名称。",
+          "example": "default",
+          "member": "string",
+          "name": "PlanName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份保留时长。",
+          "example": "3",
+          "member": "uint64",
+          "name": "LogBackupRetentionPeriod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2024-10-09 15:16:51",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近一次的修改时间。",
+          "example": "2024-11-09 15:16:51",
+          "member": "string",
+          "name": "UpdatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份计划类型。系统默认创建的为default，自定义的为custom。",
+          "example": "default",
+          "member": "string",
+          "name": "PlanType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份周期类型。当前支持week、month。",
+          "example": "week",
+          "member": "string",
+          "name": "BackupPeriodType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1707,6 +1819,97 @@
     "CreateAccountResponse": {
       "document": "CreateAccount返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupPlanRequest": {
+      "document": "CreateBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "postgres-herclkx7",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份计划名称。",
+          "example": "panl1",
+          "member": "string",
+          "name": "PlanName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建的备份计划类型，当前仅支持month创建。",
+          "example": "month",
+          "member": "string",
+          "name": "BackupPeriodType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份的日期，示例是每个月的2号开启备份。",
+          "example": "['2']",
+          "member": "string",
+          "name": "BackupPeriod",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备份开始时间，不传跟随默认备份计划。",
+          "example": "01:00:00\t",
+          "member": "string",
+          "name": "MinBackupStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份结束时间，不传跟随默认计划。",
+          "example": "02:00:00\t",
+          "member": "string",
+          "name": "MaxBackupStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据备份保留时长，week默认是7,month为30。",
+          "example": "30",
+          "member": "uint64",
+          "name": "BaseBackupRetentionPeriod",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBackupPlanResponse": {
+      "document": "CreateBackupPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份策略的ID.",
+          "example": "0ee6843a-475b-5514-bd29-c432b75bb036",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4040,6 +4243,42 @@
       ],
       "type": "object"
     },
+    "DeleteBackupPlanRequest": {
+      "document": "DeleteBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。\t",
+          "example": "postgres-herclkx7\t",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份计划的ID。",
+          "example": "0ee6843a-475b-5514-bd29-c432b75bb036",
+          "member": "string",
+          "name": "PlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupPlanResponse": {
+      "document": "DeleteBackupPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteBaseBackupRequest": {
       "document": "DeleteBaseBackup请求参数结构体",
       "members": [
@@ -5465,6 +5704,63 @@
           "name": "Detail",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceSSLConfigRequest": {
+      "document": "DescribeDBInstanceSSLConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，形如postgres-6bwgamo3",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceSSLConfigResponse": {
+      "document": "DescribeDBInstanceSSLConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "true 代表开通 ，false 代表未开通",
+          "example": "false",
+          "member": "bool",
+          "name": "SSLEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云端根证书下载链接",
+          "example": "http://testdownload.url",
+          "member": "string",
+          "name": "CAUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器证书中配置的内网或外网连接地址",
+          "example": "10.0.0.23",
+          "member": "string",
+          "name": "ConnectAddress",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7041,6 +7337,116 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksRequest": {
+      "document": "DescribeTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按照任务ID进行查询。其余云API中返回的FlowId和TaskId等价。",
+          "example": "120069",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按照数据库实例ID进行查询。",
+          "example": "postgres-q6fj84vb",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的最早开始时间，形如2024-08-23 00:00:00,默认只展示180天内的数据。",
+          "example": "2024-09-23 00:00:00",
+          "member": "string",
+          "name": "MinStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的最晚开始时间，形如2024-08-23 00:00:00，默认为当前时间。",
+          "example": "2024-09-30 00:00:00",
+          "member": "string",
+          "name": "MaxStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页显示数量，取值范围为1-100，默认为返回20条。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移量，从0开始。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持StartTime,EndTime，默认为StartTime。",
+          "example": "StartTime",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，包括升序：asc，降序：desc，默认为desc。",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTasksResponse": {
+      "document": "DescribeTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的任务数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务信息列表",
+          "example": "[{\"DBInstanceId\":\"postgres-bs9lnokj\",\"EndTime\":\"2024-09-30 11:27:57\",\"Progress\":100,\"StartTime\":\"2024-09-30 11:26:23\",\"Status\":\"Success\",\"TaskDetail\":{\"AllSteps\":\"\",\"Input\":\"\",\"Output\":\"\"},\"TaskId\":23,\"TaskType\":\"RestartInstance\"}]",
+          "member": "TaskSet",
+          "name": "TaskSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8630,6 +9036,61 @@
       ],
       "type": "object"
     },
+    "ModifyDBInstanceSSLConfigRequest": {
+      "document": "ModifyDBInstanceSSLConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "postgres-6bwgamo3",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启或关闭SSL",
+          "example": "true",
+          "member": "bool",
+          "name": "SSLEnabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "SSL证书保护的唯一连接地址，若为主实例，可设置为内外网IP地址；若为只读实例，可设置为实例IP或只读组IP。在开启SSL或修改SSL保护的连接地址时，该参数为必传项；在关闭SSL时，该参数将被忽略。",
+          "example": "10.0.0.4",
+          "member": "string",
+          "name": "ConnectAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceSSLConfigResponse": {
+      "document": "ModifyDBInstanceSSLConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "5423",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBInstanceSecurityGroupsRequest": {
       "document": "ModifyDBInstanceSecurityGroups请求参数结构体",
       "members": [
@@ -9048,6 +9509,51 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyReadOnlyDBInstanceWeightRequest": {
+      "document": "ModifyReadOnlyDBInstanceWeight请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "pgro-xxxx",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读组ID",
+          "example": "pgrogp-xxx",
+          "member": "string",
+          "name": "ReadOnlyGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只读实例在只读组中的流量权重(1-50)",
+          "example": "10",
+          "member": "int64",
+          "name": "Weight",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReadOnlyDBInstanceWeightResponse": {
+      "document": "ModifyReadOnlyDBInstanceWeight返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyReadOnlyGroupConfigRequest": {
       "document": "ModifyReadOnlyGroupConfig请求参数结构体",
@@ -11337,6 +11843,183 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskDetail": {
+      "document": "任务的详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前执行的子任务步骤名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pre-check",
+          "member": "string",
+          "name": "CurrentStep",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前任务所拥有的子步骤描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"stepID\":1,\"stepName\":\"Pre-check\"},{\"stepID\":2,\"stepName\":\"Initialize New Instance\"},{\"stepID\":3,\"stepName\":\"Download Base Backup\",\"stepProcess\":100},{\"stepID\":4,\"stepName\":\"Add Instance Management Process\"},{\"stepID\":5,\"stepName\":\"Task Complete\"}]",
+          "member": "string",
+          "name": "AllSteps",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务的输入参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DBInstanceId\":\"postgres-5gevh7gr\",\"IsAssignVip\":false,\"SubnetId\":\"subnet-cd0t5777\",\"Vip\":\"\",\"VpcId\":\"vpc-n0ofy999\"}",
+          "member": "string",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务的输出参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DBInstanceId\":\"postgres-5gevh7gr\",\"DBInstanceNetInfo\":{\"Address\":\"\",\"Ip\":\"10.0.0.1\",\"Port\":5432,\"Status\":\"opened\",\"NetType\":\"private\",\"VpcId\":\"vpc-n0ofy999\",\"SubnetId\":\"subnet-cd0t5m77\",\"ProtocolType\":\"postgresql\"}}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定实例配置完成变更后的切换时间，默认值：0\n0:   此任务不需要切换\n1：立即切换\n2：指定时间切换\n3：维护时间窗口内切换。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SwitchTag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定的切换时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "03:00:00-04:00:00",
+          "member": "string",
+          "name": "SwitchTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务的提示信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "This task requires a reboot",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TaskSet": {
+      "document": "任务列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的类型。",
+          "example": "CloneInstance",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务实例的实例ID。",
+          "example": "postgres-6jt3ml1r",
+          "member": "string",
+          "name": "DBInstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的开始时间。",
+          "example": "2024-08-22 10:06:38",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-08-22 10:06:38",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务的运行状态，包括Running,Success,WaitSwitch,Fail,Pause。",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的执行进度，取值范围0-100。",
+          "example": "75",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的详情信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskDetail",
+          "name": "TaskDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

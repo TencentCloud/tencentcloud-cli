@@ -2430,7 +2430,7 @@
         {
           "disabled": false,
           "document": "混流会话（申请混流开始到取消混流结束）标识 ID。\n该值与CreateCommonMixStream中的MixStreamSessionId保持一致。",
-          "example": "",
+          "example": "example_session_id",
           "member": "string",
           "name": "MixStreamSessionId",
           "required": true,

@@ -72,7 +72,8 @@ tccli dlc AlterDMSTable --cli-unfold-argument  \
     --Partitions.0.Sds.Cols.0.BizParams.0.Key bizparam1 \
     --Partitions.0.Sds.Cols.0.BizParams.0.Value default bizparam \
     --Partitions.0.Sds.Cols.0.IsPartition False \
-    --Name table3
+    --Name table3 \
+    --DatasourceConnectionName DataLakeCatalog
 ```
 
 Output: 

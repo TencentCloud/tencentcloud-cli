@@ -42,6 +42,13 @@
       "output": "QueryDrawPortraitJobResponse",
       "status": "online"
     },
+    "QueryGlamPicJob": {
+      "document": "AI 美照接口将根据模板为用户生成精美照片。分为提交任务和查询任务2个接口。\n- 提交任务：提交一个美照生成异步任务，获得任务 ID。\n- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n\nAI 美照默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "QueryGlamPicJobRequest",
+      "name": "查询美照生成任务",
+      "output": "QueryGlamPicJobResponse",
+      "status": "online"
+    },
     "QueryMemeJob": {
       "document": "表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。\n- 提交任务：提交一个表情动图生成异步任务，获得任务 ID。\n- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n\n表情动图生成默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "QueryMemeJobRequest",
@@ -82,6 +89,13 @@
       "input": "SubmitDrawPortraitJobRequest",
       "name": "提交生成写真图片任务",
       "output": "SubmitDrawPortraitJobResponse",
+      "status": "online"
+    },
+    "SubmitGlamPicJob": {
+      "document": "AI 美照接口将根据模板为用户生成精美照片。分为提交任务和查询任务2个接口。\n- 提交任务：提交一个美照生成异步任务，获得任务 ID。\n- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。\n\nAI 美照默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
+      "input": "SubmitGlamPicJobRequest",
+      "name": "提交美照生成任务",
+      "output": "SubmitGlamPicJobResponse",
       "status": "online"
     },
     "SubmitMemeJob": {
@@ -208,6 +222,30 @@
         }
       ],
       "type": "object"
+    },
+    "FaceInfo": {
+      "document": "融合信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户图 URL 列表",
+          "example": "[\"\"https://xxx.com/input.jpg\"\"]",
+          "member": "string",
+          "name": "ImageUrls",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模版图人脸坐标。",
+          "example": "{\"X\":30,\"Y\":30,\"Width\":30,\"Height\":\"30\"}",
+          "member": "Rect",
+          "name": "TemplateFaceRect",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "Filter": {
       "document": "训练图像质量过滤开关配置。\n支持开启或关闭对训练图像分辨率下限、脸部区域大小、脸部遮挡、脸部角度的过滤，默认开启以上过滤。\n如果训练图像内包含多人脸或无人脸、和 Base 人像不为同一人也将被过滤，不可关闭该过滤条件。\n建议：关闭以上过滤可能导致写真生成效果受损，建议使用单人、正脸、脸部清晰、无遮挡、无夸张表情、脸部区域占比较大的图像进行训练。",
@@ -817,6 +855,93 @@
       ],
       "type": "object"
     },
+    "QueryGlamPicJobRequest": {
+      "document": "QueryGlamPicJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "251197749-1732000778-a319cc1b-a646-11ef-be80-525400047e59-0",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryGlamPicJobResponse": {
+      "document": "QueryGlamPicJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前任务状态码：\n1：等待中、2：运行中、4：处理失败、5：处理完成。",
+          "example": "5",
+          "member": "string",
+          "name": "JobStatusCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前任务状态：排队中、处理中、处理失败或者处理完成。\n",
+          "example": "处理完成",
+          "member": "string",
+          "name": "JobStatusMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误码。\n",
+          "example": "FailedOperation.DownloadError",
+          "member": "string",
+          "name": "JobErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务处理失败错误信息。\n",
+          "example": "文件下载失败。",
+          "member": "string",
+          "name": "JobErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成图 URL 列表，有效期1小时，请及时保存。\n",
+          "example": "[\"https://aiart-xxx.cos.ap-guangzhou.myqcloud.com/xxx.jpg?q-sign-algorithm=sha1&q-ak=xxxxx&q-sign-time=1731574045;1731577645&q-key-time=1731574045;1731577645&q-header-list=host&q-url-param-list=&q-signature=31fe75c1c18c3d91db59508961209dd37aaf41c7\"]",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果 detail 数组，Success 代表成功。\n",
+          "example": "[\"Success\"]",
+          "member": "string",
+          "name": "ResultDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryMemeJobRequest": {
       "document": "QueryMemeJob请求参数结构体",
       "members": [
@@ -1057,6 +1182,56 @@
         }
       ],
       "type": "object"
+    },
+    "Rect": {
+      "document": "人脸框坐标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "人脸框左上角横坐标。",
+          "example": "1",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸框左上角纵坐标。",
+          "example": "1",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸框宽度。",
+          "example": "30",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "人脸框高度。",
+          "example": "30",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ReplaceBackgroundRequest": {
       "document": "ReplaceBackground请求参数结构体",
@@ -1350,6 +1525,106 @@
           "disabled": false,
           "document": "提交生成写真图片任务 ID。\n",
           "example": "无",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitGlamPicJobRequest": {
+      "document": "SubmitGlamPicJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "美照模板图 URL。\n图片限制：模板图中最多出现5张人脸，单边分辨率大于300，转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "https://xxx.com/image.jpg",
+          "member": "string",
+          "name": "TemplateUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户图 URL 列表，以及模板图中需要替换成用户的人脸框信息。\n一张美照中可包含1 ~ 5个用户形象。每个用户需上传1 ~ 6张照片，如果图中存在多个人脸将取最大人脸。\n模板图中的人脸数量需要大于等于用户个数。如果不传每个用户在模板图中的人脸框位置，默认按照模板图人脸框从大到小的顺序进行替换。如需自定义顺序，需要依次上传每个用户在模板图中的人脸框位置。\n图片限制：每张图片转成 Base64 字符串后小于 10MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。建议使用单人、正脸、脸部区域占比较大、脸部清晰无遮挡、无大角度偏转、无夸张表情的用户图。",
+          "example": "[     {         \"ImageUrls\": [             \"https://xxx.com/image.jpg\"         ]     } ]",
+          "member": "FaceInfo",
+          "name": "FaceInfos",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "美照生成数量。\n支持1 ~ 4张，默认生成4张。",
+          "example": "1",
+          "member": "int64",
+          "name": "Num",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "美照生成风格。\n仅对单人美照生效，单人可支持选择不同风格。需按照美照生成数量，在数组中逐一填入每张美照的风格名称。如果不传，默认取不重复的随机风格顺序。\n多人美照只支持 balanced 一种风格，该参数不生效。\n可选风格：<ul><li>real：面部相似度更高。</li><li>balanced：平衡面部真实感和美观度。</li><li>extured：脸部皮肤更具真实感。</li><li>beautiful：脸部美观度更高。</li></ul>",
+          "example": "[\"real\", \"balanced\", \"textured\", \"beautiful\"]",
+          "member": "string",
+          "name": "Style",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "相似度系数，越高越像用户图。\n取值范围[0, 1]，默认为0.6。",
+          "example": "0.6",
+          "member": "float",
+          "name": "Similarity",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "超分选项，默认不做超分，可选开启。\nx2：2倍超分\nx4：4倍超分",
+          "example": "x2",
+          "member": "string",
+          "name": "Clarity",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "为生成结果图添加标识的开关，默认为1。\n1：添加标识。\n0：不添加标识。\n其他数值：默认按1处理。\n建议您使用显著标识来提示结果图是 AI 生成的图片。",
+          "example": "1",
+          "member": "int64",
+          "name": "LogoAdd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标识内容设置。\n默认在生成结果图右下角添加“图片由 AI 生成”字样，您可根据自身需要替换为其他的标识图片。",
+          "example": "{\"LogoUrl\": \"https://xxx.com/logo.jpg\", \"LogoRect\": {\"X\": 10, \"Y\": 10, \"Width\": 20, \"Height\": 20}}",
+          "member": "LogoParam",
+          "name": "LogoParam",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitGlamPicJobResponse": {
+      "document": "SubmitGlamPicJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "251197749-1732000778-a319cc1b-a646-11ef-be80-525400047e59-0",
           "member": "string",
           "name": "JobId",
           "output_required": false,

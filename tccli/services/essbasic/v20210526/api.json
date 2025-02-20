@@ -4658,7 +4658,7 @@
         },
         {
           "disabled": false,
-          "document": "指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。",
+          "document": "偏移量，默认为0，最大20000。关于<code>Offset</code>的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/api/213/15688\" target=\"_blank\">简介</a>中的相关小节。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -12508,7 +12508,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#agent\" target=\"_blank\">Agent结构体</a>。\n当为子客企业指定经办人时，此OrganizationOpenId必传。",
+          "document": "第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#agent\" target=\"_blank\">Agent结构体</a>。\n<font color=\"red\">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>",
           "example": "org_dianziqian",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -12517,7 +12517,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。\n当签署方为同一第三方平台下的员工时，此OpenId必传。",
+          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。\n<font color=\"red\">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>",
           "example": "n9527",
           "member": "string",
           "name": "OpenId",

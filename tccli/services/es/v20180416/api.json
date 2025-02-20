@@ -10121,10 +10121,10 @@
         {
           "disabled": false,
           "document": "任务名",
-          "example": "xx",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10134,27 +10134,27 @@
           "example": "1.2",
           "member": "float",
           "name": "Progress",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务完成时间",
-          "example": "xx",
+          "example": "无",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子任务",
-          "example": "xx",
+          "example": "无",
           "member": "SubTaskDetail",
           "name": "SubTasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10164,7 +10164,7 @@
           "example": "1",
           "member": "int64",
           "name": "ElapsedTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10174,7 +10174,7 @@
           "example": "无",
           "member": "ProcessDetail",
           "name": "ProcessInfo",
-          "required": false,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }

@@ -7283,7 +7283,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Container",
@@ -7314,6 +7314,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例的状态信息",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9157,7 +9168,7 @@
         {
           "disabled": false,
           "document": "当前资源售罄时，可用的区域有哪些",
-          "example": "[]",
+          "example": "[\"ap-beijing\"]",
           "member": "string",
           "name": "AvailableRegion",
           "output_required": true,
@@ -9167,7 +9178,7 @@
         {
           "disabled": false,
           "document": "当前计费项支持的特性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"CFS\",\"COS\"]",
           "member": "string",
           "name": "SpecFeatures",
           "output_required": false,

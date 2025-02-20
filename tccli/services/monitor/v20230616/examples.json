@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "GetMonitorData": [
+      {
+        "document": "拉取某台云服务器某段时间内统计周期为5分钟的CPU利用率监控数据",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMonitorData\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/CVM\",\n    \"MetricName\": \"CPUUsage\",\n    \"Period\": 300,\n    \"Instances\": [\n        {\n            \"Dimensions\": [\n                {\n                    \"Name\": \"InstanceId\",\n                    \"Value\": \"ins-j0hk02zo\"\n                }\n            ]\n        }\n    ],\n    \"StartTime\": \"2019-03-24T10:51:23+08:00\",\n    \"EndTime\": \"2019-03-24T20:51:23+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2019-03-24T10:50:00+08:00\",\n        \"EndTime\": \"2019-03-24T20:50:00+08:00\",\n        \"Period\": 300,\n        \"MetricName\": \"CPUUsage\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"ins-j0hk02zo\"\n                    }\n                ],\n                \"Timestamps\": [\n                    1535079000,\n                    1535079300,\n                    1535079600,\n                    1535079900,\n                    1535080200,\n                    1535080500\n                ],\n                \"Values\": [\n                    2.566,\n                    2.283,\n                    6.316,\n                    2.816,\n                    2.7,\n                    2.35\n                ]\n            }\n        ],\n        \"Msg\": \"\",\n        \"RequestId\": \"d96ec542-6547-4af2-91ac-fee85c1b8b85\"\n    }\n}",
+        "title": "拉取单台云服务器监控数据"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetMonitorData\n<公共请求参数>\n\n{\n    \"Namespace\": \"QCE/BWP\",\n    \"MetricName\": \"BWPResourceBandwidthOut\",\n    \"Instances\": [\n        {\n            \"Dimensions\": [\n                {\n                    \"Name\": \"bandwidthPackageId\",\n                    \"Value\": \"bwp-djhptxvq\"\n                },\n                {\n                    \"Name\": \"resourceId\",\n                    \"Value\": \"eip-abcd\"\n                }\n            ]\n        }\n    ],\n    \"Expr\": {\n        \"Function\": \"PERCENTILE\",\n        \"N\": 99\n    },\n    \"Period\": 60,\n    \"StartTime\": \"2024-12-11T10:57:27+08:00\",\n    \"EndTime\": \"2024-12-11T11:07:27+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34e19559-914f-4730-be56-6d53a13e9764\",\n        \"Msg\": \"Success\",\n        \"StartTime\": \"2024-12-11T10:57:27+08:00\",\n        \"EndTime\": \"2024-12-11T11:07:27+08:00\",\n        \"MetricName\": \"BWPResourceBandwidthOut\",\n        \"Period\": 60,\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"u_id\",\n                        \"Value\": \"eip-abcd\"\n                    },\n                    {\n                        \"Name\": \"netgroup\",\n                        \"Value\": \"bwp-djhptxvq\"\n                    }\n                ],\n                \"Timestamps\": [\n                    1733886060\n                ],\n                \"Values\": [\n                    12139179.200000001\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取带宽包P99数据"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -104,7 +104,7 @@ Output:
 
 1. 使用本企业的签署人
 2. 包含了详细的解除内容
-3. 替换原流程中本企业的签署人
+3. 替换原流程中本子客企业的签署人(需要指定 OpenId， OrganizationOpenId，Name， Mobile，OrganizationName)
 4. 被替换的原流程中的签署人ApproverNumber=1(即第二个签署人，在原流程签署人列表中的第二位)
 
 扩展信息：
@@ -122,9 +122,11 @@ tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
     --Agent.AppId yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT \
     --NeedRelievedFlowId yDwFmUUckpst10i3UubBSat8PWOt2iQF \
     --ReleasedApprovers.0.ApproverNumber 1 \
+    --ReleasedApprovers.0.OpenId dianqiqian \
     --ReleasedApprovers.0.Name 典子谦 \
     --ReleasedApprovers.0.Mobile 13200000000 \
     --ReleasedApprovers.0.ApproverType ORGANIZATION \
+    --ReleasedApprovers.0.OrganizationOpenId org_dianziqian \
     --ReleasedApprovers.0.OrganizationName 典子谦示例企业 \
     --ReliveInfo.Reason 因为业务调整, 结束合作。 \
     --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。 \

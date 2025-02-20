@@ -192,7 +192,7 @@
     "DescribeTrtcMcuTranscodeTime": {
       "document": "查询旁路转码计费时长。\n- 查询时间小于等于1天时，返回每5分钟粒度的数据；查询时间大于1天时，返回按天汇总的数据。\n- 单次查询统计区间最多不能超过31天。\n- 若查询当天用量，由于统计延迟等原因，返回数据可能不够准确。\n- 日结后付费将于次日上午推送账单，建议次日上午9点以后再来查询前一天的用量。",
       "input": "DescribeTrtcMcuTranscodeTimeRequest",
-      "name": "查询旁路转码计费时长(旧)",
+      "name": "查询旁路转码计费时长（旧）",
       "output": "DescribeTrtcMcuTranscodeTimeResponse",
       "status": "online"
     },
@@ -2822,7 +2822,7 @@
           "example": "无",
           "member": "OneSdkAppIdTranscodeTimeUsagesInfo",
           "name": "Usages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5832,33 +5832,33 @@
         },
         {
           "disabled": false,
-          "document": "房间人数，用户重复进入同一个房间为1次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间人数，用户重复进入同一个房间为1次",
           "example": "108",
           "member": "uint64",
           "name": "UserNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间人次，用户每次进入房间为一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间人次，用户每次进入房间为一次",
           "example": "10086",
           "member": "uint64",
           "name": "UserCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "sdkappid下一天内的房间数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "sdkappid下一天内的房间数",
           "example": "65",
           "member": "uint64",
           "name": "RoomNumbers",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
