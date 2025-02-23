@@ -10626,6 +10626,50 @@
         },
         {
           "disabled": false,
+          "document": "节点部署服务列表，例如[\"HDFS-3.1.2\",\"YARN-3.1.2\"]。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"HDFS-3.1.2\",\"YARN-3.1.2\"]",
+          "member": "string",
+          "name": "SoftDeployDesc",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "启动进程列表，例如[\"NodeManager\"]。",
+          "example": "[\"NodeManager\"]",
+          "member": "string",
+          "name": "ServiceNodeDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动进程列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "ServiceNodeInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HDFS",
+          "member": "int64",
+          "name": "SoftDeployInfo",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "多指标触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LoadMetricsConditions",
@@ -10634,6 +10678,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "伸缩组Id",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "soft例如yarn",
+          "example": "yarn",
+          "member": "string",
+          "name": "Soft",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -11,6 +11,7 @@ tccli emr AddMetricScaleStrategy --cli-unfold-argument  \
     --LoadAutoScaleStrategy.CalmDownTime 0 \
     --LoadAutoScaleStrategy.ConfigGroupAssigned {"HDFS-3.2.2":-1,"YARN-3.2.2":-1} \
     --LoadAutoScaleStrategy.GraceDownFlag False \
+    --LoadAutoScaleStrategy.GroupId 109 \
     --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.Conditions.0.CompareMethod 1 \
     --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.Conditions.0.Threshold 0 \
     --LoadAutoScaleStrategy.LoadMetricsConditions.LoadMetrics.0.LoadMetrics AvailableMB#root \
