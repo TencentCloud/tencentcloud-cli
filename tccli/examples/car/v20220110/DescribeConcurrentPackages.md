@@ -9,7 +9,8 @@ tccli car DescribeConcurrentPackages --cli-unfold-argument  \
     --Limit 0 \
     --Filters.0.Values cac-j6x242r6 \
     --Filters.0.Name ConcurrentId \
-    --Offset 0
+    --Offset 0 \
+    --ConcurrentCategory DESKTOP
 ```
 
 Output: 

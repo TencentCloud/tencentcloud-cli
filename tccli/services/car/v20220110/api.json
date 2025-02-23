@@ -682,7 +682,7 @@
         },
         {
           "disabled": false,
-          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清",
+          "document": "项目运行需要的并发类型。\nS1：小型应用云渲染并发\nM1：中型应用云渲染并发\nL1：大型应用云渲染并发\nL2：大型应用云渲染并发\nXL2：超大型应用云渲染并发\nMM1_HD：性能型云ARM并发-高清\nMM1_FHD：性能型云ARM并发-超清\nC1_FHD：旗舰型云ARM并发\nC2_FHD：增强型云ARM并发",
           "example": "L1",
           "member": "string",
           "name": "Type",
@@ -1723,6 +1723,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "并发包类别（DESKTOP: 桌面端，默认值 、MOBILE：移动端）",
+          "example": "\"DESKTOP\"",
+          "member": "string",
+          "name": "ConcurrentCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

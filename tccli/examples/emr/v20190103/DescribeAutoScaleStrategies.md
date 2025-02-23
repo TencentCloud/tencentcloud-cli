@@ -20,6 +20,7 @@ Output:
                 "ConfigGroupAssigned": "",
                 "GraceDownFlag": false,
                 "GraceDownTime": 0,
+                "GroupId": 0,
                 "LoadMetricsConditions": {
                     "LoadMetrics": [
                         {
@@ -42,6 +43,9 @@ Output:
                 "ProcessMethod": 3,
                 "ScaleAction": 2,
                 "ScaleNum": 2,
+                "ServiceNodeInfo": null,
+                "Soft": "yarn",
+                "SoftDeployInfo": null,
                 "StrategyId": 1521,
                 "StrategyName": "负载缩容",
                 "StrategyStatus": 3,

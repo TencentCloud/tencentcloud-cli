@@ -311,6 +311,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点地址。",
+          "example": "广东省清远市清城区清晖南路腾讯清城云计算数据中心",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

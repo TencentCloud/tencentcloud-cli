@@ -301,6 +301,13 @@
       "output": "DescribeIsMeasureGrayUinResponse",
       "status": "online"
     },
+    "DescribeMeasureDeductionDetailFlow": {
+      "document": "管理端查询计量抵扣详情",
+      "input": "DescribeMeasureDeductionDetailFlowRequest",
+      "name": "查询计量抵扣明细流水",
+      "output": "DescribeMeasureDeductionDetailFlowResponse",
+      "status": "online"
+    },
     "DescribeMeasureDeductionDetails": {
       "document": "查询计量抵扣详情",
       "input": "DescribeMeasureDeductionDetailsRequest",
@@ -15129,6 +15136,97 @@
       ],
       "type": "object"
     },
+    "DescribeMeasureDeductionDetailFlowRequest": {
+      "document": "DescribeMeasureDeductionDetailFlow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前页大小",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源包产品Code一层 -- 以上查询字段必须至少填一个",
+          "example": "\"p_trade_t_s\"",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "抵扣起始时间",
+          "example": "\"2024-12-03 02:04:23\"",
+          "member": "string",
+          "name": "DeductionTimeBegin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "抵扣截止时间, 抵扣起始时间和抵扣截止时间必须同时存在，并且开始时间和结束时间需要再同一天内",
+          "example": "\"2024-12-02 02:04:23\"",
+          "member": "string",
+          "name": "DeductionTimeEnd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "游标",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源包产品Code二层，若存在，则productCode 一定要存在",
+          "example": "\"sp_trade_t_s\"",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "后付费抵扣产品一层，支持多项",
+          "example": "**",
+          "member": "string",
+          "name": "DeductionProductCodes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureDeductionDetailFlowResponse": {
+      "document": "DescribeMeasureDeductionDetailFlow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMeasureDeductionDetailsDataFlow",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMeasureDeductionDetails": {
       "document": "查询抵扣明细返回结果详情",
       "members": [
@@ -15417,6 +15515,32 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMeasureDeductionDetailsDataFlow": {
+      "document": "计量查询抵扣详情**流水**返回正常参数的封装",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页游标",
+          "example": "\"1\"",
+          "member": "string",
+          "name": "PageToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣详情列表",
+          "example": "无",
+          "member": "DescribeMeasureDeductionDetails",
+          "name": "Bills",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

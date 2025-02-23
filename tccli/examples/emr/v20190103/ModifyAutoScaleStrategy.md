@@ -11,6 +11,7 @@ tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
     --LoadAutoScaleStrategies.0.CalmDownTime 60 \
     --LoadAutoScaleStrategies.0.GraceDownFlag False \
     --LoadAutoScaleStrategies.0.GraceDownTime 0 \
+    --LoadAutoScaleStrategies.0.GroupId 0 \
     --LoadAutoScaleStrategies.0.LoadMetricsConditions.LoadMetrics.0.Conditions.0.CompareMethod 1 \
     --LoadAutoScaleStrategies.0.LoadMetricsConditions.LoadMetrics.0.Conditions.0.Threshold 16 \
     --LoadAutoScaleStrategies.0.LoadMetricsConditions.LoadMetrics.0.LoadMetrics AvailableVCores#root.default \
@@ -22,6 +23,7 @@ tccli emr ModifyAutoScaleStrategy --cli-unfold-argument  \
     --LoadAutoScaleStrategies.0.ProcessMethod 3 \
     --LoadAutoScaleStrategies.0.ScaleAction 2 \
     --LoadAutoScaleStrategies.0.ScaleNum 2 \
+    --LoadAutoScaleStrategies.0.Soft yarn \
     --LoadAutoScaleStrategies.0.StrategyId 1521 \
     --LoadAutoScaleStrategies.0.StrategyName 负载缩容 \
     --LoadAutoScaleStrategies.0.StrategyStatus 3 \

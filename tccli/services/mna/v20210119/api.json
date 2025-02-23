@@ -1650,13 +1650,13 @@
         },
         {
           "disabled": false,
-          "document": "流量包ID，仅当付费模式为流量包类型时才有。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流量包ID，仅当付费模式为流量包类型时才有。",
           "example": "res-1",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1871,13 +1871,13 @@
         },
         {
           "disabled": false,
-          "document": "购买时间，Unix时间戳格式，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买时间，Unix时间戳格式，单位：秒",
           "example": "1697181612",
           "member": "int64",
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3600,14 +3600,14 @@
         },
         {
           "disabled": false,
-          "document": "分组描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分组描述",
           "example": "\"description for group\"",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3628,47 +3628,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "硬件序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬件序列号",
           "example": "AN",
           "member": "string",
           "name": "SN",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "license计费模式：\n1，租户付费\n2，厂商月付费\n3，厂商永久授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license计费模式：\n1，租户付费\n2，厂商月付费\n3，厂商永久授权",
           "example": "1",
           "member": "int64",
           "name": "LicenseChargingMode",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备描述",
           "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "硬件ID，入参无需传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬件ID，入参无需传递",
           "example": "cpe-9oii2ew1z4",
           "member": "string",
           "name": "HardwareId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3678,143 +3678,143 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备ID",
           "example": "mna-dev1",
           "member": "string",
           "name": "DeviceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备名称",
           "example": "dev-name",
           "member": "string",
           "name": "DeviceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活时间",
           "example": "1676800844",
           "member": "string",
           "name": "ActiveTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后在线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后在线时间",
           "example": "1676800844",
           "member": "string",
           "name": "LastOnlineTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "厂商备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "厂商备注",
           "example": "厂商备注",
           "member": "string",
           "name": "VendorDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权\n注：后续将废弃此参数，新接入请使用LicensePayMode和Payer\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权\n注：后续将废弃此参数，新接入请使用LicensePayMode和Payer",
           "example": "1",
           "member": "int64",
           "name": "LicenseChargingMode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "1676800844",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "硬件序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "硬件序列号",
           "example": "AN",
           "member": "string",
           "name": "SN",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "license授权有效期 \n0：月度授权 \n1：永久授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "license授权有效期 \n0：月度授权 \n1：永久授权",
           "example": "0",
           "member": "int64",
           "name": "LicensePayMode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "付费方 \n0：客户付费 \n1：厂商付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "付费方 \n0：客户付费 \n1：厂商付费",
           "example": "1",
           "member": "int64",
           "name": "Payer",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备分组ID",
           "example": "\"group-1\"",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备分组名称",
           "example": "\"g-name\"",
           "member": "string",
           "name": "GroupName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备无流量包处理方式，0: 按量付费，1: 截断加速\t",
           "example": "0",
           "member": "int64",
           "name": "FlowTrunc",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3890,14 +3890,14 @@
         },
         {
           "disabled": false,
-          "document": "互通规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "互通规则描述",
           "example": "this is descript",
           "member": "string",
           "name": "Description",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3947,29 +3947,29 @@
           "example": "1662622200",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务指标（bps/ms/%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务指标（bps/ms/%）",
           "example": "1.0",
           "member": "float",
           "name": "BusinessMetrics",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网卡状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡状态信息",
           "example": "无",
           "member": "SlotNetInfo",
           "name": "SlotNetInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4260,33 +4260,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "网卡名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡名",
           "example": "\"eth0\"",
           "member": "string",
           "name": "NetInfoName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "公网IP",
           "example": "\"xxx.xxx.xx.xxx\"",
           "member": "string",
           "name": "PublicIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指标数据（bps/ms/%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标数据（bps/ms/%）",
           "example": "2.3",
           "member": "float",
           "name": "Current",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4702,13 +4702,13 @@
         },
         {
           "disabled": false,
-          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "激活时间",
           "example": "1680019225",
           "member": "string",
           "name": "ActiveTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4742,13 +4742,13 @@
         },
         {
           "disabled": false,
-          "document": "最后在线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后在线时间",
           "example": "1680019225",
           "member": "string",
           "name": "LastOnlineTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

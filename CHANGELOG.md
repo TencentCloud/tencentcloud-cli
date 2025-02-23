@@ -1,3 +1,89 @@
+# Release 3.0.1159.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 83 次发布
+
+发布时间：2025-02-24 01:11:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMeasureDeductionDetailFlow](http://document.tencentcloudapi.woa.com/document/product/555/85844)
+
+新增数据结构：
+
+* [DescribeMeasureDeductionDetailsDataFlow](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetailsDataFlow)
+
+
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 13 次发布
+
+发布时间：2025-02-24 01:13:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeConcurrentPackages](http://document.tencentcloudapi.woa.com/document/product/1710/84798)
+
+	* 新增入参：ConcurrentCategory
+
+
+
+
+## 专线接入(dc) 版本：2018-04-10
+
+### 第 11 次发布
+
+发布时间：2025-02-24 01:27:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AccessPoint](http://document.tencentcloudapi.woa.com/document/product/216/18418#AccessPoint)
+
+	* 新增成员：Address
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 80 次发布
+
+发布时间：2025-02-24 01:33:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyResource](http://document.tencentcloudapi.woa.com/document/product/589/85602)
+
+	* <font color="#dd0000">**修改入参**：</font>ResourceId
+
+
+修改数据结构：
+
+* [LoadAutoScaleStrategy](http://document.tencentcloudapi.woa.com/document/product/589/33981#LoadAutoScaleStrategy)
+
+	* 新增成员：SoftDeployDesc, ServiceNodeDesc, ServiceNodeInfo, SoftDeployInfo, GroupId, Soft
+
+
+
+
 # Release 3.0.1158.1
 
 ## 费用中心(billing) 版本：2018-07-09

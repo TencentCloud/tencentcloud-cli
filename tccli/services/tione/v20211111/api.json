@@ -21,6 +21,13 @@
       "output": "CreateModelServiceResponse",
       "status": "online"
     },
+    "CreateModelServicePodUrl": {
+      "document": "创建模型服务实例登录URL",
+      "input": "CreateModelServicePodUrlRequest",
+      "name": "创建模型服务实例登录URL",
+      "output": "CreateModelServicePodUrlResponse",
+      "status": "online"
+    },
     "CreateNotebook": {
       "document": "创建Notebook",
       "input": "CreateNotebookRequest",
@@ -33,6 +40,13 @@
       "input": "CreatePresignedNotebookUrlRequest",
       "name": "生成Notebook访问链接",
       "output": "CreatePresignedNotebookUrlResponse",
+      "status": "online"
+    },
+    "CreatePrivateLink": {
+      "document": "用于创建用户VPC到TIONE的私有连接通道",
+      "input": "CreatePrivateLinkRequest",
+      "name": "创建私有连接",
+      "output": "CreatePrivateLinkResponse",
       "status": "online"
     },
     "CreateTrainingModel": {
@@ -68,6 +82,13 @@
       "input": "DeleteNotebookRequest",
       "name": "删除Notebook",
       "output": "DeleteNotebookResponse",
+      "status": "online"
+    },
+    "DeletePrivateLink": {
+      "document": "用于删除用户VPC到TIONE的私有连接通道",
+      "input": "DeletePrivateLinkRequest",
+      "name": "删除私有连接",
+      "output": "DeletePrivateLinkResponse",
       "status": "online"
     },
     "DeleteTrainingModel": {
@@ -182,11 +203,25 @@
       "output": "DescribeModelServiceGroupsResponse",
       "status": "online"
     },
+    "DescribeModelServiceHistory": {
+      "document": "展示服务的历史版本",
+      "input": "DescribeModelServiceHistoryRequest",
+      "name": "展示服务的历史版本",
+      "output": "DescribeModelServiceHistoryResponse",
+      "status": "online"
+    },
     "DescribeModelServiceHotUpdated": {
       "document": "用于查询模型服务能否开启热更新",
       "input": "DescribeModelServiceHotUpdatedRequest",
       "name": "查询模型服务能否开启热更新",
       "output": "DescribeModelServiceHotUpdatedResponse",
+      "status": "online"
+    },
+    "DescribeModelServices": {
+      "document": "查询多个服务",
+      "input": "DescribeModelServicesRequest",
+      "name": "查询多个服务",
+      "output": "DescribeModelServicesResponse",
       "status": "online"
     },
     "DescribeNotebook": {
@@ -201,6 +236,13 @@
       "input": "DescribeNotebooksRequest",
       "name": "Notebook列表",
       "output": "DescribeNotebooksResponse",
+      "status": "online"
+    },
+    "DescribePlatformImages": {
+      "document": "查询平台镜像信息",
+      "input": "DescribePlatformImagesRequest",
+      "name": "查询平台镜像信息",
+      "output": "DescribePlatformImagesResponse",
       "status": "online"
     },
     "DescribeTrainingModelVersion": {
@@ -245,11 +287,46 @@
       "output": "ModifyModelServiceResponse",
       "status": "online"
     },
+    "ModifyModelServiceAuthorization": {
+      "document": "修改服务鉴权配置",
+      "input": "ModifyModelServiceAuthorizationRequest",
+      "name": "修改服务鉴权配置",
+      "output": "ModifyModelServiceAuthorizationResponse",
+      "status": "online"
+    },
+    "ModifyModelServicePartialConfig": {
+      "document": "增量更新在线推理服务的部分配置，不更新的配置项不需要传入",
+      "input": "ModifyModelServicePartialConfigRequest",
+      "name": "增量修改模型服务",
+      "output": "ModifyModelServicePartialConfigResponse",
+      "status": "online"
+    },
+    "ModifyServiceGroupWeights": {
+      "document": "更新推理服务组流量分配",
+      "input": "ModifyServiceGroupWeightsRequest",
+      "name": "更新推理服务组流量分配",
+      "output": "ModifyServiceGroupWeightsResponse",
+      "status": "online"
+    },
+    "ModifyTags": {
+      "document": "编辑模型服务的标签",
+      "input": "ModifyTagsRequest",
+      "name": "编辑模型服务的标签",
+      "output": "ModifyTagsResponse",
+      "status": "online"
+    },
     "PushTrainingMetrics": {
       "document": "上报训练自定义指标",
       "input": "PushTrainingMetricsRequest",
       "name": "上报训练自定义指标",
       "output": "PushTrainingMetricsResponse",
+      "status": "online"
+    },
+    "RebuildModelServicePod": {
+      "document": "重建模型服务中的单个Pod",
+      "input": "RebuildModelServicePodRequest",
+      "name": "重建模型服务Pod",
+      "output": "RebuildModelServicePodResponse",
       "status": "online"
     },
     "StartNotebook": {
@@ -823,6 +900,52 @@
       ],
       "type": "object"
     },
+    "CreateModelServicePodUrlRequest": {
+      "document": "CreateModelServicePodUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务id",
+          "example": "ms-xxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "pod 名称",
+          "example": "ms-xxx-xxx-xxx",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelServicePodUrlResponse": {
+      "document": "CreateModelServicePodUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod 登陆url",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateModelServiceRequest": {
       "document": "CreateModelService请求参数结构体",
       "members": [
@@ -1063,7 +1186,7 @@
         {
           "disabled": false,
           "document": "回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)",
-          "example": "无",
+          "example": "http://callback.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -1072,7 +1195,7 @@
         {
           "disabled": false,
           "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ModelTurboEnable",
           "required": false,
@@ -1081,7 +1204,7 @@
         {
           "disabled": false,
           "document": "服务分类",
-          "example": "无",
+          "example": "Normal",
           "member": "string",
           "name": "ServiceCategory",
           "required": false,
@@ -1090,7 +1213,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
-          "example": "无",
+          "example": "sleep 36000",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -1108,7 +1231,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
-          "example": "无",
+          "example": "c2xlZXAgMzYwMDA=",
           "member": "string",
           "name": "CommandBase64",
           "required": false,
@@ -1117,7 +1240,7 @@
         {
           "disabled": false,
           "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
-          "example": "无",
+          "example": "8501",
           "member": "int64",
           "name": "ServicePort",
           "required": false,
@@ -1149,13 +1272,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "生成的模型服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生成的模型服务",
           "example": "无",
           "member": "Service",
           "name": "Service",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1438,6 +1561,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateLinkRequest": {
+      "document": "CreatePrivateLink请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组ID",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户VpcId",
+          "example": "vpc-314xh0ko",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户SubnetId",
+          "example": "subnet-8ra6pdq7",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateLinkResponse": {
+      "document": "CreatePrivateLink返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2804,6 +2972,51 @@
       ],
       "type": "object"
     },
+    "DeletePrivateLinkRequest": {
+      "document": "DeletePrivateLink请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组ID",
+          "example": "ms-xy865io0",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户VpcId",
+          "example": "vpc-314xh0ko",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户SubnetId",
+          "example": "subnet-8ra6pdq7",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateLinkResponse": {
+      "document": "DeletePrivateLink返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTrainingModelRequest": {
       "document": "DeleteTrainingModel请求参数结构体",
       "members": [
@@ -2900,7 +3113,7 @@
         {
           "disabled": false,
           "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
-          "example": "[]",
+          "example": "[{Name: \"InstanceStatus\", Values: [\"RUNNING\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3831,6 +4044,53 @@
       ],
       "type": "object"
     },
+    "DescribeModelServiceHistoryRequest": {
+      "document": "DescribeModelServiceHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务Id",
+          "example": "ms-xyz11",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServiceHistoryResponse": {
+      "document": "DescribeModelServiceHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "历史版本总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceHistory",
+          "name": "ServiceHistory",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeModelServiceHotUpdatedRequest": {
       "document": "DescribeModelServiceHotUpdated请求参数结构体",
       "members": [
@@ -3942,6 +4202,98 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServicesRequest": {
+      "document": "DescribeModelServices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出列表的排列顺序。取值范围：ASC：升序排列 DESC：降序排列",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，支持的分页过滤Name包括：\n[\"ClusterId\", \"ServiceId\", \"ServiceGroupName\", \"ServiceGroupId\",\"Status\",\"CreatedBy\",\"ModelId\"]",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤参数",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelServicesResponse": {
+      "document": "DescribeModelServices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Service",
+          "name": "Services",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4072,6 +4424,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformImagesRequest": {
+      "document": "DescribePlatformImages请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePlatformImagesResponse": {
+      "document": "DescribePlatformImages返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4833,6 +5202,23 @@
       ],
       "usage": "both"
     },
+    "ImageUrl": {
+      "document": "多模态对话图片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片url",
+          "example": "https://cos-bucket.cos.ap-guangzhou.myqcloud.com/TI-ONE-release/IMG.jpg",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InferCodeInfo": {
       "document": "推理代码的信息",
       "members": [
@@ -5145,7 +5531,7 @@
         {
           "disabled": false,
           "document": "计费项特性列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"COS\",\"CBS\",\"RDMA\",\"CFS\"]",
           "member": "string",
           "name": "SpecFeatures",
           "output_required": false,
@@ -5175,7 +5561,7 @@
         {
           "disabled": false,
           "document": "部署失败错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "RegisterJobNetworkError",
           "member": "string",
           "name": "ErrCode",
           "output_required": false,
@@ -5185,7 +5571,7 @@
         {
           "disabled": false,
           "document": "部署失败错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "registernode job noderegister-ins-fczfco95 network connect failed",
           "member": "string",
           "name": "ErrMsg",
           "output_required": false,
@@ -5331,8 +5717,19 @@
           "member": "string",
           "name": "Content",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多模态对话输入内容，Content与MultiModalContents两者只需要填写其中一个即可，当对话中包含多模态对话信息时，则填写本参数",
+          "example": "无",
+          "member": "MultiModalContent",
+          "name": "MultiModalContents",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -6008,6 +6405,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型的类别 多模态MultiModal, 文本大模型 LLM",
+          "example": "MultiModal",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6153,6 +6561,97 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyModelServiceAuthorizationRequest": {
+      "document": "ModifyModelServiceAuthorization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组Id",
+          "example": "ms-xxffs23",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启鉴权,true表示开启",
+          "example": "无",
+          "member": "bool",
+          "name": "AuthorizationEnable",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServiceAuthorizationResponse": {
+      "document": "ModifyModelServiceAuthorization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServicePartialConfigRequest": {
+      "document": "ModifyModelServicePartialConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在线推理服务Id，需已存在",
+          "example": "ms-gwc8j2d5-1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新后服务不重启，定时停止的配置",
+          "example": "无",
+          "member": "ScheduledAction",
+          "name": "ScheduledAction",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "更新后服务不重启，服务对应限流限频配置",
+          "example": "无",
+          "member": "ServiceLimit",
+          "name": "ServiceLimit",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModelServicePartialConfigResponse": {
+      "document": "ModifyModelServicePartialConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "被修改后的服务配置",
+          "example": "无",
+          "member": "Service",
+          "name": "Service",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyModelServiceRequest": {
       "document": "ModifyModelService请求参数结构体",
@@ -6340,7 +6839,7 @@
         {
           "disabled": false,
           "document": "是否开启模型的加速, 仅对StableDiffusion(动态加速)格式的模型有效。默认不开启",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "ModelTurboEnable",
           "required": false,
@@ -6349,7 +6848,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，如遇特殊字符导致配置失败，可使用CommandBase64参数",
-          "example": "无",
+          "example": "sleep 36000",
           "member": "string",
           "name": "Command",
           "required": false,
@@ -6367,7 +6866,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令，以base64格式进行输入，与Command同时配置时，仅当前参数生效",
-          "example": "无",
+          "example": "c2xlZXAgMzYwMDA=",
           "member": "string",
           "name": "CommandBase64",
           "required": false,
@@ -6376,7 +6875,7 @@
         {
           "disabled": false,
           "document": "服务端口，仅在非内置镜像时生效，默认8501。不支持输入8501-8510,6006,9092",
-          "example": "无",
+          "example": "8501",
           "member": "int64",
           "name": "ServicePort",
           "required": false,
@@ -6385,7 +6884,7 @@
         {
           "disabled": false,
           "document": "单副本下的实例数，仅在部署类型为DIST时生效，默认1",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "InstancePerReplicas",
           "required": false,
@@ -6415,6 +6914,136 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyServiceGroupWeightsRequest": {
+      "document": "ModifyServiceGroupWeights请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组id",
+          "example": "ms-xyz123",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权重设置",
+          "example": "无",
+          "member": "WeightEntry",
+          "name": "Weights",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceGroupWeightsResponse": {
+      "document": "ModifyServiceGroupWeights返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新权重后的服务组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceGroup",
+          "name": "ServiceGroup",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagsRequest": {
+      "document": "ModifyTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型服务的服务组id",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签数组",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务分类, 默认不填,TAIJI_HY表示混元大模型服务",
+          "example": "TAIJI_HY",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTagsResponse": {
+      "document": "ModifyTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MultiModalContent": {
+      "document": "多模态对话内容,支持图片与文字信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话类型，text表示文本对话内容，image_url表示图片对话内容",
+          "example": "text",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文本对话内容，当Type为text时需要填写该值",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片对话内容，当Type为image_url时需要填写该值",
+          "example": "无",
+          "member": "ImageUrl",
+          "name": "ImageUrl",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "NotebookDetail": {
       "document": "类型NotebookDetail",
@@ -6818,6 +7447,46 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调度节点ID",
+          "example": "ins-pow5jmtf",
+          "member": "string",
+          "name": "ResourceGroupInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子用户名称",
+          "example": "username",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务实例创建时间",
+          "example": "2024-11-14T16:58:00+08",
+          "member": "string",
+          "name": "JobCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1256704107",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7094,6 +7763,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子用户名称",
+          "example": "username",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1256704107",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7194,7 +7883,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Container",
@@ -7225,6 +7914,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例的状态信息",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7255,7 +7955,7 @@
         {
           "disabled": false,
           "document": "pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -7265,7 +7965,7 @@
         {
           "disabled": false,
           "document": "pod启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-11T18:36:50+08",
           "member": "string",
           "name": "StartTime",
           "output_required": false,
@@ -7275,7 +7975,7 @@
         {
           "disabled": false,
           "document": "pod结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-12-11T18:36:50+08",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -7285,7 +7985,7 @@
         {
           "disabled": false,
           "document": "pod资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{                             \"Role\": \"WORKER\",                             \"Cpu\": 180000,                             \"Memory\": 921600,                             \"GpuType\": \"HCC-A100\",                             \"Gpu\": 800,                             \"InstanceType\": \"\",                             \"InstanceTypeAlias\": \"\",                             \"InstanceNum\": 2,                             \"RDMAConfig\": {                                 \"Enable\": true                             },                             \"ExtendedResourceList\": {},                             \"ArchType\": \"\"                         }",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfo",
           "output_required": false,
@@ -7398,6 +8098,51 @@
         }
       ],
       "usage": "both"
+    },
+    "RebuildModelServicePodRequest": {
+      "document": "RebuildModelServicePod请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务组ID",
+          "example": "ms-testtest",
+          "member": "string",
+          "name": "ServiceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID",
+          "example": "ms-testtest-0",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pod名称",
+          "example": "ms-6mksmt2v-2-b5bcd864f-48bnc",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebuildModelServicePodResponse": {
+      "document": "RebuildModelServicePod返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResourceConf": {
       "document": "Notebook资源参数",
@@ -8614,6 +9359,62 @@
       ],
       "usage": "out"
     },
+    "ServiceHistory": {
+      "document": "服务历史版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v12",
+          "member": "string",
+          "name": "Revision",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-21",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccr.ccs.tencentyun.com/demo/demo:1.0",
+          "member": "string",
+          "name": "Image",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "image.file",
+          "member": "string",
+          "name": "ModelFile",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "原始yaml文件",
+          "member": "string",
+          "name": "RawData",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ServiceInfo": {
       "document": "推理服务在集群中的信息",
       "members": [
@@ -8806,6 +9607,17 @@
         },
         {
           "disabled": false,
+          "document": "服务的规格别名",
+          "example": "8核40GB V100*1",
+          "member": "string",
+          "name": "InstanceAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "实例数量调节方式,默认为手动\n支持：自动 - \"AUTO\", 手动 - \"MANUAL\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AUTO",
           "member": "string",
@@ -8928,7 +9740,7 @@
         {
           "disabled": false,
           "document": "服务的启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "sleep 36000",
           "member": "string",
           "name": "Command",
           "output_required": false,
@@ -8950,7 +9762,7 @@
         {
           "disabled": false,
           "document": "服务端口，默认为8501\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8501",
           "member": "int64",
           "name": "ServicePort",
           "output_required": false,
@@ -9057,7 +9869,7 @@
         {
           "disabled": false,
           "document": "当前资源售罄时，可用的区域有哪些",
-          "example": "[]",
+          "example": "[\"ap-beijing\"]",
           "member": "string",
           "name": "AvailableRegion",
           "output_required": true,
@@ -9067,7 +9879,7 @@
         {
           "disabled": false,
           "document": "当前计费项支持的特性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"CFS\",\"COS\"]",
           "member": "string",
           "name": "SpecFeatures",
           "output_required": false,
@@ -9837,6 +10649,16 @@
         },
         {
           "disabled": false,
+          "document": "创建者名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "地域",
           "example": "ap-shenzhen",
           "member": "string",
@@ -10264,7 +11086,7 @@
         {
           "disabled": false,
           "document": "预付费专用资源组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rsg-xxxxx",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": true,
@@ -10274,7 +11096,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "[]",
+          "example": "[                             {                                 \"Role\": \"WORKER\",                                 \"Cpu\": 1000,                                 \"Memory\": 1024,                                 \"GpuType\": \"\",                                 \"Gpu\": 0,                                 \"InstanceType\": \"\",                                 \"InstanceTypeAlias\": \"\",                                 \"InstanceNum\": 1,                                 \"RDMAConfig\": {                                     \"Enable\": false                                 },                                 \"ExtendedResourceList\": {},                                 \"ArchType\": \"\"                             }                         ]",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "output_required": true,
@@ -10414,7 +11236,7 @@
         {
           "disabled": false,
           "document": "标签配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"test\":\"test\"]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -10493,6 +11315,32 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WeightEntry": {
+      "document": "服务的权重",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务id",
+          "example": "ms-xy1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量权重值，同 ServiceGroup 下 总和应为 100",
+          "example": "50",
+          "member": "uint64",
+          "name": "Weight",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
