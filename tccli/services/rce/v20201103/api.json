@@ -176,8 +176,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据委托方、需求方：客户主体名称。\n\n示例值：某某有限公司。",
-          "example": "无",
+          "document": "数据委托方、需求方：客户主体名称。",
+          "example": "某某有限公司",
           "member": "string",
           "name": "DataProviderName",
           "required": true,
@@ -185,8 +185,8 @@
         },
         {
           "disabled": false,
-          "document": "数据受托方、提供方：腾讯云主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司\n\n示例值：腾讯云计算（北京）有限责任公司",
-          "example": "无",
+          "document": "数据受托方、提供方：腾讯云主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司",
+          "example": "腾讯云计算（北京）有限责任公司",
           "member": "string",
           "name": "DataRecipientName",
           "required": true,
@@ -194,8 +194,8 @@
         },
         {
           "disabled": false,
-          "document": "客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。\n\n1-手机号；\n\n2-微信开放账号；\n\n3-QQ开放账号；\n\n4-IP地址；\n\n999-其它；\n\n示例值：[1, 4]",
-          "example": "无",
+          "document": "客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。\n\n1-手机号；\n\n2-微信开放账号；\n\n3-QQ开放账号；\n\n4-IP地址；\n\n999-其它；",
+          "example": "[1, 4]",
           "member": "uint64",
           "name": "UserDataType",
           "required": true,
@@ -203,8 +203,8 @@
         },
         {
           "disabled": false,
-          "document": "客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息\n1-已授权；其它值为未授权。\n示例值：1",
-          "example": "无",
+          "document": "客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息\n1-已授权；其它值为未授权。",
+          "example": "1",
           "member": "uint64",
           "name": "IsAuthorize",
           "required": true,
@@ -212,8 +212,8 @@
         },
         {
           "disabled": false,
-          "document": "客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。\n1-已授权；其它值为未授权。\n示例值：1",
-          "example": "无",
+          "document": "客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。\n1-已授权；其它值为未授权。",
+          "example": "1",
           "member": "uint64",
           "name": "IsOrderHandling",
           "required": false,
@@ -221,8 +221,8 @@
         },
         {
           "disabled": false,
-          "document": "客户获得的用户授权期限时间戳（单位秒）。\n\n不填默认无固定期限。\n\n示例值：1719805604",
-          "example": "无",
+          "document": "客户获得的用户授权期限时间戳（单位秒）。\n\n不填默认无固定期限。",
+          "example": "1719805604",
           "member": "uint64",
           "name": "AuthorizationTerm",
           "required": false,
@@ -230,8 +230,8 @@
         },
         {
           "disabled": false,
-          "document": "\t\n客户获得用户授权所依赖的协议地址。\n\n示例值：https://www.*****.com/*",
-          "example": "无",
+          "document": "\t\n客户获得用户授权所依赖的协议地址。",
+          "example": "https://www.*****.com/*",
           "member": "string",
           "name": "PrivacyPolicyLink",
           "required": false,
@@ -239,8 +239,8 @@
         },
         {
           "disabled": false,
-          "document": "是否是用户个人敏感数据（不推荐使用）。\n\n固定填：1。\n\n示例值：1",
-          "example": "无",
+          "document": "是否是用户个人敏感数据（不推荐使用）。\n\n固定填：1。",
+          "example": "1",
           "member": "uint64",
           "name": "IsPersonalData",
           "required": false,
@@ -255,7 +255,7 @@
         {
           "disabled": false,
           "document": "名单数据内容",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "DataContent",
           "required": false,
@@ -264,7 +264,7 @@
         {
           "disabled": false,
           "document": "名单数据描述",
-          "example": "无",
+          "example": "手机号",
           "member": "string",
           "name": "DataRemark",
           "required": false,
@@ -272,8 +272,8 @@
         },
         {
           "disabled": false,
-          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "名单数据开始时间",
+          "example": "2025-02-13 12:11:12",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -281,8 +281,8 @@
         },
         {
           "disabled": false,
-          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "名单数据结束时间",
+          "example": "2025-02-13 12:11:12",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -616,7 +616,7 @@
         {
           "disabled": false,
           "document": "名单名称",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "ListName",
           "required": true,
@@ -625,7 +625,7 @@
         {
           "disabled": false,
           "document": "名单类型 [1 黑名单 2白名单]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ListType",
           "required": true,
@@ -634,7 +634,7 @@
         {
           "disabled": false,
           "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DataType",
           "required": true,
@@ -643,7 +643,7 @@
         {
           "disabled": false,
           "document": "记录状态 [1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -652,7 +652,7 @@
         {
           "disabled": false,
           "document": "关联场景ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "EventId",
           "required": false,
@@ -661,7 +661,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "手机号名单",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -670,7 +670,7 @@
         {
           "disabled": false,
           "document": "数据来源，固定传2（手工录入）",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "DataSource",
           "required": false,
@@ -679,7 +679,7 @@
         {
           "disabled": false,
           "document": "保存在cos中key名",
-          "example": "无",
+          "example": "aba***md",
           "member": "string",
           "name": "FileCode",
           "required": false,
@@ -688,7 +688,7 @@
         {
           "disabled": false,
           "document": "需要保存的数据内容用 ; 分割",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "DataContent",
           "required": false,
@@ -697,7 +697,7 @@
         {
           "disabled": false,
           "document": "加密类型[0 无需加密 1 MD5加密 2 SHA256加密]",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "EncryptionType",
           "required": false,
@@ -706,7 +706,7 @@
         {
           "disabled": false,
           "document": "场景Code，all_scene代表全部场景",
-          "example": "无",
+          "example": "e_activity_antirush",
           "member": "string",
           "name": "SceneCode",
           "required": false,
@@ -721,32 +721,29 @@
         {
           "disabled": false,
           "document": "是否授权：1已授权，否则未授权。\n 调用全栈式风控引擎接口服务时，客户需先明确授权\n\n",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "IsAuthorized",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "加密类型：1AES加密\n",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "CryptoType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "加密内容，非空时接口采用加密模式。",
-          "example": "无",
+          "example": "tLMs/D/1SHZD/****************OoqdlZRQk8mmQJTUiY3xLw=",
           "member": "string",
           "name": "CryptoContent",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -757,7 +754,7 @@
         {
           "disabled": false,
           "document": "黑白名单数据ID集合",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListDataIdList",
           "required": true,
@@ -772,7 +769,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "required": true,
@@ -780,8 +777,8 @@
         },
         {
           "disabled": false,
-          "document": "名单状态",
-          "example": "无",
+          "document": "名单状态（已废弃）",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
@@ -796,7 +793,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "required": true,
@@ -805,7 +802,7 @@
         {
           "disabled": false,
           "document": "当前页数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
@@ -814,7 +811,7 @@
         {
           "disabled": false,
           "document": "每页显示条数\t",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -823,7 +820,7 @@
         {
           "disabled": false,
           "document": "搜索关键字，按照名单数据名称或加密名单数据名称搜索",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "KeyWord",
           "required": false,
@@ -832,7 +829,7 @@
         {
           "disabled": false,
           "document": "黑白名单列表状态[1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -847,7 +844,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "required": true,
@@ -862,7 +859,7 @@
         {
           "disabled": false,
           "document": "当前页数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
@@ -871,7 +868,7 @@
         {
           "disabled": false,
           "document": "每页显示条数",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -880,7 +877,7 @@
         {
           "disabled": false,
           "document": "关联场景ID",
-          "example": "无",
+          "example": "101",
           "member": "int64",
           "name": "EventId",
           "required": false,
@@ -889,7 +886,7 @@
         {
           "disabled": false,
           "document": "名单类型 [1 黑名单 2 白名单]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ListType",
           "required": false,
@@ -898,7 +895,7 @@
         {
           "disabled": false,
           "document": "数据类型[1 手机号 2 qqOpenId 3 wechatOpenId 4 ip 6 idfa 7 imei]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DataType",
           "required": false,
@@ -907,7 +904,7 @@
         {
           "disabled": false,
           "document": "关键字，按照名单名称搜索",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "KeyWord",
           "required": false,
@@ -916,7 +913,7 @@
         {
           "disabled": false,
           "document": "记录状态[1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -925,7 +922,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "required": false,
@@ -940,22 +937,20 @@
         {
           "disabled": false,
           "document": "字段名称",
-          "example": "",
+          "example": "openBuyTime",
           "member": "string",
           "name": "FieldName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "字段值",
-          "example": "",
+          "example": "1739268000000",
           "member": "string",
           "name": "FieldValue",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -966,7 +961,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "required": true,
@@ -975,7 +970,7 @@
         {
           "disabled": false,
           "document": "数据来源，固定传2（手工录入）",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "DataSource",
           "required": true,
@@ -984,7 +979,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -993,7 +988,7 @@
         {
           "disabled": false,
           "document": "记录状态 [-2 已删除 -1 草稿箱 0 草稿 1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1002,7 +997,7 @@
         {
           "disabled": false,
           "document": "文件字符串key",
-          "example": "无",
+          "example": "aba***md",
           "member": "string",
           "name": "FileCode",
           "required": false,
@@ -1011,7 +1006,7 @@
         {
           "disabled": false,
           "document": "数据内容",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "DataContent",
           "required": false,
@@ -1248,7 +1243,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "required": true,
@@ -1257,7 +1252,7 @@
         {
           "disabled": false,
           "document": "名单名称",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "ListName",
           "required": false,
@@ -1266,7 +1261,7 @@
         {
           "disabled": false,
           "document": "名单类型[1 黑名单 2 白名单]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ListType",
           "required": false,
@@ -1275,7 +1270,7 @@
         {
           "disabled": false,
           "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DataType",
           "required": false,
@@ -1284,7 +1279,7 @@
         {
           "disabled": false,
           "document": "名单状态 [1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1293,7 +1288,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1308,7 +1303,7 @@
         {
           "disabled": false,
           "document": "名单数据ID",
-          "example": "无",
+          "example": "10010",
           "member": "int64",
           "name": "NameListDataId",
           "required": true,
@@ -1317,7 +1312,7 @@
         {
           "disabled": false,
           "document": "名单数据内容",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "DataContent",
           "required": false,
@@ -1325,8 +1320,8 @@
         },
         {
           "disabled": false,
-          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "名单数据开始时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -1334,8 +1329,8 @@
         },
         {
           "disabled": false,
-          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "名单数据结束时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -1344,7 +1339,7 @@
         {
           "disabled": false,
           "document": "记录状态 [1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": false,
@@ -1353,7 +1348,7 @@
         {
           "disabled": false,
           "document": "名单数据描述",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1503,52 +1498,47 @@
         {
           "disabled": false,
           "document": "内容标签。",
-          "example": "无",
+          "example": "诈骗",
           "member": "string",
           "name": "ContentLabel",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "内容风险等级：\n0：正常。\n1：可疑。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ContentRiskLevel",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "内容产生形式：\n0：对话。\n1：广播。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "ContentType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "类型",
-          "example": "无",
+          "document": "账号类型\n1：手机号\n2：uin账号",
+          "example": "1",
           "member": "int64",
           "name": "FraudType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "账号",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "FraudAccount",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -1559,7 +1549,7 @@
         {
           "disabled": false,
           "document": "其他账号信息；\nAccountType是10004时，填入中国大陆标准11位手机号的MD5值\nAccountType是10005时，填入中国大陆标准11位手机号的SHA256值\n注释：\nMD5手机号加密方式，使用中国大陆11位手机号进行MD5加密，加密后取32位小写值。\nSHA256手机号加密方式，使用中国大陆11位手机号进行SHA256加密，加密后取64位小写值。",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "AccountId",
           "required": true,
@@ -1568,7 +1558,7 @@
         {
           "disabled": false,
           "document": "账号绑定的MD5或SHA256加密的手机号（该字段已不推荐使用）。\n注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；\n     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "MobilePhone",
           "required": false,
@@ -1577,7 +1567,7 @@
         {
           "disabled": false,
           "document": "用户设备号（该字段已不推荐使用）。",
-          "example": "无",
+          "example": "095006********************dddc39",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -1591,13 +1581,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数量",
+          "example": "100",
           "member": "int64",
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1618,7 +1608,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
@@ -1628,7 +1618,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -1638,7 +1628,7 @@
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ ]",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -1653,28 +1643,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "错误信息",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ ]",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -1690,7 +1680,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
@@ -1700,7 +1690,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -1710,7 +1700,7 @@
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ ]",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -1726,7 +1716,7 @@
         {
           "disabled": false,
           "document": "名单数据ID",
-          "example": "无",
+          "example": "10010",
           "member": "int64",
           "name": "NameListDataId",
           "output_required": true,
@@ -1736,7 +1726,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "output_required": true,
@@ -1746,7 +1736,7 @@
         {
           "disabled": false,
           "document": "客户腾讯云appid",
-          "example": "无",
+          "example": "133***23",
           "member": "uint64",
           "name": "AppId",
           "output_required": false,
@@ -1756,7 +1746,7 @@
         {
           "disabled": false,
           "document": "客户腾讯云UIN",
-          "example": "无",
+          "example": "100***99",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -1766,7 +1756,7 @@
         {
           "disabled": false,
           "document": "名单数据内容",
-          "example": "无",
+          "example": "137***98",
           "member": "string",
           "name": "DataContent",
           "output_required": true,
@@ -1776,7 +1766,7 @@
         {
           "disabled": false,
           "document": "数据来源，固定传2（手工录入）",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "DataSource",
           "output_required": true,
@@ -1785,28 +1775,28 @@
         },
         {
           "disabled": false,
-          "document": "名单数据开始时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "名单数据开始时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名单数据结束时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "名单数据结束时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "名单数据状态 [1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -1815,18 +1805,18 @@
         },
         {
           "disabled": false,
-          "document": "名单数据描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "名单数据描述",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名单数据创建时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "名单数据创建时间",
+          "example": "024-05-05 12:10:15",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -1836,7 +1826,7 @@
         {
           "disabled": false,
           "document": "来源IP",
-          "example": "无",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "CreateFrom",
           "output_required": false,
@@ -1846,7 +1836,7 @@
         {
           "disabled": false,
           "document": "更新数据客户腾讯云appid",
-          "example": "无",
+          "example": "133***23",
           "member": "uint64",
           "name": "UpdateAppid",
           "output_required": false,
@@ -1856,7 +1846,7 @@
         {
           "disabled": false,
           "document": "更新数据客户腾讯云UIN",
-          "example": "无",
+          "example": "100***99",
           "member": "string",
           "name": "UpdateUin",
           "output_required": false,
@@ -1865,8 +1855,8 @@
         },
         {
           "disabled": false,
-          "document": "名单数据更新时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "名单数据更新时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -1876,7 +1866,7 @@
         {
           "disabled": false,
           "document": "更新来源IP",
-          "example": "无",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "UpdateFrom",
           "output_required": false,
@@ -1885,13 +1875,13 @@
         },
         {
           "disabled": false,
-          "document": "加密名单数据内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "加密名单数据内容",
+          "example": "aba***md",
           "member": "string",
           "name": "EncryptDataContent",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1902,7 +1892,7 @@
         {
           "disabled": false,
           "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Count",
           "output_required": false,
@@ -1922,7 +1912,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": false,
@@ -1932,7 +1922,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -1958,7 +1948,7 @@
         {
           "disabled": false,
           "document": "名单ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "output_required": false,
@@ -1968,7 +1958,7 @@
         {
           "disabled": false,
           "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "ListName",
           "output_required": false,
@@ -1978,7 +1968,7 @@
         {
           "disabled": false,
           "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ListType",
           "output_required": false,
@@ -1988,7 +1978,7 @@
         {
           "disabled": false,
           "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DataType",
           "output_required": false,
@@ -1998,7 +1988,7 @@
         {
           "disabled": false,
           "document": "场景Code\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "e_activity_antirush",
           "member": "string",
           "name": "SceneCode",
           "output_required": false,
@@ -2008,7 +1998,7 @@
         {
           "disabled": false,
           "document": "名单列表状态 [1 启用 2 停用]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -2018,7 +2008,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "output_required": false,
@@ -2027,8 +2017,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -2037,8 +2027,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，时间格式示例\"2024-05-05 12:10:15\"\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -2048,7 +2038,7 @@
         {
           "disabled": false,
           "document": "加密类型 [0 无需加密，1 MD5加密，2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "EncryptionType",
           "output_required": false,
@@ -2064,7 +2054,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": false,
@@ -2074,7 +2064,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -2100,7 +2090,7 @@
         {
           "disabled": false,
           "document": "名单ID",
-          "example": "无",
+          "example": "1001",
           "member": "int64",
           "name": "NameListId",
           "output_required": true,
@@ -2110,7 +2100,7 @@
         {
           "disabled": false,
           "document": "客户腾讯云appid",
-          "example": "无",
+          "example": "125***72",
           "member": "uint64",
           "name": "AppId",
           "output_required": false,
@@ -2120,7 +2110,7 @@
         {
           "disabled": false,
           "document": "客户腾讯云UIN",
-          "example": "无",
+          "example": "100***99",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -2130,7 +2120,7 @@
         {
           "disabled": false,
           "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "ListName",
           "output_required": true,
@@ -2140,7 +2130,7 @@
         {
           "disabled": false,
           "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ListType",
           "output_required": true,
@@ -2150,7 +2140,7 @@
         {
           "disabled": false,
           "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "DataType",
           "output_required": true,
@@ -2160,7 +2150,7 @@
         {
           "disabled": false,
           "document": "关联场景ID",
-          "example": "无",
+          "example": "121",
           "member": "int64",
           "name": "EventId",
           "output_required": false,
@@ -2170,7 +2160,7 @@
         {
           "disabled": false,
           "document": "记录状态 [1 启用 2 停用]",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -2180,7 +2170,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "output_required": true,
@@ -2189,8 +2179,8 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "创建时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -2200,7 +2190,7 @@
         {
           "disabled": false,
           "document": "客户腾讯云更新者appid",
-          "example": "无",
+          "example": "125***72",
           "member": "uint64",
           "name": "UpdateAppid",
           "output_required": false,
@@ -2210,7 +2200,7 @@
         {
           "disabled": false,
           "document": "客户腾讯云更新者Uin",
-          "example": "无",
+          "example": "100***99",
           "member": "string",
           "name": "UpdateUin",
           "output_required": false,
@@ -2219,8 +2209,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，时间格式示例\"2024-05-05 12:10:15\"",
-          "example": "无",
+          "document": "更新时间",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
@@ -2230,7 +2220,7 @@
         {
           "disabled": false,
           "document": "有效数据/数据总数",
-          "example": "无",
+          "example": "10/20",
           "member": "string",
           "name": "EffectCount",
           "output_required": true,
@@ -2240,7 +2230,7 @@
         {
           "disabled": false,
           "document": "加密类型[0 无需加密 1 MD5加密 2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "EncryptionType",
           "output_required": false,
@@ -2250,7 +2240,7 @@
         {
           "disabled": false,
           "document": "场景Code，all_scene代表全部场景\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "all_scene",
           "member": "string",
           "name": "SceneCode",
           "output_required": false,
@@ -2266,7 +2256,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Count",
           "output_required": false,
@@ -2286,7 +2276,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": false,
@@ -2296,7 +2286,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": false,
@@ -2322,7 +2312,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Count",
           "output_required": false,
@@ -2460,7 +2450,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
@@ -2470,7 +2460,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -2480,7 +2470,7 @@
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ ]",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -2638,7 +2628,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
@@ -2648,7 +2638,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -2658,7 +2648,7 @@
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ ]",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -2674,7 +2664,7 @@
         {
           "disabled": false,
           "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
@@ -2684,7 +2674,7 @@
         {
           "disabled": false,
           "document": "错误信息",
-          "example": "无",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": true,
@@ -2694,7 +2684,7 @@
         {
           "disabled": false,
           "document": "空数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ ]",
           "member": "string",
           "name": "Value",
           "output_required": true,
@@ -2856,7 +2846,7 @@
         {
           "disabled": false,
           "document": "用于标识QQ用户登录后所关联业务自身的账号ID。",
-          "example": "无",
+          "example": "100001",
           "member": "string",
           "name": "AssociateAccount",
           "required": false,
@@ -2865,7 +2855,7 @@
         {
           "disabled": false,
           "document": "账号绑定的MD5或SHA256加密的手机号。\n注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；\n     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "MobilePhone",
           "required": false,
@@ -2874,7 +2864,7 @@
         {
           "disabled": false,
           "document": "用户设备号（已不推荐使用）。\n",
-          "example": "无",
+          "example": "095006********************dddc39",
           "member": "string",
           "name": "DeviceId",
           "required": false,
@@ -2889,7 +2879,7 @@
         {
           "disabled": false,
           "document": "助力场景建议填写：活动发起人微信OpenId。",
-          "example": "无",
+          "example": "ohmdTty_twb2************igq9",
           "member": "string",
           "name": "SponsorOpenId",
           "required": false,
@@ -2898,7 +2888,7 @@
         {
           "disabled": false,
           "document": "助力场景建议填写：发起人设备号",
-          "example": "无",
+          "example": "095006********************dddc39",
           "member": "string",
           "name": "SponsorDeviceNumber",
           "required": false,
@@ -2907,7 +2897,7 @@
         {
           "disabled": false,
           "document": "助力场景建议填写：发起人的MD5手机号",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "SponsorPhone",
           "required": false,
@@ -2916,7 +2906,7 @@
         {
           "disabled": false,
           "document": "助力场景建议填写：发起人IP",
-          "example": "无",
+          "example": "125.***.***.235",
           "member": "string",
           "name": "SponsorIp",
           "required": false,
@@ -2925,7 +2915,7 @@
         {
           "disabled": false,
           "document": "助力场景建议填写：活动链接",
-          "example": "无",
+          "example": "https://*www.***.com/",
           "member": "string",
           "name": "CampaignUrl",
           "required": false,
@@ -2940,7 +2930,7 @@
         {
           "disabled": false,
           "document": "微信的OpenId/UnionId。",
-          "example": "无",
+          "example": "ohmdTty_twb2************igq9",
           "member": "string",
           "name": "WeChatOpenId",
           "required": true,
@@ -2949,7 +2939,7 @@
         {
           "disabled": false,
           "document": "微信开放账号类型：\n1：微信公众号/微信第三方登录。\n2：微信小程序。",
-          "example": "无",
+          "example": "2",
           "member": "uint64",
           "name": "WeChatSubType",
           "required": false,
@@ -2958,7 +2948,7 @@
         {
           "disabled": false,
           "document": "随机串。如果WeChatSubType是2，该字段必填。Token签名随机数，建议16个字符。",
-          "example": "无",
+          "example": "1869ba9e74264061",
           "member": "string",
           "name": "RandStr",
           "required": false,
@@ -2967,7 +2957,7 @@
         {
           "disabled": false,
           "document": "如果WeChatSubType 是1，填入授权的 access_token（注意：不是普通 access_token，详情请参阅官方说明文档。获取网页版本的 access_token 时，scope 字段必需填写snsapi_userinfo\n如果WeChatSubType是2，填入以session_key 为密钥签名随机数RandStr（hmac_sha256签名算法）得到的字符串。",
-          "example": "无",
+          "example": "89_tP8ym_FpRC***************gWvQTBHBYDMY*********************fP5pL2XhKq4t_xPd6Js2G3S-x9xTh1eIGRk73ipGaKfobaC2M",
           "member": "string",
           "name": "WeChatAccessToken",
           "required": false,
@@ -2976,7 +2966,7 @@
         {
           "disabled": false,
           "document": "用于标识微信用户登录后所关联业务自身的账号ID。",
-          "example": "无",
+          "example": "100001",
           "member": "string",
           "name": "AssociateAccount",
           "required": false,
@@ -2985,7 +2975,7 @@
         {
           "disabled": false,
           "document": "账号绑定的MD5或SHA256加密的手机号。\n注释：支持标准中国大陆11位手机号MD5加密后位的32位小写字符串；\n     支持标准中国大陆11位手机号SHA256加密后位的64位小写字符串。",
-          "example": "无",
+          "example": "3ac9aa********************526ed9",
           "member": "string",
           "name": "MobilePhone",
           "required": false,
@@ -2994,7 +2984,7 @@
         {
           "disabled": false,
           "document": "用户设备号（已不推荐使用）。",
-          "example": "无",
+          "example": "095006********************dddc39",
           "member": "string",
           "name": "DeviceId",
           "required": false,

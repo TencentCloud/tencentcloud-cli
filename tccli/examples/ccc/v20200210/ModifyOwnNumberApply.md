@@ -8,7 +8,7 @@ Input:
 tccli ccc ModifyOwnNumberApply --cli-unfold-argument  \
     --SdkAppId 1 \
     --ApplyId 1 \
-    --Prefix 123 \
+    --Prefix 1145 \
     --DetailList.0.CallType 2 \
     --DetailList.0.PhoneNumber 02012345678 \
     --DetailList.0.MaxCallCount 1 \
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "foo-bar"
     }
 }
 ```

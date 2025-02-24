@@ -18,12 +18,12 @@ Output:
             "Message": "OK",
             "Value": {
                 "NameListId": 2446,
-                "ListName": "测试",
+                "ListName": "手机号黑名单",
                 "ListType": 1,
                 "DataType": 4,
                 "SceneCode": "all_scene",
                 "Status": 1,
-                "Remark": "测试",
+                "Remark": "手机号黑名单",
                 "CreateTime": "2024-05-22 14:58:21",
                 "UpdateTime": "2024-07-15 14:29:35",
                 "EncryptionType": 0

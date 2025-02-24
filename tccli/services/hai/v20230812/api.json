@@ -781,6 +781,15 @@
           "name": "CamRoleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义网络配置，包括VPC、子网、安全组",
+          "example": "{'VpcId': 'vpc-12345678'}",
+          "member": "PrivateNetworkConfig",
+          "name": "PrivateNetworkConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1407,6 +1416,39 @@
       ],
       "usage": "out"
     },
+    "PrivateNetworkConfig": {
+      "document": "自定义网络配置，包括VPC、子网、安全组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC ID",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-12345678",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安全组ID",
+          "example": "sg-12345678",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RegionInfo": {
       "document": "地域列表",
       "members": [
@@ -1536,6 +1578,15 @@
           "name": "CamRoleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义网络配置，包括VPC、子网、安全组",
+          "example": "{'VpcId': 'vpc-12345678'}",
+          "member": "PrivateNetworkConfig",
+          "name": "PrivateNetworkConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

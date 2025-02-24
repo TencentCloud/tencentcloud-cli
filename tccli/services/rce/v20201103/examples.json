@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rce.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNameListDetail\n<公共请求参数>\n\n{\n    \"BusinessSecurityData\": {\n        \"NameListId\": 2446\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"NameListId\": 2446,\n                \"ListName\": \"测试\",\n                \"ListType\": 1,\n                \"DataType\": 4,\n                \"SceneCode\": \"all_scene\",\n                \"Status\": 1,\n                \"Remark\": \"测试\",\n                \"CreateTime\": \"2024-05-22 14:58:21\",\n                \"UpdateTime\": \"2024-07-15 14:29:35\",\n                \"EncryptionType\": 0\n            }\n        },\n        \"RequestId\": \"bd2f3d71-9102-4c24-b581-4d4f22ebd077\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Code\": 0,\n            \"Message\": \"OK\",\n            \"Value\": {\n                \"NameListId\": 2446,\n                \"ListName\": \"手机号黑名单\",\n                \"ListType\": 1,\n                \"DataType\": 4,\n                \"SceneCode\": \"all_scene\",\n                \"Status\": 1,\n                \"Remark\": \"手机号黑名单\",\n                \"CreateTime\": \"2024-05-22 14:58:21\",\n                \"UpdateTime\": \"2024-07-15 14:29:35\",\n                \"EncryptionType\": 0\n            }\n        },\n        \"RequestId\": \"bd2f3d71-9102-4c24-b581-4d4f22ebd077\"\n    }\n}",
         "title": "查询黑白名单详情"
       }
     ],

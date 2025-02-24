@@ -56,11 +56,25 @@
       "output": "AddDomainWhiteRuleResponse",
       "status": "online"
     },
+    "AddResponsePage": {
+      "document": "添加自定义响应页面，每个用户最多允许添加5个自定义响应页面，添加完后需要审核通过才可以应用到域名。",
+      "input": "AddResponsePageRequest",
+      "name": "添加自定义响应页面",
+      "output": "AddResponsePageResponse",
+      "status": "online"
+    },
     "AddSpartaProtection": {
       "document": "添加SaaS型WAF防护域名",
       "input": "AddSpartaProtectionRequest",
       "name": "添加SaaS型WAF防护域名",
       "output": "AddSpartaProtectionResponse",
+      "status": "online"
+    },
+    "ApplyResponsePage": {
+      "document": "给域名应用自定义响应页面",
+      "input": "ApplyResponsePageRequest",
+      "name": "给域名应用自定义响应页面",
+      "output": "ApplyResponsePageResponse",
       "status": "online"
     },
     "BatchOperateUserSignatureRules": {
@@ -89,6 +103,13 @@
       "input": "CreateDealsRequest",
       "name": "计费实例创建订单",
       "output": "CreateDealsResponse",
+      "status": "online"
+    },
+    "CreateExport": {
+      "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449",
+      "input": "CreateExportRequest",
+      "name": "创建日志下载任务",
+      "output": "CreateExportResponse",
       "status": "online"
     },
     "CreateHost": {
@@ -175,6 +196,13 @@
       "output": "DeleteDomainWhiteRulesResponse",
       "status": "online"
     },
+    "DeleteExport": {
+      "document": "本接口用于删除日志下载任务",
+      "input": "DeleteExportRequest",
+      "name": "删除日志下载任务",
+      "output": "DeleteExportResponse",
+      "status": "online"
+    },
     "DeleteGlobalWhiteRule": {
       "document": "供内部运营系统调用，删除Tiga规则引擎全局白名单。",
       "input": "DeleteGlobalWhiteRuleRequest",
@@ -201,6 +229,13 @@
       "input": "DeleteIpAccessControlV2Request",
       "name": "IP黑白名单删除接口",
       "output": "DeleteIpAccessControlV2Response",
+      "status": "online"
+    },
+    "DeleteResponsePage": {
+      "document": "删除自定义响应页面，所有应用了该响应页面的域名都会自动删除该响应页面。",
+      "input": "DeleteResponsePageRequest",
+      "name": "删除自定义响应页面",
+      "output": "DeleteResponsePageResponse",
       "status": "online"
     },
     "DeleteSession": {
@@ -420,6 +455,13 @@
       "output": "DescribeDomainDetailsSaasResponse",
       "status": "online"
     },
+    "DescribeDomainResponsePage": {
+      "document": "显示指定域名的拦截页面信息",
+      "input": "DescribeDomainResponsePageRequest",
+      "name": "显示指定域名的响应页面信息",
+      "output": "DescribeDomainResponsePageResponse",
+      "status": "online"
+    },
     "DescribeDomainRules": {
       "document": "拉取域名的防护规则列表",
       "input": "DescribeDomainRulesRequest",
@@ -511,6 +553,13 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribeLogHistogram": {
+      "document": "本接口用于构建日志数量直方图",
+      "input": "DescribeLogHistogramRequest",
+      "name": "获取日志数量直方图",
+      "output": "DescribeLogHistogramResponse",
+      "status": "online"
+    },
     "DescribeModuleStatus": {
       "document": "查询各个waf基础安全模块的开关状态，看每个模块是否开启",
       "input": "DescribeModuleStatusRequest",
@@ -595,6 +644,13 @@
       "output": "DescribeProtectionModesResponse",
       "status": "online"
     },
+    "DescribeResponsePages": {
+      "document": "显示自定义响应页面列表信息。",
+      "input": "DescribeResponsePagesRequest",
+      "name": "显示自定义响应页面列表信息",
+      "output": "DescribeResponsePagesResponse",
+      "status": "online"
+    },
     "DescribeRuleLimit": {
       "document": "获取各个模块具体的规格限制",
       "input": "DescribeRuleLimitRequest",
@@ -635,6 +691,13 @@
       "input": "DescribeTopAttackDomainRequest",
       "name": "查询Top5的攻击域名",
       "output": "DescribeTopAttackDomainResponse",
+      "status": "online"
+    },
+    "DescribeTopics": {
+      "document": "本接口用于获取日志主题列表，支持分页",
+      "input": "DescribeTopicsRequest",
+      "name": "获取日志主题列表",
+      "output": "DescribeTopicsResponse",
       "status": "online"
     },
     "DescribeTsRegion": {
@@ -1153,6 +1216,13 @@
       "input": "SearchAttackLogRequest",
       "name": "搜索CLS新版本攻击日志",
       "output": "SearchAttackLogResponse",
+      "status": "online"
+    },
+    "SearchLog": {
+      "document": "本接口用于检索分析日志，使用该接口时请注意如下事项：\n1. 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。\n2. 检索语法建议使用CQL语法规则，请使用SyntaxRule参数，将值设置为1。\n3. API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
+      "input": "SearchLogRequest",
+      "name": "检索分析日志",
+      "output": "SearchLogResponse",
       "status": "online"
     },
     "SwitchDomainRules": {
@@ -2051,7 +2121,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是\"geoip,cc,owasp,ai,antileakage\"",
           "example": "cc,bot",
           "member": "string",
@@ -2121,6 +2191,15 @@
           "name": "PageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2180,15 +2259,6 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
-          "example": "2023-11-15 19:23:06",
-          "member": "string",
-          "name": "ExpireTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "策略详情",
           "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
           "member": "Strategy",
@@ -2207,11 +2277,20 @@
         },
         {
           "disabled": false,
-          "document": "放行的详情",
+          "document": "放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）",
           "example": "cc",
           "member": "string",
           "name": "Bypass",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "example": "0",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
           "type": "string"
         },
         {
@@ -2226,7 +2305,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -2331,6 +2410,78 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddResponsePageRequest": {
+      "document": "AddResponsePage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "展示的名称，长度不能超过30个字符",
+          "example": "拦截页面",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP状态码，可选的为5XX",
+          "example": "502",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP返回的Content-Type，可选的为application/json、application/html、text/html",
+          "example": "text/html",
+          "member": "string",
+          "name": "ContentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义页面的HTML代码，长度不能超过10240个字符",
+          "example": "<html>forbidden</html>",
+          "member": "string",
+          "name": "Html",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义头部信息",
+          "example": "无",
+          "member": "CustomHeader",
+          "name": "CustomHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "记录ID，新增传空；编辑则传对应ID接口",
+          "example": "\"17\"",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddResponsePageResponse": {
+      "document": "AddResponsePage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2747,6 +2898,24 @@
           "name": "GmSSLId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源",
+          "example": "0",
+          "member": "int64",
+          "name": "UpstreamPolicy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分流回源时生效，分流回源的规则。",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "member": "UpstreamRule",
+          "name": "UpstreamRules",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2762,6 +2931,34 @@
         }
       ],
       "type": "object"
+    },
+    "AnonymousInfo": {
+      "document": "免鉴权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作列表，支持trackLog(JS/HTTP上传日志  )和realtimeProducer(kafka协议上传日志)",
+          "example": "无",
+          "member": "string",
+          "name": "Operations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件列表",
+          "example": "无",
+          "member": "ConditionInfo",
+          "name": "Conditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ApiAsset": {
       "document": "api列表",
@@ -3249,6 +3446,51 @@
       ],
       "usage": "in"
     },
+    "ApplyResponsePageRequest": {
+      "document": "ApplyResponsePage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名的版本信息，可取的值sparta-waf、clb-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义响应页面的ID",
+          "example": "123",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyResponsePageResponse": {
+      "document": "ApplyResponsePage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Area": {
       "document": "地域信息",
       "members": [
@@ -3512,7 +3754,7 @@
       "document": "批量多域名黑白名单列表Ip",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "mongo表自增Id",
           "example": "64f9ad91ca22cf647117e44d",
           "member": "string",
@@ -3532,7 +3774,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "黑白名单的IP",
           "example": "1.1.1.1",
           "member": "string",
@@ -3553,7 +3795,7 @@
         },
         {
           "disabled": false,
-          "document": "添加路径",
+          "document": "batch为批量域名，batch-group为防护对象组",
           "example": "batch",
           "member": "string",
           "name": "Source",
@@ -3659,6 +3901,16 @@
           "name": "ValidStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组",
+          "example": "[11101,11102]\t",
+          "member": "uint64",
+          "name": "GroupIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5171,6 +5423,32 @@
       ],
       "usage": "out"
     },
+    "Column": {
+      "document": "日志分析的列属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列的名字",
+          "example": "_col0",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列的属性",
+          "example": "json",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CommonRspData": {
       "document": "通用返回",
       "members": [
@@ -5196,6 +5474,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ConditionInfo": {
+      "document": "免鉴权条件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件属性，目前只支持VpcID",
+          "example": "VpcID",
+          "member": "string",
+          "name": "Attributes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件规则，1:等于，2:不等于",
+          "example": "1",
+          "member": "uint64",
+          "name": "Rule",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对应条件属性的值",
+          "example": "vpc-6jfhit1t",
+          "member": "string",
+          "name": "ConditionValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CreateAccessExportRequest": {
       "document": "CreateAccessExport请求参数结构体",
@@ -5596,6 +5913,115 @@
       ],
       "type": "object"
     },
+    "CreateExportRequest": {
+      "document": "CreateExport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "ee20bb16-3025-4048-b81a-dd436373062e",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出数量,  最大值5000万",
+          "example": "100",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出检索语句，不支持<a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>",
+          "example": "status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出起始时间，毫秒时间戳",
+          "example": "1607499107000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出结束时间，毫秒时间戳",
+          "example": "1607499207000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出时间排序。desc，asc，默认为desc",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志导出数据格式。json，csv，默认为json",
+          "example": "json",
+          "member": "string",
+          "name": "Format",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语法规则,  默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "导出字段",
+          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "member": "string",
+          "name": "DerivedFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExportResponse": {
+      "document": "CreateExport返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志导出ID。",
+          "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
+          "member": "string",
+          "name": "ExportId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateHostRequest": {
       "document": "CreateHost请求参数结构体",
       "members": [
@@ -5802,6 +6228,45 @@
           "example": "21:00",
           "member": "string",
           "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomHeader": {
+      "document": "自定义拦截页面的自定义头部信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义头部Key信息",
+          "example": "uuid",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义头部Value信息",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义头部类型：default: 内置; custom: 自定义",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -6274,6 +6739,33 @@
       ],
       "type": "object"
     },
+    "DeleteExportRequest": {
+      "document": "DeleteExport请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志导出ID",
+          "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
+          "member": "string",
+          "name": "ExportId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExportResponse": {
+      "document": "DeleteExport返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteGlobalWhiteRuleRequest": {
       "document": "DeleteGlobalWhiteRule请求参数结构体",
       "members": [
@@ -6513,6 +7005,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResponsePageRequest": {
+      "document": "DeleteResponsePage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应页面的Id",
+          "example": "17",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteResponsePageResponse": {
+      "document": "DeleteResponsePage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7042,7 +7561,7 @@
         {
           "disabled": false,
           "document": "目前支持根据create_time、modify_time、id排序",
-          "example": "\"ts\"",
+          "example": "\"create_time\"",
           "member": "string",
           "name": "By",
           "required": false,
@@ -7067,7 +7586,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "[{                         \"Id\": 3200052851,                         \"Name\": \"1\",                         \"Domain\": \"www.qcloudwaf.com\",                         \"Uri\": \"/a.txt\",                         \"Protocol\": \"http\",                         \"Status\": 1,                         \"CreateTime\": \"2024-06-04T10:35:33+08:00\",                         \"ModifyTime\": \"2024-06-04T10:35:33+08:00\"                     }]",
+          "example": "[{\"Id\": 3200052851,\"Name\": \"1\",\"Domain\": \"www.qcloudwaf.com\",\"Uri\": \"/a.txt\",\"Protocol\": \"http\",\"Status\": 1}]",
           "member": "CacheUrlItems",
           "name": "Data",
           "output_required": true,
@@ -8255,7 +8774,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）",
+          "document": "筛选条件，支持 ActionType（可选的值为40：白名单，42：黑名单），ValidStatus（可选的值0：全部，1：生效，2：过期），Ip，Domains（域名列表），GroupId（防护对象组ID），GroupName（防护对象组名），RuleId（规则ID），TimerType（生效方式，1：永久生效，2：定时生效，3：按周周期生效，4：按月周期生效）",
           "example": "[{\"Name\":\"ValidStatus\",\"Values\":[\"1\"],\"ExactMatch\":true},{\"ExactMatch\":false,\"Name\":\"ActionType\",\"Values\":[\"42\"]}]",
           "member": "FiltersItemNew",
           "name": "Filters",
@@ -9067,6 +9586,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9331,6 +9860,33 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainResponsePageRequest": {
+      "document": "DescribeDomainResponsePage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询的域名",
+          "example": "www.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainResponsePageResponse": {
+      "document": "DescribeDomainResponsePage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -10217,7 +10773,7 @@
         },
         {
           "disabled": false,
-          "document": "生效状态",
+          "document": "生效状态，1表示生效中，2表示过期，0表示全部",
           "example": "1",
           "member": "int64",
           "name": "ValidStatus",
@@ -10253,7 +10809,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务类型筛选0 1 2 3 4",
+          "document": "0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效",
           "example": "1",
           "member": "int64",
           "name": "TimerType",
@@ -10269,7 +10825,7 @@
         {
           "disabled": false,
           "document": "输出",
-          "example": "{       \"Res\": [         {           \"ActionType\": 40,           \"Ip\": \"1.1.1.234\",           \"Note\": \"测试白\",           \"Source\": \"custom\",           \"TsVersion\": 1675087938186,           \"ValidTs\": 2019571199         }       ],       \"TotalCount\": 1     },     \"RequestId\": \"4afdae60-51ec-44f0-b09b-faf904ae6c6b\"   }",
+          "example": "{                     \"Res\": [                         {                             \"Id\": \"66a341dd8f33c805d65f4765\",                             \"RuleId\": 5501526871,                             \"IpList\": [                                 \"113.108.77.69\"                             ],                             \"ActionType\": 42,                             \"Ip\": \"113.108.77.69\",                             \"Note\": \"\",                             \"Source\": \"custom\",                             \"TsVersion\": 1721975261208,                             \"CreateTime\": 1721975261208,                             \"ValidTs\": 2019571199,                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"ValidStatus\": 1                         }                     ],                     \"TotalCount\": 1             }",
           "member": "IpAccessControlData",
           "name": "Data",
           "output_required": true,
@@ -10319,7 +10875,7 @@
         {
           "disabled": false,
           "document": "类别，ip封禁传值auto_deny",
-          "example": "threat_intelligence",
+          "example": "auto_deny",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -10372,7 +10928,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目",
+          "document": "限制数目，category不等于threat_intelligence时，该值需要必传",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -10399,7 +10955,7 @@
         },
         {
           "disabled": false,
-          "document": "IP",
+          "document": "IP,category传threat_intelligence的时候，该值必传",
           "example": "1.2.3.4",
           "member": "string",
           "name": "Ip",
@@ -10439,6 +10995,127 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogHistogramRequest": {
+      "document": "DescribeLogHistogram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询语句",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的日志主题ID",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索语法规则，默认值为0。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要检索分析的日志主题ID列表。TopicId和TopicIds二个参数只能选择其中一个参数进行查询。",
+          "example": "[\"682d0718-07bb-4ec0-9fda-f1e9a2767e0b\"]",
+          "member": "string",
+          "name": "TopicIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogHistogramResponse": {
+      "document": "DescribeLogHistogram返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计周期： 单位ms",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中关键字的日志总条数",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期内统计结果详情",
+          "example": "无",
+          "member": "HistogramInfo",
+          "name": "HistogramInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多日志主题检索，各个日志主题信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchLogTopics",
+          "name": "Topics",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11387,6 +12064,33 @@
       ],
       "type": "object"
     },
+    "DescribeResponsePagesRequest": {
+      "document": "DescribeResponsePages请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeResponsePagesResponse": {
+      "document": "DescribeResponsePages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "此appid支持的自定义响应页面数量上限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "PageLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRuleLimitRequest": {
       "document": "DescribeRuleLimit请求参数结构体",
       "members": [
@@ -12020,6 +12724,89 @@
           "name": "Web",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicsRequest": {
+      "document": "DescribeTopics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<ul><li>topicName 按照【日志主题名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>logsetName 按照【日志集名称】进行过滤，默认为模糊匹配，可使用 PreciseSearch 参数设置为精确匹配。类型：String。必选：否</li>\n<li>topicId 按照【日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>logsetId 按照【日志集ID】进行过滤，可通过调用 DescribeLogsets 查询已创建的日志集列表或登录控制台进行查看；也可以调用 CreateLogset 创建新的日志集。类型：String。必选：否</li>\n<li>tagKey 按照【标签键】进行过滤。类型：String。必选：否</li>\n<li>tag:tagKey 按照【标签键值对】进行过滤。tagKey 使用具体的标签键进行替换，例如 tag:exampleKey。类型：String。必选：否</li>\n<li>storageType 按照【日志主题的存储类型】进行过滤。可选值 hot（标准存储），cold（低频存储）类型：String。必选：否</li></ul>\n注意：每次请求的 Filters 的上限为10，Filter.Values 的上限为100。",
+          "example": "无",
+          "member": "FilterCls",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页的偏移量，默认值为0。",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页单页限制数目，默认值为20，最大值100。",
+          "example": "30",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "控制Filters相关字段是否为精确匹配。\n<ul><li>0: 默认值，topicName 和 logsetName 模糊匹配</li>\n<li>1: topicName   精确匹配</li>\n<li>2: logsetName精确匹配</li>\n<li>3: topicName 和logsetName 都精确匹配</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PreciseSearch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型\n<ul><li>0:日志主题，默认值</li>\n<li>1:指标主题</li></ul>",
+          "example": "无",
+          "member": "uint64",
+          "name": "BizType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicsResponse": {
+      "document": "DescribeTopics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题列表",
+          "example": "无",
+          "member": "TopicInfo",
+          "name": "Topics",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -13945,6 +14732,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源策略。\n0：负载均衡回源\n1：分流回源",
+          "example": "1",
+          "member": "int64",
+          "name": "UpstreamPolicy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分流回源策略",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "member": "UpstreamRule",
+          "name": "UpstreamRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14271,6 +15078,11 @@
         }
       ],
       "usage": "out"
+    },
+    "FilterCls": {
+      "document": "过滤器",
+      "members": [],
+      "usage": "in"
     },
     "FiltersItemNew": {
       "document": "过滤数组",
@@ -15299,6 +16111,11 @@
         }
       ],
       "usage": "both"
+    },
+    "HistogramInfo": {
+      "document": "直方图详细信息",
+      "members": [],
+      "usage": "out"
     },
     "HostDel": {
       "document": "CLB-WAF删除域名参数",
@@ -16543,36 +17360,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "定时执行的时间参数",
+          "document": "定时执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"StartDateTime\":1711618518\t,\"EndDateTime\":1711918518}]",
           "member": "TimedJob",
           "name": "Timed",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "周期执行的时间参数",
+          "document": "周期执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}]",
           "member": "CronJob",
           "name": "Cron",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "时区",
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UTC+8\t",
           "member": "string",
           "name": "TimeTZone",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16900,6 +17717,164 @@
           "name": "TimeStamp",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogInfo": {
+      "document": "日志结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志时间，单位ms",
+          "example": "1619162953000",
+          "member": "int64",
+          "name": "Time",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID",
+          "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志来源IP",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Source",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志文件名称",
+          "example": "/test/access.log",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志上报请求包的ID",
+          "example": "0",
+          "member": "string",
+          "name": "PkgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求包内日志的ID",
+          "example": "0",
+          "member": "string",
+          "name": "PkgLogId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志内容的Json序列化字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
+          "member": "string",
+          "name": "LogJson",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志来源主机名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hostName-1",
+          "member": "string",
+          "name": "HostName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始日志(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
+          "member": "string",
+          "name": "RawLog",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志创建索引异常原因(仅在日志创建索引异常时有值)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IndexAllFail:fields like 'a' and 'a.b' can not appear in the same topic",
+          "member": "string",
+          "name": "IndexStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItem": {
+      "document": "日志中的KV对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志Key",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志Value",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LogItems": {
+      "document": "LogItem的数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分析结果返回的KV数据对",
+          "example": "",
+          "member": "LogItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -18153,7 +19128,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。\n默认是\"geoip,cc,owasp,ai,antileakage\"",
           "example": "geoip",
           "member": "string",
@@ -18221,6 +19196,15 @@
           "example": "11033",
           "member": "string",
           "name": "PageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
           "required": false,
           "type": "string"
         }
@@ -18372,7 +19356,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。",
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
           "example": "0",
           "member": "uint64",
           "name": "ExpireTime",
@@ -19973,6 +20957,24 @@
           "name": "GmSSLId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源",
+          "example": "0",
+          "member": "int64",
+          "name": "UpstreamPolicy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分流回源时生效，分流回源的规则。",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "member": "UpstreamRule",
+          "name": "UpstreamRules",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -22082,6 +23084,218 @@
       ],
       "usage": "in"
     },
+    "SearchLogRequest": {
+      "document": "SearchLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要检索分析的日志的起始时间，Unix时间戳（毫秒）",
+          "example": "1608794854000",
+          "member": "int64",
+          "name": "From",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要检索分析的日志的结束时间，Unix时间戳（毫秒）",
+          "example": "1608794855000",
+          "member": "int64",
+          "name": "To",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索分析语句，最大长度为12KB\n语句由 <a href=\"https://cloud.tencent.com/document/product/614/47044\" target=\"_blank\">[检索条件]</a> | <a href=\"https://cloud.tencent.com/document/product/614/44061\" target=\"_blank\">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句\n使用*或空字符串可查询所有日志",
+          "example": "http_status:200",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索语法规则，默认值为0，推荐使用1 (CQL语法)。\n0：Lucene语法，1：CQL语法。\n详细说明参见<a href=\"https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules\" target=\"_blank\">检索条件语法规则</a>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "- 要检索分析的日志主题ID，仅能指定一个日志主题。\n- 如需同时检索多个日志主题，请使用Topics参数。\n- TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。",
+          "example": "682d0718-07bb-4ec0-9fda-f1e9a2767e0b",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原始日志是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果排序方式参考<a href=\"https://cloud.tencent.com/document/product/614/58978\" target=\"_blank\">SQL ORDER BY语法</a>",
+          "example": "asc",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表示单次查询返回的原始日志条数，默认为100，最大值为1000。\n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* SQL结果条数指定方式参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>\n\n可通过两种方式获取后续更多日志：\n* Context:透传上次接口返回的Context值，获取后续更多日志，总计最多可获取1万条原始日志\n* Offset:偏移量，表示从第几行开始返回原始日志，无日志条数限制",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询原始日志的偏移量，表示从第几行开始返回原始日志，默认为0。 \n注意：\n* 仅当检索分析语句(Query)不包含SQL时有效\n* 不能与Context参数同时使用\n* 仅适用于单日志主题检索",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。\n注意：\n* 透传该参数时，请勿修改除该参数外的其它参数\n* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context\n* 仅当检索分析语句(Query)不包含SQL时有效，SQL获取后续结果参考<a href=\"https://cloud.tencent.com/document/product/614/58977\" target=\"_blank\">SQL LIMIT语法</a>",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。\n0：自动采样;\n0～1：按指定采样率采样，例如0.02;\n1：不采样，即精确分析\n默认值为1",
+          "example": "0.1",
+          "member": "float",
+          "name": "SamplingRate",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "为true代表使用新的检索结果返回方式，输出参数AnalysisRecords和Columns有效\n为false时代表使用老的检索结果返回方式, 输出AnalysisResults和ColNames有效\n两种返回方式在编码格式上有少量区别，建议使用true",
+          "example": "false",
+          "member": "bool",
+          "name": "UseNewAnalysis",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogResponse": {
+      "document": "SearchLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时。\n注意：\n* 仅适用于单日志主题检索，检索多个日志主题时，请使用Topics中的Context",
+          "example": "Y29udGV4dC04MjMzNWRkMi01YmMxLTQ4NGYtYjQ4MS04MDg0NzAwYjQ1NDUxNjcy",
+          "member": "string",
+          "name": "Context",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合检索条件的日志是否已全部返回，如未全部返回可使用Context参数获取后续更多日志\n注意：仅当检索分析语句(Query)不包含SQL时有效",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的是否为统计分析（即SQL）结果",
+          "example": "false",
+          "member": "bool",
+          "name": "Analysis",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配检索条件的原始日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogInfo",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果的列名\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xx\"]",
+          "member": "string",
+          "name": "ColNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果\n当UseNewAnalysis为false时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogItems",
+          "name": "AnalysisResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxx\",\"yy\"]",
+          "member": "string",
+          "name": "AnalysisRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志统计分析结果的列属性\n当UseNewAnalysis为true时生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Column",
+          "name": "Columns",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本次统计分析使用的采样率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "SamplingRate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchLogTopics": {
+      "document": "多主题检索返回信息",
+      "members": [],
+      "usage": "out"
+    },
     "SessionData": {
       "document": "参数包装",
       "members": [
@@ -22270,7 +23484,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr></tbody></table>",
+          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>CONTENT_LENGTH（Content-length）</td><td>支持参数录入</td><td>numgt（数值大于）<br/>numlt（数值小于）<br/>numeq（数值等于）<br/></td><td>请输入0-9999999999999之间的整数</td></tr><tr><td>IP_GEO（来源IP归属地）</td><td>支持参数录入</td><td>geo_in（属于）<br/>geo_not_in（不属于）<br/></td><td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td></tr>\n</tbody></table>",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -22281,7 +23495,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格\n",
+          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n        numgt （ 数值大于）\n        numlt （ 数值小于）\n        numeq （ 数值等于）\n        geo_in （ IP地理属于）\n        geo_not_in （ IP地理不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格\n",
           "example": "contains - 包含",
           "member": "string",
           "name": "CompareFunc",
@@ -22520,6 +23734,11 @@
       ],
       "usage": "out"
     },
+    "Tag": {
+      "document": "创建资源实例时同时绑定的标签对说明",
+      "members": [],
+      "usage": "both"
+    },
     "TargetEntity": {
       "document": "需要开启/关闭API安全的 实例+域名 组合实体",
       "members": [
@@ -22599,6 +23818,249 @@
         }
       ],
       "usage": "both"
+    },
+    "TopicExtendInfo": {
+      "document": "日志主题扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题免鉴权配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AnonymousInfo",
+          "name": "AnonymousAccess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TopicInfo": {
+      "document": "主题基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题ID",
+          "example": "57f5808c-4a55-11eb-b378-0242ac130002",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题分区个数",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题是否开启索引（主题类型需为日志主题）",
+          "example": "true",
+          "member": "bool",
+          "name": "Index",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云产品标识，主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "AssumerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题是否开启采集，true：开启采集；false：关闭采集。\n创建日志主题时默认开启，可通过SDK调用ModifyTopic修改此字段。\n控制台目前不支持修改此参数。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题绑定的标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该主题是否开启自动分裂\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSplit",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "若开启自动分裂的话，该主题能够允许的最大分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "MaxSplitPartitions",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题的存储类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hot",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期，单位天，可取值范围1~3600。取值为3640时代表永久保存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TKE-Audio",
+          "member": "string",
+          "name": "SubAssumerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx部门xx业务topic",
+          "member": "string",
+          "name": "Describes",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启日志沉降，标准存储的生命周期， hotPeriod < Period。\n标准存储为 hotPeriod, 低频存储则为 Period-hotPeriod。（主题类型需为日志主题）\nHotPeriod=0为没有开启日志沉降。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "HotPeriod",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题类型。\n- 0: 日志主题 \n- 1: 指标主题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BizType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "免鉴权开关。 false：关闭； true：开启。\n开启后将支持指定操作匿名访问该日志主题。详情请参见[日志主题](https://cloud.tencent.com/document/product/614/41035)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWebTracking",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步迁移任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicAsyncTaskID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步迁移状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MigrationStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步迁移完成后，预计生效日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EffectiveDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TsResource": {
       "document": "运营后台参数，自研引擎资源信息",
@@ -22819,7 +24281,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含",
+          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含",
           "example": "0",
           "member": "int64",
           "name": "MatchFunc",
@@ -22855,7 +24317,7 @@
         },
         {
           "disabled": false,
-          "document": "附加参数",
+          "document": "[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
           "example": "\"[]\"",
           "member": "string",
           "name": "OptionsArr",
@@ -23180,6 +24642,67 @@
         }
       ],
       "type": "object"
+    },
+    "UpstreamRule": {
+      "document": "SAASWAF规则回源时的规则数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配的关键字。目前支持host、uri两种",
+          "example": "host",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑符号。\nequal：等于\nnot equal：不等于\nbelong：属于\nnot belong：不属于",
+          "example": "equal",
+          "member": "string",
+          "name": "Symbol",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配的内容。equal和not equal时，数组只能有一个元素",
+          "example": "[\"randy.test.qcloudwaf.com\"]",
+          "member": "string",
+          "name": "ContentList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配后生效的回源地址。",
+          "example": "[\"36.211.56.3\",\"54.168.6.35\"]",
+          "member": "string",
+          "name": "AddressList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源负载均衡类型，仅多个回源地址时生效。\n0：轮询\n1：IP_HASH",
+          "example": "0",
+          "member": "uint64",
+          "name": "BalanceType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UserDomainInfo": {
       "document": "saas和clb信息",
