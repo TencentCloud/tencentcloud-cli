@@ -1,6 +1,6 @@
-**Example 1: Waf ip黑白名单查询**
+**Example 1: IP黑白名单查询**
 
-Waf ip黑名单查询
+IP黑名单查询
 
 Input: 
 
@@ -21,12 +21,31 @@ Output:
         "Data": {
             "Res": [
                 {
+                    "Id": "66a341dd8f33c805d65f4765",
+                    "RuleId": 5501526871,
+                    "IpList": [
+                        "113.108.77.69"
+                    ],
                     "ActionType": 42,
-                    "Ip": "1.1.1.1",
-                    "Note": "note",
+                    "Ip": "113.108.77.69",
+                    "Note": "",
                     "Source": "custom",
-                    "TsVersion": 1579074751421,
-                    "ValidTs": 1579017599
+                    "TsVersion": 1721975261208,
+                    "CreateTime": 1721975261208,
+                    "ValidTs": 2019571199,
+                    "JobType": "TimedJob",
+                    "JobDateTime": {
+                        "Timed": [
+                            {
+                                "StartDateTime": 0,
+                                "EndDateTime": 0
+                            }
+                        ],
+                        "Cron": null,
+                        "TimeTZone": "UTC+8"
+                    },
+                    "CronType": "-",
+                    "ValidStatus": 1
                 }
             ],
             "TotalCount": 1

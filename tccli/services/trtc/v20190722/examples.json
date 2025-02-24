@@ -324,7 +324,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartAIConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 12345678,\n    \"RoomId\": \"room_987654321\",\n    \"RoomIdType\": 1,\n    \"AgentConfig\": {\n        \"UserId\": \"user_12345\",\n        \"UserSig\": \"user_signature_example\",\n        \"MaxIdleTime\": 120,\n        \"TargetUserId\": \"target_user_54321\"\n    },\n    \"SessionId\": \"session_1234567890abcdef\",\n    \"STTConfig\": {\n        \"Language\": \"en-US\",\n        \"AlternativeLanguage\": [\n            \"en-US\",\n            \"zh\"\n        ]\n    },\n    \"LLMConfig\": \"{\\\"LLMType\\\": \\\"openai\\\", \\\"Model\\\": \\\"gpt-3.5-turbo\\\", \\\"APIKey\\\": \\\"xxx\\\", \\\"APIUrl\\\": \\\"http://xxxx-api.woa.com/v1/chat/completions\\\", \\\"Streaming\\\": true}\",\n    \"TTSConfig\": \"{\\\"TTSType\\\": \\\"tencent\\\", \\\"AppId\\\": 130000000, \\\"SecretId\\\": \\\"AKIDxxxxx\\\", \\\"SecretKey\\\": \\\"HlDxxxxxx\\\", \\\"VoiceType\\\": 1008, \\\"Speed\\\": 1}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"v2_20250224_udqgoOzzpAFOoiXR_sHbeVCwys3hy0PLs1uRLvS7wY9mjZMEIQuDPhT\",\n        \"RequestId\": \"df81f274-c1b8-4342-b0a1-e552072cc48e\"\n    }\n}",
         "title": "启动一个AI机器人对话"
       }
     ],

@@ -7209,25 +7209,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
           "example": "1",
           "member": "int64",
           "name": "Period",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li><br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费</li><br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费</li><br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
           "example": "DISABLE_NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11302,25 +11302,25 @@
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属的独享集群ID。",
           "example": "cdc-xxxxxx",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
           "example": "name",
           "member": "string",
           "name": "DiskName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

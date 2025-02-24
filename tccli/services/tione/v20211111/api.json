@@ -10019,7 +10019,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "[]",
+          "example": "[{\"Role\":\"WORKER\",\"Cpu\":1000,\"Memory\":1024,\"GpuType\":\"\",\"Gpu\":0,\"InstanceType\":\"\",\"InstanceTypeAlias\":\"\",\"InstanceNum\":1,\"RDMAConfig\":{\"Enable\":false},\"ExtendedResourceList\":{},\"ArchType\":\"\"}]",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "output_required": true,
@@ -10029,7 +10029,7 @@
         {
           "disabled": false,
           "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"test\":\"test\"]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
@@ -10079,7 +10079,7 @@
         {
           "disabled": false,
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"MappingPath\":\"/opt/ml/output/data\",\"DataSourceType\":\"CFS\",\"DataSourceUsage\":\"OUTPUT\",\"CFSSource\":{\"Id\":\"cfs-123abcd\",\"Path\":\"/exp1/output\"}}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "output_required": true,
@@ -10395,7 +10395,7 @@
         {
           "disabled": false,
           "document": "资源配置",
-          "example": "[                             {                                 \"Role\": \"WORKER\",                                 \"Cpu\": 1000,                                 \"Memory\": 1024,                                 \"GpuType\": \"\",                                 \"Gpu\": 0,                                 \"InstanceType\": \"\",                                 \"InstanceTypeAlias\": \"\",                                 \"InstanceNum\": 1,                                 \"RDMAConfig\": {                                     \"Enable\": false                                 },                                 \"ExtendedResourceList\": {},                                 \"ArchType\": \"\"                             }                         ]",
+          "example": "[{\"Role\":\"WORKER\",\"Cpu\":1000,\"Memory\":1024,\"GpuType\":\"\",\"Gpu\":0,\"InstanceType\":\"\",\"InstanceTypeAlias\":\"\",\"InstanceNum\":1,\"RDMAConfig\":{\"Enable\":false},\"ExtendedResourceList\":{},\"ArchType\":\"\"}]",
           "member": "ResourceConfigInfo",
           "name": "ResourceConfigInfos",
           "output_required": true,

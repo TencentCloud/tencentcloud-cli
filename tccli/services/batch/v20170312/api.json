@@ -5417,25 +5417,25 @@
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属的独享集群ID。",
           "example": "cdc-xxxxxx",
           "member": "string",
           "name": "CdcId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘名称，长度不超过128 个字符。\n\n该参数正在邀测中，暂未开放使用。",
           "example": "name",
           "member": "string",
           "name": "DiskName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

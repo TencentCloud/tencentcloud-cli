@@ -7,7 +7,7 @@ Input:
 ```
 tccli ccc CreateOwnNumberApply --cli-unfold-argument  \
     --SdkAppId 1 \
-    --Prefix 123 \
+    --Prefix 1145 \
     --SipTrunkId 12 \
     --DetailList.0.CallType 2 \
     --DetailList.0.PhoneNumber 02012345678 \
@@ -19,7 +19,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc",
+        "RequestId": "foo-bar",
         "ApplyId": 1
     }
 }

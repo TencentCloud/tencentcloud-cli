@@ -107,8 +107,8 @@
     "CreateOwnNumberApply": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Prefix\": \"123\",\n    \"SipTrunkId\": 12,\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"ApplyId\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"Prefix\": \"1145\",\n    \"SipTrunkId\": 12,\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"foo-bar\",\n        \"ApplyId\": 1\n    }\n}",
         "title": "创建客户自携号码接入审核实例"
       }
     ],
@@ -196,7 +196,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoCalloutTasks\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"SdkAppId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"TaskId\": 3241,\n                \"IvrId\": 1,\n                \"CalleeCount\": 1,\n                \"Name\": \"foobar\",\n                \"NotBefore\": 0,\n                \"NotAfter\": 0,\n                \"State\": 1,\n                \"Callers\": [\n                    \"123456\"\n                ]\n            }\n        ],\n        \"RequestId\": \"123456\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Tasks\": [\n            {\n                \"TaskId\": 3241,\n                \"IvrId\": 1,\n                \"CalleeCount\": 1,\n                \"Name\": \"foobar\",\n                \"NotBefore\": 0,\n                \"NotAfter\": 0,\n                \"State\": 1,\n                \"Callers\": [\n                    \"008612345123456\"\n                ]\n            }\n        ],\n        \"RequestId\": \"foo-bar\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -419,8 +419,8 @@
     "ModifyOwnNumberApply": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"ApplyId\": 1,\n    \"Prefix\": \"123\",\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ccc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOwnNumberApply\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"ApplyId\": 1,\n    \"Prefix\": \"1145\",\n    \"DetailList\": [\n        {\n            \"CallType\": 2,\n            \"PhoneNumber\": \"02012345678\",\n            \"MaxCallCount\": 1,\n            \"MaxCallPSec\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"foo-bar\"\n    }\n}",
         "title": "修改客户自携号码审批单示例"
       }
     ],

@@ -614,7 +614,7 @@
         {
           "disabled": false,
           "document": "TransferFunctionEnable为true时生效；transfer_to_human function calling的desc，默认为 \"Transfer to human when the user has to transfer to human (like says transfer to human) or you are instructed to do so.\"",
-          "example": "无",
+          "example": "当客户表达出需要人工服务，或者机器人无法处理问题时，转人工",
           "member": "string",
           "name": "TransferFunctionDesc",
           "required": true,
@@ -888,7 +888,7 @@
         {
           "disabled": false,
           "document": "起始时间戳",
-          "example": "123",
+          "example": "1145",
           "member": "int64",
           "name": "NotBefore",
           "output_required": true,
@@ -898,7 +898,7 @@
         {
           "disabled": false,
           "document": "结束时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "null",
+          "example": "1146",
           "member": "int64",
           "name": "NotAfter",
           "output_required": true,
@@ -1274,7 +1274,7 @@
         {
           "disabled": false,
           "document": "申请单Id",
-          "example": "123",
+          "example": "1145",
           "member": "uint64",
           "name": "ApplicantId",
           "output_required": true,
@@ -1304,7 +1304,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "描述",
+          "example": "申请描述",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -6075,7 +6075,7 @@
         {
           "disabled": false,
           "document": "TTS 提示音内容",
-          "example": "无",
+          "example": "您好",
           "member": "string",
           "name": "TTSPrompt",
           "output_required": false,
@@ -6091,20 +6091,20 @@
         {
           "disabled": false,
           "document": "消息类型",
-          "example": "",
+          "example": "Text",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消息内容",
-          "example": "",
+          "example": "您好，我是您的小助手",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6117,30 +6117,30 @@
         {
           "disabled": false,
           "document": "消息时间戳",
-          "example": "",
+          "example": "1600007226",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "发消息的用户ID",
-          "example": "",
+          "example": "Alan",
           "member": "string",
           "name": "From",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消息列表",
-          "example": "",
+          "example": "[{\"Type\":\"Text\",\"Content\":\"您好呀！\"}]",
           "member": "Message",
           "name": "Messages",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

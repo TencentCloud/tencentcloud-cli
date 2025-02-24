@@ -126,6 +126,13 @@
       "output": "DescribeCvmQuotaResponse",
       "status": "online"
     },
+    "DescribeDAGInfo": {
+      "document": "查询DAG信息",
+      "input": "DescribeDAGInfoRequest",
+      "name": "查询DAG信息",
+      "output": "DescribeDAGInfoResponse",
+      "status": "online"
+    },
     "DescribeEmrApplicationStatics": {
       "document": "yarn application 统计接口查询",
       "input": "DescribeEmrApplicationStaticsRequest",
@@ -3795,6 +3802,45 @@
       ],
       "usage": "in"
     },
+    "DAGInfo": {
+      "document": "DAG信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询ID",
+          "example": "queryid_123",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DAG类型，目前只支持starrocks",
+          "example": "starrocks",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回的DAG的JSON字符串",
+          "example": "{\"json\":123}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DayRepeatStrategy": {
       "document": "弹性扩缩容按天重复任务描述",
       "members": [
@@ -4624,6 +4670,71 @@
           "member": "PodSaleSpec",
           "name": "EksQuotaSet",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDAGInfoRequest": {
+      "document": "DescribeDAGInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-xfaf11ab",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DAG类型，目前只支持STARROCKS",
+          "example": "STARROCKS",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询ID列表,最大长度为1",
+          "example": "query_xxx",
+          "member": "string",
+          "name": "IDList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDAGInfoResponse": {
+      "document": "DescribeDAGInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数，分页查询时使用",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Starrocks 查询信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DAGInfo",
+          "name": "DAGInfoList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },

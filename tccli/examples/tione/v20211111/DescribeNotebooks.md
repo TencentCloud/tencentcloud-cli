@@ -61,7 +61,7 @@ Output:
                 "VolumeSourceType": "CFS",
                 "VolumeSourceCFS": {
                     "Id": "cfs-9su5kqtv",
-                    "Path": "/",
+                    "Path": "/path",
                     "Protocol": "NFS",
                     "MountType": "STORAGE"
                 },

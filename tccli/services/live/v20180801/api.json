@@ -14996,6 +14996,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "导播台pvw pgm的cdn流id",
+          "example": "ExampleStreamName",
+          "member": "string",
+          "name": "CdnStreamId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

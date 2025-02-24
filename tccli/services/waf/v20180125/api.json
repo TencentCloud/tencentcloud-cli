@@ -1833,7 +1833,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。默认是\"geoip,cc,owasp,ai,antileakage\"",
           "example": "cc,bot",
           "member": "string",
@@ -1903,6 +1903,15 @@
           "name": "PageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1962,15 +1971,6 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
-          "example": "2023-11-15 19:23:06",
-          "member": "string",
-          "name": "ExpireTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "策略详情",
           "example": "[             {                 \"Field\": \"URL\",                 \"Arg\": \"\",                 \"CompareFunc\": \"eq\",                 \"Content\": \"/acl\"             }         ]",
           "member": "Strategy",
@@ -1989,11 +1989,20 @@
         },
         {
           "disabled": false,
-          "document": "放行的详情",
+          "document": "放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）",
           "example": "cc",
           "member": "string",
           "name": "Bypass",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
+          "example": "0",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
           "type": "string"
         },
         {
@@ -2008,7 +2017,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -2529,6 +2538,24 @@
           "name": "GmSSLId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源",
+          "example": "0",
+          "member": "int64",
+          "name": "UpstreamPolicy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分流回源时生效，分流回源的规则。",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "member": "UpstreamRule",
+          "name": "UpstreamRules",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3294,7 +3321,7 @@
       "document": "批量多域名黑白名单列表Ip",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "mongo表自增Id",
           "example": "64f9ad91ca22cf647117e44d",
           "member": "string",
@@ -3314,7 +3341,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "黑白名单的IP",
           "example": "1.1.1.1",
           "member": "string",
@@ -3335,7 +3362,7 @@
         },
         {
           "disabled": false,
-          "document": "添加路径",
+          "document": "batch为批量域名，batch-group为防护对象组",
           "example": "batch",
           "member": "string",
           "name": "Source",
@@ -3441,6 +3468,16 @@
           "name": "ValidStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护对象组ID列表，如果绑定的是防护对象组",
+          "example": "[11101,11102]\t",
+          "member": "uint64",
+          "name": "GroupIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -6493,7 +6530,7 @@
         {
           "disabled": false,
           "document": "目前支持根据create_time、modify_time、id排序",
-          "example": "\"ts\"",
+          "example": "\"create_time\"",
           "member": "string",
           "name": "By",
           "required": false,
@@ -6518,7 +6555,7 @@
         {
           "disabled": false,
           "document": "返回值",
-          "example": "[{                         \"Id\": 3200052851,                         \"Name\": \"1\",                         \"Domain\": \"www.qcloudwaf.com\",                         \"Uri\": \"/a.txt\",                         \"Protocol\": \"http\",                         \"Status\": 1,                         \"CreateTime\": \"2024-06-04T10:35:33+08:00\",                         \"ModifyTime\": \"2024-06-04T10:35:33+08:00\"                     }]",
+          "example": "[{\"Id\": 3200052851,\"Name\": \"1\",\"Domain\": \"www.qcloudwaf.com\",\"Uri\": \"/a.txt\",\"Protocol\": \"http\",\"Status\": 1}]",
           "member": "CacheUrlItems",
           "name": "Data",
           "output_required": true,
@@ -7706,7 +7743,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选条件，支持 ActionType，可选的值为40（白名单）42（黑名单），ValidStatus，可选的值为1（生效）0（过期）",
+          "document": "筛选条件，支持 ActionType（可选的值为40：白名单，42：黑名单），ValidStatus（可选的值0：全部，1：生效，2：过期），Ip，Domains（域名列表），GroupId（防护对象组ID），GroupName（防护对象组名），RuleId（规则ID），TimerType（生效方式，1：永久生效，2：定时生效，3：按周周期生效，4：按月周期生效）",
           "example": "[{\"Name\":\"ValidStatus\",\"Values\":[\"1\"],\"ExactMatch\":true},{\"ExactMatch\":false,\"Name\":\"ActionType\",\"Values\":[\"42\"]}]",
           "member": "FiltersItemNew",
           "name": "Filters",
@@ -8450,6 +8487,16 @@
           "example": "www.test.com",
           "member": "string",
           "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -9603,7 +9650,7 @@
         },
         {
           "disabled": false,
-          "document": "生效状态",
+          "document": "生效状态，1表示生效中，2表示过期，0表示全部",
           "example": "1",
           "member": "int64",
           "name": "ValidStatus",
@@ -9639,7 +9686,7 @@
         },
         {
           "disabled": false,
-          "document": "定时任务类型筛选0 1 2 3 4",
+          "document": "0表示全部，1表示永久生效，2表示定时生效，3表示周粒度生效，4表示月粒度生效",
           "example": "1",
           "member": "int64",
           "name": "TimerType",
@@ -9655,7 +9702,7 @@
         {
           "disabled": false,
           "document": "输出",
-          "example": "{       \"Res\": [         {           \"ActionType\": 40,           \"Ip\": \"1.1.1.234\",           \"Note\": \"测试白\",           \"Source\": \"custom\",           \"TsVersion\": 1675087938186,           \"ValidTs\": 2019571199         }       ],       \"TotalCount\": 1     },     \"RequestId\": \"4afdae60-51ec-44f0-b09b-faf904ae6c6b\"   }",
+          "example": "{                     \"Res\": [                         {                             \"Id\": \"66a341dd8f33c805d65f4765\",                             \"RuleId\": 5501526871,                             \"IpList\": [                                 \"113.108.77.69\"                             ],                             \"ActionType\": 42,                             \"Ip\": \"113.108.77.69\",                             \"Note\": \"\",                             \"Source\": \"custom\",                             \"TsVersion\": 1721975261208,                             \"CreateTime\": 1721975261208,                             \"ValidTs\": 2019571199,                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"ValidStatus\": 1                         }                     ],                     \"TotalCount\": 1             }",
           "member": "IpAccessControlData",
           "name": "Data",
           "output_required": true,
@@ -9705,7 +9752,7 @@
         {
           "disabled": false,
           "document": "类别，ip封禁传值auto_deny",
-          "example": "threat_intelligence",
+          "example": "auto_deny",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -9758,7 +9805,7 @@
         },
         {
           "disabled": false,
-          "document": "限制数目",
+          "document": "限制数目，category不等于threat_intelligence时，该值需要必传",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -9785,7 +9832,7 @@
         },
         {
           "disabled": false,
-          "document": "IP",
+          "document": "IP,category传threat_intelligence的时候，该值必传",
           "example": "1.2.3.4",
           "member": "string",
           "name": "Ip",
@@ -12620,6 +12667,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源策略。\n0：负载均衡回源\n1：分流回源",
+          "example": "1",
+          "member": "int64",
+          "name": "UpstreamPolicy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分流回源策略",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "member": "UpstreamRule",
+          "name": "UpstreamRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15126,36 +15193,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "定时执行的时间参数",
+          "document": "定时执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"StartDateTime\":1711618518\t,\"EndDateTime\":1711918518}]",
           "member": "TimedJob",
           "name": "Timed",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "周期执行的时间参数",
+          "document": "周期执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}]",
           "member": "CronJob",
           "name": "Cron",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "时区",
+          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UTC+8\t",
           "member": "string",
           "name": "TimeTZone",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16624,7 +16691,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。\n默认是\"geoip,cc,owasp,ai,antileakage\"",
           "example": "geoip",
           "member": "string",
@@ -16692,6 +16759,15 @@
           "example": "11033",
           "member": "string",
           "name": "PageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件的逻辑关系，支持and、or，分别表示多个逻辑匹配条件是与、或的关系",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
           "required": false,
           "type": "string"
         }
@@ -16843,7 +16919,7 @@
         },
         {
           "disabled": false,
-          "document": "规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。",
+          "document": "如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）",
           "example": "0",
           "member": "uint64",
           "name": "ExpireTime",
@@ -18408,6 +18484,24 @@
           "name": "GmSSLId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源",
+          "example": "0",
+          "member": "int64",
+          "name": "UpstreamPolicy",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分流回源时生效，分流回源的规则。",
+          "example": "[{\"KeyName\":\"host\",\"Symbol\": \"equal\", \"ContentList\":[\"up2.randy.qcloudwaf.com\"], \"AddressList\":[\"162.14.105.228\",\"114.132.246.237\"], \"BalanceType\":0},{\"KeyName\":\"uri\",\"Symbol\": \"belong\", \"ContentList\":[\"/aa\",\"/bb\"], \"AddressList\":[\"114.132.246.237\",\"101.34.251.68\"], \"BalanceType\":1}]",
+          "member": "UpstreamRule",
+          "name": "UpstreamRules",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -20244,7 +20338,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr></tbody></table>",
+          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>CONTENT_LENGTH（Content-length）</td><td>支持参数录入</td><td>numgt（数值大于）<br/>numlt（数值小于）<br/>numeq（数值等于）<br/></td><td>请输入0-9999999999999之间的整数</td></tr><tr><td>IP_GEO（来源IP归属地）</td><td>支持参数录入</td><td>geo_in（属于）<br/>geo_not_in（不属于）<br/></td><td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td></tr>\n</tbody></table>",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -20255,7 +20349,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格\n",
+          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n        numgt （ 数值大于）\n        numlt （ 数值小于）\n        numeq （ 数值等于）\n        geo_in （ IP地理属于）\n        geo_not_in （ IP地理不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格\n",
           "example": "contains - 包含",
           "member": "string",
           "name": "CompareFunc",
@@ -20697,7 +20791,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含",
+          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含",
           "example": "0",
           "member": "int64",
           "name": "MatchFunc",
@@ -20733,7 +20827,7 @@
         },
         {
           "disabled": false,
-          "document": "附加参数",
+          "document": "[{\\\"key\\\":\\\"Method\\\",\\\"args\\\":[\\\"=R0VU\\\"],\\\"match\\\":\\\"0\\\",\\\"encodeflag\\\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
           "example": "\"[]\"",
           "member": "string",
           "name": "OptionsArr",
@@ -21058,6 +21152,67 @@
         }
       ],
       "type": "object"
+    },
+    "UpstreamRule": {
+      "document": "SAASWAF规则回源时的规则数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配的关键字。目前支持host、uri两种",
+          "example": "host",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "逻辑符号。\nequal：等于\nnot equal：不等于\nbelong：属于\nnot belong：不属于",
+          "example": "equal",
+          "member": "string",
+          "name": "Symbol",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配的内容。equal和not equal时，数组只能有一个元素",
+          "example": "[\"randy.test.qcloudwaf.com\"]",
+          "member": "string",
+          "name": "ContentList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则匹配后生效的回源地址。",
+          "example": "[\"36.211.56.3\",\"54.168.6.35\"]",
+          "member": "string",
+          "name": "AddressList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源负载均衡类型，仅多个回源地址时生效。\n0：轮询\n1：IP_HASH",
+          "example": "0",
+          "member": "uint64",
+          "name": "BalanceType",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UserDomainInfo": {
       "document": "saas和clb信息",
