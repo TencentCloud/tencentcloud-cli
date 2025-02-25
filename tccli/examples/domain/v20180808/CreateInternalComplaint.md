@@ -15,7 +15,9 @@ tccli domain CreateInternalComplaint --cli-unfold-argument  \
     --Company test Company \
     --CountryName test CountryName \
     --Describe test Describe \
-    --Attachment test Attachment
+    --Attachment test Attachment \
+    --Url http://Url \
+    --InfringedUrl http://InfringedUrl
 ```
 
 Output: 

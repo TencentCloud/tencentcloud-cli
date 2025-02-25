@@ -7,10 +7,10 @@ Input:
 ```
 tccli ssl CertificateInfoSubmit --cli-unfold-argument  \
     --AdminEmail ssl@tencent.com \
-    --AdminFirstName 测 \
+    --AdminFirstName 宁 \
     --AdminIdNumber 110000000000000001 \
     --AdminIdType SFZ \
-    --AdminLastName 试 \
+    --AdminLastName 黄 \
     --AdminPhone 13112341234 \
     --AdminTitle 研发 \
     --CertCommonName tencent.com \
@@ -32,10 +32,10 @@ tccli ssl CertificateInfoSubmit --cli-unfold-argument  \
     --OrgPhoneNumber 234123123 \
     --OrgRegion 广东省 \
     --TechEmail ssl@tencent.com \
-    --TechFirstName 测 \
+    --TechFirstName 宁 \
     --TechIdNumber 110000000000000001 \
     --TechIdType SFZ \
-    --TechLastName 试 \
+    --TechLastName 黄 \
     --TechPhone 13112341234 \
     --TechTitle 研发 \
     --VerifyType FILE
@@ -72,25 +72,25 @@ tccli ssl CertificateInfoSubmit --cli-unfold-argument  \
     --Csr  \
     --KeyPass 12345678 \
     --OrgOrganization 腾讯云SSL证书测试 \
-    --OrgDivision 测试部门 \
+    --OrgDivision 研发部门 \
     --OrgAddress 腾讯云SSL证书测试地址 \
     --OrgCountry CN \
     --OrgCity 北京市 \
     --OrgRegion 北京市 \
     --OrgPhoneArea 010 \
     --OrgPhoneNumber 123456789010 \
-    --AdminFirstName 试 \
-    --AdminLastName 测 \
+    --AdminFirstName 宁 \
+    --AdminLastName 黄 \
     --AdminPhone 18169239105 \
     --AdminEmail ssl@tencent.com \
-    --AdminTitle 测试 \
+    --AdminTitle 研发 \
     --TechFirstName 试 \
     --TechLastName 测 \
     --CsrKeyParameter 2048 \
     --CsrEncryptAlgo RSA \
     --TechEmail ssl@tencent.com \
     --TechPhone 18169239105 \
-    --TechTitle 测试 \
+    --TechTitle 研发 \
     --ManagerId 12895
 ```
 
@@ -143,25 +143,25 @@ xHc6lEWniExaYomIboULnLTdSI1Dx0g7segNMvhLGUjRyump3/0jANfk7qbS0Nnz
  \
     --KeyPass 12345678 \
     --OrgOrganization 腾讯云SSL证书测试 \
-    --OrgDivision 测试部门 \
+    --OrgDivision 研发部门 \
     --OrgAddress 腾讯云SSL证书测试地址 \
     --OrgCountry CN \
     --OrgCity 北京市 \
     --OrgRegion 北京市 \
     --OrgPhoneArea 010 \
     --OrgPhoneNumber 123456789010 \
-    --AdminFirstName 试 \
-    --AdminLastName 测 \
+    --AdminFirstName 宁 \
+    --AdminLastName 黄 \
     --AdminPhone 18162039301 \
     --AdminEmail ssl@tencent.com \
-    --AdminTitle 测试 \
-    --TechFirstName 试 \
-    --TechLastName 测 \
+    --AdminTitle 研发 \
+    --TechFirstName 宁 \
+    --TechLastName 黄 \
     --CsrKeyParameter  \
     --CsrEncryptAlgo  \
     --TechEmail ssl@tencent.com \
     --TechPhone 18162039301 \
-    --TechTitle 测试 \
+    --TechTitle 研发 \
     --ManagerId 12895
 ```
 

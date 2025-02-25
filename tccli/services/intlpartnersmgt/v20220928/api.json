@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateAndSendClientInvitationMail": {
-      "document": "该接口需要申请白名单后使用，如有需要请联系您的商务开白。具体使用流程如下；\n1、调用接口可以创建一个邀请链接，您可以向您指定的邮箱地址发送邀请链接。\n2、客户需要点击邮箱中的邀请链接，填写并提交相关信息。\n3、客户提交后，您可以在客户管理页面查看该子客的申请，并对其进行审核。\n\n注意：如指定的邮箱未收到邀请链接，您可以将接口返回的邀请链接通过人工的方式发送给客户。",
+      "document": "描述说明：该接口需要申请白名单后使用，如有需要请联系您的商务开白。具体使用流程如下；\n1、调用接口可以创建一个邀请链接，您可以向您指定的邮箱地址发送邀请链接。\n2、客户需要点击邮箱中的邀请链接，填写并提交相关信息。\n3、客户提交后，您可以在客户管理页面查看该子客的申请，并对其进行审核。\n\n注意：如指定的邮箱未收到邀请链接，您可以将接口返回的邀请链接通过人工的方式发送给客户。\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "CreateAndSendClientInvitationMailRequest",
       "name": "创建邀请客户链接",
       "output": "CreateAndSendClientInvitationMailResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "DescribeCustomerInfo": {
-      "document": "查询子客信息",
+      "document": "描述说明：查询子客信息\n可调用角色：经销商、一级经销商",
       "input": "DescribeCustomerInfoRequest",
       "name": "查询子客信息",
       "output": "DescribeCustomerInfoResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "GetCountryCodes": {
-      "document": "获取国家和地区的代码",
+      "document": "描述说明：获取国家和地区的代码\n可调用角色：经销商、一级经销商、二级经销商、子客",
       "input": "GetCountryCodesRequest",
       "name": "获取国家和地区的代码",
       "output": "GetCountryCodesResponse",
@@ -134,14 +134,14 @@
       "status": "online"
     },
     "ModifyClientRemark": {
-      "document": "修改代客备注",
+      "document": "描述说明：修改代客备注\n可调用角色：经销商、一级经销商、二级经销商",
       "input": "ModifyClientRemarkRequest",
       "name": "修改代客备注",
       "output": "ModifyClientRemarkResponse",
       "status": "online"
     },
     "QueryAccountVerificationStatus": {
-      "document": "查询账户的验证状态",
+      "document": "描述说明：查询账户的验证状态\n可调用角色：经销商、一级经销商",
       "input": "QueryAccountVerificationStatusRequest",
       "name": "查询账户验证状态",
       "output": "QueryAccountVerificationStatusResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "SendVerifyCode": {
-      "document": "发送注册账号验证码",
+      "document": "描述说明：发送注册账号验证码\n可调用角色：经销商、一级经销商、二级经销商、子客",
       "input": "SendVerifyCodeRequest",
       "name": "发送账号注册验证码",
       "output": "SendVerifyCodeResponse",
@@ -2346,7 +2346,7 @@
           "example": "new user",
           "member": "string",
           "name": "ClientRemark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

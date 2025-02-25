@@ -7,11 +7,11 @@ Input:
 ```
 tccli weilingwith BatchCreateDevice --cli-unfold-argument  \
     --WorkspaceId 0 \
-    --AddDeviceSet.0.ProductId 0 \
-    --AddDeviceSet.0.ParentWID abc \
+    --AddDeviceSet.0.ProductId 200022 \
+    --AddDeviceSet.0.ParentWID parentwid \
     --AddDeviceSet.0.KeySource 0 \
-    --AddDeviceSet.0.SN abc \
-    --ApplicationToken abc
+    --AddDeviceSet.0.SN sn \
+    --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```
 
 Output: 

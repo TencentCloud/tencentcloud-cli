@@ -13,14 +13,14 @@ Input:
 tccli weilingwith DeleteDeviceGroup --cli-unfold-argument  \
     --Id 0 \
     --WorkspaceId 1000 \
-    --ApplicationToken abc
+    --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "RequestId"
     }
 }
 ```

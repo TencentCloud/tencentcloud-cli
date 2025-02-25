@@ -1,10 +1,29 @@
 # 本版本更新包含以下内容：
 
-## 弹性 MapReduce(emr) 版本：2019-01-03
+## 域名注册(domain) 版本：2018-08-08
 
-### 第 81 次发布
+### 第 40 次发布
 
-发布时间：2025-02-25 01:44:38
+发布时间：2025-02-26 01:32:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInternalComplaint](http://document.tencentcloudapi.woa.com/document/product/242/85217)
+
+	* 新增入参：Url, InfringedUrl
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 21 次发布
+
+发布时间：2025-02-26 01:49:12
 
 本次发布包含了以下内容：
 
@@ -12,156 +31,33 @@
 
 新增接口：
 
-* [DescribeDAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/85846)
+* [CreateKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85867)
+* [DeleteKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85866)
+* [DeleteKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85865)
+* [DescribeKnowledgeDocumentSetDetail](http://document.tencentcloudapi.woa.com/document/product/1599/85864)
+* [DescribeKnowledgeDocumentSetList](http://document.tencentcloudapi.woa.com/document/product/1599/85863)
+* [DescribeKnowledgeSetList](http://document.tencentcloudapi.woa.com/document/product/1599/85862)
+* [SearchDocList](http://document.tencentcloudapi.woa.com/document/product/1599/85861)
+* [UpdateKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85860)
+* [UploadKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85859)
 
 新增数据结构：
 
-* [DAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#DAGInfo)
-
-
-
-## 高性能应用服务(hai) 版本：2023-08-12
-
-### 第 11 次发布
-
-发布时间：2025-02-25 01:50:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [InquirePriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82599)
-
-	* 新增入参：PrivateNetworkConfig
-
-* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82569)
-
-	* 新增入参：PrivateNetworkConfig
-
-
-新增数据结构：
-
-* [PrivateNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1750/82570#PrivateNetworkConfig)
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 77 次发布
-
-发布时间：2025-02-25 01:56:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [LiveStreamMonitorInputInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#LiveStreamMonitorInputInfo)
-
-	* 新增成员：CdnStreamId
-
-
-
-
-## 实时音视频(trtc) 版本：2019-07-22
-
-### 第 83 次发布
-
-发布时间：2025-02-25 02:18:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [StartAIConversation](http://document.tencentcloudapi.woa.com/document/product/647/84215)
-
-	* 新增入参：AvatarConfig
-
-
-
-
-## Web 应用防火墙(waf) 版本：2018-01-25
-
-### 第 77 次发布
-
-发布时间：2025-02-25 02:24:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AddResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85851)
-* [ApplyResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85850)
-* [CreateExport](http://document.tencentcloudapi.woa.com/document/product/627/85857)
-* [DeleteExport](http://document.tencentcloudapi.woa.com/document/product/627/85856)
-* [DeleteResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85849)
-* [DescribeDomainResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85848)
-* [DescribeLogHistogram](http://document.tencentcloudapi.woa.com/document/product/627/85855)
-* [DescribeResponsePages](http://document.tencentcloudapi.woa.com/document/product/627/85847)
-* [DescribeTopics](http://document.tencentcloudapi.woa.com/document/product/627/85854)
-* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/627/85853)
-
-修改接口：
-
-* [AddCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/53608)
-
-	* 新增入参：LogicalOp
-
-* [AddCustomWhiteRule](http://document.tencentcloudapi.woa.com/document/product/627/77485)
-
-	* <font color="#dd0000">**修改入参**：</font>ExpireTime
-
-* [AddSpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/72689)
-
-	* 新增入参：UpstreamPolicy, UpstreamRules
-
-* [ModifyCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/81722)
-
-	* 新增入参：LogicalOp
-
-* [ModifySpartaProtection](http://document.tencentcloudapi.woa.com/document/product/627/78124)
-
-	* 新增入参：UpstreamPolicy, UpstreamRules
-
-
-新增数据结构：
-
-* [AnonymousInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AnonymousInfo)
-* [Column](http://document.tencentcloudapi.woa.com/document/product/627/53609#Column)
-* [ConditionInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ConditionInfo)
-* [CustomHeader](http://document.tencentcloudapi.woa.com/document/product/627/53609#CustomHeader)
-* [FilterCls](http://document.tencentcloudapi.woa.com/document/product/627/53609#FilterCls)
-* [HistogramInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#HistogramInfo)
-* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogInfo)
-* [LogItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItem)
-* [LogItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItems)
-* [SearchLogTopics](http://document.tencentcloudapi.woa.com/document/product/627/53609#SearchLogTopics)
-* [Tag](http://document.tencentcloudapi.woa.com/document/product/627/53609#Tag)
-* [TopicExtendInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicExtendInfo)
-* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicInfo)
-* [UpstreamRule](http://document.tencentcloudapi.woa.com/document/product/627/53609#UpstreamRule)
-
-修改数据结构：
-
-* [BatchIpAccessControlItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#BatchIpAccessControlItem)
-
-	* 新增成员：GroupIds
-
-* [DescribeCustomRulesRspRuleListItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#DescribeCustomRulesRspRuleListItem)
-
-	* 新增成员：LogicalOp
-
-* [DomainsPartInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#DomainsPartInfo)
-
-	* 新增成员：UpstreamPolicy, UpstreamRules
-
+* [DeleteKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DeleteKnowledgeDocumentSetRsp)
+* [DescribeKnowledgeDocumentSetDetailRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetDetailRsp)
+* [DescribeKnowledgeDocumentSetListRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetListRsp)
+* [DocumentQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DocumentQuery)
+* [KnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSet)
+* [KnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSetInfo)
+* [KnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSet)
+* [KnowledgeSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSetRsp)
+* [KnowledgeSplitterPreprocess](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSplitterPreprocess)
+* [PageQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#PageQuery)
+* [QureyKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSet)
+* [QureyKnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSetInfo)
+* [SearchDocInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocInfo)
+* [SearchDocRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocRsp)
+* [UploadKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#UploadKnowledgeDocumentSetRsp)
 
 
 
@@ -50567,6 +50463,21 @@
 
 ## 域名注册(domain) 版本：2018-08-08
 
+### 第 40 次发布
+
+发布时间：2025-02-26 01:32:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInternalComplaint](http://document.tencentcloudapi.woa.com/document/product/242/85217)
+
+	* 新增入参：Url, InfringedUrl
+
+
 ### 第 39 次发布
 
 发布时间：2025-02-20 01:22:30
@@ -54123,11 +54034,11 @@
 
 新增接口：
 
-* [[DescribeDAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/85846)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeDAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/85846)
 
 新增数据结构：
 
-* [[DAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#DAGInfo)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[DAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#DAGInfo))
+* [DAGInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#DAGInfo)
 
 ### 第 80 次发布
 
@@ -67726,7 +67637,7 @@
 
 新增数据结构：
 
-* [[PrivateNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1750/82570#PrivateNetworkConfig)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[PrivateNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1750/82570#PrivateNetworkConfig))
+* [PrivateNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1750/82570#PrivateNetworkConfig)
 
 ### 第 10 次发布
 
@@ -78908,6 +78819,44 @@
 
 
 ## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 21 次发布
+
+发布时间：2025-02-26 01:49:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85867)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85866)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DeleteKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85865)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeKnowledgeDocumentSetDetail](http://document.tencentcloudapi.woa.com/document/product/1599/85864)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeKnowledgeDocumentSetList](http://document.tencentcloudapi.woa.com/document/product/1599/85863)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeKnowledgeSetList](http://document.tencentcloudapi.woa.com/document/product/1599/85862)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SearchDocList](http://document.tencentcloudapi.woa.com/document/product/1599/85861)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UpdateKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85860)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[UploadKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85859)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[DeleteKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DeleteKnowledgeDocumentSetRsp)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[DeleteKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DeleteKnowledgeDocumentSetRsp))
+* [[DescribeKnowledgeDocumentSetDetailRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetDetailRsp)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[DescribeKnowledgeDocumentSetDetailRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetDetailRsp))
+* [[DescribeKnowledgeDocumentSetListRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetListRsp)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[DescribeKnowledgeDocumentSetListRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetListRsp))
+* [[DocumentQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DocumentQuery)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[DocumentQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DocumentQuery))
+* [[KnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSet)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[KnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSet))
+* [[KnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSetInfo)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[KnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSetInfo))
+* [[KnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSet)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[KnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSet))
+* [[KnowledgeSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSetRsp)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[KnowledgeSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSetRsp))
+* [[KnowledgeSplitterPreprocess](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSplitterPreprocess)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[KnowledgeSplitterPreprocess](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSplitterPreprocess))
+* [[PageQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#PageQuery)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[PageQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#PageQuery))
+* [[QureyKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSet)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[QureyKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSet))
+* [[QureyKnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSetInfo)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[QureyKnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSetInfo))
+* [[SearchDocInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocInfo)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[SearchDocInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocInfo))
+* [[SearchDocRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocRsp)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[SearchDocRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocRsp))
+* [[UploadKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#UploadKnowledgeDocumentSetRsp)](http://document.tencentcloudapi.woa.com/document/product/1599/75496#[UploadKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#UploadKnowledgeDocumentSetRsp))
 
 ### 第 20 次发布
 
@@ -135229,16 +135178,16 @@
 
 新增接口：
 
-* [[AddResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85851)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ApplyResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85850)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateExport](http://document.tencentcloudapi.woa.com/document/product/627/85857)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteExport](http://document.tencentcloudapi.woa.com/document/product/627/85856)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85849)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDomainResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85848)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLogHistogram](http://document.tencentcloudapi.woa.com/document/product/627/85855)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeResponsePages](http://document.tencentcloudapi.woa.com/document/product/627/85847)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTopics](http://document.tencentcloudapi.woa.com/document/product/627/85854)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SearchLog](http://document.tencentcloudapi.woa.com/document/product/627/85853)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85851)
+* [ApplyResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85850)
+* [CreateExport](http://document.tencentcloudapi.woa.com/document/product/627/85857)
+* [DeleteExport](http://document.tencentcloudapi.woa.com/document/product/627/85856)
+* [DeleteResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85849)
+* [DescribeDomainResponsePage](http://document.tencentcloudapi.woa.com/document/product/627/85848)
+* [DescribeLogHistogram](http://document.tencentcloudapi.woa.com/document/product/627/85855)
+* [DescribeResponsePages](http://document.tencentcloudapi.woa.com/document/product/627/85847)
+* [DescribeTopics](http://document.tencentcloudapi.woa.com/document/product/627/85854)
+* [SearchLog](http://document.tencentcloudapi.woa.com/document/product/627/85853)
 
 修改接口：
 
@@ -135265,20 +135214,20 @@
 
 新增数据结构：
 
-* [[AnonymousInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AnonymousInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[AnonymousInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AnonymousInfo))
-* [[Column](http://document.tencentcloudapi.woa.com/document/product/627/53609#Column)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[Column](http://document.tencentcloudapi.woa.com/document/product/627/53609#Column))
-* [[ConditionInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ConditionInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[ConditionInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ConditionInfo))
-* [[CustomHeader](http://document.tencentcloudapi.woa.com/document/product/627/53609#CustomHeader)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[CustomHeader](http://document.tencentcloudapi.woa.com/document/product/627/53609#CustomHeader))
-* [[FilterCls](http://document.tencentcloudapi.woa.com/document/product/627/53609#FilterCls)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[FilterCls](http://document.tencentcloudapi.woa.com/document/product/627/53609#FilterCls))
-* [[HistogramInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#HistogramInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[HistogramInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#HistogramInfo))
-* [[LogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[LogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogInfo))
-* [[LogItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItem)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[LogItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItem))
-* [[LogItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItems)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[LogItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItems))
-* [[SearchLogTopics](http://document.tencentcloudapi.woa.com/document/product/627/53609#SearchLogTopics)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[SearchLogTopics](http://document.tencentcloudapi.woa.com/document/product/627/53609#SearchLogTopics))
-* [[Tag](http://document.tencentcloudapi.woa.com/document/product/627/53609#Tag)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[Tag](http://document.tencentcloudapi.woa.com/document/product/627/53609#Tag))
-* [[TopicExtendInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicExtendInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[TopicExtendInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicExtendInfo))
-* [[TopicInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicInfo)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[TopicInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicInfo))
-* [[UpstreamRule](http://document.tencentcloudapi.woa.com/document/product/627/53609#UpstreamRule)](http://document.tencentcloudapi.woa.com/document/product/627/53609#[UpstreamRule](http://document.tencentcloudapi.woa.com/document/product/627/53609#UpstreamRule))
+* [AnonymousInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#AnonymousInfo)
+* [Column](http://document.tencentcloudapi.woa.com/document/product/627/53609#Column)
+* [ConditionInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#ConditionInfo)
+* [CustomHeader](http://document.tencentcloudapi.woa.com/document/product/627/53609#CustomHeader)
+* [FilterCls](http://document.tencentcloudapi.woa.com/document/product/627/53609#FilterCls)
+* [HistogramInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#HistogramInfo)
+* [LogInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogInfo)
+* [LogItem](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItem)
+* [LogItems](http://document.tencentcloudapi.woa.com/document/product/627/53609#LogItems)
+* [SearchLogTopics](http://document.tencentcloudapi.woa.com/document/product/627/53609#SearchLogTopics)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/627/53609#Tag)
+* [TopicExtendInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicExtendInfo)
+* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/627/53609#TopicInfo)
+* [UpstreamRule](http://document.tencentcloudapi.woa.com/document/product/627/53609#UpstreamRule)
 
 修改数据结构：
 

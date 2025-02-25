@@ -18,8 +18,8 @@ Output:
         "Result": {
             "List": [
                 {
-                    "StatusID": "test",
-                    "StatusName": "测试",
+                    "StatusID": "statusid",
+                    "StatusName": "statusname",
                     "StatusType": ""
                 }
             ]

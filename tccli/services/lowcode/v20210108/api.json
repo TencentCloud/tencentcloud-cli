@@ -14,6 +14,27 @@
       "output": "CreateDataSourceDetailResponse",
       "status": "online"
     },
+    "CreateKnowledgeSet": {
+      "document": "创建知识库",
+      "input": "CreateKnowledgeSetRequest",
+      "name": "创建知识库",
+      "output": "CreateKnowledgeSetResponse",
+      "status": "online"
+    },
+    "DeleteKnowledgeDocumentSet": {
+      "document": "删除知识库下文档",
+      "input": "DeleteKnowledgeDocumentSetRequest",
+      "name": "删除知识库下文档",
+      "output": "DeleteKnowledgeDocumentSetResponse",
+      "status": "online"
+    },
+    "DeleteKnowledgeSet": {
+      "document": "删除知识库",
+      "input": "DeleteKnowledgeSetRequest",
+      "name": "删除知识库",
+      "output": "DeleteKnowledgeSetResponse",
+      "status": "online"
+    },
     "DeleteMaterialInfo": {
       "document": "删除素材",
       "input": "DeleteMaterialInfoRequest",
@@ -33,6 +54,27 @@
       "input": "DescribeFoldProcessBasicInfosRequest",
       "name": "查询流程折叠基础信息列表",
       "output": "DescribeFoldProcessBasicInfosResponse",
+      "status": "online"
+    },
+    "DescribeKnowledgeDocumentSetDetail": {
+      "document": "获取知识库下文档详情",
+      "input": "DescribeKnowledgeDocumentSetDetailRequest",
+      "name": "获取知识库下文档详情",
+      "output": "DescribeKnowledgeDocumentSetDetailResponse",
+      "status": "online"
+    },
+    "DescribeKnowledgeDocumentSetList": {
+      "document": "查询知识库下文件集合",
+      "input": "DescribeKnowledgeDocumentSetListRequest",
+      "name": "用于精确查找与查询条件完全匹配知识库下文件集合",
+      "output": "DescribeKnowledgeDocumentSetListResponse",
+      "status": "online"
+    },
+    "DescribeKnowledgeSetList": {
+      "document": "查询知识库",
+      "input": "DescribeKnowledgeSetListRequest",
+      "name": "查询环境下的知识库列表",
+      "output": "DescribeKnowledgeSetListResponse",
       "status": "online"
     },
     "DescribeMaterialInfoList": {
@@ -98,11 +140,32 @@
       "output": "ModifyDataSourceResponse",
       "status": "online"
     },
+    "SearchDocList": {
+      "document": "知识库文档搜索接口",
+      "input": "SearchDocListRequest",
+      "name": "知识库搜索文档接口",
+      "output": "SearchDocListResponse",
+      "status": "online"
+    },
+    "UpdateKnowledgeSet": {
+      "document": "更新知识库",
+      "input": "UpdateKnowledgeSetRequest",
+      "name": "更新知识库",
+      "output": "UpdateKnowledgeSetResponse",
+      "status": "online"
+    },
     "UpdateMaterialInfo": {
       "document": "新增或更新素材信息",
       "input": "UpdateMaterialInfoRequest",
       "name": "新增或更新素材信息",
       "output": "UpdateMaterialInfoResponse",
+      "status": "online"
+    },
+    "UploadKnowledgeDocumentSet": {
+      "document": "更新知识库",
+      "input": "UploadKnowledgeDocumentSetRequest",
+      "name": "上传知识库文档",
+      "output": "UploadKnowledgeDocumentSetResponse",
       "status": "online"
     }
   },
@@ -449,6 +512,60 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKnowledgeSetRequest": {
+      "document": "CreateKnowledgeSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "”“",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateKnowledgeSetResponse": {
+      "document": "CreateKnowledgeSet返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1220,6 +1337,113 @@
       ],
       "usage": "out"
     },
+    "DeleteKnowledgeDocumentSetRequest": {
+      "document": "DeleteKnowledgeDocumentSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "qinmyku873d0a9",
+          "member": "string",
+          "name": "CollectionView",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除时制定的条件",
+          "example": "无",
+          "member": "DocumentQuery",
+          "name": "Query",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKnowledgeDocumentSetResponse": {
+      "document": "DeleteKnowledgeDocumentSet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增文件返回信息",
+          "example": "无",
+          "member": "DeleteKnowledgeDocumentSetRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKnowledgeDocumentSetRsp": {
+      "document": "删除文档出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除文档数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AffectedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteKnowledgeSetRequest": {
+      "document": "DeleteKnowledgeSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "”“",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteKnowledgeSetResponse": {
+      "document": "DeleteKnowledgeSet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteMaterialInfoRequest": {
       "document": "DeleteMaterialInfo请求参数结构体",
       "members": [
@@ -1534,6 +1758,259 @@
           "member": "ProcessFoldBasicInfoSets",
           "name": "Data",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeDocumentSetDetailRequest": {
+      "document": "DescribeKnowledgeDocumentSetDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "qinmyku873d0a9",
+          "member": "string",
+          "name": "CollectionView",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件名",
+          "example": " my-test.md",
+          "member": "string",
+          "name": "DocumentSetName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件id",
+          "example": "1232343434511",
+          "member": "string",
+          "name": "DocumentSetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeDocumentSetDetailResponse": {
+      "document": "DescribeKnowledgeDocumentSetDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增文件返回信息",
+          "example": "无",
+          "member": "DescribeKnowledgeDocumentSetDetailRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeDocumentSetDetailRsp": {
+      "document": "上传知识库文档返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeDocumentSet",
+          "name": "DocumentSet",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeKnowledgeDocumentSetListRequest": {
+      "document": "DescribeKnowledgeDocumentSetList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "qinmyku873d0a9",
+          "member": "string",
+          "name": "CollectionView",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "无",
+          "member": "PageQuery",
+          "name": "Query",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeDocumentSetListResponse": {
+      "document": "DescribeKnowledgeDocumentSetList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增文件返回信息",
+          "example": "无",
+          "member": "DescribeKnowledgeDocumentSetListRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeDocumentSetListRsp": {
+      "document": "删除文档出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QureyKnowledgeDocumentSet",
+          "name": "DocumentSets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeKnowledgeSetListRequest": {
+      "document": "DescribeKnowledgeSetList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识，精准查询",
+          "example": "”“",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称，精准查询",
+          "example": "”“",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页起始位",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "NoPage标识不分页",
+          "example": "\"NoPage\"",
+          "member": "string",
+          "name": "QueryMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKnowledgeSetListResponse": {
+      "document": "DescribeKnowledgeSetList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeSetRsp",
+          "name": "Data",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2132,6 +2609,39 @@
       ],
       "type": "object"
     },
+    "DocumentQuery": {
+      "document": "删除文档时查询入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件ids",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件名集合",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用创建 CollectionView 指定的 Filter 索引的字段设置查询过滤表达式",
+          "example": "无",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "GetDataSourceTokenRequest": {
       "document": "GetDataSourceToken请求参数结构体",
       "members": [
@@ -2214,6 +2724,306 @@
         }
       ],
       "usage": "both"
+    },
+    "KnowledgeDocumentSet": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件完整内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件内容前 200个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TextPrefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeDocumentSetInfo",
+          "name": "DocumentSetInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件拆分信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeSplitterPreprocess",
+          "name": "SplitterPreprocess",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kent测试文件",
+          "member": "string",
+          "name": "FileTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档元信息，必须为jsonstring\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}",
+          "member": "string",
+          "name": "FileMetaData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Author",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KnowledgeDocumentSetInfo": {
+      "document": "文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件的字符数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TextLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件的字节数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ByteLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件被预处理、Embedding 向量化的进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IndexedProgress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件预处理、Embedding 向量化的状态。\nNew：等待解析。\nLoading：文件解析中。\nFailure：文件解析、写入出错。\nReady：文件解析、写入完成。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndexedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件最后更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件关键字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KnowledgeSet": {
+      "document": "知识库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”test“",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”title“",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”desc“",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态，\nNOT_ENABLED未启用\nENABLED 已启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”NOT_ENABLED“",
+          "member": "string",
+          "name": "Active",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”2024-06-04 11:16:49“",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "”2024-06-04 11:16:49“",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KnowledgeSetRsp": {
+      "document": "查询知识库列表返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeSet",
+          "name": "KnowledgeSets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KnowledgeSplitterPreprocess": {
+      "document": "文件拆分信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "在对文件拆分时，配置是否将 Title 追加到切分后的段落后面一并 Embedding。取值如下所示：\nfalse：不追加。\ntrue：将段落 Title 追加到切分后的段落。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AppendTitleToChunk",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "在对文件拆分时，配置是否将关键字 keywords 追加到切分后的段落一并 Embedding。取值如下所示：\nfalse：不追加。\ntrue：将全文的 keywords 追加到切分后的段落。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AppendKeywordsToChunk",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MaterialInfo": {
       "document": "素材信息",
@@ -2438,6 +3248,66 @@
         }
       ],
       "type": "object"
+    },
+    "PageQuery": {
+      "document": "查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件id数组，表示要查询的文件的所有 ID，支持批量查询，数组元素范围[1,20]。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "表示要查询的文档名称，支持批量查询，数组元素范围[1,20]。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "取值范围：[1,16384]",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置分页偏移量，用于控制分页查询返回结果的起始位置，方便用户对数据进行分页展示和浏览。\n取值：为 limit 整数倍。\n计算公式：offset=limit*(page-1)。\n例如：当 limit = 10，page = 2 时，分页偏移量 offset = 10 * (2 - 1) = 10，表示从查询结果的第 11 条记录开始返回数据。\n",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设置后，其他字段为空值",
+          "example": "无",
+          "member": "string",
+          "name": "OutputFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用创建 CollectionView 指定的 Filter 索引的字段设置查询过滤表达式。",
+          "example": "无",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "PermissionResourceInfo": {
       "document": "资源权限信息",
@@ -2873,6 +3743,196 @@
       ],
       "usage": "both"
     },
+    "QureyKnowledgeDocumentSet": {
+      "document": "搜索数据的集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件内容前 200个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TextPrefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件拆分信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KnowledgeSplitterPreprocess",
+          "name": "SplitterPreprocess",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QureyKnowledgeDocumentSetInfo",
+          "name": "DocumentSetInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kent测试文件",
+          "member": "string",
+          "name": "FileTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件元信息，必须为jsonstring\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}",
+          "member": "string",
+          "name": "FileMetaData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kent",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Author",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QureyKnowledgeDocumentSetInfo": {
+      "document": "查询文件集合信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件的字符数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TextLength",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件的字节数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ByteLength",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件被预处理、Embedding 向量化的进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "IndexedProgress",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件预处理、Embedding 向量化的状态。\nNew：等待解析。\nLoading：文件解析中。\nFailure：文件解析、写入出错。\nReady：文件解析、写入完成。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndexedStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IndexedErrorMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件最后更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件关键字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RelationField": {
       "document": "数据源关联的的信息",
       "members": [
@@ -2985,6 +4045,200 @@
       ],
       "usage": "out"
     },
+    "SearchDocInfo": {
+      "document": "知识库搜索文档信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库名称",
+          "example": "abc",
+          "member": "string",
+          "name": "CollectionViewName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档Id",
+          "example": "Id",
+          "member": "string",
+          "name": "DocSetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档Name",
+          "example": "Name",
+          "member": "string",
+          "name": "DocSetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档类型",
+          "example": ".md",
+          "member": "string",
+          "name": "DocType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档标题",
+          "example": "title",
+          "member": "string",
+          "name": "FileTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档元信息",
+          "example": "{}",
+          "member": "string",
+          "name": "FileMetaData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档描述",
+          "example": "abc",
+          "member": "string",
+          "name": "DocDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档大小",
+          "example": "100",
+          "member": "uint64",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchDocListRequest": {
+      "document": "SearchDocList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-xxx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称",
+          "example": "abc",
+          "member": "string",
+          "name": "CollectionView",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索模式",
+          "example": "id",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "搜索值",
+          "example": "abc",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchDocListResponse": {
+      "document": "SearchDocList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "知识库文档搜索数据",
+          "example": "{}",
+          "member": "SearchDocRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchDocRsp": {
+      "document": "知识库文档搜索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档基本信息",
+          "example": "[]",
+          "member": "SearchDocInfo",
+          "name": "DocInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "TicketAuthInfo": {
       "document": "数据源授权信息",
       "members": [
@@ -3026,6 +4280,69 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateKnowledgeSetRequest": {
+      "document": "UpdateKnowledgeSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "”“",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库名称",
+          "example": "无",
+          "member": "string",
+          "name": "Title",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态;ENABLED启用；NOT_ENABLED不启用",
+          "example": "无",
+          "member": "string",
+          "name": "Active",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateKnowledgeSetResponse": {
+      "document": "UpdateKnowledgeSet返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateMaterialInfoRequest": {
       "document": "UpdateMaterialInfo请求参数结构体",
@@ -3098,6 +4415,165 @@
         }
       ],
       "type": "object"
+    },
+    "UploadKnowledgeDocumentSetRequest": {
+      "document": "UploadKnowledgeDocumentSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库标识",
+          "example": "qinmyku873d0a9",
+          "member": "string",
+          "name": "CollectionView",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态;ENABLED启用；NOT_ENABLED不启用",
+          "example": "my-test.md",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件存储位置的可读地址",
+          "example": "无",
+          "member": "string",
+          "name": "CosUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，例如: .docx, .md",
+          "example": ".md",
+          "member": "string",
+          "name": "DocumentType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对文件的描述",
+          "example": "一个md文件",
+          "member": "string",
+          "name": "DocumentDesc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件标题",
+          "example": "文件标题",
+          "member": "string",
+          "name": "FileTitle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "\t文件元信息，为jsonstring",
+          "example": "{\"url\":\"\",\"title\":\"标题\"}",
+          "member": "string",
+          "name": "FileMetaData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件id",
+          "example": "id",
+          "member": "string",
+          "name": "DocumentSetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadKnowledgeDocumentSetResponse": {
+      "document": "UploadKnowledgeDocumentSet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增文件返回信息",
+          "example": "无",
+          "member": "UploadKnowledgeDocumentSetRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadKnowledgeDocumentSetRsp": {
+      "document": "上传知识库文档返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "给文件分配的 ID 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentSetName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "文件标题",
+          "member": "string",
+          "name": "FileTitle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件元信息，为jsonstring\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"url\":\"url\",\"title\":\"标题\"}",
+          "member": "string",
+          "name": "FileMetaData",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WxAppInfo": {
       "document": "微信小程序信息",

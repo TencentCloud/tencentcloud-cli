@@ -152,7 +152,7 @@
       {
         "document": "查询子客信息",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerInfo\n<公共请求参数>\n\n{\n    \"CustomerUin\": [\n        200000000000,\n        200000000001,\n        200000000002\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CustomerUin\": \"200000000000\",\n                \"Email\": \"test@gmail.com\",\n                \"Phone\": \"18888888\",\n                \"Mark\": \"for test\",\n                \"Name\": \"tom\",\n                \"BindTime\": \"2020-01-01 08:00:00\",\n                \"AccountStatus\": \"0\",\n                \"AuthStatus\": \"0\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"CustomerUin\": \"200000000000\",\n                \"Email\": \"test@gmail.com\",\n                \"Phone\": \"18888888\",\n                \"Mark\": \"for test\",\n                \"Name\": \"tom\",\n                \"BindTime\": \"2020-01-01 08:00:00\",\n                \"AccountStatus\": \"0\",\n                \"AuthStatus\": \"0\"\n            }\n        ],\n        \"RequestId\": \"91991903-****-42ca-9f0d-68****39b231\"\n    }\n}",
         "title": "查询子客信息"
       }
     ],
@@ -312,7 +312,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendVerifyCode\n<公共请求参数>\n\n{\n    \"CountryCode\": \"852\",\n    \"PhoneNum\": \"18888888888\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9******3-2380-42ca-9f0d-68fc6f39****\"\n    }\n}",
         "title": "发送主账号验证码"
       }
     ]

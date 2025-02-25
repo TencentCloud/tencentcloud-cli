@@ -1,3 +1,66 @@
+# Release 3.0.1161.1
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 40 次发布
+
+发布时间：2025-02-26 01:32:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInternalComplaint](http://document.tencentcloudapi.woa.com/document/product/242/85217)
+
+	* 新增入参：Url, InfringedUrl
+
+
+
+
+## 云开发低码(lowcode) 版本：2021-01-08
+
+### 第 21 次发布
+
+发布时间：2025-02-26 01:49:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85867)
+* [DeleteKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85866)
+* [DeleteKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85865)
+* [DescribeKnowledgeDocumentSetDetail](http://document.tencentcloudapi.woa.com/document/product/1599/85864)
+* [DescribeKnowledgeDocumentSetList](http://document.tencentcloudapi.woa.com/document/product/1599/85863)
+* [DescribeKnowledgeSetList](http://document.tencentcloudapi.woa.com/document/product/1599/85862)
+* [SearchDocList](http://document.tencentcloudapi.woa.com/document/product/1599/85861)
+* [UpdateKnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/85860)
+* [UploadKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/85859)
+
+新增数据结构：
+
+* [DeleteKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DeleteKnowledgeDocumentSetRsp)
+* [DescribeKnowledgeDocumentSetDetailRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetDetailRsp)
+* [DescribeKnowledgeDocumentSetListRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DescribeKnowledgeDocumentSetListRsp)
+* [DocumentQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#DocumentQuery)
+* [KnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSet)
+* [KnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeDocumentSetInfo)
+* [KnowledgeSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSet)
+* [KnowledgeSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSetRsp)
+* [KnowledgeSplitterPreprocess](http://document.tencentcloudapi.woa.com/document/product/1599/75496#KnowledgeSplitterPreprocess)
+* [PageQuery](http://document.tencentcloudapi.woa.com/document/product/1599/75496#PageQuery)
+* [QureyKnowledgeDocumentSet](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSet)
+* [QureyKnowledgeDocumentSetInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#QureyKnowledgeDocumentSetInfo)
+* [SearchDocInfo](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocInfo)
+* [SearchDocRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#SearchDocRsp)
+* [UploadKnowledgeDocumentSetRsp](http://document.tencentcloudapi.woa.com/document/product/1599/75496#UploadKnowledgeDocumentSetRsp)
+
+
+
 # Release 3.0.1160.1
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03

@@ -12,7 +12,7 @@ tccli weilingwith ChangeAlarmStatus --cli-unfold-argument  \
     --ProcessType kill_warning \
     --WorkspaceId 1016 \
     --UserId 1 \
-    --UserName a \
+    --UserName andy \
     --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```
 

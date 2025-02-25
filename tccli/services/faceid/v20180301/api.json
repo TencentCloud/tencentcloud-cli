@@ -656,7 +656,6 @@
           "example": "A561B769-C347-4724-A69A-6C3B3483E107",
           "member": "string",
           "name": "SdkToken",
-          "required": true,
           "type": "string",
           "value_allowed_null": false
         },

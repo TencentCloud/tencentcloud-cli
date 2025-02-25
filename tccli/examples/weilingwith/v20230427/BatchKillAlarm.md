@@ -11,7 +11,7 @@ tccli weilingwith BatchKillAlarm --cli-unfold-argument  \
     --StatusSet processed \
     --WorkspaceId 1016 \
     --UserId 1 \
-    --UserName a \
+    --UserName username \
     --ApplicationToken baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0
 ```
 

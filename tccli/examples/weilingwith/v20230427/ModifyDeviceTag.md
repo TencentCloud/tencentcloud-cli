@@ -7,8 +7,8 @@ Input:
 ```
 tccli weilingwith ModifyDeviceTag --cli-unfold-argument  \
     --WorkspaceId 1016 \
-    --Set.0.WID abc \
-    --Set.0.NameSet aaa bbb \
+    --Set.0.WID wid \
+    --Set.0.NameSet name1 name2 \
     --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```
 

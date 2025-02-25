@@ -1,6 +1,6 @@
 **Example 1: 获取Token成功**
 
-
+申请活体验证 token
 
 Input: 
 

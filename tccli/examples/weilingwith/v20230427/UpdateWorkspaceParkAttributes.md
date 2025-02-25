@@ -8,7 +8,7 @@ Input:
 tccli weilingwith UpdateWorkspaceParkAttributes --cli-unfold-argument  \
     --WorkspaceId 1016 \
     --AdministrativeCodeSet 100110 \
-    --ApplicationToken xxx
+    --ApplicationToken vfy4zPtG74k6OYKr9rNa9
 ```
 
 Output: 
