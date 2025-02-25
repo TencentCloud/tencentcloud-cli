@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli tione DescribeBillingResourceGroups --cli-unfold-argument  \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --Filters.0.Name AvailableSort \
+    --Filters.0.Values true \
     --Filters.0.Negative True \
     --Filters.0.Fuzzy True \
-    --TagFilters.0.TagKey abc \
-    --TagFilters.0.TagValues abc \
+    --TagFilters.0.TagKey tag-a \
+    --TagFilters.0.TagValues tag-a \
     --Offset 0 \
     --Limit 0 \
-    --SearchWord abc \
+    --SearchWord hello-world \
     --DontShowInstanceSet True
 ```
 
@@ -25,8 +25,8 @@ Output:
         "TotalCount": 1,
         "ResourceGroupSet": [
             {
-                "ResourceGroupId": "abc",
-                "ResourceGroupName": "abc",
+                "ResourceGroupId": "rsg-8c92bd27",
+                "ResourceGroupName": "test-rsg-a",
                 "FreeInstance": 1,
                 "TotalInstance": 1,
                 "UsedResource": {
@@ -35,7 +35,7 @@ Output:
                     "Gpu": 1,
                     "GpuDetailSet": [
                         {
-                            "Name": "abc",
+                            "Name": "A100",
                             "Value": 1
                         }
                     ]
@@ -46,56 +46,21 @@ Output:
                     "Gpu": 1,
                     "GpuDetailSet": [
                         {
-                            "Name": "abc",
+                            "Name": "A100",
                             "Value": 1
                         }
                     ]
                 },
-                "InstanceSet": [
-                    {
-                        "InstanceId": "abc",
-                        "UsedResource": {
-                            "Cpu": 1,
-                            "Memory": 1,
-                            "Gpu": 1,
-                            "GpuType": "abc",
-                            "RealGpu": 1,
-                            "RealGpuDetailSet": [
-                                {
-                                    "Name": "abc",
-                                    "Value": 1
-                                }
-                            ]
-                        },
-                        "TotalResource": {
-                            "Cpu": 1,
-                            "Memory": 1,
-                            "Gpu": 1,
-                            "GpuType": "abc",
-                            "RealGpu": 1
-                        },
-                        "InstanceStatus": "abc",
-                        "SubUin": "abc",
-                        "CreateTime": "abc",
-                        "ExpireTime": "abc",
-                        "AutoRenewFlag": "abc",
-                        "SpecId": "abc",
-                        "SpecAlias": "abc",
-                        "SpecFeatures": [
-                            "abc"
-                        ],
-                        "CvmInstanceId": "abc"
-                    }
-                ],
+                "InstanceSet": [],
                 "TagSet": [
                     {
-                        "TagKey": "abc",
-                        "TagValue": "abc"
+                        "TagKey": "tag-a",
+                        "TagValue": "tag-b"
                     }
                 ]
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "a8410ded-4a5f-6ad1-6537-6a3462568017"
     }
 }
 ```

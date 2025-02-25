@@ -7,7 +7,7 @@ Input:
 ```
 tccli weilingwith DescribeFileUploadURL --cli-unfold-argument  \
     --WorkspaceId 1016 \
-    --FileName a \
+    --FileName filename \
     --FileSize 10 \
     --FileExpireTime 1693411200 \
     --ApplicationToken YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78

@@ -1,5 +1,19 @@
 {
   "actions": {
+    "AddCustomizedConfig": {
+      "document": "新增个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。",
+      "input": "AddCustomizedConfigRequest",
+      "name": "新增个性化配置",
+      "output": "AddCustomizedConfigResponse",
+      "status": "online"
+    },
+    "AssociateCustomizedConfig": {
+      "document": "关联配置到server或location，根据配置类型关联到server或location。准备下线，请使用SetCustomizedConfigForLoadBalancer。",
+      "input": "AssociateCustomizedConfigRequest",
+      "name": "关联个性化配置",
+      "output": "AssociateCustomizedConfigResponse",
+      "status": "online"
+    },
     "AssociateTargetGroups": {
       "document": "本接口(AssociateTargetGroups)用来将目标组绑定到负载均衡的监听器（四层协议）或转发规则（七层协议）上。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "AssociateTargetGroupsRequest",
@@ -96,6 +110,13 @@
       "input": "CreateTopicRequest",
       "name": "创建主题",
       "output": "CreateTopicResponse",
+      "status": "online"
+    },
+    "DeleteCustomizedConfig": {
+      "document": "删除个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。",
+      "input": "DeleteCustomizedConfigRequest",
+      "name": "删除个性化配置",
+      "output": "DeleteCustomizedConfigResponse",
       "status": "online"
     },
     "DeleteListener": {
@@ -378,6 +399,13 @@
       "output": "DescribeTaskStatusResponse",
       "status": "online"
     },
+    "DisassociateCustomizedConfig": {
+      "document": "去关联个性化配置，准备下线，请使用SetCustomizedConfigForLoadBalancer。",
+      "input": "DisassociateCustomizedConfigRequest",
+      "name": "去关联个性化配置",
+      "output": "DisassociateCustomizedConfigResponse",
+      "status": "online"
+    },
     "DisassociateTargetGroups": {
       "document": "解除规则的目标组关联关系。\n本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。",
       "input": "DisassociateTargetGroupsRequest",
@@ -432,6 +460,13 @@
       "input": "ModifyBlockIPListRequest",
       "name": "修改负载均衡的IP封禁黑名单列表",
       "output": "ModifyBlockIPListResponse",
+      "status": "online"
+    },
+    "ModifyCustomizedConfig": {
+      "document": "修改个性化配置。如果配置已经绑定clb、server或location，同时更新。准备下线，请使用SetCustomizedConfigForLoadBalancer。",
+      "input": "ModifyCustomizedConfigRequest",
+      "name": "修改个性化配置",
+      "output": "ModifyCustomizedConfigResponse",
       "status": "online"
     },
     "ModifyDomain": {
@@ -610,6 +645,97 @@
     "serviceShortName": "clb"
   },
   "objects": {
+    "AddCustomizedConfigRequest": {
+      "document": "AddCustomizedConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置名字",
+          "example": "myconf",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置类型，取值范围[\"CLB\", \"SERVER\", \"LOCATION\"]，分别表示CLB配置，server配置，location配置。",
+          "example": "CLB",
+          "member": "string",
+          "name": "ConfigType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置内容",
+          "example": "add_header VER 1.0",
+          "member": "string",
+          "name": "ConfigContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddCustomizedConfigResponse": {
+      "document": "AddCustomizedConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置ID",
+          "example": "pz-xxxxxxxx",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateCustomizedConfigRequest": {
+      "document": "AssociateCustomizedConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置ID",
+          "example": "pz-clweh**c1",
+          "member": "string",
+          "name": "UconfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关联的server或location",
+          "example": "无",
+          "member": "BindItem",
+          "name": "BindList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssociateCustomizedConfigResponse": {
+      "document": "AssociateCustomizedConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AssociateTargetGroupsRequest": {
       "document": "AssociateTargetGroups请求参数结构体",
       "members": [
@@ -1296,6 +1422,52 @@
         }
       ],
       "usage": "out"
+    },
+    "BindItem": {
+      "document": "配置绑定关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置绑定的CLB ID",
+          "example": "",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置绑定的监听器ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置绑定的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置绑定的规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BlockedIP": {
       "document": "加入了12306黑名单的IP",
@@ -3504,6 +3676,33 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteCustomizedConfigRequest": {
+      "document": "DeleteCustomizedConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的配置ID列表",
+          "example": "[\"pz-efce**cu\"]",
+          "member": "string",
+          "name": "UconfigIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomizedConfigResponse": {
+      "document": "DeleteCustomizedConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DeleteListenerRequest": {
       "document": "DeleteListener请求参数结构体",
@@ -5849,6 +6048,42 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateCustomizedConfigRequest": {
+      "document": "DisassociateCustomizedConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置ID",
+          "example": "pz-ched**vd",
+          "member": "string",
+          "name": "UconfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解绑的列表",
+          "example": "无",
+          "member": "BindItem",
+          "name": "BindList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DisassociateCustomizedConfigResponse": {
+      "document": "DisassociateCustomizedConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8585,6 +8820,51 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizedConfigRequest": {
+      "document": "ModifyCustomizedConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置名字",
+          "example": "myconf",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置ID",
+          "example": "pz-sdf",
+          "member": "string",
+          "name": "UconfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置内容",
+          "example": "client_max_body_size 100M;",
+          "member": "string",
+          "name": "ConfigContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomizedConfigResponse": {
+      "document": "ModifyCustomizedConfig返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

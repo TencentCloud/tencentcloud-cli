@@ -11,10 +11,10 @@ Input:
 tccli weilingwith SaveDeviceGroup --cli-unfold-argument  \
     --Id 0 \
     --ParentId 0 \
-    --Name abc \
-    --Description abc \
+    --Name name \
+    --Description description \
     --WorkspaceId 0 \
-    --ApplicationToken abc
+    --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
         "Result": {
             "Id": 0
         },
-        "RequestId": "abc"
+        "RequestId": "requestid"
     }
 }
 ```

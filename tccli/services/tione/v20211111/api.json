@@ -1343,7 +1343,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "{\"ImageType\":\"SYSTEM\",\"ImageId\":\"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"ImageName\":\"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\"AllowSaveAllContent\":true,\"SupportDataPipeline\":false}",
+          "example": "{\"ImageType\":\"SYSTEM\",\"ImageId\":\"35551e3c-b0e3\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud/llm-train:1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"ImageName\":\"tilearn-llm0.9\"}",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "required": false,
@@ -6771,7 +6771,7 @@
         {
           "disabled": false,
           "document": "数据配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"MappingPath\":\"/home/tione/notebook\",\"DataSourceType\":\"CFS\",\"WeDataHDFSSource\":{\"Id\":0,\"Path\":\"\"},\"CFSSource\":{\"Id\":\"cfs-14cpoxo5\",\"Path\":\"/\"},\"GooseFSSource\":{\"Id\":\"\",\"Type\":\"\",\"Path\":\"\",\"NameSpace\":\"\"},\"LocalDiskSource\":{\"InstanceId\":\"\"},\"CBSSource\":{\"VolumeSizeInGB\":0},\"DataSetSource\":{\"Id\":\"\"}}]",
+          "example": "[{\"MappingPath\":\"/home/tione/notebook\",\"DataSourceType\":\"CFS\",\"WeDataHDFSSource\":{\"Id\":0,\"Path\":\"\"},\"CFSSource\":{\"Id\":\"cfs-14cpoxo5\",\"Path\":\"/\"}}]",
           "member": "DataConfig",
           "name": "DataConfigs",
           "output_required": true,
@@ -6801,7 +6801,7 @@
         {
           "disabled": false,
           "document": "镜像信息",
-          "example": "{\"ImageType\":\"SYSTEM\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"RegistryRegion\":\"\",\"RegistryId\":\"\",\"AllowSaveAllContent\":true,\"ImageName\":\"tilearn-llm0.9-torch2.3-py3.10-cuda12.4-gpu\",\"SupportDataPipeline\":false,\"ImageSecret\":{\"KeyId\":\"\",\"Username\":\"\",\"Password\":\"\",\"SecretId\":\"\"},\"ImageId\":\"35551e3c-b0e3-40dc-8e91-cc10a5613cd3\"}",
+          "example": "{\"ImageType\":\"SYSTEM\",\"ImageUrl\":\"tione.tencentcloudcr.com/qcloud-ti-platform/llm-train:24.03-gpu-py310-cu124-tilearn-llm-v1.8.0\",\"ImageName\":\"tilearn-\",\"ImageId\":\"35551e3c-b0e310a5613cd3\"}",
           "member": "ImageInfo",
           "name": "ImageInfo",
           "output_required": true,

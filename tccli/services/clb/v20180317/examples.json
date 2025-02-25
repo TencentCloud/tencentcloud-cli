@@ -1,5 +1,21 @@
 {
   "actions": {
+    "AddCustomizedConfig": [
+      {
+        "document": "新增个性化配置",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomizedConfig\n<公共请求参数>\n\n{\n    \"ConfigName\": \"test_xxxx\",\n    \"ConfigType\": \"CLB\",\n    \"ConfigContent\": \"test-xxxxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConfigId\": \"pz-rnac4p7u\",\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "新增个性化配置"
+      }
+    ],
+    "AssociateCustomizedConfig": [
+      {
+        "document": "关联配置",
+        "input": "https://clb.tencentcloudapi.com/?Action=AssociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "关联配置"
+      }
+    ],
     "AssociateTargetGroups": [
       {
         "document": "",
@@ -152,6 +168,14 @@
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTopic\n<公共请求参数>\n\n{\n    \"PartitionCount\": \"3\",\n    \"TopicName\": \"clb-topic\"\n}",
         "output": "{\n    \"Response\": {\n        \"TopicId\": \"b046ae5f-00cf-4e90-880c-215e5ae7b6xy\",\n        \"RequestId\": \"dccf2ce3-0277-465a-9c60-260cfb141d65\"\n    }\n}",
         "title": "创建主题。"
+      }
+    ],
+    "DeleteCustomizedConfig": [
+      {
+        "document": "删除配置",
+        "input": "https://clb.tencentcloudapi.com/?Action=DeleteCustomizedConfig\r\n&UconfigIdList.0=pz-asdf\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "删除配置"
       }
     ],
     "DeleteListener": [
@@ -528,6 +552,14 @@
         "title": "查询异步任务状态"
       }
     ],
+    "DisassociateCustomizedConfig": [
+      {
+        "document": "解绑配置",
+        "input": "https://clb.tencentcloudapi.com/?Action=DisassociateCustomizedConfig\r\n&UconfigId=pz-asdfs\r\n&BindList.0.LoadBalancerId=asdfasdf\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "解绑配置"
+      }
+    ],
     "DisassociateTargetGroups": [
       {
         "document": "",
@@ -614,6 +646,14 @@
         "input": "https://clb.tencentcloudapi.com/?Action=ModifyBlockIPList\r\n&LoadBalancerIds.0=lb-6efswuxa\r\n&Type=add_customized_field\r\n&ClientIPField=client_ip_test\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"JodId\": \"localjob010916173469001234512345\",\n        \"RequestId\": \"83329908-a282-4f9f-82ab-033a30212345\"\n    }\n}",
         "title": "设置header，开启黑名单功能"
+      }
+    ],
+    "ModifyCustomizedConfig": [
+      {
+        "document": "",
+        "input": "https://clb.tencentcloudapi.com/?Action=ModifyCustomizedConfig\n&ConfigName=testname\n&UconfigId=pz-sdf\n&ConfigContent=client_max_body_size 100M;\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"83129908-a282-4f9f-8ab-131a3025ba11\"\n    }\n}",
+        "title": "更新配置"
       }
     ],
     "ModifyDomain": [

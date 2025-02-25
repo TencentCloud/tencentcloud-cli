@@ -7,7 +7,7 @@ Input:
 ```
 tccli weilingwith BatchDeleteDevice --cli-unfold-argument  \
     --WorkspaceId 1016 \
-    --WIDSet aaa bbb \
+    --WIDSet wid1 wid2 \
     --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```
 

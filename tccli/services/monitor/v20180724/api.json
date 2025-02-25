@@ -14605,7 +14605,7 @@
         {
           "disabled": false,
           "document": "内容",
-          "example": "{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"in",
+          "example": "{\"name\":\"test\",\"kind\":\"blackbox-exporter\",\"spec\":{\"scrapeSpec\":{\"interval\":\"15s\"},\"instanceSpec\":{\"module\":\"http_get\",\"urls\":[\"http://test.com\"]},\"exporterSpec\":{}}}",
           "member": "string",
           "name": "Content",
           "output_required": true,

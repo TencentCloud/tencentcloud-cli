@@ -50,8 +50,8 @@ Output:
                     "WorkspaceId": 1175
                 },
                 {
-                    "ChineseName": "ces",
-                    "Description": "123",
+                    "ChineseName": "chinesename1",
+                    "Description": "description1",
                     "EnglishName": "",
                     "IsCommWorkspace": false,
                     "Status": 1,
@@ -94,8 +94,8 @@ Output:
                     "WorkspaceId": 1018
                 },
                 {
-                    "ChineseName": "test",
-                    "Description": "ceshi",
+                    "ChineseName": "chinesename2",
+                    "Description": "description2",
                     "EnglishName": "",
                     "IsCommWorkspace": false,
                     "Status": 0,

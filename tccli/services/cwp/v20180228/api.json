@@ -21816,7 +21816,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>StrategyId- Uint64 - 基线策略id</li>\n<li>Status - Uint64 - 处理状态1已通过 0未通过</li>\n<li>Level - Uint64[] - 威胁等级</li>\n<li>BaselineName  - String - 基线名称</li>\n<li>Quuid- String - 主机quuid</li>\n<li>Uuid- String - 主机uuid</li>",
+          "document": "过滤条件 <li>StrategyId- Uint64 - 基线策略id</li> <li>Status - Uint64 - 处理状态 1-已通过 0-未通过</li> <li>Level - Uint64 - 威胁等级 1-低危 2-中危 3-高危 4-严重</li> <li>BaselineName  - String - 基线名称</li> <li>Quuid- String - 主机quuid</li> <li>Uuid- String - 主机uuid</li>",
           "example": "[{\"Name\": \"Strate****\", \"Values\": [null]}]",
           "member": "Filters",
           "name": "Filters",
@@ -21832,7 +21832,7 @@
         {
           "disabled": false,
           "document": "基线信息列表",
-          "example": "[             {                 \"Name\": \"基线名A\",                 \"Level\": 1,                 \"RuleCount\": 11,                 \"HostCount\": 12,                 \"Status\": 0,                 \"CategoryId\": 2,                 \"LastScanTime\": \"2024-11-04 03:43:26\",                 \"MaxStatus\": 2,                 \"BaselineFailCount\": 29             }         ]",
+          "example": "无",
           "member": "BaselineInfo",
           "name": "BaselineList",
           "output_required": true,
@@ -35109,7 +35109,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>\n<li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>\n<li>Uuid- String - 是否必填：否 - 主机uuid查询</li>\n<li>VulName- string -</li>\n<li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li>\n<li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li>\n<li>Labels- string- 是否必填：否 - 标签搜索</li>\n<li>IsSupportAutoFix- string- 是否必填：否 - 是否支持自动修复 0:不支持 1:支持</li>\n<li>CvssScore- string- 是否必填：否 - CvssScore大于多少</li>\n<li>AttackLevel- string- 是否必填：否 - 攻击热度大于多少</li>\n\n",
+          "document": "过滤条件。<li>Status - String - 是否必填：否 - 处理状态  0-待处理 1-已加白 2-已删除 3-已修复 5-检测中 6-修复中 8-修复失败</li><li>ModifyTime - String - 是否必填：否 - 最近发生时间</li><li>Uuid- String - 是否必填：否 - 主机uuid查询</li><li>VulName- string -</li><li>VulCategory- string - 是否必填：否 - 漏洞类别 1: web-cms漏洞 2:应用漏洞  4: Linux软件漏洞 5: Windows系统漏洞</li><li>IsSupportDefense - int- 是否必填：否 - 是否支持防御 0:不支持 1:支持</li><li>Labels- string- 是否必填：否 - 标签搜索</li><li>IsSupportAutoFix- string- 是否必填：否 - 是否支持自动修复 0:不支持 1:支持</li><li>CvssScore- string- 是否必填：否 - CvssScore大于多少</li><li>AttackLevel- string- 是否必填：否 - 攻击热度大于多少</li>",
           "example": "[{\"ExactMatch\": true, \"Name\": \"VulCate****\", \"Values\": [null]}]",
           "member": "Filters",
           "name": "Filters",
@@ -35143,7 +35143,7 @@
         {
           "disabled": false,
           "document": "漏洞列表",
-          "example": "[             {                 \"Ids\": \"1\",                 \"Name\": \"Apache Log4j 1.x JNDI 注入漏洞（CVE-2021-4104）\",                 \"VulId\": 34338,                 \"Status\": 0,                 \"PublishTime\": \"2021-12-14 20:15:00\",                 \"LastTime\": \"2024-10-21 17:20:13\",                 \"HostCount\": 1,                 \"Level\": 3,                 \"From\": 0,                 \"Descript\": \"Apache Log4j是美国阿帕奇（Apache）基金会的一款基于Java的开源日志记录工具。 \\nApache Log4j 1.2存在代码问题漏洞，攻击者可利用该漏洞通过JMSApender反序列化来运行代码。\",                 \"PublishTimeWisteria\": \"\",                 \"NameWisteria\": \"\",                 \"DescriptWisteria\": \"\",                 \"CveId\": \"CVE-2021-4104\",                 \"CvssScore\": 7.5,                 \"Labels\": \"远程利用,存在POC\",                 \"IsSupportDefense\": 0,                 \"FixSwitch\": 1,                 \"TaskId\": 1,                 \"StatusStr\": \"\",                 \"DefenseAttackCount\": 0,                 \"FirstAppearTime\": \"2024-10-18T01:22:06+08:00\",                 \"VulCategory\": 4,                 \"AttackLevel\": 0,                 \"FixNoNeedRestart\": false,                 \"Method\": 0,                 \"VulFixSwitch\": 1             }         ]",
+          "example": "无",
           "member": "VulInfoList",
           "name": "VulInfoList",
           "output_required": true,

@@ -19,7 +19,7 @@ tccli tione CreateNotebook --cli-unfold-argument  \
     --VolumeSourceType CFS \
     --VolumeSizeInGB 1 \
     --VolumeSourceCFS.Id cfs-9su5kqtv \
-    --VolumeSourceCFS.Path / \
+    --VolumeSourceCFS.Path /tione \
     --LogEnable True \
     --LogConfig.LogsetId 4dd0a097-f629-4afc-9b99-888ef99a178f \
     --LogConfig.TopicId ea8048db-8f97-4abb-9668-f3532b9b61f8 \

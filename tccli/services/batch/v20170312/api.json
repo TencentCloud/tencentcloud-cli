@@ -3362,36 +3362,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "释放地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "释放地址",
           "example": "true",
           "member": "bool",
           "name": "ReleaseAddress",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>",
           "example": "VPC1.0",
           "member": "string",
           "name": "UnsupportNetworks",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HDD本地存储属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{     \"Type\": \"LOCAL_NVME\",     \"MinSize\": 3570,     \"MaxSize\": 3570 }",
+          "document": "HDD本地存储属性",
+          "example": "无",
           "member": "StorageBlock",
           "name": "StorageBlockAttr",
           "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3686,13 +3686,13 @@
         },
         {
           "disabled": false,
-          "document": "扩展属性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展属性。",
           "example": "无",
           "member": "Externals",
           "name": "Externals",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3766,13 +3766,13 @@
         },
         {
           "disabled": false,
-          "document": "售罄原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售罄原因。",
           "example": "ResourcesSoldOut.SpecifiedInstanceType",
           "member": "string",
           "name": "SoldOutReason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3866,13 +3866,13 @@
         },
         {
           "disabled": false,
-          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> \n<li>NormalStock：表示对应库存供应有保障</li>\n<li> UnderStock：表示对应库存即将售罄</li> \n<li>WithoutStock：表示对应库存已经售罄</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述库存情况。取值范围：\n<li> EnoughStock：表示对应库存非常充足</li> \n<li>NormalStock：表示对应库存供应有保障</li>\n<li> UnderStock：表示对应库存即将售罄</li> \n<li>WithoutStock：表示对应库存已经售罄</li>",
           "example": "EnoughStock",
           "member": "string",
           "name": "StatusCategory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3932,193 +3932,193 @@
       "members": [
         {
           "disabled": false,
-          "document": "后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后续合计费用的原价，后付费模式使用，单位：元。<br><li>如返回了其他时间区间项，如UnitPriceSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时</li>",
           "example": "35.5",
           "member": "float",
           "name": "UnitPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：</li><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后续计价单元，后付费模式使用，可取值范围： <br><li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）：</li><li>GB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。</li>",
           "example": "HOUR",
           "member": "string",
           "name": "ChargeUnit",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支合计费用的原价，预付费模式使用，单位：元。",
           "example": "35.5",
           "member": "float",
           "name": "OriginalPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支合计费用的折扣价，预付费模式使用，单位：元。",
           "example": "35.5",
           "member": "float",
           "name": "DiscountPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "折扣，如20.0代表2折。",
           "example": "20.0",
           "member": "float",
           "name": "Discount",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后续合计费用的折扣价，后付费模式使用，单位：元<br><li>如返回了其他时间区间项，如UnitPriceDiscountSecondStep，则本项代表时间区间在(0, 96)小时；若未返回其他时间区间项，则本项代表全时段，即(0, ∞)小时</li>",
           "example": "35.5",
           "member": "float",
           "name": "UnitPriceDiscount",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用时间区间在(96, 360)小时的后续合计费用的原价，后付费模式使用，单位：元。",
           "example": "35.5",
           "member": "float",
           "name": "UnitPriceSecondStep",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用时间区间在(96, 360)小时的后续合计费用的折扣价，后付费模式使用，单位：元",
           "example": "35.5",
           "member": "float",
           "name": "UnitPriceDiscountSecondStep",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用时间区间在(360, ∞)小时的后续合计费用的原价，后付费模式使用，单位：元。",
           "example": "35.5",
           "member": "float",
           "name": "UnitPriceThirdStep",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "使用时间区间在(360, ∞)小时的后续合计费用的折扣价，后付费模式使用，单位：元",
           "example": "35.5",
           "member": "float",
           "name": "UnitPriceDiscountThirdStep",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支三年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支三年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "OriginalPriceThreeYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支三年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支三年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "DiscountPriceThreeYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支三年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支三年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "DiscountThreeYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支五年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支五年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "OriginalPriceFiveYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支五年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支五年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "DiscountPriceFiveYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支五年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支五年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "DiscountFiveYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支一年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支一年合计费用的原价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "OriginalPriceOneYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支一年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支一年合计费用的折扣价，预付费模式使用，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "35.5",
           "member": "float",
           "name": "DiscountPriceOneYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预支一年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预支一年应用的折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "20.0",
           "member": "float",
           "name": "DiscountOneYear",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5290,36 +5290,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "HDD本地存储类型，值为：LOCAL_PRO.\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HDD本地存储类型，值为：LOCAL_PRO.",
           "example": "LOCAL_PRO",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最小容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HDD本地存储的最小容量",
           "example": "100",
           "member": "int64",
           "name": "MinSize",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "HDD本地存储的最大容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "HDD本地存储的最大容量",
           "example": "200",
           "member": "int64",
           "name": "MaxSize",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

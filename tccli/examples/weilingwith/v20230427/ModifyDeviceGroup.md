@@ -7,7 +7,7 @@ Input:
 ```
 tccli weilingwith ModifyDeviceGroup --cli-unfold-argument  \
     --WorkspaceId 1016 \
-    --Set.0.WID abc \
+    --Set.0.WID wid1 \
     --Set.0.GroupId 100 \
     --ApplicationToken YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2
 ```

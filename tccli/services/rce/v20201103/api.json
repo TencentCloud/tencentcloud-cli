@@ -1628,33 +1628,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "OK",
           "member": "string",
           "name": "Message",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "黑白名单数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "黑白名单数据信息",
           "example": "无",
           "member": "OuntputDescribeDataListInfo",
           "name": "Value",
-          "output_required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1664,103 +1664,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "名单ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单ID",
           "example": "1001",
           "member": "int64",
           "name": "NameListId",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单名称",
           "example": "手机号黑名单",
           "member": "string",
           "name": "ListName",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单类型 [1 黑名单 2 白名单]",
           "example": "1",
           "member": "int64",
           "name": "ListType",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据类型[1 手机号 2 qqOpenId 3 2echatOpenId 4 ip 6 idfa 7 imei]",
           "example": "1",
           "member": "int64",
           "name": "DataType",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景Code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景Code",
           "example": "e_activity_antirush",
           "member": "string",
           "name": "SceneCode",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名单列表状态 [1 启用 2 停用]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单列表状态 [1 启用 2 停用]",
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "CreateTime",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新时间",
           "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "UpdateTime",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "加密类型 [0 无需加密，1 MD5加密，2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密类型 [0 无需加密，1 MD5加密，2 SHA256加密]",
           "example": "0",
           "member": "int64",
           "name": "EncryptionType",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1770,23 +1770,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误",
           "example": "0",
           "member": "int64",
           "name": "Code",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "OK",
           "member": "string",
           "name": "Message",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1816,23 +1816,23 @@
         },
         {
           "disabled": false,
-          "document": "名单名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单名称",
           "example": "手机号黑名单",
           "member": "string",
           "name": "ListName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "名单类型 [1 黑名单 2 白名单]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名单类型 [1 黑名单 2 白名单]",
           "example": "1",
           "member": "int64",
           "name": "ListType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1856,13 +1856,13 @@
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述",
           "example": "手机号黑名单",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1896,23 +1896,23 @@
         },
         {
           "disabled": false,
-          "document": "加密类型[0 无需加密 1 MD5加密 2 SHA256加密]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密类型[0 无需加密 1 MD5加密 2 SHA256加密]",
           "example": "0",
           "member": "int64",
           "name": "EncryptionType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "场景Code，all_scene代表全部场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "场景Code，all_scene代表全部场景",
           "example": "all_scene",
           "member": "string",
           "name": "SceneCode",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1922,33 +1922,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n",
           "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "黑白名单列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "黑白名单列表信息",
           "example": "无",
           "member": "OutputDescribeNameListInfo",
           "name": "Value",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1958,13 +1958,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "100",
           "member": "int64",
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1984,73 +1984,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前付费模式，0 后付费 1 预付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前付费模式，0 后付费 1 预付费",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后付费本月使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费本月使用量",
           "example": "0",
           "member": "int64",
           "name": "AfterPayModeThisMonthUsedCnt",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "2000-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "超出时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超出时间",
           "example": "2000-01-01 00:00:00",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "后付费上月使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "后付费上月使用量",
           "example": "0",
           "member": "int64",
           "name": "AfterPayModeLastMonthUsedCnt",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费总量",
           "example": "0",
           "member": "int64",
           "name": "BeforePayModeTotalUsedCnt",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费剩余用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预付费剩余用量",
           "example": "0",
           "member": "int64",
           "name": "BeforePayModeRemainUsedCnt",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

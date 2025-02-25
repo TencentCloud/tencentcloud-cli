@@ -472,7 +472,7 @@
         {
           "disabled": false,
           "document": "动作名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -498,7 +498,7 @@
         {
           "disabled": false,
           "document": "动作名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -538,7 +538,7 @@
         {
           "disabled": false,
           "document": "消息内容,有效值为x-json:后的字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "x-json:[{\\\"model\\\":\\\"红灯(red)\\\",\\\"value\\\":\\\"10\\\",\\\"obj\\\":{\\\"name\\\":\\\"红灯\\\",\\\"type\\\":\\\"int\\\",\\\"modelName\\\":\\\"智能灯控模块\\\",\\\"modelId\\\":\\\"2000126\\\",\\\"define\\\":{\\\"type\\\":\\\"int\\\",\\\"min\\\":0,\\\"max\\\":255},\\\"options\\\":[]},\\\"type\\\":\\\"int\\\"},{\\\"model\\\":\\\"绿灯(green)\\\",\\\"value\\\":\\\"10\\\",\\\"type\\\":\\\"int\\\",\\\"obj\\\":{\\\"name\\\":\\\"绿灯\\\",\\\"type\\\":\\\"int\\\",\\\"modelName\\\":\\\"智能灯控模块\\\",\\\"modelId\\\":\\\"2000126\\\",\\\"define\\\":{\\\"type\\\":\\\"int\\\",\\\"min\\\":0,\\\"max\\\":255},\\\"options\\\":[]}}]",
+          "example": "无",
           "member": "string",
           "name": "MsgContent",
           "output_required": false,
@@ -558,7 +558,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "wid",
           "member": "string",
           "name": "WID",
           "output_required": false,
@@ -604,7 +604,7 @@
         {
           "disabled": false,
           "document": "动作名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -624,7 +624,7 @@
         {
           "disabled": false,
           "document": "动作说明\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "desc",
           "member": "string",
           "name": "Desc",
           "output_required": false,
@@ -708,7 +708,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -772,7 +772,7 @@
         {
           "disabled": false,
           "document": "设备sn序列号",
-          "example": "test",
+          "example": "sn",
           "member": "string",
           "name": "SN",
           "required": true,
@@ -781,7 +781,7 @@
         {
           "disabled": false,
           "document": "父设备wid，不为空表示导入子设备",
-          "example": "xxx-aaa",
+          "example": "parentwid",
           "member": "string",
           "name": "ParentWID",
           "required": false,
@@ -1706,7 +1706,7 @@
         {
           "disabled": false,
           "document": "设备信息项\n",
-          "example": "{\"ProductId\": 200022,\"ParentWID\": \"xxx-aaa\",\"KeySource\": 0,\"SN\": \"test\"}",
+          "example": "{\"ProductId\": 200022,\"ParentWID\": \"parentwid\",\"KeySource\": 0,\"SN\": \"sn\"}",
           "member": "AddDeviceInfo",
           "name": "AddDeviceSet",
           "required": true,
@@ -1715,7 +1715,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -1787,7 +1787,7 @@
         {
           "disabled": false,
           "document": "设备wid数组列表",
-          "example": "[\"aaa\",\"bbb\"]",
+          "example": "[\"wid1\",\"wid2\"]",
           "member": "string",
           "name": "WIDSet",
           "required": true,
@@ -1796,7 +1796,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -1878,7 +1878,7 @@
         {
           "disabled": false,
           "document": "当前操作用户名称",
-          "example": "a",
+          "example": "username",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -1887,7 +1887,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -1987,7 +1987,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -2329,7 +2329,7 @@
         {
           "disabled": false,
           "document": "当前操作用户名称",
-          "example": "atest",
+          "example": "andy",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -2338,7 +2338,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -2347,7 +2347,7 @@
         {
           "disabled": false,
           "document": "平台告警处理人",
-          "example": "a",
+          "example": "Processor",
           "member": "string",
           "name": "Processor",
           "required": false,
@@ -2356,7 +2356,7 @@
         {
           "disabled": false,
           "document": "告警处理的描述信息",
-          "example": "描述",
+          "example": "ProcessDescription",
           "member": "string",
           "name": "ProcessDescription",
           "required": false,
@@ -2365,7 +2365,7 @@
         {
           "disabled": false,
           "document": "告警处理的扩展信息，可以为JSON字符串",
-          "example": "aaa",
+          "example": "ProcessExtend",
           "member": "string",
           "name": "ProcessExtend",
           "required": false,
@@ -2383,7 +2383,7 @@
         {
           "disabled": false,
           "document": "应用id",
-          "example": "123",
+          "example": "10085",
           "member": "int64",
           "name": "ApplicationId",
           "required": false,
@@ -2447,7 +2447,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "ct5E8QNPQEZZqNW7ShPAJQVzrTV9xIbL",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -2511,7 +2511,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -2793,7 +2793,7 @@
         {
           "disabled": false,
           "document": "字段内容",
-          "example": "test",
+          "example": "value",
           "member": "string",
           "name": "Val",
           "required": false,
@@ -2838,7 +2838,7 @@
         {
           "disabled": false,
           "document": "字段值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "yellow",
           "member": "string",
           "name": "Val",
           "output_required": false,
@@ -2872,7 +2872,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3127,7 +3127,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3225,7 +3225,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3395,7 +3395,7 @@
         {
           "disabled": false,
           "document": "告警列表查询结果",
-          "example": "{\"AlarmInfoSet\": [{\"AppId\": 0,\"Desc\": \"水量使用超限\",\"DeviceName\": \"20楼水表\",\"Echo\": \"\",\"Extend\": \"x-json:{\\\"alarmLevel\\\":3,\\\"alarmValue\\\":13730945.6}\",\"ExtendOne\": \"x-json:\",\"ExtendTwo\": \"x-json:\",\"HandlePersonSet\": [],\"HandleRecordSet\": [],\"Id\": \"0c6ec1cc-25d6-43bc-96b1-6b4131f1771a\",\"Level\": 3,\"LevelName\": \"严重\",\"Position\": \"滨海大厦-7F\",\"ReportImg\": {\"Data\": \"\",\"Type\": 0},\"Status\": \"unprocessed\",\"SubType\": \"water_limit\",\"SubTypeName\": \"水量使用超限\",\"Time\": 1693416976,\"Type\": \"energy\",\"TypeName\": \"能源\",\"WID\": \"b1fd7aa3-4407-4b82-9dc3-aff9b3034a9f\",\"WorkspaceId\": 1016}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 125,\"TotalRow\": 125}}",
+          "example": "无",
           "member": "DescribeAlarmListRes",
           "name": "Result",
           "output_required": false,
@@ -3488,7 +3488,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3497,7 +3497,7 @@
         {
           "disabled": false,
           "document": "一级类型",
-          "example": "test",
+          "example": "ParentType",
           "member": "string",
           "name": "ParentType",
           "required": false,
@@ -3650,7 +3650,7 @@
         {
           "disabled": false,
           "document": "空间编码",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "SpaceCodes",
           "required": false,
@@ -3665,7 +3665,7 @@
         {
           "disabled": false,
           "document": "查询建筑列表出参",
-          "example": " { \t\t\t\"BuildingProfileList\": [ \t\t\t\t{ \t\t\t\t\t\"Address\": \"北京市,丰台区样例模型\", \t\t\t\t\t\"BuildingId\": \"2da7d294-483e-4033-a99a-49f7323fd6ef\", \t\t\t\t\t\"BuildingName\": \"样例模型1\", \t\t\t\t\t\"Latitude\": 39.927326, \t\t\t\t\t\"Longitude\": 116.39177, \t\t\t\t\t\"SpaceCode\": \"000009\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"1#楼\", \t\t\t\t\t\"BuildingId\": \"dfad5b19-79d8-4e40-9a8c-8efa32a1f425\", \t\t\t\t\t\"BuildingName\": \"1#楼\", \t\t\t\t\t\"Latitude\": 39.92442, \t\t\t\t\t\"Longitude\": 116.38269, \t\t\t\t\t\"SpaceCode\": \"000007\" \t\t\t\t}\t\t\t] \t\t}",
+          "example": "无",
           "member": "BuildingListRes",
           "name": "Result",
           "output_required": false,
@@ -3815,7 +3815,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "ct5E8QNPQEZZqNW7ShPAJQVzrTV9xIbL",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3861,7 +3861,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxxx",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3892,7 +3892,7 @@
         {
           "disabled": false,
           "document": "工作空间信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"WorkspaceSet\":[{\"AdministrativeDetailSet\":[{\"AdministrativeCode\":\"130000\",\"AdministrativeName\":\"河北省\",\"AdministrativeTypeCode\":\"QH01\"},{\"AdministrativeCode\":\"130500\",\"AdministrativeName\":\"邢台市\",\"AdministrativeTypeCode\":\"QH02\"},{\"AdministrativeCode\":\"130521\",\"AdministrativeName\":\"邢台县\",\"AdministrativeTypeCode\":\"QH03\"}],\"ChineseName\":\"华南园区项目\",\"Description\":\"华南园区项目\",\"ParkName\":\"\",\"ParkNum\":\"\",\"Status\":0,\"WorkspaceId\":1016}]}",
+          "example": "无",
           "member": "DescribeCityWorkspaceListRes",
           "name": "Result",
           "output_required": false,
@@ -4013,7 +4013,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "wA9bELuI4oulQCBK876UDBxe00dNcxQW",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4174,7 +4174,7 @@
         {
           "disabled": false,
           "document": "查询设备列表结果",
-          "example": "{\"DeviceDataSet\": [{\"ActiveTime\": \"2023-04-13T09:41:38+08:00\",\"DeviceName\": \"1c902558-d360-4a93-9b6f-1b49970534f7\",\"DeviceTagSet\": [\"中文标签测试\"],\"DeviceTypeCode\": \"1c902558-d360-4a93-9b6f-1b49970534f7\",\"DeviceTypeName\": \"1c902558-d360-4a93-9b6f-1b49970534f7\",\"FieldList\": [{\"Id\": 1,\"Key\": \"color\",\"Name\": \"颜色\",\"Val\": \"\"}],\"IsActive\": 1,\"IsLive\": false,\"Location\": {\"X\": -197697.515625,\"Y\": 22156.90234375,\"Z\": 0},\"ModelId\": \"\",\"ModelName\": \"\",\"OtaVersion\": \"v1\",\"ParentWID\": \"\",\"ParentWIDName\": \"\",\"ProductAbility\": 1,\"ProductId\": 2000053,\"ProductName\": \"其它网关\",\"SN\": \"tony001\",\"SpaceInfoSet\": [{\"Code\": \"001234\",\"Id\": \"7e0eba7e-aa9b-43bd-8a68-2ea7153828de\",\"Level\": 6,\"Name\": \"验证专用\"}],\"WID\": \"1c902558-d360-4a93-9b6f-1b49970534f7\"}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 8790,\"TotalRow\": 8790}}",
+          "example": "无",
           "member": "DescribeDeviceListRes",
           "name": "Result",
           "output_required": false,
@@ -4277,7 +4277,7 @@
         {
           "disabled": false,
           "document": "设备标签名",
-          "example": "test",
+          "example": "DeviceTags",
           "member": "string",
           "name": "DeviceTagSet",
           "required": false,
@@ -4292,7 +4292,7 @@
         {
           "disabled": false,
           "document": "获取设备影子结果",
-          "example": "{\"PageNumber\": 1,\"PageSize\": 20,\"Set\": [{\"DeviceShadow\": \"x-json:{\\\"desired\\\":{},\\\"reported\\\":{\\\"events\\\":{},\\\"profile\\\":{\\\"modelId\\\":\\\"w0745001\\\"},\\\"properties\\\":{\\\"Ept\\\":96,\\\"IA\\\":32,\\\"IB\\\":42},\\\"reportTs\\\":1693370542126}}\",\"DeviceShadowUpdateTime\": \"2023-08-30 12:42:22\",\"WID\": \"026d1dd8-a6d7-4fb7-9a94-0df07edaaff8\"}],\"TotalPage\": 1,\"TotalRow\": 1}}",
+          "example": "无",
           "member": "DeviceShadowRes",
           "name": "Result",
           "output_required": false,
@@ -4323,7 +4323,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4395,7 +4395,7 @@
         {
           "disabled": false,
           "document": "设备标签名，非必填",
-          "example": "test",
+          "example": "DeviceTags",
           "member": "string",
           "name": "DeviceTagSet",
           "required": false,
@@ -4477,7 +4477,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4559,7 +4559,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4605,7 +4605,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4742,7 +4742,7 @@
         {
           "disabled": false,
           "document": "父级构件id",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "ParentElementIds",
           "required": false,
@@ -4760,7 +4760,7 @@
         {
           "disabled": false,
           "document": "空间分类代码",
-          "example": "\"\"",
+          "example": "spacetypecode",
           "member": "string",
           "name": "SpaceTypeCode",
           "required": false,
@@ -4811,7 +4811,7 @@
         {
           "disabled": false,
           "document": "分页查询构件出参",
-          "example": "{ \t\t\t\"List\": [ \t\t\t\t{ \t\t\t\t\t\"BottomHeight\": -100, \t\t\t\t\t\"BuildingId\": \"956bd069-c802-4bbb-b325-18d30d7bcd3c\", \t\t\t\t\t\"ElementDesc\": \"\", \t\t\t\t\t\"ElementId\": \"1Kjh8u2qf4uRSkCPoKigTI\", \t\t\t\t\t\"ElementName\": \"1F（结） -0.100\", \t\t\t\t\t\"EntityType\": \"TBIM_BUILDINGSTOREY\", \t\t\t\t\t\"IsDelete\": 0, \t\t\t\t\t\"Level\": 7, \t\t\t\t\t\"ParentElementId\": \"956bd069-c802-4bbb-b325-18d30d7bcd3c\", \t\t\t\t\t\"Sort\": 1, \t\t\t\t\t\"SpaceCode\": \"000185004\", \t\t\t\t\t\"SpacePoiId\": \"\", \t\t\t\t\t\"SpaceTypeCode\": \"\", \t\t\t\t\t\"SpaceTypeName\": \"\" \t\t\t\t} \t\t\t], \t\t\t\"TotalCount\": 1\t\t}",
+          "example": "无",
           "member": "ElementProfilePageRes",
           "name": "Result",
           "output_required": false,
@@ -4878,7 +4878,7 @@
         {
           "disabled": false,
           "document": "空间分类代码",
-          "example": "\"\"",
+          "example": "spacetypecode",
           "member": "string",
           "name": "SpaceTypeCode",
           "required": false,
@@ -4893,7 +4893,7 @@
         {
           "disabled": false,
           "document": "构件树出参",
-          "example": "{ \t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\"ParentElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \t\t\t\"Root\": { \t\t\t\t\"Children\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"Children\": [], \t\t\t\t\t\t\"ElementProfile\": { \t\t\t\t\t\t\t\"BottomHeight\": 3000, \t\t\t\t\t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\t\t\t\t\"ElementDesc\": \"\", \t\t\t\t\t\t\t\"ElementId\": \"6042d426-6973-47ff-8ce1-3a63ef9f3c2f\", \t\t\t\t\t\t\t\"ElementName\": \"\", \t\t\t\t\t\t\t\"EntityType\": \"TBIM_SLASHWALL\", \t\t\t\t\t\t\t\"IsDelete\": 0, \t\t\t\t\t\t\t\"Level\": 8, \t\t\t\t\t\t\t\"ParentElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \t\t\t\t\t\t\t\"Sort\": 1, \t\t\t\t\t\t\t\"SpaceCode\": \"00003000300000001\", \t\t\t\t\t\t\t\"SpacePoiId\": \"\", \t\t\t\t\t\t\t\"SpaceTypeCode\": \"\", \t\t\t\t\t\t\t\"SpaceTypeName\": \"\" \t\t\t\t\t\t} \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"ElementProfile\": { \t\t\t\t\t\"BottomHeight\": 3000, \t\t\t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\t\t\"ElementDesc\": \"\", \t\t\t\t\t\"ElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \t\t\t\t\t\"ElementName\": \"RF\", \t\t\t\t\t\"EntityType\": \"TBIM_BUILDINGSTOREY\", \t\t\t\t\t\"IsDelete\": 0, \t\t\t\t\t\"Level\": 7, \t\t\t\t\t\"ParentElementId\": \"\", \t\t\t\t\t\"Sort\": 1, \t\t\t\t\t\"SpaceCode\": \"000030003\", \t\t\t\t\t\"SpacePoiId\": \"\", \t\t\t\t\t\"SpaceTypeCode\": \"\", \t\t\t\t\t\"SpaceTypeName\": \"\" \t\t\t\t} \t\t\t} \t\t}",
+          "example": "无",
           "member": "ElementProfileTreeRes",
           "name": "Result",
           "output_required": false,
@@ -4942,7 +4942,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5031,7 +5031,7 @@
         {
           "disabled": false,
           "document": "事件列表查询结果",
-          "example": "{\"EventDetailSet\": [{\"CreateTime\": \"2023-05-13 20:23:37\",\"DeviceType\": \"\",\"Id\": 14,\"LinkRuleSet\": [{\"Id\": 23,\"Name\": \"\"}],\"Name\": \"13\",\"TriggerCondition\": \"x-json:\",\"TriggerType\": \"timer\",\"ValidPeriod\": \"\",\"WID\": \"\"}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 78,\"TotalRow\": 78}",
+          "example": "无",
           "member": "DescribeEventListRes",
           "name": "Result",
           "output_required": false,
@@ -5062,7 +5062,7 @@
         {
           "disabled": false,
           "document": "文件Id",
-          "example": "a",
+          "example": "fileid",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -5071,7 +5071,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "sFEmY6U",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5117,7 +5117,7 @@
         {
           "disabled": false,
           "document": "文件名称",
-          "example": "a",
+          "example": "filename",
           "member": "string",
           "name": "FileName",
           "required": true,
@@ -5135,7 +5135,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5318,7 +5318,7 @@
         {
           "disabled": false,
           "document": "API列表",
-          "example": "{ \t\t\t\"ApiInfo\": [ \t\t\t\t{ \t\t\t\t\t\"Address\": \"/weiling-pubsub/datafusion/\", \t\t\t\t\t\"ApiId\": \"013a8423-03f6-4c00-9181-ade7f124ae8f\", \t\t\t\t\t\"AppId\": \"10069\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"get\", \t\t\t\t\t\"Name\": \"数据融合中心websocket勿删\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000\", \t\t\t\t\t\"PreviewUrl\": \"ws://dev-ws.twins.tencent.com/proxy/013a8423-03f6-4c00-9181-ade7f124ae8f/weiling-pubsub/datafusion/\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 2, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"/trpc.wetwin.trpc_wetwin_container_svr.AppAPI/DeviceList\", \t\t\t\t\t\"ApiId\": \"027d9a7a-1d1d-4974-9992-9a21d2ff843d\", \t\t\t\t\t\"AppId\": \"20134\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"post\", \t\t\t\t\t\"Name\": \"测试cachess\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/027d9a7a-1d1d-4974-9992-9a21d2ff843d/trpc.wetwin.trpc_wetwin_container_svr.AppAPI/DeviceList\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6IjA3ZjlhZjg3YWRmNzQ5ZWM5YmIyZTkzMzkwNGNlNTcwIiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"/trpc.bim.bim_data_bus.TBimOpen\", \t\t\t\t\t\"ApiId\": \"0571bcd5-77ea-458a-ab37-1e9b4ca131f9\", \t\t\t\t\t\"AppId\": \"98\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"IiI=\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"hhh\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"post\", \t\t\t\t\t\"Name\": \"robbytest\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000002\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/0571bcd5-77ea-458a-ab37-1e9b4ca131f9/trpc.bim.bim_data_bus.TBimOpen\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6IjQ2NzBiZWQ2OGRjMDRmNTg5YmViYjY4NWFhZDY4ZTc4Iiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"/posts/2\", \t\t\t\t\t\"ApiId\": \"0fcca883-bd05-4b0d-8252-4f2ce5e7042f\", \t\t\t\t\t\"AppId\": \"10052\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"123213\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"get\", \t\t\t\t\t\"Name\": \"集华的接口\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/0fcca883-bd05-4b0d-8252-4f2ce5e7042f/posts/2\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6ImI1NmMzMzIwNjU3ZTQ2N2M4ZDAzZmQ4MTQ2NTgwMWYzIiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"\", \t\t\t\t\t\"ApiId\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\"AppId\": \"10070\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": false, \t\t\t\t\t\"Method\": \"get\", \t\t\t\t\t\"Name\": \"sxy测试\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api001\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\"QueryParams\": [ \t\t\t\t\t\t{ \t\t\t\t\t\t\t\"DefaultValue\": \"\", \t\t\t\t\t\t\t\"Dynamic\": false, \t\t\t\t\t\t\t\"Id\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\t\t\"Name\": \"123123\", \t\t\t\t\t\t\t\"Required\": false, \t\t\t\t\t\t\t\"Type\": \"value\", \t\t\t\t\t\t\t\"Value\": \"123123\" \t\t\t\t\t\t}, \t\t\t\t\t\t{ \t\t\t\t\t\t\t\"DefaultValue\": \"\", \t\t\t\t\t\t\t\"Dynamic\": false, \t\t\t\t\t\t\t\"Id\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\t\t\"Name\": \"123123\", \t\t\t\t\t\t\t\"Required\": false, \t\t\t\t\t\t\t\"Type\": \"value\", \t\t\t\t\t\t\t\"Value\": \"123123\" \t\t\t\t\t\t}, \t\t\t\t\t\t{ \t\t\t\t\t\t\t\"DefaultValue\": \"\", \t\t\t\t\t\t\t\"Dynamic\": false, \t\t\t\t\t\t\t\"Id\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\t\t\"Name\": \"123123\", \t\t\t\t\t\t\t\"Required\": false, \t\t\t\t\t\t\t\"Type\": \"value\", \t\t\t\t\t\t\t\"Value\": \"123123\" \t\t\t\t\t\t}, \t\t\t\t\t\t{ \t\t\t\t\t\t\t\"DefaultValue\": \"\", \t\t\t\t\t\t\t\"Dynamic\": false, \t\t\t\t\t\t\t\"Id\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\t\t\"Name\": \"123123\", \t\t\t\t\t\t\t\"Required\": false, \t\t\t\t\t\t\t\"Type\": \"value\", \t\t\t\t\t\t\t\"Value\": \"123123\" \t\t\t\t\t\t}, \t\t\t\t\t\t{ \t\t\t\t\t\t\t\"DefaultValue\": \"\", \t\t\t\t\t\t\t\"Dynamic\": false, \t\t\t\t\t\t\t\"Id\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\t\t\"Name\": \"123123\", \t\t\t\t\t\t\t\"Required\": false, \t\t\t\t\t\t\t\"Type\": \"value\", \t\t\t\t\t\t\t\"Value\": \"123123\" \t\t\t\t\t\t}, \t\t\t\t\t\t{ \t\t\t\t\t\t\t\"DefaultValue\": \"\", \t\t\t\t\t\t\t\"Dynamic\": false, \t\t\t\t\t\t\t\"Id\": \"13108ad8-4c73-48f2-a70c-aaded78a9d89\", \t\t\t\t\t\t\t\"Name\": \"33333\", \t\t\t\t\t\t\t\"Required\": false, \t\t\t\t\t\t\t\"Type\": \"value\", \t\t\t\t\t\t\t\"Value\": \"333333\" \t\t\t\t\t\t} \t\t\t\t\t], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6IjNiZTFiODRmYzk2MDQyYWI5NzQ2ZWE4NzcwOGYyYTk1Iiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1016\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"\", \t\t\t\t\t\"ApiId\": \"136a66f7-a730-40ae-8aad-659f69c449b7\", \t\t\t\t\t\"AppId\": \"20768\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"get\", \t\t\t\t\t\"Name\": \"测试新增目录接口\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000003002\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/136a66f7-a730-40ae-8aad-659f69c449b7\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6ImYzYTM0MDM2YzUzZDRlNDRhNjIzYmM5YTFiNDA5MTA3Iiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"/spaceFusion/appApi/message/batchReport\", \t\t\t\t\t\"ApiId\": \"1388c124-0acc-4cbc-931a-a5bfab400a1c\", \t\t\t\t\t\"AppId\": \"98\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"post\", \t\t\t\t\t\"Name\": \"应用消息批量上报\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000002\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/1388c124-0acc-4cbc-931a-a5bfab400a1c/spaceFusion/appApi/message/batchReport\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"/trpc.wetwin.trpc_wetwin_container_svr.AppAPI/DescribeAlarmStatusList\", \t\t\t\t\t\"ApiId\": \"1e1005b8-2a79-4f76-97cc-57c819b3751d\", \t\t\t\t\t\"AppId\": \"10051\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 0, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"post\", \t\t\t\t\t\"Name\": \"告警状态列表\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000006004\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/1e1005b8-2a79-4f76-97cc-57c819b3751d/trpc.wetwin.trpc_wetwin_container_svr.AppAPI/DescribeAlarmStatusList\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6IjEyYzQ5YzYzY2IxOTQ3ZTFhY2I3MTFlMGU4ZmQ4YmRiIiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"\", \t\t\t\t\t\"ApiId\": \"2a0206b6-3094-4c56-964c-568ce2b13a7f\", \t\t\t\t\t\"AppId\": \"10041\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 1, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"\", \t\t\t\t\t\"Name\": \"wewe\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000002\", \t\t\t\t\t\"PreviewUrl\": \"ws://dev-ws.twins.tencent.com/proxy/2a0206b6-3094-4c56-964c-568ce2b13a7f\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 2, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"\", \t\t\t\t\t\"ApiId\": \"32ba90be-a5c9-4e22-8370-df09bb1092e2\", \t\t\t\t\t\"AppId\": \"10001\", \t\t\t\t\t\"ApplyAudit\": 0, \t\t\t\t\t\"Body\": \"\", \t\t\t\t\t\"DataAudit\": 1, \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"IsCommonSpace\": true, \t\t\t\t\t\"Method\": \"post\", \t\t\t\t\t\"Name\": \"abba\", \t\t\t\t\t\"PathParams\": [], \t\t\t\t\t\"PoiCode\": \"api000\", \t\t\t\t\t\"PreviewUrl\": \"http://dev-apigw.twins.tencent.com/proxy/32ba90be-a5c9-4e22-8370-df09bb1092e2\", \t\t\t\t\t\"QueryParams\": [], \t\t\t\t\t\"RequestHeaders\": [], \t\t\t\t\t\"ResponseBody\": \"W3sidXVpZCI6ImQ3ZjI1NDE4NjdhMDQyYWE4MDJlMGUzOGZiNGNmMzlmIiwia2V5Ijoicm9vdCIsInR5cGUiOiJzdHJ1Y3QiLCJpc0V4cGFuZCI6dHJ1ZSwiZGVzY3JpcHRpb24iOiIiLCJjaGlsZHJlbiI6W10sIm9yZGVyIjowLCJsZXZlbCI6MCwicG9zIjoiMCJ9XQ==\", \t\t\t\t\t\"ResponseHeaders\": [], \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"Style\": 1, \t\t\t\t\t\"Type\": 1, \t\t\t\t\t\"WorkspaceId\": \"1015\" \t\t\t\t} \t\t\t], \t\t\t\"TotalCount\": 64 \t\t}",
+          "example": "无",
           "member": "ApiInfoList",
           "name": "Result",
           "output_required": false,
@@ -5367,7 +5367,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5456,7 +5456,7 @@
         {
           "disabled": false,
           "document": "联动规则列表查询结果",
-          "example": "{\"LinkRuleSet\": [{\"ActionSet\": [{\"Id\": 28,\"Name\": \"瞿杨动作\"}],\"BeginDate\": \"2023-05-03\",\"EndDate\": \"2023-05-22\",\"EventSet\": [{\"Id\": 33,\"Name\": \"体验\"}],\"Id\": 24,\"Name\": \"体验\",\"Status\": 24,\"ValidPeriod\": \"\"}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 7,\"TotalRow\": 7}",
+          "example": "无",
           "member": "DescribeLinkRuleListRes",
           "name": "Result",
           "output_required": false,
@@ -5505,7 +5505,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5547,7 +5547,7 @@
         {
           "disabled": false,
           "document": "模型列表查询结果",
-          "example": "{\"PageNumber\": 1,\"PageSize\": 1,\"Set\": [{\"DeviceType\": \"w0404024\",\"DeviceTypeName\": \"空调温控器\",\"ModelId\": \"2000055\",\"ModelName\": \"边缘温控器\",\"ModelParams\": \"x-json:{}\",\"ModelType\": 1,\"RelatedProduct\": [{\"Id\": 2000055,\"Name\": \"边缘温控器\"}],\"WorkspaceId\": 1016}],\"TotalPage\": 156,\"TotalRow\": 156}",
+          "example": "无",
           "member": "ModelSet",
           "name": "Result",
           "output_required": false,
@@ -5596,7 +5596,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5638,7 +5638,7 @@
         {
           "disabled": false,
           "document": "产品列表查询结果",
-          "example": "{\"PageNumber\": 1,\"PageSize\": 1,\"Product\": [{\"Attribute\": 1,\"DeviceTypeId\": \"w777\",\"DeviceTypeName\": \"\",\"MaintenanceMfr\": \"未知厂商\",\"Manufacturer\": \"未知厂商\",\"ModelId\": \"\",\"ModelName\": \"\",\"ModelType\": 0,\"ProductAbility\": 1,\"ProductId\": 2000051,\"ProductName\": \"视频网关\",\"ProductType\": \"33\",\"WorkspaceId\": 1016}],\"TotalPage\": 132,\"TotalRow\": 132}",
+          "example": "无",
           "member": "ProductSet",
           "name": "Result",
           "output_required": false,
@@ -5742,7 +5742,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5757,7 +5757,7 @@
         {
           "disabled": false,
           "document": "规则详情查询结果",
-          "example": "{\"ActionInfoSet\": [{\"ApplyDevice\": \"\",\"CreateTime\": \"2023-05-23 14:38:13\",\"Desc\": \"事件范围内同一建筑\",\"Id\": 71,\"MsgContent\": \"x-json:\",\"MsgType\": \"origin\",\"Name\": \"事件范围内同一建筑\",\"SinkConfig\": \"x-json:{\\\"nearbySearch\\\":{\\\"deviceType\\\":\\\"w0201001\\\",\\\"pid\\\":0,\\\"limit\\\":2,\\\"objectLevel\\\":9,\\\"scopeLevel\\\":\\\"6\\\",\\\"scopeRadius\\\":\\\"100\\\",\\\"deviceAssign\\\":\\\"deviceType\\\"}}\",\"Type\": \"nearbyDevices\"}],\"BeginDate\": \"\",\"EndDate\": \"\",\"EventInfoSet\": [{\"Condition\": \"x-json:[{\\\"type\\\":\\\"objmodel\\\",\\\"attr\\\":\\\"properties.idtest\\\",\\\"oper\\\":\\\"=\\\",\\\"val\\\":\\\"348\\\",\\\"obj\\\":{\\\"id\\\":\\\"idtest\\\",\\\"name\\\":\\\"idtest\\\",\\\"type\\\":\\\"int\\\",\\\"modelName\\\":\\\"网关设备_直连类型\\\",\\\"modelId\\\":\\\"2000085\\\",\\\"define\\\":{\\\"type\\\":\\\"int\\\"}},\\\"valType\\\":0,\\\"otherObj\\\":\\\"\\\"}]\",\"Id\": 36,\"Name\": \"具体设备\",\"Type\": \"device\"}],\"EventRule\": \"36\",\"RuleDesc\": \"联动同一建筑\",\"RuleId\": 29,\"RuleName\": \"联动同一建筑332\",\"Status\": 0,\"ValidPeriod\": \"x-json:\",\"ValidType\": 1}",
+          "example": "无",
           "member": "RuleDetailRes",
           "name": "Result",
           "output_required": false,
@@ -5803,7 +5803,7 @@
         {
           "disabled": false,
           "document": "场景列表出参",
-          "example": " { \t\t\t\"SceneList\": [ \t\t\t\t{ \t\t\t\t\t\"SceneId\": \"0abe73dd-d06f-44f5-af82-43dea23af230\", \t\t\t\t\t\"SceneName\": \"三层商务办公楼单位修正\", \t\t\t\t\t\"Version\": \"20230705160410780\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"SceneId\": \"e9f2b87f-9078-4546-8d4f-99356ec3f82c\", \t\t\t\t\t\"SceneName\": \"商务办公楼模型\", \t\t\t\t\t\"Version\": \"20230630151240729\" \t\t\t\t} \t\t\t] \t\t}",
+          "example": "无",
           "member": "SceneListRes",
           "name": "Result",
           "output_required": false,
@@ -6227,7 +6227,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "xxx",
+          "example": "zD3G1qtO9Fy4mu5HAMydrXNHBputBQVS",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6318,7 +6318,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "xxx",
+          "example": "Z2GWsZyAcnKt1zIK65FQz5XsFk5nTKqx",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6381,7 +6381,7 @@
         {
           "disabled": false,
           "document": "关键词",
-          "example": "test",
+          "example": "keyword",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -6463,7 +6463,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "RewYT6DXVWDg51Sx8tdcj89cX1pEns2h",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6527,7 +6527,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "ct5E8QNPQEZZqNW7ShPAJQVzrTV9xIbL",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6560,7 +6560,7 @@
         {
           "disabled": false,
           "document": "视频实时流获取结果",
-          "example": "{\"FLV\":\"\",\"HLS\":\"https://t-video.twins.tencent.com:443/hls1935/76d8109e-64cd-4a85-b011-4a0c29a654e8.m3u8?ticket=7a2368131f084363a4a6cb146cbfc353\",\"RAW\":{\"IP\":\"\",\"InnerIP\":\"\",\"NATIP\":\"\",\"Port\":0,\"SM4Vector\":\"\",\"StreamEnKey\":\"\",\"StreamToken\":\"\"},\"RTMP\":\"\",\"Stream\":\"76d8109e-64cd-4a85-b011-4a0c29a654e8\",\"WebRTC\":\"\"}",
+          "example": "无",
           "member": "VideoRecordStreamRes",
           "name": "Result",
           "output_required": false,
@@ -6751,7 +6751,7 @@
         {
           "disabled": false,
           "document": "项目空间列表",
-          "example": "{ \t\t\t\"List\": [ \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"lv测试空间\", \t\t\t\t\t\"Description\": \"lv测试空间\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"1744387200\", \t\t\t\t\t\"ValidityStartTime\": \"1682524800\", \t\t\t\t\t\"WorkspaceId\": 1092 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"RayDataWeb\", \t\t\t\t\t\"Description\": \"RayDataWeb测试使用测完后删除\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"2000390400\", \t\t\t\t\t\"ValidityStartTime\": \"1684684800\", \t\t\t\t\t\"WorkspaceId\": 1166 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"华东项目空间\", \t\t\t\t\t\"Description\": \"演练项目空间\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"1693411200\", \t\t\t\t\t\"ValidityStartTime\": \"1682870400\", \t\t\t\t\t\"WorkspaceId\": 1175 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"ces\", \t\t\t\t\t\"Description\": \"123\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 1, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"1688400000\", \t\t\t\t\t\"ValidityStartTime\": \"1688313600\", \t\t\t\t\t\"WorkspaceId\": 1524 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"公共空间\", \t\t\t\t\t\"Description\": \"租户默认工作空间\", \t\t\t\t\t\"EnglishName\": \"comm_workspace\", \t\t\t\t\t\"IsCommWorkspace\": true, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"4834882335\", \t\t\t\t\t\"ValidityStartTime\": \"1681282335\", \t\t\t\t\t\"WorkspaceId\": 1015 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"华南园区项目\", \t\t\t\t\t\"Description\": \"华南园区项目\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"2153664000\", \t\t\t\t\t\"ValidityStartTime\": \"1680278400\", \t\t\t\t\t\"WorkspaceId\": 1016 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"华北园区项目\", \t\t\t\t\t\"Description\": \"华北园区项目\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"2153664000\", \t\t\t\t\t\"ValidityStartTime\": \"1680278400\", \t\t\t\t\t\"WorkspaceId\": 1018 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"test\", \t\t\t\t\t\"Description\": \"ceshi\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"1747584000\", \t\t\t\t\t\"ValidityStartTime\": \"1685289600\", \t\t\t\t\t\"WorkspaceId\": 1263 \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ChineseName\": \"report2test\", \t\t\t\t\t\"Description\": \"report2test\", \t\t\t\t\t\"EnglishName\": \"\", \t\t\t\t\t\"IsCommWorkspace\": false, \t\t\t\t\t\"Status\": 0, \t\t\t\t\t\"TenantId\": 100055, \t\t\t\t\t\"ValidityEndTime\": \"2192976000\", \t\t\t\t\t\"ValidityStartTime\": \"1687795200\", \t\t\t\t\t\"WorkspaceId\": 1439 \t\t\t\t} \t\t\t] \t\t}",
+          "example": "无",
           "member": "WorkspaceInfoList",
           "name": "Result",
           "output_required": false,
@@ -6800,7 +6800,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "xxx",
+          "example": "o9ftuUNOFkOVf2o5etJ0nHou396ufAes",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6945,7 +6945,7 @@
         {
           "disabled": false,
           "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "modelname",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -6995,7 +6995,7 @@
         {
           "disabled": false,
           "document": "设备所属父设备id（子设备才有）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxxx",
+          "example": "parentwid",
           "member": "string",
           "name": "ParentWID",
           "output_required": false,
@@ -7005,7 +7005,7 @@
         {
           "disabled": false,
           "document": "设备所有父设备名称（子设备才有）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "atest",
+          "example": "parentwidname",
           "member": "string",
           "name": "ParentWIDName",
           "output_required": false,
@@ -7126,7 +7126,7 @@
         {
           "disabled": false,
           "document": "修改后的设备名字",
-          "example": "a",
+          "example": "devicename",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -7879,7 +7879,7 @@
         {
           "disabled": false,
           "document": "空间分类编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "spacetypecode",
           "member": "string",
           "name": "SpaceTypeCode",
           "output_required": false,
@@ -7889,7 +7889,7 @@
         {
           "disabled": false,
           "document": "空间分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "spacetypename",
           "member": "string",
           "name": "SpaceTypeName",
           "output_required": false,
@@ -7909,7 +7909,7 @@
         {
           "disabled": false,
           "document": "空间层级类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "spacepoiid",
           "member": "string",
           "name": "SpacePoiId",
           "output_required": false,
@@ -7919,7 +7919,7 @@
         {
           "disabled": false,
           "document": "构件描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "elementdesc",
           "member": "string",
           "name": "ElementDesc",
           "output_required": false,
@@ -8217,7 +8217,7 @@
         {
           "disabled": false,
           "document": "事件名称或动作名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8243,7 +8243,7 @@
         {
           "disabled": false,
           "document": "事件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8273,7 +8273,7 @@
         {
           "disabled": false,
           "document": "有效期\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "validperiod",
           "member": "string",
           "name": "ValidPeriod",
           "output_required": false,
@@ -8303,7 +8303,7 @@
         {
           "disabled": false,
           "document": "设备类型，当触发类型为deviceType时返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "devicetype",
           "member": "string",
           "name": "DeviceType",
           "output_required": false,
@@ -8401,7 +8401,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "reportname",
           "member": "string",
           "name": "ReportName",
           "output_required": false,
@@ -8427,7 +8427,7 @@
         {
           "disabled": false,
           "document": "文件Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "fileid",
           "member": "string",
           "name": "FileId",
           "output_required": false,
@@ -8463,7 +8463,7 @@
         {
           "disabled": false,
           "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -8473,7 +8473,7 @@
         {
           "disabled": false,
           "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8559,7 +8559,7 @@
         {
           "disabled": false,
           "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8585,7 +8585,7 @@
         {
           "disabled": false,
           "document": "关联联动规则名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "a",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -8871,7 +8871,7 @@
         {
           "disabled": false,
           "document": "自定义字段key",
-          "example": "xxx",
+          "example": "keyname",
           "member": "string",
           "name": "Key",
           "required": true,
@@ -8880,7 +8880,7 @@
         {
           "disabled": false,
           "document": "自定义字段值",
-          "example": "xxx",
+          "example": "value",
           "member": "string",
           "name": "Val",
           "required": true,
@@ -8904,7 +8904,7 @@
         {
           "disabled": false,
           "document": "设备自定义字段修改信息集合",
-          "example": "[{\"WID\":\"xx\",\"Key\":\"size\",\"Val\":\"100\"}}]",
+          "example": "[{\"WID\":\"wid\",\"Key\":\"size\",\"Val\":\"100\"}}]",
           "member": "ModifyDeviceFieldInfo",
           "name": "Set",
           "required": true,
@@ -8913,7 +8913,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -8983,7 +8983,7 @@
         {
           "disabled": false,
           "document": "设备组修改信息集合\t",
-          "example": "[{\"WID\":\"xx\",\"GroupId\":100},{\"WID\":\"xx2\",\"GroupId\":100}]",
+          "example": "[{\"WID\":\"wid1\",\"GroupId\":100},{\"WID\":\"wid2\",\"GroupId\":100}]",
           "member": "ModifyDeviceGroupInfo",
           "name": "Set",
           "required": true,
@@ -8992,7 +8992,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -9038,7 +9038,7 @@
         {
           "disabled": false,
           "document": "设备修改信息集合",
-          "example": "{\"WID\":\"xx\",\"DeviceName\":\"a\"}",
+          "example": "{\"WID\":\"be2ea997-b7f4-4167-9545-9aa275158a92\",\"DeviceName\":\"devicename\"}",
           "member": "DeviceModifyInfo",
           "name": "Set",
           "required": true,
@@ -9047,7 +9047,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -9117,7 +9117,7 @@
         {
           "disabled": false,
           "document": "设备标签修改信息集合",
-          "example": "[{\"WID\":\"xx\",\"NameSet\":[\"aaa\",\"bbb\"]}]",
+          "example": "[{\"WID\":\"wid\",\"NameSet\":[\"name1\",\"name2\"]}]",
           "member": "ModifyDeviceTagInfo",
           "name": "Set",
           "required": true,
@@ -9126,7 +9126,7 @@
         {
           "disabled": false,
           "document": "应用token\t",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -9199,7 +9199,7 @@
         {
           "disabled": false,
           "document": "处理描述信息",
-          "example": "test",
+          "example": "processdesc",
           "member": "string",
           "name": "ProcessDescription",
           "required": false,
@@ -9667,7 +9667,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "baSTzPx0vZ6LPuv2EifNa5CqRBj9hoY0",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -9694,7 +9694,7 @@
         {
           "disabled": false,
           "document": "扩展字段2，如：算法上报id，若为json格式，需传x-json:{}，有效字段为x-json:后的字段",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "ExtendTwo",
           "required": false,
@@ -9703,7 +9703,7 @@
         {
           "disabled": false,
           "document": "透传信息，若为json格式，需传x-json:{}，有效字段为x-json:后的字段",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "Echo",
           "required": false,
@@ -9935,7 +9935,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxx",
+          "example": "YVySZSL1Lp5UtSJ5uJVLJYOKDEGfCCH2",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -9984,7 +9984,7 @@
         {
           "disabled": false,
           "document": "新增/修改的设备分组记录的id",
-          "example": "{}",
+          "example": "无",
           "member": "SaveDeviceGroupRes",
           "name": "Result",
           "output_required": false,
@@ -10768,7 +10768,7 @@
         {
           "disabled": false,
           "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "departmentid",
           "member": "string",
           "name": "DepartmentId",
           "output_required": false,
@@ -10788,7 +10788,7 @@
         {
           "disabled": false,
           "document": "子账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "100011",
           "member": "int64",
           "name": "DepartmentUserId",
           "output_required": false,
@@ -10880,7 +10880,7 @@
         {
           "disabled": false,
           "document": "设备名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -10999,7 +10999,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "xxxx",
+          "example": "RewYT6DXVWDg51Sx8tdcj89cX1pEns2h",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -11054,7 +11054,7 @@
         {
           "disabled": false,
           "document": "园区简称",
-          "example": "test",
+          "example": "parkname",
           "member": "string",
           "name": "ParkName",
           "required": false,
