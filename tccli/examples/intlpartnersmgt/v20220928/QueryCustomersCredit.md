@@ -26,7 +26,9 @@ Output:
                 "IdentifyType": 1,
                 "Type": "new",
                 "Email": "abcd*********@tencent.com",
-                "Arrears": "固定为-"
+                "Arrears": "固定为-",
+                "PostpayFreezeCredit": 1,
+                "PrepayFreezeCredit": 2
             }
         ],
         "RequestId": "2b7c676e-bb4b-449d-89e6-4866132036c4"

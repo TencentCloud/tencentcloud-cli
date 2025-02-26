@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AllocateCreditPool\n<公共请求参数>\n\n{\n    \"SubAgentUin\": 23427433726,\n    \"Credit\": 234.345\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCredit\": 345365,\n        \"RemainingCredit\": 3214.345,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCredit\": 345365,\n        \"RemainingCredit\": 3214.345,\n        \"RequestId\": \"xsakjf-asjfda-sadf\"\n    }\n}",
         "title": "分配信用池"
       }
     ],
@@ -27,7 +27,7 @@
     "CreateAccount": [
       {
         "document": "申请创建客户账户",
-        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"Extended\": \"for personal\",\n    \"CountryCode\": \"852\",\n    \"Area\": \"HK\",\n    \"PhoneNum\": \"18888888888\",\n    \"AccountType\": \"business\",\n    \"Mail\": \"account@qq.com\",\n    \"Password\": \"ABCabc123!\",\n    \"ConfirmPassword\": \"ABCabc123\"\n}",
+        "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccount\n<公共请求参数>\n\n{\n    \"Extended\": \"for personal\",\n    \"CountryCode\": \"852\",\n    \"Area\": \"HK\",\n    \"PhoneNum\": \"18888888888\",\n    \"AccountType\": \"business\",\n    \"Mail\": \"account@qq.com\",\n    \"Password\": \"ABCabc123!\",\n    \"ConfirmPassword\": \"ABCabc123\",\n    \"VerifyCode\": \"364928\"\n}",
         "output": "{\n    \"Response\": {\n        \"Uin\": \"200000123456\",\n        \"RequestId\": \"a9e390a7-a1af-42cd-8178-13bd046337a7\"\n    }\n}",
         "title": "申请创建客户账户"
       }
@@ -240,7 +240,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: intlpartnersmgt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCustomersCredit\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"ClientUin\": 1,\n                \"Name\": \"abcdefg@tencent.com\",\n                \"Mobile\": \"131123456789\",\n                \"RecentExpiry\": \"2022-10-13 20:09:03\",\n                \"RemainingCredit\": 100,\n                \"Remark\": \"remark\",\n                \"Credit\": 100,\n                \"Force\": 0,\n                \"AssociationTime\": \"2022-10-13 20:09:03\",\n                \"IdentifyType\": 1,\n                \"Type\": \"new\",\n                \"Email\": \"abcd*********@tencent.com\",\n                \"Arrears\": \"固定为-\"\n            }\n        ],\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"ClientUin\": 1,\n                \"Name\": \"abcdefg@tencent.com\",\n                \"Mobile\": \"131123456789\",\n                \"RecentExpiry\": \"2022-10-13 20:09:03\",\n                \"RemainingCredit\": 100,\n                \"Remark\": \"remark\",\n                \"Credit\": 100,\n                \"Force\": 0,\n                \"AssociationTime\": \"2022-10-13 20:09:03\",\n                \"IdentifyType\": 1,\n                \"Type\": \"new\",\n                \"Email\": \"abcd*********@tencent.com\",\n                \"Arrears\": \"固定为-\",\n                \"PostpayFreezeCredit\": 1,\n                \"PrepayFreezeCredit\": 2\n            }\n        ],\n        \"RequestId\": \"2b7c676e-bb4b-449d-89e6-4866132036c4\"\n    }\n}",
         "title": "查询客户信用额度"
       }
     ],

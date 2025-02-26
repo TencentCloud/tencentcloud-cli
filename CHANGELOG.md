@@ -1,3 +1,43 @@
+# Release 3.0.1162.1
+
+## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15
+
+### 第 16 次发布
+
+发布时间：2025-02-27 01:17:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)
+
+	* 新增成员：Status, UUID, Zone, ZoneDesc, RealResourceId
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 29 次发布
+
+发布时间：2025-02-27 01:40:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAccount](http://document.tencentcloudapi.woa.com/document/product/1724/80745)
+
+	* <font color="#dd0000">**修改入参**：</font>VerifyCode
+
+
+
+
 # Release 3.0.1161.1
 
 ## 域名注册(domain) 版本：2018-08-08

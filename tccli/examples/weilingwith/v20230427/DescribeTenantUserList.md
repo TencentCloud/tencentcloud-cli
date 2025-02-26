@@ -29,7 +29,7 @@ Output:
                     "Email": "test@tencent.com",
                     "Password": "",
                     "Phone": "159****6666",
-                    "RealName": "test",
+                    "RealName": "realname",
                     "Status": 1,
                     "TenantId": "100055",
                     "UpdateAt": 1691745205,

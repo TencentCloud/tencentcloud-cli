@@ -20,7 +20,7 @@ Output:
         "ImageParentVersions": [
             {
                 "UpdateTime": "2020-01-01:00:00:00",
-                "Description": "测试",
+                "Description": "SparkSQL大版本镜像",
                 "IsSharedEngine": 1,
                 "ImageVersionId": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
                 "IsPublic": 1,

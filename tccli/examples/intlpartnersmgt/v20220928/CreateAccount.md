@@ -13,7 +13,8 @@ tccli intlpartnersmgt CreateAccount --cli-unfold-argument  \
     --AccountType business \
     --Mail account@qq.com \
     --Password ABCabc123! \
-    --ConfirmPassword ABCabc123
+    --ConfirmPassword ABCabc123 \
+    --VerifyCode 364928
 ```
 
 Output: 

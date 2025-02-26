@@ -27,6 +27,9 @@ Output:
             ],
             "TimeoutInstanceIds": [
                 "ins=kytrdqq45"
+            ],
+            "FailedReasons": [
+                "this is failed reason"
             ]
         }
     }

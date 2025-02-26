@@ -29,7 +29,10 @@ Output:
 {
     "Response": {
         "RequestId": "b057eeaa-ccdf-40be-995f-f059b4b974e8",
-        "Result": null
+        "Result": {
+            "TotalCount": 2,
+            "Content": []
+        }
     }
 }
 ```

@@ -16,7 +16,7 @@ Output:
     "Response": {
         "TotalCredit": 345365,
         "RemainingCredit": 3214.345,
-        "RequestId": "xx"
+        "RequestId": "xsakjf-asjfda-sadf"
     }
 }
 ```
