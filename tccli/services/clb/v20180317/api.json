@@ -3477,6 +3477,15 @@
         },
         {
           "disabled": false,
+          "document": "目标组类型，当前支持v1(旧版目标组), v2(新版目标组), 默认为v1(旧版目标组)。",
+          "example": "v1",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "标签。",
           "example": "无",
           "member": "TagInfo",

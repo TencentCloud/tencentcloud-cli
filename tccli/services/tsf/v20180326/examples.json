@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=AddClusterInstances\n&InstanceIdList.0=ins-xxxxxxx\n&InstanceIdList.1=ins-xxxxxxx\n&ClusterId=cluster-xxxxxxx\n&InstanceImportMode=R\n&ImageId=img-xxxxxxx\n&Password=xxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b141f81-e708-46f0-a8d3-4e5259c82890\",\n        \"Result\": {\n            \"FailedInstanceIds\": [\n                \"ins-fgbrdsa12\"\n            ],\n            \"SuccInstanceIds\": [\n                \"ins-geeqwysd1\"\n            ],\n            \"TimeoutInstanceIds\": [\n                \"ins=kytrdqq45\"\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b141f81-e708-46f0-a8d3-4e5259c82890\",\n        \"Result\": {\n            \"FailedInstanceIds\": [\n                \"ins-fgbrdsa12\"\n            ],\n            \"SuccInstanceIds\": [\n                \"ins-geeqwysd1\"\n            ],\n            \"TimeoutInstanceIds\": [\n                \"ins=kytrdqq45\"\n            ],\n            \"FailedReasons\": [\n                \"this is failed reason\"\n            ]\n        }\n    }\n}",
         "title": "添加云主机节点"
       }
     ],
@@ -1164,7 +1164,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatistics\n<公共请求参数>\n\n{\n    \"OrderBy\": \"字符串\",\n    \"StartTime\": \"2020-05-12 14:43:12\",\n    \"TimeStep\": \"1\",\n    \"Offset\": \"1\",\n    \"DbName\": \"字符串\",\n    \"ServiceName\": \"字符串\",\n    \"Limit\": \"1\",\n    \"NamespaceIdList\": [\n        \"字符串\"\n    ],\n    \"SearchWord\": \"字符串\",\n    \"OrderType\": \"1\",\n    \"EndTime\": \"2020-05-12 14:43:12\",\n    \"Type\": \"字符串\",\n    \"NamespaceId\": \"字符串\",\n    \"BucketKey\": \"字符串\",\n    \"MetricDimensionValues\": [\n        {\n            \"Name\": \"字符串\",\n            \"Value\": [\n                \"字符串\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b057eeaa-ccdf-40be-995f-f059b4b974e8\",\n        \"Result\": null\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b057eeaa-ccdf-40be-995f-f059b4b974e8\",\n        \"Result\": {\n            \"TotalCount\": 2,\n            \"Content\": []\n        }\n    }\n}",
         "title": "test"
       }
     ],

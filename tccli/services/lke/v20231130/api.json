@@ -1423,6 +1423,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型资源状态 1：资源可用；2：资源已用尽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ResourceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2593,7 +2604,7 @@
         },
         {
           "disabled": false,
-          "document": "父级业务ID",
+          "document": "父级业务ID，创建顶级分类时传字符串\"0\"",
           "example": "无",
           "member": "string",
           "name": "ParentBizId",
@@ -3951,7 +3962,7 @@
         },
         {
           "disabled": false,
-          "document": "机器人配额\n",
+          "document": "应用配额",
           "example": "无",
           "member": "uint64",
           "name": "RobotQuota",
@@ -3967,6 +3978,46 @@
           "name": "FullName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否试用",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTrial",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否试用过期",
+          "example": "无",
+          "member": "bool",
+          "name": "IsTrialExpired",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用应用数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "AvailableAppQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持自定义模型配置",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSupportCustomModel",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -8763,6 +8814,26 @@
           "name": "IsAllowRetry",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0:文档比对处理 1:文档生成问答\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Processing",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文档创建落库时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

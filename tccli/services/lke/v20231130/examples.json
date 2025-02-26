@@ -196,7 +196,7 @@
       {
         "document": "获取企业信息",
         "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCorp\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"CorpBizId\": \"18485034430310\",\n        \"FullName\": \"我的企业\",\n        \"RequestId\": \"669edde9-e9ec-40c6-bf31-5e9402fb26fb\",\n        \"RobotQuota\": 10\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CorpBizId\": \"18485034430310\",\n        \"FullName\": \"我的企业\",\n        \"RequestId\": \"669edde9-e9ec-40c6-bf31-5e9402fb26fb\",\n        \"RobotQuota\": 10,\n        \"IsTrial\": false,\n        \"IsTrialExpired\": false,\n        \"AvailableAppQuota\": 10\n    }\n}",
         "title": "获取企业信息"
       }
     ],

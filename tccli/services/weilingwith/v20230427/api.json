@@ -8043,7 +8043,7 @@
         {
           "disabled": false,
           "document": "属性描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "output_required": false,

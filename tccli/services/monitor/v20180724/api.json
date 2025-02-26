@@ -784,6 +784,13 @@
       "output": "GetPrometheusAgentManagementCommandResponse",
       "status": "online"
     },
+    "GetTopNMonitorData": {
+      "document": "支持TopN查询，对于给定的监控指标和时间区间，按照指标大小按序返回不同维度组合及数据。",
+      "input": "GetTopNMonitorDataRequest",
+      "name": "获取TopN监控数据",
+      "output": "GetTopNMonitorDataResponse",
+      "status": "online"
+    },
     "InstallPlugins": {
       "document": "安装 Grafana Plugin",
       "input": "InstallPluginsRequest",
@@ -13931,6 +13938,137 @@
       ],
       "type": "object"
     },
+    "GetTopNMonitorDataRequest": {
+      "document": "GetTopNMonitorData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "topN",
+          "example": "20",
+          "member": "uint64",
+          "name": "N",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2020-05-11T14:52:44+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "截止时间",
+          "example": "2020-05-11T14:52:44+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品监控指标文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取50个实例的监控数据。",
+          "example": "[{\"Dimensions\":[{\"Name\":\"netgroup\",\"Value\":\"-1\"}]}]",
+          "member": "Instance",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称，如Bwpresourcebandwidthin，仅支持单指标拉取。各个云产品的详细指标说明请参阅各个产品监控指标文档，对应的指标英文名即为MetricName",
+          "example": "Bwpresourcebandwidthin",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，如QCE/CVM。各个云产品的详细命名空间说明请参阅各个产品监控指标文档",
+          "example": "QCE/BWP",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控统计周期，如60。默认为取值为60，单位为s。每个指标支持的统计周期不一定相同，各个云产品支持的统计周期请参阅各个产品监控指标文档，对应的统计周期列即为支持的统计周期。",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTopNMonitorDataResponse": {
+      "document": "GetTopNMonitorData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名\t",
+          "example": "Bwpresourcebandwidthin",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计周期\t",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "topN",
+          "example": "无",
+          "member": "uint64",
+          "name": "N",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "排序的监控数据\t",
+          "example": "无",
+          "member": "SingleOrderedDataPoint",
+          "name": "OrderedDataPoints",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GrafanaAccountInfo": {
       "document": "Grafana可视化服务 授权账户信息",
       "members": [
@@ -19881,6 +20019,56 @@
         }
       ],
       "type": "object"
+    },
+    "SingleOrderedDataPoint": {
+      "document": "单个有序数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例对象维度组合\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控数据值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控数据时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排序序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Order",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SyncPrometheusTempRequest": {
       "document": "SyncPrometheusTemp请求参数结构体",

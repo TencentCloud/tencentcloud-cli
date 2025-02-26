@@ -2768,7 +2768,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2778,7 +2778,7 @@
           "example": "SCH1",
           "member": "string",
           "name": "Spec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2788,7 +2788,7 @@
           "example": "2",
           "member": "int64",
           "name": "Core",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2798,7 +2798,7 @@
           "example": "4",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2808,7 +2808,7 @@
           "example": "CLOUD_HSSD",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2818,7 +2818,7 @@
           "example": "100",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2828,7 +2828,7 @@
           "example": "default_cluster",
           "member": "string",
           "name": "Cluster",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2838,7 +2838,7 @@
           "example": "无",
           "member": "GroupInfo",
           "name": "NodeGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2848,7 +2848,7 @@
           "example": "192.168.1.1",
           "member": "string",
           "name": "Rip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2858,9 +2858,59 @@
           "example": "true",
           "member": "bool",
           "name": "IsCHProxy",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "状态",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "唯一id",
+          "member": "string",
+          "name": "UUID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "区描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "真实资源id",
+          "example": "ins-379ozssh",
+          "member": "string",
+          "name": "RealResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3538,7 +3588,7 @@
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "20a71202-27c4-4120-80c4-fb1a8e15dxxx",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,

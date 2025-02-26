@@ -1,17 +1,83 @@
 {
   "actions": {
+    "CreateKnowledgeSet": [
+      {
+        "document": "创建微搭知识库",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeSet\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Title\": \"testTiTle\",\n    \"Desc\": \"descd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
+        "title": "创建知识库"
+      }
+    ],
+    "DeleteKnowledgeDocumentSet": [
+      {
+        "document": "删除知识库下文档",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeDocumentSet\n<公共请求参数>\n\n{\n    \"CollectionView\": \"gqtianTw west666\",\n    \"Query\": {\n        \"DocumentSetId\": [\n            \"124847948693739929www6\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AffectedCount\": 1\n        },\n        \"RequestId\": \"7365a503-7b9e-4510-9b0c-e7af0f0c06cf\"\n    }\n}",
+        "title": "删除知识库下文档"
+      }
+    ],
+    "DeleteKnowledgeSet": [
+      {
+        "document": "用于删除知识库",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeSet\n<公共请求参数>\n\n{\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
+        "title": "删除知识库"
+      }
+    ],
     "DescribeDataSourceList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceList\n<公共请求参数>\n\n{\n    \"PageIndex\": 0,\n    \"PageSize\": 0,\n    \"EnvId\": \"aaa\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 0,\n            \"Rows\": [\n                {\n                    \"IsNewDataSource\": 0,\n                    \"ChildDataSourceNames\": [\n                        \"xx\"\n                    ],\n                    \"CmsProject\": \"xx\",\n                    \"CreatorId\": \"xx\",\n                    \"AuthStatus\": 0,\n                    \"Type\": \"xx\",\n                    \"AppUsageList\": [\n                        {\n                            \"OnlineStatusUse\": 0,\n                            \"PreviewStatusUse\": 0,\n                            \"Id\": \"xx\",\n                            \"EditStatusUse\": 0,\n                            \"Title\": \"xx\"\n                        }\n                    ],\n                    \"Schema\": \"xx\",\n                    \"PkgId\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"ScfStatus\": 1,\n                    \"PublishVersion\": \"xx\",\n                    \"ViewId\": \"xx\",\n                    \"Title\": \"xx\",\n                    \"PublishedAt\": \"xx\",\n                    \"TemplateCode\": \"xx\",\n                    \"DataSourceVersion\": \"xx\",\n                    \"UpdatedAt\": \"xx\",\n                    \"Configuration\": \"xx\",\n                    \"CreatedAt\": \"xx\",\n                    \"EnvId\": \"xx\",\n                    \"Name\": \"xx\",\n                    \"ChildDataSourceIds\": [\n                        \"xx\"\n                    ],\n                    \"Fun\": \"xx\",\n                    \"Methods\": \"xx\",\n                    \"SubType\": \"database\",\n                    \"Source\": 0,\n                    \"SchemaVersion\": \"xx\",\n                    \"PublishViewId\": \"xx\",\n                    \"Id\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取数据源详情列表"
-      },
+        "document": "查询数据源列表",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceList\n<公共请求参数>\n\n{\n    \"PageSize\": 10,\n    \"PageIndex\": 1,\n    \"EnvId\": \"lowcode-4jT6kVY\",\n    \"Appids\": [\n        \"data-4jT6kVY\"\n    ],\n    \"DataSourceIds\": [\n        \"data-4jT6kVY\"\n    ],\n    \"DataSourceNames\": [\n        \"4jT6kVY\"\n    ],\n    \"DataSourceType\": \"mysql\",\n    \"QueryOption\": {\n        \"LikeName\": \"4jT6kVY\",\n        \"LikeTitle\": \"用户\"\n    },\n    \"ViewIds\": [\n        \"4jT6kVY\"\n    ],\n    \"AppLinkStatus\": 0,\n    \"QueryBindToApp\": 0,\n    \"QueryConnector\": 0,\n    \"NotQuerySubTypeList\": [\n        \"d4jT6kVY\"\n    ],\n    \"ChannelList\": [\n        \"4jT6kVY\"\n    ],\n    \"QueryDataSourceRelationList\": true,\n    \"DbInstanceType\": \"mysql\",\n    \"DatabaseTableNames\": [\n        \"sys_user\"\n    ],\n    \"QuerySystemModel\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Rows\": [\n                {\n                    \"Id\": \"data-4jT6kVY\",\n                    \"Title\": \"用户\",\n                    \"Name\": \"sys_user\",\n                    \"Type\": \"database\",\n                    \"Description\": \"内置数据源\",\n                    \"Schema\": \"{\\\"x-primary-column\\\":\\\"name\\\",\\\"x-kind\\\":\\\"tcb\\\",\\\"name\\\":\\\"sys_user\\\",\\\"x-defaultMethods\\\":[\\\"wedaCreate\\\"]}\",\n                    \"CmsProject\": \"data-4jT6kVY\",\n                    \"PkgId\": \"lowcode-4jT6kVY\",\n                    \"SchemaVersion\": \"2.0\",\n                    \"CreatorId\": \"sys_user_1\",\n                    \"CreatedAt\": \"sys\",\n                    \"UpdatedAt\": \"sys\",\n                    \"EnvId\": \"lowcode-4jT6kVY\",\n                    \"DataSourceVersion\": \"data-4jT6kVY\",\n                    \"AppUsageList\": [\n                        {\n                            \"Id\": \"data-4jT6kVY\",\n                            \"Title\": \"用户\",\n                            \"EditStatusUse\": 0,\n                            \"PreviewStatusUse\": 0,\n                            \"OnlineStatusUse\": 0,\n                            \"DataSourceId\": \"data-4jT6kVY\"\n                        }\n                    ],\n                    \"PublishedAt\": \"sys\",\n                    \"ChildDataSourceIds\": [\n                        \"data-4jT6kVY\"\n                    ],\n                    \"Fun\": \"{\\\"prviewPublishAt\\\":\\\"2024-11-19T17:28:57.919+0800\\\",\\\"onlinePublishAt\\\":\\\"2024-11-19T17:28:30.989+0800\\\",\\\"previewVersion\\\":2,\\\"onlineVersion\\\":2}\",\n                    \"ScfStatus\": 1,\n                    \"Methods\": \"data-4jT6kVY\",\n                    \"ChildDataSourceNames\": [\n                        \"data-4jT6kVY\"\n                    ],\n                    \"IsNewDataSource\": 0,\n                    \"ViewId\": \"view-67vvgoe840\",\n                    \"Configuration\": \"data-4jT6kVY\",\n                    \"TemplateCode\": \"data-4jT6kVY\",\n                    \"Source\": 0,\n                    \"PublishVersion\": \"data-4jT6kVY\",\n                    \"PublishViewId\": \"data-4jT6kVY\",\n                    \"SubType\": \"data-4jT6kVY\",\n                    \"AuthStatus\": 0,\n                    \"AuthInfo\": {\n                        \"AuthUser\": \"sys\"\n                    },\n                    \"PublishStatus\": 0,\n                    \"UpdateVersion\": 0,\n                    \"RelationFieldList\": [\n                        {\n                            \"Field\": \"abcdata-4jT6kVY\",\n                            \"Format\": \"data-4jT6kVY\",\n                            \"RelateDataSourceName\": \"data-4jT6kVY\"\n                        }\n                    ],\n                    \"DbInstanceType\": \"mysql\",\n                    \"PreviewTableName\": \"sys_user_pre\",\n                    \"PublishedTableName\": \"sys_user\",\n                    \"DbSourceType\": \"mysql\"\n                }\n            ],\n            \"Count\": 1\n        },\n        \"RequestId\": \"1234_23232sdssasd\"\n    }\n}",
+        "title": "DescribeDataSourceList"
+      }
+    ],
+    "DescribeKnowledgeDocumentSetDetail": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceList\n<公共请求参数>\n\n{\n    \"PageIndex\":\"1\",\n    \"EnvId\":\"\"123\"\",\n    \"PageSize\":\"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 8,\n            \"Rows\": [\n                {\n                    \"AppUsageList\": [\n                        {\n                            \"EditStatusUse\": 0,\n                            \"Id\": \"\",\n                            \"OnlineStatusUse\": 0,\n                            \"PreviewStatusUse\": 0,\n                            \"Title\": \"\"\n                        }\n                    ],\n                    \"AuthInfo\": {\n                        \"AuthUser\": \"\"\n                    },\n                    \"AuthStatus\": 0,\n                    \"ChildDataSourceIds\": [\n                        \"\"\n                    ],\n                    \"ChildDataSourceNames\": [\n                        \"\"\n                    ],\n                    \"CmsProject\": \"0\",\n                    \"Configuration\": \"\",\n                    \"CreatedAt\": \"\",\n                    \"CreatorId\": \"\",\n                    \"DataSourceVersion\": \"\",\n                    \"Description\": \"\",\n                    \"EnvId\": \"\",\n                    \"Fun\": \"\",\n                    \"Id\": \"\",\n                    \"IsNewDataSource\": 0,\n                    \"Methods\": \"\",\n                    \"Name\": \"\",\n                    \"PkgId\": \"\",\n                    \"PublishVersion\": \"\",\n                    \"PublishViewId\": \"\",\n                    \"PublishedAt\": \"\",\n                    \"ScfStatus\": 0,\n                    \"Schema\": \"\",\n                    \"SchemaVersion\": \"\",\n                    \"Source\": 0,\n                    \"SubType\": \"\",\n                    \"TemplateCode\": \"\",\n                    \"Title\": \"\",\n                    \"Type\": \"\",\n                    \"UpdatedAt\": \"\",\n                    \"ViewId\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"7aad9c07-97ab-4bed-8a4a-77e0c4c96e6a\"\n    }\n}",
-        "title": "成功用例"
+        "document": "获取知识库下文档详情",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeDocumentSetDetail\n<公共请求参数>\n\n{\n    \"CollectionView\": \"gqtianTest222666\",\n    \"DocumentSetId\": \"1248479222486937399296\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 1,\n            \"DocumentSet\": {\n                \"DocumentSetId\": \"1248479222486937399296\",\n                \"FileTitle\": \"kent测试文件\",\n                \"FileMetaData\": \"{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}\",\n                \"DocumentSetInfo\": {\n                    \"ByteLength\": 46,\n                    \"CreateTime\": \"2024-06-07 11:31:45\",\n                    \"IndexedProgress\": 100,\n                    \"IndexedStatus\": \"Ready\",\n                    \"Keywords\": \"\",\n                    \"LastUpdateTime\": \"2024-06-07 11:31:46\",\n                    \"TextLength\": 20\n                },\n                \"DocumentSetName\": \"jackzlqin.md\",\n                \"Name\": \"\",\n                \"Author\": \"\",\n                \"SplitterPreprocess\": {\n                    \"AppendKeywordsToChunk\": false,\n                    \"AppendTitleToChunk\": true\n                },\n                \"Text\": \"1. 入门微搭的技术文档\\n2. 学习微搭\",\n                \"TextPrefix\": \"1. 入门微搭的技术文档\\n2. 学习微搭......\"\n            }\n        },\n        \"RequestId\": \"b404ff44-6bc3-4f60-8185-2ff4d9be5b63\"\n    }\n}",
+        "title": "获取知识库下文档详情"
+      }
+    ],
+    "DescribeKnowledgeDocumentSetList": [
+      {
+        "document": "查询知识库下文件集合",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeDocumentSetList\n<公共请求参数>\n\n{\n    \"CollectionView\": \"gqtianTest666\",\n    \"Query\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 1,\n            \"DocumentSets\": [\n                {\n                    \"DocumentSetId\": \"1248479486937399296\",\n                    \"FileTitle\": \"kent测试文件\",\n                    \"FileMetaData\": \"{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}\",\n                    \"DocumentSetInfo\": {\n                        \"ByteLength\": 46,\n                        \"CreateTime\": \"2024-06-07 11:31:45\",\n                        \"IndexedErrorMsg\": \"\",\n                        \"IndexedProgress\": 100,\n                        \"IndexedStatus\": \"Ready\",\n                        \"Keywords\": \"\",\n                        \"LastUpdateTime\": \"2024-06-07 11:31:46\",\n                        \"TextLength\": 20\n                    },\n                    \"DocumentSetName\": \"jackzlqin.md\",\n                    \"Name\": \"\",\n                    \"Author\": \"\",\n                    \"SplitterPreprocess\": {\n                        \"AppendKeywordsToChunk\": false,\n                        \"AppendTitleToChunk\": true\n                    },\n                    \"TextPrefix\": \"1. 入门微搭的技术文档\\n2. 学习微搭......\"\n                }\n            ]\n        },\n        \"RequestId\": \"2e7bdcc4-d82f-4b81-abc6-6e8b08cf1832\"\n    }\n}",
+        "title": "查询知识库下文件集合"
+      }
+    ],
+    "DescribeKnowledgeSetList": [
+      {
+        "document": "查询环境下的知识库列表",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeSetList\n<公共请求参数>\n\n{\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"test\",\n                    \"Title\": \"testTiTle\",\n                    \"Desc\": \"test\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
+        "title": "查询环境下的知识库列表"
+      }
+    ],
+    "SearchDocList": [
+      {
+        "document": "根据关键字搜索知识库文档",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchDocList\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"CollectionView\": \"abc\",\n    \"SearchKey\": \"abc\",\n    \"SearchValue\": \"abc\",\n    \"PageNo\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DocInfos\": [\n                {\n                    \"CollectionViewName\": \"abc\",\n                    \"DocSetId\": \"123456\",\n                    \"DocSetName\": \"abc.md\",\n                    \"DocType\": \".md\",\n                    \"FileTitle\": \"abc\",\n                    \"FileMetaData\": \"{}\",\n                    \"DocDesc\": \"test\",\n                    \"FileSize\": 0\n                }\n            ],\n            \"Total\": 10\n        },\n        \"RequestId\": \"1cc82948-244f-4812-bb2a-25a8a473d312\"\n    }\n}",
+        "title": "知识库文档搜索接口"
+      }
+    ],
+    "UpdateKnowledgeSet": [
+      {
+        "document": "更新知识库状态",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateKnowledgeSet\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Active\": \"ENABLED\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
+        "title": "更新知识库"
+      }
+    ],
+    "UploadKnowledgeDocumentSet": [
+      {
+        "document": "上传知识库文档\n",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadKnowledgeDocumentSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1gk9y5ik310a94df\",\n    \"CollectionView\": \"qinmyku873d0a97\",\n    \"CosUrl\": \"https://6c6f-lowcode-5g5llxbq5bc9299e-1300677802.tcb.qcloud.la/weda-uploader/5e471ea6d1891cced441b68df1022023-新手指引.md\",\n    \"FileName\": \"jackzlqin-test1.md\",\n    \"DocumentDesc\": \"test-qin-11\",\n     \"FileTitle\":\"kent测试文件\",\n    \"FileMetaData\":\"{\\\"url\\\":\\\"https://ww.com\\\",\\\"total\\\":3}\",\n    \"DocumentSetId\":\"1258635496046329856\"\n}\n\n",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DocumentSetId\": \"1248563007152455680\",\n            \"DocumentSetName\": \"jackzqlin-test.md\",\n            \"FileTitle\": \"kent测试文件\",\n            \"FileMetaData\": \"{\\\"url\\\":\\\"https://ww.com\\\",\\\"total\\\":3}\"\n        },\n        \"RequestId\": \"0f27f7a7-2d8a-456a-8de9-2e794f3f8e74\"\n    }\n}",
+        "title": "UploadKnowledgeDocumentSet"
       }
     ]
   },

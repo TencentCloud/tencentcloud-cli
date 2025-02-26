@@ -1464,7 +1464,7 @@
         {
           "disabled": false,
           "document": "管理人职位。若没有传ManagerId， 则此字段必传",
-          "example": "测试",
+          "example": "研发",
           "member": "string",
           "name": "AdminTitle",
           "required": false,
@@ -1581,7 +1581,7 @@
         {
           "disabled": false,
           "document": "待提交资料的付费证书 ID。\t",
-          "example": "无",
+          "example": "Lr1eMvQr",
           "member": "string",
           "name": "CertId",
           "required": true,
@@ -1590,7 +1590,7 @@
         {
           "disabled": false,
           "document": "是否删除自动DNS验证值：0，不删除； 1，删除； 默认不删除",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "DeleteDnsAutoRecord",
           "required": false,
@@ -1599,7 +1599,7 @@
         {
           "disabled": false,
           "document": "证书域名验证方式：\nDNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号\nDNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值\nFILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面",
-          "example": "无",
+          "example": "DNS",
           "member": "string",
           "name": "VerifyType",
           "required": false,
@@ -1614,7 +1614,7 @@
         {
           "disabled": false,
           "document": "CA机构侧订单号。",
-          "example": "无",
+          "example": "rcMcFK7a_b0iMMEH4",
           "member": "string",
           "name": "OrderId",
           "output_required": true,
@@ -1624,7 +1624,7 @@
         {
           "disabled": false,
           "document": "证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
@@ -1634,7 +1634,7 @@
         {
           "disabled": false,
           "document": "是否预审核",
-          "example": "无",
+          "example": "0",
           "member": "bool",
           "name": "IsAudited",
           "output_required": true,
@@ -9122,7 +9122,7 @@
         {
           "disabled": false,
           "document": "上传的 CSR 内容。\n若CstType为parse， 则此字段必传。",
-          "example": "无",
+          "example": "-----BEGIN CERTIFICATE REQUEST-----\\nxxxxxxx\\n-----END CERTIFICATE REQUEST-----",
           "member": "string",
           "name": "CsrContent",
           "required": false,
@@ -9149,7 +9149,7 @@
         {
           "disabled": false,
           "document": "私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密\t",
-          "example": "无",
+          "example": "1234aaa5678",
           "member": "string",
           "name": "KeyPassword",
           "required": false,

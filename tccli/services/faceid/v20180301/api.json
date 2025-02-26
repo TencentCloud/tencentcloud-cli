@@ -3159,8 +3159,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "拉取的日期（YYYY-MM-DD）。最大可追溯到365天前。当天6点后才能拉取前一天的数据。",
-          "example": "无",
+          "document": "拉取的日期（YYYY-MM-DD）。\n- 最大可追溯到365天前。\n- 当天6点后才能拉取前一天的数据。",
+          "example": "2023-03-01",
           "member": "date",
           "name": "Date",
           "required": true,
@@ -3168,7 +3168,7 @@
         },
         {
           "disabled": false,
-          "document": "游标。用于分页，取第一页时传0，取后续页面时，传入本接口响应中返回的NextCursor字段的值。",
+          "document": "游标。\n- 用于分页。\n- 取第一页时传0，取后续页面时，传入本接口响应中返回的NextCursor字段的值。",
           "example": "1",
           "member": "uint64",
           "name": "Cursor",
@@ -3177,8 +3177,8 @@
         },
         {
           "disabled": false,
-          "document": "需要拉取账单详情业务对应的RuleId。不传会返回所有RuleId数据。默认为空字符串。",
-          "example": "无",
+          "document": "需要拉取账单详情业务对应的RuleId。\n- 不传会返回所有RuleId数据。\n- 默认为空字符串。",
+          "example": "12",
           "member": "string",
           "name": "RuleId",
           "required": false,
@@ -3192,31 +3192,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。",
+          "document": "是否还有下一页。\n- 该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。",
           "example": "false",
           "member": "bool",
           "name": "HasNextPage",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下一页的游标。用于分页。",
+          "document": "下一页的游标，用于分页。",
           "example": "1",
           "member": "uint64",
           "name": "NextCursor",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据",
+          "document": "数据。",
           "example": "无",
           "member": "WeChatBillDetail",
           "name": "WeChatBillDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -1681,13 +1681,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "添加云主机的返回列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加云主机的返回列表",
           "example": "无",
           "member": "AddInstanceResult",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1836,13 +1836,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "添加云主机是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "添加云主机是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3199,13 +3199,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3281,13 +3281,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "绑定是否成功",
           "example": "1",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7201,13 +7201,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用ID",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7382,13 +7382,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群ID",
           "example": "cluster-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8379,13 +8379,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "groupId， null表示创建失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "groupId， null表示创建失败",
           "example": "group-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8743,13 +8743,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功时为命名空间ID，失败为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功时为命名空间ID，失败为null",
           "example": "namespace-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9134,13 +9134,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建仓库是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建仓库是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9207,13 +9207,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "工作流 ID",
           "example": "flow-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9379,13 +9379,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "task-6a79x94v",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10069,13 +10069,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除部署组操作是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除部署组操作是否成功。\ntrue：操作成功。\nfalse：操作失败。",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10458,13 +10458,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除仓库是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除仓库是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11448,13 +11448,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "task-6a79x94v",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12012,13 +12012,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用分页列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用分页列表信息",
           "example": "无",
           "member": "TsfPageApplication",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12241,13 +12241,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群机器实例分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群机器实例分页信息",
           "example": "无",
           "member": "TsfPageInstance",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12332,13 +12332,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "Cluster分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Cluster分页信息",
           "example": "无",
           "member": "TsfPageClusterV2",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12895,13 +12895,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "events 分页列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "events 分页列表",
           "example": "无",
           "member": "TsfPageContainerEvent",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13299,13 +13299,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递项关联部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "投递项关联部署组信息",
           "example": "无",
           "member": "DeliveryConfigBindGroups",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13828,13 +13828,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "虚拟机部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟机部署组信息",
           "example": "无",
           "member": "VmGroupOther",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14074,13 +14074,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署组机器信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署组机器信息",
           "example": "无",
           "member": "TsfPageInstance",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14347,13 +14347,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "虚拟机部署组分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟机部署组分页信息",
           "example": "无",
           "member": "TsfPageVmGroup",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14810,13 +14810,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "机器列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机器列表信息",
           "example": "{\"TotalCount\":0,\"Content\":[]}",
           "member": "InstanceEnrichedInfoPage",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14901,13 +14901,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标监控数据曲线集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指标监控数据曲线集合",
           "example": "无",
           "member": "MetricDataCurve",
           "name": "Result",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15065,13 +15065,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "单值指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单值指标列表",
           "example": "无",
           "member": "MetricDataSingleValue",
           "name": "Result",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16619,13 +16619,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询的仓库信息",
           "example": "无",
           "member": "RepositoryInfo",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16765,13 +16765,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "简单应用分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "简单应用分页对象",
           "example": "无",
           "member": "TsfPageSimpleApplication",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16847,13 +16847,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "TSF集群分页对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "TSF集群分页对象",
           "example": "无",
           "member": "TsfPageCluster",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16956,13 +16956,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "简单部署组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "简单部署组列表",
           "example": "无",
           "member": "TsfPageSimpleGroup",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17083,13 +17083,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间分页列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间分页列表",
           "example": "无",
           "member": "TsfPageNamespace",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17255,13 +17255,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询服务统计结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询服务统计结果",
           "example": "无",
           "member": "ServiceStatisticsResults",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -17438,13 +17438,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务记录列表",
           "example": "无",
           "member": "TaskRecordPage",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18165,13 +18165,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作结果",
           "example": "false",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18211,13 +18211,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "解除绑定是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "解除绑定是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18708,13 +18708,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -22927,13 +22927,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "true：操作成功\nfalse：操作失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：操作成功\nfalse：操作失败",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23210,13 +23210,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新部署组详情是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新部署组详情是否成功。\ntrue：操作成功。\nfalse：操作失败。",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23465,13 +23465,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "Result\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Result",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23791,13 +23791,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25864,13 +25864,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群移除机器是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群移除机器是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -27569,13 +27569,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -27987,13 +27987,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -28107,13 +28107,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务ID",
           "example": "无",
           "member": "TaskId",
           "name": "Result",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -30692,13 +30692,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新仓库是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新仓库是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

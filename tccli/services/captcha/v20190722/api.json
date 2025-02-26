@@ -544,7 +544,7 @@
         {
           "disabled": false,
           "document": "验证码应用注册APPID",
-          "example": "",
+          "example": "199999409",
           "member": "uint64",
           "name": "CaptchaAppId",
           "required": true,
@@ -559,7 +559,7 @@
         {
           "disabled": false,
           "document": "界面风格",
-          "example": "",
+          "example": "\"1a79ff\"",
           "member": "string",
           "name": "SchemeColor",
           "output_required": true,
@@ -569,7 +569,7 @@
         {
           "disabled": false,
           "document": "语言",
-          "example": "",
+          "example": "2052",
           "member": "int64",
           "name": "Language",
           "output_required": true,
@@ -579,7 +579,7 @@
         {
           "disabled": false,
           "document": "场景",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "SceneType",
           "output_required": true,
@@ -589,7 +589,7 @@
         {
           "disabled": false,
           "document": "防控风险等级",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "EvilInterceptGrade",
           "output_required": true,
@@ -599,7 +599,7 @@
         {
           "disabled": false,
           "document": "智能验证",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "SmartVerify",
           "output_required": true,
@@ -609,7 +609,7 @@
         {
           "disabled": false,
           "document": "智能引擎",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "SmartEngine",
           "output_required": true,
@@ -619,7 +619,7 @@
         {
           "disabled": false,
           "document": "验证码类型",
-          "example": "",
+          "example": "13",
           "member": "int64",
           "name": "CapType",
           "output_required": true,
@@ -629,7 +629,7 @@
         {
           "disabled": false,
           "document": "应用名称",
-          "example": "",
+          "example": "\"登陆场景\"",
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -639,7 +639,7 @@
         {
           "disabled": false,
           "document": "域名限制",
-          "example": "",
+          "example": "“xxx”",
           "member": "string",
           "name": "DomainLimit",
           "output_required": true,
@@ -649,7 +649,7 @@
         {
           "disabled": false,
           "document": "邮件告警\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"xxx@xxx.com\"",
           "member": "string",
           "name": "MailAlarm",
           "output_required": true,
@@ -659,7 +659,7 @@
         {
           "disabled": false,
           "document": "流量控制",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TrafficThreshold",
           "output_required": true,
@@ -669,7 +669,7 @@
         {
           "disabled": false,
           "document": "加密key",
-          "example": "",
+          "example": "\"QiriRVK5Kg2IE3tNyVxCW9Zvv\"",
           "member": "string",
           "name": "EncryptKey",
           "output_required": true,
@@ -679,7 +679,7 @@
         {
           "disabled": false,
           "document": "是否全屏",
-          "example": "",
+          "example": "-1",
           "member": "int64",
           "name": "TopFullScreen",
           "output_required": true,
@@ -689,7 +689,7 @@
         {
           "disabled": false,
           "document": "成功返回0 其它失败",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
           "output_required": true,
@@ -698,13 +698,13 @@
         },
         {
           "disabled": false,
-          "document": "返回操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "返回操作信息",
+          "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -721,7 +721,7 @@
         {
           "disabled": false,
           "document": "验证码应用ID",
-          "example": "",
+          "example": "1854132229",
           "member": "int64",
           "name": "CaptchaAppId",
           "required": true,
@@ -730,7 +730,7 @@
         {
           "disabled": false,
           "document": "查询开始时间",
-          "example": "",
+          "example": "20220206",
           "member": "int64",
           "name": "Start",
           "required": true,
@@ -739,7 +739,7 @@
         {
           "disabled": false,
           "document": "查询结束时间",
-          "example": "",
+          "example": "20220201",
           "member": "int64",
           "name": "End",
           "required": true,
@@ -748,7 +748,7 @@
         {
           "disabled": false,
           "document": "查询类型",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Type",
           "required": true,
@@ -763,7 +763,7 @@
         {
           "disabled": false,
           "document": "返回码 0 成功 其它失败",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
           "output_required": true,
@@ -772,23 +772,23 @@
         },
         {
           "disabled": false,
-          "document": "数据数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "数据数组",
+          "example": "{\"Cnt\":1, \"Date\":20220206}",
           "member": "CaptchaQueryData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "返回信息描述",
+          "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -877,13 +877,13 @@
         },
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回信息",
           "example": "OK",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -940,7 +940,7 @@
         {
           "disabled": false,
           "document": "验证码应用ID",
-          "example": "123456789",
+          "example": "1854132229",
           "member": "int64",
           "name": "CaptchaAppId",
           "required": true,
@@ -991,23 +991,23 @@
         },
         {
           "disabled": false,
-          "document": "数据数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据数组",
           "example": "{                 \"Cnt\": 0,                 \"Date\": \"2019112900\"",
           "member": "CaptchaQueryData",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回信息描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "document": "返回信息描述",
+          "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1024,7 +1024,7 @@
         {
           "disabled": false,
           "document": "验证码应用ID",
-          "example": "",
+          "example": "1854132229",
           "member": "int64",
           "name": "CaptchaAppId",
           "required": true,
@@ -1033,7 +1033,7 @@
         {
           "disabled": false,
           "document": "查询开始时间",
-          "example": "",
+          "example": "20220201",
           "member": "int64",
           "name": "Start",
           "required": true,
@@ -1042,7 +1042,7 @@
         {
           "disabled": false,
           "document": "查询结束时间",
-          "example": "",
+          "example": "20220201",
           "member": "int64",
           "name": "End",
           "required": true,
@@ -1056,93 +1056,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "请求总量",
+          "example": "57",
           "member": "int64",
           "name": "GetSum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求验证成功量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "请求验证成功量",
+          "example": "0",
           "member": "int64",
           "name": "VfySuccSum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "请求验证量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "请求验证量",
+          "example": "57",
           "member": "int64",
           "name": "VfySum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "拦截攻击量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "拦截攻击量",
+          "example": "0",
           "member": "int64",
           "name": "AttackSum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "返回信息",
+          "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成功返回0  其它失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "成功返回0  其它失败",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "票据校验总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "票据校验总量",
+          "example": "0",
           "member": "int64",
           "name": "CheckTicketSum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "票据验证通过量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "票据验证通过量",
+          "example": "0",
           "member": "int64",
           "name": "TicketThroughputSum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "票据验证拦截量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "票据验证拦截量",
+          "example": "0",
           "member": "int64",
           "name": "TicketInterceptSum",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1210,23 +1210,23 @@
         },
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回信息",
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户操作数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户操作数据",
           "example": "无",
           "member": "CaptchaOperDataRes",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1560,23 +1560,23 @@
         },
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回信息",
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户操作数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户操作数据",
           "example": "{\"OperDataLoadTimeUnitArray\":[{\"DateKey\": \"20191202\", \"MarketLoadTime\": 0, \"AppIdLoadTime\": 0.9}]}",
           "member": "CaptchaOperDataRes",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2009,23 +2009,23 @@
         },
         {
           "disabled": false,
-          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "返回信息",
           "example": "\"success\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验证码票据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "验证码票据信息",
           "example": "{                       \"DateKey\":\"20200909\",                   ",
           "member": "CaptchaTicketDataRes",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2046,18 +2046,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户注册的所有Appid和应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "用户注册的所有Appid和应用名称",
+          "example": "{\"TcAppId\":125111111,\"CaptchaAppId\":201111111,\"AppName\":\"短信验证\",\"ChannelInfo\":\"mini\"}",
           "member": "CaptchaUserAllAppId",
           "name": "Data",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "成功返回 0  其它失败",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
           "output_required": true,
@@ -2066,13 +2066,13 @@
         },
         {
           "disabled": false,
-          "document": "返回操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "返回操作信息",
+          "example": "“sucess”",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2793,7 +2793,7 @@
         {
           "disabled": false,
           "document": "验证码应用ID",
-          "example": "",
+          "example": "199999409",
           "member": "int64",
           "name": "CaptchaAppId",
           "required": true,
@@ -2802,7 +2802,7 @@
         {
           "disabled": false,
           "document": "应用名",
-          "example": "",
+          "example": "\"登陆场景\"",
           "member": "string",
           "name": "AppName",
           "required": true,
@@ -2811,7 +2811,7 @@
         {
           "disabled": false,
           "document": "域名限制",
-          "example": "",
+          "example": "\"login.com\"",
           "member": "string",
           "name": "DomainLimit",
           "required": true,
@@ -2820,7 +2820,7 @@
         {
           "disabled": false,
           "document": "场景类型",
-          "example": "",
+          "example": "3",
           "member": "int64",
           "name": "SceneType",
           "required": true,
@@ -2829,7 +2829,7 @@
         {
           "disabled": false,
           "document": "验证码类型",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "CapType",
           "required": true,
@@ -2838,7 +2838,7 @@
         {
           "disabled": false,
           "document": "风险级别",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "EvilInterceptGrade",
           "required": true,
@@ -2847,7 +2847,7 @@
         {
           "disabled": false,
           "document": "智能检测",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "SmartVerify",
           "required": true,
@@ -2856,7 +2856,7 @@
         {
           "disabled": false,
           "document": "开启智能引擎",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "SmartEngine",
           "required": true,
@@ -2865,7 +2865,7 @@
         {
           "disabled": false,
           "document": "web风格",
-          "example": "",
+          "example": "\"#ffffff\"",
           "member": "string",
           "name": "SchemeColor",
           "required": true,
@@ -2874,7 +2874,7 @@
         {
           "disabled": false,
           "document": "语言",
-          "example": "",
+          "example": "2052",
           "member": "int64",
           "name": "CaptchaLanguage",
           "required": true,
@@ -2883,7 +2883,7 @@
         {
           "disabled": false,
           "document": "告警邮箱",
-          "example": "",
+          "example": "\"login@login.com\"",
           "member": "string",
           "name": "MailAlarm",
           "required": true,
@@ -2892,7 +2892,7 @@
         {
           "disabled": false,
           "document": "是否全屏",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TopFullScreen",
           "required": true,
@@ -2901,7 +2901,7 @@
         {
           "disabled": false,
           "document": "流量限制",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TrafficThreshold",
           "required": true,
@@ -2916,7 +2916,7 @@
         {
           "disabled": false,
           "document": "返回码 0 成功，其它失败",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "CaptchaCode",
           "output_required": true,
@@ -2925,13 +2925,13 @@
         },
         {
           "disabled": false,
-          "document": "返回操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "返回操作信息",
+          "example": "\"sucess\"",
           "member": "string",
           "name": "CaptchaMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

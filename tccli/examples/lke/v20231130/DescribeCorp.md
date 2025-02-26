@@ -14,7 +14,10 @@ Output:
         "CorpBizId": "18485034430310",
         "FullName": "我的企业",
         "RequestId": "669edde9-e9ec-40c6-bf31-5e9402fb26fb",
-        "RobotQuota": 10
+        "RobotQuota": 10,
+        "IsTrial": false,
+        "IsTrialExpired": false,
+        "AvailableAppQuota": 10
     }
 }
 ```

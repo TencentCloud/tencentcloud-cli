@@ -106,7 +106,7 @@
       "status": "online"
     },
     "UpdateCredentialState": {
-      "document": "更新凭证的链上状态",
+      "document": "1. 首次更新凭证状态基于不同场景参数有所差异，分以下两种场景：\n(1)  颁发凭证的DID是本腾讯云账号创建\n(2) 颁发凭证的DID是非本腾讯云账号创建(此调用方式也适用于场景1)\n2. 首次更新过凭证状态后，凭证状态已绑定该账号的链上用户，后续更新凭证状态只需参数CredentialStatus即可, OperateCredential和OriginCredential参数均不需要",
       "input": "UpdateCredentialStateRequest",
       "name": "更新凭证的链上状态",
       "output": "UpdateCredentialStateResponse",
@@ -225,7 +225,7 @@
         {
           "disabled": false,
           "document": "凭证文本内容，FunctionArg和CredentialText任选其一",
-          "example": "{\"cptId\":1,\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"type\":[\"VerifiableCredential\"],\"credentialSubject\":{\"action\":\"setAge\",\"age\":17},\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"yol5B\"}}}",
+          "example": "{\"cptId\":1}",
           "member": "string",
           "name": "CredentialData",
           "required": false,
@@ -248,6 +248,15 @@
           "name": "DAPId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户应用ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "UAPId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -258,7 +267,7 @@
         {
           "disabled": false,
           "document": "凭证字符串",
-          "example": "{\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"cptId\":1,\"credentialSubject\":{\"action\":\"setAge\",\"age\":\"0x7a5b0f3813c2bcd4a0b3e2c534aafdb4cf0337af1ad2bc308bd11c6aded91a3c\"},\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"0\"},\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\"},\"type\":[\"VerifiableCredential\"]}",
+          "example": "{\"type\":[\"VerifiableCredential\"]}",
           "member": "string",
           "name": "CredentialData",
           "output_required": true,
@@ -283,6 +292,15 @@
           "example": "1",
           "member": "uint64",
           "name": "DAPId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户应用id",
+          "example": "1",
+          "member": "uint64",
+          "name": "UAPId",
           "required": false,
           "type": "int"
         },
@@ -349,7 +367,7 @@
         {
           "disabled": false,
           "document": "可验证表达内容",
-          "example": "{\"context\":[\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\"],\"holder\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T11:12:22+08:00\",\"nonce\":\"RIflyg\",\"signatureValue\":\"eyJjb250ZXh0IjpbImh0dHBzOi8vZ2l0aHViLmNvbS9UZW5jZW50Q2xvdWQtQmxvY2tjaGFpbi9URElEL2Jsb2IvbWFpbi9jb250ZXh0L3YxIl0sImhvbGRlciI6ImRpZDp0ZGlkOmMxMToweGU0ZTA3NjY4OWIxMWRjYWExMTE4YWVmNjU0NzkxY2NhOTVjNzY4MjciLCJ0eXBlIjpbIlZlcmlmaWFibGVQcmVzZW50YXRpb24iXSwidmVyaWZpYWJsZUNyZWRlbnRpYWwiOlt7ImNvbnRleHQiOiJodHRwczovL2dpdGh1Yi5jb20vVGVuY2VudENsb3VkLUJsb2NrY2hhaW4vVERJRC9ibG9iL21haW4vY29udGV4dC92MSIsImNwdElkIjoxLCJjcmVkZW50aWFsU3ViamVjdCI6eyJhY3Rpb24iOiJzZXRBZ2UiLCJhZ2UiOiIweDdhNWIwZjM4MTNjMmJjZDRhMGIzZTJjNTM0YWFmZGI0Y2YwMzM3YWYxYWQyYmMzMDhiZDExYzZhZGVkOTFhM2MifSwiZXhwaXJhdGlvbkRhdGUiOiIyMTI0LTA2LTI5VDE1OjI1OjAwKzA4OjAwIiwiaWQiOiI2YWVlYTk0M2E4NTFhZDgzYWNhZTFlMTM4YzJlZGM2NyIsImlzc3VhbmNlRGF0ZSI6IjIwMjQtMTItMThUMTA6NTE6NDcrMDg6MDAiLCJpc3N1ZXIiOiJkaWQ6dGRpZDpjMTE6MHhlNGUwNzY2ODliMTFkY2FhMTExOGFlZjY1NDc5MWNjYTk1Yzc2ODI3IiwicHJvb2YiOnsiY3JlYXRlZCI6IjIwMjQtMTItMThUMTA6NTE6NDcrMDg6MDAiLCJjcmVhdG9yIjoiZGlkOnRkaWQ6YzExOjB4ZTRlMDc2Njg5YjExZGNhYTExMThhZWY2NTQ3OTFjY2E5NWM3NjgyNyNrZXlzLTAiLCJtZXRhRGlnZXN0IjoiNzljY2VmZTIzN2M5YmY2NWQ4MDQ3NDdjYTdmMjBmZjliOTg1MjQyZTRlMWU4NjM0NTg3YmJlYmUwN2I1MWM0NSIsInByaXZhY3kiOiJQdWJsaWMiLCJzYWx0Ijp7ImFjdGlvbiI6IlhHOVZBIiwiYWdlIjoiMCJ9LCJzaWduYXR1cmVWYWx1ZSI6Ik1FUUNJSEVUc0RySXBrYTgzOHk0TkhXVTJTMDcrWXdQUmIzTXB3cThXNVRMRE5zTkFpQlVCRlAwbWIrZU5wYzVjVGxhMTVNeHRJV0drMHU4QUFpVEFITGpZYlMyTWc9PSIsInR5cGUiOiJTZWNwMjU2cjEiLCJ2Y0RpZ2VzdCI6ImI4ZTE4NWZkZDYyM2QwOTQzNDQ2MGNlYWFlNmRkNTU2MzQxMWVkOWQ4YzdkZWQxNDQyNDg4MTNiYTBiNGJjZmMifSwidHlwZSI6WyJWZXJpZmlhYmxlQ3JlZGVudGlhbCJdfV0sInplcm9Qcm9vZiI6W1tdXX0=\",\"type\":\"Secp256r1\",\"verificationMethod\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"vpDigest\":\"61975d8175b3cf3f7f9f316350d94bcd2e980eb7b2e66ddecc170ab43bbb5183\"},\"type\":[\"VerifiablePresentation\"],\"verifiableCredential\":[{\"context\":\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\",\"cptId\":1,\"credentialSubject\":{\"action\":\"setAge\",\"age\":\"0x7a5b0f3813c2bcd4a0b3e2c534aafdb4cf0337af1ad2bc308bd11c6aded91a3c\"},\"expirationDate\":\"2124-06-29T15:25:00+08:00\",\"id\":\"6aeea943a851ad83acae1e138c2edc67\",\"issuanceDate\":\"2024-12-18T10:51:47+08:00\",\"issuer\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{\"created\":\"2024-12-18T10:51:47+08:00\",\"creator\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827#keys-0\",\"metaDigest\":\"79ccefe237c9bf65d804747ca7f20ff9b985242e4e1e8634587bbebe07b51c45\",\"privacy\":\"Public\",\"salt\":{\"action\":\"XG9VA\",\"age\":\"0\"},\"signatureValue\":\"MEQCIHETsDrIpka838y4NHWU2S07+YwPRb3Mpwq8W5TLDNsNAiBUBFP0mb+eNpc5cTla15MxtIWGk0u8AAiTAHLjYbS2Mg==\",\"type\":\"Secp256r1\",\"vcDigest\":\"b8e185fdd623d09434460ceaae6dd5563411ed9d8c7ded144248813ba0b4bcfc\"},\"type\":[\"VerifiableCredential\"]}],\"zeroProof\":[[]]}",
+          "example": "{\"context\":[\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\"],\"holder\":\"did:tdid:c11:0xe4e076689b11dcaa1118aef654791cca95c76827\",\"proof\":{}}",
           "member": "string",
           "name": "PresentationData",
           "output_required": false,
@@ -626,6 +644,39 @@
       ],
       "usage": "both"
     },
+    "CredentialStatusInfo": {
+      "document": "设置凭证状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭证唯一id",
+          "example": "8818fdd61eb84e4a745a3b04c96e5237",
+          "member": "string",
+          "name": "Id",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭证状态（0：吊销；1：有效）",
+          "example": "1",
+          "member": "string",
+          "name": "Issuer",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭证颁发者Did",
+          "example": "did:tdid:w1:0x833e89118443c623a8ab063d9ef08268268fe3a4",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "DeactivateTDidRequest": {
       "document": "DeactivateTDid请求参数结构体",
       "members": [
@@ -734,23 +785,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户参与应用的统计指标 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户参与应用的统计指标 ",
           "example": "{\"DidCnt\":676,\"VCCnt\":942,\"CPTCnt\":2,\"VerifyCnt\":1288,\"AuthCnt\":2}",
           "member": "ResourceCounterData",
           "name": "AppCounter",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户创建资源的统计指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户创建资源的统计指标",
           "example": "{\"DidCnt\":341,\"VCCnt\":484,\"CPTCnt\":2,\"VerifyCnt\":648,\"AuthCnt\":2}",
           "member": "ResourceCounterData",
           "name": "UserCounter",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -790,13 +841,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭证状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "凭证状态信息",
           "example": "无",
           "member": "CredentialState",
           "name": "CredentialState",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -903,13 +954,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "DID标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DID标识",
           "example": "did:tdid:w1:0xadjadjiwdiqe2131",
           "member": "string",
           "name": "Did",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1213,53 +1264,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "DID总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DID总数",
           "example": "10",
           "member": "uint64",
           "name": "DidCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "VC总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VC总数",
           "example": "3",
           "member": "uint64",
           "name": "VCCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CPT总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CPT总数",
           "example": "2",
           "member": "uint64",
           "name": "CPTCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " VC验证总数 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " VC验证总数 ",
           "example": "2",
           "member": "uint64",
           "name": "VerifyCnt",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权威机构数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权威机构数量",
           "example": "1",
           "member": "uint64",
           "name": "AuthCnt",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1342,12 +1393,30 @@
         },
         {
           "disabled": false,
-          "document": "更新VC状态的临时凭证内容，通过创建凭证接口(CreateCredential)生成并签名，凭证类型为：OperateCredential, 为安全起见凭证过期时间不适合太长，建议设置为1分钟内",
-          "example": "{\\n\\t\\\"cptId\\\": 1,\\n\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\\"expirationDate\\\": \\\"2023-12-01T10:00:00+08:00\\\",\\n\\t\\\"issuanceDate\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\\"context\\\": \\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\n\\t\\\"id\\\": \\\"fw1652844bee8e5ecf1b404242b83f1b\\\",\\n\\t\\\"type\\\": [\\\"VerifiableCredential\\\"],\\n\\t\\\"credentialSubject\\\": {\\n\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\\"id\\\": \\\"8818fdd61eb84e4a745a3b04c96e5237\\\",\\n\\t\\t\\t\\\"issuer\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\",\\n\\t\\t\\t\\\"status\\\": 1\\n\\t\\t},\\n\\t\\t\\\"action\\\": \\\"updateCredentialState\\\",\\n\\t\\t\\\"orignCredential\\\": \\\"{\\\\\\\"cptId\\\\\\\":1,\\\\\\\"issuer\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\\\\\\\",\\\\\\\"expirationDate\\\\\\\":\\\\\\\"2023-12-01T10:00:00+08:00\\\\\\\",\\\\\\\"issuanceDate\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"context\\\\\\\":\\\\\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\\\\\",\\\\\\\"id\\\\\\\":\\\\\\\"8818fdd61eb84e4a745a3b04c96e5237\\\\\\\",\\\\\\\"type\\\\\\\":[\\\\\\\"VerifiableCredential\\\\\\\"],\\\\\\\"credentialSubject\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"updateCredentialState\\\\\\\"},\\\\\\\"proof\\\\\\\":{\\\\\\\"created\\\\\\\":\\\\\\\"2023-09-19T20:04:20+08:00\\\\\\\",\\\\\\\"creator\\\\\\\":\\\\\\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\\\\\",\\\\\\\"signatureValue\\\\\\\":\\\\\\\"MEUCIQDUneIwlLbh5AFjQt9HJhIZAQshT45/Em8hVOUjHcdu0QIgL3rg3A99qGGNszstF+GTV5IU4vT9OnI1lqM3f0w1JmI=\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"Secp256r1\\\\\\\",\\\\\\\"metaDigest\\\\\\\":\\\\\\\"6a216f84cb9w1b6170cb017cccd6w1d0b81aad200d5691914d6045471d0dd1ad\\\\\\\",\\\\\\\"vcDigest\\\\\\\":\\\\\\\"c7e13w1bcfa879c922f9141d085facc0ce1973e8d27d48238130739c1a332dcf\\\\\\\",\\\\\\\"privacy\\\\\\\":\\\\\\\"Public\\\\\\\",\\\\\\\"salt\\\\\\\":{\\\\\\\"action\\\\\\\":\\\\\\\"HZdDU\\\\\\\"}}}\\\"\\n\\t},\\n\\t\\\"proof\\\": {\\n\\t\\t\\\"created\\\": \\\"2023-09-19T20:13:36+08:00\\\",\\n\\t\\t\\\"creator\\\": \\\"did:tdid:w1:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb#keys-0\\\",\\n\\t\\t\\\"signatureValue\\\": \\\"MEUCIDkLg6EqmwvEHYLtjumpeqKz/hIi6EROMDXPPpNIxORHAiEA8T0LMI59tkBTz+llu/GkjToj5M8k5SwXFoU3fnjQ3mo=\\\",\\n\\t\\t\\\"type\\\": \\\"Secp256r1\\\",\\n\\t\\t\\\"metaDigest\\\": \\\"46894b7f54365d685ba587608d2b74f800404ebb76f5c32dd90bc3916e844ae2\\\",\\n\\t\\t\\\"vcDigest\\\": \\\"d086ba831ab3185971c168w125bf2bd487d7eced3ede8d623b30cfe9da03bcaf\\\",\\n\\t\\t\\\"privacy\\\": \\\"Public\\\",\\n\\t\\t\\\"salt\\\": {\\n\\t\\t\\t\\\"CredentialStatus\\\": {\\n\\t\\t\\t\\t\\\"id\\\": \\\"4dPOH\\\",\\n\\t\\t\\t\\t\\\"issuer\\\": \\\"OJH5M\\\",\\n\\t\\t\\t\\t\\\"status\\\": \\\"lm2W4\\\"\\n\\t\\t\\t},\\n\\t\\t\\t\\\"action\\\": \\\"r95wA\\\",\\n\\t\\t\\t\\\"orignCredential\\\": \\\"b3H4j\\\"\\n\\t\\t}\\n\\t}\\n}",
+          "document": "更新VC状态的临时凭证内容，通过创建凭证接口(CreateCredential)生成并签名，凭证类型为：OperateCredential, 为安全起见凭证过期时间不适合太长，如设置为1分钟内",
+          "example": "无",
           "member": "string",
           "name": "OperateCredential",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待更新凭证状态的原始凭证内容",
+          "example": "无",
+          "member": "string",
+          "name": "OriginCredential",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "凭证状态信息",
+          "example": "无",
+          "member": "CredentialStatusInfo",
+          "name": "CredentialStatus",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1357,13 +1426,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "更新是否成功",
           "example": "true",
           "member": "bool",
           "name": "Result",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
