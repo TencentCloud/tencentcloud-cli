@@ -1,4 +1,4 @@
-**Example 1: demo**
+**Example 1: ES 云顾问管理接口**
 
 
 
@@ -21,7 +21,7 @@ Output:
                 "StrategyValue": "true"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "xxx-xxxx"
     }
 }
 ```

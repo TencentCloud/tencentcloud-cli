@@ -1,3 +1,200 @@
+# Release 3.0.1163.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 55 次发布
+
+发布时间：2025-02-28 01:16:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84381)
+
+	* 新增入参：ComputeGroupIds
+
+
+修改数据结构：
+
+* [ClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsHistory)
+
+	* 新增成员：ComputeGroupId
+
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+### 第 7 次发布
+
+发布时间：2025-02-28 01:20:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyWorkspace](http://document.tencentcloudapi.woa.com/document/product/1640/78589)
+
+	* 新增入参：TenantAppId, TenantUin, TenantUniqVpcId, TenantSubnetId
+
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+
+
+
+## 高性能弹性计算底座(cube) 版本：2024-03-04
+
+### 第 5 次发布
+
+发布时间：2025-02-28 01:22:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstanceHostInfo](http://document.tencentcloudapi.woa.com/document/product/1760/85323)
+
+	* 新增出参：AttachMode
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 80 次发布
+
+发布时间：2025-02-28 01:37:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckIntlNameIdBirth](http://document.tencentcloudapi.woa.com/document/product/1007/85869)
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 78 次发布
+
+发布时间：2025-02-28 01:45:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [StreamOnlineInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#StreamOnlineInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>PushToDelay
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 49 次发布
+
+发布时间：2025-02-28 01:51:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/80993)
+
+	* 新增入参：IsModifyNickName
+
+
+修改数据结构：
+
+* [OrgMember](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMember)
+
+	* 新增成员：NickName
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 云托管 CloudBase Run(tcbr) 版本：2022-02-17
+
+### 第 4 次发布
+
+发布时间：2025-02-28 01:59:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudRunServers](http://document.tencentcloudapi.woa.com/document/product/1711/80397)
+
+	* 新增入参：ServerName, ServerType
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 34 次发布
+
+发布时间：2025-02-28 02:00:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ImageScanInquireInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImageScanInquireInfo)
+
+	* 新增成员：PayNum, TrialNum, PayUsage
+
+
+
+
+## 智能钛机器学习(tia) 版本：2018-02-26
+
+### 第 4 次发布
+
+发布时间：2025-02-28 02:07:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateModel
+* DeleteJob
+* DeleteModel
+* DescribeJob
+* DescribeModel
+* InstallAgent
+* ListJobs
+* ListModels
+* QueryLogs
+
+
+
 # Release 3.0.1162.1
 
 ## 腾讯云数据仓库TCHouse-C(cdwch) 版本：2020-09-15

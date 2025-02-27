@@ -33527,7 +33527,7 @@
         },
         {
           "disabled": false,
-          "document": "容量",
+          "document": "总容量",
           "example": "1",
           "member": "uint64",
           "name": "Capcity",
@@ -33583,6 +33583,36 @@
           "name": "ResourceID",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买扫描数",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "试用扫描数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrialNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买已使用量",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayUsage",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

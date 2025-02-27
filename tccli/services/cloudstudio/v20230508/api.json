@@ -596,11 +596,47 @@
         {
           "disabled": false,
           "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
-          "example": "{         \"init\": [             {                 \"name\": \"init\",                 \"command\": \"echo init\"             }         ],         \"start\": [             {                 \"name\": \"start\",                 \"command\": \"echo start\"             }         ],         \"destroy\": [             {                 \"name\": \"shutdown\",                 \"command\": \"echo shutdown\"             }         ]     }",
+          "example": "{ \"init\": [ { \"name\": \"init\", \"command\": \"echo init\" } ], \"start\": [ { \"name\": \"start\", \"command\": \"echo start\" } ], \"destroy\": [ { \"name\": \"shutdown\", \"command\": \"echo shutdown\" } ] }",
           "member": "LifeCycle",
           "name": "Lifecycle",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云账号 AppId. 注意: 若需修改租户信息，则这四个参数都不能为空",
+          "example": "1303697168",
+          "member": "uint64",
+          "name": "TenantAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云账号 OwnerUin. 注意: 若需修改租户信息，则这四个参数都不能为空",
+          "example": "100015915015",
+          "member": "string",
+          "name": "TenantUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VPC ID. 注意: 若需修改租户信息，则这四个参数都不能为空",
+          "example": "vpc-rdfkabjj",
+          "member": "string",
+          "name": "TenantUniqVpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网 ID. 注意: 若需修改租户信息，则这四个参数都不能为空",
+          "example": "subnet-bx88somq",
+          "member": "string",
+          "name": "TenantSubnetId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

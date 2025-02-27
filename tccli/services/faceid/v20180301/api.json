@@ -84,6 +84,13 @@
       "output": "CheckIdNameDateResponse",
       "status": "online"
     },
+    "CheckIntlNameIdBirth": {
+      "document": "本接口用于校验出入境证件姓名、证件号码、证件有效期、出生日期、性别的真实性和一致性。\n支持证件：新旧版外国人永居证、港澳居民来往大陆通行证、台湾居民来往大陆通行证、普通护照。",
+      "input": "CheckIntlNameIdBirthRequest",
+      "name": "出入境证件五要素核验",
+      "output": "CheckIntlNameIdBirthResponse",
+      "status": "online"
+    },
     "CheckPhoneAndName": {
       "document": "手机号二要素核验接口用于校验手机号和姓名的真实性和一致性，支持的手机号段详情请查阅<a href=\"https://cloud.tencent.com/document/product/1007/46063\">运营商类</a>文档。",
       "input": "CheckPhoneAndNameRequest",
@@ -2078,6 +2085,107 @@
         {
           "disabled": false,
           "document": "业务结果描述。",
+          "example": "一致",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIntlNameIdBirthRequest": {
+      "document": "CheckIntlNameIdBirth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "姓名。",
+          "example": "韦小宝",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件号码。支持字母、数字。",
+          "example": "H12345678",
+          "member": "string",
+          "name": "IdNum",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件有效期至。\n格式：YYYYMMDD，长期用“00000000”代替，如：20250101。",
+          "example": "20250607",
+          "member": "string",
+          "name": "ExpiryDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "出生日期。\n格式：YYYYMMDD，如20250218。",
+          "example": "20250218",
+          "member": "string",
+          "name": "BirthDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "性别。男：1；女：2。",
+          "example": "1",
+          "member": "string",
+          "name": "Gender",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国别简码（仅当证件类型为港澳居民来往内地通行证（非中国籍）时需传该参数，其他证件类型无需传参）。",
+          "example": "CHN",
+          "member": "string",
+          "name": "Nation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "敏感数据加密信息。\n- 对传入信息（姓名、身份证号）有加密需求的用户可使用此参数，详情请点击左侧链接。",
+          "example": "无",
+          "member": "Encryption",
+          "name": "Encryption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckIntlNameIdBirthResponse": {
+      "document": "CheckIntlNameIdBirth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证结果码，收费情况如下。\n\n- 收费结果码：\n0: 一致。\n-1: 不一致。\n\n- 不收费结果码：\n-2: 非法身份证号（长度、校验位等不正确）。\n-3: 非法姓名（长度、格式等不正确）。\n-4: 非法有效期（长度、格式等不正确）。\n-5: 非法生日（长度、格式等不正确）。\n-6: 非法性别（长度、格式等不正确）。\n-7: 身份信息无效。\n-8: 证件库服务异常。\n-9: 证件库中无此身份证记录。\n-10: 认证次数超过当日限制，请次日重试。\n示例值：\"0\"",
+          "example": "0",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务结果描述。 \n示例值：一致",
           "example": "一致",
           "member": "string",
           "name": "Description",
@@ -4487,7 +4595,7 @@
         },
         {
           "disabled": false,
-          "document": "指定拉取的结果信息。\n- 取值范围：\n     0：全部。\n    1：文本类。\n    2：身份证信息。\n    3：最佳截图信息。\n    5：意愿核身朗读模式相关结果。\n    6：意愿核身问答模式相关结果。\n- 例如 13表示拉取文本类、最佳截图信息。\n- 默认值：0",
+          "document": "指定需要拉取的结果信息。\n- 取值范围：\n     0：全部。\n    1：文本类。\n    2：身份证信息。\n    3：最佳截图信息。\n    5：意愿核身朗读模式相关结果。\n    6：意愿核身问答/点头模式相关结果。\n- 例如 13表示拉取文本类、最佳截图信息。\n- 默认值：0",
           "example": "1",
           "member": "string",
           "name": "InfoType",
@@ -4559,7 +4667,7 @@
         },
         {
           "disabled": false,
-          "document": "Eid信息。\n- 包括商户下用户唯一标识以及加密后的姓名、身份证号信息。\n- 解密方式详见[E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Eid信息。\n- EidInfo字段只有在人脸核身控制台完成“申请返回实名信息”之后返回，操作指引详见 [E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)。\n- Eid信息包括商户下用户唯一标识以及加密后的姓名、身份证号信息。\n- 解密方式详见 [E证通获取实名信息指引](https://cloud.tencent.com/document/product/1007/63370)\n- 只有整个核验流程完成之后才能返回该字段信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EidInfo",
           "name": "EidInfo",
@@ -4707,7 +4815,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。\n- 字段长度最长50位。",
+          "document": "EID商户ID。\n- 商户ID通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。\n- 商户ID与您通过腾讯云人脸核身控制台完成自助接入时所使用的腾讯云账号绑定。\n- 必须使用申请该商户ID时登录的腾讯云账号所对应的腾讯云API密钥调用该接口。",
           "example": "0NSJ243206261600932123",
           "member": "string",
           "name": "MerchantId",

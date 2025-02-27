@@ -12666,7 +12666,7 @@
         {
           "disabled": false,
           "document": "返回结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "SmartAdvisor",
           "name": "StrategyResult",
           "output_required": false,
@@ -14045,7 +14045,7 @@
         {
           "disabled": false,
           "document": "实例管道ID",
-          "example": "xxx",
+          "example": "pipe1",
           "member": "string",
           "name": "PipelineId",
           "required": true,
@@ -14054,7 +14054,7 @@
         {
           "disabled": false,
           "document": "管道描述信息",
-          "example": "xxx",
+          "example": "test pipe",
           "member": "string",
           "name": "PipelineDesc",
           "required": true,

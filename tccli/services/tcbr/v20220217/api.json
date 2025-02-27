@@ -641,6 +641,24 @@
           "name": "PageNum",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务名",
+          "example": "server-name",
+          "member": "string",
+          "name": "ServerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务类型：function | container",
+          "example": "function",
+          "member": "string",
+          "name": "ServerType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

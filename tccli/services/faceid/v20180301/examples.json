@@ -138,6 +138,20 @@
         "title": "身份信息及有效期核验不一致示例"
       }
     ],
+    "CheckIntlNameIdBirth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIntlNameIdBirth\n<公共请求参数>\n\n{\n    \"Name\": \"张三\",\n    \"IdNum\": \"H00000001\",\n    \"BirthDate\": \"20000101\",\n    \"Gender\": \"2\",\n    \"ExpiryDate\": \"20100101\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"0\",\n        \"Description\": \"一致\",\n        \"RequestId\": \"80c7abb8-4563-4636-98c3-0499f1611a33\"\n    }\n}",
+        "title": "证件核验一致示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckIntlNameIdBirth\n<公共请求参数>\n\n{\n    \"Name\": \"张三\",\n    \"IdNum\": \"H00000001\",\n    \"BirthDate\": \"20000101\",\n    \"Gender\": \"2\",\n    \"ExpiryDate\": \"20100101\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"-1\",\n        \"Description\": \"不一致\",\n        \"RequestId\": \"80c7abb8-4563-4636-98c3-0499f1611a33\"\n    }\n}",
+        "title": "证件核验不一致示例"
+      }
+    ],
     "CheckPhoneAndName": [
       {
         "document": "",
