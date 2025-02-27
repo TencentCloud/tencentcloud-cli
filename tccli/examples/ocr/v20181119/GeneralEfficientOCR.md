@@ -1,18 +1,19 @@
 **Example 1: 通用印刷体识别（精简版）示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralEfficientOCR)**
 
-
+通用印刷体识别（精简版）示例
 
 Input: 
 
 ```
 tccli ocr GeneralEfficientOCR --cli-unfold-argument  \
-    --ImageUrl https://xx/a.jpg
+    --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralBasicOCR/GeneralBasicOCR1.jpg
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "Angle": 0,
         "Angel": 0,
         "RequestId": "389c588f-ae23-42f9-a34c-c5dfafc8fdd1",
         "TextDetections": [

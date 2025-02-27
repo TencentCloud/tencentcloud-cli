@@ -596,7 +596,7 @@
         {
           "disabled": false,
           "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
-          "example": "{         \"init\": [             {                 \"name\": \"init\",                 \"command\": \"echo init\"             }         ],         \"start\": [             {                 \"name\": \"start\",                 \"command\": \"echo start\"             }         ],         \"destroy\": [             {                 \"name\": \"shutdown\",                 \"command\": \"echo shutdown\"             }         ]     }",
+          "example": "{ \"init\": [ { \"name\": \"init\", \"command\": \"echo init\" } ], \"start\": [ { \"name\": \"start\", \"command\": \"echo start\" } ], \"destroy\": [ { \"name\": \"shutdown\", \"command\": \"echo shutdown\" } ] }",
           "member": "LifeCycle",
           "name": "Lifecycle",
           "required": false,

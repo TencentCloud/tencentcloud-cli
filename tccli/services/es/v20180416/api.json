@@ -10980,7 +10980,7 @@
         {
           "disabled": false,
           "document": "实例管道ID",
-          "example": "xxx",
+          "example": "pipe1",
           "member": "string",
           "name": "PipelineId",
           "required": true,
@@ -10989,7 +10989,7 @@
         {
           "disabled": false,
           "document": "管道描述信息",
-          "example": "xxx",
+          "example": "test pipe",
           "member": "string",
           "name": "PipelineDesc",
           "required": true,

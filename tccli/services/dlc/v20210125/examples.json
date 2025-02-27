@@ -171,8 +171,8 @@
     "CreateDataEngine": [
       {
         "document": "创建数据引擎",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataEngine\n<公共请求参数>\n\n{\n    \"EngineType\": \"spark\",\n    \"DataEngineName\": \"test\",\n    \"ClusterType\": \"spark\",\n    \"MinClusters\": 0,\n    \"MaxClusters\": 0,\n    \"DefaultDataEngine\": true,\n    \"CidrBlock\": \"10.255.255.0/16\",\n    \"Mode\": 0,\n    \"Message\": \"test\",\n    \"AutoResume\": true,\n    \"Size\": 0,\n    \"PayMode\": 0,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"h\",\n    \"AutoRenew\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key\",\n            \"TagValue\": \"value\"\n        }\n    ],\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspend\": 0,\n    \"CrontabResumeSuspendStrategy\": {\n        \"ResumeTime\": \"10\",\n        \"SuspendTime\": \"10\",\n        \"SuspendStrategy\": 0\n    },\n    \"EngineExecType\": \"BATCH\",\n    \"MaxConcurrency\": 10,\n    \"TolerableQueueTime\": 5,\n    \"AutoSuspendTime\": 5,\n    \"ResourceType\": \"spark_cu\",\n    \"ImageVersionName\": \"SuperSQL-P 1.1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DataEngineId\": \"DataEngine-abc123\",\n        \"RequestId\": \"sd01m2-fasfki-231safas\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataEngine\n<公共请求参数>\n\n{\n    \"EngineType\": \"spark\",\n    \"DataEngineName\": \"house_test\",\n    \"ClusterType\": \"spark\",\n    \"MinClusters\": 0,\n    \"MaxClusters\": 0,\n    \"DefaultDataEngine\": true,\n    \"CidrBlock\": \"10.*.*.*/16\",\n    \"Mode\": 0,\n    \"Message\": \"cretate house test\",\n    \"AutoResume\": true,\n    \"Size\": 0,\n    \"PayMode\": 0,\n    \"TimeSpan\": 1,\n    \"TimeUnit\": \"h\",\n    \"AutoRenew\": 0,\n    \"Tags\": [\n        {\n            \"TagKey\": \"key\",\n            \"TagValue\": \"value\"\n        }\n    ],\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspend\": 0,\n    \"CrontabResumeSuspendStrategy\": {\n        \"ResumeTime\": \"10\",\n        \"SuspendTime\": \"10\",\n        \"SuspendStrategy\": 0\n    },\n    \"EngineExecType\": \"BATCH\",\n    \"MaxConcurrency\": 10,\n    \"TolerableQueueTime\": 5,\n    \"AutoSuspendTime\": 5,\n    \"ResourceType\": \"spark_cu\",\n    \"ImageVersionName\": \"SuperSQL-P 1.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineId\": \"DataEngine-abc123\",\n        \"RequestId\": \"7348577b-a168-467b-bd68-3c396b78b608\"\n    }\n}",
         "title": "创建数据引擎"
       }
     ],
@@ -1121,8 +1121,8 @@
     "UpdateDataEngine": [
       {
         "document": "引擎变配",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataEngine\n<公共请求参数>\n\n{\n    \"MaxClusters\": 0,\n    \"CrontabResumeSuspend\": 0,\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspendStrategy\": {\n        \"SuspendTime\": \"0\",\n        \"SuspendStrategy\": 0,\n        \"ResumeTime\": \"0\"\n    },\n    \"AutoResume\": true,\n    \"DataEngineName\": \"test\",\n    \"Message\": \"modify\",\n    \"MinClusters\": 0,\n    \"Size\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xxxx-xxx-xxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataEngine\n<公共请求参数>\n\n{\n    \"MaxClusters\": 0,\n    \"CrontabResumeSuspend\": 0,\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspendStrategy\": {\n        \"SuspendTime\": \"0\",\n        \"SuspendStrategy\": 0,\n        \"ResumeTime\": \"0\"\n    },\n    \"AutoResume\": true,\n    \"DataEngineName\": \"engine_presto\",\n    \"Message\": \"modify\",\n    \"MinClusters\": 0,\n    \"Size\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8eb4c0da-bf0d-4e63-859e-62378668bdaa\"\n    }\n}",
         "title": "引擎变配"
       }
     ],

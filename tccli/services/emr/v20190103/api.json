@@ -283,7 +283,7 @@
     "DescribeStarRocksQueryInfo": {
       "document": "查询StarRocks查询信息",
       "input": "DescribeStarRocksQueryInfoRequest",
-      "name": "查询StarRocsk查询信息",
+      "name": "查询StarRocks查询信息",
       "output": "DescribeStarRocksQueryInfoResponse",
       "status": "online"
     },

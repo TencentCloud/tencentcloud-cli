@@ -7,10 +7,10 @@ Input:
 ```
 tccli es RestoreClusterSnapshot --cli-unfold-argument  \
     --InstanceId es-qpzizjym \
-    --Password abc \
+    --Password pass \
     --RepositoryName ES_AUTO_BACKUP \
     --SnapshotName test1 \
-    --Indices abc \
+    --Indices test \
     --Partial true \
     --TargetInstanceId es-qpzizjym
 ```
@@ -20,7 +20,7 @@ Output:
 {
     "Response": {
         "InstanceId": "es-qpzizjym",
-        "RequestId": "abc"
+        "RequestId": "test"
     }
 }
 ```

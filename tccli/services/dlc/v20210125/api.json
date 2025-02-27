@@ -3140,7 +3140,7 @@
         {
           "disabled": false,
           "document": "虚拟集群名称",
-          "example": "test",
+          "example": "at_data_engine_spark_jar",
           "member": "string",
           "name": "DataEngineName",
           "required": true,
@@ -3212,7 +3212,7 @@
         {
           "disabled": false,
           "document": "描述信息",
-          "example": "test",
+          "example": "at_data_engine_spark_jar",
           "member": "string",
           "name": "Message",
           "required": false,
@@ -3365,7 +3365,7 @@
         {
           "disabled": false,
           "document": "主集群名称，创建容灾集群时指定",
-          "example": "test",
+          "example": "MainCluster",
           "member": "string",
           "name": "MainClusterName",
           "required": false,
@@ -5034,36 +5034,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "定时拉起时间：如：周一&周三8点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时拉起时间：如：周一&周三8点",
           "example": "0000101-08:00:00",
           "member": "string",
           "name": "ResumeTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "定时挂起时间：如：周一&周三20点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时挂起时间：如：周一&周三20点",
           "example": "0000101-20:00:00",
           "member": "string",
           "name": "SuspendTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起",
           "example": "0",
           "member": "int64",
           "name": "SuspendStrategy",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18222,23 +18222,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "tagKey1",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "tagValue1",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19195,7 +19197,7 @@
         {
           "disabled": false,
           "document": "数据引擎名称",
-          "example": "testHouse",
+          "example": "engine_presto\"",
           "member": "string",
           "name": "DataEngineName",
           "required": true,
@@ -19204,7 +19206,7 @@
         {
           "disabled": false,
           "document": "相关信息",
-          "example": "xxx",
+          "example": "autotest_engine_test2",
           "member": "string",
           "name": "Message",
           "required": true,

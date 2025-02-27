@@ -1147,6 +1147,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "计算组id",
+          "example": "tchd-2ydhbjw5-xasd1",
+          "member": "string",
+          "name": "ComputeGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "配置文件名称",
           "example": "config.xml",
           "member": "string",
@@ -2803,6 +2813,15 @@
           "example": "[\"be.conf\", \"fe.conf\"]",
           "member": "string",
           "name": "ConfigFileNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的计算组列表",
+          "example": "[\"tchd-2ydhbjw5-xasd\"]",
+          "member": "string",
+          "name": "ComputeGroupIds",
           "required": false,
           "type": "list"
         }

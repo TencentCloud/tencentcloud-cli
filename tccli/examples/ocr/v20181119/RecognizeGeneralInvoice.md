@@ -67,6 +67,8 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
+                    "TaxPayment": null,
+                    "CustomsPaymentReceipt": null,
                     "VatSpecialInvoice": {
                         "AcquisitionMark": 0,
                         "AgentMark": 0,
@@ -176,6 +178,8 @@ Output:
                     "QuotaInvoice": null,
                     "ShippingInvoice": null,
                     "TaxiTicket": null,
+                    "TaxPayment": null,
+                    "CustomsPaymentReceipt": null,
                     "TollInvoice": {
                         "Code": "144031700221",
                         "Date": "2018年08月07日",
@@ -247,6 +251,8 @@ Output:
                     "ShippingInvoice": null,
                     "TaxiTicket": null,
                     "TollInvoice": null,
+                    "TaxPayment": null,
+                    "CustomsPaymentReceipt": null,
                     "TrainTicket": {
                         "AdditionalFare": "",
                         "DateGetOn": "2018年03月06日",

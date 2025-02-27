@@ -2323,13 +2323,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用信息",
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2546,23 +2546,23 @@
         },
         {
           "disabled": false,
-          "document": "可升级节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可升级节点列表",
           "example": "无",
           "member": "UpgradeAbleInstancesItem",
           "name": "UpgradeAbleInstances",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "3",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5073,13 +5073,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用详情",
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7850,13 +7850,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除采集规则遇到错误时返回错误原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除采集规则遇到错误时返回错误原因",
           "example": "failed to delete logconfigs:test1 err:logconfigs.cls.cloud.tencent.com \\\"test1\\\" not found",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8431,13 +8431,13 @@
         },
         {
           "disabled": false,
-          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群信息",
           "example": "无",
           "member": "ClusterVersion",
           "name": "Clusters",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8562,23 +8562,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败资源列表",
           "example": "无",
           "member": "FailedResource",
           "name": "FailedResources",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "任务状态：\n- running 运行中\n- failed 失败\n- done 成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务状态：\n- running 运行中\n- failed 失败\n- done 成功",
           "example": "running",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8629,13 +8629,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群弹性伸缩属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群弹性伸缩属性",
           "example": "无",
           "member": "ClusterAsGroupOption",
           "name": "ClusterAsGroupOption",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8740,33 +8740,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "ServiceAccount认证配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "ServiceAccount认证配置",
           "example": "无",
           "member": "ServiceAccountAuthenticationOptions",
           "name": "ServiceAccounts",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近一次修改操作结果，返回值可能为：Updating，Success，Failed，TimeOut",
           "example": "Updating",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "OIDC认证配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "OIDC认证配置",
           "example": "无",
           "member": "OIDCConfigAuthenticationOptions",
           "name": "OIDCConfig",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8898,23 +8898,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）",
           "example": "Created",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开启访问入口失败信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启访问入口失败信息",
           "example": "enable error",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8955,13 +8955,13 @@
         },
         {
           "disabled": false,
-          "document": "操作失败的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作失败的原因",
           "example": "create failed",
           "member": "string",
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9022,13 +9022,13 @@
         },
         {
           "disabled": false,
-          "document": "集群APIServer的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群APIServer的域名",
           "example": "cls-65r1c5nu.ccs.tencent-cloud.com",
           "member": "string",
           "name": "ClusterDomain",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9042,43 +9042,43 @@
         },
         {
           "disabled": false,
-          "document": "外网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网域名",
           "example": "cls.domain",
           "member": "string",
           "name": "ClusterExternalDomain",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网域名",
           "example": "cls.domain",
           "member": "string",
           "name": "ClusterIntranetDomain",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "外网安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网安全组",
           "example": "sg-3euou3gv",
           "member": "string",
           "name": "SecurityGroup",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网访问所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网访问所属子网",
           "example": "subnet-qbc3zefo",
           "member": "string",
           "name": "ClusterIntranetSubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9109,13 +9109,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群自定义参数",
           "example": "无",
           "member": "ClusterExtraArgs",
           "name": "ClusterExtraArgs",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9532,13 +9532,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "NodePools（节点池列表）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "NodePools（节点池列表）",
           "example": "无",
           "member": "NodePool",
           "name": "NodePoolSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -9606,43 +9606,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "正在安装中应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "正在安装中应用列表",
           "example": "无",
           "member": "PendingRelease",
           "name": "ReleaseSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每页返回数量限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每页返回数量限制",
           "example": "1",
           "member": "int64",
           "name": "Limit",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "页偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "页偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9700,12 +9700,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用详情",
           "example": "无",
           "member": "ReleaseDetails",
           "name": "Release",
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9763,23 +9764,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "已安装应用版本历史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已安装应用版本历史",
           "example": "无",
           "member": "ReleaseHistory",
           "name": "ReleaseHistorySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9864,39 +9865,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量限制",
           "example": "0",
           "member": "int64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "偏移量",
           "example": "0",
           "member": "int64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已安装应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已安装应用列表",
           "example": "无",
           "member": "Release",
           "name": "ReleaseSet",
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "已安装应用总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已安装应用总数量",
           "example": "1",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10090,13 +10095,13 @@
         },
         {
           "disabled": false,
-          "document": "集群Kubeconfig文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群Kubeconfig文件",
           "example": "\"[REDACTED]\"",
           "member": "string",
           "name": "Kubeconfig",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -10184,23 +10189,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "虚拟节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "虚拟节点池列表",
           "example": "无",
           "member": "VirtualNodePool",
           "name": "NodePoolSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -10249,23 +10254,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点列表",
           "example": "无",
           "member": "VirtualNode",
           "name": "Nodes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点总数",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11209,13 +11214,13 @@
         },
         {
           "disabled": false,
-          "document": "当任务进度为Failed时，对任务状态的进一步描述，例如IPAMD组件安装失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当任务进度为Failed时，对任务状态的进一步描述，例如IPAMD组件安装失败",
           "example": "\"ipamd has not been installed yet\"",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11356,13 +11361,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "已经存在的实例信息数组。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已经存在的实例信息数组。",
           "example": "无",
           "member": "ExistedInstance",
           "name": "ExistedInstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11580,43 +11585,43 @@
         },
         {
           "disabled": false,
-          "document": "是否开启自定义podcidr，默认为false，已安装eniipamd组件才意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启自定义podcidr，默认为false，已安装eniipamd组件才意义",
           "example": "false",
           "member": "bool",
           "name": "EnableCustomizedPodCidr",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否不开启vpccni模式，默认为false，已安装eniipamd组件才意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否不开启vpccni模式，默认为false，已安装eniipamd组件才意义",
           "example": "false",
           "member": "bool",
           "name": "DisableVpcCniMode",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组件状态，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组件状态，已安装eniipamd组件才会有值",
           "example": "running",
           "member": "string",
           "name": "Phase",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息，已安装eniipamd组件且状态为非running才会有错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息，已安装eniipamd组件且状态为非running才会有错误信息",
           "example": "this is error message",
           "member": "string",
           "name": "Reason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11630,23 +11635,23 @@
         },
         {
           "disabled": false,
-          "document": "固定ip回收时间，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固定ip回收时间，已安装eniipamd组件才会有值",
           "example": "300s",
           "member": "string",
           "name": "ClaimExpiredDuration",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启了中继网卡模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启了中继网卡模式",
           "example": "false",
           "member": "bool",
           "name": "EnableTrunkingENI",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11750,23 +11755,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像信息列表",
           "example": "无",
           "member": "ImageInstance",
           "name": "ImageInstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11833,33 +11838,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页查找时返回采集规则总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分页查找时返回采集规则总数",
           "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指定采集规则名称查找，部分失败时返回失败采集规则名称及最后一个失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定采集规则名称查找，部分失败时返回失败采集规则名称及最后一个失败原因",
           "example": "success",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "采集规则查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "采集规则查询结果",
           "example": "{\"ItemCount\":0,\"Items\":[]}",
           "member": "string",
           "name": "LogConfigs",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13601,23 +13606,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域的数量",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域列表",
           "example": "无",
           "member": "RegionInstance",
           "name": "RegionInstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13902,13 +13907,13 @@
         },
         {
           "disabled": false,
-          "document": "路由表冲突列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "路由表冲突列表。",
           "example": "无",
           "member": "RouteTableConflict",
           "name": "RouteTableConflictSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13939,13 +13944,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "可选运行时列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可选运行时列表",
           "example": "无",
           "member": "OptionalRuntimes",
           "name": "OptionalRuntimes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14344,23 +14349,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本数量",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "版本列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "版本列表",
           "example": "无",
           "member": "VersionInstance",
           "name": "VersionInstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14409,23 +14414,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "机型数据数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型数据数量",
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "机型信息及其可支持的最大VPC-CNI模式Pod数量信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型信息及其可支持的最大VPC-CNI模式Pod数量信息",
           "example": "无",
           "member": "PodLimitsInstance",
           "name": "PodLimitsInstanceSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18799,73 +18804,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群所属项目",
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群名称",
           "example": "tke",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群描述",
           "example": "tke cluster",
           "member": "string",
           "name": "ClusterDesc",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群等级",
           "example": "L5",
           "member": "string",
           "name": "ClusterLevel",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自动变配集群等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动变配集群等级",
           "example": "无",
           "member": "AutoUpgradeClusterLevel",
           "name": "AutoUpgradeClusterLevel",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启QGPU共享\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启QGPU共享",
           "example": "false",
           "member": "bool",
           "name": "QGPUShareEnable",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群属性",
           "example": "无",
           "member": "ClusterProperty",
           "name": "ClusterProperty",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24293,13 +24298,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用详情",
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -24825,13 +24830,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功设置的节点id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成功设置的节点id",
           "example": "[\"ins-e55paxnt\"]",
           "member": "string",
           "name": "SucceedInstanceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -25483,13 +25488,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用详情",
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -25655,13 +25660,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "已更新的子账户Uin列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已更新的子账户Uin列表",
           "example": "[\"1385968384757\"]",
           "member": "string",
           "name": "UpdatedSubAccounts",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26487,13 +26492,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用详情",
           "example": "无",
           "member": "PendingRelease",
           "name": "Release",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

@@ -2584,7 +2584,7 @@
       "status": "online"
     },
     "ReplaceCcnRouteTableInputPolicys": {
-      "document": "本接口(ReplaceRouteTableInputPolicys)用于替换云联网路由表路由接收策略。\n> 特别注意：是全量覆盖，非增量添加\n\n**路由条件支持以下四种：**\n\n- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、专线网关 `VPNGW`\n- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例\n- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`\n- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`\n\n\n**使用限制：**\n- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值\n- 一张路由表，最大支持 `100` 条路由接收策略\n- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式",
+      "document": "本接口(ReplaceRouteTableInputPolicys)用于替换云联网路由表路由接收策略。\n> 特别注意：是全量覆盖，非增量添加\n\n**路由条件支持以下四种：**\n\n- 实例类型: `instance-type`，可选值：私有网络 `VPC`、专线网关 `DIRECTCONNECT`、VPN网关 `VPNGW`\n- 实例ID: `instance-id`，例如：`dcg-8zljkrft`、`vpc-jdevjrup`，暂不支持 `Edge` 实例\n- 实例地域: `instance-region`，例如：`ap-guangzhou`<br />产品支持的所有地域列表可通过接口 [DescribeRegions](https://cloud.tencent.com/document/product/1596/77930) 查询，其中参数 `Product` 设置为 `ccn`\n- 路由前缀: `cidr-block`，例如：`10.1.0.0/16`\n\n\n**使用限制：**\n- 一条策略内的单个条件类型，最大支持设置 `25` 个条件值\n- 一张路由表，最大支持 `100` 条路由接收策略\n- 路由条件类型中，只有 `cidr-block` 类型支持模糊匹配和精确匹配两种，其它类型只支持精确匹配一种模式",
       "input": "ReplaceCcnRouteTableInputPolicysRequest",
       "name": "替换云联网路由接收策略",
       "output": "ReplaceCcnRouteTableInputPolicysResponse",
@@ -31818,7 +31818,7 @@
         {
           "disabled": false,
           "document": "新的路由接收策略。",
-          "example": "[             {                 \"routeConditions\": [                     {                         \"name\": \"instanceType\",                         \"values\": [1]                     },                     {                         \"name\": \"routePrefix\",                         \"values\": [\"10.9.3.0/24\"]                     },                 ],                 \"action\": \"accept\",                 \"description\": \"拒收指定网段\"             },             {                 \"routeConditions\": [                     {                         \"name\": \"uniqInstanceIndex\",                         \"values\": [\"vpc-8qxuno77\"]                     },                 ],                 \"action\": \"accept\",                 \"description\": \"接收指定网络实例的路由\"             },         ]",
+          "example": "[{'routeConditions': [{'name': 'uniqInstanceIndex', 'valuevpc-8qxuno77']}], 'action': 'accept', 'description': '接收指定网络实例的路由'}]",
           "member": "CcnRouteTableInputPolicy",
           "name": "Policys",
           "required": true,

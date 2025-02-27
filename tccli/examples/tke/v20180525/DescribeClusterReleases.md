@@ -18,6 +18,7 @@ Output:
         "ReleaseSet": [
             {
                 "Name": "app-name",
+                "Description": "This is app description",
                 "Namespace": "default",
                 "Revision": "1",
                 "Status": "deployed",

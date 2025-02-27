@@ -7,14 +7,14 @@ Input:
 ```
 tccli dlc CreateDataEngine --cli-unfold-argument  \
     --EngineType spark \
-    --DataEngineName test \
+    --DataEngineName house_test \
     --ClusterType spark \
     --MinClusters 0 \
     --MaxClusters 0 \
     --DefaultDataEngine True \
-    --CidrBlock 10.255.255.0/16 \
+    --CidrBlock 10.*.*.*/16 \
     --Mode 0 \
-    --Message test \
+    --Message cretate house test \
     --AutoResume True \
     --Size 0 \
     --PayMode 0 \
@@ -41,7 +41,7 @@ Output:
 {
     "Response": {
         "DataEngineId": "DataEngine-abc123",
-        "RequestId": "sd01m2-fasfki-231safas"
+        "RequestId": "7348577b-a168-467b-bd68-3c396b78b608"
     }
 }
 ```

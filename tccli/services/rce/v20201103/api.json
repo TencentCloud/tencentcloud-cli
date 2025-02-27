@@ -2198,8 +2198,8 @@
         },
         {
           "disabled": false,
-          "document": "业务参数。",
-          "example": "空",
+          "document": "业务预留参数（暂无实际业务含义， 无需关注返回值）",
+          "example": "1***01",
           "member": "string",
           "name": "AssociateAccount",
           "output_required": true,

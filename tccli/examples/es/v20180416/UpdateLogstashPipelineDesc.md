@@ -1,13 +1,13 @@
 **Example 1: 更新实例管道的描述信息**
 
-
+更新实例管道的描述信息
 
 Input: 
 
 ```
 tccli es UpdateLogstashPipelineDesc --cli-unfold-argument  \
     --InstanceId ls-xxxxxxxx \
-    --PipelineId xx \
+    --PipelineId pipeId1 \
     --PipelineDesc test
 ```
 

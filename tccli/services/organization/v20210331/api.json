@@ -8769,6 +8769,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云昵称",
+          "example": "member_name",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11497,6 +11507,15 @@
           "name": "PayUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsModifyNickName",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

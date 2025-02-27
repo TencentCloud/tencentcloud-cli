@@ -842,13 +842,13 @@
         },
         {
           "disabled": false,
-          "document": "错误信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息集合",
           "example": "eks not support",
           "member": "string",
           "name": "Errors",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -916,13 +916,13 @@
         },
         {
           "disabled": false,
-          "document": "数组总数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数组总数目",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -990,13 +990,13 @@
         },
         {
           "disabled": false,
-          "document": "健康检测规则数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "健康检测规则数量",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1081,13 +1081,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点池列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点池列表",
           "example": "无",
           "member": "NodePool",
           "name": "NodePools",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
