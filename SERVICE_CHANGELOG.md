@@ -1,181 +1,38 @@
 # 本版本更新包含以下内容：
 
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+## 音频内容安全(ams) 版本：2020-12-29
 
-### 第 55 次发布
+### 第 11 次发布
 
-发布时间：2025-02-28 01:16:45
+发布时间：2025-03-03 01:07:34
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+新增数据结构：
 
-* [DescribeClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/84381)
-
-	* 新增入参：ComputeGroupIds
-
+* [HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo)
+* [Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position)
 
 修改数据结构：
 
-* [ClusterConfigsHistory](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsHistory)
+* [TextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#TextResult)
 
-	* 新增成员：ComputeGroupId
+	* 新增成员：HitInfos
 
 
 
 
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+## 音频内容安全(ams) 版本：2020-06-08
 
-### 第 7 次发布
 
-发布时间：2025-02-28 01:20:18
 
-本次发布包含了以下内容：
+## 云防火墙(cfw) 版本：2019-09-04
 
-改善已有的文档。
+### 第 68 次发布
 
-修改接口：
-
-* [ModifyWorkspace](http://document.tencentcloudapi.woa.com/document/product/1640/78589)
-
-	* 新增入参：TenantAppId, TenantUin, TenantUniqVpcId, TenantSubnetId
-
-
-
-
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
-
-
-
-## 高性能弹性计算底座(cube) 版本：2024-03-04
-
-### 第 5 次发布
-
-发布时间：2025-02-28 01:22:35
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeInstanceHostInfo](http://document.tencentcloudapi.woa.com/document/product/1760/85323)
-
-	* 新增出参：AttachMode
-
-
-
-
-## 人脸核身(faceid) 版本：2018-03-01
-
-### 第 80 次发布
-
-发布时间：2025-02-28 01:37:00
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CheckIntlNameIdBirth](http://document.tencentcloudapi.woa.com/document/product/1007/85869)
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 78 次发布
-
-发布时间：2025-02-28 01:45:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [StreamOnlineInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#StreamOnlineInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>PushToDelay
-
-
-
-
-## 集团账号管理(organization) 版本：2021-03-31
-
-### 第 49 次发布
-
-发布时间：2025-02-28 01:51:29
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UpdateOrganizationMember](http://document.tencentcloudapi.woa.com/document/product/850/80993)
-
-	* 新增入参：IsModifyNickName
-
-
-修改数据结构：
-
-* [OrgMember](http://document.tencentcloudapi.woa.com/document/product/850/67060#OrgMember)
-
-	* 新增成员：NickName
-
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## 云托管 CloudBase Run(tcbr) 版本：2022-02-17
-
-### 第 4 次发布
-
-发布时间：2025-02-28 01:59:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCloudRunServers](http://document.tencentcloudapi.woa.com/document/product/1711/80397)
-
-	* 新增入参：ServerName, ServerType
-
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 34 次发布
-
-发布时间：2025-02-28 02:00:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ImageScanInquireInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ImageScanInquireInfo)
-
-	* 新增成员：PayNum, TrialNum, PayUsage
-
-
-
-
-## 智能钛机器学习(tia) 版本：2018-02-26
-
-### 第 4 次发布
-
-发布时间：2025-02-28 02:07:59
+发布时间：2025-03-03 01:18:05
 
 本次发布包含了以下内容：
 
@@ -183,15 +40,142 @@
 
 <font color="#dd0000">**预下线接口**：</font>
 
-* CreateModel
-* DeleteJob
-* DeleteModel
-* DescribeJob
-* DescribeModel
-* InstallAgent
-* ListJobs
-* ListModels
-* QueryLogs
+* CreateIdsWhiteRule
+* DeleteIdsWhiteRule
+* DescribeIdsWhiteRule
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 119 次发布
+
+发布时间：2025-03-03 01:25:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48094)
+
+	* 新增出参：LogicBackupConfig
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 82 次发布
+
+发布时间：2025-03-03 01:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)
+
+	* 新增入参：ClusterId
+
+
+修改数据结构：
+
+* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
+
+	* 新增成员：Default
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 127 次发布
+
+发布时间：2025-03-03 01:35:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/85871)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 180 次发布
+
+发布时间：2025-03-03 01:36:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85872)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 83 次发布
+
+发布时间：2025-03-03 02:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81079)
+
+	* 新增入参：CanaryRuleList
+
+	* <font color="#dd0000">**修改入参**：</font>CanaryRule
+
+* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
+
+	* 新增入参：RegexPriority
+
+* [DeleteCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81074)
+
+	* 新增入参：PriorityList
+
+	* <font color="#dd0000">**修改入参**：</font>Priority
+
+* [ModifyCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81063)
+
+	* 新增入参：CanaryRuleList
+
+	* <font color="#dd0000">**修改入参**：</font>Priority, CanaryRule
+
+* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
+
+	* 新增入参：RegexPriority
+
+
+新增数据结构：
+
+* [CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule)
+
+修改数据结构：
+
+* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
+
+	* 新增成员：RegexPriority
+
 
 
 
@@ -2063,6 +2047,26 @@
 
 
 ## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 11 次发布
+
+发布时间：2025-03-03 01:07:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo)](http://document.tencentcloudapi.woa.com/document/product/1219/53259#[HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo))
+* [[Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position)](http://document.tencentcloudapi.woa.com/document/product/1219/53259#[Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position))
+
+修改数据结构：
+
+* [TextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#TextResult)
+
+	* 新增成员：HitInfos
+
 
 ### 第 10 次发布
 
@@ -22832,6 +22836,20 @@
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 68 次发布
+
+发布时间：2025-03-03 01:18:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateIdsWhiteRule
+* DeleteIdsWhiteRule
+* DescribeIdsWhiteRule
+
 ### 第 67 次发布
 
 发布时间：2025-02-10 01:11:14
@@ -41315,6 +41333,21 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 119 次发布
+
+发布时间：2025-03-03 01:25:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48094)
+
+	* 新增出参：LogicBackupConfig
+
+
 ### 第 118 次发布
 
 发布时间：2025-01-14 01:14:23
@@ -54225,6 +54258,28 @@
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
+### 第 82 次发布
+
+发布时间：2025-03-03 01:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)
+
+	* 新增入参：ClusterId
+
+
+修改数据结构：
+
+* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
+
+	* 新增成员：Default
+
+
 ### 第 81 次发布
 
 发布时间：2025-02-25 01:44:38
@@ -57853,6 +57908,18 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 127 次发布
+
+发布时间：2025-03-03 01:35:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/85871)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 126 次发布
 
 发布时间：2025-02-13 01:16:38
@@ -60497,6 +60564,18 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 180 次发布
+
+发布时间：2025-03-03 01:36:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85872)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 179 次发布
 
@@ -64142,7 +64221,7 @@
 
 新增接口：
 
-* [[CheckIntlNameIdBirth](http://document.tencentcloudapi.woa.com/document/product/1007/85869)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckIntlNameIdBirth](http://document.tencentcloudapi.woa.com/document/product/1007/85869)
 
 ### 第 79 次发布
 
@@ -123316,6 +123395,54 @@
 
 
 ## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 83 次发布
+
+发布时间：2025-03-03 02:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81079)
+
+	* 新增入参：CanaryRuleList
+
+	* <font color="#dd0000">**修改入参**：</font>CanaryRule
+
+* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
+
+	* 新增入参：RegexPriority
+
+* [DeleteCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81074)
+
+	* 新增入参：PriorityList
+
+	* <font color="#dd0000">**修改入参**：</font>Priority
+
+* [ModifyCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81063)
+
+	* 新增入参：CanaryRuleList
+
+	* <font color="#dd0000">**修改入参**：</font>Priority, CanaryRule
+
+* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
+
+	* 新增入参：RegexPriority
+
+
+新增数据结构：
+
+* [[CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule))
+
+修改数据结构：
+
+* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
+
+	* 新增成员：RegexPriority
+
 
 ### 第 82 次发布
 

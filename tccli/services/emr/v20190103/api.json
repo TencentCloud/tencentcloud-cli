@@ -7260,6 +7260,15 @@
           "name": "DedicatedRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被克隆集群id",
+          "example": "emr-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9744,7 +9753,7 @@
           "example": "[\"\"]",
           "member": "string",
           "name": "SoftInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9754,7 +9763,7 @@
           "example": "2",
           "member": "int64",
           "name": "MasterNodeSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9764,7 +9773,7 @@
           "example": "3",
           "member": "int64",
           "name": "CoreNodeSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9774,7 +9783,7 @@
           "example": "4",
           "member": "int64",
           "name": "TaskNodeSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9784,7 +9793,7 @@
           "example": "5",
           "member": "int64",
           "name": "ComNodeSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9794,7 +9803,7 @@
           "example": "null",
           "member": "OutterResource",
           "name": "MasterResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9804,7 +9813,7 @@
           "example": "null",
           "member": "OutterResource",
           "name": "CoreResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9814,7 +9823,7 @@
           "example": "null",
           "member": "OutterResource",
           "name": "TaskResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9824,7 +9833,7 @@
           "example": "null",
           "member": "OutterResource",
           "name": "ComResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9834,7 +9843,7 @@
           "example": "true",
           "member": "bool",
           "name": "OnCos",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -9844,7 +9853,7 @@
           "example": "2",
           "member": "int64",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9854,7 +9863,7 @@
           "example": "3",
           "member": "int64",
           "name": "RouterNodeSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9864,7 +9873,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportHA",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -9874,17 +9883,17 @@
           "example": "true",
           "member": "bool",
           "name": "SecurityOn",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"111\"",
+          "document": "集群初始安全组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"sg-3xxx\"",
           "member": "string",
           "name": "SecurityGroup",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9894,27 +9903,27 @@
           "example": "2",
           "member": "int64",
           "name": "CbsEncrypt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "自定义应用角色。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"123\"",
+          "example": "\"role_test\"",
           "member": "string",
           "name": "ApplicationRole",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "安全组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "安全组id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sg-3xxx\"]",
           "member": "string",
           "name": "SecurityGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9924,7 +9933,7 @@
           "example": "skey-xxxxxxxx",
           "member": "string",
           "name": "PublicKeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -17332,6 +17341,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认地域",
+          "example": "true",
+          "member": "bool",
+          "name": "Default",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

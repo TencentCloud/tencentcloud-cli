@@ -1178,6 +1178,52 @@
       ],
       "type": "object"
     },
+    "HitInfo": {
+      "document": "关键词命中位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识模型命中还是关键词命中",
+          "example": "Model",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中关键词",
+          "example": "hello",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义词库名称",
+          "example": "测试词库1",
+          "member": "string",
+          "name": "LibName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t位置信息",
+          "example": "无",
+          "member": "Position",
+          "name": "Positions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InputInfo": {
       "document": "输入信息详情",
       "members": [
@@ -1408,6 +1454,32 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Position": {
+      "document": "标识命中的违规关键词位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Start",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词结束位置",
+          "example": "10",
+          "member": "int64",
+          "name": "End",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1948,6 +2020,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回违规文本命中信息",
+          "example": "无",
+          "member": "HitInfo",
+          "name": "HitInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

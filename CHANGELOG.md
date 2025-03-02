@@ -1,3 +1,184 @@
+# Release 3.0.1164.1
+
+## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 11 次发布
+
+发布时间：2025-03-03 01:07:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo)
+* [Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position)
+
+修改数据结构：
+
+* [TextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#TextResult)
+
+	* 新增成员：HitInfos
+
+
+
+
+## 音频内容安全(ams) 版本：2020-06-08
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 68 次发布
+
+发布时间：2025-03-03 01:18:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateIdsWhiteRule
+* DeleteIdsWhiteRule
+* DescribeIdsWhiteRule
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 119 次发布
+
+发布时间：2025-03-03 01:25:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48094)
+
+	* 新增出参：LogicBackupConfig
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 82 次发布
+
+发布时间：2025-03-03 01:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)
+
+	* 新增入参：ClusterId
+
+
+修改数据结构：
+
+* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
+
+	* 新增成员：Default
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 127 次发布
+
+发布时间：2025-03-03 01:35:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/85871)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 180 次发布
+
+发布时间：2025-03-03 01:36:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85872)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 微服务引擎(tse) 版本：2020-12-07
+
+### 第 83 次发布
+
+发布时间：2025-03-03 02:14:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81079)
+
+	* 新增入参：CanaryRuleList
+
+	* <font color="#dd0000">**修改入参**：</font>CanaryRule
+
+* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
+
+	* 新增入参：RegexPriority
+
+* [DeleteCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81074)
+
+	* 新增入参：PriorityList
+
+	* <font color="#dd0000">**修改入参**：</font>Priority
+
+* [ModifyCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81063)
+
+	* 新增入参：CanaryRuleList
+
+	* <font color="#dd0000">**修改入参**：</font>Priority, CanaryRule
+
+* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
+
+	* 新增入参：RegexPriority
+
+
+新增数据结构：
+
+* [CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule)
+
+修改数据结构：
+
+* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
+
+	* 新增成员：RegexPriority
+
+
+
+
 # Release 3.0.1163.1
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28

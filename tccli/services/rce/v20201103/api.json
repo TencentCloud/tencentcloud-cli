@@ -185,7 +185,7 @@
         },
         {
           "disabled": false,
-          "document": "数据受托方、提供方：腾讯云主体名称。\n\n固定填：腾讯云计算（北京）有限责任公司",
+          "document": "数据受托方、提供方：腾讯云主体名称。固定填：腾讯云计算（北京）有限责任公司",
           "example": "腾讯云计算（北京）有限责任公司",
           "member": "string",
           "name": "DataRecipientName",
@@ -194,7 +194,7 @@
         },
         {
           "disabled": false,
-          "document": "客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。\n\n1-手机号；\n\n2-微信开放账号；\n\n3-QQ开放账号；\n\n4-IP地址；\n\n999-其它；",
+          "document": "客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。\n1-手机号；\n2-微信开放账号；\n3-QQ开放账号；\n4-IP地址；\n999-其它；",
           "example": "[1, 4]",
           "member": "uint64",
           "name": "UserDataType",
@@ -221,7 +221,7 @@
         },
         {
           "disabled": false,
-          "document": "客户获得的用户授权期限时间戳（单位秒）。\n\n不填默认无固定期限。",
+          "document": "客户获得的用户授权期限时间戳（单位秒）。不填默认无固定期限。",
           "example": "1719805604",
           "member": "uint64",
           "name": "AuthorizationTerm",
@@ -230,7 +230,7 @@
         },
         {
           "disabled": false,
-          "document": "\t\n客户获得用户授权所依赖的协议地址。",
+          "document": "客户获得用户授权所依赖的协议地址。",
           "example": "https://www.*****.com/*",
           "member": "string",
           "name": "PrivacyPolicyLink",
@@ -239,7 +239,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是用户个人敏感数据（不推荐使用）。\n\n固定填：1。",
+          "document": "是否是用户个人敏感数据（不推荐使用）。固定填：1。",
           "example": "1",
           "member": "uint64",
           "name": "IsPersonalData",
@@ -720,7 +720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否授权：1已授权，否则未授权。\n 调用全栈式风控引擎接口服务时，客户需先明确授权\n\n",
+          "document": "是否授权：1已授权，否则未授权。\n 调用全栈式风控引擎接口服务时，客户需先明确授权。",
           "example": "1",
           "member": "string",
           "name": "IsAuthorized",
@@ -729,7 +729,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型：1AES加密\n",
+          "document": "加密类型：1AES加密",
           "example": "1",
           "member": "string",
           "name": "CryptoType",
@@ -1218,7 +1218,7 @@
         },
         {
           "disabled": false,
-          "document": "1：Android\n2：iOS\n3：H5\n4：小程序\n",
+          "document": "1：Android\n2：iOS\n3：H5\n4：小程序",
           "example": "1",
           "member": "string",
           "name": "Platform",
@@ -1816,7 +1816,7 @@
         {
           "disabled": false,
           "document": "名单数据创建时间",
-          "example": "024-05-05 12:10:15",
+          "example": "2024-05-05 12:10:15",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -2255,7 +2255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "总数。",
           "example": "100",
           "member": "int64",
           "name": "Count",
@@ -2265,7 +2265,7 @@
         },
         {
           "disabled": false,
-          "document": "列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OutputDescribeNameListFrontFix",
           "name": "List",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误\n",
+          "document": "错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误。",
           "example": "0",
           "member": "int64",
           "name": "Code",
@@ -2285,7 +2285,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "错误信息。",
           "example": "OK",
           "member": "string",
           "name": "Message",
@@ -2295,7 +2295,7 @@
         },
         {
           "disabled": false,
-          "document": "黑白名单列表信息",
+          "document": "黑白名单列表信息。",
           "example": "无",
           "member": "OutputDescribeNameListInfo",
           "name": "Value",
@@ -2863,7 +2863,7 @@
         },
         {
           "disabled": false,
-          "document": "用户设备号（已不推荐使用）。\n",
+          "document": "用户设备号（已不推荐使用）。",
           "example": "095006********************dddc39",
           "member": "string",
           "name": "DeviceId",

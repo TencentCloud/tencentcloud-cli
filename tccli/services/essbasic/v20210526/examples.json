@@ -892,6 +892,20 @@
         "title": "生成到模板详情的控制台链接"
       }
     ],
+    "CreateEmployeeChangeUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng_1\"\n        }\n    },\n    \"OpenId\": \"kevinlcheng_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1741332331,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDtSJUde8JFIMAykHz79\",\n        \"RequestId\": \"s1740727531055190955\"\n    }\n}",
+        "title": "生成员工手机号变更链接-不指定手机号"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEmployeeChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"kevinlcheng_1\"\n        }\n    },\n    \"OpenId\": \"kevinlcheng_1\",\n    \"NewMobile\": \"+12 12345721\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1741332331,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDtSJUde8JFIMAykHz79\",\n        \"RequestId\": \"s1740727531055190955\"\n    }\n}",
+        "title": "生成员工手机号变更链接-指定手机号"
+      }
+    ],
     "CreateEmployeeQualificationSealQrCode": [
       {
         "document": "企业需要员工授权执业章使用权限给企业时，调用接口产生二维码",
