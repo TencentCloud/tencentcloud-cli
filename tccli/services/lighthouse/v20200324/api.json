@@ -2731,7 +2731,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像 ID 列表。",
+          "document": "镜像 ID 列表。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。列表长度最大值为100。",
           "example": "[\"lhbp-aaaabbbb\"]",
           "member": "string",
           "name": "BlueprintIds",
@@ -2999,7 +2999,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的云硬盘备份点ID列表。最大支持 100 个。参数不支持同时指定 DiskBackupIds 和 Filters。",
+          "document": "查询的云硬盘备份点ID列表。可通过[DescribeDiskBackups](https://cloud.tencent.com/document/product/1207/84379)接口返回值字段DiskBackupSet获取。列表长度最大值为100。参数不支持同时指定 DiskBackupIds 和 Filters。",
           "example": "[\"lhbak-nuen5foj\"]",
           "member": "string",
           "name": "DiskBackupIds",
@@ -3212,7 +3212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云硬盘ID列表。每次批量请求云硬盘的上限为 100。",
+          "document": "云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。",
           "example": "[\"lhdisk-p1zflrif\"]",
           "member": "string",
           "name": "DiskIds",
@@ -3878,7 +3878,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "防火墙模板ID。",
+          "document": "防火墙模板ID列表。可通过[DescribeFirewallTemplates](https://cloud.tencent.com/document/product/1207/96874)接口返回值字段TemplateSet获取。列表长度最大值为100。",
           "example": "lhft-ow2dn19x",
           "member": "string",
           "name": "TemplateId",
@@ -3887,7 +3887,7 @@
         },
         {
           "disabled": false,
-          "document": "防火墙模板规则ID列表。",
+          "document": "防火墙模板规则ID列表。可通过[DescribeFirewallTemplateRules](https://cloud.tencent.com/document/product/1207/96875)接口返回值字段TemplateRuleSet获取。列表长度最大值为100。",
           "example": "[\"lhftr-gexf7cmvpq\"]",
           "member": "string",
           "name": "TemplateRuleIds",
@@ -4443,7 +4443,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥对 ID 列表，每次请求批量密钥对的上限为 100。",
+          "document": "密钥对 ID 列表。可通过[DescribeKeyPairs](https://cloud.tencent.com/document/product/1207/55540)接口返回值字段KeyPairSet获取。列表长度最大值为100。",
           "example": "[\"lhkp-omd12oc1\"]",
           "member": "string",
           "name": "KeyIds",

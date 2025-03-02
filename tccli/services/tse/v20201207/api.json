@@ -1185,6 +1185,30 @@
       ],
       "usage": "out"
     },
+    "CanaryPriorityRule": {
+      "document": "灰度规则 Priority - Rule",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "10",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则配置",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayCanaryRule",
+          "name": "CanaryRule",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "CertificateInfo": {
       "document": "证书信息",
       "members": [
@@ -3702,8 +3726,17 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayCanaryRule",
           "name": "CanaryRule",
-          "required": true,
+          "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略CanaryRule参数",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayCanaryRule",
+          "name": "CanaryRuleList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4238,6 +4271,15 @@
           "name": "ResponseBuffering",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "正则优先级",
+          "example": "0",
+          "member": "int64",
+          "name": "RegexPriority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5375,8 +5417,17 @@
           "example": "10",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "优先级列表，如果配置了此参数，将以此参数为准，忽略Priority参数",
+          "example": "[10,20]",
+          "member": "int64",
+          "name": "PriorityList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12675,6 +12726,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "正则优先级",
+          "example": "0",
+          "member": "int64",
+          "name": "RegexPriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13716,7 +13778,7 @@
           "example": "10",
           "member": "int64",
           "name": "Priority",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -13725,8 +13787,17 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayCanaryRule",
           "name": "CanaryRule",
-          "required": true,
+          "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "灰度规则配置列表，如果配置了此参数，将以此参数为准，忽略Priority和CanaryRule参数",
+          "example": "无",
+          "member": "CanaryPriorityRule",
+          "name": "CanaryRuleList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -14087,6 +14158,15 @@
           "name": "ResponseBuffering",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "增加优先级",
+          "example": "0",
+          "member": "int64",
+          "name": "RegexPriority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

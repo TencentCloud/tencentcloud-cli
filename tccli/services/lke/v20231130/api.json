@@ -623,6 +623,13 @@
       "output": "ReconstructDocumentResponse",
       "status": "online"
     },
+    "RenameDoc": {
+      "document": "文档重命名",
+      "input": "RenameDocRequest",
+      "name": "文档重命名",
+      "output": "RenameDocResponse",
+      "status": "online"
+    },
     "ResetSession": {
       "document": "重置会话",
       "input": "ResetSessionRequest",
@@ -7084,7 +7091,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接入类型",
+          "document": "接入类型，当前请填写5",
           "example": "1: 坐席 2: 访客 3: 体验 5: API 访客",
           "member": "int64",
           "name": "Type",
@@ -7093,7 +7100,7 @@
         },
         {
           "disabled": false,
-          "document": "应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）",
+          "document": "当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）",
           "example": "无",
           "member": "string",
           "name": "BotAppKey",
@@ -13231,6 +13238,69 @@
         }
       ],
       "usage": "out"
+    },
+    "RenameDocRequest": {
+      "document": "RenameDoc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录用户主账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "登录用户子账号(集成商模式必填)\t",
+          "example": "6000005624511",
+          "member": "string",
+          "name": "LoginSubAccountUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "无",
+          "member": "string",
+          "name": "BotBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档ID",
+          "example": "无",
+          "member": "string",
+          "name": "DocBizId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新文档名，需要带上后缀",
+          "example": "新文档名.docx",
+          "member": "string",
+          "name": "NewName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenameDocResponse": {
+      "document": "RenameDoc返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResetSessionRequest": {
       "document": "ResetSession请求参数结构体",

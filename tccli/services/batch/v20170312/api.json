@@ -1258,80 +1258,80 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  false：子机销毁时，保留数据盘<br />\n  默认取值：true<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  false：子机销毁时，保留数据盘<br />\n  默认取值：true<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
           "example": "true",
           "member": "bool",
           "name": "DeleteWithInstance",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘快照ID。选择的数据盘快照大小需小于数据盘大小。",
           "example": "snap-6yczrj8x",
           "member": "string",
           "name": "SnapshotId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义CMK对应的ID，取值为UUID或者类似kms-abcd1234。用于加密云盘。\n\n该参数目前仅用于 `RunInstances` 接口。",
           "example": "kms-abcd1234",
           "member": "string",
           "name": "KmsKeyId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云硬盘性能，单位：MB/s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云硬盘性能，单位：MB/s",
           "example": "20",
           "member": "int64",
           "name": "ThroughputPerformance",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属的独享集群ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属的独享集群ID。",
           "example": "cdc-1648zauv",
           "member": "string",
           "name": "CdcId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "突发性能\n\n <b>注：内测中。</b>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "突发性能\n\n <b>注：内测中。</b>",
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3523,25 +3523,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "竞价相关选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价相关选项",
           "example": "0.12",
           "member": "SpotMarketOptions",
           "name": "SpotOptions",
           "output_required": true,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "市场选项类型，当前只支持取值：spot",
           "example": "spot",
           "member": "string",
           "name": "MarketType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5228,14 +5228,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>true：表示开启云监控服务<br><li>false：表示不开启云监控服务<br><br>默认取值：true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>true：表示开启云监控服务</li><li>false：表示不开启云监控服务</li><br>默认取值：true。",
           "example": "true",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5262,25 +5262,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "竞价出价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价出价",
           "example": "0.01",
           "member": "string",
           "name": "MaxPrice",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞价请求类型，当前仅支持类型：one-time\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价请求类型，当前仅支持类型：one-time",
           "example": "one-time",
           "member": "string",
           "name": "SpotInstanceType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -724,6 +724,14 @@
         "title": "接口调用成功示例"
       }
     ],
+    "RenameDoc": [
+      {
+        "document": "重命名文档-提交成功",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenameDoc\n<公共请求参数>\n\n{\n    \"BotBizId\": \"181XXXXXXXXX54112\",\n    \"DocBizId\": \"181XXXXXXXXXXXXXXX\",\n    \"NewName\": \"新文档名.docx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9580fed9-441a-4825-8343-8d5ed700ebe8\"\n    }\n}",
+        "title": "重命名文档-提交成功"
+      }
+    ],
     "ResetSession": [
       {
         "document": "",

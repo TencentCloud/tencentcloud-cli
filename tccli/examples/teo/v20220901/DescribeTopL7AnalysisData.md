@@ -27,7 +27,7 @@ Output:
             {
                 "DetailData": [
                     {
-                        "Key": "/",
+                        "Key": "path",
                         "Value": 1210001
                     }
                 ],

@@ -8822,7 +8822,7 @@
         {
           "disabled": false,
           "document": "备份方式，logic-逻辑备份，snapshot-快照备份\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"snapshot\"",
+          "example": "snapshot",
           "member": "string",
           "name": "BackupType",
           "output_required": true,
@@ -8832,11 +8832,21 @@
         {
           "disabled": false,
           "document": "跨地域逻辑备份配置修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"2023-07-12 12:00:00\"",
+          "example": "2023-07-12 12:00:00",
           "member": "string",
           "name": "LogicCrossRegionsConfigUpdateTime",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动逻辑备份配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogicBackupConfigInfo",
+          "name": "LogicBackupConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -10136,7 +10146,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "实例ID",
+          "document": "实例ID（InstanceId与InstanceGroupId必须任选一个传入）",
           "example": "cynosdbmysql-ins-jhi2gdi0",
           "member": "string",
           "name": "InstanceId",
@@ -10145,7 +10155,7 @@
         },
         {
           "disabled": false,
-          "document": "实例组ID",
+          "document": "实例组ID（InstanceId与InstanceGroupId必须任选一个传入）",
           "example": "cynosdbmysql-grp-as124sa5",
           "member": "string",
           "name": "InstanceGroupId",

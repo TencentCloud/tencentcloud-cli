@@ -105,6 +105,13 @@
       "output": "CreateEmbedWebUrlResponse",
       "status": "online"
     },
+    "CreateEmployeeChangeUrl": {
+      "document": "生成员工信息变更链接，当前仅支持变更手机号\n\n注: \n1. 目前仅支持修改员工手机号，待修改员工必须已经实名且在职\n2. 仅支持返回小程序链接",
+      "input": "CreateEmployeeChangeUrlRequest",
+      "name": "创建员工信息变更链接",
+      "output": "CreateEmployeeChangeUrlResponse",
+      "status": "online"
+    },
     "CreateEmployeeQualificationSealQrCode": {
       "document": "该接口用于获取个人授权执业章给企业的微信二维码，需要个人用户通过微信扫码。\n\n扫描后将跳转到腾讯电子签小程序，进入到授权执业章的流程。\n\n个人用户授权成功后，企业印章管理员需对印章进行审核，审核通过后，即可使用个人授权的执业章进行盖章操作。\n\n\n**注意**\n1. 该二维码**有效期为7天**，过期后将失效，可重新创建。\n\n整体流程入下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/21b6b56dbc796c9d6f402d6ce6febb07.png)",
       "input": "CreateEmployeeQualificationSealQrCodeRequest",
@@ -706,23 +713,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "超管名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超管名",
           "example": "张三",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "超管手机号，打码显示\n示例值：138****1569\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超管手机号，打码显示\n示例值：138****1569\n",
           "example": "18888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1020,33 +1027,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方唯一编号",
           "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "SignId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方角色编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方角色编号",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方角色名称",
           "example": "甲方",
           "member": "string",
           "name": "ApproverRoleName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1162,25 +1169,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。",
           "example": "06f2bc0f1772d8deac2f92b5df61a5ac",
           "member": "string",
           "name": "SignId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n",
           "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1255,69 +1262,69 @@
       "members": [
         {
           "disabled": false,
-          "document": "扩展服务类型，和入参一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展服务类型，和入参一致",
           "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "Type",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩展服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展服务名称",
           "example": "企业静默签（自动签署）",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权员工列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权员工列表",
           "example": "无",
           "member": "HasAuthUser",
           "name": "HasAuthUserList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权企业列表（企业自动签时，该字段有值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权企业列表（企业自动签时，该字段有值）",
           "example": "无",
           "member": "HasAuthOrganization",
           "name": "HasAuthOrganizationList",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权员工列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权员工列表总数",
           "example": "0",
           "member": "int64",
           "name": "AuthUserTotal",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权企业列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权企业列表总数",
           "example": "1",
           "member": "int64",
           "name": "AuthOrganizationTotal",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2132,25 +2139,25 @@
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。\n注意： `向左调整设置为负数， 向右调整设置成正数`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行横坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏左或偏右，可以通过调整横坐标方向的参数来使控件位置更加准确。\n注意： `向左调整设置为负数， 向右调整设置成正数`",
           "example": "10",
           "member": "float",
           "name": "OffsetX",
           "output_required": true,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行纵坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏上或偏下，可以通过调整纵坐标方向的参数来使控件位置更加准确。\n注意： `向上调整设置为负数， 向下调整设置成正数`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**如果控件是关键字定位方式**，可以对关键字定位出来的区域进行纵坐标方向的调整，单位为pt（点）。例如，如果关键字定位出来的区域偏上或偏下，可以通过调整纵坐标方向的参数来使控件位置更加准确。\n注意： `向上调整设置为负数， 向下调整设置成正数`",
           "example": "10",
           "member": "float",
           "name": "OffsetY",
           "output_required": true,
           "required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2198,25 +2205,25 @@
         },
         {
           "disabled": false,
-          "document": "**web嵌入发起合同场景下**， 是否锁定填写和签署控件值不允许嵌入页面进行编辑\n<ul><li>false（默认）：不锁定控件值，允许在页面编辑控件值</li>\n<li>true：锁定控件值，在页面编辑控件值</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**web嵌入发起合同场景下**， 是否锁定填写和签署控件值不允许嵌入页面进行编辑\n<ul><li>false（默认）：不锁定控件值，允许在页面编辑控件值</li>\n<li>true：锁定控件值，在页面编辑控件值</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "LockComponentValue",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "**web嵌入发起合同场景下**，是否禁止移动和删除填写和签署控件\n<ul><li> <b>false（默认）</b> :不禁止移动和删除控件</li>\n<li> <b>true</b> : 可以移动和删除控件</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "**web嵌入发起合同场景下**，是否禁止移动和删除填写和签署控件\n<ul><li> <b>false（默认）</b> :不禁止移动和删除控件</li>\n<li> <b>true</b> : 可以移动和删除控件</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "ForbidMoveAndDelete",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3335,6 +3342,80 @@
           "name": "WebUrl",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmployeeChangeUrlRequest": {
+      "document": "CreateEmployeeChangeUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。<br/>在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。<br/>注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的员工UserId",
+          "example": "yDwFoUUckpsomwx1UyhWGhIR2RkhOjw2",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的员工手机号",
+          "example": "13100001111",
+          "member": "string",
+          "name": "NewMobile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEmployeeChangeUrlResponse": {
+      "document": "CreateEmployeeChangeUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改员工信息的小程序链接<br>跳转到腾讯电子签小程序的实现可以参考微信的官方文档:<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\" target=\"_blank\">开放能力/打开 App</a> ",
+          "example": "/pages/guide/index?shortKey=yDtSqUdeX03V7Rza3e37",
+          "member": "string",
+          "name": "MiniAppPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。\n\n",
+          "example": "1683545268",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5313,7 +5394,7 @@
         {
           "disabled": false,
           "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n该名称还将用于合同签署完成后的下载文件名。",
-          "example": "无",
+          "example": "签到合同",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -7174,23 +7255,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建员工的成功列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建员工的成功列表",
           "example": "无",
           "member": "SuccessCreateStaffData",
           "name": "SuccessEmployeeData",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建员工的失败列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建员工的失败列表",
           "example": "无",
           "member": "FailedCreateStaffData",
           "name": "FailedEmployeeData",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8183,23 +8264,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除员工的成功数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除员工的成功数据",
           "example": "无",
           "member": "SuccessDeleteStaffData",
           "name": "SuccessEmployeeData",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "删除员工的失败数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "删除员工的失败数据",
           "example": "无",
           "member": "FailedDeleteStaffData",
           "name": "FailedEmployeeData",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8725,7 +8806,7 @@
         {
           "disabled": false,
           "document": "失败的错误信息，加签任务失败的情况下会返回。",
-          "example": "无",
+          "example": "任务执行失败",
           "member": "string",
           "name": "ErrorDetail",
           "output_required": false,
@@ -10329,13 +10410,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "活体视频的base64编码，mp4格式\n\n注:`需进行base64解码获取活体视频文件`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "活体视频的base64编码，mp4格式\n\n注:`需进行base64解码获取活体视频文件`",
           "example": "5rS75L2T6KeG6aKR55qEYmFzZTY057yW56CB77yMbXA05qC85byP",
           "member": "string",
           "name": "LiveNessVideo",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10399,36 +10480,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n\n在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方角色编号，签署方角色编号是用于区分同一个流程中不同签署方的唯一标识。不同的流程会出现同样的签署方角色编号。\n\n填写控件和签署控件都与特定的角色编号关联。\n\n在进行新增签署方操作时，建议记录下该签署方的角色编号。后续可以拉取流程信息，用来判断该签署方的当前状态。\n",
           "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方唯一编号，一个全局唯一的标识符，不同的流程不会出现冲突。\n\n可以使用签署方的唯一编号来生成签署链接（也可以通过RecipientId来生成签署链接）。",
           "example": "yDt1JUUckp77a2tqUyEmko8RVpCEHoNA",
           "member": "string",
           "name": "SignId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方当前状态，会出现下面的状态\n\n2：待签署\n3：已签署\n4：已拒绝\n5：已过期\n6：已撤销\n8：待填写\n9：因为各种原因（签署人改名等）而终止\n10：填写完成\n15：已解除\n19：转他人处理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方当前状态，会出现下面的状态\n\n2：待签署\n3：已签署\n4：已拒绝\n5：已过期\n6：已撤销\n8：待填写\n9：因为各种原因（签署人改名等）而终止\n10：填写完成\n15：已解除\n19：转他人处理",
           "example": "2",
           "member": "int64",
           "name": "ApproverStatus",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10504,36 +10585,36 @@
         },
         {
           "disabled": false,
-          "document": "操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作扩展服务的操作人UserId，员工在腾讯电子签平台的唯一身份标识，为32位字符串。",
           "example": "yDR********CLU",
           "member": "string",
           "name": "OperatorUserId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩展服务的操作时间，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展服务的操作时间，格式为Unix标准时间戳（秒）。",
           "example": "1693557098",
           "member": "int64",
           "name": "OperateOn",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "该扩展服务若可以授权，此参数对应授权人员的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该扩展服务若可以授权，此参数对应授权人员的列表",
           "example": "无",
           "member": "HasAuthUser",
           "name": "HasAuthUserList",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10543,36 +10624,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "印章来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章来源类型",
           "example": "GENERATE",
           "member": "string",
           "name": "GenerateType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "印章来源类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章来源类型描述",
           "example": "深圳电子印章",
           "member": "string",
           "name": "GenerateTypeDesc",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "印章来源logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章来源logo",
           "example": "https://file.cn/sist-seal-logo-alpha.png",
           "member": "string",
           "name": "GenerateTypeLogo",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10582,23 +10663,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户userId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户userId",
           "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "角色id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色id列表",
           "example": "[\"yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH\"]",
           "member": "string",
           "name": "RoleIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10807,14 +10888,14 @@
         },
         {
           "disabled": false,
-          "document": "下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽",
           "example": "{\"width\":595.3,\"height\":841.9}",
           "member": "string",
           "name": "Option",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10911,33 +10992,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "补充失败错误说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "补充失败错误说明",
           "example": "已经是合同的参与人",
           "member": "string",
           "name": "ErrMessage",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程ID，为32位字符串。\t",
           "example": "yDt1iUUckp7xb05iUuWfBtZwW5IdVzLn",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10947,63 +11028,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "控件Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控件Id",
           "example": "component_01",
           "member": "string",
           "name": "ComponentId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控件名称",
           "example": "地址",
           "member": "string",
           "name": "ComponentName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件填写状态；0-未填写；1-已填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控件填写状态；0-未填写；1-已填写",
           "example": "1",
           "member": "string",
           "name": "ComponentFillStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件填写内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控件填写内容",
           "example": "深圳市南山区腾讯大厦",
           "member": "string",
           "name": "ComponentValue",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件所属参与方Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "控件所属参与方Id",
           "example": "yDtwEUUckp7f8w6uUuBHsZJd9KcpXpMH",
           "member": "string",
           "name": "ComponentRecipientId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。",
           "example": "https://file.cn/resourceId.jpg",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11041,13 +11122,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署时的相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署时的相关信息",
           "example": "发起方因为【金额错误】撤销合同",
           "member": "string",
           "name": "ApproveMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11081,13 +11162,13 @@
         },
         {
           "disabled": false,
-          "document": "客户自定义的用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义的用户ID",
           "example": "n9727",
           "member": "string",
           "name": "CustomUserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11121,73 +11202,73 @@
         },
         {
           "disabled": false,
-          "document": "签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方类型，ORGANIZATION-企业员工，PERSON-个人，ENTERPRISESERVER-企业静默签",
           "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproveType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方侧用户来源，如WEWORKAPP-企业微信等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方侧用户来源，如WEWORKAPP-企业微信等",
           "example": "WEWORKAPP",
           "member": "string",
           "name": "ApproverSource",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "客户自定义签署方标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户自定义签署方标识",
           "example": "甲方",
           "member": "string",
           "name": "CustomApproverTag",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方企业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方企业Id",
           "example": "yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF",
           "member": "string",
           "name": "OrganizationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方企业名称",
           "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署参与人在本流程中的编号ID（每个流程不同），可用此ID来定位签署参与人在本流程的签署节点，也可用于后续创建签署链接等操作。",
           "example": " yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
           "member": "string",
           "name": "SignId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义签署人角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义签署人角色",
           "example": "甲方",
           "member": "string",
           "name": "ApproverRoleName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11322,13 +11403,13 @@
         },
         {
           "disabled": false,
-          "document": "合同流程描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程描述信息。",
           "example": "测试流程的描述信息",
           "member": "string",
           "name": "FlowDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11342,53 +11423,53 @@
         },
         {
           "disabled": false,
-          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>\n<li> **1** : 待签署</li>\n<li> **2** : 部分签署</li>\n<li> **3** : 已拒签</li>\n<li> **4** : 已签署</li>\n<li> **5** : 已过期</li>\n<li> **6** : 已撤销</li>\n<li> **7** : 未开启流程(合同中存在填写环节)</li>\n<li> **8** : 等待填写</li>\n<li> **9** : 部分填写</li>\n<li> **10** : 已拒填</li>\n<li> **21** : 已解除</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>\n<li> **1** : 待签署</li>\n<li> **2** : 部分签署</li>\n<li> **3** : 已拒签</li>\n<li> **4** : 已签署</li>\n<li> **5** : 已过期</li>\n<li> **6** : 已撤销</li>\n<li> **7** : 未开启流程(合同中存在填写环节)</li>\n<li> **8** : 等待填写</li>\n<li> **9** : 部分填写</li>\n<li> **10** : 已拒填</li>\n<li> **21** : 已解除</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "FlowStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同流程创建时间，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程创建时间，格式为Unix标准时间戳（秒）。",
           "example": "1604910798",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。",
           "example": "因合同中的预付款金额错误所以撤销此合同",
           "member": "string",
           "name": "FlowMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。",
           "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "Creator",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒）。",
           "example": "1606910798",
           "member": "int64",
           "name": "Deadline",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11685,13 +11766,13 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的类别分类（如销售合同/入职合同等）。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程的类别分类（如销售合同/入职合同等）。\t",
           "example": "入职合同\t",
           "member": "string",
           "name": "FlowType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11705,23 +11786,23 @@
         },
         {
           "disabled": false,
-          "document": "当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。\t",
           "example": "因合同中的预付款金额错误所以撤销此合同\t",
           "member": "string",
           "name": "FlowMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同流程描述信息。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程描述信息。\t",
           "example": "测试流程的描述信息\t",
           "member": "string",
           "name": "FlowDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -11755,13 +11836,13 @@
         },
         {
           "disabled": false,
-          "document": "合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。\t",
           "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\t",
           "member": "string",
           "name": "Creator",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11795,23 +11876,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程ID ",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署方信息，包含合同ID和角色ID用于定位RecipientId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方信息，包含合同ID和角色ID用于定位RecipientId。",
           "example": "无",
           "member": "ApproverItem",
           "name": "Approvers",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12134,123 +12215,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员企业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业名",
           "example": "张三示例企业",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成员企业别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业别名",
           "example": "张三示例企业",
           "member": "string",
           "name": "Alias",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取",
           "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "OrganizationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "记录更新时间， unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录更新时间， unix时间戳，单位秒",
           "example": "1736751627",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成员企业加入集团的当前状态\n<ul><li> **1**：待授权</li>\n<li> **2**：已授权待激活</li>\n<li> **3**：拒绝授权</li>\n<li> **4**：已解除</li>\n<li> **5**：已加入</li>\n</ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业加入集团的当前状态\n<ul><li> **1**：待授权</li>\n<li> **2**：已授权待激活</li>\n<li> **3**：拒绝授权</li>\n<li> **4**：已解除</li>\n<li> **5**：已加入</li>\n</ul>\n",
           "example": "5",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为集团主企业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为集团主企业",
           "example": "false",
           "member": "bool",
           "name": "IsMainOrganization",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业社会信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业社会信用代码",
           "example": "91110108772551611J",
           "member": "string",
           "name": "IdCardNumber",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业超管信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业超管信息",
           "example": "无",
           "member": "Admin",
           "name": "AdminInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业许可证Id，此字段暂时不需要关注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业许可证Id，此字段暂时不需要关注",
           "example": "企业许可证Id",
           "member": "string",
           "name": "License",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业许可证过期时间，unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业许可证过期时间，unix时间戳，单位秒",
           "example": "1736751627",
           "member": "uint64",
           "name": "LicenseExpireTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "成员企业加入集团时间，unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业加入集团时间，unix时间戳，单位秒",
           "example": "1736751627",
           "member": "uint64",
           "name": "JoinTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否使用自建审批流引擎（即不是企微审批流引擎）\n<ul><li> **true**：是</li>\n<li> **false**：否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否使用自建审批流引擎（即不是企微审批流引擎）\n<ul><li> **true**：是</li>\n<li> **false**：否</li></ul>",
           "example": "trye",
           "member": "bool",
           "name": "FlowEngineEnable",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12260,80 +12341,80 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权企业id",
           "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "OrganizationId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权企业名称",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "被授权企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被授权企业id",
           "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "AuthorizedOrganizationId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "被授权企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "被授权企业名称",
           "example": "李四示例企业",
           "member": "string",
           "name": "AuthorizedOrganizationName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权模板id（仅当授权方式为模板授权时有值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权模板id（仅当授权方式为模板授权时有值）",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "TemplateId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权模板名称（仅当授权方式为模板授权时有值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权模板名称（仅当授权方式为模板授权时有值）",
           "example": "入职合同",
           "member": "string",
           "name": "TemplateName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "授权时间，格式为时间戳，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权时间，格式为时间戳，单位s",
           "example": "1736751627",
           "member": "int64",
           "name": "AuthorizeTime",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12343,36 +12424,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。",
           "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前员工的归属情况，可能值是：\nMainOrg：在集团企业的场景下，返回此值代表是归属主企业\nCurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前员工的归属情况，可能值是：\nMainOrg：在集团企业的场景下，返回此值代表是归属主企业\nCurrentOrg：在普通企业场景下返回此值；或者在集团企业的场景下，返回此值代表归属子企业",
           "example": "MainOrg",
           "member": "string",
           "name": "BelongTo",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集团主企业id，当前企业为集团子企业时，该字段有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集团主企业id，当前企业为集团子企业时，该字段有值",
           "example": "yDt1JUUckp77a2omUyEmko88eg49PTsN",
           "member": "string",
           "name": "MainOrganizationId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12382,63 +12463,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色id",
           "example": "caf2d1eab2632cd84a66593a23b769d9",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "角色名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色名",
           "example": "超级管理员",
           "member": "string",
           "name": "RoleName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "角色状态，1-启用，2-禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色状态，1-启用，2-禁用",
           "example": "1",
           "member": "uint64",
           "name": "RoleStatus",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是集团角色，true-是，false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是集团角色，true-是，false-否",
           "example": "false",
           "member": "bool",
           "name": "IsGroupRole",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "管辖的子企业列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "管辖的子企业列表",
           "example": "[\"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"]",
           "member": "string",
           "name": "SubOrgIdList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权限树\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限树",
           "example": "无",
           "member": "PermissionGroup",
           "name": "PermissionGroups",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12448,53 +12529,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "部门ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门ID。",
           "example": "dp**********************155f2",
           "member": "string",
           "name": "DeptId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部门名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部门名。",
           "example": "测试部门",
           "member": "string",
           "name": "DeptName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "父部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父部门ID",
           "example": "yD**********************m1221",
           "member": "string",
           "name": "ParentDeptId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "客户系统部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户系统部门ID",
           "example": "dept_open_1",
           "member": "string",
           "name": "DeptOpenId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "序列号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "序列号。",
           "example": "1",
           "member": "uint64",
           "name": "OrderNo",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12568,13 +12649,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频base64编码（其中包含全程提示文本和点头音频，mp4格式）",
           "example": "AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wN",
           "member": "string",
           "name": "Video",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12608,33 +12689,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n\n注：`需进行base64解码获取视频文件`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "视频base64（其中包含全程问题和回答音频，mp4格式）\n\n注：`需进行base64解码获取视频文件`",
           "example": "6KeG6aKRYmFzZTY0",
           "member": "string",
           "name": "Video",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " 和答案匹配结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " 和答案匹配结果列表",
           "example": "[\"0\"]",
           "member": "string",
           "name": "ResultCode",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回答问题语音识别结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回答问题语音识别结果列表",
           "example": "[\"同意\"]",
           "member": "string",
           "name": "AsrResult",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13126,13 +13207,13 @@
         },
         {
           "disabled": false,
-          "document": "审核失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "审核失败原因",
           "example": "印章错误",
           "member": "string",
           "name": "FailReason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13166,23 +13247,23 @@
         },
         {
           "disabled": false,
-          "document": "授权人列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "授权人列表",
           "example": "无",
           "member": "AuthorizedUser",
           "name": "AuthorizedUsers",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "印章扩展数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章扩展数据信息",
           "example": "无",
           "member": "ExtendScene",
           "name": "ExtendScene",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13274,124 +13355,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
           "example": "张三示例企业",
           "member": "string",
           "name": "OrganizationName",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。",
           "example": "37000019890303000X",
           "member": "string",
           "name": "UniformSocialCreditCode",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。",
           "example": "张三",
           "member": "string",
           "name": "LegalName",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构法人的证件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构法人的证件类型",
           "example": "居民身份证",
           "member": "string",
           "name": "LegalIdCardType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构法人的证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构法人的证件号码",
           "example": "37000019890303000X",
           "member": "string",
           "name": "LegalIdCardNumber",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构超管姓名。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构超管姓名。\n",
           "example": "张三",
           "member": "string",
           "name": "AdminName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构超管手机号。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构超管手机号。\n",
           "example": "18888888888",
           "member": "string",
           "name": "AdminMobile",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构超管证件类型\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构超管证件类型\n",
           "example": "居民身份证",
           "member": "string",
           "name": "AdminIdCardType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组织机构超管证件号码\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "组织机构超管证件号码\n",
           "example": "37000019890303000X",
           "member": "string",
           "name": "AdminIdCardNumber",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原超管姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原超管姓名",
           "example": "李四",
           "member": "string",
           "name": "OldAdminName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原超管手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原超管手机号",
           "example": "15100000000",
           "member": "string",
           "name": "OldAdminMobile",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13615,124 +13696,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限名称",
           "example": "订单管理",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权限key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限key",
           "example": "BillOrderManagement",
           "member": "string",
           "name": "Key",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权限类型 1前端，2后端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限类型 1前端，2后端",
           "example": "2",
           "member": "int64",
           "name": "Type",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否隐藏",
           "example": "1",
           "member": "int64",
           "name": "Hide",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据权限标签 1:表示根节点，2:表示叶子结点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据权限标签 1:表示根节点，2:表示叶子结点",
           "example": "0",
           "member": "int64",
           "name": "DataLabel",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权",
           "example": "0",
           "member": "int64",
           "name": "DataType",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己",
           "example": "0",
           "member": "int64",
           "name": "DataRange",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联权限, 表示这个功能权限要受哪个数据权限管控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联权限, 表示这个功能权限要受哪个数据权限管控",
           "example": "FlowsManagement",
           "member": "string",
           "name": "DataTo",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "父级权限key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "父级权限key",
           "example": "BillInvoiceManagement",
           "member": "string",
           "name": "ParentKey",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否选中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否选中",
           "example": "false",
           "member": "bool",
           "name": "IsChecked",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子权限集合",
           "example": "无",
           "member": "Permission",
           "name": "Children",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13742,47 +13823,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限组名称",
           "example": "费用中心",
           "member": "string",
           "name": "GroupName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权限组key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限组key",
           "example": "bill",
           "member": "string",
           "name": "GroupKey",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否隐藏分组，0否1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否隐藏分组，0否1是",
           "example": "false",
           "member": "int64",
           "name": "Hide",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "权限集合",
           "example": "无",
           "member": "Permission",
           "name": "Permissions",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13974,43 +14055,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方经办人在合同流程中的参与方ID，与控件绑定，是控件的归属方",
           "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参与方填写状态\n<ul>\n<li>**空值** : 此参与方没有填写控件</li>\n<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>\n<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与方填写状态\n<ul>\n<li>**空值** : 此参与方没有填写控件</li>\n<li>**0**:  未填写, 表示此参与方还没有填写合同的填写控件</li>\n<li>**1**:  已填写, 表示此参与方已经填写所有的填写控件</li></ul>\n",
           "example": "1",
           "member": "string",
           "name": "RecipientFillStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为发起方\n<ul><li>true-发起方</li>\n<li>false-参与方</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为发起方\n<ul><li>true-发起方</li>\n<li>false-参与方</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "IsPromoter",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "改参与方填写控件信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "改参与方填写控件信息列表",
           "example": "无",
           "member": "FilledComponent",
           "name": "Components",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14020,14 +14101,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "法人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "法人姓名",
           "example": "张三",
           "member": "string",
           "name": "LegalName",
           "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
@@ -14042,14 +14123,14 @@
         },
         {
           "disabled": false,
-          "document": "社会统一信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "社会统一信用代码",
           "example": "91110108772551611J",
           "member": "string",
           "name": "UnifiedSocialCreditCode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14417,36 +14498,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "印章ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章ID",
           "example": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
           "member": "string",
           "name": "SealId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "印章类型。LEGAL_PERSON_SEAL: 法定代表人章；\nORGANIZATIONSEAL：企业印章；\nOFFICIAL：企业公章；\nCONTRACT：合同专用章\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章类型。LEGAL_PERSON_SEAL: 法定代表人章；\nORGANIZATIONSEAL：企业印章；\nOFFICIAL：企业公章；\nCONTRACT：合同专用章",
           "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "印章名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "印章名称",
           "example": "张三示例企业公章",
           "member": "string",
           "name": "SealName",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14571,47 +14652,47 @@
         },
         {
           "disabled": false,
-          "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户邮箱。",
           "example": "testtest@tencent.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户在第三方平台ID。\n注：`如需在此接口提醒员工实名，该参数不传。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户在第三方平台ID。\n注：`如需在此接口提醒员工实名，该参数不传。`",
           "example": "open_user1",
           "member": "string",
           "name": "OpenId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工角色信息。\n注：`创建和更新场景无需填写。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工角色信息。\n注：`创建和更新场景无需填写。`",
           "example": "无",
           "member": "StaffRole",
           "name": "Roles",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工部门信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工部门信息。",
           "example": "无",
           "member": "Department",
           "name": "Department",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -14637,25 +14718,25 @@
         },
         {
           "disabled": false,
-          "document": "员工实名时间戳，单位秒。\n注：`创建和更新场景无需填写。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工实名时间戳，单位秒。\n注：`创建和更新场景无需填写。`",
           "example": "1691563315",
           "member": "int64",
           "name": "VerifiedOn",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "员工是否离职：\n<ul><li>**0**：未离职</li><li>**1**：离职</li></ul>\n注：`创建和更新场景无需填写。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工是否离职：\n<ul><li>**0**：未离职</li><li>**1**：离职</li></ul>\n注：`创建和更新场景无需填写。`",
           "example": "0",
           "member": "int64",
           "name": "QuiteJob",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -14681,14 +14762,14 @@
         },
         {
           "disabled": false,
-          "document": "企业微信用户账号ID。\n注：`仅企微类型的企业创建员工接口支持该字段。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业微信用户账号ID。\n注：`仅企微类型的企业创建员工接口支持该字段。`",
           "example": "wework_open1",
           "member": "string",
           "name": "WeworkOpenId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14698,25 +14779,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色ID。",
           "example": "4dff1******************10b",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "角色名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "角色名称。",
           "example": "业务员",
           "member": "string",
           "name": "RoleName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14881,13 +14962,13 @@
         },
         {
           "disabled": false,
-          "document": "提示，当创建已存在未实名用户时，该字段有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提示，当创建已存在未实名用户时，该字段有值",
           "example": "张三已经注册了",
           "member": "string",
           "name": "Note",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15197,69 +15278,69 @@
         },
         {
           "disabled": false,
-          "document": "模板的 H5 预览链接，有效期为 5 分钟。\n您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。\n\n注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的 H5 预览链接，有效期为 5 分钟。\n您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。\n\n注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。",
           "example": "https://embed.beta.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDSxNUUckptbbq64UEly7FaCkhsBlSLj&codeType=QUICK&businessType=TEMPLATE&businessId=yDSLVUUckpo3pub6UE5dPdv8pkDsrbEn&channel=PROXYCHANNEL",
           "member": "string",
           "name": "PreviewUrl",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户自定义合同类型。\n\n返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)\n\n自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户自定义合同类型。\n\n返回配置模板的时候选择的合同类型。[点击查看配置的位置](https://qcloudimg.tencent-cloud.cn/raw/4a766f0540253bf2a05d50c58bd14990.png)\n\n自定义合同类型配置的地方如链接图所示。[点击查看自定义合同类型管理的位置](https://qcloudimg.tencent-cloud.cn/raw/36582cea03ae6a2559894844942b5d5c.png)\n",
           "example": "无",
           "member": "UserFlowType",
           "name": "UserFlowType",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板版本的编号，旨在标识其独特的版本信息，通常呈现为一串字符串，由日期和递增的数字组成",
           "example": "20240205005",
           "member": "string",
           "name": "TemplateVersion",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模板是否已发布可以分为以下两种状态：\n\n<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。\n<b>false</b>：未发布状态，表示该模板还未发布，无法使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板是否已发布可以分为以下两种状态：\n\n<b>true</b>：已发布状态，表示该模板已经发布并可以正常使用。\n<b>false</b>：未发布状态，表示该模板还未发布，无法使用。",
           "example": "true",
           "member": "bool",
           "name": "Published",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<b>集体账号场景下</b>： 集团账号分享给子企业的模板的来源模板ID。",
           "example": "yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
           "member": "string",
           "name": "ShareTemplateId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "此模板配置的预填印章列表（包括自动签署指定的印章）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此模板配置的预填印章列表（包括自动签署指定的印章）",
           "example": "无",
           "member": "SealInfo",
           "name": "TemplateSeals",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": true,
@@ -15570,36 +15651,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同类型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同类型ID",
           "example": "yDCNsUUg9tk6n6UtJrNd1S1ueFygJh9D",
           "member": "string",
           "name": "UserFlowTypeId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同类型名称",
           "example": "分销合同",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同类型说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同类型说明",
           "example": "由主承销人、国际协调人和全体承销商签署的旨在明确承销团成员间权利义务关系的协议",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -7820,7 +7820,7 @@
         },
         {
           "disabled": false,
-          "document": "指标列表，取值有：\n<li>acc_flux: 内容加速流量，单位为 Byte；</li>\n<li>smt_flux: 智能加速流量，单位为 Byte；</li>\n<li>l4_flux: 四层加速流量，单位为 Byte；</li>\n<li>sec_flux: 独立防护流量，单位为 Byte；</li>\n<li>zxctg_flux: 中国大陆网络优化流量，单位为 Byte；</li>\n<li>acc_bandwidth: 内容加速带宽，单位为 bps；</li>\n<li>smt_bandwidth: 智能加速带宽，单位为 bps；</li>\n<li>l4_bandwidth: 四层加速带宽，单位为 bps；</li>\n<li>sec_bandwidth: 独立防护带宽，单位为 bps；</li>\n<li>zxctg_bandwidth: 中国大陆网络优化带宽，单位为 bps；</li>\n<li>sec_request_clean: HTTP/HTTPS 请求，单位为次；</li>\n<li>smt_request_clean: 智能加速请求，单位为次；</li>\n<li>quic_request: QUIC 请求，单位为次；</li>\n<li>bot_request_clean: Bot 请求，单位为次；</li>\n<li>cls_count: 实时日志推送条数，单位为条；</li>\n<li>ddos_bandwidth: 弹性 DDoS 防护带宽，单位为 bps。</li>",
+          "document": "指标列表，取值有：\n<li>acc_flux: 内容加速流量，单位为 Byte；</li>\n<li>smt_flux: 智能加速流量，单位为 Byte；</li>\n<li>l4_flux: 四层加速流量，单位为 Byte；</li>\n<li>sec_flux: 独立防护流量，单位为 Byte；</li>\n<li>zxctg_flux: 中国大陆网络优化流量，单位为 Byte；</li>\n<li>acc_bandwidth: 内容加速带宽，单位为 bps；</li>\n<li>smt_bandwidth: 智能加速带宽，单位为 bps；</li>\n<li>l4_bandwidth: 四层加速带宽，单位为 bps；</li>\n<li>sec_bandwidth: 独立防护带宽，单位为 bps；</li>\n<li>zxctg_bandwidth: 中国大陆网络优化带宽，单位为 bps；</li>\n<li>sec_request_clean: HTTP/HTTPS 请求，单位为次；</li>\n<li>smt_request_clean: 智能加速请求，单位为次；</li>\n<li>quic_request: QUIC 请求，单位为次；</li>\n<li>bot_request_clean: Bot 请求，单位为次；</li>\n<li>cls_count: 实时日志推送条数，单位为条；</li>\n<li>ddos_bandwidth: 弹性 DDoS 防护带宽，单位为 bps；</li>\n<li>total_transcode：所有规格音频，视频即时转码，转封装时长，单位为秒；</li>\n<li>remux：转封装时长，单位为秒；</li>\n<li>transcode_audio：音频转码时长，单位为秒；</li>\n<li>transcode_H264_SD：H.264 编码方式的标清视频（短边 <= 480 px）时长，单位为秒；</li>\n<li>transcode_H264_HD：H.264 编码方式的高清视频（短边 <= 720 px）时长，单位为秒；</li>\n<li>transcode_H264_FHD：H.264 编码方式的全高清视频（短边 <= 1080 px）时长，单位为秒；</li>\n<li>transcode_H264_2K：H.264 编码方式的 2K 视频（短边 <= 1440 px）时长，单位为秒。</li>",
           "example": "acc_flux",
           "member": "string",
           "name": "MetricName",
@@ -11020,7 +11020,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 appid 下有权限的所有站点信息。详细的过滤条件如下：\n<li>zone-name：按照站点名称进行过滤；</li><li>zone-id：按照站点 ID进行过滤。站点 ID 形如：zone-2noz78a8ev6k；</li><li>status：按照站点状态进行过滤；</li><li>tag-key：按照标签键进行过滤；</li><li>tag-value： 按照标签值进行过滤。</li>模糊查询时仅支持过滤字段名为 zone-name。",
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 appid 下有权限的所有站点信息。详细的过滤条件如下：\n<li>zone-name：按照站点名称进行过滤；</li><li>zone-id：按照站点 ID进行过滤。站点 ID 形如：zone-2noz78a8ev6k；</li><li>status：按照站点状态进行过滤；</li><li>tag-key：按照标签键进行过滤；</li><li>tag-value： 按照标签值进行过滤。</li><li>alias-zone-name： 按照同名站点标识进行过滤。</li>模糊查询时支持过滤字段名为 zone-name 或 alias-zone-name。",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",

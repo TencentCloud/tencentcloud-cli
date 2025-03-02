@@ -2080,20 +2080,20 @@
         {
           "disabled": false,
           "document": "国家名称",
-          "example": "",
+          "example": "阿联酋",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "带宽明细数据信息。",
-          "example": "",
+          "example": "无",
           "member": "BillDataInfo",
           "name": "BandInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -3540,60 +3540,60 @@
         {
           "disabled": false,
           "document": "客户端 IP，点分型。",
-          "example": "",
+          "example": "119.44.7.168",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端所在省份。",
-          "example": "",
+          "example": "湖南省",
           "member": "string",
           "name": "Province",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总流量。",
-          "example": "",
+          "example": "13321.099",
           "member": "float",
           "name": "TotalFlux",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总请求数。",
-          "example": "",
+          "example": "740",
           "member": "uint64",
           "name": "TotalRequest",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总失败请求数。",
-          "example": "",
+          "example": "4",
           "member": "uint64",
           "name": "TotalFailedRequest",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "客户端所在国家。",
-          "example": "",
+          "example": "中国",
           "member": "string",
           "name": "CountryArea",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3901,20 +3901,20 @@
         {
           "disabled": false,
           "document": "时间点。",
-          "example": "",
+          "example": "2019-03-01T01:00:00+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "路数。",
-          "example": "",
+          "example": "100",
           "member": "uint64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -6491,70 +6491,70 @@
         {
           "disabled": false,
           "document": "推流域名。",
-          "example": "",
+          "example": "5000.pushdomain.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流路径，与推流和播放地址中的 \n AppName 保持一致，默认为 live。",
-          "example": "",
+          "example": "live",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "延播时间，单位：秒。",
-          "example": "",
+          "example": "60",
           "member": "uint64",
           "name": "DelayInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，UTC 时间。\n注意：UTC时间和北京时间相差8小时。\n例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。",
-          "example": "",
+          "example": "2019-06-14T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "过期时间，UTC 时间。\n注意：UTC时间和北京时间相差8小时。\n例如：2019-06-18T12:00:00Z（为北京时间 2019 年 6 月 18 日 20 点 0 分 0 秒）。",
-          "example": "",
+          "example": "2019-06-15T00:00:00Z",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前状态:\n-1：已过期。\n1： 生效中。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -13728,50 +13728,50 @@
         {
           "disabled": false,
           "document": "国内还是国外:\nMainland: 表示国内数据。\nOversea: 表示国外数据。",
-          "example": "",
+          "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "带宽，单位: Mbps。",
-          "example": "",
+          "example": "309.998",
           "member": "float",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量，单位: MB。",
-          "example": "",
+          "example": "18599.880",
           "member": "float",
           "name": "Flux",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人数。",
-          "example": "",
+          "example": "374",
           "member": "uint64",
           "name": "Online",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "请求数。",
-          "example": "",
+          "example": "175",
           "member": "uint64",
           "name": "Request",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -13910,20 +13910,20 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "",
+          "example": "123.tencent.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "明细信息。",
-          "example": "",
+          "example": "无",
           "member": "DomainDetailInfo",
           "name": "DetailInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -14215,30 +14215,30 @@
         {
           "disabled": false,
           "document": "省份。",
-          "example": "",
+          "example": "广东省",
           "member": "string",
           "name": "ProvinceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商。",
-          "example": "",
+          "example": "联通",
           "member": "string",
           "name": "IspName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分钟维度的明细数据。",
-          "example": "",
+          "example": "无",
           "member": "CdnPlayStatData",
           "name": "DetailInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -14268,20 +14268,20 @@
         {
           "disabled": false,
           "document": "HTTP协议返回码。\n例：\"2xx\", \"3xx\", \"4xx\", \"5xx\"。",
-          "example": "",
+          "example": "3xx",
           "member": "string",
           "name": "HttpCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "统计信息，对于无数据的时间点，会补0。",
-          "example": "",
+          "example": "无",
           "member": "HttpCodeValue",
           "name": "ValueList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -14356,20 +14356,20 @@
         {
           "disabled": false,
           "document": "播放HTTP状态码。",
-          "example": "",
+          "example": "200",
           "member": "string",
           "name": "HttpStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "个数。",
-          "example": "",
+          "example": "50",
           "member": "uint64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17081,70 +17081,70 @@
         {
           "disabled": false,
           "document": "播放域名。",
-          "example": "",
+          "example": "domain.test1.com",
           "member": "string",
           "name": "PlayDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流id。",
-          "example": "",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "播放码率，0表示原始码率。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Rate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "播放协议，可选值包括 Unknown，Flv，Hls，Rtmp，Huyap2p。",
-          "example": "",
+          "example": "Hls",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "带宽，单位是Mbps。",
-          "example": "",
+          "example": "1.82",
           "member": "float",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "在线人数，1分钟采样一个点，统计采样点的tcp链接数目。",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "Online",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "请求数。",
-          "example": "",
+          "example": "19",
           "member": "uint64",
           "name": "Request",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17253,50 +17253,50 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "",
+          "example": "5000.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否启用:\n0: 关闭。\n1: 启用。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "鉴权 Key。",
-          "example": "",
+          "example": "AKID0QJ82oYdLJ",
           "member": "string",
           "name": "AuthKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有效时间，单位：秒。",
-          "example": "",
+          "example": "300",
           "member": "uint64",
           "name": "AuthDelta",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "鉴权 BackKey。",
-          "example": "",
+          "example": "lbPUl5VIKKFB1KazNB",
           "member": "string",
           "name": "AuthBackKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -17309,20 +17309,20 @@
         {
           "disabled": false,
           "document": "HTTP code，可选值包括:\n400，403，404，500，502，503，504。",
-          "example": "",
+          "example": "200",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总次数。",
-          "example": "",
+          "example": "11",
           "member": "uint64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17335,20 +17335,20 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总流量，单位: MB。",
-          "example": "",
+          "example": "500.0",
           "member": "float",
           "name": "TotalFlux",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -17361,22 +17361,22 @@
         {
           "disabled": false,
           "document": "数据时间点。",
-          "example": "",
+          "example": "2019-02-01T00:00:00+08:00",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "带宽/流量/请求数/并发连接数/下载速度的值，若没数据返回时该值为0。",
+          "example": "500.0",
           "member": "float",
           "name": "Value",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17387,40 +17387,40 @@
         {
           "disabled": false,
           "document": "域名或流 ID。",
-          "example": "",
+          "example": "CSZFMPP360",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "平均下载速度，\n单位: MB/s。\n计算公式: 每分钟的下载速度求平均值。",
-          "example": "",
+          "example": "4.773",
           "member": "float",
           "name": "AvgFluxPerSecond",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总流量，单位: MB。",
-          "example": "",
+          "example": "69023.772",
           "member": "float",
           "name": "TotalFlux",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总请求数。",
-          "example": "",
+          "example": "36590",
           "member": "uint64",
           "name": "TotalRequest",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17509,40 +17509,40 @@
         {
           "disabled": false,
           "document": "省份/运营商/国家或地区。",
-          "example": "",
+          "example": "山东省",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总流量，单位: MB。",
-          "example": "",
+          "example": "50.0",
           "member": "float",
           "name": "TotalFlux",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总请求数。",
-          "example": "",
+          "example": "50",
           "member": "uint64",
           "name": "TotalRequest",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "平均下载流量，单位: MB/s。",
-          "example": "",
+          "example": "10.1",
           "member": "float",
           "name": "AvgFluxPerSecond",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -17555,10 +17555,10 @@
         {
           "disabled": false,
           "document": "推流时间。\nUTC 格式，例如：2018-06-29T19:00:00Z。",
-          "example": "",
+          "example": "2017-10-24T12:00:00Z",
           "member": "string",
           "name": "PublishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -17637,80 +17637,80 @@
         {
           "disabled": false,
           "document": "拉流配置 ID。",
-          "example": "",
+          "example": "5674",
           "member": "string",
           "name": "ConfigId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "源 URL。",
-          "example": "",
+          "example": "rtmp://5000.liveplay.myqcloud.com/txlive",
           "member": "string",
           "name": "FromUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "目的 URL。",
-          "example": "",
+          "example": "rtmp://5000.livepush2.myqcloud.com/live/3954_462724865?&txSecret=xx",
           "member": "string",
           "name": "ToUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "区域名。",
-          "example": "",
+          "example": "深圳",
           "member": "string",
           "name": "AreaName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "运营商名。",
-          "example": "",
+          "example": "电信",
           "member": "string",
           "name": "IspName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开始时间。\nUTC格式时间，例如: 2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "",
+          "example": "2018-07-06T14:40:23Z",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结束时间。\n\nUTC格式时间，例如：2019-01-08T10:00:00Z。\n注意：北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "",
+          "example": "2018-07-06T18:05:23Z",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "状态:\n0: 无效。\n1: 初始状态。\n2: 正在运行。\n3: 拉起失败。\n4: 暂停。",
-          "example": "",
+          "example": "2",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -20700,20 +20700,20 @@
         {
           "disabled": false,
           "document": "UTC 时间，时间格式：yyyy-mm-ddTHH:MM:SSZ。",
-          "example": "",
+          "example": "2019-11-07T16:00:00Z",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数值。",
-          "example": "",
+          "example": "41876427",
           "member": "uint64",
           "name": "Num",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

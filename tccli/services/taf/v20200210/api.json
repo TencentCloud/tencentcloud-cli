@@ -30,7 +30,7 @@
         {
           "disabled": false,
           "document": "用户公网ip（仅支持IPv4）",
-          "example": "203.205.141.118",
+          "example": "203.***.***.118",
           "member": "string",
           "name": "UserIp",
           "required": true,
@@ -39,7 +39,7 @@
         {
           "disabled": false,
           "document": "渠道号",
-          "example": "1234",
+          "example": "1",
           "member": "int64",
           "name": "Channel",
           "required": true,
@@ -54,7 +54,7 @@
         {
           "disabled": false,
           "document": "返回码（0，成功，其他失败）",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Code",
           "output_required": true,
@@ -63,18 +63,18 @@
         },
         {
           "disabled": false,
-          "document": "返回码对应的信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "返回码对应的信息",
+          "example": "OK",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{\"Level\":0,\"UserIp\":\"150.***.***.175\"}",
           "member": "ManagePortraitRiskValueOutput",
           "name": "Value",
           "output_required": false,
@@ -127,7 +127,7 @@
         {
           "disabled": false,
           "document": "对应的IP",
-          "example": "无",
+          "example": "150.***.***.175",
           "member": "string",
           "name": "UserIp",
           "output_required": true,
@@ -137,7 +137,7 @@
         {
           "disabled": false,
           "document": "返回风险等级, 0 - 4，0代表无风险，数值越大，风险越高",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Level",
           "output_required": true,
