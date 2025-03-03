@@ -84,11 +84,11 @@ Output:
                     ],
                     "ExtConfig": [
                         {
-                            "Name": "x",
+                            "Name": "x1",
                             "Value": "300"
                         },
                         {
-                            "Name": "y",
+                            "Name": "y2",
                             "Value": "260"
                         },
                         {

@@ -13575,33 +13575,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "断流信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "断流信息",
           "example": "无",
           "member": "string",
           "name": "StreamBrokenResults",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "低帧率信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "低帧率信息",
           "example": "无",
           "member": "string",
           "name": "LowFrameRateResults",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流格式诊断信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流格式诊断信息",
           "example": "无",
           "member": "string",
           "name": "StreamFormatResults",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14665,223 +14665,223 @@
       "members": [
         {
           "disabled": false,
-          "document": "监播任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务ID。",
           "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
           "member": "string",
           "name": "MonitorId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务名称。128字节以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务名称。128字节以内。",
           "example": "ExampleMonitorName",
           "member": "string",
           "name": "MonitorName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务输出信息。",
           "example": " output_info",
           "member": "LiveStreamMonitorOutputInfo",
           "name": "OutputInfo",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "待监播的输入流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待监播的输入流信息。",
           "example": " input_list",
           "member": "LiveStreamMonitorInputInfo",
           "name": "InputList",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务状态。\n0： 代表空闲\n1： 代表监播中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务状态。\n0： 代表空闲\n1： 代表监播中。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上一次的启动时间，unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次的启动时间，unix时间戳。",
           "example": "1640763135",
           "member": "uint64",
           "name": "StartTime",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上一次的停止时间，unix时间戳。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上一次的停止时间，unix时间戳。",
           "example": "1640763135",
           "member": "uint64",
           "name": "StopTime",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务创建时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务创建时间，unix时间戳",
           "example": "1640763135",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务更新时间，unix时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务更新时间，unix时间戳",
           "example": "1640763135",
           "member": "uint64",
           "name": "UpdateTime",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播事件通知策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播事件通知策略。",
           "example": "无",
           "member": "LiveStreamMonitorNotifyPolicy",
           "name": "NotifyPolicy",
           "output_required": true,
           "required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "输出音频的输入Index列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "输出音频的输入Index列表。",
           "example": "[1]",
           "member": "uint64",
           "name": "AudibleInputIndexList",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开启智能语音识别的输入Index列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启智能语音识别的输入Index列表",
           "example": "[1]",
           "member": "uint64",
           "name": "AiAsrInputIndexList",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启断流检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启断流检测",
           "example": "0",
           "member": "uint64",
           "name": "CheckStreamBroken",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启低帧率检测\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启低帧率检测",
           "example": "0",
           "member": "uint64",
           "name": "CheckStreamLowFrameRate",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "智能语音识别语种：\n0 关闭 1 中文 2 英文 3日文 4 韩文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能语音识别语种：\n0 关闭 1 中文 2 英文 3日文 4 韩文",
           "example": "0",
           "member": "uint64",
           "name": "AsrLanguage",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "智能文字识别语种：\n0 关闭 1 中、英文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能文字识别语种：\n0 关闭 1 中、英文",
           "example": "0",
           "member": "uint64",
           "name": "OcrLanguage",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开启智能文字识别的输入Index列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启智能文字识别的输入Index列表",
           "example": "[1]",
           "member": "uint64",
           "name": "AiOcrInputIndexList",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否存储监播事件到监播报告，以及是否允许查询监播报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否存储监播事件到监播报告，以及是否允许查询监播报告",
           "example": "0",
           "member": "uint64",
           "name": "AllowMonitorReport",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启格式诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启格式诊断",
           "example": "0",
           "member": "uint64",
           "name": "AiFormatDiagnose",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否开启内容质检。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启内容质检。",
           "example": "0",
           "member": "uint64",
           "name": "AiQualityControl",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -14913,58 +14913,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。",
           "example": "ExampleStreamName",
           "member": "string",
           "name": "InputStreamName",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。",
           "example": "ExampleDomain",
           "member": "string",
           "name": "InputDomain",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。",
           "example": "Live",
           "member": "string",
           "name": "InputApp",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "待监播的输入流推流url。一般场景下，无需该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "待监播的输入流推流url。一般场景下，无需该参数。",
           "example": "rtmp://ExampleDomain/Live/ExampleStreamName",
           "member": "string",
           "name": "InputUrl",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述。256字节以内。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述。256字节以内。",
           "example": "Input1",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -15007,23 +15007,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知策略类型：范围[0,1]\n0:代表不使用任何通知策略\n1:代表使用全局回调策略，所有事件通知到CallbackUrl。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通知策略类型：范围[0,1]\n0:代表不使用任何通知策略\n1:代表使用全局回调策略，所有事件通知到CallbackUrl。",
           "example": "0",
           "member": "uint64",
           "name": "NotifyPolicyType",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回调URL：长度[0,512]\n只支持http和https类型的url。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回调URL：长度[0,512]\n只支持http和https类型的url。",
           "example": "http://notify.example.com/notify",
           "member": "string",
           "name": "CallbackUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15033,53 +15035,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。",
           "example": "1920",
           "member": "uint64",
           "name": "OutputStreamWidth",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。",
           "example": "1080",
           "member": "uint64",
           "name": "OutputStreamHeight",
+          "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务输出流名称。\n不填时，系统会自动生成。\n256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务输出流名称。\n不填时，系统会自动生成。\n256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。",
           "example": "OutputExampleName",
           "member": "string",
           "name": "OutputStreamName",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。",
           "example": "OutputExampleDomain",
           "member": "string",
           "name": "OutputDomain",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。",
           "example": "Live",
           "member": "string",
           "name": "OutputApp",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15135,33 +15142,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能语音识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能语音识别结果。",
           "example": "无",
           "member": "string",
           "name": "AiAsrResults",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "智能文字识别结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "智能文字识别结果。",
           "example": "无",
           "member": "string",
           "name": "AiOcrResults",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内容质检结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内容质检结果。",
           "example": "无",
           "member": "string",
           "name": "StreamQuaCtrlResults",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -47,9 +47,9 @@ tccli wedata ModifyIntegrationTask --cli-unfold-argument  \
     --TaskInfo.Nodes.0.Config.8.Value 0 \
     --TaskInfo.Nodes.0.Config.9.Name encoding \
     --TaskInfo.Nodes.0.Config.9.Value utf-8 \
-    --TaskInfo.Nodes.0.ExtConfig.0.Name x \
+    --TaskInfo.Nodes.0.ExtConfig.0.Name x1 \
     --TaskInfo.Nodes.0.ExtConfig.0.Value 300 \
-    --TaskInfo.Nodes.0.ExtConfig.1.Name y \
+    --TaskInfo.Nodes.0.ExtConfig.1.Name y1 \
     --TaskInfo.Nodes.0.ExtConfig.1.Value 260 \
     --TaskInfo.Nodes.0.ExtConfig.2.Name iconPosition \
     --TaskInfo.Nodes.0.ExtConfig.2.Value left \

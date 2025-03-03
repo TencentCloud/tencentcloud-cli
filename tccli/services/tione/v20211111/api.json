@@ -134,11 +134,11 @@
       "status": "online"
     },
     "DescribeInferTemplates": {
-      "document": "查询推理镜像模板",
+      "document": "已废弃，收敛到统一接口\n\n查询推理镜像模板",
       "input": "DescribeInferTemplatesRequest",
       "name": "查询推理镜像模板",
       "output": "DescribeInferTemplatesResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeModelAccelerateTask": {
       "document": "查询模型优化任务详情",

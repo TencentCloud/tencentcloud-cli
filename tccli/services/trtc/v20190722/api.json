@@ -7756,6 +7756,15 @@
           "name": "Volume",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPause",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -3613,7 +3613,7 @@
         {
           "disabled": false,
           "document": "项目ID",
-          "example": "123456",
+          "example": "1470547050521227264",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -12976,7 +12976,7 @@
         {
           "disabled": false,
           "document": "数据源ID列表",
-          "example": "1234",
+          "example": "8902",
           "member": "string",
           "name": "DatasourceIdList",
           "required": false,
@@ -17743,7 +17743,7 @@
         {
           "disabled": false,
           "document": "函数信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[             {                 \"Category\": \"CUSTOM\",                  \"Status\": \"EFFECTIVE\",                  \"Kind\": \"ANALYSIS\",                  \"DisplayName\": \"Hive SQL 函数\",                  \"Name\": \"hive_01\",                  \"OwnerUserIds\": [                     0                 ],                  \"ReturnDesc\": \"test\",                  \"FuncId\": \"d65df5af-28b4-4171-9a24-ce96fc4e83fa\",                  \"ParamDesc\": \"test\",                  \"Example\": \"\",                  \"ClassName\": \"demoClass\",                  \"ResourceList\": [                     {                         \"Comment\": \"test\",                          \"UserName\": \"test\",                          \"Timestamp\": \"20240101\",                          \"UserId\": \"4563234\",                          \"Content\": \"test\",                          \"Tag\": \"tag\",                          \"Type\": \"HIVE\"                     }                 ],                  \"OperatorUserIds\": [                     0                 ],                  \"Usage\": \"UDFRepeat(var,2)\",                  \"ClusterIdentifier\": \"fpgreitj\",                  \"LayerPath\": \"/HIVE/CUSTOM\",                  \"Type\": \"HIVE\",                  \"SubmitErrorMsg\": \"test\",                 \"SchemaName\": \"cdw\",                 \"CommandFormat\": \"cdw\",                 \"DbName\": \"test\",                 \"ParentLayerPath\": \"/HIVE\",                  \"Description\": \"test\"             }         ]",
+          "example": "无",
           "member": "OrganizationalFunction",
           "name": "Content",
           "output_required": true,
@@ -18025,7 +18025,7 @@
         {
           "disabled": false,
           "document": "【过滤参数】自定义条件查询",
-          "example": "[]",
+          "example": "1",
           "member": "FilterOptional",
           "name": "Filters",
           "required": false,
@@ -18034,7 +18034,7 @@
         {
           "disabled": false,
           "document": "【排序参数】排序字段",
-          "example": "[]",
+          "example": "1",
           "member": "OrderFieldOptional",
           "name": "OrderFields",
           "required": false,
@@ -18061,6 +18061,7 @@
           "example": "无",
           "member": "ProjectUsersPage",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -29036,6 +29037,7 @@
           "example": "无",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34639,7 +34641,7 @@
         {
           "disabled": false,
           "document": "项目Id",
-          "example": "\"1492511691706699776\"",
+          "example": "1492511691706699776",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -34648,7 +34650,7 @@
         {
           "disabled": false,
           "document": "事件名称，支持英文、数字和下划线，最长20个字符, 不能以数字下划线开头。",
-          "example": "\"test_event\"",
+          "example": "test_event",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -34657,7 +34659,7 @@
         {
           "disabled": false,
           "document": "事件分割类型，周期类型: DAY，HOUR，MIN，SECOND",
-          "example": "\"DAY\"",
+          "example": "DAY",
           "member": "string",
           "name": "EventSubType",
           "required": true,
@@ -34666,7 +34668,7 @@
         {
           "disabled": false,
           "document": "广播：BROADCAST,单播：SINGLE",
-          "example": "\"SINGLE\"",
+          "example": "SINGLE",
           "member": "string",
           "name": "EventBroadcastType",
           "required": true,
@@ -34675,7 +34677,7 @@
         {
           "disabled": false,
           "document": "周期类型为天和小时为HOURS ，周期类型为分钟 ：MINUTES,周期类型为秒：SECONDS",
-          "example": "\"DAY\"",
+          "example": "DAYS",
           "member": "string",
           "name": "TimeUnit",
           "required": true,
@@ -34684,7 +34686,7 @@
         {
           "disabled": false,
           "document": "事件所属人",
-          "example": "\"tom\"",
+          "example": "tom",
           "member": "string",
           "name": "Owner",
           "required": true,
@@ -34692,8 +34694,8 @@
         },
         {
           "disabled": false,
-          "document": "事件类型，默认值：TIME_SERIES",
-          "example": "\"TIME_SERIES\"",
+          "document": "必填，事件类型，默认值：TIME_SERIES",
+          "example": "TIME_SERIES",
           "member": "string",
           "name": "EventType",
           "required": false,
@@ -34701,8 +34703,8 @@
         },
         {
           "disabled": false,
-          "document": "对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss",
-          "example": "\"yyyyMMdd\"",
+          "document": "必填，对应day： yyyyMMdd，对应HOUR：yyyyMMddHH，对应MIN：yyyyMMddHHmm，对应SECOND：yyyyMMddHHmmss，默认值：yyyyMMdd",
+          "example": "yyyyMMdd",
           "member": "string",
           "name": "DimensionFormat",
           "required": false,
@@ -34720,7 +34722,7 @@
         {
           "disabled": false,
           "document": "事件描述",
-          "example": "\"天事件\"",
+          "example": "天事件",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -34995,6 +34997,15 @@
           "example": "无",
           "member": "string",
           "name": "CalendarId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时区",
+          "example": "无",
+          "member": "string",
+          "name": "ScheduleTimeZone",
           "required": false,
           "type": "string"
         }
@@ -46507,7 +46518,7 @@
         {
           "disabled": false,
           "document": "脚本上传信息",
-          "example": "{ \t\"FileExtensionType\": \"xml\", \t\"FilePath\": \"/datastudio/resource/a/settings-b-0714.xml\", \t\"ProjectId\": \"1460947878944567296\", \t\"Version\": \"1\", \t\"Operation\": \"1485413914375667712\", \t\"ExtraInfo\": \"用于a任务\", \t\"BucketName\": \"1219-agent-1315051789\", \t\"Region\": \"ap-beijing\"  }",
+          "example": "无",
           "member": "ScriptRequestInfo",
           "name": "ScriptRequestInfo",
           "required": true,
@@ -46540,7 +46551,7 @@
         {
           "disabled": false,
           "document": "脚本信息响应\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{       \"Bucket\": \"wedata-agent-sh-1257305432\",       \"CreateTime\": \"2024-04-10 10:38:15\",       \"ExtraInfo\": \"{\\\"taskId\\\":\\\"ap-shanghai|wedata-agent-sh-1257305432|/datastudio/personal/shell1234.sh\\\"}\",       \"FileExtensionType\": \"sh\",       \"FileName\": \"shell1234.sh\",       \"LocalPath\": \"/datastudio/personal/shell1234.sh\",       \"LocalTempPath\": null,       \"Md5Value\": null,       \"Owner\": \"100028649733\",       \"OwnerName\": \"demo\",       \"PathDepth\": null,       \"ProjectId\": \"100028649733\",       \"Region\": \"ap-shanghai\",       \"RemotePath\": \"/datastudio/personal/100028649733/shell1234.sh\",       \"ResourceId\": \"3342446a-d046-4a97-9fe6-3c5dd9866ba4\",       \"Size\": null,       \"Type\": \"personal\",       \"UpdateTime\": \"2024-04-10 10:38:15\",       \"ZipPath\": null     }",
+          "example": "无",
           "member": "ScriptInfoResponse",
           "name": "ScriptInfo",
           "output_required": true,

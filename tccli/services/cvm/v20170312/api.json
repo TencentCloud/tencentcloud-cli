@@ -1752,6 +1752,15 @@
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "置放群组的亲和度，在置放群组的实例会按该亲和度分布，亲和度的取值范围是：1-10，默认为1",
+          "example": "3",
+          "member": "int64",
+          "name": "Affinity",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
