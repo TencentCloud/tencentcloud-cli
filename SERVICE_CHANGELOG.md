@@ -2,22 +2,21 @@
 
 ## 音频内容安全(ams) 版本：2020-12-29
 
-### 第 11 次发布
+### 第 12 次发布
 
-发布时间：2025-03-03 01:07:34
+发布时间：2025-03-04 01:07:35
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增数据结构：
-
-* [HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo)
-* [Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position)
-
 修改数据结构：
 
-* [TextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#TextResult)
+* [AudioResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#AudioResult)
+
+	* 新增成员：SubTag, SubTagCode
+
+* [AudioResultDetailTextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#AudioResultDetailTextResult)
 
 	* 新增成员：HitInfos
 
@@ -28,74 +27,11 @@
 
 
 
-## 云防火墙(cfw) 版本：2019-09-04
-
-### 第 68 次发布
-
-发布时间：2025-03-03 01:18:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* CreateIdsWhiteRule
-* DeleteIdsWhiteRule
-* DescribeIdsWhiteRule
-
-
-
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
-
-### 第 119 次发布
-
-发布时间：2025-03-03 01:25:51
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48094)
-
-	* 新增出参：LogicBackupConfig
-
-
-
-
-## 弹性 MapReduce(emr) 版本：2019-01-03
-
-### 第 82 次发布
-
-发布时间：2025-03-03 01:33:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeRegionAndZoneSaleInfo](http://document.tencentcloudapi.woa.com/document/product/589/83589)
-
-	* 新增入参：ClusterId
-
-
-修改数据结构：
-
-* [SaleRegionConfInfo](http://document.tencentcloudapi.woa.com/document/product/589/33981#SaleRegionConfInfo)
-
-	* 新增成员：Default
-
-
-
-
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 127 次发布
+### 第 128 次发布
 
-发布时间：2025-03-03 01:35:30
+发布时间：2025-03-04 01:17:32
 
 本次发布包含了以下内容：
 
@@ -103,15 +39,20 @@
 
 新增接口：
 
-* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/85871)
+* [CreateFlowForwards](http://document.tencentcloudapi.woa.com/document/product/1668/85874)
+
+新增数据结构：
+
+* [FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardInfo)
+* [FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardResult)
 
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 180 次发布
+### 第 181 次发布
 
-发布时间：2025-03-03 01:36:53
+发布时间：2025-03-04 01:18:16
 
 本次发布包含了以下内容：
 
@@ -119,7 +60,12 @@
 
 新增接口：
 
-* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85872)
+* [CreateFlowForwards](http://document.tencentcloudapi.woa.com/document/product/1595/85875)
+
+新增数据结构：
+
+* [FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardInfo)
+* [FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardResult)
 
 
 
@@ -127,11 +73,58 @@
 
 
 
-## 微服务引擎(tse) 版本：2020-12-07
+## 图片内容安全(ims) 版本：2020-12-29
 
-### 第 83 次发布
+### 第 7 次发布
 
-发布时间：2025-03-03 02:14:58
+发布时间：2025-03-04 01:19:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [OcrHitInfo](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrHitInfo)
+* [Positions](http://document.tencentcloudapi.woa.com/document/product/1125/53274#Positions)
+
+修改数据结构：
+
+* [OcrTextDetail](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrTextDetail)
+
+	* 新增成员：HitInfos
+
+
+
+
+## 图片内容安全(ims) 版本：2020-07-13
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 79 次发布
+
+发布时间：2025-03-04 01:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/267/20474#DiagnoseResult)
+
+	* <font color="#dd0000">**修改成员**：</font>StreamBrokenResults, LowFrameRateResults, StreamFormatResults
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 88 次发布
+
+发布时间：2025-03-04 01:32:08
 
 本次发布包含了以下内容：
 
@@ -139,42 +132,9 @@
 
 修改接口：
 
-* [CreateCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81079)
+* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
 
-	* 新增入参：CanaryRuleList
-
-	* <font color="#dd0000">**修改入参**：</font>CanaryRule
-
-* [CreateCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81078)
-
-	* 新增入参：RegexPriority
-
-* [DeleteCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81074)
-
-	* 新增入参：PriorityList
-
-	* <font color="#dd0000">**修改入参**：</font>Priority
-
-* [ModifyCloudNativeAPIGatewayCanaryRule](http://document.tencentcloudapi.woa.com/document/product/1364/81063)
-
-	* 新增入参：CanaryRuleList
-
-	* <font color="#dd0000">**修改入参**：</font>Priority, CanaryRule
-
-* [ModifyCloudNativeAPIGatewayRoute](http://document.tencentcloudapi.woa.com/document/product/1364/81062)
-
-	* 新增入参：RegexPriority
-
-
-新增数据结构：
-
-* [CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule)
-
-修改数据结构：
-
-* [KongRoutePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongRoutePreview)
-
-	* 新增成员：RegexPriority
+	* 新增入参：ScheduleTimeZone
 
 
 
@@ -2048,6 +2008,25 @@
 
 ## 音频内容安全(ams) 版本：2020-12-29
 
+### 第 12 次发布
+
+发布时间：2025-03-04 01:07:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#AudioResult)
+
+	* 新增成员：SubTag, SubTagCode
+
+* [AudioResultDetailTextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#AudioResultDetailTextResult)
+
+	* 新增成员：HitInfos
+
+
 ### 第 11 次发布
 
 发布时间：2025-03-03 01:07:34
@@ -2058,8 +2037,8 @@
 
 新增数据结构：
 
-* [[HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo)](http://document.tencentcloudapi.woa.com/document/product/1219/53259#[HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo))
-* [[Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position)](http://document.tencentcloudapi.woa.com/document/product/1219/53259#[Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position))
+* [HitInfo](http://document.tencentcloudapi.woa.com/document/product/1219/53259#HitInfo)
+* [Position](http://document.tencentcloudapi.woa.com/document/product/1219/53259#Position)
 
 修改数据结构：
 
@@ -57908,6 +57887,23 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 128 次发布
+
+发布时间：2025-03-04 01:17:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateFlowForwards](http://document.tencentcloudapi.woa.com/document/product/1668/85874)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardInfo)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardInfo))
+* [[FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardResult)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardResult))
+
 ### 第 127 次发布
 
 发布时间：2025-03-03 01:35:30
@@ -57918,7 +57914,7 @@
 
 新增接口：
 
-* [[CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/85871)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/85871)
 
 ### 第 126 次发布
 
@@ -60565,6 +60561,23 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 181 次发布
+
+发布时间：2025-03-04 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateFlowForwards](http://document.tencentcloudapi.woa.com/document/product/1595/85875)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardInfo))
+* [[FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardResult)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardResult))
+
 ### 第 180 次发布
 
 发布时间：2025-03-03 01:36:53
@@ -60575,7 +60588,7 @@
 
 新增接口：
 
-* [[CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85872)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateEmployeeChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/85872)
 
 ### 第 179 次发布
 
@@ -69678,6 +69691,26 @@
 
 ## 图片内容安全(ims) 版本：2020-12-29
 
+### 第 7 次发布
+
+发布时间：2025-03-04 01:19:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[OcrHitInfo](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrHitInfo)](http://document.tencentcloudapi.woa.com/document/product/1125/53274#[OcrHitInfo](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrHitInfo))
+* [[Positions](http://document.tencentcloudapi.woa.com/document/product/1125/53274#Positions)](http://document.tencentcloudapi.woa.com/document/product/1125/53274#[Positions](http://document.tencentcloudapi.woa.com/document/product/1125/53274#Positions))
+
+修改数据结构：
+
+* [OcrTextDetail](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrTextDetail)
+
+	* 新增成员：HitInfos
+
+
 ### 第 6 次发布
 
 发布时间：2023-05-09 01:22:32
@@ -76544,6 +76577,21 @@
 
 
 ## 云直播CSS(live) 版本：2018-08-01
+
+### 第 79 次发布
+
+发布时间：2025-03-04 01:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/267/20474#DiagnoseResult)
+
+	* <font color="#dd0000">**修改成员**：</font>StreamBrokenResults, LowFrameRateResults, StreamFormatResults
+
 
 ### 第 78 次发布
 
@@ -123435,7 +123483,7 @@
 
 新增数据结构：
 
-* [[CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule))
+* [CanaryPriorityRule](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CanaryPriorityRule)
 
 修改数据结构：
 
@@ -137879,6 +137927,21 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 88 次发布
+
+发布时间：2025-03-04 01:32:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
+
+	* 新增入参：ScheduleTimeZone
+
 
 ### 第 87 次发布
 

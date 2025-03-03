@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata JudgeResourceFile --cli-unfold-argument  \
-    --ProjectId abc \
-    --FilePath abc
+    --ProjectId 1470547050521227264 \
+    --FilePath a/b
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "abc",
-        "RequestId": "abc"
+        "Data": "ab/c",
+        "RequestId": "3b4d1a5a-69bf-41c7-946c-dd609cf89119"
     }
 }
 ```

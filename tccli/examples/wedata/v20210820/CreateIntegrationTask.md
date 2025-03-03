@@ -15,12 +15,12 @@ tccli wedata CreateIntegrationTask --cli-unfold-argument  \
     --TaskInfo.SyncType 0 \
     --TaskInfo.ProjectId 17865298918277529 \
     --TaskInfo.OwnerUin 100006386216 \
-    --TaskInfo.ExecuteContext.0.Name - \
-    --TaskInfo.ExecuteContext.0.Value - \
-    --TaskInfo.ScheduleTaskId 12345678 \
+    --TaskInfo.ExecuteContext.0.Name x1 \
+    --TaskInfo.ExecuteContext.0.Value test123 \
+    --TaskInfo.ScheduleTaskId 2609696090365952 \
     --TaskInfo.TaskType 0 \
     --TaskInfo.AppId 57234323 \
-    --TaskInfo.ExecutorId 1347534 \
+    --TaskInfo.ExecutorId 9696090365952 \
     --TaskInfo.TaskId 015235-2adc2d-372dasd-5273 \
     --TaskInfo.OperatorUin 100006386235 \
     --TaskInfo.Nodes.0.NodeType INPUT \
@@ -31,24 +31,24 @@ tccli wedata CreateIntegrationTask --cli-unfold-argument  \
     --TaskInfo.Nodes.0.OwnerUin 100006386235 \
     --TaskInfo.Nodes.0.ExtConfig.0.Name test-name \
     --TaskInfo.Nodes.0.ExtConfig.0.Value test-value \
-    --TaskInfo.Nodes.0.DatasourceId 1237582840 \
+    --TaskInfo.Nodes.0.DatasourceId 6090365952 \
     --TaskInfo.Nodes.0.NodeMapping.SourceId 1 \
     --TaskInfo.Nodes.0.NodeMapping.SchemaMappings.0.SinkSchemaId 2 \
     --TaskInfo.Nodes.0.NodeMapping.SchemaMappings.0.SourceSchemaId 3 \
     --TaskInfo.Nodes.0.NodeMapping.SinkId 2 \
     --TaskInfo.Nodes.0.NodeMapping.SourceSchema.0.Type String \
-    --TaskInfo.Nodes.0.NodeMapping.SourceSchema.0.Id 123 \
+    --TaskInfo.Nodes.0.NodeMapping.SourceSchema.0.Id 2393 \
     --TaskInfo.Nodes.0.NodeMapping.SourceSchema.0.Value test \
     --TaskInfo.Nodes.0.NodeMapping.SourceSchema.0.Name name \
     --TaskInfo.Nodes.0.TaskId 015235-2adc2d-372dasd-5274 \
     --TaskInfo.Nodes.0.AppId 57234323 \
     --TaskInfo.Nodes.0.Schema.0.Type String \
-    --TaskInfo.Nodes.0.Schema.0.Id 134 \
+    --TaskInfo.Nodes.0.Schema.0.Id 2134 \
     --TaskInfo.Nodes.0.Schema.0.Value test2 \
     --TaskInfo.Nodes.0.Schema.0.Name name2 \
     --TaskInfo.Nodes.0.Config.0.Name config0 \
     --TaskInfo.Nodes.0.Config.0.Value value0 \
-    --TaskInfo.Nodes.0.Id 123456 \
+    --TaskInfo.Nodes.0.Id 325239 \
     --TaskInfo.Nodes.0.OperatorUin 100006386235 \
     --TaskInfo.Nodes.0.Name name \
     --TaskInfo.ExtConfig.0.Name name0 \
@@ -61,7 +61,7 @@ tccli wedata CreateIntegrationTask --cli-unfold-argument  \
     --TaskInfo.Mappings.0.SchemaMappings.0.SourceSchemaId 3 \
     --TaskInfo.Mappings.0.SinkId 2 \
     --TaskInfo.Mappings.0.SourceSchema.0.Type String \
-    --TaskInfo.Mappings.0.SourceSchema.0.Id 123 \
+    --TaskInfo.Mappings.0.SourceSchema.0.Id 623 \
     --TaskInfo.Mappings.0.SourceSchema.0.Value test \
     --TaskInfo.Mappings.0.SourceSchema.0.Name name
 ```

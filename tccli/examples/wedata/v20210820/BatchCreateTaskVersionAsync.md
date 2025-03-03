@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli wedata BatchCreateTaskVersionAsync --cli-unfold-argument  \
-    --Tasks.0.TaskId abc \
-    --Tasks.0.VersionRemark abc \
+    --Tasks.0.TaskId 20250227112817430 \
+    --Tasks.0.VersionRemark test \
     --AutoRun True \
-    --AlarmWays abc \
-    --AlarmRecipientTypes abc \
-    --ProjectId abc
+    --AlarmWays true \
+    --AlarmRecipientTypes all \
+    --ProjectId 1470547050521227264
 ```
 
 Output: 
@@ -21,7 +21,7 @@ Output:
         "Data": {
             "JobId": 1
         },
-        "RequestId": "abc"
+        "RequestId": "2c66cc14-ea0a-4f25-bb2c-3a315bd9b606"
     }
 }
 ```
@@ -35,7 +35,7 @@ Input:
 ```
 tccli wedata BatchCreateTaskVersionAsync --cli-unfold-argument  \
     --Tasks.0.TaskId 20230425181533351 \
-    --Tasks.0.VersionRemark 1111 \
+    --Tasks.0.VersionRemark ces \
     --AutoRun True \
     --AlarmWays email \
     --AlarmRecipientTypes 2 \

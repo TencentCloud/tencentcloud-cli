@@ -1,3 +1,144 @@
+# Release 3.0.1165.1
+
+## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 12 次发布
+
+发布时间：2025-03-04 01:07:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AudioResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#AudioResult)
+
+	* 新增成员：SubTag, SubTagCode
+
+* [AudioResultDetailTextResult](http://document.tencentcloudapi.woa.com/document/product/1219/53259#AudioResultDetailTextResult)
+
+	* 新增成员：HitInfos
+
+
+
+
+## 音频内容安全(ams) 版本：2020-06-08
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 128 次发布
+
+发布时间：2025-03-04 01:17:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateFlowForwards](http://document.tencentcloudapi.woa.com/document/product/1668/85874)
+
+新增数据结构：
+
+* [FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardInfo)
+* [FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowForwardResult)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 181 次发布
+
+发布时间：2025-03-04 01:18:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateFlowForwards](http://document.tencentcloudapi.woa.com/document/product/1595/85875)
+
+新增数据结构：
+
+* [FlowForwardInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardInfo)
+* [FlowForwardResult](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowForwardResult)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 图片内容安全(ims) 版本：2020-12-29
+
+### 第 7 次发布
+
+发布时间：2025-03-04 01:19:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [OcrHitInfo](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrHitInfo)
+* [Positions](http://document.tencentcloudapi.woa.com/document/product/1125/53274#Positions)
+
+修改数据结构：
+
+* [OcrTextDetail](http://document.tencentcloudapi.woa.com/document/product/1125/53274#OcrTextDetail)
+
+	* 新增成员：HitInfos
+
+
+
+
+## 图片内容安全(ims) 版本：2020-07-13
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 79 次发布
+
+发布时间：2025-03-04 01:21:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/267/20474#DiagnoseResult)
+
+	* <font color="#dd0000">**修改成员**：</font>StreamBrokenResults, LowFrameRateResults, StreamFormatResults
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 88 次发布
+
+发布时间：2025-03-04 01:32:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RenewWorkflowSchedulerInfoDs](http://document.tencentcloudapi.woa.com/document/product/1607/83020)
+
+	* 新增入参：ScheduleTimeZone
+
+
+
+
 # Release 3.0.1164.1
 
 ## 音频内容安全(ams) 版本：2020-12-29

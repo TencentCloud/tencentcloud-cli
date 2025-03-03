@@ -889,6 +889,52 @@
       ],
       "usage": "out"
     },
+    "OcrHitInfo": {
+      "document": "ocr关键词命中位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识模型命中还是关键词命中",
+          "example": "Model",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中关键词",
+          "example": "啦啦",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义词库名称",
+          "example": "测试词库1",
+          "member": "string",
+          "name": "LibName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "位置信息",
+          "example": "无",
+          "member": "Positions",
+          "name": "Positions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OcrResult": {
       "document": "用于返回OCR结果检测详情",
       "members": [
@@ -1056,6 +1102,42 @@
           "name": "SubLabel",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词命中位置信息",
+          "example": "{\"Type\": \"Keyword\",   \"Keyword\": \"国家\",  \"LibName\": \"\", \"Positions\": [  {  \"Start\": 0,   \"End\": 2   }    ]    }",
+          "member": "OcrHitInfo",
+          "name": "HitInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Positions": {
+      "document": "标识命中的违规关键词位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Start",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词结束位置",
+          "example": "10",
+          "member": "int64",
+          "name": "End",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
