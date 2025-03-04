@@ -54,7 +54,7 @@ Input:
 ```
 tccli ess DescribeExtendedServiceAuthDetail --cli-unfold-argument  \
     --Operator.UserId yDwf3UUckps8dvveUEfH3DjvMmg3ZkjQ \
-    --ExtendServiceType OPEN_SERVER_SIGN \
+    --ExtendServiceType BATCH_SIGN \
     --Limit 10 \
     --Offset 0
 ```

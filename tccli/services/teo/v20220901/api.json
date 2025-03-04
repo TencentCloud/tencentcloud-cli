@@ -6036,7 +6036,7 @@
         },
         {
           "disabled": false,
-          "document": "同名站点标识。限制输入数字、英文、- 和 _ 组合，长度 20 个字符以内。详情参考 [同名站点标识](https://cloud.tencent.com/document/product/1552/70202)，无此使用场景时，该字段保留为空即可。",
+          "document": "同名站点标识。限制输入数字、英文、\".\" 、\"-\" 和 \"_\"，长度 200 个字符以内。详情参考 [同名站点标识](https://cloud.tencent.com/document/product/1552/70202)，无此使用场景时，该字段保留为空即可。",
           "example": "zone-example",
           "member": "string",
           "name": "AliasZoneName",
@@ -6046,7 +6046,7 @@
         {
           "disabled": false,
           "document": "标签。该参数用于对站点进行分权限管控、分账。需要先前往 [标签控制台](https://console.cloud.tencent.com/tag/taglist) 创建对应的标签才可以在此处传入对应的标签键和标签值。",
-          "example": "a",
+          "example": "[a]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -16519,7 +16519,7 @@
         },
         {
           "disabled": false,
-          "document": "站点别名。数字、英文、-和_组合，限制20个字符。",
+          "document": "同名站点标识。限制输入数字、英文、\".\" 、\"-\" 和 \"_\"，长度 200 个字符以内。",
           "example": "zone-example",
           "member": "string",
           "name": "AliasZoneName",

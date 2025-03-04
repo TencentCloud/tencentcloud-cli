@@ -434,6 +434,13 @@
       "output": "ModifySLInstanceResponse",
       "status": "online"
     },
+    "ModifySLInstanceBasic": {
+      "document": "serverless hbase修改实例名称",
+      "input": "ModifySLInstanceBasicRequest",
+      "name": "Serverless HBase修改实例名称",
+      "output": "ModifySLInstanceBasicResponse",
+      "status": "online"
+    },
     "ModifyUserManagerPwd": {
       "document": "修改用户密码（用户管理）",
       "input": "ModifyUserManagerPwdRequest",
@@ -11680,6 +11687,42 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySLInstanceBasicRequest": {
+      "document": "ModifySLInstanceBasic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySLInstanceBasicResponse": {
+      "document": "ModifySLInstanceBasic返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

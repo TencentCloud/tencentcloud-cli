@@ -1389,7 +1389,7 @@
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvveUEfH3DjvMmg3ZkjQ\"\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Agent\": {},\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvveUEfH3DjvMmg3ZkjQ\"\n    },\n    \"ExtendServiceType\": \"BATCH_SIGN\",\n    \"Agent\": {},\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"AuthInfoDetail\": {\n            \"AuthOrganizationTotal\": 0,\n            \"AuthUserTotal\": 1,\n            \"HasAuthOrganizationList\": [],\n            \"HasAuthUserList\": [\n                {\n                    \"BelongTo\": \"CurrentOrg\",\n                    \"MainOrganizationId\": \"\",\n                    \"UserId\": \"yDxjKxxxxxxxx4zjESzn1dvkm5\"\n                }\n            ],\n            \"Name\": \"批量签署\",\n            \"Type\": \"BATCH_SIGN\"\n        },\n        \"RequestId\": \"d03c95cb-82f4-488a-a832-4ced6e367a54\"\n    }\n}",
         "title": "查询企业扩展服务授权详情-批量签署"
       }
