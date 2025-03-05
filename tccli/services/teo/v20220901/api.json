@@ -1494,7 +1494,7 @@
         {
           "disabled": false,
           "document": "ip 封禁的惩罚时间单位，取值有：\n<li>second：秒；</li>\n<li>minutes：分；</li>\n<li>hour：小时。</li>默认为 second。",
-          "example": "min",
+          "example": "second",
           "member": "string",
           "name": "PunishTimeUnit",
           "output_required": true,

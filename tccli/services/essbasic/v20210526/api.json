@@ -463,7 +463,7 @@
       "status": "online"
     },
     "CreateSealByImage": {
-      "document": "1. 可以**通过图片**为子客企业代创建印章，图片最大5MB\n\n2. 可以**系统创建**子客企业代创建印章, 系统创建的印章样子下图(样式可以调整)\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage.png)",
+      "document": "1. 可以**通过图片**为子客企业代创建印章，图片最大5MB\n\n2. 可以使用**系统生成印章**为子客企业代创建印章, 系统创建的印章样子下图(样式可以调整)\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage.png)",
       "input": "CreateSealByImageRequest",
       "name": "创建企业电子印章",
       "output": "CreateSealByImageResponse",
@@ -7284,7 +7284,7 @@
         {
           "disabled": false,
           "document": "合同对应参与方需要修改的目标经办人对应的OpenId。\n\n注意：`需要保证目标经办人已经加入企业且已实名`",
-          "example": "无",
+          "example": "test_user_open_id",
           "member": "string",
           "name": "TargetOpenId",
           "required": true,

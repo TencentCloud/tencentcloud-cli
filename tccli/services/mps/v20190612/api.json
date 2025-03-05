@@ -2681,16 +2681,18 @@
           "example": "0",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扩展参数，其值为序列化的 json字符串。\n注意：此参数为定制需求参数，需要线下对接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "“”",
+          "document": "扩展参数，其值为序列化的 json字符串。\n注意：此参数为定制需求参数，参考如下：\n智能檫除：https://cloud.tencent.com/document/product/862/101530\n智能拆条：https://cloud.tencent.com/document/product/862/112098\n高光集锦：https://cloud.tencent.com/document/product/862/107280\n智能横转竖：https://cloud.tencent.com/document/product/862/112112\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"{}\"",
           "member": "string",
           "name": "ExtendedParameter",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -15203,8 +15205,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密类型：\n<li> simpleaes: aes-128 加密</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "加密类型：\n<li> simpleaes: aes-128 加密</li>\n<li> widevine</li>\n<li> fairplay：Dash不支持fairplay加密</li>  \n<li> playready</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "widevine",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -24554,7 +24556,7 @@
         {
           "disabled": false,
           "document": "媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。\n如果不填，表示与 InputInfo 中文件所在的目录一致。",
-          "example": "无",
+          "example": "/movie/test/",
           "member": "string",
           "name": "OutputDir",
           "required": false,
@@ -24563,7 +24565,7 @@
         {
           "disabled": false,
           "document": "编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若创建任务接口（ProcessMedia）有指定输出，将覆盖原有编排的默认输出。</li>\n<li>即输出设置的优先级：编排子任务节点 > 任务接口指定 > 对应编排内的配置 </li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessMedia）有设置，将覆盖原有编排的默认回调。\n\n注意3：编排的 Trigger 只是用来自动化触发场景，在手动发起的请求中已经配置的 Trigger 无意义。",
-          "example": "无",
+          "example": "157482",
           "member": "int64",
           "name": "ScheduleId",
           "required": false,
@@ -24626,7 +24628,7 @@
         {
           "disabled": false,
           "document": "任务流的优先级，数值越大优先级越高，取值范围是-10到 10，不填代表0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -24635,7 +24637,7 @@
         {
           "disabled": false,
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不传该参数或者参数为空字符串则本次请求不做去重操作。",
-          "example": "无",
+          "example": "85c94a33-6227-43d5-8179-69b0602f6346",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -24644,7 +24646,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
+          "example": "UserDefinedInfo",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -24656,6 +24658,15 @@
           "example": "Online",
           "member": "string",
           "name": "TaskType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID，需要保证对应资源是开启状态。默认为帐号主资源ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }

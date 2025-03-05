@@ -29,8 +29,8 @@ Output:
                 "CodeLength": 32,
                 "CodeType": "0",
                 "Cipher": 0,
-                "TextUrl": "https://xxx.xxx.com/texturl",
-                "PackUrl": "https://xxx.xxx.com/packurl",
+                "TextUrl": "https://xxx.cos.com/texturl",
+                "PackUrl": "https://xxx.cos.com/packurl",
                 "MerchantName": "商户名称",
                 "RuleType": 0,
                 "CustomId": "自定义码规则ID",
@@ -55,9 +55,9 @@ Output:
                         "SceneCode": 0
                     }
                 ],
-                "ProductName": "abc",
-                "ProductSpecification": "abc",
-                "ProductId": "abc",
+                "ProductName": "商品",
+                "ProductSpecification": "规格",
+                "ProductId": "97zu51y30awe",
                 "RelateType": 0
             }
         ],

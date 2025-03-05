@@ -834,14 +834,14 @@
       "status": "online"
     },
     "ExtractCopyRightWatermark": {
-      "document": "该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
+      "document": "如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
       "input": "ExtractCopyRightWatermarkRequest",
       "name": "提取版权水印",
       "output": "ExtractCopyRightWatermarkResponse",
       "status": "online"
     },
     "ExtractTraceWatermark": {
-      "document": "该 API 已经<font color='red'>不再维护</font>。如果有盗录溯源需求，请参考 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
+      "document": "如果有盗录溯源需求，推荐使用 [幽灵水印](https://cloud.tencent.com/document/product/266/94228)。",
       "input": "ExtractTraceWatermarkRequest",
       "name": "提取溯源水印",
       "output": "ExtractTraceWatermarkResponse",
@@ -1738,7 +1738,7 @@
         {
           "disabled": false,
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
-          "example": "[]",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
           "output_required": true,
@@ -1748,7 +1748,7 @@
         },
         {
           "disabled": false,
-          "document": "溯源水印，该功能已不再支持使用。",
+          "document": "溯源水印。",
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
@@ -1759,7 +1759,7 @@
         },
         {
           "disabled": false,
-          "document": "版权水印，该功能已不再支持使用。",
+          "document": "版权水印。",
           "example": "无",
           "member": "CopyRightWatermarkInput",
           "name": "CopyRightWatermark",
@@ -1771,7 +1771,7 @@
         {
           "disabled": false,
           "document": "字幕列表，元素为字幕 ID，支持多个字幕，最大可支持16个。",
-          "example": "[]",
+          "example": "无",
           "member": "string",
           "name": "SubtitleSet",
           "output_required": true,
@@ -19254,7 +19254,7 @@
         {
           "disabled": false,
           "document": "标识来源上下文，用于透传用户请求信息，在 ExtractCopyRightWatermarkComplete 回调和任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -19263,7 +19263,7 @@
         {
           "disabled": false,
           "document": "用于任务去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -19281,7 +19281,7 @@
         {
           "disabled": false,
           "document": "保留字段，特殊用途时使用。",
-          "example": "\"\"",
+          "example": "无",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -37400,7 +37400,7 @@
         },
         {
           "disabled": false,
-          "document": "溯源水印，该功能已不再支持使用。",
+          "document": "溯源水印。",
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
@@ -37411,7 +37411,7 @@
         },
         {
           "disabled": false,
-          "document": "版权水印，该功能已不再支持使用。",
+          "document": "版权水印。",
           "example": "无",
           "member": "CopyRightWatermarkInput",
           "name": "CopyRightWatermark",

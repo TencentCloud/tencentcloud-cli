@@ -124,7 +124,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测间隔",
+          "document": "拨测间隔，单位为分钟",
           "example": "30",
           "member": "int64",
           "name": "Interval",

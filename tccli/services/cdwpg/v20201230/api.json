@@ -7,6 +7,34 @@
       "output": "CreateInstanceByApiResponse",
       "status": "online"
     },
+    "DescribeAccounts": {
+      "document": "获取云原生实例对应的账号列表",
+      "input": "DescribeAccountsRequest",
+      "name": "账号管理",
+      "output": "DescribeAccountsResponse",
+      "status": "online"
+    },
+    "DescribeDBConfigHistory": {
+      "document": "DescribeDBConfigHistory1",
+      "input": "DescribeDBConfigHistoryRequest",
+      "name": "查询DB参数操作历史操作",
+      "output": "DescribeDBConfigHistoryResponse",
+      "status": "online"
+    },
+    "DescribeDBParams": {
+      "document": "配置描述",
+      "input": "DescribeDBParamsRequest",
+      "name": "集群配置描述",
+      "output": "DescribeDBParamsResponse",
+      "status": "online"
+    },
+    "DescribeErrorLog": {
+      "document": "查询错误日志",
+      "input": "DescribeErrorLogRequest",
+      "name": "错误日志",
+      "output": "DescribeErrorLogResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "根据实例ID查询某个实例的具体信息",
       "input": "DescribeInstanceRequest",
@@ -19,6 +47,20 @@
       "input": "DescribeInstanceInfoRequest",
       "name": "获取集群信息",
       "output": "DescribeInstanceInfoResponse",
+      "status": "online"
+    },
+    "DescribeInstanceNodes": {
+      "document": "节点list",
+      "input": "DescribeInstanceNodesRequest",
+      "name": "节点列表",
+      "output": "DescribeInstanceNodesResponse",
+      "status": "online"
+    },
+    "DescribeInstanceOperations": {
+      "document": "在集群详情页面，拉取该集群的操作",
+      "input": "DescribeInstanceOperationsRequest",
+      "name": "云原生拉取集群操作列表",
+      "output": "DescribeInstanceOperationsResponse",
       "status": "online"
     },
     "DescribeInstanceState": {
@@ -42,6 +84,27 @@
       "output": "DescribeSimpleInstancesResponse",
       "status": "online"
     },
+    "DescribeSlowLog": {
+      "document": "查询慢SQL日志",
+      "input": "DescribeSlowLogRequest",
+      "name": "慢SQL日志",
+      "output": "DescribeSlowLogResponse",
+      "status": "online"
+    },
+    "DescribeUpgradeList": {
+      "document": "升级记录",
+      "input": "DescribeUpgradeListRequest",
+      "name": "升级记录",
+      "output": "DescribeUpgradeListResponse",
+      "status": "online"
+    },
+    "DescribeUserHbaConfig": {
+      "document": "user_hba",
+      "input": "DescribeUserHbaConfigRequest",
+      "name": "查询用户Hba",
+      "output": "DescribeUserHbaConfigResponse",
+      "status": "online"
+    },
     "DestroyInstanceByApi": {
       "document": "销毁集群",
       "input": "DestroyInstanceByApiRequest",
@@ -49,11 +112,60 @@
       "output": "DestroyInstanceByApiResponse",
       "status": "online"
     },
+    "ModifyDBParameters": {
+      "document": "集群配置下发",
+      "input": "ModifyDBParametersRequest",
+      "name": "集群配置下发",
+      "output": "ModifyDBParametersResponse",
+      "status": "online"
+    },
     "ModifyInstance": {
       "document": "修改实例信息，目前为实例名称",
       "input": "ModifyInstanceRequest",
       "name": "修改实例信息",
       "output": "ModifyInstanceResponse",
+      "status": "online"
+    },
+    "ModifyUserHba": {
+      "document": "修改用户Hba配置",
+      "input": "ModifyUserHbaRequest",
+      "name": "修改用户Hba",
+      "output": "ModifyUserHbaResponse",
+      "status": "online"
+    },
+    "ResetAccountPassword": {
+      "document": "修改账号密码",
+      "input": "ResetAccountPasswordRequest",
+      "name": "重置密码",
+      "output": "ResetAccountPasswordResponse",
+      "status": "online"
+    },
+    "RestartInstance": {
+      "document": "用户在控制台主动发起重启实例",
+      "input": "RestartInstanceRequest",
+      "name": "云原生重启实例",
+      "output": "RestartInstanceResponse",
+      "status": "online"
+    },
+    "ScaleOutInstance": {
+      "document": "水平扩容",
+      "input": "ScaleOutInstanceRequest",
+      "name": "水平扩容",
+      "output": "ScaleOutInstanceResponse",
+      "status": "online"
+    },
+    "ScaleUpInstance": {
+      "document": "控制台垂直变配集群",
+      "input": "ScaleUpInstanceRequest",
+      "name": "集群垂直变配",
+      "output": "ScaleUpInstanceResponse",
+      "status": "online"
+    },
+    "UpgradeInstance": {
+      "document": "在线升级",
+      "input": "UpgradeInstanceRequest",
+      "name": "在线升级",
+      "output": "UpgradeInstanceResponse",
       "status": "online"
     }
   },
@@ -64,6 +176,68 @@
     "serviceShortName": "cdwpg"
   },
   "objects": {
+    "AccessInfo": {
+      "document": "访问信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.89:9000",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcp",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AccountInfo": {
+      "document": "用于描述账号的实例ID、账号名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号名",
+          "example": "cdwpg",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[superuser]",
+          "member": "string",
+          "name": "Perms",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CBSSpec": {
       "document": "磁盘规格",
       "members": [
@@ -139,6 +313,52 @@
       ],
       "usage": "both"
     },
+    "CNResourceSpec": {
+      "document": "云原生资源规格描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "xxx",
+          "member": "CBSSpec",
+          "name": "DiskSpec",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ChargeProperties": {
       "document": "计费时间参数",
       "members": [
@@ -199,6 +419,138 @@
         }
       ],
       "usage": "both"
+    },
+    "ConfigHistory": {
+      "document": "ConfigHistory1",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id1",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "asd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "dn/cn",
+          "example": "dn",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "param",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新参数值",
+          "example": "new",
+          "member": "string",
+          "name": "ParamNewValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "旧参数值",
+          "example": "old",
+          "member": "string",
+          "name": "ParamOldValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态 doing/success",
+          "example": "doing/success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfigParams": {
+      "document": "参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名字",
+          "example": "Name",
+          "member": "string",
+          "name": "ParameterName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "value",
+          "member": "string",
+          "name": "ParameterValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改前的值",
+          "example": "value",
+          "member": "string",
+          "name": "ParameterOldValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     },
     "CreateInstanceByApiRequest": {
       "document": "CreateInstanceByApi请求参数结构体",
@@ -329,6 +681,293 @@
       ],
       "type": "object"
     },
+    "DescribeAccountsRequest": {
+      "document": "DescribeAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountsResponse": {
+      "document": "DescribeAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cran",
+          "member": "AccountInfo",
+          "name": "Accounts",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBConfigHistoryRequest": {
+      "document": "DescribeDBConfigHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "cdwpg-as",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBConfigHistoryResponse": {
+      "document": "DescribeDBConfigHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "历史参数",
+          "example": "无",
+          "member": "ConfigHistory",
+          "name": "ConfigHistory",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBParamsRequest": {
+      "document": "DescribeDBParams请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cn/dn",
+          "example": "cn/dn",
+          "member": "string",
+          "name": "NodeTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "range::(0,100]",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "range::[0,INF)",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "InstanceId名称",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBParamsResponse": {
+      "document": "DescribeDBParams返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数信息",
+          "example": "无",
+          "member": "ParamItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeErrorLogRequest": {
+      "document": "DescribeErrorLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2021-12-12 12:12:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2021-12-12 12:12:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为2000",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeErrorLogResponse": {
+      "document": "DescribeErrorLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回信息总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误日志详细信息",
+          "example": "无",
+          "member": "ErrorLogDetail",
+          "name": "ErrorLogDetails",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceInfoRequest": {
       "document": "DescribeInstanceInfo请求参数结构体",
       "members": [
@@ -376,6 +1015,136 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceNodesRequest": {
+      "document": "DescribeInstanceNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cdwpg-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNodesResponse": {
+      "document": "DescribeInstanceNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "error msg\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "--",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"cn001\"]",
+          "member": "InstanceNode",
+          "name": "InstanceNodes",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOperationsRequest": {
+      "document": "DescribeInstanceOperations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cdwpg-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，偏移量，从0开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，每页数目，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2024-12-21 12:12:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2024-12-21 12:12:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceOperationsResponse": {
+      "document": "DescribeInstanceOperations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作记录总数",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作记录具体数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create",
+          "member": "InstanceOperation",
+          "name": "Operations",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceRequest": {
       "document": "DescribeInstance请求参数结构体",
       "members": [
@@ -400,7 +1169,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -419,7 +1188,7 @@
         {
           "disabled": false,
           "document": "集群实例名称",
-          "example": "-",
+          "example": "\"cdwpg-sss\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -434,72 +1203,80 @@
         {
           "disabled": false,
           "document": "集群状态，例如：Serving",
-          "example": "-",
+          "example": "\"Serving\"",
           "member": "string",
           "name": "InstanceState",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "集群操作创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"2023-04-10 15:30:00\"",
           "member": "string",
           "name": "FlowCreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群操作名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"create\"",
           "member": "string",
           "name": "FlowName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群操作进度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "75",
           "member": "float",
           "name": "FlowProgress",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群状态描述，例如：运行中\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"运行中\"",
           "member": "string",
           "name": "InstanceStateDesc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群流程错误信息，例如：“创建失败，资源不足”\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"dd\"",
           "member": "string",
           "name": "FlowMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "当前步骤的名称，例如：”购买资源中“\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"create\"",
           "member": "string",
           "name": "ProcessName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "集群备份任务开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "0",
           "member": "int64",
           "name": "BackupStatus",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -527,7 +1304,7 @@
         {
           "disabled": false,
           "document": "搜索的集群name",
-          "example": "-",
+          "example": "\"ddd\"",
           "member": "string",
           "name": "SearchInstanceName",
           "required": false,
@@ -572,27 +1349,27 @@
           "example": "18",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "[\"cdwpg-ccs\",\"cdwpg-ddd\"]",
           "member": "InstanceInfo",
           "name": "InstancesList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "-\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "example": "\"cc\"",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -665,6 +1442,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -674,6 +1452,7 @@
           "example": "无",
           "member": "InstanceSimpleInfoNew",
           "name": "InstancesList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -683,7 +1462,239 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogRequest": {
+      "document": "DescribeSlowLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2012-12-12 12:12:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2012-12-12 13:12:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为2000",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "cdwpg",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序根据",
+          "example": "CallTimes",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升降序",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤时间",
+          "example": "无",
+          "member": "float",
+          "name": "Duration",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowLogResponse": {
+      "document": "DescribeSlowLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回信息总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL日志详细信息",
+          "example": "无",
+          "member": "SlowLogDetail",
+          "name": "SlowLogDetails",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpgradeListRequest": {
+      "document": "DescribeUpgradeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cdwpg-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，偏移量，从0开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，每页数目，默认为10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpgradeListResponse": {
+      "document": "DescribeUpgradeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "升级记录具体数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "--",
+          "member": "UpgradeItem",
+          "name": "UpgradeItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "升级记录总数",
+          "example": "20",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserHbaConfigRequest": {
+      "document": "DescribeUserHbaConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserHbaConfigResponse": {
+      "document": "DescribeUserHbaConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hba数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "--",
+          "member": "HbaConfig",
+          "name": "HbaConfigs",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -716,7 +1727,7 @@
         {
           "disabled": false,
           "document": "销毁流程Id",
-          "example": "\"123\"",
+          "example": "1254",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -742,6 +1753,184 @@
       ],
       "type": "object"
     },
+    "DiskSpecPlus": {
+      "document": "磁盘规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinDiskSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiskDesc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CvmClass",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ErrorLogDetail": {
+      "document": "错误日志详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwpg",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报错时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报错信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "HbaConfig": {
+      "document": "user_config",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "host",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "all",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户",
+          "example": "all",
+          "member": "string",
+          "name": "User",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip地址",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "方法",
+          "example": "md5",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否遮盖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Mask",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceInfo": {
       "document": "云原生实例详情",
       "members": [
@@ -751,7 +1940,7 @@
           "example": "1",
           "member": "int64",
           "name": "ID",
-          "required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -761,7 +1950,7 @@
           "example": "cdwpg-cn",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -771,7 +1960,7 @@
           "example": "cdwpg-xxxx",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -781,7 +1970,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -791,7 +1980,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -801,7 +1990,7 @@
           "example": "无",
           "member": "InstanceStateInfo",
           "name": "InstanceStateInfo",
-          "required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -811,7 +2000,7 @@
           "example": "-",
           "member": "string",
           "name": "InstanceID",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -821,7 +2010,7 @@
           "example": "2022-09-05 20:00:01",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -831,7 +2020,7 @@
           "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -841,7 +2030,7 @@
           "example": "ap-chongqing-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -851,7 +2040,7 @@
           "example": "region",
           "member": "string",
           "name": "RegionDesc",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -861,7 +2050,7 @@
           "example": "zone",
           "member": "string",
           "name": "ZoneDesc",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -871,7 +2060,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -881,7 +2070,7 @@
           "example": "v3",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -891,28 +2080,8 @@
           "example": "zone",
           "member": "string",
           "name": "Charset",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "引擎版本",
-          "member": "string",
-          "name": "EngineVersion",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "GTM节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "InstanceNodeGroup",
-          "name": "GTMNodes",
-          "required": true,
-          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -921,7 +2090,7 @@
           "example": "无",
           "member": "InstanceNodeGroup",
           "name": "CNNodes",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -931,36 +2100,269 @@
           "example": "无",
           "member": "InstanceNodeGroup",
           "name": "DNNodes",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "备份存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "InstanceNodeGroup",
-          "name": "BackupStorage",
-          "required": true,
-          "type": "list",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "FN节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "InstanceNodeGroup",
-          "name": "FNNodes",
-          "required": true,
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "RenewFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessInfo",
+          "name": "AccessDetails",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
     },
+    "InstanceNode": {
+      "document": "Instance node",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id",
+          "example": "1",
+          "member": "int64",
+          "name": "NodeId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cn",
+          "example": "cn",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "9.0.0.1",
+          "member": "string",
+          "name": "NodeIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceNodeGroup": {
       "document": "集群节点信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiskSpecPlus",
+          "name": "DataDisk",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CvmCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceOperation": {
+      "document": "集群操作描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作名称，例如“create_instance\"、“scaleout_instance”等",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwpg-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作名称描述，例如“创建”，“修改集群名称”等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "创建",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-08 12:00:08",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-08 12:00:08",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作上下文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "string",
+          "name": "Context",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-08 12:00:08",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123123124",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "InstanceSimpleInfoNew": {
@@ -1245,6 +2647,52 @@
       ],
       "usage": "out"
     },
+    "ModifyDBParametersRequest": {
+      "document": "ModifyDBParameters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Instance 名字",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "node参数",
+          "example": "无",
+          "member": "NodeConfigParams",
+          "name": "NodeConfigParams",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBParametersResponse": {
+      "document": "ModifyDBParameters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步流程Id",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceRequest": {
       "document": "ModifyInstance请求参数结构体",
       "members": [
@@ -1272,6 +2720,477 @@
     "ModifyInstanceResponse": {
       "document": "ModifyInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserHbaRequest": {
+      "document": "ModifyUserHba请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "hba数组",
+          "example": "无",
+          "member": "HbaConfig",
+          "name": "HbaConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserHbaResponse": {
+      "document": "ModifyUserHba返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NodeConfigParams": {
+      "document": "node参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "node类型",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数",
+          "example": "无",
+          "member": "ConfigParams",
+          "name": "ConfigParams",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NormQueryItem": {
+      "document": "慢查询项目信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CallTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读共享内存块数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SharedReadBlocks",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "写共享内存块数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SharedWriteBlocks",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脱敏后语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "NormalQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行时间最长的语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "MaxElapsedQuery",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "花费总时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "CostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总次数占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "TotalCallTimesPercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总耗时占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "TotalCostTimePercent",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "花费最小时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "MinCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "花费最大时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "MaxCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最早一条时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FirstTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最晚一条时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "LastTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读io总耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "ReadCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "写io总耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "WriteCostTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ParamDetail": {
+      "document": "ParamDetail 详细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParamName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要重启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedRestart",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前运行值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "RunningValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "取值范围",
+          "example": "无",
+          "member": "ValueRange",
+          "name": "ValueRange",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Unit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ShortDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ParamItem": {
+      "document": "ParamItem 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点类型, cn/dn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cn",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ParamDetail",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Range": {
+      "document": "Range范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Min",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "Max",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResetAccountPasswordRequest": {
+      "document": "ResetAccountPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "cdwch-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的用户名",
+          "example": "test",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新密码",
+          "example": "cdwpg123456",
+          "member": "string",
+          "name": "NewPassword",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetAccountPasswordResponse": {
+      "document": "ResetAccountPassword返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1372,6 +3291,210 @@
         }
       ],
       "usage": "in"
+    },
+    "RestartInstanceRequest": {
+      "document": "RestartInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称，例如“cdwpg-xxxx\"",
+          "example": "\"cdwpg-13456\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要重启的节点类型么，gtm/cn/dn/fn",
+          "example": "[\"cn\",\"dn\"]",
+          "member": "string",
+          "name": "NodeTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要重启的节点编号，指定重启节点",
+          "example": "[\"110.110.10.0\",\"110.101.10.1\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartInstanceResponse": {
+      "document": "RestartInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重启实例id",
+          "example": "1",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "--",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceRequest": {
+      "document": "ScaleOutInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩容节点数量",
+          "example": "无",
+          "member": "int64",
+          "name": "ScaleOutCount",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceResponse": {
+      "document": "ScaleOutInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceRequest": {
+      "document": "ScaleUpInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群唯一ID",
+          "example": "cdwpg-xxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "变更资源类型",
+          "example": "vm",
+          "member": "string",
+          "name": "Case",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改的参数",
+          "example": "无",
+          "member": "CNResourceSpec",
+          "name": "ModifySpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "test1",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceResponse": {
+      "document": "ScaleUpInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的id",
+          "example": "43",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体错误",
+          "example": "\"errorstest\"",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchTags": {
       "document": "列表页搜索的标记列表",
@@ -1591,6 +3714,42 @@
       ],
       "usage": "both"
     },
+    "SlowLogDetail": {
+      "document": "慢SQL日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "花费总时间",
+          "example": "0.0",
+          "member": "float",
+          "name": "TotalTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调用总次数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCallTimes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢SQL",
+          "example": "[]",
+          "member": "NormQueryItem",
+          "name": "NormalQuerys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "标签描述",
       "members": [
@@ -1616,6 +3775,184 @@
         }
       ],
       "usage": "both"
+    },
+    "UpgradeInstanceRequest": {
+      "document": "UpgradeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "安装包版本",
+          "example": "无",
+          "member": "string",
+          "name": "PackageVersion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeInstanceResponse": {
+      "document": "UpgradeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeItem": {
+      "document": "升级信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UpgradeTo3.15.2.0_2023-02-16 00:12:44",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原有内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.15.0.1",
+          "member": "string",
+          "name": "SourceVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.15.2.0",
+          "member": "string",
+          "name": "TargetVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-17 11:56:15",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-17 11:56:15",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务完成状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OperateUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ValueRange": {
+      "document": "ValueRange值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数类型，可以为 enum，string，section; 其中enum表示枚举，类似： utf8,latin1,gbk; string表示返回的参数值是字符串; section表示返回的参数值是一个取值范围，类似：[4-8]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "type 取section的时候，返回的参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Range",
+          "name": "Range",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "type 取enum的时候，返回参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Enum",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "type 取string的时候，返回的参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "String",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

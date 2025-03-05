@@ -8,27 +8,75 @@
         "title": "创建集群"
       }
     ],
+    "DescribeAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"InstanceId\": \"cdwpg_xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Accounts\": [\n            {\n                \"InstanceId\": \"cdwpg_xx\",\n                \"UserName\": \"cran\",\n                \"Perms\": [\n                    \"sds\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xxdsds\"\n    }\n}",
+        "title": "账号管理"
+      }
+    ],
+    "DescribeDBConfigHistory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBConfigHistory\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xx\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"xssx\",\n        \"ConfigHistory\": [\n            {\n                \"Status\": \"\",\n                \"NodeType\": \"cn\",\n                \"InstanceId\": \"cdwpg-xx\",\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ParamNewValue\": \"1024\",\n                \"ParamName\": \"con\",\n                \"ParamOldValue\": \"1243\",\n                \"Id\": 0,\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ]\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeDBParams": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBParams\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xx\",\n    \"Limit\": 20,\n    \"NodeTypes\": [\n        \"dn\"\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xxss\",\n        \"Items\": [\n            {\n                \"NodeType\": \"cn\",\n                \"NodeName\": \"cn001\",\n                \"TotalCount\": 2,\n                \"Details\": [\n                    {\n                        \"ParamName\": \"MaxConnections\",\n                        \"DefaultValue\": \"100\",\n                        \"NeedRestart\": false,\n                        \"RunningValue\": \"100\",\n                        \"ValueRange\": {\n                            \"Type\": \"enum\",\n                            \"Enum\": [\n                                \"DEBUG\",\n                                \"INFO\",\n                                \"WARN\",\n                                \"ERROR\"\n                            ],\n                            \"Range\": {\n                                \"Min\": \"1024\",\n                                \"Max\": \"4096\"\n                            },\n                            \"String\": \"\"\n                        },\n                        \"Unit\": \"connections\",\n                        \"ShortDesc\": \"Maximum number of concurrent connections\",\n                        \"ParameterName\": \"cds\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeErrorLog": [
+      {
+        "document": "查询错误日志详细信息",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeErrorLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xx\",\n    \"StartTime\": \"2012-12-12 12:12:12\",\n    \"EndTime\": \"2012-12-13 12:12:12\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"sxx\",\n        \"ErrorLogDetails\": [\n            {\n                \"UserName\": \"cran\",\n                \"ErrorMessage\": \"xdx\",\n                \"ErrorTime\": \"2012-12-12 12:12:12\",\n                \"Database\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "错误日志"
+      }
+    ],
     "DescribeInstance": [
       {
         "document": "根据实例ID查询某个实例的具体信息",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceInfo\": {\n            \"Status\": \"xx\",\n            \"InstanceID\": \"xx\",\n            \"InstanceType\": \"xx\",\n            \"InstanceStateInfo\": {\n                \"FlowName\": \"xx\",\n                \"FlowMsg\": \"xx\",\n                \"FlowProgress\": 0,\n                \"ProcessName\": \"xx\",\n                \"InstanceState\": \"xx\",\n                \"FlowCreateTime\": \"xx\",\n                \"InstanceStateDesc\": \"xx\"\n            },\n            \"StatusDesc\": \"xx\",\n            \"InstanceName\": \"xx\",\n            \"ID\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xdx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceInfo\": {\n            \"ID\": 20230915001,\n            \"InstanceType\": \"cdwpg-cn\",\n            \"InstanceName\": \"analytics-prod-01\",\n            \"Status\": \"Serving\",\n            \"StatusDesc\": \"服务中\",\n            \"InstanceStateInfo\": {\n                \"InstanceState\": \"Serving\",\n                \"FlowCreateTime\": \"2023-09-15 09:30:00\",\n                \"FlowName\": \"ClusterScaleOut\",\n                \"FlowProgress\": 75,\n                \"InstanceStateDesc\": \"集群扩容中\",\n                \"FlowMsg\": \"正在添加3个计算节点\",\n                \"ProcessName\": \"资源扩容中\",\n                \"BackupStatus\": 0,\n                \"RequestId\": \"req-5f82b735\",\n                \"BackupOpenStatus\": 1\n            },\n            \"InstanceID\": \"inst-9d7e2f4a\",\n            \"CreateTime\": \"2023-01-15 14:20:00\",\n            \"Region\": \"ap-shanghai\",\n            \"Zone\": \"ap-shanghai-2\",\n            \"RegionDesc\": \"上海地域\",\n            \"ZoneDesc\": \"上海二区\",\n            \"Tags\": [\n                {\n                    \"TagKey\": \"Environment\",\n                    \"TagValue\": \"Production\"\n                },\n                {\n                    \"TagKey\": \"Department\",\n                    \"TagValue\": \"DataAnalytics\"\n                }\n            ],\n            \"Version\": \"v3.2.1\",\n            \"Charset\": \"UTF-8\",\n            \"CNNodes\": [\n                {\n                    \"SpecName\": \"CN8x32\",\n                    \"DataDisk\": {\n                        \"DiskCount\": 2,\n                        \"MaxDiskSize\": 2048,\n                        \"MinDiskSize\": 512,\n                        \"DiskType\": \"Cloud_SSD\",\n                        \"DiskDesc\": \"高性能云盘\",\n                        \"CvmClass\": \"S5.MEDIUM8\"\n                    },\n                    \"CvmCount\": 3\n                }\n            ],\n            \"DNNodes\": [\n                {\n                    \"SpecName\": \"DN4x64\",\n                    \"DataDisk\": {\n                        \"DiskCount\": 4,\n                        \"MaxDiskSize\": 4096,\n                        \"MinDiskSize\": 1024,\n                        \"DiskType\": \"Cloud_Premium\",\n                        \"DiskDesc\": \"企业级云盘\",\n                        \"CvmClass\": \"S5.LARGE16\"\n                    },\n                    \"CvmCount\": 2\n                }\n            ],\n            \"RegionId\": 21,\n            \"ZoneId\": 210002,\n            \"VpcId\": \"vpc-89f2d1e3\",\n            \"SubnetId\": \"subnet-45c9b2f1\",\n            \"ExpireTime\": \"2025-12-31 23:59:59\",\n            \"PayMode\": \"PrePaid\",\n            \"RenewFlag\": true,\n            \"InstanceId\": \"cluster-9a8b7c6d\",\n            \"AccessDetails\": [\n                {\n                    \"Address\": \"10.16.32.45:3306\",\n                    \"Protocol\": \"MySQL\"\n                }\n            ]\n        },\n        \"RequestId\": \"xdsx\"\n    }\n}",
         "title": "描述实例信息"
       }
     ],
     "DescribeInstanceInfo": [
       {
         "document": "查询集群信息",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SimpleInstanceInfo\": {\n            \"ID\": 0,\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"Version\": \"abc\",\n            \"Region\": \"abc\",\n            \"Zone\": \"abc\",\n            \"UserVPCID\": \"abc\",\n            \"UserSubnetID\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"ExpireTime\": \"abc\",\n            \"AccessInfo\": \"abc\",\n            \"RenewFlag\": 0,\n            \"ChargeProperties\": {\n                \"PayMode\": 0,\n                \"RenewFlag\": 0,\n                \"TimeSpan\": 0,\n                \"TimeUnit\": \"abc\",\n                \"ChargeType\": \"abc\"\n            },\n            \"Resources\": [\n                {\n                    \"SpecName\": \"abc\",\n                    \"Count\": 0,\n                    \"DiskSpec\": {\n                        \"DiskType\": \"abc\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0\n                    },\n                    \"Type\": \"abc\"\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"Status\": 0\n        },\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SimpleInstanceInfo\": {\n            \"ID\": 0,\n            \"InstanceId\": \"cdwpg-abc\",\n            \"InstanceName\": \"test-abc\",\n            \"Version\": \"3.16.4.8\",\n            \"Region\": \"ap-beijing\",\n            \"Zone\": \"ap-beijing-6\",\n            \"UserVPCID\": \"abdc\",\n            \"UserSubnetID\": \"abdc\",\n            \"CreateTime\": \"2012-12-12 12:12:12\",\n            \"ExpireTime\": \"2012-12-12 13:12:12\",\n            \"AccessInfo\": \"--\",\n            \"RenewFlag\": 0,\n            \"ChargeProperties\": {\n                \"PayMode\": 0,\n                \"RenewFlag\": 0,\n                \"TimeSpan\": 0,\n                \"TimeUnit\": \"--\",\n                \"ChargeType\": \"--\"\n            },\n            \"Resources\": [\n                {\n                    \"SpecName\": \"s4\",\n                    \"Count\": 0,\n                    \"DiskSpec\": {\n                        \"DiskType\": \"local\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0\n                    },\n                    \"Type\": \"dn\"\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"TagKey\": \"gd\",\n                    \"TagValue\": \"fd\"\n                }\n            ],\n            \"Status\": 0\n        },\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abcss\"\n    }\n}",
         "title": "查询集群信息"
+      }
+    ],
+    "DescribeInstanceNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"InstanceNodes\": [\n            {\n                \"NodeIp\": \"9.0.45.12\",\n                \"NodeType\": \"cn\",\n                \"NodeId\": 0\n            }\n        ],\n        \"RequestId\": \"xdx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeInstanceOperations": [
+      {
+        "document": "获取集群操作列表",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceOperations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-exs8Mnql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx-xxxxx\",\n        \"TotalCount\": 2,\n        \"Operations\": [\n            {\n                \"Id\": 1,\n                \"InstanceId\": \"cdwpg-abc123\",\n                \"Action\": \"创建\",\n                \"Status\": 2,\n                \"StartTime\": \"2022-09-08 12:00:08\",\n                \"EndTime\": \"2022-09-08 12:05:08\",\n                \"Context\": \"{\\\"key1\\\":\\\"value1\\\", \\\"key2\\\":\\\"value2\\\"}\",\n                \"UpdateTime\": \"2022-09-08 12:05:08\",\n                \"Uin\": \"123123124\"\n            }\n        ]\n    }\n}",
+        "title": "获取集群操作列表"
       }
     ],
     "DescribeInstanceState": [
       {
         "document": "需要展现集群状态以及操作进度",
         "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceState\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-exs8Mnql\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowName\": \"xx\",\n        \"FlowMsg\": \"xx\",\n        \"FlowProgress\": 0.0,\n        \"ProcessName\": \"xx\",\n        \"InstanceState\": \"xx\",\n        \"FlowCreateTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"InstanceStateDesc\": \"xx\",\n        \"BackupStatus\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowName\": \"test\",\n        \"FlowMsg\": \"test\",\n        \"FlowProgress\": 0.0,\n        \"ProcessName\": \"test\",\n        \"InstanceState\": \"test\",\n        \"FlowCreateTime\": \"test\",\n        \"RequestId\": \"test\",\n        \"InstanceStateDesc\": \"test\",\n        \"BackupStatus\": 1\n    }\n}",
         "title": "获取集群状态"
       }
     ],
@@ -36,24 +84,56 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchTags\": [\n        {\n            \"AllValue\": 0,\n            \"TagKey\": \"test\",\n            \"TagValue\": \"test\"\n        }\n    ],\n    \"SearchInstanceId\": \"test\",\n    \"SearchInstanceName\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"Status\": \"xx\",\n                \"InstanceID\": \"xx\",\n                \"InstanceType\": \"xx\",\n                \"InstanceStateInfo\": {\n                    \"FlowName\": \"xx\",\n                    \"FlowMsg\": \"xx\",\n                    \"FlowProgress\": 0,\n                    \"ProcessName\": \"xx\",\n                    \"InstanceState\": \"xx\",\n                    \"FlowCreateTime\": \"xx\",\n                    \"InstanceStateDesc\": \"xx\"\n                },\n                \"StatusDesc\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"ID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"ErrorMsg\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxxx-xxxxx\",\n        \"TotalCount\": 2,\n        \"ErrorMsg\": \"\",\n        \"InstancesList\": [\n            {\n                \"ID\": 12345,\n                \"InstanceType\": \"cdwpg-cn\",\n                \"InstanceName\": \"cdwpg-example\",\n                \"Status\": \"Running\",\n                \"StatusDesc\": \"运行中\",\n                \"InstanceStateInfo\": {\n                    \"InstanceState\": \"Serving\",\n                    \"FlowCreateTime\": \"2023-04-10T15:30:00Z\",\n                    \"FlowName\": \"CreateCluster\",\n                    \"FlowProgress\": 50,\n                    \"InstanceStateDesc\": \"运行中\",\n                    \"FlowMsg\": \"\",\n                    \"ProcessName\": \"购买资源中\",\n                    \"BackupStatus\": 0,\n                    \"RequestId\": \"req-1234567890\",\n                    \"BackupOpenStatus\": 1\n                },\n                \"InstanceID\": \"cdwpg-ddd\",\n                \"CreateTime\": \"2022-09-05 20:00:01\",\n                \"Region\": \"ap-chongqing\",\n                \"Zone\": \"ap-chongqing-1\",\n                \"RegionDesc\": \"重庆区域\",\n                \"ZoneDesc\": \"重庆可用区1\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"Environment\",\n                        \"TagValue\": \"Production\"\n                    }\n                ],\n                \"Version\": \"v3\",\n                \"Charset\": \"UTF-8\",\n                \"CNNodes\": [\n                    {\n                        \"SpecName\": \"high-cpu\",\n                        \"DataDisk\": {\n                            \"DiskCount\": 2,\n                            \"MaxDiskSize\": 1024,\n                            \"MinDiskSize\": 256,\n                            \"DiskType\": \"SSD\",\n                            \"DiskDesc\": \"高性能固态硬盘\",\n                            \"CvmClass\": \"标准型S3\"\n                        },\n                        \"CvmCount\": 2\n                    }\n                ],\n                \"DNNodes\": [\n                    {\n                        \"SpecName\": \"high-cpu\",\n                        \"DataDisk\": {\n                            \"DiskCount\": 2,\n                            \"MaxDiskSize\": 1024,\n                            \"MinDiskSize\": 256,\n                            \"DiskType\": \"SSD\",\n                            \"DiskDesc\": \"高性能固态硬盘\",\n                            \"CvmClass\": \"标准型S3\"\n                        },\n                        \"CvmCount\": 2\n                    }\n                ],\n                \"RegionId\": 1,\n                \"ZoneId\": 101,\n                \"VpcId\": \"vpc-12345678\",\n                \"SubnetId\": \"subnet-87654321\",\n                \"ExpireTime\": \"2023-09-05 20:00:01\",\n                \"PayMode\": \"Postpaid\",\n                \"RenewFlag\": true,\n                \"InstanceId\": \"instance-abcdefg\",\n                \"AccessDetails\": [\n                    {\n                        \"Address\": \"10.0.123.x\",\n                        \"Protocol\": \"ddd\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
         "title": "查询云原生实例列表"
       }
     ],
     "DescribeSimpleInstances": [
       {
         "document": "集群列表",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSimpleInstances\n<公共请求参数>\n\n{\n    \"SearchInstanceId\": \"abc\",\n    \"SearchInstanceName\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchTags\": [\n        \"abc\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"ID\": 0,\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Version\": \"abc\",\n                \"Region\": \"abc\",\n                \"RegionId\": 0,\n                \"RegionDesc\": \"abc\",\n                \"Zone\": \"abc\",\n                \"ZoneId\": 0,\n                \"ZoneDesc\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"AccessInfo\": \"abc\",\n                \"PayMode\": \"abc\",\n                \"RenewFlag\": true\n            }\n        ],\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSimpleInstances\n<公共请求参数>\n\n{\n    \"SearchInstanceId\": \"dabc\",\n    \"SearchInstanceName\": \"dabc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchTags\": [\n        \"dabc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"ID\": 0,\n                \"InstanceId\": \"dabc\",\n                \"InstanceName\": \"dabc\",\n                \"Version\": \"dabc\",\n                \"Region\": \"dabc\",\n                \"RegionId\": 0,\n                \"RegionDesc\": \"adbc\",\n                \"Zone\": \"abdc\",\n                \"ZoneId\": 0,\n                \"ZoneDesc\": \"abdc\",\n                \"VpcId\": \"abdc\",\n                \"SubnetId\": \"abdc\",\n                \"CreateTime\": \"abdc\",\n                \"ExpireTime\": \"abdc\",\n                \"AccessInfo\": \"adbc\",\n                \"PayMode\": \"abdc\",\n                \"RenewFlag\": true\n            }\n        ],\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abcdd\"\n    }\n}",
         "title": "集群列表new"
+      }
+    ],
+    "DescribeSlowLog": [
+      {
+        "document": "慢日志查询",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowLog\n<公共请求参数>\n\n{\n    \"InstanceId\": \"1abc\",\n    \"StartTime\": \"2012-12-12 12:12:12\",\n    \"EndTime\": \"2012-12-12 13:12:12\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Database\": \"1abc\",\n    \"OrderBy\": \"1abc\",\n    \"OrderByType\": \"1abc\",\n    \"Duration\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SlowLogDetails\": {\n            \"TotalTime\": 0,\n            \"TotalCallTimes\": 0,\n            \"NormalQuerys\": [\n                {\n                    \"CallTimes\": 0,\n                    \"SharedReadBlocks\": 0,\n                    \"SharedWriteBlocks\": 0,\n                    \"DatabaseName\": \"1abc\",\n                    \"NormalQuery\": \"1abc\",\n                    \"MaxElapsedQuery\": \"1abc\",\n                    \"CostTime\": 0,\n                    \"ClientIp\": \"1abc\",\n                    \"UserName\": \"1abc\",\n                    \"TotalCallTimesPercent\": 0,\n                    \"TotalCostTimePercent\": 0,\n                    \"MinCostTime\": 0,\n                    \"MaxCostTime\": 0,\n                    \"FirstTime\": \"2012-12-12 12:12:12\",\n                    \"LastTime\": \"2012-12-12 12:12:12\",\n                    \"ReadCostTime\": 0,\n                    \"WriteCostTime\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"1abc\"\n    }\n}",
+        "title": "慢日志查询"
+      }
+    ],
+    "DescribeUpgradeList": [
+      {
+        "document": "升级记录",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpgradeList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xx\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": \"2\",\n        \"UpgradeItems\": [\n            {\n                \"TaskName\": \"test\",\n                \"SourceVersion\": \"3.16.4.7\",\n                \"TargetVersion\": \"3.16.4.8\",\n                \"CreateTime\": \"2025-01-06 12:12:12\",\n                \"EndTime\": \"2025-01-06 12:18:12\",\n                \"Status\": \"2\",\n                \"OperateUin\": \"test\"\n            }\n        ],\n        \"RequestId\": \"ssxx\"\n    }\n}",
+        "title": "升级记录"
+      }
+    ],
+    "DescribeUserHbaConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserHbaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"HbaConfigs\": [\n            {\n                \"Type\": \"cn\",\n                \"Database\": \"cran\",\n                \"User\": \"test\",\n                \"Address\": \"\",\n                \"Mask\": \"\",\n                \"Method\": \"md5\"\n            }\n        ],\n        \"RequestId\": \"ssxx\"\n    }\n}",
+        "title": "查询用户Hba"
       }
     ],
     "DestroyInstanceByApi": [
       {
         "document": "销毁集群",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"1254\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"afsbc\"\n    }\n}",
         "title": "销毁集群"
+      }
+    ],
+    "ModifyDBParameters": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBParameters\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abc\",\n    \"NodeConfigParams\": [\n        {\n            \"NodeType\": \"dn\",\n            \"ConfigParams\": [\n                {\n                    \"ParameterName\": \"k1\",\n                    \"ParameterValue\": \"v1\",\n                    \"ParameterOldValue\": \"v0\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"RequestId\": \"abddc\"\n    }\n}",
+        "title": "1"
       }
     ],
     "ModifyInstance": [
@@ -62,6 +142,54 @@
         "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-12345678\",\n    \"InstanceName\": \"cdwch-test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx\"\n    }\n}",
         "title": "修改实例信息"
+      }
+    ],
+    "ModifyUserHba": [
+      {
+        "document": "修改用户Hba",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserHba\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-abc\",\n    \"HbaConfigs\": [\n        {\n            \"Type\": \"1abc\",\n            \"Database\": \"1abc\",\n            \"User\": \"1abc\",\n            \"Address\": \"1abc\",\n            \"Mask\": \"1abc\",\n            \"Method\": \"1abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"1abc\"\n    }\n}",
+        "title": "修改用户Hba"
+      }
+    ],
+    "ResetAccountPassword": [
+      {
+        "document": "修改用户密码",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetAccountPassword\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-12345678\",\n    \"UserName\": \"test\",\n    \"NewPassword\": \"cdwpg123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abcdd\"\n    }\n}",
+        "title": "重置密码"
+      }
+    ],
+    "RestartInstance": [
+      {
+        "document": "用户在控制台主动发起重启实例",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-13456\",\n    \"NodeTypes\": [\n        \"cn\",\n        \"dn\"\n    ],\n    \"NodeIds\": [\n        \"102\",\n        \"103\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fdsfsd\",\n        \"FlowId\": 1,\n        \"ErrorMsg\": \"faile to restart intance\"\n    }\n}",
+        "title": "重启实例"
+      }
+    ],
+    "ScaleOutInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOutInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"NodeType\": \"dn\",\n    \"ScaleOutCount\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "ScaleOutInstance"
+      }
+    ],
+    "ScaleUpInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleUpInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xxxxx\",\n    \"InstanceName\": \"test1\",\n    \"Case\": \"vm\",\n    \"ModifySpec\": {\n        \"Type\": \"cn\",\n        \"SpecName\": \"S_8_32_S\",\n        \"Count\": 4,\n        \"DiskSpec\": {\n            \"DiskType\": \"CLOUD_SSD\",\n            \"DiskSize\": 200,\n            \"DiskCount\": 1\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 43,\n        \"RequestId\": \"errorstest\",\n        \"ErrorMsg\": \"errorstest\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "UpgradeInstance": [
+      {
+        "document": "在线升级",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-xxx\",\n    \"PackageVersion\": \"3.15.3.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"abcss\"\n    }\n}",
+        "title": "在线升级"
       }
     ]
   },

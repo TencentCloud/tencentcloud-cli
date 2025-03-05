@@ -4156,7 +4156,7 @@
         {
           "disabled": false,
           "document": "合同对应参与方需要修改的目标经办人。其UserId可在企业控制台中组织管理里面找到。或者使用获取员工信息接口得到。\n\n注意：`需要保证目标经办人已经加入企业且已实名`",
-          "example": "无",
+          "example": "yDwfGUieurag8Uy0AthwPa6bOntYp6x0",
           "member": "string",
           "name": "TargetUserId",
           "required": true,
@@ -4199,7 +4199,7 @@
         {
           "disabled": false,
           "document": "成功的合同id",
-          "example": "无",
+          "example": "[\"yDtCvUUlal1z9fUEyCjfI8TAPPwBtFzu\"]",
           "member": "string",
           "name": "SuccessFlows",
           "output_required": false,

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cdwpg DestroyInstanceByApi --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId cdwpg-abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "abc",
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "FlowId": "1254",
+        "ErrorMsg": "",
+        "RequestId": "afsbc"
     }
 }
 ```

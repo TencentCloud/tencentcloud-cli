@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cdwpg DescribeInstanceInfo --cli-unfold-argument  \
-    --InstanceId abc
+    --InstanceId cdwpg-abc
 ```
 
 Output: 
@@ -15,46 +15,46 @@ Output:
     "Response": {
         "SimpleInstanceInfo": {
             "ID": 0,
-            "InstanceId": "abc",
-            "InstanceName": "abc",
-            "Version": "abc",
-            "Region": "abc",
-            "Zone": "abc",
-            "UserVPCID": "abc",
-            "UserSubnetID": "abc",
-            "CreateTime": "abc",
-            "ExpireTime": "abc",
-            "AccessInfo": "abc",
+            "InstanceId": "cdwpg-abc",
+            "InstanceName": "test-abc",
+            "Version": "3.16.4.8",
+            "Region": "ap-beijing",
+            "Zone": "ap-beijing-6",
+            "UserVPCID": "abdc",
+            "UserSubnetID": "abdc",
+            "CreateTime": "2012-12-12 12:12:12",
+            "ExpireTime": "2012-12-12 13:12:12",
+            "AccessInfo": "--",
             "RenewFlag": 0,
             "ChargeProperties": {
                 "PayMode": 0,
                 "RenewFlag": 0,
                 "TimeSpan": 0,
-                "TimeUnit": "abc",
-                "ChargeType": "abc"
+                "TimeUnit": "--",
+                "ChargeType": "--"
             },
             "Resources": [
                 {
-                    "SpecName": "abc",
+                    "SpecName": "s4",
                     "Count": 0,
                     "DiskSpec": {
-                        "DiskType": "abc",
+                        "DiskType": "local",
                         "DiskSize": 0,
                         "DiskCount": 0
                     },
-                    "Type": "abc"
+                    "Type": "dn"
                 }
             ],
             "Tags": [
                 {
-                    "TagKey": "abc",
-                    "TagValue": "abc"
+                    "TagKey": "gd",
+                    "TagValue": "fd"
                 }
             ],
             "Status": 0
         },
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "abcss"
     }
 }
 ```

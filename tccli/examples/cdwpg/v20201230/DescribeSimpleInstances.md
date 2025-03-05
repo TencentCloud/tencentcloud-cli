@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cdwpg DescribeSimpleInstances --cli-unfold-argument  \
-    --SearchInstanceId abc \
-    --SearchInstanceName abc \
+    --SearchInstanceId dabc \
+    --SearchInstanceName dabc \
     --Offset 0 \
     --Limit 0 \
-    --SearchTags abc
+    --SearchTags dabc
 ```
 
 Output: 
@@ -21,26 +21,26 @@ Output:
         "InstancesList": [
             {
                 "ID": 0,
-                "InstanceId": "abc",
-                "InstanceName": "abc",
-                "Version": "abc",
-                "Region": "abc",
+                "InstanceId": "dabc",
+                "InstanceName": "dabc",
+                "Version": "dabc",
+                "Region": "dabc",
                 "RegionId": 0,
-                "RegionDesc": "abc",
-                "Zone": "abc",
+                "RegionDesc": "adbc",
+                "Zone": "abdc",
                 "ZoneId": 0,
-                "ZoneDesc": "abc",
-                "VpcId": "abc",
-                "SubnetId": "abc",
-                "CreateTime": "abc",
-                "ExpireTime": "abc",
-                "AccessInfo": "abc",
-                "PayMode": "abc",
+                "ZoneDesc": "abdc",
+                "VpcId": "abdc",
+                "SubnetId": "abdc",
+                "CreateTime": "abdc",
+                "ExpireTime": "abdc",
+                "AccessInfo": "adbc",
+                "PayMode": "abdc",
                 "RenewFlag": true
             }
         ],
-        "ErrorMsg": "abc",
-        "RequestId": "abc"
+        "ErrorMsg": "",
+        "RequestId": "abcdd"
     }
 }
 ```
