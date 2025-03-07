@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud ResetDeviceState --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --DeviceNames test_device1 test_device2
 ```
 

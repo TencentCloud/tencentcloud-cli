@@ -3475,7 +3475,7 @@
         },
         {
           "disabled": false,
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时",
+          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时，不与 Offset  参数同时使用",
           "example": "csdfeee-dsfll09ds-sdsf",
           "member": "string",
           "name": "Context",
@@ -3511,8 +3511,8 @@
         },
         {
           "disabled": false,
-          "document": "ap-shanghai, ap-guangzhou",
-          "example": "地域",
+          "document": "地域",
+          "example": "ap-shanghai",
           "member": "string",
           "name": "InstanceRegion",
           "required": false,
@@ -3521,7 +3521,7 @@
         {
           "disabled": false,
           "document": "施压引擎节点IP",
-          "example": "节点IP",
+          "example": "192.168.0.1",
           "member": "string",
           "name": "Instance",
           "required": false,
@@ -3529,12 +3529,21 @@
         },
         {
           "disabled": false,
-          "document": "request 代表采样日志,可为不填",
-          "example": "日志类型",
+          "document": "request 代表采样日志,engine 代表引擎日志，console 代表用户打印日志",
+          "example": "request/engine/console",
           "member": "string",
           "name": "LogType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志偏移量，不与Context 参数同时使用",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3673,6 +3682,15 @@
           "name": "Queries",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "最多返回的数据点个数",
+          "example": "500",
+          "member": "int64",
+          "name": "MaxPoint",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3764,6 +3782,15 @@
           "name": "GroupBy",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回的最大数据点个数",
+          "example": "500",
+          "member": "int64",
+          "name": "MaxPoint",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6802,6 +6829,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件是否已上传，如果已上传，则可以不必填写 EncodedContent,EncodedHar 等内容。\n主要用于较大长度脚本上传。",
+          "example": "true/false",
+          "member": "bool",
+          "name": "Uploaded",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

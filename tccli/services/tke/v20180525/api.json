@@ -11950,13 +11950,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略信息列表",
           "example": "无",
           "member": "OpenPolicyInfo",
           "name": "OpenPolicyInfoList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -20445,93 +20445,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略",
           "example": "cluster",
           "member": "string",
           "name": "PolicyCategory",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略中文名称",
           "example": "存在节点的集群不允许删除",
           "member": "string",
           "name": "PolicyName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略描述",
           "example": "集群中存在任意节点，需下线节点后方可删除",
           "member": "string",
           "name": "PolicyDesc",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略运行模式：dryrun空跑不生效，deny拦截生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略运行模式：dryrun空跑不生效，deny拦截生效",
           "example": "dryrun",
           "member": "string",
           "name": "EnforcementAction",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联的事件数量(最近7d)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的事件数量(最近7d)",
           "example": "3",
           "member": "uint64",
           "name": "EventNums",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略英文名称",
           "example": "block-crd-deletion-rule",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略模板类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略模板类型",
           "example": "BlockCrdDeletion",
           "member": "string",
           "name": "Kind",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略开关状态：open打开，close关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略开关状态：open打开，close关闭",
           "example": "open",
           "member": "string",
           "name": "EnabledStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略的实例的yaml示例base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "策略的实例的yaml示例base64编码",
           "example": "yaml base64",
           "member": "string",
           "name": "ConstraintYamlExample",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

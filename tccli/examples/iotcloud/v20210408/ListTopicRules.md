@@ -17,18 +17,18 @@ Output:
         "TotalCnt": 2,
         "Rules": [
             {
-                "RuleName": "test2",
+                "RuleName": "rule2",
                 "CreatedAt": 1524455688,
                 "RuleDisabled": false,
                 "Description": "test2",
-                "TopicPattern": "xx"
+                "TopicPattern": ""
             },
             {
                 "RuleName": "test",
                 "CreatedAt": 1524192248,
                 "RuleDisabled": false,
                 "Description": "Describe",
-                "TopicPattern": "xx"
+                "TopicPattern": "gstasg"
             }
         ],
         "RequestId": "be69a7a3-7315-40a7-9532-3316e4a3e97e"

@@ -10150,6 +10150,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "洞察结构化信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"allocatedMemMBSeconds\":118066,\"confMemSizeMB\":4096,\"minimumWastePercent\":48,\"suggestMemSizeMB\":3072,\"totalWastePercent\":48}\"",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

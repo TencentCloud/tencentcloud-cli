@@ -9622,6 +9622,15 @@
           "name": "NextToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批次Id",
+          "example": "82544cc2-116f-4f4e-93e3-d23e7f2437f2",
+          "member": "string",
+          "name": "BatchId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9707,6 +9716,16 @@
           "name": "DataAmount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "spark ui地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://dlc-spark-ui.chongqing.cloud.tencent.com/history/spark-9bc03e7ad3b74bf989a5007df156c66e/none/none/jobs/",
+          "member": "string",
+          "name": "UiUrl",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {

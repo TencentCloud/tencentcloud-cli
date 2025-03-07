@@ -1,4 +1,4 @@
-**Example 1: 批量解绑子设备**
+**Example 1: 批量解绑子设备（旧）**
 
 
 
@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli iotcloud UnbindDevices --cli-unfold-argument  \
-    --GatewayProductId 12345ABCDE \
-    --GatewayDeviceName test \
-    --ProductId ABCDE12345 \
-    --DeviceNames test0 test1
+    --GatewayProductId EQPOKD5111 \
+    --GatewayDeviceName gateway-001 \
+    --ProductId EQPOKD5222 \
+    --DeviceNames dev-001 dev-002
 ```
 
 Output: 

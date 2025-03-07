@@ -1422,7 +1422,7 @@
         },
         {
           "disabled": false,
-          "document": "装有查询结果 Spans 的 Trace 结构体。OpenTelemetry 标准 Trace 结构体哈希后的字符串，先将 Trace 利用 ptrace.JSONMarshaler 转换成 Json 字符串，再用 gzip 压缩，最后转换成 base64 标准的字符串。",
+          "document": "Spans字段中包含了链路数据的全部内容，由于数据经过了压缩，需要对结果进行如下三步转换，以还原始的文本。\n1. 将Spans字段中的文本进行 Base64 解码，得到经过压缩后字节数组。\n2. 使用 gzip 对压缩后的字节数组进行解压，得到压缩前的字节数组。\n3. 使用 UTF-8 字符集，将压缩前的字节数组转换为文本。\n",
           "example": "无",
           "member": "string",
           "name": "Spans",
@@ -1718,6 +1718,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "业务系统 ID",
+          "example": "apm-52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "指标列表",
           "example": "无",
           "member": "QueryMetricItem",
@@ -1727,12 +1736,12 @@
         },
         {
           "disabled": false,
-          "document": "业务系统 ID",
-          "example": "apm-52Dpv13GR",
+          "document": "聚合维度",
+          "example": "service.name",
           "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
+          "name": "GroupBy",
+          "required": true,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1740,15 +1749,6 @@
           "example": "无",
           "member": "Filter",
           "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "聚合维度",
-          "example": "service.name",
-          "member": "string",
-          "name": "GroupBy",
           "required": false,
           "type": "list"
         },
@@ -1827,30 +1827,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "业务系统 ID",
+          "example": "apm-52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "维度名",
           "example": "service.name",
           "member": "string",
           "name": "TagKey",
           "required": true,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "业务系统 ID",
-          "example": "apm-52Dpv13GR",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "过滤条件",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
         },
         {
           "disabled": false,
@@ -1869,6 +1860,15 @@
           "name": "EndTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2323,7 +2323,7 @@
           "example": "[\"stock-service\",\"profile-service28\",\"profile-service08\"]",
           "member": "string",
           "name": "ServiceNames",
-          "required": false,
+          "required": true,
           "type": "list"
         }
       ],

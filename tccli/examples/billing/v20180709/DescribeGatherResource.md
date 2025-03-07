@@ -20,7 +20,10 @@ Output:
                 "ActionType": "prepay_renew",
                 "ActionTypeName": "包年包月续费",
                 "AllocationType": 1,
-                "BelongRule": null,
+                "BelongRule": {
+                    "RuleId": 862324,
+                    "RuleName": "公摊规则"
+                },
                 "BelongTreeNodeUniqKey": {
                     "TreeNodeUniqKey": "909619400-6391dae9802da",
                     "TreeNodeUniqKeyName": "客户应用组"
@@ -34,8 +37,22 @@ Output:
                 "ItemCode": "sv_mongodb_mem_replica",
                 "ItemCodeName": "文档数据库MongoDB-副本集-内存",
                 "OperateUin": "909619400",
-                "OtherRules": [],
-                "OtherTreeNodeUniqKeys": [],
+                "OtherRules": [
+                    {
+                        "RuleId": "124",
+                        "RuleName": "分摊规则1"
+                    }
+                ],
+                "OtherTreeNodeUniqKeys": [
+                    {
+                        "TreeNodeUniqKey": "909619400-67290cae5",
+                        "TreeNodeUniqKeyName": "z-自动创建"
+                    },
+                    {
+                        "TreeNodeUniqKey": "909619400-447c2c41d",
+                        "TreeNodeUniqKeyName": "f-二组"
+                    }
+                ],
                 "OwnerUin": "909619400",
                 "PayMode": "prePay",
                 "PayModeName": "包年包月",
@@ -48,12 +65,17 @@ Output:
                 "RegionId": 1,
                 "RegionName": "华南地区（广州）",
                 "ResourceId": "cmgo-p46bysvb",
-                "ResourceName": null,
-                "RuleId": null,
-                "RuleName": null,
+                "ResourceName": "",
+                "RuleId": "191027",
+                "RuleName": "公共服务公摊",
                 "SplitItemId": "",
                 "SplitItemName": "",
-                "Tag": null,
+                "Tag": [
+                    {
+                        "TagKey": "dms-common",
+                        "TagValue": "prod"
+                    }
+                ],
                 "TransferPayAmount": "0.00000000",
                 "TreeNodeUniqKey": "909619400-6391dae9802da",
                 "TreeNodeUniqKeyName": "客户应用组",

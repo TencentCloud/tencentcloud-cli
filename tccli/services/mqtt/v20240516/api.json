@@ -287,6 +287,13 @@
       "output": "ModifyUserResponse",
       "status": "online"
     },
+    "PublishMessage": {
+      "document": "发布 MQTT 消息到消息主题或客户端",
+      "input": "PublishMessageRequest",
+      "name": "发布 MQTT 消息",
+      "output": "PublishMessageResponse",
+      "status": "online"
+    },
     "RegisterCaCertificate": {
       "document": "注册ca证书",
       "input": "RegisterCaCertificateRequest",
@@ -4326,6 +4333,87 @@
         }
       ],
       "usage": "both"
+    },
+    "PublishMessageRequest": {
+      "document": "PublishMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 payload，需要按 encoding 指定的编码方式进行编码",
+          "example": "Hello MQTT!",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息目的主题，该参数与 TargetClientId 二选一",
+          "example": "test/a/b",
+          "member": "string",
+          "name": "TargetTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息目的客户端 ID，该参数与 TargetTopic 二选一",
+          "example": "myclient0001",
+          "member": "string",
+          "name": "TargetClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 payload 编码，可选 plain 或 base64，默认为 plain（即不编码）",
+          "example": "plain",
+          "member": "string",
+          "name": "Encoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息的服务质量等级，默认为 1",
+          "example": "1",
+          "member": "int64",
+          "name": "Qos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否为保留消息，默认为 false，且仅支持发布到主题的消息设置为 true",
+          "example": "false",
+          "member": "bool",
+          "name": "Retain",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "PublishMessageResponse": {
+      "document": "PublishMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RegisterCaCertificateRequest": {
       "document": "RegisterCaCertificate请求参数结构体",

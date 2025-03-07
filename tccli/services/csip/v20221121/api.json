@@ -2961,7 +2961,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，0未处理、1已处置、2已忽略",
+          "document": "状态，0未处理、1已处置、2已忽略、3云防已防护",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -3047,6 +3047,26 @@
           "name": "From",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务判定,high_risk_service 高危服务 web_service web服务 other_service 其他服务",
+          "example": "high",
+          "member": "string",
+          "name": "ServiceJudge",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理",
+          "example": "0",
+          "member": "uint64",
+          "name": "XspmStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3790,6 +3810,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否POC扫描，0-非POC，1-POC",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsPOC",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4005,6 +4035,16 @@
           "name": "Payload",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "22",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -13054,7 +13094,7 @@
         {
           "disabled": false,
           "document": "风险详情",
-          "example": "未授权访问:如果未受管理员授权，可能会被未经授权的人登录和访问 服务器被攻击: WebLogic 可能会被攻击者利用，最终导致整个服务器被攻击",
+          "example": "未授权访问:如果未受管理员授权，可能会被未经授权的人登录和访问",
           "member": "string",
           "name": "RiskDetails",
           "output_required": true,
@@ -13064,7 +13104,7 @@
         {
           "disabled": false,
           "document": "处置建议",
-          "example": "禁用未授权访问:应禁止 WebLogic 未授权的访问，通常可以通过固定的 IP 地址或者域名来做到 更新 WebLogic:WebLogic 应及时更新到最新的版本，来避免存在的漏洞被攻击者利用 定期审计:定期审计 WebLogic 的日志，可以及时发现不正常的访问行为",
+          "example": "禁用未授权访问:应禁止 WebLogic 未授权的访问",
           "member": "string",
           "name": "Suggestion",
           "output_required": true,
@@ -13073,7 +13113,7 @@
         },
         {
           "disabled": false,
-          "document": "状态，0未处理、1已处置、2已忽略",
+          "document": "状态，0未处理、1已处置、2已忽略、3云防已防护",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -13154,7 +13194,7 @@
         {
           "disabled": false,
           "document": "风险列表",
-          "example": "[   {     \"Title\": \"未授权访问\",     \"Body\": \"如果未受管理员授权，可能会被未经授权的人登录和访问\"   },   {     \"Title\": \"服务器被攻击\",     \"Body\": \" WebLogic 可能会被攻击者利用，最终导致整个服务器被攻击\"   } ]",
+          "example": "[{\"Title\": \"禁用未授权访问\",\"Body\": \"应禁止未授权的访问\"}]",
           "member": "ServerRiskSuggestion",
           "name": "RiskList",
           "output_required": true,
@@ -13164,7 +13204,7 @@
         {
           "disabled": false,
           "document": "建议列表",
-          "example": "[{\"Title\": \"禁用未授权访问\",     \"Body\": \"应禁止 WebLogic 未授权的访问，通常可以通过固定的 IP 地址或者域名来做到\"   },   {     \"Title\": \"更新 WebLogic\",     \"Body\": \"WebLogic 应及时更新到最新的版本，来避免存在的漏洞被攻击者利用\"   },   {     \"Title\": \"定期审计\",     \"Body\": \"定期审计 WebLogic 的日志，可以及时发现不正常的访问行为\"   } ]",
+          "example": "[{\"Title\": \"禁用未授权访问\",\"Body\": \"应禁止未授权的访问\"}]",
           "member": "ServerRiskSuggestion",
           "name": "SuggestionList",
           "output_required": true,
@@ -13179,6 +13219,26 @@
           "name": "StatusCode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新风险等级,high_risk 高危 suspect 疑似 Normal 暂无风险",
+          "example": "high",
+          "member": "string",
+          "name": "NewLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理",
+          "example": "o",
+          "member": "uint64",
+          "name": "XspmStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

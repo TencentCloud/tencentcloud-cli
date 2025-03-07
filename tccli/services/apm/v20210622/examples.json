@@ -105,7 +105,7 @@
     "DescribeTagValues": [
       {
         "document": "根据维度列名和过滤条件，查询维度值",
-        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagValues\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"service.instance\",\n            \"Type\": \"=\",\n            \"Value\": \"127.0.0.1\"\n        }\n    ],\n    \"TagKey\": \"servier.name\"\n}",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagValues\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Key\": \"service.instance\",\n            \"Type\": \"=\",\n            \"Value\": \"127.0.0.1\"\n        }\n    ],\n    \"TagKey\": \"servier.name\",\n    \"InstanceId\": \"apm-CVfliqa8U\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"apz12zicapy-eqixuc-uehq346v59c62\",\n        \"Values\": [\n            \"sso-api\",\n            \"auth-api\"\n        ]\n    }\n}",
         "title": "查询维度数据"
       }

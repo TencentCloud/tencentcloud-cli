@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeFirmwareTask --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --FirmwareVersion 1.0.0 \
     --TaskId 10000
 ```
@@ -21,9 +21,9 @@ Output:
         "Type": 1,
         "ProductName": "门锁",
         "UpgradeMode": "originalVersion",
-        "ProductId": "ABCDE12345",
+        "ProductId": "EQPOKD5111",
         "OriginalVersion": "1.0.0",
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "5186e731-d43c-43ef-955c-12ff9b0ce9f2"
     }
 }
 ```

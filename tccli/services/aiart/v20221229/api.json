@@ -1265,7 +1265,7 @@
         },
         {
           "disabled": false,
-          "document": "商品图中的商品主体名称。\n建议说明商品主体，否则影响生成效果。",
+          "document": "商品图中的商品主体名称。\n最多支持50个 utf-8 字符，支持中、英文。\n建议说明商品主体，否则影响生成效果。",
           "example": "汽车",
           "member": "string",
           "name": "Product",

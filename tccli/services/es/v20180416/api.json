@@ -9451,6 +9451,7 @@
           "example": "5",
           "member": "string",
           "name": "NumberOfShards",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9461,9 +9462,21 @@
           "example": "20s",
           "member": "string",
           "name": "RefreshInterval",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数",
+          "example": "5",
+          "member": "string",
+          "name": "CustomSetting",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

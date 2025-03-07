@@ -6806,6 +6806,7 @@
           "member": "string",
           "name": "Spec",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6816,6 +6817,7 @@
           "member": "int64",
           "name": "NodeSize",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6826,6 +6828,7 @@
           "member": "int64",
           "name": "Core",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6836,6 +6839,7 @@
           "member": "int64",
           "name": "Memory",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6846,6 +6850,7 @@
           "member": "int64",
           "name": "Disk",
           "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6856,6 +6861,7 @@
           "member": "string",
           "name": "DiskType",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6866,6 +6872,7 @@
           "member": "string",
           "name": "DiskDesc",
           "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6876,6 +6883,7 @@
           "member": "AttachCBSSpec",
           "name": "AttachCBSSpec",
           "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6886,6 +6894,7 @@
           "member": "string",
           "name": "SubProductType",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6896,6 +6905,7 @@
           "member": "int64",
           "name": "SpecCore",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6906,6 +6916,7 @@
           "member": "int64",
           "name": "SpecMemory",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6916,6 +6927,7 @@
           "member": "int64",
           "name": "DiskCount",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6926,6 +6938,7 @@
           "member": "int64",
           "name": "Encrypt",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6936,11 +6949,12 @@
           "member": "int64",
           "name": "MaxDiskSize",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "OpenCoolDownPolicyRequest": {
       "document": "OpenCoolDownPolicy请求参数结构体",

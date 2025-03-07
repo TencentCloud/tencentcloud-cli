@@ -9702,7 +9702,7 @@
         {
           "disabled": false,
           "document": "输出",
-          "example": "{                     \"Res\": [                         {                             \"Id\": \"66a341dd8f33c805d65f4765\",                             \"RuleId\": 5501526871,                             \"IpList\": [                                 \"113.108.77.69\"                             ],                             \"ActionType\": 42,                             \"Ip\": \"113.108.77.69\",                             \"Note\": \"\",                             \"Source\": \"custom\",                             \"TsVersion\": 1721975261208,                             \"CreateTime\": 1721975261208,                             \"ValidTs\": 2019571199,                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"ValidStatus\": 1                         }                     ],                     \"TotalCount\": 1             }",
+          "example": "{ \"Res\": [{\"Id\": \"66a341dd8f33c805d65f4765\", \"RuleId\": 5501526871, \"IpList\": [ \"113.108.77.69\" ],  \"TotalCount\": 1 }",
           "member": "IpAccessControlData",
           "name": "Data",
           "output_required": true,
@@ -15193,36 +15193,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "定时执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "定时执行的时间参数",
           "example": "[{\"StartDateTime\":1711618518\t,\"EndDateTime\":1711918518}]",
           "member": "TimedJob",
           "name": "Timed",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "周期执行的时间参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "周期执行的时间参数",
           "example": "[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}]",
           "member": "CronJob",
           "name": "Cron",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "时区",
           "example": "UTC+8\t",
           "member": "string",
           "name": "TimeTZone",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

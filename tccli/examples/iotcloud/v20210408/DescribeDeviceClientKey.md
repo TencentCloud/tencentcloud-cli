@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli iotcloud DescribeDeviceClientKey --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
-    --DeviceName abc
+    --ProductId EQPOKD5111 \
+    --DeviceName dev-001
 ```
 
 Output: 

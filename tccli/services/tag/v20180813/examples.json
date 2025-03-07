@@ -231,7 +231,7 @@
     "TagResources": [
       {
         "document": "为资源绑定标签",
-        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/ins-****\",\n        \"qcs::cvm:ap-shanghai:uin/10000055****:volme/volme-****\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"11\",\n            \"TagValue\": \"11\"\n        },\n        {\n            \"TagKey\": \"22\",\n            \"TagValue\": \"22\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/ins-****\",\n        \"qcs::cvm:ap-shanghai:uin/10000055****:volume/****\"\n    ],\n    \"Tags\": [\n        {\n            \"TagKey\": \"11\",\n            \"TagValue\": \"11\"\n        },\n        {\n            \"TagKey\": \"22\",\n            \"TagValue\": \"22\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedResources\": [],\n        \"RequestId\": \"a4c9f540-b04e-47c4-a267-4a398b70d2f5\"\n    }\n}",
         "title": "为资源绑定标签"
       }

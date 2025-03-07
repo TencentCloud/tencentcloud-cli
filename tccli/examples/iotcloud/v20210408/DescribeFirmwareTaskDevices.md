@@ -17,21 +17,21 @@ Output:
         "Total": 0,
         "Devices": [
             {
-                "DeviceName": "123",
+                "DeviceName": "dev-001",
                 "LastProcessTime": 1597141763,
                 "Status": 5,
-                "ErrMsg": "",
+                "ErrMsg": "fail",
                 "DstVersion": "1.0",
-                "Retcode": 0,
+                "Retcode": -1,
                 "Percent": 0,
                 "OriVersion": "0.1"
             },
             {
                 "OriVersion": "0.1",
-                "DeviceName": "abc",
+                "DeviceName": "dev-001",
                 "LastProcessTime": 1597140525,
                 "Status": 0,
-                "ErrMsg": "",
+                "ErrMsg": "fail",
                 "DstVersion": "1.0",
                 "Retcode": 0,
                 "Percent": 0
@@ -39,12 +39,12 @@ Output:
             {
                 "LastProcessTime": 1597141811,
                 "Status": 6,
-                "ErrMsg": "",
+                "ErrMsg": "fail",
                 "DstVersion": "1.0",
                 "Retcode": 0,
                 "Percent": 0,
                 "OriVersion": "0.1",
-                "DeviceName": "123"
+                "DeviceName": "dev-001"
             }
         ],
         "RequestId": "968ac21f-815f-4f32-852f-c0729c40e724"

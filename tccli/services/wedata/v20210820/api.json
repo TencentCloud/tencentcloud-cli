@@ -7702,6 +7702,15 @@
           "name": "TableName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据优化资源组",
+          "example": "\"group\"",
+          "member": "string",
+          "name": "ResourceGroupName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7819,6 +7828,15 @@
           "example": "\"aa\"",
           "member": "string",
           "name": "TableName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据优化资源组",
+          "example": "\"group\"",
+          "member": "string",
+          "name": "ResourceGroupName",
           "required": false,
           "type": "string"
         }
@@ -17133,6 +17151,24 @@
           "name": "ProjectIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除",
+          "example": "无",
+          "member": "string",
+          "name": "BlackTaskIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "时区",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -26119,6 +26155,15 @@
           "name": "OnlyRerun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "时区",
+          "example": "UTC+7",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -29963,6 +30008,26 @@
           "example": "NORMAL",
           "member": "string",
           "name": "MakeDataTimeOrder",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补录时间范围的时区",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行应用参数",
+          "example": "-executor-cores 2  --executor-memory 2g  --conf spark.task.maxFailures=3",
+          "member": "string",
+          "name": "AppParam",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35008,6 +35073,15 @@
           "name": "ScheduleTimeZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动清理不支持的任务链接",
+          "example": "true",
+          "member": "bool",
+          "name": "ClearLink",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -40531,6 +40605,7 @@
           "example": "无",
           "member": "string",
           "name": "K",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -40541,6 +40616,7 @@
           "example": "无",
           "member": "string",
           "name": "V",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45498,6 +45574,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务自依赖类型：\nyes： 任务需满足自依赖\nno：任务无需满足自依赖\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SelfWorkFlowDependType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -46167,6 +46254,15 @@
           "name": "EventBatchCaseList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "触发时区",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "ScheduleTimeZone",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -48036,6 +48132,17 @@
           "example": "无",
           "member": "string",
           "name": "CalendarId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时区配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScheduleTimeZone",
           "output_required": false,
           "required": false,
           "type": "string",

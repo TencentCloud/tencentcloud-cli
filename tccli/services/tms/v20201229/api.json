@@ -460,6 +460,15 @@
           "name": "Device",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "Content的原始语种，比如en,zh",
+          "example": "en",
+          "member": "string",
+          "name": "SourceLanguage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

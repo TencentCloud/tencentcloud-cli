@@ -20,23 +20,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号工厂基线项唯一标识,只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号工厂基线项唯一标识,只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。",
           "example": "ACS-BP_ACCOUNT_FACTORY_ACCOUNT_CONTACT",
           "member": "string",
           "name": "Identifier",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "账号工厂基线项配置，不同基线项配置参数不同。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号工厂基线项配置，不同基线项配置参数不同。",
           "example": "{\\\"Contacts\\\":[{\\\"Name\\\":\\\"dest\\\",\\\"Email\\\":\\\"ia@22.com\\\",\\\"Mobile\\\":\\\"12345678910\\\",\\\"Position\\\":\\\"Technical Director\\\"}]}",
           "member": "string",
           "name": "Configuration",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -47,7 +49,7 @@
         {
           "disabled": false,
           "document": "成员账号uin，也是被应用基线的账号uin。",
-          "example": "[124254533, 13894929458]",
+          "example": "[1000000000001]",
           "member": "int64",
           "name": "MemberUinList",
           "required": true,

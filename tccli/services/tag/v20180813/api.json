@@ -2361,8 +2361,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务类型，示例 cvm 。资源所属业务名称（资源六段式中的第三段）",
-          "example": "cmv",
+          "document": "业务类型，示例 cvm。资源所属业务名称（资源六段式中的第三段）",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -2371,7 +2371,7 @@
         {
           "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
-          "example": "12345",
+          "example": "[ \"ins-1\", \"ins-2\" ]",
           "member": "string",
           "name": "ResourceIds",
           "required": true,

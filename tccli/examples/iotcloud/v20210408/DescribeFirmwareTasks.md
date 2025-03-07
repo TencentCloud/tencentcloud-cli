@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeFirmwareTasks --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --FirmwareVersion 1.0.0 \
     --Offset 1 \
     --Limit 5
@@ -49,7 +49,7 @@ Output:
                 "CreateTime": 1589467141
             }
         ],
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "5186e731-d43c-43ef-955c-12ff9b0ce9f2"
     }
 }
 ```

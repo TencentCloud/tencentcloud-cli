@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli iotcloud DescribeProductCA --cli-unfold-argument  \
-    --ProductId ABCDE12345
+    --ProductId EQPOKD5111
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxx",
+        "RequestId": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6111",
         "CAs": [
             {
                 "CreateTime": 1622619674,

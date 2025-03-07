@@ -258,14 +258,14 @@
     ],
     "SetUserQuota": [
       {
-        "document": "",
+        "document": "用于设置用户配额",
         "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"UserType\": \"Uid\",\n    \"UserId\": \"1000\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fjo8aejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "设置文件系统用户配额"
       },
       {
-        "document": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"UserType\": \"Dir\",\n    \"DirectoryPath\": \"/cfs/123\",\n    \"CapacityHardLimit\":  10,\n    \"FileHardLimit\":  10000\n}",
-        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"UserType\": \"Uid\",\n    \"UserId\": \"1000\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
+        "document": "用于设置文件系统目录配额",
+        "input": "POST / HTTP/1.1\nHost: cfs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"cfs-12345\",\n    \"UserType\": \"Dir\",\n    \"DirectoryPath\": \"/cfs/123\",\n    \"CapacityHardLimit\": 10,\n    \"FileHardLimit\": 10000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fasfsaaejo-fjei-32eu-2je9-fhue83nd81\"\n    }\n}",
         "title": "设置文件系统目录配额"
       }

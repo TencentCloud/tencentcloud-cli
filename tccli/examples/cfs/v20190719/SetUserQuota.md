@@ -1,6 +1,6 @@
 **Example 1: 设置文件系统用户配额**
 
-
+用于设置用户配额
 
 Input: 
 
@@ -24,27 +24,15 @@ Output:
 
 **Example 2: 设置文件系统目录配额**
 
-POST / HTTP/1.1
-Host: cfs.tencentcloudapi.com
-Content-Type: application/json
-X-TC-Action: SetUserQuota
-<公共请求参数>
-
-{
-    "FileSystemId": "cfs-12345",
-    "UserType": "Dir",
-    "DirectoryPath": "/cfs/123",
-    "CapacityHardLimit":  10,
-    "FileHardLimit":  10000
-}
+用于设置文件系统目录配额
 
 Input: 
 
 ```
 tccli cfs SetUserQuota --cli-unfold-argument  \
     --FileSystemId cfs-12345 \
-    --UserType Uid \
-    --UserId 1000 \
+    --UserType Dir \
+    --DirectoryPath /cfs/123 \
     --CapacityHardLimit 10 \
     --FileHardLimit 10000
 ```

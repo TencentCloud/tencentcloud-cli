@@ -9,7 +9,8 @@ tccli apm DescribeTagValues --cli-unfold-argument  \
     --Filters.0.Key service.instance \
     --Filters.0.Type = \
     --Filters.0.Value 127.0.0.1 \
-    --TagKey servier.name
+    --TagKey servier.name \
+    --InstanceId apm-CVfliqa8U
 ```
 
 Output: 

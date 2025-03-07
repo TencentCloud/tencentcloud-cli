@@ -46,7 +46,7 @@ Output:
                     "PhoneCircleInterval": 0,
                     "PhoneArriveNotice": true,
                     "NotifyWay": [
-                        "abc"
+                        "notify"
                     ]
                 },
                 "Rules": [

@@ -8693,7 +8693,7 @@
         {
           "disabled": true,
           "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警\n-9106       证件遮挡告警\n-9107       模糊图片告警",
-          "example": "[]",
+          "example": "[-9103]",
           "member": "int64",
           "name": "Warn",
           "output_required": true,
@@ -16669,7 +16669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SmartStructuralOCR/SmartStructuralPro1.png",
           "member": "string",
           "name": "ImageUrl",
@@ -16678,7 +16678,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，WORD，EXCEL，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。支持的图片像素：需介于20-10000px之间。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -16714,7 +16714,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：General -- 通用场景 InvoiceEng -- 海运提单、国际invoice模版 WayBillEng --海运订单模板",
+          "document": "配置id支持：\nGeneral -- 通用场景 \nInvoiceEng -- 国际invoice模版 \nWayBillEng --海运订单模板\nCustomsDeclaration -- 进出口报关单\nWeightNote -- 磅单\nMedicalMeter -- 血压仪表识别\nBillOfLading -- 海运提单\nEntrustmentBook -- 海运托书\nWordRecognize -- 手写英文作文模版\nStatement -- 对账单识别模板\nBookingConfirmation -- 配舱通知书识别模板",
           "example": "General",
           "member": "string",
           "name": "ConfigId",

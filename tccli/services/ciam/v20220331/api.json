@@ -174,33 +174,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组id",
           "example": "6cd22e51****************f6f7cb81",
           "member": "string",
           "name": "UserGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用id",
           "example": "17c29b8c****************c0228c48",
           "member": "string",
           "name": "ApplicationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "WEB应用",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -516,13 +516,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "创建的用户信息",
+          "example": "{\"UserId\":\"53e25c3****************e4eb5bd1\",\"UserName\":\"zhangsan\",\"UserDataSourceEnum\":\"管理员添加\",\"Nickname\":\"昵称1\",\"Address\":\"北京市海淀区\",\"Birthdate\":1706682491339}",
           "member": "User",
           "name": "User",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -572,7 +572,7 @@
         {
           "disabled": false,
           "document": "用户目录ID",
-          "example": "xxx",
+          "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "output_required": false,
@@ -617,13 +617,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除的用户组关联的应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "删除的用户组关联的应用信息",
+          "example": "{\"ErrorMessage\":\"\",\"AppAssociatedUserGroupIds\":[{\"UserGroupId\":\"6cd22e51****************f6f7cb81\",\"ApplicationId\":\"17c29b8c****************c0228c48\",\"ApplicationName\":\"WEB应用\"}]}",
           "member": "UserGroupDeleteResp",
           "name": "UserGroupDeletedInfo",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -808,13 +808,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -828,13 +828,13 @@
         },
         {
           "disabled": false,
-          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户列表",
+          "example": "[{\"UserId\":\"53e25c3****************e4eb5bd1\",\"UserName\":\"zhangsan\",\"PhoneNumber\":\"132****0000\",\"Email\":\"132****@qq.com\",\"LastSignOn\":1711002933442,\"CreatedDate\":1718332940956,\"Status\":\"NORMAL\",\"UserDataSourceEnum\":\"管理员添加\"}]",
           "member": "User",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -850,13 +850,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户信息",
           "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -904,23 +904,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "失败用户标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败用户标识",
           "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "FailedUserIdentification",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "导入的用户失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "导入的用户失败原因",
           "example": "error reason",
           "member": "string",
           "name": "FailedReason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1126,7 +1126,7 @@
         {
           "disabled": false,
           "document": "实名核验方式",
-          "example": "无",
+          "example": "nameAndIdCard",
           "member": "string",
           "name": "IdentityVerificationMethod",
           "required": false,
@@ -1317,13 +1317,13 @@
         },
         {
           "disabled": false,
-          "document": "失败详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "失败详情",
+          "example": "[{\"UserId\":\"53e25c3****************e4eb5bd1\",\"Error\":\"\"}]",
           "member": "ErrorDetails",
           "name": "ErrorDetails",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1331,7 +1331,7 @@
           "example": "无",
           "member": "FailedUsers",
           "name": "FailedUsers",
-          "output_required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1421,13 +1421,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "任务列表",
+          "example": "{\"Id\":\"c29f2c0f****************405ec698\",\"Status\":\"PENDING\",\"Type\":\"IMPORT_USER\",\"CreatedDate\":1715156770024,\"Format\":\"NDJSON\",\"Location\":\"http://aa.com/bb.csv\"}",
           "member": "Job",
           "name": "JobSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1505,13 +1505,13 @@
         },
         {
           "disabled": false,
-          "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "日志列表",
+          "example": "[{\"LogId\":\"a23039fd****************44a78adc\",\"TenantId\":\"tenantId\",\"UserStoreId\":\"2c3aca3b****************a7efe88e\",\"EventCode\":\"FORGET_USERNAME\",\"EventDate\":1703385600000,\"Description\":\"忘记用户名日志\",\"Participant\":\"TENANT\"}]",
           "member": "LogMessage",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1569,13 +1569,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户列表",
+          "example": "[{\"UserId\":\"53e25c3****************e4eb5bd1\",\"UserName\":\"zhangsan\",\"PhoneNumber\":\"132****0000\",\"Email\":\"132****@qq.com\",\"LastSignOn\":1711002933442,\"CreatedDate\":1718332940956,\"Status\":\"NORMAL\",\"UserDataSourceEnum\":\"管理员添加\",\"Nickname\":\"昵称1\"}]",
           "member": "User",
           "name": "Users",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1624,33 +1624,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户组列表",
+          "example": "[{\"UserGroupId\":\"6cd22e51****************f6f7cb81\",\"DisplayName\":\"用户组1\",\"Description\":\"包含了一组用户\",\"UserStoreId\":\"2c3aca3b****************a7efe88e\",\"TenantId\":\"tenantId\",\"CreatedDate\":1651073285427,\"LastModifyDate\":1651073285306}]",
           "member": "UserGroup",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "分页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "分页",
+          "example": "{\"PageSize\":10,\"PageNumber\":10}",
           "member": "Pageable",
           "name": "Pageable",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1708,13 +1708,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总条数",
           "example": "10",
           "member": "int64",
           "name": "Total",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1728,13 +1728,13 @@
         },
         {
           "disabled": false,
-          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户列表",
+          "example": "[{\"UserId\":\"53e25c3****************e4eb5bd1\",\"UserName\":\"zhangsan\",\"PhoneNumber\":\"132****0000\",\"Email\":\"132****@qq.com\",\"LastSignOn\":1711002933442,\"CreatedDate\":1718332940956,\"Status\":\"NORMAL\",\"UserDataSourceEnum\":\"管理员添加\",\"Nickname\":\"昵称1\"}]",
           "member": "User",
           "name": "Content",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1787,43 +1787,43 @@
         },
         {
           "disabled": false,
-          "document": "租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "租户ID",
           "example": "tenantId",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户池ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户池ID",
           "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件编码",
           "example": "FORGET_USERNAME",
           "member": "string",
           "name": "EventCode",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "事件发生时间戳，单位：毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件发生时间戳，单位：毫秒",
           "example": "1703385600000",
           "member": "int64",
           "name": "EventDate",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1837,103 +1837,103 @@
         },
         {
           "disabled": false,
-          "document": "事件参与者\n\n<li> **TENANT** </li>  租户\n<li> **USER** </li>  用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件参与者\n\n<li> **TENANT** </li>  租户\n<li> **USER** </li>  用户",
           "example": "TENANT",
           "member": "string",
           "name": "Participant",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用clientId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用clientId",
           "example": "YmFiZTk5********3ZGZiZmY",
           "member": "string",
           "name": "ApplicationClientId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用名称",
           "example": "应用1",
           "member": "string",
           "name": "ApplicationName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "认证源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证源ID",
           "example": "5c7df28a********2a3dbbae",
           "member": "string",
           "name": "AuthSourceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "认证源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证源名称",
           "example": "账号密码认证源1",
           "member": "string",
           "name": "AuthSourceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "认证源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证源类型",
           "example": "USERNAME_PASSWORD",
           "member": "string",
           "name": "AuthSourceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "认证源类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "认证源类别",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "AuthSourceCategory",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP地址",
           "example": "127.*.*.1",
           "member": "string",
           "name": "Ip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户代理\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户代理",
           "example": "agent1",
           "member": "string",
           "name": "UserAgent",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户ID",
           "example": "53e25c3****************e4eb5bd1",
           "member": "string",
           "name": "UserId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1951,7 +1951,7 @@
           "example": "FAIL",
           "member": "string",
           "name": "ActionResult",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1985,14 +1985,14 @@
         },
         {
           "disabled": false,
-          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型",
           "example": "STRING",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2443,13 +2443,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "更新之后的用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "更新之后的用户信息",
+          "example": "{\"UserId\":\"53e25c3****************e4eb5bd1\",\"UserName\":\"zhangsan\",\"PhoneNumber\":\"132****0000\",\"Email\":\"132****@qq.com\",\"LastSignOn\":1711002933442,\"CreatedDate\":1718332940956,\"Status\":\"NORMAL\",\"UserDataSourceEnum\":\"管理员添加\",\"Nickname\":\"昵称1\"}",
           "member": "User",
           "name": "User",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2694,13 +2694,13 @@
         },
         {
           "disabled": false,
-          "document": "自定义属性\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "自定义属性",
+          "example": "[{\"Name\":\"test_name\",\"Value\":\"test_value\",\"Type\":\"test_type\"}]",
           "member": "MemberMap",
           "name": "CustomAttributes",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2815,7 +2815,7 @@
         {
           "disabled": false,
           "document": "实名核验方式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "nameAndIdCard",
           "member": "string",
           "name": "IdentityVerificationMethod",
           "output_required": true,
@@ -2824,13 +2824,13 @@
         },
         {
           "disabled": false,
-          "document": "是否已经实名核验\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否已经实名核验",
           "example": "true",
           "member": "bool",
           "name": "IdentityVerified",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2854,13 +2854,13 @@
         },
         {
           "disabled": false,
-          "document": "是否主账号（进行过账号融合后，主账号为true，从账号为false）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否主账号（进行过账号融合后，主账号为true，从账号为false）",
           "example": "true",
           "member": "bool",
           "name": "Primary",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2874,33 +2874,33 @@
         },
         {
           "disabled": false,
-          "document": "是否已经首次登录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否已经首次登录",
           "example": "true",
           "member": "bool",
           "name": "AlreadyFirstLogin",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "租户id",
           "example": "tenantId",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户目录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户目录id",
           "example": "2c3aca3b****************a7efe88e",
           "member": "string",
           "name": "UserStoreId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2915,7 +2915,7 @@
         {
           "disabled": false,
           "document": "锁定类型（分为管理员锁定，和登录策略锁定）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "failureLock",
           "member": "string",
           "name": "LockType",
           "output_required": true,
@@ -3066,23 +3066,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误详情",
           "example": "error message",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户组关联的应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户组关联的应用信息",
           "example": "[6cd22e51****************f6f7cb81]",
           "member": "AppAssociatedUserGroupIds",
           "name": "AppAssociatedUserGroupIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3162,33 +3162,33 @@
         },
         {
           "disabled": false,
-          "document": "上次切换的用户池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "上次切换的用户池",
           "example": "true",
           "member": "bool",
           "name": "LastStatus",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "默认用户池\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认用户池",
           "example": "true",
           "member": "bool",
           "name": "DefaultStatus",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "1706682491339",
           "member": "int64",
           "name": "CreateDate",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

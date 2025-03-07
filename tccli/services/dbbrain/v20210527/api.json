@@ -2415,19 +2415,19 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "联系人的信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "联系人的信息。",
+          "example": "无",
           "member": "ContactItem",
           "name": "Contacts",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2471,19 +2471,19 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "组信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "组信息。",
+          "example": "无",
           "member": "GroupItem",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2797,13 +2797,13 @@
         },
         {
           "disabled": false,
-          "document": "保留字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保留字段。",
           "example": "innodb_rows_read_per_qps",
           "member": "string",
           "name": "Metric",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3406,13 +3406,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询实例慢查询聚合结果。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"AvgExecTime\":179,\"AvgDocsExamined\":68818,\"SlowLogCount\":259,\"SlowLogs\":[\"Mon Dec 23 18:43:37.203 I COMMAND  [conn49740688] command demo_db.demo_collection command: find { find: \\\"demo_collection\\\", filter: { userId: \\\"65001072666xxxx\\\", img.url: \\\"https://zh.demo.com/m-1/atom-render/render/generate-from-demo/65001072666xxxx/demo/d2a640196ffed78xxx.png\\\", action: \\\"API-smart\\\" }, limit: 1, batchSize: 1, shardVersion: [ Timestamp(0, 0), ObjectId('000000000000000000000000') ], lsid: { id: UUID(\\\"994478dc-813f-42c0-8328-1107bxxxx\\\"), uid: BinData(0, F1B0A328B38C64201EE9214999B268A480B7F225C476879D9B842498000) }, $clusterTime: { clusterTime: Timestamp(1734950616, 2), signature: { hash: BinData(0, 76AD2803276E9B2E223ABACCA4830998000), keyId: 7429087055960000 } }, $client: { driver: { name: \\\"nodejs|Mongoose\\\", version: \\\"4.17.2|6.13.5\\\" }, platform: \\\"Node.js v18.9.0, LE\\\", os: { name: \\\"linux\\\", architecture: \\\"x64\\\", version: \\\"5.4.119-1-tlinux4-0010.2\\\", type: \\\"Linux\\\" }, mongos: { host: \\\"TENCENT64.site:6016\\\", client: \\\"10.10.10.10:50168\\\", version: \\\"3.6.3-cmongo-\\\" } }, $configServerState: { opTime: { ts: Timestamp(1734950616, 2), t: 1 } }, $db: \\\"demo_db\\\" } planSummary: IXSCAN { userId: 1, from: 1, action: 1, createdAt: -1 } keysExamined:72992 docsExamined:72990 cursorExhausted:1 numYields:570 nreturned:0 reslen:363 locks:{ Global: { acquireCount: { r: 1142 } }, Database: { acquireCount: { r: 571 } }, Collection: { acquireCount: { r: 571 } } } protocol:op_msg 171ms\"],\"SortCount\":0}",
+          "document": "查询实例慢查询聚合结果。",
+          "example": "无",
           "member": "Aggregation",
           "name": "Aggregation",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3731,13 +3731,13 @@
         },
         {
           "disabled": false,
-          "document": "sql会话统计信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "sql会话统计信息。",
           "example": "无",
           "member": "StatisticInfo",
           "name": "Statistics",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6824,13 +6824,13 @@
         },
         {
           "disabled": false,
-          "document": "执行ID， Prepare阶段的任务输出，用于Commit阶段中指定执行kill操作的会话ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"AEnnKexGijsX\"",
+          "document": "执行ID， Prepare阶段的任务输出，用于Commit阶段中指定执行kill操作的会话ID。",
+          "example": "AEnnKexGijsX",
           "member": "string",
           "name": "SqlExecId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

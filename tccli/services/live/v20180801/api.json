@@ -1879,63 +1879,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推流域名。",
           "example": "5000.livepush.com",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推流路径。",
           "example": "live",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": " UTC 格式，例如：2018-06-29T19:00:00Z。\n注意：和北京时间相差8小时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": " UTC 格式，例如：2018-06-29T19:00:00Z。\n注意：和北京时间相差8小时。",
           "example": "2018-06-29T19:00:00Z",
           "member": "string",
           "name": "PublishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "推流唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推流唯一标识。",
           "example": "710313341080024599",
           "member": "string",
           "name": "UpstreamSequence",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "推流来源。示例：\n直推流；\n拉流转推(1234)；\n注意：拉流转推来源括号中为拉流转推的任务 \n ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推流来源。示例：\n直推流；\n拉流转推(1234)；\n注意：拉流转推来源括号中为拉流转推的任务 \n ID。",
           "example": "直推流",
           "member": "string",
           "name": "SourceFrom",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主备标识。\n当前流为主流：1，\n当前流为备流: 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主备标识。\n当前流为主流：1，\n当前流为备流: 0。",
           "example": "0",
           "member": "int64",
           "name": "MasterFlag",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1945,43 +1945,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "流名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test1",
+          "document": "流名称。",
+          "example": "stream1",
           "member": "string",
           "name": "StreamName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主备流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主备流信息。",
           "example": "无",
           "member": "BackupStreamDetailData",
           "name": "BackupList",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否对该流开启了择优调度。\n0 - 未开启。\n1 - 已开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否对该流开启了择优调度。\n0 - 未开启。\n1 - 已开启。",
           "example": "0",
           "member": "int64",
           "name": "OptimalEnable",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名分组的分组名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名分组的分组名称。",
           "example": "groupname",
           "member": "string",
           "name": "HostGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2018,30 +2018,30 @@
         {
           "disabled": false,
           "document": "操作失败的域名。",
-          "example": "",
+          "example": "domain.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "API3.0错误码。",
-          "example": "",
+          "example": "invalid",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "API3.0错误信息。",
-          "example": "",
+          "example": "invalid",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2152,50 +2152,50 @@
         {
           "disabled": false,
           "document": "规则创建时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2022-05-16T10:59:38+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则更新时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2022-05-17T14:33:50+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板 ID。",
-          "example": "无",
+          "example": "385622",
           "member": "int64",
           "name": "TemplateId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流域名。",
-          "example": "无",
+          "example": "7895.livepush.myqcloud.com",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流路径。",
-          "example": "无",
+          "example": "trtc_140042",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3454,80 +3454,80 @@
         {
           "disabled": false,
           "document": "证书 ID。",
-          "example": "无",
+          "example": "25",
           "member": "int64",
           "name": "CertId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书名称。",
-          "example": "无",
+          "example": "certname",
           "member": "string",
           "name": "CertName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "无",
+          "example": "describe",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，UTC 格式。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2023-09-07 14:36:56",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书内容。",
-          "example": "无",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIGkzCCBPugAwIBAgIbARReVnKfzs8qY4R\\n7k3XSMi\\/bYK0DbRkrflzJviwZAAmyx24Y4W7byfTf6O9D8K56NDcMSv1xnWeWkkl\\nYTmU+vZ9czFIGtbI0M6JHAdwjLBUOLZgDb0A7GGGhyByWaPqXftEqiUjC78\\/8pDL\\nxviG4QhCkw==\\n-----END CERTIFICATE-----",
           "member": "string",
           "name": "HttpsCrt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书类型。\n0：用户添加证书，\n1：腾讯云托管证书。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CertType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书过期时间，UTC 格式。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-09-07 07:59:59",
           "member": "string",
           "name": "CertExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用此证书的域名列表。",
-          "example": "无",
+          "example": "auto.liveplay.org",
           "member": "string",
           "name": "DomainList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -10114,7 +10114,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起始时间。 \nUTC 格式，例如：2018-12-29T19:00:00Z。\n支持查询60天内的历史记录。",
+          "document": "起始时间。 UTC 格式，例如：2018-12-29T19:00:00Z。支持查询2个月内的历史记录。",
           "example": "2019-01-04T12:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -10123,7 +10123,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。\nUTC 格式，例如：2018-12-29T20:00:00Z。\n不超过当前时间，且和起始时间相差不得超过30天。",
+          "document": "结束时间。UTC 格式，例如：2018-12-29T20:00:00Z。不超过当前时间，且和起始时间相差不得超过1个月。",
           "example": "2019-01-04T20:00:00Z",
           "member": "string",
           "name": "EndTime",
@@ -10214,7 +10214,7 @@
           "example": "无",
           "member": "StreamEventInfo",
           "name": "EventList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10224,7 +10224,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PageNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10234,7 +10234,7 @@
           "example": "10",
           "member": "uint64",
           "name": "PageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10244,7 +10244,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10254,7 +10254,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalPage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10487,7 +10487,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。\nUTC 格式，例如：2016-06-30T19:00:00Z。\n不超过当前时间。\n注意：EndTime和StartTime相差不可超过30天。",
+          "document": "结束时间。UTC 格式，例如：2016-06-30T19:00:00Z。不超过当前时间。注意：EndTime和StartTime相差不可超过1个月。",
           "example": "2024-11-23T00:00:00Z",
           "member": "string",
           "name": "EndTime",
@@ -10496,7 +10496,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间。 \nUTC 格式，例如：2016-06-29T19:00:00Z。\n最长支持查询60天内数据。",
+          "document": "起始时间。 UTC 格式，例如：2016-06-29T19:00:00Z。最长支持查询2个月内数据。",
           "example": "2024-11-22T00:00:00Z",
           "member": "string",
           "name": "StartTime",
@@ -13612,112 +13612,112 @@
         {
           "disabled": false,
           "document": "证书Id。",
-          "example": "无",
+          "example": "38518",
           "member": "int64",
           "name": "CertId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书名称。",
-          "example": "无",
+          "example": "inkegd",
           "member": "string",
           "name": "CertName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "描述信息。",
-          "example": "无",
+          "example": "describe",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间，UTC格式。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书内容。",
-          "example": "无",
+          "example": "-----BEGIN CERTIFICATE-----\\\\nMIIGvjCCBaagAwIBAgIQByuQf2Ch2YzIRqKLw02HazANBgkqhkiG9w0BAQsFADBf\\\\\\\\ntVzBAiBjg8xWJzJq57oMQeYLYrdlR8MHqyfXcXqggvZ3TIgyNQB3AObSMYukn\\\\nlA4=\\\\n-----END CERTIFICATE----",
           "member": "string",
           "name": "HttpsCrt",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书类型。\n0：用户添加证书，\n1：腾讯云托管证书。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CertType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书过期时间，UTC格式。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2025-04-17 11:55:21",
           "member": "string",
           "name": "CertExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用此证书的域名名称。",
-          "example": "无",
+          "example": "iparty-pull.in.com",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书状态。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "证书本身标识的域名列表。\n比如: [\"*.x.com\"]\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "证书本身标识的域名列表。\n比如: [\"*.x.com\"]",
+          "example": "certname",
           "member": "string",
           "name": "CertDomains",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "腾讯云ssl的证书Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "腾讯云ssl的证书Id",
+          "example": "4512",
           "member": "string",
           "name": "CloudCertId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -13874,7 +13874,7 @@
         {
           "disabled": false,
           "document": "失效参数，可忽略。",
-          "example": "a",
+          "example": "1",
           "member": "int64",
           "name": "RentTag",
           "output_required": true,
@@ -13893,13 +13893,13 @@
         },
         {
           "disabled": false,
-          "document": "0: 标准直播。\n1: 小程序直播。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0: 标准直播。\n1: 小程序直播。",
           "example": "0",
           "member": "int64",
           "name": "IsMiniProgramLive",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -14382,22 +14382,20 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "",
+          "example": "domain.com",
           "member": "string",
           "name": "DomainName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "是否启用域名的https规则。\n1：启用\n0：禁用\n-1：保持不变",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -14408,70 +14406,70 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "无",
+          "example": "iparty-pull.in.com",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书备注。与CertName同义。",
-          "example": "无",
+          "example": "cert",
           "member": "string",
           "name": "CertificateAlias",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书类型。\n0：自有证书\n1：腾讯云ssl托管证书",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CertType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "https状态。\n1：已开启。\n0：已关闭。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书过期时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "datetime",
           "name": "CertExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书Id。",
-          "example": "无",
+          "example": "453612",
           "member": "int64",
           "name": "CertId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "腾讯云ssl的证书Id。",
-          "example": "无",
+          "example": "85212",
           "member": "string",
           "name": "CloudCertId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14481,7 +14479,7 @@
           "example": "2020-05-06 17:00:00",
           "member": "datetime",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14560,100 +14558,100 @@
         {
           "disabled": false,
           "document": "包 ID。",
-          "example": "无",
+          "example": "4512",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。",
-          "example": "无",
+          "example": "500000",
           "member": "int64",
           "name": "Total",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "使用量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。\n当为连麦包时单位为小时。",
-          "example": "无",
+          "example": "200000",
           "member": "int64",
           "name": "Used",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "剩余量。\n注意：当为流量包时单位为字节。\n当为转码包时单位为分钟。\n当为连麦包时单位为小时。",
-          "example": "无",
+          "example": "300000",
           "member": "int64",
           "name": "Left",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "购买时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "BuyTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "过期时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2025-04-17 11:55:21",
           "member": "string",
           "name": "ExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "包类型，可选值:\n0: 流量包。\n1: 普通转码包。\n2: 极速高清包。\n3: 连麦包。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "包状态，可选值:\n0: 未使用。\n1: 使用中。\n2: 已过期。\n3: 已冻结。\n4: 已耗尽。\n5: 已退款",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否自动续购。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "WillRenew",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "续购状态。\n1 ：续购成功。\n0 ：尚未续购。\n<0  : 续购失败。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "RenewalResult",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -15097,40 +15095,40 @@
         {
           "disabled": false,
           "document": "日志名称。",
-          "example": "无",
+          "example": "logname",
           "member": "string",
           "name": "LogName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志 URL。",
-          "example": "无",
+          "example": "http://abc.ab.com",
           "member": "string",
           "name": "LogUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志生成时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "LogTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "文件大小。",
-          "example": "无",
+          "example": "10000",
           "member": "int64",
           "name": "FileSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -17167,6 +17165,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TemplateId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -17174,9 +17173,10 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "test",
+          "example": "templatename",
           "member": "string",
           "name": "TemplateName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17187,6 +17187,7 @@
           "example": "https://test.com/a.mp4",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17197,6 +17198,7 @@
           "example": "2020-01-01 08:00:00",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17207,6 +17209,7 @@
           "example": "2020-01-01 08:00:00",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17214,9 +17217,10 @@
         {
           "disabled": false,
           "document": "模板描述。",
-          "example": "test",
+          "example": "description",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17227,6 +17231,7 @@
           "example": "0",
           "member": "uint64",
           "name": "WaitDuration",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17237,6 +17242,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxDuration",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17247,6 +17253,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17581,6 +17588,7 @@
           "example": "http://xxx.gifshow/pic.jpg",
           "member": "string",
           "name": "PictureUrl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -17591,6 +17599,7 @@
           "example": "0",
           "member": "int64",
           "name": "XPosition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -17601,6 +17610,7 @@
           "example": "0",
           "member": "int64",
           "name": "YPosition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -17611,6 +17621,7 @@
           "example": "100",
           "member": "int64",
           "name": "Width",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -17621,6 +17632,7 @@
           "example": "100",
           "member": "int64",
           "name": "Height",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -17631,6 +17643,7 @@
           "example": "0",
           "member": "int64",
           "name": "Location",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -18036,50 +18049,50 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "无",
+          "example": "push.tlivecloud.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否启用，0：关闭，1：启用。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主鉴权 Key。",
-          "example": "无",
+          "example": "29077666814d739e801ceb5",
           "member": "string",
           "name": "MasterAuthKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备鉴权 Key。",
-          "example": "无",
+          "example": "78895532321114d739e801ceb5",
           "member": "string",
           "name": "BackupAuthKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "有效时间，单位：秒。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "AuthDelta",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -18607,7 +18620,7 @@
         {
           "disabled": false,
           "document": "录制存储时长。\n单位秒，取值范围： 0 - 1500天。\n0：表示永久存储。",
-          "example": "123",
+          "example": "800",
           "member": "int64",
           "name": "StorageTime",
           "output_required": true,
@@ -18673,7 +18686,7 @@
         {
           "disabled": false,
           "document": "点播应用分类\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "4512",
           "member": "int64",
           "name": "ClassId",
           "output_required": true,
@@ -18684,7 +18697,7 @@
         {
           "disabled": false,
           "document": "存储至 cos 的 bucket 桶名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "bucket",
           "member": "string",
           "name": "CosBucketName",
           "output_required": true,
@@ -18695,7 +18708,7 @@
         {
           "disabled": false,
           "document": "存储至 cos 的 bucket 区域。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "bucket",
           "member": "string",
           "name": "CosBucketRegion",
           "output_required": true,
@@ -18706,7 +18719,7 @@
         {
           "disabled": false,
           "document": "存储至 cos 的 bucket 路径。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "example": "bucket",
           "member": "string",
           "name": "CosBucketPath",
           "output_required": true,
@@ -18723,80 +18736,80 @@
         {
           "disabled": false,
           "document": "录制任务ID。",
-          "example": "",
+          "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流域名。",
-          "example": "",
+          "example": "5000.live.push.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流路径。",
-          "example": "",
+          "example": "live",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "",
+          "example": "livetest",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务开始时间，Unix时间戳。",
-          "example": "",
+          "example": "1589904000",
           "member": "uint64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务结束时间，Unix时间戳。",
-          "example": "",
+          "example": "1589889600",
           "member": "uint64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "录制模板ID。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "调用 StopRecordTask 停止任务时间，Unix时间戳。值为0表示未曾调用接口停止任务。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Stopped",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -18945,50 +18958,50 @@
         {
           "disabled": false,
           "document": "域名。",
-          "example": "",
+          "example": "domainname",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否启用，0：关闭，1：启用。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "名单类型，0：黑名单，1：白名单。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否允许空Referer，0：不允许，1：允许。",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "AllowEmpty",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "名单列表，以分号(;)分隔。",
-          "example": "",
+          "example": "(rule1;rule2)",
           "member": "string",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19154,60 +19167,60 @@
         {
           "disabled": false,
           "document": "规则创建时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则更新时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板 ID。",
-          "example": "无",
+          "example": "8252",
           "member": "int64",
           "name": "TemplateId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流域名。",
-          "example": "无",
+          "example": "push.domain.com",
           "member": "string",
           "name": "DomainName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "推流路径。",
-          "example": "无",
+          "example": "live",
           "member": "string",
           "name": "AppName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "无",
+          "example": "stream",
           "member": "string",
           "name": "StreamName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -19220,7 +19233,7 @@
         {
           "disabled": false,
           "document": "截图任务ID。",
-          "example": "\"\"",
+          "example": "UpTbk5RSVhRQFkAAfHwQCCjcRD0lRFcZ0xTSlNTQltlRVRLU1JAWW9EUb",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -19230,7 +19243,7 @@
         {
           "disabled": false,
           "document": "推流域名。",
-          "example": "\"\"",
+          "example": "5000.live.push.com",
           "member": "string",
           "name": "DomainName",
           "output_required": true,
@@ -19240,7 +19253,7 @@
         {
           "disabled": false,
           "document": "推流路径。",
-          "example": "\"\"",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -19250,7 +19263,7 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "\"\"",
+          "example": "livetest",
           "member": "string",
           "name": "StreamName",
           "output_required": true,
@@ -19260,7 +19273,7 @@
         {
           "disabled": false,
           "document": "任务开始时间，Unix时间戳。",
-          "example": "0",
+          "example": "1589904000",
           "member": "uint64",
           "name": "StartTime",
           "output_required": true,
@@ -19270,7 +19283,7 @@
         {
           "disabled": false,
           "document": "任务结束时间，Unix时间戳。",
-          "example": "0",
+          "example": "1589889600",
           "member": "uint64",
           "name": "EndTime",
           "output_required": true,
@@ -19306,20 +19319,20 @@
         {
           "disabled": false,
           "document": "模板 ID。",
-          "example": "123",
+          "example": "85421",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "test",
+          "example": "templatename",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19329,7 +19342,7 @@
           "example": "5",
           "member": "int64",
           "name": "SnapshotInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19339,7 +19352,7 @@
           "example": "5",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19349,7 +19362,7 @@
           "example": "5",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19359,27 +19372,27 @@
           "example": "0",
           "member": "int64",
           "name": "PornFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Cos 应用 ID。",
-          "example": "123456",
+          "example": "746113",
           "member": "int64",
           "name": "CosAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Cos Bucket名称。",
-          "example": "test",
+          "example": "cosbucket",
           "member": "string",
           "name": "CosBucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19389,7 +19402,7 @@
           "example": "ap-nanjing",
           "member": "string",
           "name": "CosRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19399,7 +19412,7 @@
           "example": "测试模板",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19409,7 +19422,7 @@
           "example": "prefix_",
           "member": "string",
           "name": "CosPrefix",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19419,7 +19432,7 @@
           "example": "testname",
           "member": "string",
           "name": "CosFileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -20257,7 +20270,7 @@
         {
           "disabled": false,
           "document": "模板 ID。",
-          "example": "123",
+          "example": "855123",
           "member": "int64",
           "name": "TemplateId",
           "output_required": true,
@@ -20267,7 +20280,7 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "xxx",
+          "example": "templatename",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -20277,7 +20290,7 @@
         {
           "disabled": false,
           "document": "模板描述。",
-          "example": "xx",
+          "example": "description",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -20399,30 +20412,30 @@
         {
           "disabled": false,
           "document": "时移录制会话标识。",
-          "example": "无",
+          "example": "46545",
           "member": "string",
           "name": "Sid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "录制会话开始时间，Unix 时间戳。",
-          "example": "无",
+          "example": "1285512",
           "member": "int64",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "录制会话结束时间，Unix 时间戳。",
-          "example": "无",
+          "example": "1295512",
           "member": "int64",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -20435,7 +20448,7 @@
         {
           "disabled": false,
           "document": "推流域名所属组。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "group",
           "member": "string",
           "name": "DomainGroup",
           "output_required": true,
@@ -20445,7 +20458,7 @@
         {
           "disabled": false,
           "document": "推流域名。",
-          "example": "无",
+          "example": "push.domain.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
@@ -20455,7 +20468,7 @@
         {
           "disabled": false,
           "document": "推流路径。",
-          "example": "无",
+          "example": "live",
           "member": "string",
           "name": "AppName",
           "output_required": true,
@@ -20465,7 +20478,7 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "无",
+          "example": "stream",
           "member": "string",
           "name": "StreamName",
           "output_required": true,
@@ -20475,7 +20488,7 @@
         {
           "disabled": false,
           "document": "流起始时间，Unix 时间戳。",
-          "example": "无",
+          "example": "15424755",
           "member": "int64",
           "name": "StartTime",
           "output_required": true,
@@ -20485,7 +20498,7 @@
         {
           "disabled": false,
           "document": "截止查询时流结束时间，Unix 时间戳。",
-          "example": "无",
+          "example": "16424755",
           "member": "int64",
           "name": "EndTime",
           "output_required": true,
@@ -20495,7 +20508,7 @@
         {
           "disabled": false,
           "document": "转码模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "45223",
           "member": "uint64",
           "name": "TransCodeId",
           "output_required": true,
@@ -20505,7 +20518,7 @@
         {
           "disabled": false,
           "document": "流类型，取值0为原始流，1为水印流，2为转码流。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "StreamType",
           "output_required": true,
@@ -20515,7 +20528,7 @@
         {
           "disabled": false,
           "document": "时移数据存储时长，单位秒。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "45562",
           "member": "uint64",
           "name": "Duration",
           "output_required": true,
@@ -20733,7 +20746,7 @@
         {
           "disabled": false,
           "document": "流名称。",
-          "example": "test",
+          "example": "streamname",
           "member": "string",
           "name": "StreamName",
           "output_required": true,
@@ -21092,110 +21105,110 @@
         {
           "disabled": false,
           "document": "水印 ID。",
-          "example": "无",
+          "example": "45621",
           "member": "int64",
           "name": "WatermarkId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印图片 URL。",
-          "example": "无",
+          "example": "http://picture.com.url",
           "member": "string",
           "name": "PictureUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "显示位置，X 轴偏移。",
-          "example": "无",
+          "example": "45",
           "member": "int64",
           "name": "XPosition",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "显示位置，Y 轴偏移。",
-          "example": "无",
+          "example": "25",
           "member": "int64",
           "name": "YPosition",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印名称。",
-          "example": "无",
+          "example": "watername",
           "member": "string",
           "name": "WatermarkName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "当前状态。0：未使用，1:使用中。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "添加时间。\n注：此字段为北京时间（UTC+8时区）。",
-          "example": "无",
+          "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印宽。",
-          "example": "无",
+          "example": "54",
           "member": "int64",
           "name": "Width",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "水印高。",
-          "example": "无",
+          "example": "52",
           "member": "int64",
           "name": "Height",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "背景水印宽。",
-          "example": "无",
+          "example": "65",
           "member": "int64",
           "name": "BackgroundWidth",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "背景水印高。",
-          "example": "无",
+          "example": "56",
           "member": "int64",
           "name": "BackgroundHeight",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -21287,33 +21300,33 @@
         },
         {
           "disabled": false,
-          "document": "类型，分live和vod两种。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "类型，分live和vod两种。",
           "example": "live",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流ID。",
           "example": "7852921",
           "member": "string",
           "name": "StreamName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "AppId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "AppId。",
           "example": "appidtest",
           "member": "string",
           "name": "AppId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

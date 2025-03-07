@@ -816,6 +816,14 @@
         "title": "获取rocketmq消费组订阅关系"
       }
     ],
+    "DescribeRocketMQTopUsages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTopUsages\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-abc\",\n    \"MetricName\": \"consumeLag\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Dimensions\": [\n            {\n                \"Dimensions\": [\n                    {},\n                    {},\n                    {}\n                ]\n            },\n            {\n                \"Dimensions\": [\n                    {},\n                    {},\n                    {}\n                ]\n            }\n        ],\n        \"RequestId\": \"f0288e86-ee7d-4a73-a788-81ca6680b06c\",\n        \"Values\": [\n            309,\n            0\n        ]\n    }\n}",
+        "title": "获取 Group 堆积数量排序"
+      }
+    ],
     "DescribeRocketMQTopicMsgs": [
       {
         "document": "",

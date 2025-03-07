@@ -1042,47 +1042,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "minos类型。是使用腾讯云的minios，还是客户自己的minios。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "minos类型。是使用腾讯云的minios，还是客户自己的minios。",
           "example": "public",
           "member": "string",
           "name": "MiniOsType",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务器的架构和启动方式。取值为x86_legacy, arm_uefi。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "服务器的架构和启动方式。取值为x86_legacy, arm_uefi。",
           "example": "x86_legacy",
           "member": "string",
           "name": "BootType",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "PXE使用的引导文件。默认为pxelinux.0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "PXE使用的引导文件。默认为pxelinux.0。",
           "example": "pxelinux.0",
           "member": "string",
           "name": "BootFile",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "tftp服务器的ip地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "tftp服务器的ip地址。",
           "example": "169.254.68.10",
           "member": "string",
           "name": "NextServerAddress",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1132,13 +1132,13 @@
         },
         {
           "disabled": false,
-          "document": "设备类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备类型。",
           "example": "CHC_HS1",
           "member": "string",
           "name": "DeviceType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1152,73 +1152,73 @@
         },
         {
           "disabled": false,
-          "document": "带外网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带外网络。",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "BmcVirtualPrivateCloud",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带外网络Ip。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带外网络Ip。",
           "example": "10.12.10.34",
           "member": "string",
           "name": "BmcIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带外网络安全组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带外网络安全组Id。",
           "example": "[\"sg-1a2b34af\"]",
           "member": "string",
           "name": "BmcSecurityGroupIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署网络。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署网络。",
           "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "DeployVirtualPrivateCloud",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署网络Ip。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署网络Ip。",
           "example": "10.12.10.34",
           "member": "string",
           "name": "DeployIp",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署网络安全组Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署网络安全组Id。",
           "example": "[\"sg-1a2b34af\"]",
           "member": "string",
           "name": "DeploySecurityGroupIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "关联的云主机Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联的云主机Id。",
           "example": "ins-34as43at",
           "member": "string",
           "name": "CvmInstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1232,183 +1232,183 @@
         },
         {
           "disabled": false,
-          "document": "机型的硬件描述，分别为CPU核数，内存容量和磁盘容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "机型的硬件描述，分别为CPU核数，内存容量和磁盘容量",
           "example": "128C 22GB 2424GB",
           "member": "string",
           "name": "HardwareDescription",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器的CPU核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC物理服务器的CPU核数",
           "example": "128",
           "member": "int64",
           "name": "CPU",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器的内存大小，单位为GB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC物理服务器的内存大小，单位为GB",
           "example": "22",
           "member": "int64",
           "name": "Memory",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器的磁盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC物理服务器的磁盘信息",
           "example": "10T",
           "member": "string",
           "name": "Disk",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带外网络下分配的MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带外网络下分配的MAC地址",
           "example": "51:94:20:9C:B1:CB",
           "member": "string",
           "name": "BmcMAC",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "部署网络下分配的MAC地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "部署网络下分配的MAC地址",
           "example": "51:94:20:9C:B1:CB",
           "member": "string",
           "name": "DeployMAC",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "设备托管类型。\nHOSTING: 托管\nTENANT: 租赁\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备托管类型。\nHOSTING: 托管\nTENANT: 租赁",
           "example": "HOSTING",
           "member": "string",
           "name": "TenantType",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "chc dhcp选项，用于minios调试。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "chc dhcp选项，用于minios调试。",
           "example": "无",
           "member": "ChcDeployExtraConfig",
           "name": "DeployExtraConfig",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GPU型号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU型号。",
           "example": "2 * NVIDIA P40",
           "member": "string",
           "name": "Gpu",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网卡型号。主要指RDMA网卡。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网卡型号。主要指RDMA网卡。",
           "example": "ConnectX-5",
           "member": "string",
           "name": "NetworkCard",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否是预定义机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否是预定义机型。",
           "example": "true",
           "member": "bool",
           "name": "IsPredefinedType",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC云主机机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC云主机机型。",
           "example": "CHCS5.128C256M",
           "member": "string",
           "name": "ChcInstanceType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC云主机机型簇。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC云主机机型簇。",
           "example": "CHCS5",
           "member": "string",
           "name": "ChcInstanceFamily",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC云主机机型簇名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC云主机机型簇名称。",
           "example": "标准型CHCS5",
           "member": "string",
           "name": "ChcInstanceFamilyName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转售客户的AppId。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转售客户的AppId。",
           "example": "12510001001",
           "member": "string",
           "name": "ResaleAppId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "转售客户的账号ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转售客户的账号ID。",
           "example": "100002300442",
           "member": "string",
           "name": "ResaleAccountId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "售卖状态。<br/>\n<ul>\n<li>NOT_FOR_SALE:不可售卖</li>\n<li>AVAILABLE: 可售卖</li>\n<li>SOLD: 已售卖</li>\n</ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "售卖状态。<br/>\n<ul>\n<li>NOT_FOR_SALE:不可售卖</li>\n<li>AVAILABLE: 可售卖</li>\n<li>SOLD: 已售卖</li>\n</ul>\n",
           "example": "SOLD",
           "member": "string",
           "name": "SaleStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CHC物理服务器关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CHC物理服务器关联的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1672,23 +1672,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "转换的目标操系统信息，仅在入参 DryRun 为 true 时返回。",
           "example": "[     {         \"TargetOSType\": \"TencentOS\",         \"TargetOSVersion\": \"2.4\"     } ]",
           "member": "TargetOS",
           "name": "SupportTargetOSList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作系统转换的任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "操作系统转换的任务 ID",
           "example": "12345678",
           "member": "string",
           "name": "TaskId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1911,13 +1911,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "高性能计算集群信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群信息。",
           "example": "[{\"HpcClusterId\":\"hpc-jtynq57p\",\"Name\":\"test\",\"Remark\":\"test\",\"InstanceIds\":[],\"Zone\":\"ap-guangzhou-2\",\"CvmQuotaTotal\":100,\"CurrentNum\":0,\"CreateTime\":\"2023-04-20T06:25:58Z\"}]",
           "member": "HpcClusterInfo",
           "name": "HpcClusterSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2029,13 +2029,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "镜像ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像ID",
           "example": "img-2v3sqe2t",
           "member": "string",
           "name": "ImageId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3176,6 +3176,7 @@
           "example": "10",
           "member": "int64",
           "name": "GroupQuota",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3185,6 +3186,7 @@
           "example": "25",
           "member": "int64",
           "name": "CurrentNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3194,15 +3196,17 @@
           "example": "50",
           "member": "int64",
           "name": "CvmInHostGroupQuota",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交换机类型容灾组内实例的配额数。",
           "example": "20",
           "member": "int64",
           "name": "CvmInSwGroupQuota",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3212,6 +3216,17 @@
           "example": "30",
           "member": "int64",
           "name": "CvmInRackGroupQuota",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交换机类型容灾组内实例的配额数。",
+          "example": "20",
+          "member": "int64",
+          "name": "CvmInSwitchGroupQuota",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4387,7 +4402,7 @@
         },
         {
           "disabled": false,
-          "document": "<p style=\"padding-left: 30px;\">按照【<strong>LaunchTemplateName</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchTemplateIds`和`Filters`。",
+          "document": "<li><strong>LaunchTemplateName</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例启动模板名称</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-key</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>标签键</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag-value</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签值</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>tag:tag-key</strong></li> <p style=\"padding-left: 30px;\">按照【<strong>标签键值对</strong>】进行过滤。tag-key使用具体的标签键进行替换。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchTemplateIds`和`Filters`。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4420,23 +4435,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的实例模板数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的实例模板数量。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例详细信息列表。",
           "example": "无",
           "member": "LaunchTemplateInfo",
           "name": "LaunchTemplateSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5061,7 +5076,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像ID列表",
+          "document": "镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。",
           "example": "img-72n9mi0y",
           "member": "string",
           "name": "ImageIds",
@@ -5216,33 +5231,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例GPU个数。值小于1代表VGPU类型，大于1代表GPU直通类型。",
           "example": "1",
           "member": "float",
           "name": "GPUCount",
-          "required": true,
+          "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例GPU地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例GPU地址。",
           "example": "['0000:18:00.0','0000:18:00.1']",
           "member": "string",
           "name": "GPUId",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例GPU类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例GPU类型。",
           "example": "NVIDIA T4",
           "member": "string",
           "name": "GPUType",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5372,23 +5387,23 @@
         },
         {
           "disabled": false,
-          "document": "专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用宿主机所属的围笼ID。该字段仅对金融专区围笼内的专用宿主机有效。",
           "example": "cage-gz-1-2",
           "member": "string",
           "name": "CageId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "专用宿主机关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "专用宿主机关联的标签列表。",
           "example": "[     {         \"ResourceType\": \"cdh\",         \"Tags\": [             {                 \"Key\": \"myTag\",                 \"Value\": \"cloud\"             }         ]     } ]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5504,13 +5519,13 @@
         },
         {
           "disabled": false,
-          "document": "CDH owner\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CDH owner",
           "example": "12300021",
           "member": "string",
           "name": "ExclusiveOwner",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5530,23 +5545,23 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群名",
           "example": "myCluster",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高性能计算集群备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群备注",
           "example": "H20",
           "member": "string",
           "name": "Remark",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5580,43 +5595,43 @@
         },
         {
           "disabled": false,
-          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群创建时间",
           "example": "2023-10-05T14:30:00Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群内实例ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群内实例ID列表",
           "example": "[\"ins-xxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高性能计算集群类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群类型。",
           "example": "STANDARD",
           "member": "string",
           "name": "HpcClusterType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群对应的业务场景标识，当前只支持CDC。\t",
           "example": "cluster-1f6vxxx",
           "member": "string",
           "name": "HpcClusterBusinessId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5776,33 +5791,33 @@
         },
         {
           "disabled": false,
-          "document": "镜像是否支持cloud-init\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像是否支持cloud-init",
           "example": "true",
           "member": "bool",
           "name": "IsSupportCloudinit",
           "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像关联的快照信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像关联的快照信息",
           "example": "无",
           "member": "Snapshot",
           "name": "SnapshotSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "镜像关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像关联的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5816,13 +5831,13 @@
         },
         {
           "disabled": false,
-          "document": "镜像族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像族",
           "example": "business-daily-update",
           "member": "string",
           "name": "ImageFamily",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -5842,23 +5857,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的Windows操作系统。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的Windows操作系统。",
           "example": "Windows Server 2019",
           "member": "string",
           "name": "Windows",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "支持的Linux操作系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持的Linux操作系统",
           "example": "CentOS",
           "member": "string",
           "name": "Linux",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7119,13 +7134,13 @@
         },
         {
           "disabled": false,
-          "document": "分散置放群组ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分散置放群组ID。",
           "example": "ps-l7sdunxx",
           "member": "string",
           "name": "DisasterRecoverGroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7149,13 +7164,13 @@
         },
         {
           "disabled": false,
-          "document": "高性能计算集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群`ID`。",
           "example": "hpc-4dxxetpt",
           "member": "string",
           "name": "HpcClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7169,33 +7184,33 @@
         },
         {
           "disabled": false,
-          "document": "实例所在的专用集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例所在的专用集群`ID`。",
           "example": "cluster-du3jken",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>",
           "example": "NOTISOLATED",
           "member": "string",
           "name": "IsolatedSource",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。",
           "example": "无",
           "member": "GPUInfo",
           "name": "GPUInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7337,33 +7352,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例Id。",
           "example": "\"ins-fxqy3xmq\"",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "退款数额。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退款数额。",
           "example": "\"7.36元\"",
           "member": "float",
           "name": "Refunds",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "退款详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "退款详情。",
           "example": "\"退款：7.36元，代金券不退（订单号20210406606002706051431：部件cvm:现金支付17.9元-已使用第一",
           "member": "string",
           "name": "PriceDetail",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -7489,19 +7504,19 @@
           "example": "\"UNAVAILABLE\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态描述信息",
           "example": "\"The instance does not support tuning to SA3 instance family.\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7509,7 +7524,7 @@
           "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -7843,25 +7858,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "网络计费模式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络计费模式。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络计费模式描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "网络计费模式描述信息。",
           "example": "postpaid monthly",
           "member": "string",
           "name": "Description",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8147,13 +8162,13 @@
         },
         {
           "disabled": false,
-          "document": "密钥关联的标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "密钥关联的标签列表。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8189,73 +8204,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例启动模版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例启动模版本号。",
           "example": "10",
           "member": "uint64",
           "name": "LatestVersionNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例启动模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例启动模板ID。",
           "example": "lt-rf6ogz49",
           "member": "string",
           "name": "LaunchTemplateId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例启动模板名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例启动模板名。",
           "example": "foobar",
           "member": "string",
           "name": "LaunchTemplateName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例启动模板默认版本号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例启动模板默认版本号。",
           "example": "5",
           "member": "uint64",
           "name": "DefaultVersionNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例启动模板包含的版本总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例启动模板包含的版本总数量。",
           "example": "8",
           "member": "uint64",
           "name": "LaunchTemplateVersionCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建该模板的用户UIN。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建该模板的用户UIN。",
           "example": "1230000",
           "member": "string",
           "name": "CreatedBy",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建该模板的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建该模板的时间。",
           "example": "2020-12-17T01:54:31Z",
           "member": "datetime_iso",
           "name": "CreationTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8265,243 +8280,243 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所在的位置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例所在的位置。",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例机型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例机型。",
           "example": "S1.SMALL2",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称。",
           "example": "MyInstance",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例计费模式。取值范围：<br><li>`PREPAID`：表示预付费，即包年包月<br><li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费<br><li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。<br><li>`SPOTPAID`：表示竞价实例付费。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例计费模式。取值范围：\n<li>`PREPAID`：表示预付费，即包年包月</li>\n<li>`POSTPAID_BY_HOUR`：表示后付费，即按量计费</li>\n<li>`CDHPAID`：`专用宿主机`付费，即只对`专用宿主机`计费，不对`专用宿主机`上的实例计费。</li>\n<li>`SPOTPAID`：表示竞价实例付费。</li>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例系统盘信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例系统盘信息。",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例数据盘信息。只包含随实例购买的数据盘。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例数据盘信息。只包含随实例购买的数据盘。",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例带宽信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例带宽信息。",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所属虚拟私有网络信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例所属虚拟私有网络信息。",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "生产实例所使用的镜像`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生产实例所使用的镜像`ID`。",
           "example": "img-pi0aa46r",
           "member": "string",
           "name": "ImageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['sg-rf6ogz49']",
+          "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。",
+          "example": "[\"sg-rf6ogz49\"]",
           "member": "string",
           "name": "SecurityGroupIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例登录设置。目前只返回实例所关联的密钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例登录设置。目前只返回实例所关联的密钥。",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "CAM角色名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CAM角色名。",
           "example": "testroleName001",
           "member": "string",
           "name": "CamRoleName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "高性能计算集群`ID`。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高性能计算集群`ID`。",
           "example": "hpc-a5n666lo",
           "member": "string",
           "name": "HpcClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "购买实例数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买实例数量。",
           "example": "1",
           "member": "uint64",
           "name": "InstanceCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "增强服务。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "增强服务。",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。",
           "example": "TXlVc2VyRGF0YQo=",
           "member": "string",
           "name": "UserData",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "置放群组ID，仅支持指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "['ps-3p88qhfo']",
+          "document": "置放群组ID，仅支持指定一个。",
+          "example": "[\"ps-3p88qhfo\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
+          "example": "无",
           "member": "ActionTimer",
           "name": "ActionTimer",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云服务器的主机名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "云服务器的主机名。",
           "example": "MyHostName",
           "member": "string",
           "name": "HostName",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用于保证请求幂等性的字符串。",
           "example": "system-f3827db9-c58a-49cc-bf10-33fc1923a34a",
           "member": "string",
           "name": "ClientToken",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预付费模式，即包年包月相关参数设置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "预付费模式，即包年包月相关参数设置。",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
-          "required": false,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的云服务器、云硬盘实例。",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
-          "required": false,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：\n\nTRUE：表示开启实例保护，不允许通过api接口删除实例\nFALSE：表示关闭实例保护，允许通过api接口删除实例\n\n默认取值：FALSE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：\n\ntrue：表示开启实例保护，不允许通过api接口删除实例\nfalse：表示关闭实例保护，允许通过api接口删除实例\n\n默认取值：false。",
           "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
-          "required": false,
+          "output_required": true,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8515,17 +8530,17 @@
           "example": "1",
           "member": "uint64",
           "name": "LaunchTemplateVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "实例启动模板版本数据详情。",
-          "example": "NA",
+          "example": "无",
           "member": "LaunchTemplateVersionData",
           "name": "LaunchTemplateVersionData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8535,7 +8550,7 @@
           "example": "2020-12-17T01:54:31Z",
           "member": "datetime_iso",
           "name": "CreationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8545,7 +8560,7 @@
           "example": "lt-b8v1kcyq",
           "member": "string",
           "name": "LaunchTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8555,7 +8570,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsDefaultVersion",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8565,7 +8580,7 @@
           "example": "MyVersion",
           "member": "string",
           "name": "LaunchTemplateVersionDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8575,7 +8590,7 @@
           "example": "251001234",
           "member": "string",
           "name": "CreatedBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9583,7 +9598,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UsedQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9593,7 +9608,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RemainingQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9603,7 +9618,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9613,7 +9628,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9629,7 +9644,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UsedQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9639,7 +9654,7 @@
           "example": "100",
           "member": "uint64",
           "name": "OnceQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9649,7 +9664,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RemainingQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9659,7 +9674,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "TotalQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9669,7 +9684,7 @@
           "example": "ap-nanjing-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9806,33 +9821,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域名称，例如，ap-guangzhou\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域名称，例如，ap-guangzhou",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域描述，例如，华南地区(广州)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域描述，例如，华南地区(广州)",
           "example": "华南地区(广州)",
           "member": "string",
           "name": "RegionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域是否可用状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地域是否可用状态",
           "example": "AVAILABLE",
           "member": "string",
           "name": "RegionState",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11036,7 +11051,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UsedQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11046,7 +11061,7 @@
           "example": "100",
           "member": "uint64",
           "name": "RemainingQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11056,7 +11071,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "TotalQuota",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11066,7 +11081,7 @@
           "example": "ap-nanjing-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

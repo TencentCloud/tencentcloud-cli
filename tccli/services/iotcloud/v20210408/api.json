@@ -8,7 +8,7 @@
       "status": "online"
     },
     "BindDevices": {
-      "document": "本接口（BindDevices）用于网关设备批量绑定子设备 ",
+      "document": "本接口（BindDevices）用于网关设备批量绑定子设备",
       "input": "BindDevicesRequest",
       "name": "批量绑定子设备",
       "output": "BindDevicesResponse",
@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CreateProduct": {
-      "document": "本接口（CreateProduct）用于创建一个新的物联网通信产品 ",
+      "document": "本接口（CreateProduct）用于创建一个新的物联网通信产品",
       "input": "CreateProductRequest",
       "name": "创建产品",
       "output": "CreateProductResponse",
@@ -57,14 +57,14 @@
       "status": "online"
     },
     "CreateTopicPolicy": {
-      "document": "本接口（CreateTopicPolicy）用于创建一个Topic ",
+      "document": "本接口（CreateTopicPolicy）用于创建一个Topic",
       "input": "CreateTopicPolicyRequest",
       "name": "创建Topic",
       "output": "CreateTopicPolicyResponse",
       "status": "online"
     },
     "CreateTopicRule": {
-      "document": "本接口（CreateTopicRule）用于创建一个规则 ",
+      "document": "本接口（CreateTopicRule）用于创建一个规则",
       "input": "CreateTopicRuleRequest",
       "name": "创建规则",
       "output": "CreateTopicRuleResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DeleteDeviceShadow": {
-      "document": "本接口（DeleteDeviceShadow）用于删除设备影子 ",
+      "document": "本接口（DeleteDeviceShadow）用于删除设备影子",
       "input": "DeleteDeviceShadowRequest",
       "name": "删除设备影子",
       "output": "DeleteDeviceShadowResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeDeviceClientKey": {
-      "document": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次 ",
+      "document": "获取证书认证类型设备的私钥，刚生成或者重置设备后仅可调用一次",
       "input": "DescribeDeviceClientKeyRequest",
       "name": "获取设备私钥",
       "output": "DescribeDeviceClientKeyResponse",
@@ -204,7 +204,7 @@
       "status": "online"
     },
     "DescribeGatewayBindDevices": {
-      "document": "本接口（DescribeGatewayBindDevices）用于获取网关绑定的子设备列表 ",
+      "document": "本接口（DescribeGatewayBindDevices）用于获取网关绑定的子设备列表",
       "input": "DescribeGatewayBindDevicesRequest",
       "name": "获取网关绑定的子设备列表",
       "output": "DescribeGatewayBindDevicesResponse",
@@ -253,7 +253,7 @@
       "status": "online"
     },
     "DescribeProductResources": {
-      "document": "本接口（DescribeProductResources）用于查询产品资源列表。 ",
+      "document": "本接口（DescribeProductResources）用于查询产品资源列表。",
       "input": "DescribeProductResourcesRequest",
       "name": "获取产品资源列表",
       "output": "DescribeProductResourcesResponse",
@@ -323,16 +323,16 @@
       "status": "online"
     },
     "GetAllVersion": {
-      "document": "本接口（GetAllVersion）用于获取所有的版本列表 ",
+      "document": "本接口（GetAllVersion）用于获取所有的版本列表",
       "input": "GetAllVersionRequest",
       "name": "获取所有版本列表",
       "output": "GetAllVersionResponse",
       "status": "online"
     },
     "GetCOSURL": {
-      "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL ",
+      "document": "本接口（GetCOSURL）用于获取固件存储在COS的URL",
       "input": "GetCOSURLRequest",
-      "name": "获取固件下载地址",
+      "name": "获取固件上传地址",
       "output": "GetCOSURLResponse",
       "status": "online"
     },
@@ -407,7 +407,7 @@
       "status": "online"
     },
     "ResetDeviceState": {
-      "document": "重置设备的连接状态 ",
+      "document": "重置设备的连接状态",
       "input": "ResetDeviceStateRequest",
       "name": "重置设备状态",
       "output": "ResetDeviceStateResponse",
@@ -428,9 +428,9 @@
       "status": "online"
     },
     "UnbindDevices": {
-      "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备 ",
+      "document": "本接口（UnbindDevices）用于网关设备批量解绑子设备",
       "input": "UnbindDevicesRequest",
-      "name": "批量解绑子设备",
+      "name": "批量解绑子设备（旧）",
       "output": "UnbindDevicesResponse",
       "status": "online"
     },
@@ -442,14 +442,14 @@
       "status": "online"
     },
     "UpdateDeviceLogLevel": {
-      "document": "设置设备上报的日志级别  ",
+      "document": "设置设备上报的日志级别",
       "input": "UpdateDeviceLogLevelRequest",
       "name": "更新设备日志级别",
       "output": "UpdateDeviceLogLevelResponse",
       "status": "online"
     },
     "UpdateDevicePSK": {
-      "document": "本接口（UpdateDevicePSK）用于更新设备的PSK ",
+      "document": "本接口（UpdateDevicePSK）用于更新设备的PSK",
       "input": "UpdateDevicePSKRequest",
       "name": "更新设备PSK",
       "output": "UpdateDevicePSKResponse",
@@ -484,7 +484,7 @@
       "status": "online"
     },
     "UpdateProductDynamicRegister": {
-      "document": "更新产品动态注册的配置 ",
+      "document": "更新产品动态注册的配置",
       "input": "UpdateProductDynamicRegisterRequest",
       "name": "更新产品动态注册",
       "output": "UpdateProductDynamicRegisterResponse",
@@ -541,7 +541,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5123",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -604,7 +604,7 @@
         {
           "disabled": false,
           "document": "需要升级的设备名称列表",
-          "example": "无",
+          "example": "dev_001",
           "member": "string",
           "name": "DeviceNames",
           "required": false,
@@ -637,7 +637,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123456",
+          "example": "11236",
           "member": "uint64",
           "name": "TaskId",
           "output_required": true,
@@ -659,20 +659,20 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "UTY4QRLMQY",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -682,7 +682,7 @@
           "example": "无",
           "member": "DeviceTag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -692,7 +692,7 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "BindTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -705,7 +705,7 @@
         {
           "disabled": false,
           "document": "网关设备的产品ID",
-          "example": "12345ABCDE",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -714,7 +714,7 @@
         {
           "disabled": false,
           "document": "网关设备的设备名",
-          "example": "test",
+          "example": "devGat-001",
           "member": "string",
           "name": "GatewayDeviceName",
           "required": true,
@@ -723,7 +723,7 @@
         {
           "disabled": false,
           "document": "被绑定设备的产品ID",
-          "example": "ABCDE12345",
+          "example": "DGRESAG222",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -732,7 +732,7 @@
         {
           "disabled": false,
           "document": "被绑定的多个设备名",
-          "example": "[\"test0\\n\",\"test1\\n\"]",
+          "example": "[\"dev01\\n\",\"dev02\\n\"]",
           "member": "string",
           "name": "DeviceNames",
           "required": true,
@@ -741,7 +741,7 @@
         {
           "disabled": false,
           "document": "中兴CLAA设备的绑定需要skey，普通的设备不需要",
-          "example": "123",
+          "example": "adferdfwe",
           "member": "string",
           "name": "Skey",
           "required": false,
@@ -794,22 +794,20 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "UTY5QRLMQY",
           "member": "string",
           "name": "ProductId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "设备名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -916,7 +914,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -925,7 +923,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "dev",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1253,7 +1251,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1271,7 +1269,7 @@
         {
           "disabled": false,
           "document": "文件上传类型时文件名",
-          "example": "ABCD",
+          "example": "mydev",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -1280,7 +1278,7 @@
         {
           "disabled": false,
           "document": "文件上传类型时文件大小",
-          "example": "123",
+          "example": "20",
           "member": "uint64",
           "name": "FileSize",
           "required": false,
@@ -1298,7 +1296,7 @@
         {
           "disabled": false,
           "document": "文件上传类型时文件md5值",
-          "example": "123123",
+          "example": "无",
           "member": "string",
           "name": "Hash",
           "required": false,
@@ -1316,7 +1314,7 @@
           "example": "1000001",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1380,7 +1378,7 @@
         {
           "disabled": false,
           "document": "产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}",
-          "example": "fruit",
+          "example": "dev-01",
           "member": "string",
           "name": "ProductName",
           "required": true,
@@ -1398,7 +1396,7 @@
         {
           "disabled": false,
           "document": "创建CLAA产品时，需要Skey",
-          "example": "xxx",
+          "example": "adferdfwe",
           "member": "string",
           "name": "Skey",
           "required": false,
@@ -1413,20 +1411,20 @@
         {
           "disabled": false,
           "document": "产品名称",
-          "example": "fruit",
+          "example": "dev-01",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品 ID，腾讯云生成全局唯一 ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1436,7 +1434,7 @@
           "example": "无",
           "member": "ProductProperties",
           "name": "ProductProperties",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1455,7 +1453,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1470,20 +1468,20 @@
         {
           "disabled": false,
           "document": "任务文件上传链接",
-          "example": "https://iothub-tasktest-****",
+          "example": "https://iothub-tasktest-1256872341.cos.ap-guangzhou.myqcloud.com/600100559989_ODX2QWWUF9_1740476304769587313_2VAUCV",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务文件名",
-          "example": "111111_ABCDE12345_1586228400",
+          "example": "121111_EQPOKD5111_1586228400",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1502,7 +1500,7 @@
         {
           "disabled": false,
           "document": "产品自身ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1511,7 +1509,7 @@
         {
           "disabled": false,
           "document": "Topic名称",
-          "example": "abc",
+          "example": "update",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -1556,7 +1554,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "testrulename",
+          "example": "allrule",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -1624,17 +1622,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
-          "example": "AAAAAAAAAA",
-          "member": "string",
-          "name": "ProductID",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "资源名称",
-          "example": "test",
+          "example": "myname",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1643,10 +1632,19 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "test",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "EQPOKD5111",
+          "member": "string",
+          "name": "ProductID",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1682,7 +1680,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1691,7 +1689,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "abc",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1745,7 +1743,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE2345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1772,7 +1770,7 @@
         {
           "disabled": false,
           "document": "需要删除的产品 ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1781,7 +1779,7 @@
         {
           "disabled": false,
           "document": "删除LoRa产品需要skey",
-          "example": "xxx",
+          "example": "adferdfwe",
           "member": "string",
           "name": "Skey",
           "required": false,
@@ -1808,7 +1806,7 @@
         {
           "disabled": false,
           "document": "规则名",
-          "example": "test",
+          "example": "myname",
           "member": "string",
           "name": "RuleName",
           "required": true,
@@ -1835,7 +1833,7 @@
         {
           "disabled": false,
           "document": "所属产品的Id",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -1844,7 +1842,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "abc",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -1862,7 +1860,7 @@
           "example": "----------BEGIN PRIVATE KEY----------END PRIVATE KEY-----",
           "member": "string",
           "name": "ClientKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2506,7 +2504,7 @@
         {
           "disabled": false,
           "document": "固件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "name",
+          "example": "myname",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -2516,7 +2514,7 @@
         {
           "disabled": false,
           "document": "固件描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "desc",
+          "example": "mydescription",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -2526,7 +2524,7 @@
         {
           "disabled": false,
           "document": "固件Md5值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "md5",
+          "example": "418806da363b5b57199e5a9f88fc69c3",
           "member": "string",
           "name": "Md5sum",
           "output_required": true,
@@ -2546,7 +2544,7 @@
         {
           "disabled": false,
           "document": "产品名称",
-          "example": "ABC",
+          "example": "myname",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -2639,10 +2637,10 @@
         {
           "disabled": false,
           "document": "固件升级任务的设备总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2652,7 +2650,7 @@
           "example": "无",
           "member": "DeviceUpdateStatus",
           "name": "Devices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2689,7 +2687,7 @@
         {
           "disabled": false,
           "document": "固件升级任务ID",
-          "example": "123",
+          "example": "43522",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -2707,7 +2705,7 @@
           "example": "无",
           "member": "StatusStatistic",
           "name": "StatusInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2726,7 +2724,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2762,7 +2760,7 @@
           "example": "1000175",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2772,7 +2770,7 @@
           "example": "3",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2782,7 +2780,7 @@
           "example": "1589466879",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2792,7 +2790,7 @@
           "example": "1",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2802,7 +2800,7 @@
           "example": "门锁",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2812,17 +2810,17 @@
           "example": "originalVersion",
           "member": "string",
           "name": "UpgradeMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2832,7 +2830,7 @@
           "example": "1.0.0",
           "member": "string",
           "name": "OriginalVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2878,7 +2876,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SuccessTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2888,7 +2886,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FailureTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2898,7 +2896,7 @@
           "example": "1",
           "member": "uint64",
           "name": "UpgradingTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2917,7 +2915,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -2971,7 +2969,7 @@
           "example": "无",
           "member": "FirmwareTaskInfo",
           "name": "TaskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2981,7 +2979,7 @@
           "example": "53",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3000,7 +2998,7 @@
         {
           "disabled": false,
           "document": "网关设备的产品ID",
-          "example": "12345ABCDE",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -3009,7 +3007,7 @@
         {
           "disabled": false,
           "document": "网关设备的设备名",
-          "example": "test",
+          "example": "devGat-001",
           "member": "string",
           "name": "GatewayDeviceName",
           "required": true,
@@ -3036,7 +3034,7 @@
         {
           "disabled": false,
           "document": "LoRa产品的ID",
-          "example": "ABCDE12345",
+          "example": "BSDGEW222",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -3054,7 +3052,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3064,17 +3062,17 @@
           "example": "无",
           "member": "BindDeviceInfo",
           "name": "Devices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "子设备所属的产品名",
-          "example": "test",
+          "example": "devGat-001",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3212,7 +3210,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE2345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3230,7 +3228,7 @@
           "example": "无",
           "member": "CertInfo",
           "name": "CAs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3328,7 +3326,7 @@
         {
           "disabled": false,
           "document": "需要查看资源列表的产品 ID",
-          "example": "AAAAAAAAAA",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductID",
           "required": false,
@@ -3337,7 +3335,7 @@
         {
           "disabled": false,
           "document": "需要过滤的资源名称",
-          "example": "test",
+          "example": "myname",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -3355,7 +3353,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3365,7 +3363,7 @@
           "example": "无",
           "member": "ProductResourceInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3436,7 +3434,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3445,7 +3443,7 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "1",
+          "example": "3153452",
           "member": "uint64",
           "name": "TaskId",
           "required": true,
@@ -3463,7 +3461,7 @@
           "example": "无",
           "member": "ProductTaskInfo",
           "name": "TaskInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3482,7 +3480,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -3518,7 +3516,7 @@
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3528,7 +3526,7 @@
           "example": "无",
           "member": "ProductTaskInfo",
           "name": "TaskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4186,10 +4184,10 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4199,7 +4197,7 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "LastProcessTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4209,7 +4207,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4219,7 +4217,7 @@
           "example": "fail",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4229,7 +4227,7 @@
           "example": "-1",
           "member": "int64",
           "name": "Retcode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4239,7 +4237,7 @@
           "example": "1.0.1",
           "member": "string",
           "name": "DstVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4249,7 +4247,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4259,17 +4257,17 @@
           "example": "1.0.0",
           "member": "string",
           "name": "OriVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "132",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4364,7 +4362,7 @@
         {
           "disabled": false,
           "document": "产品ID。",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -4382,7 +4380,7 @@
         {
           "disabled": false,
           "document": "固件名称。",
-          "example": "name",
+          "example": "name1",
           "member": "string",
           "name": "FirmwareName",
           "required": true,
@@ -4484,7 +4482,7 @@
         {
           "disabled": false,
           "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductName",
           "output_required": true,
@@ -4514,7 +4512,7 @@
         {
           "disabled": false,
           "document": "产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "output_required": true,
@@ -4606,7 +4604,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -4624,7 +4622,7 @@
           "example": "[\"1.0.0\",\"2.0.0\"]",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4643,7 +4641,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -4676,10 +4674,10 @@
         {
           "disabled": false,
           "document": "固件URL",
-          "example": "http://abc.com",
+          "example": "http://tencent.com",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4753,7 +4751,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": false,
@@ -4827,7 +4825,7 @@
         {
           "disabled": false,
           "document": "查询关键字，可以同时支持键值查询和文本查询，例如，查询某key的值为value，并且包含某word的日志，该参数为：key:value word。键值或文本可以包含多个，以空格隔开。其中可以索引的key比如：RequestID、ProductID、DeviceName等。\n一个典型的查询示例：ProductID:ABCDE12345 DeviceName:test publish",
-          "example": "productid:xxxxxxxxxx",
+          "example": "productid:EQPOKD5111",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -4863,7 +4861,7 @@
           "example": "ic0cxTVFidWRTTUZmcERXMVZR",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4873,7 +4871,7 @@
           "example": "false",
           "member": "bool",
           "name": "Listover",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4883,7 +4881,7 @@
           "example": "无",
           "member": "PayloadLogItem",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5125,7 +5123,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5135,7 +5133,7 @@
           "example": "无",
           "member": "TopicRuleInfo",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5154,30 +5152,30 @@
         {
           "disabled": false,
           "document": "账号id",
-          "example": "12345",
+          "example": "10324534",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品id",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5187,27 +5185,27 @@
           "example": "device:DEFAULT_DEVICE",
           "member": "string",
           "name": "SrcType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源名称",
-          "example": "xxx/xxxx",
+          "example": "mysrcname",
           "member": "string",
           "name": "SrcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "消息topic",
-          "example": "xxx/xxxx/data",
+          "example": "EQPOKD5111/dev-001/data",
           "member": "string",
           "name": "Topic",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5217,7 +5215,7 @@
           "example": "JSON",
           "member": "string",
           "name": "PayloadFormatType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5227,17 +5225,17 @@
           "example": "{\"abc\":123}",
           "member": "string",
           "name": "Payload",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "请求ID",
-          "example": "xxxxxxxxx",
+          "example": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc",
           "member": "string",
           "name": "RequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5247,7 +5245,7 @@
           "example": "2021-04-08 00:00:00",
           "member": "string",
           "name": "DateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5419,7 +5417,7 @@
         {
           "disabled": false,
           "document": "产品绑定的物模型ID，-1表示不绑定",
-          "example": "123",
+          "example": "-1",
           "member": "string",
           "name": "ModelId",
           "output_required": true,
@@ -5430,7 +5428,7 @@
         {
           "disabled": false,
           "document": "产品绑定的物模型名称",
-          "example": "xxx",
+          "example": "ipc",
           "member": "string",
           "name": "ModelName",
           "output_required": true,
@@ -5441,7 +5439,7 @@
         {
           "disabled": false,
           "document": "产品密钥，suite产品才会有",
-          "example": "xxxxx",
+          "example": "grwgrer",
           "member": "string",
           "name": "ProductKey",
           "output_required": true,
@@ -5485,7 +5483,7 @@
         {
           "disabled": false,
           "document": "划归的产品，展示为源产品ID，其余为空",
-          "example": "ABCDE2345",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "OriginProductId",
           "output_required": true,
@@ -5507,7 +5505,7 @@
         {
           "disabled": false,
           "document": "划归的产品，展示为源用户ID，其余为空",
-          "example": "12345",
+          "example": "fag",
           "member": "uint64",
           "name": "OriginUserId",
           "output_required": true,
@@ -5540,7 +5538,7 @@
         {
           "disabled": false,
           "document": "LoRa产品运营侧APPEUI，只有LoRa产品需要填写",
-          "example": "12345",
+          "example": "UTY6QRLMQY",
           "member": "string",
           "name": "AppEUI",
           "output_required": true,
@@ -5557,30 +5555,30 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "AAAAAAAAAA",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "产品名",
-          "example": "test",
+          "example": "dev-001",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源名称",
-          "example": "test",
+          "example": "myname",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5590,7 +5588,7 @@
           "example": "bda2cc64487b0db7f53d689bccabde2d",
           "member": "string",
           "name": "Md5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5600,17 +5598,17 @@
           "example": "10",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源文件描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "测试",
+          "example": "mydescription",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5620,7 +5618,7 @@
           "example": "2021-01-03 17:04:05",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5633,10 +5631,10 @@
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "123",
+          "example": "54521",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5646,7 +5644,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5656,7 +5654,7 @@
           "example": "0",
           "member": "uint64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5666,17 +5664,17 @@
           "example": "cosfile",
           "member": "string",
           "name": "ParametersType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务参数",
-          "example": "abc",
+          "example": "gfadg",
           "member": "string",
           "name": "Parameters",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5686,7 +5684,7 @@
           "example": "cosfile",
           "member": "string",
           "name": "ResultType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5696,7 +5694,7 @@
           "example": "succ",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5706,7 +5704,7 @@
           "example": "100",
           "member": "uint64",
           "name": "BatchCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5716,7 +5714,7 @@
           "example": "50",
           "member": "uint64",
           "name": "BatchOffset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5726,7 +5724,7 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5736,7 +5734,7 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5746,7 +5744,7 @@
           "example": "1617801604",
           "member": "uint64",
           "name": "CompleteTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -5768,7 +5766,7 @@
         {
           "disabled": false,
           "document": "消息内容",
-          "example": "123456",
+          "example": "5346563",
           "member": "string",
           "name": "Payload",
           "required": true,
@@ -5804,7 +5802,7 @@
           "example": "1000523",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5996,10 +5994,10 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "ABCD",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6009,7 +6007,7 @@
           "example": "true",
           "member": "bool",
           "name": "Success",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6019,7 +6017,7 @@
           "example": "not exist",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6032,7 +6030,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6059,7 +6057,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6069,7 +6067,7 @@
           "example": "无",
           "member": "ResetDeviceResult",
           "name": "ResetDeviceResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6088,7 +6086,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6097,7 +6095,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "dev",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -6263,17 +6261,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "统计总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "100",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -6286,30 +6284,30 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "test",
+          "example": "rule1",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则描述",
-          "example": "test",
+          "example": "my description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "1000",
+          "example": "1741231767",
           "member": "uint64",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6319,17 +6317,17 @@
           "example": "false",
           "member": "bool",
           "name": "RuleDisabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "规则模式",
-          "example": "test",
+          "example": "topice1",
           "member": "string",
           "name": "TopicPattern",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6388,7 +6386,7 @@
         {
           "disabled": false,
           "document": "网关设备的产品ID",
-          "example": "12345ABCDE",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "GatewayProductId",
           "required": true,
@@ -6397,7 +6395,7 @@
         {
           "disabled": false,
           "document": "网关设备的设备名",
-          "example": "test",
+          "example": "gateway-001",
           "member": "string",
           "name": "GatewayDeviceName",
           "required": true,
@@ -6406,7 +6404,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6415,7 +6413,7 @@
         {
           "disabled": false,
           "document": "多个设备名",
-          "example": "[\"test0\\n\",\"test1\\n\"]",
+          "example": "[\"dev-001\\n\",\"dev-0021\\n\"]",
           "member": "string",
           "name": "DeviceNames",
           "required": true,
@@ -6424,7 +6422,7 @@
         {
           "disabled": false,
           "document": "中兴CLAA设备的解绑需要Skey，普通设备不需要",
-          "example": "123",
+          "example": "adferdfwe",
           "member": "string",
           "name": "Skey",
           "required": false,
@@ -6496,7 +6494,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6505,7 +6503,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "abc",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -6541,7 +6539,7 @@
         {
           "disabled": false,
           "document": "产品名",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6550,7 +6548,7 @@
         {
           "disabled": false,
           "document": "设备名",
-          "example": "test_device",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -6586,7 +6584,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6595,7 +6593,7 @@
         {
           "disabled": false,
           "document": "设备名称",
-          "example": "ABC",
+          "example": "dev-001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -6604,7 +6602,7 @@
         {
           "disabled": false,
           "document": "虚拟设备的状态，JSON字符串格式，由desired结构组成",
-          "example": "xxx",
+          "example": "{\"desired\":{\"color\":\"red\"}}",
           "member": "string",
           "name": "State",
           "required": true,
@@ -6613,7 +6611,7 @@
         {
           "disabled": false,
           "document": "当前版本号，需要和后台的version保持一致，才能更新成功",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "ShadowVersion",
           "required": true,
@@ -6631,7 +6629,7 @@
           "example": "{\"payload\":{\"state\": {\"desired\": { \"color\": \"red\"}}, \"timestamp\"",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6695,7 +6693,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6785,7 +6783,7 @@
         {
           "disabled": false,
           "document": "产品Id",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6821,17 +6819,17 @@
           "example": "0",
           "member": "uint64",
           "name": "RegisterType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "动态注册产品密钥",
-          "example": "xxxx",
+          "example": "adferdfwe",
           "member": "string",
           "name": "ProductSecret",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6841,7 +6839,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "RegisterLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6860,7 +6858,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE2345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6896,7 +6894,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6905,7 +6903,7 @@
         {
           "disabled": false,
           "document": "更新前Topic名",
-          "example": "abc",
+          "example": "topic1",
           "member": "string",
           "name": "TopicName",
           "required": true,
@@ -6914,7 +6912,7 @@
         {
           "disabled": false,
           "document": "更新后Topic名",
-          "example": "ABC",
+          "example": "topic2",
           "member": "string",
           "name": "NewTopicName",
           "required": true,
@@ -6959,7 +6957,7 @@
         {
           "disabled": false,
           "document": "产品ID",
-          "example": "ABCDE12345",
+          "example": "EQPOKD5111",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6995,7 +6993,7 @@
         {
           "disabled": false,
           "document": "固件名称",
-          "example": "ABCD",
+          "example": "ota-1.0",
           "member": "string",
           "name": "FirmwareName",
           "required": false,

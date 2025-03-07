@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud UpdateOtaTaskStatus --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --TaskId 10000 \
     --Status 6
 ```
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "RequestId": "ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbc"
     }
 }
 ```

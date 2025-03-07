@@ -6400,6 +6400,78 @@
           "name": "Desc",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "启动kafka配置",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableKafka",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "kafka_host",
+          "example": "9.134.190.4:9092",
+          "member": "string",
+          "name": "KafkaHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic",
+          "example": "topic",
+          "member": "string",
+          "name": "KafkaTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kafka_version",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "KafkaVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kafka_username",
+          "example": "hawchen",
+          "member": "string",
+          "name": "SaslUserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "kafka_pwd",
+          "example": "password",
+          "member": "string",
+          "name": "SaslPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SaslMechanism",
+          "example": "plan",
+          "member": "string",
+          "name": "SaslMechanism",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sink_id，日知汇算子id",
+          "example": "1025",
+          "member": "uint64",
+          "name": "SinkId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6569,6 +6641,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改是否包括白名单",
+          "example": "true",
+          "member": "bool",
+          "name": "IsModifyAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7299,6 +7380,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改是否包括白名单",
+          "example": "true",
+          "member": "bool",
+          "name": "IsModifyAll",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

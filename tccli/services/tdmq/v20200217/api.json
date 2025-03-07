@@ -693,6 +693,13 @@
       "output": "DescribeRocketMQSubscriptionsResponse",
       "status": "online"
     },
+    "DescribeRocketMQTopUsages": {
+      "document": "用于获取RocketMQ指标排序列表，比如集群实例下占用存储空间最多的主题排序。",
+      "input": "DescribeRocketMQTopUsagesRequest",
+      "name": "获取 RocketMQ 集群相关指标排序列表",
+      "output": "DescribeRocketMQTopUsagesResponse",
+      "status": "online"
+    },
     "DescribeRocketMQTopicMsgs": {
       "document": "rocketmq 消息查询",
       "input": "DescribeRocketMQTopicMsgsRequest",
@@ -10859,6 +10866,71 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQTopUsagesRequest": {
+      "document": "DescribeRocketMQTopUsages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名称，支持以下：\nconsumeLag，消费组堆积数量\ndeadLetterCount，死信数量\ntopicRateIn,   Topic生产速率\ntopicRateOut，Topic消费速率\ntopicStorageSize，Topic存储空间\ntopicApiCalls，Topic API调用次数",
+          "example": "consumeLag",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序数量，最大20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopUsagesResponse": {
+      "document": "DescribeRocketMQTopUsages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标值列表",
+          "example": "[120,88]",
+          "member": "int64",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标值对应的维度组合，本接口存在以下几个维度：\ntenant，namespace，group，topic",
+          "example": "无",
+          "member": "DimensionInstance",
+          "name": "Dimensions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQTopicMsgsRequest": {
       "document": "DescribeRocketMQTopicMsgs请求参数结构体",
       "members": [
@@ -11847,6 +11919,27 @@
           "value_allowed_null": false
         }
       ],
+      "usage": "both"
+    },
+    "DimensionInstance": {
+      "document": "实例维度组合数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的维度组合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DimensionOpt",
+          "name": "Dimensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DimensionOpt": {
+      "document": "指标维度对象",
+      "members": [],
       "usage": "both"
     },
     "Environment": {

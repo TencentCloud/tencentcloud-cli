@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotcloud DescribeProductTasks --cli-unfold-argument  \
-    --ProductId ABCDE12345 \
+    --ProductId EQPOKD5111 \
     --Offset 0 \
     --Limit 10
 ```

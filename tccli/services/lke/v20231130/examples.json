@@ -96,6 +96,14 @@
         "title": "创建发布"
       }
     ],
+    "CreateVar": [
+      {
+        "document": "创建变量",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVar\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\",\n    \"VarName\": \"TimeID\",\n    \"VarDesc\": \"这个参数要来传时间\",\n    \"VarType\": \"STRING\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa7b90b3-bca5-4666-8bb8-e76b0374137c\",\n        \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\"\n    }\n}",
+        "title": "创建变量"
+      }
+    ],
     "DeleteApp": [
       {
         "document": "删除应用",
@@ -420,6 +428,14 @@
         "input": "POST / HTTP/1.1\n      Host: xxx.tencentcloudapi.com\n      Content-Type: application/json\n      X-TC-Action: GetTaskStatus\n      <公共请求参数>\n   \n{\n\t\"TaskId\": \"8\",\n\t\"TaskType\":\"ModifyAttributeLabel\",\n\t\"BotBizId\":\"1767024172536168448\"\n}",
         "output": "{\n    \"Response\": {\n        \"Message\": \"\",\n        \"Params\": {\n            \"CosPath\": \"\"\n        },\n        \"RequestId\": \"896e8585-8013-446f-a403-0952f9e207e5\",\n        \"Status\": \"SUCCESS\",\n        \"TaskId\": \"8\",\n        \"TaskType\": \"ModifyAttributeLabel\"\n    }\n}",
         "title": "获取任务状态"
+      }
+    ],
+    "GetVarList": [
+      {
+        "document": "获取应用下的变量列表",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVarList\n<公共请求参数>\n\n{\n    \"AppBizId\": \"1793260396881641472\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"VarId\": \"55127e9e-6e9e-4c11-bcf8-b524959cd841\",\n                \"VarName\": \"TimeIDUpdate\",\n                \"VarDesc\": \"时间ID描述\",\n                \"VarType\": \"STRING\"\n            },\n            {\n                \"VarId\": \"d125c28b-55db-4478-9066-6115ab97ee17\",\n                \"VarName\": \"UserID\",\n                \"VarDesc\": \"用户ID描述\",\n                \"VarType\": \"STRING\"\n            }\n        ],\n        \"RequestId\": \"925208e7-46fa-43b3-a429-ddcbccad24f6\",\n        \"Total\": 2\n    }\n}",
+        "title": "获取应用下的变量列表"
       }
     ],
     "GetWsToken": [
