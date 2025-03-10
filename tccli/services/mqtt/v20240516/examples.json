@@ -198,6 +198,14 @@
         "title": "示例"
       }
     ],
+    "DescribeClientList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTClientList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-2vnk55xv\",\n    \"ClientId\": \"sub\",\n    \"Number\": \"10\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Clients\": [\n            {\n                \"ClientAddress\": \"11.176.16.153:63066\",\n                \"ClientId\": \"sub_client1\",\n                \"ConnectTime\": 1710314923557,\n                \"ConnectionStatus\": \"CONNECTED\",\n                \"CreateTime\": 1710314923554,\n                \"DisconnectTime\": 0,\n                \"Keepalive\": 60,\n                \"MQTTClientSubscriptions\": [\n                    {\n                        \"Qos\": 1,\n                        \"TopicFilter\": \"home/temp/+/\"\n                    },\n                    {\n                        \"Qos\": 0,\n                        \"TopicFilter\": \"home/humidity/+/\"\n                    },\n                    {\n                        \"Qos\": 2,\n                        \"TopicFilter\": \"home/person/+/\"\n                    }\n                ],\n                \"ProtocolVersion\": 4\n            },\n            {\n                \"ClientAddress\": \"11.176.16.153:62048\",\n                \"ClientId\": \"sub_client2\",\n                \"ConnectTime\": 1710314912143,\n                \"ConnectionStatus\": \"CONNECTED\",\n                \"CreateTime\": 1710314912140,\n                \"DisconnectTime\": 0,\n                \"Keepalive\": 60,\n                \"MQTTClientSubscriptions\": [\n                    {\n                        \"Qos\": 1,\n                        \"TopicFilter\": \"home/sun/+/\"\n                    },\n                    {\n                        \"Qos\": 1,\n                        \"TopicFilter\": \"home/temp/+/\"\n                    },\n                    {\n                        \"Qos\": 0,\n                        \"TopicFilter\": \"home/humidity/+/\"\n                    },\n                    {\n                        \"Qos\": 2,\n                        \"TopicFilter\": \"home/person/+/\"\n                    }\n                ],\n                \"ProtocolVersion\": 4\n            }\n        ],\n        \"RequestId\": \"9f81924f-41e8-4f24-aaf2-61da7da9c713\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeDeviceCertificate": [
       {
         "document": "示例",
@@ -252,11 +260,27 @@
         "title": "示例"
       }
     ],
+    "DescribeMessageList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTMessageList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-47ka4rdr\",\n    \"Topic\": \"topic24\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"StartTime\": 1705373755266,\n    \"EndTime\": 1705632955266,\n    \"TaskRequestId\": \" \"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": null,\n                \"MsgId\": \"0B8D67F0002D6ACBCFC0557BCEBA0001\",\n                \"ProduceTime\": \"2024-01-17 14:22:57\",\n                \"ProducerAddr\": \"11.176.16.153:51134\",\n                \"Qos\": \"1\",\n                \"SubTopic\": \"/1/\",\n                \"Tags\": \"MQTT_COMMON\"\n            },\n            {\n                \"DeadLetterResendSuccessTimes\": null,\n                \"DeadLetterResendTimes\": null,\n                \"Keys\": null,\n                \"MsgId\": \"0B8D67F0002D6ACBCFC0557B1A980000\",\n                \"ProduceTime\": \"2024-01-17 14:22:11\",\n                \"ProducerAddr\": \"11.176.16.153:44044\",\n                \"Qos\": \"0\",\n                \"SubTopic\": \"\",\n                \"Tags\": \"MQTT_COMMON\"\n            }\n        ],\n        \"RequestId\": \"116cd3f5-668f-42fe-8572-fcd5d3a31377\",\n        \"TaskRequestId\": \"e3d14393-4701-4f62-8a7d-b52bd59b5ace\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeProductSKUList": [
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductSKUList\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"MQTTProductSkuList\": [\n            {\n                \"ClientNumLimit\": 1,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"SkuCode\": \"mqtt_1k\",\n                \"TopicNumLimit\": 1,\n                \"TpsLimit\": 1\n            },\n            {\n                \"ClientNumLimit\": 1000,\n                \"InstanceType\": \"BASIC\",\n                \"OnSale\": true,\n                \"SkuCode\": \"basic_1k\",\n                \"TopicNumLimit\": 25,\n                \"TpsLimit\": 1000\n            }\n        ],\n        \"RequestId\": \"2be05982-b125-4259-b965-c487949cd896\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeSharedSubscriptionLag": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSharedSubscriptionLag\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-8x3ae7q2\",\n    \"SharedSubscription\": \"$share/group/home\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Lag\": 0,\n        \"RequestId\": \"f5209cd4-34e9-4807-807d-57c35296d7e5\"\n    }\n}",
         "title": "示例"
       }
     ],

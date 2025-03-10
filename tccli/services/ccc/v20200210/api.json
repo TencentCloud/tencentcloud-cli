@@ -2026,6 +2026,15 @@
           "name": "ExtractConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型温度控制",
+          "example": "0",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"

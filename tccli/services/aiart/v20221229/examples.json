@@ -80,6 +80,14 @@
         "title": "查询成功"
       }
     ],
+    "RefineImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: aiart.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefineImage\n<公共请求参数>\n\n{\n    \"InputUrl\": \"https://xxx.com/image.jpg\",\n    \"RspImgType\": \"url\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"75c9d572-a163-4ffd-852f-eb6e11bd6ff9\",\n        \"ResultImage\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/refine_image/xxx.jpg\"\n    }\n}",
+        "title": "请求调用示例"
+      }
+    ],
     "ReplaceBackground": [
       {
         "document": "成功调用并生成图片",

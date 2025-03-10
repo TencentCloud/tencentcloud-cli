@@ -2155,6 +2155,16 @@
         },
         {
           "disabled": false,
+          "document": "任务输出文件信息列表",
+          "example": "无",
+          "member": "CloudStorageAIServiceTaskFileInfo",
+          "name": "FilesInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "创建时间",
           "example": "1711338476",
           "member": "int64",
@@ -2181,6 +2191,88 @@
           "name": "CustomId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudStorageAIServiceTaskFileInfo": {
+      "document": "云存 AI 任务输出文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称（含扩展名）",
+          "example": "video.mp4",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小（单位：bytes）",
+          "example": "1228800",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件下载 URL",
+          "example": "https://example.com/video.mp4",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件的 MIME Type",
+          "example": "video/mp4",
+          "member": "string",
+          "name": "MimeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频文件元数据（仅当文件为视频类型时包含该字段）",
+          "example": "无",
+          "member": "CloudStorageAIServiceTaskVideoMetaInfo",
+          "name": "VideoMetaInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudStorageAIServiceTaskVideoMetaInfo": {
+      "document": "云存 AI 任务输出视频文件元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频对应的缩略图的文件名称（含扩展名）",
+          "example": "thumbnail.jpg",
+          "member": "string",
+          "name": "ThumbnailFileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频时长（单位：毫秒）",
+          "example": "30000",
+          "member": "int64",
+          "name": "DurationMilliSeconds",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4992,6 +5084,42 @@
           "example": "1",
           "member": "uint64",
           "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称列表。\n\n当需要同时查询多台设备的任务列表时传入，优先级高于参数 `DeviceName`",
+          "example": "[\"dev001\", \"dev002\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务时间范围的起始时间（秒级 UNIX 时间戳）",
+          "example": "1740585600",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询任务时间范围的结束时间（秒级 UNIX 时间戳）",
+          "example": "1740671999",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下载 URL 的过期时间。\n\n若传入该参数，则响应中将包含所有文件的下载 URL",
+          "example": "1743436800",
+          "member": "int64",
+          "name": "FileURLExpireTime",
           "required": false,
           "type": "int"
         }

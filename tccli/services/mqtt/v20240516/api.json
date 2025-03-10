@@ -168,6 +168,13 @@
       "output": "DescribeCaCertificatesResponse",
       "status": "online"
     },
+    "DescribeClientList": {
+      "document": "查询 MQTT 客户端详情",
+      "input": "DescribeClientListRequest",
+      "name": "查询 MQTT 客户端列表",
+      "output": "DescribeClientListResponse",
+      "status": "online"
+    },
     "DescribeDeviceCertificate": {
       "document": "查询设备证书详情接口",
       "input": "DescribeDeviceCertificateRequest",
@@ -210,11 +217,25 @@
       "output": "DescribeInstanceListResponse",
       "status": "online"
     },
+    "DescribeMessageList": {
+      "document": "查询消息列表，如查询死信，请设置ConsumerGroup参数",
+      "input": "DescribeMessageListRequest",
+      "name": "查询MQTT消息列表",
+      "output": "DescribeMessageListResponse",
+      "status": "online"
+    },
     "DescribeProductSKUList": {
       "document": "获取产品售卖规格",
       "input": "DescribeProductSKUListRequest",
       "name": "获取MQTT产品售卖规格",
       "output": "DescribeProductSKUListResponse",
+      "status": "online"
+    },
+    "DescribeSharedSubscriptionLag": {
+      "document": "查询共享订阅消息堆积量",
+      "input": "DescribeSharedSubscriptionLagRequest",
+      "name": "查询共享订阅堆积",
+      "output": "DescribeSharedSubscriptionLagResponse",
       "status": "online"
     },
     "DescribeTopic": {
@@ -2001,6 +2022,61 @@
       ],
       "type": "object"
     },
+    "DescribeClientListRequest": {
+      "document": "DescribeClientList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端名",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端数量限制,最大1024，默认1024",
+          "example": "1024",
+          "member": "string",
+          "name": "Number",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientListResponse": {
+      "document": "DescribeClientList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端列表",
+          "example": "[ \t\t\t{ \t\t\t\t\"ClientAddress\": \"11.176.16.153:63066\", \t\t\t\t\"ClientId\": \"sub_client1\", \t\t\t\t\"ConnectTime\": 1710314923557, \t\t\t\t\"ConnectionStatus\": \"CONNECTED\", \t\t\t\t\"CreateTime\": 1710314923554, \t\t\t\t\"DisconnectTime\": 0, \t\t\t\t\"Keepalive\": 60, \t\t\t\t\"MQTTClientSubscriptions\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 1, \t\t\t\t\t\t\"TopicFilter\": \"home/temp/+/\" \t\t\t\t\t}, \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 0, \t\t\t\t\t\t\"TopicFilter\": \"home/humidity/+/\" \t\t\t\t\t}, \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 2, \t\t\t\t\t\t\"TopicFilter\": \"home/person/+/\" \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"ProtocolVersion\": 4 \t\t\t}, \t\t\t{ \t\t\t\t\"ClientAddress\": \"11.176.16.153:62048\", \t\t\t\t\"ClientId\": \"sub_client2\", \t\t\t\t\"ConnectTime\": 1710314912143, \t\t\t\t\"ConnectionStatus\": \"CONNECTED\", \t\t\t\t\"CreateTime\": 1710314912140, \t\t\t\t\"DisconnectTime\": 0, \t\t\t\t\"Keepalive\": 60, \t\t\t\t\"MQTTClientSubscriptions\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 1, \t\t\t\t\t\t\"TopicFilter\": \"home/sun/+/\" \t\t\t\t\t}, \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 1, \t\t\t\t\t\t\"TopicFilter\": \"home/temp/+/\" \t\t\t\t\t}, \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 0, \t\t\t\t\t\t\"TopicFilter\": \"home/humidity/+/\" \t\t\t\t\t}, \t\t\t\t\t{ \t\t\t\t\t\t\"Qos\": 2, \t\t\t\t\t\t\"TopicFilter\": \"home/person/+/\" \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"ProtocolVersion\": 4 \t\t\t} \t\t]",
+          "member": "MQTTClientInfo",
+          "name": "Clients",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceCertificateRequest": {
       "document": "DescribeDeviceCertificate请求参数结构体",
       "members": [
@@ -2705,6 +2781,117 @@
       ],
       "type": "object"
     },
+    "DescribeMessageListRequest": {
+      "document": "DescribeMessageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1712025623202",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1712112023202",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求任务id",
+          "example": "dcfefe36-829d-4dd8-a436-e622c6ecab8f",
+          "member": "string",
+          "name": "TaskRequestId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageListResponse": {
+      "document": "DescribeMessageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[                     {                         \"MsgId\": \"0B8D67D3003505C29BFD077EC81A0005\",                         \"SubTopic\": \"/humidity/room1/\",                         \"Qos\": \"2\",                         \"Tags\": \"MQTT_COMMON\",                         \"Keys\": null,                         \"ProducerAddr\": \"11.176.16.153:26866\",                         \"ProduceTime\": \"2024-04-02 10:55:49\",                         \"DeadLetterResendTimes\": null,                         \"DeadLetterResendSuccessTimes\": null                     },                     {                         \"MsgId\": \"0B8D67D3003505C29BFD077EC65B0002\",                         \"SubTopic\": \"/humidity/room0/\",                         \"Qos\": \"2\",                         \"Tags\": \"MQTT_COMMON\",                         \"Keys\": null,                         \"ProducerAddr\": \"11.176.16.153:26866\",                         \"ProduceTime\": \"2024-04-02 10:55:48\",                         \"DeadLetterResendTimes\": null,                         \"DeadLetterResendSuccessTimes\": null                     }                 ]",
+          "member": "MQTTMessageItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求任务id",
+          "example": "dcfefe36-829d-4dd8-a436-e622c6ecab8f",
+          "member": "string",
+          "name": "TaskRequestId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductSKUListRequest": {
       "document": "DescribeProductSKUList请求参数结构体",
       "members": [],
@@ -2732,6 +2919,52 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedSubscriptionLagRequest": {
+      "document": "DescribeSharedSubscriptionLag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id\t",
+          "example": "mqtt-sample",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享订阅表达式",
+          "example": "$share/example_group/home/#",
+          "member": "string",
+          "name": "SharedSubscription",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSharedSubscriptionLagResponse": {
+      "document": "DescribeSharedSubscriptionLag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堆积值",
+          "example": "1",
+          "member": "int64",
+          "name": "Lag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -3231,6 +3464,148 @@
       ],
       "usage": "out"
     },
+    "MQTTClientInfo": {
+      "document": "MQTT客户端信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户端唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ClientId",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端网络地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1:10001",
+          "member": "string",
+          "name": "ClientAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MQTT 协议版本，4 表示 MQTT 3.1.1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "ProtocolVersion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保持连接时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "Keepalive",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连接状态，CONNECTED 已连接，DISCONNECTED 未连接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CONNECTED",
+          "member": "string",
+          "name": "ConnectionStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1701396000000",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次建立连接时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1701396000000",
+          "member": "int64",
+          "name": "ConnectTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1701403200000",
+          "member": "int64",
+          "name": "DisconnectTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端的订阅列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MQTTClientSubscription",
+          "name": "MQTTClientSubscriptions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MQTTClientSubscription": {
+      "document": "MQTT 订阅关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "topic 订阅",
+          "example": "mytopic/a/+",
+          "member": "string",
+          "name": "TopicFilter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务质量等级",
+          "example": "1",
+          "member": "int64",
+          "name": "Qos",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "堆积数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Lag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递未确认数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Inflight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "MQTTEndpointItem": {
       "document": "MQTTEndpoint",
       "members": [
@@ -3515,6 +3890,102 @@
           "name": "MaxSubscription",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MQTTMessageItem": {
+      "document": "消息记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "MsgId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag1",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value1",
+          "member": "string",
+          "name": "Keys",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "ProducerAddr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息发送时间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1713164969433",
+          "member": "string",
+          "name": "ProduceTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "死信重发次数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DeadLetterResendTimes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "死信重发成功次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DeadLetterResendSuccessTimes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subtopic",
+          "member": "string",
+          "name": "SubTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息质量等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Qos",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

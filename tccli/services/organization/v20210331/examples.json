@@ -88,12 +88,28 @@
         "title": "绑定组织成员和组织管理员子账号的授权关系"
       }
     ],
+    "BindOrganizationPolicySubAccount": [
+      {
+        "document": "绑定成员访问授权策略和组织管理员子账号",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindOrganizationPolicySubAccount\n<公共请求参数>\n\n{\n    \"PolicyId\": 123,\n    \"OrgSubAccountUins\": [\n        111111111111\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bebe4b80-bca5-45fe-a460-455045879f89\"\n    }\n}",
+        "title": "绑定成员访问授权策略和组织管理员子账号"
+      }
+    ],
     "CancelOrganizationMemberAuthAccount": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelOrganizationMemberAuthAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111,\n    \"PolicyId\": 101,\n    \"OrgSubAccountUin\": 222222222222\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"caecf1a4-72b7-48d6-8f5f-90d1c428d3f3\"\n    }\n}",
         "title": "取消组织成员和组织管理员子账号的授权关系"
+      }
+    ],
+    "CancelOrganizationPolicySubAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelOrganizationPolicySubAccount\n<公共请求参数>\n\n{\n    \"PolicyId\": 123,\n    \"OrgSubAccountUins\": [\n        111111111111\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae4cbff0-b722-4ef1-b1b0-2088af894566\"\n    }\n}",
+        "title": "解绑成员访问授权策略和组织管理员子账号"
       }
     ],
     "CheckAccountDelete": [

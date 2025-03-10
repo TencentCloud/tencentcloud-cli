@@ -134,7 +134,7 @@
       "status": "online"
     },
     "ChannelCreateMultiFlowSignQRCode": {
-      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多签签署码。 \n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过扫描一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/partner/callback_types_contracts_sign)\n3. 用户通过扫描一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
+      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多签签署码。 \n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1.满足以下条件的模板支持创建签署码： \n - 签署对象：企业与个人（无序签署）、企业与个人（顺序签署&企业非首位）、 仅个人签署。\n - 其发起方没有填写控件,签署方（B端或C端）可以有填写控件。 \n - 如签署对象中含企业方，企业方签署区只能由发起方企业签署。\n\n2. 通过扫描一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/partner/callback_types_contracts_sign)\n3. 用户通过扫描一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多签签署码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse",
@@ -2541,7 +2541,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方签署控件（印章/签名等）的生成方式：\n<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>\n<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>\n**注**: `发起后添加控件功能不支持添加签批控件`",
+          "document": "签署方签署控件（印章/签名等）的生成方式：\n<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>\n<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>\n\n**注**: \n1.发起后添加控件功能不支持添加签批控件 \n2.签署方在签署时自行添加签署控件仅支持电子签小程序或web控制台签署，不支持H5",
           "example": "0",
           "member": "int64",
           "name": "SignBeanTag",

@@ -70,6 +70,13 @@
       "output": "QueryTrainPortraitModelJobResponse",
       "status": "online"
     },
+    "RefineImage": {
+      "document": "将图像变清晰，增强图像细节。变清晰后的图片将保持原图比例，长边为2048。\n默认提供1个并发，代表最多能同时处理1个已提交的任务。",
+      "input": "RefineImageRequest",
+      "name": "图片变清晰",
+      "output": "RefineImageResponse",
+      "status": "online"
+    },
     "ReplaceBackground": {
       "document": "商品背景生成接口根据指定的背景描述 Prompt，将商品图中的原背景替换为自定义的新背景并保留商品主体形象，实现商品背景的自由生成与更换。\n\n商品背景生成默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
       "input": "ReplaceBackgroundRequest",
@@ -1232,6 +1239,61 @@
         }
       ],
       "usage": "both"
+    },
+    "RefineImageRequest": {
+      "document": "RefineImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入图 Url。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "https://xxx.com/image.jpg",
+          "member": "string",
+          "name": "InputUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输入图 Base64 数据。\nBase64 和 Url 必须提供一个，如果都提供以 Url 为准。\n图片限制：转成 Base64 字符串后小于 6MB，格式支持 jpg、jpeg、png、bmp、tiff、webp。",
+          "example": "9j/4QlQaHR0c...N6a2M5ZCI",
+          "member": "string",
+          "name": "InputImage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回图像方式（base64 或 url) ，二选一，默认为 base64。url 有效期为1小时。 示例值：url",
+          "example": "url",
+          "member": "string",
+          "name": "RspImgType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RefineImageResponse": {
+      "document": "RefineImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "根据入参 RspImgType 填入不同，返回不同的内容。\n如果传入 base64 则返回生成图 Base64 编码。\n如果传入 url 则返回的生成图 URL , 有效期1小时，请及时保存。",
+          "example": "url",
+          "member": "string",
+          "name": "ResultImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReplaceBackgroundRequest": {
       "document": "ReplaceBackground请求参数结构体",

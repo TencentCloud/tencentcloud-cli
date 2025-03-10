@@ -15643,6 +15643,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型\n",
+          "example": "SuperSQL/Native",
+          "member": "string",
+          "name": "EngineGeneration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

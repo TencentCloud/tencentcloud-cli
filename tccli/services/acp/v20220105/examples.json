@@ -34,7 +34,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAppScanTask\n<公共请求参数>\n\n{\n    \"AppPackage\": \"com.test.app\",\n    \"Source\": \"2\",\n    \"Platform\": \"0\",\n    \"TaskType\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ed2aa90dc-2354a9d8ee8304-a7a9-4a29-0\",\n        \"Result\": 0,\n        \"TaskID\": \"170143813*******360\"\n    }\n}",
         "title": "创建App隐私合规基础诊断任务"
       },
       {

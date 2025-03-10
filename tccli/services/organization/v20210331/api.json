@@ -77,11 +77,25 @@
       "output": "BindOrganizationMemberAuthAccountResponse",
       "status": "online"
     },
+    "BindOrganizationPolicySubAccount": {
+      "document": "绑定成员访问授权策略和组织管理员子账号",
+      "input": "BindOrganizationPolicySubAccountRequest",
+      "name": "绑定成员访问授权策略和组织管理员子账号",
+      "output": "BindOrganizationPolicySubAccountResponse",
+      "status": "online"
+    },
     "CancelOrganizationMemberAuthAccount": {
       "document": "取消组织成员和组织管理员子账号的授权关系",
       "input": "CancelOrganizationMemberAuthAccountRequest",
       "name": "取消组织成员和组织管理员子账号的授权关系",
       "output": "CancelOrganizationMemberAuthAccountResponse",
+      "status": "online"
+    },
+    "CancelOrganizationPolicySubAccount": {
+      "document": "解绑成员访问授权策略和组织管理员子账号",
+      "input": "CancelOrganizationPolicySubAccountRequest",
+      "name": "解绑成员访问授权策略和组织管理员子账号",
+      "output": "CancelOrganizationPolicySubAccountResponse",
       "status": "online"
     },
     "CheckAccountDelete": {
@@ -1529,6 +1543,42 @@
       ],
       "type": "object"
     },
+    "BindOrganizationPolicySubAccountRequest": {
+      "document": "BindOrganizationPolicySubAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "10",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "组织管理员子账号Uin列表。最大5个",
+          "example": "[111111111111]",
+          "member": "int64",
+          "name": "OrgSubAccountUins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindOrganizationPolicySubAccountResponse": {
+      "document": "BindOrganizationPolicySubAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CancelOrganizationMemberAuthAccountRequest": {
       "document": "CancelOrganizationMemberAuthAccount请求参数结构体",
       "members": [
@@ -1564,6 +1614,42 @@
     },
     "CancelOrganizationMemberAuthAccountResponse": {
       "document": "CancelOrganizationMemberAuthAccount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelOrganizationPolicySubAccountRequest": {
+      "document": "CancelOrganizationPolicySubAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID。",
+          "example": "10",
+          "member": "int64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "组织管理员子账号Uin列表。最大5个",
+          "example": "[111111111111]",
+          "member": "int64",
+          "name": "OrgSubAccountUins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelOrganizationPolicySubAccountResponse": {
+      "document": "CancelOrganizationPolicySubAccount返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
