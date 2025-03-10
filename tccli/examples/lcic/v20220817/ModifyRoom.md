@@ -31,20 +31,20 @@ Input:
 
 ```
 tccli lcic ModifyRoom --cli-unfold-argument  \
-    --RoomId 1 \
-    --StartTime 1 \
-    --EndTime 1 \
-    --TeacherId abc \
-    --Name abc \
+    --RoomId 301234567 \
+    --StartTime 1704074400 \
+    --EndTime 1704076200 \
+    --TeacherId 2i5WfUzRRC2Eb2uNmLNv96gzxCv \
+    --Name myClass \
     --Resolution 1 \
     --MaxMicNumber 1 \
     --AutoMic 1 \
     --AudioQuality 1 \
-    --SubType abc \
+    --SubType videodoc \
     --DisableRecord 1 \
-    --Assistants abc \
+    --Assistants 2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc \
     --SdkAppId 1 \
-    --GroupId abc \
+    --GroupId 301234567 \
     --EnableDirectControl 1
 ```
 
@@ -52,7 +52,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "e574aae1-lp02-4225-a2f8-9032h7199f5f0"
     }
 }
 ```

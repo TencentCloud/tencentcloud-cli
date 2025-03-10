@@ -5662,7 +5662,7 @@
         {
           "disabled": false,
           "document": "域名ID 例如：domain-123abc",
-          "example": "域名ID",
+          "example": "domain-dwerewwq",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -6041,7 +6041,7 @@
           "example": "54",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6087,7 +6087,7 @@
           "example": "54",
           "member": "uint64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

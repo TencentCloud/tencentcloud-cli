@@ -6,6 +6,8 @@ Input:
 
 ```
 tccli lowcode DescribeKnowledgeSetList --cli-unfold-argument  \
+    --EnvId lowcode-xxxx \
+    --Offset 0 \
     --Limit 10
 ```
 

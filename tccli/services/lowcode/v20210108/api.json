@@ -83,8 +83,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识",
-          "example": "”“",
+          "example": "the_name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -93,7 +102,7 @@
         {
           "disabled": false,
           "document": "知识库名称",
-          "example": "无",
+          "example": "the_title",
           "member": "string",
           "name": "Title",
           "required": true,
@@ -102,9 +111,18 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "the_desc",
           "member": "string",
           "name": "Desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库的meta信息",
+          "example": "meta",
+          "member": "string",
+          "name": "Meta",
           "required": false,
           "type": "string"
         }
@@ -630,6 +648,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识",
           "example": "qinmyku873d0a9",
           "member": "string",
@@ -690,6 +717,15 @@
     "DeleteKnowledgeSetRequest": {
       "document": "DeleteKnowledgeSet请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "知识库标识",
@@ -909,6 +945,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识",
           "example": "qinmyku873d0a9",
           "member": "string",
@@ -990,6 +1035,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识",
           "example": "qinmyku873d0a9",
           "member": "string",
@@ -1062,6 +1116,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识，精准查询",
           "example": "”“",
           "member": "string",
@@ -1077,6 +1140,15 @@
           "name": "Title",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页起始位",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1398,6 +1470,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库的meta信息",
+          "example": "\"meta\"",
+          "member": "string",
+          "name": "Meta",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1841,7 +1923,7 @@
         {
           "disabled": false,
           "document": "知识库名称",
-          "example": "abc",
+          "example": "collection_view",
           "member": "string",
           "name": "CollectionView",
           "required": false,
@@ -1859,7 +1941,7 @@
         {
           "disabled": false,
           "document": "搜索值",
-          "example": "abc",
+          "example": "value",
           "member": "string",
           "name": "SearchValue",
           "required": false,
@@ -1892,7 +1974,7 @@
         {
           "disabled": false,
           "document": "知识库文档搜索数据",
-          "example": "{}",
+          "example": "{     \"DocInfos\": [     ],     \"Total\": 0 }",
           "member": "SearchDocRsp",
           "name": "Data",
           "output_required": false,
@@ -1955,8 +2037,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识",
-          "example": "”“",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1965,7 +2056,7 @@
         {
           "disabled": false,
           "document": "知识库名称",
-          "example": "无",
+          "example": "title",
           "member": "string",
           "name": "Title",
           "required": false,
@@ -1974,7 +2065,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "desc",
           "member": "string",
           "name": "Desc",
           "required": false,
@@ -1983,9 +2074,18 @@
         {
           "disabled": false,
           "document": "状态;ENABLED启用；NOT_ENABLED不启用",
-          "example": "无",
+          "example": "ENABLED",
           "member": "string",
           "name": "Active",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "知识库的meta信息",
+          "example": "meta",
+          "member": "string",
+          "name": "Meta",
           "required": false,
           "type": "string"
         }
@@ -2009,6 +2109,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "环境ID",
+          "example": "lowcode-sdf",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "知识库标识",
           "example": "qinmyku873d0a9",
           "member": "string",
@@ -2027,7 +2136,7 @@
         },
         {
           "disabled": false,
-          "document": "文件存储位置的可读地址",
+          "document": "腾讯云文件存储位置的可读地址",
           "example": "无",
           "member": "string",
           "name": "CosUrl",

@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lowcode DeleteKnowledgeDocumentSet --cli-unfold-argument  \
+    --EnvId lowcode-2gay8jwwgh25c7b1cf \
     --CollectionView gqtianTw west666 \
     --Query.DocumentSetId 124847948693739929www6
 ```

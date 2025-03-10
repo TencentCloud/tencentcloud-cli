@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli lowcode SearchDocList --cli-unfold-argument  \
-    --EnvId abc \
-    --CollectionView abc \
-    --SearchKey abc \
-    --SearchValue abc \
+    --EnvId prod-1 \
+    --CollectionView view \
+    --SearchKey key \
+    --SearchValue value \
     --PageNo 1 \
     --PageSize 1
 ```
@@ -21,12 +21,12 @@ Output:
         "Data": {
             "DocInfos": [
                 {
-                    "CollectionViewName": "abc",
-                    "DocSetId": "123456",
+                    "CollectionViewName": "name",
+                    "DocSetId": "00-11",
                     "DocSetName": "abc.md",
                     "DocType": ".md",
-                    "FileTitle": "abc",
-                    "FileMetaData": "{}",
+                    "FileTitle": "title",
+                    "FileMetaData": "{\"key\":\"value\"}",
                     "DocDesc": "test",
                     "FileSize": 0
                 }

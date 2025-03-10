@@ -21,7 +21,7 @@ Output:
                 "Order": 0,
                 "InstanceFamilies": [
                     {
-                        "InstanceFamily": "abc",
+                        "InstanceFamily": "C3",
                         "Order": 402,
                         "InstanceTypes": [
                             {

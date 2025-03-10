@@ -73,29 +73,29 @@
           "example": "com.test.app",
           "member": "string",
           "name": "AppPackage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "App名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "App名称",
           "example": "测试App",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "App版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "App版本",
           "example": "v1.0",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -103,89 +103,89 @@
           "example": "0",
           "member": "int64",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "App隐私诊断报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "App隐私诊断报告下载链接",
           "example": "诊断报告下载链接",
           "member": "string",
           "name": "ReportUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "App隐私诊断报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "App隐私诊断报告名称",
           "example": "诊断报告名称",
           "member": "string",
           "name": "ReportTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "App诊断堆栈报告下载链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "App诊断堆栈报告下载链接",
           "example": "诊断堆栈报告下载链接",
           "member": "string",
           "name": "BehaviorUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "App诊断堆栈报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "App诊断堆栈报告名称",
           "example": "诊断堆栈报告名称",
           "member": "string",
           "name": "BehaviorTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "诊断高风险项数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "诊断高风险项数量",
           "example": "5",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "隐私申明文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隐私申明文件名称",
           "example": "隐私申明文本.txt",
           "member": "string",
           "name": "PrivacyTextName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "软件MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "软件MD5",
           "example": "c7991677cc57d3b9d4974316db0ac4f9f430593f",
           "member": "string",
           "name": "SoftwareMD5",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "隐私文本MD5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "隐私文本MD5",
           "example": "3bc1efe919a5245f711071373a2b4523",
           "member": "string",
           "name": "PrivacyTextMD5",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -199,7 +199,7 @@
           "example": "1701438134******0",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -209,7 +209,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -219,19 +219,19 @@
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "内部错误",
           "member": "string",
           "name": "TaskErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -239,7 +239,7 @@
           "example": "2",
           "member": "int64",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -249,7 +249,7 @@
           "example": "复杂类型",
           "member": "AppInfoItem",
           "name": "AppInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -259,7 +259,7 @@
           "example": "2021-09-30 10:57:34",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -269,19 +269,19 @@
           "example": "2021-10-11 14:53:36",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "联系人信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "联系人信息",
           "example": "老王",
           "member": "string",
           "name": "ContactName",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -665,7 +665,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "6bb56a09278740bc80c5dc6dab783eff",
           "member": "string",
           "name": "TaskID",
           "required": true,
@@ -692,7 +692,7 @@
         {
           "disabled": false,
           "document": "子渠道APP MD5值",
-          "example": "无",
+          "example": "d7849918ab117b2857d6335a76eceea8",
           "member": "string",
           "name": "AppMD5",
           "required": true,
@@ -710,24 +710,27 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断报告/堆栈信息/报告json结果下载链接",
-          "example": "无",
+          "example": "https://xxxx.xxxx.com/report.pdf",
           "member": "string",
           "name": "ReportUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "诊断报告/堆栈/报告json结果的名称",
-          "example": "无",
+          "example": "xxxx诊断报告",
           "member": "string",
           "name": "ReportTitle",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -867,7 +870,7 @@
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -877,7 +880,7 @@
           "example": "无",
           "member": "ResourceUsageInfoData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1257,13 +1260,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程编号",
           "example": "1.1",
           "member": "string",
           "name": "FlowNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1271,7 +1274,7 @@
           "example": "APK 下载",
           "member": "string",
           "name": "FlowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1281,39 +1284,39 @@
           "example": "1",
           "member": "int64",
           "name": "FlowStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程状态描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程状态描述",
           "example": "进行中",
           "member": "string",
           "name": "FlowStateDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程启动时间",
           "example": "2022-03-21 15:17:18",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "流程完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "流程完成时间",
           "example": "2022-03-21 15:17:18",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

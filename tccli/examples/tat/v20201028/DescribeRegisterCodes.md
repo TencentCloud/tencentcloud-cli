@@ -8,7 +8,7 @@ Input:
 tccli tat DescribeRegisterCodes --cli-unfold-argument  \
     --RegisterCodeIds 8cca2d3b-7ac3-422a-98f0-8a5bc17cdc38 \
     --Offset 0 \
-    --Limit 0
+    --Limit 1
 ```
 
 Output: 

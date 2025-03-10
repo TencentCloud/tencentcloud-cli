@@ -700,22 +700,6 @@
         "title": "修改拒答问题"
       }
     ],
-    "ParseDoc": [
-      {
-        "document": "文档解析",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ParseDoc\n<公共请求参数>\n\n{\n    \"Name\": \"微信城市服务CityID说明文档.docx\",\n    \"Url\": \"https://wximg.qq.com/cityservices/doc/res/cityservices_cityids.docx\",\n    \"TaskId\": \"D78iBBGi\",\n    \"Policy\": \"default\",\n    \"Operate\": \"split\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ea5a507-108f-4b05-add4-b07de8580590\",\n        \"TaskId\": \"D78iBBGi\"\n    }\n}",
-        "title": "文档解析"
-      }
-    ],
-    "QueryParseDocResult": [
-      {
-        "document": "查询文档解析结果",
-        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryParseDocResult\n<公共请求参数>\n\n{\n    \"TaskId\": \"D78iBBGi\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"D78iBBGi.zip\",\n        \"Reason\": \"\",\n        \"RequestId\": \"acd2b5f3-350f-4171-92be-e1c70f3e73d7\",\n        \"Status\": \"success\",\n        \"Url\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/%2Fatomic/2/D78iBBGi.zip?q-sign-algorithm=sha1&q-ak=xxxxxxxxx&q-sign-time=1706792626%3B1706796226&q-key-time=1706792626%3B1706796226&q-header-list=host&q-url-param-list=&q-signature=e3d46a97846b256ff89f3698*******************\",\n        \"Usage\": {\n            \"TotalPages\": 1\n        }\n    }\n}",
-        "title": "查询文档解析结果"
-      }
-    ],
     "QueryRewrite": [
       {
         "document": "多轮改写",

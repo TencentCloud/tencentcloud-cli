@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cfg DescribeTemplate --cli-unfold-argument  \
-    --TemplateId 1175
+    --TemplateId 1953
 ```
 
 Output: 
@@ -19,11 +19,11 @@ Output:
             "ApmServiceList": [],
             "Tags": [],
             "TemplateCreateTime": "2023-10-09 11:03:31",
-            "TemplateDescription": "测试",
+            "TemplateDescription": "cvm关机经验库，团队内部使用",
             "TemplateGroups": [
                 {
                     "CreateTime": "2023-10-09 11:03:31",
-                    "Description": "测试",
+                    "Description": "逻辑层故障场景编排",
                     "Mode": 1,
                     "ObjectTypeId": 1,
                     "Order": 1,
@@ -35,7 +35,7 @@ Output:
                             "ActionTitle": "关机（测试）",
                             "ActionType": "平台",
                             "CreateTime": "2023-10-09 11:03:31",
-                            "CustomConfiguration": "{}",
+                            "CustomConfiguration": "{\"force\": \"否\", \"destIp\": \"\", \"excludeIp\": \"\", \"localPort\": \"\", \"netPercent\": 8, \"remotePort\": \"\", \"excludePort\": \"\", \"netInterface\": \"eth0\"}",
                             "ExecuteId": null,
                             "GeneralConfiguration": "{\"AliasTitle\": \"\", \"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
                             "Order": 1,
@@ -51,7 +51,7 @@ Output:
                             "ActionTitle": "开机",
                             "ActionType": "平台",
                             "CreateTime": "2023-10-09 11:03:31",
-                            "CustomConfiguration": "{}",
+                            "CustomConfiguration": "{\"force\": \"否\", \"destIp\": \"\", \"excludeIp\": \"\", \"localPort\": \"\", \"netPercent\": 8, \"remotePort\": \"\", \"excludePort\": \"\", \"netInterface\": \"eth0\"}",
                             "ExecuteId": 368448,
                             "GeneralConfiguration": "{\"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
                             "Order": 2,
@@ -62,7 +62,7 @@ Output:
                         }
                     ],
                     "TemplateGroupId": 1659,
-                    "Title": "测试",
+                    "Title": "逻辑层故障验证",
                     "UpdateTime": "2023-10-09 11:03:31"
                 }
             ],
@@ -84,7 +84,7 @@ Output:
             "TemplateRegionId": 1,
             "TemplateSource": 0,
             "TemplateTag": "",
-            "TemplateTitle": "测试",
+            "TemplateTitle": "CVM关机",
             "TemplateUpdateTime": "2023-10-09 11:03:31"
         }
     }

@@ -7,8 +7,8 @@ Input:
 ```
 tccli cfg ExecuteTaskInstance --cli-unfold-argument  \
     --TaskId 222 \
-    --TaskActionId 1111 \
-    --TaskInstanceIds 111 222 33 \
+    --TaskActionId 2430 \
+    --TaskInstanceIds 4670 4671 4672 \
     --IsOperateAll True \
     --ActionType 1 \
     --TaskGroupId 12

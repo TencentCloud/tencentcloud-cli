@@ -189,6 +189,13 @@
       "output": "DescribeInsPublicEndpointsResponse",
       "status": "online"
     },
+    "DescribeInsVPCEndpoints": {
+      "document": "查询MQTT实例公网接入点",
+      "input": "DescribeInsVPCEndpointsRequest",
+      "name": "查询MQTT实例VPC接入点",
+      "output": "DescribeInsVPCEndpointsResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "查询实例信息",
       "input": "DescribeInstanceRequest",
@@ -2319,6 +2326,43 @@
           "name": "Status",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInsVPCEndpointsRequest": {
+      "document": "DescribeInsVPCEndpoints请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mqtt-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInsVPCEndpointsResponse": {
+      "document": "DescribeInsVPCEndpoints返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入点",
+          "example": " [ \t\t\t{ \t\t\t\t\"Host\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com\", \t\t\t\t\"Port\": 1883, \t\t\t\t\"SubnetId\": null, \t\t\t\t\"Type\": \"mqtt-tcp\", \t\t\t\t\"Url\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:1883\", \t\t\t\t\"VpcId\": null \t\t\t}, \t\t\t{ \t\t\t\t\"Host\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com\", \t\t\t\t\"Port\": 8888, \t\t\t\t\"SubnetId\": null, \t\t\t\t\"Type\": \"mqtt-ws\", \t\t\t\t\"Url\": \"mqtt-47ka4rdr-cd-qcloud.mqtt.tencenttdmq.com:8888\", \t\t\t\t\"VpcId\": null \t\t\t} \t\t]",
+          "member": "MQTTEndpointItem",
+          "name": "Endpoints",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

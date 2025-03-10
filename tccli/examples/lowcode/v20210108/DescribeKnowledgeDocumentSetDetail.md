@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lowcode DescribeKnowledgeDocumentSetDetail --cli-unfold-argument  \
+    --EnvId lowcode-2gay8jgh25c722222b1cf \
     --CollectionView gqtianTest222666 \
     --DocumentSetId 1248479222486937399296
 ```

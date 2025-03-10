@@ -98,6 +98,13 @@
       "output": "DescribeClientBalanceNewResponse",
       "status": "online"
     },
+    "DescribeClientJoinIncreaseList": {
+      "document": "查询合作伙伴名下客户的参与增量激励考核信息列表",
+      "input": "DescribeClientJoinIncreaseListRequest",
+      "name": "查询客户参与增量激励考核信息",
+      "output": "DescribeClientJoinIncreaseListResponse",
+      "status": "online"
+    },
     "DescribeRebateInfos": {
       "document": "【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息",
       "input": "DescribeRebateInfosRequest",
@@ -1178,6 +1185,72 @@
       ],
       "type": "object"
     },
+    "ClientIncreaseInfoList": {
+      "document": "客户增量激励考核信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户UIN",
+          "example": "10000014512",
+          "member": "string",
+          "name": "ClientUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否参与增量政策，\nY：是，N：否",
+          "example": "Y",
+          "member": "string",
+          "name": "IsJoinIncrease",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量考核关联时间",
+          "example": "2024-12",
+          "member": "string",
+          "name": "IncreaseUseAssociateDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参与增量考核的原始客户等级",
+          "example": "T2",
+          "member": "string",
+          "name": "TLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量考核目标,分",
+          "example": "12000",
+          "member": "string",
+          "name": "IncreaseGoal",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "完成订单金额,分",
+          "example": "100",
+          "member": "string",
+          "name": "TotalBaseAmt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CreatePayRelationForClientRequest": {
       "document": "CreatePayRelationForClient请求参数结构体",
       "members": [
@@ -2103,6 +2176,43 @@
           "name": "Cash",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientJoinIncreaseListRequest": {
+      "document": "DescribeClientJoinIncreaseList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户UIN列表",
+          "example": "{\"1000000\",\"1000001\"}",
+          "member": "string",
+          "name": "ClientUins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientJoinIncreaseListResponse": {
+      "document": "DescribeClientJoinIncreaseList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已审核代客列表",
+          "example": "{\"ClientUin\": \"1000000121\",\"IsJoinIncrease\":\"Y\",\"IncreaseUseAssociateDate\":\"2024-09-12\",\"TLevel\":\"T1\",\"IncreaseGoal\":\"1000\",\"TotalBaseAmt\":\"10\"}",
+          "member": "ClientIncreaseInfoList",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

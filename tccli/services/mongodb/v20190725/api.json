@@ -1810,17 +1810,17 @@
           "example": "MONGOS_ALL",
           "member": "string",
           "name": "URLType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例 URI 形式的连接串访问地址示例。",
-          "example": "无",
+          "example": "mongodb://mongouser:******@10.0.5.**:27017/test?replicaSet=cmgo-ldig****_0&authSource=admin",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

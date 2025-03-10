@@ -7,6 +7,38 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2f35fb3-3c8c-431e-b318-b4746cfe076c\"\n    }\n}",
         "title": "批量对存量账号应用基线"
       }
+    ],
+    "GetAccountFactoryBaseline": [
+      {
+        "document": "获取用户基线配置",
+        "input": "POST / HTTP/1.1\nHost: controlcenter.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAccountFactoryBaseline\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"OwnerUin\": 126464647,\n        \"Name\": \"test\",\n        \"BaselineConfigItems\": [\n            {\n                \"Identifier\": \"ACS-BP_ACCOUNT_FACTORY_ACCOUNT_CONTACT\",\n                \"Configuration\": \"{\\\"Contacts\\\":[{\\\"Name\\\":\\\"dest\\\",\\\"Email\\\":\\\"ia@22.com\\\",\\\"Mobile\\\":\\\"12345678910\\\",\\\"Position\\\":\\\"Technical Director\\\"}]}\",\n                \"ApplyCount\": 5\n            }\n        ],\n        \"CreateTime\": \"2022-08-18 12:00:00\",\n        \"UpdateTime\": \"2022-08-18 12:00:00\",\n        \"RequestId\": \"e2f35fb3-3c8c-431e-b318-b4746cfe076c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ListAccountFactoryBaselineItems": [
+      {
+        "document": "控制台获取账号基线列表",
+        "input": "POST / HTTP/1.1\nHost: controlcenter.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListAccountFactoryBaselineItems\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BaselineItems\": [\n            {\n                \"Classify\": \"消息\",\n                \"ClassifyEn\": \"Message\",\n                \"DependsOn\": [\n                    {\n                        \"Identifier\": \"TCC-AF_ACCOUNT_CONTACT\",\n                        \"Type\": \"AccountFactorySetUp\"\n                    }\n                ],\n                \"Description\": \"可以为每类消息设置接收人。账户、产品、故障等重要消息，建议您务必设置接收，防止消息遗漏造成损失。\",\n                \"DescriptionEn\": \"Specify recipients for the notifications of different products. To avoid unexpected losses, we recommend you subscribe to important messages related to accounts, products, and errors.\",\n                \"Identifier\": \"TCC-AF_ACCOUNT_NOTIFICATION\",\n                \"Name\": \"消息订阅\",\n                \"NameEn\": \"Message subscriptions\",\n                \"Required\": 0,\n                \"Weight\": 8\n            }\n        ],\n        \"RequestId\": \"885a87d0-af7d-414a-b128-fd13653387b7\",\n        \"Total\": 1\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ListDeployStepTasks": [
+      {
+        "document": "通过基线identifier获取部署任务历史",
+        "input": "POST / HTTP/1.1\nHost: controlcenter.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDeployStepTasks\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Identifier\": \"TCC-AF_CAM_USER_PASSWORD_POLICY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"BaselineDeployStepTaskList\": [\n            {\n                \"TaskId\": \"s8gsj834y8ef0cjs\",\n                \"Identifier\": \"TCC-AF_CAM_USER_PASSWORD_POLICY\",\n                \"MemberUin\": 100000000001,\n                \"Status\": \"Success\",\n                \"Output\": \"\",\n                \"ErrCode\": \"Ok\",\n                \"ErrMessage\": \"Ok\",\n                \"CreateTime\": \"2022-08-18 12:00:00\",\n                \"UpdateTime\": \"2022-08-18 12:00:00\"\n            }\n        ],\n        \"RequestId\": \"ef0e0140-4e51-4087-95a1-f7fd18ca6d63\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "UpdateAccountFactoryBaseline": [
+      {
+        "document": "批量更新/增加用户基线配置",
+        "input": "POST / HTTP/1.1\nHost: controlcenter.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAccountFactoryBaseline\n<公共请求参数>\n\n{\n    \"Name\": \"default\",\n    \"BaselineConfigItems\": [\n        {\n            \"Identifier\": \"ACS-BP_ACCOUNT_FACTORY_ACCOUNT_CONTACT\",\n            \"Configuration\": \"{\\\"Contacts\\\":[{\\\"Name\\\":\\\"dest\\\",\\\"Email\\\":\\\"ia@22.com\\\",\\\"Mobile\\\":\\\"12345678910\\\",\\\"Position\\\":\\\"Technical Director\\\"}]}\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"748eabd0-5d58-40a6-85e3-26d74c3397d4\"\n    }\n}",
+        "title": "示例"
+      }
     ]
   },
   "version": "1.0"

@@ -3,7 +3,7 @@
     "CreateKnowledgeSet": [
       {
         "document": "创建微搭知识库",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeSet\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Title\": \"testTiTle\",\n    \"Desc\": \"descd\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"test\",\n    \"Title\": \"testTiTle\",\n    \"Desc\": \"descd\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "创建知识库"
       }
@@ -11,7 +11,7 @@
     "DeleteKnowledgeDocumentSet": [
       {
         "document": "删除知识库下文档",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeDocumentSet\n<公共请求参数>\n\n{\n    \"CollectionView\": \"gqtianTw west666\",\n    \"Query\": {\n        \"DocumentSetId\": [\n            \"124847948693739929www6\"\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeDocumentSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-2gay8jwwgh25c7b1cf\",\n    \"CollectionView\": \"gqtianTw west666\",\n    \"Query\": {\n        \"DocumentSetId\": [\n            \"124847948693739929www6\"\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AffectedCount\": 1\n        },\n        \"RequestId\": \"7365a503-7b9e-4510-9b0c-e7af0f0c06cf\"\n    }\n}",
         "title": "删除知识库下文档"
       }
@@ -19,7 +19,7 @@
     "DeleteKnowledgeSet": [
       {
         "document": "用于删除知识库",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeSet\n<公共请求参数>\n\n{\n    \"Name\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "删除知识库"
       }
@@ -35,7 +35,7 @@
     "DescribeKnowledgeDocumentSetDetail": [
       {
         "document": "获取知识库下文档详情",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeDocumentSetDetail\n<公共请求参数>\n\n{\n    \"CollectionView\": \"gqtianTest222666\",\n    \"DocumentSetId\": \"1248479222486937399296\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeDocumentSetDetail\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-2gay8jgh25c722222b1cf\",\n    \"CollectionView\": \"gqtianTest222666\",\n    \"DocumentSetId\": \"1248479222486937399296\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 1,\n            \"DocumentSet\": {\n                \"DocumentSetId\": \"1248479222486937399296\",\n                \"FileTitle\": \"kent测试文件\",\n                \"FileMetaData\": \"{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}\",\n                \"DocumentSetInfo\": {\n                    \"ByteLength\": 46,\n                    \"CreateTime\": \"2024-06-07 11:31:45\",\n                    \"IndexedProgress\": 100,\n                    \"IndexedStatus\": \"Ready\",\n                    \"Keywords\": \"\",\n                    \"LastUpdateTime\": \"2024-06-07 11:31:46\",\n                    \"TextLength\": 20\n                },\n                \"DocumentSetName\": \"jackzlqin.md\",\n                \"Name\": \"\",\n                \"Author\": \"\",\n                \"SplitterPreprocess\": {\n                    \"AppendKeywordsToChunk\": false,\n                    \"AppendTitleToChunk\": true\n                },\n                \"Text\": \"1. 入门微搭的技术文档\\n2. 学习微搭\",\n                \"TextPrefix\": \"1. 入门微搭的技术文档\\n2. 学习微搭......\"\n            }\n        },\n        \"RequestId\": \"b404ff44-6bc3-4f60-8185-2ff4d9be5b63\"\n    }\n}",
         "title": "获取知识库下文档详情"
       }
@@ -43,7 +43,7 @@
     "DescribeKnowledgeDocumentSetList": [
       {
         "document": "查询知识库下文件集合",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeDocumentSetList\n<公共请求参数>\n\n{\n    \"CollectionView\": \"gqtianTest666\",\n    \"Query\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeDocumentSetList\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-2gay8jgh25c7b1cf\",\n    \"CollectionView\": \"gqtianTest666\",\n    \"Query\": {\n        \"Limit\": 10,\n        \"Offset\": 0\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Count\": 1,\n            \"DocumentSets\": [\n                {\n                    \"DocumentSetId\": \"1248479486937399296\",\n                    \"FileTitle\": \"kent测试文件\",\n                    \"FileMetaData\": \"{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}\",\n                    \"DocumentSetInfo\": {\n                        \"ByteLength\": 46,\n                        \"CreateTime\": \"2024-06-07 11:31:45\",\n                        \"IndexedErrorMsg\": \"\",\n                        \"IndexedProgress\": 100,\n                        \"IndexedStatus\": \"Ready\",\n                        \"Keywords\": \"\",\n                        \"LastUpdateTime\": \"2024-06-07 11:31:46\",\n                        \"TextLength\": 20\n                    },\n                    \"DocumentSetName\": \"jackzlqin.md\",\n                    \"Name\": \"\",\n                    \"Author\": \"\",\n                    \"SplitterPreprocess\": {\n                        \"AppendKeywordsToChunk\": false,\n                        \"AppendTitleToChunk\": true\n                    },\n                    \"TextPrefix\": \"1. 入门微搭的技术文档\\n2. 学习微搭......\"\n                }\n            ]\n        },\n        \"RequestId\": \"2e7bdcc4-d82f-4b81-abc6-6e8b08cf1832\"\n    }\n}",
         "title": "查询知识库下文件集合"
       }
@@ -51,7 +51,7 @@
     "DescribeKnowledgeSetList": [
       {
         "document": "查询环境下的知识库列表",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeSetList\n<公共请求参数>\n\n{\n    \"Limit\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeSetList\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxxx\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"test\",\n                    \"Title\": \"testTiTle\",\n                    \"Desc\": \"test\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
         "title": "查询环境下的知识库列表"
       }
@@ -59,15 +59,15 @@
     "SearchDocList": [
       {
         "document": "根据关键字搜索知识库文档",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchDocList\n<公共请求参数>\n\n{\n    \"EnvId\": \"abc\",\n    \"CollectionView\": \"abc\",\n    \"SearchKey\": \"abc\",\n    \"SearchValue\": \"abc\",\n    \"PageNo\": 1,\n    \"PageSize\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DocInfos\": [\n                {\n                    \"CollectionViewName\": \"abc\",\n                    \"DocSetId\": \"123456\",\n                    \"DocSetName\": \"abc.md\",\n                    \"DocType\": \".md\",\n                    \"FileTitle\": \"abc\",\n                    \"FileMetaData\": \"{}\",\n                    \"DocDesc\": \"test\",\n                    \"FileSize\": 0\n                }\n            ],\n            \"Total\": 10\n        },\n        \"RequestId\": \"1cc82948-244f-4812-bb2a-25a8a473d312\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchDocList\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-1\",\n    \"CollectionView\": \"view\",\n    \"SearchKey\": \"key\",\n    \"SearchValue\": \"value\",\n    \"PageNo\": 1,\n    \"PageSize\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DocInfos\": [\n                {\n                    \"CollectionViewName\": \"name\",\n                    \"DocSetId\": \"00-11\",\n                    \"DocSetName\": \"abc.md\",\n                    \"DocType\": \".md\",\n                    \"FileTitle\": \"title\",\n                    \"FileMetaData\": \"{\\\"key\\\":\\\"value\\\"}\",\n                    \"DocDesc\": \"test\",\n                    \"FileSize\": 0\n                }\n            ],\n            \"Total\": 10\n        },\n        \"RequestId\": \"1cc82948-244f-4812-bb2a-25a8a473d312\"\n    }\n}",
         "title": "知识库文档搜索接口"
       }
     ],
     "UpdateKnowledgeSet": [
       {
         "document": "更新知识库状态",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateKnowledgeSet\n<公共请求参数>\n\n{\n    \"Name\": \"test\",\n    \"Active\": \"ENABLED\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxx\",\n    \"Name\": \"test\",\n    \"Active\": \"ENABLED\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "更新知识库"
       }

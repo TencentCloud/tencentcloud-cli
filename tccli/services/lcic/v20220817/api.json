@@ -860,7 +860,7 @@
         {
           "disabled": false,
           "document": "低代码平台的SdkAppId。",
-          "example": "123467",
+          "example": "379829232",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -1824,6 +1824,15 @@
           "example": "1",
           "member": "uint64",
           "name": "RecordStream",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "WhiteBoardSnapshotMode",
           "required": false,
           "type": "int"
         }
@@ -3757,43 +3766,43 @@
         },
         {
           "disabled": false,
-          "document": "助教UserId列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "助教UserId列表。",
           "example": "\t[azsdasfsdfsd,asefawefew]",
           "member": "string",
           "name": "Assistants",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "录制地址（协议为https)。仅在房间结束后存在。",
+          "example": "https://abc.mp4",
           "member": "string",
           "name": "RecordUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间绑定的群组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "abc",
+          "document": "房间绑定的群组ID",
+          "example": "2435342",
           "member": "string",
           "name": "GroupId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3908,7 +3917,7 @@
         {
           "disabled": false,
           "document": "RTMP推流链接",
-          "example": "rtmp://rtmp.rtc.qq.com/push/301234567?sdkappid=141234567&userid=abcdefg123456789&usersig=eJwsztFLhTAYBfD-5Xs17Nu3NeegJw1KBkEFSW-W5pxaLDMN4-7vF66*-s7hcP7hxTyn7i*GyYGmm5wQry4WrPuaQxvcBBqoi1K8L8PKfByHD1e0ZpSqlLVH2Os-dmhiDBY0E4ic8YzyIwkeNHz31YaoirV5vH7q5GZ48ioqkajaxsU3d7-3oi-N-FaKh9tjcg6fDjTLOKqciGjXZT*UIpzOAQAA--8wZTch&use_number_room_id=1",
+          "example": "rtmp://rtmp.rtc.qq.com/push/301234567?sdkappid=141234567&userid=abcdefg123456789&usersig=&use_number_room_id=1",
           "member": "string",
           "name": "RTMPStreamingURL",
           "output_required": false,
@@ -3951,6 +3960,16 @@
           "example": "3",
           "member": "uint64",
           "name": "RecordLayout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "WhiteBoardSnapshotMode",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4966,7 +4985,7 @@
         {
           "disabled": false,
           "document": "低代码平台的SdkAppId。\n",
-          "example": "234331324",
+          "example": "2343313242",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5036,7 +5055,7 @@
         {
           "disabled": false,
           "document": "房间列表",
-          "example": "[{\"Name\":\"课件展示\",\"RoomId\":352310919,\"Status\":1,\"StartTime\":1700029180,\"EndTime\":1708990380,\"RealStartTime\":17089018212,\"RealEndTime\":0,\"Resolution\":1,\"MaxRTCMember\":5,\"ReplayUrl\":\"\",\"RecordUrl\":\"\",\"MaxMicNumber\":1000,\"EnableDirectControl\":1,\"InteractionMode\":0,\"VideoOrientation\":0,\"IsGradingRequiredPostClass\":0,\"RoomType\":0,\"EndDelayTime\":0,\"LiveType\":0,\"RecordLiveUrl\":\"\",\"EnableAutoStart\":0,\"RecordBackground\":\"\"}]",
+          "example": "无",
           "member": "RoomItem",
           "name": "Rooms",
           "output_required": true,
@@ -5826,7 +5845,7 @@
         {
           "disabled": false,
           "document": "需要修改的群组ID",
-          "example": "test",
+          "example": "asfeasewfawe",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -5835,7 +5854,7 @@
         {
           "disabled": false,
           "document": "低代码平台应用ID",
-          "example": "13465287",
+          "example": "134652876",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -5997,7 +6016,7 @@
         {
           "disabled": false,
           "document": "房间绑定的群组ID。直播开始后不允许修改。",
-          "example": "abc",
+          "example": "490194023",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -6110,6 +6129,15 @@
           "name": "RecordLang",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "WhiteBoardSnapshotMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6641,6 +6669,15 @@
           "name": "RecordStream",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "WhiteBoardSnapshotMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -6650,233 +6687,233 @@
       "members": [
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名称",
           "example": "room",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间ID",
           "example": "12234",
           "member": "uint64",
           "name": "RoomId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间状态。0 未开始 ；1进行中  ；2 已结束；3已过期",
           "example": "0",
           "member": "uint64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开始时间",
           "example": "1708928949",
           "member": "uint64",
           "name": "StartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "结束时间",
           "example": "1708929949",
           "member": "uint64",
           "name": "EndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实际开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际开始时间",
           "example": "1708928949",
           "member": "uint64",
           "name": "RealStartTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实际结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实际结束时间",
           "example": "1708929949",
           "member": "uint64",
           "name": "RealEndTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "头像区域，摄像头视频画面的分辨率。可以有如下取值：\n1 标清\n2 高清\n3 全高清",
           "example": "1",
           "member": "uint64",
           "name": "Resolution",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大允许连麦人数。已废弃，使用字段 MaxMicNumber\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大允许连麦人数。已废弃，使用字段 MaxMicNumber",
           "example": "16",
           "member": "uint64",
           "name": "MaxRTCMember",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间录制地址。已废弃，使用新字段 RecordUrl\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间录制地址。已废弃，使用新字段 RecordUrl",
           "example": "http://class.qcloudclass.com?classId=123456",
           "member": "string",
           "name": "ReplayUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制地址（协议为https)。仅在房间结束后存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制地址（协议为https)。仅在房间结束后存在。",
           "example": "https://class.qcloudclass.com?classId=123456",
           "member": "string",
           "name": "RecordUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。",
           "example": "16",
           "member": "uint64",
           "name": "MaxMicNumber",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "打开学生麦克风/摄像头的授权开关 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "打开学生麦克风/摄像头的授权开关 ",
           "example": "1",
           "member": "uint64",
           "name": "EnableDirectControl",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启专注模式。 0 收看全部角色音视频(默认) 1 只看老师和助教",
           "example": "0",
           "member": "int64",
           "name": "InteractionMode",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "横竖屏。0：横屏开播（默认值）; 1：竖屏开播，当前仅支持移动端的纯视频类型",
           "example": "0",
           "member": "int64",
           "name": "VideoOrientation",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "开启课后评分。 0：不开启(默认)  1：开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "开启课后评分。 0：不开启(默认)  1：开启",
           "example": "0",
           "member": "int64",
           "name": "IsGradingRequiredPostClass",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）\n注：大班课的布局(layout)只有三分屏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "房间类型。0:小班课（默认值）；1:大班课；2:1V1（后续扩展）\n注：大班课的布局(layout)只有三分屏",
           "example": "0",
           "member": "int64",
           "name": "RoomType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "拖堂时间：单位分钟，0为不限制(默认值), -1为不能拖堂，大于0为拖堂的时间，最大值120分钟",
           "example": "0",
           "member": "int64",
           "name": "EndDelayTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "直播类型：0 常规（默认）1 伪直播\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播类型：0 常规（默认）1 伪直播",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "伪直播回放链接\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "伪直播回放链接\t",
           "example": "https://class.qcloudclass.com?classId=123456",
           "member": "string",
           "name": "RecordLiveUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效\t",
           "example": "0",
           "member": "uint64",
           "name": "EnableAutoStart",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道",
           "example": "https://picture.com?picid=123456",
           "member": "string",
           "name": "RecordBackground",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "录制自定义场景，仅recordlayout=9的时候此参数有效,数据内容为用户自定义场景参数，数据格式为json键值对方式，其中键值对的value为string类型。",
           "example": "{\"scene\":\"test\",\"lng\":\"zh\",\"type\":\"h5\",\"subjectId\":\"57\",\"customToken\":\"sajdlfjasdglweqioiu\"}",
           "member": "string",
           "name": "RecordScene",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6886,6 +6923,16 @@
           "name": "RecordLang",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "WhiteBoardSnapshotMode",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

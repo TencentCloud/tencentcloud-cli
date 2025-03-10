@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lowcode CreateKnowledgeSet --cli-unfold-argument  \
+    --EnvId lowcode-1cf \
     --Name test \
     --Title testTiTle \
     --Desc descd

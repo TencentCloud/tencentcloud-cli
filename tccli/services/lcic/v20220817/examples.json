@@ -27,8 +27,8 @@
     "BatchCreateRoom": [
       {
         "document": "批量创建课堂",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomInfos\": [\n        {\n            \"Name\": \"abc\",\n            \"StartTime\": 1,\n            \"EndTime\": 1,\n            \"TeacherId\": \"abc\",\n            \"Resolution\": 1,\n            \"MaxMicNumber\": 1,\n            \"AutoMic\": 1,\n            \"TurnOffMic\": 1,\n            \"AudioQuality\": 1,\n            \"SubType\": \"abc\",\n            \"DisableRecord\": 1,\n            \"Assistants\": [\n                \"abc\"\n            ],\n            \"AudienceType\": 1,\n            \"RecordLayout\": 1,\n            \"GroupId\": \"abc\",\n            \"EnableDirectControl\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            301234567\n        ],\n        \"RequestId\": \"213das\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateRoom\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"RoomInfos\": [\n        {\n            \"Name\": \"testRoom\",\n            \"StartTime\": 1704074400,\n            \"EndTime\": 1704076200,\n            \"TeacherId\": \"2i5WfUzRRC2Eb2uNmLNv96gzxCv\",\n            \"Resolution\": 1,\n            \"MaxMicNumber\": 1,\n            \"AutoMic\": 1,\n            \"TurnOffMic\": 1,\n            \"AudioQuality\": 1,\n            \"SubType\": \"video\",\n            \"DisableRecord\": 1,\n            \"Assistants\": [\n                \"2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc\"\n            ],\n            \"AudienceType\": 1,\n            \"RecordLayout\": 1,\n            \"GroupId\": \"2CvDgjRNjylAs\",\n            \"EnableDirectControl\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RoomIds\": [\n            301234567\n        ],\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "批量创建课堂"
       }
     ],
@@ -324,7 +324,7 @@
       {
         "document": "获取课堂房间信息",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"test\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"test\",\n        \"StartTime\": 1,\n        \"AudienceType\": 1,\n        \"TeacherId\": \"test\",\n        \"Assistants\": [\n            \"test\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"EnableDirectControl\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoMic\": 1,\n        \"RecordUrl\": \"https://example.com/test.mp4\",\n        \"Name\": \"sdsdsdf\",\n        \"AudioQuality\": 1,\n        \"MaxMicNumber\": 1,\n        \"SubType\": \"videodoc\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"sdfgsdfg\",\n        \"StartTime\": 1,\n        \"AudienceType\": 1,\n        \"TeacherId\": \"sdfgsdefg\",\n        \"Assistants\": [\n            \"test\"\n        ],\n        \"EndTime\": 1,\n        \"Resolution\": 1,\n        \"DisableRecord\": 1,\n        \"Status\": 0,\n        \"EnableDirectControl\": 0,\n        \"GroupId\": \"afdg\"\n    }\n}",
         "title": "房间信息"
       }
     ],
@@ -412,7 +412,7 @@
       {
         "document": "示例",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRooms\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"Page\": 1,\n    \"Limit\": 1,\n    \"Status\": [\n        0,\n        1,\n        2,\n        3\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Rooms\": [\n            {\n                \"Name\": \"abc\",\n                \"RoomId\": 1,\n                \"Status\": 1,\n                \"StartTime\": 1,\n                \"EndTime\": 1,\n                \"RealStartTime\": 1,\n                \"RealEndTime\": 1,\n                \"Resolution\": 1,\n                \"MaxRTCMember\": 1,\n                \"ReplayUrl\": \"abc\",\n                \"RecordUrl\": \"abc\",\n                \"MaxMicNumber\": 1,\n                \"EnableDirectControl\": 1,\n                \"InteractionMode\": 0,\n                \"VideoOrientation\": 0,\n                \"IsGradingRequiredPostClass\": 0,\n                \"RoomType\": 0,\n                \"EndDelayTime\": 0,\n                \"LiveType\": 1,\n                \"RecordLiveUrl\": \"abc\",\n                \"EnableAutoStart\": 1,\n                \"RecordBackground\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Rooms\": [\n            {\n                \"Name\": \"dfg\",\n                \"RoomId\": 1,\n                \"Status\": 1,\n                \"StartTime\": 1,\n                \"EndTime\": 1,\n                \"RealStartTime\": 1,\n                \"RealEndTime\": 1,\n                \"Resolution\": 1,\n                \"MaxRTCMember\": 1,\n                \"ReplayUrl\": \"dfg\",\n                \"RecordUrl\": \"dfg\",\n                \"MaxMicNumber\": 1,\n                \"EnableDirectControl\": 1,\n                \"InteractionMode\": 0,\n                \"VideoOrientation\": 0,\n                \"IsGradingRequiredPostClass\": 0,\n                \"RoomType\": 0,\n                \"EndDelayTime\": 0,\n                \"LiveType\": 1,\n                \"RecordLiveUrl\": \"dfgd\",\n                \"EnableAutoStart\": 1,\n                \"RecordBackground\": \"dfgdfg\"\n            }\n        ],\n        \"RequestId\": \"dfgdg\"\n    }\n}",
         "title": "示例"
       }
     ],
@@ -473,8 +473,8 @@
       },
       {
         "document": "修改房间参数示例",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1,\n    \"StartTime\": 1,\n    \"EndTime\": 1,\n    \"TeacherId\": \"abc\",\n    \"Name\": \"abc\",\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"abc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"abc\"\n    ],\n    \"SdkAppId\": 1,\n    \"GroupId\": \"abc\",\n    \"EnableDirectControl\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 301234567,\n    \"StartTime\": 1704074400,\n    \"EndTime\": 1704076200,\n    \"TeacherId\": \"2i5WfUzRRC2Eb2uNmLNv96gzxCv\",\n    \"Name\": \"myClass\",\n    \"Resolution\": 1,\n    \"MaxMicNumber\": 1,\n    \"AutoMic\": 1,\n    \"AudioQuality\": 1,\n    \"SubType\": \"videodoc\",\n    \"DisableRecord\": 1,\n    \"Assistants\": [\n        \"2d3FgsZRRB2EbRu5Cwe8Rd7R6Bc\"\n    ],\n    \"SdkAppId\": 1,\n    \"GroupId\": \"301234567\",\n    \"EnableDirectControl\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e574aae1-lp02-4225-a2f8-9032h7199f5f0\"\n    }\n}",
         "title": "修改房间"
       }
     ],

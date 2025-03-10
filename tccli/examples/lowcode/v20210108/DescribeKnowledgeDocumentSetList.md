@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lowcode DescribeKnowledgeDocumentSetList --cli-unfold-argument  \
+    --EnvId lowcode-2gay8jgh25c7b1cf \
     --CollectionView gqtianTest666 \
     --Query.Limit 10 \
     --Query.Offset 0

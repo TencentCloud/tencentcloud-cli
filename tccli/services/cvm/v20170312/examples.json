@@ -384,6 +384,22 @@
         "title": "请求例子"
       }
     ],
+    "DescribeReservedInstancesConfigInfos": [
+      {
+        "document": "查询预留实例机型配置",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstancesConfigInfos\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-guangzhou-1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ReservedInstanceConfigInfos\": [\n            {\n                \"Type\": \"C\",\n                \"TypeName\": \"计算型\",\n                \"Order\": 0,\n                \"InstanceFamilies\": [\n                    {\n                        \"InstanceFamily\": \"C3\",\n                        \"Order\": 402,\n                        \"InstanceTypes\": [\n                            {\n                                \"InstanceType\": \"C3.LARGE8\",\n                                \"Cpu\": 4,\n                                \"Memory\": 8,\n                                \"Gpu\": 0,\n                                \"Fpga\": 0,\n                                \"StorageBlock\": 0,\n                                \"NetworkCard\": 0,\n                                \"MaxBandwidth\": 0,\n                                \"Frequency\": \"2.5\",\n                                \"CpuModelName\": \"Intel Xeon Skylake 6146\",\n                                \"Pps\": 60,\n                                \"Externals\": {\n                                    \"ReleaseAddress\": true,\n                                    \"UnsupportNetworks\": [],\n                                    \"StorageBlockAttr\": {\n                                        \"Type\": \"\",\n                                        \"MinSize\": 0,\n                                        \"MaxSize\": 0\n                                    }\n                                },\n                                \"Remark\": \"\",\n                                \"Prices\": [\n                                    {\n                                        \"ReservedInstancesOfferingId\": \"d81353d7-fe7d-43d0-a361-fb5633a9a7e5\",\n                                        \"OfferingType\": \"No Upfront\",\n                                        \"FixedPrice\": 0,\n                                        \"UsagePrice\": 2.99,\n                                        \"Duration\": 1,\n                                        \"Zone\": \"ap-guangzhou-1\",\n                                        \"ProductDescription\": \"\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"87eccd3e-9e7a-4b42-be3a-87eccd3e\"\n    }\n}",
+        "title": "查询预留实例机型配置"
+      }
+    ],
+    "DescribeReservedInstancesOfferings": [
+      {
+        "document": "列出可购买预留实例计费",
+        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeReservedInstancesOfferings\r\n&Filters.0.Name=zone\r\n&Filters.0.Values.0=ap-guangzhou-1\r\n&Offset=0\r\n&Limit=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReservedInstancesOfferingsSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-1\",\n                \"CurrencyCode\": \"USD\",\n                \"Duration\": 31536000,\n                \"FixedPrice\": 4000.0,\n                \"InstanceType\": \"S3.MEDIUM4\",\n                \"OfferingType\": \"All Upfront\",\n                \"ReservedInstancesOfferingId\": \"noew0342-324f-f3ab-9uut-wrlnth53dcee\",\n                \"ProductDescription\": \"linux\",\n                \"UsagePrice\": 0.0\n            }\n        ],\n        \"RequestId\": \"b813c959-cc89-41d5-9cc4-ceb7d853dcaa\"\n    }\n}",
+        "title": "列出可购买预留实例计费"
+      }
+    ],
     "DescribeTaskInfo": [
       {
         "document": "根据以下条件，查询并获取维修任务返回列表：\n\n- 任务的创建时间在 `2023-03-01 00:00:00` ~ `2023-04-01 00:00:00` 范围内。\n- 任务当前的状态为`待授权`。\n- 返回的任务列表按照`CreateTime`创建时间降序返回，偏移量为`0`，最多返回`20`条数据。",
@@ -476,6 +492,14 @@
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportKeyPair\n<公共请求参数>\n\n{\n    \"ProjectId\": 0,\n    \"KeyName\": \"operation_key\",\n    \"PublicKey\": \"ssh-rsa XXXXXXXXXXXX== skey_45071\"\n}",
         "output": "{\n    \"Response\": {\n        \"KeyId\": \"skey-4e5ty7i8\",\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
         "title": "导入密钥对"
+      }
+    ],
+    "InquirePricePurchaseReservedInstancesOffering": [
+      {
+        "document": "",
+        "input": "https://cvm.tencentcloudapi.com/?Action=InquirePricePurchaseReservedInstancesOffering\n&InstanceCount=2\n&ReservedInstancesOfferingId=noew0342-324f-f3ab-9uut-wrlnth53dcee\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"OriginalFixedPrice\": 100.99,\n            \"DiscountFixedPrice\": 100.99,\n            \"OriginalUsagePrice\": 1.99,\n            \"DiscountUsagePrice\": 1.99,\n            \"FixedPriceDiscount\": 60,\n            \"UsagePriceDiscount\": 60\n        },\n        \"RequestId\": \"b333ddb8-4aed-4def-a0d9-617043c2614e\"\n    }\n}",
+        "title": "创建预留实例询价"
       }
     ],
     "InquiryPriceModifyInstancesChargeType": [
@@ -700,6 +724,14 @@
         "input": "https://cvm.tencentcloudapi.com/?Action=ProgramFpgaImage\n&InstanceId=ins-r8hr2upy\n&FPGAUrl=fpga-test-123456.cos.ap-guangzhou.myqcloud.com/test.xclbin\n&DBDFs.0=0000:00:08.0\n&DBDFs.1=0000:00:09.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270dfafb54a7\"\n    }\n}",
         "title": "在线烧录FPGA镜像"
+      }
+    ],
+    "PurchaseReservedInstancesOffering": [
+      {
+        "document": "购买预留实例计费",
+        "input": "https://cvm.tencentcloudapi.com/?Action=PurchaseReservedInstancesOffering\r\n&InstanceCount=2\r\n&ReservedInstancesOfferingId=noew0342-324f-f3ab-9uut-wrlnth53dcee\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ReservedInstanceId\": \"13d8e599-b8dc-4e8a-80b4-7dce9eb27043\",\n        \"RequestId\": \"b333ddb8-4aed-4def-a0d9-617043c2614e\"\n    }\n}",
+        "title": "购买预留实例计费"
       }
     ],
     "RebootInstances": [

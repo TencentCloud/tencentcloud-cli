@@ -810,43 +810,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "VpcId(VPC网络下有效)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "VpcId(VPC网络下有效)",
           "example": "vpc-hu6khgap",
           "member": "string",
           "name": "VpcId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网Id(VPC网络下有效)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子网Id(VPC网络下有效)。",
           "example": "subnet-6mt7lir6",
           "member": "string",
           "name": "SubnetId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网访问IP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网访问IP。",
           "example": "10.1.1.2",
           "member": "string",
           "name": "Vip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网访问Port。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网访问Port。",
           "example": "80",
           "member": "int64",
           "name": "Port",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1064,25 +1064,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签键",
           "example": "key1",
           "member": "string",
           "name": "TagKey",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "value1",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

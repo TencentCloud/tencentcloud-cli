@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli lowcode UpdateKnowledgeSet --cli-unfold-argument  \
+    --EnvId lowcode-xxx \
     --Name test \
     --Active ENABLED
 ```

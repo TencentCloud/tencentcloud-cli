@@ -8,8 +8,8 @@ Input:
 tccli tat CreateRegisterCode --cli-unfold-argument  \
     --Description webserver \
     --InstanceNamePrefix webserver \
-    --RegisterLimit 0 \
-    --EffectiveTime 0 \
+    --RegisterLimit 10 \
+    --EffectiveTime 4 \
     --IpAddressRange 192.168.10.1/10
 ```
 

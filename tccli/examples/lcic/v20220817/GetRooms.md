@@ -21,7 +21,7 @@ Output:
         "Total": 1,
         "Rooms": [
             {
-                "Name": "abc",
+                "Name": "dfg",
                 "RoomId": 1,
                 "Status": 1,
                 "StartTime": 1,
@@ -30,8 +30,8 @@ Output:
                 "RealEndTime": 1,
                 "Resolution": 1,
                 "MaxRTCMember": 1,
-                "ReplayUrl": "abc",
-                "RecordUrl": "abc",
+                "ReplayUrl": "dfg",
+                "RecordUrl": "dfg",
                 "MaxMicNumber": 1,
                 "EnableDirectControl": 1,
                 "InteractionMode": 0,
@@ -40,12 +40,12 @@ Output:
                 "RoomType": 0,
                 "EndDelayTime": 0,
                 "LiveType": 1,
-                "RecordLiveUrl": "abc",
+                "RecordLiveUrl": "dfgd",
                 "EnableAutoStart": 1,
-                "RecordBackground": "abc"
+                "RecordBackground": "dfgdfg"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "dfgdg"
     }
 }
 ```

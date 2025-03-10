@@ -945,7 +945,7 @@
         {
           "disabled": false,
           "document": "对象类型列表",
-          "example": "[{\"Key\":\"NatGatewayId\",\"Header\":\"实例ID\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"NatGatewayName\",\"Header\":\"实例名称\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"InternetMaxBandwidthOut\",\"Header\":\"最大出带宽(Mbps)\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"MaxConcurrentConnection\",\"Header\":\"最大并发连接数\",\"Transfer\":null,\"JsonParse\":null},{\"Key\":\"VpcId\",\"Header\":\"VPC-ID\",\"Transfer\":null,\"JsonParse\":null}]",
+          "example": "无",
           "member": "ObjectType",
           "name": "ObjectTypeList",
           "output_required": true,
@@ -1723,7 +1723,7 @@
         {
           "disabled": false,
           "document": "tke接口json解析规则，null不需要解析\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"NameSpace\": \"$.metadata.name\", \"WorkloadName\": \"$.metadata.name\"}",
+          "example": "无",
           "member": "ObjectTypeJsonParse",
           "name": "ObjectTypeJsonParse",
           "output_required": true,
@@ -1912,7 +1912,7 @@
         {
           "disabled": false,
           "document": "演练ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "111",
+          "example": "1065",
           "member": "int64",
           "name": "TaskId",
           "output_required": false,
@@ -2127,7 +2127,7 @@
         {
           "disabled": false,
           "document": "保护策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "系统预留",
           "member": "string",
           "name": "TaskProtectStrategy",
           "output_required": true,
@@ -2380,7 +2380,7 @@
         {
           "disabled": false,
           "document": "计划开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"2025-01-14 00:00:00\"",
           "member": "string",
           "name": "TaskPlanStartTime",
           "output_required": false,
@@ -2391,7 +2391,7 @@
         {
           "disabled": false,
           "document": "计划结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"2025-01-14 05:00:00\"",
           "member": "string",
           "name": "TaskPlanEndTime",
           "output_required": false,
@@ -2402,7 +2402,7 @@
         {
           "disabled": false,
           "document": "人员组织\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"TaskRole\": \"负责人\", \"TaskOperator\": \"张三\"}, {\"TaskRole\": \"记录人\", \"TaskOperator\": \"李四\"}]",
           "member": "TaskOrg",
           "name": "TaskOrg",
           "output_required": false,
@@ -2413,7 +2413,7 @@
         {
           "disabled": false,
           "document": "问题和改进\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "需要优化自动重连",
           "member": "string",
           "name": "TaskIssue",
           "output_required": false,
@@ -2424,7 +2424,7 @@
         {
           "disabled": false,
           "document": "region信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "广州",
           "member": "string",
           "name": "TaskRegionName",
           "output_required": false,
@@ -2513,6 +2513,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2523,6 +2524,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskGroupTitle",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2533,6 +2535,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskGroupDescription",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2543,6 +2546,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupOrder",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2553,6 +2557,7 @@
           "example": "1",
           "member": "int64",
           "name": "ObjectTypeId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2563,6 +2568,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupCreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2573,6 +2579,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskGroupUpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2583,6 +2590,7 @@
           "example": "无",
           "member": "TaskGroupAction",
           "name": "TaskGroupActions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2590,9 +2598,10 @@
         {
           "disabled": false,
           "document": "实例列表",
-          "example": "[]",
+          "example": "[\"ins-adk7g8\",\"ins-akkk980\"]",
           "member": "string",
           "name": "TaskGroupInstanceList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2603,6 +2612,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2610,9 +2620,10 @@
         {
           "disabled": false,
           "document": "不参演的实例列表",
-          "example": "[]",
+          "example": "[\"ins-akkk980\"]",
           "member": "string",
           "name": "TaskGroupDiscardInstanceList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2620,9 +2631,10 @@
         {
           "disabled": false,
           "document": "参演实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"ins-akkk980\"]",
           "member": "string",
           "name": "TaskGroupSelectedInstanceList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -2630,9 +2642,10 @@
         {
           "disabled": false,
           "document": "机器选取规则\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[{\"TaskGroupInstancesExecuteMode\": 1}]",
           "member": "TaskGroupInstancesExecuteRules",
           "name": "TaskGroupInstancesExecuteRule",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -2690,7 +2703,7 @@
         {
           "disabled": false,
           "document": "分组动作通用配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
           "member": "string",
           "name": "TaskGroupActionGeneralConfiguration",
           "output_required": true,
@@ -2701,7 +2714,7 @@
         {
           "disabled": false,
           "document": "分组动作自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"Weight\": 1, \"Methods\": 0, \"InjectMod\": \"all\"}",
           "member": "string",
           "name": "TaskGroupActionCustomConfiguration",
           "output_required": true,
@@ -2767,7 +2780,7 @@
         {
           "disabled": false,
           "document": "RandomId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "207538",
           "member": "int64",
           "name": "TaskGroupActionRandomId",
           "output_required": true,
@@ -2778,7 +2791,7 @@
         {
           "disabled": false,
           "document": "RecoverId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "204392",
           "member": "int64",
           "name": "TaskGroupActionRecoverId",
           "output_required": true,
@@ -2789,7 +2802,7 @@
         {
           "disabled": false,
           "document": "ExecuteId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "206754",
           "member": "int64",
           "name": "TaskGroupActionExecuteId",
           "output_required": true,
@@ -3870,7 +3883,7 @@
         {
           "disabled": false,
           "document": "分组动作通用配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"PreTimeWait\": 0, \"ActionTimeout\": 1800, \"AfterTimeWait\": 0}",
           "member": "string",
           "name": "GeneralConfiguration",
           "output_required": true,
@@ -3881,7 +3894,7 @@
         {
           "disabled": false,
           "document": "分组动作自定义配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "{\"Weight\": 1, \"Methods\": 0, \"InjectMod\": \"all\"}",
           "member": "string",
           "name": "CustomConfiguration",
           "output_required": true,
@@ -3925,7 +3938,7 @@
         {
           "disabled": false,
           "document": "自身随机id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "447054",
           "member": "int64",
           "name": "RandomId",
           "output_required": true,
@@ -3936,7 +3949,7 @@
         {
           "disabled": false,
           "document": "恢复动作id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "211672",
           "member": "int64",
           "name": "RecoverId",
           "output_required": true,
@@ -3947,7 +3960,7 @@
         {
           "disabled": false,
           "document": "执行动作id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123456",
+          "example": "536092",
           "member": "int64",
           "name": "ExecuteId",
           "output_required": true,

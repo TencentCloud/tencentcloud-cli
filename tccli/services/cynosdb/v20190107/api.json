@@ -6188,6 +6188,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本标签",
+          "example": "stable",
+          "member": "string",
+          "name": "CynosVersionTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11320,8 +11330,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID（该参数必传，例如cynosdbmysql-xxxxxx）",
-          "example": "cynosdbmysql-xxxxxx",
+          "document": "集群 ID（该参数必传，例如 cynosdbmysql-2u2mh111）。",
+          "example": "cynosdbmysql-2u2mh111",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -11366,7 +11376,7 @@
         {
           "disabled": false,
           "document": "搜索条件，若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
-          "example": "无",
+          "example": "[{\"Names\": [\"InstanceId\"],\"Values\": [\"acynosdbmysql-ins-d6l1z111\"],\"ExactMatch\": true}]",
           "member": "QueryParamFilter",
           "name": "Filters",
           "required": false,

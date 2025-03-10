@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 13,
+        "TotalCount": 12,
         "RegionSet": [
             {
                 "Region": "ap-guangzhou",
@@ -66,11 +66,6 @@ Output:
             {
                 "Region": "ap-chongqing",
                 "RegionName": "重庆",
-                "RegionState": "AVAILABLE"
-            },
-            {
-                "Region": "ap-mumbai",
-                "RegionName": "孟买",
                 "RegionState": "AVAILABLE"
             }
         ],

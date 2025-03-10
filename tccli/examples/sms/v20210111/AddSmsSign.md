@@ -13,7 +13,8 @@ tccli sms AddSmsSign --cli-unfold-argument  \
     --SignName 腾讯云 \
     --DocumentType 1 \
     --International 0 \
-    --ProofImage base64
+    --ProofImage base64 \
+    --QualificationId 1000001
 ```
 
 Output: 

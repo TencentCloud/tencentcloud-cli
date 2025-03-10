@@ -50,128 +50,29 @@ Input:
 
 ```
 tccli cfg DescribeTemplateList --cli-unfold-argument  \
-    --Limit 10 \
-    --Offset 1
+    --Limit 1 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6775138e-92c5-40cb-ab0e-a61a5c63b5fa",
+        "RequestId": "b96d80d2-51b4-4f0f-8501-90b5ed5f0cfc",
         "TemplateList": [
             {
-                "TemplateCreateTime": "2023-06-06 15:05:18",
-                "TemplateDescription": "3",
-                "TemplateId": 914,
+                "TemplateCreateTime": "2024-07-01 15:26:46",
+                "TemplateDescription": "test-descrition",
+                "TemplateId": 1959,
                 "TemplateIsUsed": 1,
                 "TemplateSource": 0,
-                "TemplateTag": "",
-                "TemplateTitle": "3",
-                "TemplateUpdateTime": "2023-06-06 15:05:18",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-05 14:43:42",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 913,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-05 14:43:42",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-05 14:42:31",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 912,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-05 14:42:31",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-05 11:48:02",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 910,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-05 11:48:02",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-05 11:48:02",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 911,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-05 11:48:02",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-02 17:38:34",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 904,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-02 17:38:34",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-02 17:38:34",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 905,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-02 17:38:34",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-02 17:38:34",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 906,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-02 17:38:34",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-02 17:38:34",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 907,
-                "TemplateIsUsed": 1,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-02 17:38:34",
-                "TemplateUsedNum": 0
-            },
-            {
-                "TemplateCreateTime": "2023-06-02 17:38:34",
-                "TemplateDescription": "从接入层、逻辑层、数据层模拟单AZ故障，进而验证架构跨可用区容灾的有效性",
-                "TemplateId": 908,
-                "TemplateIsUsed": 2,
-                "TemplateSource": 1,
-                "TemplateTag": "",
-                "TemplateTitle": "跨可用区容灾演练",
-                "TemplateUpdateTime": "2023-06-13 16:30:37",
+                "TemplateTag": "资源归属:研发组",
+                "TemplateTitle": "经验库编辑",
+                "TemplateUpdateTime": "2024-07-01 15:48:26",
                 "TemplateUsedNum": 0
             }
         ],
-        "Total": 43
+        "Total": 22
     }
 }
 ```

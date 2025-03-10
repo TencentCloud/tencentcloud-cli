@@ -118,6 +118,14 @@
         "title": "查询客户余额"
       }
     ],
+    "DescribeClientJoinIncreaseList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: partners.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClientJoinIncreaseList\n<公共请求参数>\n\n{\n    \"ClientUins\": [\n        \"700000000000\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"ClientUin\": \"700000000000\",\n                \"IncreaseGoal\": \"1000000.00\",\n                \"IncreaseUseAssociateDate\": \"2025-01-03 14:35:31\",\n                \"IsJoinIncrease\": \"Y\",\n                \"TLevel\": \"T0\",\n                \"TotalBaseAmt\": \"800000.00\"\n            }\n        ],\n        \"RequestId\": \"7e4387ac-7373-417a-87fa-b8de96fd9b7b\"\n    }\n}",
+        "title": "查询客户参与增量激励考核信息"
+      }
+    ],
     "DescribeRebateInfos": [
       {
         "document": "查询某代理商在2018年2月份的返佣信息",

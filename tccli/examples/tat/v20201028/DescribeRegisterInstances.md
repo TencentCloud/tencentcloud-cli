@@ -9,7 +9,7 @@ tccli tat DescribeRegisterInstances --cli-unfold-argument  \
     --Filters.0.Name instance-name \
     --Filters.0.Values WebServer-01 \
     --Offset 0 \
-    --Limit 0
+    --Limit 1
 ```
 
 Output: 
@@ -19,15 +19,15 @@ Output:
         "TotalCount": 1,
         "RegisterInstanceSet": [
             {
-                "RegisterCodeId": "4a0f151f-a07a-494d-a2f2-8ea2ec4639eb488f31f9-b656-4f45-823d-5a90b07c7116",
+                "RegisterCodeId": "d0b7xxxx-a6xx-40x9-898x-44c9f508axxx",
                 "InstanceId": "rins-uf673dgi",
                 "InstanceName": "WebServer-01",
-                "MachineId": "m-i2345678",
+                "MachineId": "22c4dvvv-3ae9-4ff3-8331-d44147c96f8b",
                 "SystemName": "Windows",
                 "HostName": "webserver01",
                 "LocalIp": "10.0.0.1",
-                "PublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... user@hostname",
-                "Status": "RUNNING",
+                "PublicKey": "-----BEGIN RSA PUBLIC KEY-----\nAAAAAAAAAQEA1vVOon7U12dLFl7AOZjGnfWSMJ4rhHAagLne85Qbyn7rrow90bZF\ngsO9cpUfljliymtGAe1ZxkZZAWbwYeiS+x3KMO3rsbaXZtb9CiPSuMmyCcoyNRWy\nztLhIAHz6TFdoYYPdepY/HrL1rppGaVvUT6ufZrWIw2wF4KzPsIwGmfKYDrP+JOd\nfxkdewMwaFUP8xotqF+qi6YVbBMYSEGQyU9n42FTNxHMsLrBf1yPIcyaD+itWbWk\nyG0KcHTF2gbtgHqGV9wkc5jcqJYK3iJ1bQgEIWZ1lThRncOnHKHmSEnQ/XD5+6Hi\nLdVILVm0Gu8cnelE34kTcIqUAIQcB9wJBBBBBBBB\n-----END RSA PUBLIC KEY-----\n",
+                "Status": "Online",
                 "CreatedTime": "2020-09-22T08:00:00Z",
                 "UpdatedTime": "2020-09-22T08:00:00Z"
             }
@@ -47,7 +47,7 @@ Input:
 tccli tat DescribeRegisterInstances --cli-unfold-argument  \
     --InstanceIds rins-uf673dgi \
     --Offset 0 \
-    --Limit 0
+    --Limit 1
 ```
 
 Output: 
@@ -57,15 +57,15 @@ Output:
         "TotalCount": 1,
         "RegisterInstanceSet": [
             {
-                "RegisterCodeId": "4a0f151f-a07a-494d-a2f2-8ea2ec4639eb488f31f9-b656-4f45-823d-5a90b07c7116",
+                "RegisterCodeId": "d0b7xxxx-a6xx-40x9-898x-44c9f508axxx",
                 "InstanceId": "rins-uf673dgi",
                 "InstanceName": "WebServer-01",
-                "MachineId": "m-i2345678",
+                "MachineId": "22c4dvvv-3ae9-4ff3-8331-d44147c96f8b",
                 "SystemName": "Windows",
                 "HostName": "webserver01",
                 "LocalIp": "10.0.0.1",
-                "PublicKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... user@hostname",
-                "Status": "RUNNING",
+                "PublicKey": "-----BEGIN RSA PUBLIC KEY-----\nAAAAAAAAAQEA1vVOon7U12dLFl7AOZjGnfWSMJ4rhHAagLne85Qbyn7rrow90bZF\ngsO9cpUfljliymtGAe1ZxkZZAWbwYeiS+x3KMO3rsbaXZtb9CiPSuMmyCcoyNRWy\nztLhIAHz6TFdoYYPdepY/HrL1rppGaVvUT6ufZrWIw2wF4KzPsIwGmfKYDrP+JOd\nfxkdewMwaFUP8xotqF+qi6YVbBMYSEGQyU9n42FTNxHMsLrBf1yPIcyaD+itWbWk\nyG0KcHTF2gbtgHqGV9wkc5jcqJYK3iJ1bQgEIWZ1lThRncOnHKHmSEnQ/XD5+6Hi\nLdVILVm0Gu8cnelE34kTcIqUAIQcB9wJBBBBBBBB\n-----END RSA PUBLIC KEY-----\n",
+                "Status": "Online",
                 "CreatedTime": "2020-09-22T08:00:00Z",
                 "UpdatedTime": "2020-09-22T08:00:00Z"
             }

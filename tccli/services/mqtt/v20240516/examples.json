@@ -222,6 +222,20 @@
         "title": "示例"
       }
     ],
+    "DescribeInsVPCEndpoints": [
+      {
+        "document": "样例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMQTTInsVPCEndpoints\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-25zqb75a\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Endpoints\": [\n            {\n                \"Host\": \"mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com\",\n                \"Ip\": \"10.0.0.25\",\n                \"Port\": 1883,\n                \"SubnetId\": \"subnet-fr9ez60m\",\n                \"Type\": \"mqtt-tcp\",\n                \"Url\": \"mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com:1883\",\n                \"VpcId\": \"vpc-35wk4c6h\"\n            },\n            {\n                \"Host\": \"mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com\",\n                \"Ip\": \"10.0.0.25\",\n                \"Port\": 8888,\n                \"SubnetId\": \"subnet-fr9ez60m\",\n                \"Type\": \"mqtt-ws\",\n                \"Url\": \"mqtt-25zqb75a-qy.mqtt.qcloud.tencenttdmq.com:8888\",\n                \"VpcId\": \"vpc-35wk4c6h\"\n            }\n        ],\n        \"RequestId\": \"4313484d-47c1-4fc8-b402-f997d2ba7256\"\n    }\n}",
+        "title": "样例"
+      },
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInsVPCEndpoints\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-g4r4x85z\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Endpoints\": [\n            {\n                \"Host\": \"mqtt-g4r4x85z-cd-vpc.mqtt.tencenttdmq.com\",\n                \"Ip\": \"127.0.0.1\",\n                \"Port\": 1883,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-tcp\",\n                \"Url\": \"mqtt-g4r4x85z-cd-vpc.mqtt.tencenttdmq.com:1883\",\n                \"VpcId\": null\n            },\n            {\n                \"Host\": \"mqtt-g4r4x85z-cd-vpc.mqtt.tencenttdmq.com\",\n                \"Ip\": \"127.0.0.1\",\n                \"Port\": 8888,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-ws\",\n                \"Url\": \"mqtt-g4r4x85z-cd-vpc.mqtt.tencenttdmq.com:8888\",\n                \"VpcId\": null\n            },\n            {\n                \"Host\": \"mqtt-g4r4x85z-cd-vpc.mqtt.tencenttdmq.com\",\n                \"Ip\": \"127.0.0.1\",\n                \"Port\": 8883,\n                \"SubnetId\": null,\n                \"Type\": \"mqtt-tls\",\n                \"Url\": \"mqtt-g4r4x85z-cd-vpc.mqtt.tencenttdmq.com:8883\",\n                \"VpcId\": null\n            }\n        ],\n        \"RequestId\": \"ec17e61f-7749-4192-bbc7-804b031a7da8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeInstance": [
       {
         "document": "示例",
