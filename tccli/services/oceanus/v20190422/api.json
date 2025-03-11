@@ -2177,6 +2177,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启默认告警",
+          "example": "1",
+          "member": "int64",
+          "name": "OpenJobDefaultAlarm",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5662,6 +5671,26 @@
           "output_required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开了默认告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "OpenJobDefaultAlarm",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作中描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "操作中",
+          "member": "string",
+          "name": "ProgressDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7921,23 +7950,33 @@
         },
         {
           "disabled": false,
-          "document": "RunningCpu",
+          "document": "RunningCpu\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "float",
           "name": "RunningCpu",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "RunningMem",
+          "document": "RunningMem\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "float",
           "name": "RunningMem",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sql\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select * from table",
+          "member": "string",
+          "name": "DecodeSqlCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

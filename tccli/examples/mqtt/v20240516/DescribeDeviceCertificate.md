@@ -23,6 +23,7 @@ Output:
         "DeviceCertificate": "-----BEGIN CERTIFICATE-----\nMIIEQjCCAyqgAwIBAgIUDu9opYK5QlQpblTOdU+U1welmREwDQYJKoZIhvcNAQEL\n-----END CERTIFICATE-----\n",
         "DeviceCertificateCn": "mqtt-test.xxx.tencent.com",
         "DeviceCertificateSn": "0eef68a582b94254296e54ce754f94d707a59911",
+        "OrganizationalUnit": "TencentCloud",
         "Format": "PEM",
         "LastActivationTime": 1724050378987,
         "LastInactivationTime": 0,

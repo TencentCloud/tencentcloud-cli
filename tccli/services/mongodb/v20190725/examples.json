@@ -227,8 +227,8 @@
     "EnableTransparentDataEncryption": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjysqkr\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"myEncryptionkey\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"RequestId\": \"a8dce7a4-d488-49c9-8d24-33cf623f5992\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTransparentDataEncryption\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-igjy****\",\n    \"KmsRegion\": \"ap-guangzhou\",\n    \"KeyId\": \"AKID********************************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 17316505316,\n        \"RequestId\": \"a8dce7a4-d488-49c9-8d24-33cf623f5992\"\n    }\n}",
         "title": "开启实例数据透明加密"
       }
     ],

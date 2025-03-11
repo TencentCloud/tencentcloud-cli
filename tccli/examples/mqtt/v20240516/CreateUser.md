@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli mqtt CreateUser --cli-unfold-argument  \
-    --InstanceId mqtt-7pnqmkrx \
+    --InstanceId mqtt-12345 \
     --Remark remark \
-    --Username 123 \
-    --Password 456
+    --Username user1 \
+    --Password user1-pd
 ```
 
 Output: 

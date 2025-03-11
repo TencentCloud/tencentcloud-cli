@@ -197,7 +197,7 @@
       "status": "online"
     },
     "EnableTransparentDataEncryption": {
-      "document": "本接口(EnableTransparentDataEncryption)用于开启云数据库 MongoDB 的透明加密能力。",
+      "document": "本接口（EnableTransparentDataEncryption）用于开启云数据库 MongoDB 的透明加密能力。",
       "input": "EnableTransparentDataEncryptionRequest",
       "name": "开启实例数据透明加密",
       "output": "EnableTransparentDataEncryptionResponse",
@@ -3416,7 +3416,7 @@
         {
           "disabled": false,
           "document": "密钥 ID。若不设置该参数，不指定具体的密钥 ID，由腾讯云自动生成密钥。",
-          "example": "AKIDnRsa6OfiW8**********************",
+          "example": "AKID********************************",
           "member": "string",
           "name": "KeyId",
           "required": false,
