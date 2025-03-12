@@ -3,7 +3,7 @@
     "CreateKnowledgeSet": [
       {
         "document": "创建微搭知识库",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"test\",\n    \"Title\": \"testTiTle\",\n    \"Desc\": \"descd\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"the_name\",\n    \"Title\": \"the_title\",\n    \"Desc\": \"the_desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "创建知识库"
       }
@@ -19,7 +19,7 @@
     "DeleteKnowledgeSet": [
       {
         "document": "用于删除知识库",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"test\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-1cf\",\n    \"Name\": \"name\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "删除知识库"
       }
@@ -52,7 +52,7 @@
       {
         "document": "查询环境下的知识库列表",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKnowledgeSetList\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxxx\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"test\",\n                    \"Title\": \"testTiTle\",\n                    \"Desc\": \"test\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"KnowledgeSets\": [\n                {\n                    \"Name\": \"name\",\n                    \"Title\": \"title\",\n                    \"Desc\": \"desc\",\n                    \"Active\": \"ENABLED\",\n                    \"CreateTime\": \"2024-06-04 18:07:38\",\n                    \"UpdateTime\": \"2024-06-04 18:09:29\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"f549082e-0cff-4026-96f6-a570d9f1c22d\"\n    }\n}",
         "title": "查询环境下的知识库列表"
       }
     ],
@@ -60,14 +60,14 @@
       {
         "document": "根据关键字搜索知识库文档",
         "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchDocList\n<公共请求参数>\n\n{\n    \"EnvId\": \"prod-1\",\n    \"CollectionView\": \"view\",\n    \"SearchKey\": \"key\",\n    \"SearchValue\": \"value\",\n    \"PageNo\": 1,\n    \"PageSize\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DocInfos\": [\n                {\n                    \"CollectionViewName\": \"name\",\n                    \"DocSetId\": \"00-11\",\n                    \"DocSetName\": \"abc.md\",\n                    \"DocType\": \".md\",\n                    \"FileTitle\": \"title\",\n                    \"FileMetaData\": \"{\\\"key\\\":\\\"value\\\"}\",\n                    \"DocDesc\": \"test\",\n                    \"FileSize\": 0\n                }\n            ],\n            \"Total\": 10\n        },\n        \"RequestId\": \"1cc82948-244f-4812-bb2a-25a8a473d312\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DocInfos\": [\n                {\n                    \"CollectionViewName\": \"name\",\n                    \"DocSetId\": \"00-11\",\n                    \"DocSetName\": \"abc.md\",\n                    \"DocType\": \".md\",\n                    \"FileTitle\": \"title\",\n                    \"FileMetaData\": \"{\\\"key\\\":\\\"value\\\"}\",\n                    \"DocDesc\": \"desc\",\n                    \"FileSize\": 0\n                }\n            ],\n            \"Total\": 10\n        },\n        \"RequestId\": \"1cc82948-244f-4812-bb2a-25a8a473d312\"\n    }\n}",
         "title": "知识库文档搜索接口"
       }
     ],
     "UpdateKnowledgeSet": [
       {
         "document": "更新知识库状态",
-        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxx\",\n    \"Name\": \"test\",\n    \"Active\": \"ENABLED\"\n}",
+        "input": "POST / HTTP/1.1\nHost: lowcode.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateKnowledgeSet\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-xxx\",\n    \"Name\": \"name\",\n    \"Active\": \"ENABLED\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dde48f19-e0fb-490e-bf4c-150bcf7e3c91\"\n    }\n}",
         "title": "更新知识库"
       }

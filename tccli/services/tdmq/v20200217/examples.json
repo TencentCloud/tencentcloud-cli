@@ -638,14 +638,6 @@
         "title": "查询RabbitMQ vhost列表"
       }
     ],
-    "DescribeRabbitMQVirtualHostList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQVirtualHostList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-testtesttest\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"a8f28d5e-a7e2-4b0b-afa0-2fba09c077a0\",\n        \"VirtualHostList\": [\n            {\n                \"VirtualHostName\": \"tdmq_data\",\n                \"Description\": \"The virtual host is for test\"\n            }\n        ]\n    }\n}",
-        "title": "获取云服务器列表"
-      }
-    ],
     "DescribeRocketMQCluster": [
       {
         "document": "获取RocketMQ集群详情",

@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli es UpdateDictionaries --cli-unfold-argument  \
-    --IkStopwords abc \
-    --Synonym abc \
-    --InstanceId abc \
+    --IkStopwords stop \
+    --Synonym syno \
+    --InstanceId es-esadfeas \
     --UpdateType 0 \
     --ForceRestart True \
-    --QQDict abc \
-    --IkMainDicts abc
+    --QQDict qqDict \
+    --IkMainDicts mainDict
 ```
 
 Output: 

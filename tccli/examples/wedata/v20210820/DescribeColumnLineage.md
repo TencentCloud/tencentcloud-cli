@@ -6,71 +6,56 @@ Input:
 
 ```
 tccli wedata DescribeColumnLineage --cli-unfold-argument  \
-    --Direction xx \
-    --InputDepth 0 \
-    --ExtParams.0.Name xx \
-    --ExtParams.0.Value xx \
-    --OutputDepth 0 \
-    --IgnoreTemp True \
-    --Data.ParentId xx \
-    --Data.Params xx \
-    --Data.MetastoreType xx \
-    --Data.RelationParams xx \
-    --Data.QualifiedName xx \
-    --Data.Description xx \
-    --Data.TableName xx \
-    --Data.ColumnNameCn xx \
-    --Data.ParentSet xx \
-    --Data.ChildSet xx \
-    --Data.ColumnType xx \
-    --Data.UpStreamCount 0 \
-    --Data.PrefixPath xx \
-    --Data.DatasourceId xx \
-    --Data.ModifyTime xx \
-    --Data.MetastoreTypeName xx \
-    --Data.Tasks xx \
+    --Direction BOTH \
+    --Data.Id 12395550416 \
+    --Data.ColumnType INT \
+    --Data.ColumnName col_a1 \
+    --Data.ColumnNameCn  \
+    --Data.Description  \
+    --Data.DatasourceId - \
+    --Data.QualifiedName - \
+    --Data.TableName 0210_biao1 \
     --Data.DownStreamCount 0 \
-    --Data.ExtParams.0.Name xx \
-    --Data.ExtParams.0.Value xx \
-    --Data.Id xx \
-    --Data.ColumnName xx \
-    --Data.TableId xx \
-    --Data.CreateTime xx
+    --Data.UpStreamCount 0 \
+    --Data.TableId JqDviGd3SJKP1Dzlaabbcc \
+    --Data.ExtParams.0.Value 00000000-0000-0000-0000-000000000000 \
+    --Data.ExtParams.0.Name nodeid \
+    --Data.ExtParams.1.Value true \
+    --Data.ExtParams.1.Name flag \
+    --IgnoreTemp True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "ColumnAggregationLineage": {
-            "ChildSet": "xx",
-            "ParentSet": "xx",
-            "ParentId": "xx",
-            "TableName": "xx",
-            "MetastoreType": "xx",
+            "ChildSet": null,
             "ColumnInfoSet": [
                 {
-                    "QualifiedName": "xx",
-                    "Tasks": [
-                        "xx"
-                    ],
-                    "ColumnType": "xx",
-                    "Description": "xx",
+                    "ColumnName": "a",
+                    "ColumnNameCn": "",
+                    "ColumnType": "",
+                    "CreateTime": "",
+                    "DatasourceId": "",
+                    "Description": "",
                     "DownStreamCount": 0,
-                    "UpStreamCount": 0,
-                    "CreateTime": "xx",
-                    "ColumnName": "xx",
-                    "PrefixPath": "xx",
-                    "Params": "xx",
-                    "ModifyTime": "xx",
-                    "RelationParams": "xx",
-                    "ColumnNameCn": "xx",
-                    "Id": "xx",
-                    "DatasourceId": "xx"
+                    "Id": null,
+                    "ModifyTime": "",
+                    "Params": "",
+                    "PrefixPath": "",
+                    "QualifiedName": null,
+                    "RelationParams": "",
+                    "Tasks": [],
+                    "UpStreamCount": 0
                 }
-            ]
-        }
+            ],
+            "MetastoreType": null,
+            "ParentId": "-",
+            "ParentSet": null,
+            "TableName": "0210_biao1"
+        },
+        "RequestId": "08e65bec-dbd8-4dde-b682-6734b5137557"
     }
 }
 ```

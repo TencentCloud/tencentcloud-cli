@@ -2540,168 +2540,190 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件id",
           "example": "configId",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件名称",
           "example": "application",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件命名空间",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件组",
           "example": "groupName",
           "member": "string",
           "name": "Group",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件内容",
           "example": "configContent",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件格式",
           "example": "text",
           "member": "string",
           "name": "Format",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件注释",
           "example": "Comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件状态",
           "example": "status",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件标签数组",
           "example": "[\"taga\",\"tagb\"]",
           "member": "ConfigFileTag",
           "name": "Tags",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件创建时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件创建者",
           "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件修改时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件修改者",
           "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ReleaseTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布者",
           "example": "usera",
           "member": "string",
           "name": "ReleaseBy",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件类型",
+          "example": "无",
+          "member": "int64",
+          "name": "ConfigFileSupportedClient",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件持久化",
+          "example": "无",
+          "member": "ConfigFilePersistent",
+          "name": "ConfigFilePersistent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2938,6 +2960,45 @@
       ],
       "usage": "both"
     },
+    "ConfigFilePersistent": {
+      "document": "配置文件持久化",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件编码",
+          "example": "无",
+          "member": "string",
+          "name": "Encoding",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件下发路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件后置命令",
+          "example": "无",
+          "member": "string",
+          "name": "PostCmd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConfigFilePublishInfo": {
       "document": "发布详情",
       "members": [
@@ -3039,190 +3100,212 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件发布id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布id",
           "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布名称",
           "example": "application",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布命名空间",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布组",
           "example": "provider-demo",
           "member": "string",
           "name": "Group",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布文件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布文件名称",
           "example": "application.yml",
           "member": "string",
           "name": "FileName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布内容",
           "example": "hello",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布注释",
           "example": "comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布Md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布Md5",
           "example": "md5hash",
           "member": "string",
           "name": "Md5",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布版本",
           "example": "1",
           "member": "uint64",
           "name": "Version",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布创建时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布创建者",
           "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布修改时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布修改者",
           "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发布描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发布描述",
           "example": "config-desc",
           "member": "string",
           "name": "ReleaseDescription",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否生效",
           "example": "true",
           "member": "bool",
           "name": "Active",
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "格式",
           "example": "yaml",
           "member": "string",
           "name": "Format",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件ID",
           "example": "name",
           "member": "string",
           "name": "ConfigFileId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件类型",
+          "example": "无",
+          "member": "int64",
+          "name": "ConfigFileSupportedClient",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件持久化",
+          "example": "无",
+          "member": "ConfigFilePersistent",
+          "name": "ConfigFilePersistent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3293,183 +3376,203 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件发布历史记录id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史记录id",
           "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史名称",
           "example": "configName",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史命名空间",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史组",
           "example": "provider-demo",
           "member": "string",
           "name": "Group",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史名称",
           "example": "application,yml",
           "member": "string",
           "name": "FileName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史内容",
           "example": "hello",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史格式",
           "example": "yaml",
           "member": "string",
           "name": "Format",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史注释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史注释",
           "example": "comment",
           "member": "string",
           "name": "Comment",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史Md5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史Md5",
           "example": "md5hash",
           "member": "string",
           "name": "Md5",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史类型",
           "example": "config",
           "member": "string",
           "name": "Type",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史状态",
           "example": "status",
           "member": "string",
           "name": "Status",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史标签组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布历史标签组",
           "example": "无",
           "member": "ConfigFileTag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布创建时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布创建者",
           "example": "usera",
           "member": "string",
           "name": "CreateBy",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布修改时间",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置文件发布修改者",
           "example": "usera",
           "member": "string",
           "name": "ModifyBy",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发布描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "发布描述",
           "example": "desc",
           "member": "string",
           "name": "ReleaseDescription",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "原因，用于失败时原因展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原因，用于失败时原因展示",
           "example": "publish error",
           "member": "string",
           "name": "ReleaseReason",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件类型\n",
+          "example": "无",
+          "member": "int64",
+          "name": "ConfigFileSupportedClient",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件持久化",
+          "example": "无",
+          "member": "ConfigFilePersistent",
+          "name": "ConfigFilePersistent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3479,25 +3582,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "key-value 键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key-value 键",
           "example": "name",
           "member": "string",
           "name": "Key",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "key-value 值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "key-value 值",
           "example": "tom",
           "member": "string",
           "name": "Value",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

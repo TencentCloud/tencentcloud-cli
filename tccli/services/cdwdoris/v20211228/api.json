@@ -4281,6 +4281,15 @@
           "name": "SortOrder",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "user",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4451,6 +4460,15 @@
           "example": "ASC",
           "member": "string",
           "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "user",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
           "required": false,
           "type": "string"
         }

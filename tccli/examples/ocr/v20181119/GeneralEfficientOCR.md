@@ -1,6 +1,6 @@
-**Example 1: 通用印刷体识别（精简版）示例代码 [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralEfficientOCR)**
+**Example 1: 通用印刷体识别（精简版）示例代码**
 
-通用印刷体识别（精简版）示例
+通用印刷体识别（精简版）示例 ，  [ 前往调试工具](https://console.cloud.tencent.com/api/explorer?Product=ocr&Action=GeneralEfficientOCR)
 
 Input: 
 

@@ -1822,13 +1822,13 @@
         },
         {
           "disabled": false,
-          "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前步骤开始的时间，格式为\"yyyy-mm-dd hh:mm:ss\"，该字段不存在或者为空是无意义",
           "example": "2024-12-20 19:02:01",
           "member": "string",
           "name": "StartTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2453,14 +2453,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "错误信息",
           "example": "error",
           "member": "string",
           "name": "Message",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2613,14 +2613,14 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2723,14 +2723,14 @@
         },
         {
           "disabled": false,
-          "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅实例版本；txdts-旧版数据订阅,kafka-kafka版本数据订阅",
           "example": "kafka",
           "member": "string",
           "name": "SubscribeVersion",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2740,36 +2740,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据订阅对象的类型，0-数据库，1-数据库内的表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据订阅对象的类型，0-数据库，1-数据库内的表",
           "example": "1",
           "member": "int64",
           "name": "ObjectsType",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅数据库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅数据库的名称",
           "example": "db_1",
           "member": "string",
           "name": "DatabaseName",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅数据库中表名称数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅数据库中表名称数组",
           "example": "[\"tab_1\"]",
           "member": "string",
           "name": "TableNames",
           "output_required": true,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2814,14 +2814,14 @@
         },
         {
           "disabled": false,
-          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签值",
           "example": "value",
           "member": "string",
           "name": "TagValue",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -1437,13 +1437,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
           "example": "129542924",
           "member": "int64",
           "name": "AsyncRequestId",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2559,18 +2559,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的实例个数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合条件的实例个数。",
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例详情。",
-          "example": "[{\"BillingConfirmed\":1,\"AuditStatus\":\"ON\",\"ColdLogExpireDay\":23,\"InstanceId\":\"tdsql-lq5ue8p7\",\"LogExpireDay\":30,\"CreateTime\":\"2023-06-08 19:48:19\",\"HotLogSize\":0,\"HotLogExpireDay\":7,\"BillingAmount\":0,\"ColdLogSize\":0,\"InstanceInfo\":{\"InstanceName\":\"DBbrain测试_fanzhi_MySQL8.0\",\"AuditStatus\":1,\"AppId\":251009273,\"InstanceId\":\"tdsql-lq5ue8p7\",\"ResourceTags\":[\"tag_abc\"],\"ProjectId\":0,\"Region\":\"ap-guangzhou\"}}]",
+          "example": "无",
           "member": "AuditInstance",
           "name": "Items",
           "output_required": true,
@@ -4064,13 +4064,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务总数。",
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6046,7 +6046,7 @@
           "example": "100",
           "member": "int64",
           "name": "HealthScore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6056,7 +6056,7 @@
           "example": "HEALTH",
           "member": "string",
           "name": "HealthLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6066,19 +6066,19 @@
           "example": "0",
           "member": "int64",
           "name": "ScoreLost",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "扣分详情。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
+          "document": "扣分详情。",
+          "example": "无",
           "member": "ScoreDetail",
           "name": "ScoreDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6642,23 +6642,23 @@
         },
         {
           "disabled": false,
-          "document": "内网vip。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网vip。",
           "example": "10.5.0.9",
           "member": "string",
           "name": "InternalVip",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内网port。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "内网port。",
           "example": "9090",
           "member": "int64",
           "name": "InternalVport",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6672,23 +6672,23 @@
         },
         {
           "disabled": false,
-          "document": "所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。",
           "example": "cynosdbmysql-92r4lpsa",
           "member": "string",
           "name": "ClusterId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。",
           "example": "开发-测试库",
           "member": "string",
           "name": "ClusterName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,

@@ -16281,9 +16281,10 @@
         {
           "disabled": false,
           "document": "国内特殊配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "null",
           "member": "MainlandConfig",
           "name": "Mainland",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -16291,9 +16292,10 @@
         {
           "disabled": false,
           "document": "海外特殊配置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "null",
           "member": "OverseaConfig",
           "name": "Overseas",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

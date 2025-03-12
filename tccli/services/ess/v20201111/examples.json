@@ -1684,6 +1684,32 @@
         "title": "查看个人自动签状态"
       }
     ],
+    "DescribeUserFlowType": [
+      {
+        "document": "查询用户合同类型（不指定filter）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTemplates\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 0,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（不指定filter）"
+      },
+      {
+        "document": "查询用户合同类型（不指定查询绑定模版的合同类型）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTemplates\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"QueryBindTemplate\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 0,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（不指定查询绑定模版的合同类型）"
+      },
+      {
+        "document": "查询用户合同类型（指定查询绑定模版的合同类型）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTemplates\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"QueryBindTemplate\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 10,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（指定查询绑定模版的合同类型）"
+      },
+      {
+        "document": "查询用户合同类型（指定用户模版id）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowTemplates\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"user-flow-type-id\",\n            \"Values\": [\n                \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AllUserFlowTypes\": [\n            {\n                \"Description\": \"\",\n                \"Name\": \"单方合同\",\n                \"TemplateNum\": 0,\n                \"UserFlowTypeId\": \"yDwXXUUckp19hvn8URxp4X6wVwCLodxJ\"\n            }\n        ],\n        \"RequestId\": \"s1741681654595707818\"\n    }\n}",
+        "title": "查询用户合同类型（指定用户模版id）"
+      }
+    ],
     "DescribeUserVerifyStatus": [
       {
         "document": "通过二要素查询用户是否实名",

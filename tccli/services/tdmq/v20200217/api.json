@@ -553,13 +553,6 @@
       "output": "DescribeRabbitMQVirtualHostResponse",
       "status": "online"
     },
-    "DescribeRabbitMQVirtualHostList": {
-      "document": "消息队列TDMQ RabbitMQ 有一个存量旧接口没下线，目前实际上已经不在产品中使用：DescribeRabbitMQVirtualHostList，这个接口很久前已经被 DescribeRabbitMQVirtualHost 替换掉。已无用户在调用。\n\nRabbitMQ专享版查询虚拟主机列表",
-      "input": "DescribeRabbitMQVirtualHostListRequest",
-      "name": "RabbitMQ专享版查询虚拟主机列表",
-      "output": "DescribeRabbitMQVirtualHostListResponse",
-      "status": "deprecated"
-    },
     "DescribeRocketMQCluster": {
       "document": "获取单个RocketMQ集群信息",
       "input": "DescribeRocketMQClusterRequest",
@@ -1774,43 +1767,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "死信队列。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "死信队列。",
           "example": "test-queue",
           "member": "string",
           "name": "DeadLetterQueue",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "死信队列策略。0:最大接收次数;1:最大未消费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "死信队列策略。0:最大接收次数;1:最大未消费时间",
           "example": "0",
           "member": "uint64",
           "name": "Policy",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。",
           "example": "300",
           "member": "uint64",
           "name": "MaxTimeToLive",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大接收次数。Policy为0时必选，范围在1到1000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大接收次数。Policy为0时必选，范围在1到1000。",
           "example": "2",
           "member": "uint64",
           "name": "MaxReceiveCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1830,13 +1823,13 @@
         },
         {
           "disabled": false,
-          "document": "消息队列名字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息队列名字。",
           "example": "test1",
           "member": "string",
           "name": "QueueName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1866,33 +1859,33 @@
         },
         {
           "disabled": false,
-          "document": "每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每秒钟生产消息条数的限制，消费消息的大小是该值的1.1倍。",
           "example": "5000",
           "member": "uint64",
           "name": "Qps",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "带宽限制。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽限制。",
           "example": "52428800",
           "member": "uint64",
           "name": "Bps",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "飞行消息最大保留时间，需要小于消息保留周期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "飞行消息最大保留时间，需要小于消息保留周期。",
           "example": "3600",
           "member": "uint64",
           "name": "MaxDelaySeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -1906,93 +1899,93 @@
         },
         {
           "disabled": false,
-          "document": "消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息接收长轮询等待时间。取值范围0 - 30秒，默认值0。",
           "example": "3",
           "member": "uint64",
           "name": "PollingWaitSeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息保留周期。取值范围60-1296000秒（1min-15天），默认值345600秒（4 天）。",
           "example": "7200",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息可见性超时。取值范围1 - 43200秒（即12小时内），默认值30。",
           "example": "30",
           "member": "uint64",
           "name": "VisibilityTimeout",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息最大长度。取值范围1024 - 1048576 Byte（即1K - 1024K），默认值65536。",
           "example": "1048576",
           "member": "uint64",
           "name": "MaxMsgSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "回溯队列的消息回溯时间最大值，取值范围0 - 43200秒，0表示不开启消息回溯。",
           "example": "0",
           "member": "uint64",
           "name": "RewindSeconds",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "队列的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "队列的创建时间。返回 Unix 时间戳，精确到毫秒。",
           "example": "1726730748000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后一次修改队列属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次修改队列属性的时间。返回 Unix 时间戳，精确到毫秒。",
           "example": "1729740386000",
           "member": "uint64",
           "name": "LastModifyTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在队列中处于 Active 状态（不处于被消费状态）的消息总数，为近似值。",
           "example": "0",
           "member": "uint64",
           "name": "ActiveMsgNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "在队列中处于 Inactive 状态（正处于被消费状态）的消息总数，为近似值。",
           "example": "0",
           "member": "uint64",
           "name": "InactiveMsgNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2096,63 +2089,63 @@
         },
         {
           "disabled": false,
-          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "租户id",
           "example": "cmq-131794",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间名称",
           "example": "CMQ_QUEUE-test-queue",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大未确认消息数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大未确认消息数量",
           "example": "100000",
           "member": "int64",
           "name": "MaxUnackedMsgNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大消息堆积大小（字节）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大消息堆积大小（字节）",
           "example": "104857600",
           "member": "int64",
           "name": "MaxMsgBacklogSize",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "队列可回溯存储空间，取值范围1024MB - 10240MB，0表示不开启",
           "example": "0",
           "member": "uint64",
           "name": "RetentionSizeInMB",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2162,23 +2155,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。",
           "example": "sub",
           "member": "string",
           "name": "SubscriptionName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅 ID。订阅 ID 在拉取监控数据时会用到。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅 ID。订阅 ID 在拉取监控数据时会用到。",
           "example": "subsc-w4nojx4a",
           "member": "string",
           "name": "SubscriptionId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2192,33 +2185,33 @@
         },
         {
           "disabled": false,
-          "document": "该订阅待投递的消息数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该订阅待投递的消息数。",
           "example": "0",
           "member": "uint64",
           "name": "MsgCount",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到毫秒。",
           "example": "1692691279000",
           "member": "uint64",
           "name": "LastModifyTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅的创建时间。返回 Unix 时间戳，精确到毫秒。",
           "example": "1692691279000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2232,63 +2225,63 @@
         },
         {
           "disabled": false,
-          "document": "接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接收通知的 endpoint，根据协议 protocol 区分：对于 HTTP，endpoint 必须以http://开头，host 可以是域名或 IP；对于 queue，则填 queueName。",
           "example": "queue",
           "member": "string",
           "name": "Endpoint",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述用户创建订阅时选择的过滤策略：\nfilterType = 1表示用户使用 filterTag 标签过滤\nfilterType = 2表示用户使用 bindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述用户创建订阅时选择的过滤策略：\nfilterType = 1表示用户使用 filterTag 标签过滤\nfilterType = 2表示用户使用 bindingKey 过滤。",
           "example": "[\"tag1\"]",
           "member": "string",
           "name": "FilterTags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。",
           "example": "queue",
           "member": "string",
           "name": "Protocol",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：\n（1）BACKOFF_RETRY，退避重试。每隔一定时间重试一次，重试够一定次数后，就把该消息丢弃，继续推送下一条消息；\n（2）EXPONENTIAL_DECAY_RETRY，指数衰退重试。每次重试的间隔是指数递增的，例如开始 1s，后面是 2s，4s，8s...由于 Topic 消息的周期是一天，所以最多重试一天就把消息丢弃。默认值是 EXPONENTIAL_DECAY_RETRY。",
           "example": "EXPONENTIAL_DECAY_RETRY",
           "member": "string",
           "name": "NotifyStrategy",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "推送内容的格式。取值：（1）JSON；（2）SIMPLIFIED，即 raw 格式。如果 protocol 是 queue，则取值必须为 SIMPLIFIED。如果 protocol 是 HTTP，两个值均可以，默认值是 JSON。",
           "example": "SIMPLIFIED",
           "member": "string",
           "name": "NotifyContentFormat",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅所属的主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅所属的主题名称",
           "example": "testTopic",
           "member": "string",
           "name": "TopicName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2298,102 +2291,102 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题的 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题的 ID。",
           "example": "cmqt-w4nb4z",
           "member": "string",
           "name": "TopicId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题名称。",
           "example": "testTopic",
           "member": "string",
           "name": "TopicName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。",
           "example": "86400",
           "member": "uint64",
           "name": "MsgRetentionSeconds",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。",
           "example": "1048576",
           "member": "uint64",
           "name": "MaxMsgSize",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "每秒钟发布消息的条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每秒钟发布消息的条数。",
           "example": "5000",
           "member": "uint64",
           "name": "Qps",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述用户创建订阅时选择的过滤策略：\nFilterType = 1表示用户使用 FilterTag 标签过滤;\nFilterType = 2表示用户使用 BindingKey 过滤。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "描述用户创建订阅时选择的过滤策略：\nFilterType = 1表示用户使用 FilterTag 标签过滤;\nFilterType = 2表示用户使用 BindingKey 过滤。",
           "example": "1",
           "member": "uint64",
           "name": "FilterType",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "主题的创建时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "主题的创建时间。返回 Unix 时间戳，精确到毫秒。",
           "example": "1692691278000",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。",
           "example": "1692691278000",
           "member": "uint64",
           "name": "LastModifyTime",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前该主题中消息数目（消息堆积数）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前该主题中消息数目（消息堆积数）。",
           "example": "0",
           "member": "uint64",
           "name": "MsgCount",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2430,58 +2423,58 @@
         },
         {
           "disabled": false,
-          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "租户id",
           "example": "cmq-13179",
           "member": "string",
           "name": "TenantId",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命名空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命名空间名称",
           "example": "CMQ_TOPIC-testTopic",
           "member": "string",
           "name": "NamespaceName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败",
           "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0表示pulsar，1表示rocketmq\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0表示pulsar，1表示rocketmq",
           "example": "0",
           "member": "int64",
           "name": "BrokerType",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "订阅数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订阅数量",
           "example": "1",
           "member": "int64",
           "name": "SubscriptionCount",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2491,23 +2484,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "第一次回查时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "第一次回查时间。",
           "example": "0",
           "member": "uint64",
           "name": "FirstQueryInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最大查询次数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最大查询次数。",
           "example": "0",
           "member": "uint64",
           "name": "MaxQueryCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6392,13 +6385,13 @@
         },
         {
           "disabled": false,
-          "document": "队列列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"QueueId\":\"cmqq-bzgqn83n\",\"QueueName\":\"test0829\",\"Qps\":5000,\"Bps\":52428800,\"MaxDelaySeconds\":3600,\"MaxMsgHeapNum\":1000000,\"PollingWaitSeconds\":3,\"MsgRetentionSeconds\":7200,\"VisibilityTimeout\":30,\"MaxMsgSize\":1048576,\"RewindSeconds\":0,\"RetentionSizeInMB\":0,\"CreateTime\":1724918937000,\"LastModifyTime\":1724924966000,\"ActiveMsgNum\":0,\"InactiveMsgNum\":0,\"DelayMsgNum\":null,\"RewindMsgNum\":null,\"MinMsgTime\":null,\"MaxUnackedMsgNum\":100000,\"DeadLetterPolicy\":{\"DeadLetterQueue\":\"rmqbroker-nj\",\"Policy\":0,\"MaxTimeToLive\":0,\"MaxReceiveCount\":22},\"DeadLetterSource\":null,\"Transaction\":null,\"TransactionPolicy\":null,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-131794\",\"NamespaceName\":\"CMQ_QUEUE-test0829\",\"Status\":1,\"MaxMsgBacklogSize\":10737418240,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null}]",
+          "document": "队列列表",
+          "example": "无",
           "member": "CmqQueue",
           "name": "QueueList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6484,13 +6477,13 @@
         },
         {
           "disabled": false,
-          "document": "Subscription属性集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"SubscriptionName\":\"health-check-sub\",\"SubscriptionId\":\"subsc-w4nojx4aeqb2\",\"TopicOwner\":null,\"MsgCount\":0,\"LastModifyTime\":1692691277000,\"CreateTime\":1692691277000,\"BindingKey\":[],\"Endpoint\":\"rmqbroker-nj-cmq1-health-check-queue\",\"FilterTags\":[],\"Protocol\":\"queue\",\"NotifyStrategy\":\"EXPONENTIAL_DECAY_RETRY\",\"NotifyContentFormat\":\"SIMPLIFIED\",\"TopicName\":\"rmqbroker-nj-cmq1-health-check-topic\"}]",
+          "document": "Subscription属性集合",
+          "example": "无",
           "member": "CmqSubscription",
           "name": "SubscriptionSet",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6603,13 +6596,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "主题列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"TopicId\":\"cmqt-w4nb4z27w111\",\"TopicName\":\"rtopic\",\"MaxMsgSize\":1048576,\"FilterType\":1,\"MsgRetentionSeconds\":86400,\"Qps\":5000,\"CreateTime\":1692691276000,\"LastModifyTime\":1692691276000,\"MsgCount\":0,\"CreateUin\":null,\"Trace\":null,\"Tags\":null,\"TenantId\":\"cmq-1317947242\",\"NamespaceName\":\"CMQ_TOPIC-rtopic\",\"Status\":1,\"BrokerType\":1,\"SetType\":\"SHARED\",\"InstanceId\":null,\"SubscriptionCount\":1}]",
+          "document": "主题列表",
+          "example": "无",
           "member": "CmqTopic",
           "name": "TopicList",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -8832,71 +8825,6 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRabbitMQVirtualHostListRequest": {
-      "document": "DescribeRabbitMQVirtualHostList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "不适用，默认参数",
-          "example": "amqp-jero744g",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "偏移量",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "一页限制",
-          "example": "20",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRabbitMQVirtualHostListResponse": {
-      "document": "DescribeRabbitMQVirtualHostList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "集群列表数量",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "RabbitMQPrivateVirtualHost",
-          "name": "VirtualHostList",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -16538,32 +16466,6 @@
       ],
       "usage": "out"
     },
-    "RabbitMQPrivateVirtualHost": {
-      "document": "RabbitMQ专享版云服务器",
-      "members": [
-        {
-          "disabled": false,
-          "document": "虚拟主机的名字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "amqp_xxx",
-          "member": "string",
-          "name": "VirtualHostName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "虚拟主机的描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "desc",
-          "member": "string",
-          "name": "Description",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
     "RabbitMQQueueListConsumerDetailInfo": {
       "document": "RabbitMQ队列列表消费者信息",
       "members": [
@@ -21035,7 +20937,7 @@
           "example": "10",
           "member": "int64",
           "name": "MaxVirtualHost",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21045,7 +20947,7 @@
           "example": "4",
           "member": "int64",
           "name": "UsedVirtualHost",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -21155,6 +21057,7 @@
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21165,6 +21068,7 @@
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -21175,16 +21079,18 @@
           "example": "ip:port",
           "member": "string",
           "name": "VpcEndpoint",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "vpc接入点状态\nOFF/ON/CREATING/DELETING\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "vpc接入点状态 OFF/ON/CREATING/DELETING\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcDataStreamEndpointStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

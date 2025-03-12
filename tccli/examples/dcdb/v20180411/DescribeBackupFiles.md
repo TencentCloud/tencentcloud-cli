@@ -34,7 +34,8 @@ Output:
             }
         ],
         "RequestId": "549454bd-65ac-4507-8f75-65609c357328",
-        "TotalCount": 1
+        "TotalCount": 1,
+        "UrlPrefix": "http://newdtsdev-1301792469.cos.ap-guangzhou.myqcloud.com"
     }
 }
 ```

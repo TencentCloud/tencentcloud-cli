@@ -928,6 +928,14 @@
         "title": "修改绑定成员邮箱"
       }
     ],
+    "UpdateOrganizationMembersPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationMembersPolicy\n<公共请求参数>\n\n{\n    \"MemberUins\": [\n        111111111111\n    ],\n    \"PolicyId\": 123,\n    \"IdentityId\": 1,\n    \"Description\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4868f21-fa38-4815-8e48-596b17c1b37\"\n    }\n}",
+        "title": "修改组织成员访问策略"
+      }
+    ],
     "UpdateOrganizationNode": [
       {
         "document": "",

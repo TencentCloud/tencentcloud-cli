@@ -10186,7 +10186,7 @@
         {
           "disabled": false,
           "document": "策略组id",
-          "example": "123456",
+          "example": "1247756",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -10261,7 +10261,7 @@
         {
           "disabled": false,
           "document": "最近编辑的用户uin",
-          "example": "123",
+          "example": "100040701662",
           "member": "string",
           "name": "LastEditUin",
           "output_required": true,
@@ -10301,7 +10301,7 @@
         {
           "disabled": false,
           "document": "阈值规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "DescribePolicyGroupInfoCondition",
           "name": "ConditionsConfig",
           "output_required": true,
@@ -10311,7 +10311,7 @@
         {
           "disabled": false,
           "document": "产品事件规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "DescribePolicyGroupInfoEventCondition",
           "name": "EventConfig",
           "output_required": true,
@@ -10321,7 +10321,7 @@
         {
           "disabled": false,
           "document": "用户接收人列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "无",
           "member": "DescribePolicyGroupInfoReceiverInfo",
           "name": "ReceiverInfos",
           "output_required": true,
@@ -10331,7 +10331,7 @@
         {
           "disabled": false,
           "document": "用户回调信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "DescribePolicyGroupInfoCallback",
           "name": "Callback",
           "output_required": true,
@@ -10341,7 +10341,7 @@
         {
           "disabled": false,
           "document": "模板策略组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "无",
           "member": "DescribePolicyGroupInfoConditionTpl",
           "name": "ConditionsTemp",
           "output_required": true,

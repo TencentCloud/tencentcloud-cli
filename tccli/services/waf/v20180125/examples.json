@@ -1120,6 +1120,14 @@
         "title": "查询示例"
       }
     ],
+    "ModifyUserSignatureClass": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserSignatureClass\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"TypeID\": \"010000000\",\n    \"Status\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TypeID\": \"010000000\",\n        \"Status\": 0,\n        \"RequestId\": \"f5063595-f20c-4fa8-9ae4-aed9f16dcb43\"\n    }\n}",
+        "title": "切换Tiga引擎规则类型的生效开关"
+      }
+    ],
     "ModifyUserSignatureRule": [
       {
         "document": "",
@@ -1206,6 +1214,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchElasticMode\n<公共请求参数>\n\n{\n    \"Edition\": \"clb-waf\",\n    \"Mode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123894afsa90577\"\n    }\n}",
         "title": "切换弹性的开关"
+      }
+    ],
+    "UpdateProtectionModes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProtectionModes\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\",\n    \"Edition\": \"abc\",\n    \"TypeIDs\": [\n        \"abc\"\n    ],\n    \"Mode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"CommonRsp\": {\n            \"Code\": 0,\n            \"Msg\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新Tiga引擎下大类规则的防护模式"
       }
     ],
     "UpsertCCAutoStatus": [

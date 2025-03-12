@@ -703,13 +703,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除文档数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "删除文档数量。",
+          "example": "10",
           "member": "int64",
           "name": "AffectedCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -729,7 +729,7 @@
         {
           "disabled": false,
           "document": "知识库标识",
-          "example": "”“",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1009,23 +1009,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取的数量。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "获取的数量。",
+          "example": "10",
           "member": "int64",
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档信息",
           "example": "无",
           "member": "KnowledgeDocumentSet",
           "name": "DocumentSet",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1090,23 +1090,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件集",
           "example": "无",
           "member": "QureyKnowledgeDocumentSet",
           "name": "DocumentSets",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "条数",
+          "example": "10",
           "member": "uint64",
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1126,7 +1126,7 @@
         {
           "disabled": false,
           "document": "知识库标识，精准查询",
-          "example": "”“",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -1135,7 +1135,7 @@
         {
           "disabled": false,
           "document": "知识库名称，精准查询",
-          "example": "”“",
+          "example": "title",
           "member": "string",
           "name": "Title",
           "required": false,
@@ -1162,7 +1162,7 @@
         {
           "disabled": false,
           "document": "NoPage标识不分页",
-          "example": "\"NoPage\"",
+          "example": "NoPage",
           "member": "string",
           "name": "QueryMode",
           "required": false,
@@ -1199,7 +1199,7 @@
         {
           "disabled": false,
           "document": "文件ids",
-          "example": "无",
+          "example": "docId",
           "member": "string",
           "name": "DocumentSetId",
           "required": false,
@@ -1208,7 +1208,7 @@
         {
           "disabled": false,
           "document": "文件名集合",
-          "example": "无",
+          "example": "docName",
           "member": "string",
           "name": "DocumentSetName",
           "required": false,
@@ -1217,7 +1217,7 @@
         {
           "disabled": false,
           "document": "使用创建 CollectionView 指定的 Filter 索引的字段设置查询过滤表达式",
-          "example": "无",
+          "example": "filter",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -1231,103 +1231,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "文档id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文档id",
+          "example": "docId",
           "member": "string",
           "name": "DocumentSetId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文档名",
+          "example": "docName",
           "member": "string",
           "name": "DocumentSetName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件完整内容。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件完整内容。",
+          "example": "我的文档",
           "member": "string",
           "name": "Text",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件内容前 200个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件内容前 200个字符。",
+          "example": "我的文档",
           "member": "string",
           "name": "TextPrefix",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件详情",
           "example": "无",
           "member": "KnowledgeDocumentSetInfo",
           "name": "DocumentSetInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件拆分信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件拆分信息",
           "example": "无",
           "member": "KnowledgeSplitterPreprocess",
           "name": "SplitterPreprocess",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "未使用",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档标题",
           "example": "kent测试文件",
           "member": "string",
           "name": "FileTitle",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文档元信息，必须为jsonstring\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档元信息，必须为jsonstring",
           "example": "{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}",
           "member": "string",
           "name": "FileMetaData",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "作者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "作者",
+          "example": "bob",
           "member": "string",
           "name": "Author",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1337,73 +1337,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件的字符数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件的字符数。",
+          "example": "64",
           "member": "uint64",
           "name": "TextLength",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件的字节数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件的字节数。",
+          "example": "256",
           "member": "uint64",
           "name": "ByteLength",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件被预处理、Embedding 向量化的进度。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件被预处理、Embedding 向量化的进度。",
+          "example": "64",
           "member": "uint64",
           "name": "IndexedProgress",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件预处理、Embedding 向量化的状态。\nNew：等待解析。\nLoading：文件解析中。\nFailure：文件解析、写入出错。\nReady：文件解析、写入完成。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件预处理、Embedding 向量化的状态。\nNew：等待解析。\nLoading：文件解析中。\nFailure：文件解析、写入出错。\nReady：文件解析、写入完成。\n",
+          "example": "Ready",
           "member": "string",
           "name": "IndexedStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件创建时间。",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件最后更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件最后更新时间。",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "LastUpdateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件关键字。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件关键字。",
+          "example": "key",
           "member": "string",
           "name": "Keywords",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1413,68 +1413,68 @@
       "members": [
         {
           "disabled": false,
-          "document": "知识库标识\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”test“",
+          "document": "知识库标识",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "知识库名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”title“",
+          "document": "知识库名称",
+          "example": "title",
           "member": "string",
           "name": "Title",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”desc“",
+          "document": "描述",
+          "example": "desc",
           "member": "string",
           "name": "Desc",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态，\nNOT_ENABLED未启用\nENABLED 已启用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”NOT_ENABLED“",
+          "document": "状态，\nNOT_ENABLED未启用\nENABLED 已启用",
+          "example": "NOT_ENABLED",
           "member": "string",
           "name": "Active",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”2024-06-04 11:16:49“",
+          "document": "创建时间",
+          "example": "2024-06-04 11:16:49",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "”2024-06-04 11:16:49“",
+          "document": "更新时间",
+          "example": "2024-06-04 11:16:49",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "知识库的meta信息",
-          "example": "\"meta\"",
+          "example": "meta",
           "member": "string",
           "name": "Meta",
           "output_required": false,
@@ -1489,23 +1489,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "知识库列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "知识库列表",
           "example": "无",
           "member": "KnowledgeSet",
           "name": "KnowledgeSets",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1515,23 +1515,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "在对文件拆分时，配置是否将 Title 追加到切分后的段落后面一并 Embedding。取值如下所示：\nfalse：不追加。\ntrue：将段落 Title 追加到切分后的段落。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "在对文件拆分时，配置是否将 Title 追加到切分后的段落后面一并 Embedding。取值如下所示：\nfalse：不追加。\ntrue：将段落 Title 追加到切分后的段落。\n",
+          "example": "true",
           "member": "bool",
           "name": "AppendTitleToChunk",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "在对文件拆分时，配置是否将关键字 keywords 追加到切分后的段落一并 Embedding。取值如下所示：\nfalse：不追加。\ntrue：将全文的 keywords 追加到切分后的段落。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "在对文件拆分时，配置是否将关键字 keywords 追加到切分后的段落一并 Embedding。取值如下所示：\nfalse：不追加。\ntrue：将全文的 keywords 追加到切分后的段落。\n",
+          "example": "true",
           "member": "bool",
           "name": "AppendKeywordsToChunk",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1542,7 +1542,7 @@
         {
           "disabled": false,
           "document": "文件id数组，表示要查询的文件的所有 ID，支持批量查询，数组元素范围[1,20]。",
-          "example": "无",
+          "example": "docId",
           "member": "string",
           "name": "DocumentSetId",
           "required": false,
@@ -1551,7 +1551,7 @@
         {
           "disabled": false,
           "document": "表示要查询的文档名称，支持批量查询，数组元素范围[1,20]。",
-          "example": "无",
+          "example": "docName",
           "member": "string",
           "name": "DocumentSetName",
           "required": false,
@@ -1560,7 +1560,7 @@
         {
           "disabled": false,
           "document": "取值范围：[1,16384]",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1569,7 +1569,7 @@
         {
           "disabled": false,
           "document": "设置分页偏移量，用于控制分页查询返回结果的起始位置，方便用户对数据进行分页展示和浏览。\n取值：为 limit 整数倍。\n计算公式：offset=limit*(page-1)。\n例如：当 limit = 10，page = 2 时，分页偏移量 offset = 10 * (2 - 1) = 10，表示从查询结果的第 11 条记录开始返回数据。\n",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1578,7 +1578,7 @@
         {
           "disabled": false,
           "document": "设置后，其他字段为空值",
-          "example": "无",
+          "example": "file",
           "member": "string",
           "name": "OutputFields",
           "required": false,
@@ -1587,7 +1587,7 @@
         {
           "disabled": false,
           "document": "使用创建 CollectionView 指定的 Filter 索引的字段设置查询过滤表达式。",
-          "example": "无",
+          "example": "filter",
           "member": "string",
           "name": "Filter",
           "required": false,
@@ -1601,93 +1601,93 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件id",
+          "example": "docId",
           "member": "string",
           "name": "DocumentSetId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件名",
+          "example": "docName",
           "member": "string",
           "name": "DocumentSetName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件内容前 200个字符。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件内容前 200个字符。",
+          "example": "我的文档",
           "member": "string",
           "name": "TextPrefix",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件拆分信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件拆分信息",
           "example": "无",
           "member": "KnowledgeSplitterPreprocess",
           "name": "SplitterPreprocess",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件详情",
           "example": "无",
           "member": "QureyKnowledgeDocumentSetInfo",
           "name": "DocumentSetInfo",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件标题",
           "example": "kent测试文件",
           "member": "string",
           "name": "FileTitle",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件元信息，必须为jsonstring\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件元信息，必须为jsonstring",
           "example": "{\\\"url\\\": \\\"https://ww.com\\\", \\\"total\\\": 3}",
           "member": "string",
           "name": "FileMetaData",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "kent",
+          "document": "name",
+          "example": "name",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "作者\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "作者",
+          "example": "bob",
           "member": "string",
           "name": "Author",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1697,91 +1697,91 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件的字符数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件的字符数。",
+          "example": "1024",
           "member": "uint64",
           "name": "TextLength",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件的字节数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件的字节数。",
+          "example": "4096",
           "member": "uint64",
           "name": "ByteLength",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件被预处理、Embedding 向量化的进度。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件被预处理、Embedding 向量化的进度。",
+          "example": "10",
           "member": "uint64",
           "name": "IndexedProgress",
           "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件预处理、Embedding 向量化的状态。\nNew：等待解析。\nLoading：文件解析中。\nFailure：文件解析、写入出错。\nReady：文件解析、写入完成。\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件预处理、Embedding 向量化的状态。\nNew：等待解析。\nLoading：文件解析中。\nFailure：文件解析、写入出错。\nReady：文件解析、写入完成。\n",
+          "example": "Ready",
           "member": "string",
           "name": "IndexedStatus",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "错误信息",
+          "example": "error",
           "member": "string",
           "name": "IndexedErrorMsg",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件创建时间。",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件最后更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件最后更新时间。",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "LastUpdateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件关键字。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件关键字。",
+          "example": "key",
           "member": "string",
           "name": "Keywords",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1828,7 +1828,7 @@
         {
           "disabled": false,
           "document": "知识库名称",
-          "example": "abc",
+          "example": "collectionName",
           "member": "string",
           "name": "CollectionViewName",
           "output_required": false,
@@ -1838,7 +1838,7 @@
         {
           "disabled": false,
           "document": "文档Id",
-          "example": "Id",
+          "example": "docId",
           "member": "string",
           "name": "DocSetId",
           "output_required": false,
@@ -1848,7 +1848,7 @@
         {
           "disabled": false,
           "document": "文档Name",
-          "example": "Name",
+          "example": "docName",
           "member": "string",
           "name": "DocSetName",
           "output_required": false,
@@ -1878,7 +1878,7 @@
         {
           "disabled": false,
           "document": "文档元信息",
-          "example": "{}",
+          "example": "{\"foo\":\"bar\"}",
           "member": "string",
           "name": "FileMetaData",
           "output_required": false,
@@ -1888,7 +1888,7 @@
         {
           "disabled": false,
           "document": "文档描述",
-          "example": "abc",
+          "example": "docDesc",
           "member": "string",
           "name": "DocDesc",
           "output_required": false,
@@ -2137,7 +2137,7 @@
         {
           "disabled": false,
           "document": "腾讯云文件存储位置的可读地址",
-          "example": "无",
+          "example": "http://example.myqcloud.com/file.txt",
           "member": "string",
           "name": "CosUrl",
           "required": true,
@@ -2218,47 +2218,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "给文件分配的 ID 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "给文件分配的 ID 信息。",
+          "example": "docId",
           "member": "string",
           "name": "DocumentSetId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "文件名",
+          "example": "docName",
           "member": "string",
           "name": "DocumentSetName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件标题",
           "example": "文件标题",
           "member": "string",
           "name": "FileTitle",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "文件元信息，为jsonstring\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文件元信息，为jsonstring",
           "example": "{\"url\":\"url\",\"title\":\"标题\"}",
           "member": "string",
           "name": "FileMetaData",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -18,9 +18,9 @@ Output:
         "Data": {
             "KnowledgeSets": [
                 {
-                    "Name": "test",
-                    "Title": "testTiTle",
-                    "Desc": "test",
+                    "Name": "name",
+                    "Title": "title",
+                    "Desc": "desc",
                     "Active": "ENABLED",
                     "CreateTime": "2024-06-04 18:07:38",
                     "UpdateTime": "2024-06-04 18:09:29"

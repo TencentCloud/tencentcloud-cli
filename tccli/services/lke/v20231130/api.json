@@ -666,9 +666,9 @@
       "status": "online"
     },
     "SaveDoc": {
-      "document": "保存文档",
+      "document": "知识库文档问答保存。\n将文件存储到应用的知识库内需要三步：\n1.获取临时密钥，参考[接口文档](https://cloud.tencent.com/document/product/1759/105050)。\n2.调用腾讯云提供的 cos 存储接口，将文件存储到知识引擎 cos 中：参考[PUT Objectufeff](https://cloud.tencent.com/document/product/436/7749)\n3.调用本接口，将文件的基础信息存储到知识引擎中。\n以上步骤可参考[文档](https://cloud.tencent.com/document/product/1759/108903)，文档最后有[代码demo](https://cloud.tencent.com/document/product/1759/108903#demo)，可作为参考。",
       "input": "SaveDocRequest",
-      "name": "保存文档",
+      "name": "知识库文档问答保存",
       "output": "SaveDocResponse",
       "status": "online"
     },
@@ -13637,7 +13637,7 @@
         },
         {
           "disabled": false,
-          "document": "ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化",
+          "document": "ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化 成功上传cos后，从返回头中获取",
           "example": "\\\"58e88ad7665f11c4f66eba0eada383a5\\\"",
           "member": "string",
           "name": "ETag",
@@ -13646,7 +13646,7 @@
         },
         {
           "disabled": false,
-          "document": "cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性",
+          "document": "cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性  <br> 成功上传cos后，从返回头中获取",
           "example": "xxxxxxxxx",
           "member": "string",
           "name": "CosHash",
@@ -13664,11 +13664,11 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围 1：全部，2：按条件范围",
-          "example": "1：全部，2：按条件范围",
+          "document": "标签适用范围，默认填0即可",
+          "example": "0",
           "member": "uint64",
           "name": "AttrRange",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -13736,7 +13736,7 @@
         },
         {
           "disabled": false,
-          "document": "文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）",
+          "document": "文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从知识引擎页面下载excel模板",
           "example": "无",
           "member": "uint64",
           "name": "Opt",

@@ -10,8 +10,8 @@ tccli dlc CreateTask --cli-unfold-argument  \
     --Task.SQLTask.Config.0.Key  \
     --Task.SQLTask.Config.0.Value  \
     --Task.SparkSQLTask.SQL  \
-    --Task.SparkSQLTask.Config.0.Key  \
-    --Task.SparkSQLTask.Config.0.Value  \
+    --Task.SparkSQLTask.Config.0.Key spark.sql.sources.partitionOverwriteMode \
+    --Task.SparkSQLTask.Config.0.Value static \
     --DatabaseName testdb
 ```
 
@@ -20,7 +20,7 @@ Output:
 {
     "Response": {
         "RequestId": "13bfd2b2-b92e-4c49-9c7e-3662b5f32165",
-        "TaskId": "4ad30ca9-8b0e-499f-b4e1-d6e43ba0e564"
+        "TaskId": "4ad30ca9-*-*-*-*"
     }
 }
 ```

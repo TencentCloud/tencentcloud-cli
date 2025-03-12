@@ -88,7 +88,7 @@
       {
         "document": "获取app隐私诊断上传url",
         "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTicket\n<公共请求参数>\n\n{\n    \"Source\": \"2\",\n    \"Platform\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxx\",\n        \"UploadSign\": \"\",\n        \"Result\": 0,\n        \"FildID\": \"\",\n        \"UploadUrl\": \"https://priva***d35\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd20b929c9-211d-4121-b2ad-179047c17e\",\n        \"UploadSign\": \"\",\n        \"Result\": 0,\n        \"FildID\": \"\",\n        \"UploadUrl\": \"https://priva***d35\"\n    }\n}",
         "title": "获取App隐私诊断上传url"
       },
       {
@@ -121,14 +121,8 @@
     "DescribeScanTaskList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"0,1,2\",\n    \"PageSize\": \"10\",\n    \"PageNo\": \"1\",\n    \"Platform\": \"0\",\n    \"TaskTypes\": \"0,1\",\n    \"Source\": \"-1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e7c3b1d4-a45b-4a45-be38-49565552a871\",\n        \"Result\": 0,\n        \"Total\": 0,\n        \"Data\": null\n    }\n}",
-        "title": "获取诊断任务为空的情况"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: acp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"TaskStatuses\": \"\\\"0,1,2\\\"\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\",\n    \"TaskTypes\": \"\\\"0,1\\\"\",\n    \"Source\": \"-1\",\n    \"Platform\": \"2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"235***952\",\n                \"TaskType\": 0,\n                \"TaskStatus\": 0,\n                \"TaskErrMsg\": \"\",\n                \"Source\": 0,\n                \"AppInfo\": {\n                    \"AppPackage\": \"wx66e50f1e*******6f\",\n                    \"AppName\": \"测试app1\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": 2,\n                    \"ReportUrl\": \"\",\n                    \"ReportTitle\": \"\",\n                    \"BehaviorUrl\": \"\",\n                    \"BehaviorTitle\": \"\"\n                },\n                \"StartTime\": \"2021-10-11 14:53:36\",\n                \"EndTime\": \"2021-10-11 14:53:36\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e93a212-ca01-0fdc-eedd-5a1fce5e83e6\",\n        \"Result\": 0,\n        \"Data\": [\n            {\n                \"TaskID\": \"1701438134******0\",\n                \"TaskType\": \"0\",\n                \"TaskStatus\": \"0\",\n                \"TaskErrMsg\": \"内部错误\",\n                \"Source\": \"2\",\n                \"AppInfo\": {\n                    \"AppPackage\": \"com.test.app\",\n                    \"AppName\": \"测试App\",\n                    \"AppVersion\": \"v1.0\",\n                    \"Platform\": \"0\",\n                    \"ReportUrl\": \"诊断报告下载链接\",\n                    \"ReportTitle\": \"诊断报告名称\",\n                    \"BehaviorUrl\": \"诊断堆栈报告下载链接\",\n                    \"BehaviorTitle\": \"诊断堆栈报告名称\",\n                    \"HighRiskCount\": \"5\",\n                    \"PrivacyTextName\": \"隐私申明文本.txt\",\n                    \"SoftwareMD5\": \"c7991677cc57d3b9d4974316db0ac4f9f430593f\",\n                    \"PrivacyTextMD5\": \"3bc1efe919a5245f711071373a2b4523\"\n                },\n                \"StartTime\": \"2021-09-30 10:57:34\",\n                \"EndTime\": \"2021-10-11 14:53:36\",\n                \"ContactName\": \"老王\"\n            }\n        ],\n        \"Total\": 1\n    }\n}",
         "title": "获取应用合规诊断任务列表"
       }
     ],

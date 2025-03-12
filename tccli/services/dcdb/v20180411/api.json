@@ -2636,7 +2636,7 @@
         {
           "disabled": false,
           "document": "分片详情",
-          "example": "[{\"Cpu\":1,\"Createtime\":\"2024-11-07 14:53:53\",\"Memory\":2,\"NodeCount\":2,\"Pid\":1001670,\"ShardId\":12984,\"ShardInstanceId\":\"shard-4cw33xnp\",\"ShardSerialId\":\"set_1693557415_1\",\"Status\":2,\"Storage\":300},{\"Cpu\":1,\"Createtime\":\"2024-11-07 14:53:53\",\"Memory\":2,\"NodeCount\":2,\"Pid\":1001670,\"ShardId\":12985,\"ShardInstanceId\":\"shard-nw0u76x9\",\"ShardSerialId\":\"set_1693557529_3\",\"Status\":2,\"Storage\":300},{\"Cpu\":1,\"Createtime\":\"2024-11-07 14:53:53\",\"Memory\":2,\"NodeCount\":2,\"Pid\":1001670,\"ShardId\":12987,\"ShardInstanceId\":\"shard-wsfe8s7e\",\"ShardSerialId\":\"set_1693558023_5\",\"Status\":2,\"Storage\":300},{\"Cpu\":1,\"Createtime\":\"2024-11-07 14:53:53\",\"Memory\":2,\"NodeCount\":2,\"Pid\":1001670,\"ShardId\":12988,\"ShardInstanceId\":\"shard-jwud46a9\",\"ShardSerialId\":\"set_1693558125_7\",\"Status\":2,\"Storage\":300}]",
+          "example": "详见ShardInfo复杂结构",
           "member": "ShardInfo",
           "name": "ShardDetail",
           "output_required": true,
@@ -4147,7 +4147,7 @@
         {
           "disabled": false,
           "document": "备份文件列表",
-          "example": "[{\"BackupType\":\"Data\",\"EndTime\":\"2024-12-20 16:29:07\",\"FileName\":\"cos_xtrabackup+1734683337+20241220+162857+1507806831+xbstream.lz4\",\"FilePath\":\"cos_backup/tdsql/group_1734680376_202786203/set_1734681147_5/xtrabackup/2024-12-20/cos_xtrabackup+1734683337+20241220+162857+1507806831+xbstream.lz4\",\"FileSize\":13930740,\"InstanceId\":\"tdsqlshard-02badqa3\",\"InstanceName\":\"QT4syxfv8.0\",\"InstanceStatus\":2,\"ManualBackup\":0,\"ShardId\":\"shard-fqj08u7f\",\"StartTime\":\"2024-12-20 16:28:57\",\"StorageClass\":\"STANDARD\",\"Url\":\"\"}]",
+          "example": "无",
           "member": "InstanceBackupFileItem",
           "name": "Files",
           "output_required": true,
@@ -4162,6 +4162,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下载链接前缀",
+          "example": "http://newdtsdev-1301792469.cos.ap-guangzhou.myqcloud.com",
+          "member": "string",
+          "name": "UrlPrefix",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -4734,7 +4744,7 @@
           "example": "2019-01-01 10:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4744,7 +4754,7 @@
           "example": "2019-01-01 12:00:00",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

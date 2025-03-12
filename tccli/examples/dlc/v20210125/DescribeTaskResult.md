@@ -31,27 +31,27 @@ Output:
             "RowAffectInfo": "59378 rows affected (1.761000 seconds)",
             "ResultSchema": [
                 {
-                    "Name": "a",
-                    "Type": "integer",
+                    "Name": "key",
+                    "Type": "STRING_TYPE",
                     "Comment": "",
                     "Precision": 0,
                     "Scale": 0,
                     "Nullable": "NULLABLE",
                     "Position": 0,
-                    "CreateTime": "abc",
-                    "ModifiedTime": "abc",
+                    "CreateTime": "1737009973603",
+                    "ModifiedTime": "",
                     "IsPartition": true
                 },
                 {
-                    "Name": "b",
-                    "Type": "varchar",
+                    "Name": "key",
+                    "Type": "STRING_TYPE",
                     "Comment": "",
                     "Precision": 0,
                     "Scale": 0,
                     "Nullable": "NULLABLE",
                     "Position": 0,
-                    "CreateTime": "abc",
-                    "ModifiedTime": "abc",
+                    "CreateTime": "1737009973603",
+                    "ModifiedTime": "",
                     "IsPartition": true
                 }
             ],

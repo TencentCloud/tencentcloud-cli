@@ -12274,8 +12274,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待变更实例 ID。",
-          "example": "crs-5qlrlhux",
+          "document": "待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。",
+          "example": "crs-5qlr****",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -12316,6 +12316,15 @@
           "name": "NodeSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "切换时间。 \n- 1：维护时间窗操作：在设置的维护时间窗内执行操作。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。缩副本、扩缩分片、扩内存均支持在维护时间窗执行操作。\n- 2：立即操作：默认切换时刻。操作将立即执行，无需等待维护时间窗。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SwitchOption",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

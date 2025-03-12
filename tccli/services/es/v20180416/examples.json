@@ -401,7 +401,7 @@
     "UpdateDictionaries": [
       {
         "document": "更新ES集群词典",
-        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDictionaries\n<公共请求参数>\n\n{\n    \"IkStopwords\": [\n        \"abc\"\n    ],\n    \"Synonym\": [\n        \"abc\"\n    ],\n    \"InstanceId\": \"abc\",\n    \"UpdateType\": 0,\n    \"ForceRestart\": true,\n    \"QQDict\": [\n        \"abc\"\n    ],\n    \"IkMainDicts\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDictionaries\n<公共请求参数>\n\n{\n    \"IkStopwords\": [\n        \"stop\"\n    ],\n    \"Synonym\": [\n        \"syno\"\n    ],\n    \"InstanceId\": \"es-esadfeas\",\n    \"UpdateType\": 0,\n    \"ForceRestart\": true,\n    \"QQDict\": [\n        \"qqDict\"\n    ],\n    \"IkMainDicts\": [\n        \"mainDict\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c96a110c-7493-452d-a99b-683d07xxxxxx\"\n    }\n}",
         "title": "更新ES集群词典"
       }

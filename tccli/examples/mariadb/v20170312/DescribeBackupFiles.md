@@ -1,11 +1,16 @@
-**Example 1: 无**
+**Example 1: 获取实例备份列表**
 
-
+该接口用于获取实例的备份列表
 
 Input: 
 
 ```
-tccli mariadb DescribeBackupFiles --cli-unfold-argument ```
+tccli mariadb DescribeBackupFiles --cli-unfold-argument  \
+    --InstanceId tdsql-02badqa3 \
+    --BackupType Data \
+    --Limit 20 \
+    --Offset 0
+```
 
 Output: 
 ```
@@ -14,63 +19,22 @@ Output:
         "Files": [
             {
                 "BackupType": "Data",
-                "EndTime": "2022-05-20 00:02:19",
-                "FileName": "cos_xtrabackup+1652976129+20220520+000209+3085636221+xbstream.lz4",
-                "FilePath": "cos_backup/tdsql/set_1652843814_8559529/xtrabackup/2022-05-20/cos_xtrabackup+1652976129+20220520+000209+3085636221+xbstream.lz4",
-                "FileSize": 48721218,
-                "InstanceId": "tdsql-lyzax5rb",
-                "InstanceName": "test-name",
+                "EndTime": "2024-12-20 16:29:07",
+                "FileName": "cos_xtrabackup+1734683337+20241220+162857+1507806831+xbstream.lz4",
+                "FilePath": "cos_backup/tdsql/set_1734680376_202786203/xtrabackup/2024-12-20/cos_xtrabackup+1734683337+20241220+162857+1507806831+xbstream.lz4",
+                "FileSize": 13930740,
+                "InstanceId": "tdsql-02badqa3",
+                "InstanceName": "QT4syxfv8.0",
                 "InstanceStatus": 2,
                 "ManualBackup": 0,
                 "ShardId": "",
-                "StartTime": "2022-05-20 00:02:09",
-                "StorageClass": "STANDARD"
-            },
-            {
-                "BackupType": "Data",
-                "EndTime": "2022-05-19 00:23:03",
-                "FileName": "cos_xtrabackup+1652890972+20220519+002252+3085636221+xbstream.lz4",
-                "FilePath": "cos_backup/tdsql/set_1652843814_8559529/xtrabackup/2022-05-19/cos_xtrabackup+1652890972+20220519+002252+3085636221+xbstream.lz4",
-                "FileSize": 47738611,
-                "InstanceId": "tdsql-lyzax5rb",
-                "InstanceName": "test-name",
-                "InstanceStatus": 2,
-                "ManualBackup": 0,
-                "ShardId": "",
-                "StartTime": "2022-05-19 00:22:52",
-                "StorageClass": "STANDARD"
-            },
-            {
-                "BackupType": "Data",
-                "EndTime": "2022-05-18 11:44:52",
-                "FileName": "cos_xtrabackup+1652845485+20220518+114445+3085636221+xbstream.lz4",
-                "FilePath": "cos_backup/tdsql/set_1652843814_8559529/xtrabackup/2022-05-18/cos_xtrabackup+1652845485+20220518+114445+3085636221+xbstream.lz4",
-                "FileSize": 10281128,
-                "InstanceId": "tdsql-lyzax5rb",
-                "InstanceName": "test-name",
-                "InstanceStatus": 2,
-                "ManualBackup": 0,
-                "ShardId": "",
-                "StartTime": "2022-05-18 11:44:45",
-                "StorageClass": "STANDARD"
-            },
-            {
-                "BackupType": "Binlog",
-                "EndTime": "2022-05-20 17:13:31",
-                "FileName": "binlog+1652843821+20220518+111701+3085636221+binlog.000002.lz4",
-                "FilePath": "cos_backup/tdsql/set_1652843814_8559529/binlog/2022-05-18/binlog+1652843821+20220518+111701+3085636221+binlog.000002.lz4",
-                "FileSize": 51119079,
-                "InstanceId": "tdsql-lyzax5rb",
-                "InstanceName": "test-name",
-                "InstanceStatus": 2,
-                "ManualBackup": 0,
-                "ShardId": "",
-                "StartTime": "2022-05-18 11:17:01",
+                "StartTime": "2024-12-20 16:28:57",
                 "StorageClass": "STANDARD"
             }
         ],
-        "RequestId": "dce77e5f-57b9-4df5-9889-1a4b9f318659",
-        "TotalCount": 4
+        "RequestId": "549454bd-65ac-4507-8f75-65609c357328",
+        "TotalCount": 1,
+        "UrlPrefix": "http://newdtsdev-1301792469.cos.ap-guangzhou.myqcloud.com"
     }
 }
 ```

@@ -214,9 +214,10 @@
         {
           "disabled": false,
           "document": "键名",
-          "example": "aaa",
+          "example": "product",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -224,9 +225,10 @@
         {
           "disabled": false,
           "document": "键名对应值",
-          "example": "xxx",
+          "example": "cvm",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

@@ -7,9 +7,9 @@ Input:
 ```
 tccli lowcode CreateKnowledgeSet --cli-unfold-argument  \
     --EnvId lowcode-1cf \
-    --Name test \
-    --Title testTiTle \
-    --Desc descd
+    --Name the_name \
+    --Title the_title \
+    --Desc the_desc
 ```
 
 Output: 

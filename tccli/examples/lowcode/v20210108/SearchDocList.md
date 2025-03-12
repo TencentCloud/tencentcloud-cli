@@ -27,7 +27,7 @@ Output:
                     "DocType": ".md",
                     "FileTitle": "title",
                     "FileMetaData": "{\"key\":\"value\"}",
-                    "DocDesc": "test",
+                    "DocDesc": "desc",
                     "FileSize": 0
                 }
             ],

@@ -938,6 +938,13 @@
       "output": "ModifyUserLevelResponse",
       "status": "online"
     },
+    "ModifyUserSignatureClass": {
+      "document": "切换Tiga引擎规则类型的生效开关",
+      "input": "ModifyUserSignatureClassRequest",
+      "name": "切换规则类型生效开关",
+      "output": "ModifyUserSignatureClassResponse",
+      "status": "online"
+    },
     "ModifyUserSignatureRule": {
       "document": "修改用户防护规则，开启关闭具体的某条规则",
       "input": "ModifyUserSignatureRuleRequest",
@@ -1013,6 +1020,13 @@
       "input": "SwitchElasticModeRequest",
       "name": "切换弹性QPS的开关",
       "output": "SwitchElasticModeResponse",
+      "status": "online"
+    },
+    "UpdateProtectionModes": {
+      "document": "更新Tiga引擎下大类规则的防护模式",
+      "input": "UpdateProtectionModesRequest",
+      "name": "批量更新规则防护模式",
+      "output": "UpdateProtectionModesResponse",
       "status": "online"
     },
     "UpsertCCAutoStatus": {
@@ -18554,6 +18568,71 @@
       ],
       "type": "object"
     },
+    "ModifyUserSignatureClassRequest": {
+      "document": "ModifyUserSignatureClass请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型ID",
+          "example": "010000000",
+          "member": "string",
+          "name": "TypeID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型状态，0:关闭，1:开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserSignatureClassResponse": {
+      "document": "ModifyUserSignatureClass返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型ID",
+          "example": "010000000",
+          "member": "string",
+          "name": "TypeID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型状态，0：关闭，1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserSignatureRuleRequest": {
       "document": "ModifyUserSignatureRule请求参数结构体",
       "members": [
@@ -20667,6 +20746,70 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateProtectionModesRequest": {
+      "document": "UpdateProtectionModes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "大类规则ID",
+          "example": "[010000000,020000000]",
+          "member": "string",
+          "name": "TypeIDs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0表示观察，1表示拦截",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProtectionModesResponse": {
+      "document": "UpdateProtectionModes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonRspData",
+          "name": "CommonRsp",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpsertCCAutoStatusRequest": {
       "document": "UpsertCCAutoStatus请求参数结构体",

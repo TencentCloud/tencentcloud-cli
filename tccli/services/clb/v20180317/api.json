@@ -2873,7 +2873,7 @@
         },
         {
           "disabled": false,
-          "document": "证书相关信息。参数限制如下：\n<li>\n此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。\n</li>\n<li>\n创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。\n</li>",
+          "document": "证书相关信息。参数限制如下：\n<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>\n<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>",
           "example": "无",
           "member": "CertificateInput",
           "name": "Certificate",
@@ -2954,7 +2954,7 @@
         },
         {
           "disabled": false,
-          "document": "证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：\n<li>\n此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。\n</li>\n<li>\n创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。\n</li>",
+          "document": "证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：\n<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>\n<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>",
           "example": "无",
           "member": "MultiCertInfo",
           "name": "MultiCertInfo",
@@ -3023,6 +3023,15 @@
           "name": "SslCloseSwitch",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据压缩模式",
+          "example": "transparent/compatibility",
+          "member": "string",
+          "name": "DataCompressMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3817,6 +3826,15 @@
           "name": "LoadBalancerIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。",
+          "example": "True",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
