@@ -30,10 +30,10 @@ def login_command_entrypoint(args, parsed_globals):
     if not profile:
         profile = "default"
 
-    login(profile, language)
+    login(profile, language, args)
 
 
-def login(profile, language):
+def login(profile, language, args):
     cred_path = sso.cred_path_of_profile(profile)
     auth_url = ""
     if os.path.exists(cred_path):
@@ -89,7 +89,7 @@ def login(profile, language):
     role_arn = "qcs::cam::uin/%s:roleName/TencentCloudSSO-%s" % (account["Uin"], role["RoleConfigurationName"])
     principal_arn = "qcs::cam::uin/%s:saml-provider/TencentReservedSSO-%s" % (account["Uin"], token_info["ZoneId"])
     cred = sso.assume_role_with_saml(
-        saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), 7200, site)
+        saml_resp["SAMLResponse"], principal_arn, role_arn, "ses-%s" % uuid.uuid4(), args.get("duration", 7200), site)
 
     sso_info = {
         "token": login_token,
