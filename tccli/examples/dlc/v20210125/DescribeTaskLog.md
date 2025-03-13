@@ -6,34 +6,22 @@ Input:
 
 ```
 tccli dlc DescribeTaskLog --cli-unfold-argument  \
-    --TaskId abc \
-    --StartTime 0 \
-    --EndTime 0 \
-    --Limit 0 \
-    --Context abc \
-    --Asc True \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
-    --BatchId abc
+    --TaskId 84f55bb7-4f9c-4995-90c5-a40fdff9bc62 \
+    --StartTime 1736931692631 \
+    --EndTime 1737104492631 \
+    --Limit 10 \
+    --Context 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Context": "abc",
+        "Context": "",
         "ListOver": true,
-        "Results": [
-            {
-                "Time": 0,
-                "TopicId": "abc",
-                "TopicName": "abc",
-                "LogJson": "abc",
-                "PkgLogId": "abc"
-            }
-        ],
-        "LogUrl": "abc",
-        "RequestId": "abc"
+        "LogUrl": "",
+        "RequestId": "********-****-****-****-303d24983adb",
+        "Results": []
     }
 }
 ```

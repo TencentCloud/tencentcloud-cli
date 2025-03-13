@@ -398,43 +398,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "竞拍人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞拍人",
           "example": "ten***t.com",
           "member": "string",
           "name": "Bidder",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞拍时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞拍时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "AuctionTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞拍价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞拍价格",
           "example": "100.00",
           "member": "float",
           "name": "AuctionPrice",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态 up: 领先 down: 落后\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态 up: 领先 down: 落后",
           "example": "up",
           "member": "string",
           "name": "Status",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -658,73 +658,73 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "business_id",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预定价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预定价格",
           "example": "127",
           "member": "uint64",
           "name": "AppointPrice",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预约保证金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预约保证金",
           "example": "85",
           "member": "uint64",
           "name": "AppointBondPrice",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预约结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预约结束时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "AppointEndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预约人数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预约人数",
           "example": "1",
           "member": "uint64",
           "name": "AppointNum",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -790,103 +790,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "business_id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "business_id",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessID",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前价格",
           "example": "100",
           "member": "uint64",
           "name": "CurrentPrice",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前用户昵称",
           "example": "ten**nt",
           "member": "string",
           "name": "CurrentNickname",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "我的出价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "我的出价",
           "example": "50",
           "member": "uint64",
           "name": "BiddingPrice",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞价保证金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价保证金",
           "example": "50",
           "member": "uint64",
           "name": "BiddingBondPrice",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞价结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价结束时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingEndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞价标识，1 领先，2 落后\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价标识，1 领先，2 落后",
           "example": "1",
           "member": "uint64",
           "name": "BiddingFlag",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出价次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出价次数",
           "example": "2",
           "member": "uint64",
           "name": "BiddingNum",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "2 竞价中  3 等待出价 4 竞价失败 10 竞价持有者赎回",
           "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -896,13 +896,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "支付结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支付结束时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "PayEndTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3204,13 +3204,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "总数",
           "example": "50",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3514,13 +3514,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数量",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4024,7 +4024,7 @@
           "example": "domain-12345",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4034,7 +4034,7 @@
           "example": "test.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4044,7 +4044,7 @@
           "example": "InAudit",
           "member": "string",
           "name": "RealNameAuditStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4054,7 +4054,7 @@
           "example": "证件照片不清晰",
           "member": "string",
           "name": "RealNameAuditUnpassReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4064,7 +4064,7 @@
           "example": "Pending",
           "member": "string",
           "name": "DomainNameAuditStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4074,7 +4074,7 @@
           "example": "域名包含非法字符",
           "member": "string",
           "name": "DomainNameAuditUnpassReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4084,7 +4084,7 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "CreationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4094,7 +4094,7 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "ExpirationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4104,7 +4104,7 @@
           "example": "ok",
           "member": "string",
           "name": "DomainStatus",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4114,7 +4114,7 @@
           "example": "ok",
           "member": "string",
           "name": "BuyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4124,7 +4124,7 @@
           "example": "epp",
           "member": "string",
           "name": "RegistrarType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4134,7 +4134,7 @@
           "example": "[\"new.dnspod.net\", \"oat.dnspod.net\"]",
           "member": "string",
           "name": "NameServer",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4144,7 +4144,7 @@
           "example": "false",
           "member": "bool",
           "name": "LockTransfer",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4154,7 +4154,7 @@
           "example": "2021-08-31 18:17:32",
           "member": "string",
           "name": "LockEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4206,13 +4206,13 @@
         },
         {
           "disabled": false,
-          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "失败原因",
           "example": "域名正在转出中，不可编辑",
           "member": "string",
           "name": "Reason",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4236,13 +4236,13 @@
         },
         {
           "disabled": false,
-          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单号",
           "example": "1",
           "member": "string",
           "name": "BigDealId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4428,7 +4428,7 @@
           "example": "domain-12345",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4438,7 +4438,7 @@
           "example": "test.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4448,19 +4448,19 @@
           "example": "InAudit",
           "member": "string",
           "name": "RealNameAuditStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名实名认证不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名实名认证不通过原因。",
           "example": "证件照片不清晰",
           "member": "string",
           "name": "RealNameAuditUnpassReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4468,19 +4468,19 @@
           "example": "Pending",
           "member": "string",
           "name": "DomainNameAuditStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名命名审核不通过原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名命名审核不通过原因。",
           "example": "域名包含非法字符",
           "member": "string",
           "name": "DomainNameAuditUnpassReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4488,7 +4488,7 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "CreationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4498,7 +4498,7 @@
           "example": "2020-01-01",
           "member": "string",
           "name": "ExpirationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4508,7 +4508,7 @@
           "example": "ok",
           "member": "string",
           "name": "DomainStatus",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4518,7 +4518,7 @@
           "example": "ok",
           "member": "string",
           "name": "BuyStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4528,7 +4528,7 @@
           "example": "epp",
           "member": "string",
           "name": "RegistrarType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4538,7 +4538,7 @@
           "example": "[\"new.dnspod.net\", \"oat.dnspod.net\"]",
           "member": "string",
           "name": "NameServer",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4548,7 +4548,7 @@
           "example": "false",
           "member": "bool",
           "name": "LockTransfer",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4558,7 +4558,7 @@
           "example": "2021-08-31 18:17:32",
           "member": "string",
           "name": "LockEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4568,7 +4568,7 @@
           "example": "I",
           "member": "string",
           "name": "RegistrantType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4578,7 +4578,7 @@
           "example": "张三",
           "member": "string",
           "name": "OrganizationNameCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4588,7 +4588,7 @@
           "example": "zhangsan",
           "member": "string",
           "name": "OrganizationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4598,7 +4598,7 @@
           "example": "张三",
           "member": "string",
           "name": "RegistrantNameCN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4608,7 +4608,7 @@
           "example": "zhangsan",
           "member": "string",
           "name": "RegistrantName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -4620,25 +4620,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预约失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预约失败原因",
           "example": "当前已经提交预约信息,请勿重复提交",
           "member": "string",
           "name": "FailReason",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4969,63 +4969,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "竞价倒计时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价倒计时",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "BiddingTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出价次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出价次数",
           "example": "20",
           "member": "int64",
           "name": "BidCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前价格",
           "example": "1200.00",
           "member": "float",
           "name": "Price",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户操作 bid：出价 \"noAction\"：无法操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户操作 bid：出价 \"noAction\"：无法操作",
           "example": "bid",
           "member": "string",
           "name": "Op",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务ID",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5035,103 +5035,103 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预订倒计时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预订倒计时",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ReservationTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名注册时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "域名删除时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名删除时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "DelTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前人数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前人数",
           "example": "20",
           "member": "int64",
           "name": "CurrentPeople",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前价格",
           "example": "1200.00",
           "member": "float",
           "name": "Price",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否收藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否收藏",
           "example": "true",
           "member": "bool",
           "name": "IsFollow",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否已经预约\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否已经预约",
           "example": "true",
           "member": "bool",
           "name": "IsAppoint",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务ID",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否为原持有者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为原持有者",
           "example": "false",
           "member": "bool",
           "name": "IsDomainUser",
           "output_required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5197,43 +5197,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "最高价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最高价格",
           "example": "1000.00",
           "member": "float",
           "name": "MaxPrice",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "最低价格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最低价格",
           "example": "100.00",
           "member": "float",
           "name": "MinPrice",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "价格幅度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "价格幅度",
           "example": "10.00",
           "member": "float",
           "name": "Price",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "保证金\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "保证金",
           "example": "50.00",
           "member": "float",
           "name": "DepositPrice",
           "output_required": true,
           "type": "float",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5343,43 +5343,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户",
           "example": "r***cent@.com",
           "member": "string",
           "name": "User",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出价",
           "example": "100.00",
           "member": "int64",
           "name": "Price",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "出价时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出价时间",
           "example": "15:04:05",
           "member": "string",
           "name": "BidTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前状态",
           "example": "down",
           "member": "string",
           "name": "BidStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5475,63 +5475,63 @@
         },
         {
           "disabled": false,
-          "document": "域名预定失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名预定失败原因",
           "example": "当前已经提交预约信息,请勿重复提交",
           "member": "string",
           "name": "FailReason",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预计变更所有权时间（仅用于参考，实际时间会存在误差）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "预计变更所有权时间（仅用于参考，实际时间会存在误差）",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ChangeOwnerTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "注册时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "注册时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "RegTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "到期时间",
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源ID，用于删除资源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源ID，用于删除资源信息",
           "example": "R0011706772888979211",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务ID",
           "example": "R0011708628496445392",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5697,23 +5697,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "域名",
           "example": "tencent.com",
           "member": "string",
           "name": "Domain",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务ID",
           "example": "P0011702977661022561",
           "member": "string",
           "name": "BusinessId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -2419,7 +2419,7 @@
         {
           "disabled": false,
           "document": "错误流程说明信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"\"",
+          "example": "error",
           "member": "string",
           "name": "FlowMsg",
           "output_required": true,
@@ -2479,7 +2479,7 @@
         {
           "disabled": false,
           "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "error",
           "member": "string",
           "name": "ClsTopicId",
           "output_required": true,
@@ -2489,7 +2489,7 @@
         {
           "disabled": false,
           "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "error",
           "member": "string",
           "name": "ClsLogSetId",
           "output_required": true,
@@ -2639,7 +2639,7 @@
         {
           "disabled": false,
           "document": "服务信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"error\"]",
           "member": "ServiceInfo",
           "name": "Components",
           "output_required": true,
@@ -2649,7 +2649,7 @@
         {
           "disabled": false,
           "document": "可升级的内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "error",
           "member": "string",
           "name": "UpgradeVersions",
           "output_required": true,
@@ -2755,6 +2755,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网clb",
+          "example": "true",
+          "member": "bool",
+          "name": "HasPublicCloudClb",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3975,7 +3985,7 @@
           "example": "123",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3985,17 +3995,17 @@
           "example": "cdwch-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "InvalidParameter",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

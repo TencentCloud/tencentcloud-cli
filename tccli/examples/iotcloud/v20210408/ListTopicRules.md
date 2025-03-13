@@ -20,11 +20,11 @@ Output:
                 "RuleName": "rule2",
                 "CreatedAt": 1524455688,
                 "RuleDisabled": false,
-                "Description": "test2",
+                "Description": "mydescription1",
                 "TopicPattern": ""
             },
             {
-                "RuleName": "test",
+                "RuleName": "rule1",
                 "CreatedAt": 1524192248,
                 "RuleDisabled": false,
                 "Description": "Describe",

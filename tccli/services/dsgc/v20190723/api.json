@@ -5763,7 +5763,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据源类型",
           "example": "cdb",
           "member": "string",
@@ -5772,7 +5772,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据源ID",
           "example": "cos-xxx",
           "member": "string",

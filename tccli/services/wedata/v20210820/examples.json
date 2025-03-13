@@ -2068,6 +2068,14 @@
         "title": "触发事件"
       }
     ],
+    "TriggerManualTasks": [
+      {
+        "document": "手动任务触发运行",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerManualTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1464962169590902784\",\n    \"TriggerName\": \"test_name\",\n    \"TriggerScope\": \"ENTIRE_WORKFLOW\",\n    \"DataTimeList\": [\n        \"2025-01-14 00:00:00\",\n        \"2025-01-14 01:00:00\"\n    ],\n    \"WorkflowId\": \"d4d7e9a7-0649-4410-a2ae-89818043c58a\",\n    \"Remark\": \"\",\n    \"TaskIds\": [],\n    \"SchedulerResourceGroup\": \"20240703113703331017\",\n    \"IntegrationResourceGroup\": \"\",\n    \"ExecOrder\": \"RAND\",\n    \"CustomParams\": [\n        {\n            \"K\": \"param1\",\n            \"V\": \"10\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateTime\": \"2025-01-14T17:42:37.069\",\n            \"DatetimeList\": [\n                \"2025-01-14 00:00:00\",\n                \"2025-01-14 01:00:00\"\n            ],\n            \"FinishedInstanceCnt\": null,\n            \"InstanceCnt\": null,\n            \"OwnerUin\": \"100028448903\",\n            \"ProjectId\": \"1464962169590902784\",\n            \"Remark\": \"\",\n            \"Status\": \"INIT\",\n            \"SuccessInstanceCnt\": null,\n            \"TaskCnt\": null,\n            \"TenantId\": \"1315051789\",\n            \"TriggerId\": \"9a350a12-40bd-4610-9d9e-445ee8730d6e\",\n            \"TriggerName\": \"test_name\",\n            \"TriggerParams\": \"{\\\"ProjectId\\\":\\\"1464962169590902784\\\",\\\"TriggerName\\\":\\\"test_name\\\",\\\"Remark\\\":\\\"\\\",\\\"TriggerScope\\\":\\\"ENTIRE_WORKFLOW\\\",\\\"WorkflowId\\\":\\\"d4d7e9a7-0649-4410-a2ae-89818043c58a\\\",\\\"TaskIds\\\":[\\\"20241223224113778\\\",\\\"20241224171752455\\\",\\\"20241223224056125\\\"],\\\"DataTimeList\\\":[\\\"2025-01-14 00:00:00\\\",\\\"2025-01-14 01:00:00\\\"],\\\"SchedulerResourceGroup\\\":\\\"20240703113703331017\\\",\\\"IntegrationResourceGroup\\\":\\\"\\\",\\\"ExecOrder\\\":\\\"RAND\\\",\\\"CustomParams\\\":[{\\\"K\\\":\\\"param1\\\",\\\"V\\\":\\\"10\\\"}],\\\"ExtraParams\\\":null}\",\n            \"UserName\": \"wenjieyao\",\n            \"UserUin\": \"100028579606\"\n        },\n        \"RequestId\": \"da12b6d9-fd32-4b3e-8716-5085722e06e5\"\n    }\n}",
+        "title": "手动任务触发运行"
+      }
+    ],
     "UnlockIntegrationTask": [
       {
         "document": "",

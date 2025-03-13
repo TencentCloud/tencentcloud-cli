@@ -511,8 +511,8 @@
     "DescribeVideoBitRate": [
       {
         "document": "正常响应",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoBitRate\n<公共请求参数>\n\n{\n    \"ChannelIds\": [\n        \"ffefbe2f-a5a2-4659-a56f-7596a0e13900\",\n        \"ffd25236-a057-4c30-a3dc-91b1aee8cbc0\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BitRates\": [\n                {\n                    \"ChannelId\": \"ffefbe2f-a5a2-4659-a56f-7596a0e13900\",\n                    \"Bitrate\": 15.23\n                },\n                {\n                    \"ChannelId\": \"ffd25236-a057-4c30-a3dc-91b1aee8cbc0\",\n                    \"Bitrate\": 3.23\n                }\n            ]\n        },\n        \"RequestId\": \"e4a15dcd-b66b-4804-a4b0-2187ac35fe1d\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoBitRate\n<公共请求参数>\n\n{\n    \"ChannelIds\": [\n        \"ffefbe2f-****-4659-****-7596****3900\",\n        \"ffd2****-a057-****-a3dc-91b1****cbc0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BitRates\": [\n                {\n                    \"ChannelId\": \"ffefbe2f-****-4659-****-7596****3900\",\n                    \"Bitrate\": 15.23\n                },\n                {\n                    \"ChannelId\": \"ffd2****-a057-****-a3dc-91b1****cbc0\",\n                    \"Bitrate\": 3.23\n                }\n            ]\n        },\n        \"RequestId\": \"e4a15dcd-****-4804-****-2187ac35fe1d\"\n    }\n}",
         "title": "视频通道码率信息返回结果"
       }
     ],

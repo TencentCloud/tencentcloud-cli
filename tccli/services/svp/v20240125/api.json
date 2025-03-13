@@ -7,6 +7,13 @@
       "output": "CreateSavingPlanOrderResponse",
       "status": "online"
     },
+    "DescribeSavingPlanCoverage": {
+      "document": "查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。",
+      "input": "DescribeSavingPlanCoverageRequest",
+      "name": "查询节省计划覆盖率数据",
+      "output": "DescribeSavingPlanCoverageResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanDeduct": {
       "document": "查询节省计划抵扣明细",
       "input": "DescribeSavingPlanDeductRequest",
@@ -134,6 +141,99 @@
           "name": "BigDealId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSavingPlanCoverageRequest": {
+      "document": "DescribeSavingPlanCoverage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "费用起始日期，格式yyyy-MM-dd",
+          "example": "2023-06-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "费用结束日期，格式yyyy-MM-dd",
+          "example": "2023-06-30",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，以此类推",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量，最大值为200",
+          "example": "200",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "取值包括1（缺省值）和2，1表示按天统计覆盖率，2表示按月统计覆盖率，此参数仅影响返回的RateSet聚合粒度，不影响返回的DetailSet",
+          "example": "1",
+          "member": "uint64",
+          "name": "PeriodType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSavingPlanCoverageResponse": {
+      "document": "DescribeSavingPlanCoverage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节省计划覆盖率明细数据",
+          "example": "无",
+          "member": "SavingPlanCoverageDetail",
+          "name": "DetailSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节省计划覆盖率聚合数据",
+          "example": "无",
+          "member": "SavingPlanCoverageRate",
+          "name": "RateSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询命中的节省计划覆盖率明细数据总条数",
+          "example": "1000",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -438,6 +538,225 @@
         }
       ],
       "type": "object"
+    },
+    "SavingPlanCoverageDetail": {
+      "document": "节省计划覆盖率数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID",
+          "example": "disk-3t7fhog0",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "p_cynosdb",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码",
+          "example": "sp_cynosdb_mysql",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "费用起始日期，格式yyyy-MM-dd",
+          "example": "2023-06-01",
+          "member": "string",
+          "name": "StartDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "费用结束日期，格式yyyy-MM-dd，目前与StartDate相等",
+          "example": "2023-06-01",
+          "member": "string",
+          "name": "EndDate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节省计划覆盖金额（即节省计划支付金额）",
+          "example": "1.0",
+          "member": "float",
+          "name": "SpCoveredAmount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节省计划未覆盖金额（即优惠后总价）",
+          "example": "2.0",
+          "member": "float",
+          "name": "SpUncoveredAmount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）",
+          "example": "3.0",
+          "member": "float",
+          "name": "TotalRealAmount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "按量计费预期金额（即折前价 * 折扣）",
+          "example": "3.0",
+          "member": "float",
+          "name": "ExpectedAmount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "覆盖率结果，取值[0, 100]",
+          "example": "30.0",
+          "member": "float",
+          "name": "SpCoverage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付者昵称",
+          "example": "腾讯",
+          "member": "string",
+          "name": "PayerUinName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用者昵称",
+          "example": "腾讯",
+          "member": "string",
+          "name": "OwnerUinName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付者uin",
+          "example": "9091",
+          "member": "string",
+          "name": "PayerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项名称",
+          "example": "存储",
+          "member": "string",
+          "name": "SubBillingItemName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费细项名称",
+          "example": "cynosdb_存储_mysql\t",
+          "member": "string",
+          "name": "BillingItemName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称",
+          "example": "TDSQL-C MySQL版",
+          "member": "string",
+          "name": "SubProductName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SavingPlanCoverageRate": {
+      "document": "节省计划覆盖率聚合数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "聚合时间维度，按天聚合格式为yyyy-MM-dd，按月聚合格式为yyyy-MM",
+          "example": "2023-06-01",
+          "member": "string",
+          "name": "DatePoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "覆盖率结果，取值[0, 100]",
+          "example": "10.0",
+          "member": "float",
+          "name": "Rate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SavingPlanDeductDetail": {
       "document": "节省计划抵扣明细",

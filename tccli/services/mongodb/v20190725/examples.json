@@ -128,6 +128,20 @@
         "title": "查询订单详情"
       }
     ],
+    "DescribeDBInstanceNamespace": [
+      {
+        "document": "输入参数 DbName 为空时，查看当前实例全部数据库列表。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceNamespace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qny2****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Databases\": [\n            \"demo_db7\",\n            \"demo_db8\",\n            \"demo_db9\"\n        ],\n        \"RequestId\": \"18cfe2bf-6934-4f17-a089-8d2e5d6cfc53\"\n    }\n}",
+        "title": "查询当前实例的DB列表。"
+      },
+      {
+        "document": "指定 DbName，查询该数据库下的所有集合信息。",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceNamespace\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-qny2****\",\n    \"DbName\": \"demo_db0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Collections\": [\n            \"col148\",\n            \"col108\",\n            \"col120\"\n        ],\n        \"RequestId\": \"21b503b5-6606-4efb-b250-63071c2fe565\"\n    }\n}",
+        "title": "查询指定 DB 下的所有集合"
+      }
+    ],
     "DescribeDBInstanceNodeProperty": [
       {
         "document": "查询实例节点详细属性",

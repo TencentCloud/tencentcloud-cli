@@ -8,15 +8,15 @@ Input:
 tccli monitor UpdateGrafanaNotificationChannel --cli-unfold-argument  \
     --InstanceId grafana-12345678 \
     --ChannelId nchannel-abcd1234 \
-    --ChannelName test \
-    --Receivers abc
+    --ChannelName test-channel \
+    --Receivers test-Receivers
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "e3adaaf0-7266-4949-be41-bed713136876"
     }
 }
 ```

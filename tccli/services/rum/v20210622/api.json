@@ -7080,13 +7080,13 @@
         },
         {
           "disabled": false,
-          "document": "kafka旁路配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "kafka旁路配置信息",
           "example": "Kafka",
           "member": "Kafka",
           "name": "Kafka",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

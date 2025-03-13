@@ -176,6 +176,14 @@
         "title": "示例1"
       }
     ],
+    "DeleteWhiteBoardSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWhiteBoardSnapshot\n<公共请求参数>\n\n{\n    \"RoomId\": 353530000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"611a885e-8299-4cc5-b1d1-1ea75f50c6b7\"\n    }\n}",
+        "title": "删除板书截图"
+      }
+    ],
     "DescribeAnswerList": [
       {
         "document": "示例",
@@ -374,6 +382,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"2kJJBH6G1dfBFUJqXLh0Mg3ELLk\"\n}",
         "output": "{\n    \"Response\": {\n        \"SdkAppId\": 1,\n        \"UserId\": \"2kJJBH6G1dfBFUJqXLh0Mg3ELLk\",\n        \"Name\": \"zhagnsan\",\n        \"Avatar\": \"https://xxx.com/cat.jpg\",\n        \"OriginId\": \"hello-moto\",\n        \"RequestId\": \"2a117d109a0c533e5ecd37fc221ba7f7\"\n    }\n}",
         "title": "获取用户信息"
+      }
+    ],
+    "DescribeWhiteBoardSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWhiteBoardSnapshot\n<公共请求参数>\n\n{\n    \"RoomId\": 345740000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2fbab292-694c-437c-9182-5f9af464ebb0\",\n        \"Result\": [\n            \"https://example.cos.ap-shanghai.myqcloud.com/snapshot1.png\",\n            \"https://example.cos.ap-shanghai.myqcloud.com/snapshot2.png\",\n            \"https://example.cos.ap-shanghai.myqcloud.com/snapshot3.png\",\n            \"https://example.cos.ap-shanghai.myqcloud.com/snapshot4.png\",\n            \"https://example.cos.ap-shanghai.myqcloud.com/snapshot5.png\"\n        ],\n        \"Status\": 3,\n        \"Total\": 5,\n        \"WhiteBoardSnapshotMode\": 1\n    }\n}",
+        "title": "查询白板板书截图"
       }
     ],
     "EndRoom": [

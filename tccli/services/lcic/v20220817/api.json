@@ -154,6 +154,13 @@
       "output": "DeleteUserResponse",
       "status": "online"
     },
+    "DeleteWhiteBoardSnapshot": {
+      "document": "删除白板板书截图",
+      "input": "DeleteWhiteBoardSnapshotRequest",
+      "name": "删除板书截图",
+      "output": "DeleteWhiteBoardSnapshotResponse",
+      "status": "online"
+    },
     "DescribeAnswerList": {
       "document": "获取房间答题详情",
       "input": "DescribeAnswerListRequest",
@@ -306,6 +313,13 @@
       "input": "DescribeUserRequest",
       "name": "获取用户信息",
       "output": "DescribeUserResponse",
+      "status": "online"
+    },
+    "DescribeWhiteBoardSnapshot": {
+      "document": "查询白板板书截图",
+      "input": "DescribeWhiteBoardSnapshotRequest",
+      "name": "获取板书截图",
+      "output": "DescribeWhiteBoardSnapshotResponse",
       "status": "online"
     },
     "EndRoom": {
@@ -2290,6 +2304,33 @@
     },
     "DeleteUserResponse": {
       "document": "DeleteUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWhiteBoardSnapshotRequest": {
+      "document": "DeleteWhiteBoardSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWhiteBoardSnapshotResponse": {
+      "document": "DeleteWhiteBoardSnapshot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4398,6 +4439,73 @@
           "name": "OriginId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhiteBoardSnapshotRequest": {
+      "document": "DescribeWhiteBoardSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间ID",
+          "example": "301234567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWhiteBoardSnapshotResponse": {
+      "document": "DescribeWhiteBoardSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "WhiteBoardSnapshotMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "板书任务状态，0：未开始，1：进行中，2：失败，3：成功，4：已删除",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "板书截图链接",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "3",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

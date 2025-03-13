@@ -8,14 +8,6 @@
         "title": "成功激活示例"
       }
     ],
-    "AssignTWeCallLicense": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssignTWeCallLicense\n<公共请求参数>\n\n{\n    \"PkgType\": 1,\n    \"MiniProgramAppId\": \"abc\",\n    \"DeductNum\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "分配成功"
-      }
-    ],
     "BindCloudStorageUser": [
       {
         "document": "",
@@ -984,14 +976,6 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallActiveStatus\n<公共请求参数>\n\n{\n    \"MiniProgramAppId\": \"abc\",\n    \"DeviceList\": [\n        {\n            \"ModelId\": \"1qaz\",\n            \"Sn\": \"p/d\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"TWeCallActiveInfos\": [\n            {\n                \"ModelId\": \"1qaz\",\n                \"Sn\": \"p/d\",\n                \"ExpireTime\": 45674345567\n            }\n        ]\n    }\n}",
         "title": "成功获取激活状态"
-      }
-    ],
-    "GetTWeCallPkgList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallPkgList\n<公共请求参数>\n\n{\n    \"MiniProgramAppId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\",\n        \"Total\": 1,\n        \"TWeCallPkgList\": [\n            {\n                \"PkgId\": \"1qaz\",\n                \"PkgType\": 1,\n                \"CreateTime\": 45674345567,\n                \"ExpireTime\": 45674345567,\n                \"LicenseTotalNum\": 1,\n                \"LicenseUsedNum\": 1\n            }\n        ]\n    }\n}",
-        "title": "成功查询示例"
       }
     ],
     "GetTopicRuleList": [

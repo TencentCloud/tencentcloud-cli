@@ -177,8 +177,8 @@
     "DescribeDeviceShadow": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceShadow\n&ProductId=ABCDE12345\n&DeviceName=abc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"reported\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"reported\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"get\\\"}\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeDeviceShadow\n&ProductId=EQPOKD5111\n&DeviceName=dev-001\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"{\\\"payload\\\":{\\\"state\\\": {\\\"reported\\\": { \\\"color\\\": \\\"red\\\"}}, \\\"metadata\\\": {\\\"reported\\\": {\\\"color\\\": {\\\"timestamp\\\": 1509092895971}}}, \\\"timestamp\\\": 1509443636326, \\\"version\\\": 5},\\\"result\\\":0,\\\"timestamp\\\":1509440846582,\\\"type\\\":\\\"get\\\"}\",\n        \"RequestId\": \"54f75f05-a87c-45fc-9520-6b59e251e91c\"\n    }\n}",
         "title": "获取设备影子"
       }
     ],
@@ -337,8 +337,8 @@
     "DescribeResourceTasks": [
       {
         "document": "",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeResourceTasks\n&ProductID=ABCDE12345\n&Name=test\n&Offset=1\n&Limit=5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Total\": 53,\n        \"TaskInfos\": [\n            {\n                \"TaskId\": 1000175,\n                \"Status\": 3,\n                \"CreateTime\": 1589466879,\n                \"Type\": 1\n            },\n            {\n                \"TaskId\": 1000176,\n                \"Status\": 3,\n                \"CreateTime\": 1589467049,\n                \"Type\": 1\n            },\n            {\n                \"Status\": 3,\n                \"CreateTime\": 1589467138,\n                \"Type\": 1,\n                \"TaskId\": 1000179\n            },\n            {\n                \"TaskId\": 1000180,\n                \"Status\": 3,\n                \"CreateTime\": 1589467139,\n                \"Type\": 1\n            },\n            {\n                \"Type\": 1,\n                \"TaskId\": 1000182,\n                \"Status\": 3,\n                \"CreateTime\": 1589467141\n            }\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=DescribeResourceTasks\n&ProductID= EQPOKD5111\n&Name=dev-001\n&Offset=1\n&Limit=5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 53,\n        \"TaskInfos\": [\n            {\n                \"TaskId\": 1000175,\n                \"Status\": 3,\n                \"CreateTime\": 1589466879,\n                \"Type\": 1\n            },\n            {\n                \"TaskId\": 1000176,\n                \"Status\": 3,\n                \"CreateTime\": 1589467049,\n                \"Type\": 1\n            },\n            {\n                \"Status\": 3,\n                \"CreateTime\": 1589467138,\n                \"Type\": 1,\n                \"TaskId\": 1000179\n            },\n            {\n                \"TaskId\": 1000180,\n                \"Status\": 3,\n                \"CreateTime\": 1589467139,\n                \"Type\": 1\n            },\n            {\n                \"Type\": 1,\n                \"TaskId\": 1000182,\n                \"Status\": 3,\n                \"CreateTime\": 1589467141\n            }\n        ],\n        \"RequestId\": \"ebea2fd8-0b8f-44b3-99ab-1b04fcfb6cbd\"\n    }\n}",
         "title": "查询资源推送任务列表"
       }
     ],
@@ -425,7 +425,7 @@
     "ListSDKLog": [
       {
         "document": "查询设备SDK日志",
-        "input": "https://iotcloud.tencentcloudapi.com/?Action=ListSDKLog\n&Keywords=productid:xxxxxxx\n&MinTime=1606205400000\n&MaxTime=1606209059999\n&<公共请求参数>",
+        "input": "https://iotcloud.tencentcloudapi.com/?Action=ListSDKLog\n&Keywords=productid: UTY5QRLMQY\n&MinTime=1606205400000\n&MaxTime=1606209059999\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Context\": \"DXF1ZXJ5QW5kRmV0Y2gBAAAAAAD1JVkWTEk5MHpyTVRTQ3lqa0tVbUtNVm9sZw==\",\n        \"Listover\": true,\n        \"RequestId\": \"1641d33e-df97-43d4-8cf1-21ba85533336\",\n        \"Results\": []\n    }\n}",
         "title": "查询设备SDK日志"
       }
@@ -434,7 +434,7 @@
       {
         "document": "",
         "input": "https://iotcloud.tencentcloudapi.com/?Action=ListTopicRules\n&PageNum=1\n&PageSize=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCnt\": 2,\n        \"Rules\": [\n            {\n                \"RuleName\": \"rule2\",\n                \"CreatedAt\": 1524455688,\n                \"RuleDisabled\": false,\n                \"Description\": \"test2\",\n                \"TopicPattern\": \"\"\n            },\n            {\n                \"RuleName\": \"test\",\n                \"CreatedAt\": 1524192248,\n                \"RuleDisabled\": false,\n                \"Description\": \"Describe\",\n                \"TopicPattern\": \"gstasg\"\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCnt\": 2,\n        \"Rules\": [\n            {\n                \"RuleName\": \"rule2\",\n                \"CreatedAt\": 1524455688,\n                \"RuleDisabled\": false,\n                \"Description\": \"mydescription1\",\n                \"TopicPattern\": \"\"\n            },\n            {\n                \"RuleName\": \"rule1\",\n                \"CreatedAt\": 1524192248,\n                \"RuleDisabled\": false,\n                \"Description\": \"Describe\",\n                \"TopicPattern\": \"gstasg\"\n            }\n        ],\n        \"RequestId\": \"be69a7a3-7315-40a7-9532-3316e4a3e97e\"\n    }\n}",
         "title": "获取规则列表示例"
       }
     ],

@@ -868,6 +868,13 @@
       "output": "DescribeMicroservicesResponse",
       "status": "online"
     },
+    "DescribeMicroservicesByGroupIds": {
+      "document": "通过部署组ID获取微服务",
+      "input": "DescribeMicroservicesByGroupIdsRequest",
+      "name": "通过部署组ID获取微服务",
+      "output": "DescribeMicroservicesByGroupIdsResponse",
+      "status": "online"
+    },
     "DescribeMsApiList": {
       "document": "查询服务API列表",
       "input": "DescribeMsApiListRequest",
@@ -7159,8 +7166,8 @@
         },
         {
           "disabled": false,
-          "document": "编程语言;\nJ - JAVA；\nC - C/C++；\nP - Python；\nG - Go；\nO - Other；",
-          "example": "J",
+          "document": "编程语言:  Java；C/C++；Python；Go；Other",
+          "example": "Java",
           "member": "string",
           "name": "ProgramLanguage",
           "required": false,
@@ -15464,6 +15471,43 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMicroservicesByGroupIdsRequest": {
+      "document": "DescribeMicroservicesByGroupIds请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署组ID列表",
+          "example": "[\"group-6a7eb39y\",\"group-nalb5dwv\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMicroservicesByGroupIdsResponse": {
+      "document": "DescribeMicroservicesByGroupIds返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "微服务信息分页列表",
+          "example": "{\"Content\":[{\"GroupIds\":[\"group-nalb5dwv\"],\"MicroserviceId\":\"ms-id\",\"MicroserviceName\":\"ms-name\",\"NamespaceId\":\"namespace-id\",\"NamespaceName\":\"ns_default\",\"RunInstanceCount\":1}],\"TotalCount\":1}",
+          "member": "TsfPageMicroservice",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -26929,8 +26973,8 @@
         },
         {
           "disabled": false,
-          "document": "服务治理类型",
-          "example": "share",
+          "document": "服务治理类型（枚举：SHARE、EXCLUSIVE）",
+          "example": "SHARE",
           "member": "string",
           "name": "GovernanceType",
           "output_required": false,

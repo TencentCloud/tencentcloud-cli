@@ -17,56 +17,58 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 10,
         "Histories": [
             {
-                "AlarmId": "abc",
-                "MonitorType": "abc",
-                "Namespace": "abc",
-                "AlarmObject": "abc",
-                "Content": "abc",
-                "FirstOccurTime": 0,
-                "LastOccurTime": 0,
-                "AlarmStatus": "abc",
-                "PolicyId": "abc",
-                "PolicyName": "abc",
-                "VPC": "abc",
-                "ProjectId": 0,
-                "ProjectName": "abc",
+                "AlarmId": "23456789-12ab-45cd-8ef0-123456789",
+                "MonitorType": "cvm",
+                "Namespace": "cvm_device",
+                "AlarmObject": "ins-123456",
+                "Content": "实例 ins-123456 CPU 使用率过高",
+                "FirstOccurTime": 1672531200,
+                "LastOccurTime": 1672534800,
+                "AlarmStatus": "2",
+                "PolicyId": "policy-123456",
+                "PolicyName": "云服务器 CPU 使用率告警策略",
+                "VPC": "vpc-123456",
+                "ProjectId": 12345,
+                "ProjectName": "项目 A",
                 "InstanceGroup": [
                     {
-                        "Id": 0,
-                        "Name": "abc"
+                        "Id": 1,
+                        "Name": "生产环境实例组"
                     }
                 ],
                 "ReceiverUids": [
-                    0
+                    1001,
+                    1002
                 ],
                 "ReceiverGroups": [
-                    0
+                    2001
                 ],
                 "NoticeWays": [
-                    "abc"
+                    "sms",
+                    "email"
                 ],
-                "OriginId": "abc",
-                "AlarmType": "abc",
-                "EventId": 0,
-                "Region": "abc",
-                "PolicyExists": 0,
+                "OriginId": "1234567890",
+                "AlarmType": "metric_alarm",
+                "EventId": 123456,
+                "Region": "ap-guangzhou",
+                "PolicyExists": 1,
                 "MetricsInfo": [
                     {
-                        "QceNamespace": "abc",
-                        "MetricName": "abc",
-                        "Period": 0,
-                        "Value": "abc",
-                        "Description": "abc"
+                        "QceNamespace": "qce/cvm",
+                        "MetricName": "cpu_utilization",
+                        "Period": 60,
+                        "Value": "80",
+                        "Description": "云服务器 CPU 使用率指标"
                     }
                 ],
-                "Dimensions": "abc",
-                "AlarmLevel": "abc"
+                "Dimensions": "{\"InstanceId\":\"ins-123456\"}",
+                "AlarmLevel": "high"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1234567890abcdef"
     }
 }
 ```
@@ -99,56 +101,58 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
+        "TotalCount": 10,
         "Histories": [
             {
-                "AlarmId": "abc",
-                "MonitorType": "abc",
-                "Namespace": "abc",
-                "AlarmObject": "abc",
-                "Content": "abc",
-                "FirstOccurTime": 0,
-                "LastOccurTime": 0,
-                "AlarmStatus": "abc",
-                "PolicyId": "abc",
-                "PolicyName": "abc",
-                "VPC": "abc",
-                "ProjectId": 0,
-                "ProjectName": "abc",
+                "AlarmId": "23456789-12ab-45cd-8ef0-123456789",
+                "MonitorType": "cvm",
+                "Namespace": "cvm_device",
+                "AlarmObject": "ins-123456",
+                "Content": "实例 ins-123456 CPU 使用率过高",
+                "FirstOccurTime": 1672531200,
+                "LastOccurTime": 1672534800,
+                "AlarmStatus": "2",
+                "PolicyId": "policy-123456",
+                "PolicyName": "云服务器 CPU 使用率告警策略",
+                "VPC": "vpc-123456",
+                "ProjectId": 12345,
+                "ProjectName": "项目 A",
                 "InstanceGroup": [
                     {
-                        "Id": 0,
-                        "Name": "abc"
+                        "Id": 1,
+                        "Name": "生产环境实例组"
                     }
                 ],
                 "ReceiverUids": [
-                    0
+                    1001,
+                    1002
                 ],
                 "ReceiverGroups": [
-                    0
+                    2001
                 ],
                 "NoticeWays": [
-                    "abc"
+                    "sms",
+                    "email"
                 ],
-                "OriginId": "abc",
-                "AlarmType": "abc",
-                "EventId": 0,
-                "Region": "abc",
-                "PolicyExists": 0,
+                "OriginId": "1234567890",
+                "AlarmType": "metric_alarm",
+                "EventId": 123456,
+                "Region": "ap-guangzhou",
+                "PolicyExists": 1,
                 "MetricsInfo": [
                     {
-                        "QceNamespace": "abc",
-                        "MetricName": "abc",
-                        "Period": 0,
-                        "Value": "abc",
-                        "Description": "abc"
+                        "QceNamespace": "qce/cvm",
+                        "MetricName": "cpu_utilization",
+                        "Period": 60,
+                        "Value": "80",
+                        "Description": "云服务器 CPU 使用率指标"
                     }
                 ],
-                "Dimensions": "abc",
-                "AlarmLevel": "abc"
+                "Dimensions": "{\"InstanceId\":\"ins-123456\"}",
+                "AlarmLevel": "high"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "1234567890abcdef"
     }
 }
 ```

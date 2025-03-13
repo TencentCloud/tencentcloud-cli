@@ -2426,7 +2426,7 @@
           "example": "CPU使用率",
           "member": "string",
           "name": "Description",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2437,7 +2437,7 @@
           "example": "%",
           "member": "string",
           "name": "Unit",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2459,7 +2459,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsAdvanced",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2470,7 +2470,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsOpen",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2481,7 +2481,7 @@
           "example": "cvm",
           "member": "string",
           "name": "ProductId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2492,7 +2492,7 @@
           "example": "0",
           "member": "float",
           "name": "ValueMax",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": true
@@ -2503,7 +2503,7 @@
           "example": "0",
           "member": "float",
           "name": "ValueMin",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": true
@@ -2525,7 +2525,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsLatenessMetric",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3420,7 +3420,7 @@
         {
           "disabled": false,
           "document": "触发条件模板 Id，该参数与 Condition 参数二选一。如果策略绑定触发条件模板，则传该参数；否则不传该参数，而是传 Condition 参数。触发条件模板 Id 可以从 [DescribeConditionsTemplateList](https://cloud.tencent.com/document/api/248/70250) 接口获取。",
-          "example": "无",
+          "example": "9674169",
           "member": "int64",
           "name": "ConditionTemplateId",
           "required": false,
@@ -3528,7 +3528,7 @@
         {
           "disabled": false,
           "document": "附加告警内容",
-          "example": "无",
+          "example": "1 AND 2",
           "member": "string",
           "name": "AdditionalAlarmContent",
           "required": false,
@@ -3710,7 +3710,7 @@
         {
           "disabled": false,
           "document": "屏蔽规则的描述",
-          "example": "描述",
+          "example": "实例下线，告警策略不再需要",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -4074,7 +4074,7 @@
         {
           "disabled": false,
           "document": "集成配置",
-          "example": "[]",
+          "example": "{\\\"kind\\\":\\\"tencent-cloud-kong\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-kong\\\",\\\"url\\\":\\\"http://10.0.0.0:9090/\\\",\\\"user\\\":\\\"user\\\",\\\"password\\\":\\\"password\\\",\\\"labels\\\":{\\\"label\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -4129,7 +4129,7 @@
         {
           "disabled": false,
           "document": "接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID ",
-          "example": "[]",
+          "example": "[“notice-7k7q3qzr”]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -4147,7 +4147,7 @@
         {
           "disabled": false,
           "document": "额外组织 ID 数组，已废弃，请使用 OrganizationIds",
-          "example": "[]",
+          "example": "[“out_field”]",
           "member": "string",
           "name": "ExtraOrgIds",
           "required": false,
@@ -4156,7 +4156,7 @@
         {
           "disabled": false,
           "document": "生效的所有组织 ID 数组，默认为 [\"1\"]",
-          "example": "[\"1\"]",
+          "example": "[\"111324\"]",
           "member": "string",
           "name": "OrganizationIds",
           "required": false,
@@ -4361,7 +4361,7 @@
         {
           "disabled": false,
           "document": "模板策略组Id, 通过模板创建时才需要传",
-          "example": "123",
+          "example": "15500623",
           "member": "int64",
           "name": "ConditionTempGroupId",
           "required": false,
@@ -4442,7 +4442,7 @@
           "example": "1288099",
           "member": "int64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6451,7 +6451,7 @@
         {
           "disabled": false,
           "document": "根据项目ID过滤，-1=无项目 0=默认项目\n可在此页面查询 [项目管理](https://console.cloud.tencent.com/project)",
-          "example": "无",
+          "example": "[130034]",
           "member": "int64",
           "name": "ProjectIds",
           "required": false,
@@ -6460,7 +6460,7 @@
         {
           "disabled": false,
           "document": "根据实例组ID过滤",
-          "example": "无",
+          "example": "[1217862]",
           "member": "int64",
           "name": "InstanceGroupIds",
           "required": false,
@@ -6487,7 +6487,7 @@
         {
           "disabled": false,
           "document": "根据策略名称模糊搜索,不支持大小写区分",
-          "example": "无",
+          "example": "\"系统预设通知模板\"",
           "member": "string",
           "name": "PolicyName",
           "required": false,
@@ -6496,7 +6496,7 @@
         {
           "disabled": false,
           "document": "根据告警内容模糊搜索",
-          "example": "无",
+          "example": "CPU利用率",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -6505,7 +6505,7 @@
         {
           "disabled": false,
           "document": "根据接收人搜索，可以使用“访问管理”的 [拉取子用户 ListUsers](https://cloud.tencent.com/document/product/598/34587) 接口获取用户列表 或 [查询子用户 GetUser](https://cloud.tencent.com/document/product/598/34590) 接口查询子用户详情，此处填入返回结果中的 `Uid` 字段",
-          "example": "无",
+          "example": "[11053412,16090421]",
           "member": "int64",
           "name": "ReceiverUids",
           "required": false,
@@ -6514,7 +6514,7 @@
         {
           "disabled": false,
           "document": "根据接收组搜索，可以使用“访问管理”的 [查询用户组列表 ListGroups](https://cloud.tencent.com/document/product/598/34589) 接口获取用户组列表 或 [列出用户关联的用户组 ListGroupsForUser](https://cloud.tencent.com/document/product/598/34588) 查询某个子用户所在的用户组列表 ，此处填入返回结果中的 `GroupId ` 字段",
-          "example": "无",
+          "example": "[143785,144016]",
           "member": "int64",
           "name": "ReceiverGroups",
           "required": false,
@@ -6523,7 +6523,7 @@
         {
           "disabled": false,
           "document": "根据告警策略 Id 列表搜索",
-          "example": "policy-abcedf",
+          "example": "[policy-abtvedf]",
           "member": "string",
           "name": "PolicyIds",
           "required": false,
@@ -20633,7 +20633,7 @@
         {
           "disabled": false,
           "document": "策略组id，如传入 PolicyId 则该字段被忽略可传入任意值如 0",
-          "example": "11111",
+          "example": "11106331",
           "member": "int64",
           "name": "GroupId",
           "required": true,
@@ -21120,7 +21120,7 @@
         {
           "disabled": false,
           "document": "JSON 序列化后的环境变量字符串，如 \"{\\\"key1\\\":\\\"key2\\\"}\"\n",
-          "example": "{}",
+          "example": "\"{\\\"key_1\\\":\\\"value_1\\\"}\"\t",
           "member": "string",
           "name": "Envs",
           "required": true,
@@ -21219,7 +21219,7 @@
         {
           "disabled": false,
           "document": "接受告警通道 ID 数组",
-          "example": "[]",
+          "example": "[“test-Receivers”]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -21237,7 +21237,7 @@
         {
           "disabled": false,
           "document": "已废弃，请使用 OrganizationIds",
-          "example": "[]",
+          "example": "[\"test-ExtraOrgIds\"]",
           "member": "string",
           "name": "ExtraOrgIds",
           "required": false,
@@ -21653,7 +21653,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "xxx",
+          "example": "授权该用户",
           "member": "string",
           "name": "Notes",
           "required": false,

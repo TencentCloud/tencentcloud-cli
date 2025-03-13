@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iss DescribeVideoBitRate --cli-unfold-argument  \
-    --ChannelIds ffefbe2f-a5a2-4659-a56f-7596a0e13900 ffd25236-a057-4c30-a3dc-91b1aee8cbc0
+    --ChannelIds ffefbe2f-****-4659-****-7596****3900 ffd2****-a057-****-a3dc-91b1****cbc0
 ```
 
 Output: 
@@ -16,16 +16,16 @@ Output:
         "Data": {
             "BitRates": [
                 {
-                    "ChannelId": "ffefbe2f-a5a2-4659-a56f-7596a0e13900",
+                    "ChannelId": "ffefbe2f-****-4659-****-7596****3900",
                     "Bitrate": 15.23
                 },
                 {
-                    "ChannelId": "ffd25236-a057-4c30-a3dc-91b1aee8cbc0",
+                    "ChannelId": "ffd2****-a057-****-a3dc-91b1****cbc0",
                     "Bitrate": 3.23
                 }
             ]
         },
-        "RequestId": "e4a15dcd-b66b-4804-a4b0-2187ac35fe1d"
+        "RequestId": "e4a15dcd-****-4804-****-2187ac35fe1d"
     }
 }
 ```

@@ -1309,7 +1309,7 @@
         {
           "disabled": false,
           "document": "七层规则 ID。7层负载均衡该参数必填",
-          "example": "lbl-4apy****",
+          "example": "loc-4apy****",
           "member": "string",
           "name": "LocationId",
           "required": false,

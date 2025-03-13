@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AccessDevices": {
+      "document": "外部客户访问资产",
+      "input": "AccessDevicesRequest",
+      "name": "运维登录资产",
+      "output": "AccessDevicesResponse",
+      "status": "online"
+    },
     "AddDeviceGroupMembers": {
       "document": "添加资产组成员",
       "input": "AddDeviceGroupMembersRequest",
@@ -480,6 +487,198 @@
         }
       ],
       "usage": "both"
+    },
+    "AccessDevicesRequest": {
+      "document": "AccessDevices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "ins-bhtest",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "root",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运维端登录账号",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "LoginAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "运维端登录密码",
+          "example": "980930",
+          "member": "string",
+          "name": "LoginPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "1a2b3c",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥",
+          "example": "bh-test-private-key",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥密码",
+          "example": "1a2b3c",
+          "member": "string",
+          "name": "PrivateKeyPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端工具",
+          "example": "mrd",
+          "member": "string",
+          "name": "Exe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RDP挂载盘符驱动（mstsc支持）",
+          "example": "[\"c:\",\"d:\"]",
+          "member": "string",
+          "name": "Drivers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "窗口宽度（RDP支持）",
+          "example": "800",
+          "member": "uint64",
+          "name": "Width",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "窗口高度（RDP支持）",
+          "example": "600",
+          "member": "uint64",
+          "name": "Height",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否内网访问（默认不是）",
+          "example": "false",
+          "member": "bool",
+          "name": "IntranetAccess",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "AccessDevicesResponse": {
+      "document": "AccessDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证信息",
+          "example": "{\"Ip\":\"127.0.0.1\",\"Port\":22}",
+          "member": "AccessInfo",
+          "name": "AccessInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AccessInfo": {
+      "document": "认证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "v_feifei",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "980930",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "唤起链接｜wss链接",
+          "example": "tsecbh://CgcxLjIuMS4xEgNtcmQaDzEyMy4yMDcuMTA2LjIxNyDFQSoNMTkyLjE2OC4xMS4xMzIr546w572R546v5aKD5YaF572R6K6_6Zeu6ZW_5pyf5L2_55SoLeWLv-WIoDoNYWRtaW5pc3RyYXRvckIQcmYwU1pIQ0ozcmlFQ1lVb0gBUIAIWIAGeAA",
+          "member": "string",
+          "name": "AccessURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Acl": {
       "document": "访问权限",

@@ -1097,13 +1097,13 @@
         },
         {
           "disabled": false,
-          "document": "实例名称序号相关设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例名称序号相关设置。",
           "example": "{\"BeginIndex\": 0, \"Enabled\": true}",
           "member": "InstanceNameIndexSettings",
           "name": "InstanceNameIndexSettings",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2428,25 +2428,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li>\n默认取值与系统盘类型（SystemDisk.DiskType）保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘类型。数据盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>CLOUD_HSSD：增强型SSD云硬盘</li>\n<li>CLOUD_TSSD：极速型SSD云硬盘</li>\n默认取值与系统盘类型（SystemDisk.DiskType）保持一致。",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘大小，单位：GB。最小调整步长为10G，不同数据盘类型取值范围不同，具体限制详见：[CVM实例配置](https://cloud.tencent.com/document/product/213/2177)。默认值为0，表示不购买数据盘。更多限制详见产品文档。",
           "example": "0",
           "member": "uint64",
           "name": "DiskSize",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -2454,7 +2454,7 @@
           "example": "snap-l8psqwnt",
           "member": "string",
           "name": "SnapshotId",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2465,7 +2465,7 @@
           "example": "false",
           "member": "bool",
           "name": "DeleteWithInstance",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -2476,7 +2476,7 @@
           "example": "true",
           "member": "bool",
           "name": "Encrypt",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -2487,7 +2487,7 @@
           "example": "100",
           "member": "uint64",
           "name": "ThroughputPerformance",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2498,7 +2498,7 @@
           "example": "false",
           "member": "bool",
           "name": "BurstPerformance",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -3844,13 +3844,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "伸缩活动ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "伸缩活动ID。",
           "example": "asa-q59zikez",
           "member": "string",
           "name": "ActivityId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4066,7 +4066,7 @@
           "example": "ins-089dlszs",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4076,7 +4076,7 @@
           "example": "asg-02ofd40a",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4086,7 +4086,7 @@
           "example": "asc-23yf98ie",
           "member": "string",
           "name": "LaunchConfigurationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4096,17 +4096,17 @@
           "example": "测试asc-01_2.3",
           "member": "string",
           "name": "LaunchConfigurationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "生命周期状态，取值如下：<br>\n<li>IN_SERVICE：运行中\n<li>CREATING：创建中\n<li>CREATION_FAILED：创建失败\n<li>TERMINATING：中止中\n<li>TERMINATION_FAILED：中止失败\n<li>ATTACHING：绑定中\n<li>ATTACH_FAILED：绑定失败\n<li>DETACHING：解绑中\n<li>DETACH_FAILED：解绑失败\n<li>ATTACHING_LB：绑定LB中\n<li>DETACHING_LB：解绑LB中\n<li>MODIFYING_LB：修改LB中\n<li>STARTING：开机中\n<li>START_FAILED：开机失败\n<li>STOPPING：关机中\n<li>STOP_FAILED：关机失败\n<li>STOPPED：已关机\n<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中\n<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中",
+          "document": "生命周期状态，取值如下：\n<li>IN_SERVICE：运行中</li>\n<li>CREATING：创建中</li>\n<li>CREATION_FAILED：创建失败</li>\n<li>TERMINATING：中止中</li>\n<li>TERMINATION_FAILED：中止失败</li>\n<li>ATTACHING：绑定中</li>\n<li>ATTACH_FAILED：绑定失败</li>\n<li>DETACHING：解绑中</li>\n<li>DETACH_FAILED：解绑失败</li>\n<li>ATTACHING_LB：绑定LB中</li>\n<li>DETACHING_LB：解绑LB中</li>\n<li>MODIFYING_LB：修改LB中</li>\n<li>STARTING：开机中</li>\n<li>START_FAILED：开机失败</li>\n<li>STOPPING：关机中</li>\n<li>STOP_FAILED：关机失败</li>\n<li>STOPPED：已关机</li>\n<li>IN_LAUNCHING_HOOK：扩容生命周期挂钩中</li>\n<li>IN_TERMINATING_HOOK：缩容生命周期挂钩中</li>",
           "example": "IN_SERVICE",
           "member": "string",
           "name": "LifeCycleState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4116,7 +4116,7 @@
           "example": "HEALTHY",
           "member": "string",
           "name": "HealthStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4126,7 +4126,7 @@
           "example": "false",
           "member": "bool",
           "name": "ProtectedFromScaleIn",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4136,7 +4136,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4146,7 +4146,7 @@
           "example": "AUTO_CREATION",
           "member": "string",
           "name": "CreationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4156,7 +4156,7 @@
           "example": "2023-01-13T03:06:25Z",
           "member": "datetime_iso",
           "name": "AddTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4166,7 +4166,7 @@
           "example": "S3.MEDIUM2",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4176,7 +4176,7 @@
           "example": "1",
           "member": "int64",
           "name": "VersionNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4186,29 +4186,29 @@
           "example": "测试asg-01_2.3",
           "member": "string",
           "name": "AutoScalingGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "预热状态，取值如下：\n<li>WAITING_ENTER_WARMUP：等待进入预热\n<li>NO_NEED_WARMUP：无需预热\n<li>IN_WARMUP：预热中\n<li>AFTER_WARMUP：完成预热",
+          "document": "预热状态，取值如下：\n<li>WAITING_ENTER_WARMUP：等待进入预热</li>\n<li>NO_NEED_WARMUP：无需预热</li>\n<li>IN_WARMUP：预热中</li>\n<li>AFTER_WARMUP：完成预热</li>",
           "example": "IN_WARMUP",
           "member": "string",
           "name": "WarmupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "置放群组id，仅支持指定一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "置放群组id，仅支持指定一个。",
           "example": "[\"ps-uf8j6y3t\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
-          "required": false,
+          "output_required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4257,14 +4257,14 @@
         },
         {
           "disabled": false,
-          "document": "市场选项类型，当前只支持取值：spot\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "市场选项类型，当前只支持取值：spot",
           "example": "spot",
           "member": "string",
           "name": "MarketType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4419,63 +4419,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例ID。",
           "example": "ins-0lizunus",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行活动ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行活动ID。",
           "example": "inv-0h9q6ahv",
           "member": "string",
           "name": "InvocationId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行任务ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行任务ID。",
           "example": "invt-4mqj9ekr",
           "member": "string",
           "name": "InvocationTaskId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "命令ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "命令ID。",
           "example": "cmd-5l44tu7j",
           "member": "string",
           "name": "CommandId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行任务状态。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行任务状态。",
           "example": "SUCCESS",
           "member": "string",
           "name": "TaskStatus",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行异常信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行异常信息。",
           "example": "InvocationTaskFailed->Invocation task failed.",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4675,13 +4675,13 @@
         },
         {
           "disabled": false,
-          "document": "标签列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签列表。",
           "example": "[{\"Key\": \"CCode\", \"Value\": \"ASTENCENT\", \"ResourceType\": \"launch-configuration\"}]",
           "member": "Tag",
           "name": "Tags",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4795,13 +4795,13 @@
         },
         {
           "disabled": false,
-          "document": "镜像族名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像族名称。",
           "example": "testfamily",
           "member": "string",
           "name": "ImageFamily",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -4897,25 +4897,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "远程命令ID。若选择执行命令，则此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "远程命令ID。若选择执行命令，则此项必填。",
           "example": "cmd-gt5dre32",
           "member": "string",
           "name": "CommandId",
           "output_required": true,
           "required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义参数。字段类型为 json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义参数。字段类型为 json encoded string。如：{\"varA\": \"222\"}。\nkey为自定义参数名称，value为该参数的默认取值。kv均为字符串型。\n如果未提供该参数取值，将使用 Command 的 DefaultParameters 进行替换。\n自定义参数最多20个。自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。",
           "example": "{\"varA\": \"222\"}",
           "member": "string",
           "name": "Parameters",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5025,13 +5025,13 @@
         },
         {
           "disabled": false,
-          "document": "远程命令执行对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "远程命令执行对象",
           "example": "{\"CommandId\": \"cmd-am4e3hd8\", \"Parameters\": \"{123: 222}\"}",
           "member": "LifecycleCommand",
           "name": "LifecycleCommand",
           "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6284,18 +6284,18 @@
         },
         {
           "disabled": false,
-          "document": "原始刷新活动ID，仅在回滚刷新活动中存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "原始刷新活动ID，仅在回滚刷新活动中存在。",
           "example": "asr-v8dd7er6",
           "member": "string",
           "name": "OriginRefreshActivityId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "刷新批次信息列表。",
-          "example": " [{\"RefreshBatchNum\": 1, \"EndTime\": \"2024-11-06T19:01:08Z\", \"RefreshBatchRelatedInstanceSet\": [{\"InstanceId\": \"ins-m30w46cu\", \"InstanceStatusMessage\": \"success\", \"LastActivityId\": \"asa-dayrcku8\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"StartTime\": \"2024-11-06T19:00:14Z\", \"RefreshBatchStatus\": \"SUCCESSFUL\"}]",
+          "example": " [{\"RefreshBatchNum\": 1, \"RefreshBatchRelatedInstanceSet\": [{\"InstanceId\": \"ins-m30w46cu\", \"InstanceStatus\": \"SUCCESSFUL\"}], \"StartTime\": \"2024-11-06T19:00:14Z\", \"RefreshBatchStatus\": \"SUCCESSFUL\"}]",
           "member": "RefreshBatch",
           "name": "RefreshBatchSet",
           "output_required": true,
@@ -6344,13 +6344,13 @@
         },
         {
           "disabled": false,
-          "document": "当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。",
           "example": "2",
           "member": "uint64",
           "name": "CurrentRefreshBatchNum",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6374,13 +6374,13 @@
         },
         {
           "disabled": false,
-          "document": "刷新活动创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "刷新活动创建时间。",
           "example": "2023-09-04T11:42:46Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6456,7 +6456,7 @@
         },
         {
           "disabled": false,
-          "document": "刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在",
+          "document": "刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在</li>",
           "example": "WAITING",
           "member": "string",
           "name": "InstanceStatus",
@@ -6466,23 +6466,23 @@
         },
         {
           "disabled": false,
-          "document": "实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。\n需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。\n需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。",
           "example": "asa-7y5rey56",
           "member": "string",
           "name": "LastActivityId",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "实例刷新状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例刷新状态信息。",
           "example": "success",
           "member": "string",
           "name": "InstanceStatusMessage",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6492,14 +6492,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。",
           "example": "{\"BatchNumber\": 1, \"MaxSurge\": 1, \"BatchPause\": \"AUTOMATIC\"}",
           "member": "RollingUpdateSettings",
           "name": "RollingUpdateSettings",
           "output_required": false,
           "required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6767,14 +6767,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：\n<li>TRUE：表示开启云监控服务</li>\n<li>FALSE：表示不开启云监控服务</li>\n默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启[可观测平台（原名云监控）](https://cloud.tencent.com/document/product/248)服务。取值范围：\n<li>TRUE：表示开启云监控服务</li>\n<li>FALSE：表示不开启云监控服务</li>\n默认取值：TRUE。",
           "example": "{\"Enabled\": true}",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6784,14 +6784,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：\n<li>TRUE：表示开启云安全服务</li>\n<li>FALSE：表示不开启云安全服务</li>\n默认取值：TRUE。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启[云安全](https://cloud.tencent.com/document/product/296)服务。取值范围：\n<li>TRUE：表示开启云安全服务</li>\n<li>FALSE：表示不开启云安全服务</li>\n默认取值：TRUE。",
           "example": "{\"Enabled\": true}",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
           "required": false,
           "type": "bool",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7187,14 +7187,14 @@
         },
         {
           "disabled": false,
-          "document": "不健康替换服务的替换模式。取值范围：\nRECREATE：重建实例替代原有不健康实例；\nRESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。\n默认取值：RECREATE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "不健康替换服务的替换模式。取值范围：\nRECREATE：重建实例替代原有不健康实例；\nRESET：对原有不健康实例进行重装系统操作，可保持数据盘、内网IP、实例id等信息不发生变化，实例登录设置、主机名、增强服务和 UserData 与当前启动配置保持一致。\n默认取值：RECREATE",
           "example": "RECREATE",
           "member": "string",
           "name": "ReplaceMode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7282,14 +7282,14 @@
         },
         {
           "disabled": false,
-          "document": "竞价请求类型，当前仅支持类型：one-time，默认值为one-time\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "竞价请求类型，当前仅支持类型：one-time，默认值为one-time",
           "example": "one-time",
           "member": "string",
           "name": "SpotInstanceType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7537,23 +7537,25 @@
       "members": [
         {
           "disabled": false,
-          "document": "系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><br>默认取值：CLOUD_PREMIUM。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘类型。系统盘类型限制详见[云硬盘类型](https://cloud.tencent.com/document/product/362/2353)。取值范围\n<li>LOCAL_BASIC：本地硬盘</li>\n<li>LOCAL_SSD：本地SSD硬盘</li>\n<li>CLOUD_BASIC：普通云硬盘</li>\n<li>CLOUD_PREMIUM：高性能云硬盘</li>\n<li>CLOUD_SSD：SSD云硬盘</li>\n<li>默认取值：CLOUD_PREMIUM。</li>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
+          "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "系统盘大小，单位：GB。默认值为 50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "系统盘大小，单位：GB。默认值为 50",
           "example": "50",
           "member": "uint64",
           "name": "DiskSize",
+          "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7585,14 +7587,14 @@
         },
         {
           "disabled": false,
-          "document": "标签绑定的资源类型，当前支持类型：\"auto-scaling-group\", \"launch-configuration\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "标签绑定的资源类型，当前支持类型：\"auto-scaling-group\", \"launch-configuration\"",
           "example": "auto-scaling-group",
           "member": "string",
           "name": "ResourceType",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

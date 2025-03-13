@@ -136,7 +136,7 @@
           "example": "input",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -146,7 +146,7 @@
           "example": "开机时间",
           "member": "string",
           "name": "Lable",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -156,7 +156,7 @@
           "example": "open_time",
           "member": "string",
           "name": "Field",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -166,17 +166,17 @@
           "example": "默认值",
           "member": "string",
           "name": "DefaultValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "支持配置项如下,可根据需要选择配置项，不需要配置是设置空{}：\n\n{\n\n  placeholder: string (占位符)\n\n  tooltip: string (提示信息)\n\n  reg: RegExp (对输入内容格式进行正则校验的规则)\n\n  max: number (对于输入框，限制最大输入字符数，对于数值输入框，设置上限)\n\n  min: number (对于数值输入框，设置下限)\n\n  step: number (设置数值输入框的步长，默认为1)\n\n  format: string (时间选择的格式，如YYYY-MM-DD表示年月日, YYYY-MM-DD HH:mm:ss 表示时分秒)\n\n  separator:  string[] (多行输入框的分隔符，不传或者为空时表示不分隔，直接返回用户输入的文本字符串)\n\n  multiple: boolean (是否多选,对选择器和级联选择器有效)\n\n  options:  选择器的选项【支持以下两种形式】\n\n直接给定选项数组  { value: string; label: string }[]\n通过调接口获取选项                                                                                                                                       { api: string(接口地址),                                                                                                                                       params: string[] (接口参数,对应于参数配置的field，前端根据field对应的所有组件的输入值作为参数查询数据， 为空时在组件加载时直接请求数据)                                                                                                    }\n}",
-          "example": "{}",
+          "example": "\"{\\\"max\\\": 86400, \\\"min\\\": 0, \\\"tooltip\\\": \\\"动作的超时时间\\\"}\"",
           "member": "string",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -186,27 +186,27 @@
           "example": "0",
           "member": "uint64",
           "name": "Required",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "compute配置依赖的其他field满足的条件时通过校验（如：三个表单项中必须至少有一个填写了）\n\n[fieldName,\n\n{ config:  此项保留，等待后面具体场景细化  }\n\n]",
-          "example": "{}",
+          "example": "\"{\\\"op\\\": \\\"==\\\", \\\"value\\\": \\\"指定个数重启\\\", \\\"relatedField\\\": \\\"reboot_mod\\\"}\"",
           "member": "string",
           "name": "Validate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否可见",
-          "example": "{}",
+          "example": "\"{\\\"op\\\": \\\"<\\\", \\\"type\\\": \\\"need_insert\\\", \\\"value\\\": 0, \\\"relatedField\\\": \\\"ActionTimeout\\\"}\"",
           "member": "string",
           "name": "Visible",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -497,7 +497,7 @@
         {
           "disabled": false,
           "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "apm-xxxx",
+          "example": "apm-5akd64",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -999,14 +999,14 @@
         },
         {
           "disabled": false,
-          "document": "护栏策略生效处理策略 1:顺序执行，2:暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "护栏策略生效处理策略 1:顺序执行，2:暂停",
           "example": "1",
           "member": "int64",
           "name": "TaskPolicyDealType",
           "output_required": true,
           "required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1769,6 +1769,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持演练生图",
+          "example": "true",
+          "member": "bool",
+          "name": "IsArchSvg",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2431,6 +2441,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "架构ID",
+          "example": "arch-ca2c",
+          "member": "string",
+          "name": "TaskArchId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3101,7 +3122,7 @@
         {
           "disabled": true,
           "document": "实例动作执行日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{}",
+          "example": "\"2024-01-10 14:01:00 执行完成\"",
           "member": "string",
           "name": "TaskGroupInstanceExecuteLog",
           "output_required": true,
@@ -3143,6 +3164,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskGroupInstancesExecuteMode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3153,6 +3175,7 @@
           "example": "100",
           "member": "int64",
           "name": "TaskGroupInstancesExecutePercent",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3163,6 +3186,7 @@
           "example": "10",
           "member": "int64",
           "name": "TaskGroupInstancesExecuteNum",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3492,13 +3516,13 @@
         },
         {
           "disabled": false,
-          "document": "演练报告cos文件地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "演练报告cos文件地址",
           "example": "\"http://xxxx\"",
           "member": "string",
           "name": "CosUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -3532,13 +3556,13 @@
         },
         {
           "disabled": false,
-          "document": "归档ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "归档ID",
           "example": "cfg-uixxx",
           "member": "string",
           "name": "ArchiveUuid",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

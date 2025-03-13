@@ -11037,10 +11037,10 @@
         {
           "disabled": false,
           "document": "下一次分页参数，第一次传空。透传上次接口返回的Context值，可获取后续更多日志，总计最多可获取1万条原始日志，过期时间1小时。",
-          "example": "xx",
+          "example": "下一次分页参数",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
