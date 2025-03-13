@@ -30,10 +30,10 @@ def login_command_entrypoint(args, parsed_globals):
     if not profile:
         profile = "default"
 
-    login(profile, language, args)
+    login(args, profile, language)
 
 
-def login(profile, language, args):
+def login(args, profile, language):
     cred_path = sso.cred_path_of_profile(profile)
     auth_url = ""
     if os.path.exists(cred_path):
